@@ -2,17 +2,18 @@ package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ShieldItem;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ShieldItem;
+import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(ShieldItem.class)
+@Mixin(Item.class)
 public class ShieldItemMixin {
 
     @Inject(
@@ -21,13 +22,14 @@ public class ShieldItemMixin {
         cancellable = true
     )
     public void lockShield(
-        World world,
-        PlayerEntity player,
-        Hand hand,
-        CallbackInfoReturnable<ActionResult> cir
+        Level world,
+        Player player,
+        InteractionHand hand,
+        CallbackInfoReturnable<InteractionResult> cir
     ) {
-        if (AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_SHIELD)) {
-            cir.setReturnValue(ActionResult.PASS);
+        if ((Object) this instanceof ShieldItem &&
+            AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_SHIELD)) {
+            cir.setReturnValue(InteractionResult.PASS);
         }
     }
 }

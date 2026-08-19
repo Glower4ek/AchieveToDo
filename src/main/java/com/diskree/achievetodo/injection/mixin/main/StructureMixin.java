@@ -2,12 +2,13 @@ package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.ability.LandmarkType;
 import com.diskree.achievetodo.injection.extension.main.StructureStartExtension;
+import com.diskree.achievetodo.util.MixinCasting;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.structure.StructureStart;
-import net.minecraft.world.gen.structure.Structure;
-import net.minecraft.world.gen.structure.StructureType;
+import net.minecraft.core.Holder;
+import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.StructureStart;
+import net.minecraft.world.level.levelgen.structure.StructureType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,10 +17,10 @@ import org.spongepowered.asm.mixin.injection.At;
 public abstract class StructureMixin {
 
     @Shadow
-    public abstract StructureType<?> getType();
+    public abstract StructureType<?> type();
 
     @ModifyReturnValue(
-        method = "createStructureStart",
+        method = "generate",
         at = @At(
             value = "RETURN",
             ordinal = 0
@@ -27,13 +28,12 @@ public abstract class StructureMixin {
     )
     private StructureStart setStructureLandmarkType(
         StructureStart structureStart,
-        @Local(argsOnly = true) RegistryEntry<Structure> structure
+        @Local(argsOnly = true) Holder<Structure> structure
     ) {
-        if (structureStart instanceof StructureStartExtension structureStartExtension) {
-            LandmarkType landmarkType = LandmarkType.findByStructureRegistryKey(structure.getKey().orElse(null));
-            if (landmarkType != null) {
-                structureStartExtension.achievetodo$setLandmarkType(landmarkType);
-            }
+        LandmarkType landmarkType = LandmarkType.findByStructureRegistryKey(structure.unwrapKey().orElse(null));
+        if (landmarkType != null) {
+            StructureStartExtension structureStartExtension = MixinCasting.structureStart(structureStart);
+            structureStartExtension.achievetodo$setLandmarkType(landmarkType);
         }
         return structureStart;
     }

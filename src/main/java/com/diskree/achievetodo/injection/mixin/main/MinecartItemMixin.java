@@ -1,9 +1,9 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.MinecartItem;
-import net.minecraft.util.ActionResult;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.MinecartItem;
+import net.minecraft.world.item.context.UseOnContext;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -13,17 +13,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MinecartItemMixin {
 
     @Inject(
-        method = "useOnBlock",
+        method = "useOn",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/vehicle/AbstractMinecartEntity;areMinecartImprovementsEnabled(Lnet/minecraft/world/World;)Z",
+            target = "Lnet/minecraft/world/entity/vehicle/minecart/AbstractMinecart;useExperimentalMovement(Lnet/minecraft/world/level/Level;)Z",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockMinecartPlace(ItemUsageContext context, CallbackInfoReturnable<ActionResult> cir) {
+    public void lockMinecartPlace(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir) {
         if (AchieveToDoMod.isTargetInLockedLandmark(context)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 }

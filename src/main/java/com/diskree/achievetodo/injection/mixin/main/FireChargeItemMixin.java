@@ -1,9 +1,9 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
-import net.minecraft.item.FireChargeItem;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.util.ActionResult;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.FireChargeItem;
+import net.minecraft.world.item.context.UseOnContext;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -13,17 +13,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class FireChargeItemMixin {
 
     @Inject(
-        method = "useOnBlock",
+        method = "useOn",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/item/FireChargeItem;playUseSound(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V",
+            target = "Lnet/minecraft/world/item/FireChargeItem;playSound(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockFireCharge(ItemUsageContext context, CallbackInfoReturnable<ActionResult> cir) {
+    public void lockFireCharge(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir) {
         if (AchieveToDoMod.isTargetInLockedLandmark(context)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 }

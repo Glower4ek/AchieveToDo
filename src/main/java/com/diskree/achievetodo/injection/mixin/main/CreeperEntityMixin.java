@@ -3,41 +3,41 @@ package com.diskree.achievetodo.injection.mixin.main;
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.entity.mob.CreeperEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(CreeperEntity.class)
+@Mixin(Creeper.class)
 public class CreeperEntityMixin {
 
     @Inject(
-        method = "interactMob",
+        method = "mobInteract",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/World;playSound(Lnet/minecraft/entity/player/PlayerEntity;DDDLnet/minecraft/sound/SoundEvent;Lnet/minecraft/sound/SoundCategory;FF)V",
+            target = "Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/Entity;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
     public void lockFlintAndSteel(
-        PlayerEntity player,
-        Hand hand,
-        CallbackInfoReturnable<ActionResult> cir,
+        Player player,
+        InteractionHand hand,
+        CallbackInfoReturnable<InteractionResult> cir,
         @Local @NotNull ItemStack stack
     ) {
-        CreeperEntity creeperEntity = (CreeperEntity) (Object) this;
+        Creeper creeperEntity = (Creeper) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, creeperEntity) ||
-            stack.isOf(Items.FLINT_AND_STEEL) && AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_FLINT_AND_STEEL)
+            stack.is(Items.FLINT_AND_STEEL) && AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_FLINT_AND_STEEL)
         ) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 }

@@ -4,7 +4,6 @@ import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.BuildConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;

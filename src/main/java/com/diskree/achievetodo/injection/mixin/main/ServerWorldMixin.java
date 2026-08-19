@@ -1,27 +1,27 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.injection.extension.main.LandmarkGenerationTracker;
-import net.minecraft.block.BlockState;
-import net.minecraft.registry.DynamicRegistryManager;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.BlockBox;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.MutableWorldProperties;
-import net.minecraft.world.World;
-import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.dimension.DimensionType;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
+import net.minecraft.world.level.storage.WritableLevelData;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
-@Mixin(ServerWorld.class)
-public abstract class ServerWorldMixin extends World implements LandmarkGenerationTracker {
+@Mixin(ServerLevel.class)
+public abstract class ServerWorldMixin extends Level implements LandmarkGenerationTracker {
 
     @Unique
     private boolean isLandmarkGenerationTrackingEnabled;
 
     @Unique
-    private BlockBox landmarkBlockBox;
+    private BoundingBox landmarkBlockBox;
 
     @Override
     public void achievetodo$setLandmarkGenerationTrackingEnabled(boolean isLandmarkGenerationTrackingEnabled) {
@@ -29,35 +29,35 @@ public abstract class ServerWorldMixin extends World implements LandmarkGenerati
     }
 
     @Override
-    public void achievetodo$setLandmarkBlockBox(BlockBox landmarkBlockBox) {
+    public void achievetodo$setLandmarkBlockBox(BoundingBox landmarkBlockBox) {
         this.landmarkBlockBox = landmarkBlockBox;
     }
 
     @Override
-    public BlockBox achievetodo$getLandmarkBlockBox() {
-        BlockBox temp = landmarkBlockBox;
+    public BoundingBox achievetodo$getLandmarkBlockBox() {
+        BoundingBox temp = landmarkBlockBox;
         landmarkBlockBox = null;
         return temp;
     }
 
     @SuppressWarnings("deprecation")
     @Override
-    public boolean setBlockState(BlockPos pos, BlockState state, int flags, int maxUpdateDepth) {
-        boolean result = super.setBlockState(pos, state, flags, maxUpdateDepth);
+    public boolean setBlock(BlockPos pos, BlockState state, int flags, int maxUpdateDepth) {
+        boolean result = super.setBlock(pos, state, flags, maxUpdateDepth);
         if (result && isLandmarkGenerationTrackingEnabled) {
             if (landmarkBlockBox == null) {
-                landmarkBlockBox = new BlockBox(pos);
+                landmarkBlockBox = new BoundingBox(pos);
             }
-            landmarkBlockBox.encompass(pos);
+            landmarkBlockBox.encapsulate(pos);
         }
         return result;
     }
 
     protected ServerWorldMixin(
-        MutableWorldProperties properties,
-        RegistryKey<World> registryRef,
-        DynamicRegistryManager registryManager,
-        RegistryEntry<DimensionType> dimensionEntry,
+        WritableLevelData properties,
+        ResourceKey<Level> registryRef,
+        RegistryAccess registryManager,
+        Holder<DimensionType> dimensionEntry,
         boolean isClient,
         boolean debugWorld,
         long seed,

@@ -2,37 +2,35 @@ package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.injection.extension.main.LevelInfoExtension;
 import com.diskree.achievetodo.server.Constants;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.registry.DynamicRegistryManager;
-import net.minecraft.world.level.LevelInfo;
-import net.minecraft.world.level.LevelProperties;
+import com.diskree.achievetodo.util.MixinCasting;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.level.LevelSettings;
+import net.minecraft.world.level.storage.PrimaryLevelData;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(LevelProperties.class)
+@Mixin(PrimaryLevelData.class)
 public class LevelPropertiesMixin {
 
     @Shadow
-    private LevelInfo levelInfo;
+    private LevelSettings settings;
 
     @Inject(
-        method = "updateProperties",
+        method = "setTagData",
         at = @At("RETURN")
     )
     private void saveConfigName(
-        DynamicRegistryManager registryManager,
-        NbtCompound levelNbt,
-        NbtCompound playerNbt,
+        CompoundTag levelNbt,
+        java.util.UUID singlePlayerUuid,
         CallbackInfo ci
     ) {
-        if (levelInfo instanceof LevelInfoExtension levelInfoExtension) {
-            String configName = levelInfoExtension.achievetodo$getConfigName();
-            if (configName != null) {
-                levelNbt.putString(Constants.NbtKey.LEVEL_CONFIG_NAME, configName);
-            }
+        LevelInfoExtension levelInfoExtension = MixinCasting.levelInfo(settings);
+        String configName = levelInfoExtension.achievetodo$getConfigName();
+        if (configName != null) {
+            levelNbt.putString(Constants.NbtKey.LEVEL_CONFIG_NAME, configName);
         }
     }
 }

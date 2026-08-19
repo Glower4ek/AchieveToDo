@@ -6,14 +6,15 @@ import com.diskree.achievetodo.client.Utils;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.gui.screen.ConfirmScreen;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.tooltip.Tooltip;
-import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.screen.ScreenTexts;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
+import net.minecraft.ChatFormatting;
 import net.minecraft.util.Util;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.client.gui.layouts.LinearLayout;
+import net.minecraft.client.gui.screens.ConfirmScreen;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.system.MemoryStack;
@@ -50,8 +51,8 @@ public class ExternalPackDownloader extends ConfirmScreen {
     private boolean isFileDownloaded;
 
     private final boolean inGameDownloadSupported;
-    private ButtonWidget downloadButton;
-    private ButtonWidget backButton;
+    private Button downloadButton;
+    private Button backButton;
     private static final AtomicBoolean isDownloadingCanceled = new AtomicBoolean(true);
 
     public ExternalPackDownloader(
@@ -64,21 +65,21 @@ public class ExternalPackDownloader extends ConfirmScreen {
             null,
             AchieveToDoClient.translate("downloader.title_prefix")
                 .append(
-                    Text.literal(pack.getTitle())
-                        .formatted(pack.getColor(), Formatting.ITALIC)
+                    Component.literal(pack.getTitle())
+                        .withStyle(pack.getColor(), ChatFormatting.ITALIC)
                 ),
             AchieveToDoClient.translate(
                     isOutdatedVersion ? "downloader.reason.outdated" : pack.getReasonKey()
                 )
-                .append(ScreenTexts.LINE_BREAK)
-                .append(ScreenTexts.LINE_BREAK)
-                .append(ScreenTexts.LINE_BREAK)
-                .append(ScreenTexts.LINE_BREAK)
-                .append(ScreenTexts.LINE_BREAK)
+                .append(CommonComponents.NEW_LINE)
+                .append(CommonComponents.NEW_LINE)
+                .append(CommonComponents.NEW_LINE)
+                .append(CommonComponents.NEW_LINE)
+                .append(CommonComponents.NEW_LINE)
                 .append(
                     AchieveToDoClient.translate(
                         pack.isInGameDownloadSupported() ? "downloader.automatically_info" : "downloader.manually_info"
-                    ).formatted(DesignCodePalette.TEXT_COLOR)
+                    ).withStyle(DesignCodePalette.TEXT_COLOR)
                 )
         );
         this.parent = parent;
@@ -88,45 +89,38 @@ public class ExternalPackDownloader extends ConfirmScreen {
     }
 
     @Override
-    public void close() {
-        if (client != null) {
-            client.setScreen(parent);
+    public void onClose() {
+        if (minecraft != null) {
+            minecraft.setScreenAndShow(parent);
             exitCallback.accept(isFileDownloaded);
         }
     }
 
     @Override
-    protected void addButtons(int y) {
-        int selectFileButtonX = (width - BUTTON_WIDTH) / 2;
-
-        downloadButton = addDrawableChild(
-            ButtonWidget.builder(
+    protected void addButtons(LinearLayout buttons) {
+        downloadButton = buttons.addChild(
+            Button.builder(
                     AchieveToDoClient.translate("downloader.download"),
                     button -> {
                         if (inGameDownloadSupported) {
-                            backButton.setMessage(ScreenTexts.CANCEL);
+                            backButton.setMessage(CommonComponents.GUI_CANCEL);
                             button.active = false;
                             startDownload();
                         } else {
-                            Util.getOperatingSystem().open(externalPack.getDownloadUrl());
+                            Util.getPlatform().openUri(externalPack.getDownloadUrl());
                         }
                     }
                 )
                 .tooltip(inGameDownloadSupported ? null :
-                    Tooltip.of(AchieveToDoClient.translate("downloader.download.tooltip"))
+                    Tooltip.create(AchieveToDoClient.translate("downloader.download.tooltip"))
                 )
-                .dimensions(
-                    selectFileButtonX - BUTTON_MARGIN - BUTTON_WIDTH,
-                    y,
-                    inGameDownloadSupported ? BUTTON_WIDTH * 2 + BUTTON_MARGIN : BUTTON_WIDTH,
-                    BUTTON_HEIGHT
-                )
+                .size(inGameDownloadSupported ? BUTTON_WIDTH * 2 + BUTTON_MARGIN : BUTTON_WIDTH, BUTTON_HEIGHT)
                 .build()
         );
 
         if (!inGameDownloadSupported) {
-            addDrawableChild(
-                ButtonWidget.builder(
+            buttons.addChild(
+                Button.builder(
                         AchieveToDoClient.translate("downloader.select_file"),
                         button -> {
                             try (MemoryStack stack = MemoryStack.stackPush()) {
@@ -147,54 +141,40 @@ public class ExternalPackDownloader extends ConfirmScreen {
                             }
                         }
                     )
-                    .dimensions(selectFileButtonX, y, BUTTON_WIDTH, BUTTON_HEIGHT)
+                    .size(BUTTON_WIDTH, BUTTON_HEIGHT)
                     .build()
             );
         }
 
-        backButton = addDrawableChild(
-            ButtonWidget.builder(
-                    ScreenTexts.BACK,
+        backButton = buttons.addChild(
+            Button.builder(
+                    CommonComponents.GUI_BACK,
                     button -> {
                         if (!isDownloadingCanceled.get()) {
                             isDownloadingCanceled.set(true);
                         } else {
-                            close();
+                            onClose();
                         }
                     }
                 )
-                .dimensions(selectFileButtonX + BUTTON_WIDTH + BUTTON_MARGIN, y, BUTTON_WIDTH, BUTTON_HEIGHT)
+                .size(BUTTON_WIDTH, BUTTON_HEIGHT)
                 .build()
         );
 
-        addDrawableChild(
-            ButtonWidget.builder(
+        buttons.addChild(
+            Button.builder(
                     AchieveToDoClient.translate("downloader.learn_more"),
-                    button -> Util.getOperatingSystem().open(externalPack.getPageUrl())
+                    button -> Util.getPlatform().openUri(externalPack.getPageUrl())
                 )
-                .tooltip(Tooltip.of(AchieveToDoClient.translate("downloader.learn_more.tooltip")))
-                .dimensions(
-                    selectFileButtonX + BUTTON_WIDTH + BUTTON_MARGIN,
-                    y + BUTTON_HEIGHT + BUTTON_MARGIN,
-                    BUTTON_WIDTH,
-                    BUTTON_HEIGHT
-                )
+                .tooltip(Tooltip.create(AchieveToDoClient.translate("downloader.learn_more.tooltip")))
+                .size(BUTTON_WIDTH, BUTTON_HEIGHT)
                 .build()
         );
     }
 
     @Override
-    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        if (isDownloadingCanceled.get() && keyCode == 256) {
-            close();
-            return true;
-        }
-        return super.keyPressed(keyCode, scanCode, modifiers);
-    }
-
-    @Override
-    public void onFilesDropped(List<Path> paths) {
-        super.onFilesDropped(paths);
+    public void onFilesDrop(List<Path> paths) {
+        super.onFilesDrop(paths);
         if (paths == null || paths.size() != 1) {
             return;
         }
@@ -202,7 +182,7 @@ public class ExternalPackDownloader extends ConfirmScreen {
     }
 
     private void handleDatapackFile(Path path) {
-        if (client == null) {
+        if (minecraft == null) {
             return;
         }
         boolean isWrapper;
@@ -213,13 +193,13 @@ public class ExternalPackDownloader extends ConfirmScreen {
             }
             isWrapper = sha1.equals(externalPack.getWrapperSha1());
             if (!isWrapper && !sha1.equalsIgnoreCase(externalPack.getSha1())) {
-                client.setScreen(new ErrorScreen(this, "error.wrong_datapack_file"));
+                minecraft.setScreenAndShow(new ErrorScreen(this, "error.wrong_datapack_file"));
                 return;
             }
         } catch (Exception e) {
             return;
         }
-        Path globalPacksDirectory = new File(client.runDirectory, "datapacks").toPath();
+        Path globalPacksDirectory = new File(minecraft.gameDirectory, "datapacks").toPath();
         try {
             if (Files.notExists(globalPacksDirectory)) {
                 Files.createDirectory(globalPacksDirectory);
@@ -234,7 +214,7 @@ public class ExternalPackDownloader extends ConfirmScreen {
             return;
         }
         isFileDownloaded = true;
-        close();
+        onClose();
     }
 
     private Path unzip(Path source, Path destination) throws IOException {
@@ -265,12 +245,12 @@ public class ExternalPackDownloader extends ConfirmScreen {
     }
 
     private void startDownload() {
-        if (client == null) {
+        if (minecraft == null) {
             return;
         }
         isDownloadingCanceled.set(false);
         String url = externalPack.getDownloadUrl();
-        Path downloadTempDirectory = new File(client.runDirectory, ".datapacks_temp").toPath();
+        Path downloadTempDirectory = new File(minecraft.gameDirectory, ".datapacks_temp").toPath();
         if (Files.notExists(downloadTempDirectory)) {
             try {
                 Files.createDirectory(downloadTempDirectory);
@@ -315,8 +295,8 @@ public class ExternalPackDownloader extends ConfirmScreen {
                         downloadedBytes += bytesRead;
 
                         int progress = (downloadedBytes * 100) / totalBytes;
-                        client.execute(() -> downloadButton.setMessage(
-                            Text.translatable("mco.download.downloading").append(": " + progress + "%"))
+                        minecraft.execute(() -> downloadButton.setMessage(
+                            Component.translatable("mco.download.downloading").append(": " + progress + "%"))
                         );
                     }
 
@@ -324,7 +304,7 @@ public class ExternalPackDownloader extends ConfirmScreen {
                         Files.deleteIfExists(tempFile);
                         hideDownloadingUI();
                     }
-                    client.execute(() -> {
+                    minecraft.execute(() -> {
                         handleDatapackFile(tempFile);
                         try {
                             Files.deleteIfExists(tempFile);
@@ -347,7 +327,7 @@ public class ExternalPackDownloader extends ConfirmScreen {
     }
 
     private void hideDownloadingUI() {
-        backButton.setMessage(ScreenTexts.BACK);
+        backButton.setMessage(CommonComponents.GUI_BACK);
         downloadButton.active = true;
     }
 }

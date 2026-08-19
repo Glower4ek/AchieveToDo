@@ -2,39 +2,39 @@ package com.diskree.achievetodo.networking.c2s;
 
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.network.packet.CustomPayload;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 
-import static net.minecraft.network.packet.CustomPayload.codecOf;
+import static net.minecraft.network.protocol.common.custom.CustomPacketPayload.codec;
 
 public record DemystifyAbilityPayload(
     @NotNull AbilityType abilityType
-) implements CustomPayload {
+) implements CustomPacketPayload {
 
-    public static final Id<DemystifyAbilityPayload> ID = new Id<>(AchieveToDoMod.getIdentifier(
+    public static final Type<DemystifyAbilityPayload> ID = new Type<>(AchieveToDoMod.getIdentifier(
         DemystifyAbilityPayload.class.getName().toLowerCase(Locale.ROOT).toLowerCase(Locale.ROOT)
     ));
 
-    public static final PacketCodec<PacketByteBuf, DemystifyAbilityPayload> CODEC = codecOf(
+    public static final StreamCodec<FriendlyByteBuf, DemystifyAbilityPayload> CODEC = codec(
         DemystifyAbilityPayload::encode,
         DemystifyAbilityPayload::decode
     );
 
     @Override
-    public Id<?> getId() {
+    public Type<?> type() {
         return ID;
     }
 
-    private void encode(@NotNull PacketByteBuf buf) {
-        buf.writeEnumConstant(abilityType);
+    private void encode(@NotNull FriendlyByteBuf buf) {
+        buf.writeEnum(abilityType);
     }
 
-    private static @NotNull DemystifyAbilityPayload decode(@NotNull PacketByteBuf buf) {
-        AbilityType abilityType = buf.readEnumConstant(AbilityType.class);
+    private static @NotNull DemystifyAbilityPayload decode(@NotNull FriendlyByteBuf buf) {
+        AbilityType abilityType = buf.readEnum(AbilityType.class);
         return new DemystifyAbilityPayload(abilityType);
     }
 }

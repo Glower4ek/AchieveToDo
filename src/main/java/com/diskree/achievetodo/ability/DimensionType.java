@@ -1,7 +1,7 @@
 package com.diskree.achievetodo.ability;
 
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.world.World;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 public enum DimensionType {
@@ -10,14 +10,14 @@ public enum DimensionType {
     NETHER,
     END;
 
-    public static @Nullable DimensionType findByWorld(RegistryKey<World> world) {
-        if (world == World.OVERWORLD) {
+    public static @Nullable DimensionType findByWorld(ResourceKey<Level> world) {
+        if (world == Level.OVERWORLD) {
             return OVERWORLD;
         }
-        if (world == World.NETHER) {
+        if (world == Level.NETHER) {
             return NETHER;
         }
-        if (world == World.END) {
+        if (world == Level.END) {
             return END;
         }
         return null;

@@ -1,31 +1,31 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
-import net.minecraft.entity.mob.PiglinEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.monster.piglin.Piglin;
+import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(PiglinEntity.class)
+@Mixin(Piglin.class)
 public class PiglinEntityMixin {
 
     @Inject(
-        method = "interactMob",
+        method = "mobInteract",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/mob/PiglinEntity;getWorld()Lnet/minecraft/world/World;",
+            target = "Lnet/minecraft/world/entity/monster/piglin/Piglin;level()Lnet/minecraft/world/level/Level;",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockInteract(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        PiglinEntity piglinEntity = (PiglinEntity) (Object) this;
+    public void lockInteract(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
+        Piglin piglinEntity = (Piglin) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, piglinEntity)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 }

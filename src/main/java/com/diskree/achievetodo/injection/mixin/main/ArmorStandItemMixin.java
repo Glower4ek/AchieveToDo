@@ -4,21 +4,21 @@ import com.diskree.achievetodo.AchieveToDoMod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.entity.Entity;
-import net.minecraft.item.ArmorStandItem;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.util.math.Box;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 import java.util.List;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.ArmorStandItem;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.phys.AABB;
 
 @Mixin(ArmorStandItem.class)
 public class ArmorStandItemMixin {
 
     @WrapOperation(
-        method = "useOnBlock",
+        method = "useOn",
         at = @At(
             value = "INVOKE",
             target = "Ljava/util/List;isEmpty()Z"
@@ -27,10 +27,10 @@ public class ArmorStandItemMixin {
     public boolean lockArmorStandPlace(
         List<Entity> entities,
         @NotNull Operation<Boolean> original,
-        @Local(argsOnly = true) ItemUsageContext context,
-        @Local Box boundingBox
+        @Local(argsOnly = true) UseOnContext context,
+        @Local AABB boundingBox
     ) {
         return original.call(entities) &&
-            !AchieveToDoMod.isTargetInLockedLandmark(context.getPlayer(), context.getWorld(), boundingBox);
+            !AchieveToDoMod.isTargetInLockedLandmark(context.getPlayer(), context.getLevel(), boundingBox);
     }
 }

@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version "${loomVersion}-SNAPSHOT"
+    id 'net.fabricmc.fabric-loom' version "${loomVersion}"
 }
 
 def modId = project.modName.toLowerCase()
@@ -18,11 +18,12 @@ repositories {
 
 dependencies {
     minecraft "com.mojang:minecraft:${minMinecraftVersion}"
-    mappings "net.fabricmc:yarn:${minMinecraftVersion}+build.${mappingsBuild}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${minLoaderVersion}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${apiVersion}+${minMinecraftVersion}"
+    implementation "net.fabricmc:fabric-loader:${minLoaderVersion}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${apiVersion}+${minMinecraftVersion}"
     implementation "com.moandjiezana.toml:toml4j:${tomlVersion}"
-    modImplementation(include("com.moandjiezana.toml:toml4j:${tomlVersion}"))
+    implementation(include("com.moandjiezana.toml:toml4j:${tomlVersion}"))
+    testImplementation "org.junit.jupiter:junit-jupiter:5.12.2"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher:1.12.2"
 }
 
 processResources {
@@ -52,6 +53,17 @@ sourceSets {
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = 'UTF-8'
     it.options.release.set(minJavaVersion.toInteger())
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
+
+tasks.register('syncWorldDatapacks', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.client.ExternalPackSyncTool'
+    args = [file('run/datapacks').absolutePath, file('run/saves').absolutePath]
 }
 
 tasks.register('generateBuildConfig', DefaultTask) {
@@ -90,7 +102,7 @@ jar {
 }
 
 loom {
-    accessWidenerPath.set(file("src/main/resources/${modId}.accesswidener"))
+    accessWidenerPath.set(file("src/main/resources/${modId}.classtweaker"))
 
     runs {
         datagen {

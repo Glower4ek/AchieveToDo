@@ -4,11 +4,11 @@ import com.diskree.achievetodo.AchieveToDoMod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BoatItem;
-import net.minecraft.util.math.Box;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BoatItem;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,15 +20,15 @@ public class BoatItemMixin {
         method = "use",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/World;isSpaceEmpty(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/Box;)Z"
+            target = "Lnet/minecraft/world/level/Level;noCollision(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;)Z"
         )
     )
     public boolean lockBoatPlace(
-        World world,
+        Level world,
         Entity entity,
-        Box boundingBox,
+        AABB boundingBox,
         @NotNull Operation<Boolean> original,
-        @Local(argsOnly = true) PlayerEntity player
+        @Local(argsOnly = true) Player player
     ) {
         return original.call(world, entity, boundingBox) &&
             !AchieveToDoMod.isTargetInLockedLandmark(player, world, boundingBox);

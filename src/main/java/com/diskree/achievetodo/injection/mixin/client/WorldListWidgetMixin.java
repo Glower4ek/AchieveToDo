@@ -1,15 +1,16 @@
 package com.diskree.achievetodo.injection.mixin.client;
 
 import com.diskree.achievetodo.client.ExternalPack;
+import com.diskree.achievetodo.client.ExternalPackCompatibility;
 import com.diskree.achievetodo.client.Utils;
 import com.diskree.achievetodo.client.gui.ErrorScreen;
 import com.diskree.achievetodo.client.gui.ExternalPackDownloader;
 import com.diskree.achievetodo.server.Constants;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.world.SelectWorldScreen;
-import net.minecraft.client.gui.screen.world.WorldListWidget;
-import net.minecraft.util.WorldSavePath;
-import net.minecraft.world.level.storage.LevelStorage;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.screens.worldselection.WorldSelectionList;
+import net.minecraft.world.level.storage.LevelResource;
+import net.minecraft.world.level.storage.LevelStorageSource;
 import net.minecraft.world.level.storage.LevelSummary;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Final;
@@ -24,92 +25,65 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.List;
 
-@Mixin(WorldListWidget.WorldEntry.class)
+@Mixin(WorldSelectionList.WorldListEntry.class)
 public abstract class WorldListWidgetMixin {
 
     @Unique
     private void showUnknownError() {
-        client.setScreen(new ErrorScreen(screen, "error.unknown"));
+        minecraft.setScreenAndShow(new ErrorScreen(screen, "error.unknown"));
     }
 
     @Unique
     private void showIntegrityCheckFailed() {
-        client.setScreen(new ErrorScreen(screen, "error.integrity_check_failed"));
+        minecraft.setScreenAndShow(new ErrorScreen(screen, "error.integrity_check_failed"));
+    }
+
+    @Unique
+    private void showMissingRequiredPack() {
+        minecraft.setScreenAndShow(new ErrorScreen(screen, "error.missing_required_pack"));
     }
 
     @Shadow
     @Final
-    LevelSummary level;
+    LevelSummary summary;
 
     @Shadow
     @Final
-    private MinecraftClient client;
+    private Minecraft minecraft;
 
     @Shadow
     @Final
-    private SelectWorldScreen screen;
+    private Screen screen;
 
     @Shadow
-    public abstract void play();
+    public abstract void joinWorld();
 
     @Inject(
-        method = "play",
+        method = "joinWorld",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/MinecraftClient;createIntegratedServerLoader()Lnet/minecraft/server/integrated/IntegratedServerLoader;",
+            target = "Lnet/minecraft/client/Minecraft;createWorldOpenFlows()Lnet/minecraft/client/gui/screens/worldselection/WorldOpenFlows;",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
     public void checkPacks(@NotNull CallbackInfo ci) {
         Path worldPacksDirectory;
-        try (LevelStorage.Session session = client.getLevelStorage().createSession(level.getName())) {
-            worldPacksDirectory = session.getDirectory(WorldSavePath.DATAPACKS);
+        Path levelDataFile;
+        try (LevelStorageSource.LevelStorageAccess session = minecraft.getLevelSource().validateAndCreateAccess(summary.getLevelId())) {
+            worldPacksDirectory = session.getLevelPath(LevelResource.DATAPACK_DIR);
+            levelDataFile = session.getLevelPath(LevelResource.LEVEL_DATA_FILE);
         } catch (Exception e) {
             showUnknownError();
             ci.cancel();
             return;
         }
-        if (worldPacksDirectory == null || Files.notExists(worldPacksDirectory)) {
-            showIntegrityCheckFailed();
-            ci.cancel();
+        if (!ExternalPackCompatibility.requiresHistoricalCompatibility(levelDataFile)) {
             return;
         }
-        List<String> worldPackFileNames;
-        try (Stream<Path> stream = Files.list(worldPacksDirectory)) {
-            worldPackFileNames = stream
-                .filter(Files::isRegularFile)
-                .filter(path -> path.toString().endsWith(Constants.FileExtension.ZIP))
-                .map(path -> path.getFileName().toString())
-                .toList();
-        } catch (IOException e) {
-            showUnknownError();
-            ci.cancel();
-            return;
-        }
-        if (worldPackFileNames.isEmpty()) {
-            showIntegrityCheckFailed();
-            ci.cancel();
-            return;
-        }
-        List<String> installedPackFileNames = new ArrayList<>(worldPackFileNames);
-        List<String> allPackFileNames = Arrays.stream(ExternalPack.values()).map(ExternalPack::getFileName).toList();
-        installedPackFileNames.retainAll(allPackFileNames);
-        List<ExternalPack> externalPacksToCheck = installedPackFileNames.stream()
-            .map(ExternalPack::mapFromFileName)
-            .filter(Objects::nonNull)
-            .sorted(Comparator.comparingInt(Enum::ordinal))
-            .toList();
-        if (externalPacksToCheck.isEmpty()) {
-            showIntegrityCheckFailed();
-            ci.cancel();
-            return;
-        }
-        Path globalPacksDirectory = new File(client.runDirectory, "datapacks").toPath();
+        Path globalPacksDirectory = new File(minecraft.gameDirectory, "datapacks").toPath();
         if (Files.notExists(globalPacksDirectory)) {
             try {
                 Files.createDirectory(globalPacksDirectory);
@@ -119,35 +93,63 @@ public abstract class WorldListWidgetMixin {
                 return;
             }
         }
-        for (ExternalPack externalPack : externalPacksToCheck) {
-            Path worldPack = worldPacksDirectory.resolve(externalPack.getFileName());
-            if (Utils.calculateSHA1(worldPack).equals(externalPack.getSha1())) {
-                continue;
-            }
-            Path globalPack = globalPacksDirectory.resolve(externalPack.getFileName());
-            if (Files.exists(globalPack) && Utils.calculateSHA1(globalPack).equals(externalPack.getSha1())) {
-                try {
-                    Files.copy(globalPack, worldPack, StandardCopyOption.REPLACE_EXISTING);
-                } catch (IOException ignored) {
-                    showUnknownError();
-                    ci.cancel();
-                    return;
-                }
-                play();
-                ci.cancel();
-                continue;
-            }
-            client.setScreen(new ExternalPackDownloader(screen, externalPack, isFileDownloaded -> {
-                if (isFileDownloaded) {
-                    try {
-                        Files.copy(globalPack, worldPack, StandardCopyOption.REPLACE_EXISTING);
-                    } catch (IOException e) {
-                        showUnknownError();
-                    }
-                    play();
-                }
-            }, true));
+        List<ExternalPack> requiredPacks = ExternalPackCompatibility.findRequiredExternalPacks(worldPacksDirectory);
+        if (requiredPacks.isEmpty()) {
+            showMissingRequiredPack();
             ci.cancel();
+            return;
         }
+        prepareHistoricalSourcesAndJoin(requiredPacks, 0, globalPacksDirectory, worldPacksDirectory);
+        ci.cancel();
+    }
+
+    @Unique
+    private void prepareHistoricalSourcesAndJoin(
+        @NotNull List<ExternalPack> requiredPacks,
+        int index,
+        @NotNull Path globalPacksDirectory,
+        @NotNull Path worldPacksDirectory
+    ) {
+        if (index >= requiredPacks.size()) {
+            ExternalPackCompatibility.WorldPackSyncResult result = ExternalPackCompatibility.ensureWorldPacksUpToDate(
+                globalPacksDirectory,
+                worldPacksDirectory,
+                true
+            );
+            if (result == ExternalPackCompatibility.WorldPackSyncResult.ALREADY_CURRENT
+                || result == ExternalPackCompatibility.WorldPackSyncResult.UPDATED) {
+                joinWorld();
+                return;
+            }
+            if (result == ExternalPackCompatibility.WorldPackSyncResult.INTEGRITY_CHECK_FAILED) {
+                showIntegrityCheckFailed();
+                return;
+            }
+            if (result == ExternalPackCompatibility.WorldPackSyncResult.MISSING_REQUIRED_PACK
+                || result == ExternalPackCompatibility.WorldPackSyncResult.NO_KNOWN_PACKS) {
+                showMissingRequiredPack();
+                return;
+            }
+            showUnknownError();
+            return;
+        }
+
+        ExternalPack externalPack = requiredPacks.get(index);
+        Path globalPack = globalPacksDirectory.resolve(externalPack.getFileName());
+        if (ExternalPackCompatibility.isPinnedHistoricalSource(globalPack, externalPack)) {
+            prepareHistoricalSourcesAndJoin(requiredPacks, index + 1, globalPacksDirectory, worldPacksDirectory);
+            return;
+        }
+
+        minecraft.setScreenAndShow(new ExternalPackDownloader(screen, externalPack, isFileDownloaded -> {
+            if (!isFileDownloaded) {
+                return;
+            }
+            if (!ExternalPackCompatibility.isPinnedHistoricalSource(globalPack, externalPack)) {
+                showMissingRequiredPack();
+                return;
+            }
+            prepareHistoricalSourcesAndJoin(requiredPacks, index + 1, globalPacksDirectory, worldPacksDirectory);
+        }, true));
     }
 }

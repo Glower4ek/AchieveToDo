@@ -4,16 +4,15 @@ import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import net.minecraft.block.AbstractCauldronBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.cauldron.CauldronBehavior;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.cauldron.CauldronInteraction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.AbstractCauldronBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -24,30 +23,30 @@ public class AbstractCauldronBlockMixin {
 
     @Shadow
     @Final
-    protected CauldronBehavior.CauldronBehaviorMap behaviorMap;
+    protected CauldronInteraction.Dispatcher interactions;
 
     @WrapOperation(
-        method = "onUseWithItem",
+        method = "useItemOn",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/block/cauldron/CauldronBehavior;interact(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;Lnet/minecraft/item/ItemStack;)Lnet/minecraft/util/ActionResult;"
+            target = "Lnet/minecraft/core/cauldron/CauldronInteraction;interact(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/InteractionResult;"
         )
     )
-    public ActionResult lockCauldron(
-        CauldronBehavior behavior,
+    public InteractionResult lockCauldron(
+        CauldronInteraction behavior,
         BlockState blockState,
-        World world,
+        Level world,
         BlockPos blockPos,
-        PlayerEntity player,
-        Hand hand,
+        Player player,
+        InteractionHand hand,
         ItemStack stack,
-        Operation<ActionResult> original
+        Operation<InteractionResult> original
     ) {
-        if (behavior != ((Object2ObjectOpenHashMap<?, ?>) behaviorMap.map()).defaultReturnValue()) {
+        if (behavior != CauldronInteraction.DEFAULT) {
             if (AchieveToDoMod.isTargetInLockedLandmark(player, world, blockPos) ||
                 AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_CAULDRON)
             ) {
-                return ActionResult.SUCCESS;
+                return InteractionResult.SUCCESS;
             }
         }
         return original.call(behavior, blockState, world, blockPos, player, hand, stack);

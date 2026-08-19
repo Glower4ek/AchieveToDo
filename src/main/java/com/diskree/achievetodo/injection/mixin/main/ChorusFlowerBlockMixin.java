@@ -1,12 +1,12 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ChorusFlowerBlock;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.ChorusFlowerBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,19 +20,19 @@ public class ChorusFlowerBlockMixin {
         method = "onProjectileHit",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/World;breakBlock(Lnet/minecraft/util/math/BlockPos;ZLnet/minecraft/entity/Entity;)Z",
+            target = "Lnet/minecraft/world/level/Level;destroyBlock(Lnet/minecraft/core/BlockPos;ZLnet/minecraft/world/entity/Entity;)Z",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
     private void lockBreak(
-        World world,
+        Level world,
         BlockState state,
         BlockHitResult hit,
-        @NotNull ProjectileEntity projectile,
+        @NotNull Projectile projectile,
         CallbackInfo ci
     ) {
-        if (projectile.getOwner() instanceof PlayerEntity player &&
+        if (projectile.getOwner() instanceof Player player &&
             AchieveToDoMod.isTargetInLockedLandmark(player, world, hit.getBlockPos())
         ) {
             ci.cancel();

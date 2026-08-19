@@ -2,38 +2,38 @@ package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.entity.passive.IronGolemEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.animal.golem.IronGolem;
+import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(IronGolemEntity.class)
+@Mixin(IronGolem.class)
 public class IronGolemEntityMixin {
 
     @Inject(
-        method = "interactMob",
+        method = "mobInteract",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/IronGolemEntity;heal(F)V",
+            target = "Lnet/minecraft/world/entity/animal/golem/IronGolem;heal(F)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
     public void lockLandmarkTarget(
-        PlayerEntity player,
-        Hand hand,
-        CallbackInfoReturnable<ActionResult> cir,
+        Player player,
+        InteractionHand hand,
+        CallbackInfoReturnable<InteractionResult> cir,
         @Local float currentHealth
     ) {
-        IronGolemEntity ironGolemEntity = (IronGolemEntity) (Object) this;
+        IronGolem ironGolemEntity = (IronGolem) (Object) this;
         if (currentHealth < ironGolemEntity.getMaxHealth() &&
             AchieveToDoMod.isTargetInLockedLandmark(player, ironGolemEntity)
         ) {
-            cir.setReturnValue(ActionResult.PASS);
+            cir.setReturnValue(InteractionResult.PASS);
         }
     }
 }

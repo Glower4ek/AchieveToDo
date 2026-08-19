@@ -1,34 +1,34 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.vehicle.VehicleInventory;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.math.Box;
-import net.minecraft.world.World;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.vehicle.ContainerEntity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(VehicleInventory.class)
+@Mixin(ContainerEntity.class)
 public interface VehicleInventoryMixin {
 
     @Shadow
-    World getWorld();
+    Level level();
 
     @Shadow
-    Box getBoundingBox();
+    AABB getBoundingBox();
 
     @Inject(
-        method = "open",
+        method = "interactWithContainerVehicle",
         at = @At(value = "HEAD"),
         cancellable = true
     )
-    default void lockVehicleInventory(PlayerEntity player, CallbackInfoReturnable<ActionResult> cir) {
-        if (AchieveToDoMod.isTargetInLockedLandmark(player, getWorld(), getBoundingBox())) {
-            cir.setReturnValue(ActionResult.FAIL);
+    default void lockVehicleInventory(Player player, CallbackInfoReturnable<InteractionResult> cir) {
+        if (AchieveToDoMod.isTargetInLockedLandmark(player, level(), getBoundingBox())) {
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 }

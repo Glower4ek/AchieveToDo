@@ -1,34 +1,40 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.decoration.ItemFrameEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.decoration.ItemFrame;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(ItemFrameEntity.class)
+@Mixin(ItemFrame.class)
 public class ItemFrameEntityMixin {
 
     @Inject(
         method = "interact",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/decoration/ItemFrameEntity;setHeldItemStack(Lnet/minecraft/item/ItemStack;)V",
+            target = "Lnet/minecraft/world/entity/decoration/ItemFrame;setItem(Lnet/minecraft/world/item/ItemStack;)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockPlace(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        ItemFrameEntity itemFrameEntity = (ItemFrameEntity) (Object) this;
+    public void lockPlace(
+        Player player,
+        InteractionHand hand,
+        Vec3 hitPosition,
+        CallbackInfoReturnable<InteractionResult> cir
+    ) {
+        ItemFrame itemFrameEntity = (ItemFrame) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, itemFrameEntity)) {
-            cir.setReturnValue(ActionResult.SUCCESS);
+            cir.setReturnValue(InteractionResult.SUCCESS);
         }
     }
 
@@ -36,35 +42,40 @@ public class ItemFrameEntityMixin {
         method = "interact",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/decoration/ItemFrameEntity;playSound(Lnet/minecraft/sound/SoundEvent;FF)V",
+            target = "Lnet/minecraft/world/entity/decoration/ItemFrame;playSound(Lnet/minecraft/sounds/SoundEvent;FF)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockRotation(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        ItemFrameEntity itemFrameEntity = (ItemFrameEntity) (Object) this;
+    public void lockRotation(
+        Player player,
+        InteractionHand hand,
+        Vec3 hitPosition,
+        CallbackInfoReturnable<InteractionResult> cir
+    ) {
+        ItemFrame itemFrameEntity = (ItemFrame) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, itemFrameEntity)) {
-            cir.setReturnValue(ActionResult.SUCCESS);
+            cir.setReturnValue(InteractionResult.SUCCESS);
         }
     }
 
     @Inject(
-        method = "damage",
+        method = "hurtServer",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/decoration/ItemFrameEntity;dropHeldStack(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/Entity;Z)V",
+            target = "Lnet/minecraft/world/entity/decoration/ItemFrame;dropItem(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/Entity;Z)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
     public void lockDrop(
-        ServerWorld world,
+        ServerLevel world,
         @NotNull DamageSource source,
         float amount,
         CallbackInfoReturnable<Boolean> cir
     ) {
-        ItemFrameEntity itemFrameEntity = (ItemFrameEntity) (Object) this;
-        if (source.getAttacker() instanceof PlayerEntity player &&
+        ItemFrame itemFrameEntity = (ItemFrame) (Object) this;
+        if (source.getEntity() instanceof Player player &&
             AchieveToDoMod.isTargetInLockedLandmark(player, itemFrameEntity)
         ) {
             cir.setReturnValue(false);

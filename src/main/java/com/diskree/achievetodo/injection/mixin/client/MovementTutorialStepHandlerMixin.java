@@ -5,12 +5,12 @@ import com.diskree.achievetodo.client.AchieveToDoClient;
 import com.diskree.achievetodo.injection.extension.client.MovementTutorialStepHandlerExtension;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.toast.TutorialToast;
-import net.minecraft.client.tutorial.MovementTutorialStepHandler;
-import net.minecraft.client.tutorial.TutorialManager;
-import net.minecraft.client.tutorial.TutorialStep;
-import net.minecraft.text.Text;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.components.toasts.TutorialToast;
+import net.minecraft.client.tutorial.MovementTutorialStepInstance;
+import net.minecraft.client.tutorial.Tutorial;
+import net.minecraft.client.tutorial.TutorialSteps;
+import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -21,18 +21,18 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(MovementTutorialStepHandler.class)
+@Mixin(MovementTutorialStepInstance.class)
 public class MovementTutorialStepHandlerMixin implements MovementTutorialStepHandlerExtension {
 
     @Unique
-    private static final Text OPEN_ADVANCEMENTS_TITLE =
+    private static final Component OPEN_ADVANCEMENTS_TITLE =
         AchieveToDoClient.translate("tutorial.open_advancements.title");
 
     @Unique
-    private static final Text OPEN_ADVANCEMENTS_DESCRIPTION =
+    private static final Component OPEN_ADVANCEMENTS_DESCRIPTION =
         AchieveToDoClient.translate(
             "tutorial.open_advancements.description",
-            TutorialManager.keyToText("advancements")
+            Tutorial.key("advancements")
         );
 
     @Unique
@@ -51,19 +51,19 @@ public class MovementTutorialStepHandlerMixin implements MovementTutorialStepHan
     }
 
     @Shadow
-    private int moveAroundCompletionTicks;
+    private int moveCompleted;
 
     @Shadow
-    private int lookAroundCompletionTicks;
+    private int lookCompleted;
 
     @Shadow
-    private int ticks;
+    private int timeWaiting;
 
     @Inject(
         method = "tick",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/tutorial/TutorialManager;getClient()Lnet/minecraft/client/MinecraftClient;",
+            target = "Lnet/minecraft/client/tutorial/Tutorial;getMinecraft()Lnet/minecraft/client/Minecraft;",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
@@ -86,28 +86,28 @@ public class MovementTutorialStepHandlerMixin implements MovementTutorialStepHan
         method = "tick",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/tutorial/TutorialManager;getClient()Lnet/minecraft/client/MinecraftClient;"
+            target = "Lnet/minecraft/client/tutorial/Tutorial;getMinecraft()Lnet/minecraft/client/Minecraft;"
         )
     )
-    public MinecraftClient showOpenAdvancementsToast(
-        TutorialManager manager,
-        @NotNull Operation<MinecraftClient> original
+    public Minecraft showOpenAdvancementsToast(
+        Tutorial manager,
+        @NotNull Operation<Minecraft> original
     ) {
-        MinecraftClient client = original.call(manager);
-        if (moveAroundCompletionTicks != -1 &&
-            lookAroundCompletionTicks != -1 &&
-            ticks - lookAroundCompletionTicks >= 40 &&
+        Minecraft client = original.call(manager);
+        if (moveCompleted != -1 &&
+            lookCompleted != -1 &&
+            timeWaiting - lookCompleted >= 40 &&
             !isAdvancementsOpened &&
             openAdvancementsToast == null
         ) {
             openAdvancementsToast = new TutorialToast(
-                client.textRenderer,
-                TutorialToast.Type.RECIPE_BOOK,
+                client.font,
+                TutorialToast.Icons.RECIPE_BOOK,
                 OPEN_ADVANCEMENTS_TITLE,
                 OPEN_ADVANCEMENTS_DESCRIPTION,
                 false
             );
-            client.getToastManager().add(openAdvancementsToast);
+            client.gui.toastManager().addToast(openAdvancementsToast);
         }
         return client;
     }
@@ -116,17 +116,17 @@ public class MovementTutorialStepHandlerMixin implements MovementTutorialStepHan
         method = "tick",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/tutorial/TutorialManager;setStep(Lnet/minecraft/client/tutorial/TutorialStep;)V"
+            target = "Lnet/minecraft/client/tutorial/Tutorial;setStep(Lnet/minecraft/client/tutorial/TutorialSteps;)V"
         )
     )
-    public void waitOpenAdvancementsCompletion(TutorialManager manager, TutorialStep step, Operation<Void> original) {
+    public void waitOpenAdvancementsCompletion(Tutorial manager, TutorialSteps step, Operation<Void> original) {
         if (isAdvancementsOpened) {
             original.call(manager, step);
         }
     }
 
     @Inject(
-        method = "destroy",
+        method = "clear",
         at = @At(value = "HEAD")
     )
     public void hideOpenAdvancementsToast(CallbackInfo ci) {

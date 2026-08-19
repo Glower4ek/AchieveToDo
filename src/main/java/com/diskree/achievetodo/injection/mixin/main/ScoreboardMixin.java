@@ -5,9 +5,14 @@ import com.diskree.achievetodo.server.AdvancementsMode;
 import com.diskree.achievetodo.tracking.TrackedScoreType;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import net.minecraft.scoreboard.*;
-import net.minecraft.server.PlayerManager;
-import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.ServerScoreboard;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.players.PlayerList;
+import net.minecraft.world.scores.Objective;
+import net.minecraft.world.scores.PlayerTeam;
+import net.minecraft.world.scores.Score;
+import net.minecraft.world.scores.ScoreHolder;
+import net.minecraft.world.scores.Scoreboard;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,47 +23,47 @@ import java.util.Set;
 @Mixin(Scoreboard.class)
 public class ScoreboardMixin {
 
-    @Mixin(targets = "net/minecraft/scoreboard/Scoreboard$1")
+    @Mixin(targets = "net/minecraft/world/scores/Scoreboard$1")
     public static class ScoreMixin {
 
         @WrapOperation(
-            method = "update",
+            method = "sendScoreToPlayers",
             at = @At(
                 value = "INVOKE",
-                target = "Lnet/minecraft/scoreboard/Scoreboard;updateScore(Lnet/minecraft/scoreboard/ScoreHolder;Lnet/minecraft/scoreboard/ScoreboardObjective;Lnet/minecraft/scoreboard/ScoreboardScore;)V"
+                target = "Lnet/minecraft/world/scores/Scoreboard;onScoreChanged(Lnet/minecraft/world/scores/ScoreHolder;Lnet/minecraft/world/scores/Objective;Lnet/minecraft/world/scores/Score;)V"
             )
         )
         private void trackScoreChanges(
             Scoreboard scoreboard,
             @NotNull ScoreHolder scoreHolder,
-            @NotNull ScoreboardObjective objective,
-            ScoreboardScore scoreboardScore,
+            @NotNull Objective objective,
+            Score scoreboardScore,
             @NotNull Operation<Void> original
         ) {
             original.call(scoreboard, scoreHolder, objective, scoreboardScore);
 
             if (scoreboard instanceof ServerScoreboard serverScoreboard) {
-                int score = scoreboardScore.getScore();
+                int score = scoreboardScore.value();
                 String objectiveName = objective.getName();
                 AdvancementsMode advancementsMode = AchieveToDoMod.getServer().currentAdvancementsMode;
                 if (advancementsMode != null &&
                     advancementsMode == AdvancementsMode.findByObjectiveName(objectiveName)
                 ) {
                     if (advancementsMode.isTeamsMode()) {
-                        Team team = scoreboard.getScoreHolderTeam(scoreHolder.getNameForScoreboard());
+                        PlayerTeam team = scoreboard.getPlayersTeam(scoreHolder.getScoreboardName());
                         if (team != null) {
-                            PlayerManager playerManager = serverScoreboard.server.getPlayerManager();
-                            for (String playerName : team.getPlayerList()) {
-                                ServerPlayerEntity serverPlayer = playerManager.getPlayer(playerName);
+                            PlayerList playerManager = serverScoreboard.server.getPlayerList();
+                            for (String playerName : team.getPlayers()) {
+                                ServerPlayer serverPlayer = playerManager.getPlayerByName(playerName);
                                 if (serverPlayer != null) {
                                     AchieveToDoMod.getServer().setObtainedCount(serverPlayer, score);
                                 }
                             }
                         }
-                    } else if (scoreHolder instanceof ServerPlayerEntity serverPlayer) {
+                    } else if (scoreHolder instanceof ServerPlayer serverPlayer) {
                         AchieveToDoMod.getServer().setObtainedCount(serverPlayer, score);
                     }
-                } else if (scoreHolder instanceof ServerPlayerEntity serverPlayer) {
+                } else if (scoreHolder instanceof ServerPlayer serverPlayer) {
                     Set<TrackedScoreType> progressTypes = TrackedScoreType.findByObjectiveName(objectiveName);
                     if (progressTypes != null) {
                         for (TrackedScoreType progressType : progressTypes) {

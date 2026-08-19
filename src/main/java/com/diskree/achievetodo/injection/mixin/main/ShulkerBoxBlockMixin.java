@@ -5,12 +5,12 @@ import com.diskree.achievetodo.ability.AbilityType;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShulkerBoxBlock;
-import net.minecraft.block.entity.ShulkerBoxBlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.ShulkerBoxBlock;
+import net.minecraft.world.level.block.entity.ShulkerBoxBlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,24 +19,24 @@ import org.spongepowered.asm.mixin.injection.At;
 public class ShulkerBoxBlockMixin {
 
     @WrapOperation(
-        method = "onUse",
+        method = "useWithoutItem",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/block/ShulkerBoxBlock;canOpen(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/entity/ShulkerBoxBlockEntity;)Z"
+            target = "Lnet/minecraft/world/level/block/ShulkerBoxBlock;canOpen(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/entity/ShulkerBoxBlockEntity;)Z"
         )
     )
     private boolean lockShulkerBox(
         BlockState state,
-        World world,
+        Level world,
         BlockPos pos,
         @NotNull ShulkerBoxBlockEntity entity,
         @NotNull Operation<Boolean> original,
-        @Local(argsOnly = true) PlayerEntity player
+        @Local(argsOnly = true) Player player
     ) {
         if (!original.call(state, world, pos, entity)) {
             return false;
         }
-        if (entity.getAnimationStage() != ShulkerBoxBlockEntity.AnimationStage.CLOSED) {
+        if (entity.getAnimationStatus() != ShulkerBoxBlockEntity.AnimationStatus.CLOSED) {
             return true;
         }
         if (AchieveToDoMod.isTargetInLockedLandmark(player, world, pos) ||

@@ -5,20 +5,20 @@ import com.diskree.achievetodo.ability.AbilityType;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.entity.Entity;
-import net.minecraft.item.EndCrystalItem;
-import net.minecraft.item.ItemUsageContext;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 import java.util.List;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.EndCrystalItem;
+import net.minecraft.world.item.context.UseOnContext;
 
 @Mixin(EndCrystalItem.class)
 public class EndCrystalItemMixin {
 
     @WrapOperation(
-        method = "useOnBlock",
+        method = "useOn",
         at = @At(
             value = "INVOKE",
             target = "Ljava/util/List;isEmpty()Z"
@@ -27,7 +27,7 @@ public class EndCrystalItemMixin {
     public boolean lockEndCrystal(
         List<Entity> entities,
         @NotNull Operation<Boolean> original,
-        @Local(argsOnly = true) ItemUsageContext context
+        @Local(argsOnly = true) UseOnContext context
     ) {
         if (!original.call(entities)) {
             return false;

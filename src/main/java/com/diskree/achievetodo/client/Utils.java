@@ -1,7 +1,5 @@
 package com.diskree.achievetodo.client;
 
-import net.minecraft.util.math.BlockBox;
-import net.minecraft.util.math.Box;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -10,6 +8,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
+import net.minecraft.world.phys.AABB;
 
 public class Utils {
 
@@ -40,14 +40,14 @@ public class Utils {
         }
     }
 
-    public static @NotNull BlockBox toBlockBox(@NotNull Box box) {
+    public static @NotNull BoundingBox toBlockBox(@NotNull AABB box) {
         int minX = (int) Math.floor(box.minX);
         int minY = (int) Math.floor(box.minY);
         int minZ = (int) Math.floor(box.minZ);
         int maxX = (int) Math.ceil(box.maxX) - 1;
         int maxY = (int) Math.ceil(box.maxY) - 1;
         int maxZ = (int) Math.ceil(box.maxZ) - 1;
-        return new BlockBox(minX, minY, minZ, maxX, maxY, maxZ);
+        return new BoundingBox(minX, minY, minZ, maxX, maxY, maxZ);
     }
 
     public static @NotNull String buildModrinthModUrl(String slug) {

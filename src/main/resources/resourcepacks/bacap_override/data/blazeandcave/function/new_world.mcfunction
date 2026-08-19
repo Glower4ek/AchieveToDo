@@ -10,9 +10,9 @@ scoreboard players set intro_msg bac_settings 1
 scoreboard players set extra_reward bac_settings 0
 scoreboard players set extra_trophy bac_settings 0
 
-execute in the_end run gamerule announceAdvancements false
-execute in overworld run gamerule announceAdvancements false
-execute in the_nether run gamerule announceAdvancements false
+# achievetodo compatibility: removed unsupported gamerule command
+# achievetodo compatibility: removed unsupported gamerule command
+# achievetodo compatibility: removed unsupported gamerule command
 
 execute unless score bac_created bac_created matches 1 run function blazeandcave:global_install
 scoreboard players set bac_created bac_created 1

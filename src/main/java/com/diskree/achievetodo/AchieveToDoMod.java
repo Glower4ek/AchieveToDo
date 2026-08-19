@@ -8,14 +8,14 @@ import com.diskree.achievetodo.networking.s2c.*;
 import com.diskree.achievetodo.server.AchieveToDoServer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
@@ -40,101 +40,101 @@ public class AchieveToDoMod implements ModInitializer {
     }
 
     public static @NotNull Identifier getIdentifier(String path) {
-        return Identifier.of(BuildConfig.MOD_ID, path);
+        return Identifier.fromNamespaceAndPath(BuildConfig.MOD_ID, path);
     }
 
-    public static boolean isAbilityLocked(@Nullable PlayerEntity player, @Nullable AbilityType abilityType) {
+    public static boolean isAbilityLocked(@Nullable Player player, @Nullable AbilityType abilityType) {
         return isAbilityLocked(player, abilityType, false);
     }
 
     public static boolean isAbilityLocked(
-        @Nullable PlayerEntity player,
+        @Nullable Player player,
         @Nullable AbilityType abilityType,
         boolean checkOnly
     ) {
         if (player == null || abilityType == null) {
             return false;
         }
-        if (player.getWorld().isClient) {
+        if (player.level().isClientSide()) {
             return AchieveToDoClient.isAbilityLocked(abilityType, checkOnly);
         }
-        return player instanceof ServerPlayerEntity serverPlayer &&
+        return player instanceof ServerPlayer serverPlayer &&
             server != null &&
             server.isAbilityLocked(serverPlayer, abilityType);
     }
 
-    public static boolean isTargetInLockedLandmark(@Nullable PlayerEntity actor, @NotNull Entity target) {
-        return isTargetInLockedLandmark(actor, target.getWorld(), target.getBoundingBox());
+    public static boolean isTargetInLockedLandmark(@Nullable Player actor, @NotNull Entity target) {
+        return isTargetInLockedLandmark(actor, target.level(), target.getBoundingBox());
     }
 
-    public static boolean isTargetInLockedLandmark(@NotNull ItemUsageContext context) {
-        return isTargetInLockedLandmark(context.getPlayer(), context.getWorld(), context.getBlockPos());
+    public static boolean isTargetInLockedLandmark(@NotNull UseOnContext context) {
+        return isTargetInLockedLandmark(context.getPlayer(), context.getLevel(), context.getClickedPos());
     }
 
     public static boolean isTargetInLockedLandmark(
-        @Nullable PlayerEntity actor,
-        @NotNull World targetWorld,
+        @Nullable Player actor,
+        @NotNull Level targetWorld,
         @NotNull BlockPos targetBlockPos
     ) {
-        return isTargetInLockedLandmark(actor, targetWorld, new Box(targetBlockPos));
+        return isTargetInLockedLandmark(actor, targetWorld, new AABB(targetBlockPos));
     }
 
     public static boolean isTargetInLockedLandmark(
-        @Nullable PlayerEntity actor,
-        @NotNull World targetWorld,
-        @NotNull Box targetBox
+        @Nullable Player actor,
+        @NotNull Level targetWorld,
+        @NotNull AABB targetBox
     ) {
         if (actor == null) {
             return false;
         }
-        DimensionType targetDimensionType = DimensionType.findByWorld(targetWorld.getRegistryKey());
+        DimensionType targetDimensionType = DimensionType.findByWorld(targetWorld.dimension());
         if (targetDimensionType == null) {
             return false;
         }
-        if (actor.getWorld().isClient) {
+        if (actor.level().isClientSide()) {
             return AchieveToDoClient.isTargetInLockedLandmark(targetDimensionType, targetBox);
         }
-        if (server != null && actor instanceof ServerPlayerEntity serverPlayer) {
+        if (server != null && actor instanceof ServerPlayer serverPlayer) {
             return server.isTargetInLockedLandmark(serverPlayer, targetDimensionType, targetBox);
         }
         return false;
     }
 
     private static void registerPayloads() {
-        PayloadTypeRegistry.playC2S().register(
+        PayloadTypeRegistry.serverboundPlay().register(
             DemystifyAbilityPayload.ID,
             DemystifyAbilityPayload.CODEC
         );
 
-        PayloadTypeRegistry.playS2C().register(
+        PayloadTypeRegistry.clientboundPlay().register(
             SyncAbilitiesConfigurationPayload.ID,
             SyncAbilitiesConfigurationPayload.CODEC
         );
-        PayloadTypeRegistry.playS2C().register(
+        PayloadTypeRegistry.clientboundPlay().register(
             SyncObtainedAdvancementsCountPayload.ID,
             SyncObtainedAdvancementsCountPayload.CODEC
         );
-        PayloadTypeRegistry.playS2C().register(
+        PayloadTypeRegistry.clientboundPlay().register(
             LandmarksLockedStatusChangedPayload.ID,
             LandmarksLockedStatusChangedPayload.CODEC
         );
-        PayloadTypeRegistry.playS2C().register(
+        PayloadTypeRegistry.clientboundPlay().register(
             LandmarkTypesUnlockedPayload.ID,
             LandmarkTypesUnlockedPayload.CODEC
         );
-        PayloadTypeRegistry.playS2C().register(
+        PayloadTypeRegistry.clientboundPlay().register(
             LockedLandmarkResizedPayload.ID,
             LockedLandmarkResizedPayload.CODEC
         );
-        PayloadTypeRegistry.playS2C().register(
+        PayloadTypeRegistry.clientboundPlay().register(
             ScoreProgressChangedPayload.ID,
             ScoreProgressChangedPayload.CODEC
         );
-        PayloadTypeRegistry.playS2C().register(
+        PayloadTypeRegistry.clientboundPlay().register(
             StatisticsDataProgressChangedPayload.ID,
             StatisticsDataProgressChangedPayload.CODEC
         );
-        PayloadTypeRegistry.playS2C().register(
+        PayloadTypeRegistry.clientboundPlay().register(
             CheckTargetInLockedLandmarkPayload.ID,
             CheckTargetInLockedLandmarkPayload.CODEC
         );

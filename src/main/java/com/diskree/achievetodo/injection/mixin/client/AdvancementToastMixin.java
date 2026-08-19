@@ -2,19 +2,22 @@ package com.diskree.achievetodo.injection.mixin.client;
 
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
-import net.minecraft.advancement.AdvancementEntry;
-import net.minecraft.client.sound.PositionedSoundInstance;
-import net.minecraft.client.toast.AdvancementToast;
-import net.minecraft.client.toast.ToastManager;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
-import net.minecraft.util.Colors;
-import net.minecraft.util.Identifier;
+import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.client.gui.components.toasts.AdvancementToast;
+import net.minecraft.client.gui.components.toasts.ToastManager;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.CommonColors;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AdvancementToast.class)
 public class AdvancementToastMixin {
@@ -24,7 +27,7 @@ public class AdvancementToastMixin {
         AchieveToDoMod.getIdentifier("ability_unlocked_notification_background");
 
     @Unique
-    private static final int ABILITY_UNLOCKED_NOTIFICATION_TITLE_COLOR = Colors.BLACK;
+    private static final int ABILITY_UNLOCKED_NOTIFICATION_TITLE_COLOR = CommonColors.BLACK;
 
     @Unique
     private static final int ABILITY_UNLOCKED_NOTIFICATION_SUBTITLE_COLOR = 0x725e3c;
@@ -36,15 +39,15 @@ public class AdvancementToastMixin {
         method = "<init>",
         at = @At(value = "TAIL")
     )
-    private void findAbility(AdvancementEntry advancement, CallbackInfo ci) {
+    private void findAbility(AdvancementHolder advancement, CallbackInfo ci) {
         abilityType = AbilityType.findByAdvancement(advancement);
     }
 
     @ModifyArg(
-        method = "draw",
+        method = "extractRenderState",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/gui/DrawContext;drawGuiTexture(Ljava/util/function/Function;Lnet/minecraft/util/Identifier;IIII)V",
+            target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIII)V",
             ordinal = 0
         ),
         index = 1
@@ -54,60 +57,99 @@ public class AdvancementToastMixin {
     }
 
     @ModifyArg(
-        method = "draw",
+        method = "extractRenderState",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/gui/DrawContext;drawText(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/text/Text;IIIZ)I"
+            target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;text(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)V",
+            ordinal = 0
         ),
         index = 1
     )
-    private Text setCustomTitleForAbilityUnlockedNotification(Text original) {
+    private Component setCustomTitleForAbilityUnlockedNotificationInSingleLineMode(Component original) {
         return abilityType != null ? abilityType.getUnlockToastType().getToastTitle() : original;
     }
 
-    @ModifyVariable(
-        method = "draw",
-        at = @At(value = "STORE"),
-        ordinal = 0
+    @ModifyArg(
+        method = "extractRenderState",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;text(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)V",
+            ordinal = 1
+        ),
+        index = 1
     )
-    private int setCustomTitleColorForAbilityUnlockedNotification(int original) {
-        return abilityType != null ? ABILITY_UNLOCKED_NOTIFICATION_TITLE_COLOR : original;
+    private Component setCustomTitleForAbilityUnlockedNotificationInMultiLineMode(Component original) {
+        return abilityType != null ? abilityType.getUnlockToastType().getToastTitle() : original;
     }
 
     @ModifyArg(
-        method = "draw",
+        method = "extractRenderState",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/gui/DrawContext;drawText(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/text/OrderedText;IIIZ)I",
+            target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;text(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)V",
             ordinal = 0
         ),
         index = 4
     )
-    private int setCustomSubtitleColorForAbilityUnlockedNotification(int original) {
-        return abilityType != null ? ABILITY_UNLOCKED_NOTIFICATION_SUBTITLE_COLOR : original;
+    private int setCustomTitleColorForAbilityUnlockedNotificationInSingleLineMode(int original) {
+        return abilityType != null
+            ? (original & 0xFF000000) | ABILITY_UNLOCKED_NOTIFICATION_TITLE_COLOR
+            : original;
     }
 
-    @ModifyConstant(
-        method = "draw",
-        constant = @Constant(intValue = 16777215)
+    @ModifyArg(
+        method = "extractRenderState",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;text(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)V",
+            ordinal = 1
+        ),
+        index = 4
     )
-    private int setCustomTwoLineSubtitleColorForAbilityUnlockedNotification(int original) {
-        return abilityType != null ? ABILITY_UNLOCKED_NOTIFICATION_SUBTITLE_COLOR : original;
+    private int setCustomTitleColorForAbilityUnlockedNotificationInMultiLineMode(int original) {
+        return abilityType != null
+            ? (original & 0xFF000000) | ABILITY_UNLOCKED_NOTIFICATION_TITLE_COLOR
+            : original;
+    }
+
+    @ModifyArg(
+        method = "extractRenderState",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;text(Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;IIIZ)V",
+            ordinal = 0
+        ),
+        index = 4
+    )
+    private int setCustomSubtitleColorForAbilityUnlockedNotificationInSingleLineMode(int original) {
+        return abilityType != null
+            ? (original & 0xFF000000) | ABILITY_UNLOCKED_NOTIFICATION_SUBTITLE_COLOR
+            : original;
+    }
+
+    @ModifyArg(
+        method = "extractRenderState",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;text(Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;IIIZ)V",
+            ordinal = 1
+        ),
+        index = 4
+    )
+    private int setCustomSubtitleColorForAbilityUnlockedNotificationInMultiLineMode(int original) {
+        return abilityType != null
+            ? (original & 0xFF000000) | ABILITY_UNLOCKED_NOTIFICATION_SUBTITLE_COLOR
+            : original;
     }
 
     @Inject(
-        method = "update",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/advancement/AdvancementDisplay;getFrame()Lnet/minecraft/advancement/AdvancementFrame;",
-            ordinal = 0
-        )
+        method = "getSoundEvent",
+        at = @At("HEAD"),
+        cancellable = true
     )
-    private void playAbilityUnlockedSound(ToastManager manager, long time, CallbackInfo ci) {
+    private void playAbilityUnlockedSound(CallbackInfoReturnable<SoundEvent> cir) {
         if (abilityType != null) {
-            manager.getClient().getSoundManager().play(
-                PositionedSoundInstance.master(SoundEvents.ENTITY_PLAYER_LEVELUP, 0.8f, 0.2f)
-            );
+            cir.setReturnValue(SoundEvents.PLAYER_LEVELUP);
         }
     }
 }

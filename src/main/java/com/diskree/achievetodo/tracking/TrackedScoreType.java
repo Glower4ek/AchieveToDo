@@ -1,14 +1,14 @@
 package com.diskree.achievetodo.tracking;
 
-import net.minecraft.scoreboard.ReadableScoreboardScore;
-import net.minecraft.scoreboard.ScoreHolder;
-import net.minecraft.scoreboard.Scoreboard;
-import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.scores.ReadOnlyScoreInfo;
+import net.minecraft.world.scores.ScoreHolder;
+import net.minecraft.world.scores.Scoreboard;
 
 public enum TrackedScoreType {
 
@@ -234,30 +234,30 @@ public enum TrackedScoreType {
 
     public int fixScore(Scoreboard scoreboard, ScoreHolder scoreHolder, int score) {
         if (this == TrackedScoreType.ON_A_RAIL) {
-            ReadableScoreboardScore eligibleXScore = scoreboard.getScore(
-                scoreHolder, scoreboard.getNullableObjective("bac_oar_eligible_x")
+            ReadOnlyScoreInfo eligibleXScore = scoreboard.getPlayerScoreInfo(
+                scoreHolder, scoreboard.getObjective("bac_oar_eligible_x")
             );
             if (eligibleXScore != null) {
-                if (eligibleXScore.getScore() == 1) {
-                    ReadableScoreboardScore currentXScore = scoreboard.getScore(
-                        scoreHolder, scoreboard.getNullableObjective("bac_oar_current_x")
+                if (eligibleXScore.value() == 1) {
+                    ReadOnlyScoreInfo currentXScore = scoreboard.getPlayerScoreInfo(
+                        scoreHolder, scoreboard.getObjective("bac_oar_current_x")
                     );
                     if (currentXScore != null) {
-                        score = Math.abs(currentXScore.getScore());
+                        score = Math.abs(currentXScore.value());
                     }
                 } else {
-                    ReadableScoreboardScore eligibleZScore = scoreboard.getScore(
-                        scoreHolder, scoreboard.getNullableObjective("bac_oar_eligible_z")
+                    ReadOnlyScoreInfo eligibleZScore = scoreboard.getPlayerScoreInfo(
+                        scoreHolder, scoreboard.getObjective("bac_oar_eligible_z")
                     );
                     if (eligibleZScore != null) {
-                        if (eligibleZScore.getScore() == 1) {
-                            ReadableScoreboardScore currentZScore = scoreboard.getScore(
-                                scoreHolder, scoreboard.getNullableObjective("bac_oar_current_z")
+                        if (eligibleZScore.value() == 1) {
+                            ReadOnlyScoreInfo currentZScore = scoreboard.getPlayerScoreInfo(
+                                scoreHolder, scoreboard.getObjective("bac_oar_current_z")
                             );
                             if (currentZScore == null) {
                                 return score;
                             }
-                            score = Math.abs(currentZScore.getScore());
+                            score = Math.abs(currentZScore.value());
                         } else {
                             score = 0;
                         }

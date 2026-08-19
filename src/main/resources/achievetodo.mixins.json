@@ -18,7 +18,6 @@
     "main.AnimalEntityMixin",
     "main.AnvilBlockMixin",
     "main.ArmadilloEntityMixin",
-    "main.ArmorItemMixin",
     "main.ArmorSlotMixin",
     "main.ArmorStandEntityMixin",
     "main.ArmorStandItemMixin",
@@ -89,7 +88,6 @@
     "main.LoomBlockMixin",
     "main.MainMixin",
     "main.MinecartItemMixin",
-    "main.MiningToolItemMixin",
     "main.MooshroomEntityMixin",
     "main.OcelotEntityMixin",
     "main.PandaEntityMixin",
@@ -124,7 +122,6 @@
     "main.StriderEntityMixin",
     "main.StructureMixin",
     "main.StructureStartMixin",
-    "main.SwordItemMixin",
     "main.TadpoleEntityMixin",
     "main.TargetBlockMixin",
     "main.TntBlockMixin",
@@ -161,6 +158,7 @@
     "client.PackScreenMixin",
     "client.PunchTreeTutorialStepHandlerMixin",
     "client.WorldCreatorMixin",
+    "client.WorldOpenFlowsMixin",
     "client.WorldListWidgetMixin",
     "client.WorldRendererMixin"
   ]

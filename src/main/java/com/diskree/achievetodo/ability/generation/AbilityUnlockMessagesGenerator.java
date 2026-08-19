@@ -6,11 +6,11 @@ import com.diskree.achievetodo.ability.AbilityType;
 import com.diskree.achievetodo.client.gui.DesignCodePalette;
 import com.google.common.hash.Hashing;
 import com.google.common.hash.HashingOutputStream;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.minecraft.data.DataOutput;
-import net.minecraft.data.DataProvider;
-import net.minecraft.data.DataWriter;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.util.Util;
+import net.minecraft.data.CachedOutput;
+import net.minecraft.data.DataProvider;
+import net.minecraft.data.PackOutput;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedWriter;
@@ -24,21 +24,21 @@ import java.util.concurrent.CompletableFuture;
 
 public class AbilityUnlockMessagesGenerator implements DataProvider {
 
-    protected final FabricDataOutput dataOutput;
+    protected final FabricPackOutput dataOutput;
 
-    protected AbilityUnlockMessagesGenerator(FabricDataOutput dataOutput) {
+    protected AbilityUnlockMessagesGenerator(FabricPackOutput dataOutput) {
         this.dataOutput = dataOutput;
     }
 
     @Override
-    public CompletableFuture<?> run(DataWriter writer) {
+    public CompletableFuture<?> run(CachedOutput writer) {
         return CompletableFuture.runAsync(() -> {
             try {
                 createFunctions(writer);
             } catch (IOException e) {
                 AchieveToDoMod.logger.error("Error while generating AbilityUnlockMessages:", e);
             }
-        }, Util.getMainWorkerExecutor());
+        }, Util.backgroundExecutor());
     }
 
     @Override
@@ -47,7 +47,7 @@ public class AbilityUnlockMessagesGenerator implements DataProvider {
     }
 
     @SuppressWarnings({"UnstableApiUsage", "deprecation"})
-    private void createFunctions(DataWriter dataWriter) throws IOException {
+    private void createFunctions(CachedOutput dataWriter) throws IOException {
         for (AbilityType abilityType : AbilityType.values()) {
             String function = buildFunction(abilityType);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -58,9 +58,9 @@ public class AbilityUnlockMessagesGenerator implements DataProvider {
                 bufferedWriter.write(function);
             }
             Path functionsPath = dataOutput
-                .getResolver(DataOutput.OutputType.DATA_PACK, "function")
-                .resolve(AbilityAdvancementsGenerator.buildAdvancementId(abilityType), "mcfunction");
-            dataWriter.write(functionsPath, byteArrayOutputStream.toByteArray(), hashingOutputStream.hash());
+                .createPathProvider(PackOutput.Target.DATA_PACK, "function")
+                .file(AbilityAdvancementsGenerator.buildAdvancementId(abilityType), "mcfunction");
+            dataWriter.writeIfNeeded(functionsPath, byteArrayOutputStream.toByteArray(), hashingOutputStream.hash());
         }
     }
 

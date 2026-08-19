@@ -2,40 +2,40 @@ package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
-import net.minecraft.component.type.JukeboxPlayableComponent;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.JukeboxPlayable;
+import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(JukeboxPlayableComponent.class)
+@Mixin(JukeboxPlayable.class)
 public class JukeboxPlayableComponentMixin {
 
     @Inject(
-        method = "tryPlayStack",
+        method = "tryInsertIntoJukebox",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/item/ItemStack;splitUnlessCreative(ILnet/minecraft/entity/LivingEntity;)Lnet/minecraft/item/ItemStack;",
+            target = "Lnet/minecraft/world/item/ItemStack;consumeAndReturn(ILnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
     private static void lockJukebox(
-        World world,
+        Level world,
         BlockPos pos,
         ItemStack stack,
-        PlayerEntity player,
-        CallbackInfoReturnable<ActionResult> cir
+        Player player,
+        CallbackInfoReturnable<InteractionResult> cir
     ) {
         if (AchieveToDoMod.isTargetInLockedLandmark(player, world, pos) ||
             AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_JUKEBOX)
         ) {
-            cir.setReturnValue(ActionResult.PASS_TO_DEFAULT_BLOCK_ACTION);
+            cir.setReturnValue(InteractionResult.TRY_WITH_EMPTY_HAND);
         }
     }
 }

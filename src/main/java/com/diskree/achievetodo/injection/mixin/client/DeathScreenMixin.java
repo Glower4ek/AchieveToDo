@@ -4,9 +4,9 @@ import com.diskree.achievetodo.client.AchieveToDoClient;
 import com.diskree.achievetodo.client.gui.DesignCodePalette;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import net.minecraft.client.gui.screen.DeathScreen;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Text;
+import net.minecraft.client.gui.screens.DeathScreen;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,26 +18,26 @@ public class DeathScreenMixin {
 
     @Shadow
     @Final
-    private boolean isHardcore;
+    private boolean hardcore;
 
     @WrapOperation(
-        method = "init",
+        method = "<init>",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/text/Text;translatable(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/text/MutableText;"
+            target = "Lnet/minecraft/network/chat/Component;translatable(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;"
         )
     )
-    private @NotNull MutableText showObtainedCountInsteadScoreInHardcore(
+    private @NotNull MutableComponent showObtainedCountInsteadScoreInHardcore(
         String key,
         Object[] args,
-        @NotNull Operation<MutableText> original
+        @NotNull Operation<MutableComponent> original
     ) {
-        if (isHardcore && !AchieveToDoClient.isNotReady()) {
-            return Text.translatable("key.advancements")
+        if (hardcore && !AchieveToDoClient.isNotReady()) {
+            return Component.translatable("key.advancements")
                 .append(": ")
                 .append(
-                    Text.literal(String.valueOf(AchieveToDoClient.getObtainedAdvancementsCount()))
-                        .formatted(DesignCodePalette.TEXT_COLOR)
+                    Component.literal(String.valueOf(AchieveToDoClient.getObtainedAdvancementsCount()))
+                        .withStyle(DesignCodePalette.TEXT_COLOR)
                 );
         }
         return original.call(key, args);

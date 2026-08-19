@@ -1,8 +1,5 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
-import net.minecraft.advancement.AdvancementEntry;
-import net.minecraft.advancement.PlacedAdvancement;
-import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -12,8 +9,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.*;
+import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.AdvancementNode;
+import net.minecraft.resources.Identifier;
 
-@Mixin(PlacedAdvancement.class)
+@Mixin(AdvancementNode.class)
 public abstract class PlacedAdvancementMixin {
 
     @Unique
@@ -57,38 +57,38 @@ public abstract class PlacedAdvancementMixin {
     }
 
     @Unique
-    private List<PlacedAdvancement> sortedChildren = null;
+    private List<AdvancementNode> sortedChildren = null;
 
     @Shadow
     @Final
-    public Set<PlacedAdvancement> children;
+    public Set<AdvancementNode> children;
 
     @Shadow
     @Final
-    private AdvancementEntry advancementEntry;
+    private AdvancementHolder holder;
 
     @Shadow
-    public abstract PlacedAdvancement getRoot();
+    public abstract AdvancementNode root();
 
     @Inject(
-        method = "getChildren",
+        method = "children",
         at = @At("HEAD"),
         cancellable = true
     )
-    public void sortChildren(CallbackInfoReturnable<Iterable<PlacedAdvancement>> cir) {
+    public void sortChildren(CallbackInfoReturnable<Iterable<AdvancementNode>> cir) {
         if (children.size() <= 1) {
             return;
         }
         if (sortedChildren == null) {
             sortedChildren = new ArrayList<>(children);
-            Identifier advancementId = advancementEntry.id();
+            Identifier advancementId = holder.id();
             if (customChildrenOrderMap.containsKey(advancementId.toString())) {
                 List<String> customChildrenIds = customChildrenOrderMap.get(advancementId.toString());
                 sortedChildren.sort(Comparator.comparingInt(child ->
-                    customChildrenIds.indexOf(child.getAdvancementEntry().id().toString())
+                    customChildrenIds.indexOf(child.holder().id().toString())
                 ));
             } else {
-                sortedChildren.sort(Comparator.comparing(advancement -> advancement.getAdvancementEntry().id()));
+                sortedChildren.sort(Comparator.comparing(advancement -> advancement.holder().id()));
             }
         }
         cir.setReturnValue(sortedChildren);

@@ -1,78 +1,78 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
-import net.minecraft.entity.passive.CamelEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.animal.camel.Camel;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(CamelEntity.class)
+@Mixin(Camel.class)
 public class CamelEntityMixin {
 
     @Inject(
-        method = "interactMob",
+        method = "mobInteract",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/CamelEntity;putPlayerOnBack(Lnet/minecraft/entity/player/PlayerEntity;)V",
+            target = "Lnet/minecraft/world/entity/animal/camel/Camel;doPlayerRide(Lnet/minecraft/world/entity/player/Player;)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockInteract1(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        CamelEntity camelEntity = (CamelEntity) (Object) this;
+    public void lockInteract1(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
+        Camel camelEntity = (Camel) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, camelEntity)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 
     @Inject(
-        method = "receiveFood",
+        method = "handleEating",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/CamelEntity;heal(F)V",
+            target = "Lnet/minecraft/world/entity/animal/camel/Camel;heal(F)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockInteract2(PlayerEntity player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
-        CamelEntity camelEntity = (CamelEntity) (Object) this;
-        if (AchieveToDoMod.isTargetInLockedLandmark(player, camelEntity)) {
-            cir.setReturnValue(false);
-        }
-    }
-
-    @Inject(
-        method = "receiveFood",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/CamelEntity;lovePlayer(Lnet/minecraft/entity/player/PlayerEntity;)V",
-            shift = At.Shift.BEFORE
-        ),
-        cancellable = true
-    )
-    public void lockInteract3(PlayerEntity player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
-        CamelEntity camelEntity = (CamelEntity) (Object) this;
+    public void lockInteract2(Player player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
+        Camel camelEntity = (Camel) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, camelEntity)) {
             cir.setReturnValue(false);
         }
     }
 
     @Inject(
-        method = "receiveFood",
+        method = "handleEating",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/World;addParticle(Lnet/minecraft/particle/ParticleEffect;DDDDDD)V",
+            target = "Lnet/minecraft/world/entity/animal/camel/Camel;setInLove(Lnet/minecraft/world/entity/player/Player;)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockInteract4(PlayerEntity player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
-        CamelEntity camelEntity = (CamelEntity) (Object) this;
+    public void lockInteract3(Player player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
+        Camel camelEntity = (Camel) (Object) this;
+        if (AchieveToDoMod.isTargetInLockedLandmark(player, camelEntity)) {
+            cir.setReturnValue(false);
+        }
+    }
+
+    @Inject(
+        method = "handleEating",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V",
+            shift = At.Shift.BEFORE
+        ),
+        cancellable = true
+    )
+    public void lockInteract4(Player player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
+        Camel camelEntity = (Camel) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, camelEntity)) {
             cir.setReturnValue(false);
         }

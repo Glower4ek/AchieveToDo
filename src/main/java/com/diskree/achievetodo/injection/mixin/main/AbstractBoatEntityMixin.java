@@ -4,13 +4,13 @@ import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.vehicle.AbstractBoatEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
-@Mixin(AbstractBoatEntity.class)
+@Mixin(AbstractBoat.class)
 public class AbstractBoatEntityMixin {
 
     @ModifyReturnValue(
@@ -24,8 +24,8 @@ public class AbstractBoatEntityMixin {
         if (!original) {
             return false;
         }
-        if (passenger instanceof PlayerEntity player) {
-            AbstractBoatEntity boatEntity = (AbstractBoatEntity) (Object) this;
+        if (passenger instanceof Player player) {
+            AbstractBoat boatEntity = (AbstractBoat) (Object) this;
             if (AchieveToDoMod.isTargetInLockedLandmark(player, boatEntity) ||
                 AchieveToDoMod.isAbilityLocked(player, AbilityType.GET_INTO_BOAT)
             ) {

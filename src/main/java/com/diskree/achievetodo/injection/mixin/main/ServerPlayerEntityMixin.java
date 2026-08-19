@@ -4,44 +4,44 @@ import com.diskree.achievetodo.ability.AbilityType;
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.block.BlockState;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.Heightmap;
-import net.minecraft.world.chunk.WorldChunk;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.LevelChunk;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(ServerPlayerEntity.class)
+@Mixin(ServerPlayer.class)
 public class ServerPlayerEntityMixin {
 
     @Inject(
-        method = "jump",
+        method = "jumpFromGround",
         at = @At("HEAD"),
         cancellable = true
     )
     public void lockJump(CallbackInfo ci) {
-        ServerPlayerEntity player = (ServerPlayerEntity) (Object) this;
-        if (!player.isTouchingWater() && AchieveToDoMod.isAbilityLocked(player, AbilityType.JUMP)) {
+        ServerPlayer player = (ServerPlayer) (Object) this;
+        if (!player.isInWater() && AchieveToDoMod.isAbilityLocked(player, AbilityType.JUMP)) {
             ci.cancel();
         }
     }
 
     @ModifyReturnValue(
-        method = "getWorldSpawnPos",
+        method = "adjustSpawnLocation",
         at = @At("RETURN")
     )
     public BlockPos setSafeWorldSpawn(
         @NotNull BlockPos original,
-        @Local(argsOnly = true) @NotNull ServerWorld world
+        @Local(argsOnly = true) @NotNull ServerLevel world
     ) {
-        int maxY = world.getBottomY() - 1;
+        int maxY = world.getMinY() - 1;
         BlockPos highestBlockPos = original;
 
         int centerX = original.getX();
@@ -58,19 +58,19 @@ public class ServerPlayerEntityMixin {
 
         for (int chunkX = chunkStartX; chunkX <= chunkEndX; chunkX++) {
             for (int chunkZ = chunkStartZ; chunkZ <= chunkEndZ; chunkZ++) {
-                WorldChunk chunk = world.getChunkManager().getWorldChunk(chunkX, chunkZ, false);
+                LevelChunk chunk = world.getChunkSource().getChunk(chunkX, chunkZ, false);
                 if (chunk == null) {
                     continue;
                 }
-                Heightmap heightmap = chunk.getHeightmap(Heightmap.Type.WORLD_SURFACE);
+                Heightmap heightmap = chunk.getOrCreateHeightmapUnprimed(Heightmap.Types.WORLD_SURFACE);
                 int chunkMaxY;
                 if (heightmap == null) {
-                    chunkMaxY = world.getBottomY();
+                    chunkMaxY = world.getMinY();
                 } else {
-                    int tmpMax = world.getBottomY();
+                    int tmpMax = world.getMinY();
                     for (int localX = 0; localX < 16; localX++) {
                         for (int localZ = 0; localZ < 16; localZ++) {
-                            int y = heightmap.get(localX, localZ);
+                            int y = heightmap.getFirstAvailable(localX, localZ);
                             if (y > tmpMax) {
                                 tmpMax = y;
                             }
@@ -93,7 +93,7 @@ public class ServerPlayerEntityMixin {
 
                 for (int x = realStartX; x <= realEndX; x++) {
                     for (int z = realStartZ; z <= realEndZ; z++) {
-                        int topY = chunk.sampleHeightmap(Heightmap.Type.WORLD_SURFACE, x, z);
+                        int topY = chunk.getHeight(Heightmap.Types.WORLD_SURFACE, x, z);
                         if (topY > maxY) {
                             maxY = topY;
                             BlockPos topPos = new BlockPos(x, topY, z);
@@ -102,10 +102,10 @@ public class ServerPlayerEntityMixin {
                                 continue;
                             }
                             VoxelShape shape = state.getCollisionShape(world, topPos);
-                            if (shape.isEmpty() || shape.getMax(Direction.Axis.Y) < 1.0D) {
+                            if (shape.isEmpty() || shape.max(Direction.Axis.Y) < 1.0D) {
                                 continue;
                             }
-                            double maxCollisionY = shape.getMax(Direction.Axis.Y);
+                            double maxCollisionY = shape.max(Direction.Axis.Y);
                             if (maxCollisionY >= 1.0D) {
                                 topY++;
                             }

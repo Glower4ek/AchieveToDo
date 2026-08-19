@@ -6,13 +6,6 @@ import com.diskree.achievetodo.client.AchieveToDoClient;
 import com.diskree.achievetodo.client.gui.AdvancementsTabType;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import net.minecraft.advancement.AdvancementDisplay;
-import net.minecraft.advancement.AdvancementEntry;
-import net.minecraft.advancement.PlacedAdvancement;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.advancement.AdvancementTab;
-import net.minecraft.client.gui.screen.advancement.AdvancementWidget;
-import net.minecraft.client.gui.screen.advancement.AdvancementsScreen;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -26,6 +19,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.AdvancementNode;
+import net.minecraft.advancements.DisplayInfo;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.advancements.AdvancementTab;
+import net.minecraft.client.gui.screens.advancements.AdvancementWidget;
+import net.minecraft.client.gui.screens.advancements.AdvancementsScreen;
 
 @Mixin(AdvancementTab.class)
 public abstract class AdvancementTabMixin {
@@ -34,15 +34,15 @@ public abstract class AdvancementTabMixin {
     private final Map<AbilityType, AdvancementWidget> pendingAbilityWidgets = new HashMap<>();
 
     @Shadow
-    protected abstract void addWidget(AdvancementWidget widget, AdvancementEntry advancement);
+    protected abstract void addWidget(AdvancementWidget widget, AdvancementHolder advancement);
 
     @Shadow
     @Final
-    private PlacedAdvancement root;
+    private AdvancementNode rootNode;
 
     @Shadow
     @Final
-    private Map<AdvancementEntry, AdvancementWidget> widgets;
+    private Map<AdvancementHolder, AdvancementWidget> widgets;
 
     @Inject(
         method = "create",
@@ -50,20 +50,19 @@ public abstract class AdvancementTabMixin {
         cancellable = true
     )
     private static void setCustomTabsLayout(
-        MinecraftClient client,
+        Minecraft client,
         AdvancementsScreen screen,
         int index,
-        @NotNull PlacedAdvancement root,
+        @NotNull AdvancementNode root,
         CallbackInfoReturnable<AdvancementTab> cir
     ) {
-        AdvancementDisplay advancementDisplay = root.getAdvancement().display().orElse(null);
+        DisplayInfo advancementDisplay = root.advancement().display().orElse(null);
         if (advancementDisplay == null) {
             cir.setReturnValue(null);
             return;
         }
         AdvancementsTabType tab = AdvancementsTabType.findByAdvancement(root);
         if (tab == null) {
-            cir.setReturnValue(null);
             return;
         }
         if (tab == AdvancementsTabType.ABILITIES) {
@@ -71,7 +70,7 @@ public abstract class AdvancementTabMixin {
             for (AbilitiesHierarchyLayerType layerType : AbilitiesHierarchyLayerType.values()) {
                 childrenCount += layerType.getRowsCount();
             }
-            advancementDisplay.setPos(advancementDisplay.getX(), (float) (childrenCount / 2));
+            advancementDisplay.setLocation(advancementDisplay.getX(), (float) (childrenCount / 2));
         }
         cir.setReturnValue(new AdvancementTab(
             client,
@@ -87,20 +86,20 @@ public abstract class AdvancementTabMixin {
         method = "addAdvancement",
         at = @At(
             value = "NEW",
-            target = "(Lnet/minecraft/client/gui/screen/advancement/AdvancementTab;Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/advancement/PlacedAdvancement;Lnet/minecraft/advancement/AdvancementDisplay;)Lnet/minecraft/client/gui/screen/advancement/AdvancementWidget;"
+            target = "(Lnet/minecraft/client/gui/screens/advancements/AdvancementTab;Lnet/minecraft/client/Minecraft;Lnet/minecraft/advancements/AdvancementNode;Lnet/minecraft/advancements/DisplayInfo;)Lnet/minecraft/client/gui/screens/advancements/AdvancementWidget;"
         )
     )
     public AdvancementWidget restructureAbilitiesAdvancements(
         AdvancementTab tab,
-        MinecraftClient client,
-        @NotNull PlacedAdvancement advancement,
-        AdvancementDisplay display,
+        Minecraft client,
+        @NotNull AdvancementNode advancement,
+        DisplayInfo display,
         @NotNull Operation<AdvancementWidget> original
     ) {
         AbilityType abilityTypeToAdd = null;
         boolean isFirstInRow = false;
         boolean shouldSkipVanillaBehavior = false;
-        if (AdvancementsTabType.findByAdvancement(root) == AdvancementsTabType.ABILITIES) {
+        if (AdvancementsTabType.findByAdvancement(rootNode) == AdvancementsTabType.ABILITIES) {
             abilityTypeToAdd = AbilityType.findByAdvancement(advancement);
             if (abilityTypeToAdd != null) {
                 List<List<AbilityType>> rows = AchieveToDoClient.getAbilityRows();
@@ -109,7 +108,7 @@ public abstract class AdvancementTabMixin {
                         List<AbilityType> row = rows.get(rowIndex);
                         if (abilityTypeToAdd == row.getFirst()) {
                             isFirstInRow = true;
-                            display.setPos(display.getX(), rowIndex);
+                            display.setLocation(display.getX(), rowIndex);
                             break;
                         }
                     }
@@ -118,7 +117,7 @@ public abstract class AdvancementTabMixin {
                             List<AbilityType> row = rows.get(rowIndex);
                             int columnIndex = row.indexOf(abilityTypeToAdd);
                             if (columnIndex != -1) {
-                                display.setPos(columnIndex + 1, rowIndex);
+                                display.setLocation(columnIndex + 1, rowIndex);
                                 break;
                             }
                         }
@@ -141,7 +140,7 @@ public abstract class AdvancementTabMixin {
                         AbilityType previousAbilityType = row.get(columnIndex - 1);
                         AdvancementWidget currentWidget = pendingAbilityWidgets.get(abilityType);
                         if (currentWidget == null) {
-                            for (AdvancementEntry widgetAdvancement : widgets.keySet()) {
+                            for (AdvancementHolder widgetAdvancement : widgets.keySet()) {
                                 if (AbilityType.findByAdvancement(widgetAdvancement) == abilityType) {
                                     currentWidget = widgets.get(widgetAdvancement);
                                 }
@@ -152,7 +151,7 @@ public abstract class AdvancementTabMixin {
                         }
                         AdvancementWidget parentWidget = pendingAbilityWidgets.get(previousAbilityType);
                         if (parentWidget == null) {
-                            for (AdvancementEntry widgetAdvancement : widgets.keySet()) {
+                            for (AdvancementHolder widgetAdvancement : widgets.keySet()) {
                                 if (AbilityType.findByAdvancement(widgetAdvancement) == previousAbilityType) {
                                     parentWidget = widgets.get(widgetAdvancement);
                                 }
@@ -163,7 +162,7 @@ public abstract class AdvancementTabMixin {
                         }
                         currentWidget.parent = parentWidget;
                         parentWidget.addChild(currentWidget);
-                        addWidget(currentWidget, currentWidget.advancement.getAdvancementEntry());
+                        addWidget(currentWidget, currentWidget.advancementNode.holder());
                     }
                 }
             }
@@ -176,7 +175,7 @@ public abstract class AdvancementTabMixin {
         at = @At(value = "HEAD"),
         cancellable = true
     )
-    public void skipNullWidget(AdvancementWidget widget, @NotNull AdvancementEntry advancement, CallbackInfo ci) {
+    public void skipNullWidget(AdvancementWidget widget, @NotNull AdvancementHolder advancement, CallbackInfo ci) {
         if (widget == null) {
             ci.cancel();
         }

@@ -4,9 +4,6 @@ import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.DimensionalBlockBox;
 import com.diskree.achievetodo.ability.LandmarkType;
 import com.diskree.achievetodo.injection.extension.main.ChunkExtension;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.world.chunk.Chunk;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,8 +14,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.chunk.ChunkAccess;
 
-@Mixin(Chunk.class)
+@Mixin(ChunkAccess.class)
 public abstract class ChunkMixin implements ChunkExtension {
 
     @Unique
@@ -26,14 +26,14 @@ public abstract class ChunkMixin implements ChunkExtension {
 
     @Override
     public void achievetodo$setFeatureLandmarks(
-        @NotNull ServerWorld world,
+        @NotNull ServerLevel world,
         Map<LandmarkType, Set<DimensionalBlockBox>> featureLandmarks
     ) {
         this.featureLandmarks = featureLandmarks;
         if (featureLandmarks != null) {
-            AchieveToDoMod.getServer().onLandmarksLoadedStatusChanged(world, pos, featureLandmarks, true);
+            AchieveToDoMod.getServer().onLandmarksLoadedStatusChanged(world, chunkPos, featureLandmarks, true);
         }
-        markNeedsSaving();
+        markUnsaved();
     }
 
     @Override
@@ -43,7 +43,7 @@ public abstract class ChunkMixin implements ChunkExtension {
 
     @Override
     public void achievetodo$addFeatureLandmark(
-        @NotNull ServerWorld world,
+        @NotNull ServerLevel world,
         LandmarkType featureLandmarkType,
         DimensionalBlockBox dimensionalBlockBox
     ) {
@@ -55,17 +55,17 @@ public abstract class ChunkMixin implements ChunkExtension {
             .add(dimensionalBlockBox);
         AchieveToDoMod.getServer().onLandmarksLoadedStatusChanged(
             world,
-            pos,
+            chunkPos,
             Map.of(featureLandmarkType, Set.of(dimensionalBlockBox)),
             true
         );
-        markNeedsSaving();
+        markUnsaved();
     }
 
     @Shadow
     @Final
-    protected ChunkPos pos;
+    protected ChunkPos chunkPos;
 
     @Shadow
-    public abstract void markNeedsSaving();
+    public abstract void markUnsaved();
 }

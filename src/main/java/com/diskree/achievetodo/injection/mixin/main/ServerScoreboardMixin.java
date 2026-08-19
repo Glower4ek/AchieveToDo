@@ -1,7 +1,7 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
-import net.minecraft.scoreboard.ServerScoreboard;
+import net.minecraft.server.ServerScoreboard;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ServerScoreboardMixin {
 
     @Inject(
-        method = "setObjectiveSlot",
+        method = "setDisplayObjective",
         at = @At("RETURN")
     )
     private void trackScoreboardChanged(CallbackInfo ci) {

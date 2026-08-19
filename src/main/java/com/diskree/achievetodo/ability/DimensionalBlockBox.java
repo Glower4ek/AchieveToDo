@@ -1,6 +1,6 @@
 package com.diskree.achievetodo.ability;
 
-import net.minecraft.util.math.BlockBox;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
 
-public record DimensionalBlockBox(DimensionType dimensionType, BlockBox blockBox) {
+public record DimensionalBlockBox(DimensionType dimensionType, BoundingBox blockBox) {
 }

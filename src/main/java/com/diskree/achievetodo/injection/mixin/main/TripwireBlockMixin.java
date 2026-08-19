@@ -2,33 +2,33 @@ package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.TripwireBlock;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.TripWireBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(TripwireBlock.class)
+@Mixin(TripWireBlock.class)
 public class TripwireBlockMixin {
 
     @Inject(
-        method = "onBreak",
+        method = "playerWillDestroy",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/World;setBlockState(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;I)Z",
+            target = "Lnet/minecraft/world/level/Level;setBlock(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Z",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
     public void lockShears(
-        World world,
+        Level world,
         BlockPos blockPos,
         BlockState blockState,
-        PlayerEntity player,
+        Player player,
         CallbackInfoReturnable<BlockState> cir
     ) {
         if (AchieveToDoMod.isTargetInLockedLandmark(player, world, blockPos) ||

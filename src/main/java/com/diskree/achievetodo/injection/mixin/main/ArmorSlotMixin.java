@@ -5,11 +5,11 @@ import com.diskree.achievetodo.ability.AbilityType;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.screen.slot.ArmorSlot;
-import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ArmorSlot;
+import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,34 +23,34 @@ public class ArmorSlotMixin {
 
     @Shadow
     @Final
-    private LivingEntity entity;
+    private LivingEntity owner;
 
     @Inject(
-        method = "canInsert",
+        method = "mayPlace",
         at = @At(value = "HEAD"),
         cancellable = true
     )
     private void lockEquip(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if (entity instanceof PlayerEntity player &&
+        if (owner instanceof Player player &&
             AchieveToDoMod.isAbilityLocked(player, AbilityType.findEquipmentEquipAbility(stack.getItem()))
         ) {
-            if (player instanceof ServerPlayerEntity serverPlayer) {
-                serverPlayer.closeHandledScreen();
+            if (player instanceof ServerPlayer serverPlayer) {
+                serverPlayer.closeContainer();
             }
             cir.setReturnValue(false);
         }
     }
 
     @WrapOperation(
-        method = "canTakeItems",
+        method = "mayPickup",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/screen/slot/Slot;canTakeItems(Lnet/minecraft/entity/player/PlayerEntity;)Z"
+            target = "Lnet/minecraft/world/inventory/Slot;mayPickup(Lnet/minecraft/world/entity/player/Player;)Z"
         )
     )
     private boolean lockEquip(
         ArmorSlot armorSlot,
-        PlayerEntity player,
+        Player player,
         @NotNull Operation<Boolean> original,
         @Local @NotNull ItemStack stack
     ) {
@@ -58,8 +58,8 @@ public class ArmorSlotMixin {
             return false;
         }
         if (AchieveToDoMod.isAbilityLocked(player, AbilityType.findEquipmentEquipAbility(stack.getItem()))) {
-            if (player instanceof ServerPlayerEntity serverPlayer) {
-                serverPlayer.closeHandledScreen();
+            if (player instanceof ServerPlayer serverPlayer) {
+                serverPlayer.closeContainer();
             }
             return false;
         }

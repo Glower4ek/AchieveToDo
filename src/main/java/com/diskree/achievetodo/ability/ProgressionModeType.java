@@ -1,11 +1,11 @@
 package com.diskree.achievetodo.ability;
 
 import com.diskree.achievetodo.client.AchieveToDoClient;
-import net.minecraft.text.Text;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Locale;
+import net.minecraft.network.chat.Component;
 
 public enum ProgressionModeType {
 
@@ -40,14 +40,14 @@ public enum ProgressionModeType {
         return version;
     }
 
-    public @NotNull Text getDisplayedText() {
+    public @NotNull Component getDisplayedText() {
         if (this == CHAOS) {
             return AchieveToDoClient.translate("world_creation_tab.progression.chaos");
         }
-        return Text.translatable("options.difficulty." + getName());
+        return Component.translatable("options.difficulty." + getName());
     }
 
-    public @NotNull Text getTooltipText() {
+    public @NotNull Component getTooltipText() {
         return AchieveToDoClient.translate("world_creation_tab.progression." + getName() + ".tooltip");
     }
 

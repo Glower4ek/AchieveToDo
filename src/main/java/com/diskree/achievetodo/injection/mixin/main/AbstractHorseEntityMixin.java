@@ -1,126 +1,126 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
-import net.minecraft.entity.passive.AbstractHorseEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.animal.equine.AbstractHorse;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(AbstractHorseEntity.class)
+@Mixin(AbstractHorse.class)
 public class AbstractHorseEntityMixin {
 
     @Inject(
-        method = "interactMob",
+        method = "mobInteract",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;openInventory(Lnet/minecraft/entity/player/PlayerEntity;)V",
+            target = "Lnet/minecraft/world/entity/animal/equine/AbstractHorse;openCustomInventoryScreen(Lnet/minecraft/world/entity/player/Player;)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockInteract1(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        AbstractHorseEntity abstractHorseEntity = (AbstractHorseEntity) (Object) this;
+    public void lockInteract1(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
+        AbstractHorse abstractHorseEntity = (AbstractHorse) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, abstractHorseEntity)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 
     @Inject(
-        method = "interactMob",
+        method = "mobInteract",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;equipHorseArmor(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/item/ItemStack;)V",
+            target = "Lnet/minecraft/world/entity/animal/equine/AbstractHorse;equipBodyArmor(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockInteract2(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        AbstractHorseEntity abstractHorseEntity = (AbstractHorseEntity) (Object) this;
+    public void lockInteract2(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
+        AbstractHorse abstractHorseEntity = (AbstractHorse) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, abstractHorseEntity)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 
     @Inject(
-        method = "interactMob",
+        method = "mobInteract",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;putPlayerOnBack(Lnet/minecraft/entity/player/PlayerEntity;)V",
+            target = "Lnet/minecraft/world/entity/animal/equine/AbstractHorse;doPlayerRide(Lnet/minecraft/world/entity/player/Player;)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockInteract3(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        AbstractHorseEntity abstractHorseEntity = (AbstractHorseEntity) (Object) this;
+    public void lockInteract3(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
+        AbstractHorse abstractHorseEntity = (AbstractHorse) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, abstractHorseEntity)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 
     @Inject(
-        method = "receiveFood",
+        method = "handleEating",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;lovePlayer(Lnet/minecraft/entity/player/PlayerEntity;)V",
+            target = "Lnet/minecraft/world/entity/animal/equine/AbstractHorse;setInLove(Lnet/minecraft/world/entity/player/Player;)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockInteract4(PlayerEntity player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
-        AbstractHorseEntity abstractHorseEntity = (AbstractHorseEntity) (Object) this;
-        if (AchieveToDoMod.isTargetInLockedLandmark(player, abstractHorseEntity)) {
-            cir.setReturnValue(false);
-        }
-    }
-
-    @Inject(
-        method = "receiveFood",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;heal(F)V",
-            shift = At.Shift.BEFORE
-        ),
-        cancellable = true
-    )
-    public void lockInteract5(PlayerEntity player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
-        AbstractHorseEntity abstractHorseEntity = (AbstractHorseEntity) (Object) this;
+    public void lockInteract4(Player player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
+        AbstractHorse abstractHorseEntity = (AbstractHorse) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, abstractHorseEntity)) {
             cir.setReturnValue(false);
         }
     }
 
     @Inject(
-        method = "receiveFood",
+        method = "handleEating",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/World;addParticle(Lnet/minecraft/particle/ParticleEffect;DDDDDD)V",
+            target = "Lnet/minecraft/world/entity/animal/equine/AbstractHorse;heal(F)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockInteract6(PlayerEntity player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
-        AbstractHorseEntity abstractHorseEntity = (AbstractHorseEntity) (Object) this;
+    public void lockInteract5(Player player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
+        AbstractHorse abstractHorseEntity = (AbstractHorse) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, abstractHorseEntity)) {
             cir.setReturnValue(false);
         }
     }
 
     @Inject(
-        method = "receiveFood",
+        method = "handleEating",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;addTemper(I)I",
+            target = "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockInteract7(PlayerEntity player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
-        AbstractHorseEntity abstractHorseEntity = (AbstractHorseEntity) (Object) this;
+    public void lockInteract6(Player player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
+        AbstractHorse abstractHorseEntity = (AbstractHorse) (Object) this;
+        if (AchieveToDoMod.isTargetInLockedLandmark(player, abstractHorseEntity)) {
+            cir.setReturnValue(false);
+        }
+    }
+
+    @Inject(
+        method = "handleEating",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/world/entity/animal/equine/AbstractHorse;modifyTemper(I)I",
+            shift = At.Shift.BEFORE
+        ),
+        cancellable = true
+    )
+    public void lockInteract7(Player player, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
+        AbstractHorse abstractHorseEntity = (AbstractHorse) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, abstractHorseEntity)) {
             cir.setReturnValue(false);
         }

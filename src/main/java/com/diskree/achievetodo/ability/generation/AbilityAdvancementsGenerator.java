@@ -4,22 +4,22 @@ import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
 import com.diskree.achievetodo.BuildConfig;
 import com.diskree.achievetodo.client.AchieveToDoClient;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
-import net.minecraft.advancement.Advancement;
-import net.minecraft.advancement.AdvancementEntry;
-import net.minecraft.advancement.AdvancementFrame;
-import net.minecraft.advancement.AdvancementRewards;
-import net.minecraft.advancement.criterion.Criteria;
-import net.minecraft.advancement.criterion.ImpossibleCriterion;
-import net.minecraft.advancement.criterion.TickCriterion;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.AdvancementRewards;
+import net.minecraft.advancements.AdvancementType;
+import net.minecraft.advancements.triggers.CriteriaTriggers;
+import net.minecraft.advancements.triggers.ImpossibleTrigger;
+import net.minecraft.advancements.triggers.PlayerTrigger;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -35,8 +35,8 @@ public class AbilityAdvancementsGenerator extends FabricAdvancementProvider {
     public static final Block TAB_BACKGROUND = Blocks.PALE_MOSS_BLOCK;
 
     protected AbilityAdvancementsGenerator(
-        FabricDataOutput output,
-        CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup
+        FabricPackOutput output,
+        CompletableFuture<HolderLookup.Provider> registryLookup
     ) {
         super(output, registryLookup);
     }
@@ -51,48 +51,48 @@ public class AbilityAdvancementsGenerator extends FabricAdvancementProvider {
 
     @Override
     public void generateAdvancement(
-        RegistryWrapper.WrapperLookup registryLookup,
-        @NotNull Consumer<AdvancementEntry> consumer
+        HolderLookup.Provider registryLookup,
+        @NotNull Consumer<AdvancementHolder> consumer
     ) {
-        AdvancementEntry rootAdvancement = Advancement.Builder
-            .createUntelemetered()
+        AdvancementHolder rootAdvancement = Advancement.Builder
+            .recipeAdvancement()
             .display(
                 Items.BARRIER,
-                Text.literal(BuildConfig.MOD_NAME),
+                Component.literal(BuildConfig.MOD_NAME),
                 AchieveToDoClient.translate("description"),
-                Identifier.ofVanilla("textures/block/" + Registries.BLOCK.getId(TAB_BACKGROUND).getPath() + ".png"),
-                AdvancementFrame.TASK,
+                Identifier.withDefaultNamespace("block/" + BuiltInRegistries.BLOCK.getKey(TAB_BACKGROUND).getPath()),
+                AdvancementType.TASK,
                 false,
                 false,
                 false
             )
-            .criterion("tick", TickCriterion.Conditions.createTick())
+            .addCriterion("tick", PlayerTrigger.TriggerInstance.tick())
             .build(buildAdvancementId("root"));
         consumer.accept(rootAdvancement);
 
         for (AbilityType abilityType : AbilityType.values()) {
             Identifier advancementId = buildAdvancementId(abilityType);
             consumer.accept(Advancement.Builder
-                .createUntelemetered()
+                .recipeAdvancement()
                 .parent(rootAdvancement)
                 .display(
                     abilityType.getIcon(),
                     abilityType.getTitle(),
                     abilityType.getDescription(),
                     null,
-                    AdvancementFrame.TASK,
+                    AdvancementType.TASK,
                     true,
                     false,
                     false
                 )
                 .rewards(AdvancementRewards.Builder.function(advancementId))
-                .criterion(
+                .addCriterion(
                     DEMYSTIFIED_CRITERION,
-                    Criteria.IMPOSSIBLE.create(new ImpossibleCriterion.Conditions())
+                    CriteriaTriggers.IMPOSSIBLE.createCriterion(new ImpossibleTrigger.TriggerInstance())
                 )
-                .criterion(
+                .addCriterion(
                     UNLOCKED_CRITERION,
-                    Criteria.IMPOSSIBLE.create(new ImpossibleCriterion.Conditions())
+                    CriteriaTriggers.IMPOSSIBLE.createCriterion(new ImpossibleTrigger.TriggerInstance())
                 )
                 .build(advancementId)
             );

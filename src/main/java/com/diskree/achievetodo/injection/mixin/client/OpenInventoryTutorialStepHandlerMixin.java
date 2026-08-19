@@ -2,7 +2,7 @@ package com.diskree.achievetodo.injection.mixin.client;
 
 import com.diskree.achievetodo.ability.AbilityType;
 import com.diskree.achievetodo.client.AchieveToDoClient;
-import net.minecraft.client.tutorial.OpenInventoryTutorialStepHandler;
+import net.minecraft.client.tutorial.OpenInventoryTutorialStep;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(OpenInventoryTutorialStepHandler.class)
+@Mixin(OpenInventoryTutorialStep.class)
 public class OpenInventoryTutorialStepHandlerMixin {
 
     @ModifyConstant(
@@ -25,7 +25,7 @@ public class OpenInventoryTutorialStepHandlerMixin {
         method = "tick",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/tutorial/TutorialManager;getClient()Lnet/minecraft/client/MinecraftClient;",
+            target = "Lnet/minecraft/client/tutorial/Tutorial;getMinecraft()Lnet/minecraft/client/Minecraft;",
             shift = At.Shift.BEFORE
         ),
         cancellable = true

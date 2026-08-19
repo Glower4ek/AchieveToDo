@@ -1,65 +1,65 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
-import net.minecraft.entity.passive.PandaEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.animal.panda.Panda;
+import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(PandaEntity.class)
+@Mixin(Panda.class)
 public class PandaEntityMixin {
 
     @Inject(
-        method = "interactMob",
+        method = "mobInteract",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/PandaEntity;eat(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;Lnet/minecraft/item/ItemStack;)V",
+            target = "Lnet/minecraft/world/entity/animal/panda/Panda;usePlayerItem(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;)V",
             shift = At.Shift.BEFORE,
             ordinal = 0
         ),
         cancellable = true
     )
-    public void lockInteract1(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        PandaEntity pandaEntity = (PandaEntity) (Object) this;
+    public void lockInteract1(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
+        Panda pandaEntity = (Panda) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, pandaEntity)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 
     @Inject(
-        method = "interactMob",
+        method = "mobInteract",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/PandaEntity;eat(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;Lnet/minecraft/item/ItemStack;)V",
+            target = "Lnet/minecraft/world/entity/animal/panda/Panda;usePlayerItem(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;)V",
             shift = At.Shift.BEFORE,
             ordinal = 1
         ),
         cancellable = true
     )
-    public void lockInteract2(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        PandaEntity pandaEntity = (PandaEntity) (Object) this;
+    public void lockInteract2(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
+        Panda pandaEntity = (Panda) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, pandaEntity)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 
     @Inject(
-        method = "interactMob",
+        method = "mobInteract",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/passive/PandaEntity;stop()V",
+            target = "Lnet/minecraft/world/entity/animal/panda/Panda;tryToSit()V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockInteract3(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        PandaEntity pandaEntity = (PandaEntity) (Object) this;
+    public void lockInteract3(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
+        Panda pandaEntity = (Panda) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, pandaEntity)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 }

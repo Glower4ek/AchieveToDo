@@ -3,7 +3,7 @@ package com.diskree.achievetodo.client;
 import com.diskree.achievetodo.server.Constants;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.util.Formatting;
+import net.minecraft.ChatFormatting;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
@@ -13,7 +13,7 @@ public enum ExternalPack {
 
     BACAP(
         "BlazeandCave's Advancements Pack (BACAP)",
-        Formatting.AQUA,
+        ChatFormatting.AQUA,
         "https://modrinth.com/datapack/blazeandcaves-advancements-pack",
         "https://cdn.modrinth.com/data/VoVJ47kN/versions/i8N5hYLH/BlazeandCave%27s%20Advancements%20Pack%201.18.1.zip",
         null,
@@ -22,7 +22,7 @@ public enum ExternalPack {
     ),
     BACAP_HARDCORE(
         "BACAP (Hardcore version)",
-        Formatting.RED,
+        ChatFormatting.RED,
         "https://modrinth.com/datapack/blazeandcaves-advancements-pack-hardcore-version",
         "https://cdn.modrinth.com/data/QEv1xmKi/versions/uRKM9Bou/BlazeandCave%27s%20Advancements%20Pack%20Hardcore.zip",
         null,
@@ -31,7 +31,7 @@ public enum ExternalPack {
     ),
     BACAP_TERRALITH(
         "BACAP (Terralith version)",
-        Formatting.GREEN,
+        ChatFormatting.GREEN,
         "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
         "https://www.mediafire.com/file/ljb8qwofxk4dq9i/%255BUNZIP_ME%255D_BlazeandCave%2527s_Advancements_Pack_Terralith_1.18.zip/file",
         "2699070cf5040ab519c223178ee64ee9eafe3691",
@@ -40,7 +40,7 @@ public enum ExternalPack {
     ),
     BACAP_AMPLIFIED_NETHER(
         "BACAP (Amplified Nether version)",
-        Formatting.DARK_RED,
+        ChatFormatting.DARK_RED,
         "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
         "https://www.mediafire.com/file/ak5sjemiz60mzrc/%255BUNZIP_ME%255D_BlazeandCave%2527s_Advancements_Pack_Amplified_Nether_1.18.zip/file",
         "981ff801e3cf7eace1ddc2fff8b6165c12ea52b0",
@@ -49,7 +49,7 @@ public enum ExternalPack {
     ),
     BACAP_NULLSCAPE(
         "BACAP (Nullscape version)",
-        Formatting.DARK_PURPLE,
+        ChatFormatting.DARK_PURPLE,
         "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
         "https://www.mediafire.com/file/hsj4koctw778e43/%255BUNZIP_ME%255D_BlazeandCave%2527s_Advancements_Pack_Nullscape_1.18.zip/file",
         "029c29644a9e94dd8c4111dc3ab2165e79fe4d66",
@@ -58,7 +58,7 @@ public enum ExternalPack {
     ),
     TERRALITH(
         "Terralith",
-        Formatting.GREEN,
+        ChatFormatting.GREEN,
         "https://www.planetminecraft.com/data-pack/terralith-overworld-evolved-100-biomes-caves-and-more/",
         "https://cdn.modrinth.com/data/8oi3bsk5/versions/PcYlKx8w/Terralith_1.21_v2.5.7.zip",
         null,
@@ -67,7 +67,7 @@ public enum ExternalPack {
     ),
     AMPLIFIED_NETHER(
         "Amplified Nether",
-        Formatting.DARK_RED,
+        ChatFormatting.DARK_RED,
         "https://www.planetminecraft.com/data-pack/amplified-nether-1-18/",
         "https://cdn.modrinth.com/data/wXiGiyGX/versions/jfHNaJaE/Amplified_Nether_1.21_v1.2.7.zip",
         null,
@@ -76,7 +76,7 @@ public enum ExternalPack {
     ),
     NULLSCAPE(
         "Nullscape",
-        Formatting.DARK_PURPLE,
+        ChatFormatting.DARK_PURPLE,
         "https://www.planetminecraft.com/data-pack/nullscape/",
         "https://cdn.modrinth.com/data/LPjGiSO4/versions/J4B2BaWk/Nullscape_1.21_v1.2.10.zip",
         null,
@@ -85,7 +85,7 @@ public enum ExternalPack {
     );
 
     private final String title;
-    private final Formatting color;
+    private final ChatFormatting color;
     private final String pageUrl;
     private final String downloadUrl;
     private final String wrapperSha1;
@@ -94,7 +94,7 @@ public enum ExternalPack {
 
     ExternalPack(
         String title,
-        Formatting color,
+        ChatFormatting color,
         String pageUrl,
         String downloadUrl,
         String wrapperSha1,
@@ -114,7 +114,7 @@ public enum ExternalPack {
         return title;
     }
 
-    public Formatting getColor() {
+    public ChatFormatting getColor() {
         return color;
     }
 

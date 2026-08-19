@@ -2,41 +2,41 @@ package com.diskree.achievetodo.networking.s2c;
 
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.tracking.TrackedScoreType;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.network.packet.CustomPayload;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 
-import static net.minecraft.network.packet.CustomPayload.codecOf;
+import static net.minecraft.network.protocol.common.custom.CustomPacketPayload.codec;
 
 public record ScoreProgressChangedPayload(
     @NotNull TrackedScoreType progressType,
     int progress
-) implements CustomPayload {
+) implements CustomPacketPayload {
 
-    public static final Id<ScoreProgressChangedPayload> ID = new Id<>(AchieveToDoMod.getIdentifier(
+    public static final Type<ScoreProgressChangedPayload> ID = new Type<>(AchieveToDoMod.getIdentifier(
         ScoreProgressChangedPayload.class.getName().toLowerCase(Locale.ROOT)
     ));
 
-    public static final PacketCodec<PacketByteBuf, ScoreProgressChangedPayload> CODEC = codecOf(
+    public static final StreamCodec<FriendlyByteBuf, ScoreProgressChangedPayload> CODEC = codec(
         ScoreProgressChangedPayload::encode,
         ScoreProgressChangedPayload::decode
     );
 
     @Override
-    public Id<? extends CustomPayload> getId() {
+    public Type<? extends CustomPacketPayload> type() {
         return ID;
     }
 
-    private void encode(@NotNull PacketByteBuf buf) {
-        buf.writeEnumConstant(progressType);
+    private void encode(@NotNull FriendlyByteBuf buf) {
+        buf.writeEnum(progressType);
         buf.writeInt(progress);
     }
 
-    private static @NotNull ScoreProgressChangedPayload decode(@NotNull PacketByteBuf buf) {
-        TrackedScoreType trackedScoreType = buf.readEnumConstant(TrackedScoreType.class);
+    private static @NotNull ScoreProgressChangedPayload decode(@NotNull FriendlyByteBuf buf) {
+        TrackedScoreType trackedScoreType = buf.readEnum(TrackedScoreType.class);
         int progress = buf.readInt();
         return new ScoreProgressChangedPayload(trackedScoreType, progress);
     }

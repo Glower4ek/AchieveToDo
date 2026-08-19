@@ -4,16 +4,17 @@ import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.block.Portal;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
-import net.minecraft.entity.vehicle.MinecartEntity;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.throwableitemprojectile.ThrownEnderpearl;
+import net.minecraft.world.entity.vehicle.minecart.Minecart;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Portal;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -33,15 +34,15 @@ public abstract class EntityMixin {
     }
 
     @Inject(
-        method = "setSneaking",
+        method = "setShiftKeyDown",
         at = @At("HEAD"),
         cancellable = true
     )
     public void lockSneaking(boolean isSneaking, CallbackInfo ci) {
         if (isSneaking) {
             Entity entity = (Entity) (Object) this;
-            if (entity instanceof PlayerEntity player &&
-                player.isOnGround() &&
+            if (entity instanceof Player player &&
+                player.onGround() &&
                 AchieveToDoMod.isAbilityLocked(player, AbilityType.SNEAK)
             ) {
                 ci.cancel();
@@ -53,14 +54,14 @@ public abstract class EntityMixin {
         method = "interact",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/Leashable;canLeashAttachTo()Z"
+            target = "Lnet/minecraft/world/entity/Leashable;canHaveALeashAttachedTo(Lnet/minecraft/world/entity/Entity;)Z"
         ),
         cancellable = true
     )
-    public void lockLeashAttach(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
+    public void lockLeashAttach(Player player, InteractionHand hand, Vec3 hitPosition, CallbackInfoReturnable<InteractionResult> cir) {
         Entity entity = (Entity) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, entity)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 
@@ -68,15 +69,15 @@ public abstract class EntityMixin {
         method = "interact",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/Leashable;detachLeash()V",
+            target = "Lnet/minecraft/world/entity/Leashable;dropLeash()V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockLeashDetach(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
+    public void lockLeashDetach(Player player, InteractionHand hand, Vec3 hitPosition, CallbackInfoReturnable<InteractionResult> cir) {
         Entity entity = (Entity) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, entity)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 
@@ -92,7 +93,7 @@ public abstract class EntityMixin {
             return false;
         }
         Entity entity = (Entity) (Object) this;
-        if (passenger instanceof PlayerEntity player && entity instanceof MinecartEntity) {
+        if (passenger instanceof Player player && entity instanceof Minecart) {
             if (AchieveToDoMod.isTargetInLockedLandmark(player, entity) ||
                 AchieveToDoMod.isAbilityLocked(player, AbilityType.GET_INTO_MINECART)
             ) {
@@ -103,27 +104,27 @@ public abstract class EntityMixin {
     }
 
     @Inject(
-        method = "tryUsePortal",
+        method = "setAsInsidePortal",
         at = @At("HEAD"),
         cancellable = true
     )
     private void lockPortal(Portal portal, BlockPos pos, CallbackInfo ci) {
         Entity teleportEntity = (Entity) (Object) this;
-        EnderPearlEntity enderPearl = null;
-        if (teleportEntity instanceof EnderPearlEntity enderPearlEntity) {
+        ThrownEnderpearl enderPearl = null;
+        if (teleportEntity instanceof ThrownEnderpearl enderPearlEntity) {
             teleportEntity = enderPearlEntity.getOwner();
             enderPearl = enderPearlEntity;
         }
         if (teleportEntity == null) {
             return;
         }
-        World currentWorld = enderPearl != null ? enderPearl.getWorld() : teleportEntity.getWorld();
-        RegistryKey<World> currentWorldRegistryKey = currentWorld.getRegistryKey();
+        Level currentWorld = enderPearl != null ? enderPearl.level() : teleportEntity.level();
+        ResourceKey<Level> currentWorldRegistryKey = currentWorld.dimension();
         AbilityType abilityType = AbilityType.findPortalTeleportAbility(portal);
-        if (currentWorldRegistryKey == World.NETHER && abilityType == AbilityType.ENTER_NETHER) {
+        if (currentWorldRegistryKey == Level.NETHER && abilityType == AbilityType.ENTER_NETHER) {
             return;
         }
-        if (currentWorldRegistryKey == World.END) {
+        if (currentWorldRegistryKey == Level.END) {
             if (abilityType == AbilityType.ENTER_END) {
                 return;
             }
@@ -132,7 +133,7 @@ public abstract class EntityMixin {
             }
         }
 
-        if (teleportEntity instanceof PlayerEntity playerEntity) {
+        if (teleportEntity instanceof Player playerEntity) {
             if (AchieveToDoMod.isTargetInLockedLandmark(playerEntity, currentWorld, pos) ||
                 AchieveToDoMod.isAbilityLocked(playerEntity, abilityType)
             ) {
@@ -143,17 +144,17 @@ public abstract class EntityMixin {
                 return;
             }
         }
-        if (enderPearl != null || !teleportEntity.hasPassengers()) {
+        if (enderPearl != null || !teleportEntity.isVehicle()) {
             return;
         }
-        if (teleportEntity.getControllingPassenger() instanceof PlayerEntity controllingPlayer &&
+        if (teleportEntity.getControllingPassenger() instanceof Player controllingPlayer &&
             AchieveToDoMod.isAbilityLocked(controllingPlayer, abilityType)
         ) {
             ci.cancel();
             return;
         }
-        for (Entity passengerEntity : teleportEntity.getPassengerList()) {
-            if (passengerEntity instanceof PlayerEntity passenger &&
+        for (Entity passengerEntity : teleportEntity.getPassengers()) {
+            if (passengerEntity instanceof Player passenger &&
                 AchieveToDoMod.isAbilityLocked(passenger, abilityType)
             ) {
                 passenger.stopRiding();

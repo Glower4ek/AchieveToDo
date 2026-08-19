@@ -1,10 +1,10 @@
 package com.diskree.achievetodo.client.gui;
 
 import com.diskree.achievetodo.client.AchieveToDoClient;
-import net.minecraft.text.Text;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
+import net.minecraft.network.chat.Component;
 
 public enum AbilityUnlockedToastType {
 
@@ -19,7 +19,7 @@ public enum AbilityUnlockedToastType {
     PORTAL,
     LANDMARK;
 
-    public @NotNull Text getToastTitle() {
+    public @NotNull Component getToastTitle() {
         return AchieveToDoClient.translate("ability_unlocked_toast." + getName())
             .append("!");
     }

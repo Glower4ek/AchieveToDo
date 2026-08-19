@@ -2,26 +2,26 @@ package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
-import net.minecraft.component.type.ConsumableComponent;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.Consumable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(ConsumableComponent.class)
+@Mixin(Consumable.class)
 public class ConsumableComponentMixin {
 
     @Inject(
-        method = "consume",
+        method = "startConsuming",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/component/type/ConsumableComponent;getConsumeTicks()I",
+            target = "Lnet/minecraft/world/item/component/Consumable;consumeTicks()I",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
@@ -29,13 +29,13 @@ public class ConsumableComponentMixin {
     public void lockFood(
         LivingEntity user,
         ItemStack stack,
-        Hand hand,
-        CallbackInfoReturnable<ActionResult> cir
+        InteractionHand hand,
+        CallbackInfoReturnable<InteractionResult> cir
     ) {
-        if (user instanceof PlayerEntity player &&
+        if (user instanceof Player player &&
             AchieveToDoMod.isAbilityLocked(player, AbilityType.findEatFoodAbility(stack))
         ) {
-            cir.setReturnValue(ActionResult.PASS);
+            cir.setReturnValue(InteractionResult.PASS);
         }
     }
 
@@ -49,8 +49,8 @@ public class ConsumableComponentMixin {
         ItemStack stack,
         CallbackInfoReturnable<Boolean> cir
     ) {
-        if (user instanceof PlayerEntity player &&
-            stack.isOf(Items.OMINOUS_BOTTLE) &&
+        if (user instanceof Player player &&
+            stack.is(Items.OMINOUS_BOTTLE) &&
             AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_OMINOUS_BOTTLE)
         ) {
             cir.setReturnValue(false);

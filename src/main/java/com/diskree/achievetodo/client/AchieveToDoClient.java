@@ -13,16 +13,16 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Text;
-import net.minecraft.util.TypeFilter;
-import net.minecraft.util.math.Box;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.entity.EntityTypeTest;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -67,13 +67,13 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static int getTrackedNearbyEntitiesCount(TrackedNearbyEntitiesType type) {
-        ClientPlayerEntity player = MinecraftClient.getInstance().player;
+        LocalPlayer player = Minecraft.getInstance().player;
         if (player == null || player.isSpectator()) {
             return 0;
         }
         int radius = type.getRadius();
-        Vec3d playerPos = player.getPos();
-        Box area = new Box(playerPos, playerPos).expand(radius);
+        Vec3 playerPos = player.position();
+        AABB area = new AABB(playerPos, playerPos).inflate(radius);
         Set<EntityType<?>> trackedEntities = type.getEntities();
         boolean isBabySeparated = type.isBabySeparated();
         Map<EntityType<?>, Map<Boolean, Boolean>> trackedMap = new HashMap<>();
@@ -86,14 +86,14 @@ public class AchieveToDoClient implements ClientModInitializer {
             trackedMap.put(entityType, babyAndAdultMap);
         }
         int entitiesCount = 0;
-        List<Entity> entities = player.getWorld().getEntitiesByType(
-            TypeFilter.instanceOf(Entity.class),
+        List<Entity> entities = player.level().getEntities(
+            EntityTypeTest.forClass(Entity.class),
             area,
             entity -> trackedEntities.contains(entity.getType())
         );
         for (Entity entity : entities) {
             if (entity instanceof LivingEntity livingEntity) {
-                if (playerPos.distanceTo(entity.getPos()) > radius) {
+                if (playerPos.distanceTo(entity.position()) > radius) {
                     continue;
                 }
                 Map<Boolean, Boolean> stateMap = trackedMap.get(entity.getType());
@@ -109,8 +109,8 @@ public class AchieveToDoClient implements ClientModInitializer {
         return entitiesCount;
     }
 
-    public static @NotNull MutableText translate(String keySuffix, Object... args) {
-        return Text.translatable(BuildConfig.MOD_ID + "." + keySuffix, args);
+    public static @NotNull MutableComponent translate(String keySuffix, Object... args) {
+        return Component.translatable(BuildConfig.MOD_ID + "." + keySuffix, args);
     }
 
     @Override
@@ -214,7 +214,7 @@ public class AchieveToDoClient implements ClientModInitializer {
                 result.add(new LockedLandmarkBox(
                     landmarkType,
                     dimensionalBlockBox.dimensionType(),
-                    Box.from(dimensionalBlockBox.blockBox())
+                    AABB.of(dimensionalBlockBox.blockBox())
                 ));
             }
         }
@@ -253,7 +253,7 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static boolean isAbilityLocked(@NotNull AbilityType abilityType, boolean checkOnly) {
-        ClientPlayerEntity player = MinecraftClient.getInstance().player;
+        LocalPlayer player = Minecraft.getInstance().player;
         if (player == null || player.isCreative() || player.isSpectator()) {
             return false;
         }
@@ -270,20 +270,20 @@ public class AchieveToDoClient implements ClientModInitializer {
             return false;
         }
         if (!checkOnly) {
-            Text lockedMessageText;
+            Component lockedMessageText;
             if (requiredCount == Constants.Progression.PERMANENTLY_LOCKED_FLAG) {
                 lockedMessageText = abilityType.buildPermanentlyLockedMessage();
             } else {
                 int leftCount = requiredCount - obtainedAdvancementsCount;
                 lockedMessageText = abilityType.buildUnlockProgressMessage(leftCount);
             }
-            player.sendMessage(lockedMessageText, true);
+            player.sendOverlayMessage(lockedMessageText);
             ClientPlayNetworking.send(new DemystifyAbilityPayload(abilityType));
         }
         return true;
     }
 
-    public static boolean isTargetInLockedLandmark(@NotNull DimensionType targetDimensionType, @NotNull Box targetBox) {
+    public static boolean isTargetInLockedLandmark(@NotNull DimensionType targetDimensionType, @NotNull AABB targetBox) {
         for (LockedLandmarkBox lockedLandmarksBox : lockedLandmarkBoxes) {
             if (lockedLandmarksBox.dimensionType() == targetDimensionType &&
                 lockedLandmarksBox.box().intersects(targetBox)

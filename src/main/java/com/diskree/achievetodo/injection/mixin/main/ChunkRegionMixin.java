@@ -1,25 +1,25 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.injection.extension.main.LandmarkGenerationTracker;
-import net.minecraft.block.BlockState;
-import net.minecraft.util.math.BlockBox;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ChunkRegion;
-import net.minecraft.world.StructureWorldAccess;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.WorldGenRegion;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(ChunkRegion.class)
-public abstract class ChunkRegionMixin implements StructureWorldAccess, LandmarkGenerationTracker {
+@Mixin(WorldGenRegion.class)
+public abstract class ChunkRegionMixin implements WorldGenLevel, LandmarkGenerationTracker {
 
     @Unique
     private boolean isLandmarkGenerationTrackingEnabled;
 
     @Unique
-    private BlockBox landmarkBlockBox;
+    private BoundingBox landmarkBlockBox;
 
     @Override
     public void achievetodo$setLandmarkGenerationTrackingEnabled(boolean isLandmarkGenerationTrackingEnabled) {
@@ -27,18 +27,18 @@ public abstract class ChunkRegionMixin implements StructureWorldAccess, Landmark
     }
 
     @Override
-    public void achievetodo$setLandmarkBlockBox(BlockBox landmarkBlockBox) {
+    public void achievetodo$setLandmarkBlockBox(BoundingBox landmarkBlockBox) {
         this.landmarkBlockBox = landmarkBlockBox;
     }
 
     @Override
-    public BlockBox achievetodo$getLandmarkBlockBox() {
+    public BoundingBox achievetodo$getLandmarkBlockBox() {
         return landmarkBlockBox;
     }
 
     @SuppressWarnings("deprecation")
     @Inject(
-        method = "setBlockState",
+        method = "setBlock",
         at = @At(value = "TAIL")
     )
     private void trackLandmarkGeneration(
@@ -50,9 +50,9 @@ public abstract class ChunkRegionMixin implements StructureWorldAccess, Landmark
     ) {
         if (isLandmarkGenerationTrackingEnabled) {
             if (landmarkBlockBox == null) {
-                landmarkBlockBox = new BlockBox(pos);
+                landmarkBlockBox = new BoundingBox(pos);
             }
-            landmarkBlockBox.encompass(pos);
+            landmarkBlockBox.encapsulate(pos);
         }
     }
 }

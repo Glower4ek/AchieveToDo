@@ -1,14 +1,14 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
-import net.minecraft.block.AbstractCandleBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.AbstractCandleBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,13 +25,13 @@ public class AbstractCandleBlockMixin {
         cancellable = true
     )
     private static void lockExtinguish(
-        @Nullable PlayerEntity player,
+        @Nullable Player player,
         BlockState state,
-        WorldAccess worldAccess,
+        LevelAccessor worldAccess,
         BlockPos pos,
         CallbackInfo ci
     ) {
-        if (worldAccess instanceof World world && AchieveToDoMod.isTargetInLockedLandmark(player, world, pos)) {
+        if (worldAccess instanceof Level world && AchieveToDoMod.isTargetInLockedLandmark(player, world, pos)) {
             ci.cancel();
         }
     }
@@ -40,19 +40,19 @@ public class AbstractCandleBlockMixin {
         method = "onProjectileHit",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/block/AbstractCandleBlock;setLit(Lnet/minecraft/world/WorldAccess;Lnet/minecraft/block/BlockState;Lnet/minecraft/util/math/BlockPos;Z)V",
+            target = "Lnet/minecraft/world/level/block/AbstractCandleBlock;setLit(Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Z)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
     private void lockLit(
-        World world,
+        Level world,
         BlockState state,
         BlockHitResult hit,
-        @NotNull ProjectileEntity projectile,
+        @NotNull Projectile projectile,
         CallbackInfo ci
     ) {
-        if (projectile.getOwner() instanceof PlayerEntity player &&
+        if (projectile.getOwner() instanceof Player player &&
             AchieveToDoMod.isTargetInLockedLandmark(player, world, hit.getBlockPos())
         ) {
             ci.cancel();

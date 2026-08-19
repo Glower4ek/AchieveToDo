@@ -2,12 +2,12 @@ package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.EnderEyeItem;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.EnderEyeItem;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,17 +18,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class EnderEyeItemMixin {
 
     @Inject(
-        method = "useOnBlock",
+        method = "useOn",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/block/BlockState;with(Lnet/minecraft/state/property/Property;Ljava/lang/Comparable;)Ljava/lang/Object;",
+            target = "Lnet/minecraft/world/level/block/state/BlockState;setValue(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Ljava/lang/Object;",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockEnderEye(@NotNull ItemUsageContext context, CallbackInfoReturnable<ActionResult> cir) {
+    public void lockEnderEye(@NotNull UseOnContext context, CallbackInfoReturnable<InteractionResult> cir) {
         if (AchieveToDoMod.isTargetInLockedLandmark(context)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 
@@ -36,14 +36,14 @@ public class EnderEyeItemMixin {
         method = "use",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/player/PlayerEntity;setCurrentHand(Lnet/minecraft/util/Hand;)V",
+            target = "Lnet/minecraft/world/entity/player/Player;startUsingItem(Lnet/minecraft/world/InteractionHand;)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockEnderEye(World world, PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
+    public void lockEnderEye(Level world, Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
         if (AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_ENDER_EYE)) {
-            cir.setReturnValue(ActionResult.CONSUME);
+            cir.setReturnValue(InteractionResult.CONSUME);
         }
     }
 }

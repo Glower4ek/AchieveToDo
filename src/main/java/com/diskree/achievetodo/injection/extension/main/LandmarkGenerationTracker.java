@@ -1,11 +1,11 @@
 package com.diskree.achievetodo.injection.extension.main;
 
-import net.minecraft.util.math.BlockBox;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
 
 public interface LandmarkGenerationTracker {
     void achievetodo$setLandmarkGenerationTrackingEnabled(boolean isLandmarkGenerationTrackingEnabled);
 
-    void achievetodo$setLandmarkBlockBox(BlockBox landmarkBlockBox);
+    void achievetodo$setLandmarkBlockBox(BoundingBox landmarkBlockBox);
 
-    BlockBox achievetodo$getLandmarkBlockBox();
+    BoundingBox achievetodo$getLandmarkBlockBox();
 }

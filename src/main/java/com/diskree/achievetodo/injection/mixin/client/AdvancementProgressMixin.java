@@ -9,10 +9,10 @@ import com.diskree.achievetodo.tracking.TrackedScoreType;
 import com.diskree.achievetodo.tracking.TrackedStatisticsDataType;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import net.minecraft.advancement.AdvancementProgress;
-import net.minecraft.advancement.AdvancementRequirements;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.AdvancementRequirements;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -53,7 +53,7 @@ public abstract class AdvancementProgressMixin implements AdvancementProgressExt
     public abstract boolean isDone();
 
     @Inject(
-        method = "countObtainedRequirements",
+        method = "countCompletedRequirements",
         at = @At("HEAD"),
         cancellable = true
     )
@@ -88,12 +88,12 @@ public abstract class AdvancementProgressMixin implements AdvancementProgressExt
 
     @WrapOperation(
         method = {
-            "getProgressBarPercentage",
-            "getProgressBarFraction"
+            "getPercent",
+            "getProgressText"
         },
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/advancement/AdvancementRequirements;getLength()I"
+            target = "Lnet/minecraft/advancements/AdvancementRequirements;size()I"
         )
     )
     public int overrideRequiredCount(
@@ -116,7 +116,7 @@ public abstract class AdvancementProgressMixin implements AdvancementProgressExt
     }
 
     @Inject(
-        method = "getProgressBarPercentage",
+        method = "getPercent",
         at = @At("HEAD"),
         cancellable = true
     )
@@ -142,11 +142,11 @@ public abstract class AdvancementProgressMixin implements AdvancementProgressExt
     }
 
     @Inject(
-        method = "getProgressBarFraction",
+        method = "getProgressText",
         at = @At("HEAD"),
         cancellable = true
     )
-    public void overrideProgressText(CallbackInfoReturnable<Text> cir) {
+    public void overrideProgressText(CallbackInfoReturnable<Component> cir) {
         if (abilityType != null) {
             int requiredCount = AchieveToDoClient.getRequiredAdvancementsCount(abilityType);
             if (requiredCount == Constants.Progression.INITIALLY_UNLOCKED_FLAG ||
@@ -169,6 +169,6 @@ public abstract class AdvancementProgressMixin implements AdvancementProgressExt
         } else {
             completionPercent = AchieveToDoClient.getTrackedStatisticsData(trackedStatisticsDataType);
         }
-        cir.setReturnValue(Text.translatable("mco.upload.percent", completionPercent));
+        cir.setReturnValue(Component.translatable("mco.upload.percent", completionPercent));
     }
 }

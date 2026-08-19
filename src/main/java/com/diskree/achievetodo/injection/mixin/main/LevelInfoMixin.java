@@ -8,13 +8,14 @@ import com.diskree.achievetodo.ability.ProgressionModeType;
 import com.diskree.achievetodo.ability.Progressions;
 import com.diskree.achievetodo.injection.extension.main.LevelInfoExtension;
 import com.diskree.achievetodo.server.Constants;
+import com.diskree.achievetodo.util.MixinCasting;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.moandjiezana.toml.Toml;
 import com.mojang.serialization.Dynamic;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.world.level.LevelInfo;
+import net.minecraft.world.level.LevelSettings;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,7 +25,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Map;
 
-@Mixin(LevelInfo.class)
+@Mixin(LevelSettings.class)
 public abstract class LevelInfoMixin implements LevelInfoExtension {
 
     @Unique
@@ -138,32 +139,30 @@ public abstract class LevelInfoMixin implements LevelInfoExtension {
     }
 
     @ModifyReturnValue(
-        method = "fromDynamic",
+        method = "parse",
         at = @At("RETURN")
     )
-    private static LevelInfo readConfigName(
-        LevelInfo levelInfo,
+    private static LevelSettings readConfigName(
+        LevelSettings levelInfo,
         @Local(argsOnly = true) Dynamic<?> dynamic
     ) {
-        if (levelInfo instanceof LevelInfoExtension levelInfoExtension) {
-            levelInfoExtension.achievetodo$setConfigName(dynamic.get(Constants.NbtKey.LEVEL_CONFIG_NAME).asString(""));
-        }
+        LevelInfoExtension levelInfoExtension = MixinCasting.levelInfo(levelInfo);
+        levelInfoExtension.achievetodo$setConfigName(dynamic.get(Constants.NbtKey.LEVEL_CONFIG_NAME).asString(""));
         return levelInfo;
     }
 
     @ModifyReturnValue(
         method = {
-            "withGameMode",
+            "withGameType",
             "withDifficulty",
             "withDataConfiguration",
-            "withCopiedGameRules"
+            "copy"
         },
         at = @At("RETURN")
     )
-    private LevelInfo keepConfigNameOnRecreate(LevelInfo levelInfo) {
-        if (levelInfo instanceof LevelInfoExtension levelInfoExtension) {
-            levelInfoExtension.achievetodo$setConfigName(configName);
-        }
+    private LevelSettings keepConfigNameOnRecreate(LevelSettings levelInfo) {
+        LevelInfoExtension levelInfoExtension = MixinCasting.levelInfo(levelInfo);
+        levelInfoExtension.achievetodo$setConfigName(configName);
         return levelInfo;
     }
 }

@@ -1,7 +1,7 @@
 package com.diskree.achievetodo.injection.extension.main;
 
-import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.CompoundTag;
 
 public interface SerializedChunkExtension {
-    void achievetodo$setFeatureLandmarksNbt(NbtCompound featureLandmarksNbt);
+    void achievetodo$setFeatureLandmarksNbt(CompoundTag featureLandmarksNbt);
 }

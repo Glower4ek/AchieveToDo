@@ -1,0 +1,18 @@
+classTweaker	v1	official
+accessible	class	net/minecraft/world/inventory/ArmorSlot
+accessible	class	net/minecraft/client/gui/screens/worldselection/SwitchGrid
+accessible	class	net/minecraft/client/gui/screens/advancements/AdvancementTabType
+accessible	class	net/minecraft/server/advancements/AdvancementVisibilityEvaluator$VisibilityRule
+extendable	class	net/minecraft/world/level/LevelSettings
+extendable	class	net/minecraft/world/level/chunk/storage/SerializableChunkData
+extendable	class	net/minecraft/world/level/levelgen/structure/StructureStart
+accessible	method	net/minecraft/client/gui/screens/worldselection/CreateWorldScreen	onCreate	()V
+accessible	method	net/minecraft/server/dedicated/Settings	get	(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+accessible	method	net/minecraft/client/renderer/culling/Frustum	cubeInFrustum	(DDDDDD)I
+accessible	field	net/minecraft/server/ServerScoreboard	server	Lnet/minecraft/server/MinecraftServer;
+accessible	field	net/minecraft/client/gui/screens/Screen	minecraft	Lnet/minecraft/client/Minecraft;
+accessible	field	net/minecraft/client/gui/components/tabs/TabNavigationBar	tabManager	Lnet/minecraft/client/gui/components/tabs/TabManager;
+accessible	field	net/minecraft/client/tutorial/Tutorial	instance	Lnet/minecraft/client/tutorial/TutorialStepInstance;
+accessible	field	net/minecraft/advancements/AdvancementNode	children	Ljava/util/Set;
+accessible	field	net/minecraft/client/gui/screens/advancements/AdvancementWidget	parent	Lnet/minecraft/client/gui/screens/advancements/AdvancementWidget;
+accessible	field	net/minecraft/client/gui/screens/advancements/AdvancementWidget	advancementNode	Lnet/minecraft/advancements/AdvancementNode;

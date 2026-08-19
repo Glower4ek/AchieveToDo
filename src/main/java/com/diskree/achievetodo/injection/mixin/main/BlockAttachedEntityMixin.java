@@ -1,10 +1,10 @@
 package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.decoration.BlockAttachedEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.world.ServerWorld;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.decoration.BlockAttachedEntity;
+import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -15,21 +15,21 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class BlockAttachedEntityMixin {
 
     @Inject(
-        method = "damage",
+        method = "hurtServer",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/decoration/BlockAttachedEntity;kill(Lnet/minecraft/server/world/ServerWorld;)V",
+            target = "Lnet/minecraft/world/entity/decoration/BlockAttachedEntity;kill(Lnet/minecraft/server/level/ServerLevel;)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
     public void lockKillAttachedEntity(
-        ServerWorld world,
+        ServerLevel world,
         @NotNull DamageSource source,
         float amount,
         CallbackInfoReturnable<Boolean> cir
     ) {
-        if (source.getAttacker() instanceof PlayerEntity player) {
+        if (source.getEntity() instanceof Player player) {
             BlockAttachedEntity blockAttachedEntity = (BlockAttachedEntity) (Object) this;
             if (AchieveToDoMod.isTargetInLockedLandmark(player, blockAttachedEntity)) {
                 cir.setReturnValue(false);

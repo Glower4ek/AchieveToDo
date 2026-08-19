@@ -1,12 +1,5 @@
 package com.diskree.achievetodo.tracking;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.EntityType;
-import net.minecraft.item.Items;
-import net.minecraft.stat.Stat;
-import net.minecraft.stat.StatType;
-import net.minecraft.stat.Stats;
-import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -14,19 +7,26 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import net.minecraft.resources.Identifier;
+import net.minecraft.stats.Stat;
+import net.minecraft.stats.StatType;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 
 public enum TrackedStatisticsDataType {
 
     ICEOLOGER_SHOULDVE_WON(
         "blazeandcave:animal/iceologer_shouldve_won",
-        Stats.KILLED,
-        EntityType.GLOW_SQUID,
+        Stats.ENTITY_KILLED,
+        EntityTypes.GLOW_SQUID,
         100,
         false
     ),
     WHERES_THE_HONEY_LEBOWSKI(
         "blazeandcave:animal/wheres_the_honey_lebowski",
-        Stats.USED,
+        Stats.ITEM_USED,
         Items.HONEY_BOTTLE,
         200,
         false
@@ -40,8 +40,8 @@ public enum TrackedStatisticsDataType {
     ),
     RING_OF_THE_END(
         "blazeandcave:end/ring_of_the_end",
-        Stats.KILLED,
-        EntityType.ENDER_DRAGON,
+        Stats.ENTITY_KILLED,
+        EntityTypes.ENDER_DRAGON,
         20,
         false
     ),
@@ -54,14 +54,14 @@ public enum TrackedStatisticsDataType {
     ),
     BULLDOZER(
         "blazeandcave:mining/bulldozer",
-        Stats.MINED,
+        Stats.BLOCK_MINED,
         Blocks.STONE,
         10_000,
         true
     ),
     PUPIL_POPPERS(
         "blazeandcave:monsters/pupil_poppers",
-        Stats.USED,
+        Stats.ITEM_USED,
         Items.SPIDER_EYE,
         1_000,
         false
@@ -405,7 +405,7 @@ public enum TrackedStatisticsDataType {
         boolean isPercentage
     ) {
         this.advancementId = advancementId;
-        this.statisticsData = type.getOrCreateStat(key);
+        this.statisticsData = type.get(key);
         this.finalValue = finalValue;
         this.isPercentage = isPercentage;
     }

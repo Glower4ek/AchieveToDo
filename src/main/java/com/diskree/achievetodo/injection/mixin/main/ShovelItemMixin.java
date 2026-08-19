@@ -2,11 +2,11 @@ package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.util.ActionResult;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.context.UseOnContext;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -29,46 +29,46 @@ public class ShovelItemMixin {
         ToolMaterial material,
         float attackDamage,
         float attackSpeed,
-        Item.Settings settings,
+        Item.Properties settings,
         CallbackInfo ci
     ) {
         this.material = material;
     }
 
     @Inject(
-        method = "useOnBlock",
+        method = "useOn",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/World;playSound(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/sound/SoundEvent;Lnet/minecraft/sound/SoundCategory;FF)V",
+            target = "Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/BlockPos;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
-    public void lockFlattenUsage(@NotNull ItemUsageContext context, CallbackInfoReturnable<ActionResult> cir) {
+    public void lockFlattenUsage(@NotNull UseOnContext context, CallbackInfoReturnable<InteractionResult> cir) {
         if (AchieveToDoMod.isTargetInLockedLandmark(context) ||
             AchieveToDoMod.isAbilityLocked(context.getPlayer(), AbilityType.findToolMaterialUsageAbility(material))
         ) {
-            cir.setReturnValue(ActionResult.PASS);
+            cir.setReturnValue(InteractionResult.PASS);
         }
     }
 
     @Inject(
-        method = "useOnBlock",
+        method = "useOn",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/World;isClient()Z",
+            target = "Lnet/minecraft/world/level/Level;isClientSide()Z",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
     public void lockCampfireExtinguishUsage(
-        @NotNull ItemUsageContext context,
-        CallbackInfoReturnable<ActionResult> cir
+        @NotNull UseOnContext context,
+        CallbackInfoReturnable<InteractionResult> cir
     ) {
         if (AchieveToDoMod.isTargetInLockedLandmark(context) ||
             AchieveToDoMod.isAbilityLocked(context.getPlayer(), AbilityType.findToolMaterialUsageAbility(material))
         ) {
-            cir.setReturnValue(ActionResult.PASS);
+            cir.setReturnValue(InteractionResult.PASS);
         }
     }
 }

@@ -11,21 +11,22 @@ import com.diskree.achievetodo.tracking.TrackedStatisticsDataType;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import net.minecraft.advancement.AdvancementDisplay;
-import net.minecraft.advancement.AdvancementProgress;
-import net.minecraft.advancement.AdvancementRequirements;
-import net.minecraft.advancement.PlacedAdvancement;
-import net.minecraft.advancement.criterion.CriterionProgress;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.screen.advancement.AdvancementTab;
-import net.minecraft.client.gui.screen.advancement.AdvancementWidget;
-import net.minecraft.item.ItemStack;
-import net.minecraft.screen.ScreenTexts;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
+import net.minecraft.ChatFormatting;
+import net.minecraft.advancements.AdvancementNode;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.AdvancementRequirements;
+import net.minecraft.advancements.CriterionProgress;
+import net.minecraft.advancements.DisplayInfo;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.screens.advancements.AdvancementTab;
+import net.minecraft.client.gui.screens.advancements.AdvancementWidget;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
@@ -68,10 +69,10 @@ public class AdvancementWidgetMixin {
         ) {
             return false;
         }
-        CriterionProgress demystifiedCriterionProgress = progress.getCriterionProgress(
+        CriterionProgress demystifiedCriterionProgress = progress.getCriterion(
             AbilityAdvancementsGenerator.DEMYSTIFIED_CRITERION
         );
-        return demystifiedCriterionProgress != null && !demystifiedCriterionProgress.isObtained();
+        return demystifiedCriterionProgress != null && !demystifiedCriterionProgress.isDone();
     }
 
     @Shadow
@@ -79,24 +80,24 @@ public class AdvancementWidgetMixin {
 
     @Shadow
     @Final
-    private MinecraftClient client;
+    private Minecraft minecraft;
 
     @Inject(
         method = "<init>",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/font/TextRenderer;wrapLines(Lnet/minecraft/text/StringVisitable;I)Ljava/util/List;",
+            target = "Lnet/minecraft/client/gui/Font;split(Lnet/minecraft/network/chat/FormattedText;I)Ljava/util/List;",
             shift = At.Shift.BEFORE
         )
     )
     private void findAbility(
         AdvancementTab tab,
-        MinecraftClient client,
-        @NotNull PlacedAdvancement advancement,
-        AdvancementDisplay display,
+        Minecraft client,
+        @NotNull AdvancementNode advancement,
+        DisplayInfo display,
         CallbackInfo ci
     ) {
-        Identifier advancementId = advancement.getAdvancementEntry().id();
+        Identifier advancementId = advancement.holder().id();
         trackedScoreType = TrackedScoreType.findByAdvancement(advancementId);
         if (trackedScoreType == null) {
             trackedNearbyEntitiesType = TrackedNearbyEntitiesType.findByAdvancement(advancementId);
@@ -113,23 +114,26 @@ public class AdvancementWidgetMixin {
         method = "<init>",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/text/Text;copy()Lnet/minecraft/text/MutableText;"
+            target = "Lnet/minecraft/advancements/DisplayInfo;getDescription()Lnet/minecraft/network/chat/Component;"
         )
     )
-    private MutableText appendSpecialFlagInfoToDescription(Text text, @NotNull Operation<MutableText> original) {
-        MutableText originalText = original.call(text);
+    private Component appendSpecialFlagInfoToDescription(
+        DisplayInfo displayInfo,
+        @NotNull Operation<Component> original
+    ) {
+        MutableComponent originalText = original.call(displayInfo).copy();
         if (abilityType != null) {
             int requiredCount = AchieveToDoClient.getRequiredAdvancementsCount(abilityType);
             boolean isInitiallyUnlocked = requiredCount == Constants.Progression.INITIALLY_UNLOCKED_FLAG;
             boolean isPermanentlyLocked = requiredCount == Constants.Progression.PERMANENTLY_LOCKED_FLAG;
             if (isInitiallyUnlocked || isPermanentlyLocked) {
-                Text specialFlagInfo = AchieveToDoClient
+                Component specialFlagInfo = AchieveToDoClient
                     .translate(isInitiallyUnlocked ? "ability.initially_unlocked" : "ability.permanently_locked")
-                    .formatted(Formatting.ITALIC)
-                    .formatted(isInitiallyUnlocked ? Formatting.GRAY : Formatting.RED);
+                    .withStyle(ChatFormatting.ITALIC)
+                    .withStyle(isInitiallyUnlocked ? ChatFormatting.GRAY : ChatFormatting.RED);
                 originalText = originalText
-                    .append(ScreenTexts.LINE_BREAK)
-                    .append(ScreenTexts.LINE_BREAK)
+                    .append(CommonComponents.NEW_LINE)
+                    .append(CommonComponents.NEW_LINE)
                     .append(specialFlagInfo);
             }
         }
@@ -137,10 +141,10 @@ public class AdvancementWidgetMixin {
     }
 
     @WrapOperation(
-        method = "getProgressWidth",
+        method = "getMaxProgressWidth",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/advancement/AdvancementRequirements;getLength()I"
+            target = "Lnet/minecraft/advancements/AdvancementRequirements;size()I"
         )
     )
     public int setRequiredAdvancementsCount(AdvancementRequirements requirements, Operation<Integer> original) {
@@ -160,7 +164,7 @@ public class AdvancementWidgetMixin {
     }
 
     @Inject(
-        method = "getProgressWidth",
+        method = "getMaxProgressWidth",
         at = @At(value = "HEAD"),
         cancellable = true
     )
@@ -177,15 +181,15 @@ public class AdvancementWidgetMixin {
         if (trackedScoreType != null && trackedScoreType.isPercentage() ||
             trackedStatisticsDataType != null && trackedStatisticsDataType.isPercentage()
         ) {
-            cir.setReturnValue(8 + client.textRenderer.getWidth(Text.translatable("mco.upload.percent", 100)));
+            cir.setReturnValue(8 + minecraft.font.width(Component.translatable("mco.upload.percent", 100)));
         }
     }
 
     @ModifyArg(
-        method = "renderWidgets",
+        method = "extractRenderState",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/gui/DrawContext;drawGuiTexture(Ljava/util/function/Function;Lnet/minecraft/util/Identifier;IIII)V"
+            target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIII)V"
         ),
         index = 1
     )
@@ -194,14 +198,14 @@ public class AdvancementWidgetMixin {
     }
 
     @WrapOperation(
-        method = "renderWidgets",
+        method = "extractRenderState",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/gui/DrawContext;drawItemWithoutEntity(Lnet/minecraft/item/ItemStack;II)V"
+            target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;fakeItem(Lnet/minecraft/world/item/ItemStack;II)V"
         )
     )
     private void hideAdvancementIconForMystifiedAbility(
-        DrawContext instance,
+        GuiGraphicsExtractor instance,
         ItemStack stack,
         int x,
         int y,
@@ -213,7 +217,7 @@ public class AdvancementWidgetMixin {
     }
 
     @ModifyReturnValue(
-        method = "shouldRender",
+        method = "isMouseOver",
         at = @At("RETURN")
     )
     private boolean hideTooltipForMystifiedAbility(boolean original) {

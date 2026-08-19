@@ -2,11 +2,11 @@ package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.CrossbowItem;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.CrossbowItem;
+import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -19,19 +19,19 @@ public class CrossbowItemMixin {
         method = "use",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/item/CrossbowItem;shootAll(Lnet/minecraft/world/World;Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/util/Hand;Lnet/minecraft/item/ItemStack;FFLnet/minecraft/entity/LivingEntity;)V",
+            target = "Lnet/minecraft/world/item/CrossbowItem;performShooting(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;FFLnet/minecraft/world/entity/LivingEntity;)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
     )
     public void lockCrossbowShoot(
-        World world,
-        PlayerEntity player,
-        Hand hand,
-        CallbackInfoReturnable<ActionResult> cir
+        Level world,
+        Player player,
+        InteractionHand hand,
+        CallbackInfoReturnable<InteractionResult> cir
     ) {
         if (AchieveToDoMod.isAbilityLocked(player, AbilityType.SHOOT_CROSSBOW)) {
-            cir.setReturnValue(ActionResult.FAIL);
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 }

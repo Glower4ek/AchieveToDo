@@ -3,46 +3,46 @@ package com.diskree.achievetodo.networking.s2c;
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.DimensionType;
 import com.diskree.achievetodo.ability.LandmarkType;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.network.packet.CustomPayload;
-import net.minecraft.util.math.BlockBox;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
 
-import static net.minecraft.network.packet.CustomPayload.codecOf;
+import static net.minecraft.network.protocol.common.custom.CustomPacketPayload.codec;
 
 public record LockedLandmarkResizedPayload(
     @NotNull LandmarkType landmarkType,
     @NotNull DimensionType dimensionType,
-    @NotNull BlockBox oldBlockBox,
-    @NotNull BlockBox newBlockBox
-) implements CustomPayload {
+    @NotNull BoundingBox oldBlockBox,
+    @NotNull BoundingBox newBlockBox
+) implements CustomPacketPayload {
 
-    public static final Id<LockedLandmarkResizedPayload> ID = new Id<>(AchieveToDoMod.getIdentifier(
+    public static final Type<LockedLandmarkResizedPayload> ID = new Type<>(AchieveToDoMod.getIdentifier(
         LockedLandmarkResizedPayload.class.getName().toLowerCase(Locale.ROOT)
     ));
 
-    public static final PacketCodec<PacketByteBuf, LockedLandmarkResizedPayload> CODEC = codecOf(
+    public static final StreamCodec<FriendlyByteBuf, LockedLandmarkResizedPayload> CODEC = codec(
         LockedLandmarkResizedPayload::encode,
         LockedLandmarkResizedPayload::decode
     );
 
     @Override
-    public Id<? extends CustomPayload> getId() {
+    public Type<? extends CustomPacketPayload> type() {
         return ID;
     }
 
-    private void encode(@NotNull PacketByteBuf buf) {
-        buf.writeEnumConstant(landmarkType);
-        buf.writeEnumConstant(dimensionType);
-        int oldMinX = oldBlockBox.getMinX();
-        int oldMinY = oldBlockBox.getMinY();
-        int oldMinZ = oldBlockBox.getMinZ();
-        int oldMaxX = oldBlockBox.getMaxX();
-        int oldMaxY = oldBlockBox.getMaxY();
-        int oldMaxZ = oldBlockBox.getMaxZ();
+    private void encode(@NotNull FriendlyByteBuf buf) {
+        buf.writeEnum(landmarkType);
+        buf.writeEnum(dimensionType);
+        int oldMinX = oldBlockBox.minX();
+        int oldMinY = oldBlockBox.minY();
+        int oldMinZ = oldBlockBox.minZ();
+        int oldMaxX = oldBlockBox.maxX();
+        int oldMaxY = oldBlockBox.maxY();
+        int oldMaxZ = oldBlockBox.maxZ();
         buf.writeInt(oldMinX);
         buf.writeInt(oldMinY);
         buf.writeInt(oldMinZ);
@@ -50,12 +50,12 @@ public record LockedLandmarkResizedPayload(
         buf.writeInt(oldMaxY);
         buf.writeInt(oldMaxZ);
 
-        int newMinX = newBlockBox.getMinX();
-        int newMinY = newBlockBox.getMinY();
-        int newMinZ = newBlockBox.getMinZ();
-        int newMaxX = newBlockBox.getMaxX();
-        int newMaxY = newBlockBox.getMaxY();
-        int newMaxZ = newBlockBox.getMaxZ();
+        int newMinX = newBlockBox.minX();
+        int newMinY = newBlockBox.minY();
+        int newMinZ = newBlockBox.minZ();
+        int newMaxX = newBlockBox.maxX();
+        int newMaxY = newBlockBox.maxY();
+        int newMaxZ = newBlockBox.maxZ();
         buf.writeInt(newMinX);
         buf.writeInt(newMinY);
         buf.writeInt(newMinZ);
@@ -64,16 +64,16 @@ public record LockedLandmarkResizedPayload(
         buf.writeInt(newMaxZ);
     }
 
-    private static @NotNull LockedLandmarkResizedPayload decode(@NotNull PacketByteBuf buf) {
-        LandmarkType landmarkType = buf.readEnumConstant(LandmarkType.class);
-        DimensionType dimensionType = buf.readEnumConstant(DimensionType.class);
+    private static @NotNull LockedLandmarkResizedPayload decode(@NotNull FriendlyByteBuf buf) {
+        LandmarkType landmarkType = buf.readEnum(LandmarkType.class);
+        DimensionType dimensionType = buf.readEnum(DimensionType.class);
         int oldMinX = buf.readInt();
         int oldMinY = buf.readInt();
         int oldMinZ = buf.readInt();
         int oldMaxX = buf.readInt();
         int oldMaxY = buf.readInt();
         int oldMaxZ = buf.readInt();
-        BlockBox oldBlockBox = new BlockBox(
+        BoundingBox oldBlockBox = new BoundingBox(
             oldMinX,
             oldMinY,
             oldMinZ,
@@ -88,7 +88,7 @@ public record LockedLandmarkResizedPayload(
         int newMaxX = buf.readInt();
         int newMaxY = buf.readInt();
         int newMaxZ = buf.readInt();
-        BlockBox newBlockBox = new BlockBox(
+        BoundingBox newBlockBox = new BoundingBox(
             newMinX,
             newMinY,
             newMinZ,

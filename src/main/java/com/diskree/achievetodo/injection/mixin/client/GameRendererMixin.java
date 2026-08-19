@@ -2,11 +2,10 @@ package com.diskree.achievetodo.injection.mixin.client;
 
 import com.diskree.achievetodo.ability.AbilityType;
 import com.diskree.achievetodo.client.AchieveToDoClient;
-import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.client.render.*;
-import net.minecraft.client.util.math.MatrixStack;
-import org.jetbrains.annotations.NotNull;
-import org.joml.Matrix4f;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.screens.Overlay;
+import net.minecraft.client.renderer.GameRenderer;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,69 +18,71 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class GameRendererMixin {
 
     @Unique
-    private float blackOverlayAlpha = 0.0f;
+    private static final VisionOverlay VISION_OVERLAY = new VisionOverlay();
 
     @Unique
-    private void drawBlackOverlay(@NotNull MatrixStack stack) {
-        VertexConsumerProvider.Immediate immediate = buffers.getEntityVertexConsumers();
-        Matrix4f matrix = stack.peek().getPositionMatrix();
-        VertexConsumer vertexConsumer = immediate.getBuffer(RenderLayer.getGui());
-        int blackColor = (int) (blackOverlayAlpha * 255.0f) << 24;
-        vertexConsumer.vertex(matrix, -1.0f, -1.0f, -0.1f).color(blackColor);
-        vertexConsumer.vertex(matrix, 1.0f, -1.0f, -0.1f).color(blackColor);
-        vertexConsumer.vertex(matrix, 1.0f, 1.0f, -0.1f).color(blackColor);
-        vertexConsumer.vertex(matrix, -1.0f, 1.0f, -0.1f).color(blackColor);
-        immediate.draw();
-    }
+    private float blackOverlayAlpha = 0.0f;
 
     @Shadow
     @Final
-    private BufferBuilderStorage buffers;
+    private Minecraft minecraft;
 
     @Shadow
-    protected abstract void updateWorldIcon();
+    protected abstract void tryTakeScreenshotIfNeeded();
 
     @Inject(
-        method = "renderHand",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/client/option/GameOptions;getPerspective()Lnet/minecraft/client/option/Perspective;",
-            shift = At.Shift.BEFORE,
-            ordinal = 1
-        )
+        method = "tick",
+        at = @At("TAIL")
     )
-    private void lockVision(
-        Camera camera,
-        float tickDelta,
-        Matrix4f matrix4f,
-        CallbackInfo ci,
-        @Local @NotNull MatrixStack stack
-    ) {
+    private void updateVisionOverlay(CallbackInfo ci) {
         if (AchieveToDoClient.isAbilityLocked(AbilityType.VISION)) {
             blackOverlayAlpha = 1.0f;
-            drawBlackOverlay(stack);
-        } else if (blackOverlayAlpha > 0) {
-            blackOverlayAlpha = Math.max(0, blackOverlayAlpha - 0.02f * tickDelta);
-            if (blackOverlayAlpha == 0) {
-                updateWorldIcon();
-            } else {
-                drawBlackOverlay(stack);
+        } else if (blackOverlayAlpha > 0.0f) {
+            blackOverlayAlpha = Math.max(0.0f, blackOverlayAlpha - 0.02f);
+            if (blackOverlayAlpha == 0.0f) {
+                tryTakeScreenshotIfNeeded();
             }
+        }
+
+        if (blackOverlayAlpha > 0.0f) {
+            VISION_OVERLAY.setAlpha(blackOverlayAlpha);
+            if (minecraft.gui.overlay() == null || minecraft.gui.overlay() == VISION_OVERLAY) {
+                minecraft.gui.setOverlay(VISION_OVERLAY);
+            }
+        } else if (minecraft.gui.overlay() == VISION_OVERLAY) {
+            minecraft.gui.setOverlay(null);
         }
     }
 
     @Inject(
-        method = "updateWorldIcon()V",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/util/Util;getMeasuringTimeMs()J",
-            shift = At.Shift.AFTER
-        ),
+        method = "tryTakeScreenshotIfNeeded()V",
+        at = @At("HEAD"),
         cancellable = true
     )
     private void scheduleWorldIconUpdateUntilVisionAbilityUnlocked(CallbackInfo ci) {
-        if (blackOverlayAlpha != 0) {
+        if (blackOverlayAlpha != 0.0f) {
             ci.cancel();
+        }
+    }
+
+    @Unique
+    private static final class VisionOverlay extends Overlay {
+
+        private float alpha;
+
+        private void setAlpha(float alpha) {
+            this.alpha = alpha;
+        }
+
+        @Override
+        public boolean isPausing() {
+            return false;
+        }
+
+        @Override
+        public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float delta) {
+            int alphaChannel = (int) (alpha * 255.0f) << 24;
+            context.fill(0, 0, context.guiWidth(), context.guiHeight(), alphaChannel);
         }
     }
 }

@@ -4,11 +4,11 @@ import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.client.AchieveToDoClient;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.advancement.PlacedAdvancement;
-import net.minecraft.client.gui.screen.advancement.AdvancementTabType;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
+import net.minecraft.ChatFormatting;
+import net.minecraft.advancements.AdvancementNode;
+import net.minecraft.client.gui.screens.advancements.AdvancementTabType;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,18 +40,18 @@ public enum AdvancementsTabType {
         return AchieveToDoMod.getIdentifier("locked_tab_" + getName() + "/root");
     }
 
-    public @NotNull Text getMystifiedTabTooltipText() {
+    public @NotNull Component getMystifiedTabTooltipText() {
         return AchieveToDoClient.translate("advancements_tab_mystified_tooltip." + getName())
-            .formatted(Formatting.ITALIC)
-            .formatted(Formatting.GRAY);
+            .withStyle(ChatFormatting.ITALIC)
+            .withStyle(ChatFormatting.GRAY);
     }
 
     public @NotNull String getName() {
         return name().toLowerCase(Locale.ROOT);
     }
 
-    public static @Nullable AdvancementsTabType findByAdvancement(@NotNull PlacedAdvancement advancement) {
-        return findByAdvancement(advancement.getAdvancementEntry().id());
+    public static @Nullable AdvancementsTabType findByAdvancement(@NotNull AdvancementNode advancement) {
+        return findByAdvancement(advancement.holder().id());
     }
 
     public static @Nullable AdvancementsTabType findByAdvancement(@NotNull Identifier advancementId) {
