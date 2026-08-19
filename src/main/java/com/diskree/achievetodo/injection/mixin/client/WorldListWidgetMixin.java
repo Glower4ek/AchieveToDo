@@ -2,6 +2,7 @@ package com.diskree.achievetodo.injection.mixin.client;
 
 import com.diskree.achievetodo.client.ExternalPack;
 import com.diskree.achievetodo.client.ExternalPackCompatibility;
+import com.diskree.achievetodo.client.CompatibilityJoinGate;
 import com.diskree.achievetodo.client.Utils;
 import com.diskree.achievetodo.client.gui.ErrorScreen;
 import com.diskree.achievetodo.client.gui.ExternalPackDownloader;
@@ -29,6 +30,9 @@ import java.util.List;
 
 @Mixin(WorldSelectionList.WorldListEntry.class)
 public abstract class WorldListWidgetMixin {
+
+    @Unique
+    private final CompatibilityJoinGate achievetodo$compatibilityJoinGate = new CompatibilityJoinGate();
 
     @Unique
     private void showUnknownError() {
@@ -70,6 +74,10 @@ public abstract class WorldListWidgetMixin {
         cancellable = true
     )
     public void checkPacks(@NotNull CallbackInfo ci) {
+        if (!achievetodo$compatibilityJoinGate.shouldRunPreparation()) {
+            return;
+        }
+
         Path worldPacksDirectory;
         Path levelDataFile;
         try (LevelStorageSource.LevelStorageAccess session = minecraft.getLevelSource().validateAndCreateAccess(summary.getLevelId())) {
@@ -118,18 +126,21 @@ public abstract class WorldListWidgetMixin {
             );
             if (result == ExternalPackCompatibility.WorldPackSyncResult.ALREADY_CURRENT
                 || result == ExternalPackCompatibility.WorldPackSyncResult.UPDATED) {
-                joinWorld();
+                achievetodo$compatibilityJoinGate.runPreparedJoin(this::joinWorld);
                 return;
             }
             if (result == ExternalPackCompatibility.WorldPackSyncResult.INTEGRITY_CHECK_FAILED) {
+                achievetodo$compatibilityJoinGate.reset();
                 showIntegrityCheckFailed();
                 return;
             }
             if (result == ExternalPackCompatibility.WorldPackSyncResult.MISSING_REQUIRED_PACK
                 || result == ExternalPackCompatibility.WorldPackSyncResult.NO_KNOWN_PACKS) {
+                achievetodo$compatibilityJoinGate.reset();
                 showMissingRequiredPack();
                 return;
             }
+            achievetodo$compatibilityJoinGate.reset();
             showUnknownError();
             return;
         }
@@ -143,9 +154,11 @@ public abstract class WorldListWidgetMixin {
 
         minecraft.setScreenAndShow(new ExternalPackDownloader(screen, externalPack, isFileDownloaded -> {
             if (!isFileDownloaded) {
+                achievetodo$compatibilityJoinGate.reset();
                 return;
             }
             if (!ExternalPackCompatibility.isPinnedHistoricalSource(globalPack, externalPack)) {
+                achievetodo$compatibilityJoinGate.reset();
                 showMissingRequiredPack();
                 return;
             }
