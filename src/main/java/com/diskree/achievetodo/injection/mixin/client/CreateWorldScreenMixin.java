@@ -1,5 +1,6 @@
 package com.diskree.achievetodo.injection.mixin.client;
 
+import com.diskree.achievetodo.client.CreateWorldContinuationGate;
 import com.diskree.achievetodo.client.ExternalPack;
 import com.diskree.achievetodo.client.ExternalPackCompatibility;
 import com.diskree.achievetodo.client.InternalPack;
@@ -53,6 +54,9 @@ public abstract class CreateWorldScreenMixin extends Screen implements CreateWor
     private boolean isWaitingDatapack;
 
     @Unique
+    private final CreateWorldContinuationGate achievetodo$createContinuationGate = new CreateWorldContinuationGate();
+
+    @Unique
     private WorldCreationTab worldCreationTab;
 
     protected CreateWorldScreenMixin(Component title) {
@@ -67,6 +71,11 @@ public abstract class CreateWorldScreenMixin extends Screen implements CreateWor
     @Override
     public void achievetodo$setWaitingDatapack(boolean isWaitingDatapack) {
         this.isWaitingDatapack = isWaitingDatapack;
+    }
+
+    @Override
+    public CreateWorldContinuationGate achievetodo$getCreateContinuationGate() {
+        return achievetodo$createContinuationGate;
     }
 
     @Shadow
@@ -176,8 +185,14 @@ public abstract class CreateWorldScreenMixin extends Screen implements CreateWor
     private void prepareDatapacks(CallbackInfo ci) {
         CreateWorldScreen createWorldScreen = (CreateWorldScreen) (Object) this;
         WorldCreatorExtension worldCreatorExtension = (WorldCreatorExtension) uiState;
+        if (isWaitingDatapack) {
+            isWaitingDatapack = false;
+            achievetodo$createContinuationGate.consumeResumedCreate();
+            return;
+        }
         Minecraft client = createWorldScreen.minecraft;
         if (client == null) {
+            achievetodo$createContinuationGate.clear();
             ci.cancel();
             return;
         }
@@ -224,6 +239,7 @@ public abstract class CreateWorldScreenMixin extends Screen implements CreateWor
         if (!isWaitingDatapack) {
             Path worldPacksTempDirectory = getOrCreateTempDataPackDir();
             if (worldPacksTempDirectory == null) {
+                achievetodo$createContinuationGate.clear();
                 ci.cancel();
                 return;
             }
@@ -282,11 +298,41 @@ public abstract class CreateWorldScreenMixin extends Screen implements CreateWor
                     tempDataPackRepository.addPack(InternalPack.BACAP_COOPERATIVE_MODE.getDatapackName());
                 }
 
-                isWaitingDatapack = true;
+                achievetodo$createContinuationGate.beginUserCreate();
                 tryApplyNewDataPacks(tempDataPackRepository, false, (dataConfiguration) -> client.setScreenAndShow(createWorldScreen));
 
                 ci.cancel();
             }
+        }
+    }
+
+    @Inject(
+        method = "tryApplyNewDataPacks",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/gui/Gui;setScreen(Lnet/minecraft/client/gui/screens/Screen;)V",
+            ordinal = 0
+        )
+    )
+    private void markInlineReloadContinuation(PackRepository dataPackManager, boolean warnForExperimentsIfApplicable, Consumer<WorldDataConfiguration> consumer, CallbackInfo ci) {
+        if (achievetodo$createContinuationGate.hasPendingUserCreate()) {
+            isWaitingDatapack = true;
+            achievetodo$createContinuationGate.markDatapacksReady();
+        }
+    }
+
+    @Inject(
+        method = "lambda$applyNewPackConfig$5",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/gui/Gui;setScreen(Lnet/minecraft/client/gui/screens/Screen;)V",
+            ordinal = 1
+        )
+    )
+    private void markAsyncReloadContinuation(Consumer<WorldDataConfiguration> consumer, Void unused, Throwable throwable, CallbackInfoReturnable<Object> cir) {
+        if (achievetodo$createContinuationGate.hasPendingUserCreate() && throwable == null) {
+            isWaitingDatapack = true;
+            achievetodo$createContinuationGate.markDatapacksReady();
         }
     }
 

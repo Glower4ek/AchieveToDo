@@ -1,0 +1,461 @@
+key	english	type	advancement_id	context	ru_manual
+Find a Traveller’s Map	Find a Traveller’s Map	DESCRIPTION	blazeandcave:adventure/a_journey_begins	Описание advancement blazeandcave:adventure/a_journey_begins	
+Awards Ceremony	Awards Ceremony	TITLE	blazeandcave:adventure/awards_ceremony	Название advancement blazeandcave:adventure/awards_ceremony	
+Defeat a Breeze in the Trial Chambers	Defeat a Breeze in the Trial Chambers	DESCRIPTION	blazeandcave:adventure/break_wind	Описание advancement blazeandcave:adventure/break_wind	
+Businessman	Businessman	TITLE	blazeandcave:adventure/businessman	Название advancement blazeandcave:adventure/businessman	
+Have an Allay deliver a potion to you in the Deep Dark	Have an Allay deliver a potion to you in the Deep Dark	DESCRIPTION	blazeandcave:adventure/diagon_allay	Описание advancement blazeandcave:adventure/diagon_allay	
+Feeling Ill	Feeling Ill	TITLE	blazeandcave:adventure/feeling_ill	Название advancement blazeandcave:adventure/feeling_ill	
+Florist	Florist	TITLE	blazeandcave:adventure/florist	Название advancement blazeandcave:adventure/florist	
+Trade for a flower from the Wandering Trader	Trade for a flower from the Wandering Trader	DESCRIPTION	blazeandcave:adventure/florist	Описание advancement blazeandcave:adventure/florist	
+Ghostbuster!	Ghostbuster!	TITLE	blazeandcave:adventure/ghostbuster	Название advancement blazeandcave:adventure/ghostbuster	
+Grave Robber	Grave Robber	TITLE	blazeandcave:adventure/grave_robber	Название advancement blazeandcave:adventure/grave_robber	
+Kill a Vindicator in a Woodland Mansion	Kill a Vindicator in a Woodland Mansion	DESCRIPTION	blazeandcave:adventure/heres_johnny	Описание advancement blazeandcave:adventure/heres_johnny	
+Name a bunny 'Toast'	Name a bunny 'Toast'	DESCRIPTION	blazeandcave:adventure/i_just_want_to_make_toast	Описание advancement blazeandcave:adventure/i_just_want_to_make_toast	
+Justice	Justice	TITLE	blazeandcave:adventure/justice	Название advancement blazeandcave:adventure/justice	
+Defeat a Guardian	Defeat a Guardian	DESCRIPTION	blazeandcave:adventure/laser_sharks	Описание advancement blazeandcave:adventure/laser_sharks	
+Place a map in an item frame	Place a map in an item frame	DESCRIPTION	blazeandcave:adventure/map_room	Описание advancement blazeandcave:adventure/map_room	
+Kill a villager	Kill a villager	DESCRIPTION	blazeandcave:adventure/murderer	Описание advancement blazeandcave:adventure/murderer	
+Play a music disc in a jukebox	Play a music disc in a jukebox	DESCRIPTION	blazeandcave:adventure/music_to_my_ears	Описание advancement blazeandcave:adventure/music_to_my_ears	
+Name a Piglin Brute 'Technoblade'	Name a Piglin Brute 'Technoblade'	DESCRIPTION	blazeandcave:adventure/nerds_never_die	Описание advancement blazeandcave:adventure/nerds_never_die	
+Picador	Picador	TITLE	blazeandcave:adventure/picador	Название advancement blazeandcave:adventure/picador	
+Pottery Exhibition	Pottery Exhibition	TITLE	blazeandcave:adventure/pottery_exhibition	Название advancement blazeandcave:adventure/pottery_exhibition	
+Prime Specimen	Prime Specimen	TITLE	blazeandcave:adventure/prime_specimen	Название advancement blazeandcave:adventure/prime_specimen	
+Rebuilding the Oceans	Rebuilding the Oceans	TITLE	blazeandcave:adventure/rebuilding_the_oceans	Название advancement blazeandcave:adventure/rebuilding_the_oceans	
+Trade for a coral block from the Wandering Trader	Trade for a coral block from the Wandering Trader	DESCRIPTION	blazeandcave:adventure/rebuilding_the_oceans	Описание advancement blazeandcave:adventure/rebuilding_the_oceans	
+Get attacked by a natural iron golem defending its village	Get attacked by a natural iron golem defending its village	DESCRIPTION	blazeandcave:adventure/rekt	Описание advancement blazeandcave:adventure/rekt	
+Shady Deals	Shady Deals	TITLE	blazeandcave:adventure/shady_deals	Название advancement blazeandcave:adventure/shady_deals	
+Kill a Guardian with arrows	Kill a Guardian with arrows	DESCRIPTION	blazeandcave:adventure/spear_fishing	Описание advancement blazeandcave:adventure/spear_fishing	
+Stacked Smither	Stacked Smither	TITLE	blazeandcave:adventure/stacked_smither	Название advancement blazeandcave:adventure/stacked_smither	
+Enter a jungle temple	Enter a jungle temple	DESCRIPTION	blazeandcave:adventure/tomb_raider	Описание advancement blazeandcave:adventure/tomb_raider	
+Have a Sniffer dig up seeds	Have a Sniffer dig up seeds	DESCRIPTION	blazeandcave:adventure/truffle_worm	Описание advancement blazeandcave:adventure/truffle_worm	
+Under the Ice	Under the Ice	TITLE	blazeandcave:adventure/under_the_ice	Название advancement blazeandcave:adventure/under_the_ice	
+We're being attacked!	We're being attacked!	TITLE	blazeandcave:adventure/were_being_attacked	Название advancement blazeandcave:adventure/were_being_attacked	
+Wololo!	Wololo!	TITLE	blazeandcave:adventure/wololo	Название advancement blazeandcave:adventure/wololo	
+Adventuring Time	Adventuring Time	TITLE	minecraft:adventure/adventuring_time	Название advancement minecraft:adventure/adventuring_time	
+Arbalistic	Arbalistic	TITLE	minecraft:adventure/arbalistic	Название advancement minecraft:adventure/arbalistic	
+Sneak near something in the Deep Dark to prevent being heard	Sneak near something in the Deep Dark to prevent being heard	DESCRIPTION	minecraft:adventure/avoid_vibration	Описание advancement minecraft:adventure/avoid_vibration	
+Bullseye	Bullseye	TITLE	minecraft:adventure/bullseye	Название advancement minecraft:adventure/bullseye	
+Careful Restoration	Careful Restoration	TITLE	minecraft:adventure/craft_decorated_pot_using_only_sherds	Название advancement minecraft:adventure/craft_decorated_pot_using_only_sherds	
+Crafters Crafting Crafters	Crafters Crafting Crafters	TITLE	minecraft:adventure/crafters_crafting_crafters	Название advancement minecraft:adventure/crafters_crafting_crafters	
+Caves & Cliffs	Caves & Cliffs	TITLE	minecraft:adventure/fall_from_world_height	Название advancement minecraft:adventure/fall_from_world_height	
+Hero of the Village	Hero of the Village	TITLE	minecraft:adventure/hero_of_the_village	Название advancement minecraft:adventure/hero_of_the_village	
+Sticky Situation	Sticky Situation	TITLE	minecraft:adventure/honey_block_slide	Название advancement minecraft:adventure/honey_block_slide	
+Monster Hunter	Monster Hunter	TITLE	minecraft:adventure/kill_a_mob	Название advancement minecraft:adventure/kill_a_mob	
+Monsters Hunted	Monsters Hunted	TITLE	minecraft:adventure/kill_all_mobs	Название advancement minecraft:adventure/kill_all_mobs	
+Kill a mob near a Sculk Catalyst	Kill a mob near a Sculk Catalyst	DESCRIPTION	minecraft:adventure/kill_mob_near_sculk_catalyst	Описание advancement minecraft:adventure/kill_mob_near_sculk_catalyst	
+Surge Protector	Surge Protector	TITLE	minecraft:adventure/lightning_rod_with_villager_no_fire	Название advancement minecraft:adventure/lightning_rod_with_villager_no_fire	
+Protect a villager from an undesired shock without starting a fire	Protect a villager from an undesired shock without starting a fire	DESCRIPTION	minecraft:adventure/lightning_rod_with_villager_no_fire	Описание advancement minecraft:adventure/lightning_rod_with_villager_no_fire	
+Shoot a crossbow	Shoot a crossbow	DESCRIPTION	minecraft:adventure/ol_betsy	Описание advancement minecraft:adventure/ol_betsy	
+Meteor Strike	Meteor Strike	TITLE	minecraft:adventure/overoverkill	Название advancement minecraft:adventure/overoverkill	
+Deal 50 hearts of damage in a single hit using the Mace	Deal 50 hearts of damage in a single hit using the Mace	DESCRIPTION	minecraft:adventure/overoverkill	Описание advancement minecraft:adventure/overoverkill	
+The Sound of Music	The Sound of Music	TITLE	minecraft:adventure/play_jukebox_in_meadows	Название advancement minecraft:adventure/play_jukebox_in_meadows	
+Unlock an Ominous Vault with an Ominous Trial Key	Unlock an Ominous Vault with an Ominous Trial Key	DESCRIPTION	minecraft:adventure/revaulting	Описание advancement minecraft:adventure/revaulting	
+Adventure	Adventure	TAB	minecraft:adventure/root	Название вкладки/категории для minecraft:adventure/root	
+Respecting the Remnants	Respecting the Remnants	TITLE	minecraft:adventure/salvage_sherd	Название advancement minecraft:adventure/salvage_sherd	
+Take Aim	Take Aim	TITLE	minecraft:adventure/shoot_arrow	Название advancement minecraft:adventure/shoot_arrow	
+Sweet dreams	Sweet dreams	TITLE	minecraft:adventure/sleep_in_bed	Название advancement minecraft:adventure/sleep_in_bed	
+Sniper Duel	Sniper Duel	TITLE	minecraft:adventure/sniper_duel	Название advancement minecraft:adventure/sniper_duel	
+Is it a Plane?	Is it a Plane?	TITLE	minecraft:adventure/spyglass_at_dragon	Название advancement minecraft:adventure/spyglass_at_dragon	
+Is it a Balloon?	Is it a Balloon?	TITLE	minecraft:adventure/spyglass_at_ghast	Название advancement minecraft:adventure/spyglass_at_ghast	
+Look at a Ghast through a Spyglass	Look at a Ghast through a Spyglass	DESCRIPTION	minecraft:adventure/spyglass_at_ghast	Описание advancement minecraft:adventure/spyglass_at_ghast	
+Is it a Bird?	Is it a Bird?	TITLE	minecraft:adventure/spyglass_at_parrot	Название advancement minecraft:adventure/spyglass_at_parrot	
+Look at a Parrot through a Spyglass	Look at a Parrot through a Spyglass	DESCRIPTION	minecraft:adventure/spyglass_at_parrot	Описание advancement minecraft:adventure/spyglass_at_parrot	
+Summon an Iron Golem to help defend a village	Summon an Iron Golem to help defend a village	DESCRIPTION	minecraft:adventure/summon_iron_golem	Описание advancement minecraft:adventure/summon_iron_golem	
+A Throwaway Joke	A Throwaway Joke	TITLE	minecraft:adventure/throw_trident	Название advancement minecraft:adventure/throw_trident	
+Postmortal	Postmortal	TITLE	minecraft:adventure/totem_of_undying	Название advancement minecraft:adventure/totem_of_undying	
+What a Deal!	What a Deal!	TITLE	minecraft:adventure/trade	Название advancement minecraft:adventure/trade	
+Star Trader	Star Trader	TITLE	minecraft:adventure/trade_at_world_height	Название advancement minecraft:adventure/trade_at_world_height	
+Smithing With Style	Smithing With Style	TITLE	minecraft:adventure/trim_with_all_exclusive_armor_patterns	Название advancement minecraft:adventure/trim_with_all_exclusive_armor_patterns	
+Crafting a New Look	Crafting a New Look	TITLE	minecraft:adventure/trim_with_any_armor_pattern	Название advancement minecraft:adventure/trim_with_any_armor_pattern	
+Two Birds, One Arrow	Two Birds, One Arrow	TITLE	minecraft:adventure/two_birds_one_arrow	Название advancement minecraft:adventure/two_birds_one_arrow	
+Unlock a Vault using a Trial Key	Unlock a Vault using a Trial Key	DESCRIPTION	minecraft:adventure/under_lock_and_key	Описание advancement minecraft:adventure/under_lock_and_key	
+Very Very Frightening	Very Very Frightening	TITLE	minecraft:adventure/very_very_frightening	Название advancement minecraft:adventure/very_very_frightening	
+Strike a Villager with lightning	Strike a Villager with lightning	DESCRIPTION	minecraft:adventure/very_very_frightening	Описание advancement minecraft:adventure/very_very_frightening	
+Light as a Rabbit	Light as a Rabbit	TITLE	minecraft:adventure/walk_on_powder_snow_with_leather_boots	Название advancement minecraft:adventure/walk_on_powder_snow_with_leather_boots	
+Who Needs Rockets?	Who Needs Rockets?	TITLE	minecraft:adventure/who_needs_rockets	Название advancement minecraft:adventure/who_needs_rockets	
+Who's the Pillager Now?	Who's the Pillager Now?	TITLE	minecraft:adventure/whos_the_pillager_now	Название advancement minecraft:adventure/whos_the_pillager_now	
+Are we there yet?	Are we there yet?	TITLE	blazeandcave:animal/are_we_there_yet	Название advancement blazeandcave:animal/are_we_there_yet	
+Tame a donkey	Tame a donkey	DESCRIPTION	blazeandcave:animal/are_we_there_yet	Описание advancement blazeandcave:animal/are_we_there_yet	
+Kill an Axolotl with an axe	Kill an Axolotl with an axe	DESCRIPTION	blazeandcave:animal/axeolotl	Описание advancement blazeandcave:animal/axeolotl	
+Bacon!	Bacon!	TITLE	blazeandcave:animal/bacon	Название advancement blazeandcave:animal/bacon	
+Battle of the Bands	Battle of the Bands	TITLE	blazeandcave:animal/battle_of_the_bands	Название advancement blazeandcave:animal/battle_of_the_bands	
+Beeloons!	Beeloons!	TITLE	blazeandcave:animal/beeloons	Название advancement blazeandcave:animal/beeloons	
+Attach a lead to a bee	Attach a lead to a bee	DESCRIPTION	blazeandcave:animal/beeloons	Описание advancement blazeandcave:animal/beeloons	
+Bunny Lover	Bunny Lover	TITLE	blazeandcave:animal/bunny_lover	Название advancement blazeandcave:animal/bunny_lover	
+Catching Nemo	Catching Nemo	TITLE	blazeandcave:animal/catching_nemo	Название advancement blazeandcave:animal/catching_nemo	
+Kill a Glow Squid	Kill a Glow Squid	DESCRIPTION	blazeandcave:animal/cephalight	Описание advancement blazeandcave:animal/cephalight	
+Cow Tipper	Cow Tipper	TITLE	blazeandcave:animal/cow_tipper	Название advancement blazeandcave:animal/cow_tipper	
+Cook and eat a fish!	Cook and eat a fish!	DESCRIPTION	blazeandcave:animal/delicious_fish	Описание advancement blazeandcave:animal/delicious_fish	
+You'll get over it	You'll get over it	DESCRIPTION	blazeandcave:animal/feeling_sheepish	Описание advancement blazeandcave:animal/feeling_sheepish	
+Put an item up for display in a Glowing Item Frame	Put an item up for display in a Glowing Item Frame	DESCRIPTION	blazeandcave:animal/flashy_items	Описание advancement blazeandcave:animal/flashy_items	
+Give a fox a Totem of Undying	Give a fox a Totem of Undying	DESCRIPTION	blazeandcave:animal/foxy_thievery	Описание advancement blazeandcave:animal/foxy_thievery	
+Slaughter a Goat	Slaughter a Goat	DESCRIPTION	blazeandcave:animal/goat_out_of_here	Описание advancement blazeandcave:animal/goat_out_of_here	
+You have Goat to be kidding me!	You have Goat to be kidding me!	DESCRIPTION	blazeandcave:animal/goat_simulator	Описание advancement blazeandcave:animal/goat_simulator	
+Have a Shearful Day	Have a Shearful Day	TITLE	blazeandcave:animal/have_a_shearful_day	Название advancement blazeandcave:animal/have_a_shearful_day	
+The steaks are high for this advancement!	The steaks are high for this advancement!	DESCRIPTION	blazeandcave:animal/high_steaks	Описание advancement blazeandcave:animal/high_steaks	
+Iceologer Should've Won	Iceologer Should've Won	TITLE	blazeandcave:animal/iceologer_shouldve_won	Название advancement blazeandcave:animal/iceologer_shouldve_won	
+Kill 100 Glow Squids	Kill 100 Glow Squids	DESCRIPTION	blazeandcave:animal/iceologer_shouldve_won	Описание advancement blazeandcave:animal/iceologer_shouldve_won	
+Craft a lead using string and a slimeball, then attach it to a mob	Craft a lead using string and a slimeball, then attach it to a mob	DESCRIPTION	blazeandcave:animal/lead_the_way	Описание advancement blazeandcave:animal/lead_the_way	
+Loud and Proud	Loud and Proud	TITLE	blazeandcave:animal/loud_and_proud	Название advancement blazeandcave:animal/loud_and_proud	
+Play a Goat Horn in the Deep Dark	Play a Goat Horn in the Deep Dark	DESCRIPTION	blazeandcave:animal/loud_and_proud	Описание advancement blazeandcave:animal/loud_and_proud	
+Paw Patrol	Paw Patrol	TITLE	blazeandcave:animal/paw_patrol	Название advancement blazeandcave:animal/paw_patrol	
+Pig Slaughterer	Pig Slaughterer	TITLE	blazeandcave:animal/pig_slaughterer	Название advancement blazeandcave:animal/pig_slaughterer	
+Pork Chop	Pork Chop	TITLE	blazeandcave:animal/pork_chop	Название advancement blazeandcave:animal/pork_chop	
+You know kung fu, how about pork chop?	You know kung fu, how about pork chop?	DESCRIPTION	blazeandcave:animal/pork_chop	Описание advancement blazeandcave:animal/pork_chop	
+Eat some raw salmon... and not get poisoned after all	Eat some raw salmon... and not get poisoned after all	DESCRIPTION	blazeandcave:animal/salmonella_poisoning	Описание advancement blazeandcave:animal/salmonella_poisoning	
+Collect a stack of turtle eggs	Collect a stack of turtle eggs	DESCRIPTION	blazeandcave:animal/save_the_turtles	Описание advancement blazeandcave:animal/save_the_turtles	
+Milk a screaming Goat	Milk a screaming Goat	DESCRIPTION	blazeandcave:animal/screaming_milk	Описание advancement blazeandcave:animal/screaming_milk	
+Scuttler	Scuttler	TITLE	blazeandcave:animal/scuttler	Название advancement blazeandcave:animal/scuttler	
+Collect a stack of white wool	Collect a stack of white wool	DESCRIPTION	blazeandcave:animal/sheariously	Описание advancement blazeandcave:animal/sheariously	
+Shoe Shed	Shoe Shed	TITLE	blazeandcave:animal/shoe_shed	Название advancement blazeandcave:animal/shoe_shed	
+Silence of the Lambs	Silence of the Lambs	TITLE	blazeandcave:animal/silence_of_the_lambs	Название advancement blazeandcave:animal/silence_of_the_lambs	
+So Hungry I Could Eat a Horse!	So Hungry I Could Eat a Horse!	TITLE	blazeandcave:animal/so_hungry_i_could_eat_a_horse	Название advancement blazeandcave:animal/so_hungry_i_could_eat_a_horse	
+Tame a llama	Tame a llama	DESCRIPTION	blazeandcave:animal/stay_calmer	Описание advancement blazeandcave:animal/stay_calmer	
+Eat some raw fish	Eat some raw fish	DESCRIPTION	blazeandcave:animal/sushi	Описание advancement blazeandcave:animal/sushi	
+Turtle Army	Turtle Army	TITLE	blazeandcave:animal/turtle_army	Название advancement blazeandcave:animal/turtle_army	
+Turtle Soldier	Turtle Soldier	TITLE	blazeandcave:animal/turtle_soldier	Название advancement blazeandcave:animal/turtle_soldier	
+What a piece of junk!	What a piece of junk!	TITLE	blazeandcave:animal/what_a_piece_of_junk	Название advancement blazeandcave:animal/what_a_piece_of_junk	
+Drink some honey	Drink some honey	DESCRIPTION	blazeandcave:animal/winnie_the_pooh	Описание advancement blazeandcave:animal/winnie_the_pooh	
+Ahoy!	Ahoy!	TITLE	blazeandcave:biomes/ahoy	Название advancement blazeandcave:biomes/ahoy	
+Captain America	Captain America	TITLE	blazeandcave:biomes/captain_america	Название advancement blazeandcave:biomes/captain_america	
+Choco Mountain	Choco Mountain	TITLE	blazeandcave:biomes/choco_mountain	Название advancement blazeandcave:biomes/choco_mountain	
+Construction Worker	Construction Worker	TITLE	blazeandcave:biomes/construction_worker	Название advancement blazeandcave:biomes/construction_worker	
+Echolocation	Echolocation	TITLE	blazeandcave:biomes/echolocation	Название advancement blazeandcave:biomes/echolocation	
+Enchanted Forest	Enchanted Forest	TITLE	blazeandcave:biomes/enchanted_forest	Название advancement blazeandcave:biomes/enchanted_forest	
+In a Pickle	In a Pickle	TITLE	blazeandcave:biomes/in_a_pickle	Название advancement blazeandcave:biomes/in_a_pickle	
+Kung Fu Panda!	Kung Fu Panda!	TITLE	blazeandcave:biomes/kung_fu_panda	Название advancement blazeandcave:biomes/kung_fu_panda	
+Qinling	Qinling	TITLE	blazeandcave:biomes/qinling	Название advancement blazeandcave:biomes/qinling	
+Biomes	Biomes	TAB	blazeandcave:biomes/root	Название вкладки/категории для blazeandcave:biomes/root	
+All around the world!	All around the world!	DESCRIPTION	blazeandcave:biomes/root	Описание advancement blazeandcave:biomes/root	
+Simba	Simba	TITLE	blazeandcave:biomes/simba	Название advancement blazeandcave:biomes/simba	
+Get attacked by dolphins	Get attacked by dolphins	DESCRIPTION	blazeandcave:biomes/so_long_and_thanks_for_all_the_fish	Описание advancement blazeandcave:biomes/so_long_and_thanks_for_all_the_fish	
+Tarzan	Tarzan	TITLE	blazeandcave:biomes/tarzan	Название advancement blazeandcave:biomes/tarzan	
+Fall into some Powder Snow	Fall into some Powder Snow	DESCRIPTION	blazeandcave:biomes/this_snow_is_snowier	Описание advancement blazeandcave:biomes/this_snow_is_snowier	
+Titanic	Titanic	TITLE	blazeandcave:biomes/titanic	Название advancement blazeandcave:biomes/titanic	
+Put up a painting	Put up a painting	DESCRIPTION	blazeandcave:building/a_masterpiece	Описание advancement blazeandcave:building/a_masterpiece	
+Change of Sheets	Change of Sheets	TITLE	blazeandcave:building/change_of_sheets	Название advancement blazeandcave:building/change_of_sheets	
+Classy Glassy	Classy Glassy	TITLE	blazeandcave:building/classy_glassy	Название advancement blazeandcave:building/classy_glassy	
+Colors of the Wind	Colors of the Wind	TITLE	blazeandcave:building/colors_of_the_wind	Название advancement blazeandcave:building/colors_of_the_wind	
+Glowing!	Glowing!	TITLE	blazeandcave:building/glowing	Название advancement blazeandcave:building/glowing	
+Put up a Hanging Sign	Put up a Hanging Sign	DESCRIPTION	blazeandcave:building/hanging_around	Описание advancement blazeandcave:building/hanging_around	
+Happy Birthday!	Happy Birthday!	TITLE	blazeandcave:building/happy_birthday	Название advancement blazeandcave:building/happy_birthday	
+Place a candle on a cake	Place a candle on a cake	DESCRIPTION	blazeandcave:building/happy_birthday	Описание advancement blazeandcave:building/happy_birthday	
+Hot Tub	Hot Tub	TITLE	blazeandcave:building/hot_tub	Название advancement blazeandcave:building/hot_tub	
+Insomniac	Insomniac	TITLE	blazeandcave:building/insomniac	Название advancement blazeandcave:building/insomniac	
+Let There Be Light!	Let There Be Light!	TITLE	blazeandcave:building/let_there_be_light	Название advancement blazeandcave:building/let_there_be_light	
+Professor Birch	Professor Birch	TITLE	blazeandcave:building/professor_birch	Название advancement blazeandcave:building/professor_birch	
+Raise the flag!	Raise the flag!	TITLE	blazeandcave:building/raise_the_flag	Название advancement blazeandcave:building/raise_the_flag	
+Rock Collection	Rock Collection	TITLE	blazeandcave:building/rock_collection	Название advancement blazeandcave:building/rock_collection	
+Building	Building	TAB	blazeandcave:building/root	Название вкладки/категории для blazeandcave:building/root	
+Fill a Chiseled Bookshelf with books	Fill a Chiseled Bookshelf with books	DESCRIPTION	blazeandcave:building/shelf_expression	Описание advancement blazeandcave:building/shelf_expression	
+Sign Off	Sign Off	TITLE	blazeandcave:building/sign_off	Название advancement blazeandcave:building/sign_off	
+Use honeycomb to wax a sign, setting its ink for eternity	Use honeycomb to wax a sign, setting its ink for eternity	DESCRIPTION	blazeandcave:building/sign_off	Описание advancement blazeandcave:building/sign_off	
+Skyblock	Skyblock	TITLE	blazeandcave:building/skyblock	Название advancement blazeandcave:building/skyblock	
+Washing Machine	Washing Machine	TITLE	blazeandcave:building/washing_machine	Название advancement blazeandcave:building/washing_machine	
+Abyss Lord	Abyss Lord	TITLE	blazeandcave:challenges/abyss_lord	Название advancement blazeandcave:challenges/abyss_lord	
+Ad Astra	Ad Astra	TITLE	blazeandcave:challenges/ad_astra	Название advancement blazeandcave:challenges/ad_astra	
+Biological Warfare	Biological Warfare	TITLE	blazeandcave:challenges/biological_warfare	Название advancement blazeandcave:challenges/biological_warfare	
+Collect 64 nether stars	Collect 64 nether stars	DESCRIPTION	blazeandcave:challenges/constellation	Описание advancement blazeandcave:challenges/constellation	
+Death From All	Death From All	TITLE	blazeandcave:challenges/death_from_all	Название advancement blazeandcave:challenges/death_from_all	
+Get hurt by every mob that can kill you	Get hurt by every mob that can kill you	DESCRIPTION	blazeandcave:challenges/death_from_all	Описание advancement blazeandcave:challenges/death_from_all	
+Explorer of Worlds	Explorer of Worlds	TITLE	blazeandcave:challenges/explorer_of_worlds	Название advancement blazeandcave:challenges/explorer_of_worlds	
+Global Vaccination	Global Vaccination	TITLE	blazeandcave:challenges/global_vaccination	Название advancement blazeandcave:challenges/global_vaccination	
+Hearts of the Stack	Hearts of the Stack	TITLE	blazeandcave:challenges/hearts_of_the_stack	Название advancement blazeandcave:challenges/hearts_of_the_stack	
+Collect 64 Hearts of the Sea	Collect 64 Hearts of the Sea	DESCRIPTION	blazeandcave:challenges/hearts_of_the_stack	Описание advancement blazeandcave:challenges/hearts_of_the_stack	
+I am Loot!	I am Loot!	TITLE	blazeandcave:challenges/i_am_loot	Название advancement blazeandcave:challenges/i_am_loot	
+I'm in Space!	I'm in Space!	TITLE	blazeandcave:challenges/im_in_space	Название advancement blazeandcave:challenges/im_in_space	
+Fill your entire inventory with Totems of Undying	Fill your entire inventory with Totems of Undying	DESCRIPTION	blazeandcave:challenges/immortal	Описание advancement blazeandcave:challenges/immortal	
+block.minecraft.deepslate_emerald_ore	block.minecraft.deepslate_emerald_ore	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	Описание advancement blazeandcave:challenges/stack_all_the_blocks	
+block.minecraft.dragon_egg	block.minecraft.dragon_egg	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	Описание advancement blazeandcave:challenges/stack_all_the_blocks	
+block.minecraft.heavy_core	block.minecraft.heavy_core	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	Описание advancement blazeandcave:challenges/stack_all_the_blocks	
+block.minecraft.large_fern	block.minecraft.large_fern	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	Описание advancement blazeandcave:challenges/stack_all_the_blocks	
+block.minecraft.netherite_block	block.minecraft.netherite_block	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	Описание advancement blazeandcave:challenges/stack_all_the_blocks	
+block.minecraft.suspicious_gravel	block.minecraft.suspicious_gravel	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	Описание advancement blazeandcave:challenges/stack_all_the_blocks	
+block.minecraft.suspicious_sand	block.minecraft.suspicious_sand	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	Описание advancement blazeandcave:challenges/stack_all_the_blocks	
+block.minecraft.tall_grass	block.minecraft.tall_grass	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	Описание advancement blazeandcave:challenges/stack_all_the_blocks	
+item.minecraft.recovery_compass	item.minecraft.recovery_compass	DESCRIPTION	blazeandcave:challenges/stack_all_the_items	Описание advancement blazeandcave:challenges/stack_all_the_items	
+Pottery Sherd	Pottery Sherd	DESCRIPTION	blazeandcave:challenges/stack_all_the_items	Описание advancement blazeandcave:challenges/stack_all_the_items	
+The Perfect Run	The Perfect Run	TITLE	blazeandcave:challenges/the_perfect_run	Название advancement blazeandcave:challenges/the_perfect_run	
+Ultimate Enchanter	Ultimate Enchanter	TITLE	blazeandcave:challenges/ultimate_enchanter	Название advancement blazeandcave:challenges/ultimate_enchanter	
+Warlock	Warlock	TITLE	blazeandcave:challenges/warlock	Название advancement blazeandcave:challenges/warlock	
+Zombie Apocalypse	Zombie Apocalypse	TITLE	blazeandcave:challenges/zombie_apocalypse	Название advancement blazeandcave:challenges/zombie_apocalypse	
+Boomerang	Boomerang	TITLE	blazeandcave:enchanting/boomerang	Название advancement blazeandcave:enchanting/boomerang	
+Complete Enchanter	Complete Enchanter	TITLE	blazeandcave:enchanting/complete_enchanter	Название advancement blazeandcave:enchanting/complete_enchanter	
+Curses!	Curses!	TITLE	blazeandcave:enchanting/curses	Название advancement blazeandcave:enchanting/curses	
+I'll be back	I'll be back	TITLE	blazeandcave:enchanting/ill_be_back	Название advancement blazeandcave:enchanting/ill_be_back	
+Let It Go!	Let It Go!	TITLE	blazeandcave:enchanting/let_it_go	Название advancement blazeandcave:enchanting/let_it_go	
+Master Enchanter	Master Enchanter	TITLE	blazeandcave:enchanting/master_enchanter	Название advancement blazeandcave:enchanting/master_enchanter	
+Overkill	Overkill	TITLE	blazeandcave:enchanting/overkill	Название advancement blazeandcave:enchanting/overkill	
+Enchanting	Enchanting	TAB	blazeandcave:enchanting/root	Название вкладки/категории для blazeandcave:enchanting/root	
+To Infinity And Beyond!	To Infinity And Beyond!	TITLE	blazeandcave:enchanting/to_infinity_and_beyond	Название advancement blazeandcave:enchanting/to_infinity_and_beyond	
+Event Horizon	Event Horizon	TITLE	blazeandcave:end/event_horizon	Название advancement blazeandcave:end/event_horizon	
+Survive void damage	Survive void damage	DESCRIPTION	blazeandcave:end/event_horizon	Описание advancement blazeandcave:end/event_horizon	
+Kill a shulker	Kill a shulker	DESCRIPTION	blazeandcave:end/for_mother_clarence	Описание advancement blazeandcave:end/for_mother_clarence	
+Purpurfect!	Purpurfect!	TITLE	blazeandcave:end/purpurfect	Название advancement blazeandcave:end/purpurfect	
+Rocketman	Rocketman	TITLE	blazeandcave:end/rocketman	Название advancement blazeandcave:end/rocketman	
+Fill your inventory with full stacks of firework rockets	Fill your inventory with full stacks of firework rockets	DESCRIPTION	blazeandcave:end/rocketman	Описание advancement blazeandcave:end/rocketman	
+Collect a stack of shulker shells	Collect a stack of shulker shells	DESCRIPTION	blazeandcave:end/shulker_breaker	Описание advancement blazeandcave:end/shulker_breaker	
+The Point of No Return	The Point of No Return	TITLE	blazeandcave:end/the_point_of_no_return	Название advancement blazeandcave:end/the_point_of_no_return	
+You Need a Mint	You Need a Mint	TITLE	minecraft:end/dragon_breath	Название advancement minecraft:end/dragon_breath	
+The Next Generation	The Next Generation	TITLE	minecraft:end/dragon_egg	Название advancement minecraft:end/dragon_egg	
+Hold the Dragon Egg	Hold the Dragon Egg	DESCRIPTION	minecraft:end/dragon_egg	Описание advancement minecraft:end/dragon_egg	
+Sky's the Limit	Sky's the Limit	TITLE	minecraft:end/elytra	Название advancement minecraft:end/elytra	
+Remote Getaway	Remote Getaway	TITLE	minecraft:end/enter_end_gateway	Название advancement minecraft:end/enter_end_gateway	
+The City at the End of the Game	The City at the End of the Game	TITLE	minecraft:end/find_end_city	Название advancement minecraft:end/find_end_city	
+Free the End	Free the End	TITLE	minecraft:end/kill_dragon	Название advancement minecraft:end/kill_dragon	
+Great View From Up Here	Great View From Up Here	TITLE	minecraft:end/levitate	Название advancement minecraft:end/levitate	
+The End... Again	The End... Again	TITLE	minecraft:end/respawn_dragon	Название advancement minecraft:end/respawn_dragon	
+Respawn the Ender Dragon	Respawn the Ender Dragon	DESCRIPTION	minecraft:end/respawn_dragon	Описание advancement minecraft:end/respawn_dragon	
+The End	The End	TAB	minecraft:end/root	Название вкладки/категории для minecraft:end/root	
+Or the beginning?	Or the beginning?	DESCRIPTION	minecraft:end/root	Описание advancement minecraft:end/root	
+Eat a golden carrot	Eat a golden carrot	DESCRIPTION	blazeandcave:farming/24_carrot_gold	Описание advancement blazeandcave:farming/24_carrot_gold	
+Aquatic Biofuel	Aquatic Biofuel	TITLE	blazeandcave:farming/aquatic_biofuel	Название advancement blazeandcave:farming/aquatic_biofuel	
+Crunch into an apple	Crunch into an apple	DESCRIPTION	blazeandcave:farming/bapple	Описание advancement blazeandcave:farming/bapple	
+Hot Chocolate	Hot Chocolate	TITLE	blazeandcave:farming/hot_chocolate	Название advancement blazeandcave:farming/hot_chocolate	
+Eat 100 slices of cake	Eat 100 slices of cake	DESCRIPTION	blazeandcave:farming/must_be_your_birthday	Описание advancement blazeandcave:farming/must_be_your_birthday	
+Fill up a composter	Fill up a composter	DESCRIPTION	blazeandcave:farming/natural_fertiliser	Описание advancement blazeandcave:farming/natural_fertiliser	
+Eat a poisonous potato	Eat a poisonous potato	DESCRIPTION	blazeandcave:farming/not_today	Описание advancement blazeandcave:farming/not_today	
+Carve a stack of pumpkins	Carve a stack of pumpkins	DESCRIPTION	blazeandcave:farming/pumpa_kungen	Описание advancement blazeandcave:farming/pumpa_kungen	
+Farming	Farming	TAB	blazeandcave:farming/root	Название вкладки/категории для blazeandcave:farming/root	
+Squid Game	Squid Game	TITLE	blazeandcave:farming/squid_game	Название advancement blazeandcave:farming/squid_game	
+Suspicious Looking Stew	Suspicious Looking Stew	TITLE	blazeandcave:farming/suspicious_looking_stew	Название advancement blazeandcave:farming/suspicious_looking_stew	
+Ultra Hardcore	Ultra Hardcore	TITLE	blazeandcave:farming/ultra_hardcore	Название advancement blazeandcave:farming/ultra_hardcore	
+A Shiny Treat	A Shiny Treat	TITLE	blazeandcave:mining/a_shiny_treat	Название advancement blazeandcave:mining/a_shiny_treat	
+Get struck by lightning while standing on a Lightning Rod	Get struck by lightning while standing on a Lightning Rod	DESCRIPTION	blazeandcave:mining/called_shot	Описание advancement blazeandcave:mining/called_shot	
+Coal Miner	Coal Miner	TITLE	blazeandcave:mining/coal_miner	Название advancement blazeandcave:mining/coal_miner	
+Death Pointer	Death Pointer	TITLE	blazeandcave:mining/death_pointer	Название advancement blazeandcave:mining/death_pointer	
+Diamond Miner	Diamond Miner	TITLE	blazeandcave:mining/diamond_miner	Название advancement blazeandcave:mining/diamond_miner	
+Diamonds to you!	Diamonds to you!	TITLE	blazeandcave:mining/diamonds_to_you	Название advancement blazeandcave:mining/diamonds_to_you	
+Echonomy	Echonomy	TITLE	blazeandcave:mining/echonomy	Название advancement blazeandcave:mining/echonomy	
+Get stuck in a cobweb	Get stuck in a cobweb	DESCRIPTION	blazeandcave:mining/eeuuwww	Описание advancement blazeandcave:mining/eeuuwww	
+Emerald Miner	Emerald Miner	TITLE	blazeandcave:mining/emerald_miner	Название advancement blazeandcave:mining/emerald_miner	
+Fallen Kingdom	Fallen Kingdom	TITLE	blazeandcave:mining/fallen_kingdom	Название advancement blazeandcave:mining/fallen_kingdom	
+Loot a chest inside an ice box in an Ancient City	Loot a chest inside an ice box in an Ancient City	DESCRIPTION	blazeandcave:mining/frigid_diversions	Описание advancement blazeandcave:mining/frigid_diversions	
+Gold Miner	Gold Miner	TITLE	blazeandcave:mining/gold_miner	Название advancement blazeandcave:mining/gold_miner	
+Gold Rush	Gold Rush	TITLE	blazeandcave:mining/gold_rush	Название advancement blazeandcave:mining/gold_rush	
+Wear a full suit of iron armor	Wear a full suit of iron armor	DESCRIPTION	blazeandcave:mining/iron_man	Описание advancement blazeandcave:mining/iron_man	
+Iron Miner	Iron Miner	TITLE	blazeandcave:mining/iron_miner	Название advancement blazeandcave:mining/iron_miner	
+Master Diamond Miner	Master Diamond Miner	TITLE	blazeandcave:mining/master_diamond_miner	Название advancement blazeandcave:mining/master_diamond_miner	
+Master Iron Miner	Master Iron Miner	TITLE	blazeandcave:mining/master_iron_miner	Название advancement blazeandcave:mining/master_iron_miner	
+Obsidian Miner	Obsidian Miner	TITLE	blazeandcave:mining/obsidian_miner	Название advancement blazeandcave:mining/obsidian_miner	
+Mining	Mining	TAB	blazeandcave:mining/root	Название вкладки/категории для blazeandcave:mining/root	
+Smokin' Hot	Smokin' Hot	TITLE	blazeandcave:mining/smokin_hot	Название advancement blazeandcave:mining/smokin_hot	
+Spelunker	Spelunker	TITLE	blazeandcave:mining/spelunker	Название advancement blazeandcave:mining/spelunker	
+Loot a minecart chest from an Abandoned Mineshaft	Loot a minecart chest from an Abandoned Mineshaft	DESCRIPTION	blazeandcave:mining/steals_on_wheels	Описание advancement blazeandcave:mining/steals_on_wheels	
+That's the point!	That's the point!	TITLE	blazeandcave:mining/thats_the_point	Название advancement blazeandcave:mining/thats_the_point	
+Gurgle	Gurgle	DESCRIPTION	blazeandcave:monsters/a_watery_grave	Описание advancement blazeandcave:monsters/a_watery_grave	
+Kill one of each of a baby zombie, zombie villager, husk, drowned and zombie pigman	Kill one of each of a baby zombie, zombie villager, husk, drowned and zombie pigman	DESCRIPTION	blazeandcave:monsters/baby_baby_baby_noo	Описание advancement blazeandcave:monsters/baby_baby_baby_noo	
+Blast Shield	Blast Shield	TITLE	blazeandcave:monsters/blast_shield	Название advancement blazeandcave:monsters/blast_shield	
+Blind Stare	Blind Stare	TITLE	blazeandcave:monsters/blind_stare	Название advancement blazeandcave:monsters/blind_stare	
+Look at a Warden with a Spyglass	Look at a Warden with a Spyglass	DESCRIPTION	blazeandcave:monsters/blind_stare	Описание advancement blazeandcave:monsters/blind_stare	
+Camouflage	Camouflage	TITLE	blazeandcave:monsters/camouflage	Название advancement blazeandcave:monsters/camouflage	
+Collect a stack of gunpowder	Collect a stack of gunpowder	DESCRIPTION	blazeandcave:monsters/creeper_killer	Описание advancement blazeandcave:monsters/creeper_killer	
+Kill a zombie	Kill a zombie	DESCRIPTION	blazeandcave:monsters/dead_dont_die	Описание advancement blazeandcave:monsters/dead_dont_die	
+Kill a husk	Kill a husk	DESCRIPTION	blazeandcave:monsters/desert_nomad	Описание advancement blazeandcave:monsters/desert_nomad	
+Collect a stack of ender pearls	Collect a stack of ender pearls	DESCRIPTION	blazeandcave:monsters/enderman_destroyer	Описание advancement blazeandcave:monsters/enderman_destroyer	
+Kill a spider	Kill a spider	DESCRIPTION	blazeandcave:monsters/ew_ew_ew	Описание advancement blazeandcave:monsters/ew_ew_ew	
+Kill a stray	Kill a stray	DESCRIPTION	blazeandcave:monsters/frosty	Описание advancement blazeandcave:monsters/frosty	
+Gelatinous Cube	Gelatinous Cube	TITLE	blazeandcave:monsters/gelatinous_cube	Название advancement blazeandcave:monsters/gelatinous_cube	
+Kill a slime	Kill a slime	DESCRIPTION	blazeandcave:monsters/gelatinous_cube	Описание advancement blazeandcave:monsters/gelatinous_cube	
+Kill a Creeper with arrows	Kill a Creeper with arrows	DESCRIPTION	blazeandcave:monsters/keep_your_distance	Описание advancement blazeandcave:monsters/keep_your_distance	
+Maximum Resistance	Maximum Resistance	TITLE	blazeandcave:monsters/maximum_resistance	Название advancement blazeandcave:monsters/maximum_resistance	
+Bring a stray to a desert biome and then kill it	Bring a stray to a desert biome and then kill it	DESCRIPTION	blazeandcave:monsters/melting	Описание advancement blazeandcave:monsters/melting	
+Mollusc Man	Mollusc Man	TITLE	blazeandcave:monsters/mollusc_man	Название advancement blazeandcave:monsters/mollusc_man	
+Kill a baby zombie	Kill a baby zombie	DESCRIPTION	blazeandcave:monsters/ooh_baby	Описание advancement blazeandcave:monsters/ooh_baby	
+Paleontologist	Paleontologist	TITLE	blazeandcave:monsters/paleontologist	Название advancement blazeandcave:monsters/paleontologist	
+Collect a stack of phantom membranes	Collect a stack of phantom membranes	DESCRIPTION	blazeandcave:monsters/phantom_slayer	Описание advancement blazeandcave:monsters/phantom_slayer	
+Poison Dart	Poison Dart	TITLE	blazeandcave:monsters/poison_dart	Название advancement blazeandcave:monsters/poison_dart	
+Kill a cave spider	Kill a cave spider	DESCRIPTION	blazeandcave:monsters/poisonous_ew	Описание advancement blazeandcave:monsters/poisonous_ew	
+Monsters	Monsters	TAB	blazeandcave:monsters/root	Название вкладки/категории для blazeandcave:monsters/root	
+Collect a stack of bones	Collect a stack of bones	DESCRIPTION	blazeandcave:monsters/skeleton_smiter	Описание advancement blazeandcave:monsters/skeleton_smiter	
+Collect a stack of slimeballs	Collect a stack of slimeballs	DESCRIPTION	blazeandcave:monsters/slime_squisher	Описание advancement blazeandcave:monsters/slime_squisher	
+Kill a skeleton	Kill a skeleton	DESCRIPTION	blazeandcave:monsters/spooky_skeleton	Описание advancement blazeandcave:monsters/spooky_skeleton	
+Blow up a skeleton with a charged creeper to get a skeleton skull	Blow up a skeleton with a charged creeper to get a skeleton skull	DESCRIPTION	blazeandcave:monsters/spooky_skulls	Описание advancement blazeandcave:monsters/spooky_skulls	
+Stealth is Optional	Stealth is Optional	TITLE	blazeandcave:monsters/stealth_is_optional	Название advancement blazeandcave:monsters/stealth_is_optional	
+Kill a witch with a splash potion	Kill a witch with a splash potion	DESCRIPTION	blazeandcave:monsters/taste_of_your_own_medicine	Описание advancement blazeandcave:monsters/taste_of_your_own_medicine	
+Termite Control	Termite Control	TITLE	blazeandcave:monsters/termite_control	Название advancement blazeandcave:monsters/termite_control	
+Kill a silverfish	Kill a silverfish	DESCRIPTION	blazeandcave:monsters/termite_control	Описание advancement blazeandcave:monsters/termite_control	
+Kill an enderman	Kill an enderman	DESCRIPTION	blazeandcave:monsters/the_ender_of_ender	Описание advancement blazeandcave:monsters/the_ender_of_ender	
+Get attacked by phantoms	Get attacked by phantoms	DESCRIPTION	blazeandcave:monsters/the_phantom_menace	Описание advancement blazeandcave:monsters/the_phantom_menace	
+Ride a Skeleton Horse	Ride a Skeleton Horse	DESCRIPTION	blazeandcave:monsters/the_undead_cavalry	Описание advancement blazeandcave:monsters/the_undead_cavalry	
+Trampoline	Trampoline	TITLE	blazeandcave:monsters/trampoline	Название advancement blazeandcave:monsters/trampoline	
+Trick or Treat!	Trick or Treat!	TITLE	blazeandcave:monsters/trick_or_treat	Название advancement blazeandcave:monsters/trick_or_treat	
+Warden Frostbite	Warden Frostbite	TITLE	blazeandcave:monsters/warden_frostbite	Название advancement blazeandcave:monsters/warden_frostbite	
+Kill a creeper	Kill a creeper	DESCRIPTION	blazeandcave:monsters/what_a_creep	Описание advancement blazeandcave:monsters/what_a_creep	
+Kill a witch	Kill a witch	DESCRIPTION	blazeandcave:monsters/witch	Описание advancement blazeandcave:monsters/witch	
+Collect a stack of rotten flesh	Collect a stack of rotten flesh	DESCRIPTION	blazeandcave:monsters/zombie_slayer	Описание advancement blazeandcave:monsters/zombie_slayer	
+Collect a stack of blaze rods	Collect a stack of blaze rods	DESCRIPTION	blazeandcave:nether/blaze_extinguisher	Описание advancement blazeandcave:nether/blaze_extinguisher	
+Bobbleheads	Bobbleheads	TITLE	blazeandcave:nether/bobbleheads	Название advancement blazeandcave:nether/bobbleheads	
+Brute Force	Brute Force	TITLE	blazeandcave:nether/brute_force	Название advancement blazeandcave:nether/brute_force	
+Diamonds Are Not Forever	Diamonds Are Not Forever	TITLE	blazeandcave:nether/diamonds_are_not_forever	Название advancement blazeandcave:nether/diamonds_are_not_forever	
+Get attacked by Piglin Brutes	Get attacked by Piglin Brutes	DESCRIPTION	blazeandcave:nether/et_tu_brute	Описание advancement blazeandcave:nether/et_tu_brute	
+Get a Lode Of This!	Get a Lode Of This!	TITLE	blazeandcave:nether/get_a_lode_of_this	Название advancement blazeandcave:nether/get_a_lode_of_this	
+Craft a Lodestone using Chiseled Stone Bricks and a Netherite Ingot	Craft a Lodestone using Chiseled Stone Bricks and a Netherite Ingot	DESCRIPTION	blazeandcave:nether/get_a_lode_of_this	Описание advancement blazeandcave:nether/get_a_lode_of_this	
+Collect a stack of ghast tears	Collect a stack of ghast tears	DESCRIPTION	blazeandcave:nether/ghast_slayer	Описание advancement blazeandcave:nether/ghast_slayer	
+Shoot down a ghast	Shoot down a ghast	DESCRIPTION	blazeandcave:nether/giant_floating_jellyfish	Описание advancement blazeandcave:nether/giant_floating_jellyfish	
+Mine some Gilded Blackstone from a Bastion Remnant	Mine some Gilded Blackstone from a Bastion Remnant	DESCRIPTION	blazeandcave:nether/gilty	Описание advancement blazeandcave:nether/gilty	
+Glowstone Miner	Glowstone Miner	TITLE	blazeandcave:nether/glowstone_miner	Название advancement blazeandcave:nether/glowstone_miner	
+Hell Botanist	Hell Botanist	TITLE	blazeandcave:nether/hell_botanist	Название advancement blazeandcave:nether/hell_botanist	
+Gather a stack of every Nether plant	Gather a stack of every Nether plant	DESCRIPTION	blazeandcave:nether/hell_botanist	Описание advancement blazeandcave:nether/hell_botanist	
+Ring a bell in the Nether	Ring a bell in the Nether	DESCRIPTION	blazeandcave:nether/hells_bells	Описание advancement blazeandcave:nether/hells_bells	
+High Temperature Fluid Monster	High Temperature Fluid Monster	TITLE	blazeandcave:nether/high_temperature_fluid_monster	Название advancement blazeandcave:nether/high_temperature_fluid_monster	
+Kill a magma cube	Kill a magma cube	DESCRIPTION	blazeandcave:nether/high_temperature_fluid_monster	Описание advancement blazeandcave:nether/high_temperature_fluid_monster	
+Reel in a Strider using a Fishing Rod	Reel in a Strider using a Fishing Rod	DESCRIPTION	blazeandcave:nether/hot_reels	Описание advancement blazeandcave:nether/hot_reels	
+Let Me Out!	Let Me Out!	TITLE	blazeandcave:nether/let_me_out	Название advancement blazeandcave:nether/let_me_out	
+Magma Cube Squisher	Magma Cube Squisher	TITLE	blazeandcave:nether/magma_cube_squisher	Название advancement blazeandcave:nether/magma_cube_squisher	
+Collect a stack of magma cream	Collect a stack of magma cream	DESCRIPTION	blazeandcave:nether/magma_cube_squisher	Описание advancement blazeandcave:nether/magma_cube_squisher	
+Master Netherite Miner	Master Netherite Miner	TITLE	blazeandcave:nether/master_netherite_miner	Название advancement blazeandcave:nether/master_netherite_miner	
+Netherite Mad Lad	Netherite Mad Lad	TITLE	blazeandcave:nether/netherite_mad_lad	Название advancement blazeandcave:nether/netherite_mad_lad	
+Netherite Miner	Netherite Miner	TITLE	blazeandcave:nether/netherite_miner	Название advancement blazeandcave:nether/netherite_miner	
+Seeing Stars	Seeing Stars	TITLE	blazeandcave:nether/seeing_stars	Название advancement blazeandcave:nether/seeing_stars	
+Kill a wither skeleton	Kill a wither skeleton	DESCRIPTION	blazeandcave:nether/the_hunt_begins	Описание advancement blazeandcave:nether/the_hunt_begins	
+Kill a zombie pigman	Kill a zombie pigman	DESCRIPTION	blazeandcave:nether/the_tribal_snouts	Описание advancement blazeandcave:nether/the_tribal_snouts	
+How Did We Get Here?	How Did We Get Here?	TITLE	minecraft:nether/all_effects	Название advancement minecraft:nether/all_effects	
+Have every effect applied at the same time	Have every effect applied at the same time	DESCRIPTION	minecraft:nether/all_effects	Описание advancement minecraft:nether/all_effects	
+A Furious Cocktail	A Furious Cocktail	TITLE	minecraft:nether/all_potions	Название advancement minecraft:nether/all_potions	
+Have every potion effect applied at the same time	Have every potion effect applied at the same time	DESCRIPTION	minecraft:nether/all_potions	Описание advancement minecraft:nether/all_potions	
+Local Brewery	Local Brewery	TITLE	minecraft:nether/brew_potion	Название advancement minecraft:nether/brew_potion	
+Not Quite 'Nine' Lives	Not Quite 'Nine' Lives	TITLE	minecraft:nether/charge_respawn_anchor	Название advancement minecraft:nether/charge_respawn_anchor	
+Charge a Respawn Anchor to the maximum	Charge a Respawn Anchor to the maximum	DESCRIPTION	minecraft:nether/charge_respawn_anchor	Описание advancement minecraft:nether/charge_respawn_anchor	
+Bring Home the Beacon	Bring Home the Beacon	TITLE	minecraft:nether/create_beacon	Название advancement minecraft:nether/create_beacon	
+Beaconator	Beaconator	TITLE	minecraft:nether/create_full_beacon	Название advancement minecraft:nether/create_full_beacon	
+Bring a beacon to full power	Bring a beacon to full power	DESCRIPTION	minecraft:nether/create_full_beacon	Описание advancement minecraft:nether/create_full_beacon	
+Oh, Shiny!	Oh, Shiny!	TITLE	minecraft:nether/distract_piglin	Название advancement minecraft:nether/distract_piglin	
+Distract Piglins with gold	Distract Piglins with gold	DESCRIPTION	minecraft:nether/distract_piglin	Описание advancement minecraft:nether/distract_piglin	
+Hot Tourist Destination	Hot Tourist Destination	TITLE	minecraft:nether/explore_nether	Название advancement minecraft:nether/explore_nether	
+Subspace Bubble	Subspace Bubble	TITLE	minecraft:nether/fast_travel	Название advancement minecraft:nether/fast_travel	
+Those Were the Days	Those Were the Days	TITLE	minecraft:nether/find_bastion	Название advancement minecraft:nether/find_bastion	
+Fight your way into a Bastion Remnant	Fight your way into a Bastion Remnant	DESCRIPTION	minecraft:nether/find_bastion	Описание advancement minecraft:nether/find_bastion	
+A Terrible Fortress	A Terrible Fortress	TITLE	minecraft:nether/find_fortress	Название advancement minecraft:nether/find_fortress	
+Spooky Scary Skeleton	Spooky Scary Skeleton	TITLE	minecraft:nether/get_wither_skull	Название advancement minecraft:nether/get_wither_skull	
+War Pigs	War Pigs	TITLE	minecraft:nether/loot_bastion	Название advancement minecraft:nether/loot_bastion	
+Loot a chest in a Bastion Remnant	Loot a chest in a Bastion Remnant	DESCRIPTION	minecraft:nether/loot_bastion	Описание advancement minecraft:nether/loot_bastion	
+A Knight to Nether Forget	A Knight to Nether Forget	TITLE	minecraft:nether/netherite_armor	Название advancement minecraft:nether/netherite_armor	
+Into Fire	Into Fire	TITLE	minecraft:nether/obtain_blaze_rod	Название advancement minecraft:nether/obtain_blaze_rod	
+Relieve a Blaze of its rod	Relieve a Blaze of its rod	DESCRIPTION	minecraft:nether/obtain_blaze_rod	Описание advancement minecraft:nether/obtain_blaze_rod	
+Who is Cutting Onions?	Who is Cutting Onions?	TITLE	minecraft:nether/obtain_crying_obsidian	Название advancement minecraft:nether/obtain_crying_obsidian	
+Return to Sender	Return to Sender	TITLE	minecraft:nether/return_to_sender	Название advancement minecraft:nether/return_to_sender	
+Destroy a Ghast with its fireball	Destroy a Ghast with its fireball	DESCRIPTION	minecraft:nether/return_to_sender	Описание advancement minecraft:nether/return_to_sender	
+This Boat Has Legs	This Boat Has Legs	TITLE	minecraft:nether/ride_strider	Название advancement minecraft:nether/ride_strider	
+Feels Like Home	Feels Like Home	TITLE	minecraft:nether/ride_strider_in_overworld_lava	Название advancement minecraft:nether/ride_strider_in_overworld_lava	
+Nether	Nether	TAB	minecraft:nether/root	Название вкладки/категории для minecraft:nether/root	
+Bring summer clothes	Bring summer clothes	DESCRIPTION	minecraft:nether/root	Описание advancement minecraft:nether/root	
+Withering Heights	Withering Heights	TITLE	minecraft:nether/summon_wither	Название advancement minecraft:nether/summon_wither	
+Summon the Wither	Summon the Wither	DESCRIPTION	minecraft:nether/summon_wither	Описание advancement minecraft:nether/summon_wither	
+Uneasy Alliance	Uneasy Alliance	TITLE	minecraft:nether/uneasy_alliance	Название advancement minecraft:nether/uneasy_alliance	
+Country Lode, Take Me Home	Country Lode, Take Me Home	TITLE	minecraft:nether/use_lodestone	Название advancement minecraft:nether/use_lodestone	
+Use a Compass on a Lodestone	Use a Compass on a Lodestone	DESCRIPTION	minecraft:nether/use_lodestone	Описание advancement minecraft:nether/use_lodestone	
+Brew a mundane and thick potion	Brew a mundane and thick potion	DESCRIPTION	blazeandcave:potion/failed_concoctions	Описание advancement blazeandcave:potion/failed_concoctions	
+Nocturnal	Nocturnal	TITLE	blazeandcave:potion/nocturnal	Название advancement blazeandcave:potion/nocturnal	
+Potions	Potions	TAB	blazeandcave:potion/root	Название вкладки/категории для blazeandcave:potion/root	
+Bling Plate	Bling Plate	TITLE	blazeandcave:redstone/bling_plate	Название advancement blazeandcave:redstone/bling_plate	
+Click!	Click!	TITLE	blazeandcave:redstone/click	Название advancement blazeandcave:redstone/click	
+Place and push a button	Place and push a button	DESCRIPTION	blazeandcave:redstone/click	Описание advancement blazeandcave:redstone/click	
+Metal Plate	Metal Plate	TITLE	blazeandcave:redstone/metal_plate	Название advancement blazeandcave:redstone/metal_plate	
+Monstrous Sacrifices	Monstrous Sacrifices	TITLE	blazeandcave:redstone/monstrous_sacrifices	Название advancement blazeandcave:redstone/monstrous_sacrifices	
+Mozart	Mozart	TITLE	blazeandcave:redstone/mozart	Название advancement blazeandcave:redstone/mozart	
+Railwayman	Railwayman	TITLE	blazeandcave:redstone/railwayman	Название advancement blazeandcave:redstone/railwayman	
+Repeating Repeater	Repeating Repeater	TITLE	blazeandcave:redstone/repeating_repeater	Название advancement blazeandcave:redstone/repeating_repeater	
+Redstone	Redstone	TAB	blazeandcave:redstone/root	Название вкладки/категории для blazeandcave:redstone/root	
+Sculker Box	Sculker Box	TITLE	blazeandcave:redstone/sculker_box	Название advancement blazeandcave:redstone/sculker_box	
+Hold a Shulker Box that is completely filled with Sculk	Hold a Shulker Box that is completely filled with Sculk	DESCRIPTION	blazeandcave:redstone/sculker_box	Описание advancement blazeandcave:redstone/sculker_box	
+We Have Liftoff!	We Have Liftoff!	TITLE	blazeandcave:redstone/we_have_liftoff	Название advancement blazeandcave:redstone/we_have_liftoff	
+hours of walking	hours of walking	TITLE	blazeandcave:statistics/65_hours_of_walking	Название advancement blazeandcave:statistics/65_hours_of_walking	
+Sneak 10km	Sneak 10km	DESCRIPTION	blazeandcave:statistics/ancient_kung_fu_master	Описание advancement blazeandcave:statistics/ancient_kung_fu_master	
+Trade with villagers 500 times	Trade with villagers 500 times	DESCRIPTION	blazeandcave:statistics/big_spender	Описание advancement blazeandcave:statistics/big_spender	
+Sneak 1km	Sneak 1km	DESCRIPTION	blazeandcave:statistics/black_belt_ninja	Описание advancement blazeandcave:statistics/black_belt_ninja	
+Cupid	Cupid	TITLE	blazeandcave:statistics/cupid	Название advancement blazeandcave:statistics/cupid	
+Elderly Enchanter	Elderly Enchanter	TITLE	blazeandcave:statistics/elderly_enchanter	Название advancement blazeandcave:statistics/elderly_enchanter	
+Giga XP Grinder	Giga XP Grinder	TITLE	blazeandcave:statistics/giga_xp_grinder	Название advancement blazeandcave:statistics/giga_xp_grinder	
+Ride 50km in a minecart	Ride 50km in a minecart	DESCRIPTION	blazeandcave:statistics/global_railway_network	Описание advancement blazeandcave:statistics/global_railway_network	
+Ride 1km on a horse	Ride 1km on a horse	DESCRIPTION	blazeandcave:statistics/horse_training	Описание advancement blazeandcave:statistics/horse_training	
+Walk 250km	Walk 250km	DESCRIPTION	blazeandcave:statistics/i_enjoy_long_walks_and_playing_minecraft	Описание advancement blazeandcave:statistics/i_enjoy_long_walks_and_playing_minecraft	
+Ride 10km in a minecart	Ride 10km in a minecart	DESCRIPTION	blazeandcave:statistics/i_like_trains	Описание advancement blazeandcave:statistics/i_like_trains	
+Journeyman Enchanter	Journeyman Enchanter	TITLE	blazeandcave:statistics/journeyman_enchanter	Название advancement blazeandcave:statistics/journeyman_enchanter	
+Jumping Jacks	Jumping Jacks	TITLE	blazeandcave:statistics/jumping_jacks	Название advancement blazeandcave:statistics/jumping_jacks	
+Laps in the pool	Laps in the pool	TITLE	blazeandcave:statistics/laps_in_the_pool	Название advancement blazeandcave:statistics/laps_in_the_pool	
+Swim 1km	Swim 1km	DESCRIPTION	blazeandcave:statistics/laps_in_the_pool	Описание advancement blazeandcave:statistics/laps_in_the_pool	
+Level Up	Level Up	TITLE	blazeandcave:statistics/level_up	Название advancement blazeandcave:statistics/level_up	
+Ride 10km on a pig	Ride 10km on a pig	DESCRIPTION	blazeandcave:statistics/lightning_mcpig	Описание advancement blazeandcave:statistics/lightning_mcpig	
+Sail 1km in a boat	Sail 1km in a boat	DESCRIPTION	blazeandcave:statistics/luxury_cruise	Описание advancement blazeandcave:statistics/luxury_cruise	
+Marathon	Marathon	TITLE	blazeandcave:statistics/marathon	Название advancement blazeandcave:statistics/marathon	
+Ride 1km in a minecart	Ride 1km in a minecart	DESCRIPTION	blazeandcave:statistics/minecart_rider	Описание advancement blazeandcave:statistics/minecart_rider	
+Defeat 250 mobs	Defeat 250 mobs	DESCRIPTION	blazeandcave:statistics/mob_hunter	Описание advancement blazeandcave:statistics/mob_hunter	
+More For Me	More For Me	TITLE	blazeandcave:statistics/more_for_me	Название advancement blazeandcave:statistics/more_for_me	
+Sprint 10km	Sprint 10km	DESCRIPTION	blazeandcave:statistics/natural_sprinter	Описание advancement blazeandcave:statistics/natural_sprinter	
+Swim 10km	Swim 10km	DESCRIPTION	blazeandcave:statistics/olympic_athlete	Описание advancement blazeandcave:statistics/olympic_athlete	
+Olympic Gold Medallist	Olympic Gold Medallist	TITLE	blazeandcave:statistics/olympic_gold_medallist	Название advancement blazeandcave:statistics/olympic_gold_medallist	
+Swim 50km	Swim 50km	DESCRIPTION	blazeandcave:statistics/olympic_gold_medallist	Описание advancement blazeandcave:statistics/olympic_gold_medallist	
+Walk 10km	Walk 10km	DESCRIPTION	blazeandcave:statistics/out_for_a_stroll	Описание advancement blazeandcave:statistics/out_for_a_stroll	
+Overlevelling	Overlevelling	TITLE	blazeandcave:statistics/overlevelling	Название advancement blazeandcave:statistics/overlevelling	
+Sail 10km in a boat	Sail 10km in a boat	DESCRIPTION	blazeandcave:statistics/pirate_captain	Описание advancement blazeandcave:statistics/pirate_captain	
+Statistics	Statistics	TAB	blazeandcave:statistics/root	Название вкладки/категории для blazeandcave:statistics/root	
+Sail 50km in a boat	Sail 50km in a boat	DESCRIPTION	blazeandcave:statistics/sailor_of_the_seven_seas	Описание advancement blazeandcave:statistics/sailor_of_the_seven_seas	
+Ride 50km on a horse	Ride 50km on a horse	DESCRIPTION	blazeandcave:statistics/scourge_of_the_west	Описание advancement blazeandcave:statistics/scourge_of_the_west	
+Ride 10km on a horse	Ride 10km on a horse	DESCRIPTION	blazeandcave:statistics/sheriff_firearm	Описание advancement blazeandcave:statistics/sheriff_firearm	
+Ride 1km on a pig	Ride 1km on a pig	DESCRIPTION	blazeandcave:statistics/snout_500	Описание advancement blazeandcave:statistics/snout_500	
+Fly 100km with elytra	Fly 100km with elytra	DESCRIPTION	blazeandcave:statistics/supersonic	Описание advancement blazeandcave:statistics/supersonic	
+Fly 10km with elytra	Fly 10km with elytra	DESCRIPTION	blazeandcave:statistics/take_to_the_skies	Описание advancement blazeandcave:statistics/take_to_the_skies	
+Trade with villagers 100 times	Trade with villagers 100 times	DESCRIPTION	blazeandcave:statistics/the_haggler	Описание advancement blazeandcave:statistics/the_haggler	
+Walk 50km	Walk 50km	DESCRIPTION	blazeandcave:statistics/who_needs_cars	Описание advancement blazeandcave:statistics/who_needs_cars	
+XP Grinder	XP Grinder	TITLE	blazeandcave:statistics/xp_grinder	Название advancement blazeandcave:statistics/xp_grinder	
+Sprint 250km	Sprint 250km	DESCRIPTION	blazeandcave:statistics/your_legs_must_be_tired	Описание advancement blazeandcave:statistics/your_legs_must_be_tired	
+Expelliarmus!	Expelliarmus!	TITLE	blazeandcave:weaponry/expelliarmus	Название advancement blazeandcave:weaponry/expelliarmus	
+Load your crossbow with a firework	Load your crossbow with a firework	DESCRIPTION	blazeandcave:weaponry/explosive_fire	Описание advancement blazeandcave:weaponry/explosive_fire	
+Inspector Gadget	Inspector Gadget	TITLE	blazeandcave:weaponry/inspector_gadget	Название advancement blazeandcave:weaponry/inspector_gadget	
+Loser!	Loser!	TITLE	blazeandcave:weaponry/loser	Название advancement blazeandcave:weaponry/loser	
+Multiclassed	Multiclassed	TITLE	blazeandcave:weaponry/multiclassed	Название advancement blazeandcave:weaponry/multiclassed	
+Pull a pig using a fishing rod	Pull a pig using a fishing rod	DESCRIPTION	blazeandcave:weaponry/pig_fishing_tournament	Описание advancement blazeandcave:weaponry/pig_fishing_tournament	
+Poseidon vs. Hades	Poseidon vs. Hades	TITLE	blazeandcave:weaponry/poseidon_vs_hades	Название advancement blazeandcave:weaponry/poseidon_vs_hades	
+Pyrotechnic	Pyrotechnic	TITLE	blazeandcave:weaponry/pyrotechnic	Название advancement blazeandcave:weaponry/pyrotechnic	
+Rock, Paper, Shears!	Rock, Paper, Shears!	TITLE	blazeandcave:weaponry/rock_paper_shears	Название advancement blazeandcave:weaponry/rock_paper_shears	
+Beat a zombie at rock, paper, shears	Beat a zombie at rock, paper, shears	DESCRIPTION	blazeandcave:weaponry/rock_paper_shears	Описание advancement blazeandcave:weaponry/rock_paper_shears	
+Weaponry	Weaponry	TAB	blazeandcave:weaponry/root	Название вкладки/категории для blazeandcave:weaponry/root	
+Shovel Knight	Shovel Knight	TITLE	blazeandcave:weaponry/shovel_knight	Название advancement blazeandcave:weaponry/shovel_knight	
+Slapfish	Slapfish	TITLE	blazeandcave:weaponry/slapfish	Название advancement blazeandcave:weaponry/slapfish	
+Advancement Legend	Advancement Legend	TITLE	blazeandcave:bacap/advancement_legend	Название advancement blazeandcave:bacap/advancement_legend	
+BlazeandCave's Advancements Pack	BlazeandCave's Advancements Pack	TAB	blazeandcave:bacap/root	Название вкладки/категории для blazeandcave:bacap/root	
+Thank you to all of my Patrons!	Thank you to all of my Patrons!	DESCRIPTION	blazeandcave:bacap/root	Описание advancement blazeandcave:bacap/root	
+Birthday Song	Birthday Song	TITLE	minecraft:husbandry/allay_deliver_cake_to_note_block	Название advancement minecraft:husbandry/allay_deliver_cake_to_note_block	
+Have an Allay drop a cake at a note block	Have an Allay drop a cake at a note block	DESCRIPTION	minecraft:husbandry/allay_deliver_cake_to_note_block	Описание advancement minecraft:husbandry/allay_deliver_cake_to_note_block	
+You’ve Got a Friend in Me	You’ve Got a Friend in Me	TITLE	minecraft:husbandry/allay_deliver_item_to_player	Название advancement minecraft:husbandry/allay_deliver_item_to_player	
+The Cutest Predator	The Cutest Predator	TITLE	minecraft:husbandry/axolotl_in_a_bucket	Название advancement minecraft:husbandry/axolotl_in_a_bucket	
+Catch an Axolotl in a Bucket	Catch an Axolotl in a Bucket	DESCRIPTION	minecraft:husbandry/axolotl_in_a_bucket	Описание advancement minecraft:husbandry/axolotl_in_a_bucket	
+A Balanced Diet	A Balanced Diet	TITLE	minecraft:husbandry/balanced_diet	Название advancement minecraft:husbandry/balanced_diet	
+Serious Dedication	Serious Dedication	TITLE	minecraft:husbandry/break_diamond_hoe	Название advancement minecraft:husbandry/break_diamond_hoe	
+Overpopulation	Overpopulation	TITLE	minecraft:husbandry/bred_all_animals	Название advancement minecraft:husbandry/bred_all_animals	
+A Complete Catalogue	A Complete Catalogue	TITLE	minecraft:husbandry/complete_catalogue	Название advancement minecraft:husbandry/complete_catalogue	
+Feed a Snifflet	Feed a Snifflet	DESCRIPTION	minecraft:husbandry/feed_snifflet	Описание advancement minecraft:husbandry/feed_snifflet	
+Fishy Business	Fishy Business	TITLE	minecraft:husbandry/fishy_business	Название advancement minecraft:husbandry/fishy_business	
+Catch a fish	Catch a fish	DESCRIPTION	minecraft:husbandry/fishy_business	Описание advancement minecraft:husbandry/fishy_business	
+Team up with an Axolotl and win a fight	Team up with an Axolotl and win a fight	DESCRIPTION	minecraft:husbandry/kill_axolotl_target	Описание advancement minecraft:husbandry/kill_axolotl_target	
+When the Squad Hops into Town	When the Squad Hops into Town	TITLE	minecraft:husbandry/leash_all_frog_variants	Название advancement minecraft:husbandry/leash_all_frog_variants	
+Life… uhh… finds a way	Life… uhh… finds a way	TITLE	minecraft:husbandry/obtain_sniffer_egg	Название advancement minecraft:husbandry/obtain_sniffer_egg	
+Planting the Past	Planting the Past	TITLE	minecraft:husbandry/plant_any_sniffer_seed	Название advancement minecraft:husbandry/plant_any_sniffer_seed	
+Plant any Sniffer Seed	Plant any Sniffer Seed	DESCRIPTION	minecraft:husbandry/plant_any_sniffer_seed	Описание advancement minecraft:husbandry/plant_any_sniffer_seed	
+A Seedy Place	A Seedy Place	TITLE	minecraft:husbandry/plant_seed	Название advancement minecraft:husbandry/plant_seed	
+Good as New	Good as New	TITLE	minecraft:husbandry/repair_wolf_armor	Название advancement minecraft:husbandry/repair_wolf_armor	
+Whatever Floats Your Goat!	Whatever Floats Your Goat!	TITLE	minecraft:husbandry/ride_a_boat_with_a_goat	Название advancement minecraft:husbandry/ride_a_boat_with_a_goat	
+Animals	Animals	TAB	minecraft:husbandry/root	Название вкладки/категории для minecraft:husbandry/root	
+Bee Our Guest	Bee Our Guest	TITLE	minecraft:husbandry/safely_harvest_honey	Название advancement minecraft:husbandry/safely_harvest_honey	
+Total Beelocation	Total Beelocation	TITLE	minecraft:husbandry/silk_touch_nest	Название advancement minecraft:husbandry/silk_touch_nest	
+Tactical Fishing	Tactical Fishing	TITLE	minecraft:husbandry/tactical_fishing	Название advancement minecraft:husbandry/tactical_fishing	
+Bukkit bukkit	Bukkit bukkit	TITLE	minecraft:husbandry/tadpole_in_a_bucket	Название advancement minecraft:husbandry/tadpole_in_a_bucket	
+Catch a Tadpole in a Bucket	Catch a Tadpole in a Bucket	DESCRIPTION	minecraft:husbandry/tadpole_in_a_bucket	Описание advancement minecraft:husbandry/tadpole_in_a_bucket	
+Befriend a wolf	Befriend a wolf	DESCRIPTION	minecraft:husbandry/tame_an_animal	Описание advancement minecraft:husbandry/tame_an_animal	
+Zombie Doctor	Zombie Doctor	TITLE	minecraft:story/cure_zombie_villager	Название advancement minecraft:story/cure_zombie_villager	
+Not Today, Thank You	Not Today, Thank You	TITLE	minecraft:story/deflect_arrow	Название advancement minecraft:story/deflect_arrow	
+Enchanter	Enchanter	TITLE	minecraft:story/enchant_item	Название advancement minecraft:story/enchant_item	
+The End?	The End?	TITLE	minecraft:story/enter_the_end	Название advancement minecraft:story/enter_the_end	
+Enter the End Portal	Enter the End Portal	DESCRIPTION	minecraft:story/enter_the_end	Описание advancement minecraft:story/enter_the_end	
+We Need to Go Deeper	We Need to Go Deeper	TITLE	minecraft:story/enter_the_nether	Название advancement minecraft:story/enter_the_nether	
+Eye Spy	Eye Spy	TITLE	minecraft:story/follow_ender_eye	Название advancement minecraft:story/follow_ender_eye	
+Ice Bucket Challenge	Ice Bucket Challenge	TITLE	minecraft:story/form_obsidian	Название advancement minecraft:story/form_obsidian	
+Isn't It Iron Pick	Isn't It Iron Pick	TITLE	minecraft:story/iron_tools	Название advancement minecraft:story/iron_tools	
+Diamonds!	Diamonds!	TITLE	minecraft:story/mine_diamond	Название advancement minecraft:story/mine_diamond	
+Stone Age	Stone Age	TITLE	minecraft:story/mine_stone	Название advancement minecraft:story/mine_stone	
+Benchmarking	Benchmarking	TAB	minecraft:story/root	Название вкладки/категории для minecraft:story/root	
+Cover Me With Diamonds	Cover Me With Diamonds	TITLE	minecraft:story/shiny_gear	Название advancement minecraft:story/shiny_gear	
+Acquire Hardware	Acquire Hardware	TITLE	minecraft:story/smelt_iron	Название advancement minecraft:story/smelt_iron	
+Getting an Upgrade	Getting an Upgrade	TITLE	minecraft:story/upgrade_tools	Название advancement minecraft:story/upgrade_tools	
+You don't want to have this advancement unlocked!	You don't want to have this advancement unlocked!	DESCRIPTION	blazeandcave:technical/big_cheater	Описание advancement blazeandcave:technical/big_cheater	

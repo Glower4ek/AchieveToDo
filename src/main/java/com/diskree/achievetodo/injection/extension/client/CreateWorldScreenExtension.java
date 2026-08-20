@@ -1,5 +1,6 @@
 package com.diskree.achievetodo.injection.extension.client;
 
+import com.diskree.achievetodo.client.CreateWorldContinuationGate;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
@@ -8,4 +9,6 @@ public interface CreateWorldScreenExtension {
     boolean achievetodo$isWaitingDatapack();
 
     void achievetodo$setWaitingDatapack(boolean isWaitingDatapack);
+
+    CreateWorldContinuationGate achievetodo$getCreateContinuationGate();
 }

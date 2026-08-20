@@ -1,0 +1,2271 @@
+{
+  "provenance": "Russian translations from BACAP Language Pack used with direct permission from the resource-pack owner, permission obtained by the AchieveToDo project maintainer.",
+  "phase": "PHASE_A_RU_FULL_REAUDIT",
+  "input_file": "reference/localization/phase_a_manual_ru.tsv",
+  "full_audit_file": "reference/localization/phase_a_ru_full_reaudit.tsv",
+  "final_manual_file": "reference/localization/phase_a_manual_ru_final.tsv",
+  "sources": {
+    "official_lp_1_18": {
+      "project_id": "YX5bAAJN",
+      "version_number": "1.18",
+      "version_id": "QHiTgYgH",
+      "published": "2024-12-13T23:06:56.157942Z",
+      "game_versions": [
+        "1.17",
+        "1.17.1",
+        "1.18",
+        "1.18.1",
+        "1.18.2",
+        "1.19",
+        "1.19.1",
+        "1.19.2",
+        "1.19.3",
+        "1.19.4",
+        "1.20",
+        "1.20.1",
+        "1.20.2",
+        "1.20.3",
+        "1.20.4",
+        "1.20.5",
+        "1.20.6",
+        "1.21",
+        "1.21.1",
+        "1.21.2",
+        "1.21.3",
+        "1.21.4"
+      ],
+      "download_url": "https://cdn.modrinth.com/data/YX5bAAJN/versions/QHiTgYgH/BACAP%20Language%20Pack%201.18.zip",
+      "ru_ru_path_in_zip": "assets/minecraft/lang/ru_ru.json",
+      "usage": "Allowed for this project via direct permission; public Modrinth license remains ARR."
+    },
+    "official_lp_1_21": {
+      "project_id": "YX5bAAJN",
+      "version_number": "1.21",
+      "version_id": "hsqY3G3V",
+      "published": "2026-06-20T23:51:29.012348Z",
+      "game_versions": [
+        "26.2"
+      ],
+      "download_url": "https://cdn.modrinth.com/data/YX5bAAJN/versions/hsqY3G3V/BACAP%20Language%20Pack%201.21.zip",
+      "ru_ru_path_in_zip": "assets/minecraft/lang/ru_ru.json",
+      "usage": "Allowed for this project via direct permission; used only as compatible fallback over historical 1.18 base."
+    },
+    "bacap_1_21_datapack_for_semantic_check": {
+      "project_id": "VoVJ47kN",
+      "version_number": "1.21",
+      "version_id": "Y2zZ5eSs",
+      "published": "2026-06-17T06:13:32.499541Z",
+      "game_versions": [
+        "26.2"
+      ],
+      "download_url": "https://cdn.modrinth.com/data/VoVJ47kN/versions/Y2zZ5eSs/BlazeandCave%27s%20Advancements%20Pack%201.21.zip"
+    }
+  },
+  "totals": {
+    "TOTAL_PREVIOUS_MISSING_INPUT": 1414,
+    "BETTER_RU_2_3": 0,
+    "OFFICIAL_LP_1_18": 1056,
+    "OFFICIAL_LP_1_21_COMPATIBLE": 5,
+    "ORIGINAL_ACHIEVETODO_RU": 0,
+    "VANILLA_RU": 0,
+    "EXCLUDED_TECHNICAL": 0,
+    "MANUAL_REQUIRED": 353
+  },
+  "by_type": {
+    "TAB": {
+      "total": 16,
+      "BETTER_RU_2_3": 0,
+      "OFFICIAL_LP_1_18": 16,
+      "OFFICIAL_LP_1_21_COMPATIBLE": 0,
+      "ORIGINAL_ACHIEVETODO_RU": 0,
+      "VANILLA_RU": 0,
+      "EXCLUDED_TECHNICAL": 0,
+      "MANUAL_REQUIRED": 0
+    },
+    "TITLE": {
+      "total": 260,
+      "BETTER_RU_2_3": 0,
+      "OFFICIAL_LP_1_18": 258,
+      "OFFICIAL_LP_1_21_COMPATIBLE": 2,
+      "ORIGINAL_ACHIEVETODO_RU": 0,
+      "VANILLA_RU": 0,
+      "EXCLUDED_TECHNICAL": 0,
+      "MANUAL_REQUIRED": 0
+    },
+    "DESCRIPTION": {
+      "total": 184,
+      "BETTER_RU_2_3": 0,
+      "OFFICIAL_LP_1_18": 174,
+      "OFFICIAL_LP_1_21_COMPATIBLE": 0,
+      "ORIGINAL_ACHIEVETODO_RU": 0,
+      "VANILLA_RU": 0,
+      "EXCLUDED_TECHNICAL": 0,
+      "MANUAL_REQUIRED": 10
+    },
+    "MESSAGE": {
+      "total": 954,
+      "BETTER_RU_2_3": 0,
+      "OFFICIAL_LP_1_18": 608,
+      "OFFICIAL_LP_1_21_COMPATIBLE": 3,
+      "ORIGINAL_ACHIEVETODO_RU": 0,
+      "VANILLA_RU": 0,
+      "EXCLUDED_TECHNICAL": 0,
+      "MANUAL_REQUIRED": 343
+    }
+  },
+  "ui_report": {
+    "TAB": {
+      "total": 16,
+      "manual_required": 0
+    },
+    "TITLE": {
+      "total": 260,
+      "manual_required": 0
+    },
+    "DESCRIPTION": {
+      "total": 184,
+      "manual_required": 10
+    },
+    "manual_required_total": 10,
+    "previous_9_changed_resolution": {
+      "resolved_as_vanilla_ru_count": 0,
+      "entries": []
+    }
+  },
+  "message_report": {
+    "total": 954,
+    "BETTER_RU_2_3": 0,
+    "OFFICIAL_LP_1_18": 608,
+    "OFFICIAL_LP_1_21_COMPATIBLE": 3,
+    "ORIGINAL_ACHIEVETODO_RU": 0,
+    "VANILLA_RU": 0,
+    "EXCLUDED_TECHNICAL": 0,
+    "MANUAL_REQUIRED": 343
+  },
+  "manual_required_entries": {
+    "TAB": [],
+    "TITLE": [],
+    "DESCRIPTION": [
+      {
+        "advancement_id": "blazeandcave:adventure/a_journey_begins",
+        "key": "Find a Traveller's Map",
+        "english": "Find a Traveller's Map",
+        "context": "Описание advancement blazeandcave:adventure/a_journey_begins"
+      },
+      {
+        "advancement_id": "blazeandcave:challenges/stack_all_the_blocks",
+        "key": "block.minecraft.deepslate_emerald_ore",
+        "english": "block.minecraft.deepslate_emerald_ore",
+        "context": "Описание advancement blazeandcave:challenges/stack_all_the_blocks"
+      },
+      {
+        "advancement_id": "blazeandcave:challenges/stack_all_the_blocks",
+        "key": "block.minecraft.dragon_egg",
+        "english": "block.minecraft.dragon_egg",
+        "context": "Описание advancement blazeandcave:challenges/stack_all_the_blocks"
+      },
+      {
+        "advancement_id": "blazeandcave:challenges/stack_all_the_blocks",
+        "key": "block.minecraft.heavy_core",
+        "english": "block.minecraft.heavy_core",
+        "context": "Описание advancement blazeandcave:challenges/stack_all_the_blocks"
+      },
+      {
+        "advancement_id": "blazeandcave:challenges/stack_all_the_blocks",
+        "key": "block.minecraft.large_fern",
+        "english": "block.minecraft.large_fern",
+        "context": "Описание advancement blazeandcave:challenges/stack_all_the_blocks"
+      },
+      {
+        "advancement_id": "blazeandcave:challenges/stack_all_the_blocks",
+        "key": "block.minecraft.netherite_block",
+        "english": "block.minecraft.netherite_block",
+        "context": "Описание advancement blazeandcave:challenges/stack_all_the_blocks"
+      },
+      {
+        "advancement_id": "blazeandcave:challenges/stack_all_the_blocks",
+        "key": "block.minecraft.suspicious_gravel",
+        "english": "block.minecraft.suspicious_gravel",
+        "context": "Описание advancement blazeandcave:challenges/stack_all_the_blocks"
+      },
+      {
+        "advancement_id": "blazeandcave:challenges/stack_all_the_blocks",
+        "key": "block.minecraft.suspicious_sand",
+        "english": "block.minecraft.suspicious_sand",
+        "context": "Описание advancement blazeandcave:challenges/stack_all_the_blocks"
+      },
+      {
+        "advancement_id": "blazeandcave:challenges/stack_all_the_blocks",
+        "key": "block.minecraft.tall_grass",
+        "english": "block.minecraft.tall_grass",
+        "context": "Описание advancement blazeandcave:challenges/stack_all_the_blocks"
+      },
+      {
+        "advancement_id": "blazeandcave:challenges/stack_all_the_items",
+        "key": "item.minecraft.recovery_compass",
+        "english": "item.minecraft.recovery_compass",
+        "context": "Описание advancement blazeandcave:challenges/stack_all_the_items"
+      }
+    ],
+    "MESSAGE": [
+      {
+        "advancement_id": "blazeandcave:config/coop_ru_sure_team",
+        "key": "Everyone's currently-obtained advancements will be shared between all players on their team immediately when turning this setting on.",
+        "english": "Everyone's currently-obtained advancements will be shared between all players on their team immediately when turning this setting on.",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config/coop_ru_sure_team.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:config/coop_ru_sure_team",
+        "key": "Team Cooperative Mode makes it so that whenever a player gets an advancement, that advancement will be shared across all players on a team.",
+        "english": "Team Cooperative Mode makes it so that whenever a player gets an advancement, that advancement will be shared across all players on a team.",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config/coop_ru_sure_team.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:config/help_links",
+        "key": "Patreon",
+        "english": "Patreon",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config/help_links.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:config/help_teams",
+        "key": "/team join bac_team_<color> <player>",
+        "english": "/team join bac_team_<color> <player>",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config/help_teams.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:config/revoke_ru_sure",
+        "key": "[ »» ]",
+        "english": "[ »» ]",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config/revoke_ru_sure.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:msg_welcome.mcfunction/msg_welcome",
+        "key": "Created by ",
+        "english": "Created by ",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/msg_welcome.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:new_world.mcfunction/new_world",
+        "key": "gui.advancements",
+        "english": "gui.advancements",
+        "context": "Видимое BACAP сообщение из bacap_override:data/blazeandcave/function/new_world.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/9_to_5",
+        "key": "item.minecraft.disc_fragment_5",
+        "english": "item.minecraft.disc_fragment_5",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/9_to_5.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/a_rather_pointy_fence_post",
+        "key": "block.minecraft.oak_fence",
+        "english": "block.minecraft.oak_fence",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/enchanting/a_rather_pointy_fence_post.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/a_shiny_treat",
+        "key": "item.minecraft.glow_berries",
+        "english": "item.minecraft.glow_berries",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/a_shiny_treat.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/amethyst_miner",
+        "key": "block.minecraft.amethyst_block",
+        "english": "block.minecraft.amethyst_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/amethyst_miner.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/an_amazing_story",
+        "key": "item.minecraft.writable_book",
+        "english": "item.minecraft.writable_book",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/an_amazing_story.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/artillery",
+        "key": "enchantment.minecraft.multishot",
+        "english": "enchantment.minecraft.multishot",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/weaponry/artillery.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/artillery",
+        "key": "item.minecraft.crossbow",
+        "english": "item.minecraft.crossbow",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/weaponry/artillery.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/bake_bread",
+        "key": "item.minecraft.bread",
+        "english": "item.minecraft.bread",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/bake_bread.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/bamboozled",
+        "key": "block.minecraft.bamboo_block",
+        "english": "block.minecraft.bamboo_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/bamboozled.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/barrel_rider",
+        "key": "block.minecraft.barrel",
+        "english": "block.minecraft.barrel",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/barrel_rider.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/basis_of_brewing",
+        "key": "block.minecraft.nether_wart",
+        "english": "block.minecraft.nether_wart",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/basis_of_brewing.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/beacon_overlord",
+        "key": "item.minecraft.nether_star",
+        "english": "item.minecraft.nether_star",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/beacon_overlord.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/berry_nice",
+        "key": "item.minecraft.sweet_berries",
+        "english": "item.minecraft.sweet_berries",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/berry_nice.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/blackout",
+        "key": "block.minecraft.tinted_glass",
+        "english": "block.minecraft.tinted_glass",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/blackout.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/blaze_extinguisher",
+        "key": "enchantment.minecraft.flame",
+        "english": "enchantment.minecraft.flame",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/blaze_extinguisher.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/bricks",
+        "key": "block.minecraft.bricks",
+        "english": "block.minecraft.bricks",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/bricks.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/bulbous",
+        "key": "block.minecraft.copper_bulb",
+        "english": "block.minecraft.copper_bulb",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/bulbous.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/camouflage",
+        "key": "enchantment.minecraft.channeling",
+        "english": "enchantment.minecraft.channeling",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/camouflage.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/care_for_the_environment",
+        "key": "block.minecraft.acacia_sapling",
+        "english": "block.minecraft.acacia_sapling",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/care_for_the_environment.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/care_for_the_environment",
+        "key": "block.minecraft.birch_sapling",
+        "english": "block.minecraft.birch_sapling",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/care_for_the_environment.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/care_for_the_environment",
+        "key": "block.minecraft.cherry_sapling",
+        "english": "block.minecraft.cherry_sapling",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/care_for_the_environment.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/care_for_the_environment",
+        "key": "block.minecraft.dark_oak_sapling",
+        "english": "block.minecraft.dark_oak_sapling",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/care_for_the_environment.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/care_for_the_environment",
+        "key": "block.minecraft.jungle_sapling",
+        "english": "block.minecraft.jungle_sapling",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/care_for_the_environment.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/care_for_the_environment",
+        "key": "block.minecraft.pale_oak_sapling",
+        "english": "block.minecraft.pale_oak_sapling",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/care_for_the_environment.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/cerulean",
+        "key": "block.minecraft.soul_soil",
+        "english": "block.minecraft.soul_soil",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/cerulean.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/copper_miner",
+        "key": "item.minecraft.raw_copper",
+        "english": "item.minecraft.raw_copper",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/copper_miner.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/country_lode_take_me_home",
+        "key": "item.minecraft.compass",
+        "english": "item.minecraft.compass",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/country_lode_take_me_home.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/decaying_beauty",
+        "key": "block.minecraft.wither_rose",
+        "english": "block.minecraft.wither_rose",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/decaying_beauty.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/delicious_fish",
+        "key": "item.minecraft.cooked_cod",
+        "english": "item.minecraft.cooked_cod",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/delicious_fish.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/die_potato",
+        "key": "item.minecraft.potato",
+        "english": "item.minecraft.potato",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/die_potato.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/eeuuwww",
+        "key": "block.minecraft.cobweb",
+        "english": "block.minecraft.cobweb",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/eeuuwww.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/electric",
+        "key": "block.minecraft.redstone_lamp",
+        "english": "block.minecraft.redstone_lamp",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/electric.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/elmer_mudd",
+        "key": "block.minecraft.packed_mud",
+        "english": "block.minecraft.packed_mud",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/elmer_mudd.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/enderman_destroyer",
+        "key": "enchantment.minecraft.knockback",
+        "english": "enchantment.minecraft.knockback",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/enderman_destroyer.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/expensive",
+        "key": "block.minecraft.sea_lantern",
+        "english": "block.minecraft.sea_lantern",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/expensive.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/factorio",
+        "key": "item.minecraft.bow",
+        "english": "item.minecraft.bow",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/factorio.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/fake_copper",
+        "key": "block.minecraft.resin_block",
+        "english": "block.minecraft.resin_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/fake_copper.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/fake_fortress",
+        "key": "block.minecraft.nether_bricks",
+        "english": "block.minecraft.nether_bricks",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/fake_fortress.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/fake_stronghold",
+        "key": "block.minecraft.stone_bricks",
+        "english": "block.minecraft.stone_bricks",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/fake_stronghold.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/feeling_sheepish",
+        "key": "item.minecraft.cooked_mutton",
+        "english": "item.minecraft.cooked_mutton",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/feeling_sheepish.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/festival_of_lights",
+        "key": "block.minecraft.lantern",
+        "english": "block.minecraft.lantern",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/festival_of_lights.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/filthy_stinkin_rich",
+        "key": "block.minecraft.emerald_block",
+        "english": "block.minecraft.emerald_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/filthy_stinkin_rich.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/fluorescent",
+        "key": "block.minecraft.end_rod",
+        "english": "block.minecraft.end_rod",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/fluorescent.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/free_diver",
+        "key": "enchantment.minecraft.aqua_affinity",
+        "english": "enchantment.minecraft.aqua_affinity",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/free_diver.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/freezing",
+        "key": "enchantment.minecraft.smite",
+        "english": "enchantment.minecraft.smite",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/freezing.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/frequent_flyer",
+        "key": "block.minecraft.red_shulker_box",
+        "english": "block.minecraft.red_shulker_box",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/statistics/frequent_flyer.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/fruit_of_the_looms",
+        "key": "item.minecraft.enchanted_golden_apple",
+        "english": "item.minecraft.enchanted_golden_apple",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/fruit_of_the_looms.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/getting_chorus",
+        "key": "item.minecraft.chorus_fruit",
+        "english": "item.minecraft.chorus_fruit",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/end/getting_chorus.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/ghast_slayer",
+        "key": "enchantment.minecraft.punch",
+        "english": "enchantment.minecraft.punch",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/ghast_slayer.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/glows_in_the_dark",
+        "key": "item.minecraft.spectral_arrow",
+        "english": "item.minecraft.spectral_arrow",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/glows_in_the_dark.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/handmade_blinding",
+        "key": "enchantment.minecraft.binding_curse",
+        "english": "enchantment.minecraft.binding_curse",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/enchanting/handmade_blinding.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/harry_potter",
+        "key": "block.minecraft.clay",
+        "english": "block.minecraft.clay",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/harry_potter.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/honey_im_home",
+        "key": "block.minecraft.honeycomb_block",
+        "english": "block.minecraft.honeycomb_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/honey_im_home.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/horse_training",
+        "key": "item.minecraft.iron_horse_armor",
+        "english": "item.minecraft.iron_horse_armor",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/statistics/horse_training.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/house_of_freaks",
+        "key": "block.minecraft.sculk_shrieker",
+        "english": "block.minecraft.sculk_shrieker",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/house_of_freaks.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/i_yearned_for_the_mines",
+        "key": "enchantment.minecraft.fortune",
+        "english": "enchantment.minecraft.fortune",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/i_yearned_for_the_mines.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/incandescent",
+        "key": "block.minecraft.ochre_froglight",
+        "english": "block.minecraft.ochre_froglight",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/incandescent.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/incandescent",
+        "key": "block.minecraft.pearlescent_froglight",
+        "english": "block.minecraft.pearlescent_froglight",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/incandescent.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/incandescent",
+        "key": "block.minecraft.verdant_froglight",
+        "english": "block.minecraft.verdant_froglight",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/incandescent.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/insomniac",
+        "key": "block.minecraft.pink_bed",
+        "english": "block.minecraft.pink_bed",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/insomniac.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/jurassic_sniff",
+        "key": "item.minecraft.torchflower_seeds",
+        "english": "item.minecraft.torchflower_seeds",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/jurassic_sniff.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/kelp_me",
+        "key": "block.minecraft.kelp",
+        "english": "block.minecraft.kelp",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/kelp_me.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/kill_or_be_killed",
+        "key": "enchantment.level.5",
+        "english": "enchantment.level.5",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/statistics/kill_or_be_killed.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/librarian",
+        "key": "block.minecraft.bookshelf",
+        "english": "block.minecraft.bookshelf",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/enchanting/librarian.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/lichen_subscribe",
+        "key": "block.minecraft.glow_lichen",
+        "english": "block.minecraft.glow_lichen",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/lichen_subscribe.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/live_and_let_dye",
+        "key": "item.minecraft.shears",
+        "english": "item.minecraft.shears",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/live_and_let_dye.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/lodes_of_applications",
+        "key": "block.minecraft.lodestone",
+        "english": "block.minecraft.lodestone",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/lodes_of_applications.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/magma_cube_squisher",
+        "key": "enchantment.minecraft.fire_aspect",
+        "english": "enchantment.minecraft.fire_aspect",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/magma_cube_squisher.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/master_coal_miner",
+        "key": "block.minecraft.coal_block",
+        "english": "block.minecraft.coal_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/master_coal_miner.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/master_copper_miner",
+        "key": "block.minecraft.copper_block",
+        "english": "block.minecraft.copper_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/master_copper_miner.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/master_gold_miner",
+        "key": "block.minecraft.gold_block",
+        "english": "block.minecraft.gold_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/master_gold_miner.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/medic",
+        "key": "item.minecraft.glistering_melon_slice",
+        "english": "item.minecraft.glistering_melon_slice",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/potion/medic.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/melting",
+        "key": "enchantment.minecraft.projectile_protection",
+        "english": "enchantment.minecraft.projectile_protection",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/melting.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/milk_does_your_body_good",
+        "key": "item.minecraft.milk_bucket",
+        "english": "item.minecraft.milk_bucket",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/milk_does_your_body_good.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/monstrous_music",
+        "key": "block.minecraft.brown_shulker_box",
+        "english": "block.minecraft.brown_shulker_box",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/monstrous_music.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/monstrous_music",
+        "key": "block.minecraft.creeper_head",
+        "english": "block.minecraft.creeper_head",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/monstrous_music.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/monstrous_music",
+        "key": "block.minecraft.piglin_head",
+        "english": "block.minecraft.piglin_head",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/monstrous_music.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/monstrous_music",
+        "key": "block.minecraft.skeleton_skull",
+        "english": "block.minecraft.skeleton_skull",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/monstrous_music.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/monstrous_music",
+        "key": "block.minecraft.zombie_head",
+        "english": "block.minecraft.zombie_head",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/monstrous_music.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/mr_bean",
+        "key": "block.minecraft.raw_copper_block",
+        "english": "block.minecraft.raw_copper_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/mr_bean.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/mr_bean",
+        "key": "block.minecraft.raw_gold_block",
+        "english": "block.minecraft.raw_gold_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/mr_bean.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/mr_bean",
+        "key": "block.minecraft.raw_iron_block",
+        "english": "block.minecraft.raw_iron_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/mr_bean.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/naturally_carved",
+        "key": "block.minecraft.pumpkin",
+        "english": "block.minecraft.pumpkin",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/naturally_carved.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/nerds_never_die",
+        "key": "item.minecraft.golden_sword",
+        "english": "item.minecraft.golden_sword",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/nerds_never_die.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/no_chain_no_gain",
+        "key": "block.minecraft.chain",
+        "english": "block.minecraft.chain",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/no_chain_no_gain.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/olaf",
+        "key": "block.minecraft.snow_block",
+        "english": "block.minecraft.snow_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/olaf.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/paleontologist",
+        "key": "block.minecraft.bone_block",
+        "english": "block.minecraft.bone_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/paleontologist.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/pathways",
+        "key": "item.minecraft.stone_shovel",
+        "english": "item.minecraft.stone_shovel",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/pathways.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/performance_enhancing_drugs",
+        "key": "item.minecraft.sugar",
+        "english": "item.minecraft.sugar",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/potion/performance_enhancing_drugs.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/poison_dart",
+        "key": "item.minecraft.tipped_arrow.effect.poison",
+        "english": "item.minecraft.tipped_arrow.effect.poison",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/poison_dart.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/pork_chop",
+        "key": "item.minecraft.cooked_porkchop",
+        "english": "item.minecraft.cooked_porkchop",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/pork_chop.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/poseidon_vs_hades",
+        "key": "enchantment.minecraft.loyalty",
+        "english": "enchantment.minecraft.loyalty",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/weaponry/poseidon_vs_hades.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/pottery_exhibition",
+        "key": "item.minecraft.brown_bundle",
+        "english": "item.minecraft.brown_bundle",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/pottery_exhibition.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/powder_full",
+        "key": "item.minecraft.powder_snow_bucket",
+        "english": "item.minecraft.powder_snow_bucket",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/powder_full.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/powerful_light",
+        "key": "block.minecraft.redstone_torch",
+        "english": "block.minecraft.redstone_torch",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/powerful_light.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/quicksand",
+        "key": "block.minecraft.soul_sand",
+        "english": "block.minecraft.soul_sand",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/quicksand.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/quirky_quartz",
+        "key": "item.minecraft.quartz",
+        "english": "item.minecraft.quartz",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/quirky_quartz.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/renewable_energy",
+        "key": "item.minecraft.charcoal",
+        "english": "item.minecraft.charcoal",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/renewable_energy.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/resinance",
+        "key": "item.minecraft.resin_clump",
+        "english": "item.minecraft.resin_clump",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/resinance.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/save_the_turtles",
+        "key": "block.minecraft.turtle_egg",
+        "english": "block.minecraft.turtle_egg",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/save_the_turtles.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/seeing_stars",
+        "key": "item.minecraft.glowstone_dust",
+        "english": "item.minecraft.glowstone_dust",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/seeing_stars.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/setting_up_the_mood",
+        "key": "block.minecraft.candle",
+        "english": "block.minecraft.candle",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/setting_up_the_mood.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/shelf_expression",
+        "key": "item.minecraft.book",
+        "english": "item.minecraft.book",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/shelf_expression.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/shroom_lightyear",
+        "key": "block.minecraft.shroomlight",
+        "english": "block.minecraft.shroomlight",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/shroom_lightyear.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/silence_of_the_lambs",
+        "key": "block.minecraft.gray_wool",
+        "english": "block.minecraft.gray_wool",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/silence_of_the_lambs.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/skyblock",
+        "key": "item.minecraft.lava_bucket",
+        "english": "item.minecraft.lava_bucket",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/skyblock.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/sleep_with_the_fishes",
+        "key": "enchantment.minecraft.respiration",
+        "english": "enchantment.minecraft.respiration",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/sleep_with_the_fishes.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/smithing_with_style",
+        "key": "block.minecraft.gray_shulker_box",
+        "english": "block.minecraft.gray_shulker_box",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/smithing_with_style.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/snowball_fight",
+        "key": "item.minecraft.snowball",
+        "english": "item.minecraft.snowball",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/weaponry/snowball_fight.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/souperman",
+        "key": "item.minecraft.beetroot",
+        "english": "item.minecraft.beetroot",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/souperman.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/spider_smasher",
+        "key": "enchantment.minecraft.protection",
+        "english": "enchantment.minecraft.protection",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/spider_smasher.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/spike_ice",
+        "key": "block.minecraft.packed_ice",
+        "english": "block.minecraft.packed_ice",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/spike_ice.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/sponge_miner",
+        "key": "block.minecraft.sponge",
+        "english": "block.minecraft.sponge",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/sponge_miner.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/stationary_storage",
+        "key": "block.minecraft.chest",
+        "english": "block.minecraft.chest",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/stationary_storage.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/stepping_on_legos",
+        "key": "block.minecraft.magma_block",
+        "english": "block.minecraft.magma_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/stepping_on_legos.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/stone_age",
+        "key": "block.minecraft.cobbled_deepslate",
+        "english": "block.minecraft.cobbled_deepslate",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/stone_age.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/stone_age",
+        "key": "block.minecraft.stone",
+        "english": "block.minecraft.stone",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/stone_age.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/stuck_in_the_mud",
+        "key": "block.minecraft.mud",
+        "english": "block.minecraft.mud",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/stuck_in_the_mud.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/sugar_sugar",
+        "key": "block.minecraft.sugar_cane",
+        "english": "block.minecraft.sugar_cane",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/sugar_sugar.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/super_strength",
+        "key": "item.minecraft.blaze_powder",
+        "english": "item.minecraft.blaze_powder",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/potion/super_strength.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/the_aquatic_hunter",
+        "key": "enchantment.minecraft.riptide",
+        "english": "enchantment.minecraft.riptide",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/weaponry/the_aquatic_hunter.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/the_deep_end",
+        "key": "block.minecraft.wet_sponge",
+        "english": "block.minecraft.wet_sponge",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/the_deep_end.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/the_incredible_sculk",
+        "key": "block.minecraft.sculk",
+        "english": "block.minecraft.sculk",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/the_incredible_sculk.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/the_melon_the_melon_the_melon",
+        "key": "item.minecraft.melon_slice",
+        "english": "item.minecraft.melon_slice",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/the_melon_the_melon_the_melon.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/the_meloncholy_dane",
+        "key": "block.minecraft.melon",
+        "english": "block.minecraft.melon",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/the_meloncholy_dane.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/the_pie",
+        "key": "item.minecraft.pumpkin_pie",
+        "english": "item.minecraft.pumpkin_pie",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/the_pie.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/the_rainbow_you_always_wanted",
+        "key": "block.minecraft.gravel",
+        "english": "block.minecraft.gravel",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/the_rainbow_you_always_wanted.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/the_ritual_begins",
+        "key": "block.minecraft.black_candle",
+        "english": "block.minecraft.black_candle",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/the_ritual_begins.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/theres_a_zombie_on_the_lawn",
+        "key": "block.minecraft.sunflower",
+        "english": "block.minecraft.sunflower",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/theres_a_zombie_on_the_lawn.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/thick_ice",
+        "key": "block.minecraft.blue_ice",
+        "english": "block.minecraft.blue_ice",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/thick_ice.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/time_to_upgrade",
+        "key": "item.minecraft.netherite_upgrade_smithing_template",
+        "english": "item.minecraft.netherite_upgrade_smithing_template",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/time_to_upgrade.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/top_of_the_world",
+        "key": "block.minecraft.scaffolding",
+        "english": "block.minecraft.scaffolding",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/top_of_the_world.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/totally_not_an_afk_fisher",
+        "key": "item.minecraft.fishing_rod",
+        "english": "item.minecraft.fishing_rod",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/totally_not_an_afk_fisher.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/vibe_check",
+        "key": "block.minecraft.sculk_sensor",
+        "english": "block.minecraft.sculk_sensor",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/vibe_check.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:reward/wooly",
+        "key": "item.minecraft.mutton",
+        "english": "item.minecraft.mutton",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/wooly.mcfunction"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.acacia_log",
+        "english": "block.minecraft.acacia_log",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/bacap/getting_wood.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.ancient_debris",
+        "english": "block.minecraft.ancient_debris",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/diamonds_are_not_forever.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.bamboo",
+        "english": "block.minecraft.bamboo",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/zoologist.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.big_dripleaf",
+        "english": "block.minecraft.big_dripleaf",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/leaflet_drop.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.birch_log",
+        "english": "block.minecraft.birch_log",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/bacap/getting_wood.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.blackstone",
+        "english": "block.minecraft.blackstone",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/blackstonehenge.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.brown_mushroom",
+        "english": "block.minecraft.brown_mushroom",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/im_gonna_be_sick.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.cactus",
+        "english": "block.minecraft.cactus",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/hump_day.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.cake",
+        "english": "block.minecraft.cake",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/birthday_song.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.carved_pumpkin",
+        "english": "block.minecraft.carved_pumpkin",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/olaf.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.cherry_log",
+        "english": "block.minecraft.cherry_log",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/bacap/getting_wood.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.chorus_flower",
+        "english": "block.minecraft.chorus_flower",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/end/extrabiologist.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.cobblestone",
+        "english": "block.minecraft.cobblestone",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/rock_collection.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.crafter",
+        "english": "block.minecraft.crafter",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/craftception.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.crimson_fungus",
+        "english": "block.minecraft.crimson_fungus",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/hell_botanist.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.crimson_stem",
+        "english": "block.minecraft.crimson_stem",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/a_good_start.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.crying_obsidian",
+        "english": "block.minecraft.crying_obsidian",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/end/unending_hell.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.dark_oak_log",
+        "english": "block.minecraft.dark_oak_log",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/bacap/getting_wood.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.deepslate",
+        "english": "block.minecraft.deepslate",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/deepslate_conspiracy.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.diamond_block",
+        "english": "block.minecraft.diamond_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/stacked_smither.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.dragon_head",
+        "english": "block.minecraft.dragon_head",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/end/good_luck_getting_this_one.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.dried_kelp_block",
+        "english": "block.minecraft.dried_kelp_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/aquatic_biofuel.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.gilded_blackstone",
+        "english": "block.minecraft.gilded_blackstone",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/gilded_miner.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.glass",
+        "english": "block.minecraft.glass",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/classy_glassy.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.glowstone",
+        "english": "block.minecraft.glowstone",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/glowing.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.hay_block",
+        "english": "block.minecraft.hay_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/heavy_duty_caravan.mcfunction; используется в 5 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.honey_block",
+        "english": "block.minecraft.honey_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/sticky_situation.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.ice",
+        "english": "block.minecraft.ice",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/everybody_loves_ice.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.iron_block",
+        "english": "block.minecraft.iron_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/body_guard.mcfunction; используется в 5 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.jack_o_lantern",
+        "english": "block.minecraft.jack_o_lantern",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/halloween.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.jungle_log",
+        "english": "block.minecraft.jungle_log",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/bacap/getting_wood.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.lapis_block",
+        "english": "block.minecraft.lapis_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/lapis_lazuli_miner.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.mangrove_log",
+        "english": "block.minecraft.mangrove_log",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/bacap/getting_wood.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.mangrove_propagule",
+        "english": "block.minecraft.mangrove_propagule",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/a_mangrove_grove.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.note_block",
+        "english": "block.minecraft.note_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/monstrous_music.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.oak_log",
+        "english": "block.minecraft.oak_log",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/bacap/getting_wood.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.oak_sapling",
+        "english": "block.minecraft.oak_sapling",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/skyblock.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.obsidian",
+        "english": "block.minecraft.obsidian",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/ice_bucket_challenge.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.pale_oak_log",
+        "english": "block.minecraft.pale_oak_log",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/bacap/getting_wood.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.pointed_dripstone",
+        "english": "block.minecraft.pointed_dripstone",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/dripstone_drop.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.powered_rail",
+        "english": "block.minecraft.powered_rail",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/electric_rails.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.quartz_block",
+        "english": "block.minecraft.quartz_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/greek_art_decor.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.rail",
+        "english": "block.minecraft.rail",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/all_aboard.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.red_mushroom",
+        "english": "block.minecraft.red_mushroom",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/im_gonna_be_sick.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.red_sand",
+        "english": "block.minecraft.red_sand",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/built_on_sand_set_in_stone.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.redstone_block",
+        "english": "block.minecraft.redstone_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/redstone_miner.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.sand",
+        "english": "block.minecraft.sand",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/built_on_sand_set_in_stone.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.sculk_catalyst",
+        "english": "block.minecraft.sculk_catalyst",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/not_afraid_of_heights.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.sea_pickle",
+        "english": "block.minecraft.sea_pickle",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/in_a_pickle.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.slime_block",
+        "english": "block.minecraft.slime_block",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/oh_no_guys_im_oozing.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.spruce_log",
+        "english": "block.minecraft.spruce_log",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/bacap/getting_wood.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.spruce_sapling",
+        "english": "block.minecraft.spruce_sapling",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/evelyn_evergreen.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.terracotta",
+        "english": "block.minecraft.terracotta",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/the_glazed_terracotta_army.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.tnt",
+        "english": "block.minecraft.tnt",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/we_have_liftoff.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.torch",
+        "english": "block.minecraft.torch",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/torched.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.warped_fungus",
+        "english": "block.minecraft.warped_fungus",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/bobbleheads.mcfunction; используется в 9 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.warped_stem",
+        "english": "block.minecraft.warped_stem",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/a_good_start.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.white_wool",
+        "english": "block.minecraft.white_wool",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/fuzzy_feet.mcfunction; используется в 7 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "block.minecraft.wither_skeleton_skull",
+        "english": "block.minecraft.wither_skeleton_skull",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/end/the_beginning.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.level.1",
+        "english": "enchantment.level.1",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/creeper_killer.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.level.2",
+        "english": "enchantment.level.2",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/enchanting/ill_be_back.mcfunction; используется в 12 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.level.3",
+        "english": "enchantment.level.3",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/its_high_noon.mcfunction; используется в 13 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.level.4",
+        "english": "enchantment.level.4",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/end/uh_houston_we_have_a_problem.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.minecraft.efficiency",
+        "english": "enchantment.minecraft.efficiency",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/bottom_to_top.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.minecraft.feather_falling",
+        "english": "enchantment.minecraft.feather_falling",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/end/sky_high.mcfunction; используется в 5 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.minecraft.infinity",
+        "english": "enchantment.minecraft.infinity",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/redstone/bullseye.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.minecraft.looting",
+        "english": "enchantment.minecraft.looting",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/creeper_killer.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.minecraft.mending",
+        "english": "enchantment.minecraft.mending",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/totally_not_an_afk_fisher.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.minecraft.power",
+        "english": "enchantment.minecraft.power",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/its_high_noon.mcfunction; используется в 6 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.minecraft.sharpness",
+        "english": "enchantment.minecraft.sharpness",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/enchanting/this_name_sounds_cooler.mcfunction; используется в 5 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.minecraft.silk_touch",
+        "english": "enchantment.minecraft.silk_touch",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/mushroom_scientist.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "enchantment.minecraft.unbreaking",
+        "english": "enchantment.minecraft.unbreaking",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/challenges/ad_astra.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.amethyst_shard",
+        "english": "item.minecraft.amethyst_shard",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/and_make_it_double.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.apple",
+        "english": "item.minecraft.apple",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/an_apple_a_day.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.armadillo_scute",
+        "english": "item.minecraft.armadillo_scute",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/good_as_new.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.arrow",
+        "english": "item.minecraft.arrow",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/enchanting/ill_be_back.mcfunction; используется в 11 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.beef",
+        "english": "item.minecraft.beef",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/super_mooshroom.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.blaze_rod",
+        "english": "item.minecraft.blaze_rod",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/blaze_extinguisher.mcfunction; используется в 5 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.bone",
+        "english": "item.minecraft.bone",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/leader_of_the_pack.mcfunction; используется в 8 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.bone_meal",
+        "english": "item.minecraft.bone_meal",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/harry_potter.mcfunction; используется в 9 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.breeze_rod",
+        "english": "item.minecraft.breeze_rod",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/blowback.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.carrot",
+        "english": "item.minecraft.carrot",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/swine_sailing.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.chicken",
+        "english": "item.minecraft.chicken",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/chicken_cooper.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.coal",
+        "english": "item.minecraft.coal",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/coal_miner.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.cocoa_beans",
+        "english": "item.minecraft.cocoa_beans",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/hot_chocolate.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.cod",
+        "english": "item.minecraft.cod",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/crazy_cat_lady.mcfunction; используется в 5 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.cooked_beef",
+        "english": "item.minecraft.cooked_beef",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/high_steaks.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.cooked_chicken",
+        "english": "item.minecraft.cooked_chicken",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/so_good.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.cooked_rabbit",
+        "english": "item.minecraft.cooked_rabbit",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/going_down_the_rabbit_hole.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.cooked_salmon",
+        "english": "item.minecraft.cooked_salmon",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/delicious_fish.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.copper_ingot",
+        "english": "item.minecraft.copper_ingot",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/budget_channeling.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.diamond",
+        "english": "item.minecraft.diamond",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/beethoven.mcfunction; используется в 24 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.dragon_breath",
+        "english": "item.minecraft.dragon_breath",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/potion/furious_ammunition.mcfunction; используется в 5 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.echo_shard",
+        "english": "item.minecraft.echo_shard",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/diagon_allay.mcfunction; используется в 7 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.egg",
+        "english": "item.minecraft.egg",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/feeding_the_chickens.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.elytra",
+        "english": "item.minecraft.elytra",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/challenges/ad_astra.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.emerald",
+        "english": "item.minecraft.emerald",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/businessman.mcfunction; используется в 43 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.enchanted_book",
+        "english": "item.minecraft.enchanted_book",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/its_high_noon.mcfunction; используется в 39 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.end_crystal",
+        "english": "item.minecraft.end_crystal",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/end/the_end_again.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.ender_eye",
+        "english": "item.minecraft.ender_eye",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/enders_chest.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.ender_pearl",
+        "english": "item.minecraft.ender_pearl",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/genesis_of_the_end.mcfunction; используется в 9 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.feather",
+        "english": "item.minecraft.feather",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/tickle_time.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.fermented_spider_eye",
+        "english": "item.minecraft.fermented_spider_eye",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/the_ghastly_eyes.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.firework_rocket",
+        "english": "item.minecraft.firework_rocket",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/end/divers_dozen.mcfunction; используется в 6 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.flint",
+        "english": "item.minecraft.flint",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/bonfire_night.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.ghast_tear",
+        "english": "item.minecraft.ghast_tear",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/bring_down_the_beast.mcfunction; используется в 9 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.glow_ink_sac",
+        "english": "item.minecraft.glow_ink_sac",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/cephalight.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.gold_ingot",
+        "english": "item.minecraft.gold_ingot",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/overpowered.mcfunction; используется в 16 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.gold_nugget",
+        "english": "item.minecraft.gold_nugget",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/nugget_in_a_biscuit.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.golden_apple",
+        "english": "item.minecraft.golden_apple",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/so_hungry_i_could_eat_a_horse.mcfunction; используется в 6 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.golden_carrot",
+        "english": "item.minecraft.golden_carrot",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/shady_deals.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.golden_horse_armor",
+        "english": "item.minecraft.golden_horse_armor",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/its_high_noon.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.gunpowder",
+        "english": "item.minecraft.gunpowder",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/end/rocketman.mcfunction; используется в 13 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.honey_bottle",
+        "english": "item.minecraft.honey_bottle",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/nest_quick.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.honeycomb",
+        "english": "item.minecraft.honeycomb",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/hive_mind.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.ink_sac",
+        "english": "item.minecraft.ink_sac",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/farming/its_full_of_ink.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.iron_ingot",
+        "english": "item.minecraft.iron_ingot",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/your_daily_fix.mcfunction; используется в 14 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.lapis_lazuli",
+        "english": "item.minecraft.lapis_lazuli",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/challenges/ultimate_enchanter.mcfunction; используется в 26 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.lead",
+        "english": "item.minecraft.lead",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/beeloons.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.leather",
+        "english": "item.minecraft.leather",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/colorful_cavalry.mcfunction; используется в 15 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.magma_cream",
+        "english": "item.minecraft.magma_cream",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/nether/high_temperature_fluid_monster.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.name_tag",
+        "english": "item.minecraft.name_tag",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/i_just_want_to_make_toast.mcfunction; используется в 6 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.nautilus_shell",
+        "english": "item.minecraft.nautilus_shell",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/biomes/ahoy.mcfunction; используется в 8 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.netherite_ingot",
+        "english": "item.minecraft.netherite_ingot",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/moar_broken_tools.mcfunction; используется в 7 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.ominous_trial_key",
+        "english": "item.minecraft.ominous_trial_key",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/revaulting.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.phantom_membrane",
+        "english": "item.minecraft.phantom_membrane",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/insomniac.mcfunction; используется в 8 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.porkchop",
+        "english": "item.minecraft.porkchop",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/bacon.mcfunction; используется в 8 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.prismarine_crystals",
+        "english": "item.minecraft.prismarine_crystals",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/guardian_destroyer.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.prismarine_shard",
+        "english": "item.minecraft.prismarine_shard",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/guardian_destroyer.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.pufferfish",
+        "english": "item.minecraft.pufferfish",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/monumental.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.rabbit",
+        "english": "item.minecraft.rabbit",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/in_a_hole_there_lived_a_rabbit.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.rabbit_foot",
+        "english": "item.minecraft.rabbit_foot",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/i_just_want_to_make_toast.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.rabbit_hide",
+        "english": "item.minecraft.rabbit_hide",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/going_down_the_rabbit_hole.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.raw_gold",
+        "english": "item.minecraft.raw_gold",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/gold_mine.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.raw_iron",
+        "english": "item.minecraft.raw_iron",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/building/blast_it.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.redstone",
+        "english": "item.minecraft.redstone",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/mining/seeing_red.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.rotten_flesh",
+        "english": "item.minecraft.rotten_flesh",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/puppies_yipe.mcfunction; используется в 5 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.saddle",
+        "english": "item.minecraft.saddle",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/statistics/lightning_mcpig.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.shulker_shell",
+        "english": "item.minecraft.shulker_shell",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/end/a_wizards_breakfast.mcfunction; используется в 9 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.slime_ball",
+        "english": "item.minecraft.slime_ball",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/frog_family.mcfunction; используется в 5 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.spider_eye",
+        "english": "item.minecraft.spider_eye",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/farmadillo.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.string",
+        "english": "item.minecraft.string",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/ew_ew_ew.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.tipped_arrow.effect.slowness",
+        "english": "item.minecraft.tipped_arrow.effect.slowness",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/monsters/frosty.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.totem_of_undying",
+        "english": "item.minecraft.totem_of_undying",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/postmortal.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.trial_key",
+        "english": "item.minecraft.trial_key",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/under_lock_and_key.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.trident",
+        "english": "item.minecraft.trident",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/enchanting/god_of_thunder.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.tropical_fish",
+        "english": "item.minecraft.tropical_fish",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/axolittle.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.turtle_scute",
+        "english": "item.minecraft.turtle_scute",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/save_the_turtles.mcfunction; используется в 5 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.water_bucket",
+        "english": "item.minecraft.water_bucket",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/aquarium.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.wheat",
+        "english": "item.minecraft.wheat",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/billy_the_kid.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.wheat_seeds",
+        "english": "item.minecraft.wheat_seeds",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/animal/feeding_the_chickens.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "item.minecraft.wind_charge",
+        "english": "item.minecraft.wind_charge",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/reward/adventure/from_under_your_feet.mcfunction; используется в 4 местах"
+      },
+      {
+        "advancement_id": "blazeandcave:riddle/eighth_line",
+        "key": "Eighth line complete...",
+        "english": "Eighth line complete...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/eighth_line.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:riddle/fifth_line",
+        "key": "Fifth line complete...",
+        "english": "Fifth line complete...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/fifth_line.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:riddle/first_line",
+        "key": "First line complete...",
+        "english": "First line complete...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/first_line.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:riddle/fourth_line",
+        "key": "Fourth line complete...",
+        "english": "Fourth line complete...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/fourth_line.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:riddle/ninth_line",
+        "key": "Ninth line complete...",
+        "english": "Ninth line complete...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/ninth_line.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:riddle/second_line",
+        "key": "Second line complete...",
+        "english": "Second line complete...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/second_line.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:riddle/seventh_line",
+        "key": "Seventh line complete...",
+        "english": "Seventh line complete...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/seventh_line.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:riddle/sixth_line",
+        "key": "Sixth line complete...",
+        "english": "Sixth line complete...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/sixth_line.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:riddle/third_line",
+        "key": "Third line complete...",
+        "english": "Third line complete...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/third_line.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Aqua Team",
+        "english": "Aqua Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Black Team",
+        "english": "Black Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Blue Team",
+        "english": "Blue Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Dark Aqua Team",
+        "english": "Dark Aqua Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Dark Blue Team",
+        "english": "Dark Blue Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Dark Gray Team",
+        "english": "Dark Gray Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Dark Green Team",
+        "english": "Dark Green Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Dark Purple Team",
+        "english": "Dark Purple Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Dark Red Team",
+        "english": "Dark Red Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Gold Team",
+        "english": "Gold Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Gray Team",
+        "english": "Gray Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Green Team",
+        "english": "Green Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Light Purple Team",
+        "english": "Light Purple Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Red Team",
+        "english": "Red Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "White Team",
+        "english": "White Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+        "key": "Yellow Team",
+        "english": "Yellow Team",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:timers_trigger.mcfunction/timers_trigger",
+        "key": "Let Me Out",
+        "english": "Let Me Out",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/timers_trigger.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/a_rather_pointy_fence_post",
+        "key": "This isn't just any fence postâ¦",
+        "english": "This isn't just any fence postâ¦",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/enchanting/a_rather_pointy_fence_post.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/amethyst_miner",
+        "key": "Looks like a slimy slug sucked all the power out of it...",
+        "english": "Looks like a slimy slug sucked all the power out of it...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/mining/amethyst_miner.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/cherry_bomb",
+        "key": "âNo, let's detonate instead!â says his brother, Cherry #2",
+        "english": "âNo, let's detonate instead!â says his brother, Cherry #2",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/building/cherry_bomb.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/chestful_of_cobblestone",
+        "key": "Just imagine how much cobblestone it contains...",
+        "english": "Just imagine how much cobblestone it contains...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/mining/chestful_of_cobblestone.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/edge_of_the_jungle",
+        "key": "In the jungle, the mighty jungle,\\n\\nThe lion sleeps tonight\\n\\nIn the jungle, the quiet jungle,\\n\\nThe lion sleeps tonight",
+        "english": "In the jungle, the mighty jungle,\\n\\nThe lion sleeps tonight\\n\\nIn the jungle, the quiet jungle,\\n\\nThe lion sleeps tonight",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/biomes/edge_of_the_jungle.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/event_horizon",
+        "key": "Newton's third law - the only way humans have ever",
+        "english": "Newton's third law - the only way humans have ever",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/end/event_horizon.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/fractal",
+        "key": "and they don't stop comingâ¦",
+        "english": "and they don't stop comingâ¦",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/animal/fractal.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/giga_xp_grinder",
+        "key": "yet so elusive...",
+        "english": "yet so elusive...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/statistics/giga_xp_grinder.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/multiclassed",
+        "key": "It's a sword, axe andâ¦",
+        "english": "It's a sword, axe andâ¦",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/weaponry/multiclassed.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/nest_quick",
+        "key": "Barry B. Benson",
+        "english": "Barry B. Benson",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/animal/nest_quick.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/not_afraid_of_heights",
+        "key": "This sign canât stop me because I can't see!",
+        "english": "This sign canât stop me because I can't see!",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/monsters/not_afraid_of_heights.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/over_overkill",
+        "key": "gets kinda boring after awhile...)",
+        "english": "gets kinda boring after awhile...)",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/enchanting/over_overkill.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/overwarden",
+        "key": "This is getting out of hand...",
+        "english": "This is getting out of hand...",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/challenges/overwarden.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/pupil_poppers",
+        "key": "Awarded to distinguished individuals who complete Etho's challenge",
+        "english": "Awarded to distinguished individuals who complete Etho's challenge",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/monsters/pupil_poppers.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/slabs_for_days",
+        "key": "Flex Tape",
+        "english": "Flex Tape",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/building/slabs_for_days.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/sly_copper_the_copper_heist",
+        "key": "The Moon Lord fears no weapon, but this one... it scares him",
+        "english": "The Moon Lord fears no weapon, but this one... it scares him",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/mining/sly_copper_the_copper_heist.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/when_the_squad_hops_into_town",
+        "key": "It's Wednesday, my dudes!",
+        "english": "It's Wednesday, my dudes!",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/animal/when_the_squad_hops_into_town.mcfunction"
+      },
+      {
+        "advancement_id": "blazeandcave:trophy/xp_grinder",
+        "key": "2013 - 2020",
+        "english": "2013 - 2020",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/statistics/xp_grinder.mcfunction"
+      },
+      {
+        "advancement_id": "",
+        "key": "'s Advancements Pack!",
+        "english": "'s Advancements Pack!",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/msg_intro.mcfunction; используется в 2 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "and",
+        "english": "and",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "Blaze",
+        "english": "Blaze",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "Cave",
+        "english": "Cave",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config.mcfunction; используется в 3 местах"
+      },
+      {
+        "advancement_id": "",
+        "key": "Discord",
+        "english": "Discord",
+        "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config/help_links.mcfunction; используется в 3 местах"
+      }
+    ]
+  }
+}

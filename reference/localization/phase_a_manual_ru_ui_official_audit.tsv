@@ -1,0 +1,461 @@
+key	english	type	advancement_id	match_status	official_1_21_key	semantic_note
+Find a Traveller’s Map	Find a Traveller’s Map	DESCRIPTION	blazeandcave:adventure/a_journey_begins	EXACT_MATCH	Find a Traveller’s Map	Historical key присутствует в official 1.21 RU pack.
+Awards Ceremony	Awards Ceremony	TITLE	blazeandcave:adventure/awards_ceremony	EXACT_MATCH	Awards Ceremony	Historical key присутствует в official 1.21 RU pack.
+Defeat a Breeze in the Trial Chambers	Defeat a Breeze in the Trial Chambers	DESCRIPTION	blazeandcave:adventure/break_wind	EXACT_MATCH	Defeat a Breeze in the Trial Chambers	Historical key присутствует в official 1.21 RU pack.
+Businessman	Businessman	TITLE	blazeandcave:adventure/businessman	EXACT_MATCH	Businessman	Historical key присутствует в official 1.21 RU pack.
+Have an Allay deliver a potion to you in the Deep Dark	Have an Allay deliver a potion to you in the Deep Dark	DESCRIPTION	blazeandcave:adventure/diagon_allay	EXACT_MATCH	Have an Allay deliver a potion to you in the Deep Dark	Historical key присутствует в official 1.21 RU pack.
+Feeling Ill	Feeling Ill	TITLE	blazeandcave:adventure/feeling_ill	EXACT_MATCH	Feeling Ill	Historical key присутствует в official 1.21 RU pack.
+Florist	Florist	TITLE	blazeandcave:adventure/florist	EXACT_MATCH	Florist	Historical key присутствует в official 1.21 RU pack.
+Trade for a flower from the Wandering Trader	Trade for a flower from the Wandering Trader	DESCRIPTION	blazeandcave:adventure/florist	EXACT_MATCH	Trade for a flower from the Wandering Trader	Historical key присутствует в official 1.21 RU pack.
+Ghostbuster!	Ghostbuster!	TITLE	blazeandcave:adventure/ghostbuster	EXACT_MATCH	Ghostbuster!	Historical key присутствует в official 1.21 RU pack.
+Grave Robber	Grave Robber	TITLE	blazeandcave:adventure/grave_robber	EXACT_MATCH	Grave Robber	Historical key присутствует в official 1.21 RU pack.
+Kill a Vindicator in a Woodland Mansion	Kill a Vindicator in a Woodland Mansion	DESCRIPTION	blazeandcave:adventure/heres_johnny	EXACT_MATCH	Kill a Vindicator in a Woodland Mansion	Historical key присутствует в official 1.21 RU pack.
+Name a bunny 'Toast'	Name a bunny 'Toast'	DESCRIPTION	blazeandcave:adventure/i_just_want_to_make_toast	EXACT_MATCH	Name a bunny 'Toast'	Historical key присутствует в official 1.21 RU pack.
+Justice	Justice	TITLE	blazeandcave:adventure/justice	EXACT_MATCH	Justice	Historical key присутствует в official 1.21 RU pack.
+Defeat a Guardian	Defeat a Guardian	DESCRIPTION	blazeandcave:adventure/laser_sharks	EXACT_MATCH	Defeat a Guardian	Historical key присутствует в official 1.21 RU pack.
+Place a map in an item frame	Place a map in an item frame	DESCRIPTION	blazeandcave:adventure/map_room	EXACT_MATCH	Place a map in an item frame	Historical key присутствует в official 1.21 RU pack.
+Kill a villager	Kill a villager	DESCRIPTION	blazeandcave:adventure/murderer	EXACT_MATCH	Kill a villager	Historical key присутствует в official 1.21 RU pack.
+Play a music disc in a jukebox	Play a music disc in a jukebox	DESCRIPTION	blazeandcave:adventure/music_to_my_ears	EXACT_MATCH	Play a music disc in a jukebox	Historical key присутствует в official 1.21 RU pack.
+Name a Piglin Brute 'Technoblade'	Name a Piglin Brute 'Technoblade'	DESCRIPTION	blazeandcave:adventure/nerds_never_die	EXACT_MATCH	Name a Piglin Brute 'Technoblade'	Historical key присутствует в official 1.21 RU pack.
+Picador	Picador	TITLE	blazeandcave:adventure/picador	EXACT_MATCH	Picador	Historical key присутствует в official 1.21 RU pack.
+Pottery Exhibition	Pottery Exhibition	TITLE	blazeandcave:adventure/pottery_exhibition	EXACT_MATCH	Pottery Exhibition	Historical key присутствует в official 1.21 RU pack.
+Prime Specimen	Prime Specimen	TITLE	blazeandcave:adventure/prime_specimen	EXACT_MATCH	Prime Specimen	Historical key присутствует в official 1.21 RU pack.
+Rebuilding the Oceans	Rebuilding the Oceans	TITLE	blazeandcave:adventure/rebuilding_the_oceans	EXACT_MATCH	Rebuilding the Oceans	Historical key присутствует в official 1.21 RU pack.
+Trade for a coral block from the Wandering Trader	Trade for a coral block from the Wandering Trader	DESCRIPTION	blazeandcave:adventure/rebuilding_the_oceans	EXACT_MATCH	Trade for a coral block from the Wandering Trader	Historical key присутствует в official 1.21 RU pack.
+Get attacked by a natural iron golem defending its village	Get attacked by a natural iron golem defending its village	DESCRIPTION	blazeandcave:adventure/rekt	EXACT_MATCH	Get attacked by a natural iron golem defending its village	Historical key присутствует в official 1.21 RU pack.
+Shady Deals	Shady Deals	TITLE	blazeandcave:adventure/shady_deals	EXACT_MATCH	Shady Deals	Historical key присутствует в official 1.21 RU pack.
+Kill a Guardian with arrows	Kill a Guardian with arrows	DESCRIPTION	blazeandcave:adventure/spear_fishing	EXACT_MATCH	Kill a Guardian with arrows	Historical key присутствует в official 1.21 RU pack.
+Stacked Smither	Stacked Smither	TITLE	blazeandcave:adventure/stacked_smither	EXACT_MATCH	Stacked Smither	Historical key присутствует в official 1.21 RU pack.
+Enter a jungle temple	Enter a jungle temple	DESCRIPTION	blazeandcave:adventure/tomb_raider	EXACT_MATCH	Enter a jungle temple	Historical key присутствует в official 1.21 RU pack.
+Have a Sniffer dig up seeds	Have a Sniffer dig up seeds	DESCRIPTION	blazeandcave:adventure/truffle_worm	EXACT_MATCH	Have a Sniffer dig up seeds	Historical key присутствует в official 1.21 RU pack.
+Under the Ice	Under the Ice	TITLE	blazeandcave:adventure/under_the_ice	EXACT_MATCH	Under the Ice	Historical key присутствует в official 1.21 RU pack.
+We're being attacked!	We're being attacked!	TITLE	blazeandcave:adventure/were_being_attacked	EXACT_MATCH	We're being attacked!	Historical key присутствует в official 1.21 RU pack.
+Wololo!	Wololo!	TITLE	blazeandcave:adventure/wololo	EXACT_MATCH	Wololo!	Historical key присутствует в official 1.21 RU pack.
+Adventuring Time	Adventuring Time	TITLE	minecraft:adventure/adventuring_time	EXACT_MATCH	Adventuring Time	Historical key присутствует в official 1.21 RU pack.
+Arbalistic	Arbalistic	TITLE	minecraft:adventure/arbalistic	EXACT_MATCH	Arbalistic	Historical key присутствует в official 1.21 RU pack.
+Sneak near something in the Deep Dark to prevent being heard	Sneak near something in the Deep Dark to prevent being heard	DESCRIPTION	minecraft:adventure/avoid_vibration	EXACT_MATCH	Sneak near something in the Deep Dark to prevent being heard	Historical key присутствует в official 1.21 RU pack.
+Bullseye	Bullseye	TITLE	minecraft:adventure/bullseye	EXACT_MATCH	Bullseye	Historical key присутствует в official 1.21 RU pack.
+Careful Restoration	Careful Restoration	TITLE	minecraft:adventure/craft_decorated_pot_using_only_sherds	EXACT_MATCH	Careful Restoration	Historical key присутствует в official 1.21 RU pack.
+Crafters Crafting Crafters	Crafters Crafting Crafters	TITLE	minecraft:adventure/crafters_crafting_crafters	EXACT_MATCH	Crafters Crafting Crafters	Historical key присутствует в official 1.21 RU pack.
+Caves & Cliffs	Caves & Cliffs	TITLE	minecraft:adventure/fall_from_world_height	EXACT_MATCH	Caves & Cliffs	Historical key присутствует в official 1.21 RU pack.
+Hero of the Village	Hero of the Village	TITLE	minecraft:adventure/hero_of_the_village	EXACT_MATCH	Hero of the Village	Historical key присутствует в official 1.21 RU pack.
+Sticky Situation	Sticky Situation	TITLE	minecraft:adventure/honey_block_slide	EXACT_MATCH	Sticky Situation	Historical key присутствует в official 1.21 RU pack.
+Monster Hunter	Monster Hunter	TITLE	minecraft:adventure/kill_a_mob	EXACT_MATCH	Monster Hunter	Historical key присутствует в official 1.21 RU pack.
+Monsters Hunted	Monsters Hunted	TITLE	minecraft:adventure/kill_all_mobs	EXACT_MATCH	Monsters Hunted	Historical key присутствует в official 1.21 RU pack.
+Kill a mob near a Sculk Catalyst	Kill a mob near a Sculk Catalyst	DESCRIPTION	minecraft:adventure/kill_mob_near_sculk_catalyst	EXACT_MATCH	Kill a mob near a Sculk Catalyst	Historical key присутствует в official 1.21 RU pack.
+Surge Protector	Surge Protector	TITLE	minecraft:adventure/lightning_rod_with_villager_no_fire	EXACT_MATCH	Surge Protector	Historical key присутствует в official 1.21 RU pack.
+Protect a villager from an undesired shock without starting a fire	Protect a villager from an undesired shock without starting a fire	DESCRIPTION	minecraft:adventure/lightning_rod_with_villager_no_fire	EXACT_MATCH	Protect a villager from an undesired shock without starting a fire	Historical key присутствует в official 1.21 RU pack.
+Shoot a crossbow	Shoot a crossbow	DESCRIPTION	minecraft:adventure/ol_betsy	EXACT_MATCH	Shoot a crossbow	Historical key присутствует в official 1.21 RU pack.
+Meteor Strike	Meteor Strike	TITLE	minecraft:adventure/overoverkill	EXACT_MATCH	Meteor Strike	Historical key присутствует в official 1.21 RU pack.
+Deal 50 hearts of damage in a single hit using the Mace	Deal 50 hearts of damage in a single hit using the Mace	DESCRIPTION	minecraft:adventure/overoverkill	EXACT_MATCH	Deal 50 hearts of damage in a single hit using the Mace	Historical key присутствует в official 1.21 RU pack.
+The Sound of Music	The Sound of Music	TITLE	minecraft:adventure/play_jukebox_in_meadows	EXACT_MATCH	The Sound of Music	Historical key присутствует в official 1.21 RU pack.
+Unlock an Ominous Vault with an Ominous Trial Key	Unlock an Ominous Vault with an Ominous Trial Key	DESCRIPTION	minecraft:adventure/revaulting	EXACT_MATCH	Unlock an Ominous Vault with an Ominous Trial Key	Historical key присутствует в official 1.21 RU pack.
+Adventure	Adventure	TAB	minecraft:adventure/root	EXACT_MATCH	Adventure	Historical key присутствует в official 1.21 RU pack.
+Respecting the Remnants	Respecting the Remnants	TITLE	minecraft:adventure/salvage_sherd	EXACT_MATCH	Respecting the Remnants	Historical key присутствует в official 1.21 RU pack.
+Take Aim	Take Aim	TITLE	minecraft:adventure/shoot_arrow	EXACT_MATCH	Take Aim	Historical key присутствует в official 1.21 RU pack.
+Sweet dreams	Sweet dreams	TITLE	minecraft:adventure/sleep_in_bed	EXACT_MATCH	Sweet dreams	Historical key присутствует в official 1.21 RU pack.
+Sniper Duel	Sniper Duel	TITLE	minecraft:adventure/sniper_duel	EXACT_MATCH	Sniper Duel	Historical key присутствует в official 1.21 RU pack.
+Is it a Plane?	Is it a Plane?	TITLE	minecraft:adventure/spyglass_at_dragon	EXACT_MATCH	Is it a Plane?	Historical key присутствует в official 1.21 RU pack.
+Is it a Balloon?	Is it a Balloon?	TITLE	minecraft:adventure/spyglass_at_ghast	EXACT_MATCH	Is it a Balloon?	Historical key присутствует в official 1.21 RU pack.
+Look at a Ghast through a Spyglass	Look at a Ghast through a Spyglass	DESCRIPTION	minecraft:adventure/spyglass_at_ghast	EXACT_MATCH	Look at a Ghast through a Spyglass	Historical key присутствует в official 1.21 RU pack.
+Is it a Bird?	Is it a Bird?	TITLE	minecraft:adventure/spyglass_at_parrot	EXACT_MATCH	Is it a Bird?	Historical key присутствует в official 1.21 RU pack.
+Look at a Parrot through a Spyglass	Look at a Parrot through a Spyglass	DESCRIPTION	minecraft:adventure/spyglass_at_parrot	EXACT_MATCH	Look at a Parrot through a Spyglass	Historical key присутствует в official 1.21 RU pack.
+Summon an Iron Golem to help defend a village	Summon an Iron Golem to help defend a village	DESCRIPTION	minecraft:adventure/summon_iron_golem	EXACT_MATCH	Summon an Iron Golem to help defend a village	Historical key присутствует в official 1.21 RU pack.
+A Throwaway Joke	A Throwaway Joke	TITLE	minecraft:adventure/throw_trident	EXACT_MATCH	A Throwaway Joke	Historical key присутствует в official 1.21 RU pack.
+Postmortal	Postmortal	TITLE	minecraft:adventure/totem_of_undying	EXACT_MATCH	Postmortal	Historical key присутствует в official 1.21 RU pack.
+What a Deal!	What a Deal!	TITLE	minecraft:adventure/trade	EXACT_MATCH	What a Deal!	Historical key присутствует в official 1.21 RU pack.
+Star Trader	Star Trader	TITLE	minecraft:adventure/trade_at_world_height	EXACT_MATCH	Star Trader	Historical key присутствует в official 1.21 RU pack.
+Smithing With Style	Smithing With Style	TITLE	minecraft:adventure/trim_with_all_exclusive_armor_patterns	EXACT_MATCH	Smithing With Style	Historical key присутствует в official 1.21 RU pack.
+Crafting a New Look	Crafting a New Look	TITLE	minecraft:adventure/trim_with_any_armor_pattern	EXACT_MATCH	Crafting a New Look	Historical key присутствует в official 1.21 RU pack.
+Two Birds, One Arrow	Two Birds, One Arrow	TITLE	minecraft:adventure/two_birds_one_arrow	EXACT_MATCH	Two Birds, One Arrow	Historical key присутствует в official 1.21 RU pack.
+Unlock a Vault using a Trial Key	Unlock a Vault using a Trial Key	DESCRIPTION	minecraft:adventure/under_lock_and_key	EXACT_MATCH	Unlock a Vault using a Trial Key	Historical key присутствует в official 1.21 RU pack.
+Very Very Frightening	Very Very Frightening	TITLE	minecraft:adventure/very_very_frightening	EXACT_MATCH	Very Very Frightening	Historical key присутствует в official 1.21 RU pack.
+Strike a Villager with lightning	Strike a Villager with lightning	DESCRIPTION	minecraft:adventure/very_very_frightening	EXACT_MATCH	Strike a Villager with lightning	Historical key присутствует в official 1.21 RU pack.
+Light as a Rabbit	Light as a Rabbit	TITLE	minecraft:adventure/walk_on_powder_snow_with_leather_boots	EXACT_MATCH	Light as a Rabbit	Historical key присутствует в official 1.21 RU pack.
+Who Needs Rockets?	Who Needs Rockets?	TITLE	minecraft:adventure/who_needs_rockets	EXACT_MATCH	Who Needs Rockets?	Historical key присутствует в official 1.21 RU pack.
+Who's the Pillager Now?	Who's the Pillager Now?	TITLE	minecraft:adventure/whos_the_pillager_now	EXACT_MATCH	Who's the Pillager Now?	Historical key присутствует в official 1.21 RU pack.
+Are we there yet?	Are we there yet?	TITLE	blazeandcave:animal/are_we_there_yet	EXACT_MATCH	Are we there yet?	Historical key присутствует в official 1.21 RU pack.
+Tame a donkey	Tame a donkey	DESCRIPTION	blazeandcave:animal/are_we_there_yet	EXACT_MATCH	Tame a donkey	Historical key присутствует в official 1.21 RU pack.
+Kill an Axolotl with an axe	Kill an Axolotl with an axe	DESCRIPTION	blazeandcave:animal/axeolotl	EXACT_MATCH	Kill an Axolotl with an axe	Historical key присутствует в official 1.21 RU pack.
+Bacon!	Bacon!	TITLE	blazeandcave:animal/bacon	EXACT_MATCH	Bacon!	Historical key присутствует в official 1.21 RU pack.
+Battle of the Bands	Battle of the Bands	TITLE	blazeandcave:animal/battle_of_the_bands	EXACT_MATCH	Battle of the Bands	Historical key присутствует в official 1.21 RU pack.
+Beeloons!	Beeloons!	TITLE	blazeandcave:animal/beeloons	EXACT_MATCH	Beeloons!	Historical key присутствует в official 1.21 RU pack.
+Attach a lead to a bee	Attach a lead to a bee	DESCRIPTION	blazeandcave:animal/beeloons	EXACT_MATCH	Attach a lead to a bee	Historical key присутствует в official 1.21 RU pack.
+Bunny Lover	Bunny Lover	TITLE	blazeandcave:animal/bunny_lover	EXACT_MATCH	Bunny Lover	Historical key присутствует в official 1.21 RU pack.
+Catching Nemo	Catching Nemo	TITLE	blazeandcave:animal/catching_nemo	EXACT_MATCH	Catching Nemo	Historical key присутствует в official 1.21 RU pack.
+Kill a Glow Squid	Kill a Glow Squid	DESCRIPTION	blazeandcave:animal/cephalight	EXACT_MATCH	Kill a Glow Squid	Historical key присутствует в official 1.21 RU pack.
+Cow Tipper	Cow Tipper	TITLE	blazeandcave:animal/cow_tipper	EXACT_MATCH	Cow Tipper	Historical key присутствует в official 1.21 RU pack.
+Cook and eat a fish!	Cook and eat a fish!	DESCRIPTION	blazeandcave:animal/delicious_fish	EXACT_MATCH	Cook and eat a fish!	Historical key присутствует в official 1.21 RU pack.
+You'll get over it	You'll get over it	DESCRIPTION	blazeandcave:animal/feeling_sheepish	EXACT_MATCH	You'll get over it	Historical key присутствует в official 1.21 RU pack.
+Put an item up for display in a Glowing Item Frame	Put an item up for display in a Glowing Item Frame	DESCRIPTION	blazeandcave:animal/flashy_items	EXACT_MATCH	Put an item up for display in a Glowing Item Frame	Historical key присутствует в official 1.21 RU pack.
+Give a fox a Totem of Undying	Give a fox a Totem of Undying	DESCRIPTION	blazeandcave:animal/foxy_thievery	EXACT_MATCH	Give a fox a Totem of Undying	Historical key присутствует в official 1.21 RU pack.
+Slaughter a Goat	Slaughter a Goat	DESCRIPTION	blazeandcave:animal/goat_out_of_here	EXACT_MATCH	Slaughter a Goat	Historical key присутствует в official 1.21 RU pack.
+You have Goat to be kidding me!	You have Goat to be kidding me!	DESCRIPTION	blazeandcave:animal/goat_simulator	EXACT_MATCH	You have Goat to be kidding me!	Historical key присутствует в official 1.21 RU pack.
+Have a Shearful Day	Have a Shearful Day	TITLE	blazeandcave:animal/have_a_shearful_day	EXACT_MATCH	Have a Shearful Day	Historical key присутствует в official 1.21 RU pack.
+The steaks are high for this advancement!	The steaks are high for this advancement!	DESCRIPTION	blazeandcave:animal/high_steaks	EXACT_MATCH	The steaks are high for this advancement!	Historical key присутствует в official 1.21 RU pack.
+Iceologer Should've Won	Iceologer Should've Won	TITLE	blazeandcave:animal/iceologer_shouldve_won	EXACT_MATCH	Iceologer Should've Won	Historical key присутствует в official 1.21 RU pack.
+Kill 100 Glow Squids	Kill 100 Glow Squids	DESCRIPTION	blazeandcave:animal/iceologer_shouldve_won	EXACT_MATCH	Kill 100 Glow Squids	Historical key присутствует в official 1.21 RU pack.
+Craft a lead using string and a slimeball, then attach it to a mob	Craft a lead using string and a slimeball, then attach it to a mob	DESCRIPTION	blazeandcave:animal/lead_the_way	EXACT_MATCH	Craft a lead using string and a slimeball, then attach it to a mob	Historical key присутствует в official 1.21 RU pack.
+Loud and Proud	Loud and Proud	TITLE	blazeandcave:animal/loud_and_proud	EXACT_MATCH	Loud and Proud	Historical key присутствует в official 1.21 RU pack.
+Play a Goat Horn in the Deep Dark	Play a Goat Horn in the Deep Dark	DESCRIPTION	blazeandcave:animal/loud_and_proud	EXACT_MATCH	Play a Goat Horn in the Deep Dark	Historical key присутствует в official 1.21 RU pack.
+Paw Patrol	Paw Patrol	TITLE	blazeandcave:animal/paw_patrol	EXACT_MATCH	Paw Patrol	Historical key присутствует в official 1.21 RU pack.
+Pig Slaughterer	Pig Slaughterer	TITLE	blazeandcave:animal/pig_slaughterer	EXACT_MATCH	Pig Slaughterer	Historical key присутствует в official 1.21 RU pack.
+Pork Chop	Pork Chop	TITLE	blazeandcave:animal/pork_chop	EXACT_MATCH	Pork Chop	Historical key присутствует в official 1.21 RU pack.
+You know kung fu, how about pork chop?	You know kung fu, how about pork chop?	DESCRIPTION	blazeandcave:animal/pork_chop	EXACT_MATCH	You know kung fu, how about pork chop?	Historical key присутствует в official 1.21 RU pack.
+Eat some raw salmon... and not get poisoned after all	Eat some raw salmon... and not get poisoned after all	DESCRIPTION	blazeandcave:animal/salmonella_poisoning	EXACT_MATCH	Eat some raw salmon... and not get poisoned after all	Historical key присутствует в official 1.21 RU pack.
+Collect a stack of turtle eggs	Collect a stack of turtle eggs	DESCRIPTION	blazeandcave:animal/save_the_turtles	EXACT_MATCH	Collect a stack of turtle eggs	Historical key присутствует в official 1.21 RU pack.
+Milk a screaming Goat	Milk a screaming Goat	DESCRIPTION	blazeandcave:animal/screaming_milk	EXACT_MATCH	Milk a screaming Goat	Historical key присутствует в official 1.21 RU pack.
+Scuttler	Scuttler	TITLE	blazeandcave:animal/scuttler	EXACT_MATCH	Scuttler	Historical key присутствует в official 1.21 RU pack.
+Collect a stack of white wool	Collect a stack of white wool	DESCRIPTION	blazeandcave:animal/sheariously	EXACT_MATCH	Collect a stack of white wool	Historical key присутствует в official 1.21 RU pack.
+Shoe Shed	Shoe Shed	TITLE	blazeandcave:animal/shoe_shed	EXACT_MATCH	Shoe Shed	Historical key присутствует в official 1.21 RU pack.
+Silence of the Lambs	Silence of the Lambs	TITLE	blazeandcave:animal/silence_of_the_lambs	EXACT_MATCH	Silence of the Lambs	Historical key присутствует в official 1.21 RU pack.
+So Hungry I Could Eat a Horse!	So Hungry I Could Eat a Horse!	TITLE	blazeandcave:animal/so_hungry_i_could_eat_a_horse	EXACT_MATCH	So Hungry I Could Eat a Horse!	Historical key присутствует в official 1.21 RU pack.
+Tame a llama	Tame a llama	DESCRIPTION	blazeandcave:animal/stay_calmer	EXACT_MATCH	Tame a llama	Historical key присутствует в official 1.21 RU pack.
+Eat some raw fish	Eat some raw fish	DESCRIPTION	blazeandcave:animal/sushi	EXACT_MATCH	Eat some raw fish	Historical key присутствует в official 1.21 RU pack.
+Turtle Army	Turtle Army	TITLE	blazeandcave:animal/turtle_army	EXACT_MATCH	Turtle Army	Historical key присутствует в official 1.21 RU pack.
+Turtle Soldier	Turtle Soldier	TITLE	blazeandcave:animal/turtle_soldier	EXACT_MATCH	Turtle Soldier	Historical key присутствует в official 1.21 RU pack.
+What a piece of junk!	What a piece of junk!	TITLE	blazeandcave:animal/what_a_piece_of_junk	EXACT_MATCH	What a piece of junk!	Historical key присутствует в official 1.21 RU pack.
+Drink some honey	Drink some honey	DESCRIPTION	blazeandcave:animal/winnie_the_pooh	EXACT_MATCH	Drink some honey	Historical key присутствует в official 1.21 RU pack.
+Ahoy!	Ahoy!	TITLE	blazeandcave:biomes/ahoy	EXACT_MATCH	Ahoy!	Historical key присутствует в official 1.21 RU pack.
+Captain America	Captain America	TITLE	blazeandcave:biomes/captain_america	EXACT_MATCH	Captain America	Historical key присутствует в official 1.21 RU pack.
+Choco Mountain	Choco Mountain	TITLE	blazeandcave:biomes/choco_mountain	EXACT_MATCH	Choco Mountain	Historical key присутствует в official 1.21 RU pack.
+Construction Worker	Construction Worker	TITLE	blazeandcave:biomes/construction_worker	EXACT_MATCH	Construction Worker	Historical key присутствует в official 1.21 RU pack.
+Echolocation	Echolocation	TITLE	blazeandcave:biomes/echolocation	EXACT_MATCH	Echolocation	Historical key присутствует в official 1.21 RU pack.
+Enchanted Forest	Enchanted Forest	TITLE	blazeandcave:biomes/enchanted_forest	EXACT_MATCH	Enchanted Forest	Historical key присутствует в official 1.21 RU pack.
+In a Pickle	In a Pickle	TITLE	blazeandcave:biomes/in_a_pickle	EXACT_MATCH	In a Pickle	Historical key присутствует в official 1.21 RU pack.
+Kung Fu Panda!	Kung Fu Panda!	TITLE	blazeandcave:biomes/kung_fu_panda	EXACT_MATCH	Kung Fu Panda!	Historical key присутствует в official 1.21 RU pack.
+Qinling	Qinling	TITLE	blazeandcave:biomes/qinling	EXACT_MATCH	Qinling	Historical key присутствует в official 1.21 RU pack.
+Biomes	Biomes	TAB	blazeandcave:biomes/root	EXACT_MATCH	Biomes	Historical key присутствует в official 1.21 RU pack.
+All around the world!	All around the world!	DESCRIPTION	blazeandcave:biomes/root	EXACT_MATCH	All around the world!	Historical key присутствует в official 1.21 RU pack.
+Simba	Simba	TITLE	blazeandcave:biomes/simba	EXACT_MATCH	Simba	Historical key присутствует в official 1.21 RU pack.
+Get attacked by dolphins	Get attacked by dolphins	DESCRIPTION	blazeandcave:biomes/so_long_and_thanks_for_all_the_fish	EXACT_MATCH	Get attacked by dolphins	Historical key присутствует в official 1.21 RU pack.
+Tarzan	Tarzan	TITLE	blazeandcave:biomes/tarzan	EXACT_MATCH	Tarzan	Historical key присутствует в official 1.21 RU pack.
+Fall into some Powder Snow	Fall into some Powder Snow	DESCRIPTION	blazeandcave:biomes/this_snow_is_snowier	EXACT_MATCH	Fall into some Powder Snow	Historical key присутствует в official 1.21 RU pack.
+Titanic	Titanic	TITLE	blazeandcave:biomes/titanic	EXACT_MATCH	Titanic	Historical key присутствует в official 1.21 RU pack.
+Put up a painting	Put up a painting	DESCRIPTION	blazeandcave:building/a_masterpiece	EXACT_MATCH	Put up a painting	Historical key присутствует в official 1.21 RU pack.
+Change of Sheets	Change of Sheets	TITLE	blazeandcave:building/change_of_sheets	EXACT_MATCH	Change of Sheets	Historical key присутствует в official 1.21 RU pack.
+Classy Glassy	Classy Glassy	TITLE	blazeandcave:building/classy_glassy	EXACT_MATCH	Classy Glassy	Historical key присутствует в official 1.21 RU pack.
+Colors of the Wind	Colors of the Wind	TITLE	blazeandcave:building/colors_of_the_wind	EXACT_MATCH	Colors of the Wind	Historical key присутствует в official 1.21 RU pack.
+Glowing!	Glowing!	TITLE	blazeandcave:building/glowing	EXACT_MATCH	Glowing!	Historical key присутствует в official 1.21 RU pack.
+Put up a Hanging Sign	Put up a Hanging Sign	DESCRIPTION	blazeandcave:building/hanging_around	EXACT_MATCH	Put up a Hanging Sign	Historical key присутствует в official 1.21 RU pack.
+Happy Birthday!	Happy Birthday!	TITLE	blazeandcave:building/happy_birthday	EXACT_MATCH	Happy Birthday!	Historical key присутствует в official 1.21 RU pack.
+Place a candle on a cake	Place a candle on a cake	DESCRIPTION	blazeandcave:building/happy_birthday	EXACT_MATCH	Place a candle on a cake	Historical key присутствует в official 1.21 RU pack.
+Hot Tub	Hot Tub	TITLE	blazeandcave:building/hot_tub	EXACT_MATCH	Hot Tub	Historical key присутствует в official 1.21 RU pack.
+Insomniac	Insomniac	TITLE	blazeandcave:building/insomniac	EXACT_MATCH	Insomniac	Historical key присутствует в official 1.21 RU pack.
+Let There Be Light!	Let There Be Light!	TITLE	blazeandcave:building/let_there_be_light	EXACT_MATCH	Let There Be Light!	Historical key присутствует в official 1.21 RU pack.
+Professor Birch	Professor Birch	TITLE	blazeandcave:building/professor_birch	EXACT_MATCH	Professor Birch	Historical key присутствует в official 1.21 RU pack.
+Raise the flag!	Raise the flag!	TITLE	blazeandcave:building/raise_the_flag	EXACT_MATCH	Raise the flag!	Historical key присутствует в official 1.21 RU pack.
+Rock Collection	Rock Collection	TITLE	blazeandcave:building/rock_collection	EXACT_MATCH	Rock Collection	Historical key присутствует в official 1.21 RU pack.
+Building	Building	TAB	blazeandcave:building/root	EXACT_MATCH	Building	Historical key присутствует в official 1.21 RU pack.
+Fill a Chiseled Bookshelf with books	Fill a Chiseled Bookshelf with books	DESCRIPTION	blazeandcave:building/shelf_expression	EXACT_MATCH	Fill a Chiseled Bookshelf with books	Historical key присутствует в official 1.21 RU pack.
+Sign Off	Sign Off	TITLE	blazeandcave:building/sign_off	EXACT_MATCH	Sign Off	Historical key присутствует в official 1.21 RU pack.
+Use honeycomb to wax a sign, setting its ink for eternity	Use honeycomb to wax a sign, setting its ink for eternity	DESCRIPTION	blazeandcave:building/sign_off	EXACT_MATCH	Use honeycomb to wax a sign, setting its ink for eternity	Historical key присутствует в official 1.21 RU pack.
+Skyblock	Skyblock	TITLE	blazeandcave:building/skyblock	EXACT_MATCH	Skyblock	Historical key присутствует в official 1.21 RU pack.
+Washing Machine	Washing Machine	TITLE	blazeandcave:building/washing_machine	EXACT_MATCH	Washing Machine	Historical key присутствует в official 1.21 RU pack.
+Abyss Lord	Abyss Lord	TITLE	blazeandcave:challenges/abyss_lord	EXACT_MATCH	Abyss Lord	Historical key присутствует в official 1.21 RU pack.
+Ad Astra	Ad Astra	TITLE	blazeandcave:challenges/ad_astra	EXACT_MATCH	Ad Astra	Historical key присутствует в official 1.21 RU pack.
+Biological Warfare	Biological Warfare	TITLE	blazeandcave:challenges/biological_warfare	EXACT_MATCH	Biological Warfare	Historical key присутствует в official 1.21 RU pack.
+Collect 64 nether stars	Collect 64 nether stars	DESCRIPTION	blazeandcave:challenges/constellation	EXACT_MATCH	Collect 64 nether stars	Historical key присутствует в official 1.21 RU pack.
+Death From All	Death From All	TITLE	blazeandcave:challenges/death_from_all	EXACT_MATCH	Death From All	Historical key присутствует в official 1.21 RU pack.
+Get hurt by every mob that can kill you	Get hurt by every mob that can kill you	DESCRIPTION	blazeandcave:challenges/death_from_all	EXACT_MATCH	Get hurt by every mob that can kill you	Historical key присутствует в official 1.21 RU pack.
+Explorer of Worlds	Explorer of Worlds	TITLE	blazeandcave:challenges/explorer_of_worlds	EXACT_MATCH	Explorer of Worlds	Historical key присутствует в official 1.21 RU pack.
+Global Vaccination	Global Vaccination	TITLE	blazeandcave:challenges/global_vaccination	EXACT_MATCH	Global Vaccination	Historical key присутствует в official 1.21 RU pack.
+Hearts of the Stack	Hearts of the Stack	TITLE	blazeandcave:challenges/hearts_of_the_stack	EXACT_MATCH	Hearts of the Stack	Historical key присутствует в official 1.21 RU pack.
+Collect 64 Hearts of the Sea	Collect 64 Hearts of the Sea	DESCRIPTION	blazeandcave:challenges/hearts_of_the_stack	EXACT_MATCH	Collect 64 Hearts of the Sea	Historical key присутствует в official 1.21 RU pack.
+I am Loot!	I am Loot!	TITLE	blazeandcave:challenges/i_am_loot	EXACT_MATCH	I am Loot!	Historical key присутствует в official 1.21 RU pack.
+I'm in Space!	I'm in Space!	TITLE	blazeandcave:challenges/im_in_space	EXACT_MATCH	I'm in Space!	Historical key присутствует в official 1.21 RU pack.
+Fill your entire inventory with Totems of Undying	Fill your entire inventory with Totems of Undying	DESCRIPTION	blazeandcave:challenges/immortal	EXACT_MATCH	Fill your entire inventory with Totems of Undying	Historical key присутствует в official 1.21 RU pack.
+block.minecraft.deepslate_emerald_ore	block.minecraft.deepslate_emerald_ore	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	CHANGED	Obtain a stack of all the blocks!	Существенное отличие английской формулировки: similarity=0.17, token_overlap=0.00.
+block.minecraft.dragon_egg	block.minecraft.dragon_egg	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	CHANGED	Obtain a stack of all the blocks!	Существенное отличие английской формулировки: similarity=0.17, token_overlap=0.00.
+block.minecraft.heavy_core	block.minecraft.heavy_core	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	CHANGED	Obtain a stack of all the blocks!	Существенное отличие английской формулировки: similarity=0.17, token_overlap=0.00.
+block.minecraft.large_fern	block.minecraft.large_fern	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	CHANGED	Obtain a stack of all the blocks!	Существенное отличие английской формулировки: similarity=0.17, token_overlap=0.00.
+block.minecraft.netherite_block	block.minecraft.netherite_block	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	CHANGED	Obtain a stack of all the blocks!	Существенное отличие английской формулировки: similarity=0.48, token_overlap=0.00.
+block.minecraft.suspicious_gravel	block.minecraft.suspicious_gravel	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	CHANGED	Obtain a stack of all the blocks!	Существенное отличие английской формулировки: similarity=0.18, token_overlap=0.00.
+block.minecraft.suspicious_sand	block.minecraft.suspicious_sand	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	CHANGED	Obtain a stack of all the blocks!	Существенное отличие английской формулировки: similarity=0.19, token_overlap=0.00.
+block.minecraft.tall_grass	block.minecraft.tall_grass	DESCRIPTION	blazeandcave:challenges/stack_all_the_blocks	CHANGED	Obtain a stack of all the blocks!	Существенное отличие английской формулировки: similarity=0.21, token_overlap=0.00.
+item.minecraft.recovery_compass	item.minecraft.recovery_compass	DESCRIPTION	blazeandcave:challenges/stack_all_the_items	CHANGED	Obtain a stack of all the items!	Существенное отличие английской формулировки: similarity=0.16, token_overlap=0.00.
+Pottery Sherd	Pottery Sherd	DESCRIPTION	blazeandcave:challenges/stack_all_the_items	EXACT_MATCH	Pottery Sherd	Historical key присутствует в official 1.21 RU pack.
+The Perfect Run	The Perfect Run	TITLE	blazeandcave:challenges/the_perfect_run	EXACT_MATCH	The Perfect Run	Historical key присутствует в official 1.21 RU pack.
+Ultimate Enchanter	Ultimate Enchanter	TITLE	blazeandcave:challenges/ultimate_enchanter	EXACT_MATCH	Ultimate Enchanter	Historical key присутствует в official 1.21 RU pack.
+Warlock	Warlock	TITLE	blazeandcave:challenges/warlock	EXACT_MATCH	Warlock	Historical key присутствует в official 1.21 RU pack.
+Zombie Apocalypse	Zombie Apocalypse	TITLE	blazeandcave:challenges/zombie_apocalypse	EXACT_MATCH	Zombie Apocalypse	Historical key присутствует в official 1.21 RU pack.
+Boomerang	Boomerang	TITLE	blazeandcave:enchanting/boomerang	EXACT_MATCH	Boomerang	Historical key присутствует в official 1.21 RU pack.
+Complete Enchanter	Complete Enchanter	TITLE	blazeandcave:enchanting/complete_enchanter	EXACT_MATCH	Complete Enchanter	Historical key присутствует в official 1.21 RU pack.
+Curses!	Curses!	TITLE	blazeandcave:enchanting/curses	EXACT_MATCH	Curses!	Historical key присутствует в official 1.21 RU pack.
+I'll be back	I'll be back	TITLE	blazeandcave:enchanting/ill_be_back	EXACT_MATCH	I'll be back	Historical key присутствует в official 1.21 RU pack.
+Let It Go!	Let It Go!	TITLE	blazeandcave:enchanting/let_it_go	EXACT_MATCH	Let It Go!	Historical key присутствует в official 1.21 RU pack.
+Master Enchanter	Master Enchanter	TITLE	blazeandcave:enchanting/master_enchanter	EXACT_MATCH	Master Enchanter	Historical key присутствует в official 1.21 RU pack.
+Overkill	Overkill	TITLE	blazeandcave:enchanting/overkill	EXACT_MATCH	Overkill	Historical key присутствует в official 1.21 RU pack.
+Enchanting	Enchanting	TAB	blazeandcave:enchanting/root	EXACT_MATCH	Enchanting	Historical key присутствует в official 1.21 RU pack.
+To Infinity And Beyond!	To Infinity And Beyond!	TITLE	blazeandcave:enchanting/to_infinity_and_beyond	EXACT_MATCH	To Infinity And Beyond!	Historical key присутствует в official 1.21 RU pack.
+Event Horizon	Event Horizon	TITLE	blazeandcave:end/event_horizon	EXACT_MATCH	Event Horizon	Historical key присутствует в official 1.21 RU pack.
+Survive void damage	Survive void damage	DESCRIPTION	blazeandcave:end/event_horizon	EXACT_MATCH	Survive void damage	Historical key присутствует в official 1.21 RU pack.
+Kill a shulker	Kill a shulker	DESCRIPTION	blazeandcave:end/for_mother_clarence	EXACT_MATCH	Kill a shulker	Historical key присутствует в official 1.21 RU pack.
+Purpurfect!	Purpurfect!	TITLE	blazeandcave:end/purpurfect	EXACT_MATCH	Purpurfect!	Historical key присутствует в official 1.21 RU pack.
+Rocketman	Rocketman	TITLE	blazeandcave:end/rocketman	EXACT_MATCH	Rocketman	Historical key присутствует в official 1.21 RU pack.
+Fill your inventory with full stacks of firework rockets	Fill your inventory with full stacks of firework rockets	DESCRIPTION	blazeandcave:end/rocketman	EXACT_MATCH	Fill your inventory with full stacks of firework rockets	Historical key присутствует в official 1.21 RU pack.
+Collect a stack of shulker shells	Collect a stack of shulker shells	DESCRIPTION	blazeandcave:end/shulker_breaker	EXACT_MATCH	Collect a stack of shulker shells	Historical key присутствует в official 1.21 RU pack.
+The Point of No Return	The Point of No Return	TITLE	blazeandcave:end/the_point_of_no_return	EXACT_MATCH	The Point of No Return	Historical key присутствует в official 1.21 RU pack.
+You Need a Mint	You Need a Mint	TITLE	minecraft:end/dragon_breath	EXACT_MATCH	You Need a Mint	Historical key присутствует в official 1.21 RU pack.
+The Next Generation	The Next Generation	TITLE	minecraft:end/dragon_egg	EXACT_MATCH	The Next Generation	Historical key присутствует в official 1.21 RU pack.
+Hold the Dragon Egg	Hold the Dragon Egg	DESCRIPTION	minecraft:end/dragon_egg	EXACT_MATCH	Hold the Dragon Egg	Historical key присутствует в official 1.21 RU pack.
+Sky's the Limit	Sky's the Limit	TITLE	minecraft:end/elytra	EXACT_MATCH	Sky's the Limit	Historical key присутствует в official 1.21 RU pack.
+Remote Getaway	Remote Getaway	TITLE	minecraft:end/enter_end_gateway	EXACT_MATCH	Remote Getaway	Historical key присутствует в official 1.21 RU pack.
+The City at the End of the Game	The City at the End of the Game	TITLE	minecraft:end/find_end_city	EXACT_MATCH	The City at the End of the Game	Historical key присутствует в official 1.21 RU pack.
+Free the End	Free the End	TITLE	minecraft:end/kill_dragon	EXACT_MATCH	Free the End	Historical key присутствует в official 1.21 RU pack.
+Great View From Up Here	Great View From Up Here	TITLE	minecraft:end/levitate	EXACT_MATCH	Great View From Up Here	Historical key присутствует в official 1.21 RU pack.
+The End... Again	The End... Again	TITLE	minecraft:end/respawn_dragon	EXACT_MATCH	The End... Again	Historical key присутствует в official 1.21 RU pack.
+Respawn the Ender Dragon	Respawn the Ender Dragon	DESCRIPTION	minecraft:end/respawn_dragon	EXACT_MATCH	Respawn the Ender Dragon	Historical key присутствует в official 1.21 RU pack.
+The End	The End	TAB	minecraft:end/root	EXACT_MATCH	The End	Historical key присутствует в official 1.21 RU pack.
+Or the beginning?	Or the beginning?	DESCRIPTION	minecraft:end/root	EXACT_MATCH	Or the beginning?	Historical key присутствует в official 1.21 RU pack.
+Eat a golden carrot	Eat a golden carrot	DESCRIPTION	blazeandcave:farming/24_carrot_gold	EXACT_MATCH	Eat a golden carrot	Historical key присутствует в official 1.21 RU pack.
+Aquatic Biofuel	Aquatic Biofuel	TITLE	blazeandcave:farming/aquatic_biofuel	EXACT_MATCH	Aquatic Biofuel	Historical key присутствует в official 1.21 RU pack.
+Crunch into an apple	Crunch into an apple	DESCRIPTION	blazeandcave:farming/bapple	EXACT_MATCH	Crunch into an apple	Historical key присутствует в official 1.21 RU pack.
+Hot Chocolate	Hot Chocolate	TITLE	blazeandcave:farming/hot_chocolate	EXACT_MATCH	Hot Chocolate	Historical key присутствует в official 1.21 RU pack.
+Eat 100 slices of cake	Eat 100 slices of cake	DESCRIPTION	blazeandcave:farming/must_be_your_birthday	EXACT_MATCH	Eat 100 slices of cake	Historical key присутствует в official 1.21 RU pack.
+Fill up a composter	Fill up a composter	DESCRIPTION	blazeandcave:farming/natural_fertiliser	EXACT_MATCH	Fill up a composter	Historical key присутствует в official 1.21 RU pack.
+Eat a poisonous potato	Eat a poisonous potato	DESCRIPTION	blazeandcave:farming/not_today	EXACT_MATCH	Eat a poisonous potato	Historical key присутствует в official 1.21 RU pack.
+Carve a stack of pumpkins	Carve a stack of pumpkins	DESCRIPTION	blazeandcave:farming/pumpa_kungen	EXACT_MATCH	Carve a stack of pumpkins	Historical key присутствует в official 1.21 RU pack.
+Farming	Farming	TAB	blazeandcave:farming/root	EXACT_MATCH	Farming	Historical key присутствует в official 1.21 RU pack.
+Squid Game	Squid Game	TITLE	blazeandcave:farming/squid_game	EXACT_MATCH	Squid Game	Historical key присутствует в official 1.21 RU pack.
+Suspicious Looking Stew	Suspicious Looking Stew	TITLE	blazeandcave:farming/suspicious_looking_stew	EXACT_MATCH	Suspicious Looking Stew	Historical key присутствует в official 1.21 RU pack.
+Ultra Hardcore	Ultra Hardcore	TITLE	blazeandcave:farming/ultra_hardcore	EXACT_MATCH	Ultra Hardcore	Historical key присутствует в official 1.21 RU pack.
+A Shiny Treat	A Shiny Treat	TITLE	blazeandcave:mining/a_shiny_treat	EXACT_MATCH	A Shiny Treat	Historical key присутствует в official 1.21 RU pack.
+Get struck by lightning while standing on a Lightning Rod	Get struck by lightning while standing on a Lightning Rod	DESCRIPTION	blazeandcave:mining/called_shot	EXACT_MATCH	Get struck by lightning while standing on a Lightning Rod	Historical key присутствует в official 1.21 RU pack.
+Coal Miner	Coal Miner	TITLE	blazeandcave:mining/coal_miner	EXACT_MATCH	Coal Miner	Historical key присутствует в official 1.21 RU pack.
+Death Pointer	Death Pointer	TITLE	blazeandcave:mining/death_pointer	EXACT_MATCH	Death Pointer	Historical key присутствует в official 1.21 RU pack.
+Diamond Miner	Diamond Miner	TITLE	blazeandcave:mining/diamond_miner	EXACT_MATCH	Diamond Miner	Historical key присутствует в official 1.21 RU pack.
+Diamonds to you!	Diamonds to you!	TITLE	blazeandcave:mining/diamonds_to_you	EXACT_MATCH	Diamonds to you!	Historical key присутствует в official 1.21 RU pack.
+Echonomy	Echonomy	TITLE	blazeandcave:mining/echonomy	EXACT_MATCH	Echonomy	Historical key присутствует в official 1.21 RU pack.
+Get stuck in a cobweb	Get stuck in a cobweb	DESCRIPTION	blazeandcave:mining/eeuuwww	EXACT_MATCH	Get stuck in a cobweb	Historical key присутствует в official 1.21 RU pack.
+Emerald Miner	Emerald Miner	TITLE	blazeandcave:mining/emerald_miner	EXACT_MATCH	Emerald Miner	Historical key присутствует в official 1.21 RU pack.
+Fallen Kingdom	Fallen Kingdom	TITLE	blazeandcave:mining/fallen_kingdom	EXACT_MATCH	Fallen Kingdom	Historical key присутствует в official 1.21 RU pack.
+Loot a chest inside an ice box in an Ancient City	Loot a chest inside an ice box in an Ancient City	DESCRIPTION	blazeandcave:mining/frigid_diversions	EXACT_MATCH	Loot a chest inside an ice box in an Ancient City	Historical key присутствует в official 1.21 RU pack.
+Gold Miner	Gold Miner	TITLE	blazeandcave:mining/gold_miner	EXACT_MATCH	Gold Miner	Historical key присутствует в official 1.21 RU pack.
+Gold Rush	Gold Rush	TITLE	blazeandcave:mining/gold_rush	EXACT_MATCH	Gold Rush	Historical key присутствует в official 1.21 RU pack.
+Wear a full suit of iron armor	Wear a full suit of iron armor	DESCRIPTION	blazeandcave:mining/iron_man	EXACT_MATCH	Wear a full suit of iron armor	Historical key присутствует в official 1.21 RU pack.
+Iron Miner	Iron Miner	TITLE	blazeandcave:mining/iron_miner	EXACT_MATCH	Iron Miner	Historical key присутствует в official 1.21 RU pack.
+Master Diamond Miner	Master Diamond Miner	TITLE	blazeandcave:mining/master_diamond_miner	EXACT_MATCH	Master Diamond Miner	Historical key присутствует в official 1.21 RU pack.
+Master Iron Miner	Master Iron Miner	TITLE	blazeandcave:mining/master_iron_miner	EXACT_MATCH	Master Iron Miner	Historical key присутствует в official 1.21 RU pack.
+Obsidian Miner	Obsidian Miner	TITLE	blazeandcave:mining/obsidian_miner	EXACT_MATCH	Obsidian Miner	Historical key присутствует в official 1.21 RU pack.
+Mining	Mining	TAB	blazeandcave:mining/root	EXACT_MATCH	Mining	Historical key присутствует в official 1.21 RU pack.
+Smokin' Hot	Smokin' Hot	TITLE	blazeandcave:mining/smokin_hot	EXACT_MATCH	Smokin' Hot	Historical key присутствует в official 1.21 RU pack.
+Spelunker	Spelunker	TITLE	blazeandcave:mining/spelunker	EXACT_MATCH	Spelunker	Historical key присутствует в official 1.21 RU pack.
+Loot a minecart chest from an Abandoned Mineshaft	Loot a minecart chest from an Abandoned Mineshaft	DESCRIPTION	blazeandcave:mining/steals_on_wheels	EXACT_MATCH	Loot a minecart chest from an Abandoned Mineshaft	Historical key присутствует в official 1.21 RU pack.
+That's the point!	That's the point!	TITLE	blazeandcave:mining/thats_the_point	EXACT_MATCH	That's the point!	Historical key присутствует в official 1.21 RU pack.
+Gurgle	Gurgle	DESCRIPTION	blazeandcave:monsters/a_watery_grave	EXACT_MATCH	Gurgle	Historical key присутствует в official 1.21 RU pack.
+Kill one of each of a baby zombie, zombie villager, husk, drowned and zombie pigman	Kill one of each of a baby zombie, zombie villager, husk, drowned and zombie pigman	DESCRIPTION	blazeandcave:monsters/baby_baby_baby_noo	EXACT_MATCH	Kill one of each of a baby zombie, zombie villager, husk, drowned and zombie pigman	Historical key присутствует в official 1.21 RU pack.
+Blast Shield	Blast Shield	TITLE	blazeandcave:monsters/blast_shield	EXACT_MATCH	Blast Shield	Historical key присутствует в official 1.21 RU pack.
+Blind Stare	Blind Stare	TITLE	blazeandcave:monsters/blind_stare	EXACT_MATCH	Blind Stare	Historical key присутствует в official 1.21 RU pack.
+Look at a Warden with a Spyglass	Look at a Warden with a Spyglass	DESCRIPTION	blazeandcave:monsters/blind_stare	EXACT_MATCH	Look at a Warden with a Spyglass	Historical key присутствует в official 1.21 RU pack.
+Camouflage	Camouflage	TITLE	blazeandcave:monsters/camouflage	EXACT_MATCH	Camouflage	Historical key присутствует в official 1.21 RU pack.
+Collect a stack of gunpowder	Collect a stack of gunpowder	DESCRIPTION	blazeandcave:monsters/creeper_killer	EXACT_MATCH	Collect a stack of gunpowder	Historical key присутствует в official 1.21 RU pack.
+Kill a zombie	Kill a zombie	DESCRIPTION	blazeandcave:monsters/dead_dont_die	EXACT_MATCH	Kill a zombie	Historical key присутствует в official 1.21 RU pack.
+Kill a husk	Kill a husk	DESCRIPTION	blazeandcave:monsters/desert_nomad	EXACT_MATCH	Kill a husk	Historical key присутствует в official 1.21 RU pack.
+Collect a stack of ender pearls	Collect a stack of ender pearls	DESCRIPTION	blazeandcave:monsters/enderman_destroyer	EXACT_MATCH	Collect a stack of ender pearls	Historical key присутствует в official 1.21 RU pack.
+Kill a spider	Kill a spider	DESCRIPTION	blazeandcave:monsters/ew_ew_ew	EXACT_MATCH	Kill a spider	Historical key присутствует в official 1.21 RU pack.
+Kill a stray	Kill a stray	DESCRIPTION	blazeandcave:monsters/frosty	EXACT_MATCH	Kill a stray	Historical key присутствует в official 1.21 RU pack.
+Gelatinous Cube	Gelatinous Cube	TITLE	blazeandcave:monsters/gelatinous_cube	EXACT_MATCH	Gelatinous Cube	Historical key присутствует в official 1.21 RU pack.
+Kill a slime	Kill a slime	DESCRIPTION	blazeandcave:monsters/gelatinous_cube	EXACT_MATCH	Kill a slime	Historical key присутствует в official 1.21 RU pack.
+Kill a Creeper with arrows	Kill a Creeper with arrows	DESCRIPTION	blazeandcave:monsters/keep_your_distance	EXACT_MATCH	Kill a Creeper with arrows	Historical key присутствует в official 1.21 RU pack.
+Maximum Resistance	Maximum Resistance	TITLE	blazeandcave:monsters/maximum_resistance	EXACT_MATCH	Maximum Resistance	Historical key присутствует в official 1.21 RU pack.
+Bring a stray to a desert biome and then kill it	Bring a stray to a desert biome and then kill it	DESCRIPTION	blazeandcave:monsters/melting	EXACT_MATCH	Bring a stray to a desert biome and then kill it	Historical key присутствует в official 1.21 RU pack.
+Mollusc Man	Mollusc Man	TITLE	blazeandcave:monsters/mollusc_man	EXACT_MATCH	Mollusc Man	Historical key присутствует в official 1.21 RU pack.
+Kill a baby zombie	Kill a baby zombie	DESCRIPTION	blazeandcave:monsters/ooh_baby	EXACT_MATCH	Kill a baby zombie	Historical key присутствует в official 1.21 RU pack.
+Paleontologist	Paleontologist	TITLE	blazeandcave:monsters/paleontologist	EXACT_MATCH	Paleontologist	Historical key присутствует в official 1.21 RU pack.
+Collect a stack of phantom membranes	Collect a stack of phantom membranes	DESCRIPTION	blazeandcave:monsters/phantom_slayer	EXACT_MATCH	Collect a stack of phantom membranes	Historical key присутствует в official 1.21 RU pack.
+Poison Dart	Poison Dart	TITLE	blazeandcave:monsters/poison_dart	EXACT_MATCH	Poison Dart	Historical key присутствует в official 1.21 RU pack.
+Kill a cave spider	Kill a cave spider	DESCRIPTION	blazeandcave:monsters/poisonous_ew	EXACT_MATCH	Kill a cave spider	Historical key присутствует в official 1.21 RU pack.
+Monsters	Monsters	TAB	blazeandcave:monsters/root	EXACT_MATCH	Monsters	Historical key присутствует в official 1.21 RU pack.
+Collect a stack of bones	Collect a stack of bones	DESCRIPTION	blazeandcave:monsters/skeleton_smiter	EXACT_MATCH	Collect a stack of bones	Historical key присутствует в official 1.21 RU pack.
+Collect a stack of slimeballs	Collect a stack of slimeballs	DESCRIPTION	blazeandcave:monsters/slime_squisher	EXACT_MATCH	Collect a stack of slimeballs	Historical key присутствует в official 1.21 RU pack.
+Kill a skeleton	Kill a skeleton	DESCRIPTION	blazeandcave:monsters/spooky_skeleton	EXACT_MATCH	Kill a skeleton	Historical key присутствует в official 1.21 RU pack.
+Blow up a skeleton with a charged creeper to get a skeleton skull	Blow up a skeleton with a charged creeper to get a skeleton skull	DESCRIPTION	blazeandcave:monsters/spooky_skulls	EXACT_MATCH	Blow up a skeleton with a charged creeper to get a skeleton skull	Historical key присутствует в official 1.21 RU pack.
+Stealth is Optional	Stealth is Optional	TITLE	blazeandcave:monsters/stealth_is_optional	EXACT_MATCH	Stealth is Optional	Historical key присутствует в official 1.21 RU pack.
+Kill a witch with a splash potion	Kill a witch with a splash potion	DESCRIPTION	blazeandcave:monsters/taste_of_your_own_medicine	EXACT_MATCH	Kill a witch with a splash potion	Historical key присутствует в official 1.21 RU pack.
+Termite Control	Termite Control	TITLE	blazeandcave:monsters/termite_control	EXACT_MATCH	Termite Control	Historical key присутствует в official 1.21 RU pack.
+Kill a silverfish	Kill a silverfish	DESCRIPTION	blazeandcave:monsters/termite_control	EXACT_MATCH	Kill a silverfish	Historical key присутствует в official 1.21 RU pack.
+Kill an enderman	Kill an enderman	DESCRIPTION	blazeandcave:monsters/the_ender_of_ender	EXACT_MATCH	Kill an enderman	Historical key присутствует в official 1.21 RU pack.
+Get attacked by phantoms	Get attacked by phantoms	DESCRIPTION	blazeandcave:monsters/the_phantom_menace	EXACT_MATCH	Get attacked by phantoms	Historical key присутствует в official 1.21 RU pack.
+Ride a Skeleton Horse	Ride a Skeleton Horse	DESCRIPTION	blazeandcave:monsters/the_undead_cavalry	EXACT_MATCH	Ride a Skeleton Horse	Historical key присутствует в official 1.21 RU pack.
+Trampoline	Trampoline	TITLE	blazeandcave:monsters/trampoline	EXACT_MATCH	Trampoline	Historical key присутствует в official 1.21 RU pack.
+Trick or Treat!	Trick or Treat!	TITLE	blazeandcave:monsters/trick_or_treat	EXACT_MATCH	Trick or Treat!	Historical key присутствует в official 1.21 RU pack.
+Warden Frostbite	Warden Frostbite	TITLE	blazeandcave:monsters/warden_frostbite	EXACT_MATCH	Warden Frostbite	Historical key присутствует в official 1.21 RU pack.
+Kill a creeper	Kill a creeper	DESCRIPTION	blazeandcave:monsters/what_a_creep	EXACT_MATCH	Kill a creeper	Historical key присутствует в official 1.21 RU pack.
+Kill a witch	Kill a witch	DESCRIPTION	blazeandcave:monsters/witch	EXACT_MATCH	Kill a witch	Historical key присутствует в official 1.21 RU pack.
+Collect a stack of rotten flesh	Collect a stack of rotten flesh	DESCRIPTION	blazeandcave:monsters/zombie_slayer	EXACT_MATCH	Collect a stack of rotten flesh	Historical key присутствует в official 1.21 RU pack.
+Collect a stack of blaze rods	Collect a stack of blaze rods	DESCRIPTION	blazeandcave:nether/blaze_extinguisher	EXACT_MATCH	Collect a stack of blaze rods	Historical key присутствует в official 1.21 RU pack.
+Bobbleheads	Bobbleheads	TITLE	blazeandcave:nether/bobbleheads	EXACT_MATCH	Bobbleheads	Historical key присутствует в official 1.21 RU pack.
+Brute Force	Brute Force	TITLE	blazeandcave:nether/brute_force	EXACT_MATCH	Brute Force	Historical key присутствует в official 1.21 RU pack.
+Diamonds Are Not Forever	Diamonds Are Not Forever	TITLE	blazeandcave:nether/diamonds_are_not_forever	EXACT_MATCH	Diamonds Are Not Forever	Historical key присутствует в official 1.21 RU pack.
+Get attacked by Piglin Brutes	Get attacked by Piglin Brutes	DESCRIPTION	blazeandcave:nether/et_tu_brute	EXACT_MATCH	Get attacked by Piglin Brutes	Historical key присутствует в official 1.21 RU pack.
+Get a Lode Of This!	Get a Lode Of This!	TITLE	blazeandcave:nether/get_a_lode_of_this	EXACT_MATCH	Get a Lode Of This!	Historical key присутствует в official 1.21 RU pack.
+Craft a Lodestone using Chiseled Stone Bricks and a Netherite Ingot	Craft a Lodestone using Chiseled Stone Bricks and a Netherite Ingot	DESCRIPTION	blazeandcave:nether/get_a_lode_of_this	EXACT_MATCH	Craft a Lodestone using Chiseled Stone Bricks and a Netherite Ingot	Historical key присутствует в official 1.21 RU pack.
+Collect a stack of ghast tears	Collect a stack of ghast tears	DESCRIPTION	blazeandcave:nether/ghast_slayer	EXACT_MATCH	Collect a stack of ghast tears	Historical key присутствует в official 1.21 RU pack.
+Shoot down a ghast	Shoot down a ghast	DESCRIPTION	blazeandcave:nether/giant_floating_jellyfish	EXACT_MATCH	Shoot down a ghast	Historical key присутствует в official 1.21 RU pack.
+Mine some Gilded Blackstone from a Bastion Remnant	Mine some Gilded Blackstone from a Bastion Remnant	DESCRIPTION	blazeandcave:nether/gilty	EXACT_MATCH	Mine some Gilded Blackstone from a Bastion Remnant	Historical key присутствует в official 1.21 RU pack.
+Glowstone Miner	Glowstone Miner	TITLE	blazeandcave:nether/glowstone_miner	EXACT_MATCH	Glowstone Miner	Historical key присутствует в official 1.21 RU pack.
+Hell Botanist	Hell Botanist	TITLE	blazeandcave:nether/hell_botanist	EXACT_MATCH	Hell Botanist	Historical key присутствует в official 1.21 RU pack.
+Gather a stack of every Nether plant	Gather a stack of every Nether plant	DESCRIPTION	blazeandcave:nether/hell_botanist	EXACT_MATCH	Gather a stack of every Nether plant	Historical key присутствует в official 1.21 RU pack.
+Ring a bell in the Nether	Ring a bell in the Nether	DESCRIPTION	blazeandcave:nether/hells_bells	EXACT_MATCH	Ring a bell in the Nether	Historical key присутствует в official 1.21 RU pack.
+High Temperature Fluid Monster	High Temperature Fluid Monster	TITLE	blazeandcave:nether/high_temperature_fluid_monster	EXACT_MATCH	High Temperature Fluid Monster	Historical key присутствует в official 1.21 RU pack.
+Kill a magma cube	Kill a magma cube	DESCRIPTION	blazeandcave:nether/high_temperature_fluid_monster	EXACT_MATCH	Kill a magma cube	Historical key присутствует в official 1.21 RU pack.
+Reel in a Strider using a Fishing Rod	Reel in a Strider using a Fishing Rod	DESCRIPTION	blazeandcave:nether/hot_reels	EXACT_MATCH	Reel in a Strider using a Fishing Rod	Historical key присутствует в official 1.21 RU pack.
+Let Me Out!	Let Me Out!	TITLE	blazeandcave:nether/let_me_out	EXACT_MATCH	Let Me Out!	Historical key присутствует в official 1.21 RU pack.
+Magma Cube Squisher	Magma Cube Squisher	TITLE	blazeandcave:nether/magma_cube_squisher	EXACT_MATCH	Magma Cube Squisher	Historical key присутствует в official 1.21 RU pack.
+Collect a stack of magma cream	Collect a stack of magma cream	DESCRIPTION	blazeandcave:nether/magma_cube_squisher	EXACT_MATCH	Collect a stack of magma cream	Historical key присутствует в official 1.21 RU pack.
+Master Netherite Miner	Master Netherite Miner	TITLE	blazeandcave:nether/master_netherite_miner	EXACT_MATCH	Master Netherite Miner	Historical key присутствует в official 1.21 RU pack.
+Netherite Mad Lad	Netherite Mad Lad	TITLE	blazeandcave:nether/netherite_mad_lad	EXACT_MATCH	Netherite Mad Lad	Historical key присутствует в official 1.21 RU pack.
+Netherite Miner	Netherite Miner	TITLE	blazeandcave:nether/netherite_miner	EXACT_MATCH	Netherite Miner	Historical key присутствует в official 1.21 RU pack.
+Seeing Stars	Seeing Stars	TITLE	blazeandcave:nether/seeing_stars	EXACT_MATCH	Seeing Stars	Historical key присутствует в official 1.21 RU pack.
+Kill a wither skeleton	Kill a wither skeleton	DESCRIPTION	blazeandcave:nether/the_hunt_begins	EXACT_MATCH	Kill a wither skeleton	Historical key присутствует в official 1.21 RU pack.
+Kill a zombie pigman	Kill a zombie pigman	DESCRIPTION	blazeandcave:nether/the_tribal_snouts	EXACT_MATCH	Kill a zombie pigman	Historical key присутствует в official 1.21 RU pack.
+How Did We Get Here?	How Did We Get Here?	TITLE	minecraft:nether/all_effects	EXACT_MATCH	How Did We Get Here?	Historical key присутствует в official 1.21 RU pack.
+Have every effect applied at the same time	Have every effect applied at the same time	DESCRIPTION	minecraft:nether/all_effects	EXACT_MATCH	Have every effect applied at the same time	Historical key присутствует в official 1.21 RU pack.
+A Furious Cocktail	A Furious Cocktail	TITLE	minecraft:nether/all_potions	EXACT_MATCH	A Furious Cocktail	Historical key присутствует в official 1.21 RU pack.
+Have every potion effect applied at the same time	Have every potion effect applied at the same time	DESCRIPTION	minecraft:nether/all_potions	EXACT_MATCH	Have every potion effect applied at the same time	Historical key присутствует в official 1.21 RU pack.
+Local Brewery	Local Brewery	TITLE	minecraft:nether/brew_potion	EXACT_MATCH	Local Brewery	Historical key присутствует в official 1.21 RU pack.
+Not Quite 'Nine' Lives	Not Quite 'Nine' Lives	TITLE	minecraft:nether/charge_respawn_anchor	EXACT_MATCH	Not Quite 'Nine' Lives	Historical key присутствует в official 1.21 RU pack.
+Charge a Respawn Anchor to the maximum	Charge a Respawn Anchor to the maximum	DESCRIPTION	minecraft:nether/charge_respawn_anchor	EXACT_MATCH	Charge a Respawn Anchor to the maximum	Historical key присутствует в official 1.21 RU pack.
+Bring Home the Beacon	Bring Home the Beacon	TITLE	minecraft:nether/create_beacon	EXACT_MATCH	Bring Home the Beacon	Historical key присутствует в official 1.21 RU pack.
+Beaconator	Beaconator	TITLE	minecraft:nether/create_full_beacon	EXACT_MATCH	Beaconator	Historical key присутствует в official 1.21 RU pack.
+Bring a beacon to full power	Bring a beacon to full power	DESCRIPTION	minecraft:nether/create_full_beacon	EXACT_MATCH	Bring a beacon to full power	Historical key присутствует в official 1.21 RU pack.
+Oh, Shiny!	Oh, Shiny!	TITLE	minecraft:nether/distract_piglin	EXACT_MATCH	Oh, Shiny!	Historical key присутствует в official 1.21 RU pack.
+Distract Piglins with gold	Distract Piglins with gold	DESCRIPTION	minecraft:nether/distract_piglin	EXACT_MATCH	Distract Piglins with gold	Historical key присутствует в official 1.21 RU pack.
+Hot Tourist Destination	Hot Tourist Destination	TITLE	minecraft:nether/explore_nether	EXACT_MATCH	Hot Tourist Destination	Historical key присутствует в official 1.21 RU pack.
+Subspace Bubble	Subspace Bubble	TITLE	minecraft:nether/fast_travel	EXACT_MATCH	Subspace Bubble	Historical key присутствует в official 1.21 RU pack.
+Those Were the Days	Those Were the Days	TITLE	minecraft:nether/find_bastion	EXACT_MATCH	Those Were the Days	Historical key присутствует в official 1.21 RU pack.
+Fight your way into a Bastion Remnant	Fight your way into a Bastion Remnant	DESCRIPTION	minecraft:nether/find_bastion	EXACT_MATCH	Fight your way into a Bastion Remnant	Historical key присутствует в official 1.21 RU pack.
+A Terrible Fortress	A Terrible Fortress	TITLE	minecraft:nether/find_fortress	EXACT_MATCH	A Terrible Fortress	Historical key присутствует в official 1.21 RU pack.
+Spooky Scary Skeleton	Spooky Scary Skeleton	TITLE	minecraft:nether/get_wither_skull	EXACT_MATCH	Spooky Scary Skeleton	Historical key присутствует в official 1.21 RU pack.
+War Pigs	War Pigs	TITLE	minecraft:nether/loot_bastion	EXACT_MATCH	War Pigs	Historical key присутствует в official 1.21 RU pack.
+Loot a chest in a Bastion Remnant	Loot a chest in a Bastion Remnant	DESCRIPTION	minecraft:nether/loot_bastion	EXACT_MATCH	Loot a chest in a Bastion Remnant	Historical key присутствует в official 1.21 RU pack.
+A Knight to Nether Forget	A Knight to Nether Forget	TITLE	minecraft:nether/netherite_armor	EXACT_MATCH	A Knight to Nether Forget	Historical key присутствует в official 1.21 RU pack.
+Into Fire	Into Fire	TITLE	minecraft:nether/obtain_blaze_rod	EXACT_MATCH	Into Fire	Historical key присутствует в official 1.21 RU pack.
+Relieve a Blaze of its rod	Relieve a Blaze of its rod	DESCRIPTION	minecraft:nether/obtain_blaze_rod	EXACT_MATCH	Relieve a Blaze of its rod	Historical key присутствует в official 1.21 RU pack.
+Who is Cutting Onions?	Who is Cutting Onions?	TITLE	minecraft:nether/obtain_crying_obsidian	EXACT_MATCH	Who is Cutting Onions?	Historical key присутствует в official 1.21 RU pack.
+Return to Sender	Return to Sender	TITLE	minecraft:nether/return_to_sender	EXACT_MATCH	Return to Sender	Historical key присутствует в official 1.21 RU pack.
+Destroy a Ghast with its fireball	Destroy a Ghast with its fireball	DESCRIPTION	minecraft:nether/return_to_sender	EXACT_MATCH	Destroy a Ghast with its fireball	Historical key присутствует в official 1.21 RU pack.
+This Boat Has Legs	This Boat Has Legs	TITLE	minecraft:nether/ride_strider	EXACT_MATCH	This Boat Has Legs	Historical key присутствует в official 1.21 RU pack.
+Feels Like Home	Feels Like Home	TITLE	minecraft:nether/ride_strider_in_overworld_lava	EXACT_MATCH	Feels Like Home	Historical key присутствует в official 1.21 RU pack.
+Nether	Nether	TAB	minecraft:nether/root	EXACT_MATCH	Nether	Historical key присутствует в official 1.21 RU pack.
+Bring summer clothes	Bring summer clothes	DESCRIPTION	minecraft:nether/root	EXACT_MATCH	Bring summer clothes	Historical key присутствует в official 1.21 RU pack.
+Withering Heights	Withering Heights	TITLE	minecraft:nether/summon_wither	EXACT_MATCH	Withering Heights	Historical key присутствует в official 1.21 RU pack.
+Summon the Wither	Summon the Wither	DESCRIPTION	minecraft:nether/summon_wither	EXACT_MATCH	Summon the Wither	Historical key присутствует в official 1.21 RU pack.
+Uneasy Alliance	Uneasy Alliance	TITLE	minecraft:nether/uneasy_alliance	EXACT_MATCH	Uneasy Alliance	Historical key присутствует в official 1.21 RU pack.
+Country Lode, Take Me Home	Country Lode, Take Me Home	TITLE	minecraft:nether/use_lodestone	EXACT_MATCH	Country Lode, Take Me Home	Historical key присутствует в official 1.21 RU pack.
+Use a Compass on a Lodestone	Use a Compass on a Lodestone	DESCRIPTION	minecraft:nether/use_lodestone	EXACT_MATCH	Use a Compass on a Lodestone	Historical key присутствует в official 1.21 RU pack.
+Brew a mundane and thick potion	Brew a mundane and thick potion	DESCRIPTION	blazeandcave:potion/failed_concoctions	EXACT_MATCH	Brew a mundane and thick potion	Historical key присутствует в official 1.21 RU pack.
+Nocturnal	Nocturnal	TITLE	blazeandcave:potion/nocturnal	EXACT_MATCH	Nocturnal	Historical key присутствует в official 1.21 RU pack.
+Potions	Potions	TAB	blazeandcave:potion/root	EXACT_MATCH	Potions	Historical key присутствует в official 1.21 RU pack.
+Bling Plate	Bling Plate	TITLE	blazeandcave:redstone/bling_plate	EXACT_MATCH	Bling Plate	Historical key присутствует в official 1.21 RU pack.
+Click!	Click!	TITLE	blazeandcave:redstone/click	EXACT_MATCH	Click!	Historical key присутствует в official 1.21 RU pack.
+Place and push a button	Place and push a button	DESCRIPTION	blazeandcave:redstone/click	EXACT_MATCH	Place and push a button	Historical key присутствует в official 1.21 RU pack.
+Metal Plate	Metal Plate	TITLE	blazeandcave:redstone/metal_plate	EXACT_MATCH	Metal Plate	Historical key присутствует в official 1.21 RU pack.
+Monstrous Sacrifices	Monstrous Sacrifices	TITLE	blazeandcave:redstone/monstrous_sacrifices	EXACT_MATCH	Monstrous Sacrifices	Historical key присутствует в official 1.21 RU pack.
+Mozart	Mozart	TITLE	blazeandcave:redstone/mozart	EXACT_MATCH	Mozart	Historical key присутствует в official 1.21 RU pack.
+Railwayman	Railwayman	TITLE	blazeandcave:redstone/railwayman	EXACT_MATCH	Railwayman	Historical key присутствует в official 1.21 RU pack.
+Repeating Repeater	Repeating Repeater	TITLE	blazeandcave:redstone/repeating_repeater	EXACT_MATCH	Repeating Repeater	Historical key присутствует в official 1.21 RU pack.
+Redstone	Redstone	TAB	blazeandcave:redstone/root	EXACT_MATCH	Redstone	Historical key присутствует в official 1.21 RU pack.
+Sculker Box	Sculker Box	TITLE	blazeandcave:redstone/sculker_box	EXACT_MATCH	Sculker Box	Historical key присутствует в official 1.21 RU pack.
+Hold a Shulker Box that is completely filled with Sculk	Hold a Shulker Box that is completely filled with Sculk	DESCRIPTION	blazeandcave:redstone/sculker_box	EXACT_MATCH	Hold a Shulker Box that is completely filled with Sculk	Historical key присутствует в official 1.21 RU pack.
+We Have Liftoff!	We Have Liftoff!	TITLE	blazeandcave:redstone/we_have_liftoff	EXACT_MATCH	We Have Liftoff!	Historical key присутствует в official 1.21 RU pack.
+hours of walking	hours of walking	TITLE	blazeandcave:statistics/65_hours_of_walking	EXACT_MATCH	hours of walking	Historical key присутствует в official 1.21 RU pack.
+Sneak 10km	Sneak 10km	DESCRIPTION	blazeandcave:statistics/ancient_kung_fu_master	EXACT_MATCH	Sneak 10km	Historical key присутствует в official 1.21 RU pack.
+Trade with villagers 500 times	Trade with villagers 500 times	DESCRIPTION	blazeandcave:statistics/big_spender	EXACT_MATCH	Trade with villagers 500 times	Historical key присутствует в official 1.21 RU pack.
+Sneak 1km	Sneak 1km	DESCRIPTION	blazeandcave:statistics/black_belt_ninja	EXACT_MATCH	Sneak 1km	Historical key присутствует в official 1.21 RU pack.
+Cupid	Cupid	TITLE	blazeandcave:statistics/cupid	EXACT_MATCH	Cupid	Historical key присутствует в official 1.21 RU pack.
+Elderly Enchanter	Elderly Enchanter	TITLE	blazeandcave:statistics/elderly_enchanter	EXACT_MATCH	Elderly Enchanter	Historical key присутствует в official 1.21 RU pack.
+Giga XP Grinder	Giga XP Grinder	TITLE	blazeandcave:statistics/giga_xp_grinder	EXACT_MATCH	Giga XP Grinder	Historical key присутствует в official 1.21 RU pack.
+Ride 50km in a minecart	Ride 50km in a minecart	DESCRIPTION	blazeandcave:statistics/global_railway_network	EXACT_MATCH	Ride 50km in a minecart	Historical key присутствует в official 1.21 RU pack.
+Ride 1km on a horse	Ride 1km on a horse	DESCRIPTION	blazeandcave:statistics/horse_training	EXACT_MATCH	Ride 1km on a horse	Historical key присутствует в official 1.21 RU pack.
+Walk 250km	Walk 250km	DESCRIPTION	blazeandcave:statistics/i_enjoy_long_walks_and_playing_minecraft	EXACT_MATCH	Walk 250km	Historical key присутствует в official 1.21 RU pack.
+Ride 10km in a minecart	Ride 10km in a minecart	DESCRIPTION	blazeandcave:statistics/i_like_trains	EXACT_MATCH	Ride 10km in a minecart	Historical key присутствует в official 1.21 RU pack.
+Journeyman Enchanter	Journeyman Enchanter	TITLE	blazeandcave:statistics/journeyman_enchanter	EXACT_MATCH	Journeyman Enchanter	Historical key присутствует в official 1.21 RU pack.
+Jumping Jacks	Jumping Jacks	TITLE	blazeandcave:statistics/jumping_jacks	EXACT_MATCH	Jumping Jacks	Historical key присутствует в official 1.21 RU pack.
+Laps in the pool	Laps in the pool	TITLE	blazeandcave:statistics/laps_in_the_pool	EXACT_MATCH	Laps in the pool	Historical key присутствует в official 1.21 RU pack.
+Swim 1km	Swim 1km	DESCRIPTION	blazeandcave:statistics/laps_in_the_pool	EXACT_MATCH	Swim 1km	Historical key присутствует в official 1.21 RU pack.
+Level Up	Level Up	TITLE	blazeandcave:statistics/level_up	EXACT_MATCH	Level Up	Historical key присутствует в official 1.21 RU pack.
+Ride 10km on a pig	Ride 10km on a pig	DESCRIPTION	blazeandcave:statistics/lightning_mcpig	EXACT_MATCH	Ride 10km on a pig	Historical key присутствует в official 1.21 RU pack.
+Sail 1km in a boat	Sail 1km in a boat	DESCRIPTION	blazeandcave:statistics/luxury_cruise	EXACT_MATCH	Sail 1km in a boat	Historical key присутствует в official 1.21 RU pack.
+Marathon	Marathon	TITLE	blazeandcave:statistics/marathon	EXACT_MATCH	Marathon	Historical key присутствует в official 1.21 RU pack.
+Ride 1km in a minecart	Ride 1km in a minecart	DESCRIPTION	blazeandcave:statistics/minecart_rider	EXACT_MATCH	Ride 1km in a minecart	Historical key присутствует в official 1.21 RU pack.
+Defeat 250 mobs	Defeat 250 mobs	DESCRIPTION	blazeandcave:statistics/mob_hunter	EXACT_MATCH	Defeat 250 mobs	Historical key присутствует в official 1.21 RU pack.
+More For Me	More For Me	TITLE	blazeandcave:statistics/more_for_me	EXACT_MATCH	More For Me	Historical key присутствует в official 1.21 RU pack.
+Sprint 10km	Sprint 10km	DESCRIPTION	blazeandcave:statistics/natural_sprinter	EXACT_MATCH	Sprint 10km	Historical key присутствует в official 1.21 RU pack.
+Swim 10km	Swim 10km	DESCRIPTION	blazeandcave:statistics/olympic_athlete	EXACT_MATCH	Swim 10km	Historical key присутствует в official 1.21 RU pack.
+Olympic Gold Medallist	Olympic Gold Medallist	TITLE	blazeandcave:statistics/olympic_gold_medallist	EXACT_MATCH	Olympic Gold Medallist	Historical key присутствует в official 1.21 RU pack.
+Swim 50km	Swim 50km	DESCRIPTION	blazeandcave:statistics/olympic_gold_medallist	EXACT_MATCH	Swim 50km	Historical key присутствует в official 1.21 RU pack.
+Walk 10km	Walk 10km	DESCRIPTION	blazeandcave:statistics/out_for_a_stroll	EXACT_MATCH	Walk 10km	Historical key присутствует в official 1.21 RU pack.
+Overlevelling	Overlevelling	TITLE	blazeandcave:statistics/overlevelling	EXACT_MATCH	Overlevelling	Historical key присутствует в official 1.21 RU pack.
+Sail 10km in a boat	Sail 10km in a boat	DESCRIPTION	blazeandcave:statistics/pirate_captain	EXACT_MATCH	Sail 10km in a boat	Historical key присутствует в official 1.21 RU pack.
+Statistics	Statistics	TAB	blazeandcave:statistics/root	EXACT_MATCH	Statistics	Historical key присутствует в official 1.21 RU pack.
+Sail 50km in a boat	Sail 50km in a boat	DESCRIPTION	blazeandcave:statistics/sailor_of_the_seven_seas	EXACT_MATCH	Sail 50km in a boat	Historical key присутствует в official 1.21 RU pack.
+Ride 50km on a horse	Ride 50km on a horse	DESCRIPTION	blazeandcave:statistics/scourge_of_the_west	EXACT_MATCH	Ride 50km on a horse	Historical key присутствует в official 1.21 RU pack.
+Ride 10km on a horse	Ride 10km on a horse	DESCRIPTION	blazeandcave:statistics/sheriff_firearm	EXACT_MATCH	Ride 10km on a horse	Historical key присутствует в official 1.21 RU pack.
+Ride 1km on a pig	Ride 1km on a pig	DESCRIPTION	blazeandcave:statistics/snout_500	EXACT_MATCH	Ride 1km on a pig	Historical key присутствует в official 1.21 RU pack.
+Fly 100km with elytra	Fly 100km with elytra	DESCRIPTION	blazeandcave:statistics/supersonic	EXACT_MATCH	Fly 100km with elytra	Historical key присутствует в official 1.21 RU pack.
+Fly 10km with elytra	Fly 10km with elytra	DESCRIPTION	blazeandcave:statistics/take_to_the_skies	EXACT_MATCH	Fly 10km with elytra	Historical key присутствует в official 1.21 RU pack.
+Trade with villagers 100 times	Trade with villagers 100 times	DESCRIPTION	blazeandcave:statistics/the_haggler	EXACT_MATCH	Trade with villagers 100 times	Historical key присутствует в official 1.21 RU pack.
+Walk 50km	Walk 50km	DESCRIPTION	blazeandcave:statistics/who_needs_cars	EXACT_MATCH	Walk 50km	Historical key присутствует в official 1.21 RU pack.
+XP Grinder	XP Grinder	TITLE	blazeandcave:statistics/xp_grinder	EXACT_MATCH	XP Grinder	Historical key присутствует в official 1.21 RU pack.
+Sprint 250km	Sprint 250km	DESCRIPTION	blazeandcave:statistics/your_legs_must_be_tired	EXACT_MATCH	Sprint 250km	Historical key присутствует в official 1.21 RU pack.
+Expelliarmus!	Expelliarmus!	TITLE	blazeandcave:weaponry/expelliarmus	EXACT_MATCH	Expelliarmus!	Historical key присутствует в official 1.21 RU pack.
+Load your crossbow with a firework	Load your crossbow with a firework	DESCRIPTION	blazeandcave:weaponry/explosive_fire	EXACT_MATCH	Load your crossbow with a firework	Historical key присутствует в official 1.21 RU pack.
+Inspector Gadget	Inspector Gadget	TITLE	blazeandcave:weaponry/inspector_gadget	EXACT_MATCH	Inspector Gadget	Historical key присутствует в official 1.21 RU pack.
+Loser!	Loser!	TITLE	blazeandcave:weaponry/loser	EXACT_MATCH	Loser!	Historical key присутствует в official 1.21 RU pack.
+Multiclassed	Multiclassed	TITLE	blazeandcave:weaponry/multiclassed	EXACT_MATCH	Multiclassed	Historical key присутствует в official 1.21 RU pack.
+Pull a pig using a fishing rod	Pull a pig using a fishing rod	DESCRIPTION	blazeandcave:weaponry/pig_fishing_tournament	EXACT_MATCH	Pull a pig using a fishing rod	Historical key присутствует в official 1.21 RU pack.
+Poseidon vs. Hades	Poseidon vs. Hades	TITLE	blazeandcave:weaponry/poseidon_vs_hades	EXACT_MATCH	Poseidon vs. Hades	Historical key присутствует в official 1.21 RU pack.
+Pyrotechnic	Pyrotechnic	TITLE	blazeandcave:weaponry/pyrotechnic	EXACT_MATCH	Pyrotechnic	Historical key присутствует в official 1.21 RU pack.
+Rock, Paper, Shears!	Rock, Paper, Shears!	TITLE	blazeandcave:weaponry/rock_paper_shears	EXACT_MATCH	Rock, Paper, Shears!	Historical key присутствует в official 1.21 RU pack.
+Beat a zombie at rock, paper, shears	Beat a zombie at rock, paper, shears	DESCRIPTION	blazeandcave:weaponry/rock_paper_shears	EXACT_MATCH	Beat a zombie at rock, paper, shears	Historical key присутствует в official 1.21 RU pack.
+Weaponry	Weaponry	TAB	blazeandcave:weaponry/root	EXACT_MATCH	Weaponry	Historical key присутствует в official 1.21 RU pack.
+Shovel Knight	Shovel Knight	TITLE	blazeandcave:weaponry/shovel_knight	EXACT_MATCH	Shovel Knight	Historical key присутствует в official 1.21 RU pack.
+Slapfish	Slapfish	TITLE	blazeandcave:weaponry/slapfish	EXACT_MATCH	Slapfish	Historical key присутствует в official 1.21 RU pack.
+Advancement Legend	Advancement Legend	TITLE	blazeandcave:bacap/advancement_legend	EXACT_MATCH	Advancement Legend	Historical key присутствует в official 1.21 RU pack.
+BlazeandCave's Advancements Pack	BlazeandCave's Advancements Pack	TAB	blazeandcave:bacap/root	EXACT_MATCH	BlazeandCave's Advancements Pack	Historical key присутствует в official 1.21 RU pack.
+Thank you to all of my Patrons!	Thank you to all of my Patrons!	DESCRIPTION	blazeandcave:bacap/root	EXACT_MATCH	Thank you to all of my Patrons!	Historical key присутствует в official 1.21 RU pack.
+Birthday Song	Birthday Song	TITLE	minecraft:husbandry/allay_deliver_cake_to_note_block	EXACT_MATCH	Birthday Song	Historical key присутствует в official 1.21 RU pack.
+Have an Allay drop a cake at a note block	Have an Allay drop a cake at a note block	DESCRIPTION	minecraft:husbandry/allay_deliver_cake_to_note_block	EXACT_MATCH	Have an Allay drop a cake at a note block	Historical key присутствует в official 1.21 RU pack.
+You’ve Got a Friend in Me	You’ve Got a Friend in Me	TITLE	minecraft:husbandry/allay_deliver_item_to_player	EXACT_MATCH	You’ve Got a Friend in Me	Historical key присутствует в official 1.21 RU pack.
+The Cutest Predator	The Cutest Predator	TITLE	minecraft:husbandry/axolotl_in_a_bucket	EXACT_MATCH	The Cutest Predator	Historical key присутствует в official 1.21 RU pack.
+Catch an Axolotl in a Bucket	Catch an Axolotl in a Bucket	DESCRIPTION	minecraft:husbandry/axolotl_in_a_bucket	EXACT_MATCH	Catch an Axolotl in a Bucket	Historical key присутствует в official 1.21 RU pack.
+A Balanced Diet	A Balanced Diet	TITLE	minecraft:husbandry/balanced_diet	EXACT_MATCH	A Balanced Diet	Historical key присутствует в official 1.21 RU pack.
+Serious Dedication	Serious Dedication	TITLE	minecraft:husbandry/break_diamond_hoe	EXACT_MATCH	Serious Dedication	Historical key присутствует в official 1.21 RU pack.
+Overpopulation	Overpopulation	TITLE	minecraft:husbandry/bred_all_animals	EXACT_MATCH	Overpopulation	Historical key присутствует в official 1.21 RU pack.
+A Complete Catalogue	A Complete Catalogue	TITLE	minecraft:husbandry/complete_catalogue	EXACT_MATCH	A Complete Catalogue	Historical key присутствует в official 1.21 RU pack.
+Feed a Snifflet	Feed a Snifflet	DESCRIPTION	minecraft:husbandry/feed_snifflet	EXACT_MATCH	Feed a Snifflet	Historical key присутствует в official 1.21 RU pack.
+Fishy Business	Fishy Business	TITLE	minecraft:husbandry/fishy_business	EXACT_MATCH	Fishy Business	Historical key присутствует в official 1.21 RU pack.
+Catch a fish	Catch a fish	DESCRIPTION	minecraft:husbandry/fishy_business	EXACT_MATCH	Catch a fish	Historical key присутствует в official 1.21 RU pack.
+Team up with an Axolotl and win a fight	Team up with an Axolotl and win a fight	DESCRIPTION	minecraft:husbandry/kill_axolotl_target	EXACT_MATCH	Team up with an Axolotl and win a fight	Historical key присутствует в official 1.21 RU pack.
+When the Squad Hops into Town	When the Squad Hops into Town	TITLE	minecraft:husbandry/leash_all_frog_variants	EXACT_MATCH	When the Squad Hops into Town	Historical key присутствует в official 1.21 RU pack.
+Life… uhh… finds a way	Life… uhh… finds a way	TITLE	minecraft:husbandry/obtain_sniffer_egg	EXACT_MATCH	Life… uhh… finds a way	Historical key присутствует в official 1.21 RU pack.
+Planting the Past	Planting the Past	TITLE	minecraft:husbandry/plant_any_sniffer_seed	EXACT_MATCH	Planting the Past	Historical key присутствует в official 1.21 RU pack.
+Plant any Sniffer Seed	Plant any Sniffer Seed	DESCRIPTION	minecraft:husbandry/plant_any_sniffer_seed	EXACT_MATCH	Plant any Sniffer Seed	Historical key присутствует в official 1.21 RU pack.
+A Seedy Place	A Seedy Place	TITLE	minecraft:husbandry/plant_seed	EXACT_MATCH	A Seedy Place	Historical key присутствует в official 1.21 RU pack.
+Good as New	Good as New	TITLE	minecraft:husbandry/repair_wolf_armor	EXACT_MATCH	Good as New	Historical key присутствует в official 1.21 RU pack.
+Whatever Floats Your Goat!	Whatever Floats Your Goat!	TITLE	minecraft:husbandry/ride_a_boat_with_a_goat	EXACT_MATCH	Whatever Floats Your Goat!	Historical key присутствует в official 1.21 RU pack.
+Animals	Animals	TAB	minecraft:husbandry/root	EXACT_MATCH	Animals	Historical key присутствует в official 1.21 RU pack.
+Bee Our Guest	Bee Our Guest	TITLE	minecraft:husbandry/safely_harvest_honey	EXACT_MATCH	Bee Our Guest	Historical key присутствует в official 1.21 RU pack.
+Total Beelocation	Total Beelocation	TITLE	minecraft:husbandry/silk_touch_nest	EXACT_MATCH	Total Beelocation	Historical key присутствует в official 1.21 RU pack.
+Tactical Fishing	Tactical Fishing	TITLE	minecraft:husbandry/tactical_fishing	EXACT_MATCH	Tactical Fishing	Historical key присутствует в official 1.21 RU pack.
+Bukkit bukkit	Bukkit bukkit	TITLE	minecraft:husbandry/tadpole_in_a_bucket	EXACT_MATCH	Bukkit bukkit	Historical key присутствует в official 1.21 RU pack.
+Catch a Tadpole in a Bucket	Catch a Tadpole in a Bucket	DESCRIPTION	minecraft:husbandry/tadpole_in_a_bucket	EXACT_MATCH	Catch a Tadpole in a Bucket	Historical key присутствует в official 1.21 RU pack.
+Befriend a wolf	Befriend a wolf	DESCRIPTION	minecraft:husbandry/tame_an_animal	EXACT_MATCH	Befriend a wolf	Historical key присутствует в official 1.21 RU pack.
+Zombie Doctor	Zombie Doctor	TITLE	minecraft:story/cure_zombie_villager	EXACT_MATCH	Zombie Doctor	Historical key присутствует в official 1.21 RU pack.
+Not Today, Thank You	Not Today, Thank You	TITLE	minecraft:story/deflect_arrow	EXACT_MATCH	Not Today, Thank You	Historical key присутствует в official 1.21 RU pack.
+Enchanter	Enchanter	TITLE	minecraft:story/enchant_item	EXACT_MATCH	Enchanter	Historical key присутствует в official 1.21 RU pack.
+The End?	The End?	TITLE	minecraft:story/enter_the_end	EXACT_MATCH	The End?	Historical key присутствует в official 1.21 RU pack.
+Enter the End Portal	Enter the End Portal	DESCRIPTION	minecraft:story/enter_the_end	EXACT_MATCH	Enter the End Portal	Historical key присутствует в official 1.21 RU pack.
+We Need to Go Deeper	We Need to Go Deeper	TITLE	minecraft:story/enter_the_nether	EXACT_MATCH	We Need to Go Deeper	Historical key присутствует в official 1.21 RU pack.
+Eye Spy	Eye Spy	TITLE	minecraft:story/follow_ender_eye	EXACT_MATCH	Eye Spy	Historical key присутствует в official 1.21 RU pack.
+Ice Bucket Challenge	Ice Bucket Challenge	TITLE	minecraft:story/form_obsidian	EXACT_MATCH	Ice Bucket Challenge	Historical key присутствует в official 1.21 RU pack.
+Isn't It Iron Pick	Isn't It Iron Pick	TITLE	minecraft:story/iron_tools	EXACT_MATCH	Isn't It Iron Pick	Historical key присутствует в official 1.21 RU pack.
+Diamonds!	Diamonds!	TITLE	minecraft:story/mine_diamond	EXACT_MATCH	Diamonds!	Historical key присутствует в official 1.21 RU pack.
+Stone Age	Stone Age	TITLE	minecraft:story/mine_stone	EXACT_MATCH	Stone Age	Historical key присутствует в official 1.21 RU pack.
+Benchmarking	Benchmarking	TAB	minecraft:story/root	EXACT_MATCH	Benchmarking	Historical key присутствует в official 1.21 RU pack.
+Cover Me With Diamonds	Cover Me With Diamonds	TITLE	minecraft:story/shiny_gear	EXACT_MATCH	Cover Me With Diamonds	Historical key присутствует в official 1.21 RU pack.
+Acquire Hardware	Acquire Hardware	TITLE	minecraft:story/smelt_iron	EXACT_MATCH	Acquire Hardware	Historical key присутствует в official 1.21 RU pack.
+Getting an Upgrade	Getting an Upgrade	TITLE	minecraft:story/upgrade_tools	EXACT_MATCH	Getting an Upgrade	Historical key присутствует в official 1.21 RU pack.
+You don't want to have this advancement unlocked!	You don't want to have this advancement unlocked!	DESCRIPTION	blazeandcave:technical/big_cheater	EXACT_MATCH	You don't want to have this advancement unlocked!	Historical key присутствует в official 1.21 RU pack.

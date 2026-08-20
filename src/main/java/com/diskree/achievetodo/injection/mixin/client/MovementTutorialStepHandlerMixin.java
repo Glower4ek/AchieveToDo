@@ -43,10 +43,10 @@ public class MovementTutorialStepHandlerMixin implements MovementTutorialStepHan
 
     @Override
     public void achievetodo$onAdvancementsOpened() {
+        isAdvancementsOpened = true;
         if (openAdvancementsToast != null) {
             openAdvancementsToast.hide();
             openAdvancementsToast = null;
-            isAdvancementsOpened = true;
         }
     }
 

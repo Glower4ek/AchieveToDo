@@ -1,0 +1,506 @@
+[
+  {
+    "key": "Find a Traveller's Map",
+    "english": "Find a Traveller's Map",
+    "type": "DESCRIPTION",
+    "advancement_id": "blazeandcave:adventure/a_journey_begins",
+    "context": "Описание advancement blazeandcave:adventure/a_journey_begins",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "and",
+    "english": "and",
+    "type": "MESSAGE",
+    "advancement_id": "",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config.mcfunction; используется в 3 местах",
+    "classification": "INTENTIONALLY_ENGLISH",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Blaze",
+    "english": "Blaze",
+    "type": "MESSAGE",
+    "advancement_id": "",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config.mcfunction; используется в 3 местах",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Cave",
+    "english": "Cave",
+    "type": "MESSAGE",
+    "advancement_id": "",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config.mcfunction; используется в 3 местах",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Discord",
+    "english": "Discord",
+    "type": "MESSAGE",
+    "advancement_id": "",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config/help_links.mcfunction; используется в 3 местах",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "'s Advancements Pack!",
+    "english": "'s Advancements Pack!",
+    "type": "MESSAGE",
+    "advancement_id": "",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/msg_intro.mcfunction; используется в 2 местах",
+    "classification": "INTENTIONALLY_ENGLISH",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Everyone's currently-obtained advancements will be shared between all players on their team immediately when turning this setting on.",
+    "english": "Everyone's currently-obtained advancements will be shared between all players on their team immediately when turning this setting on.",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:config/coop_ru_sure_team",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config/coop_ru_sure_team.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Team Cooperative Mode makes it so that whenever a player gets an advancement, that advancement will be shared across all players on a team.",
+    "english": "Team Cooperative Mode makes it so that whenever a player gets an advancement, that advancement will be shared across all players on a team.",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:config/coop_ru_sure_team",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config/coop_ru_sure_team.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Patreon",
+    "english": "Patreon",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:config/help_links",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config/help_links.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "/team join bac_team_<color> <player>",
+    "english": "/team join bac_team_<color> <player>",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:config/help_teams",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config/help_teams.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "[ »» ]",
+    "english": "[ »» ]",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:config/revoke_ru_sure",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/config/revoke_ru_sure.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Created by ",
+    "english": "Created by ",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:msg_welcome.mcfunction/msg_welcome",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/msg_welcome.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Eighth line complete...",
+    "english": "Eighth line complete...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:riddle/eighth_line",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/eighth_line.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Fifth line complete...",
+    "english": "Fifth line complete...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:riddle/fifth_line",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/fifth_line.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "First line complete...",
+    "english": "First line complete...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:riddle/first_line",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/first_line.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Fourth line complete...",
+    "english": "Fourth line complete...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:riddle/fourth_line",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/fourth_line.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Ninth line complete...",
+    "english": "Ninth line complete...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:riddle/ninth_line",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/ninth_line.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Second line complete...",
+    "english": "Second line complete...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:riddle/second_line",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/second_line.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Seventh line complete...",
+    "english": "Seventh line complete...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:riddle/seventh_line",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/seventh_line.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Sixth line complete...",
+    "english": "Sixth line complete...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:riddle/sixth_line",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/sixth_line.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Third line complete...",
+    "english": "Third line complete...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:riddle/third_line",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/riddle/third_line.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Aqua Team",
+    "english": "Aqua Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Black Team",
+    "english": "Black Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Blue Team",
+    "english": "Blue Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Dark Aqua Team",
+    "english": "Dark Aqua Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Dark Blue Team",
+    "english": "Dark Blue Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Dark Gray Team",
+    "english": "Dark Gray Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Dark Green Team",
+    "english": "Dark Green Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Dark Purple Team",
+    "english": "Dark Purple Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Dark Red Team",
+    "english": "Dark Red Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Gold Team",
+    "english": "Gold Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Gray Team",
+    "english": "Gray Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Green Team",
+    "english": "Green Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Light Purple Team",
+    "english": "Light Purple Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Red Team",
+    "english": "Red Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "White Team",
+    "english": "White Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Yellow Team",
+    "english": "Yellow Team",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:start_timers.mcfunction/start_timers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/start_timers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Let Me Out",
+    "english": "Let Me Out",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:timers_trigger.mcfunction/timers_trigger",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/blazeandcave/function/timers_trigger.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "This isn't just any fence postâ¦",
+    "english": "This isn't just any fence postâ¦",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/a_rather_pointy_fence_post",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/enchanting/a_rather_pointy_fence_post.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Looks like a slimy slug sucked all the power out of it...",
+    "english": "Looks like a slimy slug sucked all the power out of it...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/amethyst_miner",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/mining/amethyst_miner.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "âNo, let's detonate instead!â says his brother, Cherry #2",
+    "english": "âNo, let's detonate instead!â says his brother, Cherry #2",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/cherry_bomb",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/building/cherry_bomb.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Just imagine how much cobblestone it contains...",
+    "english": "Just imagine how much cobblestone it contains...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/chestful_of_cobblestone",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/mining/chestful_of_cobblestone.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "In the jungle, the mighty jungle,\\n\\nThe lion sleeps tonight\\n\\nIn the jungle, the quiet jungle,\\n\\nThe lion sleeps tonight",
+    "english": "In the jungle, the mighty jungle,\\n\\nThe lion sleeps tonight\\n\\nIn the jungle, the quiet jungle,\\n\\nThe lion sleeps tonight",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/edge_of_the_jungle",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/biomes/edge_of_the_jungle.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Newton's third law - the only way humans have ever",
+    "english": "Newton's third law - the only way humans have ever",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/event_horizon",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/end/event_horizon.mcfunction",
+    "classification": "INTENTIONAL_MANUAL_CORRECTION",
+    "vanilla_value": ""
+  },
+  {
+    "key": "and they don't stop comingâ¦",
+    "english": "and they don't stop comingâ¦",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/fractal",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/animal/fractal.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "yet so elusive...",
+    "english": "yet so elusive...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/giga_xp_grinder",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/statistics/giga_xp_grinder.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "It's a sword, axe andâ¦",
+    "english": "It's a sword, axe andâ¦",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/multiclassed",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/weaponry/multiclassed.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Barry B. Benson",
+    "english": "Barry B. Benson",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/nest_quick",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/animal/nest_quick.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "This sign canât stop me because I can't see!",
+    "english": "This sign canât stop me because I can't see!",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/not_afraid_of_heights",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/monsters/not_afraid_of_heights.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "gets kinda boring after awhile...)",
+    "english": "gets kinda boring after awhile...)",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/over_overkill",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/enchanting/over_overkill.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "This is getting out of hand...",
+    "english": "This is getting out of hand...",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/overwarden",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/challenges/overwarden.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Awarded to distinguished individuals who complete Etho's challenge",
+    "english": "Awarded to distinguished individuals who complete Etho's challenge",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/pupil_poppers",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/monsters/pupil_poppers.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "Flex Tape",
+    "english": "Flex Tape",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/slabs_for_days",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/building/slabs_for_days.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "The Moon Lord fears no weapon, but this one... it scares him",
+    "english": "The Moon Lord fears no weapon, but this one... it scares him",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/sly_copper_the_copper_heist",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/mining/sly_copper_the_copper_heist.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "It's Wednesday, my dudes!",
+    "english": "It's Wednesday, my dudes!",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/when_the_squad_hops_into_town",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/animal/when_the_squad_hops_into_town.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  },
+  {
+    "key": "2013 - 2020",
+    "english": "2013 - 2020",
+    "type": "MESSAGE",
+    "advancement_id": "blazeandcave:trophy/xp_grinder",
+    "context": "Видимое BACAP сообщение из bacap.zip:data/bacap_rewards/function/trophy/statistics/xp_grinder.mcfunction",
+    "classification": "REVIEW_REMAINING",
+    "vanilla_value": ""
+  }
+]

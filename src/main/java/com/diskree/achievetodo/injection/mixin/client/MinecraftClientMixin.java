@@ -46,13 +46,6 @@ public class MinecraftClientMixin {
             } else if (client.getTutorial().instance instanceof MovementTutorialStepHandlerExtension movementTutorialStepHandlerExtension) {
                 movementTutorialStepHandlerExtension.achievetodo$onAdvancementsOpened();
             }
-        } else if (screen instanceof CreateWorldScreen createWorldScreen &&
-            screen instanceof CreateWorldScreenExtension createWorldScreenExtension &&
-            createWorldScreenExtension.achievetodo$isWaitingDatapack()
-        ) {
-            createWorldScreen.onCreate();
-            createWorldScreenExtension.achievetodo$setWaitingDatapack(false);
-            ci.cancel();
         }
     }
 

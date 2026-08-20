@@ -1,0 +1,48 @@
+{
+  "phase": "A_manual_ru_completion",
+  "source_scope": {
+    "historical_bacap_packs": [
+      "reference/phase_a_preservation/files/final/bacap.zip",
+      "reference/phase_a_preservation/files/final/bacap_hardcore.zip",
+      "reference/phase_a_preservation/files/final/bacap_terralith.zip",
+      "reference/phase_a_preservation/files/final/bacap_amplified_nether.zip",
+      "reference/phase_a_preservation/files/final/bacap_nullscape.zip"
+    ],
+    "override_resourcepacks": [
+      "src/main/resources/resourcepacks/bacap_override",
+      "src/main/resources/resourcepacks/bacap_hardcore_override",
+      "src/main/resources/resourcepacks/bacap_terralith_override",
+      "src/main/resources/resourcepacks/bacap_amplified_nether_override",
+      "src/main/resources/resourcepacks/bacap_nullscape_override"
+    ],
+    "existing_translation_sources_counted_as_already_translated": [
+      "src/main/resources/assets/achievetodo/lang/ru_ru.json",
+      "src/main/resources/assets/minecraft/lang/ru_ru.json"
+    ],
+    "excluded_translation_source": "Official BACAP Language Pack (not used in Phase A)"
+  },
+  "counts": {
+    "total_current_user_facing_bacap_strings": 3505,
+    "already_translated_by_better_ru": 2090,
+    "already_translated_by_original_achievetodo": 1,
+    "genuine_missing_total": 1414,
+    "missing_title_count": 260,
+    "missing_description_count": 184,
+    "missing_tab_count": 16,
+    "missing_message_count": 954,
+    "advancements_requiring_manual_translation": 399,
+    "excluded_technical_or_artifact_count": 5,
+    "raw_unique_translate_keys_seen": 3510
+  },
+  "notes": {
+    "deduplication": "One workload row per missing translation key; repeated runtime usages are merged into context/source counts.",
+    "type_priority_when_a_single_key_is_used_in_multiple_places": [
+      "TAB",
+      "TITLE",
+      "DESCRIPTION",
+      "MESSAGE"
+    ],
+    "shared_message_templates": "Message keys reused across multiple BACAP locations are intentionally emitted without advancement_id so they do not fragment title/description work.",
+    "empty_ru_manual_is_intentional": "Production RU is not generated from this file until every manual value is supplied and validated."
+  }
+}

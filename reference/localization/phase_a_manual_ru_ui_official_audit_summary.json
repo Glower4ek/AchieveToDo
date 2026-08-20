@@ -1,0 +1,65 @@
+{
+  "input_file": "reference/localization/phase_a_manual_ru_ui.tsv",
+  "output_file": "reference/localization/phase_a_manual_ru_ui_official_audit.tsv",
+  "official_language_pack": {
+    "project_id": "YX5bAAJN",
+    "version_number": "1.21",
+    "version_id": "hsqY3G3V",
+    "published": "2026-06-20T23:51:29.012348Z",
+    "game_versions": [
+      "26.2"
+    ],
+    "download_url": "https://cdn.modrinth.com/data/YX5bAAJN/versions/hsqY3G3V/BACAP%20Language%20Pack%201.21.zip",
+    "ru_ru_path_in_zip": "assets/minecraft/lang/ru_ru.json",
+    "license": "ARR"
+  },
+  "official_bacap_datapack": {
+    "project_id": "VoVJ47kN",
+    "version_number": "1.21",
+    "version_id": "Y2zZ5eSs",
+    "published": "2026-06-17T06:13:32.499541Z",
+    "game_versions": [
+      "26.2"
+    ],
+    "download_url": "https://cdn.modrinth.com/data/VoVJ47kN/versions/Y2zZ5eSs/BlazeandCave%27s%20Advancements%20Pack%201.21.zip",
+    "license": "ARR"
+  },
+  "totals": {
+    "total_ui_missing_input": 460,
+    "EXACT_MATCH": 451,
+    "SEMANTIC_MATCH": 0,
+    "CHANGED": 9,
+    "ABSENT": 0,
+    "has_official_reference_total": 451,
+    "still_requires_manual_translation_total": 9
+  },
+  "by_type": {
+    "TAB": {
+      "total": 16,
+      "EXACT_MATCH": 16,
+      "SEMANTIC_MATCH": 0,
+      "CHANGED": 0,
+      "ABSENT": 0,
+      "has_official_reference_total": 16,
+      "still_requires_manual_translation_total": 0
+    },
+    "TITLE": {
+      "total": 260,
+      "EXACT_MATCH": 260,
+      "SEMANTIC_MATCH": 0,
+      "CHANGED": 0,
+      "ABSENT": 0,
+      "has_official_reference_total": 260,
+      "still_requires_manual_translation_total": 0
+    },
+    "DESCRIPTION": {
+      "total": 184,
+      "EXACT_MATCH": 175,
+      "SEMANTIC_MATCH": 0,
+      "CHANGED": 9,
+      "ABSENT": 0,
+      "has_official_reference_total": 175,
+      "still_requires_manual_translation_total": 9
+    }
+  }
+}

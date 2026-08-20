@@ -1,0 +1,88 @@
+{
+  "phase": "PHASE_A_RU_FINAL_MANUAL_AUDIT_V2",
+  "source_input_count": 353,
+  "actual_vanilla_source": {
+    "minecraft_version": "26.2",
+    "release_time": "2026-06-16T12:03:33+00:00",
+    "version_meta_file": "reference/localization/.official_audit_cache/minecraft_26_2_version.json",
+    "asset_index_file": "reference/localization/.official_audit_cache/minecraft_26_2_asset_index.json",
+    "vanilla_ru_file": "reference/localization/.official_audit_cache/minecraft_26_2_vanilla_ru_ru.json"
+  },
+  "counts": {
+    "VANILLA_RU": 297,
+    "PROPER_NAME_NO_TRANSLATION": 6,
+    "COMMAND_NO_TRANSLATION": 1,
+    "SYMBOL_NO_TRANSLATION": 2,
+    "EXCLUDED_TECHNICAL": 0,
+    "MANUAL_REQUIRED": 47
+  },
+  "by_type": {
+    "DESCRIPTION": {
+      "VANILLA_RU": 9,
+      "PROPER_NAME_NO_TRANSLATION": 0,
+      "COMMAND_NO_TRANSLATION": 0,
+      "SYMBOL_NO_TRANSLATION": 0,
+      "EXCLUDED_TECHNICAL": 0,
+      "MANUAL_REQUIRED": 1,
+      "total": 10
+    },
+    "MESSAGE": {
+      "VANILLA_RU": 288,
+      "PROPER_NAME_NO_TRANSLATION": 6,
+      "COMMAND_NO_TRANSLATION": 1,
+      "SYMBOL_NO_TRANSLATION": 2,
+      "EXCLUDED_TECHNICAL": 0,
+      "MANUAL_REQUIRED": 46,
+      "total": 343
+    }
+  },
+  "ui_manual_required": 1,
+  "message_manual_required": 46,
+  "previous_9_vanilla_description_keys": [
+    {
+      "key": "block.minecraft.deepslate_emerald_ore",
+      "classification": "VANILLA_RU",
+      "vanilla_value": "Глубинносланцевая изумрудная руда"
+    },
+    {
+      "key": "block.minecraft.dragon_egg",
+      "classification": "VANILLA_RU",
+      "vanilla_value": "Яйцо дракона"
+    },
+    {
+      "key": "block.minecraft.heavy_core",
+      "classification": "VANILLA_RU",
+      "vanilla_value": "Навершие булавы"
+    },
+    {
+      "key": "block.minecraft.large_fern",
+      "classification": "VANILLA_RU",
+      "vanilla_value": "Раскидистый папоротник"
+    },
+    {
+      "key": "block.minecraft.netherite_block",
+      "classification": "VANILLA_RU",
+      "vanilla_value": "Незеритовый блок"
+    },
+    {
+      "key": "block.minecraft.suspicious_gravel",
+      "classification": "VANILLA_RU",
+      "vanilla_value": "Подозрительный гравий"
+    },
+    {
+      "key": "block.minecraft.suspicious_sand",
+      "classification": "VANILLA_RU",
+      "vanilla_value": "Подозрительный песок"
+    },
+    {
+      "key": "block.minecraft.tall_grass",
+      "classification": "VANILLA_RU",
+      "vanilla_value": "Высокая трава"
+    },
+    {
+      "key": "item.minecraft.recovery_compass",
+      "classification": "VANILLA_RU",
+      "vanilla_value": "Возвратный компас"
+    }
+  ]
+}
