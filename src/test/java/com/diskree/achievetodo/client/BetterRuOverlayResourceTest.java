@@ -33,6 +33,7 @@ class BetterRuOverlayResourceTest {
     private static final Path FINAL_MANUAL_REMAINING = Path.of("reference", "localization", "phase_a_manual_ru_final_v2_remaining.tsv");
     private static final Path FINAL_MANUAL_AUDIT = Path.of("reference", "localization", "phase_a_manual_ru_final_v2_audit.tsv");
     private static final Set<String> TECHNICAL_RUNTIME_TOKENS = Set.of("", "  ", "\t   ", "tab", ">:)");
+    private static final Set<String> EXPECTED_INTENTIONAL_ENGLISH_KEYS = Set.of("'s Advancements Pack!", "and");
     private static final Pattern JSON_TRANSLATE_PATTERN = Pattern.compile("\"translate\"\\s*:\\s*\"((?:\\\\.|[^\"\\\\])*)\"");
     private static final Pattern COMMAND_TRANSLATE_PATTERN = Pattern.compile("translate\\s*:\\s*\"((?:\\\\.|[^\"\\\\])*)\"");
     private static final Pattern JSON_KEY_PATTERN = Pattern.compile("^\\s+\"((?:\\\\.|[^\"\\\\])+)\":", Pattern.MULTILINE);
@@ -51,14 +52,16 @@ class BetterRuOverlayResourceTest {
     void productionRuOverlayMatchesApprovedFinalManualDecisions() throws IOException {
         JsonObject overlay = loadJsonObject(BETTER_RU_OVERLAY);
         List<Map<String, String>> rows = loadTsvRows(FINAL_MANUAL_REMAINING);
+        Set<String> intentionalEnglishKeys = loadIntentionalEnglishKeys(rows);
 
         int translated = 0;
         int intentionallyEnglish = 0;
         for (Map<String, String> row : rows) {
             String key = row.get("key");
             String expectedRussian = row.get("ru_manual");
-            if (expectedRussian.isBlank()) {
+            if (intentionalEnglishKeys.contains(key)) {
                 intentionallyEnglish++;
+                assertEquals(key, expectedRussian, "Intentional English fallback rows should stay explicitly pinned to their runtime key");
                 assertFalse(overlay.has(key), "Intentional English fragment should stay absent from RU overlay: " + key);
                 continue;
             }
@@ -273,12 +276,21 @@ class BetterRuOverlayResourceTest {
     }
 
     private static Set<String> loadIntentionalEnglishKeys() throws IOException {
+        return loadIntentionalEnglishKeys(loadTsvRows(FINAL_MANUAL_REMAINING));
+    }
+
+    private static Set<String> loadIntentionalEnglishKeys(List<Map<String, String>> rows) {
         Set<String> keys = new HashSet<>();
-        for (Map<String, String> row : loadTsvRows(FINAL_MANUAL_REMAINING)) {
-            if (row.get("ru_manual").isBlank()) {
+        for (Map<String, String> row : rows) {
+            if (row.get("key").equals(row.get("ru_manual"))) {
                 keys.add(row.get("key"));
             }
         }
+        assertEquals(
+            EXPECTED_INTENTIONAL_ENGLISH_KEYS,
+            keys,
+            "Only the pinned intentional-English Phase A fragments may resolve via runtime English fallback"
+        );
         return keys;
     }
 }
