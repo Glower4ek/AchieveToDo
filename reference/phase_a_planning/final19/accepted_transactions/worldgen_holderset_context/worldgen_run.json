@@ -1,0 +1,9 @@
+{
+  "family": "WORLDGEN_HOLDERSET_CONTEXT",
+  "runId": "3b9f481d-4a3b-4b22-9644-cd9dcbda13cb",
+  "exact": true,
+  "fingerprint": "1ca848970ff582971e5ac4d57355418fe16fb2f9f716563941b84884ccc023f4",
+  "runtimeCopySha256": "38263da14969d271fee2ca5abc773a0fae396ba1c00d42c05fa436e6a5426396",
+  "expectedEntries": 36,
+  "stage": "TEMP_PROMOTABLE"
+}

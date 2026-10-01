@@ -1,0 +1,1948 @@
+{
+  "snapshot": "phase_a_player_killed_entity_remainder_case_catalog",
+  "family": "PLAYER_KILLED_ENTITY_REMAINDER",
+  "source": "PhaseAPlayerKilledEntityRemainderGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "criteriaCount": 46,
+  "requirementGroupCount": 43,
+  "sources": [
+    {
+      "advancementId": "blazeandcave:adventure/heres_johnny",
+      "sha256": "fde9bdb61495f1e518f9ac5dd312a4480ceac6425ee56a65802fc68041746192",
+      "requirements": [
+        [
+          "vindicator"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:adventure/wololo",
+      "sha256": "93a9d59ed2b796bf25edbf8a8d3a70176d5dbcf8538feba6ace5c67bf3b44a30",
+      "requirements": [
+        [
+          "evoker"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:animal/axeolotl",
+      "sha256": "a87c4929d757d26ae6795c1548459952c42eb25818b9ff3375a7e2810209ac94",
+      "requirements": [
+        [
+          "axeolotl"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:animal/silence_of_the_lambs",
+      "sha256": "7822eae544bed598f43e0b53fc187e1d5d83280a7a8b2310f163bc5678cd226d",
+      "requirements": [
+        [
+          "rabbit"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:animal/the_high_road",
+      "sha256": "d9cce8d33cdd3b8f0a2855f45bc01f3ddecc08f8ccc121faa6d5a3c7626804a7",
+      "requirements": [
+        [
+          "overkill"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:monsters/freezing",
+      "sha256": "b905873a488999750d8c2b9235c87ce3d4e8b51fcb0296f73332d3da473e93a0",
+      "requirements": [
+        [
+          "snowy_plains",
+          "ice_spikes"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:monsters/keep_your_distance",
+      "sha256": "cd2afa627787bc1b0291dbae0a7b553f242932546fe5f7e1560a117e152c7952",
+      "requirements": [
+        [
+          "creeper"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:monsters/melting",
+      "sha256": "501eb3ca9b17cb75a599cd22b7f513649a035dcc200810598f164a0c78f38920",
+      "requirements": [
+        [
+          "desert"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:monsters/spider_skeleton",
+      "sha256": "7be560fa28393c15d02ac79f96c114c7adc936b1836a19336021a26e03991363",
+      "requirements": [
+        [
+          "spider",
+          "skeleton"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:monsters/the_ghastly_eyes",
+      "sha256": "67218599c2f0e844d875c1e5dbb20adb62ec5d7a72095bc8774fe399b499049d",
+      "requirements": [
+        [
+          "invisible_spider"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:monsters/warden_frostbite",
+      "sha256": "f5d18da50e8457c7236df548a7720ed76489d2ddd74dc140b748604352d30993",
+      "requirements": [
+        [
+          "snowy_plains",
+          "ice_spikes"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:nether/bring_down_the_beast",
+      "sha256": "11c5b0c26322640af75396033365a0cd7ce1d10b7e2f3b259699f939ec809498",
+      "requirements": [
+        [
+          "ghast"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:nether/we_got_a_live_one",
+      "sha256": "ec5be505f4c06cad666fc8c45dc6f6267caf6cbeff7bd10e2aacce16e278069e",
+      "requirements": [
+        [
+          "killed_piglin"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:nether/when_piglins_fly",
+      "sha256": "fda1ba1a40fe75cc50f2844d9b5dedd4491129c5d8bffb7e1d4fb16281df4935",
+      "requirements": [
+        [
+          "piglin"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/spleaf",
+      "sha256": "da588adda954fc357fd2181421321f9d10262d470fe629de6342151f6b9e9443",
+      "requirements": [
+        [
+          "wooden_shovel"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "sha256": "c6eadd3804914db923646acd99743716f73a0bffbbd291400d32c796ef9a157c",
+      "requirements": [
+        [
+          "chicken"
+        ],
+        [
+          "cow"
+        ],
+        [
+          "pig"
+        ],
+        [
+          "sheep"
+        ],
+        [
+          "rabbit"
+        ],
+        [
+          "mooshroom"
+        ],
+        [
+          "polar_bear"
+        ],
+        [
+          "horse"
+        ],
+        [
+          "donkey"
+        ],
+        [
+          "mule"
+        ],
+        [
+          "llama"
+        ],
+        [
+          "wolf"
+        ],
+        [
+          "ocelot"
+        ],
+        [
+          "parrot"
+        ],
+        [
+          "cat"
+        ],
+        [
+          "panda"
+        ],
+        [
+          "fox"
+        ],
+        [
+          "bee"
+        ],
+        [
+          "hoglin"
+        ],
+        [
+          "strider"
+        ],
+        [
+          "bat"
+        ],
+        [
+          "trader_llama"
+        ],
+        [
+          "turtle"
+        ],
+        [
+          "goat"
+        ],
+        [
+          "frog"
+        ],
+        [
+          "camel"
+        ],
+        [
+          "sniffer"
+        ],
+        [
+          "armadillo"
+        ]
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "advancementId": "blazeandcave:adventure/heres_johnny",
+      "criterion": "vindicator",
+      "requirementGroup": 0,
+      "alternatives": [
+        "vindicator"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "vindicator",
+          "location": {
+            "structures": "mansion"
+          }
+        }
+      },
+      "entityPredicate": {
+        "type": "vindicator",
+        "location": {
+          "structures": "mansion"
+        }
+      },
+      "killingBlow": {},
+      "selectedEntity": "minecraft:vindicator",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_sword"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/wololo",
+      "criterion": "evoker",
+      "requirementGroup": 0,
+      "alternatives": [
+        "evoker"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "evoker",
+          "location": {
+            "structures": "mansion"
+          }
+        }
+      },
+      "entityPredicate": {
+        "type": "evoker",
+        "location": {
+          "structures": "mansion"
+        }
+      },
+      "killingBlow": {},
+      "selectedEntity": "minecraft:evoker",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_sword"
+    },
+    {
+      "advancementId": "blazeandcave:animal/axeolotl",
+      "criterion": "axeolotl",
+      "requirementGroup": 0,
+      "alternatives": [
+        "axeolotl"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "axolotl",
+          "distance": {
+            "absolute": {
+              "max": 5
+            }
+          }
+        },
+        "player": {
+          "equipment": {
+            "mainhand": {
+              "items": "#blazeandcave:axes"
+            }
+          }
+        }
+      },
+      "entityPredicate": {
+        "type": "axolotl",
+        "distance": {
+          "absolute": {
+            "max": 5
+          }
+        }
+      },
+      "killingBlow": {},
+      "selectedEntity": "minecraft:axolotl",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_axe"
+    },
+    {
+      "advancementId": "blazeandcave:animal/silence_of_the_lambs",
+      "criterion": "rabbit",
+      "requirementGroup": 0,
+      "alternatives": [
+        "rabbit"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "sheep",
+          "location": {
+            "structures": "ancient_city"
+          }
+        }
+      },
+      "entityPredicate": {
+        "type": "sheep",
+        "location": {
+          "structures": "ancient_city"
+        }
+      },
+      "killingBlow": {},
+      "selectedEntity": "minecraft:sheep",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_sword"
+    },
+    {
+      "advancementId": "blazeandcave:animal/the_high_road",
+      "criterion": "overkill",
+      "requirementGroup": 0,
+      "alternatives": [
+        "overkill"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "#blazeandcave:hostile_monsters"
+        },
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:player_attack",
+              "expected": true
+            }
+          ]
+        },
+        "player": {
+          "vehicle": {
+            "type": "camel"
+          }
+        }
+      },
+      "entityPredicate": {
+        "type": "#blazeandcave:hostile_monsters"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:player_attack",
+            "expected": true
+          }
+        ]
+      },
+      "selectedEntity": "minecraft:zombie",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_sword"
+    },
+    {
+      "advancementId": "blazeandcave:monsters/freezing",
+      "criterion": "snowy_plains",
+      "requirementGroup": 0,
+      "alternatives": [
+        "snowy_plains",
+        "ice_spikes"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "minecraft:husk",
+          "location": {
+            "biomes": "snowy_plains",
+            "position": {
+              "y": {
+                "min": 56
+              }
+            }
+          }
+        }
+      },
+      "entityPredicate": {
+        "type": "minecraft:husk",
+        "location": {
+          "biomes": "snowy_plains",
+          "position": {
+            "y": {
+              "min": 56
+            }
+          }
+        }
+      },
+      "killingBlow": {},
+      "selectedEntity": "minecraft:husk",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_sword"
+    },
+    {
+      "advancementId": "blazeandcave:monsters/keep_your_distance",
+      "criterion": "creeper",
+      "requirementGroup": 0,
+      "alternatives": [
+        "creeper"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "creeper"
+        }
+      },
+      "entityPredicate": {
+        "type": "creeper"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:creeper",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:monsters/melting",
+      "criterion": "desert",
+      "requirementGroup": 0,
+      "alternatives": [
+        "desert"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "minecraft:stray",
+          "location": {
+            "biomes": "desert",
+            "position": {
+              "y": {
+                "min": 56
+              }
+            }
+          }
+        }
+      },
+      "entityPredicate": {
+        "type": "minecraft:stray",
+        "location": {
+          "biomes": "desert",
+          "position": {
+            "y": {
+              "min": 56
+            }
+          }
+        }
+      },
+      "killingBlow": {},
+      "selectedEntity": "minecraft:stray",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_sword"
+    },
+    {
+      "advancementId": "blazeandcave:monsters/spider_skeleton",
+      "criterion": "spider",
+      "requirementGroup": 0,
+      "alternatives": [
+        "spider",
+        "skeleton"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "spider",
+          "passenger": {
+            "type": "#minecraft:skeletons"
+          }
+        }
+      },
+      "entityPredicate": {
+        "type": "spider",
+        "passenger": {
+          "type": "#minecraft:skeletons"
+        }
+      },
+      "killingBlow": {},
+      "selectedEntity": "minecraft:spider",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_sword"
+    },
+    {
+      "advancementId": "blazeandcave:monsters/the_ghastly_eyes",
+      "criterion": "invisible_spider",
+      "requirementGroup": 0,
+      "alternatives": [
+        "invisible_spider"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "#blazeandcave:spiders",
+          "effects": {
+            "minecraft:invisibility": {}
+          }
+        }
+      },
+      "entityPredicate": {
+        "type": "#blazeandcave:spiders",
+        "effects": {
+          "minecraft:invisibility": {}
+        }
+      },
+      "killingBlow": {},
+      "selectedEntity": "minecraft:spider",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_sword"
+    },
+    {
+      "advancementId": "blazeandcave:monsters/warden_frostbite",
+      "criterion": "snowy_plains",
+      "requirementGroup": 0,
+      "alternatives": [
+        "snowy_plains",
+        "ice_spikes"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "warden",
+          "location": {
+            "biomes": "snowy_plains",
+            "position": {
+              "y": {
+                "min": 64
+              }
+            }
+          }
+        }
+      },
+      "entityPredicate": {
+        "type": "warden",
+        "location": {
+          "biomes": "snowy_plains",
+          "position": {
+            "y": {
+              "min": 64
+            }
+          }
+        }
+      },
+      "killingBlow": {},
+      "selectedEntity": "minecraft:warden",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_sword"
+    },
+    {
+      "advancementId": "blazeandcave:nether/bring_down_the_beast",
+      "criterion": "ghast",
+      "requirementGroup": 0,
+      "alternatives": [
+        "ghast"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "ghast"
+        },
+        "killing_blow": {
+          "source_entity": {
+            "equipment": {
+              "mainhand": {
+                "items": "#minecraft:swords"
+              }
+            }
+          },
+          "tags": [
+            {
+              "id": "minecraft:player_attack",
+              "expected": true
+            }
+          ]
+        }
+      },
+      "entityPredicate": {
+        "type": "ghast"
+      },
+      "killingBlow": {
+        "source_entity": {
+          "equipment": {
+            "mainhand": {
+              "items": "#minecraft:swords"
+            }
+          }
+        },
+        "tags": [
+          {
+            "id": "minecraft:player_attack",
+            "expected": true
+          }
+        ]
+      },
+      "selectedEntity": "minecraft:ghast",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_sword"
+    },
+    {
+      "advancementId": "blazeandcave:nether/we_got_a_live_one",
+      "criterion": "killed_piglin",
+      "requirementGroup": 0,
+      "alternatives": [
+        "killed_piglin"
+      ],
+      "frozenConditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "#blazeandcave:piglins",
+              "location": {
+                "dimension": "overworld"
+              }
+            }
+          }
+        ]
+      },
+      "entityPredicate": {
+        "type": "#blazeandcave:piglins",
+        "location": {
+          "dimension": "overworld"
+        }
+      },
+      "killingBlow": {},
+      "selectedEntity": "minecraft:piglin",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_sword"
+    },
+    {
+      "advancementId": "blazeandcave:nether/when_piglins_fly",
+      "criterion": "piglin",
+      "requirementGroup": 0,
+      "alternatives": [
+        "piglin"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "#blazeandcave:piglins",
+          "equipment": {
+            "chest": {
+              "items": [
+                "minecraft:elytra"
+              ]
+            }
+          }
+        }
+      },
+      "entityPredicate": {
+        "type": "#blazeandcave:piglins",
+        "equipment": {
+          "chest": {
+            "items": [
+              "minecraft:elytra"
+            ]
+          }
+        }
+      },
+      "killingBlow": {},
+      "selectedEntity": "minecraft:piglin",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_sword"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/spleaf",
+      "criterion": "wooden_shovel",
+      "requirementGroup": 0,
+      "alternatives": [
+        "wooden_shovel"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "distance": {
+            "absolute": {
+              "max": 5
+            }
+          },
+          "stepping_on": {
+            "block": {
+              "blocks": [
+                "minecraft:big_dripleaf"
+              ]
+            }
+          }
+        },
+        "killing_blow": {
+          "source_entity": {
+            "equipment": {
+              "mainhand": {
+                "items": "#minecraft:shovels"
+              }
+            },
+            "stepping_on": {
+              "block": {
+                "blocks": [
+                  "minecraft:big_dripleaf"
+                ]
+              }
+            }
+          },
+          "tags": [
+            {
+              "id": "minecraft:player_attack",
+              "expected": true
+            }
+          ]
+        }
+      },
+      "entityPredicate": {
+        "distance": {
+          "absolute": {
+            "max": 5
+          }
+        },
+        "stepping_on": {
+          "block": {
+            "blocks": [
+              "minecraft:big_dripleaf"
+            ]
+          }
+        }
+      },
+      "killingBlow": {
+        "source_entity": {
+          "equipment": {
+            "mainhand": {
+              "items": "#minecraft:shovels"
+            }
+          },
+          "stepping_on": {
+            "block": {
+              "blocks": [
+                "minecraft:big_dripleaf"
+              ]
+            }
+          }
+        },
+        "tags": [
+          {
+            "id": "minecraft:player_attack",
+            "expected": true
+          }
+        ]
+      },
+      "selectedEntity": "minecraft:zombie",
+      "action": "MELEE",
+      "selectedTool": "minecraft:wooden_shovel"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "chicken",
+      "requirementGroup": 0,
+      "alternatives": [
+        "chicken"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "chicken"
+        }
+      },
+      "entityPredicate": {
+        "type": "chicken"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:chicken",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "cow",
+      "requirementGroup": 1,
+      "alternatives": [
+        "cow"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "cow"
+        }
+      },
+      "entityPredicate": {
+        "type": "cow"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:cow",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "pig",
+      "requirementGroup": 2,
+      "alternatives": [
+        "pig"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "pig"
+        }
+      },
+      "entityPredicate": {
+        "type": "pig"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:pig",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "sheep",
+      "requirementGroup": 3,
+      "alternatives": [
+        "sheep"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "sheep"
+        }
+      },
+      "entityPredicate": {
+        "type": "sheep"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:sheep",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "rabbit",
+      "requirementGroup": 4,
+      "alternatives": [
+        "rabbit"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "rabbit"
+        }
+      },
+      "entityPredicate": {
+        "type": "rabbit"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:rabbit",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "mooshroom",
+      "requirementGroup": 5,
+      "alternatives": [
+        "mooshroom"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "mooshroom"
+        }
+      },
+      "entityPredicate": {
+        "type": "mooshroom"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:mooshroom",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "polar_bear",
+      "requirementGroup": 6,
+      "alternatives": [
+        "polar_bear"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "polar_bear"
+        }
+      },
+      "entityPredicate": {
+        "type": "polar_bear"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:polar_bear",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "horse",
+      "requirementGroup": 7,
+      "alternatives": [
+        "horse"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "horse"
+        }
+      },
+      "entityPredicate": {
+        "type": "horse"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:horse",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "donkey",
+      "requirementGroup": 8,
+      "alternatives": [
+        "donkey"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "donkey"
+        }
+      },
+      "entityPredicate": {
+        "type": "donkey"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:donkey",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "mule",
+      "requirementGroup": 9,
+      "alternatives": [
+        "mule"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "mule"
+        }
+      },
+      "entityPredicate": {
+        "type": "mule"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:mule",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "llama",
+      "requirementGroup": 10,
+      "alternatives": [
+        "llama"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "llama"
+        }
+      },
+      "entityPredicate": {
+        "type": "llama"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:llama",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "wolf",
+      "requirementGroup": 11,
+      "alternatives": [
+        "wolf"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "wolf"
+        }
+      },
+      "entityPredicate": {
+        "type": "wolf"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:wolf",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "ocelot",
+      "requirementGroup": 12,
+      "alternatives": [
+        "ocelot"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "ocelot"
+        }
+      },
+      "entityPredicate": {
+        "type": "ocelot"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:ocelot",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "parrot",
+      "requirementGroup": 13,
+      "alternatives": [
+        "parrot"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "parrot"
+        }
+      },
+      "entityPredicate": {
+        "type": "parrot"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:parrot",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "cat",
+      "requirementGroup": 14,
+      "alternatives": [
+        "cat"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "cat"
+        }
+      },
+      "entityPredicate": {
+        "type": "cat"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:cat",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "panda",
+      "requirementGroup": 15,
+      "alternatives": [
+        "panda"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "panda"
+        }
+      },
+      "entityPredicate": {
+        "type": "panda"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:panda",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "fox",
+      "requirementGroup": 16,
+      "alternatives": [
+        "fox"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "fox"
+        }
+      },
+      "entityPredicate": {
+        "type": "fox"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:fox",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "bee",
+      "requirementGroup": 17,
+      "alternatives": [
+        "bee"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "bee"
+        }
+      },
+      "entityPredicate": {
+        "type": "bee"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:bee",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "hoglin",
+      "requirementGroup": 18,
+      "alternatives": [
+        "hoglin"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "hoglin"
+        }
+      },
+      "entityPredicate": {
+        "type": "hoglin"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:hoglin",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "strider",
+      "requirementGroup": 19,
+      "alternatives": [
+        "strider"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "strider"
+        }
+      },
+      "entityPredicate": {
+        "type": "strider"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:strider",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "bat",
+      "requirementGroup": 20,
+      "alternatives": [
+        "bat"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "bat"
+        }
+      },
+      "entityPredicate": {
+        "type": "bat"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:bat",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "trader_llama",
+      "requirementGroup": 21,
+      "alternatives": [
+        "trader_llama"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "trader_llama"
+        }
+      },
+      "entityPredicate": {
+        "type": "trader_llama"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:trader_llama",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "turtle",
+      "requirementGroup": 22,
+      "alternatives": [
+        "turtle"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "turtle"
+        }
+      },
+      "entityPredicate": {
+        "type": "turtle"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:turtle",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "goat",
+      "requirementGroup": 23,
+      "alternatives": [
+        "goat"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "goat"
+        }
+      },
+      "entityPredicate": {
+        "type": "goat"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:goat",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "frog",
+      "requirementGroup": 24,
+      "alternatives": [
+        "frog"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "frog"
+        }
+      },
+      "entityPredicate": {
+        "type": "frog"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:frog",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "camel",
+      "requirementGroup": 25,
+      "alternatives": [
+        "camel"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "camel"
+        }
+      },
+      "entityPredicate": {
+        "type": "camel"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:camel",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "sniffer",
+      "requirementGroup": 26,
+      "alternatives": [
+        "sniffer"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "sniffer"
+        }
+      },
+      "entityPredicate": {
+        "type": "sniffer"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:sniffer",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/the_mighty_hunter",
+      "criterion": "armadillo",
+      "requirementGroup": 27,
+      "alternatives": [
+        "armadillo"
+      ],
+      "frozenConditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "minecraft:is_projectile",
+              "expected": true
+            }
+          ],
+          "direct_entity": {
+            "type": "#blazeandcave:arrows"
+          }
+        },
+        "entity": {
+          "type": "armadillo"
+        }
+      },
+      "entityPredicate": {
+        "type": "armadillo"
+      },
+      "killingBlow": {
+        "tags": [
+          {
+            "id": "minecraft:is_projectile",
+            "expected": true
+          }
+        ],
+        "direct_entity": {
+          "type": "#blazeandcave:arrows"
+        }
+      },
+      "selectedEntity": "minecraft:armadillo",
+      "action": "ARROW",
+      "selectedTool": "minecraft:bow"
+    }
+  ]
+}

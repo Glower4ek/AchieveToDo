@@ -1,0 +1,25 @@
+{
+  "advancementId": "blazeandcave:building/washing_machine",
+  "criterion": "clean_leather_armor",
+  "runId": "62c46b0a-8e9f-4f26-be99-6299336d8ac3",
+  "ability": "USE_CAULDRON",
+  "locked": true,
+  "criterionBefore": false,
+  "criterionAfter": true,
+  "mutation": false,
+  "nativeResult": "Success[swingSource=CLIENT, itemContext=ItemContext[wasItemInteraction=true, heldItemTransformedTo=null]]",
+  "blockBefore": "Block{minecraft:water_cauldron}[level=3]",
+  "blockAfter": "Block{minecraft:water_cauldron}[level=3]",
+  "itemBefore": "{\"id\":\"minecraft:leather_chestplate\",\"count\":1,\"components\":{\"minecraft:dyed_color\":11141120}}",
+  "itemAfter": "{\"id\":\"minecraft:leather_chestplate\",\"count\":1,\"components\":{\"minecraft:dyed_color\":11141120}}",
+  "diagnosticOnly": true,
+  "classification": "PRODUCTION_BUG",
+  "cleanup": {
+    "playerRemoved": true,
+    "connectionRemoved": true,
+    "channelSettled": true,
+    "settlementMessages": 64,
+    "fixtureEntitiesRemoved": true,
+    "blocksRestored": true
+  }
+}

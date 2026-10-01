@@ -1,0 +1,21 @@
+{
+  "snapshot": "phase_a_singleton_village_bell_case_catalog",
+  "family": "SINGLETON:blazeandcave:adventure/oh_look_it_dings",
+  "source": "PhaseASingletonVillageBellGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "frozenAdvancementPath": "data/blazeandcave/advancement/adventure/oh_look_it_dings.json",
+  "frozenAdvancementSha256": "98888ba1856f1f85a6cd0e5e121a02939c62c3cdf9a0389f990234e1f063ca29",
+  "frozenStructureTagPath": "data/blazeandcave/tags/worldgen/structure/village.json",
+  "frozenStructureTagSha256": "da3e50311b2df908f525973fda99e6bf0a92652bd62b589a6540e4ce59593e57",
+  "advancementId": "blazeandcave:adventure/oh_look_it_dings",
+  "criterion": "bell",
+  "requirementGroup": 0,
+  "trigger": "minecraft:any_block_use",
+  "block": "minecraft:bell",
+  "structureTag": "blazeandcave:village",
+  "selectedStructure": "minecraft:village_plains",
+  "productionGate": "LANDMARK_ONLY_FOR_BELL_RING",
+  "runtimeBoundary": "ServerboundUseItemOnPacket.handle->ServerGamePacketListenerImpl.handleUseItemOn->ServerPlayerGameMode.useItemOn->BellBlock.useWithoutItem->BellBlock.attemptToRing->CriteriaTriggers.ANY_BLOCK_USE"
+}

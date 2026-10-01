@@ -1,0 +1,34 @@
+{
+  "parent": "achievetodo:abilities/root",
+  "criteria": {
+    "demystified": {
+      "trigger": "minecraft:impossible"
+    },
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "achievetodo.ability.open_trapdoor.description"
+    },
+    "icon": {
+      "id": "minecraft:pale_oak_trapdoor"
+    },
+    "title": {
+      "translate": "achievetodo.ability.open_trapdoor.name"
+    }
+  },
+  "requirements": [
+    [
+      "demystified"
+    ],
+    [
+      "unlocked"
+    ]
+  ],
+  "rewards": {
+    "function": "achievetodo:abilities/open_trapdoor"
+  }
+}

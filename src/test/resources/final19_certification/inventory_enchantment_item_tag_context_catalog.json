@@ -1,0 +1,3273 @@
+{
+  "family": "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+  "stage": "FINAL19",
+  "sources": [
+    {
+      "advancementId": "blazeandcave:enchanting/master_armorer",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/master_armorer.json",
+      "frozenSha256": "4da5f05749a74ee8d9847ab151dca3f4e57d69b602235251a64f290a0fc5d53e",
+      "requirements": [
+        [
+          "helmet_protection",
+          "helmet_fire_protection",
+          "helmet_projectile_protection",
+          "helmet_blast_protection"
+        ],
+        [
+          "chestplate_protection",
+          "chestplate_fire_protection",
+          "chestplate_projectile_protection",
+          "chestplate_blast_protection"
+        ],
+        [
+          "leggings_protection",
+          "leggings_fire_protection",
+          "leggings_projectile_protection",
+          "leggings_blast_protection"
+        ],
+        [
+          "boots_protection_depth_strider",
+          "boots_fire_protection_depth_strider",
+          "boots_projectile_protection_depth_strider",
+          "boots_blast_protection_depth_strider",
+          "boots_protection_frost_walker",
+          "boots_fire_protection_frost_walker",
+          "boots_projectile_protection_frost_walker",
+          "boots_blast_protection_frost_walker"
+        ]
+      ],
+      "auditedConvertedDefinition": {
+        "display": {
+          "icon": {
+            "id": "minecraft:diamond_helmet",
+            "components": {
+              "minecraft:enchantment_glint_override": true
+            }
+          },
+          "title": {
+            "translate": "Master Armorer"
+          },
+          "description": {
+            "color": "dark_purple",
+            "translate": "Create a full suit of armor with all possible enchantments at max level"
+          },
+          "announce_to_chat": false,
+          "frame": "challenge"
+        },
+        "parent": "blazeandcave:enchanting/master_arbalist",
+        "rewards": {
+          "function": "bacap_rewards:enchanting/master_armorer"
+        },
+        "criteria": {
+          "helmet_protection": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_helmets",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:aqua_affinity"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:respiration"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "helmet_fire_protection": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_helmets",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:fire_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:aqua_affinity"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:respiration"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "helmet_projectile_protection": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_helmets",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:projectile_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:aqua_affinity"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:respiration"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "helmet_blast_protection": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_helmets",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:blast_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:aqua_affinity"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:respiration"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "chestplate_protection": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_chestplates",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:thorns"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "chestplate_fire_protection": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_chestplates",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:fire_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:thorns"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "chestplate_projectile_protection": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_chestplates",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:projectile_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:thorns"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "chestplate_blast_protection": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_chestplates",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:blast_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:thorns"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "leggings_protection": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_leggings",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:swift_sneak"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "leggings_fire_protection": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_leggings",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:fire_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:swift_sneak"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "leggings_projectile_protection": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_leggings",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:projectile_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:swift_sneak"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "leggings_blast_protection": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_leggings",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:blast_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:swift_sneak"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "boots_protection_depth_strider": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_boots",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:depth_strider"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:feather_falling"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:soul_speed"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "boots_fire_protection_depth_strider": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_boots",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:fire_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:depth_strider"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:feather_falling"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:soul_speed"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "boots_projectile_protection_depth_strider": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_boots",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:projectile_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:depth_strider"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:feather_falling"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:soul_speed"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "boots_blast_protection_depth_strider": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_boots",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:blast_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:depth_strider"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:feather_falling"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:soul_speed"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "boots_protection_frost_walker": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_boots",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:frost_walker"
+                        ],
+                        "levels": {
+                          "min": 2
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:feather_falling"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:soul_speed"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "boots_fire_protection_frost_walker": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_boots",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:fire_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:frost_walker"
+                        ],
+                        "levels": {
+                          "min": 2
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:feather_falling"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:soul_speed"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "boots_projectile_protection_frost_walker": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_boots",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:projectile_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:frost_walker"
+                        ],
+                        "levels": {
+                          "min": 2
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:feather_falling"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:soul_speed"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "boots_blast_protection_frost_walker": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_boots",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:blast_protection"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:frost_walker"
+                        ],
+                        "levels": {
+                          "min": 2
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:feather_falling"
+                        ],
+                        "levels": {
+                          "min": 4
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:soul_speed"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "requirements": [
+          [
+            "helmet_protection",
+            "helmet_fire_protection",
+            "helmet_projectile_protection",
+            "helmet_blast_protection"
+          ],
+          [
+            "chestplate_protection",
+            "chestplate_fire_protection",
+            "chestplate_projectile_protection",
+            "chestplate_blast_protection"
+          ],
+          [
+            "leggings_protection",
+            "leggings_fire_protection",
+            "leggings_projectile_protection",
+            "leggings_blast_protection"
+          ],
+          [
+            "boots_protection_depth_strider",
+            "boots_fire_protection_depth_strider",
+            "boots_projectile_protection_depth_strider",
+            "boots_blast_protection_depth_strider",
+            "boots_protection_frost_walker",
+            "boots_fire_protection_frost_walker",
+            "boots_projectile_protection_frost_walker",
+            "boots_blast_protection_frost_walker"
+          ]
+        ]
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_axeman",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/master_axeman.json",
+      "frozenSha256": "6a06e8839a411bc6dc6771370e1863d980b50463c7cfa328b1b453c55c45c2ee",
+      "requirements": [
+        [
+          "perfect_axe_fortune",
+          "perfect_axe_silk_touch",
+          "perfect_axe_fortune_smite",
+          "perfect_axe_silk_touch_smite",
+          "perfect_axe_fortune_bane",
+          "perfect_axe_silk_touch_bane"
+        ]
+      ],
+      "auditedConvertedDefinition": {
+        "display": {
+          "icon": {
+            "id": "minecraft:diamond_axe",
+            "components": {
+              "minecraft:enchantment_glint_override": true
+            }
+          },
+          "title": {
+            "translate": "Master Axeman"
+          },
+          "description": {
+            "color": "dark_purple",
+            "translate": "Create an axe with all possible enchantments at max level"
+          },
+          "announce_to_chat": false,
+          "frame": "challenge"
+        },
+        "parent": "blazeandcave:enchanting/master_digger",
+        "rewards": {
+          "function": "bacap_rewards:enchanting/master_axeman"
+        },
+        "criteria": {
+          "perfect_axe_fortune": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_axes",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:sharpness"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:efficiency"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:fortune"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "perfect_axe_silk_touch": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_axes",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:sharpness"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:efficiency"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:silk_touch"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "perfect_axe_fortune_smite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_axes",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:smite"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:efficiency"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:fortune"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "perfect_axe_silk_touch_smite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_axes",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:smite"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:efficiency"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:silk_touch"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "perfect_axe_fortune_bane": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_axes",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:bane_of_arthropods"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:efficiency"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:fortune"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "perfect_axe_silk_touch_bane": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_axes",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:bane_of_arthropods"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:efficiency"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:silk_touch"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "requirements": [
+          [
+            "perfect_axe_fortune",
+            "perfect_axe_silk_touch",
+            "perfect_axe_fortune_smite",
+            "perfect_axe_silk_touch_smite",
+            "perfect_axe_fortune_bane",
+            "perfect_axe_silk_touch_bane"
+          ]
+        ]
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_digger",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/master_digger.json",
+      "frozenSha256": "38c89d8393e32f0e6487154c91590addcc445d9c69920128d3fc912316a4bb1d",
+      "requirements": [
+        [
+          "perfect_shovel_fortune",
+          "perfect_shovel_silk_touch"
+        ]
+      ],
+      "auditedConvertedDefinition": {
+        "display": {
+          "icon": {
+            "id": "minecraft:diamond_shovel",
+            "components": {
+              "minecraft:enchantment_glint_override": true
+            }
+          },
+          "title": {
+            "translate": "Master Digger"
+          },
+          "description": {
+            "color": "dark_purple",
+            "translate": "Create a shovel with all possible enchantments at max level"
+          },
+          "announce_to_chat": false,
+          "frame": "challenge"
+        },
+        "parent": "blazeandcave:enchanting/master_miner",
+        "rewards": {
+          "function": "bacap_rewards:enchanting/master_digger"
+        },
+        "criteria": {
+          "perfect_shovel_fortune": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_shovels",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:efficiency"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:fortune"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "perfect_shovel_silk_touch": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_shovels",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:efficiency"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:silk_touch"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "requirements": [
+          [
+            "perfect_shovel_fortune",
+            "perfect_shovel_silk_touch"
+          ]
+        ]
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_farmer",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/master_farmer.json",
+      "frozenSha256": "c19b438627b5a8e0d3995f71fc27c2d0988699b333455b19ceac73a0ec91ea6e",
+      "requirements": [
+        [
+          "perfect_hoe_fortune",
+          "perfect_hoe_silk_touch"
+        ]
+      ],
+      "auditedConvertedDefinition": {
+        "display": {
+          "icon": {
+            "id": "minecraft:diamond_hoe",
+            "components": {
+              "minecraft:enchantment_glint_override": true
+            }
+          },
+          "title": {
+            "translate": "Master Farmer"
+          },
+          "description": {
+            "color": "dark_purple",
+            "translate": "Create a hoe with all possible enchantments at max level"
+          },
+          "announce_to_chat": false,
+          "frame": "challenge"
+        },
+        "parent": "blazeandcave:enchanting/master_axeman",
+        "rewards": {
+          "function": "bacap_rewards:enchanting/master_farmer"
+        },
+        "criteria": {
+          "perfect_hoe_fortune": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_hoes",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:efficiency"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:fortune"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "perfect_hoe_silk_touch": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_hoes",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:efficiency"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:silk_touch"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "requirements": [
+          [
+            "perfect_hoe_fortune",
+            "perfect_hoe_silk_touch"
+          ]
+        ]
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_knight",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/master_knight.json",
+      "frozenSha256": "de8a3bbb36bfd624b318f8d4590dc13c02d6d780505d79596a94e7505cbd435a",
+      "requirements": [
+        [
+          "perfect_sword",
+          "perfect_sword_smite",
+          "perfect_sword_bane"
+        ]
+      ],
+      "auditedConvertedDefinition": {
+        "display": {
+          "icon": {
+            "id": "minecraft:diamond_sword",
+            "components": {
+              "minecraft:enchantment_glint_override": true
+            }
+          },
+          "title": {
+            "translate": "Master Knight"
+          },
+          "description": {
+            "color": "dark_purple",
+            "translate": "Create a sword with all possible enchantments at max level"
+          },
+          "announce_to_chat": false,
+          "frame": "challenge"
+        },
+        "parent": "blazeandcave:enchanting/unbreakable",
+        "rewards": {
+          "function": "bacap_rewards:enchanting/master_knight"
+        },
+        "criteria": {
+          "perfect_sword": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_swords",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:sharpness"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:knockback"
+                        ],
+                        "levels": {
+                          "min": 2
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:fire_aspect"
+                        ],
+                        "levels": {
+                          "min": 2
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:looting"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:sweeping_edge"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "perfect_sword_smite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_swords",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:smite"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:knockback"
+                        ],
+                        "levels": {
+                          "min": 2
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:fire_aspect"
+                        ],
+                        "levels": {
+                          "min": 2
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:looting"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:sweeping_edge"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "perfect_sword_bane": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_swords",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:bane_of_arthropods"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:knockback"
+                        ],
+                        "levels": {
+                          "min": 2
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:fire_aspect"
+                        ],
+                        "levels": {
+                          "min": 2
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:looting"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:sweeping_edge"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "requirements": [
+          [
+            "perfect_sword",
+            "perfect_sword_smite",
+            "perfect_sword_bane"
+          ]
+        ]
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_miner",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/master_miner.json",
+      "frozenSha256": "a7ead7be2cbab7dafe2abf8d7a28066d77f87160d68a162169ff2459b18d2621",
+      "requirements": [
+        [
+          "perfect_pickaxe_fortune",
+          "perfect_pickaxe_silk_touch"
+        ]
+      ],
+      "auditedConvertedDefinition": {
+        "display": {
+          "icon": {
+            "id": "minecraft:diamond_pickaxe",
+            "components": {
+              "minecraft:enchantment_glint_override": true
+            }
+          },
+          "title": {
+            "translate": "Master Miner"
+          },
+          "description": {
+            "color": "dark_purple",
+            "translate": "Create a pickaxe with all possible enchantments at max level"
+          },
+          "announce_to_chat": false,
+          "frame": "challenge"
+        },
+        "parent": "blazeandcave:enchanting/unbreakable",
+        "rewards": {
+          "function": "bacap_rewards:enchanting/master_miner"
+        },
+        "criteria": {
+          "perfect_pickaxe_fortune": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_pickaxes",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:efficiency"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:fortune"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "perfect_pickaxe_silk_touch": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": "#blazeandcave:master_pickaxes",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": [
+                          "minecraft:efficiency"
+                        ],
+                        "levels": {
+                          "min": 5
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:silk_touch"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:unbreaking"
+                        ],
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": [
+                          "minecraft:mending"
+                        ],
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "requirements": [
+          [
+            "perfect_pickaxe_fortune",
+            "perfect_pickaxe_silk_touch"
+          ]
+        ]
+      }
+    }
+  ],
+  "cases": [
+    {
+      "advancementId": "blazeandcave:enchanting/master_armorer",
+      "requirementGroup": 0,
+      "alternatives": [
+        "helmet_protection",
+        "helmet_fire_protection",
+        "helmet_projectile_protection",
+        "helmet_blast_protection"
+      ],
+      "criterion": "helmet_protection",
+      "expectedCriterion": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "#blazeandcave:master_helmets",
+              "predicates": {
+                "enchantments": [
+                  {
+                    "enchantments": [
+                      "minecraft:protection"
+                    ],
+                    "levels": {
+                      "min": 4
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:unbreaking"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:mending"
+                    ],
+                    "levels": {
+                      "min": 1
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:aqua_affinity"
+                    ],
+                    "levels": {
+                      "min": 1
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:respiration"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false,
+      "enchantmentWitness": {
+        "advancementId": "blazeandcave:enchanting/master_armorer",
+        "criterion": "helmet_protection",
+        "predicatePath": "/conditions/items/0/predicates/enchantments",
+        "items": [
+          "minecraft:diamond_helmet",
+          "minecraft:netherite_helmet"
+        ],
+        "chosenWitnessItem": "minecraft:diamond_helmet",
+        "enchantments": [
+          {
+            "id": "minecraft:protection",
+            "requiredLevels": {
+              "min": 4
+            },
+            "chosenLevel": 4,
+            "vanillaMaxLevel": 4
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:mending",
+            "requiredLevels": {
+              "min": 1
+            },
+            "chosenLevel": 1,
+            "vanillaMaxLevel": 1
+          },
+          {
+            "id": "minecraft:aqua_affinity",
+            "requiredLevels": {
+              "min": 1
+            },
+            "chosenLevel": 1,
+            "vanillaMaxLevel": 1
+          },
+          {
+            "id": "minecraft:respiration",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          }
+        ],
+        "unsupportedEnchantments": [],
+        "overlevelEnchantments": [],
+        "mutuallyExclusivePairs": [],
+        "legalWitness": true
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_armorer",
+      "requirementGroup": 1,
+      "alternatives": [
+        "chestplate_protection",
+        "chestplate_fire_protection",
+        "chestplate_projectile_protection",
+        "chestplate_blast_protection"
+      ],
+      "criterion": "chestplate_protection",
+      "expectedCriterion": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "#blazeandcave:master_chestplates",
+              "predicates": {
+                "enchantments": [
+                  {
+                    "enchantments": [
+                      "minecraft:protection"
+                    ],
+                    "levels": {
+                      "min": 4
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:unbreaking"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:mending"
+                    ],
+                    "levels": {
+                      "min": 1
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:thorns"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false,
+      "enchantmentWitness": {
+        "advancementId": "blazeandcave:enchanting/master_armorer",
+        "criterion": "chestplate_protection",
+        "predicatePath": "/conditions/items/0/predicates/enchantments",
+        "items": [
+          "minecraft:diamond_chestplate",
+          "minecraft:netherite_chestplate"
+        ],
+        "chosenWitnessItem": "minecraft:diamond_chestplate",
+        "enchantments": [
+          {
+            "id": "minecraft:protection",
+            "requiredLevels": {
+              "min": 4
+            },
+            "chosenLevel": 4,
+            "vanillaMaxLevel": 4
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:mending",
+            "requiredLevels": {
+              "min": 1
+            },
+            "chosenLevel": 1,
+            "vanillaMaxLevel": 1
+          },
+          {
+            "id": "minecraft:thorns",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          }
+        ],
+        "unsupportedEnchantments": [],
+        "overlevelEnchantments": [],
+        "mutuallyExclusivePairs": [],
+        "legalWitness": true
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_armorer",
+      "requirementGroup": 2,
+      "alternatives": [
+        "leggings_protection",
+        "leggings_fire_protection",
+        "leggings_projectile_protection",
+        "leggings_blast_protection"
+      ],
+      "criterion": "leggings_protection",
+      "expectedCriterion": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "#blazeandcave:master_leggings",
+              "predicates": {
+                "enchantments": [
+                  {
+                    "enchantments": [
+                      "minecraft:protection"
+                    ],
+                    "levels": {
+                      "min": 4
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:unbreaking"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:mending"
+                    ],
+                    "levels": {
+                      "min": 1
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:swift_sneak"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false,
+      "enchantmentWitness": {
+        "advancementId": "blazeandcave:enchanting/master_armorer",
+        "criterion": "leggings_protection",
+        "predicatePath": "/conditions/items/0/predicates/enchantments",
+        "items": [
+          "minecraft:diamond_leggings",
+          "minecraft:netherite_leggings"
+        ],
+        "chosenWitnessItem": "minecraft:diamond_leggings",
+        "enchantments": [
+          {
+            "id": "minecraft:protection",
+            "requiredLevels": {
+              "min": 4
+            },
+            "chosenLevel": 4,
+            "vanillaMaxLevel": 4
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:mending",
+            "requiredLevels": {
+              "min": 1
+            },
+            "chosenLevel": 1,
+            "vanillaMaxLevel": 1
+          },
+          {
+            "id": "minecraft:swift_sneak",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          }
+        ],
+        "unsupportedEnchantments": [],
+        "overlevelEnchantments": [],
+        "mutuallyExclusivePairs": [],
+        "legalWitness": true
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_armorer",
+      "requirementGroup": 3,
+      "alternatives": [
+        "boots_protection_depth_strider",
+        "boots_fire_protection_depth_strider",
+        "boots_projectile_protection_depth_strider",
+        "boots_blast_protection_depth_strider",
+        "boots_protection_frost_walker",
+        "boots_fire_protection_frost_walker",
+        "boots_projectile_protection_frost_walker",
+        "boots_blast_protection_frost_walker"
+      ],
+      "criterion": "boots_protection_depth_strider",
+      "expectedCriterion": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "#blazeandcave:master_boots",
+              "predicates": {
+                "enchantments": [
+                  {
+                    "enchantments": [
+                      "minecraft:protection"
+                    ],
+                    "levels": {
+                      "min": 4
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:unbreaking"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:mending"
+                    ],
+                    "levels": {
+                      "min": 1
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:depth_strider"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:feather_falling"
+                    ],
+                    "levels": {
+                      "min": 4
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:soul_speed"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false,
+      "enchantmentWitness": {
+        "advancementId": "blazeandcave:enchanting/master_armorer",
+        "criterion": "boots_protection_depth_strider",
+        "predicatePath": "/conditions/items/0/predicates/enchantments",
+        "items": [
+          "minecraft:diamond_boots",
+          "minecraft:netherite_boots"
+        ],
+        "chosenWitnessItem": "minecraft:diamond_boots",
+        "enchantments": [
+          {
+            "id": "minecraft:protection",
+            "requiredLevels": {
+              "min": 4
+            },
+            "chosenLevel": 4,
+            "vanillaMaxLevel": 4
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:mending",
+            "requiredLevels": {
+              "min": 1
+            },
+            "chosenLevel": 1,
+            "vanillaMaxLevel": 1
+          },
+          {
+            "id": "minecraft:depth_strider",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:feather_falling",
+            "requiredLevels": {
+              "min": 4
+            },
+            "chosenLevel": 4,
+            "vanillaMaxLevel": 4
+          },
+          {
+            "id": "minecraft:soul_speed",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          }
+        ],
+        "unsupportedEnchantments": [],
+        "overlevelEnchantments": [],
+        "mutuallyExclusivePairs": [],
+        "legalWitness": true
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_axeman",
+      "requirementGroup": 0,
+      "alternatives": [
+        "perfect_axe_fortune",
+        "perfect_axe_silk_touch",
+        "perfect_axe_fortune_smite",
+        "perfect_axe_silk_touch_smite",
+        "perfect_axe_fortune_bane",
+        "perfect_axe_silk_touch_bane"
+      ],
+      "criterion": "perfect_axe_fortune",
+      "expectedCriterion": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "#blazeandcave:master_axes",
+              "predicates": {
+                "enchantments": [
+                  {
+                    "enchantments": [
+                      "minecraft:sharpness"
+                    ],
+                    "levels": {
+                      "min": 5
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:efficiency"
+                    ],
+                    "levels": {
+                      "min": 5
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:fortune"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:unbreaking"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:mending"
+                    ],
+                    "levels": {
+                      "min": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false,
+      "enchantmentWitness": {
+        "advancementId": "blazeandcave:enchanting/master_axeman",
+        "criterion": "perfect_axe_fortune",
+        "predicatePath": "/conditions/items/0/predicates/enchantments",
+        "items": [
+          "minecraft:diamond_axe",
+          "minecraft:netherite_axe"
+        ],
+        "chosenWitnessItem": "minecraft:diamond_axe",
+        "enchantments": [
+          {
+            "id": "minecraft:sharpness",
+            "requiredLevels": {
+              "min": 5
+            },
+            "chosenLevel": 5,
+            "vanillaMaxLevel": 5
+          },
+          {
+            "id": "minecraft:efficiency",
+            "requiredLevels": {
+              "min": 5
+            },
+            "chosenLevel": 5,
+            "vanillaMaxLevel": 5
+          },
+          {
+            "id": "minecraft:fortune",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:mending",
+            "requiredLevels": {
+              "min": 1
+            },
+            "chosenLevel": 1,
+            "vanillaMaxLevel": 1
+          }
+        ],
+        "unsupportedEnchantments": [],
+        "overlevelEnchantments": [],
+        "mutuallyExclusivePairs": [],
+        "legalWitness": true
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_digger",
+      "requirementGroup": 0,
+      "alternatives": [
+        "perfect_shovel_fortune",
+        "perfect_shovel_silk_touch"
+      ],
+      "criterion": "perfect_shovel_fortune",
+      "expectedCriterion": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "#blazeandcave:master_shovels",
+              "predicates": {
+                "enchantments": [
+                  {
+                    "enchantments": [
+                      "minecraft:efficiency"
+                    ],
+                    "levels": {
+                      "min": 5
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:fortune"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:unbreaking"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:mending"
+                    ],
+                    "levels": {
+                      "min": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false,
+      "enchantmentWitness": {
+        "advancementId": "blazeandcave:enchanting/master_digger",
+        "criterion": "perfect_shovel_fortune",
+        "predicatePath": "/conditions/items/0/predicates/enchantments",
+        "items": [
+          "minecraft:diamond_shovel",
+          "minecraft:netherite_shovel"
+        ],
+        "chosenWitnessItem": "minecraft:diamond_shovel",
+        "enchantments": [
+          {
+            "id": "minecraft:efficiency",
+            "requiredLevels": {
+              "min": 5
+            },
+            "chosenLevel": 5,
+            "vanillaMaxLevel": 5
+          },
+          {
+            "id": "minecraft:fortune",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:mending",
+            "requiredLevels": {
+              "min": 1
+            },
+            "chosenLevel": 1,
+            "vanillaMaxLevel": 1
+          }
+        ],
+        "unsupportedEnchantments": [],
+        "overlevelEnchantments": [],
+        "mutuallyExclusivePairs": [],
+        "legalWitness": true
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_farmer",
+      "requirementGroup": 0,
+      "alternatives": [
+        "perfect_hoe_fortune",
+        "perfect_hoe_silk_touch"
+      ],
+      "criterion": "perfect_hoe_fortune",
+      "expectedCriterion": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "#blazeandcave:master_hoes",
+              "predicates": {
+                "enchantments": [
+                  {
+                    "enchantments": [
+                      "minecraft:efficiency"
+                    ],
+                    "levels": {
+                      "min": 5
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:fortune"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:unbreaking"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:mending"
+                    ],
+                    "levels": {
+                      "min": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false,
+      "enchantmentWitness": {
+        "advancementId": "blazeandcave:enchanting/master_farmer",
+        "criterion": "perfect_hoe_fortune",
+        "predicatePath": "/conditions/items/0/predicates/enchantments",
+        "items": [
+          "minecraft:diamond_hoe",
+          "minecraft:netherite_hoe"
+        ],
+        "chosenWitnessItem": "minecraft:diamond_hoe",
+        "enchantments": [
+          {
+            "id": "minecraft:efficiency",
+            "requiredLevels": {
+              "min": 5
+            },
+            "chosenLevel": 5,
+            "vanillaMaxLevel": 5
+          },
+          {
+            "id": "minecraft:fortune",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:mending",
+            "requiredLevels": {
+              "min": 1
+            },
+            "chosenLevel": 1,
+            "vanillaMaxLevel": 1
+          }
+        ],
+        "unsupportedEnchantments": [],
+        "overlevelEnchantments": [],
+        "mutuallyExclusivePairs": [],
+        "legalWitness": true
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_knight",
+      "requirementGroup": 0,
+      "alternatives": [
+        "perfect_sword",
+        "perfect_sword_smite",
+        "perfect_sword_bane"
+      ],
+      "criterion": "perfect_sword",
+      "expectedCriterion": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "#blazeandcave:master_swords",
+              "predicates": {
+                "enchantments": [
+                  {
+                    "enchantments": [
+                      "minecraft:sharpness"
+                    ],
+                    "levels": {
+                      "min": 5
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:knockback"
+                    ],
+                    "levels": {
+                      "min": 2
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:fire_aspect"
+                    ],
+                    "levels": {
+                      "min": 2
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:looting"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:sweeping_edge"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:unbreaking"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:mending"
+                    ],
+                    "levels": {
+                      "min": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false,
+      "enchantmentWitness": {
+        "advancementId": "blazeandcave:enchanting/master_knight",
+        "criterion": "perfect_sword",
+        "predicatePath": "/conditions/items/0/predicates/enchantments",
+        "items": [
+          "minecraft:diamond_sword",
+          "minecraft:netherite_sword"
+        ],
+        "chosenWitnessItem": "minecraft:diamond_sword",
+        "enchantments": [
+          {
+            "id": "minecraft:sharpness",
+            "requiredLevels": {
+              "min": 5
+            },
+            "chosenLevel": 5,
+            "vanillaMaxLevel": 5
+          },
+          {
+            "id": "minecraft:knockback",
+            "requiredLevels": {
+              "min": 2
+            },
+            "chosenLevel": 2,
+            "vanillaMaxLevel": 2
+          },
+          {
+            "id": "minecraft:fire_aspect",
+            "requiredLevels": {
+              "min": 2
+            },
+            "chosenLevel": 2,
+            "vanillaMaxLevel": 2
+          },
+          {
+            "id": "minecraft:looting",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:sweeping_edge",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:mending",
+            "requiredLevels": {
+              "min": 1
+            },
+            "chosenLevel": 1,
+            "vanillaMaxLevel": 1
+          }
+        ],
+        "unsupportedEnchantments": [],
+        "overlevelEnchantments": [],
+        "mutuallyExclusivePairs": [],
+        "legalWitness": true
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_miner",
+      "requirementGroup": 0,
+      "alternatives": [
+        "perfect_pickaxe_fortune",
+        "perfect_pickaxe_silk_touch"
+      ],
+      "criterion": "perfect_pickaxe_fortune",
+      "expectedCriterion": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "#blazeandcave:master_pickaxes",
+              "predicates": {
+                "enchantments": [
+                  {
+                    "enchantments": [
+                      "minecraft:efficiency"
+                    ],
+                    "levels": {
+                      "min": 5
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:fortune"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:unbreaking"
+                    ],
+                    "levels": {
+                      "min": 3
+                    }
+                  },
+                  {
+                    "enchantments": [
+                      "minecraft:mending"
+                    ],
+                    "levels": {
+                      "min": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false,
+      "enchantmentWitness": {
+        "advancementId": "blazeandcave:enchanting/master_miner",
+        "criterion": "perfect_pickaxe_fortune",
+        "predicatePath": "/conditions/items/0/predicates/enchantments",
+        "items": [
+          "minecraft:diamond_pickaxe",
+          "minecraft:netherite_pickaxe"
+        ],
+        "chosenWitnessItem": "minecraft:diamond_pickaxe",
+        "enchantments": [
+          {
+            "id": "minecraft:efficiency",
+            "requiredLevels": {
+              "min": 5
+            },
+            "chosenLevel": 5,
+            "vanillaMaxLevel": 5
+          },
+          {
+            "id": "minecraft:fortune",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "requiredLevels": {
+              "min": 3
+            },
+            "chosenLevel": 3,
+            "vanillaMaxLevel": 3
+          },
+          {
+            "id": "minecraft:mending",
+            "requiredLevels": {
+              "min": 1
+            },
+            "chosenLevel": 1,
+            "vanillaMaxLevel": 1
+          }
+        ],
+        "unsupportedEnchantments": [],
+        "overlevelEnchantments": [],
+        "mutuallyExclusivePairs": [],
+        "legalWitness": true
+      }
+    }
+  ]
+}

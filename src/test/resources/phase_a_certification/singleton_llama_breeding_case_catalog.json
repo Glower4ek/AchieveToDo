@@ -1,0 +1,23 @@
+{
+  "snapshot": "phase_a_singleton_llama_breeding_case_catalog",
+  "family": "SINGLETON:blazeandcave:animal/so_i_got_that_going_for_me",
+  "source": "PhaseASingletonLlamaBreedingGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "frozenAdvancementPath": "data/blazeandcave/advancement/animal/so_i_got_that_going_for_me.json",
+  "frozenAdvancementSha256": "c20819c76041948bc8c0e648656782a0e49f50793b0cebba7f658985f3c3c6a0",
+  "frozenEntityTagPath": "data/blazeandcave/tags/entity_type/llamas.json",
+  "frozenEntityTagSha256": "502c2a965bf6bdb960388a945f12e26d8505a778a3f5e9afc20a8bbee56cca3d",
+  "advancementId": "blazeandcave:animal/so_i_got_that_going_for_me",
+  "criterion": "llama",
+  "requirementGroup": 0,
+  "trigger": "minecraft:bred_animals",
+  "parentTag": "blazeandcave:llamas",
+  "partnerTag": "blazeandcave:llamas",
+  "selectedParent": "minecraft:llama",
+  "selectedPartner": "minecraft:llama",
+  "feedItem": "minecraft:hay_block",
+  "productionGate": "LANDMARK_ONLY_FOR_LLAMA_FEEDING",
+  "runtimeBoundary": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->Llama.mobInteract->Llama.handleEating->Animal.setInLove->BreedGoal.breed->Animal.spawnChildFromBreeding->Animal.finalizeSpawnChildFromBreeding->CriteriaTriggers.BRED_ANIMALS"
+}

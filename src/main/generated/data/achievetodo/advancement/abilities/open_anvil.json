@@ -1,0 +1,34 @@
+{
+  "parent": "achievetodo:abilities/root",
+  "criteria": {
+    "demystified": {
+      "trigger": "minecraft:impossible"
+    },
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "achievetodo.ability.open_anvil.description"
+    },
+    "icon": {
+      "id": "minecraft:anvil"
+    },
+    "title": {
+      "translate": "achievetodo.ability.open_anvil.name"
+    }
+  },
+  "requirements": [
+    [
+      "demystified"
+    ],
+    [
+      "unlocked"
+    ]
+  ],
+  "rewards": {
+    "function": "achievetodo:abilities/open_anvil"
+  }
+}

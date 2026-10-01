@@ -1,0 +1,34 @@
+{
+  "parent": "achievetodo:abilities/root",
+  "criteria": {
+    "demystified": {
+      "trigger": "minecraft:impossible"
+    },
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "achievetodo.ability.use_netherite_tools.description"
+    },
+    "icon": {
+      "id": "minecraft:netherite_pickaxe"
+    },
+    "title": {
+      "translate": "achievetodo.ability.use_netherite_tools.name"
+    }
+  },
+  "requirements": [
+    [
+      "demystified"
+    ],
+    [
+      "unlocked"
+    ]
+  ],
+  "rewards": {
+    "function": "achievetodo:abilities/use_netherite_tools"
+  }
+}

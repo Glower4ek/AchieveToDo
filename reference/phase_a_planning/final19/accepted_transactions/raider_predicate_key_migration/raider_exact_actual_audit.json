@@ -1,0 +1,13 @@
+{
+  "runId": "c30e2c9f-013f-4c33-98e6-924904c77908",
+  "prefix": "raider",
+  "mode": "exact",
+  "actualEntries": 5,
+  "actualTempSha256": "af54781762c0f315fdf72d825505acde7ae86666ea87cb358d868296c0665c45",
+  "actualRunStateSha256": "eda1eaf9a19c4806f6b8098c7141b874e68619a5b4c317c2555d39304a519080",
+  "runtimeCopySha256": "44219d947a77fafdaa11dadffb8cd1bd0adcce904c408637fcf7b989a232e31a",
+  "runtimeCopyArchive": "reference/phase_a_planning/final19/combat_runtime_copies/44219d947a77fafdaa11dadffb8cd1bd0adcce904c408637fcf7b989a232e31a.zip",
+  "fingerprint": "7733f645f8b60231ab3e763b47fa0dc55cf676567b99310308ea394118f46832",
+  "nativeWindowWarnings": 0,
+  "verdict": "ACTUAL_TEMP_RUN_STATE_GREEN"
+}

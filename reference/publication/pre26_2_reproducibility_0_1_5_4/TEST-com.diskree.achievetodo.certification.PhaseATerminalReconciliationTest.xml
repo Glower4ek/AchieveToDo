@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseATerminalReconciliationTest" tests="2" skipped="0" failures="1" errors="0" timestamp="2026-10-01T17:03:56.153Z" hostname="LAPTOP-L0LPH8GP" time="2.083">
+  <properties/>
+  <testcase name="frozenRequirementsAndTerminalPlanningRemainIndependent()" classname="com.diskree.achievetodo.certification.PhaseATerminalReconciliationTest" time="0.067">
+    <failure message="java.nio.file.NoSuchFileException: D:\Vibecode\AchieveToDo 26.2\build\tmp\publication_probe\snapshot\.agents\skills\achievetodo-phase-a\SKILL.md" type="java.nio.file.NoSuchFileException">java.nio.file.NoSuchFileException: D:\Vibecode\AchieveToDo 26.2\build\tmp\publication_probe\snapshot\.agents\skills\achievetodo-phase-a\SKILL.md
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:231)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:357)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:399)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:2973)
+	at java.base/java.nio.file.Files.readString(Files.java:3043)
+	at java.base/java.nio.file.Files.readString(Files.java:3006)
+	at com.diskree.achievetodo.certification.PhaseATerminalReconciliationTest.frozenRequirementsAndTerminalPlanningRemainIndependent(PhaseATerminalReconciliationTest.java:61)
+</failure>
+  </testcase>
+  <testcase name="allCanonicalEntriesAndProtectedDebtReconcileAgainstFreshEvidence()" classname="com.diskree.achievetodo.certification.PhaseATerminalReconciliationTest" time="2.014"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

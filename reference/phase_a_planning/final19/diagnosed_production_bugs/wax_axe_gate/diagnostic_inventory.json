@@ -1,0 +1,39 @@
+{
+  "classification": "PRODUCTION_BUG",
+  "diagnosticOnly": true,
+  "nativeWarningDebt": 0,
+  "runId": "0937d889-b634-4397-b591-96e25f4307ee",
+  "files": {
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/dual_tags_canary-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/dual_tags_canary.exit": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/dual_tags_canary.gradle.log": "8d73e190ff4925fa14a7f6cb7a89b503752d221508377d57fe76d151d84bd6c2",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/dual_tags_compile_static.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/dual_tags_compile_static.gradle.log": "e5fbe3f7304becaaf6b3918d0111cda0cb8db184010fc1174d792006476cc454",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/dual_tags_compile_static.previous.639263848806003423.gradle.log": "4a1a0015c343fa8161bd06b8722d78d536e2427456ab6f134783616282a7467e",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/dual_tags_failure.json": "9013e1c3acd30ca4e3863ee07233c57430c4d361a4201fb245ba0d23f3385a3a",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/dual_tags_run.json": "f42411e66baea5dd51eb784c4cc74dfcf29091ba81f429533af1f2b9446e0f0b",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/dual_tags_static.json": "c0c34e9b84c2e7f7ebca1601af032857d3c3c066247e3bfba0ad7b4d69be1a4b",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/dual_tags_temp.json": "97184d6608c0894f4c37eed3638acb2fb6c9b3e4aaec40b5642096786120b055",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/official_26_2_AxeItem_bytecode.txt": "9a3262fab390223d8de153a818359162303cfefebe20bace661d7b29b5aabb7a",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/recovery_persistent_regression.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/recovery_persistent_regression.gradle.log": "a9026cdc3219b1684d69d07962a4efb3f99a8e4da1c0b1bd5ed02d17f077bf4e",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/TEST-com.diskree.achievetodo.certification.Final19DualTagsStaticTest.xml": "12e45c9acb6bfe5fd7151018ffc064f01b48039a53879bb3b5e7c61c4d972e1e",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/TEST-com.diskree.achievetodo.certification.Final19LedgerTest.xml": "0539dbf7326666c2b4d178da0ecb0aedc68fedfe5b3b54b115f62fd4e3d7cf0d",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/TEST-com.diskree.achievetodo.certification.Final19VariantsAcceptanceTest.xml": "0959a2e432b68c813d3dc059fc5532062c21c0d3c8578e41bd0e2782fd96f1a4",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/TEST-com.diskree.achievetodo.certification.Final19WorldgenAcceptanceTest.xml": "ee1c32991fda77b80ca20a85bf4138bf447b677b61391511ca0ff000aaa49074",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/wax_gate_packet_diagnosis-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/wax_gate_packet_diagnosis.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/wax_gate_packet_diagnosis.gradle.log": "e490cf9cee007d66ff48be1c99c0059a6860c54c8c4bc53e99254f61955cda3f",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/wax_gate_packet_diagnosis.json": "35fe082bc60f6dfae05f140d9f6b3d75be1d896c868f9607f346d7455572a416"
+  },
+  "productionSource": "src/main/java/com/diskree/achievetodo/injection/mixin/main/AxeItemMixin.java",
+  "productionSha256": "e19c4a65da4df917424a44ff00248220f20dcab57d0668b9ebfbebd01fabbb46",
+  "proposalSha256": "8aa346920a42de51dc8ce8756d6fd212d5d055709c633e07ce8e223e7a49f1a3",
+  "officialLoadedJarSha256": "4beaad36aebac56874c1feef75a680638fed2d733387b5977481e5b21406d1ef",
+  "persistentRegression": {
+    "tests": 5,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

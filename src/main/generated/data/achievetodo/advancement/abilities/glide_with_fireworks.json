@@ -1,0 +1,34 @@
+{
+  "parent": "achievetodo:abilities/root",
+  "criteria": {
+    "demystified": {
+      "trigger": "minecraft:impossible"
+    },
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "achievetodo.ability.glide_with_fireworks.description"
+    },
+    "icon": {
+      "id": "minecraft:firework_rocket"
+    },
+    "title": {
+      "translate": "achievetodo.ability.glide_with_fireworks.name"
+    }
+  },
+  "requirements": [
+    [
+      "demystified"
+    ],
+    [
+      "unlocked"
+    ]
+  ],
+  "rewards": {
+    "function": "achievetodo:abilities/glide_with_fireworks"
+  }
+}

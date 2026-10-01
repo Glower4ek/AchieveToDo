@@ -1,0 +1,61 @@
+{
+  "snapshot": "phase_a_tame_animal_llama_case_catalog",
+  "schemaVersion": 1,
+  "family": "TAME_ANIMAL_LLAMA",
+  "canonicalAdvancementCount": 1152,
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "canonicalSemanticsSource": "reference/phase_a_preservation/files/final/bacap.zip",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "runtimeBoundary": "ServerGamePacketListenerImpl.handleInteract",
+  "runtimePacketPath": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->AbstractHorse.mobInteract->Player.startRiding->RunAroundLikeCrazyGoal.tick->AbstractHorse.tameWithName->CriteriaTriggers.TAME_ANIMAL",
+  "summary": {
+    "totalCases": 6,
+    "uniqueKeys": 6,
+    "uniqueAdvancements": 3,
+    "requirementGroups": 6,
+    "boundedNativeTamingTicks": 600
+  },
+  "cases": [
+    {
+      "advancementId": "blazeandcave:animal/heavy_duty_caravan",
+      "sourcePath": "data/blazeandcave/advancement/animal/heavy_duty_caravan.json",
+      "criterion": "strength",
+      "requirementGroupIndex": 0,
+      "trigger": "minecraft:tame_animal",
+      "entityPredicate": { "entityType": "#blazeandcave:llamas", "kind": "strength", "strength": 5 },
+      "action": "MOUNT_UNTAMED_LLAMA",
+      "boundary": "ServerGamePacketListenerImpl.handleInteract",
+      "packetPath": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->AbstractHorse.mobInteract->Player.startRiding->RunAroundLikeCrazyGoal.tick->AbstractHorse.tameWithName->CriteriaTriggers.TAME_ANIMAL",
+      "nativeTamingStrategy": "set max temper, mount through real interaction packet, wait at most 600 normal server ticks for RunAroundLikeCrazyGoal",
+      "automationEligibility": "SUPPORTED_BOUNDED",
+      "semanticsSource": "frozenBacap+official26_2Bytecode",
+      "sourceJsonSha256": "ff42c3d13a868fc40e22a842dd2f2ebc6d033baf8350078353f096efd3111d8d"
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_llama_duck_king",
+      "sourcePath": "data/blazeandcave/advancement/animal/llama_llama_duck_king.json",
+      "criterion": "creamy",
+      "requirementGroupIndex": 0,
+      "trigger": "minecraft:tame_animal",
+      "entityPredicate": { "entityType": "#blazeandcave:llamas", "kind": "variant", "variant": "CREAMY", "variantId": 0 },
+      "action": "MOUNT_UNTAMED_LLAMA", "boundary": "ServerGamePacketListenerImpl.handleInteract", "packetPath": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->AbstractHorse.mobInteract->Player.startRiding->RunAroundLikeCrazyGoal.tick->AbstractHorse.tameWithName->CriteriaTriggers.TAME_ANIMAL", "nativeTamingStrategy": "set max temper, mount through real interaction packet, wait at most 600 normal server ticks for RunAroundLikeCrazyGoal", "automationEligibility": "SUPPORTED_BOUNDED", "semanticsSource": "frozenBacap+official26_2Bytecode", "sourceJsonSha256": "d286f447dc9e117632310fd24ae368b421d005ed77c93351b98bc189e1734e8b"
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_llama_duck_king", "sourcePath": "data/blazeandcave/advancement/animal/llama_llama_duck_king.json", "criterion": "white", "requirementGroupIndex": 1, "trigger": "minecraft:tame_animal",
+      "entityPredicate": { "entityType": "#blazeandcave:llamas", "kind": "variant", "variant": "WHITE", "variantId": 1 }, "action": "MOUNT_UNTAMED_LLAMA", "boundary": "ServerGamePacketListenerImpl.handleInteract", "packetPath": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->AbstractHorse.mobInteract->Player.startRiding->RunAroundLikeCrazyGoal.tick->AbstractHorse.tameWithName->CriteriaTriggers.TAME_ANIMAL", "nativeTamingStrategy": "set max temper, mount through real interaction packet, wait at most 600 normal server ticks for RunAroundLikeCrazyGoal", "automationEligibility": "SUPPORTED_BOUNDED", "semanticsSource": "frozenBacap+official26_2Bytecode", "sourceJsonSha256": "d286f447dc9e117632310fd24ae368b421d005ed77c93351b98bc189e1734e8b"
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_llama_duck_king", "sourcePath": "data/blazeandcave/advancement/animal/llama_llama_duck_king.json", "criterion": "brown", "requirementGroupIndex": 2, "trigger": "minecraft:tame_animal",
+      "entityPredicate": { "entityType": "#blazeandcave:llamas", "kind": "variant", "variant": "BROWN", "variantId": 2 }, "action": "MOUNT_UNTAMED_LLAMA", "boundary": "ServerGamePacketListenerImpl.handleInteract", "packetPath": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->AbstractHorse.mobInteract->Player.startRiding->RunAroundLikeCrazyGoal.tick->AbstractHorse.tameWithName->CriteriaTriggers.TAME_ANIMAL", "nativeTamingStrategy": "set max temper, mount through real interaction packet, wait at most 600 normal server ticks for RunAroundLikeCrazyGoal", "automationEligibility": "SUPPORTED_BOUNDED", "semanticsSource": "frozenBacap+official26_2Bytecode", "sourceJsonSha256": "d286f447dc9e117632310fd24ae368b421d005ed77c93351b98bc189e1734e8b"
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_llama_duck_king", "sourcePath": "data/blazeandcave/advancement/animal/llama_llama_duck_king.json", "criterion": "gray", "requirementGroupIndex": 3, "trigger": "minecraft:tame_animal",
+      "entityPredicate": { "entityType": "#blazeandcave:llamas", "kind": "variant", "variant": "GRAY", "variantId": 3 }, "action": "MOUNT_UNTAMED_LLAMA", "boundary": "ServerGamePacketListenerImpl.handleInteract", "packetPath": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->AbstractHorse.mobInteract->Player.startRiding->RunAroundLikeCrazyGoal.tick->AbstractHorse.tameWithName->CriteriaTriggers.TAME_ANIMAL", "nativeTamingStrategy": "set max temper, mount through real interaction packet, wait at most 600 normal server ticks for RunAroundLikeCrazyGoal", "automationEligibility": "SUPPORTED_BOUNDED", "semanticsSource": "frozenBacap+official26_2Bytecode", "sourceJsonSha256": "d286f447dc9e117632310fd24ae368b421d005ed77c93351b98bc189e1734e8b"
+    },
+    {
+      "advancementId": "blazeandcave:animal/stay_calmer", "sourcePath": "data/blazeandcave/advancement/animal/stay_calmer.json", "criterion": "tamed_animal", "requirementGroupIndex": 0, "trigger": "minecraft:tame_animal",
+      "entityPredicate": { "entityType": "#blazeandcave:llamas", "kind": "any_llama" }, "action": "MOUNT_UNTAMED_LLAMA", "boundary": "ServerGamePacketListenerImpl.handleInteract", "packetPath": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->AbstractHorse.mobInteract->Player.startRiding->RunAroundLikeCrazyGoal.tick->AbstractHorse.tameWithName->CriteriaTriggers.TAME_ANIMAL", "nativeTamingStrategy": "set max temper, mount through real interaction packet, wait at most 600 normal server ticks for RunAroundLikeCrazyGoal", "automationEligibility": "SUPPORTED_BOUNDED", "semanticsSource": "frozenBacap+official26_2Bytecode", "sourceJsonSha256": "47cb4d34c7fc4e44a42d61d679cec089b3c65b32d568b7dd5113e2c333da0de4"
+    }
+  ]
+}

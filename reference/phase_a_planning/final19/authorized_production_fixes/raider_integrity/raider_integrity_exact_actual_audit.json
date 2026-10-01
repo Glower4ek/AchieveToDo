@@ -1,0 +1,13 @@
+{
+  "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+  "prefix": "raider_integrity",
+  "mode": "exact",
+  "actualEntries": 16,
+  "actualTempSha256": "2327d33e34aa862a4ec647c7c858275f42c880729a7296f4448e3e0c7bc9839d",
+  "actualRunStateSha256": "3cab6f971ca65e5b66d0a5f84de584e53e9894a26f74914b3f009aa674497965",
+  "runtimeCopySha256": "0806de4bfe2432f5a02328caa74198ae560c49af231a04608a0983c4c586dc37",
+  "runtimeCopyArchive": "reference/phase_a_planning/final19/combat_runtime_copies/0806de4bfe2432f5a02328caa74198ae560c49af231a04608a0983c4c586dc37.zip",
+  "fingerprint": "7733f645f8b60231ab3e763b47fa0dc55cf676567b99310308ea394118f46832",
+  "nativeWindowWarnings": 0,
+  "verdict": "ACTUAL_TEMP_RUN_STATE_GREEN"
+}

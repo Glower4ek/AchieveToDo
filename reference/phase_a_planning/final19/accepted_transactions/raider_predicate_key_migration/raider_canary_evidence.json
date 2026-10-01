@@ -1,0 +1,135 @@
+{
+  "runId": "dd65b03f-8790-4bba-a246-9b1861898ce5",
+  "prefix": "raider",
+  "exact": false,
+  "fingerprint": "7733f645f8b60231ab3e763b47fa0dc55cf676567b99310308ea394118f46832",
+  "runtimeCopySha256": "efbc6e03e964987e8cd67fe4f4d0ca4913533910ab8602a5c4ad16e115f182db",
+  "productionConverterSha256": "1bea3ba9caf22963d1ef26de69b19534a4b16d1eab85a39c5e1fc17750227a31",
+  "certificationGain": 1,
+  "entries": [
+    {
+      "case": "captain",
+      "runId": "dd65b03f-8790-4bba-a246-9b1861898ce5",
+      "advancementId": "minecraft:adventure/voluntary_exile",
+      "criterion": "bad_omen",
+      "requirementGroup": 0,
+      "playerUuid": "55da5ddb-58e7-4810-972e-75f69d8a95b9",
+      "targetUuid": "348faeca-a4e5-447c-81fa-7b86cdfea33b",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "advancementDone": true,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": false,
+        "isCaptain": true,
+        "patrolLeader": true,
+        "activeRaid": false,
+        "exactOminousBanner": true,
+        "registeredLiveRaid": false,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": true,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:pillager",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": false,
+        "criterionImmediatelyAfterKill": true
+      },
+      "decodedPredicate": {
+        "hasRaid": false,
+        "isCaptain": true
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 141,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "ordinary",
+      "runId": "dd65b03f-8790-4bba-a246-9b1861898ce5",
+      "advancementId": "minecraft:adventure/voluntary_exile",
+      "criterion": "bad_omen",
+      "requirementGroup": 0,
+      "playerUuid": "602d73ab-5814-416c-9687-ef8c88529998",
+      "targetUuid": "3d1a3648-d328-446b-812d-9080a3da42b9",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": false,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": false,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": false,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": false,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": false,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:pillager",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": false,
+        "criterionImmediatelyAfterKill": false
+      },
+      "decodedPredicate": {
+        "hasRaid": false,
+        "isCaptain": true
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 103,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    }
+  ]
+}

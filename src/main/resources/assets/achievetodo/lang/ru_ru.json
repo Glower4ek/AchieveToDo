@@ -75,6 +75,7 @@
   "achievetodo.advancements_tab_mystified_tooltip.challenges": "Убейте эндер-дракона, чтобы разблокировать эту вкладку",
 
   "achievetodo.suggest_install_advancements_search_mod": "Для перехода к достижениям установите ",
+  "achievetodo.advancement_navigation_unavailable": "Не удалось открыть это достижение через текущую интеграцию AdvancementsSearch.",
 
   "achievetodo.ability.eat_apple.name": "Яблоко",
   "achievetodo.ability.eat_apple.description": "Возможность съесть яблоко",

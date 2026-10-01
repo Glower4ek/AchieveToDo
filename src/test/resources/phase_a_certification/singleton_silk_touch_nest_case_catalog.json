@@ -1,0 +1,20 @@
+{
+  "snapshot": "phase_a_singleton_silk_touch_nest_case_catalog",
+  "family": "SINGLETON:minecraft:husbandry/silk_touch_nest",
+  "source": "PhaseASingletonSilkTouchNestGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "frozenAdvancementPath": "data/minecraft/advancement/husbandry/silk_touch_nest.json",
+  "frozenAdvancementSha256": "6191682bd841af5c00405a13f10d9fdfaeb2596c1b983d169534ee113ef2e3bf",
+  "advancementId": "minecraft:husbandry/silk_touch_nest",
+  "criterion": "silk_touch_nest",
+  "requirementGroup": 0,
+  "trigger": "minecraft:bee_nest_destroyed",
+  "block": "minecraft:bee_nest",
+  "beesInside": 3,
+  "enchantment": "minecraft:silk_touch",
+  "minimumEnchantmentLevel": 1,
+  "selectedTool": "minecraft:wooden_axe",
+  "runtimeBoundary": "ServerboundPlayerActionPacket.handle->ServerGamePacketListenerImpl.handlePlayerAction->ServerPlayerGameMode.handleBlockBreakAction->ServerPlayerGameMode.destroyBlock->BeehiveBlock.playerDestroy->CriteriaTriggers.BEE_NEST_DESTROYED"
+}

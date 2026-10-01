@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseASingletonRedstoneClickCertificationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:59:46.088Z" hostname="LAPTOP-L0LPH8GP" time="3.545">
+  <properties/>
+  <testcase name="persistentClickReceiptChangesOnlyItsOwnStatus()" classname="com.diskree.achievetodo.certification.PhaseASingletonRedstoneClickCertificationTest" time="3.534"/>
+  <testcase name="frozenCatalogAndPersistentReceiptCoverOnlyTheClickSingleton()" classname="com.diskree.achievetodo.certification.PhaseASingletonRedstoneClickCertificationTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

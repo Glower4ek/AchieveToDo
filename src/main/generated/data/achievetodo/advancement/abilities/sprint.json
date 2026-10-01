@@ -1,0 +1,34 @@
+{
+  "parent": "achievetodo:abilities/root",
+  "criteria": {
+    "demystified": {
+      "trigger": "minecraft:impossible"
+    },
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "achievetodo.ability.sprint.description"
+    },
+    "icon": {
+      "id": "minecraft:chainmail_boots"
+    },
+    "title": {
+      "translate": "achievetodo.ability.sprint.name"
+    }
+  },
+  "requirements": [
+    [
+      "demystified"
+    ],
+    [
+      "unlocked"
+    ]
+  ],
+  "rewards": {
+    "function": "achievetodo:abilities/sprint"
+  }
+}

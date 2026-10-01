@@ -1,0 +1,135 @@
+{
+  "snapshot": "phase_a_item_tag_player_interacted_with_entity_case_catalog",
+  "schemaVersion": 1,
+  "family": "ITEM_TAG_PLAYER_INTERACTED_WITH_ENTITY",
+  "canonicalAdvancementCount": 1152,
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "canonicalSemanticsSource": "reference/phase_a_preservation/files/final/bacap.zip",
+  "semanticsSource": "frozenBacap",
+  "frozenBacapSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "sourceArtifactClassification": "FROZEN_BACAP_DEFINITION",
+  "runtimeBoundary": "ServerGamePacketListenerImpl.handleInteract",
+  "runtimePacketPath": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->CriteriaTriggers.PLAYER_INTERACTED_WITH_ENTITY",
+  "summary": {
+    "totalCases": 4,
+    "uniqueKeys": 4,
+    "uniqueAdvancements": 4,
+    "requirementGroups": 4,
+    "automationSupported": 4,
+    "automationDeferred": 0,
+    "actionCategories": {
+      "FEED_DOLPHIN": 1,
+      "FEED_OCELOT": 1,
+      "IGNITE_CREEPER": 1,
+      "FEED_BABY_SNIFFER": 1
+    }
+  },
+  "cases": [
+    {
+      "advancementId": "blazeandcave:biomes/echolocation",
+      "sourcePath": "data/blazeandcave/advancement/biomes/echolocation.json",
+      "criterion": "echolocation",
+      "requirementGroupIndex": 0,
+      "trigger": "minecraft:player_interacted_with_entity",
+      "itemTag": "blazeandcave:dolphin_feedable",
+      "selectedItem": "minecraft:cod",
+      "entityPredicate": {
+        "entityType": "minecraft:dolphin",
+        "flags": {}
+      },
+      "selectedEntityType": "minecraft:dolphin",
+      "action": "FEED_DOLPHIN",
+      "interactionHand": "MAIN_HAND",
+      "boundary": "ServerGamePacketListenerImpl.handleInteract",
+      "packetPath": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->CriteriaTriggers.PLAYER_INTERACTED_WITH_ENTITY",
+      "expectedInteractionResult": "SUCCESS",
+      "productionPrecondition": "NONE",
+      "automationEligibility": "SUPPORTED",
+      "semanticsSource": "frozenBacap",
+      "sourceArtifactClassification": "FROZEN_BACAP_DEFINITION",
+      "sourceJsonSha256": "30424d1b92bd3ad61715e9c933129b913e6c989fb9cf0765e07ab37a131d3bab",
+      "itemTagSource": "frozenBacap",
+      "itemTagSourceSha256": "29114ab5d25f352cb4539101c9d10987072ed2348567b45e52df39a1411b627b"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/lion_hunter",
+      "sourcePath": "data/blazeandcave/advancement/biomes/lion_hunter.json",
+      "criterion": "ocelot",
+      "requirementGroupIndex": 0,
+      "trigger": "minecraft:player_interacted_with_entity",
+      "itemTag": "blazeandcave:ocelot_feedable",
+      "selectedItem": "minecraft:cod",
+      "entityPredicate": {
+        "entityType": "minecraft:ocelot",
+        "flags": {}
+      },
+      "selectedEntityType": "minecraft:ocelot",
+      "action": "FEED_OCELOT",
+      "interactionHand": "MAIN_HAND",
+      "boundary": "ServerGamePacketListenerImpl.handleInteract",
+      "packetPath": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->CriteriaTriggers.PLAYER_INTERACTED_WITH_ENTITY",
+      "expectedInteractionResult": "SUCCESS",
+      "productionPrecondition": "NONE",
+      "automationEligibility": "SUPPORTED",
+      "semanticsSource": "frozenBacap",
+      "sourceArtifactClassification": "FROZEN_BACAP_DEFINITION",
+      "sourceJsonSha256": "4683a3cf7b83b38a58d5dfe5ccb8964644661fb7b12d65aff3d0f4d352240d3b",
+      "itemTagSource": "frozenBacap",
+      "itemTagSourceSha256": "72263c1cae6e700a67c0128fc7b24a9bc703b2fb9bf2a27331b7cf0c0bbaf665"
+    },
+    {
+      "advancementId": "blazeandcave:monsters/controlled_detonation",
+      "sourcePath": "data/blazeandcave/advancement/monsters/controlled_detonation.json",
+      "criterion": "controlled_detonation",
+      "requirementGroupIndex": 0,
+      "trigger": "minecraft:player_interacted_with_entity",
+      "itemTag": "minecraft:creeper_igniters",
+      "selectedItem": "minecraft:flint_and_steel",
+      "entityPredicate": {
+        "entityType": "minecraft:creeper",
+        "flags": {}
+      },
+      "selectedEntityType": "minecraft:creeper",
+      "action": "IGNITE_CREEPER",
+      "interactionHand": "MAIN_HAND",
+      "boundary": "ServerGamePacketListenerImpl.handleInteract",
+      "packetPath": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->CriteriaTriggers.PLAYER_INTERACTED_WITH_ENTITY",
+      "expectedInteractionResult": "SUCCESS",
+      "productionPrecondition": "USE_FLINT_AND_STEEL_UNLOCKED",
+      "automationEligibility": "SUPPORTED",
+      "semanticsSource": "frozenBacap",
+      "sourceArtifactClassification": "FROZEN_BACAP_DEFINITION",
+      "sourceJsonSha256": "6b558f2283c928cc1c4aca893871d2baa5847d428dc1330bf9107d2d598a116e",
+      "itemTagSource": "minecraftRuntime"
+    },
+    {
+      "advancementId": "minecraft:husbandry/feed_snifflet",
+      "sourcePath": "data/minecraft/advancement/husbandry/feed_snifflet.json",
+      "criterion": "feed_snifflet",
+      "requirementGroupIndex": 0,
+      "trigger": "minecraft:player_interacted_with_entity",
+      "itemTag": "minecraft:sniffer_food",
+      "selectedItem": "minecraft:torchflower_seeds",
+      "entityPredicate": {
+        "entityType": "minecraft:sniffer",
+        "flags": {
+          "is_baby": "true"
+        }
+      },
+      "selectedEntityType": "minecraft:sniffer",
+      "action": "FEED_BABY_SNIFFER",
+      "interactionHand": "MAIN_HAND",
+      "boundary": "ServerGamePacketListenerImpl.handleInteract",
+      "packetPath": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->CriteriaTriggers.PLAYER_INTERACTED_WITH_ENTITY",
+      "expectedInteractionResult": "SUCCESS",
+      "productionPrecondition": "NONE",
+      "automationEligibility": "SUPPORTED",
+      "semanticsSource": "frozenBacap",
+      "sourceArtifactClassification": "FROZEN_BACAP_DEFINITION",
+      "sourceJsonSha256": "37dd2d60cc81304f16f1ba1cb3bb4736dd6bb0fb6a1ba606094d1e3106e815f6",
+      "itemTagSource": "minecraftRuntime"
+    }
+  ]
+}

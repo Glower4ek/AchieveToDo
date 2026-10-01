@@ -1,0 +1,2166 @@
+{
+  "task": "PRE_26_2_FINAL19_AUDIT_AND_MASTER_MAP",
+  "schemaVersion": 1,
+  "planningOnly": true,
+  "historicalPhaseAState": "PHASE_A_ACTIONABLE_FRONTIER_EXHAUSTED",
+  "start": {
+    "certified": 1133,
+    "uncertified": 19,
+    "denominator": 1152
+  },
+  "target": {
+    "certified": 1152,
+    "uncertified": 0,
+    "denominator": 1152,
+    "state": "1152_TARGET_PATH_DEFINED_CONDITIONAL_ON_PROOF",
+    "explicitDecisionBlockers": [],
+    "knownSemanticIntegrityGate": "Already-certified feeling_ill raider true-boolean contract is currently lost. The plan includes a zero-gain repair/revalidation gate; merely adding 19 statuses would not establish real 1152.",
+    "achievedByThisTask": false
+  },
+  "minimumSensibleFamilyCount": 7,
+  "familyCountRationale": "Five distinct bounded static context defects, one proven raider conversion bug and one native shield proof gap. A shared typed lookup/composer foundation does not erase different predicate/diagnostic dependencies; native actions within a shared static family stay separate.",
+  "classificationCounts": {
+    "ALREADY_WORKS_RUNTIME_STATIC_CERTIFICATION_BUG": 1,
+    "COMPAT_MIGRATION_BUG": 1,
+    "RUNTIME_CERTIFICATION_GAP": 1,
+    "STATIC_ANALYZER_CONTEXT_BUG": 16
+  },
+  "foundationalFixes": [
+    {
+      "nodeId": "F_CONTEXT",
+      "type": "FOUNDATIONAL_FIX",
+      "layer": "STATIC_ANALYZER",
+      "gain": 0,
+      "strategy": "New bounded typed context composition in FINAL19 validation: worldgen scalar/list, data-driven variant components, two-tag item-used-on-block, inventory tag+enchantment and worldgen+other. Share source-backed lookup/index infrastructure, keep five distinct cause-specific gates. Never treat a full generic codec success as sufficient semantic certification.",
+      "dependsOn": []
+    },
+    {
+      "nodeId": "F_ACCOUNTING",
+      "type": "FOUNDATIONAL_FIX",
+      "layer": "CANONICAL_ACCOUNTING",
+      "gain": 0,
+      "strategy": "Separate FINAL19 ledger/generator for immutable baseline plus new validated IDs; require valid static input and exact AND-of-OR evidence. Existing jungle GREEN retained. Final historical Phase A counter remains 1133; new-stage ledger predicts and later proves 1152.",
+      "dependsOn": [
+        "F_CONTEXT"
+      ]
+    },
+    {
+      "nodeId": "F_NATIVE_LIFECYCLE",
+      "type": "FOUNDATIONAL_VALIDATION",
+      "layer": "TEST_INFRASTRUCTURE",
+      "gain": 0,
+      "strategy": "Reuse accepted joined SURVIVAL player/network/load/config/finite resource/owned-fixture teardown; add narrow species/biome/Frost Walker/shield orchestration only as needed. New catalog provenance and receipts; no shared fake gameplay abstraction.",
+      "dependsOn": []
+    },
+    {
+      "nodeId": "I_LET_IT_GO",
+      "type": "PROTECTED_CONTROL_REPLACEMENT",
+      "layer": "STATIC_ANALYZER",
+      "gain": 0,
+      "strategy": "New-stage reopening record after typed deep-ocean+Frost Walker semantics and replacement invalid-input controls; historical control remains closed.",
+      "dependsOn": [
+        "F_CONTEXT"
+      ]
+    },
+    {
+      "nodeId": "I_TRAVELLING_BARD",
+      "type": "PROTECTED_CONTROL_REPLACEMENT",
+      "layer": "STATIC_ANALYZER",
+      "gain": 0,
+      "strategy": "New-stage reopening after all 36 biome/location predicates resolve unchanged in typed context; replace generic-biome-migration negative with unknown/scalar/list/mixed/wrong-biome/wrong-block/default-use/group-deletion guards. Historical control remains closed.",
+      "dependsOn": [
+        "F_CONTEXT"
+      ]
+    },
+    {
+      "nodeId": "F_RAIDER",
+      "type": "FOUNDATIONAL_FIX",
+      "layer": "COMPAT_MIGRATION",
+      "gain": 0,
+      "productionPath": "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+      "strategy": "Preserve both snake_case raider booleans in existing exact subtype conversion. Reconvert all three affected source definitions; provide a new explicit raider mapping freshness marker/revision retaining llama and root guarantees. Pure serialization repair, no predicate weakening.",
+      "dependsOn": []
+    },
+    {
+      "nodeId": "G_CERTIFIED_RAIDER_INTEGRITY",
+      "type": "CERTIFIED_REGRESSION_GATE",
+      "layer": "COMPAT_MIGRATION",
+      "gain": 0,
+      "advancementIds": [
+        "blazeandcave:adventure/feeling_ill",
+        "blazeandcave:monsters/dungeon_crawler"
+      ],
+      "strategy": "Repair/revalidate feeling_ill true raid predicates and dungeon_crawler false raid semantics. Require decoded exact booleans for all 8 criteria, supported native raid vs nonraid predicate witnesses, all unrelated advancement semantic hashes unchanged. Existing certified statuses do not gain an extra count. Old accepted static success alone is insufficient for this proven semantic loss.",
+      "dependsOn": [
+        "F_RAIDER",
+        "F_NATIVE_LIFECYCLE"
+      ]
+    },
+    {
+      "nodeId": "I_VOLUNTARY_EXILE",
+      "type": "PROTECTED_CONTROL_REPLACEMENT",
+      "layer": "COMPAT_MIGRATION",
+      "gain": 0,
+      "strategy": "New-stage invalidation justified by proven is_captain loss; retain tag/banner context and replacement noncaptain/active-raid/stale-evidence controls before promotion.",
+      "dependsOn": [
+        "F_RAIDER",
+        "F_CONTEXT",
+        "G_CERTIFIED_RAIDER_INTEGRITY"
+      ]
+    },
+    {
+      "nodeId": "I_DEFLECT_ARROW",
+      "type": "PROTECTED_CONTROL_REPLACEMENT",
+      "layer": "RUNTIME_EVIDENCE_ONLY",
+      "gain": 0,
+      "strategy": "New-stage tag/banner/native shield schema proof plus replacement non-block/wrong-source/locked-shield/stale-evidence negatives; no definition change.",
+      "dependsOn": [
+        "F_CONTEXT",
+        "F_NATIVE_LIFECYCLE"
+      ]
+    }
+  ],
+  "families": [
+    {
+      "sharedRootCauseId": "WORLDGEN_HOLDERSET_CONTEXT",
+      "familyName": "Biome HolderSet scalar/list validator context",
+      "advancementIds": [
+        "blazeandcave:biomes/the_mighty_jungle",
+        "blazeandcave:redstone/travelling_bard"
+      ],
+      "advancementCount": 2,
+      "criteriaCount": 37,
+      "requirementGroupCount": 37,
+      "rootCause": "PhaseACertification starts with BuiltInRegistries only. findLocationHolderFieldMatches/containsOnlyLocationHolderSetDiagnostics account for scalar Not-a-json-array errors, but not list-shaped missing-biome-registry errors. Jungle is a biome list; bard mixes 19 list and 17 scalar biome selectors across 36 criteria. Scalar HolderSets are accepted by real 26.2 HolderSetCodec; they are not malformed data.",
+      "primaryFixLayer": "STATIC_ANALYZER",
+      "semanticHomogeneity": "Same missing worldgen registry/error accounting boundary; native proofs differ: location movement versus note-block default use.",
+      "implementationCost": "MEDIUM static; HIGH exact bard fixture coverage across Overworld, Nether and End",
+      "semanticRisk": "MEDIUM: false acceptance of unknown/list biome IDs or losses of bard AND groups",
+      "harnessReuse": [
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseALocationMovementGameTest.java",
+          "sha256": "0043073989a2dba0866e78798ad7a66182350a4197ce3f178b4b6ccd387e89d8",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseALocationHolderSetWorldgenGameTest.java",
+          "sha256": "89d46ca8f37f8cd61136936796d52f051b41d1eed8a0d43fc8d5892248e452e8",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseASingletonRedstoneClickGameTest.java",
+          "sha256": "43f147d2aa2db0a9356440b5812b8aea2b957edb5c776d9be7e0bccbd7e7ba29",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseASingletonVillageBellGameTest.java",
+          "sha256": "697805ba61e92b69d93031ee9599ba2649d6d71bc4c568a022ac458b4e97ede6",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        }
+      ],
+      "productionGateRisk": "No new production bug identified. Jungle spectator exclusion remains; bard preserves each exact existing player predicate (including its deliberate omissions). Nether/End/world fixtures must retain live biome registry identity.",
+      "dependencies": [
+        "F_CONTEXT",
+        "F_ACCOUNTING",
+        "F_NATIVE_LIFECYCLE",
+        "I_TRAVELLING_BARD"
+      ],
+      "expectedCertifiedGain": 2,
+      "requiredStaticGates": [
+        "Parse the exact current conversion with real 26.2 registries and source-backed tags; match every converted field to frozen semantic intent. Codec success alone is insufficient (raider control demonstrates this).",
+        "Retain scalar/list worldgen HolderSet forms and scoped existing enchantment normalization; do not introduce a generic biome/structure/enchantment rewrite or broaden the old fallback allowlist.",
+        "Every error chunk/field path must be accounted for; unsupported contexts, unknown IDs, missing tags, invalid levels/components and unknown predicate fields stay fail-closed.",
+        "Byte/hash diff all converted advancements. Only the explicitly mapped raider predicate and required freshness marker changes may differ semantically; denominator stays 1152.",
+        "Keep historical Phase A tests/artifacts readable as snapshots; add separate FINAL19 expectations. Do not make STATIC_FAIL promote merely because runtime GREEN exists.",
+        "Add source-path-preserving typed biome HolderSet context/error accounting for both scalar and list selectors. Validate only fields actually requiring context; do not migrate valid scalars. Parse all 37 criteria. Preserve accepted jungle receipt; native empty-hand note-block default use in each of the 36 biome selector groups completes bard."
+      ],
+      "requiredRuntimeGates": [
+        "Plain joined ServerPlayer, PlayerList.placeNewPlayer, registered real connection, ServerboundPlayerLoadedPacket, SURVIVAL. Read live advancement/ability config only after loading.",
+        "Record frozen/source/converter/runtime-pack/config/catalog/matrix fingerprints, unique new runId, exact criterion and requirement group, relevant entities/items/components/tags/biomes/structures.",
+        "Assert criterion and advancement incomplete before action; perform native packet/gameplay action; observe named criterion false -> true, actual action state transition, then AND-of-OR completion.",
+        "No direct CriteriaTriggers.trigger calls, no manual grants or awards, no setTame/set progress as proof, no predicate stubs, no bypassed production gates or fabricated HolderSet membership.",
+        "Finite resources, finite attempts/ticks and SURVIVAL where applicable. Fixture state must be a legitimate game state; registry data, enchanting combinations and source predicates must be independently checked.",
+        "Fail on missing tags/holders, warnings, disconnect/network cleanup debt, leaked players/entities/tickets/connections, timing out, or a predicate only partially proven. Restore owned world/biome/structure/block fixtures and remove actors.",
+        "TEMP diagnostic output is never promoted. Later exact certification uses fresh persistent evidence and its fingerprint validation; preserve accepted historical runIds and the terminal Phase A snapshot.",
+        {
+          "advancementId": "blazeandcave:biomes/the_mighty_jungle",
+          "nativeBoundary": "ServerPlayer.doTick native LOCATION trigger and EntityPredicate.location biome HolderSet.",
+          "action": "Retain accepted LOCATION_MOVEMENT jungle GREEN; after static context repair, revalidate input/receipt fingerprints and normal requirement accounting. Existing proof need not be rerun simply to manufacture a new receipt.",
+          "requirementGroups": 1,
+          "existingGreen": [
+            "jungle"
+          ],
+          "requiredNewSatisfiedGroups": 0
+        },
+        {
+          "advancementId": "blazeandcave:redstone/travelling_bard",
+          "nativeBoundary": "ServerboundUseItemOnPacket -> ServerPlayerGameMode.useItemOn -> NoteBlock.useWithoutItem -> DEFAULT_BLOCK_USE; location predicate checks note_block at use position and specified biome.",
+          "action": "For each of 36 exact criteria use a note block with empty hand, air above and live specified biome/dimension, observe tuned note state/native use and criterion. One representative biome from each list suffices, all 36 groups required. Preserve predicates even where frozen omits spectator filter.",
+          "requirementGroups": 36,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 36
+        }
+      ],
+      "requiredRegressionGates": [
+        "Unknown scalar/list/mixed biome IDs must fail; do not substitute a successful parse after deleting a predicate.",
+        "Jungle must keep its three alternatives and spectator exclusion; normal rollup STATIC_FAIL precedence stays intact.",
+        "Bard retains minecraft:default_block_use, note_block, all 36 AND groups, source biome aliases and exact dimension/player predicates. No jukebox/music-disc substitution.",
+        "Travelling-bard protected static control reopens only after all 36 exact biome predicates parse/resolve and unknown/scalar/list/mixed-biome fail-closed controls replace the old no-generic-migration guard; exact native note-block completion still required."
+      ],
+      "canaryStrategy": "First reuse jungle GREEN with full static proof; then bard plains + snowy_plains (list), pale_garden (scalar), nether_wastes and the_end. Exact stage covers all 36 bard groups.",
+      "exactStrategy": "Add source-path-preserving typed biome HolderSet context/error accounting for both scalar and list selectors. Validate only fields actually requiring context; do not migrate valid scalars. Parse all 37 criteria. Preserve accepted jungle receipt; native empty-hand note-block default use in each of the 36 biome selector groups completes bard.",
+      "promotionStrategy": "Later implementation only: validate prerequisites, canary, then exact complete family receipts. Reconcile every ID independently using its frozen AND-of-OR groups; append FINAL19 evidence/accounting as a new stage. Historical Phase A canonical/frontier/reconciliation/accepted evidence remain immutable. No promotion in this audit.",
+      "invalidationRisks": [
+        "A source/converted/converter/config/marker/class/resource/tag/matrix/catalog hash change invalidates the affected proof; do not reuse stale save copies or broaden old fallback policy.",
+        "Unknown scalar/list/mixed biome IDs must fail; do not substitute a successful parse after deleting a predicate.",
+        "Jungle must keep its three alternatives and spectator exclusion; normal rollup STATIC_FAIL precedence stays intact.",
+        "Bard retains minecraft:default_block_use, note_block, all 36 AND groups, source biome aliases and exact dimension/player predicates. No jukebox/music-disc substitution.",
+        "Travelling-bard protected static control reopens only after all 36 exact biome predicates parse/resolve and unknown/scalar/list/mixed-biome fail-closed controls replace the old no-generic-migration guard; exact native note-block completion still required."
+      ],
+      "recommendedOperationalOrder": 1,
+      "reasonForOrder": "Jungle provides a pre-existing real runtime control for the validator/accounting foundation; bard amortizes the same worldgen repair and avoids 36 data patches."
+    },
+    {
+      "sharedRootCauseId": "ENTITY_VARIANT_COMPONENT_CONTEXT",
+      "familyName": "Cat/frog/wolf data-driven component registry context",
+      "advancementIds": [
+        "minecraft:husbandry/complete_catalogue",
+        "minecraft:husbandry/leash_all_frog_variants",
+        "minecraft:husbandry/whole_pack"
+      ],
+      "advancementCount": 3,
+      "criteriaCount": 23,
+      "requirementGroupCount": 23,
+      "rootCause": "Converted legacy type_specific variant predicates are correctly represented as minecraft:cat/variant, frog/variant and wolf/variant component predicates. Limited static RegistryAccess excludes these three data-driven registries; current deferred classifier has no variant-registry family. All 23 IDs resolve in actual VanillaRegistries 26.2 and all 23 criteria parse.",
+      "primaryFixLayer": "STATIC_ANALYZER",
+      "semanticHomogeneity": "Same dynamic variant registry context, with separate species-native taming and leashing action executors.",
+      "implementationCost": "MEDIUM context; MEDIUM species executors/23 group witnesses",
+      "semanticRisk": "MEDIUM: fixture variant spoofing, taming RNG or awarding through state setters",
+      "harnessReuse": [
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseATameAnimalLlamaGameTest.java",
+          "sha256": "9776945b3515f6c738fa22347793a40595ec6b09597a8a3606463aca7f5d27dd",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAEntityTypeTagPlayerInteractedWithEntityGameTest.java",
+          "sha256": "aba9f85482f59263c86ad24a8afb2f42bb3fadb5e2ba76140d18517032c15c75",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAItemTagPlayerInteractedWithEntityGameTest.java",
+          "sha256": "5b6cd07e4f7217ed84c60b1ff0a63cd7b1d414662e634dd8d2e344a7a0ee2a6d",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        }
+      ],
+      "productionGateRisk": "Cat/Wolf mobInteract and Entity.interact/attach leash have landmark restrictions. Use unlocked fixture sites; no variant rename or new 26.2 variant expansion is needed.",
+      "dependencies": [
+        "F_CONTEXT",
+        "F_ACCOUNTING",
+        "F_NATIVE_LIFECYCLE"
+      ],
+      "expectedCertifiedGain": 3,
+      "requiredStaticGates": [
+        "Parse the exact current conversion with real 26.2 registries and source-backed tags; match every converted field to frozen semantic intent. Codec success alone is insufficient (raider control demonstrates this).",
+        "Retain scalar/list worldgen HolderSet forms and scoped existing enchantment normalization; do not introduce a generic biome/structure/enchantment rewrite or broaden the old fallback allowlist.",
+        "Every error chunk/field path must be accounted for; unsupported contexts, unknown IDs, missing tags, invalid levels/components and unknown predicate fields stay fail-closed.",
+        "Byte/hash diff all converted advancements. Only the explicitly mapped raider predicate and required freshness marker changes may differ semantically; denominator stays 1152.",
+        "Keep historical Phase A tests/artifacts readable as snapshots; add separate FINAL19 expectations. Do not make STATIC_FAIL promote merely because runtime GREEN exists.",
+        "Provide typed data-driven cat_variant/frog_variant/wolf_variant context, check direct IDs/components against the real registry, and retain frozen criteria unchanged. Feed untamed cats/wolves through normal packets using finite fish/bones and bounded retries; lead each live frog normally. Native taming/leash attachment must cause the receipt."
+      ],
+      "requiredRuntimeGates": [
+        "Plain joined ServerPlayer, PlayerList.placeNewPlayer, registered real connection, ServerboundPlayerLoadedPacket, SURVIVAL. Read live advancement/ability config only after loading.",
+        "Record frozen/source/converter/runtime-pack/config/catalog/matrix fingerprints, unique new runId, exact criterion and requirement group, relevant entities/items/components/tags/biomes/structures.",
+        "Assert criterion and advancement incomplete before action; perform native packet/gameplay action; observe named criterion false -> true, actual action state transition, then AND-of-OR completion.",
+        "No direct CriteriaTriggers.trigger calls, no manual grants or awards, no setTame/set progress as proof, no predicate stubs, no bypassed production gates or fabricated HolderSet membership.",
+        "Finite resources, finite attempts/ticks and SURVIVAL where applicable. Fixture state must be a legitimate game state; registry data, enchanting combinations and source predicates must be independently checked.",
+        "Fail on missing tags/holders, warnings, disconnect/network cleanup debt, leaked players/entities/tickets/connections, timing out, or a predicate only partially proven. Restore owned world/biome/structure/block fixtures and remove actors.",
+        "TEMP diagnostic output is never promoted. Later exact certification uses fresh persistent evidence and its fingerprint validation; preserve accepted historical runIds and the terminal Phase A snapshot.",
+        {
+          "advancementId": "minecraft:husbandry/complete_catalogue",
+          "nativeBoundary": "Cat.mobInteract native fish consume/RNG -> TamableAnimal.tame -> TAME_ANIMAL -> entity variant component predicate.",
+          "action": "One initially untamed live cat per source variant, normal finite fish feeding with bounded attempts; observe owner/tamed transition and named criterion. No direct tame method as test action.",
+          "requirementGroups": 11,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 11
+        },
+        {
+          "advancementId": "minecraft:husbandry/leash_all_frog_variants",
+          "nativeBoundary": "ServerboundInteractPacket -> Entity.interact attach_leash -> PlayerInteractedWithEntityTrigger.",
+          "action": "Normal lead interaction on each initially unleashed live frog variant; observe actual leash holder and criterion. Fence-binding LeadItem path alone does not establish the required interaction.",
+          "requirementGroups": 3,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 3
+        },
+        {
+          "advancementId": "minecraft:husbandry/whole_pack",
+          "nativeBoundary": "Wolf.mobInteract native bone consume/RNG -> TamableAnimal.tame -> TAME_ANIMAL.",
+          "action": "Nine initially untamed live variants, normal bounded finite bone feeding at unlocked site, each owner/tamed transition and criterion observed.",
+          "requirementGroups": 9,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 9
+        }
+      ],
+      "requiredRegressionGates": [
+        "Reject unknown variant/component ID and wrong species/variant; default variant may not stand in for all entries.",
+        "No direct tame calls or setTame proof. Count consumed food/lead state and actual owner/leash holder.",
+        "All 23 frozen AND groups remain required; compare the five current vanilla controls without replacing BACAP definitions."
+      ],
+      "canaryStrategy": "One cat, warm frog and pale wolf, with wrong-variant negative controls; execute all 11+3+9 AND groups afterward.",
+      "exactStrategy": "Provide typed data-driven cat_variant/frog_variant/wolf_variant context, check direct IDs/components against the real registry, and retain frozen criteria unchanged. Feed untamed cats/wolves through normal packets using finite fish/bones and bounded retries; lead each live frog normally. Native taming/leash attachment must cause the receipt.",
+      "promotionStrategy": "Later implementation only: validate prerequisites, canary, then exact complete family receipts. Reconcile every ID independently using its frozen AND-of-OR groups; append FINAL19 evidence/accounting as a new stage. Historical Phase A canonical/frontier/reconciliation/accepted evidence remain immutable. No promotion in this audit.",
+      "invalidationRisks": [
+        "A source/converted/converter/config/marker/class/resource/tag/matrix/catalog hash change invalidates the affected proof; do not reuse stale save copies or broaden old fallback policy.",
+        "Reject unknown variant/component ID and wrong species/variant; default variant may not stand in for all entries.",
+        "No direct tame calls or setTame proof. Count consumed food/lead state and actual owner/leash holder.",
+        "All 23 frozen AND groups remain required; compare the five current vanilla controls without replacing BACAP definitions."
+      ],
+      "recommendedOperationalOrder": 2,
+      "reasonForOrder": "One typed registry foundation resolves three independent targets; finite native interaction fixtures are already available."
+    },
+    {
+      "sharedRootCauseId": "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+      "familyName": "Item-used-on-block simultaneous item/block tags",
+      "advancementIds": [
+        "blazeandcave:building/happy_birthday",
+        "blazeandcave:building/setting_up_the_mood",
+        "blazeandcave:building/washing_machine",
+        "minecraft:husbandry/wax_off"
+      ],
+      "advancementCount": 4,
+      "criteriaCount": 6,
+      "requirementGroupCount": 6,
+      "rootCause": "Both match_tool item tag and location_check block tag are present. collapseTagComponents returns null when components differ; classifyMultiContextDeferredComponent requires an equipment-enchantment dimension, so two tag-only dimensions are rejected. All source tags exist and resolve with full source-backed context. No missing-tag conversion is required.",
+      "primaryFixLayer": "STATIC_ANALYZER",
+      "semanticHomogeneity": "Same ITEM_TAG + BLOCK_TAG classification/context composer defect; native actions have different side-effect timing.",
+      "implementationCost": "MEDIUM static; LOW/MEDIUM six interaction proofs",
+      "semanticRisk": "MEDIUM: pre/post block mutation and consumed item capture",
+      "harnessReuse": [
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAItemTagItemUsedOnBlockGameTest.java",
+          "sha256": "72b46eb967e198de0ca4b6562747ff8cbda4be1344aa21f1c784f8adf898e1a1",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseABlockTagItemUsedOnBlockGameTest.java",
+          "sha256": "b560f8381d962277effda7651d609c621ff5a5c6994ec6e63a72f16a0dbb7d13",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAItemUsedOnBlockContextualGameTest.java",
+          "sha256": "2b482d8a2eeb17922acc0c9a58e154dbb617e8daf0724a198e1afd0541f22f39",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseARecipeCraftedWaxOnGameTest.java",
+          "sha256": "84e676e4420e12779eb1f43b00841abe9a56b1528c0021e5338e6caf03e30f20",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        }
+      ],
+      "productionGateRisk": "USE_CAULDRON for washing, tool material ability for wax_off, ignition ability for flint-and-steel alternative; live landmark gates for all applicable items/blocks. Choose fire charge for mood with finite consumption. No gate change expected.",
+      "dependencies": [
+        "F_CONTEXT",
+        "F_ACCOUNTING",
+        "F_NATIVE_LIFECYCLE"
+      ],
+      "expectedCertifiedGain": 4,
+      "requiredStaticGates": [
+        "Parse the exact current conversion with real 26.2 registries and source-backed tags; match every converted field to frozen semantic intent. Codec success alone is insufficient (raider control demonstrates this).",
+        "Retain scalar/list worldgen HolderSet forms and scoped existing enchantment normalization; do not introduce a generic biome/structure/enchantment rewrite or broaden the old fallback allowlist.",
+        "Every error chunk/field path must be accounted for; unsupported contexts, unknown IDs, missing tags, invalid levels/components and unknown predicate fields stay fail-closed.",
+        "Byte/hash diff all converted advancements. Only the explicitly mapped raider predicate and required freshness marker changes may differ semantically; denominator stays 1152.",
+        "Keep historical Phase A tests/artifacts readable as snapshots; add separate FINAL19 expectations. Do not make STATIC_FAIL promote merely because runtime GREEN exists.",
+        "Compose only actual typed item+block tag dependencies with complete diagnostic coverage. Reuse item/block/contextual GameTests. Assert candle insertion, lighting, each cleaning mutation and native axe unwaxing. Wax-off uses AxeItem native pre-setBlock trigger; do not move predicate onto the already unwaxed post-state."
+      ],
+      "requiredRuntimeGates": [
+        "Plain joined ServerPlayer, PlayerList.placeNewPlayer, registered real connection, ServerboundPlayerLoadedPacket, SURVIVAL. Read live advancement/ability config only after loading.",
+        "Record frozen/source/converter/runtime-pack/config/catalog/matrix fingerprints, unique new runId, exact criterion and requirement group, relevant entities/items/components/tags/biomes/structures.",
+        "Assert criterion and advancement incomplete before action; perform native packet/gameplay action; observe named criterion false -> true, actual action state transition, then AND-of-OR completion.",
+        "No direct CriteriaTriggers.trigger calls, no manual grants or awards, no setTame/set progress as proof, no predicate stubs, no bypassed production gates or fabricated HolderSet membership.",
+        "Finite resources, finite attempts/ticks and SURVIVAL where applicable. Fixture state must be a legitimate game state; registry data, enchanting combinations and source predicates must be independently checked.",
+        "Fail on missing tags/holders, warnings, disconnect/network cleanup debt, leaked players/entities/tickets/connections, timing out, or a predicate only partially proven. Restore owned world/biome/structure/block fixtures and remove actors.",
+        "TEMP diagnostic output is never promoted. Later exact certification uses fresh persistent evidence and its fingerprint validation; preserve accepted historical runIds and the terminal Phase A snapshot.",
+        {
+          "advancementId": "blazeandcave:building/happy_birthday",
+          "nativeBoundary": "CakeBlock.useItemOn candle insertion -> ServerPlayerGameMode.useItemOn -> ITEM_USED_ON_BLOCK (post-use candle-cake block, original used item).",
+          "action": "Start ordinary cake, add one finite candle normally; observe candle_cake and consumed candle. Predicate target is the resulting candle-cake, not a static prefilled display.",
+          "requirementGroups": 1,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 1
+        },
+        {
+          "advancementId": "blazeandcave:building/setting_up_the_mood",
+          "nativeBoundary": "FireChargeItem/FlintAndSteelItem.useOn -> block lit mutation -> gameMode ITEM_USED_ON_BLOCK.",
+          "action": "Use one finite fire charge on unlit tagged candle/cake, observe lit state and count decrease. Flint/steel alternative additionally requires its ability and durability delta.",
+          "requirementGroups": 1,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 1
+        },
+        {
+          "advancementId": "blazeandcave:building/washing_machine",
+          "nativeBoundary": "AbstractCauldronBlock.useItemOn -> CauldronInteraction clean mutations -> gameMode ITEM_USED_ON_BLOCK.",
+          "action": "Three normal uses at water cauldrons: dyed leather loses dye, patterned banner loses pattern, colored shulker becomes uncolored; observe water drop and each separate criterion. Unlock USE_CAULDRON.",
+          "requirementGroups": 3,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 3
+        },
+        {
+          "advancementId": "minecraft:husbandry/wax_off",
+          "nativeBoundary": "AxeItem.useOn emits native ITEM_USED_ON_BLOCK before Level.setBlock unwaxes; subsequent gameMode trigger is post-mutation. This preserves frozen waxed-block test.",
+          "action": "One tagged waxed copper block and finite wooden axe; live material ability unlocked. Normal packet must unwax, decrease durability and produce criterion through native pre-mutation path.",
+          "requirementGroups": 1,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 1
+        }
+      ],
+      "requiredRegressionGates": [
+        "Missing nested tag or unknown member remains a hard failure; retain custom waxed_copper_blocks frozen membership (36 entries), not a broader new vanilla tag.",
+        "Test no-op interactions, wrong item/block, unlit/undyeable cases and locked abilities; correct interaction success must be accompanied by actual mutation.",
+        "RECIPE_CRAFTED_WAX_ON is a different trigger and cannot prove wax_off. Successful single-tag families must keep exact classified dependencies."
+      ],
+      "canaryStrategy": "Happy birthday candle insertion plus wax_off pre-mutation trigger canary; exact four advancements/six groups next.",
+      "exactStrategy": "Compose only actual typed item+block tag dependencies with complete diagnostic coverage. Reuse item/block/contextual GameTests. Assert candle insertion, lighting, each cleaning mutation and native axe unwaxing. Wax-off uses AxeItem native pre-setBlock trigger; do not move predicate onto the already unwaxed post-state.",
+      "promotionStrategy": "Later implementation only: validate prerequisites, canary, then exact complete family receipts. Reconcile every ID independently using its frozen AND-of-OR groups; append FINAL19 evidence/accounting as a new stage. Historical Phase A canonical/frontier/reconciliation/accepted evidence remain immutable. No promotion in this audit.",
+      "invalidationRisks": [
+        "A source/converted/converter/config/marker/class/resource/tag/matrix/catalog hash change invalidates the affected proof; do not reuse stale save copies or broaden old fallback policy.",
+        "Missing nested tag or unknown member remains a hard failure; retain custom waxed_copper_blocks frozen membership (36 entries), not a broader new vanilla tag.",
+        "Test no-op interactions, wrong item/block, unlit/undyeable cases and locked abilities; correct interaction success must be accompanied by actual mutation.",
+        "RECIPE_CRAFTED_WAX_ON is a different trigger and cannot prove wax_off. Successful single-tag families must keep exact classified dependencies."
+      ],
+      "recommendedOperationalOrder": 3,
+      "reasonForOrder": "One two-tag composer improvement unlocks four IDs with six small, existing native-action fixtures."
+    },
+    {
+      "sharedRootCauseId": "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+      "familyName": "Inventory item tag plus enchantment HolderSet context",
+      "advancementIds": [
+        "blazeandcave:enchanting/master_armorer",
+        "blazeandcave:enchanting/master_axeman",
+        "blazeandcave:enchanting/master_digger",
+        "blazeandcave:enchanting/master_farmer",
+        "blazeandcave:enchanting/master_knight",
+        "blazeandcave:enchanting/master_miner"
+      ],
+      "advancementCount": 6,
+      "criteriaCount": 35,
+      "requirementGroupCount": 9,
+      "rootCause": "The converter already performs the intended direct enchantment scalar -> singleton list migration under item predicates. Each master combines item tag and enchantment registry dependencies in conditions.items[0].predicates.enchantments. Multi-context classification accepts enchantments only under conditions.player[0].predicate.equipment; inventory item predicates are excluded. Pure tag/enchantment classifiers cannot account for the other dimension. All 35 branches parse and have a legal supported-item/max-level/nonexclusive witness.",
+      "primaryFixLayer": "STATIC_ANALYZER",
+      "semanticHomogeneity": "Same inventory item-tag + enchantment-context defect; armor has four AND groups, tools/sword have one OR group each.",
+      "implementationCost": "MEDIUM static; LOW/MEDIUM native pickup reuse for nine group witnesses",
+      "semanticRisk": "MEDIUM: weakening enchantment conjunctions, requiring all OR branches, illegal combinations or wrong component path",
+      "harnessReuse": [
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAPureEnchantmentInventoryChangedGameTest.java",
+          "sha256": "71dd9b2ee907cff8f7fe68bd124a17fd96f417fdeb2f2947f2f845f8f44a5293",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAEnchantmentInventoryChangedGameTest.java",
+          "sha256": "30daf0eb5033e1e2c31abee4240914ff0a9dc786904dd46b6e4030336e3bfb42",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest.java",
+          "sha256": "35ad9c078aabd5940949d8af34f7e9e51f5dd8883aa275b94e681358d2906f11",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        }
+      ],
+      "productionGateRisk": "Native ItemEntity pickup avoids armor-equipping and tool-use gates. Do not infer an armor-wear gate from master_armorer name. Ground pickup remains SURVIVAL at an unlocked site.",
+      "dependencies": [
+        "F_CONTEXT",
+        "F_ACCOUNTING",
+        "F_NATIVE_LIFECYCLE"
+      ],
+      "expectedCertifiedGain": 6,
+      "requiredStaticGates": [
+        "Parse the exact current conversion with real 26.2 registries and source-backed tags; match every converted field to frozen semantic intent. Codec success alone is insufficient (raider control demonstrates this).",
+        "Retain scalar/list worldgen HolderSet forms and scoped existing enchantment normalization; do not introduce a generic biome/structure/enchantment rewrite or broaden the old fallback allowlist.",
+        "Every error chunk/field path must be accounted for; unsupported contexts, unknown IDs, missing tags, invalid levels/components and unknown predicate fields stay fail-closed.",
+        "Byte/hash diff all converted advancements. Only the explicitly mapped raider predicate and required freshness marker changes may differ semantically; denominator stays 1152.",
+        "Keep historical Phase A tests/artifacts readable as snapshots; add separate FINAL19 expectations. Do not make STATIC_FAIL promote merely because runtime GREEN exists.",
+        "Extend typed diagnostic composition to exact inventory item predicate paths, retaining each enchantment conjunction. Audit all 35 branch definitions against live supported_items, max_level and exclusive_set. Reuse existing inventory pickup lifecycle. Nine true group witnesses suffice for completion across six advancements; optional other OR-branch runtime coverage must not inflate gain."
+      ],
+      "requiredRuntimeGates": [
+        "Plain joined ServerPlayer, PlayerList.placeNewPlayer, registered real connection, ServerboundPlayerLoadedPacket, SURVIVAL. Read live advancement/ability config only after loading.",
+        "Record frozen/source/converter/runtime-pack/config/catalog/matrix fingerprints, unique new runId, exact criterion and requirement group, relevant entities/items/components/tags/biomes/structures.",
+        "Assert criterion and advancement incomplete before action; perform native packet/gameplay action; observe named criterion false -> true, actual action state transition, then AND-of-OR completion.",
+        "No direct CriteriaTriggers.trigger calls, no manual grants or awards, no setTame/set progress as proof, no predicate stubs, no bypassed production gates or fabricated HolderSet membership.",
+        "Finite resources, finite attempts/ticks and SURVIVAL where applicable. Fixture state must be a legitimate game state; registry data, enchanting combinations and source predicates must be independently checked.",
+        "Fail on missing tags/holders, warnings, disconnect/network cleanup debt, leaked players/entities/tickets/connections, timing out, or a predicate only partially proven. Restore owned world/biome/structure/block fixtures and remove actors.",
+        "TEMP diagnostic output is never promoted. Later exact certification uses fresh persistent evidence and its fingerprint validation; preserve accepted historical runIds and the terminal Phase A snapshot.",
+        {
+          "advancementId": "blazeandcave:enchanting/master_armorer",
+          "nativeBoundary": "ItemEntity.playerTouch -> Inventory.add -> InventoryChangedTrigger inventory-wide item/enchantment component predicate matching.",
+          "action": "Use finite legal diamond armor witness(es) constructed from real registry-supported compatible enchantments at required levels as fixture items. Ground ItemEntity pickup must cause native inventory transition and named criterion; no direct add-trigger or award. Pick one branch in each requirement group, all 35 definitions independently validated.",
+          "requirementGroups": 4,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 4
+        },
+        {
+          "advancementId": "blazeandcave:enchanting/master_axeman",
+          "nativeBoundary": "ItemEntity.playerTouch -> Inventory.add -> InventoryChangedTrigger inventory-wide item/enchantment component predicate matching.",
+          "action": "Use finite legal diamond_axe witness(es) constructed from real registry-supported compatible enchantments at required levels as fixture items. Ground ItemEntity pickup must cause native inventory transition and named criterion; no direct add-trigger or award. Pick one branch in each requirement group, all 35 definitions independently validated.",
+          "requirementGroups": 1,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 1
+        },
+        {
+          "advancementId": "blazeandcave:enchanting/master_digger",
+          "nativeBoundary": "ItemEntity.playerTouch -> Inventory.add -> InventoryChangedTrigger inventory-wide item/enchantment component predicate matching.",
+          "action": "Use finite legal diamond_shovel witness(es) constructed from real registry-supported compatible enchantments at required levels as fixture items. Ground ItemEntity pickup must cause native inventory transition and named criterion; no direct add-trigger or award. Pick one branch in each requirement group, all 35 definitions independently validated.",
+          "requirementGroups": 1,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 1
+        },
+        {
+          "advancementId": "blazeandcave:enchanting/master_farmer",
+          "nativeBoundary": "ItemEntity.playerTouch -> Inventory.add -> InventoryChangedTrigger inventory-wide item/enchantment component predicate matching.",
+          "action": "Use finite legal diamond_hoe witness(es) constructed from real registry-supported compatible enchantments at required levels as fixture items. Ground ItemEntity pickup must cause native inventory transition and named criterion; no direct add-trigger or award. Pick one branch in each requirement group, all 35 definitions independently validated.",
+          "requirementGroups": 1,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 1
+        },
+        {
+          "advancementId": "blazeandcave:enchanting/master_knight",
+          "nativeBoundary": "ItemEntity.playerTouch -> Inventory.add -> InventoryChangedTrigger inventory-wide item/enchantment component predicate matching.",
+          "action": "Use finite legal diamond_sword witness(es) constructed from real registry-supported compatible enchantments at required levels as fixture items. Ground ItemEntity pickup must cause native inventory transition and named criterion; no direct add-trigger or award. Pick one branch in each requirement group, all 35 definitions independently validated.",
+          "requirementGroups": 1,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 1
+        },
+        {
+          "advancementId": "blazeandcave:enchanting/master_miner",
+          "nativeBoundary": "ItemEntity.playerTouch -> Inventory.add -> InventoryChangedTrigger inventory-wide item/enchantment component predicate matching.",
+          "action": "Use finite legal diamond_pickaxe witness(es) constructed from real registry-supported compatible enchantments at required levels as fixture items. Ground ItemEntity pickup must cause native inventory transition and named criterion; no direct add-trigger or award. Pick one branch in each requirement group, all 35 definitions independently validated.",
+          "requirementGroups": 1,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 1
+        }
+      ],
+      "requiredRegressionGates": [
+        "Retain successful PURE_ENCHANTMENT_INVENTORY_CHANGED, ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED and ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16 behavior and source hashes.",
+        "Fortune/Silk Touch, armor protection alternatives, Sharpness/Smite/Bane and Depth Strider/Frost Walker are alternatives across criteria, never simultaneous requirements. All 35 selected branch witnesses are valid.",
+        "Reject missing item tag, enchantment registry/ID, one missing/underlevel enchantment or unsupported item. Full registry lookup does not become a generic enchantment fallback."
+      ],
+      "canaryStrategy": "Diamond helmet protection branch plus diamond axe sharpness/fortune branch; exact stage includes four armor groups and one group for each of five tools/sword.",
+      "exactStrategy": "Extend typed diagnostic composition to exact inventory item predicate paths, retaining each enchantment conjunction. Audit all 35 branch definitions against live supported_items, max_level and exclusive_set. Reuse existing inventory pickup lifecycle. Nine true group witnesses suffice for completion across six advancements; optional other OR-branch runtime coverage must not inflate gain.",
+      "promotionStrategy": "Later implementation only: validate prerequisites, canary, then exact complete family receipts. Reconcile every ID independently using its frozen AND-of-OR groups; append FINAL19 evidence/accounting as a new stage. Historical Phase A canonical/frontier/reconciliation/accepted evidence remain immutable. No promotion in this audit.",
+      "invalidationRisks": [
+        "A source/converted/converter/config/marker/class/resource/tag/matrix/catalog hash change invalidates the affected proof; do not reuse stale save copies or broaden old fallback policy.",
+        "Retain successful PURE_ENCHANTMENT_INVENTORY_CHANGED, ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED and ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16 behavior and source hashes.",
+        "Fortune/Silk Touch, armor protection alternatives, Sharpness/Smite/Bane and Depth Strider/Frost Walker are alternatives across criteria, never simultaneous requirements. All 35 selected branch witnesses are valid.",
+        "Reject missing item tag, enchantment registry/ID, one missing/underlevel enchantment or unsupported item. Full registry lookup does not become a generic enchantment fallback."
+      ],
+      "recommendedOperationalOrder": 4,
+      "reasonForOrder": "Highest certified gain (six) per shared repair; existing pickup executors and static legality checks minimize semantic changes."
+    },
+    {
+      "sharedRootCauseId": "MIXED_WORLDGEN_PREDICATE_CONTEXT",
+      "familyName": "Worldgen HolderSet combined with another predicate context",
+      "advancementIds": [
+        "blazeandcave:biomes/boatception",
+        "blazeandcave:enchanting/let_it_go"
+      ],
+      "advancementCount": 2,
+      "criteriaCount": 5,
+      "requirementGroupCount": 2,
+      "rootCause": "The scalar structure/biome selectors are valid HolderSetCodec forms. Existing pure location classifier requires only location errors; it cannot compose boat entity-tag+structure or boots-enchantment+deep-ocean contexts. Existing multi-context classifier combines tags with equipment enchantments but omits worldgen. Both complete definitions and all five criteria parse with exact source-backed contexts.",
+      "primaryFixLayer": "STATIC_ANALYZER",
+      "semanticHomogeneity": "Shared missing worldgen-plus-other typed dependency composition. Boat and Frost Walker native paths remain distinct subcases, never one common gameplay executor.",
+      "implementationCost": "MEDIUM static; MEDIUM boat and Frost Walker native world fixtures",
+      "semanticRisk": "HIGH for real structure membership and pre/post frosted-ice movement; no semantic change required",
+      "harnessReuse": [
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAEntityTypeTagStartedRidingGameTest.java",
+          "sha256": "27701dddd505e5a2ed11157ec3d9b2d9a34078c34308ce761f37f532084236e1",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAStructureLocationGameTest.java",
+          "sha256": "52bed4e275ecd6bb5071a37e5315e034cc0a4c824361919ec34b6c77d1de13bc",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseASingletonVillageBellGameTest.java",
+          "sha256": "697805ba61e92b69d93031ee9599ba2649d6d71bc4c568a022ac458b4e97ede6",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseALocationHolderSetWorldgenGameTest.java",
+          "sha256": "89d46ca8f37f8cd61136936796d52f051b41d1eed8a0d43fc8d5892248e452e8",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseALocationMovementGameTest.java",
+          "sha256": "0043073989a2dba0866e78798ad7a66182350a4197ce3f178b4b6ccd387e89d8",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest.java",
+          "sha256": "35ad9c078aabd5940949d8af34f7e9e51f5dd8883aa275b94e681358d2906f11",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        }
+      ],
+      "productionGateRisk": "Boat GET_INTO_BOAT and shipwreck landmark threshold must be unlocked using live config. Boots equip/movement gates need live checking; preserve spectator exclusion and grounded non-riding Frost Walker activation.",
+      "dependencies": [
+        "F_CONTEXT",
+        "F_ACCOUNTING",
+        "F_NATIVE_LIFECYCLE",
+        "I_LET_IT_GO"
+      ],
+      "expectedCertifiedGain": 2,
+      "requiredStaticGates": [
+        "Parse the exact current conversion with real 26.2 registries and source-backed tags; match every converted field to frozen semantic intent. Codec success alone is insufficient (raider control demonstrates this).",
+        "Retain scalar/list worldgen HolderSet forms and scoped existing enchantment normalization; do not introduce a generic biome/structure/enchantment rewrite or broaden the old fallback allowlist.",
+        "Every error chunk/field path must be accounted for; unsupported contexts, unknown IDs, missing tags, invalid levels/components and unknown predicate fields stay fail-closed.",
+        "Byte/hash diff all converted advancements. Only the explicitly mapped raider predicate and required freshness marker changes may differ semantically; denominator stays 1152.",
+        "Keep historical Phase A tests/artifacts readable as snapshots; add separate FINAL19 expectations. Do not make STATIC_FAIL promote merely because runtime GREEN exists.",
+        "Compose worldgen/structure or biome dependencies with actual tag/enchantment paths; no generic scalar/list migration. Boat proof uses actual registered/generated shipwreck OR beached-shipwreck start and native mounting. Let-it-go proof equips a legal Frost Walker boot, walks on water at a qualifying deep-ocean biome and observes native frosted-ice and LOCATION tick. One of four OR branches satisfies that advancement."
+      ],
+      "requiredRuntimeGates": [
+        "Plain joined ServerPlayer, PlayerList.placeNewPlayer, registered real connection, ServerboundPlayerLoadedPacket, SURVIVAL. Read live advancement/ability config only after loading.",
+        "Record frozen/source/converter/runtime-pack/config/catalog/matrix fingerprints, unique new runId, exact criterion and requirement group, relevant entities/items/components/tags/biomes/structures.",
+        "Assert criterion and advancement incomplete before action; perform native packet/gameplay action; observe named criterion false -> true, actual action state transition, then AND-of-OR completion.",
+        "No direct CriteriaTriggers.trigger calls, no manual grants or awards, no setTame/set progress as proof, no predicate stubs, no bypassed production gates or fabricated HolderSet membership.",
+        "Finite resources, finite attempts/ticks and SURVIVAL where applicable. Fixture state must be a legitimate game state; registry data, enchanting combinations and source predicates must be independently checked.",
+        "Fail on missing tags/holders, warnings, disconnect/network cleanup debt, leaked players/entities/tickets/connections, timing out, or a predicate only partially proven. Restore owned world/biome/structure/block fixtures and remove actors.",
+        "TEMP diagnostic output is never promoted. Later exact certification uses fresh persistent evidence and its fingerprint validation; preserve accepted historical runIds and the terminal Phase A snapshot.",
+        {
+          "advancementId": "blazeandcave:biomes/boatception",
+          "nativeBoundary": "ServerboundInteractPacket -> AbstractBoat.interact/startRiding -> native StartRidingTrigger; vehicle LocationPredicate checks StructureManager valid structure at vehicle position.",
+          "action": "Use a boat-tag oak boat at a genuine generated/registered shipwreck start; send ordinary interaction, observe mounted passenger and criterion. Inspect real structure presence before action. Restore only owned fixtures afterward.",
+          "requirementGroups": 1,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 1
+        },
+        {
+          "advancementId": "blazeandcave:enchanting/let_it_go",
+          "nativeBoundary": "EnchantmentHelper location_changed effect minecraft:replace_disk makes frosted_ice under grounded non-riding player; ServerPlayer.doTick LOCATION checks feet/stepping_on/biome.",
+          "action": "Legal Frost Walker diamond boots at deep_ocean, finite SURVIVAL normal equip/move, native freezing then stepping-on proof. All four branches parse; one true branch completes the single OR group.",
+          "requirementGroups": 1,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 1
+        }
+      ],
+      "requiredRegressionGates": [
+        "Boat mounted outside structure/nonboat remains false; structure predicate evaluates vehicle location, not a display-name or player biome proxy.",
+        "Let-it-go protected control is reopened only after typed semantic proof and replacement wrong-biome/boots/ice/enchantment/spectator guards.",
+        "Both shipwreck branches and all four deep-ocean branches must parse unchanged. Existing ENTITY_TYPE_TAG_STARTED_RIDING and worldgen family evidence remains historical."
+      ],
+      "canaryStrategy": "Boat tag member outside shipwreck negative then legitimate shipwreck mount; Frost Walker on ordinary/deep-ocean ice negative then native water-to-frosted-ice movement.",
+      "exactStrategy": "Compose worldgen/structure or biome dependencies with actual tag/enchantment paths; no generic scalar/list migration. Boat proof uses actual registered/generated shipwreck OR beached-shipwreck start and native mounting. Let-it-go proof equips a legal Frost Walker boot, walks on water at a qualifying deep-ocean biome and observes native frosted-ice and LOCATION tick. One of four OR branches satisfies that advancement.",
+      "promotionStrategy": "Later implementation only: validate prerequisites, canary, then exact complete family receipts. Reconcile every ID independently using its frozen AND-of-OR groups; append FINAL19 evidence/accounting as a new stage. Historical Phase A canonical/frontier/reconciliation/accepted evidence remain immutable. No promotion in this audit.",
+      "invalidationRisks": [
+        "A source/converted/converter/config/marker/class/resource/tag/matrix/catalog hash change invalidates the affected proof; do not reuse stale save copies or broaden old fallback policy.",
+        "Boat mounted outside structure/nonboat remains false; structure predicate evaluates vehicle location, not a display-name or player biome proxy.",
+        "Let-it-go protected control is reopened only after typed semantic proof and replacement wrong-biome/boots/ice/enchantment/spectator guards.",
+        "Both shipwreck branches and all four deep-ocean branches must parse unchanged. Existing ENTITY_TYPE_TAG_STARTED_RIDING and worldgen family evidence remains historical."
+      ],
+      "recommendedOperationalOrder": 5,
+      "reasonForOrder": "Depends on working typed worldgen foundation and explicit protected-control replacement; two distinct native fixtures deserve isolation."
+    },
+    {
+      "sharedRootCauseId": "RAIDER_PREDICATE_KEY_MIGRATION",
+      "familyName": "Raider snake_case field semantics lost by migration",
+      "advancementIds": [
+        "minecraft:adventure/voluntary_exile"
+      ],
+      "advancementCount": 1,
+      "criteriaCount": 1,
+      "requirementGroupCount": 1,
+      "rootCause": "ExternalPackCompatibility.transformRaiderTypeSpecificObject rewrites is_captain -> isCaptain and has_raid -> hasRaid. Actual 26.2 RaiderPredicate.CODEC reads is_captain/has_raid, both default false. Current voluntary_exile decodes hasRaid=false,isCaptain=false although frozen is_captain=true. Historical official 1.21.4 has the same defaults, so preserving omitted has_raid=false needs no product choice. This is a proven gameplay contract bug, not just a missing receipt.",
+      "primaryFixLayer": "COMPAT_MIGRATION",
+      "semanticHomogeneity": "One proven serialization-field preservation defect. Only one unresolved target; two already-certified definitions are a zero-gain mandatory regression surface.",
+      "implementationCost": "LOW narrow migration; MEDIUM semantic regression/native captain kill",
+      "semanticRisk": "HIGH: ignored unknown keys silently parse, permitting noncaptain and rejecting true captain; certified feeling_ill has the same has_raid loss",
+      "harnessReuse": [
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAEntityTypeTagPlayerKilledEntityGameTest.java",
+          "sha256": "a4269a5fcf4343f308fa01002191b41191aeae83a1e7168f08476b756cf34e7d",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAPlayerKilledEntityRemainderGameTest.java",
+          "sha256": "0ec050d5d0229e960307c8a7ea4406f901ec83df9c0d12b215fa6838f33cc054",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        }
+      ],
+      "productionGateRisk": "Normal legitimate kill at unlocked landmark with live attack/tool abilities. Captain requires isPatrolLeader plus Raid.getOminousBannerInstance at HEAD and no active raid. No Bad Omen effect, bottle use or active-raid participation substitutes for frozen criterion.",
+      "dependencies": [
+        "F_RAIDER",
+        "F_ACCOUNTING",
+        "F_NATIVE_LIFECYCLE",
+        "I_VOLUNTARY_EXILE",
+        "G_CERTIFIED_RAIDER_INTEGRITY"
+      ],
+      "expectedCertifiedGain": 1,
+      "requiredStaticGates": [
+        "Parse the exact current conversion with real 26.2 registries and source-backed tags; match every converted field to frozen semantic intent. Codec success alone is insufficient (raider control demonstrates this).",
+        "Retain scalar/list worldgen HolderSet forms and scoped existing enchantment normalization; do not introduce a generic biome/structure/enchantment rewrite or broaden the old fallback allowlist.",
+        "Every error chunk/field path must be accounted for; unsupported contexts, unknown IDs, missing tags, invalid levels/components and unknown predicate fields stay fail-closed.",
+        "Byte/hash diff all converted advancements. Only the explicitly mapped raider predicate and required freshness marker changes may differ semantically; denominator stays 1152.",
+        "Keep historical Phase A tests/artifacts readable as snapshots; add separate FINAL19 expectations. Do not make STATIC_FAIL promote merely because runtime GREEN exists.",
+        "Later preserve has_raid/is_captain exactly within the existing raider type-specific transform; keep migrated outer type_specific/raider field and type discriminator as expected by current codec. Regenerate current compatible copy with an explicit freshness marker/fingerprint so old r15 copies cannot silently survive. Verify all three affected frozen definitions. Native player kill proves the corrected voluntary_exile predicate."
+      ],
+      "requiredRuntimeGates": [
+        "Plain joined ServerPlayer, PlayerList.placeNewPlayer, registered real connection, ServerboundPlayerLoadedPacket, SURVIVAL. Read live advancement/ability config only after loading.",
+        "Record frozen/source/converter/runtime-pack/config/catalog/matrix fingerprints, unique new runId, exact criterion and requirement group, relevant entities/items/components/tags/biomes/structures.",
+        "Assert criterion and advancement incomplete before action; perform native packet/gameplay action; observe named criterion false -> true, actual action state transition, then AND-of-OR completion.",
+        "No direct CriteriaTriggers.trigger calls, no manual grants or awards, no setTame/set progress as proof, no predicate stubs, no bypassed production gates or fabricated HolderSet membership.",
+        "Finite resources, finite attempts/ticks and SURVIVAL where applicable. Fixture state must be a legitimate game state; registry data, enchanting combinations and source predicates must be independently checked.",
+        "Fail on missing tags/holders, warnings, disconnect/network cleanup debt, leaked players/entities/tickets/connections, timing out, or a predicate only partially proven. Restore owned world/biome/structure/block fixtures and remove actors.",
+        "TEMP diagnostic output is never promoted. Later exact certification uses fresh persistent evidence and its fingerprint validation; preserve accepted historical runIds and the terminal Phase A snapshot.",
+        {
+          "advancementId": "minecraft:adventure/voluntary_exile",
+          "nativeBoundary": "RaiderPredicate.CODEC snake_case booleans -> Raider.isCaptain (patrol leader and exact ominous head banner) + hasActiveRaid; native death -> ServerPlayer.awardKillScore -> PLAYER_KILLED_ENTITY.",
+          "action": "AFTER narrow migration only: ordinary kill of valid no-active-raid patrol captain wearing native ominous banner, with native death and correct player credit. Pair noncaptain, active raid and flag/banner mismatch negatives.",
+          "requirementGroups": 1,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 1
+        }
+      ],
+      "requiredRegressionGates": [
+        "All and only three frozen definitions contain raider boolean predicates: voluntary_exile is_captain=true; feeling_ill five has_raid=true criteria; dungeon_crawler three has_raid=false criteria. Other advancement criteria stay byte/semantically unchanged.",
+        "Already STATIC_CERTIFIED feeling_ill currently decodes all five required raid booleans as false. Repair/revalidate this as certified regression debt with zero counted gain; do not add it as a twentieth unresolved target or blindly trust 1133 baseline gameplay correctness.",
+        "Negative ordinary raider, correct banner without patrol-leader flag, active-raid captain, outsider entity tag; after fix none may satisfy voluntary_exile. Assert omitted fields keep false and explicit false remains false.",
+        "Reject cached pre-fix packs even with compat_26_2_r15; retain source SHA, root override and llamaCarpetNbtMapping=equipment.body guarantees. Existing llama data remains exact."
+      ],
+      "canaryStrategy": "Decode converted predicate and assert actual boolean fields; normal noncaptain negative then true no-raid captain native kill positive. Additionally feeling_ill raid-vs-nonraid semantic canary is mandatory before final target claim.",
+      "exactStrategy": "Later preserve has_raid/is_captain exactly within the existing raider type-specific transform; keep migrated outer type_specific/raider field and type discriminator as expected by current codec. Regenerate current compatible copy with an explicit freshness marker/fingerprint so old r15 copies cannot silently survive. Verify all three affected frozen definitions. Native player kill proves the corrected voluntary_exile predicate.",
+      "promotionStrategy": "Later implementation only: validate prerequisites, canary, then exact complete family receipts. Reconcile every ID independently using its frozen AND-of-OR groups; append FINAL19 evidence/accounting as a new stage. Historical Phase A canonical/frontier/reconciliation/accepted evidence remain immutable. No promotion in this audit.",
+      "invalidationRisks": [
+        "A source/converted/converter/config/marker/class/resource/tag/matrix/catalog hash change invalidates the affected proof; do not reuse stale save copies or broaden old fallback policy.",
+        "All and only three frozen definitions contain raider boolean predicates: voluntary_exile is_captain=true; feeling_ill five has_raid=true criteria; dungeon_crawler three has_raid=false criteria. Other advancement criteria stay byte/semantically unchanged.",
+        "Already STATIC_CERTIFIED feeling_ill currently decodes all five required raid booleans as false. Repair/revalidate this as certified regression debt with zero counted gain; do not add it as a twentieth unresolved target or blindly trust 1133 baseline gameplay correctness.",
+        "Negative ordinary raider, correct banner without patrol-leader flag, active-raid captain, outsider entity tag; after fix none may satisfy voluntary_exile. Assert omitted fields keep false and explicit false remains false.",
+        "Reject cached pre-fix packs even with compat_26_2_r15; retain source SHA, root override and llamaCarpetNbtMapping=equipment.body guarantees. Existing llama data remains exact."
+      ],
+      "recommendedOperationalOrder": 6,
+      "reasonForOrder": "Real semantic repair has a wider integrity gate despite only one target; do it after analyzer/lifecycle baselines and before any claim of real 1152."
+    },
+    {
+      "sharedRootCauseId": "SKELETON_PROJECTILE_BLOCK_RUNTIME_PROOF",
+      "familyName": "Native shield block of skeleton-owned projectile",
+      "advancementIds": [
+        "minecraft:story/deflect_arrow"
+      ],
+      "advancementCount": 1,
+      "criteriaCount": 1,
+      "requirementGroupCount": 1,
+      "rootCause": "Current source-backed definition correctly requires blocked=true plus damage type projectile tag and skeleton source-entity tag. Its historical RUNTIME_DEFERRED status comes from missing skeleton tag context after display shield/banner registry fallback. No current migration or gameplay bug was found; there is no accepted native shield/projectile false-to-true receipt. Existing damage/using-item/packet lifecycle is reusable, but exact ranged skeleton shield coordination is new test orchestration.",
+      "primaryFixLayer": "RUNTIME_EVIDENCE_ONLY",
+      "semanticHomogeneity": "One exact native predicate proof, deliberately narrower than the current vanilla deflect_arrow definition.",
+      "implementationCost": "MEDIUM/HIGH timing, heading, shielding and projectile owner fixtures",
+      "semanticRisk": "HIGH: synthetic damage/direct trigger, wrong owner, blocked but nonprojectile, zero network cleanup debt",
+      "harnessReuse": [
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAPlayerHurtEntityDamageSourceGameTest.java",
+          "sha256": "75f5786057e1042f29f03eb0b743a159d217669dca2324111859093c45ad1365",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAUsingItemGameTest.java",
+          "sha256": "37848bab95bf2d0105fea8e421d0336c4237c5d0b90914324847c2f0603cc9e3",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        },
+        {
+          "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseAShotCrossbowGameTest.java",
+          "sha256": "10a864ef05292e4c4b3847bc74ea987969a51d8f47ec5c862a861f36e7dd2eb1",
+          "claim": "Reuse lifecycle/native action infrastructure, not historical evidence for this target."
+        }
+      ],
+      "productionGateRisk": "ShieldItemMixin targets Item.use and gates USE_SHIELD. Unlock using the loaded live config; face a real skeleton-fired arrow and hold shield beyond block delay. Do not bypass BlocksAttacks or force blocked=true.",
+      "dependencies": [
+        "F_CONTEXT",
+        "F_ACCOUNTING",
+        "F_NATIVE_LIFECYCLE",
+        "I_DEFLECT_ARROW"
+      ],
+      "expectedCertifiedGain": 1,
+      "requiredStaticGates": [
+        "Parse the exact current conversion with real 26.2 registries and source-backed tags; match every converted field to frozen semantic intent. Codec success alone is insufficient (raider control demonstrates this).",
+        "Retain scalar/list worldgen HolderSet forms and scoped existing enchantment normalization; do not introduce a generic biome/structure/enchantment rewrite or broaden the old fallback allowlist.",
+        "Every error chunk/field path must be accounted for; unsupported contexts, unknown IDs, missing tags, invalid levels/components and unknown predicate fields stay fail-closed.",
+        "Byte/hash diff all converted advancements. Only the explicitly mapped raider predicate and required freshness marker changes may differ semantically; denominator stays 1152.",
+        "Keep historical Phase A tests/artifacts readable as snapshots; add separate FINAL19 expectations. Do not make STATIC_FAIL promote merely because runtime GREEN exists.",
+        "Reuse joined-player/packet lifecycle and damage-source provenance infrastructure; add a finite skeleton AI ranged attack/shield coordinator. Arrow must have actual skeleton owner, projectile tag and native blocked amount. Observe LivingEntity native hurt/BlocksAttacks -> ENTITY_HURT_PLAYER and target receipt. Do not copy the relaxed 26.2 vanilla any-blocked-projectile predicate."
+      ],
+      "requiredRuntimeGates": [
+        "Plain joined ServerPlayer, PlayerList.placeNewPlayer, registered real connection, ServerboundPlayerLoadedPacket, SURVIVAL. Read live advancement/ability config only after loading.",
+        "Record frozen/source/converter/runtime-pack/config/catalog/matrix fingerprints, unique new runId, exact criterion and requirement group, relevant entities/items/components/tags/biomes/structures.",
+        "Assert criterion and advancement incomplete before action; perform native packet/gameplay action; observe named criterion false -> true, actual action state transition, then AND-of-OR completion.",
+        "No direct CriteriaTriggers.trigger calls, no manual grants or awards, no setTame/set progress as proof, no predicate stubs, no bypassed production gates or fabricated HolderSet membership.",
+        "Finite resources, finite attempts/ticks and SURVIVAL where applicable. Fixture state must be a legitimate game state; registry data, enchanting combinations and source predicates must be independently checked.",
+        "Fail on missing tags/holders, warnings, disconnect/network cleanup debt, leaked players/entities/tickets/connections, timing out, or a predicate only partially proven. Restore owned world/biome/structure/block fixtures and remove actors.",
+        "TEMP diagnostic output is never promoted. Later exact certification uses fresh persistent evidence and its fingerprint validation; preserve accepted historical runIds and the terminal Phase A snapshot.",
+        {
+          "advancementId": "minecraft:story/deflect_arrow",
+          "nativeBoundary": "Real skeleton AI bow shot with owner -> LivingEntity.hurtServer native BlocksAttacks shielding -> ENTITY_HURT_PLAYER with blocked boolean, projectile damage tag and skeleton source.",
+          "action": "Activate finite shield through normal use packet after live USE_SHIELD unlock, face skeleton-shot arrow after native block delay, observe blocked damage/source and exact false->true. No synthetic damage source or forced blocked flag.",
+          "requirementGroups": 1,
+          "existingGreen": [],
+          "requiredNewSatisfiedGroups": 1
+        }
+      ],
+      "requiredRegressionGates": [
+        "No-block skeleton projectile, melee/nonprojectile, non-skeleton projectile owner and locked USE_SHIELD remain false.",
+        "Display shield banner-pattern parsing is distinct from gameplay damage predicate; do not delete icon components to make parsing pass.",
+        "Protected runtime control replacement preserves deferred-tag classifier and stale/missing runtime receipt rejection."
+      ],
+      "canaryStrategy": "Confirm using shield active with live unlocked gate; real skeleton shot block false->true. Paired unlocked/unblocked and wrong-source negatives precede exact evidence.",
+      "exactStrategy": "Reuse joined-player/packet lifecycle and damage-source provenance infrastructure; add a finite skeleton AI ranged attack/shield coordinator. Arrow must have actual skeleton owner, projectile tag and native blocked amount. Observe LivingEntity native hurt/BlocksAttacks -> ENTITY_HURT_PLAYER and target receipt. Do not copy the relaxed 26.2 vanilla any-blocked-projectile predicate.",
+      "promotionStrategy": "Later implementation only: validate prerequisites, canary, then exact complete family receipts. Reconcile every ID independently using its frozen AND-of-OR groups; append FINAL19 evidence/accounting as a new stage. Historical Phase A canonical/frontier/reconciliation/accepted evidence remain immutable. No promotion in this audit.",
+      "invalidationRisks": [
+        "A source/converted/converter/config/marker/class/resource/tag/matrix/catalog hash change invalidates the affected proof; do not reuse stale save copies or broaden old fallback policy.",
+        "No-block skeleton projectile, melee/nonprojectile, non-skeleton projectile owner and locked USE_SHIELD remain false.",
+        "Display shield banner-pattern parsing is distinct from gameplay damage predicate; do not delete icon components to make parsing pass.",
+        "Protected runtime control replacement preserves deferred-tag classifier and stale/missing runtime receipt rejection."
+      ],
+      "recommendedOperationalOrder": 7,
+      "reasonForOrder": "Timing-sensitive last proof follows all reusable context and lifecycle gates; excludes a known source of fake GREEN."
+    }
+  ],
+  "dependencyGraph": {
+    "nodes": [
+      {
+        "nodeId": "F_CONTEXT",
+        "type": "FOUNDATIONAL_FIX",
+        "layer": "STATIC_ANALYZER",
+        "gain": 0,
+        "strategy": "New bounded typed context composition in FINAL19 validation: worldgen scalar/list, data-driven variant components, two-tag item-used-on-block, inventory tag+enchantment and worldgen+other. Share source-backed lookup/index infrastructure, keep five distinct cause-specific gates. Never treat a full generic codec success as sufficient semantic certification.",
+        "dependsOn": []
+      },
+      {
+        "nodeId": "F_ACCOUNTING",
+        "type": "FOUNDATIONAL_FIX",
+        "layer": "CANONICAL_ACCOUNTING",
+        "gain": 0,
+        "strategy": "Separate FINAL19 ledger/generator for immutable baseline plus new validated IDs; require valid static input and exact AND-of-OR evidence. Existing jungle GREEN retained. Final historical Phase A counter remains 1133; new-stage ledger predicts and later proves 1152.",
+        "dependsOn": [
+          "F_CONTEXT"
+        ]
+      },
+      {
+        "nodeId": "F_NATIVE_LIFECYCLE",
+        "type": "FOUNDATIONAL_VALIDATION",
+        "layer": "TEST_INFRASTRUCTURE",
+        "gain": 0,
+        "strategy": "Reuse accepted joined SURVIVAL player/network/load/config/finite resource/owned-fixture teardown; add narrow species/biome/Frost Walker/shield orchestration only as needed. New catalog provenance and receipts; no shared fake gameplay abstraction.",
+        "dependsOn": []
+      },
+      {
+        "nodeId": "I_LET_IT_GO",
+        "type": "PROTECTED_CONTROL_REPLACEMENT",
+        "layer": "STATIC_ANALYZER",
+        "gain": 0,
+        "strategy": "New-stage reopening record after typed deep-ocean+Frost Walker semantics and replacement invalid-input controls; historical control remains closed.",
+        "dependsOn": [
+          "F_CONTEXT"
+        ]
+      },
+      {
+        "nodeId": "I_TRAVELLING_BARD",
+        "type": "PROTECTED_CONTROL_REPLACEMENT",
+        "layer": "STATIC_ANALYZER",
+        "gain": 0,
+        "strategy": "New-stage reopening after all 36 biome/location predicates resolve unchanged in typed context; replace generic-biome-migration negative with unknown/scalar/list/mixed/wrong-biome/wrong-block/default-use/group-deletion guards. Historical control remains closed.",
+        "dependsOn": [
+          "F_CONTEXT"
+        ]
+      },
+      {
+        "nodeId": "F_RAIDER",
+        "type": "FOUNDATIONAL_FIX",
+        "layer": "COMPAT_MIGRATION",
+        "gain": 0,
+        "productionPath": "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+        "strategy": "Preserve both snake_case raider booleans in existing exact subtype conversion. Reconvert all three affected source definitions; provide a new explicit raider mapping freshness marker/revision retaining llama and root guarantees. Pure serialization repair, no predicate weakening.",
+        "dependsOn": []
+      },
+      {
+        "nodeId": "G_CERTIFIED_RAIDER_INTEGRITY",
+        "type": "CERTIFIED_REGRESSION_GATE",
+        "layer": "COMPAT_MIGRATION",
+        "gain": 0,
+        "advancementIds": [
+          "blazeandcave:adventure/feeling_ill",
+          "blazeandcave:monsters/dungeon_crawler"
+        ],
+        "strategy": "Repair/revalidate feeling_ill true raid predicates and dungeon_crawler false raid semantics. Require decoded exact booleans for all 8 criteria, supported native raid vs nonraid predicate witnesses, all unrelated advancement semantic hashes unchanged. Existing certified statuses do not gain an extra count. Old accepted static success alone is insufficient for this proven semantic loss.",
+        "dependsOn": [
+          "F_RAIDER",
+          "F_NATIVE_LIFECYCLE"
+        ]
+      },
+      {
+        "nodeId": "I_VOLUNTARY_EXILE",
+        "type": "PROTECTED_CONTROL_REPLACEMENT",
+        "layer": "COMPAT_MIGRATION",
+        "gain": 0,
+        "strategy": "New-stage invalidation justified by proven is_captain loss; retain tag/banner context and replacement noncaptain/active-raid/stale-evidence controls before promotion.",
+        "dependsOn": [
+          "F_RAIDER",
+          "F_CONTEXT",
+          "G_CERTIFIED_RAIDER_INTEGRITY"
+        ]
+      },
+      {
+        "nodeId": "I_DEFLECT_ARROW",
+        "type": "PROTECTED_CONTROL_REPLACEMENT",
+        "layer": "RUNTIME_EVIDENCE_ONLY",
+        "gain": 0,
+        "strategy": "New-stage tag/banner/native shield schema proof plus replacement non-block/wrong-source/locked-shield/stale-evidence negatives; no definition change.",
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_NATIVE_LIFECYCLE"
+        ]
+      },
+      {
+        "nodeId": "CERT:blazeandcave:biomes/boatception",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:biomes/boatception",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Use a boat-tag oak boat at a genuine generated/registered shipwreck start; send ordinary interaction, observe mounted passenger and criterion. Inspect real structure presence before action. Restore only owned fixtures afterward.",
+          "groups": [
+            [
+              "boatception"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:blazeandcave:biomes/the_mighty_jungle",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:biomes/the_mighty_jungle",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Retain accepted jungle GREEN.",
+          "groups": [
+            [
+              "jungle"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:blazeandcave:building/happy_birthday",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:building/happy_birthday",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Start ordinary cake, add one finite candle normally; observe candle_cake and consumed candle. Predicate target is the resulting candle-cake, not a static prefilled display.",
+          "groups": [
+            [
+              "candle_cake"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:blazeandcave:building/setting_up_the_mood",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:building/setting_up_the_mood",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Use one finite fire charge on unlit tagged candle/cake, observe lit state and count decrease. Flint/steel alternative additionally requires its ability and durability delta.",
+          "groups": [
+            [
+              "candle"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:blazeandcave:building/washing_machine",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:building/washing_machine",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Three normal uses at water cauldrons: dyed leather loses dye, patterned banner loses pattern, colored shulker becomes uncolored; observe water drop and each separate criterion. Unlock USE_CAULDRON.",
+          "groups": [
+            [
+              "clean_leather_armor"
+            ],
+            [
+              "clean_banner"
+            ],
+            [
+              "clean_shulker_box"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:blazeandcave:enchanting/let_it_go",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:enchanting/let_it_go",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE",
+          "I_LET_IT_GO"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Legal Frost Walker diamond boots at deep_ocean, finite SURVIVAL normal equip/move, native freezing then stepping-on proof. All four branches parse; one true branch completes the single OR group.",
+          "groups": [
+            [
+              "frost_walker_deep_lukewarm_ocean",
+              "frost_walker_deep_ocean",
+              "frost_walker_deep_cold_ocean",
+              "frost_walker_deep_frozen_ocean"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:blazeandcave:enchanting/master_armorer",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:enchanting/master_armorer",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Use finite legal diamond armor witness(es) constructed from real registry-supported compatible enchantments at required levels as fixture items. Ground ItemEntity pickup must cause native inventory transition and named criterion; no direct add-trigger or award. Pick one branch in each requirement group, all 35 definitions independently validated.",
+          "groups": [
+            [
+              "helmet_protection",
+              "helmet_fire_protection",
+              "helmet_projectile_protection",
+              "helmet_blast_protection"
+            ],
+            [
+              "chestplate_protection",
+              "chestplate_fire_protection",
+              "chestplate_projectile_protection",
+              "chestplate_blast_protection"
+            ],
+            [
+              "leggings_protection",
+              "leggings_fire_protection",
+              "leggings_projectile_protection",
+              "leggings_blast_protection"
+            ],
+            [
+              "boots_protection_depth_strider",
+              "boots_fire_protection_depth_strider",
+              "boots_projectile_protection_depth_strider",
+              "boots_blast_protection_depth_strider",
+              "boots_protection_frost_walker",
+              "boots_fire_protection_frost_walker",
+              "boots_projectile_protection_frost_walker",
+              "boots_blast_protection_frost_walker"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:blazeandcave:enchanting/master_axeman",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:enchanting/master_axeman",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Use finite legal diamond_axe witness(es) constructed from real registry-supported compatible enchantments at required levels as fixture items. Ground ItemEntity pickup must cause native inventory transition and named criterion; no direct add-trigger or award. Pick one branch in each requirement group, all 35 definitions independently validated.",
+          "groups": [
+            [
+              "perfect_axe_fortune",
+              "perfect_axe_silk_touch",
+              "perfect_axe_fortune_smite",
+              "perfect_axe_silk_touch_smite",
+              "perfect_axe_fortune_bane",
+              "perfect_axe_silk_touch_bane"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:blazeandcave:enchanting/master_digger",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:enchanting/master_digger",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Use finite legal diamond_shovel witness(es) constructed from real registry-supported compatible enchantments at required levels as fixture items. Ground ItemEntity pickup must cause native inventory transition and named criterion; no direct add-trigger or award. Pick one branch in each requirement group, all 35 definitions independently validated.",
+          "groups": [
+            [
+              "perfect_shovel_fortune",
+              "perfect_shovel_silk_touch"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:blazeandcave:enchanting/master_farmer",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:enchanting/master_farmer",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Use finite legal diamond_hoe witness(es) constructed from real registry-supported compatible enchantments at required levels as fixture items. Ground ItemEntity pickup must cause native inventory transition and named criterion; no direct add-trigger or award. Pick one branch in each requirement group, all 35 definitions independently validated.",
+          "groups": [
+            [
+              "perfect_hoe_fortune",
+              "perfect_hoe_silk_touch"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:blazeandcave:enchanting/master_knight",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:enchanting/master_knight",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Use finite legal diamond_sword witness(es) constructed from real registry-supported compatible enchantments at required levels as fixture items. Ground ItemEntity pickup must cause native inventory transition and named criterion; no direct add-trigger or award. Pick one branch in each requirement group, all 35 definitions independently validated.",
+          "groups": [
+            [
+              "perfect_sword",
+              "perfect_sword_smite",
+              "perfect_sword_bane"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:blazeandcave:enchanting/master_miner",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:enchanting/master_miner",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Use finite legal diamond_pickaxe witness(es) constructed from real registry-supported compatible enchantments at required levels as fixture items. Ground ItemEntity pickup must cause native inventory transition and named criterion; no direct add-trigger or award. Pick one branch in each requirement group, all 35 definitions independently validated.",
+          "groups": [
+            [
+              "perfect_pickaxe_fortune",
+              "perfect_pickaxe_silk_touch"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:blazeandcave:redstone/travelling_bard",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "blazeandcave:redstone/travelling_bard",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE",
+          "I_TRAVELLING_BARD"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "For each of 36 exact criteria use a note block with empty hand, air above and live specified biome/dimension, observe tuned note state/native use and criterion. One representative biome from each list suffices, all 36 groups required. Preserve predicates even where frozen omits spectator filter.",
+          "groups": [
+            [
+              "snowy_plains"
+            ],
+            [
+              "snowy_taiga"
+            ],
+            [
+              "windswept_hills"
+            ],
+            [
+              "taiga"
+            ],
+            [
+              "old_growth_taiga"
+            ],
+            [
+              "plains"
+            ],
+            [
+              "forest"
+            ],
+            [
+              "birch_forest"
+            ],
+            [
+              "dark_forest"
+            ],
+            [
+              "swamp"
+            ],
+            [
+              "jungle"
+            ],
+            [
+              "river"
+            ],
+            [
+              "beach"
+            ],
+            [
+              "mushroom_fields"
+            ],
+            [
+              "desert"
+            ],
+            [
+              "savanna"
+            ],
+            [
+              "badlands"
+            ],
+            [
+              "warm_ocean"
+            ],
+            [
+              "lukewarm_ocean"
+            ],
+            [
+              "ocean"
+            ],
+            [
+              "cold_ocean"
+            ],
+            [
+              "frozen_ocean"
+            ],
+            [
+              "meadow"
+            ],
+            [
+              "snowy_slopes_or_grove"
+            ],
+            [
+              "peaks"
+            ],
+            [
+              "nether_wastes"
+            ],
+            [
+              "soul_sand_valley"
+            ],
+            [
+              "crimson_forest"
+            ],
+            [
+              "warped_forest"
+            ],
+            [
+              "basalt_deltas"
+            ],
+            [
+              "the_end"
+            ],
+            [
+              "lush_caves"
+            ],
+            [
+              "dripstone_caves"
+            ],
+            [
+              "deep_dark"
+            ],
+            [
+              "cherry_grove"
+            ],
+            [
+              "pale_garden"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:minecraft:adventure/voluntary_exile",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "minecraft:adventure/voluntary_exile",
+        "gain": 1,
+        "dependsOn": [
+          "F_RAIDER",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE",
+          "I_VOLUNTARY_EXILE",
+          "G_CERTIFIED_RAIDER_INTEGRITY"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "AFTER narrow migration only: ordinary kill of valid no-active-raid patrol captain wearing native ominous banner, with native death and correct player credit. Pair noncaptain, active raid and flag/banner mismatch negatives.",
+          "groups": [
+            [
+              "bad_omen"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:minecraft:husbandry/complete_catalogue",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "minecraft:husbandry/complete_catalogue",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "One initially untamed live cat per source variant, normal finite fish feeding with bounded attempts; observe owner/tamed transition and named criterion. No direct tame method as test action.",
+          "groups": [
+            [
+              "minecraft:black"
+            ],
+            [
+              "minecraft:tabby"
+            ],
+            [
+              "minecraft:ragdoll"
+            ],
+            [
+              "minecraft:british_shorthair"
+            ],
+            [
+              "minecraft:white"
+            ],
+            [
+              "minecraft:persian"
+            ],
+            [
+              "minecraft:calico"
+            ],
+            [
+              "minecraft:siamese"
+            ],
+            [
+              "minecraft:all_black"
+            ],
+            [
+              "minecraft:jellie"
+            ],
+            [
+              "minecraft:red"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:minecraft:husbandry/leash_all_frog_variants",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "minecraft:husbandry/leash_all_frog_variants",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Normal lead interaction on each initially unleashed live frog variant; observe actual leash holder and criterion. Fence-binding LeadItem path alone does not establish the required interaction.",
+          "groups": [
+            [
+              "minecraft:temperate"
+            ],
+            [
+              "minecraft:warm"
+            ],
+            [
+              "minecraft:cold"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:minecraft:husbandry/wax_off",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "minecraft:husbandry/wax_off",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "One tagged waxed copper block and finite wooden axe; live material ability unlocked. Normal packet must unwax, decrease durability and produce criterion through native pre-mutation path.",
+          "groups": [
+            [
+              "wax_off"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:minecraft:husbandry/whole_pack",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "minecraft:husbandry/whole_pack",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Nine initially untamed live variants, normal bounded finite bone feeding at unlocked site, each owner/tamed transition and criterion observed.",
+          "groups": [
+            [
+              "minecraft:ashen"
+            ],
+            [
+              "minecraft:black"
+            ],
+            [
+              "minecraft:chestnut"
+            ],
+            [
+              "minecraft:pale"
+            ],
+            [
+              "minecraft:rusty"
+            ],
+            [
+              "minecraft:snowy"
+            ],
+            [
+              "minecraft:spotted"
+            ],
+            [
+              "minecraft:striped"
+            ],
+            [
+              "minecraft:woods"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "CERT:minecraft:story/deflect_arrow",
+        "type": "ADVANCEMENT_SPECIFIC_CERTIFICATION",
+        "advancementId": "minecraft:story/deflect_arrow",
+        "gain": 1,
+        "dependsOn": [
+          "F_CONTEXT",
+          "F_ACCOUNTING",
+          "F_NATIVE_LIFECYCLE",
+          "I_DEFLECT_ARROW"
+        ],
+        "proofContract": {
+          "static": "Exact frozen semantic validation after typed context or corrected migration; full parse alone insufficient.",
+          "runtime": "Activate finite shield through normal use packet after live USE_SHIELD unlock, face skeleton-shot arrow after native block delay, observe blocked damage/source and exact false->true. No synthetic damage source or forced blocked flag.",
+          "groups": [
+            [
+              "deflected_skeleton"
+            ]
+          ]
+        }
+      },
+      {
+        "nodeId": "TARGET_REAL_1152",
+        "type": "PRODUCT_TARGET_GATE",
+        "gain": 0,
+        "dependsOn": [
+          "CERT:blazeandcave:biomes/boatception",
+          "CERT:blazeandcave:biomes/the_mighty_jungle",
+          "CERT:blazeandcave:building/happy_birthday",
+          "CERT:blazeandcave:building/setting_up_the_mood",
+          "CERT:blazeandcave:building/washing_machine",
+          "CERT:blazeandcave:enchanting/let_it_go",
+          "CERT:blazeandcave:enchanting/master_armorer",
+          "CERT:blazeandcave:enchanting/master_axeman",
+          "CERT:blazeandcave:enchanting/master_digger",
+          "CERT:blazeandcave:enchanting/master_farmer",
+          "CERT:blazeandcave:enchanting/master_knight",
+          "CERT:blazeandcave:enchanting/master_miner",
+          "CERT:blazeandcave:redstone/travelling_bard",
+          "CERT:minecraft:adventure/voluntary_exile",
+          "CERT:minecraft:husbandry/complete_catalogue",
+          "CERT:minecraft:husbandry/leash_all_frog_variants",
+          "CERT:minecraft:husbandry/wax_off",
+          "CERT:minecraft:husbandry/whole_pack",
+          "CERT:minecraft:story/deflect_arrow",
+          "G_CERTIFIED_RAIDER_INTEGRITY"
+        ],
+        "strategy": "Sum exactly 19 new unique certified IDs after all native/static/regression gates; verify all 1152 individually accounted for and no certified baseline integrity debt, no warnings/cleanup debt or fake awards. This audit does not establish that result."
+      }
+    ],
+    "edges": [
+      {
+        "from": "F_CONTEXT",
+        "to": "F_ACCOUNTING"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "I_LET_IT_GO"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "I_TRAVELLING_BARD"
+      },
+      {
+        "from": "F_RAIDER",
+        "to": "G_CERTIFIED_RAIDER_INTEGRITY"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "G_CERTIFIED_RAIDER_INTEGRITY"
+      },
+      {
+        "from": "F_RAIDER",
+        "to": "I_VOLUNTARY_EXILE"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "I_VOLUNTARY_EXILE"
+      },
+      {
+        "from": "G_CERTIFIED_RAIDER_INTEGRITY",
+        "to": "I_VOLUNTARY_EXILE"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "I_DEFLECT_ARROW"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "I_DEFLECT_ARROW"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:biomes/boatception"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:biomes/boatception"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:blazeandcave:biomes/boatception"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:biomes/the_mighty_jungle"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:biomes/the_mighty_jungle"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:building/happy_birthday"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:building/happy_birthday"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:blazeandcave:building/happy_birthday"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:building/setting_up_the_mood"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:building/setting_up_the_mood"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:blazeandcave:building/setting_up_the_mood"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:building/washing_machine"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:building/washing_machine"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:blazeandcave:building/washing_machine"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:enchanting/let_it_go"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:enchanting/let_it_go"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:blazeandcave:enchanting/let_it_go"
+      },
+      {
+        "from": "I_LET_IT_GO",
+        "to": "CERT:blazeandcave:enchanting/let_it_go"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:enchanting/master_armorer"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:enchanting/master_armorer"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:blazeandcave:enchanting/master_armorer"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:enchanting/master_axeman"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:enchanting/master_axeman"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:blazeandcave:enchanting/master_axeman"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:enchanting/master_digger"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:enchanting/master_digger"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:blazeandcave:enchanting/master_digger"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:enchanting/master_farmer"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:enchanting/master_farmer"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:blazeandcave:enchanting/master_farmer"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:enchanting/master_knight"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:enchanting/master_knight"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:blazeandcave:enchanting/master_knight"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:enchanting/master_miner"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:enchanting/master_miner"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:blazeandcave:enchanting/master_miner"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:blazeandcave:redstone/travelling_bard"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:blazeandcave:redstone/travelling_bard"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:blazeandcave:redstone/travelling_bard"
+      },
+      {
+        "from": "I_TRAVELLING_BARD",
+        "to": "CERT:blazeandcave:redstone/travelling_bard"
+      },
+      {
+        "from": "F_RAIDER",
+        "to": "CERT:minecraft:adventure/voluntary_exile"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:minecraft:adventure/voluntary_exile"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:minecraft:adventure/voluntary_exile"
+      },
+      {
+        "from": "I_VOLUNTARY_EXILE",
+        "to": "CERT:minecraft:adventure/voluntary_exile"
+      },
+      {
+        "from": "G_CERTIFIED_RAIDER_INTEGRITY",
+        "to": "CERT:minecraft:adventure/voluntary_exile"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:minecraft:husbandry/complete_catalogue"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:minecraft:husbandry/complete_catalogue"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:minecraft:husbandry/complete_catalogue"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:minecraft:husbandry/leash_all_frog_variants"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:minecraft:husbandry/leash_all_frog_variants"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:minecraft:husbandry/leash_all_frog_variants"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:minecraft:husbandry/wax_off"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:minecraft:husbandry/wax_off"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:minecraft:husbandry/wax_off"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:minecraft:husbandry/whole_pack"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:minecraft:husbandry/whole_pack"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:minecraft:husbandry/whole_pack"
+      },
+      {
+        "from": "F_CONTEXT",
+        "to": "CERT:minecraft:story/deflect_arrow"
+      },
+      {
+        "from": "F_ACCOUNTING",
+        "to": "CERT:minecraft:story/deflect_arrow"
+      },
+      {
+        "from": "F_NATIVE_LIFECYCLE",
+        "to": "CERT:minecraft:story/deflect_arrow"
+      },
+      {
+        "from": "I_DEFLECT_ARROW",
+        "to": "CERT:minecraft:story/deflect_arrow"
+      },
+      {
+        "from": "CERT:blazeandcave:biomes/boatception",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:blazeandcave:biomes/the_mighty_jungle",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:blazeandcave:building/happy_birthday",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:blazeandcave:building/setting_up_the_mood",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:blazeandcave:building/washing_machine",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:blazeandcave:enchanting/let_it_go",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:blazeandcave:enchanting/master_armorer",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:blazeandcave:enchanting/master_axeman",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:blazeandcave:enchanting/master_digger",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:blazeandcave:enchanting/master_farmer",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:blazeandcave:enchanting/master_knight",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:blazeandcave:enchanting/master_miner",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:blazeandcave:redstone/travelling_bard",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:minecraft:adventure/voluntary_exile",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:minecraft:husbandry/complete_catalogue",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:minecraft:husbandry/leash_all_frog_variants",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:minecraft:husbandry/wax_off",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:minecraft:husbandry/whole_pack",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "CERT:minecraft:story/deflect_arrow",
+        "to": "TARGET_REAL_1152"
+      },
+      {
+        "from": "G_CERTIFIED_RAIDER_INTEGRITY",
+        "to": "TARGET_REAL_1152"
+      }
+    ],
+    "gainAccountingRule": "Only 19 CERT nodes contribute gain 1 each. All foundations, protected-control replacements, certified regression gates and final target gate contribute 0."
+  },
+  "predictedProgression": [
+    {
+      "order": 1,
+      "familyId": "WORLDGEN_HOLDERSET_CONTEXT",
+      "beforeCertified": 1133,
+      "expectedGain": 2,
+      "afterCertified": 1135,
+      "afterUncertified": 17,
+      "conditionalOnAllFamilyGatesAndCertifiedBaselineIntegrity": true
+    },
+    {
+      "order": 2,
+      "familyId": "ENTITY_VARIANT_COMPONENT_CONTEXT",
+      "beforeCertified": 1135,
+      "expectedGain": 3,
+      "afterCertified": 1138,
+      "afterUncertified": 14,
+      "conditionalOnAllFamilyGatesAndCertifiedBaselineIntegrity": true
+    },
+    {
+      "order": 3,
+      "familyId": "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+      "beforeCertified": 1138,
+      "expectedGain": 4,
+      "afterCertified": 1142,
+      "afterUncertified": 10,
+      "conditionalOnAllFamilyGatesAndCertifiedBaselineIntegrity": true
+    },
+    {
+      "order": 4,
+      "familyId": "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+      "beforeCertified": 1142,
+      "expectedGain": 6,
+      "afterCertified": 1148,
+      "afterUncertified": 4,
+      "conditionalOnAllFamilyGatesAndCertifiedBaselineIntegrity": true
+    },
+    {
+      "order": 5,
+      "familyId": "MIXED_WORLDGEN_PREDICATE_CONTEXT",
+      "beforeCertified": 1148,
+      "expectedGain": 2,
+      "afterCertified": 1150,
+      "afterUncertified": 2,
+      "conditionalOnAllFamilyGatesAndCertifiedBaselineIntegrity": true
+    },
+    {
+      "order": 6,
+      "familyId": "RAIDER_PREDICATE_KEY_MIGRATION",
+      "beforeCertified": 1150,
+      "expectedGain": 1,
+      "afterCertified": 1151,
+      "afterUncertified": 1,
+      "conditionalOnAllFamilyGatesAndCertifiedBaselineIntegrity": true
+    },
+    {
+      "order": 7,
+      "familyId": "SKELETON_PROJECTILE_BLOCK_RUNTIME_PROOF",
+      "beforeCertified": 1151,
+      "expectedGain": 1,
+      "afterCertified": 1152,
+      "afterUncertified": 0,
+      "conditionalOnAllFamilyGatesAndCertifiedBaselineIntegrity": true
+    }
+  ],
+  "expectedCertifiedGainTotal": 19,
+  "requiredGroupAccounting": {
+    "totalGroups": 79,
+    "existingSatisfiedGroups": 1,
+    "newSatisfiedGroupsRequired": 78,
+    "criteria": 108,
+    "rule": "AND over groups, OR within each group. Parse/check every branch; runtime completion does not require all OR alternatives to fire. No double-counting supplemental evidence."
+  },
+  "protectedControls": [
+    {
+      "advancementId": "blazeandcave:enchanting/let_it_go",
+      "currentlyProtected": true,
+      "historicalState": {
+        "advancementId": "blazeandcave:enchanting/let_it_go",
+        "sourcePath": "data/blazeandcave/advancement/enchanting/let_it_go.json",
+        "baselineStaticStatus": "STATIC_FAIL",
+        "baselineAdvancementStatus": "STATIC_FAIL_UNRESOLVED",
+        "criteriaCount": 4,
+        "requirementGroupCount": 1,
+        "baselineRuntimeGreenCriteria": [],
+        "frontierClass": "STATIC_FAIL_UNRESOLVED",
+        "familyAssignment": "STATIC_FAIL_MIXED_CODEC_ERROR",
+        "familyStatus": "PROTECTED",
+        "priorityRank": null,
+        "priorityTier": "BLOCKED_OR_STATIC",
+        "protectedControl": true,
+        "expectedCertificationOutcome": "PROTECTED_NEGATIVE_CONTROL; runtime evidence alone must not override the control.",
+        "semanticSummary": "deep-ocean scalar plus frost-walker HolderSet; no generic biome migration",
+        "likelyRuntimeBoundary": "static-analysis boundary",
+        "harnessReuseCandidate": "No runtime harness can replace the static repair.",
+        "implementationCost": "HIGH",
+        "semanticRisk": "HIGH",
+        "invalidationState": "VALID_AT_1050_BASELINE; update by local delta after an accepted family promotion",
+        "baselineRuntimeEvidenceFamilies": [],
+        "baselineRuntimeEvidenceSources": [],
+        "staticReason": "Static failure remains unresolved with no runtime evidence"
+      },
+      "originalReason": "Guarded against broad enchantment/worldgen scalar migration and runtime-only override of malformed/static-invalid input. Existing test explicitly asserts remaining deep-biome scalar errors and no frost_walker scalar error.",
+      "requiredForeverForFinalCertification": false,
+      "stillRequiredUntilReplacementAccepted": true,
+      "reopeningRule": "Full typed biome+enchantment parse and frozen semantic equality; all four OR branches valid; replacement fail-closed controls plus native Frost Walker/LOCATION proof.",
+      "replacementGuard": "Unknown biome/holder, wrong boots, absent Frost Walker, ordinary ice, shallow/wrong ocean, spectator negatives; preserve valid deep-ocean scalar predicates and reject broad fallback/migration.",
+      "historyPolicy": "New FINAL19 invalidation record; do not edit historical Phase A protection or closed artifacts."
+    },
+    {
+      "advancementId": "blazeandcave:redstone/travelling_bard",
+      "currentlyProtected": true,
+      "historicalState": {
+        "advancementId": "blazeandcave:redstone/travelling_bard",
+        "sourcePath": "data/blazeandcave/advancement/redstone/travelling_bard.json",
+        "baselineStaticStatus": "STATIC_FAIL",
+        "baselineAdvancementStatus": "STATIC_FAIL_UNRESOLVED",
+        "criteriaCount": 36,
+        "requirementGroupCount": 36,
+        "baselineRuntimeGreenCriteria": [],
+        "frontierClass": "STATIC_FAIL_UNRESOLVED",
+        "familyAssignment": "STATIC_FAIL_MIXED_CODEC_ERROR",
+        "familyStatus": "PROTECTED",
+        "priorityRank": null,
+        "priorityTier": "BLOCKED_OR_STATIC",
+        "protectedControl": true,
+        "expectedCertificationOutcome": "PROTECTED_NEGATIVE_CONTROL; runtime evidence alone must not override the control.",
+        "semanticSummary": "protected negative-control case; no generic biome migration",
+        "likelyRuntimeBoundary": "static-analysis boundary",
+        "harnessReuseCandidate": "No runtime harness can replace the static repair.",
+        "implementationCost": "HIGH",
+        "semanticRisk": "HIGH",
+        "invalidationState": "VALID_AT_1050_BASELINE; update by local delta after an accepted family promotion",
+        "baselineRuntimeEvidenceFamilies": [],
+        "baselineRuntimeEvidenceSources": [],
+        "staticReason": "Static failure remains unresolved with no runtime evidence"
+      },
+      "originalReason": "Protected static negative control against generic biome migration; existing regression explicitly expects STATIC_FAIL with pale_garden diagnostics. No runtime evidence could replace its unresolved static semantic boundary in Phase A.",
+      "requiredForeverForFinalCertification": false,
+      "stillRequiredUntilReplacementAccepted": true,
+      "reopeningRule": "New-stage typed worldgen context accounts for every diagnostic and resolves all 36 exact biome definitions without a generic rewrite; replacement fail-closed controls accepted, followed by native note-block use for each of the 36 AND groups.",
+      "replacementGuard": "Unknown biome scalar/list/mixed selectors, missing biome registry/entry, wrong biome, wrong block or non-default block use, deleted AND group and stale receipt negatives. Retain all valid frozen scalar/list forms and all 36 predicates.",
+      "historyPolicy": "New FINAL19 invalidation record; do not edit historical Phase A protection or closed artifacts."
+    },
+    {
+      "advancementId": "minecraft:adventure/voluntary_exile",
+      "currentlyProtected": true,
+      "historicalState": {
+        "advancementId": "minecraft:adventure/voluntary_exile",
+        "sourcePath": "data/minecraft/advancement/adventure/voluntary_exile.json",
+        "baselineStaticStatus": "RUNTIME_DEFERRED",
+        "baselineAdvancementStatus": "RUNTIME_DEFERRED",
+        "criteriaCount": 1,
+        "requirementGroupCount": 1,
+        "baselineRuntimeGreenCriteria": [],
+        "frontierClass": "RUNTIME_DEFERRED",
+        "familyAssignment": "PROTECTED_DEFERRED_CONTROLS",
+        "familyStatus": "PROTECTED",
+        "priorityRank": null,
+        "priorityTier": "PROTECTED",
+        "protectedControl": true,
+        "expectedCertificationOutcome": "PROTECTED_NEGATIVE_CONTROL; runtime evidence alone must not override the control.",
+        "semanticSummary": "Protected deferred negative control; do not promote without explicit invalidation.",
+        "likelyRuntimeBoundary": "protected negative-control boundary",
+        "harnessReuseCandidate": "None until control is explicitly reopened.",
+        "implementationCost": "BLOCKED",
+        "semanticRisk": "VERY_HIGH",
+        "invalidationState": "VALID_AT_1050_BASELINE; update by local delta after an accepted family promotion",
+        "baselineRuntimeEvidenceFamilies": [],
+        "baselineRuntimeEvidenceSources": [],
+        "staticReason": "No runtime evidence yet after RUNTIME_DEFERRED"
+      },
+      "originalReason": "Deferred entity-tag control after bounded banner-pattern fallback; deliberately excluded from runtime promotion until explicit invalidation. Old guard did not prove captain boolean semantics.",
+      "requiredForeverForFinalCertification": false,
+      "stillRequiredUntilReplacementAccepted": true,
+      "reopeningRule": "Proven current field loss justifies new-stage reopening only after narrow correction, fresh copy marker, certified raider zero-gain integrity gates and native valid captain kill proof.",
+      "replacementGuard": "Noncaptain, banner/leader mismatch, active raid captain, outsider entity tag; decode snake_case booleans and reject missing/stale receipts.",
+      "historyPolicy": "New FINAL19 invalidation record; do not edit historical Phase A protection or closed artifacts."
+    },
+    {
+      "advancementId": "minecraft:story/deflect_arrow",
+      "currentlyProtected": true,
+      "historicalState": {
+        "advancementId": "minecraft:story/deflect_arrow",
+        "sourcePath": "data/minecraft/advancement/story/deflect_arrow.json",
+        "baselineStaticStatus": "RUNTIME_DEFERRED",
+        "baselineAdvancementStatus": "RUNTIME_DEFERRED",
+        "criteriaCount": 1,
+        "requirementGroupCount": 1,
+        "baselineRuntimeGreenCriteria": [],
+        "frontierClass": "RUNTIME_DEFERRED",
+        "familyAssignment": "PROTECTED_DEFERRED_CONTROLS",
+        "familyStatus": "PROTECTED",
+        "priorityRank": null,
+        "priorityTier": "PROTECTED",
+        "protectedControl": true,
+        "expectedCertificationOutcome": "PROTECTED_NEGATIVE_CONTROL; runtime evidence alone must not override the control.",
+        "semanticSummary": "Protected deferred negative control; do not promote without explicit invalidation.",
+        "likelyRuntimeBoundary": "protected negative-control boundary",
+        "harnessReuseCandidate": "None until control is explicitly reopened.",
+        "implementationCost": "BLOCKED",
+        "semanticRisk": "VERY_HIGH",
+        "invalidationState": "VALID_AT_1050_BASELINE; update by local delta after an accepted family promotion",
+        "baselineRuntimeEvidenceFamilies": [],
+        "baselineRuntimeEvidenceSources": [],
+        "staticReason": "No runtime evidence yet after RUNTIME_DEFERRED"
+      },
+      "originalReason": "Deferred skeleton entity-tag control after shield display/banner fallback; retained as negative accounting/runtime-promotion guard, never accepted gameplay evidence.",
+      "requiredForeverForFinalCertification": false,
+      "stillRequiredUntilReplacementAccepted": true,
+      "reopeningRule": "Exact source-backed schema/tag proof and replacement controls, then skeleton-owned native projectile block with loaded gate, finite resources and cleanup.",
+      "replacementGuard": "No block, melee, non-skeleton projectile, locked shield, missing skeleton tag; stale/absent native receipts rejected.",
+      "historyPolicy": "New FINAL19 invalidation record; do not edit historical Phase A protection or closed artifacts."
+    }
+  ],
+  "productionChangesExpected": [
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+      "method": "transformRaiderTypeSpecificObject",
+      "lines": "820-846",
+      "provenFailure": "Snake_case raider booleans are renamed to ignored camelCase fields.",
+      "minimalConceptualFix": "Keep has_raid/is_captain names and boolean values in only the raider type-specific context; retain outer schema migration.",
+      "affectedUncertifiedAdvancements": [
+        "minecraft:adventure/voluntary_exile"
+      ],
+      "zeroGainCertifiedRegressionSurface": [
+        "blazeandcave:adventure/feeling_ill",
+        "blazeandcave:monsters/dungeon_crawler"
+      ],
+      "runtimeCopyFreshness": "Explicit new raider mapping marker or revision plus all source/converter hashes; current r15 marker alone cannot distinguish repaired semantics."
+    }
+  ],
+  "dataPolicy": "No frozen edits or broad advancement rewrites. Only corrected raider conversion output and its freshness marker/runtime copy need later semantic changes. Other 18 frozen advancement definitions remain semantically exact. Existing voluntary display text corruption is recorded separately from criteria semantics.",
+  "commonRuntimeGates": [
+    "Plain joined ServerPlayer, PlayerList.placeNewPlayer, registered real connection, ServerboundPlayerLoadedPacket, SURVIVAL. Read live advancement/ability config only after loading.",
+    "Record frozen/source/converter/runtime-pack/config/catalog/matrix fingerprints, unique new runId, exact criterion and requirement group, relevant entities/items/components/tags/biomes/structures.",
+    "Assert criterion and advancement incomplete before action; perform native packet/gameplay action; observe named criterion false -> true, actual action state transition, then AND-of-OR completion.",
+    "No direct CriteriaTriggers.trigger calls, no manual grants or awards, no setTame/set progress as proof, no predicate stubs, no bypassed production gates or fabricated HolderSet membership.",
+    "Finite resources, finite attempts/ticks and SURVIVAL where applicable. Fixture state must be a legitimate game state; registry data, enchanting combinations and source predicates must be independently checked.",
+    "Fail on missing tags/holders, warnings, disconnect/network cleanup debt, leaked players/entities/tickets/connections, timing out, or a predicate only partially proven. Restore owned world/biome/structure/block fixtures and remove actors.",
+    "TEMP diagnostic output is never promoted. Later exact certification uses fresh persistent evidence and its fingerprint validation; preserve accepted historical runIds and the terminal Phase A snapshot."
+  ],
+  "noImplementationPerformed": true,
+  "baselineSha256": {
+    "src/test/resources/phase_a_certification/phase_a_advancement_rollup.json": "439f2aa1c577ffbee275525765ac9229bf5633f0f5e1da498c0adc5702bd2810",
+    "reference/phase_a_planning/phase_a_frontier_map.json": "2cb3d3f835a1d8f1eda97ec782725a72936f346dd8cfeed75da61fc4d9f36662",
+    ".agents/skills/achievetodo-phase-a/SKILL.md": "22448f14632d290cee8b0639c88d51f1ee992cafd504231a57cb77384aa9a594",
+    "reference/phase_a_preservation/files/final/bacap.zip": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+    "reference/phase_a_planning/phase_a_terminal_reconciliation_20260930.json": "b08e001dd797e783484c3e338122286b98a17276cf289fc50270067b2a4aefb0"
+  },
+  "auditPath": "reference/phase_a_planning/final19/pre26_2_final19_audit.json",
+  "boundedUnknowns": [
+    "Native canary/exact runs and timing remain to be executed during implementation; failure is a failed gate requiring diagnosis, never grounds for silent promotion.",
+    "No explicit product/design choice or unrepresentable frozen behavior was established. Classification J not justified.",
+    "Gate thresholds must be read from the live loaded config in each later run, not assumed from historical defaults."
+  ],
+  "stopAfterPlanning": true
+}

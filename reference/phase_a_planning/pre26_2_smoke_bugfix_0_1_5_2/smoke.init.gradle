@@ -1,0 +1,68 @@
+// Release-stage inspection only; no production/source-set/package changes.
+allprojects {
+    afterEvaluate {
+        def final19Sources = file('tools/final19/java')
+        sourceSets.test.java.setSrcDirs(sourceSets.test.java.srcDirs.findAll { it != final19Sources })
+        tasks.named('compileTestJava') {
+            source fileTree(final19Sources) {
+                exclude '**/Final19PreservedSemanticBridge.java', '**/Final19CombatEvidence.java'
+            }
+        }
+        sourceSets.test.java.srcDir(file('reference/phase_a_planning/pre26_2_smoke_bugfix_0_1_5_2/java'))
+        if (System.getProperty('achievetodo.smoke.native') == 'true') {
+            def smokeRunDir = System.getProperty('achievetodo.smoke.runDir', 'build/run/pre26Smoke02')
+            loom.runs.gameTest.runDir(smokeRunDir)
+            tasks.register('preparePre26SmokeRuntime', JavaExec) {
+                dependsOn testClasses
+                classpath = sourceSets.test.runtimeClasspath
+                mainClass = 'com.diskree.achievetodo.client.Pre26SmokeRuntimeSetup'
+                args = [file(smokeRunDir).absolutePath]
+            }
+            tasks.named('runGameTest') { dependsOn 'preparePre26SmokeRuntime' }
+            tasks.named('processGametestResources') {
+                doLast {
+                    def path = new File(destinationDir, 'fabric.mod.json')
+                    def metadata = new groovy.json.JsonSlurper().parse(path)
+                    metadata.entrypoints['fabric-gametest'] = ['com.diskree.achievetodo.certification.Pre26SmokeGameTest']
+                    path.text = groovy.json.JsonOutput.toJson(metadata)
+                }
+            }
+        }
+        sourceSets.test.java.srcDir(file('reference/phase_a_planning/pre26_2_final_build/java'))
+        tasks.withType(Test).configureEach {
+            reports.junitXml.outputLocation = file('reference/phase_a_planning/pre26_2_smoke_bugfix_0_1_5_2/junit')
+            reports.html.outputLocation = file('build/tmp/pre26_smoke/junit-html')
+        }
+        tasks.register('pre26BuildMetadata') {
+            doLast {
+                def jars = tasks.withType(Jar).collect { t ->
+                    [task:t.path, type:t.class.name, archive:t.archiveFile.get().asFile.absolutePath,
+                     classifier:t.archiveClassifier.getOrElse(''), exists:t.archiveFile.get().asFile.exists(),
+                     dependencies:t.taskDependencies.getDependencies(t).collect { it.path }.sort()]
+                }
+                def sets = sourceSets.collect { s ->
+                    [name:s.name, java:s.java.srcDirs.collect { it.absolutePath }, resources:s.resources.srcDirs.collect { it.absolutePath },
+                     classes:s.output.classesDirs.files.collect { it.absolutePath }, resourcesOutput:s.output.resourcesDir?.absolutePath]
+                }
+                def graph = gradle.taskGraph.allTasks.collect { t -> [task:t.path,type:t.class.name] }
+                def result = [gradleVersion:gradle.gradleVersion,javaVersion:System.getProperty('java.version'),
+                    projectRoot:projectDir.absolutePath,projectVersion:version.toString(),archivesName:base.archivesName.get(),
+                    jarTasks:jars,sourceSets:sets,taskGraph:graph,
+                    buildDependencies:tasks.named('build').get().taskDependencies.getDependencies(tasks.named('build').get()).collect { it.path }.sort(),
+                    assembleDependencies:tasks.named('assemble').get().taskDependencies.getDependencies(tasks.named('assemble').get()).collect { it.path }.sort()]
+                file('reference/phase_a_planning/pre26_2_smoke_bugfix_0_1_5_2/gradle_output_metadata.json').text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(result))+'\n'
+                println 'PRE26_BUILD_METADATA '+groovy.json.JsonOutput.toJson(result)
+            }
+        }
+        tasks.register('pre26ResolvedDependencies') {
+            doLast {
+                def result = ['runtimeClasspath', 'testRuntimeClasspath', 'gametestRuntimeClasspath'].collectEntries { name ->
+                    [(name): configurations.getByName(name).resolvedConfiguration.resolvedArtifacts.collect {
+                        [coordinate:it.moduleVersion.id.toString(), name:it.name, classifier:it.classifier]
+                    }.sort { it.coordinate }]
+                }
+                file('reference/phase_a_planning/pre26_2_smoke_bugfix_0_1_5_2/resolved_dependencies.json').text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(result))+'\n'
+            }
+        }
+    }
+}

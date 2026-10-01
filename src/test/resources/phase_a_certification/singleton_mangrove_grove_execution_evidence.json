@@ -1,0 +1,52 @@
+{
+  "snapshot": "phase_a_singleton_mangrove_grove_execution_evidence",
+  "schemaVersion": 1,
+  "family": "SINGLETON:blazeandcave:farming/a_mangrove_grove",
+  "source": "PhaseASingletonMangroveGroveGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:d73ed7a6bc9453625a32b6e81b504de36bfec8e0c32d68a019a827416f3e031c",
+  "runId": "f4423ff6-c7fb-40db-9834-305b234db5ec",
+  "generatedAt": "2026-09-29T14:05:04.756289700Z",
+  "entries": [
+    {
+      "family": "SINGLETON:blazeandcave:farming/a_mangrove_grove",
+      "source": "PhaseASingletonMangroveGroveGameTest",
+      "advancementId": "blazeandcave:farming/a_mangrove_grove",
+      "criterion": "mangrove_propagule",
+      "trigger": "minecraft:placed_block",
+      "boundary": "ServerPlayerGameMode.useItemOn->BlockItem.place->CriteriaTriggers.PLACED_BLOCK",
+      "observedBiome": "minecraft:grove",
+      "observedSupport": "minecraft:clay",
+      "observedItem": "minecraft:mangrove_propagule",
+      "blockBefore": "minecraft:air",
+      "blockAfter": "minecraft:mangrove_propagule",
+      "itemCountBefore": 1,
+      "itemCountAfter": 0,
+      "runId": "f4423ff6-c7fb-40db-9834-305b234db5ec",
+      "catalogFingerprint": "sha-256:d73ed7a6bc9453625a32b6e81b504de36bfec8e0c32d68a019a827416f3e031c",
+      "result": "GREEN",
+      "gameMode": "SURVIVAL",
+      "playerUuid": "2defa9e7-bd22-4fab-8a4d-3f6ca33b07a4",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "noDirectCriterionTrigger": true,
+      "noManualAward": true,
+      "productionGateWitness": {
+        "productionGate": "LANDMARK_ONLY",
+        "lockedLandmark": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 2374,
+        "warningCount": 0
+      }
+    }
+  ]
+}

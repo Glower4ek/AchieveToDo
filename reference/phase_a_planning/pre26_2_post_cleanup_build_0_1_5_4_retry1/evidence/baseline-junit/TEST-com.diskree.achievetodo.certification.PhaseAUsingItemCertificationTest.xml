@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseAUsingItemCertificationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-01T15:00:01.913Z" hostname="LAPTOP-L0LPH8GP" time="0.155">
+  <properties/>
+  <testcase name="persistentValidationIgnoresNewerActiveRunState()" classname="com.diskree.achievetodo.certification.PhaseAUsingItemCertificationTest" time="0.045"/>
+  <testcase name="catalogSnapshotMatchesFrozenDerivedOutput()" classname="com.diskree.achievetodo.certification.PhaseAUsingItemCertificationTest" time="0.01"/>
+  <testcase name="catalogHasExactCasesAndCurrentNativeBoundaries()" classname="com.diskree.achievetodo.certification.PhaseAUsingItemCertificationTest" time="0.01"/>
+  <testcase name="validExactArtifactIsAccepted()" classname="com.diskree.achievetodo.certification.PhaseAUsingItemCertificationTest" time="0.044"/>
+  <testcase name="invalidNativeStateIsRejected()" classname="com.diskree.achievetodo.certification.PhaseAUsingItemCertificationTest" time="0.045"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,79 @@
+{
+  "snapshot": "phase_a_shot_crossbow_case_catalog",
+  "schemaVersion": 1,
+  "family": "SHOT_CROSSBOW",
+  "canonicalAdvancementCount": 1152,
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "canonicalSemanticsSource": "reference/phase_a_preservation/files/final/bacap.zip",
+  "semanticsSource": "frozenBacap",
+  "frozenBacapSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "sourceArtifactClassification": "FROZEN_BACAP_DEFINITION",
+  "runtimeBoundary": "ServerGamePacketListenerImpl.handleUseItem",
+  "runtimePacketPath": "ServerboundUseItemPacket.handle->ServerGamePacketListenerImpl.handleUseItem->CrossbowItem.performShooting->CriteriaTriggers.SHOT_CROSSBOW",
+  "summary": {
+    "totalCases": 2,
+    "uniqueKeys": 2,
+    "uniqueAdvancements": 2,
+    "requirementGroups": 2,
+    "automationSupported": 2,
+    "automationDeferred": 0,
+    "firingModes": {
+      "QUICK_CHARGE": 1,
+      "MULTISHOT": 1
+    }
+  },
+  "cases": [
+    {
+      "advancementId": "blazeandcave:enchanting/machine_bow",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/machine_bow.json",
+      "criterion": "shot_crossbow",
+      "requirementGroupIndex": 0,
+      "requirementGroupCount": 1,
+      "trigger": "minecraft:shot_crossbow",
+      "selectedItem": "minecraft:crossbow",
+      "enchantmentPredicate": {
+        "enchantment": "minecraft:quick_charge",
+        "levelRule": "min",
+        "level": 3
+      },
+      "firingMode": "QUICK_CHARGE",
+      "expectedLoadedProjectileCount": 1,
+      "expectedFiredProjectileCount": 1,
+      "expectedAmmoConsumed": 1,
+      "expectedDurabilityUse": 1,
+      "boundary": "ServerGamePacketListenerImpl.handleUseItem",
+      "packetPath": "ServerboundUseItemPacket.handle->ServerGamePacketListenerImpl.handleUseItem->CrossbowItem.performShooting->CriteriaTriggers.SHOT_CROSSBOW",
+      "automationEligibility": "SUPPORTED",
+      "semanticsSource": "frozenBacap",
+      "sourceArtifactClassification": "FROZEN_BACAP_DEFINITION",
+      "sourceJsonSha256": "fd11c038282218fc928af42a39f4996df995fc799b80f69b1ddbf38a592e9e42"
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/shotbow",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/shotbow.json",
+      "criterion": "shot_crossbow",
+      "requirementGroupIndex": 0,
+      "requirementGroupCount": 1,
+      "trigger": "minecraft:shot_crossbow",
+      "selectedItem": "minecraft:crossbow",
+      "enchantmentPredicate": {
+        "enchantment": "minecraft:multishot",
+        "levelRule": "present",
+        "level": 1
+      },
+      "firingMode": "MULTISHOT",
+      "expectedLoadedProjectileCount": 3,
+      "expectedFiredProjectileCount": 3,
+      "expectedAmmoConsumed": 1,
+      "expectedDurabilityUse": 3,
+      "boundary": "ServerGamePacketListenerImpl.handleUseItem",
+      "packetPath": "ServerboundUseItemPacket.handle->ServerGamePacketListenerImpl.handleUseItem->CrossbowItem.performShooting->CriteriaTriggers.SHOT_CROSSBOW",
+      "automationEligibility": "SUPPORTED",
+      "semanticsSource": "frozenBacap",
+      "sourceArtifactClassification": "FROZEN_BACAP_DEFINITION",
+      "sourceJsonSha256": "3fe10408005e0a41c1e7274041ab2bd6ac52dc262631bd5017c1e010bf4a012d"
+    }
+  ]
+}

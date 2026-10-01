@@ -1,0 +1,8 @@
+{
+  "family": "ENTITY_VARIANT_COMPONENT_CONTEXT",
+  "staticSemantics": "EXACT_FROZEN_CURRENT_TYPED_CONTEXT",
+  "criteriaCount": 23,
+  "requirementGroupCount": 23,
+  "sourceBackedTags": {},
+  "inputFingerprint": "dde219032d6c2181383ef15f993847f62fbd26458100f399c9adf37f1c00ece9"
+}

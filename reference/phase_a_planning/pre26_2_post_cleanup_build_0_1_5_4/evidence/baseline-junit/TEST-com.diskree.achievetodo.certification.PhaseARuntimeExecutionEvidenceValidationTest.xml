@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:37:32.244Z" hostname="LAPTOP-L0LPH8GP" time="0.092">
+  <properties/>
+  <testcase name="familyMappingIsNarrow()" classname="com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest" time="0.002"/>
+  <testcase name="staleFingerprintRejected()" classname="com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest" time="0.007"/>
+  <testcase name="missingMatrixCaseRejected()" classname="com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest" time="0.012"/>
+  <testcase name="deferredEligibilityRejected()" classname="com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest" time="0.016"/>
+  <testcase name="nonGreenReceiptRejected()" classname="com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest" time="0.012"/>
+  <testcase name="supportedStructureOnlyAccepted()" classname="com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest" time="0.016"/>
+  <testcase name="unsupportedFamilyRejected()" classname="com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest" time="0.011"/>
+  <testcase name="supportedSimpleBiomeAccepted()" classname="com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest" time="0.013"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

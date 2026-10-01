@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.Final19CombatStaticTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-01T17:51:45.039Z" hostname="LAPTOP-L0LPH8GP" time="25.282">
+  <properties/>
+  <testcase name="exactFrozenRaiderAndSkeletonDefinitionsParseWithActualTagsAndComponents()" classname="com.diskree.achievetodo.certification.Final19CombatStaticTest" time="25.28"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

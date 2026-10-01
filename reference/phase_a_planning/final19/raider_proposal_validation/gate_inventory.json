@@ -1,0 +1,14 @@
+{
+  "proposalOnly": true,
+  "certificationGain": 0,
+  "patchSha256": "518ebaae8587b6276610e02473fac985c12cd9431cf3c344bd31c08f48ddbdbe",
+  "files": {
+    "reference/phase_a_planning/final19/raider_proposal_validation/raider_proposal_validation.gradle.log": "a3b5b64d2afbf0e27a4fc9b4460619b75649ce436875fa052f4afdc0916d5a2e",
+    "reference/phase_a_planning/final19/raider_proposal_validation/raider_proposal_validation.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/raider_proposal_validation/TEST-com.diskree.achievetodo.certification.Final19RaiderProposalTest.xml": "cf200494bf391f7e9f82204a5f2823070e6163b93261db275298b15014455e02"
+  },
+  "tests": 5,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0
+}

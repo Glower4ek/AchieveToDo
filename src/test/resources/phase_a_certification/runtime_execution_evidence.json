@@ -1,0 +1,1122 @@
+{
+  "snapshot": "phase_a_runtime_execution_evidence",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "matrixFingerprint": "sha-256:6f04da9b03421656b470b215a19f8f25e8feea3f3adcb61d801af7ffb490d706",
+  "runId": "a166f66f-6938-41ce-8310-1b261f16faca",
+  "generatedAt": "2026-08-22T14:50:55.020764300Z",
+  "entries": [
+    {
+      "advancementId": "blazeandcave:adventure/do_you_want_to_trade",
+      "criterion": "village",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/grave_robber",
+      "criterion": "desert_pyramid",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/happy_trails",
+      "criterion": "desert_pyramid",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/house_of_psychos",
+      "criterion": "mansion",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/monumental",
+      "criterion": "monument",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/out_of_posts",
+      "criterion": "pillager_outpost",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "ancient_city",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "bastion_remnant",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "desert_pyramid",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "end_city",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "fortress",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "igloo",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "jungle_pyramid",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "mansion",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "mineshaft",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "mineshaft_mesa",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "monument",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "ocean_ruin_cold",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "ocean_ruin_warm",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "pillager_outpost",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "ruined_portal",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "shipwreck",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "stronghold",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "swamp_hut",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "trail_ruins",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "trial_chambers",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "village_desert",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "village_plains",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "village_savanna",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "village_snowy",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "village_taiga",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/secret_of_the_igloo",
+      "criterion": "igloo",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/tomb_raider",
+      "criterion": "jungle_pyramid",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/witchcraft",
+      "criterion": "swamp_hut",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:animal/mooshroom_kingdom",
+      "criterion": "mushroom_fields",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/ahoy",
+      "criterion": "shipwreck",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/atlantis",
+      "criterion": "ocean_ruin",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/cold_feet",
+      "criterion": "frozen_river",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/cold_feet",
+      "criterion": "ice_spikes",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/cold_feet",
+      "criterion": "snowy_beach",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/cold_feet",
+      "criterion": "snowy_plains",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/cold_feet",
+      "criterion": "snowy_taiga",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/enchanted_forest",
+      "criterion": "flower_forest",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/high_feet",
+      "criterion": "frozen_peaks",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/high_feet",
+      "criterion": "grove",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/high_feet",
+      "criterion": "jagged_peaks",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/high_feet",
+      "criterion": "meadow",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/high_feet",
+      "criterion": "snowy_slopes",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/high_feet",
+      "criterion": "stony_peaks",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/high_feet",
+      "criterion": "stony_shore",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/high_feet",
+      "criterion": "windswept_forest",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/high_feet",
+      "criterion": "windswept_gravelly_hills",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/high_feet",
+      "criterion": "windswept_hills",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/one_with_the_forest",
+      "criterion": "birch_forest",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/one_with_the_forest",
+      "criterion": "dark_forest",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/one_with_the_forest",
+      "criterion": "flower_forest",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/one_with_the_forest",
+      "criterion": "forest",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/one_with_the_forest",
+      "criterion": "old_growth_birch_forest",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/one_with_the_forest",
+      "criterion": "old_growth_pine_taiga",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/one_with_the_forest",
+      "criterion": "old_growth_spruce_taiga",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/one_with_the_forest",
+      "criterion": "plains",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/one_with_the_forest",
+      "criterion": "sunflower_plains",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/one_with_the_forest",
+      "criterion": "taiga",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/overgrown",
+      "criterion": "bamboo_jungle",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/overgrown",
+      "criterion": "cherry_grove",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/overgrown",
+      "criterion": "jungle",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/overgrown",
+      "criterion": "mangrove_swamp",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/overgrown",
+      "criterion": "mushroom_fields",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/overgrown",
+      "criterion": "pale_garden",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/overgrown",
+      "criterion": "sparse_jungle",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/overgrown",
+      "criterion": "swamp",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/pretty_in_pink",
+      "criterion": "cherry_grove",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/the_great_blocky_reef",
+      "criterion": "warm_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/the_mighty_jungle",
+      "criterion": "jungle",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/the_sea_calls_you",
+      "criterion": "ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/theres_a_zombie_on_the_lawn",
+      "criterion": "sunflower_plains",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/warm_feet",
+      "criterion": "badlands",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/warm_feet",
+      "criterion": "desert",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/warm_feet",
+      "criterion": "eroded_badlands",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/warm_feet",
+      "criterion": "savanna",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/warm_feet",
+      "criterion": "savanna_plateau",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/warm_feet",
+      "criterion": "windswept_savanna",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/warm_feet",
+      "criterion": "wooded_badlands",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/wet_feet",
+      "criterion": "beach",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/wet_feet",
+      "criterion": "cold_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/wet_feet",
+      "criterion": "deep_cold_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/wet_feet",
+      "criterion": "deep_frozen_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/wet_feet",
+      "criterion": "deep_lukewarm_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/wet_feet",
+      "criterion": "deep_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/wet_feet",
+      "criterion": "frozen_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/wet_feet",
+      "criterion": "lukewarm_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/wet_feet",
+      "criterion": "ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/wet_feet",
+      "criterion": "river",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/wet_feet",
+      "criterion": "warm_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:end/void_walker",
+      "criterion": "end_barrens",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:end/void_walker",
+      "criterion": "end_highlands",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:end/void_walker",
+      "criterion": "end_midlands",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:end/void_walker",
+      "criterion": "small_end_islands",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:end/void_walker",
+      "criterion": "the_end",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:mining/fallen_kingdom",
+      "criterion": "ancient_city",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:mining/gold_mine",
+      "criterion": "mineshaft_mesa",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "blazeandcave:mining/this_is_mine_now",
+      "criterion": "mineshaft",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "badlands",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "beach",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "birch_forest",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "cherry_grove",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "cold_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "dark_forest",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "desert",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "forest",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "frozen_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "jungle",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "lukewarm_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "meadow",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "mushroom_fields",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "old_growth_taiga",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "pale_garden",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "peaks",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "plains",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "river",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "savanna",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "snowy_plains",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "snowy_slopes_or_grove",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "snowy_taiga",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "swamp",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "taiga",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "warm_ocean",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/adventuring_time",
+      "criterion": "windswept_hills",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/minecraft_trials_edition",
+      "criterion": "minecraft_trials_edition",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "minecraft:end/find_end_city",
+      "criterion": "in_city",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "minecraft:nether/explore_nether",
+      "criterion": "basalt_deltas",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:nether/explore_nether",
+      "criterion": "crimson_forest",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:nether/explore_nether",
+      "criterion": "nether_wastes",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:nether/explore_nether",
+      "criterion": "soul_sand_valley",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:nether/explore_nether",
+      "criterion": "warped_forest",
+      "family": "LOCATION_MOVEMENT",
+      "source": "PhaseALocationMovementGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "AUTOMATED_GREEN"
+    },
+    {
+      "advancementId": "minecraft:nether/find_bastion",
+      "criterion": "bastion_remnant",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "minecraft:nether/find_fortress",
+      "criterion": "fortress",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    },
+    {
+      "advancementId": "minecraft:story/follow_ender_eye",
+      "criterion": "in_stronghold",
+      "family": "STRUCTURE_ONLY",
+      "source": "PhaseAStructureLocationGameTest",
+      "result": "GREEN",
+      "matrixCertificationStatus": "RUNTIME_DEFERRED"
+    }
+  ]
+}

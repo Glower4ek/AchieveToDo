@@ -1,0 +1,20 @@
+{
+  "classification": "STALE_TEST_FIXTURE_NO_PRODUCTION_BUG",
+  "failedTest": "ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies",
+  "failedLine": 867,
+  "cause": "The historical current marker fixture lacks the authorized FINAL19 mandatory raiderPredicateKeys=snake_case property. Production correctly rejects it.",
+  "sourcePath": "src/test/java/com/diskree/achievetodo/client/ExternalPackCompatibilityTest.java",
+  "sourceSha256": "bd0345e10ea907f8a295c1e90698bda9a07fb0c57a24e9a139887e373e8af60a",
+  "releaseTestPath": "reference/phase_a_planning/pre26_2_final_build/java/com/diskree/achievetodo/client/Pre26ReleaseExternalPackCompatibilityTest.java",
+  "releaseTestSha256": "17ef854d4d21933acdcb4fee02f72f85f3e2a31ac749753452326e0c47169858",
+  "adaptation": "Class renamed to Pre26ReleaseExternalPackCompatibilityTest; one fixture property added; every original assertion retained.",
+  "productionChanges": false,
+  "historicalTestChanged": false,
+  "acceptedEvidenceRegenerated": false,
+  "originalGateCounts": {
+    "tests": 72,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0
+  }
+}

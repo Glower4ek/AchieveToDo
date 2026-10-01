@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.Final19DualTagsAcceptanceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-30T19:20:21.989Z" hostname="LAPTOP-L0LPH8GP" time="0.163">
+  <properties/>
+  <testcase name="allSixDualTagGroupsPassWithNativeMutationAndGateNegatives()" classname="com.diskree.achievetodo.certification.Final19DualTagsAcceptanceTest" time="0.038"/>
+  <testcase name="missingTagsDuplicateStaleFalseGateAndNoMutationClaimsAreRejected()" classname="com.diskree.achievetodo.certification.Final19DualTagsAcceptanceTest" time="0.123"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

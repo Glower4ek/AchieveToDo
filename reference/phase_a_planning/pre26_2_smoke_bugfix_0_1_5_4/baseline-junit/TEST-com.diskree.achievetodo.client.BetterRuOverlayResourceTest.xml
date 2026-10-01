@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.client.BetterRuOverlayResourceTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:49:52.709Z" hostname="LAPTOP-L0LPH8GP" time="0.834">
+  <properties/>
+  <testcase name="betterRuOverlayDoesNotConflictWithAchieveToDoNamespaceAndEnglishStaysAvailable()" classname="com.diskree.achievetodo.client.BetterRuOverlayResourceTest" time="0.006"/>
+  <testcase name="productionRuOverlayMatchesApprovedFinalManualDecisions()" classname="com.diskree.achievetodo.client.BetterRuOverlayResourceTest" time="0.011"/>
+  <testcase name="achievetodoRussianLocaleStillCoversAllModOwnedKeys()" classname="com.diskree.achievetodo.client.BetterRuOverlayResourceTest" time="0.001"/>
+  <testcase name="pinnedHistoricalBacapSourceRemainsUnchanged()" classname="com.diskree.achievetodo.client.BetterRuOverlayResourceTest" time="0.012"/>
+  <testcase name="productionRuOverlayKeepsPinnedPhaseARuntimeResolvable()" classname="com.diskree.achievetodo.client.BetterRuOverlayResourceTest" time="0.759"/>
+  <testcase name="integratedBetterRuOverlayParsesWithoutDuplicateKeys()" classname="com.diskree.achievetodo.client.BetterRuOverlayResourceTest" time="0.031"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.client.Pre26SmokeRegressionTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:38:16.945Z" hostname="LAPTOP-L0LPH8GP" time="1.839">
+  <properties/>
+  <testcase name="ordinaryVanillaAndAlreadyModernNamesRemainUnchanged()" classname="com.diskree.achievetodo.client.Pre26SmokeRegressionTest" time="0.002"/>
+  <testcase name="rewardAndAbilityComponentsRenderRussianWithSourceEquivalentFallback()" classname="com.diskree.achievetodo.client.Pre26SmokeRegressionTest" time="0.469"/>
+  <testcase name="legacyLiteralAndArrayComponentsPreserveStylesWithoutRewritingQuotedData()" classname="com.diskree.achievetodo.client.Pre26SmokeRegressionTest" time="0.001"/>
+  <testcase name="transientObjectiveAbsenceDoesNotEmitError()" classname="com.diskree.achievetodo.client.Pre26SmokeRegressionTest" time="0.008"/>
+  <testcase name="flowerRewardUsesTranslatedStyledComponentsAndSeparateLoreLines()" classname="com.diskree.achievetodo.client.Pre26SmokeRegressionTest" time="0.015"/>
+  <testcase name="doubleEncodedNamesAndItemNamesBecomeComponents()" classname="com.diskree.achievetodo.client.Pre26SmokeRegressionTest" time="0.004"/>
+  <testcase name="all215CustomRewardsMatchSourceComponentsAndSurviveNbtReload()" classname="com.diskree.achievetodo.client.Pre26SmokeRegressionTest" time="0.698"/>
+  <testcase name="sharedAbilityFormatterRestoresTwoLines()" classname="com.diskree.achievetodo.client.Pre26SmokeRegressionTest" time="0.005"/>
+  <testcase name="everyShippedAdvancementMessageRetainsHoverClickAndFrameMetadata()" classname="com.diskree.achievetodo.client.Pre26SmokeRegressionTest" time="0.521"/>
+  <testcase name="earnedWashingMachineChatContainsHoverAndClickMetadata()" classname="com.diskree.achievetodo.client.Pre26SmokeRegressionTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

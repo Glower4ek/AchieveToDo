@@ -1,0 +1,212 @@
+{
+  "snapshot": "phase_a_mixed_perfect_run_case_catalog",
+  "family": "MIXED_PERFECT_RUN",
+  "source": "PhaseAMixedPerfectRunGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "criteriaCount": 3,
+  "requirementGroupCount": 3,
+  "supportContracts": {
+    "data/blazeandcave/advancement/technical/spawn_perfect_all.json": {
+      "sha256": "b33b12c282c0f26bb856745907f402a0258b8787bd6e04220861d991e3b29fc0",
+      "frozenJson": {
+        "criteria": {
+          "dragon": {
+            "trigger": "minecraft:summoned_entity",
+            "conditions": {
+              "entity": {
+                "type": "ender_dragon"
+              }
+            }
+          },
+          "wither": {
+            "trigger": "minecraft:summoned_entity",
+            "conditions": {
+              "entity": {
+                "type": "wither"
+              }
+            }
+          },
+          "raid": {
+            "trigger": "minecraft:voluntary_exile"
+          }
+        }
+      }
+    },
+    "data/blazeandcave/advancement/technical/spawn_perfect_one.json": {
+      "sha256": "94f70edb7d73fb65e6c7d6edfdfabd1606046c0f54d2873a5d51fc1e8255bad2",
+      "frozenJson": {
+        "criteria": {
+          "dragon": {
+            "trigger": "minecraft:summoned_entity",
+            "conditions": {
+              "entity": {
+                "type": "ender_dragon"
+              }
+            }
+          },
+          "wither": {
+            "trigger": "minecraft:summoned_entity",
+            "conditions": {
+              "entity": {
+                "type": "wither"
+              }
+            }
+          },
+          "raid": {
+            "trigger": "minecraft:voluntary_exile"
+          }
+        },
+        "requirements": [
+          [
+            "dragon",
+            "wither",
+            "raid"
+          ]
+        ]
+      }
+    },
+    "data/blazeandcave/function/one_second_timer.mcfunction": {
+      "sha256": "ced64a7d466e5751a065eebc720ab6b7a74f92041bf2200335661948d7fef43e"
+    },
+    "data/blazeandcave/function/perfect_run_fail.mcfunction": {
+      "sha256": "5cccb85da0a89107a2005093e55fee5ff749d38f4917e594db4571bade95a6d3"
+    },
+    "data/blazeandcave/function/perfect_run_start.mcfunction": {
+      "sha256": "7e2424169e21323341e6c052772b3f028456f7ac8b9e3d6633ae6e7d0bdbaf89"
+    }
+  },
+  "completionPolicy": "One joined finite SURVIVAL player completes all three native criteria while native spawn_perfect_one is live and before the frozen thirty-second failure window, with all damage counters zero. Frozen criteria require spawn_perfect_one rather than spawn_perfect_all; proof must not claim the stronger display text.",
+  "sources": [
+    {
+      "advancementId": "blazeandcave:challenges/the_perfect_run",
+      "sha256": "66accc2c4b0011b9932c7c3abe7ee6be0e5a38c792789ea69ec85c70eeb04142",
+      "requirements": [
+        [
+          "dragon"
+        ],
+        [
+          "wither"
+        ],
+        [
+          "raid"
+        ]
+      ],
+      "frozenCriteria": {
+        "dragon": {
+          "trigger": "minecraft:player_killed_entity",
+          "conditions": {
+            "entity": {
+              "type": "ender_dragon"
+            },
+            "player": {
+              "type_specific": {
+                "type": "player",
+                "advancements": {
+                  "blazeandcave:technical/spawn_perfect_one": true
+                }
+              }
+            }
+          }
+        },
+        "wither": {
+          "trigger": "minecraft:player_killed_entity",
+          "conditions": {
+            "entity": {
+              "type": "wither"
+            },
+            "player": {
+              "type_specific": {
+                "type": "player",
+                "advancements": {
+                  "blazeandcave:technical/spawn_perfect_one": true
+                }
+              }
+            }
+          }
+        },
+        "raid": {
+          "trigger": "minecraft:hero_of_the_village",
+          "conditions": {
+            "player": {
+              "type_specific": {
+                "type": "player",
+                "advancements": {
+                  "blazeandcave:technical/spawn_perfect_one": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "advancementId": "blazeandcave:challenges/the_perfect_run",
+      "criterion": "dragon",
+      "requirementGroup": 0,
+      "trigger": "minecraft:player_killed_entity",
+      "boundary": "ServerboundAttackPacket.handle->Player.attack->LivingEntity.hurtServer/die->CriteriaTriggers.PLAYER_KILLED_ENTITY",
+      "alternatives": [
+        "dragon"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "ender_dragon"
+        },
+        "player": {
+          "type_specific": {
+            "type": "player",
+            "advancements": {
+              "blazeandcave:technical/spawn_perfect_one": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/the_perfect_run",
+      "criterion": "wither",
+      "requirementGroup": 1,
+      "trigger": "minecraft:player_killed_entity",
+      "boundary": "ServerboundAttackPacket.handle->Player.attack->LivingEntity.hurtServer/die->CriteriaTriggers.PLAYER_KILLED_ENTITY",
+      "alternatives": [
+        "wither"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "type": "wither"
+        },
+        "player": {
+          "type_specific": {
+            "type": "player",
+            "advancements": {
+              "blazeandcave:technical/spawn_perfect_one": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/the_perfect_run",
+      "criterion": "raid",
+      "requirementGroup": 2,
+      "trigger": "minecraft:hero_of_the_village",
+      "boundary": "native Raider.die->Raid hero bookkeeping->normal Raid.tick VICTORY->CriteriaTriggers.RAID_WIN",
+      "alternatives": [
+        "raid"
+      ],
+      "frozenConditions": {
+        "player": {
+          "type_specific": {
+            "type": "player",
+            "advancements": {
+              "blazeandcave:technical/spawn_perfect_one": true
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/D:/Vibecode/AchieveToDo%2026.2/.gradle-user-home/wrapper/dists/gradle-9.5.1-bin/iq79hdu3mqx29lgffhp8bfmx/gradle-9.5.1/lib/native-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.5.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+Fabric Loom: 1.17.19
+
+> Task :generateBuildConfig
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :compileTestJava
+> Task :processTestResources
+> Task :testClasses
+
+> Task :compileGametestJava
+D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:37: error: cannot find symbol
+        case "wax_off"->{c.pre=Blocks.WAXED_COPPER_BLOCK.defaultBlockState();c.stack=new ItemStack(Items.DIAMOND_AXE);c.ability=AbilityType.findToolMaterialUsageAbility(ToolMaterial.DIAMOND);}
+                                     ^
+  symbol:   variable WAXED_COPPER_BLOCK
+  location: class Blocks
+D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:38: error: cannot find symbol
+        case "clean_leather_armor"->{c.pre=Blocks.WATER_CAULDRON.defaultBlockState().setValue(LeveledCauldronBlock.LEVEL,3);c.stack=new ItemStack(Items.LEATHER_CHESTPLATE);c.stack.set(DataComponents.DYED_COLOR,new DyedItemColor(0xAA0000));c.ability=AbilityType.USE_CAULDRON;}
+                                                                                              ^
+  symbol:   variable LeveledCauldronBlock
+  location: class Final19DualTagsGameTest
+D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:39: error: cannot find symbol
+        case "clean_banner"->{c.pre=Blocks.WATER_CAULDRON.defaultBlockState().setValue(LeveledCauldronBlock.LEVEL,3);c.stack=new ItemStack(Items.WHITE_BANNER);var pattern=h.getLevel().registryAccess().lookupOrThrow(Registries.BANNER_PATTERN).getOrThrow(ResourceKey.create(Registries.BANNER_PATTERN,Identifier.parse("minecraft:cross")));c.stack.set(DataComponents.BANNER_PATTERNS,new BannerPatternLayers.Builder().add(pattern,DyeColor.RED).build());c.ability=AbilityType.USE_CAULDRON;}
+                                                                                       ^
+  symbol:   variable LeveledCauldronBlock
+  location: class Final19DualTagsGameTest
+D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:39: error: cannot find symbol
+        case "clean_banner"->{c.pre=Blocks.WATER_CAULDRON.defaultBlockState().setValue(LeveledCauldronBlock.LEVEL,3);c.stack=new ItemStack(Items.WHITE_BANNER);var pattern=h.getLevel().registryAccess().lookupOrThrow(Registries.BANNER_PATTERN).getOrThrow(ResourceKey.create(Registries.BANNER_PATTERN,Identifier.parse("minecraft:cross")));c.stack.set(DataComponents.BANNER_PATTERNS,new BannerPatternLayers.Builder().add(pattern,DyeColor.RED).build());c.ability=AbilityType.USE_CAULDRON;}
+                                                                                                                                                ^
+  symbol:   variable WHITE_BANNER
+  location: class Items
+D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:40: error: cannot find symbol
+        case "clean_shulker_box"->{c.pre=Blocks.WATER_CAULDRON.defaultBlockState().setValue(LeveledCauldronBlock.LEVEL,3);c.stack=new ItemStack(Items.RED_SHULKER_BOX);c.ability=AbilityType.USE_CAULDRON;}
+                                                                                            ^
+  symbol:   variable LeveledCauldronBlock
+  location: class Final19DualTagsGameTest
+D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:40: error: cannot find symbol
+        case "clean_shulker_box"->{c.pre=Blocks.WATER_CAULDRON.defaultBlockState().setValue(LeveledCauldronBlock.LEVEL,3);c.stack=new ItemStack(Items.RED_SHULKER_BOX);c.ability=AbilityType.USE_CAULDRON;}
+                                                                                                                                                     ^
+  symbol:   variable RED_SHULKER_BOX
+  location: class Items
+D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:55: error: cannot find symbol
+        else if(c.row.get("criterion").getAsString().equals("wax_off"))h.getLevel().setBlockAndUpdate(c.pos,Blocks.COPPER_BLOCK.defaultBlockState());
+                                                                                                                               ^
+  symbol:   method defaultBlockState()
+  location: variable COPPER_BLOCK of type WeatheringCopperCollection<Block>
+D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:56: error: cannot find symbol
+        else{hand(c,c.row.get("criterion").getAsString().equals("clean_leather_armor")?new ItemStack(Items.LEATHER_CHESTPLATE):c.row.get("criterion").getAsString().equals("clean_banner")?new ItemStack(Items.WHITE_BANNER):new ItemStack(Items.SHULKER_BOX));}
+                                                                                                                                                                                                              ^
+  symbol:   variable WHITE_BANNER
+  location: class Items
+8 errors
+
+> Task :compileGametestJava FAILED
+
+[Incubating] Problems report is available at: file:///D:/Vibecode/AchieveToDo%2026.2/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileGametestJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
+> Compilation failed; see the compiler output below.
+  D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:37: error: cannot find symbol
+          case "wax_off"->{c.pre=Blocks.WAXED_COPPER_BLOCK.defaultBlockState();c.stack=new ItemStack(Items.DIAMOND_AXE);c.ability=AbilityType.findToolMaterialUsageAbility(ToolMaterial.DIAMOND);}
+                                       ^
+    symbol:   variable WAXED_COPPER_BLOCK
+    location: class Blocks
+  D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:38: error: cannot find symbol
+          case "clean_leather_armor"->{c.pre=Blocks.WATER_CAULDRON.defaultBlockState().setValue(LeveledCauldronBlock.LEVEL,3);c.stack=new ItemStack(Items.LEATHER_CHESTPLATE);c.stack.set(DataComponents.DYED_COLOR,new DyedItemColor(0xAA0000));c.ability=AbilityType.USE_CAULDRON;}
+                                                                                                ^
+    symbol:   variable LeveledCauldronBlock
+    location: class Final19DualTagsGameTest
+  D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:39: error: cannot find symbol
+          case "clean_banner"->{c.pre=Blocks.WATER_CAULDRON.defaultBlockState().setValue(LeveledCauldronBlock.LEVEL,3);c.stack=new ItemStack(Items.WHITE_BANNER);var pattern=h.getLevel().registryAccess().lookupOrThrow(Registries.BANNER_PATTERN).getOrThrow(ResourceKey.create(Registries.BANNER_PATTERN,Identifier.parse("minecraft:cross")));c.stack.set(DataComponents.BANNER_PATTERNS,new BannerPatternLayers.Builder().add(pattern,DyeColor.RED).build());c.ability=AbilityType.USE_CAULDRON;}
+                                                                                         ^
+    symbol:   variable LeveledCauldronBlock
+    location: class Final19DualTagsGameTest
+  D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:39: error: cannot find symbol
+          case "clean_banner"->{c.pre=Blocks.WATER_CAULDRON.defaultBlockState().setValue(LeveledCauldronBlock.LEVEL,3);c.stack=new ItemStack(Items.WHITE_BANNER);var pattern=h.getLevel().registryAccess().lookupOrThrow(Registries.BANNER_PATTERN).getOrThrow(ResourceKey.create(Registries.BANNER_PATTERN,Identifier.parse("minecraft:cross")));c.stack.set(DataComponents.BANNER_PATTERNS,new BannerPatternLayers.Builder().add(pattern,DyeColor.RED).build());c.ability=AbilityType.USE_CAULDRON;}
+                                                                                                                                                  ^
+    symbol:   variable WHITE_BANNER
+    location: class Items
+  D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:40: error: cannot find symbol
+          case "clean_shulker_box"->{c.pre=Blocks.WATER_CAULDRON.defaultBlockState().setValue(LeveledCauldronBlock.LEVEL,3);c.stack=new ItemStack(Items.RED_SHULKER_BOX);c.ability=AbilityType.USE_CAULDRON;}
+                                                                                              ^
+    symbol:   variable LeveledCauldronBlock
+    location: class Final19DualTagsGameTest
+  D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:40: error: cannot find symbol
+          case "clean_shulker_box"->{c.pre=Blocks.WATER_CAULDRON.defaultBlockState().setValue(LeveledCauldronBlock.LEVEL,3);c.stack=new ItemStack(Items.RED_SHULKER_BOX);c.ability=AbilityType.USE_CAULDRON;}
+                                                                                                                                                       ^
+    symbol:   variable RED_SHULKER_BOX
+    location: class Items
+  D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:56: error: cannot find symbol
+          else{hand(c,c.row.get("criterion").getAsString().equals("clean_leather_armor")?new ItemStack(Items.LEATHER_CHESTPLATE):c.row.get("criterion").getAsString().equals("clean_banner")?new ItemStack(Items.WHITE_BANNER):new ItemStack(Items.SHULKER_BOX));}
+                                                                                                                                                                                                                ^
+    symbol:   variable WHITE_BANNER
+    location: class Items
+  D:\Vibecode\AchieveToDo 26.2\tools\final19\gametest\com\diskree\achievetodo\certification\Final19DualTagsGameTest.java:55: error: cannot find symbol
+          else if(c.row.get("criterion").getAsString().equals("wax_off"))h.getLevel().setBlockAndUpdate(c.pos,Blocks.COPPER_BLOCK.defaultBlockState());
+                                                                                                                                 ^
+    symbol:   method defaultBlockState()
+    location: variable COPPER_BLOCK of type WeatheringCopperCollection<Block>
+  8 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 1m 9s
+6 actionable tasks: 4 executed, 2 up-to-date

@@ -1,0 +1,9 @@
+{
+  "family": "ENTITY_VARIANT_COMPONENT_CONTEXT",
+  "runId": "a45e9e2c-8d99-41a5-84e2-8dffdf5d3d86",
+  "exact": true,
+  "fingerprint": "c02d54573f7477506f3ecb9d6bb0cdef9f0071164b4817070c6ba56a11f46b74",
+  "expectedEntries": 23,
+  "runtimeCopySha256": "72ac00a28a2bd61b0ab965a41d99edd878f74e5c0ff67a4396f125281e725060",
+  "stage": "TEMP_PROMOTABLE"
+}

@@ -41,11 +41,7 @@ public class AxeItemMixin {
 
     @Inject(
         method = "evaluateNewBlockState",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/BlockPos;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V",
-            shift = At.Shift.BEFORE
-        ),
+        at = @At("HEAD"),
         cancellable = true
     )
     public void lockStrip(

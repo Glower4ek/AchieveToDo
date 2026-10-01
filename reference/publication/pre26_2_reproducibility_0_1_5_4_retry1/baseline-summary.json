@@ -1,0 +1,39 @@
+{
+  "failures": [
+    {
+      "message": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+      "test": "treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly()",
+      "suite": "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest",
+      "trace": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>\n\tat org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:190)\n\tat com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly(ExternalPackCompatibilityPhaseATest.java:41)",
+      "type": "org.opentest4j.AssertionFailedError"
+    },
+    {
+      "message": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+      "test": "admitsOnlyRawOrCurrentCompatiblePackCopies()",
+      "suite": "com.diskree.achievetodo.client.ExternalPackCompatibilityTest",
+      "trace": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>\n\tat org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:190)\n\tat com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies(ExternalPackCompatibilityTest.java:867)",
+      "type": "org.opentest4j.AssertionFailedError"
+    },
+    {
+      "message": "org.opentest4j.AssertionFailedError: data/blazeandcave/advancement/adventure/feeling_ill.json ==> expected: <e06123aa1f567bb2fa83234ab6f1cb7691284b23a5fae985801a827f3284e2fc> but was: <2b98428f5dc509b37e7aa5c307fe94521ab963186fa41797a193639ca24929da>",
+      "test": "onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive()",
+      "suite": "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest",
+      "trace": "org.opentest4j.AssertionFailedError: data/blazeandcave/advancement/adventure/feeling_ill.json ==> expected: <e06123aa1f567bb2fa83234ab6f1cb7691284b23a5fae985801a827f3284e2fc> but was: <2b98428f5dc509b37e7aa5c307fe94521ab963186fa41797a193639ca24929da>\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1210)\n\tat com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive(PhaseALlamaFestivalNbtScopeTest.java:41)",
+      "type": "org.opentest4j.AssertionFailedError"
+    },
+    {
+      "message": "org.opentest4j.AssertionFailedError: expected: <compat_26_2_r15> but was: <compat_26_2_r16>",
+      "test": "bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(Path)",
+      "suite": "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest",
+      "trace": "org.opentest4j.AssertionFailedError: expected: <compat_26_2_r15> but was: <compat_26_2_r16>\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1199)\n\tat com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(PhaseALlamaFestivalNbtScopeTest.java:73)",
+      "type": "org.opentest4j.AssertionFailedError"
+    }
+  ],
+  "suites": 80,
+  "totals": {
+    "skipped": 0,
+    "tests": 391,
+    "failures": 4,
+    "errors": 0
+  }
+}

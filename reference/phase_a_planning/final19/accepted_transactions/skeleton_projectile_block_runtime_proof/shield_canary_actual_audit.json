@@ -1,0 +1,13 @@
+{
+  "runId": "aa92e71f-a86c-4ca9-b85c-a2eea5427888",
+  "prefix": "shield",
+  "mode": "canary",
+  "actualEntries": 5,
+  "actualTempSha256": "88f1f19be9c16319a61fe38d3622181590eb0bb8dadfc9ca662efea32aa2a04d",
+  "actualRunStateSha256": "30ac0ab0c3bef39ae492e55152ac3c492e7501e0d6d44c60c21fb40b539785d6",
+  "runtimeCopySha256": "6694aeadd744afa96bca4ad3688566a2681c42913f0049470fab71a4be1e7416",
+  "runtimeCopyArchive": "reference/phase_a_planning/final19/combat_runtime_copies/6694aeadd744afa96bca4ad3688566a2681c42913f0049470fab71a4be1e7416.zip",
+  "fingerprint": "bf09e6d6baf6294f05136017cb19c5d093c66e4235f81d0ade1020a35eb753a6",
+  "nativeWindowWarnings": 0,
+  "verdict": "ACTUAL_TEMP_RUN_STATE_GREEN"
+}

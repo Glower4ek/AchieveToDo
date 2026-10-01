@@ -1,0 +1,58 @@
+{
+  "snapshot": "phase_a_item_used_on_block_contextual_execution_evidence",
+  "schemaVersion": 1,
+  "family": "ITEM_USED_ON_BLOCK_CONTEXTUAL",
+  "source": "PhaseAItemUsedOnBlockContextualGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:95b44c2680a9f6d6ae24f51c124f999e54a391920db123e6751defa6fa5d7583",
+  "runId": "0ae32b01-333c-4a00-a2c7-791d6fd4c774",
+  "generatedAt": "2026-09-29T10:17:42.654300800Z",
+  "entries": [
+    {
+      "family": "ITEM_USED_ON_BLOCK_CONTEXTUAL",
+      "source": "PhaseAItemUsedOnBlockContextualGameTest",
+      "advancementId": "minecraft:adventure/play_jukebox_in_meadows",
+      "criterion": "play_jukebox_in_meadows",
+      "trigger": "minecraft:item_used_on_block",
+      "boundary": "ServerPlayerGameMode.useItemOn->JukeboxBlock.useItemOn->JukeboxPlayable.tryInsertIntoJukebox->CriteriaTriggers.ITEM_USED_ON_BLOCK",
+      "observedBiome": "minecraft:meadow",
+      "observedBlock": "minecraft:jukebox",
+      "observedDisc": "minecraft:music_disc_13",
+      "runId": "0ae32b01-333c-4a00-a2c7-791d6fd4c774",
+      "catalogFingerprint": "sha-256:95b44c2680a9f6d6ae24f51c124f999e54a391920db123e6751defa6fa5d7583",
+      "result": "GREEN",
+      "gameMode": "SURVIVAL",
+      "playerUuid": "cd30750b-9d6c-44ee-aff0-d9f0d42baecf",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "toolPlayable": true,
+      "jukeboxAcceptedDisc": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "discCountBefore": 1,
+      "discCountAfter": 0,
+      "noDirectCriterionTrigger": true,
+      "noManualAward": true,
+      "productionUnlockWitness": {
+        "ability": "USE_JUKEBOX",
+        "scoreboardObjective": "bac_advancements",
+        "thresholdSource": "live_overworld_seed_abilities_configuration",
+        "requiredThreshold": 284,
+        "scoreBefore": 0,
+        "scoreAfter": 284,
+        "abilityLockedBefore": true,
+        "abilityLockedAfter": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 2455,
+        "warningCount": 0
+      }
+    }
+  ]
+}

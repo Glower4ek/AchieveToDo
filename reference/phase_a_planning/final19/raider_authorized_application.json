@@ -1,0 +1,46 @@
+{
+  "id": "AUTHORIZED_FINAL19_RAIDER_PRODUCTION_FIX",
+  "date": "2026-10-01",
+  "stage": "EXACT_AUTHORIZED_PATCH_NATIVE_FAMILY_AND_ZERO_GAIN_REGRESSIONS_DURABLY_GREEN",
+  "patchPath": "reference/phase_a_planning/final19/raider_production_fix_proposal.patch",
+  "patchSha256": "518ebaae8587b6276610e02473fac985c12cd9431cf3c344bd31c08f48ddbdbe",
+  "preconditions": {
+    "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java": "dffeb7c2cf6685c5f689cf2a205b435b81da5b524971103804de3e3a6ae1dc11"
+  },
+  "postconditions": {
+    "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java": "1bea3ba9caf22963d1ef26de69b19534a4b16d1eab85a39c5e1fc17750227a31"
+  },
+  "authorizedProductionPaths": [
+    "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java"
+  ],
+  "freshnessProperty": "raiderPredicateKeys=snake_case",
+  "patchApplied": true,
+  "certificationGain": 0,
+  "productionSemanticBridge": {
+    "path": "reference/phase_a_planning/final19/raider_production_output_scope.json",
+    "sha256": "e2b0ad1e98b119f4bfb78758f9497f3247dc0916b2fbcbbf559cf225f0c881a4",
+    "changedDefinitions": 3,
+    "unchangedDefinitions": 1226,
+    "allDefinitions": 1229,
+    "canonicalDefinitions": 1152,
+    "actualProductionConverter": true
+  },
+  "acceptedZeroGainRegression": {
+    "id": "AUTHORIZED_RAIDER_ZERO_GAIN_INTEGRITY",
+    "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+    "path": "src/test/resources/final19_certification/raider_integrity_regression.json",
+    "sha256": "2327d33e34aa862a4ec647c7c858275f42c880729a7296f4448e3e0c7bc9839d",
+    "certificationGain": 0,
+    "feelingIllBranches": 5,
+    "dungeonCrawlerFalseBranches": 3,
+    "nativeRaidNonraidControls": 16
+  },
+  "acceptedFamily": {
+    "family": "RAIDER_PREDICATE_KEY_MIGRATION",
+    "runId": "c30e2c9f-013f-4c33-98e6-924904c77908",
+    "evidenceSha256": "af54781762c0f315fdf72d825505acde7ae86666ea87cb358d868296c0665c45",
+    "requirementGroups": 1,
+    "advancements": 1,
+    "verdict": "DURABLY_GREEN"
+  }
+}

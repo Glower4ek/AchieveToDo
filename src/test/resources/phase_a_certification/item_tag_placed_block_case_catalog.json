@@ -1,0 +1,62 @@
+{
+  "snapshot": "phase_a_item_tag_placed_block_case_catalog",
+  "canonicalAdvancementCount": 1152,
+  "compatibilityMarker": "compat_26_2_r15",
+  "canonicalSemanticsSource": "reference/phase_a_preservation/files/final/bacap.zip",
+  "summary": {
+    "totalCases": 5,
+    "uniqueAdvancements": 5,
+    "automationSupported": 5,
+    "automationDeferred": 0,
+    "byEligibility": {
+      "SUPPORTED": 5
+    }
+  },
+  "cases": [
+    {
+      "advancementId": "blazeandcave:building/en_garde",
+      "sourcePath": "data/blazeandcave/advancement/building/en_garde.json",
+      "criterion": "fence",
+      "trigger": "minecraft:placed_block",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "TAG_CONTEXT_REQUIRED",
+      "itemTag": "minecraft:fences"
+    },
+    {
+      "advancementId": "blazeandcave:building/hanging_around",
+      "sourcePath": "data/blazeandcave/advancement/building/hanging_around.json",
+      "criterion": "hanging_sign",
+      "trigger": "minecraft:placed_block",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "TAG_CONTEXT_REQUIRED",
+      "itemTag": "minecraft:hanging_signs"
+    },
+    {
+      "advancementId": "blazeandcave:building/its_a_sign",
+      "sourcePath": "data/blazeandcave/advancement/building/its_a_sign.json",
+      "criterion": "sign",
+      "trigger": "minecraft:placed_block",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "TAG_CONTEXT_REQUIRED",
+      "itemTag": "minecraft:signs"
+    },
+    {
+      "advancementId": "blazeandcave:building/its_a_trap",
+      "sourcePath": "data/blazeandcave/advancement/building/its_a_trap.json",
+      "criterion": "trapdoor",
+      "trigger": "minecraft:placed_block",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "TAG_CONTEXT_REQUIRED",
+      "itemTag": "minecraft:trapdoors"
+    },
+    {
+      "advancementId": "blazeandcave:building/raise_the_flag",
+      "sourcePath": "data/blazeandcave/advancement/building/raise_the_flag.json",
+      "criterion": "banner",
+      "trigger": "minecraft:placed_block",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "TAG_CONTEXT_REQUIRED",
+      "itemTag": "minecraft:banners"
+    }
+  ]
+}

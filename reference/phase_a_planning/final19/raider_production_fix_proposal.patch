@@ -1,0 +1,43 @@
+--- a/src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java
++++ b/src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java
+@@ -36,6 +36,7 @@
+     private static final String MARKER_VERSION = "compat_26_2_r15";
+     private static final String ROOT_OVERRIDE_SHA1_PROPERTY = "rootOverrideSha1";
+     private static final String LLAMA_CARPET_NBT_PROPERTY = "llamaCarpetNbtMapping";
++    private static final String RAIDER_PREDICATE_KEYS_PROPERTY = "raiderPredicateKeys";
+     private static final String[] CATEGORY_ROOTS = {
+         "adventure",
+         "animal",
+@@ -221,7 +222,8 @@
+                 && externalPack.getSha1().equals(properties.getProperty("sourceSha1"))
+                 && currentRootOverrideSha1().equals(properties.getProperty(ROOT_OVERRIDE_SHA1_PROPERTY))
+                 && (externalPack != ExternalPack.BACAP
+-                    || "equipment.body".equals(properties.getProperty(LLAMA_CARPET_NBT_PROPERTY)));
++                    || ("equipment.body".equals(properties.getProperty(LLAMA_CARPET_NBT_PROPERTY))
++                        && "snake_case".equals(properties.getProperty(RAIDER_PREDICATE_KEYS_PROPERTY))));
+         } catch (IOException e) {
+             return false;
+         }
+@@ -826,13 +828,7 @@
+             JsonElement value = entry.getValue();
+             String targetKey = key;
+ 
+-            if (LEGACY_HAS_RAID.equals(key)) {
+-                targetKey = "hasRaid";
+-                changed = true;
+-            } else if (LEGACY_IS_CAPTAIN.equals(key)) {
+-                targetKey = "isCaptain";
+-                changed = true;
+-            }
++            // RaiderPredicate.CODEC reads snake_case; preserve explicit and omitted booleans.
+ 
+             TransformResult childResult = transformElement(value, Context.NORMAL);
+             transformed.add(targetKey, childResult.element());
+@@ -1212,6 +1208,7 @@
+         properties.setProperty(ROOT_OVERRIDE_SHA1_PROPERTY, currentRootOverrideSha1());
+         if (externalPack == ExternalPack.BACAP) {
+             properties.setProperty(LLAMA_CARPET_NBT_PROPERTY, "equipment.body");
++            properties.setProperty(RAIDER_PREDICATE_KEYS_PROPERTY, "snake_case");
+         }
+         ByteArrayOutputStream output = new ByteArrayOutputStream();
+         properties.store(output, null);

@@ -1,0 +1,26 @@
+{
+  "snapshot": "phase_a_singleton_miracle_drink_case_catalog",
+  "family": "SINGLETON:blazeandcave:monsters/miracle_drink",
+  "source": "PhaseASingletonMiracleDrinkGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "frozenAdvancementPath": "data/blazeandcave/advancement/monsters/miracle_drink.json",
+  "frozenAdvancementSha256": "071f20e4c422fc0facdc9c37a8704e08b9354a3fb0f8d18f8eb7fa29d34c1067",
+  "frozenTagPath": "data/blazeandcave/tags/item/poison_cures.json",
+  "frozenTagSha256": "d42e15905bd518c2f763c50ce752944cc4c10a4c2b2e0a08f66b53268fb70bb5",
+  "advancementId": "blazeandcave:monsters/miracle_drink",
+  "criterion": "miracle_drink",
+  "requirementGroup": 0,
+  "trigger": "minecraft:consume_item",
+  "itemTag": "blazeandcave:poison_cures",
+  "members": [
+    "minecraft:milk_bucket",
+    "minecraft:honey_bottle"
+  ],
+  "requiredEffect": "minecraft:poison",
+  "minEffectAmplifier": 0,
+  "scoreObjective": "bac_health",
+  "requiredScore": 1,
+  "runtimeBoundary": "ServerboundUseItemPacket.handle->ServerGamePacketListenerImpl.handleUseItem->LivingEntity.completeUsingItem->Consumable.onConsume->CriteriaTriggers.CONSUME_ITEM"
+}

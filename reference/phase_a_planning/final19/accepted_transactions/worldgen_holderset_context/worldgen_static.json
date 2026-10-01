@@ -1,0 +1,8 @@
+{
+  "family": "WORLDGEN_HOLDERSET_CONTEXT",
+  "staticSemantics": "EXACT_FROZEN_CURRENT_TYPED_CONTEXT",
+  "criteriaCount": 37,
+  "requirementGroupCount": 37,
+  "sourceBackedTags": {},
+  "inputFingerprint": "e5dbb0ee699f701a71cdc960357d9098f02320cf24049f8311eec0a034b00b41"
+}

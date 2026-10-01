@@ -1,0 +1,35 @@
+{
+  "id": "AUTHORIZED_FINAL19_CAULDRON_GATE_PRODUCTION_FIX",
+  "date": "2026-09-30",
+  "stage": "EXACT_PATCH_APPLIED_FRESH_NATIVE_REGRESSION_ACCEPTED",
+  "patchPath": "reference/phase_a_planning/final19/cauldron_gate_production_fix_proposal.patch",
+  "patchSha256": "ec33a350ef1ae9185ac99e1c2425a1cec38ca0d64244819058c3cc610a5a07fe",
+  "preconditions": {
+    "src/main/resources/achievetodo.mixins.json": "ed9368d4cf34f18e2d72b47f764ee1c4674418eff82b7d57fe4a1d6825380339",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockMixin.java": "c9473d4918c8d31c7215dcb98a388f3a24660b36940940a598861e9d90985394",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/AxeItemMixin.java": "4247ef44ce7e331f43820d889ecef541f8cbb0a200a31ede2764c8ecbdd46a13",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockAccessor.java": "ABSENT",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/ServerPlayerGameModeCauldronGateMixin.java": "ABSENT"
+  },
+  "postconditions": {
+    "src/main/resources/achievetodo.mixins.json": "56fcb41d75273382681cbeede45882a876de68babcd6580ae63d5c20c0ac211f",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockMixin.java": "c9473d4918c8d31c7215dcb98a388f3a24660b36940940a598861e9d90985394",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/AxeItemMixin.java": "4247ef44ce7e331f43820d889ecef541f8cbb0a200a31ede2764c8ecbdd46a13",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockAccessor.java": "63c46d242eeecabe946be353a8a2353a5ef6555d93982f8e0f8c6846ca4dfd2e",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/ServerPlayerGameModeCauldronGateMixin.java": "3f21c817198c59fd650c6384e5cc73bcda2b743ef252003b00ec8278d5193e78"
+  },
+  "authorizedProductionPaths": [
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockAccessor.java",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/ServerPlayerGameModeCauldronGateMixin.java",
+    "src/main/resources/achievetodo.mixins.json"
+  ],
+  "patchApplied": true,
+  "certificationGain": 0,
+  "acceptedRegression": {
+    "id": "AUTHORIZED_FINAL19_CAULDRON_GATE_PRODUCTION_FIX",
+    "runId": "50c353c6-aa93-4a48-b0ed-ed96c61ee9f3",
+    "path": "src/test/resources/final19_certification/cauldron_gate_postfix_regression.json",
+    "sha256": "7c01b174501b499d160ec37b04fdfaf6033b7e3ddbd52c48cdff1546a56045d5",
+    "certificationGain": 0
+  }
+}

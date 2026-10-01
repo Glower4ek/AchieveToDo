@@ -1,0 +1,8 @@
+{
+  "cause": "Fabric configureTests adds runGameTest to the standard build/check task graph; -x test does not exclude it.",
+  "selectedTests": 101,
+  "outcome": "Interrupted owned native process; no results accepted or promoted.",
+  "protectedFilesUnchanged": 2539,
+  "retry": "build -x test -x runGameTest",
+  "cleanup": false
+}

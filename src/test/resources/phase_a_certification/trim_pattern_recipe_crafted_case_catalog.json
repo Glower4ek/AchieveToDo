@@ -1,0 +1,213 @@
+{
+  "snapshot": "trim_pattern_recipe_crafted_case_catalog",
+  "canonicalAdvancementCount": 1152,
+  "compatibilityMarker": "compat_26_2_r15",
+  "canonicalSemanticsSource": "reference/phase_a_preservation/files/final/bacap.zip",
+  "summary": {
+    "totalCases": 18,
+    "uniqueAdvancements": 1,
+    "requirementGroups": 1,
+    "automationSupported": 18,
+    "automationDeferred": 0
+  },
+  "cases": [
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "coast_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:coast_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:coast",
+      "expectedTemplateItem": "minecraft:coast_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "dune_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:dune_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:dune",
+      "expectedTemplateItem": "minecraft:dune_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "eye_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:eye_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:eye",
+      "expectedTemplateItem": "minecraft:eye_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "host_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:host_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:host",
+      "expectedTemplateItem": "minecraft:host_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "raiser_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:raiser_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:raiser",
+      "expectedTemplateItem": "minecraft:raiser_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "rib_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:rib_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:rib",
+      "expectedTemplateItem": "minecraft:rib_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "sentry_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:sentry_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:sentry",
+      "expectedTemplateItem": "minecraft:sentry_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "shaper_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:shaper_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:shaper",
+      "expectedTemplateItem": "minecraft:shaper_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "silence_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:silence_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:silence",
+      "expectedTemplateItem": "minecraft:silence_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "snout_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:snout_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:snout",
+      "expectedTemplateItem": "minecraft:snout_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "spire_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:spire_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:spire",
+      "expectedTemplateItem": "minecraft:spire_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "tide_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:tide_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:tide",
+      "expectedTemplateItem": "minecraft:tide_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "vex_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:vex_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:vex",
+      "expectedTemplateItem": "minecraft:vex_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "ward_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:ward_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:ward",
+      "expectedTemplateItem": "minecraft:ward_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "wayfinder_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:wayfinder_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:wayfinder",
+      "expectedTemplateItem": "minecraft:wayfinder_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "wild_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:wild_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:wild",
+      "expectedTemplateItem": "minecraft:wild_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "bolt_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:bolt_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:bolt",
+      "expectedTemplateItem": "minecraft:bolt_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    },
+    {
+      "advancementId": "minecraft:adventure/trim_with_any_armor_pattern",
+      "sourcePath": "data/minecraft/advancement/adventure/trim_with_any_armor_pattern.json",
+      "criterion": "flow_armor_trim",
+      "trigger": "minecraft:recipe_crafted",
+      "expectedRecipeId": "minecraft:flow_armor_trim_smithing_template_smithing_trim",
+      "expectedTrimPattern": "minecraft:flow",
+      "expectedTemplateItem": "minecraft:flow_armor_trim_smithing_template",
+      "requirementGroup": 0,
+      "automationEligibility": "SUPPORTED"
+    }
+  ]
+}

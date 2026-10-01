@@ -1,0 +1,103 @@
+Compiled from "ClientPacketListenerMixin.java"
+abstract class net.fabricmc.fabric.mixin.command.client.ClientPacketListenerMixin implements net.fabricmc.fabric.impl.command.client.ClientCommandInternals$LastReceivedCommandsPacketAccessor {
+  private com.mojang.brigadier.CommandDispatcher<net.minecraft.commands.SharedSuggestionProvider> commands;
+
+  private net.minecraft.client.multiplayer.ClientSuggestionProvider suggestionsProvider;
+
+  private net.minecraft.client.multiplayer.ClientSuggestionProvider restrictedSuggestionsProvider;
+
+  private net.minecraft.world.flag.FeatureFlagSet enabledFeatures;
+
+  private net.minecraft.core.RegistryAccess$Frozen registryAccess;
+
+  private net.minecraft.network.protocol.game.ClientboundCommandsPacket lastReceivedCommandsPacket;
+
+  net.fabricmc.fabric.mixin.command.client.ClientPacketListenerMixin();
+    Code:
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: aconst_null
+         6: putfield      #7                  // Field lastReceivedCommandsPacket:Lnet/minecraft/network/protocol/game/ClientboundCommandsPacket;
+         9: return
+
+  private void init(net.minecraft.client.Minecraft, net.minecraft.network.Connection, net.minecraft.client.multiplayer.CommonListenerCookie, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+         0: aload_0
+         1: getfield      #13                 // Field suggestionsProvider:Lnet/minecraft/client/multiplayer/ClientSuggestionProvider;
+         4: checkcast     #17                 // class net/fabricmc/fabric/impl/command/client/ClientSuggestionProviderExtensions
+         7: invokeinterface #19,  1           // InterfaceMethod net/fabricmc/fabric/impl/command/client/ClientSuggestionProviderExtensions.fabric_markAttended:()V
+        12: return
+
+  private void onGameJoin(net.minecraft.network.protocol.game.ClientboundLoginPacket, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+         0: new           #22                 // class com/mojang/brigadier/CommandDispatcher
+         3: dup
+         4: invokespecial #24                 // Method com/mojang/brigadier/CommandDispatcher."<init>":()V
+         7: astore_3
+         8: aload_3
+         9: invokestatic  #25                 // Method net/fabricmc/fabric/impl/command/client/ClientCommandInternals.setActiveDispatcher:(Lcom/mojang/brigadier/CommandDispatcher;)V
+        12: getstatic     #31                 // Field net/fabricmc/fabric/api/client/command/v2/ClientCommandRegistrationCallback.EVENT:Lnet/fabricmc/fabric/api/event/Event;
+        15: invokevirtual #37                 // Method net/fabricmc/fabric/api/event/Event.invoker:()Ljava/lang/Object;
+        18: checkcast     #32                 // class net/fabricmc/fabric/api/client/command/v2/ClientCommandRegistrationCallback
+        21: aload_3
+        22: aload_0
+        23: getfield      #43                 // Field registryAccess:Lnet/minecraft/core/RegistryAccess$Frozen;
+        26: aload_0
+        27: getfield      #47                 // Field enabledFeatures:Lnet/minecraft/world/flag/FeatureFlagSet;
+        30: invokestatic  #51                 // InterfaceMethod net/minecraft/commands/CommandBuildContext.simple:(Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/world/flag/FeatureFlagSet;)Lnet/minecraft/commands/CommandBuildContext;
+        33: invokeinterface #57,  3           // InterfaceMethod net/fabricmc/fabric/api/client/command/v2/ClientCommandRegistrationCallback.register:(Lcom/mojang/brigadier/CommandDispatcher;Lnet/minecraft/commands/CommandBuildContext;)V
+        38: invokestatic  #61                 // Method net/fabricmc/fabric/impl/command/client/ClientCommandInternals.finalizeInit:()V
+        41: return
+
+  private void onOnCommandTree(net.minecraft.network.protocol.game.ClientboundCommandsPacket, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+         0: aload_0
+         1: getfield      #64                 // Field commands:Lcom/mojang/brigadier/CommandDispatcher;
+         4: aload_0
+         5: getfield      #13                 // Field suggestionsProvider:Lnet/minecraft/client/multiplayer/ClientSuggestionProvider;
+         8: checkcast     #68                 // class net/fabricmc/fabric/api/client/command/v2/FabricClientCommandSource
+        11: invokestatic  #70                 // Method net/fabricmc/fabric/impl/command/client/ClientCommandInternals.addCommands:(Lcom/mojang/brigadier/CommandDispatcher;Lnet/fabricmc/fabric/api/client/command/v2/FabricClientCommandSource;)V
+        14: return
+
+  private void setLastReceivedCommandsPacket(net.minecraft.network.protocol.game.ClientboundCommandsPacket, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: putfield      #7                  // Field lastReceivedCommandsPacket:Lnet/minecraft/network/protocol/game/ClientboundCommandsPacket;
+         5: return
+
+  private void onSendCommand(java.lang.String, net.minecraft.client.gui.screens.Screen, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+         0: aload_1
+         1: aload_0
+         2: getfield      #13                 // Field suggestionsProvider:Lnet/minecraft/client/multiplayer/ClientSuggestionProvider;
+         5: checkcast     #68                 // class net/fabricmc/fabric/api/client/command/v2/FabricClientCommandSource
+         8: aload_0
+         9: getfield      #74                 // Field restrictedSuggestionsProvider:Lnet/minecraft/client/multiplayer/ClientSuggestionProvider;
+        12: checkcast     #68                 // class net/fabricmc/fabric/api/client/command/v2/FabricClientCommandSource
+        15: invokestatic  #77                 // Method net/fabricmc/fabric/impl/command/client/ClientCommandInternals.executeCommand:(Ljava/lang/String;Lnet/fabricmc/fabric/api/client/command/v2/FabricClientCommandSource;Lnet/fabricmc/fabric/api/client/command/v2/FabricClientCommandSource;)Z
+        18: ifeq          25
+        21: aload_3
+        22: invokevirtual #81                 // Method org/spongepowered/asm/mixin/injection/callback/CallbackInfo.cancel:()V
+        25: return
+
+  private void onSendCommand(java.lang.String, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+         0: aload_1
+         1: aload_0
+         2: getfield      #13                 // Field suggestionsProvider:Lnet/minecraft/client/multiplayer/ClientSuggestionProvider;
+         5: checkcast     #68                 // class net/fabricmc/fabric/api/client/command/v2/FabricClientCommandSource
+         8: aconst_null
+         9: invokestatic  #77                 // Method net/fabricmc/fabric/impl/command/client/ClientCommandInternals.executeCommand:(Ljava/lang/String;Lnet/fabricmc/fabric/api/client/command/v2/FabricClientCommandSource;Lnet/fabricmc/fabric/api/client/command/v2/FabricClientCommandSource;)Z
+        12: ifeq          19
+        15: aload_2
+        16: invokevirtual #81                 // Method org/spongepowered/asm/mixin/injection/callback/CallbackInfo.cancel:()V
+        19: return
+
+  public net.minecraft.network.protocol.game.ClientboundCommandsPacket fabric_api$getLastReceivedCommandsPacket();
+    Code:
+         0: aload_0
+         1: getfield      #7                  // Field lastReceivedCommandsPacket:Lnet/minecraft/network/protocol/game/ClientboundCommandsPacket;
+         4: areturn
+}

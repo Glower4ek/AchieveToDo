@@ -1,0 +1,60 @@
+{
+  "snapshot": "phase_a_singleton_axolotl_monument_execution_evidence",
+  "schemaVersion": 1,
+  "family": "SINGLETON:blazeandcave:animal/thanks_a_lotl",
+  "source": "PhaseASingletonAxolotlMonumentGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:17a0e6472671c0b3710c6d359057eedff4b31571218a97edec2d82eb5cf56339",
+  "runId": "361e198d-1d2a-4e12-996a-f5722b24a56e",
+  "generatedAt": "2026-09-29T18:08:29.991405100Z",
+  "entries": [
+    {
+      "family": "SINGLETON:blazeandcave:animal/thanks_a_lotl",
+      "source": "PhaseASingletonAxolotlMonumentGameTest",
+      "advancementId": "blazeandcave:animal/thanks_a_lotl",
+      "criterion": "kill_axolotl_target",
+      "trigger": "minecraft:effects_changed",
+      "boundary": "ServerboundAttackPacket.handle->ServerGamePacketListenerImpl.handleAttack->ServerPlayer.attack->AxolotlAi.StopAttackingIfTargetInvalid->Axolotl.onStopAttacking->Axolotl.applySupportingEffects->Player.addEffect->ServerPlayer.onEffectAdded->CriteriaTriggers.EFFECTS_CHANGED",
+      "observedSourceEntity": "minecraft:axolotl",
+      "observedTargetEntity": "minecraft:tropical_fish",
+      "observedStructure": "minecraft:monument",
+      "runId": "361e198d-1d2a-4e12-996a-f5722b24a56e",
+      "catalogFingerprint": "sha-256:17a0e6472671c0b3710c6d359057eedff4b31571218a97edec2d82eb5cf56339",
+      "result": "GREEN",
+      "gameMode": "SURVIVAL",
+      "playerUuid": "7b745afb-e421-4f27-bbcf-df92cc15b995",
+      "axolotlUuid": "973ea7af-5385-4cb4-b3ba-f9fad7d7a62f",
+      "targetUuid": "eb5b5956-8a31-4c9c-8668-897bdd56cbf6",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "emptyHand": true,
+      "sourceStructureLookup": true,
+      "playerStructureLookup": true,
+      "nativeAxolotlTargetAcquired": true,
+      "targetKilledByPlayer": true,
+      "regenerationFromAxolotl": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "ticksToAssist": 12,
+      "noDirectCriterionTrigger": true,
+      "noManualAward": true,
+      "productionGateWitness": {
+        "productionGate": "LANDMARK_ONLY_FOR_PLAYER_ATTACK",
+        "lockedLandmark": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "structureRestored": true,
+        "axolotlRemoved": true,
+        "targetRemoved": true,
+        "settlementMessages": 41,
+        "warningCount": 0
+      }
+    }
+  ]
+}

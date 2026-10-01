@@ -1,0 +1,13 @@
+{
+  "scope": "SUPPLEMENTAL_GATES_FOR_SEALED_POSTFIX_FAMILIES",
+  "files": {
+    "reference/phase_a_planning/final19/resumed_postfix_gate_evidence/dual_tags_compile_static.gradle.log": "814618f0ec5c52a825269a232033795ad4e88cf4d8d2b2a9c57f8af6ecdb3285",
+    "reference/phase_a_planning/final19/resumed_postfix_gate_evidence/dual_tags_compile_static.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/resumed_postfix_gate_evidence/dual_tags_canary-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/resumed_postfix_gate_evidence/dual_tags_exact-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/resumed_postfix_gate_evidence/inventory_masters_compile_static.gradle.log": "fe327ff0e8bda9d37703fbb55169ab7e5ea954278029a957f05f7f26cc6fbc86",
+    "reference/phase_a_planning/final19/resumed_postfix_gate_evidence/inventory_masters_compile_static.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/resumed_postfix_gate_evidence/inventory_masters_canary-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/resumed_postfix_gate_evidence/inventory_masters_exact-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+  }
+}

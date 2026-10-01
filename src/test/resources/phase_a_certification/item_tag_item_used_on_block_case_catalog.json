@@ -1,0 +1,395 @@
+{
+  "snapshot": "phase_a_item_tag_item_used_on_block_case_catalog",
+  "schemaVersion": 1,
+  "family": "ITEM_TAG_ITEM_USED_ON_BLOCK",
+  "canonicalAdvancementCount": 1152,
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "canonicalSemanticsSource": "reference/phase_a_preservation/files/final/bacap.zip",
+  "semanticsSource": "frozenBacap",
+  "frozenBacapSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "summary": {
+    "totalCases": 15,
+    "uniqueKeys": 15,
+    "uniqueAdvancements": 4,
+    "requirementGroups": 15,
+    "automationSupported": 15,
+    "automationDeferred": 0,
+    "actionCategories": {
+      "AXE_COPPER_MUTATION": 1,
+      "CREATE_PATH": 1,
+      "STRIP_LOG": 12,
+      "STRIP_WOOD": 1
+    }
+  },
+  "cases": [
+    {
+      "advancementId": "blazeandcave:building/lost_its_bark",
+      "sourcePath": "data/blazeandcave/advancement/building/lost_its_bark.json",
+      "criterion": "stripped_wood",
+      "requirementGroupIndex": 0,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_oak_wood",
+          "minecraft:stripped_spruce_wood",
+          "minecraft:stripped_birch_wood",
+          "minecraft:stripped_jungle_wood",
+          "minecraft:stripped_acacia_wood",
+          "minecraft:stripped_dark_oak_wood",
+          "minecraft:stripped_mangrove_wood",
+          "minecraft:stripped_cherry_wood",
+          "minecraft:stripped_crimson_hyphae",
+          "minecraft:stripped_warped_hyphae",
+          "minecraft:stripped_pale_oak_wood"
+        ]
+      },
+      "action": "STRIP_WOOD",
+      "fixtureBlockBefore": "minecraft:oak_wood",
+      "expectedPostBlock": "minecraft:stripped_oak_wood",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "9c3b28bd110b610a1c8f9140e6d1742ba53a9ff4d902472ac81fd08ed389d58c"
+    },
+    {
+      "advancementId": "blazeandcave:building/pathways",
+      "sourcePath": "data/blazeandcave/advancement/building/pathways.json",
+      "criterion": "dirt_path",
+      "requirementGroupIndex": 0,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:shovels",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:dirt_path"
+        ]
+      },
+      "action": "CREATE_PATH",
+      "fixtureBlockBefore": "minecraft:dirt",
+      "expectedPostBlock": "minecraft:dirt_path",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_shovel",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "ae85d0671b1da6e1e835c25e84d3953ba2a7bdf0992f9b6abc022b4fab90da69"
+    },
+    {
+      "advancementId": "blazeandcave:building/stripper",
+      "sourcePath": "data/blazeandcave/advancement/building/stripper.json",
+      "criterion": "stripped_oak_log",
+      "requirementGroupIndex": 0,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_oak_log"
+        ]
+      },
+      "action": "STRIP_LOG",
+      "fixtureBlockBefore": "minecraft:oak_log",
+      "expectedPostBlock": "minecraft:stripped_oak_log",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "fd0c6afbebe20d64400aeaf8e44b10664730e1fb5cefd99fd6671c84f06b8df5"
+    },
+    {
+      "advancementId": "blazeandcave:building/stripper",
+      "sourcePath": "data/blazeandcave/advancement/building/stripper.json",
+      "criterion": "stripped_spruce_log",
+      "requirementGroupIndex": 1,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_spruce_log"
+        ]
+      },
+      "action": "STRIP_LOG",
+      "fixtureBlockBefore": "minecraft:spruce_log",
+      "expectedPostBlock": "minecraft:stripped_spruce_log",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "fd0c6afbebe20d64400aeaf8e44b10664730e1fb5cefd99fd6671c84f06b8df5"
+    },
+    {
+      "advancementId": "blazeandcave:building/stripper",
+      "sourcePath": "data/blazeandcave/advancement/building/stripper.json",
+      "criterion": "stripped_birch_log",
+      "requirementGroupIndex": 2,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_birch_log"
+        ]
+      },
+      "action": "STRIP_LOG",
+      "fixtureBlockBefore": "minecraft:birch_log",
+      "expectedPostBlock": "minecraft:stripped_birch_log",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "fd0c6afbebe20d64400aeaf8e44b10664730e1fb5cefd99fd6671c84f06b8df5"
+    },
+    {
+      "advancementId": "blazeandcave:building/stripper",
+      "sourcePath": "data/blazeandcave/advancement/building/stripper.json",
+      "criterion": "stripped_jungle_log",
+      "requirementGroupIndex": 3,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_jungle_log"
+        ]
+      },
+      "action": "STRIP_LOG",
+      "fixtureBlockBefore": "minecraft:jungle_log",
+      "expectedPostBlock": "minecraft:stripped_jungle_log",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "fd0c6afbebe20d64400aeaf8e44b10664730e1fb5cefd99fd6671c84f06b8df5"
+    },
+    {
+      "advancementId": "blazeandcave:building/stripper",
+      "sourcePath": "data/blazeandcave/advancement/building/stripper.json",
+      "criterion": "stripped_acacia_log",
+      "requirementGroupIndex": 4,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_acacia_log"
+        ]
+      },
+      "action": "STRIP_LOG",
+      "fixtureBlockBefore": "minecraft:acacia_log",
+      "expectedPostBlock": "minecraft:stripped_acacia_log",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "fd0c6afbebe20d64400aeaf8e44b10664730e1fb5cefd99fd6671c84f06b8df5"
+    },
+    {
+      "advancementId": "blazeandcave:building/stripper",
+      "sourcePath": "data/blazeandcave/advancement/building/stripper.json",
+      "criterion": "stripped_dark_oak_log",
+      "requirementGroupIndex": 5,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_dark_oak_log"
+        ]
+      },
+      "action": "STRIP_LOG",
+      "fixtureBlockBefore": "minecraft:dark_oak_log",
+      "expectedPostBlock": "minecraft:stripped_dark_oak_log",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "fd0c6afbebe20d64400aeaf8e44b10664730e1fb5cefd99fd6671c84f06b8df5"
+    },
+    {
+      "advancementId": "blazeandcave:building/stripper",
+      "sourcePath": "data/blazeandcave/advancement/building/stripper.json",
+      "criterion": "stripped_mangrove_log",
+      "requirementGroupIndex": 6,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_mangrove_log"
+        ]
+      },
+      "action": "STRIP_LOG",
+      "fixtureBlockBefore": "minecraft:mangrove_log",
+      "expectedPostBlock": "minecraft:stripped_mangrove_log",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "fd0c6afbebe20d64400aeaf8e44b10664730e1fb5cefd99fd6671c84f06b8df5"
+    },
+    {
+      "advancementId": "blazeandcave:building/stripper",
+      "sourcePath": "data/blazeandcave/advancement/building/stripper.json",
+      "criterion": "stripped_bamboo_block",
+      "requirementGroupIndex": 7,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_bamboo_block"
+        ]
+      },
+      "action": "STRIP_LOG",
+      "fixtureBlockBefore": "minecraft:bamboo_block",
+      "expectedPostBlock": "minecraft:stripped_bamboo_block",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "fd0c6afbebe20d64400aeaf8e44b10664730e1fb5cefd99fd6671c84f06b8df5"
+    },
+    {
+      "advancementId": "blazeandcave:building/stripper",
+      "sourcePath": "data/blazeandcave/advancement/building/stripper.json",
+      "criterion": "stripped_cherry_log",
+      "requirementGroupIndex": 8,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_cherry_log"
+        ]
+      },
+      "action": "STRIP_LOG",
+      "fixtureBlockBefore": "minecraft:cherry_log",
+      "expectedPostBlock": "minecraft:stripped_cherry_log",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "fd0c6afbebe20d64400aeaf8e44b10664730e1fb5cefd99fd6671c84f06b8df5"
+    },
+    {
+      "advancementId": "blazeandcave:building/stripper",
+      "sourcePath": "data/blazeandcave/advancement/building/stripper.json",
+      "criterion": "stripped_crimson_stem",
+      "requirementGroupIndex": 9,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_crimson_stem"
+        ]
+      },
+      "action": "STRIP_LOG",
+      "fixtureBlockBefore": "minecraft:crimson_stem",
+      "expectedPostBlock": "minecraft:stripped_crimson_stem",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "fd0c6afbebe20d64400aeaf8e44b10664730e1fb5cefd99fd6671c84f06b8df5"
+    },
+    {
+      "advancementId": "blazeandcave:building/stripper",
+      "sourcePath": "data/blazeandcave/advancement/building/stripper.json",
+      "criterion": "stripped_warped_stem",
+      "requirementGroupIndex": 10,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_warped_stem"
+        ]
+      },
+      "action": "STRIP_LOG",
+      "fixtureBlockBefore": "minecraft:warped_stem",
+      "expectedPostBlock": "minecraft:stripped_warped_stem",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "fd0c6afbebe20d64400aeaf8e44b10664730e1fb5cefd99fd6671c84f06b8df5"
+    },
+    {
+      "advancementId": "blazeandcave:building/stripper",
+      "sourcePath": "data/blazeandcave/advancement/building/stripper.json",
+      "criterion": "stripped_pale_oak_log",
+      "requirementGroupIndex": 11,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "minecraft:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:stripped_pale_oak_log"
+        ]
+      },
+      "action": "STRIP_LOG",
+      "fixtureBlockBefore": "minecraft:pale_oak_log",
+      "expectedPostBlock": "minecraft:stripped_pale_oak_log",
+      "fixtureStateBefore": {},
+      "expectedPostState": {},
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "fd0c6afbebe20d64400aeaf8e44b10664730e1fb5cefd99fd6671c84f06b8df5"
+    },
+    {
+      "advancementId": "minecraft:adventure/lighten_up",
+      "sourcePath": "data/minecraft/advancement/adventure/lighten_up.json",
+      "criterion": "lighten_up",
+      "requirementGroupIndex": 0,
+      "trigger": "minecraft:item_used_on_block",
+      "itemTag": "blazeandcave:axes",
+      "blockPredicate": {
+        "blocks": [
+          "minecraft:oxidized_copper_bulb",
+          "minecraft:weathered_copper_bulb",
+          "minecraft:exposed_copper_bulb",
+          "minecraft:waxed_oxidized_copper_bulb",
+          "minecraft:waxed_weathered_copper_bulb",
+          "minecraft:waxed_exposed_copper_bulb"
+        ],
+        "state": {
+          "lit": "true"
+        }
+      },
+      "action": "AXE_COPPER_MUTATION",
+      "fixtureBlockBefore": "minecraft:waxed_oxidized_copper_bulb",
+      "expectedPostBlock": "minecraft:oxidized_copper_bulb",
+      "fixtureStateBefore": {
+        "lit": "true"
+      },
+      "expectedPostState": {
+        "lit": "true"
+      },
+      "preferredToolItem": "minecraft:diamond_axe",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "EXACT_FROZEN_ITEM_USED_ON_BLOCK_SEMANTICS",
+      "semanticsSource": "frozenBacap",
+      "sourceJsonSha256": "d260a2f35e602e4a472d374f8cae3709fa8cccb8230c6cf5a146f758d0456405"
+    }
+  ]
+}

@@ -1,0 +1,1159 @@
+{
+  "classification": "PHASE_A_ACTIONABLE_FRONTIER_EXHAUSTED",
+  "date": "2026-09-30",
+  "planningOnly": true,
+  "canonicalTruthPath": "src/test/resources/phase_a_certification/phase_a_advancement_rollup.json",
+  "checkpoint": {
+    "canonical": {
+      "path": "src/test/resources/phase_a_certification/phase_a_advancement_rollup.json",
+      "sha256": "439f2aa1c577ffbee275525765ac9229bf5633f0f5e1da498c0adc5702bd2810",
+      "bytes": 1183495
+    },
+    "frontier": {
+      "path": "reference/phase_a_planning/phase_a_frontier_map.json",
+      "sha256": "2cb3d3f835a1d8f1eda97ec782725a72936f346dd8cfeed75da61fc4d9f36662",
+      "bytes": 135114
+    },
+    "skill": {
+      "path": ".agents/skills/achievetodo-phase-a/SKILL.md",
+      "sha256": "22448f14632d290cee8b0639c88d51f1ee992cafd504231a57cb77384aa9a594",
+      "bytes": 114364
+    },
+    "summary": {
+      "totalAdvancements": 1152,
+      "totalCertified": 1133,
+      "totalStrengthenedByRuntime": 175,
+      "runtimeCertified": 175,
+      "runtimePartial": 0,
+      "unresolvedOrDeferred": 19,
+      "staticFailUnresolved": 17,
+      "staticCertifiedWithRuntimeEvidence": 6,
+      "uniqueRuntimeTouchedAdvancements": 182,
+      "statusTotals": {
+        "RUNTIME_CERTIFIED": 175,
+        "RUNTIME_DEFERRED": 2,
+        "STATIC_CERTIFIED": 958,
+        "STATIC_FAIL_UNRESOLVED": 17
+      }
+    },
+    "unfinished": 19,
+    "runtimePartial": 0,
+    "statusTotals": {
+      "STATIC_CERTIFIED": 958,
+      "RUNTIME_CERTIFIED": 175,
+      "STATIC_FAIL_UNRESOLVED": 17,
+      "RUNTIME_DEFERRED": 2
+    },
+    "canonicalLocalDeltaIds": [
+      "blazeandcave:challenges/stack_all_the_items",
+      "blazeandcave:challenges/the_perfect_run"
+    ]
+  },
+  "frozenBacap": {
+    "path": "reference/phase_a_preservation/files/final/bacap.zip",
+    "sha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+    "bytes": 3864991,
+    "sha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+    "exactOrderedCompletionRequirementsReconciled": 1152
+  },
+  "terminalFrontier": {
+    "actionableCandidates": 0,
+    "protectedRuntimeControls": [
+      "minecraft:adventure/voluntary_exile",
+      "minecraft:story/deflect_arrow"
+    ],
+    "staticUnresolved": [
+      "blazeandcave:biomes/boatception",
+      "blazeandcave:biomes/the_mighty_jungle",
+      "blazeandcave:building/happy_birthday",
+      "blazeandcave:building/setting_up_the_mood",
+      "blazeandcave:building/washing_machine",
+      "blazeandcave:enchanting/let_it_go",
+      "blazeandcave:enchanting/master_armorer",
+      "blazeandcave:enchanting/master_axeman",
+      "blazeandcave:enchanting/master_digger",
+      "blazeandcave:enchanting/master_farmer",
+      "blazeandcave:enchanting/master_knight",
+      "blazeandcave:enchanting/master_miner",
+      "blazeandcave:redstone/travelling_bard",
+      "minecraft:husbandry/complete_catalogue",
+      "minecraft:husbandry/leash_all_frog_variants",
+      "minecraft:husbandry/wax_off",
+      "minecraft:husbandry/whole_pack"
+    ],
+    "requirementAccounting": {
+      "scope": "CURRENT_UNFINISHED_MAP_ENTRIES",
+      "criteria": 108,
+      "requirementGroups": 79,
+      "unsatisfiedRequirementGroups": 78,
+      "existingGreenCriteria": 1,
+      "nonGreenCriteria": 107
+    },
+    "familyStatuses": {
+      "TRIM_MATERIAL_INVENTORY_CHANGED": "CLOSED",
+      "ITEM_TAG_INVENTORY_CONTAINMENT": "CLOSED",
+      "PURE_ENCHANTMENT_INVENTORY_CHANGED": "CLOSED",
+      "USING_ITEM": "CLOSED",
+      "FISHING_ROD_HOOKED": "CLOSED",
+      "LOCATION_HOLDERSET_WORLDGEN": "CLOSED",
+      "PLAYER_KILLED_ENTITY_REMAINDER": "CLOSED",
+      "MIXED_WEAPONRY_MULTICLASSED": "CLOSED",
+      "MIXED_PERFECT_RUN": "CLOSED",
+      "MIXED_PIGLIN_DISTRACTION": "CLOSED",
+      "ITEM_USED_ON_BLOCK_CONTEXTUAL": "CLOSED",
+      "DEFERRED_SINGLETON_FRONTS": "CLOSED",
+      "PROTECTED_DEFERRED_CONTROLS": "PROTECTED",
+      "RUNTIME_PARTIAL_INVENTORY_BACKLOG": "CLOSED"
+    }
+  },
+  "freshTransactions": [
+    {
+      "family": "MIXED_PERFECT_RUN",
+      "canaryRunId": "dd63f00d-7ce6-490b-b3e8-d040282066e4",
+      "exactRunId": "9fc083e6-282d-4f94-9096-79ae875026f3",
+      "exactSelector": "achievetodo-test:phase_amixed_perfect_run_game_test_mixed_perfect_run_exact3",
+      "greenReceipts": 3,
+      "promotedByteIdentically": true,
+      "cleanupNetworkWarningDebt": 0,
+      "catalog": {
+        "path": "src/test/resources/phase_a_certification/mixed_perfect_run_case_catalog.json",
+        "sha256": "44fb4dce7d08ec063f85819eab2dfa54d9e702fa2cdf836e1261005a76511e14",
+        "bytes": 6225
+      },
+      "persistent": {
+        "path": "src/test/resources/phase_a_certification/mixed_perfect_run_execution_evidence.json",
+        "sha256": "5d1fe34491b8ab82fd5b1ffd84e97ab13cbf60ab3df6d810a625328fda2592c2",
+        "bytes": 10812
+      },
+      "temporary": {
+        "path": "build/tmp/phase_a_certification/mixed_perfect_run_execution_evidence.json",
+        "sha256": "5d1fe34491b8ab82fd5b1ffd84e97ab13cbf60ab3df6d810a625328fda2592c2",
+        "bytes": 10812
+      },
+      "runState": {
+        "path": "build/tmp/phase_a_certification/mixed_perfect_run_execution_evidence.run.json",
+        "sha256": "1eec4e7f120174053b21918c0ca61993102182cecbde5484c1a279e31312f4ed",
+        "bytes": 645
+      },
+      "exactGameTestReport": {
+        "path": "build/tmp/phase_a_resume_20260930/perfect_exact3_fresh.xml",
+        "sha256": "4b5926c7641ef7ec6d58737b50309530b7c3f0c2064a38719e2210d6420f443e",
+        "bytes": 305
+      },
+      "exactLog": {
+        "path": "build/tmp/phase_a_resume_20260930/perfect_exact3_fresh.gradle.log",
+        "sha256": "b8a2642a66c026a545e7bd96ac9a64fe9508daa456508ef2f893e1bd06ea1d66",
+        "bytes": 17554
+      },
+      "canaryLog": {
+        "path": "build/tmp/phase_a_resume_20260930/perfect_canary_observed_killer.gradle.log",
+        "sha256": "0a9afd6bdd0a601403a33cea0d5c82f583257cf7aca4c6cc68a441d4c447259c",
+        "bytes": 17515
+      },
+      "observedBuildExitCode": 0
+    },
+    {
+      "family": "RUNTIME_PARTIAL_INVENTORY_BACKLOG",
+      "canaryRunId": "1b914d7c-38b4-4e12-8c74-a682794df2aa",
+      "exactRunId": "8121dbc3-0ce1-41b2-8a0d-37caa0a08047",
+      "exactSelector": "achievetodo-test:phase_astack_all_items_inventory_backlog_game_test_stack_all_items_inventory_backlog_exact319",
+      "greenReceipts": 319,
+      "promotedByteIdentically": true,
+      "cleanupNetworkWarningDebt": 0,
+      "catalog": {
+        "path": "src/test/resources/phase_a_certification/stack_all_items_inventory_backlog_case_catalog.json",
+        "sha256": "d022f70035fd3851e709a1806a1a33c80dd1dbbf62e97733770510790d3e7a5e",
+        "bytes": 298663
+      },
+      "persistent": {
+        "path": "src/test/resources/phase_a_certification/stack_all_items_inventory_backlog_execution_evidence.json",
+        "sha256": "29b2a1c2afe743c26d5290b511f54b783ec36597bfe1e337535a36591f9ad73d",
+        "bytes": 562740
+      },
+      "temporary": {
+        "path": "build/tmp/phase_a_certification/stack_all_items_inventory_backlog_execution_evidence.json",
+        "sha256": "29b2a1c2afe743c26d5290b511f54b783ec36597bfe1e337535a36591f9ad73d",
+        "bytes": 562740
+      },
+      "runState": {
+        "path": "build/tmp/phase_a_certification/stack_all_items_inventory_backlog_execution_evidence.run.json",
+        "sha256": "1ca7d520d7c1959f06df0010abc1fb243140c633bc4776aec65055cbfc59ede0",
+        "bytes": 20996
+      },
+      "exactGameTestReport": {
+        "path": "build/tmp/phase_a_resume_20260930/stack_backlog_exact319.xml",
+        "sha256": "ccdf759e18a51cec7efa60bb674a740f920ecde1e1b022ab82a0f113072cf674",
+        "bytes": 341
+      },
+      "exactLog": {
+        "path": "build/tmp/phase_a_resume_20260930/stack_backlog_exact319.gradle.log",
+        "sha256": "75aad25d24208754bb835963110de9c7297af36dc584cc92b4b8fee99b500349",
+        "bytes": 75009
+      },
+      "canaryLog": {
+        "path": "build/tmp/phase_a_resume_20260930/stack_backlog_canary.gradle.log",
+        "sha256": "591ed5554a048a783996bf14f86513a57f55556ef3a2f508e01c0a925f6508a2",
+        "bytes": 12174
+      },
+      "observedBuildExitCode": 0
+    }
+  ],
+  "proofDetails": {
+    "perfectRun": {
+      "implicitAndGroups": [
+        "dragon",
+        "wither",
+        "raid"
+      ],
+      "requiredPrerequisite": "blazeandcave:technical/spawn_perfect_one",
+      "oneJoinedSurvivalPlayer": true,
+      "nativeRaidVictory": true,
+      "zeroPlayerDamageAndFrozenDamageCounters": true,
+      "completionTicksAfterSummon": 220,
+      "frozenTimerAtCompletion": 19,
+      "naturalPrerequisiteExpiryAndCompletedRetention": true,
+      "diagnosis": "HARNESS_ERROR: suffocating HOME-owning villager releases occupied POI; Raid.tick stops before wave one because no village remains. See mixed_perfect_run_raid_stop_diagnosis.md."
+    },
+    "stackAllItems": {
+      "frozenCriteria": 320,
+      "frozenSingletonRequirementGroups": 320,
+      "previousImmutableGroup": "smithing_template",
+      "remainingExactGroups": 319,
+      "joinedCompletionGroups": 320,
+      "nativeInventoryPickupEvents": 319,
+      "noMissingDuplicateOrExtraGroups": true
+    }
+  },
+  "persistentPreservation": {
+    "continuationInventory": {
+      "path": "build/tmp/phase_a_resume_20260930/resume_current_persistent_inventory.json",
+      "sha256": "fd268d5b46a00b12f2b2d0f896e09f543a916090c436cd9ee4a9efe1a1458f57",
+      "bytes": 20141
+    },
+    "existingArtifactsChanged": [
+      "phase_a_advancement_rollup.json"
+    ],
+    "allEarlierClosedArtifactsBytePreserved": true,
+    "allPersistentLoadersValidatedByFreshRollupReproduction": true,
+    "closedGameTestsRerunForTerminalAudit": false,
+    "currentInventory": [
+      {
+        "path": "src/test/resources/phase_a_certification/advancement_inventory.json",
+        "sha256": "8367517c469600342388ccdd2451f28c0a8638cfa23e2305eb733033332975d4",
+        "bytes": 1017211
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/block_tag_item_used_on_block_case_catalog.json",
+        "sha256": "a1ca1ea46131dcf6bb8e22924c2f279f054e67c0ae58e4887858568479f990b7",
+        "bytes": 26656
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/block_tag_item_used_on_block_execution_evidence.json",
+        "sha256": "11e7e8061958beaec7c7c6932c959c65de9b7c600e9e3028f8aae8aeeb7762ff",
+        "bytes": 75028
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/container_loot_case_catalog.json",
+        "sha256": "b51be75d53dc29835c23202798a9d0b09a386f1f312e31f6705c10bcfe8eedb8",
+        "bytes": 26633
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/container_loot_execution_evidence.json",
+        "sha256": "c9118495ce5882aec96226814f0c6440619de35bab1b881559e690f035a6a139",
+        "bytes": 16872
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/enchantment_inventory_changed_case_catalog.json",
+        "sha256": "d14b6727ffeef6885d774f0239c9f940ee228a451ec9402e3bef2d1720275c34",
+        "bytes": 9318
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/enchantment_inventory_changed_execution_evidence.json",
+        "sha256": "21411eb676c30d72aafab79ed9a0680b9dedc111835affc0b9533c5cfd525c80",
+        "bytes": 10064
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/enchantment_inventory_changed_expansion_direct16_case_catalog.json",
+        "sha256": "69f6288c7d7194ea856b9b07dee16498af333273348f1a1e6cf22d588e8a6703",
+        "bytes": 20865
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/enchantment_inventory_changed_expansion_direct16_execution_evidence.json",
+        "sha256": "243a28779c7f9b1225f66b549c4ba4f924b5e6c9247d8ee7d91866a9a9713cc5",
+        "bytes": 27629
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/entity_type_tag_player_interacted_with_entity_case_catalog.json",
+        "sha256": "d0c4cc3e227c77efbd433dfd54731af11647b28375a13dc95b8e7542a8ea48b0",
+        "bytes": 12620
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/entity_type_tag_player_interacted_with_entity_execution_evidence.json",
+        "sha256": "694cbf00eff3abf2f53cd9255c32357116e66ff9edbc92dddfb24ee4af6b0c40",
+        "bytes": 34320
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/entity_type_tag_player_killed_entity_case_catalog.json",
+        "sha256": "c7f4f9aebc3af22c7674c1b9a8b63d3cee48d43652a517db1338ed115c1efaa2",
+        "bytes": 1554
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/entity_type_tag_player_killed_entity_execution_evidence.json",
+        "sha256": "4b15558998849cd01e42c7444d47933ded0cbbd8a145798efcd507f3911fdf55",
+        "bytes": 2640
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/entity_type_tag_started_riding_case_catalog.json",
+        "sha256": "00cd70b0cbe4f90eac20287bb9868c28908ba1e5b36c7a7a96a1bd66ceca97a8",
+        "bytes": 4428
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/entity_type_tag_started_riding_execution_evidence.json",
+        "sha256": "417e7564bad098bad19ce5b0920a88d3aef342a46a9bb13ce97b3deb4fd3ec76",
+        "bytes": 10793
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/fishing_rod_hooked_case_catalog.json",
+        "sha256": "ac74a688bdedf4c09a2c7ece8dd679e703da69cbb8458d5505fdd95b0160906f",
+        "bytes": 2722
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/fishing_rod_hooked_execution_evidence.json",
+        "sha256": "d5cff01527b72f598f37181ba20135a4b3c8ead4c7de2c96c6fe36741ac5473a",
+        "bytes": 3719
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/item_tag_inventory_changed_case_catalog.json",
+        "sha256": "a280c23568352d130ce9520c164a7396c17b66052e30b9ee7237ce1d7d9f57e1",
+        "bytes": 433613
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/item_tag_inventory_changed_execution_evidence.json",
+        "sha256": "b7378167a2496e561689ab5eb920d495c92e2eccc655ce1ced03cfaad7f4f651",
+        "bytes": 5984
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/item_tag_inventory_containment_case_catalog.json",
+        "sha256": "76398741bbf53d2334b7c7ae6c61e11de48611472b9c469992aa32bbbb77c5be",
+        "bytes": 1497
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/item_tag_inventory_containment_execution_evidence.json",
+        "sha256": "6c8d75a4243995d54e816b965b08fc285c731afcc86018006130b235f8f11884",
+        "bytes": 5619
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/item_tag_item_used_on_block_case_catalog.json",
+        "sha256": "d7525477eaa1a2c8460b2e527a791186d1320eac0ce998a7caa66af9f5668f76",
+        "bytes": 15358
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/item_tag_item_used_on_block_execution_evidence.json",
+        "sha256": "a11c7fc460ebeff401c2fe64d1e54e728051f9e510f77c64b7ffc60117b05262",
+        "bytes": 43860
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/item_tag_placed_block_case_catalog.json",
+        "sha256": "b6d8395056064904dade2f607f76481112b9309cf9a63daf29d2368774bd0c08",
+        "bytes": 2189
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/item_tag_placed_block_execution_evidence.json",
+        "sha256": "831ac435fc5aa3a795e1ea6d89176a638d309585f87c1914d0527028fc88ae20",
+        "bytes": 6018
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/item_tag_player_interacted_with_entity_case_catalog.json",
+        "sha256": "64bc94dcc9e074c9d5777b8feed01bc798d02f4e945abf82a7df5f65666ba3ec",
+        "bytes": 6132
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/item_tag_player_interacted_with_entity_execution_evidence.json",
+        "sha256": "62cf1d8eb68223dd35da55ccbb7659f8d56371e6bf71eaf52aa72653abb359c6",
+        "bytes": 15884
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/item_used_on_block_contextual_case_catalog.json",
+        "sha256": "95b44c2680a9f6d6ae24f51c124f999e54a391920db123e6751defa6fa5d7583",
+        "bytes": 998
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/item_used_on_block_contextual_execution_evidence.json",
+        "sha256": "a8032231a41be01acc99874e7a600b184b63b6d2826197762bb45a1973e00b32",
+        "bytes": 2257
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/llama_authorized_fix_converted_advancement_sha256.json",
+        "sha256": "55c7709d872c531d5b6ca80d12b5316025932715a65547051bd0bc5b2310a4a4",
+        "bytes": 164618
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/location_holder_set_worldgen_case_catalog.json",
+        "sha256": "c6a8df9c41830f9fdae01843fe479cb8296bb4fb9836c5d589ca5a3fcdaed101",
+        "bytes": 124326
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/location_holder_set_worldgen_execution_evidence.json",
+        "sha256": "5ef1cfa316c1f36e913f7b2b4ae8e29b08015d146d6497d10f9092344f853279",
+        "bytes": 182708
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/location_movement_matrix.json",
+        "sha256": "6f04da9b03421656b470b215a19f8f25e8feea3f3adcb61d801af7ffb490d706",
+        "bytes": 243900
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/mixed_perfect_run_case_catalog.json",
+        "sha256": "44fb4dce7d08ec063f85819eab2dfa54d9e702fa2cdf836e1261005a76511e14",
+        "bytes": 6225
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/mixed_perfect_run_execution_evidence.json",
+        "sha256": "5d1fe34491b8ab82fd5b1ffd84e97ab13cbf60ab3df6d810a625328fda2592c2",
+        "bytes": 10812
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/mixed_piglin_distraction_case_catalog.json",
+        "sha256": "e86e598b5e8ae3d794dd70f26930234927d12ecd4da4ceb321f22346d0df7ec9",
+        "bytes": 8605
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/mixed_piglin_distraction_execution_evidence.json",
+        "sha256": "029d80f9b317ae323a2e81ccd5707e8908549a27284c0059e1e0dccb070dc2b9",
+        "bytes": 2347
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/mixed_weaponry_multiclassed_case_catalog.json",
+        "sha256": "9de9861dd6adb1877bf399f4faab09591bdb99e13dbbf19d788d3e30ab78e974",
+        "bytes": 24835
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/mixed_weaponry_multiclassed_execution_evidence.json",
+        "sha256": "f0871806d2f35c1d9362cca4a894f9f2ee222fcf9c09a5d35fa6ab983750fe95",
+        "bytes": 43147
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/phase_a_advancement_rollup.json",
+        "sha256": "439f2aa1c577ffbee275525765ac9229bf5633f0f5e1da498c0adc5702bd2810",
+        "bytes": 1183495
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/player_hurt_entity_damage_source_case_catalog.json",
+        "sha256": "d7817ae418fc2d1e4111155f55a5e0d14da5e2f632be0090615610afb4ce2c2e",
+        "bytes": 5195
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/player_hurt_entity_damage_source_execution_evidence.json",
+        "sha256": "6ccb314312bd8edfb0353d010e30cde0205315c05af6ac747aafb0d0a779aa46",
+        "bytes": 105949
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/player_killed_entity_remainder_case_catalog.json",
+        "sha256": "8fda71945e3a15480a797fe14da54cc5b5cf3edfe3c0edb70c464dff21423eaa",
+        "bytes": 44754
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/player_killed_entity_remainder_execution_evidence.json",
+        "sha256": "dfbfd635341d338583af27df9e539aeb227c849628cff8acf09739cad137a5c0",
+        "bytes": 98028
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/pure_enchantment_inventory_changed_case_catalog.json",
+        "sha256": "7cc5c8080742dbd91bba48119e533ae640436bb8608476673018ae52633ffa43",
+        "bytes": 179406
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/pure_enchantment_inventory_changed_execution_evidence.json",
+        "sha256": "99f4d867262550888470b5791894e0a514b6e672eced81ee4892e7019c2fcd3a",
+        "bytes": 343480
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/recipe_crafted_wax_on_case_catalog.json",
+        "sha256": "764077ed761bf340c232ad6e3bfdc87606b6430f2c2407424261aff56a41aae7",
+        "bytes": 900
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/recipe_crafted_wax_on_execution_evidence.json",
+        "sha256": "6d4c5176b5560cdf4e4d58faa09631980f2d91a0b17fec1cb2fa078cc91692d9",
+        "bytes": 1782
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/runtime_execution_evidence.json",
+        "sha256": "077ed6b888dd9f796eb7314c0712d6bdfbe9687f1f9daa261f40cd718c65503e",
+        "bytes": 38227
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/runtime_test_matrix.json",
+        "sha256": "2c316104851a108539abb7c352ec4729e7ec2713a2f235beaf9b4d1ac460d6cc",
+        "bytes": 5179
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/shot_crossbow_case_catalog.json",
+        "sha256": "d6457c3ba0ae3f1587b52b038dd7ee0e2b50c11ffefdf1cf17a3cd664e485ac1",
+        "bytes": 3321
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/shot_crossbow_execution_evidence.json",
+        "sha256": "bb9a82e42722cbc77aec2b3fe7105208af45fce694451040054014fbf268e8e4",
+        "bytes": 9730
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_ancient_restoration_case_catalog.json",
+        "sha256": "6a23006820643f0868d3e001520bd1359616a3dcaa98986385d473757d2be605",
+        "bytes": 1173
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_ancient_restoration_execution_evidence.json",
+        "sha256": "3a40147270bf444aa5727c5ec88118c0689bfdbc08512021629e175446af557a",
+        "bytes": 1963
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_axolotl_monument_case_catalog.json",
+        "sha256": "17a0e6472671c0b3710c6d359057eedff4b31571218a97edec2d82eb5cf56339",
+        "bytes": 1166
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_axolotl_monument_execution_evidence.json",
+        "sha256": "ac4e1eac28b4020f42528a8f74a35f42ae69c535c67658458d4d0c6002800721",
+        "bytes": 2541
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_diagon_allay_case_catalog.json",
+        "sha256": "589ad783a714d789fe3acadf23e7bdf0a6e22a6d9b05b27d29b977ccf0f6433f",
+        "bytes": 1076
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_diagon_allay_execution_evidence.json",
+        "sha256": "1395abc16de589fc1cd4c3d55d577d0c776990a5ce155ad1a437085bec5a38bb",
+        "bytes": 2275
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_llama_breeding_case_catalog.json",
+        "sha256": "e12c8c74a7ce0da7f36a73bd16345805df9f64f8610a6fda21aacda8b70273aa",
+        "bytes": 1403
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_llama_breeding_execution_evidence.json",
+        "sha256": "fe195d2610bf57c8e9d953c47406b5b6cfc16e2be5c30717b8436d1a8feb2a41",
+        "bytes": 3024
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_mangrove_grove_case_catalog.json",
+        "sha256": "d73ed7a6bc9453625a32b6e81b504de36bfec8e0c32d68a019a827416f3e031c",
+        "bytes": 999
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_mangrove_grove_execution_evidence.json",
+        "sha256": "b38cace106049efd18a7302f1c8cabb4faa53803557a5bd4e0a4ee628637d7f9",
+        "bytes": 1998
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_maximum_resistance_case_catalog.json",
+        "sha256": "705d3a4e92b4718ab8693742309d2c03c05e3d17465bd1845a90ed070d12a475",
+        "bytes": 1227
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_maximum_resistance_execution_evidence.json",
+        "sha256": "75e3a693809733a353a4caa1b7e5019443621fe2d969103e4f6cf5aa3d0c4b12",
+        "bytes": 2335
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_miracle_drink_case_catalog.json",
+        "sha256": "dbb7b68825ca86fe9ba4a2efbe53c57ed3f4d9c9602c27737cbd541a77c408be",
+        "bytes": 1266
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_miracle_drink_execution_evidence.json",
+        "sha256": "14838a0653cabc2dcd38ecb86442f648fd25a6f4d87ec31d224f8e8ff20d16e9",
+        "bytes": 2040
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_redstone_click_case_catalog.json",
+        "sha256": "eabf2da0a8ef6a2faebea93c2c129d2b8c64c042ed9a76c8b179c2309b78000f",
+        "bytes": 904
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_redstone_click_execution_evidence.json",
+        "sha256": "0eae345c83808d67be5a56525e99ede4392bf4899c710576a74ff10a5491d213",
+        "bytes": 1912
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_silk_touch_nest_case_catalog.json",
+        "sha256": "171e6a6ff346ca176e9603d10f93c29ab11ab55a041d54756bb5f916c234cdc2",
+        "bytes": 1114
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_silk_touch_nest_execution_evidence.json",
+        "sha256": "25eb21d185ad768dd8ddbe6fb483fd29afce223cd6a78ad4247d92e13cb69d22",
+        "bytes": 2877
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_village_bell_case_catalog.json",
+        "sha256": "d6bddb51684c9ccc3bf09bb79a859bfe923b6252840b1cb13797e1495c580b1a",
+        "bytes": 1259
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/singleton_village_bell_execution_evidence.json",
+        "sha256": "d2f6affa477666f38a7fc237ec9dab137a24e9081c8c21d88f5dd413109c75b9",
+        "bytes": 2134
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/stack_all_items_inventory_backlog_case_catalog.json",
+        "sha256": "d022f70035fd3851e709a1806a1a33c80dd1dbbf62e97733770510790d3e7a5e",
+        "bytes": 298663
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/stack_all_items_inventory_backlog_execution_evidence.json",
+        "sha256": "29b2a1c2afe743c26d5290b511f54b783ec36597bfe1e337535a36591f9ad73d",
+        "bytes": 562740
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/tame_animal_llama_case_catalog.json",
+        "sha256": "f78f8a95a3a817eeedee99647082ef8a6c53ef50a899418a76bb9bb05c0fa421",
+        "bytes": 7056
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/tame_animal_llama_execution_evidence.json",
+        "sha256": "aa3939b17cba4a741e9022605ca1961b2e89ddec7cfabfac8b23f2618adeecab",
+        "bytes": 10142
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/trim_material_inventory_changed_case_catalog.json",
+        "sha256": "fb17be3af77cd850ca9925a58d4872a4edb10c61e385eb0dde3a4a21fdf526f3",
+        "bytes": 11076
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/trim_material_inventory_changed_execution_evidence.json",
+        "sha256": "0935abcd9bd8afab420df14a2979d09c92c7d6a345b20ae0cfba4aa61116886b",
+        "bytes": 35138
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/trim_pattern_recipe_crafted_case_catalog.json",
+        "sha256": "1e2e4ed7eb6fa9b45de1f0e3bf0770e045201867f23c9e5f89411dc78a65b46b",
+        "bytes": 10287
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/trim_pattern_recipe_crafted_execution_evidence.json",
+        "sha256": "b702a19f85939cdf8754802e20afcfd469e75e1a3bf82557c5e0e382f56a0c20",
+        "bytes": 19351
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/using_item_case_catalog.json",
+        "sha256": "bdd36c80b7bc3b0425df141d05fcc9d3d768ec5f9c1fe2b5de15e10b7471da4f",
+        "bytes": 5175
+      },
+      {
+        "path": "src/test/resources/phase_a_certification/using_item_execution_evidence.json",
+        "sha256": "6a6c8f8432d3b7d8384b6b948bad11c543d631a91562bc8cd27fce8df7b9a091",
+        "bytes": 14919
+      }
+    ]
+  },
+  "finalRegression": {
+    "authoritativeRoute": "direct require_escalated with accepted JAVA_HOME / GRADLE_USER_HOME / TEMP / TMP",
+    "tasks": [
+      "compileTestJava",
+      "compileGametestJava",
+      "test"
+    ],
+    "filters": [
+      "com.diskree.achievetodo.certification.*",
+      "*PhaseALlamaFestivalNbt*",
+      "*ExternalPackCompatibilityTest"
+    ],
+    "tests": 345,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "buildSuccessful": true,
+    "historicalRollupFixturesValidated": true,
+    "authorizedLlamaScopeAndNearMissControlsValidated": true,
+    "log": {
+      "path": "build/tmp/phase_a_resume_20260930/phase_a_terminal_verified.gradle.log",
+      "sha256": "df7cd250cac4271d50acdb9a1ee00c5bd27e87f12e9adaf4b81f8245772a383c",
+      "bytes": 1747
+    },
+    "junitReports": [
+      {
+        "path": "build/test-results/test/TEST-c-52CEFIOCSIEQ6.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedExecutionEvidenceValidationTest.xml",
+        "sha256": "230203ba37114dc65cb3418ce6ebe7847d4fe1300f62d7341612a58bf16881fe",
+        "bytes": 2482
+      },
+      {
+        "path": "build/test-results/test/TEST-c-PTBR5G1DL9SQU.certification.PhaseAEnchantmentInventoryChangedExpansionDirect16ExecutionEvidenceValidationTest.xml",
+        "sha256": "4bceb5abc572d8a0429efe070574f12f310b424898e2d876996ff6b7e1d3aa5f",
+        "bytes": 1862
+      },
+      {
+        "path": "build/test-results/test/TEST-co-90QAVV4J5NJ40.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockExecutionEvidenceValidationTest.xml",
+        "sha256": "96ea47e255c4ef6cbf340ac1223ef22237ac3e9339536038e42f08c65f355b3a",
+        "bytes": 4833
+      },
+      {
+        "path": "build/test-results/test/TEST-co-B1RCFI5VP66G4.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest.xml",
+        "sha256": "86049ebe59278b7f067e319a47c69cf6f026b045565878008ab6c438ae34487b",
+        "bytes": 2190
+      },
+      {
+        "path": "build/test-results/test/TEST-co-EBVGCS8K4N5RC.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedExecutionEvidenceValidationTest.xml",
+        "sha256": "6e9e72ebfa920225a9bbe1b2af1b0b3b465dc4b6412e2f629c05a5e11258a393",
+        "bytes": 3021
+      },
+      {
+        "path": "build/test-results/test/TEST-com-VOA5TPTRF0URI.achievetodo.certification.PhaseAEnchantmentInventoryChangedExpansionDirect16CertificationTest.xml",
+        "sha256": "d1aafd100bb77979fb1c6ad803e0470d900990ab6dee6b0789b1d607a647a61b",
+        "bytes": 773
+      },
+      {
+        "path": "build/test-results/test/TEST-com.d-HH4PG14K3MP10.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidationTest.xml",
+        "sha256": "72767ac4528b54fde4b55f5e90edfdc4ab1e0db5111ba472d0f38625d704b3f0",
+        "bytes": 1539
+      },
+      {
+        "path": "build/test-results/test/TEST-com.di-O25L12GRLM1FA.achievetodo.certification.PhaseAEnchantmentInventoryChangedExecutionEvidenceValidationTest.xml",
+        "sha256": "bc265bb5c176a59b68e2aa5be083caf2d57af9c1fe99833abd4493ec94b3c837",
+        "bytes": 3518
+      },
+      {
+        "path": "build/test-results/test/TEST-com.di-VI2INOQ5MQIR8.achievetodo.certification.PhaseAItemTagInventoryContainmentExecutionEvidenceValidationTest.xml",
+        "sha256": "469b31e479b1deb8a55fa7d1d27acd7c047dd3b147bdc60ed467ff170a833c8e",
+        "bytes": 605
+      },
+      {
+        "path": "build/test-results/test/TEST-com.dis-SS2KFPJFCBGS2.achievetodo.certification.PhaseAEntityTypeTagStartedRidingExecutionEvidenceValidationTest.xml",
+        "sha256": "bbd75759b8a1b5d72c64fcb8fdfff222f101cefa807c1a8e6d0a55c6591cfa73",
+        "bytes": 797
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.-BFNNA6V0QT28C.certification.PhaseAItemTagPlayerInteractedWithEntityExecutionEvidenceValidationTest.xml",
+        "sha256": "89261e3c537330f3946baf565a5b5449fbde6baab1f588e291811f6758089cb1",
+        "bytes": 1274
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAAdvancementRollupTest.xml",
+        "sha256": "f8f311bc37161dbbc52961147e007939602b40aa9817702803400021a160b5c2",
+        "bytes": 9388
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockCertificationTest.xml",
+        "sha256": "2cfb5022a8a6a3b3da32cf761227a096af8e19b39c33ba9d9da362973343cffb",
+        "bytes": 946
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseACertificationTest.xml",
+        "sha256": "e3db2d4ea944e08b8670fe84485775a6639661b9ceb512e3dbaeb7d9c8dd5ae8",
+        "bytes": 6596
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAContainerLootCertificationTest.xml",
+        "sha256": "f530e3c79b1527c9b1a53e567cb40fd1c7c4095abc047701a069c42efc5aaa4b",
+        "bytes": 722
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest.xml",
+        "sha256": "af6f89a02d7fd3a817402075734cc6b010926eb6d531966f7d8e62b5233c4155",
+        "bytes": 2248
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedCertificationTest.xml",
+        "sha256": "aebe369c30b0148d2039e07421de3e64923cb7a28f37acbaaf5ba4cd608ee853",
+        "bytes": 780
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityCertificationTest.xml",
+        "sha256": "9d849af8510e5a246871f49ab684596ec30462bd74cc5be658b408041b348998",
+        "bytes": 807
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAEntityTypeTagStartedRidingCertificationTest.xml",
+        "sha256": "2e2cef8b1fe750c70c5b46c7b5f2b0499eca52a878897733d89a2e79fea92748",
+        "bytes": 739
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAFishingRodHookedCertificationTest.xml",
+        "sha256": "b5274d89fa0c494951763725dfc72de112a1b9ae678b146627fb06f392346864",
+        "bytes": 548
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAFishingRodHookedExecutionEvidenceValidationTest.xml",
+        "sha256": "0d1b2ee6c1e0484cb4bcec6b21509e07a71098ceb751617af88a6d2402659a61",
+        "bytes": 759
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAFishingRodHookedRollupTest.xml",
+        "sha256": "61cfe8598bfd511009f8347ce4fb959e763ec34aa31a844532870f8d0347f6ac",
+        "bytes": 747
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedCertificationTest.xml",
+        "sha256": "5421a3483a46b0cf872abaa4d82fac46ffc63f452f8a80a14e400951df6ad61c",
+        "bytes": 767
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAItemTagInventoryContainmentCertificationTest.xml",
+        "sha256": "0c0f20239e65bbaa0071cd9f94434d1faaf93429d1f5d42ead580485653cccc9",
+        "bytes": 560
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockCertificationTest.xml",
+        "sha256": "2d5ed9ef8c1c544c1fc64891931a5fe82362039e1e4e39d3e88af9a0e7df4e91",
+        "bytes": 738
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockExecutionEvidenceValidationTest.xml",
+        "sha256": "987fc62d346f371c8ababafd1f0103f950f3fb3d1baf522d6dce09a7a8332343",
+        "bytes": 1161
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockCertificationTest.xml",
+        "sha256": "fd460bd43771bc49bdae146c979e8941dd8f665941c0ddb33ec04646559a30da",
+        "bytes": 735
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest.xml",
+        "sha256": "20bc41cec79e41579399708f2c8bc6da1921a646309105ab488d9fc38a7a8c8c",
+        "bytes": 2871
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAItemTagPlayerInteractedWithEntityCertificationTest.xml",
+        "sha256": "8608ac81d43f1b3bec5cdf4d63822ef57ee623686c5c2553dc395184e3223474",
+        "bytes": 766
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAItemUsedOnBlockContextualCertificationTest.xml",
+        "sha256": "f0285c77154338917a0ea900e5145a1d0bcc7c988c13efd3cf803c0fb8b43024",
+        "bytes": 763
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenCertificationTest.xml",
+        "sha256": "4f95384347c450645110d3168e9a20531ebd8d0beeb9cc565d6baeae172494f3",
+        "bytes": 568
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenEvidenceTest.xml",
+        "sha256": "b073eb5d64886aa3f7098c8650068b25e4a223e7222220796b04849ede240a18",
+        "bytes": 792
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseALocationMovementCertificationTest.xml",
+        "sha256": "33cf80c3090344dc03c37a3c99d5cfc14f0e91c6033efbbecd8a05a776b791c5",
+        "bytes": 743
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAMixedPerfectRunCertificationTest.xml",
+        "sha256": "e64d710b724b4cacaf7b6f2a61f04570a96c45532bc9c2c2a9323cbcff95c7a4",
+        "bytes": 551
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAMixedPerfectRunEvidenceTest.xml",
+        "sha256": "d5ce5734ac83337c8a5373a2d6c868e6c0432d0932c02a30b10da1ca4c9ff76a",
+        "bytes": 943
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionCertificationTest.xml",
+        "sha256": "8f264bc2e881e4e16a257daa4e50fd15463c2b4678b54a117e3e6db4714cec7f",
+        "bytes": 559
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionEvidenceTest.xml",
+        "sha256": "2bae095ec3a5cfe097f26a869bcac34bac4bc9aee62e66057df3b47b4b29ec56",
+        "bytes": 784
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAMixedWeaponryMulticlassedCertificationTest.xml",
+        "sha256": "60432258ecb3870edc6c3fda3b9289e30ff3d771c04e8c1778f77fcd73b896a4",
+        "bytes": 564
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAMixedWeaponryMulticlassedEvidenceTest.xml",
+        "sha256": "2cfab680ac8af3c2df025e01dad521d1bea6571a8ff304d179c71d4d44e864d7",
+        "bytes": 793
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceCertificationTest.xml",
+        "sha256": "094220cdf2c7c7729525050d689a244fff0a1b29ba9dd948bf8dc7e6a8407bb8",
+        "bytes": 753
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAPlayerKilledEntityRemainderCertificationTest.xml",
+        "sha256": "63d278669b2bd733f264b5b0f4f9ed263d4a8e246066de10528c693571558dec",
+        "bytes": 571
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAPlayerKilledEntityRemainderEvidenceTest.xml",
+        "sha256": "056d4cc9eb442910d01e392ac9b190fb5d076cef07c7c7f98fdeb399573d7eda",
+        "bytes": 799
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedCertificationTest.xml",
+        "sha256": "7e60ad65f096c3e9dd98d9833391926da3f02cbe7cbbbbd19e03eb4a79515739",
+        "bytes": 585
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedEvidenceTest.xml",
+        "sha256": "7c7d23c8de60f2a94c60e099f6f59e8ff2c9442da7d42911d9ee93d088ad7843",
+        "bytes": 811
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseARecipeCraftedWaxOnCertificationTest.xml",
+        "sha256": "9ee71a85ae0cbd797226e9e58bfc876f6bede406908ef7a37c20c2498c71ed39",
+        "bytes": 535
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest.xml",
+        "sha256": "726e366671d7954bf99ba79320bdc2b0ce52edba25668c71377bbd5c6c9501c9",
+        "bytes": 1646
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAShotCrossbowExecutionEvidenceValidationTest.xml",
+        "sha256": "357fd0bfa433c19e3d22cde031b67bd86c03f1e4b184843748b41c8d417f339a",
+        "bytes": 1615
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseASingletonAncientRestorationCertificationTest.xml",
+        "sha256": "1d10f880ee6c09ac202463305bb2a91be9d6d9c418d50b597ccb97746d3706ba",
+        "bytes": 571
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseASingletonAncientRestorationEvidenceTest.xml",
+        "sha256": "fa8e809b35fe36482aa6ff6beb95bf31ba7b367a6369a64b1040e89949aac966",
+        "bytes": 751
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseASingletonAxolotlMonumentCertificationTest.xml",
+        "sha256": "7da40c054741ac86d834547e456bdfe7fadb58a08cee2afdbad7ea46fd15eada",
+        "bytes": 931
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseASingletonDiagonAllayCertificationTest.xml",
+        "sha256": "7e879ca23280ef56221cb2c90ae6b81db2c00ac401db70039ad43fc13a97c4b5",
+        "bytes": 921
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseASingletonLlamaBreedingCertificationTest.xml",
+        "sha256": "c5e21233fa90e16af7ed86025f4df68a551d7cbdc3183ec87ca86a22a59bfd3a",
+        "bytes": 768
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseASingletonMangroveGroveCertificationTest.xml",
+        "sha256": "fe381f32183adde93285ab7b37e85dfbbcff3e906bfbd7ffc961c469084c7110",
+        "bytes": 939
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseASingletonMaximumResistanceCertificationTest.xml",
+        "sha256": "23f2d0d4f10b890554ce406aa47dd6569a03212c0c03ffa485d0cc80c449dbe3",
+        "bytes": 958
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseASingletonMiracleDrinkCertificationTest.xml",
+        "sha256": "1a5305e76262cbb3027ab9b638c59458881355774b19e9382dcceff96c825e43",
+        "bytes": 929
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseASingletonRedstoneClickCertificationTest.xml",
+        "sha256": "fb430e385c5b7a414a733b7a07d7e2f223303df5066e8fb32e13c2707ee90016",
+        "bytes": 752
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseASingletonSilkTouchNestCertificationTest.xml",
+        "sha256": "b56f60af3101497620ff83767cbc3370b6c22c83e2a8fdc30768dcdd32e66b5b",
+        "bytes": 561
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseASingletonSilkTouchNestEvidenceTest.xml",
+        "sha256": "81c134031ab7a6e7f980f103cb87855c5af4ea839531a705fa6419cb9470eaff",
+        "bytes": 737
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseASingletonVillageBellCertificationTest.xml",
+        "sha256": "8d348561c84bf6e8084f3882442acb63b8d3b79a924e4226763767d6df5beb15",
+        "bytes": 757
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAStackAllItemsCertificationTest.xml",
+        "sha256": "880fa88ccc6e34e08fb6dd6c4d03e467637956ed04965439148c3ae5b02c1b6e",
+        "bytes": 548
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAStackAllItemsEvidenceTest.xml",
+        "sha256": "d5439e8104506594ff11c42184c2caae3e1cd8baa3275162a3955c9808fd5498",
+        "bytes": 751
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseATameAnimalLlamaCertificationTest.xml",
+        "sha256": "9931407ea0675095fa9db418bfae3e6e87246047a767a4d6bb6c4b41126ee1f8",
+        "bytes": 709
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseATerminalReconciliationTest.xml",
+        "sha256": "854775d4c12ea5d84ec64c9e6835440d454deb1c2a7128e3c4f99a82eaa57ff9",
+        "bytes": 727
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedCertificationTest.xml",
+        "sha256": "24283be67f6a0ff86f335d54f98469457ae30c2764909bada058136cb19cf00e",
+        "bytes": 772
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedCertificationTest.xml",
+        "sha256": "93ed7cbd5ef74812a523a0824cef9e51537e68074429c8e30fc452fbf93b3f06",
+        "bytes": 881
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAUsingItemCertificationTest.xml",
+        "sha256": "6a102d40ac0b26ef2e33d2670067e327afb81f11dabada04975512b0902af60d",
+        "bytes": 1160
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAUsingItemExecutionEvidenceValidationTest.xml",
+        "sha256": "d3f9cfd7e70279dd2cedcc2751b68cb118a7050cd2fc51d55a4269c103fbced3",
+        "bytes": 741
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.certification.PhaseAUsingItemRollupTest.xml",
+        "sha256": "5f267aaa786a82496769c3fb9bd26d82dfe24533da9c7876bebf2391ae75afa9",
+        "bytes": 696
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.client.ExternalPackCompatibilityTest.xml",
+        "sha256": "17f779b5dcc148d61fa98e2e60831dfeb1e412d8ed1c23a9905dfb44727c39e4",
+        "bytes": 6108
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.client.PhaseALlamaFestivalNbtRegressionTest.xml",
+        "sha256": "f682feae03eda98dfbdb48c21fa1c4654e24dd7ab9fb75d5cf8892a642ffc868",
+        "bytes": 545
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.xml",
+        "sha256": "34d7264784312a6586ae2b297949d7f3d9adea2f23afde045402ac85cda6a64f",
+        "bytes": 931
+      }
+    ]
+  },
+  "productionAndGit": {
+    "newProductionEditsInThisContinuation": false,
+    "authorizedLlamaMigrationUnbroadened": true,
+    "preservedDirtyTrackedFiles": [
+      {
+        "path": "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+        "sha256": "dffeb7c2cf6685c5f689cf2a205b435b81da5b524971103804de3e3a6ae1dc11",
+        "bytes": 57159
+      },
+      {
+        "path": "src/main/resources/fabric.mod.json",
+        "sha256": "408c0aa567715089febc57a84500ffcb6d3a8e5f39313654d6980795ad39ca88",
+        "bytes": 881
+      },
+      {
+        "path": "src/test/java/com/diskree/achievetodo/client/ExternalPackCompatibilityTest.java",
+        "sha256": "bd0345e10ea907f8a295c1e90698bda9a07fb0c57a24e9a139887e373e8af60a",
+        "bytes": 62838
+      }
+    ],
+    "head": "a5e1b49539a39f01bb5db13d44d420e653dce225",
+    "branch": "26.2-port",
+    "indexChanged": false,
+    "unrelatedDirtyWorkPreserved": true,
+    "gameTestTempOwnerAfterCompletion": null,
+    "workingTreeStatus": [
+      "M build.gradle",
+      " M src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+      " M src/main/resources/fabric.mod.json",
+      " M src/test/java/com/diskree/achievetodo/client/ExternalPackCompatibilityTest.java",
+      "?? $out",
+      "?? .agents/",
+      "?? .gradle-user-home/",
+      "?? META-INF/",
+      "?? _tmp_mixin/",
+      "?? _tmp_mixin_living/",
+      "?? _tmp_mixin_player/",
+      "?? assets/",
+      "?? audittmp/",
+      "?? com/",
+      "?? data/",
+      "?? datagen-fail.log",
+      "?? dist/",
+      "?? evidence/",
+      "?? flightrecorder-config.jfc",
+      "?? hs_err_pid11424.log",
+      "?? hs_err_pid1264.log",
+      "?? hs_err_pid13392.log",
+      "?? hs_err_pid13560.log",
+      "?? hs_err_pid15280.log",
+      "?? hs_err_pid15720.log",
+      "?? hs_err_pid16548.log",
+      "?? hs_err_pid18172.log",
+      "?? hs_err_pid2068.log",
+      "?? hs_err_pid7800.log",
+      "?? hs_err_pid7880.log",
+      "?? hs_err_pid8164.log",
+      "?? hs_err_pid8500.log",
+      "?? logs/",
+      "?? net/",
+      "?? pack.png",
+      "?? reference/localization/.bacap_language_pack_1.21.zip",
+      "?? reference/localization/.official_audit_cache/",
+      "?? reference/phase_a_planning/",
+      "?? reference/phase_a_preservation/author-search/",
+      "?? replay_pid1264.log",
+      "?? replay_pid13392.log",
+      "?? replay_pid16548.log",
+      "?? replay_pid7880.log",
+      "?? replay_pid8164.log",
+      "?? replay_pid8500.log",
+      "?? runGameTest-output.txt",
+      "?? runclient.err.log",
+      "?? runclient.out.log",
+      "?? skills-lock.json",
+      "?? src/data/",
+      "?? src/gametest/",
+      "?? src/main/resources/data/",
+      "?? src/test/java/com/diskree/achievetodo/certification/",
+      "?? src/test/java/com/diskree/achievetodo/client/PhaseALegacyItemTagCompatibilityTest.java",
+      "?? src/test/java/com/diskree/achievetodo/client/PhaseALlamaFestivalNbtRegressionTest.java",
+      "?? src/test/java/com/diskree/achievetodo/client/PhaseALlamaFestivalNbtScopeTest.java",
+      "?? src/test/resources/",
+      "?? tmp-annotations-26.1.0.jar",
+      "?? tmp-fabric-api-0.158.0.jar",
+      "?? tmp-fabric-gametest-api.jar",
+      "?? tmp-fabric-lifecycle.jar",
+      "?? tmp-fabric-loader.jar",
+      "?? tmp-fabric-loom-1.17.19.jar",
+      "?? tmp-gson-2.14.0.jar",
+      "?? tmp-minecraft-merged-deobf-26.2.jar",
+      "?? tmp_as.txt",
+      "?? tmp_at.txt",
+      "?? tmp_aw.txt",
+      "?? tmp_bacap_src/",
+      "?? tmp_bacap_world7/",
+      "?? tmp_canary_javap.txt",
+      "?? tmp_createworld_javap.txt",
+      "?? tmp_decompile/",
+      "?? tmp_full_log_probe.txt",
+      "?? tmp_gamemode_javap.txt",
+      "?? tmp_gametesthelper_javap.txt",
+      "?? tmp_gametestserver_javap.txt",
+      "?? tmp_gui_javap.txt",
+      "?? tmp_kill_evidence_report.csv",
+      "?? tmp_latest_tail.txt",
+      "?? tmp_live_bacap_zip/",
+      "?? tmp_minecraft_javap.txt",
+      "?? tmp_minecraftserver_javap2.txt",
+      "?? tmp_playerlist_full.txt",
+      "?? tmp_playerlist_javap2.txt",
+      "?? tmp_ru_audit/",
+      "?? tmp_serveradv.txt",
+      "?? tmp_serverplayer_javap2.txt",
+      "?? tmp_sgp_full.txt",
+      "?? tmp_signblock_javap.txt",
+      "?? tmp_signentity_javap.txt",
+      "?? tmp_tree.txt",
+      "?? tmp_upstream_1_21_4/",
+      "?? tools/__pycache__/",
+      "?? version.json"
+    ]
+  },
+  "scope": "Phase A only; no Project 2 / Purpur work."
+}

@@ -3,10 +3,10 @@ plugins {
 }
 
 def modId = project.modName.toLowerCase()
-def repoUrl = "https://github.com/${author}/${modName}"
+def repoUrl = project.repoUrl
 
 version = "mc${minMinecraftVersion}+${modVersion}"
-group = "com." + project.author
+group = project.javaNamespace
 
 base {
     archivesName = modId
@@ -22,8 +22,9 @@ dependencies {
     implementation "net.fabricmc.fabric-api:fabric-api:${apiVersion}+${minMinecraftVersion}"
     implementation "com.moandjiezana.toml:toml4j:${tomlVersion}"
     implementation(include("com.moandjiezana.toml:toml4j:${tomlVersion}"))
-    testImplementation "org.junit.jupiter:junit-jupiter:5.12.2"
-    testRuntimeOnly "org.junit.platform:junit-platform-launcher:1.12.2"
+    testImplementation platform("org.junit:junit-bom:${junitVersion}")
+    testImplementation "org.junit.jupiter:junit-jupiter"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
 }
 
 processResources {
@@ -35,7 +36,8 @@ processResources {
         'repoUrl'            : repoUrl,
         'minJavaVersion'     : minJavaVersion,
         'minMinecraftVersion': minMinecraftVersion,
-        'minLoaderVersion'   : minLoaderVersion
+        'minLoaderVersion'   : minLoaderVersion,
+        'apiVersion'         : apiVersion
     ]
     inputs.properties(propertyMap)
     filesMatching("fabric.mod.json") {
@@ -59,6 +61,161 @@ tasks.withType(Test).configureEach {
     useJUnitPlatform()
 }
 
+fabricApi {
+    configureTests {
+        createSourceSet = true
+        getModId().set("achievetodo-test")
+        enableGameTests = true
+        enableClientGameTests = false
+        eula = true
+    }
+}
+
+// The Phase A family catalogs and independent validators are compiled in test, while the
+// retained joined-player GameTests need those same fail-closed classes at runtime.
+sourceSets {
+    gametest {
+        compileClasspath += sourceSets.test.output
+        runtimeClasspath += sourceSets.test.output
+    }
+}
+
+tasks.named('compileGametestJava') {
+    dependsOn testClasses
+}
+
+// Gradle's --system-prop values belong to the build JVM; forward the Fabric GameTest
+// selection controls to the forked server so a requested narrow run stays narrow.
+tasks.named('runGameTest', JavaExec) {
+    doFirst {
+        systemProperty('achievetodo.phaseA.projectRoot', project.projectDir.absolutePath)
+        ['fabric-api.gametest.filter', 'fabric-api.gametest.verify', 'fabric-api.gametest.report-file'].each { propertyName ->
+            String propertyValue = System.getProperty(propertyName)
+            if (propertyValue != null) {
+                systemProperty(propertyName, propertyValue)
+            }
+        }
+    }
+}
+
+tasks.register('writePhaseAStackAllItemsCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAStackAllItemsCertification'
+    args = [projectDir.absolutePath]
+}
+['Temporary': 'temporary', 'Promotable': 'promotable', 'Persistent': 'persistent', 'Promotion': 'promote'].each { label, mode ->
+    tasks.register("auditPhaseAStackAllItems${label}", JavaExec) {
+        dependsOn 'gametestClasses'
+        classpath = sourceSets.gametest.runtimeClasspath
+        mainClass = 'com.diskree.achievetodo.certification.PhaseAStackAllItemsExecutionEvidence'
+        args = [mode, projectDir.absolutePath]
+    }
+}
+
+tasks.register('writePhaseAMixedPerfectRunCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAMixedPerfectRunCertification'
+    args = [projectDir.absolutePath]
+}
+['Temporary': 'temporary', 'Promotable': 'promotable', 'Persistent': 'persistent', 'Promotion': 'promote'].each { label, mode ->
+    tasks.register("auditPhaseAMixedPerfectRun${label}", JavaExec) {
+        dependsOn 'gametestClasses'
+        classpath = sourceSets.gametest.runtimeClasspath
+        mainClass = 'com.diskree.achievetodo.certification.PhaseAMixedPerfectRunExecutionEvidence'
+        args = [mode, projectDir.absolutePath]
+    }
+}
+
+tasks.register('writePhaseAMixedWeaponryMulticlassedCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAMixedWeaponryMulticlassedCertification'
+    args = [projectDir.absolutePath]
+}
+['Temporary': 'temporary', 'Promotable': 'promotable', 'Persistent': 'persistent', 'Promotion': 'promote'].each { label, mode ->
+    tasks.register("auditPhaseAMixedWeaponryMulticlassed${label}", JavaExec) {
+        dependsOn 'gametestClasses'
+        classpath = sourceSets.gametest.runtimeClasspath
+        mainClass = 'com.diskree.achievetodo.certification.PhaseAMixedWeaponryMulticlassedExecutionEvidence'
+        args = [mode, projectDir.absolutePath]
+    }
+}
+
+tasks.register('writePhaseAMixedPiglinDistractionCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionCertification'
+    args = [projectDir.absolutePath]
+}
+['Temporary': 'temporary', 'Promotable': 'promotable', 'Persistent': 'persistent', 'Promotion': 'promote'].each { label, mode ->
+    tasks.register("auditPhaseAMixedPiglinDistraction${label}", JavaExec) {
+        dependsOn 'gametestClasses'
+        classpath = sourceSets.gametest.runtimeClasspath
+        mainClass = 'com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionExecutionEvidence'
+        args = [mode, projectDir.absolutePath]
+    }
+}
+
+tasks.register('writePhaseALocationHolderSetWorldgenCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenCertification'
+    args = [projectDir.absolutePath]
+}
+['Temporary': 'temporary', 'Promotable': 'promotable', 'Persistent': 'persistent', 'Promotion': 'promote'].each { label, mode ->
+    tasks.register("auditPhaseALocationHolderSetWorldgen${label}", JavaExec) {
+        dependsOn 'gametestClasses'
+        classpath = sourceSets.gametest.runtimeClasspath
+        mainClass = 'com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenExecutionEvidence'
+        args = [mode, projectDir.absolutePath]
+    }
+}
+
+tasks.register('writePhaseALlamaFestivalPreFixBaseline', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest'
+}
+
+tasks.register('writePhaseALlamaFestivalScopeFixture', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest'
+    args = ['fingerprints']
+}
+
+tasks.register('writePhaseAPlayerKilledEntityRemainderCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAPlayerKilledEntityRemainderCertification'
+    args = [projectDir.absolutePath]
+}
+['Temporary': 'temporary', 'Promotable': 'promotable', 'Persistent': 'persistent', 'Promotion': 'promote'].each { label, mode ->
+    tasks.register("auditPhaseAPlayerKilledEntityRemainder${label}", JavaExec) {
+        dependsOn 'gametestClasses'
+        classpath = sourceSets.gametest.runtimeClasspath
+        mainClass = 'com.diskree.achievetodo.certification.PhaseAPlayerKilledEntityRemainderExecutionEvidence'
+        args = [mode, projectDir.absolutePath]
+    }
+}
+
+tasks.register('writePhaseAPureEnchantmentInventoryChangedCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedCertification'
+    args = [projectDir.absolutePath]
+}
+['Temporary': 'temporary', 'Promotable': 'promotable', 'Persistent': 'persistent', 'Promotion': 'promote'].each { label, mode ->
+    tasks.register("auditPhaseAPureEnchantmentInventoryChanged${label}", JavaExec) {
+        dependsOn 'gametestClasses'
+        classpath = sourceSets.gametest.runtimeClasspath
+        mainClass = 'com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedExecutionEvidence'
+        args = [mode, projectDir.absolutePath]
+    }
+}
+
 tasks.register('syncWorldDatapacks', JavaExec) {
     dependsOn testClasses
     classpath = sourceSets.test.runtimeClasspath
@@ -66,16 +223,130 @@ tasks.register('syncWorldDatapacks', JavaExec) {
     args = [file('run/datapacks').absolutePath, file('run/saves').absolutePath]
 }
 
+tasks.register('writePhaseACertificationAssets', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseACertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('writePhaseALocationMovementCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseALocationMovementCertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAContainerLootCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAContainerLootCertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAItemTagInventoryChangedCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedCertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAItemTagPlacedBlockCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockCertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAEntityTypeTagPlayerKilledEntityCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityCertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAEnchantmentInventoryChangedCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedCertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAItemTagPlayerInteractedWithEntityCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAItemTagPlayerInteractedWithEntityCertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAEntityTypeTagPlayerInteractedWithEntityCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerInteractedWithEntityCertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAAdvancementRollup', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAAdvancementRollup'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAFishingRodHookedCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAFishingRodHookedCertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAFishingRodHookedDiagnosticEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAFishingRodHookedExecutionEvidence'
+    args = ['diagnostic', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAFishingRodHookedTemporaryEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAFishingRodHookedExecutionEvidence'
+    args = ['temporary', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAFishingRodHookedPromotableEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAFishingRodHookedExecutionEvidence'
+    args = ['promotable', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAFishingRodHookedPersistentEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAFishingRodHookedExecutionEvidence'
+    args = ['persistent', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseAFishingRodHookedExecutionEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAFishingRodHookedExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
 tasks.register('generateBuildConfig', DefaultTask) {
     doLast {
         def templateFile = file("$projectDir/gradle/BuildConfig.java.txt")
-        def configFile = file("$projectDir/src/main/generated/java/com/${author}/${modId}/BuildConfig.java")
+        def namespacePath = project.javaNamespace.replace('.', '/')
+        def configFile = file("$projectDir/src/main/generated/java/${namespacePath}/${modId}/BuildConfig.java")
         configFile.getParentFile().mkdirs()
 
         configFile.text = templateFile.text
-            .replace('${author}', author)
+            .replace('${javaNamespace}', javaNamespace)
             .replace('${modId}', modId)
             .replace('${modName}', modName)
+            .replace('${modVersion}', modVersion)
     }
 }
 
@@ -84,6 +355,11 @@ java {
 }
 
 jar {
+    doFirst {
+        if (modVersion ==~ /\d+\.\d+\.\d+\.\d+/ && archiveFile.get().asFile.exists()) {
+            throw new GradleException("Smoke candidate ${modVersion} already exists; increment the final modVersion component before producing a changed JAR.")
+        }
+    }
     from('LICENSE') {
         rename { "${it}_${modId}" }
     }
@@ -105,6 +381,9 @@ loom {
     accessWidenerPath.set(file("src/main/resources/${modId}.classtweaker"))
 
     runs {
+        gameTest {
+            vmArg "-Dachievetodo.phaseA.projectRoot=${projectDir.absolutePath}"
+        }
         datagen {
             inherit server
             name "Data Generation"
@@ -113,6 +392,349 @@ loom {
             vmArg "-Dfabric-api.datagen.modid=${modId}"
 
             runDir "build/datagen"
+        }
+    }
+}
+
+tasks.register('promotePhaseARuntimeExecutionEvidence', JavaExec) {
+    dependsOn 'runGameTest'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseAContainerLootExecutionEvidence', JavaExec) {
+    dependsOn 'runGameTest'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseAItemTagInventoryChangedExecutionEvidence', JavaExec) {
+    dependsOn 'runGameTest'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseAItemTagPlacedBlockExecutionEvidence', JavaExec) {
+    dependsOn 'runGameTest'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseAEnchantmentInventoryChangedExecutionEvidence', JavaExec) {
+    dependsOn 'runGameTest'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseAEntityTypeTagPlayerKilledEntityExecutionEvidence', JavaExec) {
+    dependsOn 'runGameTest'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseAItemTagPlayerInteractedWithEntityExecutionEvidence', JavaExec) {
+    dependsOn 'runGameTest'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAItemTagPlayerInteractedWithEntityExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseAEntityTypeTagPlayerInteractedWithEntityExecutionEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerInteractedWithEntityExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAEntityTypeTagPlayerInteractedWithEntityTemporaryEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerInteractedWithEntityExecutionEvidenceValidation'
+    args = ['temporary', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAEntityTypeTagPlayerInteractedWithEntityPromotableEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerInteractedWithEntityExecutionEvidenceValidation'
+    args = ['promotable', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAEntityTypeTagPlayerInteractedWithEntityPersistentEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerInteractedWithEntityExecutionEvidenceValidation'
+    args = ['persistent', projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAShotCrossbowCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAShotCrossbowCertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseAShotCrossbowExecutionEvidence', JavaExec) {
+    dependsOn 'runGameTest'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAShotCrossbowExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAUsingItemCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAUsingItemCertification'
+    args = [projectDir.absolutePath]
+}
+
+// Promotion is deliberately independent of runGameTest so the exact, already-audited
+// TEMP artifact is copied byte-for-byte without rerunning unrelated GameTests.
+tasks.register('promotePhaseAUsingItemExecutionEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAUsingItemExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAUsingItemTemporaryEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAUsingItemExecutionEvidenceValidation'
+    args = ['temporary', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAUsingItemPromotableEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAUsingItemExecutionEvidenceValidation'
+    args = ['promotable', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAUsingItemPersistentEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAUsingItemExecutionEvidenceValidation'
+    args = ['persistent', projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAPlayerHurtEntityDamageSourceCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceCertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAPlayerHurtEntityDamageSourceTemporaryEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidation'
+    args = ['temporary', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAPlayerHurtEntityDamageSourcePromotableEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidation'
+    args = ['promotable', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseAPlayerHurtEntityDamageSourceExecutionEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAPlayerHurtEntityDamageSourcePersistentEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidation'
+    args = ['persistent', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseATameAnimalLlamaTemporaryEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseATameAnimalLlamaExecutionEvidence'
+    args = ['temporary', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseATameAnimalLlamaPromotableEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseATameAnimalLlamaExecutionEvidence'
+    args = ['promotable', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseATameAnimalLlamaExecutionEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseATameAnimalLlamaExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseATameAnimalLlamaPersistentEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseATameAnimalLlamaExecutionEvidence'
+    args = ['persistent', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseARecipeCraftedWaxOnTemporaryEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseARecipeCraftedWaxOnExecutionEvidence'
+    args = ['temporary', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseARecipeCraftedWaxOnPromotableEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseARecipeCraftedWaxOnExecutionEvidence'
+    args = ['promotable', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseARecipeCraftedWaxOnExecutionEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseARecipeCraftedWaxOnExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseARecipeCraftedWaxOnPersistentEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseARecipeCraftedWaxOnExecutionEvidence'
+    args = ['persistent', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAItemTagInventoryContainmentTemporaryEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAItemTagInventoryContainmentExecutionEvidence'
+    args = ['temporary', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAItemTagInventoryContainmentPromotableEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAItemTagInventoryContainmentExecutionEvidence'
+    args = ['promotable', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseAItemTagInventoryContainmentExecutionEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAItemTagInventoryContainmentExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseAItemTagInventoryContainmentPersistentEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAItemTagInventoryContainmentExecutionEvidence'
+    args = ['persistent', projectDir.absolutePath]
+}
+tasks.register('writePhaseATrimMaterialInventoryChangedCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedCertification'
+    args = [projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseATrimMaterialInventoryChangedTemporaryEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedExecutionEvidence'
+    args = ['temporary', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseATrimMaterialInventoryChangedPromotableEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedExecutionEvidence'
+    args = ['promotable', projectDir.absolutePath]
+}
+
+tasks.register('promotePhaseATrimMaterialInventoryChangedExecutionEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('validatePhaseATrimMaterialInventoryChangedPersistentEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedExecutionEvidence'
+    args = ['persistent', projectDir.absolutePath]
+}
+
+tasks.register('writePhaseAItemUsedOnBlockContextualCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAItemUsedOnBlockContextualCertification'
+    args = [projectDir.absolutePath]
+}
+
+['Temporary': 'temporary', 'Promotable': 'promotable', 'Persistent': 'persistent'].each { label, mode ->
+    tasks.register("validatePhaseAItemUsedOnBlockContextual${label}Evidence", JavaExec) {
+        dependsOn 'gametestClasses'
+        classpath = sourceSets.gametest.runtimeClasspath
+        mainClass = 'com.diskree.achievetodo.certification.PhaseAItemUsedOnBlockContextualExecutionEvidence'
+        args = [mode, projectDir.absolutePath]
+    }
+}
+tasks.register('promotePhaseAItemUsedOnBlockContextualExecutionEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseAItemUsedOnBlockContextualExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+tasks.register('writePhaseASingletonRedstoneClickCertification', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseASingletonRedstoneClickCertification'
+    args = [projectDir.absolutePath]
+}
+
+['Temporary': 'temporary', 'Promotable': 'promotable', 'Persistent': 'persistent'].each { label, mode ->
+    tasks.register("validatePhaseASingletonRedstoneClick${label}Evidence", JavaExec) {
+        dependsOn 'gametestClasses'
+        classpath = sourceSets.gametest.runtimeClasspath
+        mainClass = 'com.diskree.achievetodo.certification.PhaseASingletonRedstoneClickExecutionEvidence'
+        args = [mode, projectDir.absolutePath]
+    }
+}
+tasks.register('promotePhaseASingletonRedstoneClickExecutionEvidence', JavaExec) {
+    dependsOn 'gametestClasses'
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.certification.PhaseASingletonRedstoneClickExecutionEvidence'
+    args = ['promote', projectDir.absolutePath]
+}
+
+// New singleton transactions retain explicit TEMP audit and separate promotion.
+['AncientRestoration', 'SilkTouchNest'].each { front ->
+    tasks.register("writePhaseASingleton${front}Certification", JavaExec) {
+        dependsOn testClasses
+        classpath = sourceSets.test.runtimeClasspath
+        mainClass = "com.diskree.achievetodo.certification.PhaseASingleton${front}Certification"
+        args = [projectDir.absolutePath]
+    }
+    ['Temporary': 'temporary', 'Promotable': 'promotable', 'Persistent': 'persistent', 'Promotion': 'promote'].each { label, mode ->
+        tasks.register("auditPhaseASingleton${front}${label}", JavaExec) {
+            dependsOn 'gametestClasses'
+            classpath = sourceSets.gametest.runtimeClasspath
+            mainClass = "com.diskree.achievetodo.certification.PhaseASingleton${front}ExecutionEvidence"
+            args = [mode, projectDir.absolutePath]
         }
     }
 }

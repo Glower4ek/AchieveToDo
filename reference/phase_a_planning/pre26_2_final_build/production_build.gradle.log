@@ -1,0 +1,27 @@
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/D:/Vibecode/AchieveToDo%2026.2/.gradle-user-home/wrapper/dists/gradle-9.5.1-bin/iq79hdu3mqx29lgffhp8bfmx/gradle-9.5.1/lib/native-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.5.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+Fabric Loom: 1.17.19
+
+> Task :generateBuildConfig
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :processIncludeJars UP-TO-DATE
+> Task :jar UP-TO-DATE
+> Task :assemble UP-TO-DATE
+> Task :validateAccessWidener
+> Task :check
+> Task :build
+
+> Task :pre26BuildMetadata
+PRE26_BUILD_METADATA {"gradleVersion":"9.5.1","javaVersion":"25.0.4","projectRoot":"D:\\Vibecode\\AchieveToDo 26.2","projectVersion":"mc26.2+0.1.5","archivesName":"achievetodo","jarTasks":[{"task":":jar","type":"org.gradle.api.tasks.bundling.Jar_Decorated","archive":"D:\\Vibecode\\AchieveToDo 26.2\\build\\libs\\achievetodo-mc26.2+0.1.5.jar","classifier":"","exists":true,"dependencies":[":classes",":compileJava",":processIncludeJars"]}],"sourceSets":[{"name":"gametest","java":["D:\\Vibecode\\AchieveToDo 26.2\\src\\gametest\\java"],"resources":["D:\\Vibecode\\AchieveToDo 26.2\\src\\gametest\\resources"],"classes":["D:\\Vibecode\\AchieveToDo 26.2\\build\\classes\\java\\gametest"],"resourcesOutput":"D:\\Vibecode\\AchieveToDo 26.2\\build\\resources\\gametest"},{"name":"main","java":["D:\\Vibecode\\AchieveToDo 26.2\\src\\main\\java","D:\\Vibecode\\AchieveToDo 26.2\\src\\main\\generated\\java"],"resources":["D:\\Vibecode\\AchieveToDo 26.2\\src\\main\\resources","D:\\Vibecode\\AchieveToDo 26.2\\src\\main\\generated"],"classes":["D:\\Vibecode\\AchieveToDo 26.2\\build\\classes\\java\\main"],"resourcesOutput":"D:\\Vibecode\\AchieveToDo 26.2\\build\\resources\\main"},{"name":"test","java":["D:\\Vibecode\\AchieveToDo 26.2\\src\\test\\java","D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_planning\\pre26_2_final_build\\java"],"resources":["D:\\Vibecode\\AchieveToDo 26.2\\src\\test\\resources"],"classes":["D:\\Vibecode\\AchieveToDo 26.2\\build\\classes\\java\\test"],"resourcesOutput":"D:\\Vibecode\\AchieveToDo 26.2\\build\\resources\\test"}],"taskGraph":[{"task":":generateBuildConfig","type":"org.gradle.api.DefaultTask_Decorated"},{"task":":compileJava","type":"org.gradle.api.tasks.compile.JavaCompile_Decorated"},{"task":":processResources","type":"org.gradle.language.jvm.tasks.ProcessResources_Decorated"},{"task":":classes","type":"org.gradle.api.DefaultTask_Decorated"},{"task":":processIncludeJars","type":"net.fabricmc.loom.build.nesting.NestableJarGenerationTask_Decorated"},{"task":":jar","type":"org.gradle.api.tasks.bundling.Jar_Decorated"},{"task":":assemble","type":"org.gradle.api.DefaultTask_Decorated"},{"task":":validateAccessWidener","type":"net.fabricmc.loom.task.ValidateAccessWidenerTask_Decorated"},{"task":":check","type":"org.gradle.api.DefaultTask_Decorated"},{"task":":build","type":"org.gradle.api.DefaultTask_Decorated"},{"task":":pre26BuildMetadata","type":"org.gradle.api.DefaultTask_Decorated"}],"buildDependencies":[":assemble",":check"],"assembleDependencies":[":jar"]}
+
+BUILD SUCCESSFUL in 17s
+7 actionable tasks: 3 executed, 4 up-to-date

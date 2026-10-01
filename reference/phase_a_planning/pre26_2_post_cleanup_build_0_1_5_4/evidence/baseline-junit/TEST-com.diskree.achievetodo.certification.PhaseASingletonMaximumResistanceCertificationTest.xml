@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseASingletonMaximumResistanceCertificationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:37:45.844Z" hostname="LAPTOP-L0LPH8GP" time="2.978">
+  <properties/>
+  <testcase name="persistentEvidenceCoversOnlyTheMaximumResistanceSingleton()" classname="com.diskree.achievetodo.certification.PhaseASingletonMaximumResistanceCertificationTest" time="0.005"/>
+  <testcase name="frozenSourceAndCatalogMatchTheAssignedSingleton()" classname="com.diskree.achievetodo.certification.PhaseASingletonMaximumResistanceCertificationTest" time="0.005"/>
+  <testcase name="persistentMaximumResistanceReceiptChangesOnlyItsOwnStatus()" classname="com.diskree.achievetodo.certification.PhaseASingletonMaximumResistanceCertificationTest" time="2.967"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

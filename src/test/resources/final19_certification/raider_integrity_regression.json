@@ -1,0 +1,1003 @@
+{
+  "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+  "prefix": "raider_integrity",
+  "exact": true,
+  "fingerprint": "7733f645f8b60231ab3e763b47fa0dc55cf676567b99310308ea394118f46832",
+  "runtimeCopySha256": "0806de4bfe2432f5a02328caa74198ae560c49af231a04608a0983c4c586dc37",
+  "productionConverterSha256": "1bea3ba9caf22963d1ef26de69b19534a4b16d1eab85a39c5e1fc17750227a31",
+  "certificationGain": 0,
+  "entries": [
+    {
+      "case": "dungeon_crawler/evoker/nonraid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:monsters/dungeon_crawler",
+      "criterion": "evoker",
+      "requirementGroup": 0,
+      "playerUuid": "2071175a-195e-44bd-8b97-e0fa240ff1c2",
+      "targetUuid": "fa524208-e1fe-40c0-b19f-3ef4d98395a7",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": false,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": false,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": false,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": true,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:evoker",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": false,
+        "criterionImmediatelyAfterKill": true
+      },
+      "decodedPredicate": {
+        "hasRaid": false,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 160,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "dungeon_crawler/evoker/raid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:monsters/dungeon_crawler",
+      "criterion": "evoker",
+      "requirementGroup": 0,
+      "playerUuid": "c8c4888c-e06d-4e38-8b55-b055b10faf3b",
+      "targetUuid": "0a08171c-c04f-40cd-aef3-ac008bf484bc",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": false,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": true,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": true,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": true,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": false,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:evoker",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": true,
+        "criterionImmediatelyAfterKill": false
+      },
+      "decodedPredicate": {
+        "hasRaid": false,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 115,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "dungeon_crawler/pillager/nonraid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:monsters/dungeon_crawler",
+      "criterion": "pillager",
+      "requirementGroup": 0,
+      "playerUuid": "b3845fb1-682b-4034-b47d-b9c93d2f9790",
+      "targetUuid": "46e9f0de-a813-4933-9b9d-cabc57585d4c",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": false,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": false,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": false,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": true,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:pillager",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": false,
+        "criterionImmediatelyAfterKill": true
+      },
+      "decodedPredicate": {
+        "hasRaid": false,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 107,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "dungeon_crawler/pillager/raid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:monsters/dungeon_crawler",
+      "criterion": "pillager",
+      "requirementGroup": 0,
+      "playerUuid": "32fe4d88-97dd-4131-ae9d-9e55436b0f83",
+      "targetUuid": "7269c372-5c4b-4bef-a109-39063b7df738",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": false,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": true,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": true,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": true,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": false,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:pillager",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": true,
+        "criterionImmediatelyAfterKill": false
+      },
+      "decodedPredicate": {
+        "hasRaid": false,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 96,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "dungeon_crawler/vindicator/nonraid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:monsters/dungeon_crawler",
+      "criterion": "vindicator",
+      "requirementGroup": 0,
+      "playerUuid": "c2acf507-56e9-47a8-adef-ed3e7a58ab80",
+      "targetUuid": "10d00f76-d424-4a31-a8eb-37c547a120a8",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": false,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": false,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": false,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": true,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:vindicator",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": false,
+        "criterionImmediatelyAfterKill": true
+      },
+      "decodedPredicate": {
+        "hasRaid": false,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 145,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "dungeon_crawler/vindicator/raid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:monsters/dungeon_crawler",
+      "criterion": "vindicator",
+      "requirementGroup": 0,
+      "playerUuid": "cd27e819-c090-433c-9c4e-25f32275d440",
+      "targetUuid": "1794353c-3716-48e6-9568-cf2e17a91a37",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": false,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": true,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": true,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": true,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": false,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:vindicator",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": true,
+        "criterionImmediatelyAfterKill": false
+      },
+      "decodedPredicate": {
+        "hasRaid": false,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 98,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "feeling_ill/evoker/nonraid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:adventure/feeling_ill",
+      "criterion": "evoker",
+      "requirementGroup": 0,
+      "playerUuid": "9a74d73b-d5d3-4784-9fbc-08b07fc8e6fe",
+      "targetUuid": "52da164f-c860-481c-86dd-0b7587c6f7a5",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": false,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": false,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": false,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": false,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": false,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:evoker",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": false,
+        "criterionImmediatelyAfterKill": false
+      },
+      "decodedPredicate": {
+        "hasRaid": true,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 109,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "feeling_ill/evoker/raid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:adventure/feeling_ill",
+      "criterion": "evoker",
+      "requirementGroup": 0,
+      "playerUuid": "9f9e8249-abdf-499d-8ff4-061a105265c3",
+      "targetUuid": "4af97ff1-517d-4fe9-be18-b58d1c41f15a",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": true,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": true,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": true,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": true,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:evoker",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": true,
+        "criterionImmediatelyAfterKill": true
+      },
+      "decodedPredicate": {
+        "hasRaid": true,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 109,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "feeling_ill/pillager/nonraid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:adventure/feeling_ill",
+      "criterion": "pillager",
+      "requirementGroup": 0,
+      "playerUuid": "8aac1a4d-b071-47ac-bd01-202ca524b3ba",
+      "targetUuid": "a7faf266-210d-4278-9cf9-8f795866ea7d",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": false,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": false,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": false,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": false,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": false,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:pillager",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": false,
+        "criterionImmediatelyAfterKill": false
+      },
+      "decodedPredicate": {
+        "hasRaid": true,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 95,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "feeling_ill/pillager/raid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:adventure/feeling_ill",
+      "criterion": "pillager",
+      "requirementGroup": 0,
+      "playerUuid": "17fd1085-7fe5-4379-b9c3-3e9ca4cafbff",
+      "targetUuid": "82b8a48c-5e01-4714-932c-af3d83bcfd7f",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": true,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": true,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": true,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": true,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:pillager",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": true,
+        "criterionImmediatelyAfterKill": true
+      },
+      "decodedPredicate": {
+        "hasRaid": true,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 115,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "feeling_ill/ravager/nonraid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:adventure/feeling_ill",
+      "criterion": "ravager",
+      "requirementGroup": 0,
+      "playerUuid": "157323e4-3d8a-4c93-8e3d-1efd7b957894",
+      "targetUuid": "c19aec1e-ae14-4ee2-9f39-ab1a7f6f5e6c",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": false,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": false,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": false,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": false,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": false,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:ravager",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": false,
+        "criterionImmediatelyAfterKill": false
+      },
+      "decodedPredicate": {
+        "hasRaid": true,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 109,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "feeling_ill/ravager/raid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:adventure/feeling_ill",
+      "criterion": "ravager",
+      "requirementGroup": 0,
+      "playerUuid": "bbd1710b-a70a-473a-914e-0ccb9ab4dee8",
+      "targetUuid": "76233a2d-1c8c-40df-90ed-2e0969d08434",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": true,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": true,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": true,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": true,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:ravager",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": true,
+        "criterionImmediatelyAfterKill": true
+      },
+      "decodedPredicate": {
+        "hasRaid": true,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 113,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "feeling_ill/vindicator/nonraid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:adventure/feeling_ill",
+      "criterion": "vindicator",
+      "requirementGroup": 0,
+      "playerUuid": "3ef2ae2d-9700-4575-a96d-fc772a3f59de",
+      "targetUuid": "f920ae95-56c5-43a2-9b78-fbfc067b5efc",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": false,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": false,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": false,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": false,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": false,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:vindicator",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": false,
+        "criterionImmediatelyAfterKill": false
+      },
+      "decodedPredicate": {
+        "hasRaid": true,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 103,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "feeling_ill/vindicator/raid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:adventure/feeling_ill",
+      "criterion": "vindicator",
+      "requirementGroup": 0,
+      "playerUuid": "ab0039a1-7bd9-4bb5-9dbf-eb57ce05bd31",
+      "targetUuid": "57324e32-967a-493f-8ce0-2c99135a6460",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": true,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": true,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": true,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": true,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:vindicator",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": true,
+        "criterionImmediatelyAfterKill": true
+      },
+      "decodedPredicate": {
+        "hasRaid": true,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 98,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "feeling_ill/witch/nonraid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:adventure/feeling_ill",
+      "criterion": "witch",
+      "requirementGroup": 0,
+      "playerUuid": "61b0d2a8-eb75-4329-a6ef-d30a4a219b0d",
+      "targetUuid": "2611d740-aae8-47d4-aa2d-0ccffb7dc28b",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": false,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": false,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": false,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": false,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": false,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:witch",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": false,
+        "criterionImmediatelyAfterKill": false
+      },
+      "decodedPredicate": {
+        "hasRaid": true,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 113,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    },
+    {
+      "case": "feeling_ill/witch/raid",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "advancementId": "blazeandcave:adventure/feeling_ill",
+      "criterion": "witch",
+      "requirementGroup": 0,
+      "playerUuid": "3b4e0c85-3a23-4f2b-9e62-e0a04b42dd57",
+      "targetUuid": "6d2f6458-fefa-41c6-8f53-6e27817e6b56",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "advancementDone": false,
+      "nativeAction": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "productionGate": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 71,
+        "abilities": {
+          "USE_WOODEN_TOOLS": {
+            "threshold": 71,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "raiderWitness": {
+        "hasRaid": true,
+        "isCaptain": false,
+        "patrolLeader": false,
+        "activeRaid": true,
+        "exactOminousBanner": false,
+        "registeredLiveRaid": true,
+        "raiderTagMember": true,
+        "decodedMatchesLiveBeforeKill": true,
+        "raidStoppedBeforeKill": false,
+        "raidCurrentBeforeKill": true,
+        "entityType": "minecraft:witch",
+        "nativeKillCredit": true,
+        "damageType": "minecraft:player_attack",
+        "hasRaidAfterKill": true,
+        "criterionImmediatelyAfterKill": true
+      },
+      "decodedPredicate": {
+        "hasRaid": true,
+        "isCaptain": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 125,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true,
+        "raidStoppedAndUnregistered": true
+      }
+    }
+  ]
+}

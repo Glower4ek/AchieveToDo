@@ -1,0 +1,26 @@
+{
+  "family": "ENTITY_VARIANT_COMPONENT_CONTEXT",
+  "acceptedPersistentEvidence": {
+    "family": "ENTITY_VARIANT_COMPONENT_CONTEXT",
+    "path": "src\\test\\resources\\final19_certification\\entity_variant_component_context_evidence.json",
+    "sha256": "4a8e8fa49fad280fc6080e2ac2a7b189ebae65f82ff9046a2ad756fb11108d58",
+    "runId": "a45e9e2c-8d99-41a5-84e2-8dffdf5d3d86",
+    "catalogSha256": "9d963d7610d45d911c19b9312c7c605c64eb0d6e244fc1704d1e3670ec3cac64"
+  },
+  "files": {
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/variants_canary_evidence.json": "d11179d8fad59195810f57098d0f38edb7ee69d5ddfdf4767bb5fcc83624d36e",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/variants_canary_run.json": "b26a312415786fb83b47242ce556e1356eef1e87d5978627c3bba2575d803cfa",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/variants_run.json": "170d6dc0ec34bd58ffc9f1a1ac865b0773a2549a39ed879d6e0111f1ad78f5e4",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/variants_static.json": "6267ea80715c735b0c3bbc3b306acfc7c1bee540a43d4dd5c6a3af879f0df092",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/variants_canary.gradle.log": "f71a9b25e540d231d874392dfb229164aee21bff262834c0d766292b5d6cc33e",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/variants_canary.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/variants_exact.gradle.log": "4e1dc8f4e7ad519f7f7fa8738facb8156b15feded342742d57f54b5ef7e45717",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/variants_exact.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/variants_validation.gradle.log": "395036b3b5079ebb1ac9faaa93e23a203056df1e750a35398de0f96afa28d5de",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/variants_validation.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/variants_promotion.gradle.log": "dc31e67ddde878facbeeeb5f42283519ac51d84a097921397b388139720e52bb",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/variants_promotion.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/TEST-com.diskree.achievetodo.certification.Final19LedgerTest.xml": "4c24979dbbba83a52db2fcd80b0cb5307b7c5c67f578424fae7cd05d61c8eba6",
+    "reference/phase_a_planning/final19/accepted_transactions/entity_variant_component_context/TEST-com.diskree.achievetodo.certification.Final19VariantsAcceptanceTest.xml": "fb09620079eea646cf95ab3ded3e1b77f18e6db1aff706bbac61af8aac270cee"
+  }
+}

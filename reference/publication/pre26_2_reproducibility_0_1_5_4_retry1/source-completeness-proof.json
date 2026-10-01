@@ -1,0 +1,11 @@
+{
+  "sourceComplete": true,
+  "publicationInputFiles": 3254,
+  "allExecutedInputHashesUnchanged": true,
+  "inputReachback": "NONE",
+  "networkBootstrapVerified": true,
+  "cacheAssistedExecution": false,
+  "initialGradleHomeEmpty": true,
+  "retainedArtifactLocalValidation": "GREEN",
+  "note": "Required repository inputs resolved inside the snapshot. JDK and network-resolved dependency artifacts are environment prerequisites. The original release JAR was read externally only for final comparison."
+}

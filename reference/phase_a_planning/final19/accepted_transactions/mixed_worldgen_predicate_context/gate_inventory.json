@@ -1,0 +1,40 @@
+{
+  "family": "MIXED_WORLDGEN_PREDICATE_CONTEXT",
+  "acceptedPersistentEvidence": {
+    "family": "MIXED_WORLDGEN_PREDICATE_CONTEXT",
+    "path": "src\\test\\resources\\final19_certification\\mixed_worldgen_predicate_context_evidence.json",
+    "sha256": "5c68cac42e56ed282adfb045216e1a6a3ad0d88851ff3fe3ae07368aa186ec90",
+    "runId": "ff2bbdf0-298d-427d-aa38-6530baf9eaf5",
+    "catalogSha256": "c73009ee985871c96c4df5a0f414c3e7cdc45aea591f331fdce29bab7f0044c2"
+  },
+  "files": {
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_canary_evidence.json": "336fbad96e63c79a98b23b1c8c6873fff271d994fe2584be09b369473eacb587",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_canary_run.json": "1a2cb6c10857d610e167fbfeb9a0d571aa5230d65ce21bf0e0764bce50a047e6",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_run.json": "2a295690458c2384151be49f612eca0b5c12e97df21109b9cc55db3074bf1686",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_static.json": "c2b9a885c8bbc773c694f3f38b799798245951af5e8a4549cfebb8e3cb10d365",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_canary_actual_audit.json": "20904a41bfbb06d0056cb62bc21a04673ad92b4cacd0b65d0ce08ae03ccadc81",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_exact_actual_audit.json": "3f7e7e43148d6eceb56bc2325dd1fa1bc143486df8b3dcc7bbc658884ba2f1ac",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_compile_static.gradle.log": "5778f981587fc3ef7eebf65599bb94062524e34721e8056d488d975c984f7733",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_compile_static.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_canary-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_exact-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_canary.gradle.log": "2c13e4a9786a2bdee9dc1cf371b6b11216da6eca8bde8e0b0cf52f6f1d064bdb",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_canary.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_exact.gradle.log": "913b5696c38c24ec29730508a439ec036348e033b3af25eb021e05b6617abc36",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_exact.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_validation.gradle.log": "171c7d9dfbf58c003fdb42bd5319bb41c4dd7c2c80d6cbb514af074a6c488b87",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_validation.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_promotion.gradle.log": "b6fc2ea0e5000af4c15874fcb017912412686c6d5920278f203ab02e74a98122",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_promotion.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_persistent_regression.gradle.log": "9445470b23ad0b5215dfe69703a545c240a74b9eca9f4419cda0834e215930f6",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/mixed_worldgen_persistent_regression.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/TEST-com.diskree.achievetodo.certification.Final19CauldronGateRegressionAcceptanceTest.xml": "80f6e51f558a4b8dbaef4fea882d7a922437dba7fb5a28b03852dc3cff280993",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/TEST-com.diskree.achievetodo.certification.Final19DualTagsAcceptanceTest.xml": "d9b1eee0b20e79037cd1cf6ce2e1600aefbdf01f05647f7058eacff3136d4833",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/TEST-com.diskree.achievetodo.certification.Final19InventoryMastersAcceptanceTest.xml": "80e0ec0c892ed9088a6e04f3c76900c7b64f1ac2dc0d414440f59881b19a79ba",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/TEST-com.diskree.achievetodo.certification.Final19LedgerTest.xml": "cfde54472f101994411d8eea233b11bc9988b8b7ce4488b82675baa33d952d13",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/TEST-com.diskree.achievetodo.certification.Final19MixedWorldgenAcceptanceTest.xml": "b26ae25168e5cf638797027c3a5180c568cbd9049f45963a8e101c1489cea5a8",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/TEST-com.diskree.achievetodo.certification.Final19VariantsAcceptanceTest.xml": "d6f1949bee41bfb9438bcb144446250791a4aaa61443ec78cf20e6b68f9ff6f0",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/TEST-com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest.xml": "6803732dafd6885938569da09fd274e9be4f6a8e3920bed9d8147b09cedba2ae",
+    "reference/phase_a_planning/final19/accepted_transactions/mixed_worldgen_predicate_context/TEST-com.diskree.achievetodo.certification.Final19WorldgenAcceptanceTest.xml": "db6c1954cf8ac0c392e8c1014a2b9ea33965e89e3f7efaa03145f9902cd27ada"
+  }
+}

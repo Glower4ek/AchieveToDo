@@ -1,0 +1,11 @@
+{
+  "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+  "prefix": "raider_integrity",
+  "exact": true,
+  "fingerprint": "7733f645f8b60231ab3e763b47fa0dc55cf676567b99310308ea394118f46832",
+  "runtimeCopySha256": "0806de4bfe2432f5a02328caa74198ae560c49af231a04608a0983c4c586dc37",
+  "productionConverterSha256": "1bea3ba9caf22963d1ef26de69b19534a4b16d1eab85a39c5e1fc17750227a31",
+  "certificationGain": 0,
+  "stage": "TEMP_PROMOTABLE",
+  "expectedEntries": 16
+}

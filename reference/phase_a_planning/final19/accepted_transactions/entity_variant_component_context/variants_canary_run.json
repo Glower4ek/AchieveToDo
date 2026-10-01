@@ -1,0 +1,9 @@
+{
+  "family": "ENTITY_VARIANT_COMPONENT_CONTEXT",
+  "runId": "04923d95-c7e6-411f-9aba-231d00db2949",
+  "exact": false,
+  "fingerprint": "c02d54573f7477506f3ecb9d6bb0cdef9f0071164b4817070c6ba56a11f46b74",
+  "expectedEntries": 4,
+  "runtimeCopySha256": "6040a9e3d967e7b49794af85385897bf52e8e38da422bb12b7d59c27f1f98a4c",
+  "stage": "TEMP_DIAGNOSTIC"
+}

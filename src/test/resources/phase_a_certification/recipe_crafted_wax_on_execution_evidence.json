@@ -1,0 +1,46 @@
+{
+  "snapshot": "phase_a_recipe_crafted_wax_on_execution_evidence",
+  "schemaVersion": 1,
+  "family": "RECIPE_CRAFTED_WAX_ON",
+  "source": "PhaseARecipeCraftedWaxOnGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:764077ed761bf340c232ad6e3bfdc87606b6430f2c2407424261aff56a41aae7",
+  "runId": "dbab7d2c-2ad9-403c-8777-6cf5a45f95b4",
+  "generatedAt": "2026-09-13T06:13:09.005497Z",
+  "entries": [
+    {
+      "advancementId": "minecraft:husbandry/wax_on",
+      "criterion": "minecraft:waxed_copper_block_from_honeycomb",
+      "recipeId": "minecraft:waxed_copper_block_from_honeycomb",
+      "trigger": "minecraft:recipe_crafted",
+      "boundary": "ServerGamePacketListenerImpl.handleContainerClick->ResultSlot.onTake->CriteriaTriggers.RECIPE_CRAFTED",
+      "family": "RECIPE_CRAFTED_WAX_ON",
+      "source": "PhaseARecipeCraftedWaxOnGameTest",
+      "catalogFingerprint": "sha-256:764077ed761bf340c232ad6e3bfdc87606b6430f2c2407424261aff56a41aae7",
+      "runId": "dbab7d2c-2ad9-403c-8777-6cf5a45f95b4",
+      "result": "GREEN",
+      "gameMode": "SURVIVAL",
+      "inputA": "minecraft:copper_block",
+      "inputB": "minecraft:honeycomb",
+      "producedItem": "minecraft:waxed_copper_block",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "craftingTableInteraction": true,
+      "normalResultTaken": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "noDirectCriterionTrigger": true,
+      "noManualAward": true,
+      "ticksToCriterion": 1,
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 2496,
+        "warningCount": 0
+      }
+    }
+  ]
+}

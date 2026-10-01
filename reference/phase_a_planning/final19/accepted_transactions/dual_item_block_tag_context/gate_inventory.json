@@ -1,0 +1,34 @@
+{
+  "family": "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+  "acceptedPersistentEvidence": {
+    "family": "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+    "path": "src\\test\\resources\\final19_certification\\dual_item_block_tag_context_evidence.json",
+    "sha256": "79b07b937f4cce9e73a091ab8e8356741352513b468e4a15a8fa17ec4e73c894",
+    "runId": "606d24ad-2cf0-409d-ab75-7a50d969bcaa",
+    "catalogSha256": "bded440355ba7c2b56ad5f629605fbc2ccc23af6b47256c812238fe927e11c92"
+  },
+  "files": {
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_canary_evidence.json": "02a7c5e497f56da268ca6c0950fe57afeefe86ca4ea9ad84b1240617e30883f2",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_canary_run.json": "5146ef5ce160c9086ff3b02525120b072a6a5b8b4dbb43bcde82e5c74a351f7f",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_run.json": "0177ad61c586f4ff3df77af3c2e2a8a458adc114dd13a7f50b4e8a21f38fca9c",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_static.json": "c0c34e9b84c2e7f7ebca1601af032857d3c3c066247e3bfba0ad7b4d69be1a4b",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_canary_actual_audit.json": "2aeb7b241d30e878c2fccb15f2f226cd4706b4a6001129fc7d548ef61c52e06f",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_exact_actual_audit.json": "7036dc1fd2217fb26e0e782f63859074d95d1d0cb4f72e2f3a33f7235327085f",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_canary.gradle.log": "8182da1d378d0e9dcdc6b8bd3ba10640d02a24029206810de5d2e2dd85856b84",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_canary.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_exact.gradle.log": "a9c600815a82c27bce6528ac875dd7a660df5df418b826eb5a9dffd98fcdf21f",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_exact.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_validation.gradle.log": "cf90c88ea8604f97246dbe2010454d4decbf36b2c5c5f65214a62c4df448337c",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_validation.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_promotion.gradle.log": "417cab243f8e1d90eebbf88df2d6c75707f43a958015aa93217d90102f00cb92",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_promotion.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_persistent_regression.gradle.log": "0310f9ebc323c37b78b84e650ebd247de517ba726654a9125c6f4081e97b4a7f",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/dual_tags_persistent_regression.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/TEST-com.diskree.achievetodo.certification.Final19CauldronGateRegressionAcceptanceTest.xml": "4cb3cf0fd3feb833a5540bb64933300d803f8733f7c9397c6e7a5ff8b59cc55d",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/TEST-com.diskree.achievetodo.certification.Final19DualTagsAcceptanceTest.xml": "87cf540f2ccbbfee2cc4b2325d2b06e9bd4de8d75460c52140e3667c5077369c",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/TEST-com.diskree.achievetodo.certification.Final19LedgerTest.xml": "6cdd9202a7929aff62171bb5deec246597022fda60adf879071af57f3cee55b0",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/TEST-com.diskree.achievetodo.certification.Final19VariantsAcceptanceTest.xml": "49cba68ed6a2c3b82601de785685e3ebb88906ee7673d453996b21afe7eae1d3",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/TEST-com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest.xml": "2ccb769dd5928c6f6ad31cca48e8c239afd66cbbd79a429199e561f545a39e5d",
+    "reference/phase_a_planning/final19/accepted_transactions/dual_item_block_tag_context/TEST-com.diskree.achievetodo.certification.Final19WorldgenAcceptanceTest.xml": "76e2e9369343c94db4d60e66a00772d20d01e0881333937457a77befab909520"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "snapshot": "phase_a_singleton_silk_touch_nest_execution_evidence",
+  "schemaVersion": 1,
+  "family": "SINGLETON:minecraft:husbandry/silk_touch_nest",
+  "source": "PhaseASingletonSilkTouchNestGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:171e6a6ff346ca176e9603d10f93c29ab11ab55a041d54756bb5f916c234cdc2",
+  "runId": "db91b817-9578-4f66-8412-9e81e6048db4",
+  "generatedAt": "2026-09-30T04:27:12.563280700Z",
+  "entries": [
+    {
+      "family": "SINGLETON:minecraft:husbandry/silk_touch_nest",
+      "source": "PhaseASingletonSilkTouchNestGameTest",
+      "advancementId": "minecraft:husbandry/silk_touch_nest",
+      "criterion": "silk_touch_nest",
+      "trigger": "minecraft:bee_nest_destroyed",
+      "boundary": "ServerboundPlayerActionPacket.handle->ServerGamePacketListenerImpl.handlePlayerAction->ServerPlayerGameMode.handleBlockBreakAction->ServerPlayerGameMode.destroyBlock->BeehiveBlock.playerDestroy->CriteriaTriggers.BEE_NEST_DESTROYED",
+      "observedBlock": "minecraft:bee_nest",
+      "observedEnchantment": "minecraft:silk_touch",
+      "observedTool": "minecraft:wooden_axe",
+      "runId": "db91b817-9578-4f66-8412-9e81e6048db4",
+      "catalogFingerprint": "sha-256:171e6a6ff346ca176e9603d10f93c29ab11ab55a041d54756bb5f916c234cdc2",
+      "result": "GREEN",
+      "gameMode": "SURVIVAL",
+      "playerUuid": "28579e56-7fed-4d6b-a506-7ed61027af71",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "blockBefore": true,
+      "blockDestroyed": true,
+      "nativeBeePreservingDrop": true,
+      "startPacketSent": true,
+      "stopPacketSent": true,
+      "beesBefore": 3,
+      "beesInDrop": 3,
+      "silkTouchLevel": 1,
+      "toolCountBefore": 1,
+      "toolCountAfter": 1,
+      "toolDamageBefore": 0,
+      "toolDamageAfter": 1,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "ticksToBreak": 22,
+      "noDirectCriterionTrigger": true,
+      "noManualAward": true,
+      "productionGateWitness": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "scoreBefore": 0,
+        "BREAK_BLOCKS": {
+          "threshold": 32,
+          "lockedBefore": true,
+          "lockedAfter": false
+        },
+        "BREAK_BLOCKS_IN_NEGATIVE_Y": {
+          "threshold": 38,
+          "lockedBefore": true,
+          "lockedAfter": false
+        },
+        "USE_WOODEN_TOOLS": {
+          "threshold": 71,
+          "lockedBefore": true,
+          "lockedAfter": false
+        },
+        "requiredThreshold": 71,
+        "scoreAfter": 71
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "dropsRemoved": true,
+        "warningCount": 0,
+        "settlementMessages": 177
+      }
+    }
+  ]
+}

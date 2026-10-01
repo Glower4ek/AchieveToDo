@@ -1,0 +1,181 @@
+{
+  "family": "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+  "staticSemantics": "EXACT_FROZEN_CURRENT_TYPED_CONTEXT",
+  "criteriaCount": 35,
+  "requirementGroupCount": 9,
+  "sourceBackedTags": {
+    "minecraft:item|blazeandcave:master_axes": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/item/master_axes.json",
+          "sha256": "ed4ee0c554febb1958fc57ea3fa62e752984353ce2db0ac0112c455b7310e341",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:diamond_axe",
+              "minecraft:netherite_axe"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:diamond_axe",
+        "minecraft:netherite_axe"
+      ]
+    },
+    "minecraft:item|blazeandcave:master_boots": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/item/master_boots.json",
+          "sha256": "fb0ac24b1e2e51a23cee8fb684c867773c5f1416ba912becd63fa69fb5351d58",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:diamond_boots",
+              "minecraft:netherite_boots"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:diamond_boots",
+        "minecraft:netherite_boots"
+      ]
+    },
+    "minecraft:item|blazeandcave:master_chestplates": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/item/master_chestplates.json",
+          "sha256": "aa8da78be8898791da321811f48086bd4a4b859fff7ba95f3becbb5ac7f6b0f6",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:diamond_chestplate",
+              "minecraft:netherite_chestplate"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:diamond_chestplate",
+        "minecraft:netherite_chestplate"
+      ]
+    },
+    "minecraft:item|blazeandcave:master_helmets": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/item/master_helmets.json",
+          "sha256": "7c1ae108afed4d1f27b335f9a76a523670aa0d9b3e56a0af3a9e704cd09d5cd4",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:diamond_helmet",
+              "minecraft:netherite_helmet"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:diamond_helmet",
+        "minecraft:netherite_helmet"
+      ]
+    },
+    "minecraft:item|blazeandcave:master_hoes": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/item/master_hoes.json",
+          "sha256": "4e51d3772a62944f13027b95944c2641d186b356247a4a57b87063505bf7f450",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:diamond_hoe",
+              "minecraft:netherite_hoe"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:diamond_hoe",
+        "minecraft:netherite_hoe"
+      ]
+    },
+    "minecraft:item|blazeandcave:master_leggings": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/item/master_leggings.json",
+          "sha256": "58c3b717988077bb16125e2d8b017e67223300be6dc851ffb2184b5d2b87f402",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:diamond_leggings",
+              "minecraft:netherite_leggings"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:diamond_leggings",
+        "minecraft:netherite_leggings"
+      ]
+    },
+    "minecraft:item|blazeandcave:master_pickaxes": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/item/master_pickaxes.json",
+          "sha256": "58cac9da9a57ba9402ace7acbcfcc0f2638c0f60d0a994a059e44d6b0b3cc624",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:diamond_pickaxe",
+              "minecraft:netherite_pickaxe"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:diamond_pickaxe",
+        "minecraft:netherite_pickaxe"
+      ]
+    },
+    "minecraft:item|blazeandcave:master_shovels": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/item/master_shovels.json",
+          "sha256": "4da72fff7f4cb0d9d18c9e47f6a4082df0d1c2fc52a9e5ebfc06638b407b239b",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:diamond_shovel",
+              "minecraft:netherite_shovel"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:diamond_shovel",
+        "minecraft:netherite_shovel"
+      ]
+    },
+    "minecraft:item|blazeandcave:master_swords": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/item/master_swords.json",
+          "sha256": "d181b62c921aad04699777d81b7c6d00d704e4ec1014697bc448c0143a08f417",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:diamond_sword",
+              "minecraft:netherite_sword"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:diamond_sword",
+        "minecraft:netherite_sword"
+      ]
+    }
+  },
+  "legalBranchWitnesses": 35,
+  "inputFingerprint": "a230ee20a0ffc7e4a5148b36ccf42ee4172f7b205de6ab20d955ec2854865c54"
+}

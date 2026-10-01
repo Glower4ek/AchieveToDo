@@ -1,0 +1,55 @@
+{
+  "snapshot": "phase_a_fishing_rod_hooked_case_catalog",
+  "schemaVersion": 1,
+  "family": "FISHING_ROD_HOOKED",
+  "familySource": "Frozen BACAP",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "trigger": "minecraft:fishing_rod_hooked",
+  "runtimeBoundary": "ServerboundUseItemPacket.handle->ServerGamePacketListenerImpl.handleUseItem->ServerPlayerGameMode.useItem->FishingRodItem.use->FishingHook.retrieve->CriteriaTriggers.FISHING_ROD_HOOKED",
+  "advancementCount": 1,
+  "criterionCount": 1,
+  "requirementGroupCount": 1,
+  "requirementGroups": [["indiana_jones"]],
+  "requiredRodPredicate": "NONE",
+  "selectedRodWitness": "minecraft:fishing_rod",
+  "requiredItemPredicate": "NONE",
+  "requiredHookedEntityPredicate": {"type": "#blazeandcave:hostile_monsters"},
+  "selectedHookedEntityWitness": "minecraft:ravager",
+  "productionGate": {
+    "kind": "ABILITY_UNLOCK",
+    "ability": "USE_FISHING_ROD",
+    "scoreboardObjective": "bac_advancements",
+    "thresholdSource": "LevelInfoExtension.achievetodo$getAbilitiesConfiguration(overworldSeed)"
+  },
+  "legitimateAction": "Native MAIN_HAND cast packet; wait for vanilla hook collision; native MAIN_HAND reel packet",
+  "randomnessControl": "Stationary no-AI ravager at short unobstructed range; entity-hook retrieval bypasses fishing loot selection; bounded 20-tick collision wait",
+  "fingerprintInputs": [
+    "reference/phase_a_preservation/files/final/bacap.zip",
+    "data/blazeandcave/advancement/weaponry/indiana_jones.json",
+    "data/blazeandcave/tags/entity_type/hostile_monsters.json",
+    "minecraftVersion",
+    "compatibilityMarker",
+    "runtimeBoundary",
+    "productionGate"
+  ],
+  "cases": [
+    {
+      "advancementId": "blazeandcave:weaponry/indiana_jones",
+      "criterion": "indiana_jones",
+      "requirementGroupIndex": 0,
+      "trigger": "minecraft:fishing_rod_hooked",
+      "rodPredicate": "NONE",
+      "selectedRodWitness": "minecraft:fishing_rod",
+      "itemPredicate": "NONE",
+      "playerPredicate": "NONE",
+      "entityPredicate": {"type": "#blazeandcave:hostile_monsters"},
+      "entityTag": "blazeandcave:hostile_monsters",
+      "fixtureEntity": "minecraft:ravager",
+      "sourceJsonSha256": "efcc25197096eb690266225ad524c7a46582a5c93cce173b99fd047a5ecf5f7a",
+      "entityTagSourceSha256": "0a34f7342288773c229c3e6fa6be7aae25d431a71db9cf5b21d685068d697e2b"
+    }
+  ],
+  "completionSemantics": "The singleton requirement is satisfied only when vanilla FishingHook.retrieve reels an already hooked entity and FishingRodHookedTrigger evaluates that hooked entity against blazeandcave:hostile_monsters."
+}

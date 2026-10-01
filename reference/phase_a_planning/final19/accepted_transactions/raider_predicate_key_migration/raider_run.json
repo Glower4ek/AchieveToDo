@@ -1,0 +1,11 @@
+{
+  "runId": "c30e2c9f-013f-4c33-98e6-924904c77908",
+  "prefix": "raider",
+  "exact": true,
+  "fingerprint": "7733f645f8b60231ab3e763b47fa0dc55cf676567b99310308ea394118f46832",
+  "runtimeCopySha256": "44219d947a77fafdaa11dadffb8cd1bd0adcce904c408637fcf7b989a232e31a",
+  "productionConverterSha256": "1bea3ba9caf22963d1ef26de69b19534a4b16d1eab85a39c5e1fc17750227a31",
+  "certificationGain": 1,
+  "stage": "TEMP_PROMOTABLE",
+  "expectedEntries": 5
+}

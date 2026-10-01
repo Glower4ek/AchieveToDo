@@ -1,0 +1,50 @@
+{
+  "snapshot": "phase_a_singleton_ancient_restoration_execution_evidence",
+  "schemaVersion": 1,
+  "family": "SINGLETON:blazeandcave:nether/ancient_restoration",
+  "source": "PhaseASingletonAncientRestorationGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:6a23006820643f0868d3e001520bd1359616a3dcaa98986385d473757d2be605",
+  "runId": "2fb90835-5aae-4b4c-8474-46bb1630f463",
+  "generatedAt": "2026-09-30T04:08:36.842425700Z",
+  "entries": [
+    {
+      "family": "SINGLETON:blazeandcave:nether/ancient_restoration",
+      "source": "PhaseASingletonAncientRestorationGameTest",
+      "advancementId": "blazeandcave:nether/ancient_restoration",
+      "criterion": "entered_nether_portal",
+      "trigger": "minecraft:enter_block",
+      "boundary": "Entity.checkInsideBlocks->ServerPlayer.onInsideBlock->CriteriaTriggers.ENTER_BLOCK",
+      "observedBlock": "minecraft:nether_portal",
+      "observedStructure": "minecraft:ruined_portal",
+      "runId": "2fb90835-5aae-4b4c-8474-46bb1630f463",
+      "catalogFingerprint": "sha-256:6a23006820643f0868d3e001520bd1359616a3dcaa98986385d473757d2be605",
+      "result": "GREEN",
+      "gameMode": "SURVIVAL",
+      "playerUuid": "01c126db-7dc0-4fde-b0f6-2716245b703b",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "frameBuilt": true,
+      "nativePortalCreated": true,
+      "structureLookupBeforeEntry": true,
+      "structureLookupAtEntry": true,
+      "portalBlockAtEntry": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "ticksToEnter": 1,
+      "noDirectCriterionTrigger": true,
+      "noManualAward": true,
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "structureRestored": true,
+        "settlementMessages": 2402,
+        "warningCount": 0
+      }
+    }
+  ]
+}

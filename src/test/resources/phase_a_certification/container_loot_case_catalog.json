@@ -1,0 +1,689 @@
+{
+  "snapshot": "phase_a_container_loot_case_catalog",
+  "canonicalAdvancementCount": 1152,
+  "compatibilityMarker": "compat_26_2_r15",
+  "canonicalSemanticsSource": "reference/phase_a_preservation/files/final/bacap.zip",
+  "summary": {
+    "totalCases": 56,
+    "uniqueAdvancements": 7,
+    "automationSupported": 56,
+    "automationDeferred": 0,
+    "byEligibility": {
+      "SUPPORTED": 56
+    }
+  },
+  "cases": [
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "sourcePath": "data/blazeandcave/advancement/adventure/raidin_master.json",
+      "criterion": "buried_treasure",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/buried_treasure",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "sourcePath": "data/blazeandcave/advancement/adventure/raidin_master.json",
+      "criterion": "dungeon",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/simple_dungeon",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/x_marks_the_spot",
+      "sourcePath": "data/blazeandcave/advancement/biomes/x_marks_the_spot.json",
+      "criterion": "heart_of_the_sea",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/buried_treasure",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "abandoned_mineshaft",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/abandoned_mineshaft",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "ancient_city",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/ancient_city",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "ancient_city_ice_box",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/ancient_city_ice_box",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "bastion_bridge",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/bastion_bridge",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "bastion_hoglin_stable",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/bastion_hoglin_stable",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "bastion_other",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/bastion_other",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "bastion_treasure",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/bastion_treasure",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "buried_treasure",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/buried_treasure",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "desert_pyramid",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/desert_pyramid",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "end_city_treasure",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/end_city_treasure",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "igloo_chest",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/igloo_chest",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "jungle_temple",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/jungle_temple",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "nether_bridge",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/nether_bridge",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "pillager_outpost",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/pillager_outpost",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "ruined_portal",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/ruined_portal",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "shipwreck_map",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/shipwreck_map",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "shipwreck_supply",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/shipwreck_supply",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "shipwreck_treasure",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/shipwreck_treasure",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "simple_dungeon",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/simple_dungeon",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "stronghold_corridor",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/stronghold_corridor",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "stronghold_crossing",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/stronghold_crossing",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "stronghold_library",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/stronghold_library",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "trial_chambers_corridor",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/trial_chambers/corridor",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "trial_chambers_entrance",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/trial_chambers/entrance",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "trial_chambers_intersection",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/trial_chambers/intersection",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "trial_chambers_intersection_barrel",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/trial_chambers/intersection_barrel",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "trial_chambers_reward",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/trial_chambers/reward",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "trial_chambers_supply",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/trial_chambers/supply",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "underwater_ruin_big",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/underwater_ruin_big",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "underwater_ruin_small",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/underwater_ruin_small",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_armorer",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_armorer",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_butcher",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_butcher",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_cartographer",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_cartographer",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_desert_house",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_desert_house",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_fisher",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_fisher",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_fletcher",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_fletcher",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_mason",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_mason",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_plains_house",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_plains_house",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_savanna_house",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_savanna_house",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_snowy_house",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_snowy_house",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_taiga_house",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_taiga_house",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_tannery",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_tannery",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_temple",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_temple",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_toolsmith",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_toolsmith",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "village_weaponsmith",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/village/village_weaponsmith",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "sourcePath": "data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "criterion": "woodland_mansion",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/woodland_mansion",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:mining/dungeons_and_spawners",
+      "sourcePath": "data/blazeandcave/advancement/mining/dungeons_and_spawners.json",
+      "criterion": "dungeon",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/simple_dungeon",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:mining/frigid_diversions",
+      "sourcePath": "data/blazeandcave/advancement/mining/frigid_diversions.json",
+      "criterion": "ancient_city_ice_box",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/ancient_city_ice_box",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "blazeandcave:mining/steals_on_wheels",
+      "sourcePath": "data/blazeandcave/advancement/mining/steals_on_wheels.json",
+      "criterion": "heart_of_the_sea",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/abandoned_mineshaft",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "minecraft:nether/loot_bastion",
+      "sourcePath": "data/minecraft/advancement/nether/loot_bastion.json",
+      "criterion": "loot_bastion_bridge",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/bastion_bridge",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "minecraft:nether/loot_bastion",
+      "sourcePath": "data/minecraft/advancement/nether/loot_bastion.json",
+      "criterion": "loot_bastion_hoglin_stable",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/bastion_hoglin_stable",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "minecraft:nether/loot_bastion",
+      "sourcePath": "data/minecraft/advancement/nether/loot_bastion.json",
+      "criterion": "loot_bastion_other",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/bastion_other",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    },
+    {
+      "advancementId": "minecraft:nether/loot_bastion",
+      "sourcePath": "data/minecraft/advancement/nether/loot_bastion.json",
+      "criterion": "loot_bastion_treasure",
+      "trigger": "minecraft:player_generates_container_loot",
+      "lootTable": "minecraft:chests/bastion_treasure",
+      "conditionKeys": [
+        "loot_table"
+      ],
+      "automationEligibility": "SUPPORTED",
+      "eligibilityReason": "ONLY_LOOT_TABLE_CONDITION"
+    }
+  ]
+}

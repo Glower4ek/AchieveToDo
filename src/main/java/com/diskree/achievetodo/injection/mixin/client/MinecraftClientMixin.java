@@ -27,28 +27,6 @@ public class MinecraftClientMixin {
     @Shadow
     public @Nullable LocalPlayer player;
 
-    @Inject(
-        method = "setScreenAndShow",
-        at = @At("HEAD"),
-        cancellable = true
-    )
-    public void setScreenInject(Screen screen, CallbackInfo ci) {
-        Minecraft client = (Minecraft) (Object) this;
-        if (screen instanceof AdvancementsScreen) {
-            if (AchieveToDoClient.isNotReady()) {
-                if (player != null) {
-                    player.sendOverlayMessage(
-                        AchieveToDoClient.translate("error.not_ready_yet")
-                            .withStyle(ChatFormatting.RED)
-                    );
-                }
-                ci.cancel();
-            } else if (client.getTutorial().instance instanceof MovementTutorialStepHandlerExtension movementTutorialStepHandlerExtension) {
-                movementTutorialStepHandlerExtension.achievetodo$onAdvancementsOpened();
-            }
-        }
-    }
-
     @WrapOperation(
         method = "handleKeybinds",
         at = @At(

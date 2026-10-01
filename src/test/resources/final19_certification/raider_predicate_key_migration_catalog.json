@@ -1,0 +1,120 @@
+{
+  "family": "RAIDER_PREDICATE_KEY_MIGRATION",
+  "stage": "FINAL19",
+  "sources": [
+    {
+      "advancementId": "minecraft:adventure/voluntary_exile",
+      "sourcePath": "data/minecraft/advancement/adventure/voluntary_exile.json",
+      "frozenSha256": "c78b54261c1746014a11023f396e5c74d032556c3d944efada9c1dfe78871607",
+      "requirements": [
+        [
+          "bad_omen"
+        ]
+      ],
+      "auditedConvertedDefinition": {
+        "display": {
+          "icon": {
+            "id": "minecraft:white_banner",
+            "components": {
+              "minecraft:banner_patterns": [
+                {
+                  "color": "cyan",
+                  "pattern": "minecraft:rhombus"
+                },
+                {
+                  "color": "light_gray",
+                  "pattern": "minecraft:stripe_bottom"
+                },
+                {
+                  "color": "gray",
+                  "pattern": "minecraft:stripe_center"
+                },
+                {
+                  "color": "light_gray",
+                  "pattern": "minecraft:border"
+                },
+                {
+                  "color": "black",
+                  "pattern": "minecraft:stripe_middle"
+                },
+                {
+                  "color": "light_gray",
+                  "pattern": "minecraft:half_horizontal"
+                },
+                {
+                  "color": "light_gray",
+                  "pattern": "minecraft:circle"
+                },
+                {
+                  "color": "black",
+                  "pattern": "minecraft:border"
+                }
+              ]
+            }
+          },
+          "title": {
+            "translate": "I've got a bad feeling about this"
+          },
+          "description": {
+            "color": "green",
+            "translate": "Kill a raid captain. I’d warn against drinking that bottle they dropped…"
+          },
+          "announce_to_chat": false
+        },
+        "parent": "blazeandcave:adventure/riot_shield",
+        "rewards": {
+          "function": "bacap_rewards:adventure/ive_got_a_bad_feeling_about_this"
+        },
+        "criteria": {
+          "bad_omen": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+              "entity": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "entity_type": "#minecraft:raiders",
+                    "type_specific/raider": {
+                      "type": "raider",
+                      "isCaptain": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "advancementId": "minecraft:adventure/voluntary_exile",
+      "requirementGroup": 0,
+      "alternatives": [
+        "bad_omen"
+      ],
+      "criterion": "bad_omen",
+      "expectedCriterion": {
+        "trigger": "minecraft:player_killed_entity",
+        "conditions": {
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "entity_type": "#minecraft:raiders",
+                "type_specific/raider": {
+                  "type": "raider",
+                  "isCaptain": true
+                }
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false
+    }
+  ]
+}

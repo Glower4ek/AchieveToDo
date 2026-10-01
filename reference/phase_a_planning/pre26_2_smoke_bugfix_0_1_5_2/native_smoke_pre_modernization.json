@@ -1,0 +1,349 @@
+{
+  "nativeAdvancements": [
+    {
+      "id": "achievetodo-test:vanilla_task",
+      "frame": "TASK",
+      "nativePickup": true,
+      "criterionBefore": false,
+      "advancementAfter": true,
+      "message": {
+        "translate": "chat.type.advancement.task",
+        "with": [
+          {
+            "text": "smokea5c97fa2",
+            "click_event": {
+              "command": "/tell smokea5c97fa2 ",
+              "action": "suggest_command"
+            },
+            "hover_event": {
+              "id": "minecraft:player",
+              "uuid": [
+                -1513521246,
+                1218005810,
+                -1087185477,
+                1125956046
+              ],
+              "name": "smokea5c97fa2",
+              "action": "show_entity"
+            },
+            "insertion": "smokea5c97fa2"
+          },
+          {
+            "translate": "chat.square_brackets",
+            "with": [
+              {
+                "translate": "advancements.story.mine_stone.title",
+                "hover_event": {
+                  "value": {
+                    "translate": "advancements.story.mine_stone.title",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "advancements.story.mine_stone.description"
+                      }
+                    ],
+                    "color": "green"
+                  },
+                  "action": "show_text"
+                }
+              }
+            ],
+            "color": "green"
+          }
+        ]
+      }
+    },
+    {
+      "id": "minecraft:story/mine_stone",
+      "frame": "TASK",
+      "nativePickup": true,
+      "criterionBefore": false,
+      "advancementAfter": true,
+      "message": {
+        "translate": "%1$s has made the advancement %2$s%3$s%4$s",
+        "with": [
+          {
+            "text": "smokea5c97fa2",
+            "click_event": {
+              "command": "/tell smokea5c97fa2 ",
+              "action": "suggest_command"
+            },
+            "hover_event": {
+              "id": "minecraft:player",
+              "uuid": [
+                -1513521246,
+                1218005810,
+                -1087185477,
+                1125956046
+              ],
+              "name": "smokea5c97fa2",
+              "action": "show_entity"
+            },
+            "insertion": "smokea5c97fa2"
+          },
+          {
+            "text": "[",
+            "color": "green"
+          },
+          {
+            "translate": "Stone Age",
+            "color": "green",
+            "click_event": {
+              "command": "/advancementssearch highlight minecraft:story/mine_stone obtained_status",
+              "action": "run_command"
+            },
+            "hover_event": {
+              "value": {
+                "translate": "Stone Age",
+                "extra": [
+                  "\n",
+                  {
+                    "translate": "Mine stone with your new pickaxe",
+                    "color": "#49DB49"
+                  },
+                  "\n\n",
+                  {
+                    "translate": "%1$s tab",
+                    "with": [
+                      {
+                        "translate": "Mining"
+                      }
+                    ],
+                    "color": "gray",
+                    "italic": true
+                  }
+                ],
+                "color": "green"
+              },
+              "action": "show_text"
+            }
+          },
+          {
+            "text": "]",
+            "color": "green"
+          }
+        ]
+      }
+    },
+    {
+      "id": "blazeandcave:mining/moar_tools",
+      "frame": "TASK",
+      "nativePickup": true,
+      "criterionBefore": false,
+      "advancementAfter": true,
+      "message": {
+        "translate": "%1$s has made the advancement %2$s%3$s%4$s",
+        "with": [
+          {
+            "text": "smokea5c97fa2",
+            "click_event": {
+              "command": "/tell smokea5c97fa2 ",
+              "action": "suggest_command"
+            },
+            "hover_event": {
+              "id": "minecraft:player",
+              "uuid": [
+                -1513521246,
+                1218005810,
+                -1087185477,
+                1125956046
+              ],
+              "name": "smokea5c97fa2",
+              "action": "show_entity"
+            },
+            "insertion": "smokea5c97fa2"
+          },
+          {
+            "text": "[",
+            "color": "green"
+          },
+          {
+            "translate": "MOAR Tools",
+            "color": "green",
+            "click_event": {
+              "command": "/advancementssearch highlight blazeandcave:mining/moar_tools obtained_status",
+              "action": "run_command"
+            },
+            "hover_event": {
+              "value": {
+                "translate": "MOAR Tools",
+                "extra": [
+                  "\n",
+                  {
+                    "translate": "Craft a stone pickaxe, axe, shovel and hoe",
+                    "color": "#49DB49"
+                  },
+                  "\n\n",
+                  {
+                    "translate": "%1$s tab",
+                    "with": [
+                      {
+                        "translate": "Mining"
+                      }
+                    ],
+                    "color": "gray",
+                    "italic": true
+                  }
+                ],
+                "color": "green"
+              },
+              "action": "show_text"
+            }
+          },
+          {
+            "text": "]",
+            "color": "green"
+          }
+        ]
+      }
+    },
+    {
+      "id": "blazeandcave:mining/coal_miner",
+      "frame": "GOAL",
+      "nativePickup": true,
+      "criterionBefore": false,
+      "advancementAfter": true,
+      "message": {
+        "translate": "%1$s has reached the goal %2$s%3$s%4$s",
+        "with": [
+          {
+            "text": "smokea5c97fa2",
+            "click_event": {
+              "command": "/tell smokea5c97fa2 ",
+              "action": "suggest_command"
+            },
+            "hover_event": {
+              "id": "minecraft:player",
+              "uuid": [
+                -1513521246,
+                1218005810,
+                -1087185477,
+                1125956046
+              ],
+              "name": "smokea5c97fa2",
+              "action": "show_entity"
+            },
+            "insertion": "smokea5c97fa2"
+          },
+          {
+            "text": "[",
+            "color": "#75E1FF"
+          },
+          {
+            "translate": "Coal Miner",
+            "color": "#75E1FF",
+            "click_event": {
+              "command": "/advancementssearch highlight blazeandcave:mining/coal_miner obtained_status",
+              "action": "run_command"
+            },
+            "hover_event": {
+              "value": {
+                "translate": "Coal Miner",
+                "extra": [
+                  "\n",
+                  {
+                    "translate": "Mine a stack of coal",
+                    "color": "#63BDD7"
+                  },
+                  "\n\n",
+                  {
+                    "translate": "%1$s tab",
+                    "with": [
+                      {
+                        "translate": "Mining"
+                      }
+                    ],
+                    "color": "gray",
+                    "italic": true
+                  }
+                ],
+                "color": "#75E1FF"
+              },
+              "action": "show_text"
+            }
+          },
+          {
+            "text": "]",
+            "color": "#75E1FF"
+          }
+        ]
+      }
+    },
+    {
+      "id": "blazeandcave:biomes/flower_power",
+      "frame": "CHALLENGE",
+      "nativePickup": true,
+      "criterionBefore": false,
+      "advancementAfter": true,
+      "message": {
+        "translate": "%1$s has completed the challenge %2$s%3$s%4$s",
+        "with": [
+          {
+            "text": "smokea5c97fa2",
+            "click_event": {
+              "command": "/tell smokea5c97fa2 ",
+              "action": "suggest_command"
+            },
+            "hover_event": {
+              "id": "minecraft:player",
+              "uuid": [
+                -1513521246,
+                1218005810,
+                -1087185477,
+                1125956046
+              ],
+              "name": "smokea5c97fa2",
+              "action": "show_entity"
+            },
+            "insertion": "smokea5c97fa2"
+          },
+          {
+            "text": "[",
+            "color": "dark_purple"
+          },
+          {
+            "translate": "Flower Power",
+            "color": "dark_purple",
+            "click_event": {
+              "command": "/advancementssearch highlight blazeandcave:biomes/flower_power obtained_status",
+              "action": "run_command"
+            },
+            "hover_event": {
+              "value": {
+                "translate": "Flower Power",
+                "extra": [
+                  "\n",
+                  {
+                    "translate": "Collect all types of flowers",
+                    "color": "#C900C7"
+                  },
+                  "\n\n",
+                  {
+                    "translate": "%1$s tab",
+                    "with": [
+                      {
+                        "translate": "Biomes"
+                      }
+                    ],
+                    "color": "gray",
+                    "italic": true
+                  }
+                ],
+                "color": "dark_purple"
+              },
+              "action": "show_text"
+            }
+          },
+          {
+            "text": "]",
+            "color": "dark_purple"
+          }
+        ]
+      }
+    }
+  ],
+  "flowerRewardNative": true,
+  "scoreboardTransientAndExisting": true,
+  "certificationGain": 0,
+  "cleanupGreen": true
+}

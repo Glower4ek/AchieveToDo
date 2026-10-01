@@ -1,0 +1,99 @@
+{
+  "family": "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+  "runId": "5c40ea07-d9ad-45c6-b1ad-c267fe43740d",
+  "exact": false,
+  "fingerprint": "e222437cc189f83a9c70d5e0694e81c794638d7da97a8f122ce839daa4eed33c",
+  "entries": [
+    {
+      "advancementId": "blazeandcave:building/happy_birthday",
+      "criterion": "candle_cake",
+      "requirementGroup": 0,
+      "runId": "5c40ea07-d9ad-45c6-b1ad-c267fe43740d",
+      "playerUuid": "91979468-e855-4837-ab49-5ce342c6fec1",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "groupSatisfied": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "checkedItemTag": "#minecraft:candles",
+      "checkedBlockTag": "#minecraft:candle_cakes",
+      "itemTagMember": true,
+      "blockTagMember": true,
+      "blockTagObservationStage": "POST_NATIVE_MUTATION",
+      "blockBefore": "Block{minecraft:cake}[bites=0]",
+      "blockAfter": "Block{minecraft:candle_cake}[lit=false]",
+      "itemBefore": "{\"id\":\"minecraft:candle\",\"count\":1}",
+      "itemAfter": "{\"id\":\"minecraft:cake\",\"count\":1,\"components\":{\"minecraft:custom_name\":\"{\\\"translate\\\":\\\"Birthday Cake\\\",\\\"color\\\":\\\"#E83535\\\",\\\"bold\\\":true,\\\"italic\\\":false}\",\"minecraft:lore\":[\"{\\\"translate\\\":\\\"Happy birthday to you, happy birthday to you,\\\",\\\"color\\\":\\\"#E83535\\\"}\",\"{\\\"translate\\\":\\\"this song is copyrighted, oh wait actually it's public domain!\\\",\\\"color\\\":\\\"#E83535\\\"}\",\"{\\\"text\\\":\\\" \\\"}\",\"{\\\"translate\\\":\\\"Awarded for achieving\\\",\\\"color\\\":\\\"gray\\\"}\",\"{\\\"translate\\\":\\\"Happy Birthday!\\\",\\\"color\\\":\\\"green\\\",\\\"italic\\\":false}\"],\"minecraft:custom_model_data\":{\"floats\":[131.0]},\"minecraft:custom_data\":{\"Trophy\":1},\"minecraft:enchantment_glint_override\":true}}",
+      "nativeMutation": true,
+      "wrongItemNegative": true,
+      "noOpNegative": true,
+      "lockedGateNegative": true,
+      "productionGateUnlocked": true,
+      "productionGateWitness": {},
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 66,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true
+      }
+    },
+    {
+      "advancementId": "minecraft:husbandry/wax_off",
+      "criterion": "wax_off",
+      "requirementGroup": 0,
+      "runId": "5c40ea07-d9ad-45c6-b1ad-c267fe43740d",
+      "playerUuid": "2171df56-1b4e-4a9b-9e4c-7145e3660c0a",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "groupSatisfied": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "checkedItemTag": "#blazeandcave:axes",
+      "checkedBlockTag": "#blazeandcave:waxed_copper_blocks",
+      "itemTagMember": true,
+      "blockTagMember": true,
+      "blockTagObservationStage": "PRE_NATIVE_SET_BLOCK",
+      "blockBefore": "Block{minecraft:waxed_copper_block}",
+      "blockAfter": "Block{minecraft:copper_block}",
+      "itemBefore": "{\"id\":\"minecraft:diamond_axe\",\"count\":1}",
+      "itemAfter": "{\"id\":\"minecraft:diamond_axe\",\"count\":1,\"components\":{\"minecraft:damage\":1}}",
+      "nativeMutation": true,
+      "wrongItemNegative": true,
+      "noOpNegative": true,
+      "lockedGateNegative": true,
+      "productionGateUnlocked": true,
+      "productionGateWitness": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 401,
+        "abilities": {
+          "USE_DIAMOND_TOOLS": {
+            "threshold": 401,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 176,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true
+      }
+    }
+  ]
+}

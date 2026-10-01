@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T06:05:41.566Z" hostname="LAPTOP-L0LPH8GP" time="0.411">
+  <properties/>
+  <testcase name="allFiveExactCriteriaAndBothWorldgenCombinationGroupsParse()" classname="com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest" time="0.198"/>
+  <testcase name="missingWorldgenRegistriesAndDeletedVehicleEquipmentDimensionsRemainRejected()" classname="com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest" time="0.213"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

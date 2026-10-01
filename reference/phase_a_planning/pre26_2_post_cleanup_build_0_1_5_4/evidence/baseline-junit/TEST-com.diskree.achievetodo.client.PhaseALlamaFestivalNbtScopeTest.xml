@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest" tests="3" skipped="0" failures="2" errors="0" timestamp="2026-10-01T14:38:13.893Z" hostname="LAPTOP-L0LPH8GP" time="3.052">
+  <properties/>
+  <testcase name="onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive()" classname="com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest" time="0.087">
+    <failure message="org.opentest4j.AssertionFailedError: data/blazeandcave/advancement/adventure/feeling_ill.json ==&gt; expected: &lt;e06123aa1f567bb2fa83234ab6f1cb7691284b23a5fae985801a827f3284e2fc&gt; but was: &lt;2b98428f5dc509b37e7aa5c307fe94521ab963186fa41797a193639ca24929da&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: data/blazeandcave/advancement/adventure/feeling_ill.json ==&gt; expected: &lt;e06123aa1f567bb2fa83234ab6f1cb7691284b23a5fae985801a827f3284e2fc&gt; but was: &lt;2b98428f5dc509b37e7aa5c307fe94521ab963186fa41797a193639ca24929da&gt;
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1210)
+	at com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive(PhaseALlamaFestivalNbtScopeTest.java:41)
+</failure>
+  </testcase>
+  <testcase name="nonLlamaArbitraryNearMissAndModernNbtRemainUnchangedAndConversionIsIdempotent()" classname="com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest" time="0.001"/>
+  <testcase name="bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(Path)" classname="com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest" time="2.963">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;compat_26_2_r15&gt; but was: &lt;compat_26_2_r16&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;compat_26_2_r15&gt; but was: &lt;compat_26_2_r16&gt;
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1199)
+	at com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(PhaseALlamaFestivalNbtScopeTest.java:73)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

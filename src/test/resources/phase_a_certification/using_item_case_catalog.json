@@ -1,0 +1,120 @@
+{
+  "snapshot": "phase_a_using_item_case_catalog",
+  "schemaVersion": 1,
+  "family": "USING_ITEM",
+  "canonicalAdvancementCount": 1152,
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "canonicalSemanticsSource": "reference/phase_a_preservation/files/final/bacap.zip",
+  "semanticsSource": "frozenBacap",
+  "frozenBacapSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "sourceArtifactClassification": "FROZEN_BACAP_DEFINITION",
+  "runtimeBoundary": "ServerGamePacketListenerImpl.handleUseItem",
+  "runtimePacketPath": "ServerboundUseItemPacket.handle->ServerGamePacketListenerImpl.handleUseItem->Player.startUsingItem->ServerPlayer.updateUsingItem->CriteriaTriggers.USING_ITEM",
+  "runtimeCriterionBoundary": "ServerPlayer.updateUsingItem->CriteriaTriggers.USING_ITEM",
+  "summary": {
+    "totalCases": 2,
+    "uniqueKeys": 2,
+    "uniqueAdvancements": 2,
+    "requirementGroups": 2,
+    "automationSupported": 2,
+    "automationDeferred": 0,
+    "actions": {
+      "GOAT_HORN_USE": 1,
+      "RIPTIDE_TRIDENT_USE": 1
+    }
+  },
+  "cases": [
+    {
+      "advancementId": "blazeandcave:animal/loud_and_proud",
+      "sourcePath": "data/blazeandcave/advancement/animal/loud_and_proud.json",
+      "criterion": "goat_horn",
+      "requirementGroupIndex": 0,
+      "requirementGroupCount": 1,
+      "trigger": "minecraft:using_item",
+      "selectedItem": "minecraft:goat_horn",
+      "itemPredicate": "minecraft:goat_horn + live InstrumentComponent",
+      "requiredItemTags": [],
+      "requiredEnchantments": [],
+      "requiredComponents": {
+        "minecraft:instrument": "non-null InstrumentComponent"
+      },
+      "environmentalPreconditions": {
+        "predicate": "minecraft:deep_dark OR minecraft:ancient_city",
+        "runtimeWitness": "live biome holder minecraft:deep_dark",
+        "requiresStructureLookup": false
+      },
+      "productionUnlockGate": {
+        "present": false,
+        "ability": "NONE",
+        "scoreboardObjective": "bac_advancements",
+        "unlockThreshold": 0,
+        "source": "No AchieveToDo goat-horn use gate in current production code"
+      },
+      "action": "GOAT_HORN_USE",
+      "boundary": "ServerGamePacketListenerImpl.handleUseItem",
+      "packetPath": "ServerboundUseItemPacket.handle->ServerGamePacketListenerImpl.handleUseItem->InstrumentItem.use->Player.startUsingItem->ServerPlayer.updateUsingItem->CriteriaTriggers.USING_ITEM",
+      "expectedUseStateSemantics": {
+        "useDurationSource": "floor(InstrumentComponent.instrument.useDuration * 20)",
+        "minimumObservedTicks": 1,
+        "releaseRequiredForCriterion": false,
+        "stopAction": "ServerboundPlayerActionPacket(RELEASE_USE_ITEM)",
+        "useAnimation": "TOOT_HORN"
+      },
+      "automationEligibility": "SUPPORTED",
+      "semanticsSource": "frozenBacap",
+      "sourceArtifactClassification": "FROZEN_BACAP_DEFINITION",
+      "sourceJsonSha256": "9fc4da7b37c91e2913ce3ee60ed46474f2325ce1c5a2f0de018893117612aa35"
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/do_a_barrel_roll",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/do_a_barrel_roll.json",
+      "criterion": "riptide",
+      "requirementGroupIndex": 0,
+      "requirementGroupCount": 1,
+      "trigger": "minecraft:using_item",
+      "selectedItem": "minecraft:trident",
+      "itemPredicate": "minecraft:trident + minecraft:riptide present",
+      "requiredItemTags": [],
+      "requiredEnchantments": [
+        {
+          "id": "minecraft:riptide",
+          "levelRule": "present",
+          "minimumLevel": 1
+        }
+      ],
+      "requiredComponents": {},
+      "environmentalPreconditions": {
+        "predicate": "none",
+        "runtimeWitness": "player.isInWaterOrRain() == true",
+        "requiresWaterOrRainForStart": true,
+        "requiresWaterOrRainForRelease": true
+      },
+      "productionUnlockGate": {
+        "present": true,
+        "ability": "ATTACK_WITH_TRIDENT",
+        "scoreboardObjective": "bac_advancements",
+        "unlockThreshold": 244,
+        "source": "TridentItemMixin before Player.startUsingItem"
+      },
+      "action": "RIPTIDE_TRIDENT_USE",
+      "boundary": "ServerGamePacketListenerImpl.handleUseItem",
+      "packetPath": "ServerboundUseItemPacket.handle->ServerGamePacketListenerImpl.handleUseItem->TridentItem.use->Player.startUsingItem->ServerPlayer.updateUsingItem->CriteriaTriggers.USING_ITEM",
+      "expectedUseStateSemantics": {
+        "useDurationTicks": 72000,
+        "useDurationSource": "TridentItem.getUseDuration",
+        "minimumObservedTicks": 1,
+        "releaseRequiredForCriterion": false,
+        "riptideReleaseMinimumTicks": 10,
+        "releaseAction": "ServerboundPlayerActionPacket(RELEASE_USE_ITEM)",
+        "releasePerformedInProof": true,
+        "useAnimation": "TRIDENT"
+      },
+      "automationEligibility": "SUPPORTED",
+      "semanticsSource": "frozenBacap",
+      "sourceArtifactClassification": "FROZEN_BACAP_DEFINITION",
+      "sourceJsonSha256": "7641d3ca8f47fa14cdab7c13b1822f8efc07127e3c9863b08802f23c9b0c3a61"
+    }
+  ]
+}

@@ -1,0 +1,7302 @@
+{
+  "snapshot": "phase_a_pure_enchantment_inventory_changed_case_catalog",
+  "family": "PURE_ENCHANTMENT_INVENTORY_CHANGED",
+  "source": "PhaseAPureEnchantmentInventoryChangedGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "criteriaCount": 420,
+  "requirementGroupCount": 211,
+  "sources": [
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "path": "data/blazeandcave/advancement/challenges/ultimate_enchanter.json",
+      "sha256": "59d4b27c0eaeae286119bcc91c3c97706158a2ea5216d22e48f04a1acb122a4d",
+      "criteriaCount": 250,
+      "requirements": [
+        [
+          "protection1",
+          "protection1_book"
+        ],
+        [
+          "protection2",
+          "protection2_book"
+        ],
+        [
+          "protection3",
+          "protection3_book"
+        ],
+        [
+          "protection4",
+          "protection4_book"
+        ],
+        [
+          "fire_protection1",
+          "fire_protection1_book"
+        ],
+        [
+          "fire_protection2",
+          "fire_protection2_book"
+        ],
+        [
+          "fire_protection3",
+          "fire_protection3_book"
+        ],
+        [
+          "fire_protection4",
+          "fire_protection4_book"
+        ],
+        [
+          "feather_falling1",
+          "feather_falling1_book"
+        ],
+        [
+          "feather_falling2",
+          "feather_falling2_book"
+        ],
+        [
+          "feather_falling3",
+          "feather_falling3_book"
+        ],
+        [
+          "feather_falling4",
+          "feather_falling4_book"
+        ],
+        [
+          "blast_protection1",
+          "blast_protection1_book"
+        ],
+        [
+          "blast_protection2",
+          "blast_protection2_book"
+        ],
+        [
+          "blast_protection3",
+          "blast_protection3_book"
+        ],
+        [
+          "blast_protection4",
+          "blast_protection4_book"
+        ],
+        [
+          "projectile_protection1",
+          "projectile_protection1_book"
+        ],
+        [
+          "projectile_protection2",
+          "projectile_protection2_book"
+        ],
+        [
+          "projectile_protection3",
+          "projectile_protection3_book"
+        ],
+        [
+          "projectile_protection4",
+          "projectile_protection4_book"
+        ],
+        [
+          "respiration1",
+          "respiration1_book"
+        ],
+        [
+          "respiration2",
+          "respiration2_book"
+        ],
+        [
+          "respiration3",
+          "respiration3_book"
+        ],
+        [
+          "aqua_affinity",
+          "aqua_affinity_book"
+        ],
+        [
+          "thorns1",
+          "thorns1_book"
+        ],
+        [
+          "thorns2",
+          "thorns2_book"
+        ],
+        [
+          "thorns3",
+          "thorns3_book"
+        ],
+        [
+          "depth_strider1",
+          "depth_strider1_book"
+        ],
+        [
+          "depth_strider2",
+          "depth_strider2_book"
+        ],
+        [
+          "depth_strider3",
+          "depth_strider3_book"
+        ],
+        [
+          "frost_walker1",
+          "frost_walker1_book"
+        ],
+        [
+          "frost_walker2",
+          "frost_walker2_book"
+        ],
+        [
+          "binding_curse",
+          "binding_curse_book"
+        ],
+        [
+          "sharpness1",
+          "sharpness1_book"
+        ],
+        [
+          "sharpness2",
+          "sharpness2_book"
+        ],
+        [
+          "sharpness3",
+          "sharpness3_book"
+        ],
+        [
+          "sharpness4",
+          "sharpness4_book"
+        ],
+        [
+          "sharpness5",
+          "sharpness5_book"
+        ],
+        [
+          "smite1",
+          "smite1_book"
+        ],
+        [
+          "smite2",
+          "smite2_book"
+        ],
+        [
+          "smite3",
+          "smite3_book"
+        ],
+        [
+          "smite4",
+          "smite4_book"
+        ],
+        [
+          "smite5",
+          "smite5_book"
+        ],
+        [
+          "bane_of_arthropods1",
+          "bane_of_arthropods1_book"
+        ],
+        [
+          "bane_of_arthropods2",
+          "bane_of_arthropods2_book"
+        ],
+        [
+          "bane_of_arthropods3",
+          "bane_of_arthropods3_book"
+        ],
+        [
+          "bane_of_arthropods4",
+          "bane_of_arthropods4_book"
+        ],
+        [
+          "bane_of_arthropods5",
+          "bane_of_arthropods5_book"
+        ],
+        [
+          "knockback1",
+          "knockback1_book"
+        ],
+        [
+          "knockback2",
+          "knockback2_book"
+        ],
+        [
+          "fire_aspect1",
+          "fire_aspect1_book"
+        ],
+        [
+          "fire_aspect2",
+          "fire_aspect2_book"
+        ],
+        [
+          "looting1",
+          "looting1_book"
+        ],
+        [
+          "looting2",
+          "looting2_book"
+        ],
+        [
+          "looting3",
+          "looting3_book"
+        ],
+        [
+          "sweeping1",
+          "sweeping1_book"
+        ],
+        [
+          "sweeping2",
+          "sweeping2_book"
+        ],
+        [
+          "sweeping3",
+          "sweeping3_book"
+        ],
+        [
+          "efficiency1",
+          "efficiency1_book"
+        ],
+        [
+          "efficiency2",
+          "efficiency2_book"
+        ],
+        [
+          "efficiency3",
+          "efficiency3_book"
+        ],
+        [
+          "efficiency4",
+          "efficiency4_book"
+        ],
+        [
+          "efficiency5",
+          "efficiency5_book"
+        ],
+        [
+          "silk_touch",
+          "silk_touch_book"
+        ],
+        [
+          "unbreaking1",
+          "unbreaking1_book"
+        ],
+        [
+          "unbreaking2",
+          "unbreaking2_book"
+        ],
+        [
+          "unbreaking3",
+          "unbreaking3_book"
+        ],
+        [
+          "fortune1",
+          "fortune1_book"
+        ],
+        [
+          "fortune2",
+          "fortune2_book"
+        ],
+        [
+          "fortune3",
+          "fortune3_book"
+        ],
+        [
+          "power1",
+          "power1_book"
+        ],
+        [
+          "power2",
+          "power2_book"
+        ],
+        [
+          "power3",
+          "power3_book"
+        ],
+        [
+          "power4",
+          "power4_book"
+        ],
+        [
+          "power5",
+          "power5_book"
+        ],
+        [
+          "punch1",
+          "punch1_book"
+        ],
+        [
+          "punch2",
+          "punch2_book"
+        ],
+        [
+          "flame",
+          "flame_book"
+        ],
+        [
+          "infinity",
+          "infinity_book"
+        ],
+        [
+          "luck_of_the_sea1",
+          "luck_of_the_sea1_book"
+        ],
+        [
+          "luck_of_the_sea2",
+          "luck_of_the_sea2_book"
+        ],
+        [
+          "luck_of_the_sea3",
+          "luck_of_the_sea3_book"
+        ],
+        [
+          "lure1",
+          "lure1_book"
+        ],
+        [
+          "lure2",
+          "lure2_book"
+        ],
+        [
+          "lure3",
+          "lure3_book"
+        ],
+        [
+          "mending",
+          "mending_book"
+        ],
+        [
+          "vanishing_curse",
+          "vanishing_curse_book"
+        ],
+        [
+          "loyalty1",
+          "loyalty1_book"
+        ],
+        [
+          "loyalty2",
+          "loyalty2_book"
+        ],
+        [
+          "loyalty3",
+          "loyalty3_book"
+        ],
+        [
+          "riptide1",
+          "riptide1_book"
+        ],
+        [
+          "riptide2",
+          "riptide2_book"
+        ],
+        [
+          "riptide3",
+          "riptide3_book"
+        ],
+        [
+          "impaling1",
+          "impaling1_book"
+        ],
+        [
+          "impaling2",
+          "impaling2_book"
+        ],
+        [
+          "impaling3",
+          "impaling3_book"
+        ],
+        [
+          "impaling4",
+          "impaling4_book"
+        ],
+        [
+          "impaling5",
+          "impaling5_book"
+        ],
+        [
+          "channeling",
+          "channeling_book"
+        ],
+        [
+          "quick_charge1",
+          "quick_charge1_book"
+        ],
+        [
+          "quick_charge2",
+          "quick_charge2_book"
+        ],
+        [
+          "quick_charge3",
+          "quick_charge3_book"
+        ],
+        [
+          "piercing1",
+          "piercing1_book"
+        ],
+        [
+          "piercing2",
+          "piercing2_book"
+        ],
+        [
+          "piercing3",
+          "piercing3_book"
+        ],
+        [
+          "piercing4",
+          "piercing4_book"
+        ],
+        [
+          "multishot",
+          "multishot_book"
+        ],
+        [
+          "soul_speed1",
+          "soul_speed1_book"
+        ],
+        [
+          "soul_speed2",
+          "soul_speed2_book"
+        ],
+        [
+          "soul_speed3",
+          "soul_speed3_book"
+        ],
+        [
+          "swift_sneak1",
+          "swift_sneak1_book"
+        ],
+        [
+          "swift_sneak2",
+          "swift_sneak2_book"
+        ],
+        [
+          "swift_sneak3",
+          "swift_sneak3_book"
+        ],
+        [
+          "wind_burst1",
+          "wind_burst1_book"
+        ],
+        [
+          "wind_burst2",
+          "wind_burst2_book"
+        ],
+        [
+          "wind_burst3",
+          "wind_burst3_book"
+        ],
+        [
+          "density1",
+          "density1_book"
+        ],
+        [
+          "density2",
+          "density2_book"
+        ],
+        [
+          "density3",
+          "density3_book"
+        ],
+        [
+          "density4",
+          "density4_book"
+        ],
+        [
+          "density5",
+          "density5_book"
+        ],
+        [
+          "breach1",
+          "breach1_book"
+        ],
+        [
+          "breach2",
+          "breach2_book"
+        ],
+        [
+          "breach3",
+          "breach3_book"
+        ],
+        [
+          "breach4",
+          "breach4_book"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "path": "data/blazeandcave/advancement/enchanting/complete_enchanter.json",
+      "sha256": "f652018aebee265b8d7839048248419d78500d20b724a8ecd59ec9de649c2412",
+      "criteriaCount": 84,
+      "requirements": [
+        [
+          "protection",
+          "protection_book"
+        ],
+        [
+          "fire_protection",
+          "fire_protection_book"
+        ],
+        [
+          "feather_falling",
+          "feather_falling_book"
+        ],
+        [
+          "blast_protection",
+          "blast_protection_book"
+        ],
+        [
+          "projectile_protection",
+          "projectile_protection_book"
+        ],
+        [
+          "respiration",
+          "respiration_book"
+        ],
+        [
+          "aqua_affinity",
+          "aqua_affinity_book"
+        ],
+        [
+          "thorns",
+          "thorns_book"
+        ],
+        [
+          "depth_strider",
+          "depth_strider_book"
+        ],
+        [
+          "frost_walker",
+          "frost_walker_book"
+        ],
+        [
+          "binding_curse",
+          "binding_curse_book"
+        ],
+        [
+          "sharpness",
+          "sharpness_book"
+        ],
+        [
+          "smite",
+          "smite_book"
+        ],
+        [
+          "bane_of_arthropods",
+          "bane_of_arthropods_book"
+        ],
+        [
+          "knockback",
+          "knockback_book"
+        ],
+        [
+          "fire_aspect",
+          "fire_aspect_book"
+        ],
+        [
+          "looting",
+          "looting_book"
+        ],
+        [
+          "sweeping_edge",
+          "sweeping_book"
+        ],
+        [
+          "efficiency",
+          "efficiency_book"
+        ],
+        [
+          "silk_touch",
+          "silk_touch_book"
+        ],
+        [
+          "unbreaking",
+          "unbreaking_book"
+        ],
+        [
+          "fortune",
+          "fortune_book"
+        ],
+        [
+          "power",
+          "power_book"
+        ],
+        [
+          "punch",
+          "punch_book"
+        ],
+        [
+          "flame",
+          "flame_book"
+        ],
+        [
+          "infinity",
+          "infinity_book"
+        ],
+        [
+          "luck_of_the_sea",
+          "luck_of_the_sea_book"
+        ],
+        [
+          "lure",
+          "lure_book"
+        ],
+        [
+          "mending",
+          "mending_book"
+        ],
+        [
+          "vanishing_curse",
+          "vanishing_curse_book"
+        ],
+        [
+          "loyalty",
+          "loyalty_book"
+        ],
+        [
+          "riptide",
+          "riptide_book"
+        ],
+        [
+          "impaling",
+          "impaling_book"
+        ],
+        [
+          "channeling",
+          "channeling_book"
+        ],
+        [
+          "quick_charge",
+          "quick_charge_book"
+        ],
+        [
+          "piercing",
+          "piercing_book"
+        ],
+        [
+          "multishot",
+          "multishot_book"
+        ],
+        [
+          "soul_speed",
+          "soul_speed_book"
+        ],
+        [
+          "swift_sneak",
+          "swift_sneak_book"
+        ],
+        [
+          "wind_burst",
+          "wind_burst_book"
+        ],
+        [
+          "density",
+          "density_book"
+        ],
+        [
+          "breach",
+          "breach_book"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/god_of_thunder",
+      "path": "data/blazeandcave/advancement/enchanting/god_of_thunder.json",
+      "sha256": "7c8c6c00ad683debe339c40da714d8dc415ad692b1080930d5e277ec0a29b6ab",
+      "criteriaCount": 1,
+      "requirements": [
+        [
+          "mjolnir"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/handmade_blinding",
+      "path": "data/blazeandcave/advancement/enchanting/handmade_blinding.json",
+      "sha256": "bf6a491aa76cf4b1b2db34f4f60024f31bae8d1f7a0568ba3adfcd40287a5276",
+      "criteriaCount": 1,
+      "requirements": [
+        [
+          "binding_pumpkin"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "path": "data/blazeandcave/advancement/enchanting/master_enchanter.json",
+      "sha256": "0183c04fa54285c46efe69125e91d48c7e22d32bb04592d44a8222e38ffee947",
+      "criteriaCount": 84,
+      "requirements": [
+        [
+          "protection",
+          "protection_book"
+        ],
+        [
+          "fire_protection",
+          "fire_protection_book"
+        ],
+        [
+          "feather_falling",
+          "feather_falling_book"
+        ],
+        [
+          "blast_protection",
+          "blast_protection_book"
+        ],
+        [
+          "projectile_protection",
+          "projectile_protection_book"
+        ],
+        [
+          "respiration",
+          "respiration_book"
+        ],
+        [
+          "aqua_affinity",
+          "aqua_affinity_book"
+        ],
+        [
+          "thorns",
+          "thorns_book"
+        ],
+        [
+          "depth_strider",
+          "depth_strider_book"
+        ],
+        [
+          "frost_walker",
+          "frost_walker_book"
+        ],
+        [
+          "binding_curse",
+          "binding_curse_book"
+        ],
+        [
+          "sharpness",
+          "sharpness_book"
+        ],
+        [
+          "smite",
+          "smite_book"
+        ],
+        [
+          "bane_of_arthropods",
+          "bane_of_arthropods_book"
+        ],
+        [
+          "knockback",
+          "knockback_book"
+        ],
+        [
+          "fire_aspect",
+          "fire_aspect_book"
+        ],
+        [
+          "looting",
+          "looting_book"
+        ],
+        [
+          "sweeping_edge",
+          "sweeping_book"
+        ],
+        [
+          "efficiency",
+          "efficiency_book"
+        ],
+        [
+          "silk_touch",
+          "silk_touch_book"
+        ],
+        [
+          "unbreaking",
+          "unbreaking_book"
+        ],
+        [
+          "fortune",
+          "fortune_book"
+        ],
+        [
+          "power",
+          "power_book"
+        ],
+        [
+          "punch",
+          "punch_book"
+        ],
+        [
+          "flame",
+          "flame_book"
+        ],
+        [
+          "infinity",
+          "infinity_book"
+        ],
+        [
+          "luck_of_the_sea",
+          "luck_of_the_sea_book"
+        ],
+        [
+          "lure",
+          "lure_book"
+        ],
+        [
+          "mending",
+          "mending_book"
+        ],
+        [
+          "vanishing_curse",
+          "vanishing_curse_book"
+        ],
+        [
+          "loyalty",
+          "loyalty_book"
+        ],
+        [
+          "riptide",
+          "riptide_book"
+        ],
+        [
+          "impaling",
+          "impaling_book"
+        ],
+        [
+          "channeling",
+          "channeling_book"
+        ],
+        [
+          "quick_charge",
+          "quick_charge_book"
+        ],
+        [
+          "piercing",
+          "piercing_book"
+        ],
+        [
+          "multishot",
+          "multishot_book"
+        ],
+        [
+          "soul_speed",
+          "soul_speed_book"
+        ],
+        [
+          "swift_sneak",
+          "swift_sneak_book"
+        ],
+        [
+          "wind_burst",
+          "wind_burst_book"
+        ],
+        [
+          "density",
+          "density_book"
+        ],
+        [
+          "breach",
+          "breach_book"
+        ]
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "protection1_book",
+      "requirementGroup": 0,
+      "alternatives": [
+        "protection1",
+        "protection1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:protection",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:protection": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "protection2_book",
+      "requirementGroup": 1,
+      "alternatives": [
+        "protection2",
+        "protection2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:protection",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:protection": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "protection3_book",
+      "requirementGroup": 2,
+      "alternatives": [
+        "protection3",
+        "protection3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:protection",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:protection": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "protection4_book",
+      "requirementGroup": 3,
+      "alternatives": [
+        "protection4",
+        "protection4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:protection",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:protection": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "fire_protection1_book",
+      "requirementGroup": 4,
+      "alternatives": [
+        "fire_protection1",
+        "fire_protection1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fire_protection",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fire_protection": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "fire_protection2_book",
+      "requirementGroup": 5,
+      "alternatives": [
+        "fire_protection2",
+        "fire_protection2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fire_protection",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fire_protection": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "fire_protection3_book",
+      "requirementGroup": 6,
+      "alternatives": [
+        "fire_protection3",
+        "fire_protection3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fire_protection",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fire_protection": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "fire_protection4_book",
+      "requirementGroup": 7,
+      "alternatives": [
+        "fire_protection4",
+        "fire_protection4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fire_protection",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fire_protection": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "feather_falling1_book",
+      "requirementGroup": 8,
+      "alternatives": [
+        "feather_falling1",
+        "feather_falling1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:feather_falling",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:feather_falling": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "feather_falling2_book",
+      "requirementGroup": 9,
+      "alternatives": [
+        "feather_falling2",
+        "feather_falling2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:feather_falling",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:feather_falling": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "feather_falling3_book",
+      "requirementGroup": 10,
+      "alternatives": [
+        "feather_falling3",
+        "feather_falling3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:feather_falling",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:feather_falling": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "feather_falling4_book",
+      "requirementGroup": 11,
+      "alternatives": [
+        "feather_falling4",
+        "feather_falling4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:feather_falling",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:feather_falling": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "blast_protection1_book",
+      "requirementGroup": 12,
+      "alternatives": [
+        "blast_protection1",
+        "blast_protection1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:blast_protection",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:blast_protection": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "blast_protection2_book",
+      "requirementGroup": 13,
+      "alternatives": [
+        "blast_protection2",
+        "blast_protection2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:blast_protection",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:blast_protection": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "blast_protection3_book",
+      "requirementGroup": 14,
+      "alternatives": [
+        "blast_protection3",
+        "blast_protection3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:blast_protection",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:blast_protection": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "blast_protection4_book",
+      "requirementGroup": 15,
+      "alternatives": [
+        "blast_protection4",
+        "blast_protection4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:blast_protection",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:blast_protection": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "projectile_protection1_book",
+      "requirementGroup": 16,
+      "alternatives": [
+        "projectile_protection1",
+        "projectile_protection1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:projectile_protection",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:projectile_protection": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "projectile_protection2_book",
+      "requirementGroup": 17,
+      "alternatives": [
+        "projectile_protection2",
+        "projectile_protection2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:projectile_protection",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:projectile_protection": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "projectile_protection3_book",
+      "requirementGroup": 18,
+      "alternatives": [
+        "projectile_protection3",
+        "projectile_protection3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:projectile_protection",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:projectile_protection": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "projectile_protection4_book",
+      "requirementGroup": 19,
+      "alternatives": [
+        "projectile_protection4",
+        "projectile_protection4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:projectile_protection",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:projectile_protection": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "respiration1_book",
+      "requirementGroup": 20,
+      "alternatives": [
+        "respiration1",
+        "respiration1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:respiration",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:respiration": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "respiration2_book",
+      "requirementGroup": 21,
+      "alternatives": [
+        "respiration2",
+        "respiration2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:respiration",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:respiration": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "respiration3_book",
+      "requirementGroup": 22,
+      "alternatives": [
+        "respiration3",
+        "respiration3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:respiration",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:respiration": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "aqua_affinity_book",
+      "requirementGroup": 23,
+      "alternatives": [
+        "aqua_affinity",
+        "aqua_affinity_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:aqua_affinity",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:aqua_affinity": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "thorns1_book",
+      "requirementGroup": 24,
+      "alternatives": [
+        "thorns1",
+        "thorns1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:thorns",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:thorns": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "thorns2_book",
+      "requirementGroup": 25,
+      "alternatives": [
+        "thorns2",
+        "thorns2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:thorns",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:thorns": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "thorns3_book",
+      "requirementGroup": 26,
+      "alternatives": [
+        "thorns3",
+        "thorns3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:thorns",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:thorns": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "depth_strider1_book",
+      "requirementGroup": 27,
+      "alternatives": [
+        "depth_strider1",
+        "depth_strider1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:depth_strider",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:depth_strider": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "depth_strider2_book",
+      "requirementGroup": 28,
+      "alternatives": [
+        "depth_strider2",
+        "depth_strider2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:depth_strider",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:depth_strider": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "depth_strider3_book",
+      "requirementGroup": 29,
+      "alternatives": [
+        "depth_strider3",
+        "depth_strider3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:depth_strider",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:depth_strider": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "frost_walker1_book",
+      "requirementGroup": 30,
+      "alternatives": [
+        "frost_walker1",
+        "frost_walker1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:frost_walker",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:frost_walker": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "frost_walker2_book",
+      "requirementGroup": 31,
+      "alternatives": [
+        "frost_walker2",
+        "frost_walker2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:frost_walker",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:frost_walker": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "binding_curse_book",
+      "requirementGroup": 32,
+      "alternatives": [
+        "binding_curse",
+        "binding_curse_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:binding_curse",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:binding_curse": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "sharpness1_book",
+      "requirementGroup": 33,
+      "alternatives": [
+        "sharpness1",
+        "sharpness1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:sharpness",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:sharpness": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "sharpness2_book",
+      "requirementGroup": 34,
+      "alternatives": [
+        "sharpness2",
+        "sharpness2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:sharpness",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:sharpness": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "sharpness3_book",
+      "requirementGroup": 35,
+      "alternatives": [
+        "sharpness3",
+        "sharpness3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:sharpness",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:sharpness": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "sharpness4_book",
+      "requirementGroup": 36,
+      "alternatives": [
+        "sharpness4",
+        "sharpness4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:sharpness",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:sharpness": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "sharpness5_book",
+      "requirementGroup": 37,
+      "alternatives": [
+        "sharpness5",
+        "sharpness5_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:sharpness",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:sharpness": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "smite1_book",
+      "requirementGroup": 38,
+      "alternatives": [
+        "smite1",
+        "smite1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:smite",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:smite": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "smite2_book",
+      "requirementGroup": 39,
+      "alternatives": [
+        "smite2",
+        "smite2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:smite",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:smite": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "smite3_book",
+      "requirementGroup": 40,
+      "alternatives": [
+        "smite3",
+        "smite3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:smite",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:smite": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "smite4_book",
+      "requirementGroup": 41,
+      "alternatives": [
+        "smite4",
+        "smite4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:smite",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:smite": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "smite5_book",
+      "requirementGroup": 42,
+      "alternatives": [
+        "smite5",
+        "smite5_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:smite",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:smite": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "bane_of_arthropods1_book",
+      "requirementGroup": 43,
+      "alternatives": [
+        "bane_of_arthropods1",
+        "bane_of_arthropods1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:bane_of_arthropods",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:bane_of_arthropods": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "bane_of_arthropods2_book",
+      "requirementGroup": 44,
+      "alternatives": [
+        "bane_of_arthropods2",
+        "bane_of_arthropods2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:bane_of_arthropods",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:bane_of_arthropods": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "bane_of_arthropods3_book",
+      "requirementGroup": 45,
+      "alternatives": [
+        "bane_of_arthropods3",
+        "bane_of_arthropods3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:bane_of_arthropods",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:bane_of_arthropods": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "bane_of_arthropods4_book",
+      "requirementGroup": 46,
+      "alternatives": [
+        "bane_of_arthropods4",
+        "bane_of_arthropods4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:bane_of_arthropods",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:bane_of_arthropods": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "bane_of_arthropods5_book",
+      "requirementGroup": 47,
+      "alternatives": [
+        "bane_of_arthropods5",
+        "bane_of_arthropods5_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:bane_of_arthropods",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:bane_of_arthropods": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "knockback1_book",
+      "requirementGroup": 48,
+      "alternatives": [
+        "knockback1",
+        "knockback1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:knockback",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:knockback": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "knockback2_book",
+      "requirementGroup": 49,
+      "alternatives": [
+        "knockback2",
+        "knockback2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:knockback",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:knockback": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "fire_aspect1_book",
+      "requirementGroup": 50,
+      "alternatives": [
+        "fire_aspect1",
+        "fire_aspect1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fire_aspect",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fire_aspect": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "fire_aspect2_book",
+      "requirementGroup": 51,
+      "alternatives": [
+        "fire_aspect2",
+        "fire_aspect2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fire_aspect",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fire_aspect": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "looting1_book",
+      "requirementGroup": 52,
+      "alternatives": [
+        "looting1",
+        "looting1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:looting",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:looting": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "looting2_book",
+      "requirementGroup": 53,
+      "alternatives": [
+        "looting2",
+        "looting2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:looting",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:looting": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "looting3_book",
+      "requirementGroup": 54,
+      "alternatives": [
+        "looting3",
+        "looting3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:looting",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:looting": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "sweeping1_book",
+      "requirementGroup": 55,
+      "alternatives": [
+        "sweeping1",
+        "sweeping1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:sweeping_edge",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:sweeping_edge": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "sweeping2_book",
+      "requirementGroup": 56,
+      "alternatives": [
+        "sweeping2",
+        "sweeping2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:sweeping_edge",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:sweeping_edge": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "sweeping3_book",
+      "requirementGroup": 57,
+      "alternatives": [
+        "sweeping3",
+        "sweeping3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:sweeping_edge",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:sweeping_edge": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "efficiency1_book",
+      "requirementGroup": 58,
+      "alternatives": [
+        "efficiency1",
+        "efficiency1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:efficiency",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:efficiency": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "efficiency2_book",
+      "requirementGroup": 59,
+      "alternatives": [
+        "efficiency2",
+        "efficiency2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:efficiency",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:efficiency": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "efficiency3_book",
+      "requirementGroup": 60,
+      "alternatives": [
+        "efficiency3",
+        "efficiency3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:efficiency",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:efficiency": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "efficiency4_book",
+      "requirementGroup": 61,
+      "alternatives": [
+        "efficiency4",
+        "efficiency4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:efficiency",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:efficiency": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "efficiency5_book",
+      "requirementGroup": 62,
+      "alternatives": [
+        "efficiency5",
+        "efficiency5_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:efficiency",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:efficiency": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "silk_touch_book",
+      "requirementGroup": 63,
+      "alternatives": [
+        "silk_touch",
+        "silk_touch_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:silk_touch",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:silk_touch": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "unbreaking1_book",
+      "requirementGroup": 64,
+      "alternatives": [
+        "unbreaking1",
+        "unbreaking1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:unbreaking",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:unbreaking": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "unbreaking2_book",
+      "requirementGroup": 65,
+      "alternatives": [
+        "unbreaking2",
+        "unbreaking2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:unbreaking",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:unbreaking": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "unbreaking3_book",
+      "requirementGroup": 66,
+      "alternatives": [
+        "unbreaking3",
+        "unbreaking3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:unbreaking",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:unbreaking": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "fortune1_book",
+      "requirementGroup": 67,
+      "alternatives": [
+        "fortune1",
+        "fortune1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fortune",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fortune": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "fortune2_book",
+      "requirementGroup": 68,
+      "alternatives": [
+        "fortune2",
+        "fortune2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fortune",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fortune": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "fortune3_book",
+      "requirementGroup": 69,
+      "alternatives": [
+        "fortune3",
+        "fortune3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fortune",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fortune": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "power1_book",
+      "requirementGroup": 70,
+      "alternatives": [
+        "power1",
+        "power1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:power",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:power": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "power2_book",
+      "requirementGroup": 71,
+      "alternatives": [
+        "power2",
+        "power2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:power",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:power": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "power3_book",
+      "requirementGroup": 72,
+      "alternatives": [
+        "power3",
+        "power3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:power",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:power": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "power4_book",
+      "requirementGroup": 73,
+      "alternatives": [
+        "power4",
+        "power4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:power",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:power": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "power5_book",
+      "requirementGroup": 74,
+      "alternatives": [
+        "power5",
+        "power5_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:power",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:power": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "punch1_book",
+      "requirementGroup": 75,
+      "alternatives": [
+        "punch1",
+        "punch1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:punch",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:punch": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "punch2_book",
+      "requirementGroup": 76,
+      "alternatives": [
+        "punch2",
+        "punch2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:punch",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:punch": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "flame_book",
+      "requirementGroup": 77,
+      "alternatives": [
+        "flame",
+        "flame_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:flame",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:flame": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "infinity_book",
+      "requirementGroup": 78,
+      "alternatives": [
+        "infinity",
+        "infinity_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:infinity",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:infinity": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "luck_of_the_sea1_book",
+      "requirementGroup": 79,
+      "alternatives": [
+        "luck_of_the_sea1",
+        "luck_of_the_sea1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:luck_of_the_sea",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:luck_of_the_sea": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "luck_of_the_sea2_book",
+      "requirementGroup": 80,
+      "alternatives": [
+        "luck_of_the_sea2",
+        "luck_of_the_sea2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:luck_of_the_sea",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:luck_of_the_sea": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "luck_of_the_sea3_book",
+      "requirementGroup": 81,
+      "alternatives": [
+        "luck_of_the_sea3",
+        "luck_of_the_sea3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:luck_of_the_sea",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:luck_of_the_sea": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "lure1_book",
+      "requirementGroup": 82,
+      "alternatives": [
+        "lure1",
+        "lure1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:lure",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:lure": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "lure2_book",
+      "requirementGroup": 83,
+      "alternatives": [
+        "lure2",
+        "lure2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:lure",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:lure": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "lure3_book",
+      "requirementGroup": 84,
+      "alternatives": [
+        "lure3",
+        "lure3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:lure",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:lure": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "mending_book",
+      "requirementGroup": 85,
+      "alternatives": [
+        "mending",
+        "mending_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:mending",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:mending": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "vanishing_curse_book",
+      "requirementGroup": 86,
+      "alternatives": [
+        "vanishing_curse",
+        "vanishing_curse_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:vanishing_curse",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:vanishing_curse": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "loyalty1_book",
+      "requirementGroup": 87,
+      "alternatives": [
+        "loyalty1",
+        "loyalty1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:loyalty",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:loyalty": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "loyalty2_book",
+      "requirementGroup": 88,
+      "alternatives": [
+        "loyalty2",
+        "loyalty2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:loyalty",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:loyalty": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "loyalty3_book",
+      "requirementGroup": 89,
+      "alternatives": [
+        "loyalty3",
+        "loyalty3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:loyalty",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:loyalty": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "riptide1_book",
+      "requirementGroup": 90,
+      "alternatives": [
+        "riptide1",
+        "riptide1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:riptide",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:riptide": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "riptide2_book",
+      "requirementGroup": 91,
+      "alternatives": [
+        "riptide2",
+        "riptide2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:riptide",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:riptide": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "riptide3_book",
+      "requirementGroup": 92,
+      "alternatives": [
+        "riptide3",
+        "riptide3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:riptide",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:riptide": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "impaling1_book",
+      "requirementGroup": 93,
+      "alternatives": [
+        "impaling1",
+        "impaling1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:impaling",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:impaling": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "impaling2_book",
+      "requirementGroup": 94,
+      "alternatives": [
+        "impaling2",
+        "impaling2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:impaling",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:impaling": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "impaling3_book",
+      "requirementGroup": 95,
+      "alternatives": [
+        "impaling3",
+        "impaling3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:impaling",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:impaling": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "impaling4_book",
+      "requirementGroup": 96,
+      "alternatives": [
+        "impaling4",
+        "impaling4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:impaling",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:impaling": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "impaling5_book",
+      "requirementGroup": 97,
+      "alternatives": [
+        "impaling5",
+        "impaling5_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:impaling",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:impaling": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "channeling_book",
+      "requirementGroup": 98,
+      "alternatives": [
+        "channeling",
+        "channeling_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:channeling",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:channeling": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "quick_charge1_book",
+      "requirementGroup": 99,
+      "alternatives": [
+        "quick_charge1",
+        "quick_charge1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:quick_charge",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:quick_charge": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "quick_charge2_book",
+      "requirementGroup": 100,
+      "alternatives": [
+        "quick_charge2",
+        "quick_charge2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:quick_charge",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:quick_charge": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "quick_charge3_book",
+      "requirementGroup": 101,
+      "alternatives": [
+        "quick_charge3",
+        "quick_charge3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:quick_charge",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:quick_charge": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "piercing1_book",
+      "requirementGroup": 102,
+      "alternatives": [
+        "piercing1",
+        "piercing1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:piercing",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:piercing": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "piercing2_book",
+      "requirementGroup": 103,
+      "alternatives": [
+        "piercing2",
+        "piercing2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:piercing",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:piercing": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "piercing3_book",
+      "requirementGroup": 104,
+      "alternatives": [
+        "piercing3",
+        "piercing3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:piercing",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:piercing": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "piercing4_book",
+      "requirementGroup": 105,
+      "alternatives": [
+        "piercing4",
+        "piercing4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:piercing",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:piercing": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "multishot_book",
+      "requirementGroup": 106,
+      "alternatives": [
+        "multishot",
+        "multishot_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:multishot",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:multishot": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "soul_speed1_book",
+      "requirementGroup": 107,
+      "alternatives": [
+        "soul_speed1",
+        "soul_speed1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:soul_speed",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:soul_speed": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "soul_speed2_book",
+      "requirementGroup": 108,
+      "alternatives": [
+        "soul_speed2",
+        "soul_speed2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:soul_speed",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:soul_speed": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "soul_speed3_book",
+      "requirementGroup": 109,
+      "alternatives": [
+        "soul_speed3",
+        "soul_speed3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:soul_speed",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:soul_speed": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "swift_sneak1_book",
+      "requirementGroup": 110,
+      "alternatives": [
+        "swift_sneak1",
+        "swift_sneak1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:swift_sneak",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:swift_sneak": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "swift_sneak2_book",
+      "requirementGroup": 111,
+      "alternatives": [
+        "swift_sneak2",
+        "swift_sneak2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:swift_sneak",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:swift_sneak": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "swift_sneak3_book",
+      "requirementGroup": 112,
+      "alternatives": [
+        "swift_sneak3",
+        "swift_sneak3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:swift_sneak",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:swift_sneak": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "wind_burst1_book",
+      "requirementGroup": 113,
+      "alternatives": [
+        "wind_burst1",
+        "wind_burst1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:wind_burst",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:wind_burst": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "wind_burst2_book",
+      "requirementGroup": 114,
+      "alternatives": [
+        "wind_burst2",
+        "wind_burst2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:wind_burst",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:wind_burst": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "wind_burst3_book",
+      "requirementGroup": 115,
+      "alternatives": [
+        "wind_burst3",
+        "wind_burst3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:wind_burst",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:wind_burst": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "density1_book",
+      "requirementGroup": 116,
+      "alternatives": [
+        "density1",
+        "density1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:density",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:density": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "density2_book",
+      "requirementGroup": 117,
+      "alternatives": [
+        "density2",
+        "density2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:density",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:density": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "density3_book",
+      "requirementGroup": 118,
+      "alternatives": [
+        "density3",
+        "density3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:density",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:density": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "density4_book",
+      "requirementGroup": 119,
+      "alternatives": [
+        "density4",
+        "density4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:density",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:density": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "density5_book",
+      "requirementGroup": 120,
+      "alternatives": [
+        "density5",
+        "density5_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:density",
+                  "levels": 5
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:density": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "breach1_book",
+      "requirementGroup": 121,
+      "alternatives": [
+        "breach1",
+        "breach1_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:breach",
+                  "levels": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:breach": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "breach2_book",
+      "requirementGroup": 122,
+      "alternatives": [
+        "breach2",
+        "breach2_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:breach",
+                  "levels": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:breach": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "breach3_book",
+      "requirementGroup": 123,
+      "alternatives": [
+        "breach3",
+        "breach3_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:breach",
+                  "levels": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:breach": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/ultimate_enchanter",
+      "criterion": "breach4_book",
+      "requirementGroup": 124,
+      "alternatives": [
+        "breach4",
+        "breach4_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:breach",
+                  "levels": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:breach": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "protection_book",
+      "requirementGroup": 0,
+      "alternatives": [
+        "protection",
+        "protection_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:protection"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:protection": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "fire_protection_book",
+      "requirementGroup": 1,
+      "alternatives": [
+        "fire_protection",
+        "fire_protection_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fire_protection"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fire_protection": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "feather_falling_book",
+      "requirementGroup": 2,
+      "alternatives": [
+        "feather_falling",
+        "feather_falling_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:feather_falling"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:feather_falling": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "blast_protection_book",
+      "requirementGroup": 3,
+      "alternatives": [
+        "blast_protection",
+        "blast_protection_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:blast_protection"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:blast_protection": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "projectile_protection_book",
+      "requirementGroup": 4,
+      "alternatives": [
+        "projectile_protection",
+        "projectile_protection_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:projectile_protection"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:projectile_protection": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "respiration_book",
+      "requirementGroup": 5,
+      "alternatives": [
+        "respiration",
+        "respiration_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:respiration"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:respiration": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "aqua_affinity_book",
+      "requirementGroup": 6,
+      "alternatives": [
+        "aqua_affinity",
+        "aqua_affinity_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:aqua_affinity"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:aqua_affinity": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "thorns_book",
+      "requirementGroup": 7,
+      "alternatives": [
+        "thorns",
+        "thorns_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:thorns"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:thorns": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "depth_strider_book",
+      "requirementGroup": 8,
+      "alternatives": [
+        "depth_strider",
+        "depth_strider_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:depth_strider"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:depth_strider": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "frost_walker_book",
+      "requirementGroup": 9,
+      "alternatives": [
+        "frost_walker",
+        "frost_walker_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:frost_walker"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:frost_walker": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "binding_curse_book",
+      "requirementGroup": 10,
+      "alternatives": [
+        "binding_curse",
+        "binding_curse_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:binding_curse"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:binding_curse": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "sharpness_book",
+      "requirementGroup": 11,
+      "alternatives": [
+        "sharpness",
+        "sharpness_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:sharpness"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:sharpness": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "smite_book",
+      "requirementGroup": 12,
+      "alternatives": [
+        "smite",
+        "smite_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:smite"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:smite": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "bane_of_arthropods_book",
+      "requirementGroup": 13,
+      "alternatives": [
+        "bane_of_arthropods",
+        "bane_of_arthropods_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:bane_of_arthropods"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:bane_of_arthropods": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "knockback_book",
+      "requirementGroup": 14,
+      "alternatives": [
+        "knockback",
+        "knockback_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:knockback"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:knockback": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "fire_aspect_book",
+      "requirementGroup": 15,
+      "alternatives": [
+        "fire_aspect",
+        "fire_aspect_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fire_aspect"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fire_aspect": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "looting_book",
+      "requirementGroup": 16,
+      "alternatives": [
+        "looting",
+        "looting_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:looting"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:looting": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "sweeping_book",
+      "requirementGroup": 17,
+      "alternatives": [
+        "sweeping_edge",
+        "sweeping_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:sweeping_edge"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:sweeping_edge": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "efficiency_book",
+      "requirementGroup": 18,
+      "alternatives": [
+        "efficiency",
+        "efficiency_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:efficiency"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:efficiency": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "silk_touch_book",
+      "requirementGroup": 19,
+      "alternatives": [
+        "silk_touch",
+        "silk_touch_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:silk_touch"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:silk_touch": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "unbreaking_book",
+      "requirementGroup": 20,
+      "alternatives": [
+        "unbreaking",
+        "unbreaking_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:unbreaking"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:unbreaking": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "fortune_book",
+      "requirementGroup": 21,
+      "alternatives": [
+        "fortune",
+        "fortune_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fortune"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fortune": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "power_book",
+      "requirementGroup": 22,
+      "alternatives": [
+        "power",
+        "power_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:power"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:power": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "punch_book",
+      "requirementGroup": 23,
+      "alternatives": [
+        "punch",
+        "punch_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:punch"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:punch": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "flame_book",
+      "requirementGroup": 24,
+      "alternatives": [
+        "flame",
+        "flame_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:flame"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:flame": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "infinity_book",
+      "requirementGroup": 25,
+      "alternatives": [
+        "infinity",
+        "infinity_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:infinity"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:infinity": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "luck_of_the_sea_book",
+      "requirementGroup": 26,
+      "alternatives": [
+        "luck_of_the_sea",
+        "luck_of_the_sea_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:luck_of_the_sea"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:luck_of_the_sea": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "lure_book",
+      "requirementGroup": 27,
+      "alternatives": [
+        "lure",
+        "lure_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:lure"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:lure": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "mending_book",
+      "requirementGroup": 28,
+      "alternatives": [
+        "mending",
+        "mending_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:mending"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:mending": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "vanishing_curse_book",
+      "requirementGroup": 29,
+      "alternatives": [
+        "vanishing_curse",
+        "vanishing_curse_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:vanishing_curse"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:vanishing_curse": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "loyalty_book",
+      "requirementGroup": 30,
+      "alternatives": [
+        "loyalty",
+        "loyalty_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:loyalty"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:loyalty": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "riptide_book",
+      "requirementGroup": 31,
+      "alternatives": [
+        "riptide",
+        "riptide_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:riptide"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:riptide": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "impaling_book",
+      "requirementGroup": 32,
+      "alternatives": [
+        "impaling",
+        "impaling_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:impaling"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:impaling": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "channeling_book",
+      "requirementGroup": 33,
+      "alternatives": [
+        "channeling",
+        "channeling_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:channeling"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:channeling": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "quick_charge_book",
+      "requirementGroup": 34,
+      "alternatives": [
+        "quick_charge",
+        "quick_charge_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:quick_charge"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:quick_charge": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "piercing_book",
+      "requirementGroup": 35,
+      "alternatives": [
+        "piercing",
+        "piercing_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:piercing"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:piercing": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "multishot_book",
+      "requirementGroup": 36,
+      "alternatives": [
+        "multishot",
+        "multishot_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:multishot"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:multishot": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "soul_speed_book",
+      "requirementGroup": 37,
+      "alternatives": [
+        "soul_speed",
+        "soul_speed_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:soul_speed"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:soul_speed": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "swift_sneak_book",
+      "requirementGroup": 38,
+      "alternatives": [
+        "swift_sneak",
+        "swift_sneak_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:swift_sneak"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:swift_sneak": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "wind_burst_book",
+      "requirementGroup": 39,
+      "alternatives": [
+        "wind_burst",
+        "wind_burst_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:wind_burst"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:wind_burst": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "density_book",
+      "requirementGroup": 40,
+      "alternatives": [
+        "density",
+        "density_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:density"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:density": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/complete_enchanter",
+      "criterion": "breach_book",
+      "requirementGroup": 41,
+      "alternatives": [
+        "breach",
+        "breach_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:breach"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:breach": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/god_of_thunder",
+      "criterion": "mjolnir",
+      "requirementGroup": 0,
+      "alternatives": [
+        "mjolnir"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:trident"
+            ],
+            "components": {
+              "minecraft:custom_name": "Mjolnir"
+            },
+            "predicates": {
+              "enchantments": [
+                {
+                  "enchantments": "minecraft:loyalty",
+                  "levels": {
+                    "min": 3
+                  }
+                },
+                {
+                  "enchantments": "minecraft:channeling",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:trident",
+      "storage": "ENCHANTMENTS",
+      "customName": "Mjolnir",
+      "configuredEnchantments": {
+        "minecraft:loyalty": 3,
+        "minecraft:channeling": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/handmade_blinding",
+      "criterion": "binding_pumpkin",
+      "requirementGroup": 0,
+      "alternatives": [
+        "binding_pumpkin"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "head": {
+                  "items": [
+                    "minecraft:carved_pumpkin"
+                  ],
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": "minecraft:binding_curse"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "action": "EQUIP_HEAD",
+      "selectedItem": "minecraft:carved_pumpkin",
+      "storage": "ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:binding_curse": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "protection_book",
+      "requirementGroup": 0,
+      "alternatives": [
+        "protection",
+        "protection_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:protection",
+                  "levels": {
+                    "min": 4
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:protection": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "fire_protection_book",
+      "requirementGroup": 1,
+      "alternatives": [
+        "fire_protection",
+        "fire_protection_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fire_protection",
+                  "levels": {
+                    "min": 4
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fire_protection": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "feather_falling_book",
+      "requirementGroup": 2,
+      "alternatives": [
+        "feather_falling",
+        "feather_falling_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:feather_falling",
+                  "levels": {
+                    "min": 4
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:feather_falling": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "blast_protection_book",
+      "requirementGroup": 3,
+      "alternatives": [
+        "blast_protection",
+        "blast_protection_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:blast_protection",
+                  "levels": {
+                    "min": 4
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:blast_protection": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "projectile_protection_book",
+      "requirementGroup": 4,
+      "alternatives": [
+        "projectile_protection",
+        "projectile_protection_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:projectile_protection",
+                  "levels": {
+                    "min": 4
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:projectile_protection": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "respiration_book",
+      "requirementGroup": 5,
+      "alternatives": [
+        "respiration",
+        "respiration_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:respiration",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:respiration": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "aqua_affinity_book",
+      "requirementGroup": 6,
+      "alternatives": [
+        "aqua_affinity",
+        "aqua_affinity_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:aqua_affinity",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:aqua_affinity": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "thorns_book",
+      "requirementGroup": 7,
+      "alternatives": [
+        "thorns",
+        "thorns_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:thorns",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:thorns": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "depth_strider_book",
+      "requirementGroup": 8,
+      "alternatives": [
+        "depth_strider",
+        "depth_strider_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:depth_strider",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:depth_strider": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "frost_walker_book",
+      "requirementGroup": 9,
+      "alternatives": [
+        "frost_walker",
+        "frost_walker_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:frost_walker",
+                  "levels": {
+                    "min": 2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:frost_walker": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "binding_curse_book",
+      "requirementGroup": 10,
+      "alternatives": [
+        "binding_curse",
+        "binding_curse_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:binding_curse",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:binding_curse": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "sharpness_book",
+      "requirementGroup": 11,
+      "alternatives": [
+        "sharpness",
+        "sharpness_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:sharpness",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:sharpness": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "smite_book",
+      "requirementGroup": 12,
+      "alternatives": [
+        "smite",
+        "smite_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:smite",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:smite": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "bane_of_arthropods_book",
+      "requirementGroup": 13,
+      "alternatives": [
+        "bane_of_arthropods",
+        "bane_of_arthropods_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:bane_of_arthropods",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:bane_of_arthropods": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "knockback_book",
+      "requirementGroup": 14,
+      "alternatives": [
+        "knockback",
+        "knockback_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:knockback",
+                  "levels": {
+                    "min": 2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:knockback": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "fire_aspect_book",
+      "requirementGroup": 15,
+      "alternatives": [
+        "fire_aspect",
+        "fire_aspect_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fire_aspect",
+                  "levels": {
+                    "min": 2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fire_aspect": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "looting_book",
+      "requirementGroup": 16,
+      "alternatives": [
+        "looting",
+        "looting_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:looting",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:looting": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "sweeping_book",
+      "requirementGroup": 17,
+      "alternatives": [
+        "sweeping_edge",
+        "sweeping_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:sweeping_edge",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:sweeping_edge": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "efficiency_book",
+      "requirementGroup": 18,
+      "alternatives": [
+        "efficiency",
+        "efficiency_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:efficiency",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:efficiency": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "silk_touch_book",
+      "requirementGroup": 19,
+      "alternatives": [
+        "silk_touch",
+        "silk_touch_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:silk_touch",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:silk_touch": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "unbreaking_book",
+      "requirementGroup": 20,
+      "alternatives": [
+        "unbreaking",
+        "unbreaking_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:unbreaking",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:unbreaking": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "fortune_book",
+      "requirementGroup": 21,
+      "alternatives": [
+        "fortune",
+        "fortune_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:fortune",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:fortune": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "power_book",
+      "requirementGroup": 22,
+      "alternatives": [
+        "power",
+        "power_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:power",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:power": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "punch_book",
+      "requirementGroup": 23,
+      "alternatives": [
+        "punch",
+        "punch_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:punch",
+                  "levels": {
+                    "min": 2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:punch": 2
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "flame_book",
+      "requirementGroup": 24,
+      "alternatives": [
+        "flame",
+        "flame_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:flame",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:flame": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "infinity_book",
+      "requirementGroup": 25,
+      "alternatives": [
+        "infinity",
+        "infinity_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:infinity",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:infinity": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "luck_of_the_sea_book",
+      "requirementGroup": 26,
+      "alternatives": [
+        "luck_of_the_sea",
+        "luck_of_the_sea_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:luck_of_the_sea",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:luck_of_the_sea": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "lure_book",
+      "requirementGroup": 27,
+      "alternatives": [
+        "lure",
+        "lure_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:lure",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:lure": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "mending_book",
+      "requirementGroup": 28,
+      "alternatives": [
+        "mending",
+        "mending_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:mending",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:mending": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "vanishing_curse_book",
+      "requirementGroup": 29,
+      "alternatives": [
+        "vanishing_curse",
+        "vanishing_curse_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:vanishing_curse",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:vanishing_curse": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "loyalty_book",
+      "requirementGroup": 30,
+      "alternatives": [
+        "loyalty",
+        "loyalty_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:loyalty",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:loyalty": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "riptide_book",
+      "requirementGroup": 31,
+      "alternatives": [
+        "riptide",
+        "riptide_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:riptide",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:riptide": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "impaling_book",
+      "requirementGroup": 32,
+      "alternatives": [
+        "impaling",
+        "impaling_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:impaling",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:impaling": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "channeling_book",
+      "requirementGroup": 33,
+      "alternatives": [
+        "channeling",
+        "channeling_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:channeling",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:channeling": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "quick_charge_book",
+      "requirementGroup": 34,
+      "alternatives": [
+        "quick_charge",
+        "quick_charge_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:quick_charge",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:quick_charge": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "piercing_book",
+      "requirementGroup": 35,
+      "alternatives": [
+        "piercing",
+        "piercing_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:piercing",
+                  "levels": {
+                    "min": 4
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:piercing": 4
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "multishot_book",
+      "requirementGroup": 36,
+      "alternatives": [
+        "multishot",
+        "multishot_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:multishot",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:multishot": 1
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "soul_speed_book",
+      "requirementGroup": 37,
+      "alternatives": [
+        "soul_speed",
+        "soul_speed_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:soul_speed",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:soul_speed": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "swift_sneak_book",
+      "requirementGroup": 38,
+      "alternatives": [
+        "swift_sneak",
+        "swift_sneak_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:swift_sneak",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:swift_sneak": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "wind_burst_book",
+      "requirementGroup": 39,
+      "alternatives": [
+        "wind_burst",
+        "wind_burst_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:wind_burst",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:wind_burst": 3
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "density_book",
+      "requirementGroup": 40,
+      "alternatives": [
+        "density",
+        "density_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:density",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:density": 5
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_enchanter",
+      "criterion": "breach_book",
+      "requirementGroup": 41,
+      "alternatives": [
+        "breach",
+        "breach_book"
+      ],
+      "frozenConditions": {
+        "items": [
+          {
+            "predicates": {
+              "stored_enchantments": [
+                {
+                  "enchantments": "minecraft:breach",
+                  "levels": {
+                    "min": 4
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "action": "PICKUP",
+      "selectedItem": "minecraft:enchanted_book",
+      "storage": "STORED_ENCHANTMENTS",
+      "customName": "",
+      "configuredEnchantments": {
+        "minecraft:breach": 4
+      }
+    }
+  ]
+}

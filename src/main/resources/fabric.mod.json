@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "${modId}",
+	"id": "achievetodo",
 	"version": "${modVersion}",
 	"name": "${modName}",
 	"description": "Challenging mod with BlazeandCave's that makes advancements a part of the gameplay.",
@@ -31,7 +31,7 @@
 		"java": ">=${minJavaVersion}",
 		"minecraft": "~${minMinecraftVersion}",
 		"fabricloader": ">=${minLoaderVersion}",
-		"fabric-api": "*"
+		"fabric-api": ">=${apiVersion}+${minMinecraftVersion}"
 	},
 	"accessWidener": "achievetodo.classtweaker"
 }

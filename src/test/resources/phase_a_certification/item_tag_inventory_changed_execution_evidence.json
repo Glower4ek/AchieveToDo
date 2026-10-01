@@ -1,0 +1,170 @@
+{
+  "snapshot": "phase_a_item_tag_inventory_changed_execution_evidence",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:a280c23568352d130ce9520c164a7396c17b66052e30b9ee7237ce1d7d9f57e1",
+  "runId": "2b845522-8bc1-447b-8b4d-28a8ecccb63f",
+  "generatedAt": "2026-08-22T18:09:42.387785800Z",
+  "entries": [
+    {
+      "advancementId": "blazeandcave:adventure/good_lookin_treasure",
+      "criterion": "trim_templates",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "blazeandcave:smithing_templates",
+      "selectedItem": "minecraft:bolt_armor_trim_smithing_template",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:animal/humble_bundle",
+      "criterion": "bundle",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:bundles",
+      "selectedItem": "minecraft:black_bundle",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:building/cut_in_half",
+      "criterion": "slab",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:slabs",
+      "selectedItem": "minecraft:acacia_slab",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:building/stairs_no",
+      "criterion": "stairs",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:stairs",
+      "selectedItem": "minecraft:acacia_stairs",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:building/your_door_was_locked",
+      "criterion": "door",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:doors",
+      "selectedItem": "minecraft:acacia_door",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/stack_all_the_items",
+      "criterion": "smithing_template",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "blazeandcave:smithing_templates",
+      "selectedItem": "minecraft:bolt_armor_trim_smithing_template",
+      "requiredCount": 64,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:end/portable_storage",
+      "criterion": "shulker_box",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:shulker_boxes",
+      "selectedItem": "minecraft:black_shulker_box",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:farming/root",
+      "criterion": "hoe",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:hoes",
+      "selectedItem": "minecraft:copper_hoe",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:farming/trimming_the_treetops",
+      "criterion": "leaves",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:leaves",
+      "selectedItem": "minecraft:acacia_leaves",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:mining/emerald_miner",
+      "criterion": "silk_touch",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:emerald_ores",
+      "selectedItem": "minecraft:deepslate_emerald_ore",
+      "requiredCount": 64,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:mining/root",
+      "criterion": "pickaxe",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:pickaxes",
+      "selectedItem": "minecraft:copper_pickaxe",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:monsters/root",
+      "criterion": "sword",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:swords",
+      "selectedItem": "minecraft:copper_sword",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:nether/i_am_root",
+      "criterion": "nether_roots",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:nether_roots",
+      "selectedItem": "minecraft:crimson_roots",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:nether/what_a_fungi",
+      "criterion": "nether_fungus",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:nether_fungus",
+      "selectedItem": "minecraft:crimson_fungus",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/root",
+      "criterion": "sword",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:swords",
+      "selectedItem": "minecraft:copper_sword",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "minecraft:adventure/salvage_sherd",
+      "criterion": "has_sherd",
+      "family": "ITEM_TAG_INVENTORY_CHANGED",
+      "itemTag": "minecraft:decorated_pot_sherds",
+      "selectedItem": "minecraft:angler_pottery_sherd",
+      "requiredCount": 1,
+      "source": "PhaseAItemTagInventoryChangedGameTest",
+      "result": "GREEN"
+    }
+  ]
+}

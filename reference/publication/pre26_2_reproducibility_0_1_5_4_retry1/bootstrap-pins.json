@@ -1,0 +1,19 @@
+{
+  "java": "25 (Eclipse Adoptium 25.0.4.7)",
+  "gradle": "9.8.0",
+  "distributionUrl": "https://services.gradle.org/distributions/gradle-9.8.0-bin.zip",
+  "distributionSha256": "bafd5ce9cfaea0fbccfdc8439a1ac42fbd4cd9c89dc9a988228d8a2639a58e6c",
+  "loom": "1.18.2",
+  "minecraft": "26.2",
+  "fabricLoader": "0.19.5",
+  "fabricApi": "0.161.0+26.2",
+  "junit": "6.1.3",
+  "toml4j": "0.7.2",
+  "bootstrapCommand": "./gradlew.bat --no-daemon compileJava compileTestJava compileGametestJava",
+  "buildConfigurationSha256": {
+    "build.gradle": "d822bf40127b139813fe7ba7b2627a5458e119c640c1db0a2cfba133ebedef09",
+    "gradle.properties": "2a1f8feecdba016f57fd5d0cb9eb6864dbf220894f23d089a73e202bf418d724",
+    "gradle/wrapper/gradle-wrapper.properties": "e81b90975868be2513ca00d6a5a01303a406a5cb01a306210b887e983e4b17ae",
+    "gradle/wrapper/gradle-wrapper.jar": "238e777fcddd7e34f9708186085def2abd6e08e658505b38718d79d74c21abd5"
+  }
+}

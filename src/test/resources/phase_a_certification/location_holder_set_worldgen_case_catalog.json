@@ -1,0 +1,4670 @@
+{
+  "snapshot": "phase_a_location_holder_set_worldgen_case_catalog",
+  "family": "LOCATION_HOLDERSET_WORLDGEN",
+  "source": "PhaseALocationHolderSetWorldgenGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "criteriaCount": 94,
+  "requirementGroupCount": 93,
+  "sources": [
+    {
+      "advancementId": "blazeandcave:adventure/now_youre_thinking_with_portals",
+      "sha256": "6891f8e427b64a8df7bf7866d9fe0d42b5f08180401b1bb556a7516eb452451e",
+      "requirements": [
+        [
+          "ruined_portal"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "sha256": "78b647932d1103ae6ee670cf0915d0bea7ad3aad6dbe719d2e14d4fa9af55e55",
+      "requirements": [
+        [
+          "white_carpet"
+        ],
+        [
+          "orange_carpet"
+        ],
+        [
+          "magenta_carpet"
+        ],
+        [
+          "light_blue_carpet"
+        ],
+        [
+          "yellow_carpet"
+        ],
+        [
+          "lime_carpet"
+        ],
+        [
+          "pink_carpet"
+        ],
+        [
+          "gray_carpet"
+        ],
+        [
+          "light_gray_carpet"
+        ],
+        [
+          "cyan_carpet"
+        ],
+        [
+          "purple_carpet"
+        ],
+        [
+          "blue_carpet"
+        ],
+        [
+          "brown_carpet"
+        ],
+        [
+          "green_carpet"
+        ],
+        [
+          "red_carpet"
+        ],
+        [
+          "black_carpet"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:biomes/smooth_operator",
+      "sha256": "574da0967da83cbc8b7e8d6bed5683deb4374ede52f6189be139c874ae437e6a",
+      "requirements": [
+        [
+          "smooth_operator"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:biomes/titanic",
+      "sha256": "a86570bd8498348a12304066298373610f549f335c7cb39ccb07e5ad6faa0642",
+      "requirements": [
+        [
+          "iceberg_deep",
+          "iceberg"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "sha256": "06addbea653068a0a3914d0eadafc2aabb8982759ced56a65085e37335d47bfd",
+      "requirements": [
+        [
+          "river"
+        ],
+        [
+          "swamp"
+        ],
+        [
+          "desert"
+        ],
+        [
+          "snowy_taiga"
+        ],
+        [
+          "badlands"
+        ],
+        [
+          "forest"
+        ],
+        [
+          "stony_shore"
+        ],
+        [
+          "snowy_plains"
+        ],
+        [
+          "wooded_badlands"
+        ],
+        [
+          "savanna"
+        ],
+        [
+          "plains"
+        ],
+        [
+          "frozen_river"
+        ],
+        [
+          "old_growth_pine_taiga"
+        ],
+        [
+          "snowy_beach"
+        ],
+        [
+          "deep_ocean"
+        ],
+        [
+          "sparse_jungle"
+        ],
+        [
+          "ocean"
+        ],
+        [
+          "windswept_hills"
+        ],
+        [
+          "jungle"
+        ],
+        [
+          "beach"
+        ],
+        [
+          "savanna_plateau"
+        ],
+        [
+          "dark_forest"
+        ],
+        [
+          "taiga"
+        ],
+        [
+          "birch_forest"
+        ],
+        [
+          "mushroom_fields"
+        ],
+        [
+          "windswept_forest"
+        ],
+        [
+          "cold_ocean"
+        ],
+        [
+          "warm_ocean"
+        ],
+        [
+          "lukewarm_ocean"
+        ],
+        [
+          "frozen_ocean"
+        ],
+        [
+          "deep_frozen_ocean"
+        ],
+        [
+          "deep_lukewarm_ocean"
+        ],
+        [
+          "deep_cold_ocean"
+        ],
+        [
+          "bamboo_jungle"
+        ],
+        [
+          "sunflower_plains"
+        ],
+        [
+          "windswept_gravelly_hills"
+        ],
+        [
+          "flower_forest"
+        ],
+        [
+          "ice_spikes"
+        ],
+        [
+          "old_growth_birch_forest"
+        ],
+        [
+          "old_growth_spruce_taiga"
+        ],
+        [
+          "windswept_savanna"
+        ],
+        [
+          "eroded_badlands"
+        ],
+        [
+          "meadow"
+        ],
+        [
+          "grove"
+        ],
+        [
+          "snowy_slopes"
+        ],
+        [
+          "frozen_peaks"
+        ],
+        [
+          "jagged_peaks"
+        ],
+        [
+          "stony_peaks"
+        ],
+        [
+          "lush_caves"
+        ],
+        [
+          "dripstone_caves"
+        ],
+        [
+          "nether_wastes"
+        ],
+        [
+          "crimson_forest"
+        ],
+        [
+          "warped_forest"
+        ],
+        [
+          "soul_sand_valley"
+        ],
+        [
+          "basalt_deltas"
+        ],
+        [
+          "the_end"
+        ],
+        [
+          "small_end_islands"
+        ],
+        [
+          "end_highlands"
+        ],
+        [
+          "end_midlands"
+        ],
+        [
+          "end_barrens"
+        ],
+        [
+          "mangrove_swamp"
+        ],
+        [
+          "deep_dark"
+        ],
+        [
+          "cherry_grove"
+        ],
+        [
+          "pale_garden"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/silent_but_deadly",
+      "sha256": "8c70031b4b560c6b85a8041cfd3f396b788f5ec5f162b19948fdc4400901d27c",
+      "requirements": [
+        [
+          "silent_but_deadly"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:mining/spelunker",
+      "sha256": "86a4c911f62e025ea510e925ab0b20df9ee4fc1975b9f99c988bc34bfef91515",
+      "requirements": [
+        [
+          "lush_caves"
+        ],
+        [
+          "dripstone_caves"
+        ],
+        [
+          "deep_dark"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:nether/from_whence_it_came",
+      "sha256": "99d831706ba657fed6eecf7d261c5ebb1b8773a7df1589878cd7151d9f33b19f",
+      "requirements": [
+        [
+          "ruined_portal"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:nether/inception",
+      "sha256": "9e4e01f8212ff0a4a7f4fcba35e13bc0e33e088afe1233f75307ae3e6b047c48",
+      "requirements": [
+        [
+          "enter_cave"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:nether/instant_mining",
+      "sha256": "17d528d85a44b844fc58d3feffea5571b4c085d0f8e431c5a138b4de1b653e90",
+      "requirements": [
+        [
+          "instant_mining"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:nether/ludicrous_speed",
+      "sha256": "6e4619843d7664bb7d2cfe94524b09105895dc56f4fa16bb40f108c6db434597",
+      "requirements": [
+        [
+          "ludicrous_speed"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:nether/soul_runnings",
+      "sha256": "a2d3606067eaed21c786ff603c355f04fe88c92128c252abac8ee67227e0dfb3",
+      "requirements": [
+        [
+          "soul_runnings"
+        ]
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:nether/stepping_on_legos",
+      "sha256": "422e5f23fcd8acec253426d1f11d8d52a47f0e56fe579983ceae2856b7dc5955",
+      "requirements": [
+        [
+          "legos"
+        ]
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "advancementId": "blazeandcave:adventure/now_youre_thinking_with_portals",
+      "criterion": "ruined_portal",
+      "requirementGroup": 0,
+      "alternatives": [
+        "ruined_portal"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:any_of",
+            "terms": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal",
+                    "dimension": "overworld"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal_desert",
+                    "dimension": "overworld"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal_jungle",
+                    "dimension": "overworld"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal_mountain",
+                    "dimension": "overworld"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal_nether",
+                    "dimension": "overworld"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal_ocean",
+                    "dimension": "overworld"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal_swamp",
+                    "dimension": "overworld"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "structures": "minecraft:ruined_portal",
+          "dimension": "overworld"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "white_carpet",
+      "requirementGroup": 0,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:white_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "white_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:white_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:white_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "orange_carpet",
+      "requirementGroup": 1,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:orange_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "orange_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:orange_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:orange_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "magenta_carpet",
+      "requirementGroup": 2,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:magenta_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "magenta_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:magenta_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:magenta_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "light_blue_carpet",
+      "requirementGroup": 3,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:light_blue_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "light_blue_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:light_blue_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:light_blue_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "yellow_carpet",
+      "requirementGroup": 4,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:yellow_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "yellow_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:yellow_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:yellow_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "lime_carpet",
+      "requirementGroup": 5,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:lime_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "lime_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:lime_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:lime_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "pink_carpet",
+      "requirementGroup": 6,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:pink_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "pink_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:pink_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:pink_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "gray_carpet",
+      "requirementGroup": 7,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:gray_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "gray_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:gray_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:gray_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "light_gray_carpet",
+      "requirementGroup": 8,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:light_gray_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "light_gray_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:light_gray_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:light_gray_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "cyan_carpet",
+      "requirementGroup": 9,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:cyan_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "cyan_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:cyan_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:cyan_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "purple_carpet",
+      "requirementGroup": 10,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:purple_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "purple_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:purple_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:purple_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "blue_carpet",
+      "requirementGroup": 11,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:blue_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "blue_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:blue_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:blue_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "brown_carpet",
+      "requirementGroup": 12,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:brown_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "brown_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:brown_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:brown_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "green_carpet",
+      "requirementGroup": 13,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:green_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "green_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:green_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:green_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "red_carpet",
+      "requirementGroup": 14,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:red_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "red_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:red_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:red_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:animal/llama_festival",
+      "criterion": "black_carpet",
+      "requirementGroup": 15,
+      "nativeVehicleNbt": "{equipment:{body:{id:\"minecraft:black_carpet\"}}}",
+      "productionMigration": "EXACT_FROZEN_LLAMA_CARPET_NBT_TO_EQUIPMENT_BODY",
+      "alternatives": [
+        "black_carpet"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": {
+                "type": "#blazeandcave:llamas",
+                "nbt": "{body_armor_item:{id:\"minecraft:black_carpet\"}}"
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "vehicle": {
+          "type": "#blazeandcave:llamas",
+          "nbt": "{body_armor_item:{id:\"minecraft:black_carpet\"}}"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:biomes/smooth_operator",
+      "criterion": "smooth_operator",
+      "requirementGroup": 0,
+      "alternatives": [
+        "smooth_operator"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "stepping_on": {
+                "block": {
+                  "blocks": "#minecraft:ice"
+                }
+              }
+            },
+            "entity": "this"
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "stepping_on": {
+          "block": {
+            "blocks": "#minecraft:ice"
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:biomes/titanic",
+      "criterion": "iceberg_deep",
+      "requirementGroup": 0,
+      "selectedBiome": "minecraft:deep_frozen_ocean",
+      "alternatives": [
+        "iceberg_deep",
+        "iceberg"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:any_of",
+            "terms": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:shipwreck",
+                    "biomes": "minecraft:deep_frozen_ocean"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:shipwreck_beached",
+                    "biomes": "minecraft:deep_frozen_ocean"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "structures": "minecraft:shipwreck",
+          "biomes": "minecraft:deep_frozen_ocean"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "river",
+      "requirementGroup": 0,
+      "selectedBiome": "minecraft:river",
+      "alternatives": [
+        "river"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:river"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:river"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "swamp",
+      "requirementGroup": 1,
+      "selectedBiome": "minecraft:swamp",
+      "alternatives": [
+        "swamp"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:swamp"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:swamp"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "desert",
+      "requirementGroup": 2,
+      "selectedBiome": "minecraft:desert",
+      "alternatives": [
+        "desert"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:desert"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:desert"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "snowy_taiga",
+      "requirementGroup": 3,
+      "selectedBiome": "minecraft:snowy_taiga",
+      "alternatives": [
+        "snowy_taiga"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:snowy_taiga"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:snowy_taiga"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "badlands",
+      "requirementGroup": 4,
+      "selectedBiome": "minecraft:badlands",
+      "alternatives": [
+        "badlands"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:badlands"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:badlands"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "forest",
+      "requirementGroup": 5,
+      "selectedBiome": "minecraft:forest",
+      "alternatives": [
+        "forest"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:forest"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:forest"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "stony_shore",
+      "requirementGroup": 6,
+      "selectedBiome": "minecraft:stony_shore",
+      "alternatives": [
+        "stony_shore"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:stony_shore"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:stony_shore"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "snowy_plains",
+      "requirementGroup": 7,
+      "selectedBiome": "minecraft:snowy_plains",
+      "alternatives": [
+        "snowy_plains"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:snowy_plains"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:snowy_plains"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "wooded_badlands",
+      "requirementGroup": 8,
+      "selectedBiome": "minecraft:wooded_badlands",
+      "alternatives": [
+        "wooded_badlands"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:wooded_badlands"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:wooded_badlands"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "savanna",
+      "requirementGroup": 9,
+      "selectedBiome": "minecraft:savanna",
+      "alternatives": [
+        "savanna"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:savanna"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:savanna"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "plains",
+      "requirementGroup": 10,
+      "selectedBiome": "minecraft:plains",
+      "alternatives": [
+        "plains"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:plains"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:plains"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "frozen_river",
+      "requirementGroup": 11,
+      "selectedBiome": "minecraft:frozen_river",
+      "alternatives": [
+        "frozen_river"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:frozen_river"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:frozen_river"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "old_growth_pine_taiga",
+      "requirementGroup": 12,
+      "selectedBiome": "minecraft:old_growth_pine_taiga",
+      "alternatives": [
+        "old_growth_pine_taiga"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:old_growth_pine_taiga"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:old_growth_pine_taiga"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "snowy_beach",
+      "requirementGroup": 13,
+      "selectedBiome": "minecraft:snowy_beach",
+      "alternatives": [
+        "snowy_beach"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:snowy_beach"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:snowy_beach"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "deep_ocean",
+      "requirementGroup": 14,
+      "selectedBiome": "minecraft:deep_ocean",
+      "alternatives": [
+        "deep_ocean"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:deep_ocean"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:deep_ocean"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "sparse_jungle",
+      "requirementGroup": 15,
+      "selectedBiome": "minecraft:sparse_jungle",
+      "alternatives": [
+        "sparse_jungle"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:sparse_jungle"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:sparse_jungle"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "ocean",
+      "requirementGroup": 16,
+      "selectedBiome": "minecraft:ocean",
+      "alternatives": [
+        "ocean"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:ocean"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:ocean"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "windswept_hills",
+      "requirementGroup": 17,
+      "selectedBiome": "minecraft:windswept_hills",
+      "alternatives": [
+        "windswept_hills"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:windswept_hills"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:windswept_hills"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "jungle",
+      "requirementGroup": 18,
+      "selectedBiome": "minecraft:jungle",
+      "alternatives": [
+        "jungle"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:jungle"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:jungle"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "beach",
+      "requirementGroup": 19,
+      "selectedBiome": "minecraft:beach",
+      "alternatives": [
+        "beach"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:beach"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:beach"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "savanna_plateau",
+      "requirementGroup": 20,
+      "selectedBiome": "minecraft:savanna_plateau",
+      "alternatives": [
+        "savanna_plateau"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:savanna_plateau"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:savanna_plateau"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "dark_forest",
+      "requirementGroup": 21,
+      "selectedBiome": "minecraft:dark_forest",
+      "alternatives": [
+        "dark_forest"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:dark_forest"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:dark_forest"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "taiga",
+      "requirementGroup": 22,
+      "selectedBiome": "minecraft:taiga",
+      "alternatives": [
+        "taiga"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:taiga"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:taiga"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "birch_forest",
+      "requirementGroup": 23,
+      "selectedBiome": "minecraft:birch_forest",
+      "alternatives": [
+        "birch_forest"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:birch_forest"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:birch_forest"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "mushroom_fields",
+      "requirementGroup": 24,
+      "selectedBiome": "minecraft:mushroom_fields",
+      "alternatives": [
+        "mushroom_fields"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:mushroom_fields"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:mushroom_fields"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "windswept_forest",
+      "requirementGroup": 25,
+      "selectedBiome": "minecraft:windswept_forest",
+      "alternatives": [
+        "windswept_forest"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:windswept_forest"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:windswept_forest"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "cold_ocean",
+      "requirementGroup": 26,
+      "selectedBiome": "minecraft:cold_ocean",
+      "alternatives": [
+        "cold_ocean"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:cold_ocean"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:cold_ocean"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "warm_ocean",
+      "requirementGroup": 27,
+      "selectedBiome": "minecraft:warm_ocean",
+      "alternatives": [
+        "warm_ocean"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:warm_ocean"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:warm_ocean"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "lukewarm_ocean",
+      "requirementGroup": 28,
+      "selectedBiome": "minecraft:lukewarm_ocean",
+      "alternatives": [
+        "lukewarm_ocean"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:lukewarm_ocean"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:lukewarm_ocean"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "frozen_ocean",
+      "requirementGroup": 29,
+      "selectedBiome": "minecraft:frozen_ocean",
+      "alternatives": [
+        "frozen_ocean"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:frozen_ocean"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:frozen_ocean"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "deep_frozen_ocean",
+      "requirementGroup": 30,
+      "selectedBiome": "minecraft:deep_frozen_ocean",
+      "alternatives": [
+        "deep_frozen_ocean"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:deep_frozen_ocean"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:deep_frozen_ocean"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "deep_lukewarm_ocean",
+      "requirementGroup": 31,
+      "selectedBiome": "minecraft:deep_lukewarm_ocean",
+      "alternatives": [
+        "deep_lukewarm_ocean"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:deep_lukewarm_ocean"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:deep_lukewarm_ocean"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "deep_cold_ocean",
+      "requirementGroup": 32,
+      "selectedBiome": "minecraft:deep_cold_ocean",
+      "alternatives": [
+        "deep_cold_ocean"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:deep_cold_ocean"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:deep_cold_ocean"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "bamboo_jungle",
+      "requirementGroup": 33,
+      "selectedBiome": "minecraft:bamboo_jungle",
+      "alternatives": [
+        "bamboo_jungle"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:bamboo_jungle"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:bamboo_jungle"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "sunflower_plains",
+      "requirementGroup": 34,
+      "selectedBiome": "minecraft:sunflower_plains",
+      "alternatives": [
+        "sunflower_plains"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:sunflower_plains"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:sunflower_plains"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "windswept_gravelly_hills",
+      "requirementGroup": 35,
+      "selectedBiome": "minecraft:windswept_gravelly_hills",
+      "alternatives": [
+        "windswept_gravelly_hills"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:windswept_gravelly_hills"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:windswept_gravelly_hills"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "flower_forest",
+      "requirementGroup": 36,
+      "selectedBiome": "minecraft:flower_forest",
+      "alternatives": [
+        "flower_forest"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:flower_forest"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:flower_forest"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "ice_spikes",
+      "requirementGroup": 37,
+      "selectedBiome": "minecraft:ice_spikes",
+      "alternatives": [
+        "ice_spikes"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:ice_spikes"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:ice_spikes"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "old_growth_birch_forest",
+      "requirementGroup": 38,
+      "selectedBiome": "minecraft:old_growth_birch_forest",
+      "alternatives": [
+        "old_growth_birch_forest"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:old_growth_birch_forest"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:old_growth_birch_forest"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "old_growth_spruce_taiga",
+      "requirementGroup": 39,
+      "selectedBiome": "minecraft:old_growth_spruce_taiga",
+      "alternatives": [
+        "old_growth_spruce_taiga"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:old_growth_spruce_taiga"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:old_growth_spruce_taiga"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "windswept_savanna",
+      "requirementGroup": 40,
+      "selectedBiome": "minecraft:windswept_savanna",
+      "alternatives": [
+        "windswept_savanna"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:windswept_savanna"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:windswept_savanna"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "eroded_badlands",
+      "requirementGroup": 41,
+      "selectedBiome": "minecraft:eroded_badlands",
+      "alternatives": [
+        "eroded_badlands"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:eroded_badlands"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:eroded_badlands"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "meadow",
+      "requirementGroup": 42,
+      "selectedBiome": "minecraft:meadow",
+      "alternatives": [
+        "meadow"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:meadow"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:meadow"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "grove",
+      "requirementGroup": 43,
+      "selectedBiome": "minecraft:grove",
+      "alternatives": [
+        "grove"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:grove"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:grove"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "snowy_slopes",
+      "requirementGroup": 44,
+      "selectedBiome": "minecraft:snowy_slopes",
+      "alternatives": [
+        "snowy_slopes"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:snowy_slopes"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:snowy_slopes"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "frozen_peaks",
+      "requirementGroup": 45,
+      "selectedBiome": "minecraft:frozen_peaks",
+      "alternatives": [
+        "frozen_peaks"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:frozen_peaks"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:frozen_peaks"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "jagged_peaks",
+      "requirementGroup": 46,
+      "selectedBiome": "minecraft:jagged_peaks",
+      "alternatives": [
+        "jagged_peaks"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:jagged_peaks"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:jagged_peaks"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "stony_peaks",
+      "requirementGroup": 47,
+      "selectedBiome": "minecraft:stony_peaks",
+      "alternatives": [
+        "stony_peaks"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:stony_peaks"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:stony_peaks"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "lush_caves",
+      "requirementGroup": 48,
+      "selectedBiome": "minecraft:lush_caves",
+      "alternatives": [
+        "lush_caves"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:lush_caves"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:lush_caves"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "dripstone_caves",
+      "requirementGroup": 49,
+      "selectedBiome": "minecraft:dripstone_caves",
+      "alternatives": [
+        "dripstone_caves"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:dripstone_caves"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:dripstone_caves"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "nether_wastes",
+      "requirementGroup": 50,
+      "selectedBiome": "minecraft:nether_wastes",
+      "alternatives": [
+        "nether_wastes"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:nether_wastes"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:nether_wastes"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "crimson_forest",
+      "requirementGroup": 51,
+      "selectedBiome": "minecraft:crimson_forest",
+      "alternatives": [
+        "crimson_forest"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:crimson_forest"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:crimson_forest"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "warped_forest",
+      "requirementGroup": 52,
+      "selectedBiome": "minecraft:warped_forest",
+      "alternatives": [
+        "warped_forest"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:warped_forest"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:warped_forest"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "soul_sand_valley",
+      "requirementGroup": 53,
+      "selectedBiome": "minecraft:soul_sand_valley",
+      "alternatives": [
+        "soul_sand_valley"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:soul_sand_valley"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:soul_sand_valley"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "basalt_deltas",
+      "requirementGroup": 54,
+      "selectedBiome": "minecraft:basalt_deltas",
+      "alternatives": [
+        "basalt_deltas"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:basalt_deltas"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:basalt_deltas"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "the_end",
+      "requirementGroup": 55,
+      "selectedBiome": "minecraft:the_end",
+      "alternatives": [
+        "the_end"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:the_end"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:the_end"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "small_end_islands",
+      "requirementGroup": 56,
+      "selectedBiome": "minecraft:small_end_islands",
+      "alternatives": [
+        "small_end_islands"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:small_end_islands"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:small_end_islands"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "end_highlands",
+      "requirementGroup": 57,
+      "selectedBiome": "minecraft:end_highlands",
+      "alternatives": [
+        "end_highlands"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:end_highlands"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:end_highlands"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "end_midlands",
+      "requirementGroup": 58,
+      "selectedBiome": "minecraft:end_midlands",
+      "biomeTagSource": "data/blazeandcave/tags/worldgen/biome/end_midlands.json",
+      "biomeTagSha256": "39f71a0735f8a25501012fcd6ae07e327f70cbeb44da78c7cf24fc688dc576c2",
+      "frozenBiomeTag": {
+        "replace": false,
+        "values": [
+          "minecraft:end_midlands"
+        ]
+      },
+      "alternatives": [
+        "end_midlands"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:any_of",
+            "terms": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "biomes": "#blazeandcave:end_midlands"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "#blazeandcave:end_midlands"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "end_barrens",
+      "requirementGroup": 59,
+      "selectedBiome": "minecraft:end_barrens",
+      "biomeTagSource": "data/blazeandcave/tags/worldgen/biome/end_barrens.json",
+      "biomeTagSha256": "4903f44640cb419ebe0fce61b864301130edcb970be9b9360ad6298b1e870eaf",
+      "frozenBiomeTag": {
+        "replace": false,
+        "values": [
+          "minecraft:end_barrens"
+        ]
+      },
+      "alternatives": [
+        "end_barrens"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:any_of",
+            "terms": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "biomes": "#blazeandcave:end_barrens"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "#blazeandcave:end_barrens"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "mangrove_swamp",
+      "requirementGroup": 60,
+      "selectedBiome": "minecraft:mangrove_swamp",
+      "alternatives": [
+        "mangrove_swamp"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:mangrove_swamp"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:mangrove_swamp"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "deep_dark",
+      "requirementGroup": 61,
+      "selectedBiome": "minecraft:deep_dark",
+      "alternatives": [
+        "deep_dark"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:deep_dark"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:deep_dark"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "cherry_grove",
+      "requirementGroup": 62,
+      "selectedBiome": "minecraft:cherry_grove",
+      "alternatives": [
+        "cherry_grove"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:cherry_grove"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:cherry_grove"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+      "criterion": "pale_garden",
+      "requirementGroup": 63,
+      "selectedBiome": "minecraft:pale_garden",
+      "alternatives": [
+        "pale_garden"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:pale_garden"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:pale_garden"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/silent_but_deadly",
+      "criterion": "silent_but_deadly",
+      "requirementGroup": 0,
+      "alternatives": [
+        "silent_but_deadly"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "stepping_on": {
+                "block": {
+                  "blocks": [
+                    "minecraft:sculk"
+                  ]
+                }
+              },
+              "equipment": {
+                "legs": {
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": "minecraft:swift_sneak",
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "effects": {
+                "minecraft:speed": {
+                  "amplifier": {
+                    "min": 1
+                  }
+                }
+              },
+              "flags": {
+                "is_sneaking": true
+              }
+            },
+            "entity": "this"
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "stepping_on": {
+          "block": {
+            "blocks": [
+              "minecraft:sculk"
+            ]
+          }
+        },
+        "equipment": {
+          "legs": {
+            "predicates": {
+              "enchantments": [
+                {
+                  "enchantments": "minecraft:swift_sneak",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "effects": {
+          "minecraft:speed": {
+            "amplifier": {
+              "min": 1
+            }
+          }
+        },
+        "flags": {
+          "is_sneaking": true
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:mining/spelunker",
+      "criterion": "lush_caves",
+      "requirementGroup": 0,
+      "selectedBiome": "minecraft:lush_caves",
+      "alternatives": [
+        "lush_caves"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:lush_caves"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:lush_caves"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:mining/spelunker",
+      "criterion": "dripstone_caves",
+      "requirementGroup": 1,
+      "selectedBiome": "minecraft:dripstone_caves",
+      "alternatives": [
+        "dripstone_caves"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:dripstone_caves"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:dripstone_caves"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:mining/spelunker",
+      "criterion": "deep_dark",
+      "requirementGroup": 2,
+      "selectedBiome": "minecraft:deep_dark",
+      "alternatives": [
+        "deep_dark"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:deep_dark"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "biomes": "minecraft:deep_dark"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:nether/from_whence_it_came",
+      "criterion": "ruined_portal",
+      "requirementGroup": 0,
+      "alternatives": [
+        "ruined_portal"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:any_of",
+            "terms": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal",
+                    "dimension": "the_nether"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal_desert",
+                    "dimension": "the_nether"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal_jungle",
+                    "dimension": "the_nether"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal_mountain",
+                    "dimension": "the_nether"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal_nether",
+                    "dimension": "the_nether"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal_ocean",
+                    "dimension": "the_nether"
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "location": {
+                    "structures": "minecraft:ruined_portal_swamp",
+                    "dimension": "the_nether"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "structures": "minecraft:ruined_portal_nether",
+          "dimension": "the_nether"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:nether/inception",
+      "criterion": "enter_cave",
+      "requirementGroup": 0,
+      "selectedLocationBlock": "minecraft:air",
+      "blockTagSource": "data/minecraft/tags/block/non_underwater_blocks.json",
+      "blockTagSha256": "5d1f645b5b804944fe35a6940d587e013c1ac172833380c74ad26e618d081be0",
+      "frozenBlockTag": {
+        "replace": false,
+        "values": [
+          "minecraft:air",
+          "minecraft:cave_air",
+          "minecraft:void_air",
+          "minecraft:cobweb",
+          "minecraft:tube_coral",
+          "minecraft:brain_coral",
+          "minecraft:bubble_coral",
+          "minecraft:fire_coral",
+          "minecraft:horn_coral",
+          "minecraft:dead_tube_coral",
+          "minecraft:dead_brain_coral",
+          "minecraft:dead_bubble_coral",
+          "minecraft:dead_fire_coral",
+          "minecraft:dead_horn_coral",
+          "minecraft:tube_coral_fan",
+          "minecraft:brain_coral_fan",
+          "minecraft:bubble_coral_fan",
+          "minecraft:fire_coral_fan",
+          "minecraft:horn_coral_fan",
+          "minecraft:tube_coral_wall_fan",
+          "minecraft:brain_coral_wall_fan",
+          "minecraft:bubble_coral_wall_fan",
+          "minecraft:fire_coral_wall_fan",
+          "minecraft:horn_coral_wall_fan",
+          "minecraft:dead_tube_coral_fan",
+          "minecraft:dead_brain_coral_fan",
+          "minecraft:dead_bubble_coral_fan",
+          "minecraft:dead_fire_coral_fan",
+          "minecraft:dead_horn_coral_fan",
+          "minecraft:dead_tube_coral_wall_fan",
+          "minecraft:dead_brain_coral_wall_fan",
+          "minecraft:dead_bubble_coral_wall_fan",
+          "minecraft:dead_fire_coral_wall_fan",
+          "minecraft:dead_horn_coral_wall_fan",
+          "minecraft:fire",
+          "minecraft:lava",
+          "minecraft:nether_portal",
+          "minecraft:beetroots",
+          "minecraft:carrots",
+          "minecraft:dead_bush",
+          "minecraft:fern",
+          "minecraft:large_fern",
+          "minecraft:dandelion",
+          "minecraft:poppy",
+          "minecraft:blue_orchid",
+          "minecraft:allium",
+          "minecraft:azure_bluet",
+          "minecraft:red_tulip",
+          "minecraft:orange_tulip",
+          "minecraft:white_tulip",
+          "minecraft:pink_tulip",
+          "minecraft:oxeye_daisy",
+          "minecraft:sunflower",
+          "minecraft:rose_bush",
+          "minecraft:peony",
+          "minecraft:lilac",
+          "minecraft:short_grass",
+          "minecraft:tall_grass",
+          "minecraft:melon_stem",
+          "minecraft:red_mushroom",
+          "minecraft:brown_mushroom",
+          "minecraft:nether_wart",
+          "minecraft:potatoes",
+          "minecraft:pumpkin_stem",
+          "minecraft:oak_sapling",
+          "minecraft:spruce_sapling",
+          "minecraft:birch_sapling",
+          "minecraft:jungle_sapling",
+          "minecraft:acacia_sapling",
+          "minecraft:dark_oak_sapling",
+          "minecraft:sugar_cane",
+          "minecraft:vine",
+          "minecraft:wheat",
+          "minecraft:white_banner",
+          "minecraft:orange_banner",
+          "minecraft:magenta_banner",
+          "minecraft:light_blue_banner",
+          "minecraft:yellow_banner",
+          "minecraft:lime_banner",
+          "minecraft:pink_banner",
+          "minecraft:gray_banner",
+          "minecraft:light_gray_banner",
+          "minecraft:cyan_banner",
+          "minecraft:purple_banner",
+          "minecraft:blue_banner",
+          "minecraft:brown_banner",
+          "minecraft:green_banner",
+          "minecraft:red_banner",
+          "minecraft:black_banner",
+          "minecraft:white_carpet",
+          "minecraft:orange_carpet",
+          "minecraft:magenta_carpet",
+          "minecraft:light_blue_carpet",
+          "minecraft:yellow_carpet",
+          "minecraft:lime_carpet",
+          "minecraft:pink_carpet",
+          "minecraft:gray_carpet",
+          "minecraft:light_gray_carpet",
+          "minecraft:cyan_carpet",
+          "minecraft:purple_carpet",
+          "minecraft:blue_carpet",
+          "minecraft:brown_carpet",
+          "minecraft:green_carpet",
+          "minecraft:red_carpet",
+          "minecraft:black_carpet",
+          "minecraft:ladder",
+          "minecraft:brewing_stand",
+          "minecraft:sea_pickle",
+          "minecraft:oak_sign",
+          "minecraft:spruce_sign",
+          "minecraft:birch_sign",
+          "minecraft:jungle_sign",
+          "minecraft:acacia_sign",
+          "minecraft:dark_oak_sign",
+          "minecraft:oak_wall_sign",
+          "minecraft:spruce_wall_sign",
+          "minecraft:birch_wall_sign",
+          "minecraft:jungle_wall_sign",
+          "minecraft:acacia_wall_sign",
+          "minecraft:dark_oak_wall_sign",
+          "minecraft:torch",
+          "minecraft:oak_button",
+          "minecraft:spruce_button",
+          "minecraft:birch_button",
+          "minecraft:jungle_button",
+          "minecraft:acacia_button",
+          "minecraft:dark_oak_button",
+          "minecraft:stone_button",
+          "minecraft:lever",
+          "minecraft:oak_pressure_plate",
+          "minecraft:spruce_pressure_plate",
+          "minecraft:birch_pressure_plate",
+          "minecraft:jungle_pressure_plate",
+          "minecraft:acacia_pressure_plate",
+          "minecraft:dark_oak_pressure_plate",
+          "minecraft:stone_pressure_plate",
+          "minecraft:heavy_weighted_pressure_plate",
+          "minecraft:light_weighted_pressure_plate",
+          "minecraft:rail",
+          "minecraft:powered_rail",
+          "minecraft:detector_rail",
+          "minecraft:activator_rail",
+          "minecraft:redstone_wire",
+          "minecraft:comparator",
+          "minecraft:repeater",
+          "minecraft:redstone_torch",
+          "minecraft:tripwire",
+          "minecraft:tripwire_hook",
+          "minecraft:structure_void",
+          "minecraft:end_rod",
+          "minecraft:bamboo",
+          "minecraft:bamboo_sapling",
+          "minecraft:cornflower",
+          "minecraft:lily_of_the_valley",
+          "minecraft:wither_rose",
+          "minecraft:lantern",
+          "minecraft:scaffolding",
+          "minecraft:sweet_berry_bush"
+        ]
+      },
+      "alternatives": [
+        "enter_cave"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "block": {
+                  "blocks": "#minecraft:non_underwater_blocks"
+                },
+                "position": {
+                  "y": {
+                    "min": 127,
+                    "max": 127.9999
+                  }
+                },
+                "dimension": "the_nether"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "location": {
+          "block": {
+            "blocks": "#minecraft:non_underwater_blocks"
+          },
+          "position": {
+            "y": {
+              "min": 127,
+              "max": 127.9999
+            }
+          },
+          "dimension": "the_nether"
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:nether/instant_mining",
+      "criterion": "instant_mining",
+      "requirementGroup": 0,
+      "alternatives": [
+        "instant_mining"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "effects": {
+                "minecraft:haste": {
+                  "amplifier": {
+                    "min": 1
+                  }
+                }
+              },
+              "equipment": {
+                "mainhand": {
+                  "items": "#blazeandcave:master_pickaxes",
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": "minecraft:efficiency",
+                        "levels": {
+                          "min": 5
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "effects": {
+          "minecraft:haste": {
+            "amplifier": {
+              "min": 1
+            }
+          }
+        },
+        "equipment": {
+          "mainhand": {
+            "items": "#blazeandcave:master_pickaxes",
+            "predicates": {
+              "enchantments": [
+                {
+                  "enchantments": "minecraft:efficiency",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:nether/ludicrous_speed",
+      "criterion": "ludicrous_speed",
+      "requirementGroup": 0,
+      "alternatives": [
+        "ludicrous_speed"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "stepping_on": {
+                "block": {
+                  "blocks": "#minecraft:soul_speed_blocks"
+                }
+              },
+              "equipment": {
+                "feet": {
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": "minecraft:soul_speed",
+                        "levels": {
+                          "min": 3
+                        }
+                      },
+                      {
+                        "enchantments": "minecraft:depth_strider",
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "effects": {
+                "minecraft:speed": {
+                  "amplifier": {
+                    "min": 1
+                  }
+                },
+                "minecraft:dolphins_grace": {
+                  "amplifier": {
+                    "min": 0
+                  }
+                }
+              },
+              "flags": {
+                "is_sprinting": true
+              }
+            },
+            "entity": "this"
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "stepping_on": {
+          "block": {
+            "blocks": "#minecraft:soul_speed_blocks"
+          }
+        },
+        "equipment": {
+          "feet": {
+            "predicates": {
+              "enchantments": [
+                {
+                  "enchantments": "minecraft:soul_speed",
+                  "levels": {
+                    "min": 3
+                  }
+                },
+                {
+                  "enchantments": "minecraft:depth_strider",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "effects": {
+          "minecraft:speed": {
+            "amplifier": {
+              "min": 1
+            }
+          },
+          "minecraft:dolphins_grace": {
+            "amplifier": {
+              "min": 0
+            }
+          }
+        },
+        "flags": {
+          "is_sprinting": true
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:nether/soul_runnings",
+      "criterion": "soul_runnings",
+      "requirementGroup": 0,
+      "alternatives": [
+        "soul_runnings"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "stepping_on": {
+                "block": {
+                  "blocks": "#minecraft:soul_speed_blocks"
+                }
+              },
+              "equipment": {
+                "feet": {
+                  "items": [
+                    "minecraft:netherite_boots"
+                  ],
+                  "predicates": {
+                    "enchantments": [
+                      {
+                        "enchantments": "minecraft:soul_speed",
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "entity": "this"
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "stepping_on": {
+          "block": {
+            "blocks": "#minecraft:soul_speed_blocks"
+          }
+        },
+        "equipment": {
+          "feet": {
+            "items": [
+              "minecraft:netherite_boots"
+            ],
+            "predicates": {
+              "enchantments": [
+                {
+                  "enchantments": "minecraft:soul_speed",
+                  "levels": {
+                    "min": 3
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:nether/stepping_on_legos",
+      "criterion": "legos",
+      "requirementGroup": 0,
+      "alternatives": [
+        "legos"
+      ],
+      "frozenConditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "stepping_on": {
+                "block": {
+                  "blocks": [
+                    "minecraft:magma_block"
+                  ]
+                },
+                "dimension": "the_nether"
+              },
+              "flags": {
+                "is_sneaking": false
+              }
+            },
+            "entity": "this"
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "equipment": {
+                  "feet": {
+                    "predicates": {
+                      "enchantments": [
+                        {
+                          "enchantments": "minecraft:frost_walker"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "entity": "this"
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "predicate": {
+                "effects": {
+                  "minecraft:fire_resistance": {
+                    "amplifier": {
+                      "min": 0
+                    }
+                  }
+                }
+              },
+              "entity": "this"
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": [
+                    "spectator"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "selectedPredicate": {
+        "stepping_on": {
+          "block": {
+            "blocks": [
+              "minecraft:magma_block"
+            ]
+          },
+          "dimension": "the_nether"
+        },
+        "flags": {
+          "is_sneaking": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "family": "SKELETON_PROJECTILE_BLOCK_RUNTIME_PROOF",
+  "stage": "FINAL19",
+  "sources": [
+    {
+      "advancementId": "minecraft:story/deflect_arrow",
+      "sourcePath": "data/minecraft/advancement/story/deflect_arrow.json",
+      "frozenSha256": "5ff510e7b32e1339fe1d32872a08b06d19e93a2e0ceccdc46fdb09bbdeca2445",
+      "requirements": [
+        [
+          "deflected_skeleton"
+        ]
+      ],
+      "auditedConvertedDefinition": {
+        "display": {
+          "icon": {
+            "id": "minecraft:shield",
+            "components": {
+              "minecraft:banner_patterns": [
+                {
+                  "color": "light_gray",
+                  "pattern": "minecraft:triangle_bottom"
+                },
+                {
+                  "color": "light_gray",
+                  "pattern": "minecraft:triangle_top"
+                },
+                {
+                  "color": "light_gray",
+                  "pattern": "minecraft:rhombus"
+                },
+                {
+                  "color": "light_gray",
+                  "pattern": "minecraft:curly_border"
+                },
+                {
+                  "color": "white",
+                  "pattern": "minecraft:skull"
+                }
+              ]
+            }
+          },
+          "title": {
+            "translate": "Not Today, Thank You"
+          },
+          "description": {
+            "color": "green",
+            "translate": "Deflect a Skeleton's arrow with a Shield"
+          },
+          "announce_to_chat": false
+        },
+        "parent": "blazeandcave:monsters/boned",
+        "rewards": {
+          "function": "bacap_rewards:monsters/not_today_thank_you"
+        },
+        "criteria": {
+          "deflected_skeleton": {
+            "trigger": "minecraft:entity_hurt_player",
+            "conditions": {
+              "damage": {
+                "type": {
+                  "tags": [
+                    {
+                      "id": "minecraft:is_projectile",
+                      "expected": true
+                    }
+                  ]
+                },
+                "blocked": true,
+                "source_entity": {
+                  "entity_type": "#minecraft:skeletons"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "advancementId": "minecraft:story/deflect_arrow",
+      "requirementGroup": 0,
+      "alternatives": [
+        "deflected_skeleton"
+      ],
+      "criterion": "deflected_skeleton",
+      "expectedCriterion": {
+        "trigger": "minecraft:entity_hurt_player",
+        "conditions": {
+          "damage": {
+            "type": {
+              "tags": [
+                {
+                  "id": "minecraft:is_projectile",
+                  "expected": true
+                }
+              ]
+            },
+            "blocked": true,
+            "source_entity": {
+              "entity_type": "#minecraft:skeletons"
+            }
+          }
+        }
+      },
+      "retainedHistoricalProof": false
+    }
+  ]
+}

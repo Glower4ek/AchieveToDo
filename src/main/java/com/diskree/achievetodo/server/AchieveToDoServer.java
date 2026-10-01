@@ -56,6 +56,8 @@ public class AchieveToDoServer implements ServerModInitializer {
     private Map<AbilityType, Integer> abilitiesConfiguration;
     private final Map<UUID, Integer> obtainedAdvancementsCountByPlayers = new Object2IntOpenHashMap<>();
     private final Set<UUID> playersAwaitingInitialSync = new HashSet<>();
+    private boolean scoreboardInitializationComplete;
+    private boolean missingScoreboardReported;
 
     private final Map<ChunkPos, Map<LandmarkType, Set<DimensionalBlockBox>>> landmarksByChunks = new HashMap<>();
     private final Map<LandmarkType, Set<UUID>> playersByLockedLandmarkTypes = new HashMap<>();
@@ -95,13 +97,17 @@ public class AchieveToDoServer implements ServerModInitializer {
             currentScoreboardObjective == null ||
             currentScoreboardDisplaySlot == null
         ) {
-            AchieveToDoMod.logger.error(
+            if (scoreboardInitializationComplete && !missingScoreboardReported) {
+                missingScoreboardReported = true;
+                AchieveToDoMod.logger.error(
                 "Can't find scoreboard objective with advancements counter! " +
                     "Please check that BACAP datapack is installed " +
                     "and enable advancements counter in the sidebar, tab list or below player names."
-            );
+                );
+            }
             return;
         }
+        missingScoreboardReported = false;
         if (currentAdvancementsMode != oldAdvancementsMode ||
             currentScoreboardObjective != oldScoreboardObjective ||
             currentScoreboardDisplaySlot != oldScoreboardDisplaySlot
@@ -116,6 +122,12 @@ public class AchieveToDoServer implements ServerModInitializer {
                 updateObtainedCount(scoreboard, serverPlayer);
             }
         }
+    }
+
+    /** END_SERVER_TICK runs after the function manager has executed pending #load functions. */
+    public void finishScoreboardInitialization(ServerScoreboard scoreboard) {
+        scoreboardInitializationComplete = true;
+        prepareScoreboard(scoreboard);
     }
 
     public void setObtainedCount(@NotNull ServerPlayer player, int obtainedCount) {
@@ -400,6 +412,8 @@ public class AchieveToDoServer implements ServerModInitializer {
         registerInternalDataPacks();
         registerPayloads();
         ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+            scoreboardInitializationComplete = false;
+            missingScoreboardReported = false;
             LevelInfoExtension levelInfoExtension = MixinCasting.levelInfo(server.getWorldData().getLevelSettings());
             abilitiesConfiguration = levelInfoExtension.achievetodo$getAbilitiesConfiguration(
                 server.overworld().getSeed()
@@ -408,6 +422,8 @@ public class AchieveToDoServer implements ServerModInitializer {
             AchieveToDoMod.logger.info("Abilities configuration loaded");
         });
         ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
+            scoreboardInitializationComplete = false;
+            missingScoreboardReported = false;
             abilitiesConfiguration = null;
             obtainedAdvancementsCountByPlayers.clear();
             playersAwaitingInitialSync.clear();
@@ -421,6 +437,9 @@ public class AchieveToDoServer implements ServerModInitializer {
         });
 
         ServerTickEvents.END_SERVER_TICK.register(server -> {
+            if (!scoreboardInitializationComplete) {
+                finishScoreboardInitialization(server.getScoreboard());
+            }
             if (playersAwaitingInitialSync.isEmpty()) {
                 return;
             }
@@ -445,6 +464,12 @@ public class AchieveToDoServer implements ServerModInitializer {
                 if (player != null) {
                     syncPlayer(server, player);
                 }
+            }
+        });
+
+        ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resources, success) -> {
+            if (success) {
+                scoreboardInitializationComplete = false;
             }
         });
 

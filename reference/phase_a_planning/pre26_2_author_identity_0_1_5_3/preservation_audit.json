@@ -1,0 +1,54 @@
+{
+  "verdict": "IDENTITY_ONLY_1152_PRESERVATION_GREEN",
+  "checkedProtectedFiles": 2895,
+  "changedFiles": [
+    {
+      "path": "gradle.properties",
+      "beforeSha256": "3997745a77b274ecffd5f23a47672639aaa73bb79dceafe081e417e477e4b63b",
+      "afterSha256": "6442c3caccc0e134c3b0824a0b7d4712765cc4bfaaf87a4a88ca6097b89d6088"
+    },
+    {
+      "path": "build.gradle",
+      "beforeSha256": "3d4e9cd400ac3ce0be3ce80f82eabec25a730e59019f7ef1e142eb9b50ff1483",
+      "afterSha256": "d822bf40127b139813fe7ba7b2627a5458e119c640c1db0a2cfba133ebedef09"
+    },
+    {
+      "path": "gradle/BuildConfig.java.txt",
+      "beforeSha256": "813fe78f49101be2fa128169becaa8edef62a2b355a22411bca250c091f3947b",
+      "afterSha256": "fee34e5bcba00a3dbf29c1c7ac62836b0f5edde953982a146b17158b912baa9a"
+    },
+    {
+      "path": "src/main/generated/java/com/diskree/achievetodo/BuildConfig.java",
+      "beforeSha256": "5b7139973592aac3dbd3cfe594130a763eb15c22d1438c4db1a6e5d1e6a044fb",
+      "afterSha256": "915c6b2a683bcbd2a6dea831f1dcfacc4545f6d341ee48d67004cdd6cd35151c"
+    },
+    {
+      "path": "README.md",
+      "beforeSha256": "26e4e7d76d28fdd1746e42fd7a4dc16227dc576fa83ec8d57e2a464a68ddef5b",
+      "afterSha256": "b0052ab9232215363a0974ed996b00a41970525e798f0bf4c380a6792cca156c"
+    },
+    {
+      "path": "LICENSE",
+      "beforeSha256": "52b0ce21010c12dbcd9309d5d5801e46fb38732e26805c0a12b41db834d211f3",
+      "afterSha256": "e417f66b7847636a587fc9c371d5504810c79625f495e16104fdbdc3bcb3cf88"
+    }
+  ],
+  "unchangedProtectedFiles": 2889,
+  "jarChangedEntries": [
+    "com/diskree/achievetodo/BuildConfig.class",
+    "fabric.mod.json",
+    "LICENSE_achievetodo"
+  ],
+  "unchangedJarEntries": 1903,
+  "productCertified": 1152,
+  "productUncertified": 0,
+  "historicalPhaseACertified": 1133,
+  "FINAL19": "PRESERVED_NOT_REOPENED",
+  "userSmoke": [
+    "Axe USER_SMOKE_GREEN semantics preserved",
+    "Cauldron USER_SMOKE_GREEN semantics preserved",
+    "Deflect Arrow USER_SMOKE_GREEN semantics preserved",
+    "save/reload/rejoin preserved"
+  ],
+  "proof": "Fresh 82 retained release gates plus byte-identical production classes/resources except BuildConfig version; all prior evidence hashes preserved. No new native certification claim."
+}

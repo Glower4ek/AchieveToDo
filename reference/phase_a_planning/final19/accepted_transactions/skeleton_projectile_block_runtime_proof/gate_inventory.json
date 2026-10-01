@@ -1,0 +1,37 @@
+{
+  "acceptedPersistentEvidence": {
+    "family": "SKELETON_PROJECTILE_BLOCK_RUNTIME_PROOF",
+    "path": "src/test/resources/final19_certification/skeleton_projectile_block_runtime_proof_evidence.json",
+    "sha256": "e90c3d11c61818337fae68a708a6f91b023d608d79e37bac90b40703cabe8797",
+    "runId": "0522eec1-c39d-4789-88fc-9208f74dd472",
+    "catalogSha256": "7adda1ec1c3400de855b27cc0673b32f43f0f340a768713d25ba4ae7dc2c838c"
+  },
+  "files": {
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_acceptance.json": "cf65698d75f4eb80268e1fc298efea52a9b82a5bc0b312970383fd6634e28ba6",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_canary-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_canary.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_canary.gradle.log": "0b757b81548319fb325a42b619502f3e6ba5bbd5a6b84c9e2909c219b6f6eace",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_canary_actual_audit.json": "b55c99e2166e8470e18b6db95dbcadc6ab3fbd5afed380373c2846a92e3aa6f3",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_canary_evidence.json": "88f1f19be9c16319a61fe38d3622181590eb0bb8dadfc9ca662efea32aa2a04d",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_canary_run.json": "30ac0ab0c3bef39ae492e55152ac3c492e7501e0d6d44c60c21fb40b539785d6",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_compile_static.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_compile_static.gradle.log": "beb84dbe79522c09a96cf40b36b04fc6224007e583465f3b9ccf6e76c892debf",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_exact-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_exact.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_exact.gradle.log": "40352f882b8cec84c78527c6b0403edbaf2ca11a445264ffb821720ffc6ff2a6",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_exact_actual_audit.json": "6cdd43090fac58f4f8373b9bd68f5945d49a1fb89301d8f434a12b2d4df7859e",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_mutated.json": "534ab02202f303e10e2131d065830f7d023ac9a01a57482fbdf93882a2ec8e13",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_run.json": "5a3afd00dc1d31a75e0d1858154cdf4393458b697dbf7155beed51db06f2022b",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_static.json": "98b41298ac5e6be68f494955eb034822ad8904283d050de1f837bf65fe604c32",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_temp.json": "e90c3d11c61818337fae68a708a6f91b023d608d79e37bac90b40703cabe8797",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_validation.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_validation.gradle.log": "b1edb3c118e0920f5cd2b7a9eba82a150cd7819b23e4c6413147b1bd5716475f",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/TEST-com.diskree.achievetodo.certification.Final19CombatAcceptanceTest.xml": "a865a20f8e91a704e03fe3e105e999fd1e37ed7d0b4fd112afd5fc014c71dd4e",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/TEST-com.diskree.achievetodo.certification.Final19CombatStaticTest.xml": "d0d9b060a64bece9dd02d9b29383aa2800962ea255303f810d6939ce310d5de2",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/TEST-com.diskree.achievetodo.certification.Final19RaiderIntegrityAcceptanceTest.xml": "ca2667a3b932833fb165027d55542eab4d2f65bbb90503b70670dc7c69d1d16c",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/TEST-com.diskree.achievetodo.certification.Final19ShieldAcceptanceTest.xml": "3598bb5ca23f601c96b9b5f3a67d649369638f5c5256e4b32e6f3896cd6bc49c",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_persistent_regression.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/skeleton_projectile_block_runtime_proof/shield_persistent_regression.gradle.log": "150459139e7477907f5f1582991ce8037ac24fbe13ea49a83d3be34c90416491"
+  },
+  "transactionSeal": "GREEN"
+}

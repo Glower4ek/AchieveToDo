@@ -1,0 +1,9 @@
+{
+  "family": "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+  "runId": "3e8dbfb4-b0cf-4ec0-890b-d3c224241e25",
+  "exact": true,
+  "fingerprint": "fed4fec7482855d98efd1bef750135de6d73d443be55381acd4c366313dedeb0",
+  "expectedEntries": 9,
+  "runtimeCopySha256": "218569f84ae7a0979470eb6a6ecd80f9e87480fcf6017d323fb68bc7345dd60a",
+  "stage": "TEMP_PROMOTABLE"
+}

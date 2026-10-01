@@ -1,0 +1,131 @@
+{
+  "family": "MIXED_WORLDGEN_PREDICATE_CONTEXT",
+  "runId": "ff2bbdf0-298d-427d-aa38-6530baf9eaf5",
+  "exact": true,
+  "fingerprint": "ffbb07136a5d360a15ca78948924a90cc1ae3eabeba680e4dde42151b984cd05",
+  "entries": [
+    {
+      "advancementId": "blazeandcave:biomes/boatception",
+      "criterion": "boatception",
+      "requirementGroup": 0,
+      "runId": "ff2bbdf0-298d-427d-aa38-6530baf9eaf5",
+      "playerUuid": "aa14d1af-15d3-421a-a4ea-343f7fa51a70",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "groupSatisfied": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "nativeBoundary": "ServerboundInteractPacket.handle -> Boat.interact -> startRiding",
+      "wrongContextNegative": true,
+      "nativeEvent": true,
+      "boatTagMember": true,
+      "vehicleStructurePresent": true,
+      "nativeMount": true,
+      "observedStructure": "minecraft:shipwreck",
+      "observedVehicle": "minecraft:spruce_boat",
+      "structureFixtureSource": "OWNED_REGISTERED_STRUCTURE_START_PIECE_AND_REFERENCE",
+      "productionGateWitness": {
+        "thresholdSource": "LIVE_OVERWORLD_SEED_CONFIGURATION",
+        "nativeScoreBeforeFixture": 0,
+        "scoreAfter": 44,
+        "abilities": {
+          "GET_INTO_BOAT": {
+            "threshold": 44,
+            "lockedBefore": true,
+            "lockedAfter": false
+          }
+        }
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 94,
+        "fixtureEntitiesRemoved": true,
+        "structureRestored": true,
+        "biomeRestored": true,
+        "blocksRestored": true
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/let_it_go",
+      "criterion": "frost_walker_deep_lukewarm_ocean",
+      "requirementGroup": 0,
+      "runId": "ff2bbdf0-298d-427d-aa38-6530baf9eaf5",
+      "playerUuid": "69a889a9-e2a9-4cfb-9e92-e004969d31b7",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "groupSatisfied": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "nativeBoundary": "ServerboundMovePlayerPacket.handle -> native enchantment location effect -> periodic location trigger",
+      "nativeEvent": true,
+      "wrongContextNegative": true,
+      "observedBiome": "minecraft:deep_lukewarm_ocean",
+      "observedSteppingBlock": "minecraft:frosted_ice",
+      "legalFrostWalkerBoots": true,
+      "observedBoots": "minecraft:leather_boots",
+      "observedFrostWalkerLevel": 2,
+      "nativeWaterToFrostedIce": true,
+      "waterBefore": "Block{minecraft:water}[level=0]",
+      "iceAfter": "Block{minecraft:frosted_ice}[age=0]",
+      "negativeObservations": {
+        "wrongBiome": {
+          "criterion": false,
+          "gameMode": "SURVIVAL",
+          "biome": "minecraft:the_void",
+          "steppingBlock": "minecraft:frosted_ice",
+          "bootsEmpty": false,
+          "observedTicks": 25
+        },
+        "wrongBoots": {
+          "criterion": false,
+          "gameMode": "SURVIVAL",
+          "biome": "minecraft:deep_lukewarm_ocean",
+          "steppingBlock": "minecraft:frosted_ice",
+          "bootsEmpty": true,
+          "observedTicks": 25
+        },
+        "wrongIce": {
+          "criterion": false,
+          "gameMode": "SURVIVAL",
+          "biome": "minecraft:deep_lukewarm_ocean",
+          "steppingBlock": "minecraft:ice",
+          "bootsEmpty": false,
+          "observedTicks": 25
+        },
+        "spectator": {
+          "criterion": false,
+          "gameMode": "SPECTATOR",
+          "biome": "minecraft:deep_lukewarm_ocean",
+          "steppingBlock": "minecraft:frosted_ice",
+          "bootsEmpty": false,
+          "observedTicks": 25
+        }
+      },
+      "wrongBootsNegative": true,
+      "wrongIceNegative": true,
+      "spectatorNegative": true,
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 91,
+        "fixtureEntitiesRemoved": true,
+        "structureRestored": true,
+        "biomeRestored": true,
+        "blocksRestored": true
+      }
+    }
+  ]
+}

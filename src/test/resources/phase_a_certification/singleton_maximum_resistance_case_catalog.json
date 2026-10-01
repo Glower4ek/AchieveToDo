@@ -1,0 +1,28 @@
+{
+  "snapshot": "phase_a_singleton_maximum_resistance_case_catalog",
+  "family": "SINGLETON:blazeandcave:monsters/maximum_resistance",
+  "source": "PhaseASingletonMaximumResistanceGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "frozenAdvancementPath": "data/blazeandcave/advancement/monsters/maximum_resistance.json",
+  "frozenAdvancementSha256": "a6cbc45aefde5db109f1e9b599ac9754dc803f95044b05c22318414812da4cbf",
+  "advancementId": "blazeandcave:monsters/maximum_resistance",
+  "criterion": "phantom",
+  "requirementGroup": 0,
+  "trigger": "minecraft:entity_hurt_player",
+  "sourceEntity": "minecraft:warden",
+  "blocked": false,
+  "armor": [
+    "minecraft:netherite_helmet",
+    "minecraft:netherite_chestplate",
+    "minecraft:netherite_leggings",
+    "minecraft:netherite_boots"
+  ],
+  "enchantment": "minecraft:protection",
+  "minEnchantmentLevel": 4,
+  "effect": "minecraft:resistance",
+  "minEffectAmplifier": 3,
+  "productionGate": "NO_WARDEN_DAMAGE_GATE",
+  "runtimeBoundary": "WardenAi.MeleeAttack->Warden.doHurtTarget->LivingEntity.hurtServer->CriteriaTriggers.ENTITY_HURT_PLAYER"
+}

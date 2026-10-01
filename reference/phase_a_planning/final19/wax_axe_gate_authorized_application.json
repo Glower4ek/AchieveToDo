@@ -1,0 +1,13 @@
+{
+  "id": "AUTHORIZED_FINAL19_WAX_AXE_GATE_PRODUCTION_FIX",
+  "productionFile": "src/main/java/com/diskree/achievetodo/injection/mixin/main/AxeItemMixin.java",
+  "preSha256": "e19c4a65da4df917424a44ff00248220f20dcab57d0668b9ebfbebd01fabbb46",
+  "postSha256": "4247ef44ce7e331f43820d889ecef541f8cbb0a200a31ede2764c8ecbdd46a13",
+  "patchPath": "reference/phase_a_planning/final19/wax_axe_gate_production_fix_proposal.patch",
+  "patchSha256": "8aa346920a42de51dc8ce8756d6fd212d5d055709c633e07ce8e223e7a49f1a3",
+  "scope": "Only existing evaluateNewBlockState injection moved to HEAD; all other bytes preserved",
+  "runtimeRegression": "GREEN_14_NATIVE_PACKET_CONTROLS_INDEPENDENTLY_VALIDATED",
+  "regressionRunId": "566ab631-e69f-43b4-b4a6-690a83c312f6",
+  "regressionEvidencePath": "src/test/resources/final19_certification/axe_gate_postfix_regression.json",
+  "regressionEvidenceSha256": "0b19fd6623ac7a5ea781b0e47cddef7050d3d835ae1f26ad5ae87da5305fddc2"
+}

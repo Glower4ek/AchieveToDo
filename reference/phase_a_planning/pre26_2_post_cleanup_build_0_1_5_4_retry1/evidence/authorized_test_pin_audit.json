@@ -1,0 +1,12 @@
+{
+  "beforeSha256": "e7f65c3e4eb3ecc211310f2ad697cbbf4617ffb3886fbbf0da5d70640009eaaf",
+  "afterSha256": "e40570dc905b13be62c891fb721f59d53260621a693bbda1112f9c443c90a6db",
+  "authorizedChangedFiles": [
+    "src/test/java/com/diskree/achievetodo/client/BetterRuOverlayResourceTest.java"
+  ],
+  "protectedFilesUnchanged": 3257,
+  "newProtectedFiles": [],
+  "noProductionResourceChange": true,
+  "previousStopRecordUnchanged": true,
+  "gitBranchHeadIndexStagingPreserved": true
+}

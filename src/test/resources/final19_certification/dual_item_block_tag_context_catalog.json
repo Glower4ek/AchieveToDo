@@ -1,0 +1,445 @@
+{
+  "family": "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+  "stage": "FINAL19",
+  "sources": [
+    {
+      "advancementId": "blazeandcave:building/happy_birthday",
+      "sourcePath": "data/blazeandcave/advancement/building/happy_birthday.json",
+      "frozenSha256": "23fb6d251de89379b8c7d12ab3228966015b730fd1c7ab4bb63e9f6b327eeeea",
+      "requirements": [
+        [
+          "candle_cake"
+        ]
+      ],
+      "auditedConvertedDefinition": {
+        "display": {
+          "icon": {
+            "id": "minecraft:cake"
+          },
+          "title": {
+            "translate": "Happy Birthday!"
+          },
+          "description": {
+            "color": "green",
+            "translate": "Place a candle on a cake"
+          },
+          "announce_to_chat": false
+        },
+        "parent": "blazeandcave:building/setting_up_the_mood",
+        "rewards": {
+          "function": "bacap_rewards:building/happy_birthday"
+        },
+        "criteria": {
+          "candle_cake": {
+            "trigger": "minecraft:item_used_on_block",
+            "conditions": {
+              "location": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "block": {
+                      "blocks": "#minecraft:candle_cakes"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "#minecraft:candles"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:building/setting_up_the_mood",
+      "sourcePath": "data/blazeandcave/advancement/building/setting_up_the_mood.json",
+      "frozenSha256": "855ab337a072375fc41c375143178bbb1113ce870a0d93d5388c4ba504f56ceb",
+      "requirements": [
+        [
+          "candle"
+        ]
+      ],
+      "auditedConvertedDefinition": {
+        "display": {
+          "icon": {
+            "id": "minecraft:candle"
+          },
+          "title": {
+            "translate": "Setting up the mood"
+          },
+          "description": {
+            "color": "green",
+            "translate": "Place a candle and light it using Flint and Steel"
+          },
+          "announce_to_chat": false
+        },
+        "parent": "blazeandcave:building/one_pickle_two_pickle_sea_pickle_four",
+        "rewards": {
+          "function": "bacap_rewards:building/setting_up_the_mood"
+        },
+        "criteria": {
+          "candle": {
+            "trigger": "minecraft:item_used_on_block",
+            "conditions": {
+              "location": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "block": {
+                      "blocks": "#blazeandcave:candles_and_cakes"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "#blazeandcave:candle_lightables"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:building/washing_machine",
+      "sourcePath": "data/blazeandcave/advancement/building/washing_machine.json",
+      "frozenSha256": "7e893bbef676947917c14c29ae89b0fd2a52769aeaa8018f11757cd813b4caa1",
+      "requirements": [
+        [
+          "clean_leather_armor"
+        ],
+        [
+          "clean_banner"
+        ],
+        [
+          "clean_shulker_box"
+        ]
+      ],
+      "auditedConvertedDefinition": {
+        "display": {
+          "icon": {
+            "id": "minecraft:iron_block"
+          },
+          "title": {
+            "translate": "Washing Machine"
+          },
+          "description": {
+            "color": "#75E1FF",
+            "translate": "Use a cauldron to clean leather armor, a banner and a shulker box"
+          },
+          "announce_to_chat": false,
+          "frame": "goal"
+        },
+        "parent": "blazeandcave:building/bubble_bubble_toil_and_trouble",
+        "rewards": {
+          "function": "bacap_rewards:building/washing_machine"
+        },
+        "criteria": {
+          "clean_leather_armor": {
+            "trigger": "minecraft:item_used_on_block",
+            "conditions": {
+              "location": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "block": {
+                      "blocks": "#minecraft:cauldrons"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "#minecraft:leather_armor"
+                  }
+                }
+              ]
+            }
+          },
+          "clean_banner": {
+            "trigger": "minecraft:item_used_on_block",
+            "conditions": {
+              "location": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "block": {
+                      "blocks": "#minecraft:cauldrons"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "#minecraft:banners"
+                  }
+                }
+              ]
+            }
+          },
+          "clean_shulker_box": {
+            "trigger": "minecraft:item_used_on_block",
+            "conditions": {
+              "location": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "block": {
+                      "blocks": "#minecraft:cauldrons"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "#minecraft:shulker_boxes"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "minecraft:husbandry/wax_off",
+      "sourcePath": "data/minecraft/advancement/husbandry/wax_off.json",
+      "frozenSha256": "8855616ff05973867c12dbb5ce759bc000b2c662115d06ce0c8e9cd0bd2f9d79",
+      "requirements": [
+        [
+          "wax_off"
+        ]
+      ],
+      "auditedConvertedDefinition": {
+        "display": {
+          "icon": {
+            "id": "minecraft:stone_axe"
+          },
+          "title": {
+            "translate": "Wax Off"
+          },
+          "description": {
+            "color": "green",
+            "translate": "Use an axe to scrape wax off of a Copper Block"
+          },
+          "announce_to_chat": false
+        },
+        "parent": "minecraft:husbandry/wax_on",
+        "rewards": {
+          "function": "bacap_rewards:mining/wax_off"
+        },
+        "criteria": {
+          "wax_off": {
+            "trigger": "minecraft:item_used_on_block",
+            "conditions": {
+              "location": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "block": {
+                      "blocks": "#blazeandcave:waxed_copper_blocks"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "#blazeandcave:axes"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "advancementId": "blazeandcave:building/happy_birthday",
+      "requirementGroup": 0,
+      "alternatives": [
+        "candle_cake"
+      ],
+      "criterion": "candle_cake",
+      "expectedCriterion": {
+        "trigger": "minecraft:item_used_on_block",
+        "conditions": {
+          "location": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "#minecraft:candle_cakes"
+                }
+              }
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": "#minecraft:candles"
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false
+    },
+    {
+      "advancementId": "blazeandcave:building/setting_up_the_mood",
+      "requirementGroup": 0,
+      "alternatives": [
+        "candle"
+      ],
+      "criterion": "candle",
+      "expectedCriterion": {
+        "trigger": "minecraft:item_used_on_block",
+        "conditions": {
+          "location": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "#blazeandcave:candles_and_cakes"
+                }
+              }
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": "#blazeandcave:candle_lightables"
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false
+    },
+    {
+      "advancementId": "blazeandcave:building/washing_machine",
+      "requirementGroup": 0,
+      "alternatives": [
+        "clean_leather_armor"
+      ],
+      "criterion": "clean_leather_armor",
+      "expectedCriterion": {
+        "trigger": "minecraft:item_used_on_block",
+        "conditions": {
+          "location": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "#minecraft:cauldrons"
+                }
+              }
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": "#minecraft:leather_armor"
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false
+    },
+    {
+      "advancementId": "blazeandcave:building/washing_machine",
+      "requirementGroup": 1,
+      "alternatives": [
+        "clean_banner"
+      ],
+      "criterion": "clean_banner",
+      "expectedCriterion": {
+        "trigger": "minecraft:item_used_on_block",
+        "conditions": {
+          "location": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "#minecraft:cauldrons"
+                }
+              }
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": "#minecraft:banners"
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false
+    },
+    {
+      "advancementId": "blazeandcave:building/washing_machine",
+      "requirementGroup": 2,
+      "alternatives": [
+        "clean_shulker_box"
+      ],
+      "criterion": "clean_shulker_box",
+      "expectedCriterion": {
+        "trigger": "minecraft:item_used_on_block",
+        "conditions": {
+          "location": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "#minecraft:cauldrons"
+                }
+              }
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": "#minecraft:shulker_boxes"
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false
+    },
+    {
+      "advancementId": "minecraft:husbandry/wax_off",
+      "requirementGroup": 0,
+      "alternatives": [
+        "wax_off"
+      ],
+      "criterion": "wax_off",
+      "expectedCriterion": {
+        "trigger": "minecraft:item_used_on_block",
+        "conditions": {
+          "location": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "#blazeandcave:waxed_copper_blocks"
+                }
+              }
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": "#blazeandcave:axes"
+              }
+            }
+          ]
+        }
+      },
+      "retainedHistoricalProof": false
+    }
+  ]
+}

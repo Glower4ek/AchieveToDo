@@ -1,0 +1,88 @@
+{
+  "protectedFilesPreserved": 2724,
+  "changedFiles": [
+    {
+      "path": "src/main/generated/java/com/diskree/achievetodo/BuildConfig.java",
+      "beforeSha256": "915c6b2a683bcbd2a6dea831f1dcfacc4545f6d341ee48d67004cdd6cd35151c",
+      "afterSha256": "af3573d736c95be985a0f8cc185ca259442f12a95f8d13ae4658b36cf94005eb"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/AchieveToDoClient.java",
+      "beforeSha256": "90fe52ccc8b26528c06d912a40b307b1e0d5661768c18743485e23bf4ac25116",
+      "afterSha256": "461c9e952bca0bfdbbd6621666c0440e363286fb02f87af620b98e0eae56c40a"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/injection/mixin/client/GuiMixin.java",
+      "beforeSha256": "18f45013c7666961a8e49c63508f780e2d93721aa882ba215558fb580c715a86",
+      "afterSha256": "f5334817452f4a66c058f3a8a6d5aaa2793647902b1457f8e0e867ae1c65b501"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/injection/mixin/client/MinecraftClientMixin.java",
+      "beforeSha256": "ed2c67c314706fed936c1dee4199585a158bf32eaf13522c113645d1006c66ac",
+      "afterSha256": "b033ff4e9b019da87b2654c20bdd106c710d8e5944456a10656420a9005561a0"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/injection/mixin/client/MovementTutorialStepHandlerMixin.java",
+      "beforeSha256": "5a10b610f04c2af216ae9651e6344fcc22dd78b2b4a553582dbecd94f9417971",
+      "afterSha256": "7caf7f66de26c7bbfba768e08aa96ff6644a3cd883fbc8d23117c47e4a452427"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/injection/mixin/main/CommandManagerMixin.java",
+      "beforeSha256": "dff0441987c6e7a877b953294d145986dd91ff604097fe5c4543db58d22a43d1",
+      "afterSha256": null
+    },
+    {
+      "path": "src/main/resources/achievetodo.mixins.json",
+      "beforeSha256": "5c63a34c43f85e7106a12540d5cb3fbcd61426e1101bf5b7f3d09aa0c75ed13d",
+      "afterSha256": "06ededd5a3f73e7556e053f9c031f8b354f1ef82f63a7e0e77ae89235faa35e7"
+    },
+    {
+      "path": "src/main/resources/assets/achievetodo/lang/en_us.json",
+      "beforeSha256": "16b3d8f07f3e87e45803ff460e470cef4821db2cd531f6537ffb03bbc214cada",
+      "afterSha256": "2fe18b7a28dc1797bc4c7c470d0e59e7a87c7475cbe10966b8db45feb48d01c1"
+    },
+    {
+      "path": "src/main/resources/assets/achievetodo/lang/ru_ru.json",
+      "beforeSha256": "4c510531c96d726fe099ba8b677b01dd325c15f57a7e43b32b01c182b1b68f88",
+      "afterSha256": "74918b4e5fca10c5a54b295efae3321a07bb8b0f21c272ab2af39d6c2081e628"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/injection/mixin/client/MovementTutorialStepHandlerMixinTest.java",
+      "beforeSha256": "f882f2529da6ec14071844e1a438fcc3d404a90450acea8f51dbda4a935a212e",
+      "afterSha256": "fcbfe9ebac9c44dee6edf618fdd256e2ccd28b6f1f03e56b5ebaa6398ece96d5"
+    },
+    {
+      "path": "gradle.properties",
+      "beforeSha256": "6442c3caccc0e134c3b0824a0b7d4712765cc4bfaaf87a4a88ca6097b89d6088",
+      "afterSha256": "2a1f8feecdba016f57fd5d0cb9eb6864dbf220894f23d089a73e202bf418d724"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/AdvancementsTutorialProgress.java",
+      "beforeSha256": null,
+      "afterSha256": "45409af1cc17f0f95d9a94c561d48f8d0dadba18399099b7c93ceefe193d36e1"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/AdvancementLinkCommand.java",
+      "beforeSha256": null,
+      "afterSha256": "5c2e09935d610d610a29374e4cc52cfea1a66553710fd13c61302aa92bdfb3ea"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/OptionalAdvancementSearch.java",
+      "beforeSha256": null,
+      "afterSha256": "6164fcfed2b675af7388c39d3a956c1beb83dc686bd1d7b9a5cb85cb5188e07e"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/client/AdvancementLinkCommandTest.java",
+      "beforeSha256": null,
+      "afterSha256": "3e7272f2b4430d12c739d3c1b7a005bc096f3a658aa4755e90e5185143a09c2f"
+    }
+  ],
+  "terminal": "PRE_26_2_FINAL19_1152_CERTIFIED",
+  "productCertified": 1152,
+  "productUncertified": 0,
+  "historicalPhaseACertified": 1133,
+  "gitIndexSha256": "bd0c1882b97105b93ec41c193496cc5587131df9792f28c7bc89e08d1c33a8df",
+  "gitMutations": false,
+  "priorCandidateJarPreserved": true,
+  "fullscreenProductPatched": false
+}

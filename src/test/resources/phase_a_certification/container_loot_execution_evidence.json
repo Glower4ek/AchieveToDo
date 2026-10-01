@@ -1,0 +1,458 @@
+{
+  "snapshot": "phase_a_container_loot_execution_evidence",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:b51be75d53dc29835c23202798a9d0b09a386f1f312e31f6705c10bcfe8eedb8",
+  "runId": "cefb2d20-4fac-426a-8691-ddab771325bb",
+  "generatedAt": "2026-08-22T16:14:23.451372300Z",
+  "entries": [
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "buried_treasure",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/buried_treasure",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:adventure/raidin_master",
+      "criterion": "dungeon",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/simple_dungeon",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:biomes/x_marks_the_spot",
+      "criterion": "heart_of_the_sea",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/buried_treasure",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "abandoned_mineshaft",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/abandoned_mineshaft",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "ancient_city",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/ancient_city",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "ancient_city_ice_box",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/ancient_city_ice_box",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "bastion_bridge",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/bastion_bridge",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "bastion_hoglin_stable",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/bastion_hoglin_stable",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "bastion_other",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/bastion_other",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "bastion_treasure",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/bastion_treasure",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "buried_treasure",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/buried_treasure",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "desert_pyramid",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/desert_pyramid",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "end_city_treasure",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/end_city_treasure",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "igloo_chest",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/igloo_chest",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "jungle_temple",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/jungle_temple",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "nether_bridge",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/nether_bridge",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "pillager_outpost",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/pillager_outpost",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "ruined_portal",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/ruined_portal",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "shipwreck_map",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/shipwreck_map",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "shipwreck_supply",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/shipwreck_supply",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "shipwreck_treasure",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/shipwreck_treasure",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "simple_dungeon",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/simple_dungeon",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "stronghold_corridor",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/stronghold_corridor",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "stronghold_crossing",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/stronghold_crossing",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "stronghold_library",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/stronghold_library",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "trial_chambers_corridor",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/trial_chambers/corridor",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "trial_chambers_entrance",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/trial_chambers/entrance",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "trial_chambers_intersection",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/trial_chambers/intersection",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "trial_chambers_intersection_barrel",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/trial_chambers/intersection_barrel",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "trial_chambers_reward",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/trial_chambers/reward",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "trial_chambers_supply",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/trial_chambers/supply",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "underwater_ruin_big",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/underwater_ruin_big",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "underwater_ruin_small",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/underwater_ruin_small",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_armorer",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_armorer",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_butcher",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_butcher",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_cartographer",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_cartographer",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_desert_house",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_desert_house",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_fisher",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_fisher",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_fletcher",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_fletcher",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_mason",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_mason",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_plains_house",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_plains_house",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_savanna_house",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_savanna_house",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_snowy_house",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_snowy_house",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_taiga_house",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_taiga_house",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_tannery",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_tannery",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_temple",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_temple",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_toolsmith",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_toolsmith",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "village_weaponsmith",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/village/village_weaponsmith",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:challenges/i_am_loot",
+      "criterion": "woodland_mansion",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/woodland_mansion",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:mining/dungeons_and_spawners",
+      "criterion": "dungeon",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/simple_dungeon",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:mining/frigid_diversions",
+      "criterion": "ancient_city_ice_box",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/ancient_city_ice_box",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "blazeandcave:mining/steals_on_wheels",
+      "criterion": "heart_of_the_sea",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/abandoned_mineshaft",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "minecraft:nether/loot_bastion",
+      "criterion": "loot_bastion_bridge",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/bastion_bridge",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "minecraft:nether/loot_bastion",
+      "criterion": "loot_bastion_hoglin_stable",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/bastion_hoglin_stable",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "minecraft:nether/loot_bastion",
+      "criterion": "loot_bastion_other",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/bastion_other",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    },
+    {
+      "advancementId": "minecraft:nether/loot_bastion",
+      "criterion": "loot_bastion_treasure",
+      "family": "PLAYER_GENERATES_CONTAINER_LOOT",
+      "lootTable": "minecraft:chests/bastion_treasure",
+      "source": "PhaseAContainerLootGameTest",
+      "result": "GREEN"
+    }
+  ]
+}

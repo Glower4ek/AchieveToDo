@@ -1,0 +1,27 @@
+{
+  "command": [
+    "rg",
+    "-n",
+    "--hidden",
+    "-F",
+    ".agents/",
+    "src",
+    "tools",
+    "-g",
+    "*.java",
+    "-g",
+    "*.py",
+    "-g",
+    "*.ps1",
+    "-g",
+    "*.gradle",
+    "-g",
+    "*.sh",
+    "-g",
+    "*.bat"
+  ],
+  "exitCode": 1,
+  "matches": "",
+  "result": "ZERO active executable references to .agents/",
+  "historicalRecordReferences": "Preserved as historical/provenance labels; no archived audit is executed by the publication route."
+}

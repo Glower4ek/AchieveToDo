@@ -1,0 +1,19 @@
+{
+  "family": "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+  "mode": "exact",
+  "runId": "606d24ad-2cf0-409d-ab75-7a50d969bcaa",
+  "actualEntries": 6,
+  "actualTempSha256": "79b07b937f4cce9e73a091ab8e8356741352513b468e4a15a8fa17ec4e73c894",
+  "actualRunStateSha256": "0177ad61c586f4ff3df77af3c2e2a8a458adc114dd13a7f50b4e8a21f38fca9c",
+  "fingerprint": "1ab0bbd8627df6e8976e3ce09dfddf6fe03e10cc23f1f10475c9793b2e04916e",
+  "runtimeCopySha256": "82ff30626d67e7bef34ee295abf5e070c4f5375861438bf78582dedc7aa7226c",
+  "nativeWindowWarnings": 0,
+  "productionPostconditions": {
+    "src/main/resources/achievetodo.mixins.json": "56fcb41d75273382681cbeede45882a876de68babcd6580ae63d5c20c0ac211f",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockMixin.java": "c9473d4918c8d31c7215dcb98a388f3a24660b36940940a598861e9d90985394",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/AxeItemMixin.java": "4247ef44ce7e331f43820d889ecef541f8cbb0a200a31ede2764c8ecbdd46a13",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockAccessor.java": "63c46d242eeecabe946be353a8a2353a5ef6555d93982f8e0f8c6846ca4dfd2e",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/ServerPlayerGameModeCauldronGateMixin.java": "3f21c817198c59fd650c6384e5cc73bcda2b743ef252003b00ec8278d5193e78"
+  },
+  "verdict": "ACTUAL_TEMP_RUN_STATE_GREEN"
+}

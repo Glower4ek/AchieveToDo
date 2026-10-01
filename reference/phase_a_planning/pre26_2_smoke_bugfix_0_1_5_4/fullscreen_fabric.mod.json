@@ -1,0 +1,30 @@
+{
+    "schemaVersion": 1,
+    "id": "advancements_fullscreen",
+    "version": "2.0.1",
+    "name": "Advancements Fullscreen",
+    "description": "A client-side mod that makes the advancements window bigger by expanding it to full screen. Continuation of the Advancements Enlarger mod.",
+    "authors": [
+        "diskria"
+    ],
+    "license": "MIT",
+    "icon": "icon.png",
+    "environment": "client",
+    "mixins": [
+        "META-INF/advancements_fullscreen.mixins.json"
+    ],
+    "accessWidener": "META-INF/advancements_fullscreen.classtweaker",
+    "contact": {},
+    "entrypoints": {
+        "client": [
+            "io.github.diskria.advancements_fullscreen.client.MinecraftClientMod"
+        ]
+    },
+    "depends": {
+        "java": ">=25",
+        "minecraft": ">=26.2",
+        "fabricloader": ">=0.19.3",
+        "fabric-language-kotlin": ">=1.13.8+kotlin.2.3.0"
+    }
+}
+

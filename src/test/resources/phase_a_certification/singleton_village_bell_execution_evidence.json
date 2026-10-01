@@ -1,0 +1,53 @@
+{
+  "snapshot": "phase_a_singleton_village_bell_execution_evidence",
+  "schemaVersion": 1,
+  "family": "SINGLETON:blazeandcave:adventure/oh_look_it_dings",
+  "source": "PhaseASingletonVillageBellGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:d6bddb51684c9ccc3bf09bb79a859bfe923b6252840b1cb13797e1495c580b1a",
+  "runId": "d4c77a70-31ed-455a-bb32-dffe2d920f41",
+  "generatedAt": "2026-09-29T14:48:59.409089100Z",
+  "entries": [
+    {
+      "family": "SINGLETON:blazeandcave:adventure/oh_look_it_dings",
+      "source": "PhaseASingletonVillageBellGameTest",
+      "advancementId": "blazeandcave:adventure/oh_look_it_dings",
+      "criterion": "bell",
+      "trigger": "minecraft:any_block_use",
+      "boundary": "ServerboundUseItemOnPacket.handle->ServerGamePacketListenerImpl.handleUseItemOn->ServerPlayerGameMode.useItemOn->BellBlock.useWithoutItem->BellBlock.attemptToRing->CriteriaTriggers.ANY_BLOCK_USE",
+      "observedBlock": "minecraft:bell",
+      "checkedStructureTag": "blazeandcave:village",
+      "observedStructure": "minecraft:village_plains",
+      "runId": "d4c77a70-31ed-455a-bb32-dffe2d920f41",
+      "catalogFingerprint": "sha-256:d6bddb51684c9ccc3bf09bb79a859bfe923b6252840b1cb13797e1495c580b1a",
+      "result": "GREEN",
+      "gameMode": "SURVIVAL",
+      "playerUuid": "6a012b17-e429-4dc3-85c2-3cafb0cec064",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "emptyHand": true,
+      "structureTagMember": true,
+      "vanillaStructureLookup": true,
+      "bellRang": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "noDirectCriterionTrigger": true,
+      "noManualAward": true,
+      "productionGateWitness": {
+        "productionGate": "LANDMARK_ONLY_FOR_BELL_RING",
+        "lockedLandmark": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "structureRestored": true,
+        "settlementMessages": 61,
+        "warningCount": 0
+      }
+    }
+  ]
+}

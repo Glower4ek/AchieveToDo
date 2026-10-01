@@ -1,0 +1,20 @@
+{
+  "snapshot": "phase_a_singleton_mangrove_grove_case_catalog",
+  "family": "SINGLETON:blazeandcave:farming/a_mangrove_grove",
+  "source": "PhaseASingletonMangroveGroveGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "frozenAdvancementPath": "data/blazeandcave/advancement/farming/a_mangrove_grove.json",
+  "frozenAdvancementSha256": "e9ca956085afa3276bccdedec4c82fa19becb3649d76fa53022f8737b66cfa88",
+  "advancementId": "blazeandcave:farming/a_mangrove_grove",
+  "criterion": "mangrove_propagule",
+  "requirementGroup": 0,
+  "trigger": "minecraft:placed_block",
+  "biome": "minecraft:grove",
+  "placedBlock": "minecraft:mangrove_propagule",
+  "selectedItem": "minecraft:mangrove_propagule",
+  "supportBlock": "minecraft:clay",
+  "productionGate": "LANDMARK_ONLY",
+  "runtimeBoundary": "ServerPlayerGameMode.useItemOn->BlockItem.place->CriteriaTriggers.PLACED_BLOCK"
+}

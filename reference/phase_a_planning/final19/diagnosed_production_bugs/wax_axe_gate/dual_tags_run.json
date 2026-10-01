@@ -1,0 +1,9 @@
+{
+  "family": "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+  "runId": "c01abdba-e443-46d3-93d0-e021716c72f1",
+  "exact": false,
+  "fingerprint": "b2ad68083149beab16540afbb345b584b1b9ae06d309408aa98e4de31a7128eb",
+  "expectedEntries": 2,
+  "runtimeCopySha256": "01bc168fd2b4a9b87850f016260fe524c2aebc675bddcb07c03adb0fd4cda9dc",
+  "stage": "RUNNING"
+}

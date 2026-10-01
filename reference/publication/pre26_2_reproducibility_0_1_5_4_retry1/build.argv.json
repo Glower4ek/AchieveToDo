@@ -1,0 +1,8 @@
+[
+  "--no-daemon",
+  "build",
+  "-x",
+  "test",
+  "-x",
+  "runGameTest"
+]

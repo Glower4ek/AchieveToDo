@@ -1,0 +1,20 @@
+{
+  "classification": "PRODUCTION_BUG",
+  "diagnosticRunId": "30c8e9d9-4710-476a-852f-30e3f4baa96f",
+  "patchPath": "reference/phase_a_planning/final19/cauldron_gate_production_fix_proposal.patch",
+  "patchSha256": "ec33a350ef1ae9185ac99e1c2425a1cec38ca0d64244819058c3cc610a5a07fe",
+  "productionPreconditions": {
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockAccessor.java": "ABSENT",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/ServerPlayerGameModeCauldronGateMixin.java": "ABSENT",
+    "src/main/resources/achievetodo.mixins.json": "ed9368d4cf34f18e2d72b47f764ee1c4674418eff82b7d57fe4a1d6825380339"
+  },
+  "changedProductionFiles": [
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockAccessor.java",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/ServerPlayerGameModeCauldronGateMixin.java",
+    "src/main/resources/achievetodo.mixins.json"
+  ],
+  "patchApplied": false,
+  "proposalCompile": "GREEN_STANDALONE_API_COMPILE_ONLY_NOT_RUNTIME_PROOF",
+  "originalCauldronMixinSha256": "c9473d4918c8d31c7215dcb98a388f3a24660b36940940a598861e9d90985394",
+  "proposalCompileLogSha256": "05a7eff371ff0e24df3324bbab195094944ebf61e03c6f8d41e013d1abaedf31"
+}

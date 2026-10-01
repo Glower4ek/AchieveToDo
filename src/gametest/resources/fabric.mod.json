@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "achievetodo-test",
+  "version": "1.0.0",
+  "name": "AchieveToDo GameTests",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.diskree.achievetodo.certification.PhaseAGameTestBootstrap"
+    ],
+    "fabric-gametest": [
+      "com.diskree.achievetodo.certification.PhaseALocationMovementGameTest",
+      "com.diskree.achievetodo.certification.PhaseAStructureLocationGameTest",
+      "com.diskree.achievetodo.certification.PhaseAContainerLootGameTest",
+      "com.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedGameTest",
+      "com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockGameTest",
+      "com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityGameTest",
+      "com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedGameTest",
+      "com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "com.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedGameTest",
+      "com.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockGameTest",
+      "com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockGameTest",
+      "com.diskree.achievetodo.certification.PhaseAEntityTypeTagStartedRidingGameTest",
+      "com.diskree.achievetodo.certification.PhaseAItemTagPlayerInteractedWithEntityGameTest",
+      "com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerInteractedWithEntityGameTest",
+      "com.diskree.achievetodo.certification.PhaseAShotCrossbowGameTest",
+      "com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceGameTest",
+      "com.diskree.achievetodo.certification.PhaseAUsingItemGameTest",
+      "com.diskree.achievetodo.certification.PhaseATameAnimalLlamaGameTest",
+      "com.diskree.achievetodo.certification.PhaseARecipeCraftedWaxOnGameTest",
+      "com.diskree.achievetodo.certification.PhaseAItemTagInventoryContainmentGameTest",
+      "com.diskree.achievetodo.certification.PhaseAFishingRodHookedGameTest",
+      "com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedGameTest",
+      "com.diskree.achievetodo.certification.PhaseAItemUsedOnBlockContextualGameTest",
+      "com.diskree.achievetodo.certification.PhaseASingletonRedstoneClickGameTest",
+      "com.diskree.achievetodo.certification.PhaseASingletonMangroveGroveGameTest",
+      "com.diskree.achievetodo.certification.PhaseASingletonDiagonAllayGameTest",
+      "com.diskree.achievetodo.certification.PhaseASingletonVillageBellGameTest",
+      "com.diskree.achievetodo.certification.PhaseASingletonLlamaBreedingGameTest",
+      "com.diskree.achievetodo.certification.PhaseASingletonAxolotlMonumentGameTest",
+      "com.diskree.achievetodo.certification.PhaseASingletonMaximumResistanceGameTest",
+      "com.diskree.achievetodo.certification.PhaseASingletonMiracleDrinkGameTest",
+      "com.diskree.achievetodo.certification.PhaseASingletonAncientRestorationGameTest",
+      "com.diskree.achievetodo.certification.PhaseASingletonSilkTouchNestGameTest",
+      "com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedGameTest",
+      "com.diskree.achievetodo.certification.PhaseAMixedPerfectRunGameTest",
+      "com.diskree.achievetodo.certification.PhaseAStackAllItemsInventoryBacklogGameTest",
+      "com.diskree.achievetodo.certification.PhaseAMixedWeaponryMulticlassedGameTest",
+      "com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionGameTest",
+      "com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenGameTest",
+      "com.diskree.achievetodo.certification.PhaseAPlayerKilledEntityRemainderGameTest"
+    ]
+  },
+  "mixins": [
+    "achievetodo-test.mixins.json"
+  ]
+}

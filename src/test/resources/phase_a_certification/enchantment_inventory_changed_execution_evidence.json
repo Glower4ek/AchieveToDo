@@ -1,0 +1,245 @@
+{
+  "snapshot": "phase_a_enchantment_inventory_changed_execution_evidence",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:d14b6727ffeef6885d774f0239c9f940ee228a451ec9402e3bef2d1720275c34",
+  "runId": "8ba5ca6a-2d01-4385-874b-441b35d47378",
+  "generatedAt": "2026-08-23T06:29:51.749441600Z",
+  "entries": [
+    {
+      "advancementId": "blazeandcave:enchanting/a_rather_pointy_fence_post",
+      "criterion": "rather_pointy_fence_post",
+      "family": "ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED",
+      "selectedItem": "minecraft:wooden_sword",
+      "enchantments": [
+        {
+          "selector": "minecraft:sharpness",
+          "level": 5,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedGameTest",
+      "result": "GREEN",
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:wooden_sword, 1=1 minecraft:oak_fence, 2=64 minecraft:oak_fence, 3=20 minecraft:lapis_lazuli]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:wooden_sword,pickupDelay=false,pos=9175239.500,-55.900,7602838.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:wooden_sword,pickupDelay=false,pos=9175239.497,-55.740,7602838.465",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/boomerang",
+      "criterion": "power",
+      "family": "ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED",
+      "selectedItem": "minecraft:trident",
+      "enchantments": [
+        {
+          "selector": "minecraft:loyalty",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedGameTest",
+      "result": "GREEN",
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:trident, 1=20 minecraft:lapis_lazuli]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:trident,pickupDelay=false,pos=9175239.500,-55.900,7602838.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:trident,pickupDelay=false,pos=9175239.466,-55.740,7602838.506",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/like_a_cat",
+      "criterion": "feather_falling",
+      "family": "ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED",
+      "selectedItem": "minecraft:iron_boots",
+      "enchantments": [
+        {
+          "selector": "minecraft:feather_falling",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedGameTest",
+      "result": "GREEN",
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:iron_boots, 1=20 minecraft:lapis_lazuli]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:iron_boots,pickupDelay=false,pos=9175239.500,-55.900,7602838.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:iron_boots,pickupDelay=false,pos=9175239.436,-55.740,7602838.571",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/like_a_ninja",
+      "criterion": "swift_sneak_book",
+      "family": "ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED",
+      "selectedItem": "minecraft:enchanted_book",
+      "enchantments": [
+        {
+          "selector": "minecraft:swift_sneak",
+          "level": 1,
+          "storageType": "STORED_ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedGameTest",
+      "result": "GREEN",
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:enchanted_book, 1=1 minecraft:echo_shard]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:enchanted_book,pickupDelay=false,pos=9175239.500,-55.900,7602838.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:enchanted_book,pickupDelay=false,pos=9175239.578,-55.740,7602838.505",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/mace_windu",
+      "criterion": "mace_windu",
+      "family": "ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED",
+      "selectedItem": "minecraft:mace",
+      "enchantments": [
+        {
+          "selector": "minecraft:wind_burst",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedGameTest",
+      "result": "GREEN",
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:mace, 1=16 minecraft:wind_charge]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:mace,pickupDelay=false,pos=9175239.500,-55.900,7602838.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:mace,pickupDelay=false,pos=9175239.575,-55.740,7602838.534",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_fisher",
+      "criterion": "perfect_rod",
+      "family": "ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED",
+      "selectedItem": "minecraft:fishing_rod",
+      "enchantments": [
+        {
+          "selector": "minecraft:luck_of_the_sea",
+          "level": 3,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:lure",
+          "level": 3,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:mending",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:unbreaking",
+          "level": 3,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedGameTest",
+      "result": "GREEN",
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:fishing_rod]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:fishing_rod,pickupDelay=false,pos=9175239.500,-55.900,7602838.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:fishing_rod,pickupDelay=false,pos=9175239.461,-55.740,7602838.586",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/newtons_flaming_laser_sword",
+      "criterion": "newton",
+      "family": "ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED",
+      "selectedItem": "minecraft:diamond_sword",
+      "enchantments": [
+        {
+          "selector": "minecraft:fire_aspect",
+          "level": 2,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedGameTest",
+      "result": "GREEN",
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:diamond_sword, 1=6 minecraft:diamond]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=9175239.500,-55.900,7602838.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=9175239.465,-55.740,7602838.441",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/to_infinity_and_beyond",
+      "criterion": "infinity",
+      "family": "ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED",
+      "selectedItem": "minecraft:bow",
+      "enchantments": [
+        {
+          "selector": "minecraft:infinity",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedGameTest",
+      "result": "GREEN",
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:bow, 1=20 minecraft:lapis_lazuli]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:bow,pickupDelay=false,pos=9175239.500,-55.900,7602838.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:bow,pickupDelay=false,pos=9175239.598,-55.740,7602838.473",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/unbreakable",
+      "criterion": "mending",
+      "family": "ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED",
+      "selectedItem": "minecraft:diamond_pickaxe",
+      "enchantments": [
+        {
+          "selector": "minecraft:mending",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedGameTest",
+      "result": "GREEN",
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:diamond_pickaxe, 1=2 minecraft:diamond]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:diamond_pickaxe,pickupDelay=false,pos=9175239.500,-55.900,7602838.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:diamond_pickaxe,pickupDelay=false,pos=9175239.582,-55.740,7602838.552",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/zeus",
+      "criterion": "power",
+      "family": "ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED",
+      "selectedItem": "minecraft:trident",
+      "enchantments": [
+        {
+          "selector": "minecraft:channeling",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedGameTest",
+      "result": "GREEN",
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:trident, 1=20 minecraft:lapis_lazuli]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:trident,pickupDelay=false,pos=9175239.500,-55.900,7602838.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:trident,pickupDelay=false,pos=9175239.569,-55.740,7602838.556",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:mining/the_mistake",
+      "criterion": "the_mistake",
+      "family": "ENCHANTMENT_HOLDERSET_INVENTORY_CHANGED",
+      "selectedItem": "minecraft:golden_helmet",
+      "enchantments": [
+        {
+          "selector": "minecraft:mending",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedGameTest",
+      "result": "GREEN",
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:golden_helmet]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:golden_helmet,pickupDelay=false,pos=9175239.500,-55.900,7602838.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:golden_helmet,pickupDelay=false,pos=9175239.412,-55.740,7602838.519",
+      "ticksToPickup": 1
+    }
+  ]
+}

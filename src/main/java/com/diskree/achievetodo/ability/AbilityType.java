@@ -5,7 +5,6 @@ import com.diskree.achievetodo.ability.generation.AbilityAdvancementsGenerator;
 import com.diskree.achievetodo.client.AchieveToDoClient;
 import com.diskree.achievetodo.client.gui.AbilityUnlockedToastType;
 import com.diskree.achievetodo.client.gui.DesignCodePalette;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementNode;
@@ -290,7 +289,7 @@ public enum AbilityType {
 
     private MutableComponent buildLockedMessagePrefix() {
         return AchieveToDoClient.translate("ability." + getName() + ".locked_message")
-            .append("." + (FabricLoader.getInstance().isModLoaded("multilineactionbar") ? "\n" : " "));
+            .append(".\n");
     }
 
     public @NotNull String getName() {

@@ -1,0 +1,9 @@
+// Report destination only. Source selection and validators remain in the immutable accepted init script.
+allprojects {
+    afterEvaluate {
+        tasks.withType(Test).configureEach {
+            reports.junitXml.outputLocation = file('reference/phase_a_planning/pre26_2_post_cleanup_build_0_1_5_4_retry1/evidence/accepted-junit')
+            reports.html.outputLocation = file('build/tmp/pre26_2_post_cleanup_build_0_1_5_4_retry1/accepted-html')
+        }
+    }
+}

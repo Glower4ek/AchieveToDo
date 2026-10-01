@@ -1,0 +1,35 @@
+{
+  "family": "RAIDER_PREDICATE_KEY_MIGRATION",
+  "staticSemantics": "EXACT_FROZEN_CURRENT_TYPED_CONTEXT",
+  "criteriaCount": 1,
+  "requirementGroupCount": 1,
+  "sourceBackedTags": {
+    "minecraft:entity_type|minecraft:raiders": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\.gradle-user-home\\caches\\fabric-loom\\minecraftMaven\\net\\minecraft\\minecraft-merged-deobf\\26.2\\minecraft-merged-deobf-26.2.jar!data/minecraft/tags/entity_type/raiders.json",
+          "sha256": "411320ed449e6f57928509a6dd01a18c5bffba761c2421d1341b936d21798fb1",
+          "definition": {
+            "values": [
+              "minecraft:evoker",
+              "minecraft:pillager",
+              "minecraft:ravager",
+              "minecraft:vindicator",
+              "minecraft:illusioner",
+              "minecraft:witch"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:evoker",
+        "minecraft:pillager",
+        "minecraft:ravager",
+        "minecraft:vindicator",
+        "minecraft:illusioner",
+        "minecraft:witch"
+      ]
+    }
+  },
+  "inputFingerprint": "4afe0875484518b77c47573920d3d5d6523191ee83f5e1837be594ffb3111e7e"
+}

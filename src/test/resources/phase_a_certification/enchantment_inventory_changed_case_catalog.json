@@ -1,0 +1,317 @@
+{
+  "snapshot": "phase_a_enchantment_inventory_changed_case_catalog",
+  "canonicalAdvancementCount": 1152,
+  "compatibilityMarker": "compat_26_2_r15",
+  "canonicalSemanticsSource": "reference/phase_a_preservation/files/final/bacap.zip",
+  "summary": {
+    "totalCases": 12,
+    "automationSupported": 11,
+    "automationDeferred": 1,
+    "byEligibility": {
+      "DEFERRED": 1,
+      "SUPPORTED": 11
+    }
+  },
+  "cases": [
+    {
+      "advancementId": "blazeandcave:enchanting/a_rather_pointy_fence_post",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/a_rather_pointy_fence_post.json",
+      "criterion": "rather_pointy_fence_post",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_ENCHANTMENT_HOLDERSET",
+      "allowedItems": [
+        "minecraft:wooden_sword"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:sharpness",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 5
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/boomerang",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/boomerang.json",
+      "criterion": "power",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_ENCHANTMENT_HOLDERSET",
+      "allowedItems": [
+        "minecraft:trident"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:loyalty",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/god_of_thunder",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/god_of_thunder.json",
+      "criterion": "mjolnir",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "DEFERRED",
+      "deferReason": "MEANINGFUL_COMPONENT_MATCHER",
+      "allowedItems": [
+        "minecraft:trident"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates",
+        "components"
+      ],
+      "componentKeys": [
+        "minecraft:custom_name"
+      ],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:channeling",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1
+        },
+        {
+          "selector": "minecraft:loyalty",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 3
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/like_a_cat",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/like_a_cat.json",
+      "criterion": "feather_falling",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_ENCHANTMENT_HOLDERSET",
+      "allowedItems": [
+        "minecraft:chainmail_boots",
+        "minecraft:diamond_boots",
+        "minecraft:golden_boots",
+        "minecraft:iron_boots",
+        "minecraft:leather_boots",
+        "minecraft:netherite_boots"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:feather_falling",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/like_a_ninja",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/like_a_ninja.json",
+      "criterion": "swift_sneak_book",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_ENCHANTMENT_HOLDERSET",
+      "allowedItems": [
+        "minecraft:enchanted_book"
+      ],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:swift_sneak",
+          "storageType": "STORED_ENCHANTMENTS",
+          "minLevel": 1
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/mace_windu",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/mace_windu.json",
+      "criterion": "mace_windu",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_ENCHANTMENT_HOLDERSET",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:wind_burst",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_fisher",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/master_fisher.json",
+      "criterion": "perfect_rod",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_ENCHANTMENT_HOLDERSET",
+      "allowedItems": [
+        "minecraft:fishing_rod"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:luck_of_the_sea",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 3
+        },
+        {
+          "selector": "minecraft:lure",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 3
+        },
+        {
+          "selector": "minecraft:mending",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1
+        },
+        {
+          "selector": "minecraft:unbreaking",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 3
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/newtons_flaming_laser_sword",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/newtons_flaming_laser_sword.json",
+      "criterion": "newton",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_ENCHANTMENT_HOLDERSET",
+      "allowedItems": [
+        "minecraft:diamond_sword"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:fire_aspect",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/to_infinity_and_beyond",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/to_infinity_and_beyond.json",
+      "criterion": "infinity",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_ENCHANTMENT_HOLDERSET",
+      "allowedItems": [
+        "minecraft:bow"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:infinity",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/unbreakable",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/unbreakable.json",
+      "criterion": "mending",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_ENCHANTMENT_HOLDERSET",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:mending",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/zeus",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/zeus.json",
+      "criterion": "power",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_ENCHANTMENT_HOLDERSET",
+      "allowedItems": [
+        "minecraft:trident"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:channeling",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:mining/the_mistake",
+      "sourcePath": "data/blazeandcave/advancement/mining/the_mistake.json",
+      "criterion": "the_mistake",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_ENCHANTMENT_HOLDERSET",
+      "allowedItems": [
+        "minecraft:golden_boots",
+        "minecraft:golden_chestplate",
+        "minecraft:golden_helmet",
+        "minecraft:golden_leggings"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:mending",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1
+        }
+      ]
+    }
+  ]
+}

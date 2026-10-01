@@ -5,12 +5,13 @@ import com.mojang.serialization.JsonOps;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.minecraft.SharedConstants;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.predicates.DamageSourcePredicate;
 import net.minecraft.advancements.predicates.entity.EntityPredicate;
 import net.minecraft.advancements.triggers.EffectsChangedTrigger;
 import net.minecraft.advancements.triggers.KilledTrigger;
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.registries.VanillaRegistries;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.server.Bootstrap;
 import org.junit.jupiter.api.BeforeAll;
@@ -22,6 +23,8 @@ import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.Properties;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -34,13 +37,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ExternalPackCompatibilityTest {
 
-    private static RegistryAccess.Frozen registryAccess;
+    private static HolderLookup.Provider registryAccess;
 
     @BeforeAll
     static void bootstrapMinecraftCodecs() {
         SharedConstants.tryDetectVersion();
         Bootstrap.bootStrap();
-        registryAccess = RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY).freeze();
+        registryAccess = VanillaRegistries.createLookup();
     }
 
     @TempDir
@@ -202,7 +205,7 @@ class ExternalPackCompatibilityTest {
     }
 
     @Test
-    void preservesInventoryChangedItemPredicatesForEnchantments() throws Exception {
+    void wrapsScalarInventoryChangedItemPredicateEnchantmentsIntoSingletonArrays() throws Exception {
         JsonObject converted = convert("""
             {
               "criteria": {
@@ -238,19 +241,19 @@ class ExternalPackCompatibilityTest {
             .getAsJsonObject();
         assertTrue(item.has("predicates"));
         assertFalse(item.has("minecraft:predicates"));
+        JsonObject predicate = item.getAsJsonObject("predicates")
+            .getAsJsonArray("enchantments")
+            .get(0)
+            .getAsJsonObject();
+        assertSingleEnchantmentArray(predicate, "minecraft:sharpness");
         assertEquals(
-            "minecraft:sharpness",
-            item.getAsJsonObject("predicates")
-                .getAsJsonArray("enchantments")
-                .get(0)
-                .getAsJsonObject()
-                .get("enchantments")
-                .getAsString()
+            5,
+            predicate.getAsJsonObject("levels").get("min").getAsInt()
         );
     }
 
     @Test
-    void preservesNeedleSharpStoredAndDirectEnchantmentPredicatesFromLiveRegression() throws Exception {
+    void wrapsStoredAndDirectInventoryChangedEnchantmentPredicatesWithoutTouchingLevels() throws Exception {
         JsonObject converted = convert("""
             {
               "criteria": {
@@ -305,34 +308,229 @@ class ExternalPackCompatibilityTest {
         JsonObject criteria = converted.getAsJsonObject("criteria");
         assertInventoryChangedPredicateKey(criteria, "sharpness");
         assertInventoryChangedPredicateKey(criteria, "sharpness_book");
+        JsonObject directPredicate = criteria.getAsJsonObject("sharpness")
+            .getAsJsonObject("conditions")
+            .getAsJsonArray("items")
+            .get(0)
+            .getAsJsonObject()
+            .getAsJsonObject("predicates")
+            .getAsJsonArray("enchantments")
+            .get(0)
+            .getAsJsonObject();
+        JsonObject storedPredicate = criteria.getAsJsonObject("sharpness_book")
+            .getAsJsonObject("conditions")
+            .getAsJsonArray("items")
+            .get(0)
+            .getAsJsonObject()
+            .getAsJsonObject("predicates")
+            .getAsJsonArray("stored_enchantments")
+            .get(0)
+            .getAsJsonObject();
+        assertSingleEnchantmentArray(directPredicate, "minecraft:sharpness");
+        assertSingleEnchantmentArray(storedPredicate, "minecraft:sharpness");
         assertEquals(
-            "minecraft:sharpness",
-            criteria.getAsJsonObject("sharpness")
-                .getAsJsonObject("conditions")
-                .getAsJsonArray("items")
-                .get(0)
-                .getAsJsonObject()
-                .getAsJsonObject("predicates")
-                .getAsJsonArray("enchantments")
-                .get(0)
-                .getAsJsonObject()
-                .get("enchantments")
-                .getAsString()
+            5,
+            directPredicate.getAsJsonObject("levels").get("min").getAsInt()
         );
         assertEquals(
-            "minecraft:sharpness",
-            criteria.getAsJsonObject("sharpness_book")
-                .getAsJsonObject("conditions")
-                .getAsJsonArray("items")
-                .get(0)
-                .getAsJsonObject()
-                .getAsJsonObject("predicates")
-                .getAsJsonArray("stored_enchantments")
-                .get(0)
-                .getAsJsonObject()
-                .get("enchantments")
-                .getAsString()
+            5,
+            storedPredicate.getAsJsonObject("levels").get("min").getAsInt()
         );
+    }
+
+    @Test
+    void preservesAlreadyArrayEnchantmentHolderSetsWithoutNesting() throws Exception {
+        JsonObject converted = convert("""
+            {
+              "criteria": {
+                "silk_touch": {
+                  "trigger": "minecraft:inventory_changed",
+                  "conditions": {
+                    "items": [
+                      {
+                        "predicates": {
+                          "enchantments": [
+                            {
+                              "enchantments": [
+                                "minecraft:silk_touch"
+                              ],
+                              "levels": {
+                                "min": 1
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+            """);
+
+        JsonObject predicate = converted.getAsJsonObject("criteria")
+            .getAsJsonObject("silk_touch")
+            .getAsJsonObject("conditions")
+            .getAsJsonArray("items")
+            .get(0)
+            .getAsJsonObject()
+            .getAsJsonObject("predicates")
+            .getAsJsonArray("enchantments")
+            .get(0)
+            .getAsJsonObject();
+        assertTrue(predicate.get("enchantments").isJsonArray());
+        assertEquals(
+            "minecraft:silk_touch",
+            predicate.getAsJsonArray("enchantments").get(0).getAsString()
+        );
+        assertEquals(
+            1,
+            predicate.getAsJsonArray("enchantments").size()
+        );
+        assertEquals(
+            1,
+            predicate.getAsJsonObject("levels").get("min").getAsInt()
+        );
+    }
+
+    @Test
+    void wrapsEachScalarSelectorIndependentlyAcrossMultipleEnchantmentPredicateObjects() throws Exception {
+        JsonObject converted = convert("""
+            {
+              "criteria": {
+                "master_arbalist": {
+                  "trigger": "minecraft:inventory_changed",
+                  "conditions": {
+                    "items": [
+                      {
+                        "predicates": {
+                          "enchantments": [
+                            {
+                              "enchantments": "minecraft:quick_charge",
+                              "levels": {
+                                "min": 3
+                              }
+                            },
+                            {
+                              "enchantments": "minecraft:mending",
+                              "levels": {
+                                "min": 1
+                              }
+                            },
+                            {
+                              "enchantments": "minecraft:unbreaking",
+                              "levels": {
+                                "min": 3
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+            """);
+
+        var predicates = converted.getAsJsonObject("criteria")
+            .getAsJsonObject("master_arbalist")
+            .getAsJsonObject("conditions")
+            .getAsJsonArray("items")
+            .get(0)
+            .getAsJsonObject()
+            .getAsJsonObject("predicates")
+            .getAsJsonArray("enchantments");
+        assertEquals(3, predicates.size());
+        assertSingleEnchantmentArray(predicates.get(0).getAsJsonObject(), "minecraft:quick_charge");
+        assertSingleEnchantmentArray(predicates.get(1).getAsJsonObject(), "minecraft:mending");
+        assertSingleEnchantmentArray(predicates.get(2).getAsJsonObject(), "minecraft:unbreaking");
+    }
+
+    @Test
+    void leavesUnrelatedEnchantmentNamedFieldsUntouched() throws Exception {
+        JsonObject converted = convert("""
+            {
+              "custom": {
+                "enchantments": "minecraft:silk_touch",
+                "stored_enchantments": "minecraft:mending"
+              },
+              "criteria": {
+                "noop": {
+                  "trigger": "minecraft:tick"
+                }
+              }
+            }
+            """);
+
+        JsonObject custom = converted.getAsJsonObject("custom");
+        assertEquals("minecraft:silk_touch", custom.get("enchantments").getAsString());
+        assertEquals("minecraft:mending", custom.get("stored_enchantments").getAsString());
+    }
+
+    @Test
+    void leavesInnerEnchantmentSelectorsOutsideAcceptedPredicatesPathUntouched() throws Exception {
+        JsonObject converted = convert("""
+            {
+              "criteria": {
+                "noop": {
+                  "trigger": "minecraft:tick",
+                  "conditions": {
+                    "item": {
+                      "enchantments": [
+                        {
+                          "enchantments": "minecraft:sharpness"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+            """);
+
+        JsonObject predicate = converted.getAsJsonObject("criteria")
+            .getAsJsonObject("noop")
+            .getAsJsonObject("conditions")
+            .getAsJsonObject("item")
+            .getAsJsonArray("enchantments")
+            .get(0)
+            .getAsJsonObject();
+        assertTrue(predicate.get("enchantments").isJsonPrimitive());
+        assertEquals("minecraft:sharpness", predicate.get("enchantments").getAsString());
+    }
+
+    @Test
+    void conversionIsIdempotentForWrappedInnerEnchantmentSelectors() throws Exception {
+        String input = """
+            {
+              "criteria": {
+                "sharpness": {
+                  "trigger": "minecraft:inventory_changed",
+                  "conditions": {
+                    "items": [
+                      {
+                        "predicates": {
+                          "enchantments": [
+                            {
+                              "enchantments": "minecraft:sharpness",
+                              "levels": {
+                                "min": 5
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+            """;
+
+        JsonObject once = convert(input);
+        JsonObject twice = convert(once.toString());
+        assertEquals(once, twice);
     }
 
     @Test
@@ -618,6 +816,39 @@ class ExternalPackCompatibilityTest {
     }
 
     @Test
+    void worldCopyPreservesHistoricalGlowAndHoneyDefinitionsAndFrozenSource() throws Exception {
+        Path frozen = Path.of("reference/phase_a_preservation/files/final/bacap.zip");
+        byte[] before = Files.readAllBytes(frozen);
+        assertEquals("8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+            java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(before)));
+        assertEquals(ExternalPack.BACAP.getSha1(),
+            java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-1").digest(before)));
+        Path target = tempDir.resolve("historical-sign-honey.zip");
+        ExternalPackCompatibility.copyForWorld(frozen, target, ExternalPack.BACAP);
+        org.junit.jupiter.api.Assertions.assertArrayEquals(before, Files.readAllBytes(frozen));
+        assertTrue(ExternalPackCompatibility.isCompatibleWorldCopy(target, ExternalPack.BACAP));
+        try (ZipFile source = new ZipFile(frozen.toFile()); ZipFile converted = new ZipFile(target.toFile())) {
+            for (String[] binding : new String[][]{
+                {"make_a_sign_glow", "glow_ink_sac", "cephalight", "glow_and_behold"},
+                {"safely_harvest_honey", "safely_harvest_honey", "ya_like_jazz", "bee_our_guest"}
+            }) {
+                String path = "data/minecraft/advancement/husbandry/" + binding[0] + ".json";
+                JsonObject original = readJson(source, path);
+                JsonObject actual = readJson(converted, path);
+                assertEquals(Set.of(binding[1]), actual.getAsJsonObject("criteria").keySet());
+                assertEquals("blazeandcave:animal/" + binding[2], actual.get("parent").getAsString());
+                assertEquals("bacap_rewards:animal/" + binding[3], actual.getAsJsonObject("rewards").get("function").getAsString());
+                for (String field : new String[]{"criteria", "requirements", "parent", "rewards"}) {
+                    assertEquals(original.get(field), actual.get(field), path + " " + field);
+                }
+                assertFalse(actual.getAsJsonObject("display").get("announce_to_chat").getAsBoolean());
+                original.getAsJsonObject("display").addProperty("announce_to_chat", false);
+                assertEquals(original, actual, "Only the existing production announcement conversion is expected");
+            }
+        }
+    }
+
+    @Test
     void admitsOnlyRawOrCurrentCompatiblePackCopies() throws Exception {
         ExternalPack externalPack = ExternalPack.BACAP;
         Path rawPack = Path.of("reference", "phase_a_preservation", "files", "final", externalPack.getFileName());
@@ -747,6 +978,63 @@ class ExternalPackCompatibilityTest {
     }
 
     @Test
+    void rewritesHistoricalSilkTouchNestEnchantmentPredicateScalarToSingletonArray() throws Exception {
+        Path bacapPack = Path.of("reference", "phase_a_preservation", "files", "final", "bacap.zip");
+        try (ZipFile zipFile = new ZipFile(bacapPack.toFile())) {
+            JsonObject frozen = readJson(zipFile, "data/minecraft/advancement/husbandry/silk_touch_nest.json");
+            JsonObject converted = convert(frozen.toString());
+            JsonObject predicate = converted.getAsJsonObject("criteria")
+                .getAsJsonObject("silk_touch_nest")
+                .getAsJsonObject("conditions")
+                .getAsJsonObject("item")
+                .getAsJsonObject("predicates")
+                .getAsJsonArray("enchantments")
+                .get(0)
+                .getAsJsonObject();
+            assertSingleEnchantmentArray(predicate, "minecraft:silk_touch");
+            assertEquals(
+                1,
+                predicate.getAsJsonObject("levels").get("min").getAsInt()
+            );
+            parseCodec(Advancement.CODEC, converted);
+        }
+    }
+
+    @Test
+    void rewritesAllHistoricalInnerEnchantmentSelectorScalarsToHolderSetArrays() throws Exception {
+        Path bacapPack = Path.of("reference", "phase_a_preservation", "files", "final", "bacap.zip");
+        try (ZipFile zipFile = new ZipFile(bacapPack.toFile())) {
+            Set<String> auditedAdvancementIds = new LinkedHashSet<>();
+            int legacyScalarOccurrencesBefore = 0;
+            int legacyScalarOccurrencesAfter = 0;
+            int holderSetArrayOccurrencesAfter = 0;
+
+            for (ZipEntry entry : java.util.Collections.list(zipFile.entries())) {
+                if (!entry.getName().endsWith(".json") || !entry.getName().contains("/advancement/")) {
+                    continue;
+                }
+                JsonObject frozen = readJson(zipFile, entry.getName());
+                int legacyScalarsInFrozen = countLegacyScalarEnchantmentOccurrences(frozen);
+                if (legacyScalarsInFrozen == 0) {
+                    continue;
+                }
+                auditedAdvancementIds.add(toAdvancementId(entry.getName()));
+                legacyScalarOccurrencesBefore += legacyScalarsInFrozen;
+
+                JsonObject converted = convert(frozen.toString());
+                legacyScalarOccurrencesAfter += countLegacyScalarEnchantmentOccurrences(converted);
+                holderSetArrayOccurrencesAfter += countHolderSetArrayEnchantmentOccurrences(converted);
+                parseCodec(Advancement.CODEC, converted);
+            }
+
+            assertEquals(50, auditedAdvancementIds.size());
+            assertTrue(legacyScalarOccurrencesBefore > 0);
+            assertEquals(0, legacyScalarOccurrencesAfter);
+            assertEquals(legacyScalarOccurrencesBefore, holderSetArrayOccurrencesAfter);
+        }
+    }
+
+    @Test
     void rewritesTenSecondTimerDaytimeQueryToOverworldDayTimeline() throws Exception {
         String converted = convertFunction("execute store result score time bac_current_time run time query daytime");
         assertEquals(
@@ -764,6 +1052,12 @@ class ExternalPackCompatibilityTest {
             .getAsJsonObject();
         assertTrue(item.has("predicates"));
         assertFalse(item.has("minecraft:predicates"));
+    }
+
+    private static void assertSingleEnchantmentArray(JsonObject predicate, String expectedEnchantmentId) {
+        assertTrue(predicate.get("enchantments").isJsonArray());
+        assertEquals(1, predicate.getAsJsonArray("enchantments").size());
+        assertEquals(expectedEnchantmentId, predicate.getAsJsonArray("enchantments").get(0).getAsString());
     }
 
     private static void assertDamageDirectEntityType(JsonObject converted, String criterion, String expectedEntityType) {
@@ -1189,6 +1483,54 @@ class ExternalPackCompatibilityTest {
         );
     }
 
+    @Test
+    void preservesLegacyPlayerGamemodeFieldInsideTypeSpecificPlayerPredicate() throws Exception {
+        JsonObject converted = convert("""
+            {
+              "criteria": {
+                "jungle": {
+                  "trigger": "minecraft:location",
+                  "conditions": {
+                    "player": [
+                      {
+                        "condition": "minecraft:inverted",
+                        "term": {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "type_specific": {
+                              "type": "player",
+                              "gamemode": [
+                                "spectator"
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+            """);
+
+        JsonObject playerPredicate = converted
+            .getAsJsonObject("criteria")
+            .getAsJsonObject("jungle")
+            .getAsJsonObject("conditions")
+            .getAsJsonArray("player")
+            .get(0)
+            .getAsJsonObject()
+            .getAsJsonObject("term")
+            .getAsJsonObject("predicate");
+
+        assertTrue(playerPredicate.has("type_specific/player"));
+        JsonObject typeSpecificPlayer = playerPredicate.getAsJsonObject("type_specific/player");
+        assertTrue(typeSpecificPlayer.has("gamemode"));
+        assertEquals("spectator", typeSpecificPlayer.getAsJsonArray("gamemode").get(0).getAsString());
+        assertFalse(typeSpecificPlayer.has("gameMode"));
+    }
+
     private static JsonObject convert(String json) throws Exception {
         Method convertJson = ExternalPackCompatibility.class.getDeclaredMethod("convertJson", String.class);
         convertJson.setAccessible(true);
@@ -1220,6 +1562,90 @@ class ExternalPackCompatibilityTest {
         }
     }
 
+    private static int countLegacyScalarEnchantmentOccurrences(com.google.gson.JsonElement element) {
+        if (!element.isJsonObject()) {
+            if (element.isJsonArray()) {
+                int total = 0;
+                for (var child : element.getAsJsonArray()) {
+                    total += countLegacyScalarEnchantmentOccurrences(child);
+                }
+                return total;
+            }
+            return 0;
+        }
+        int total = 0;
+        JsonObject object = element.getAsJsonObject();
+        for (String key : new String[]{"enchantments", "stored_enchantments"}) {
+            if (!object.has(key) || !object.get(key).isJsonArray()) {
+                continue;
+            }
+            for (var child : object.getAsJsonArray(key)) {
+                if (!child.isJsonObject()) {
+                    continue;
+                }
+                JsonObject predicate = child.getAsJsonObject();
+                if (predicate.has("enchantments")
+                    && predicate.get("enchantments").isJsonPrimitive()
+                    && predicate.get("enchantments").getAsJsonPrimitive().isString()
+                    && !predicate.get("enchantments").getAsString().startsWith("#")
+                ) {
+                    total++;
+                }
+            }
+        }
+        for (var entry : object.entrySet()) {
+            total += countLegacyScalarEnchantmentOccurrences(entry.getValue());
+        }
+        return total;
+    }
+
+    private static int countHolderSetArrayEnchantmentOccurrences(com.google.gson.JsonElement element) {
+        if (!element.isJsonObject()) {
+            if (element.isJsonArray()) {
+                int total = 0;
+                for (var child : element.getAsJsonArray()) {
+                    total += countHolderSetArrayEnchantmentOccurrences(child);
+                }
+                return total;
+            }
+            return 0;
+        }
+        int total = 0;
+        JsonObject object = element.getAsJsonObject();
+        for (String key : new String[]{"enchantments", "stored_enchantments"}) {
+            if (!object.has(key) || !object.get(key).isJsonArray()) {
+                continue;
+            }
+            for (var child : object.getAsJsonArray(key)) {
+                if (!child.isJsonObject()) {
+                    continue;
+                }
+                JsonObject predicate = child.getAsJsonObject();
+                if (predicate.has("enchantments")
+                    && predicate.get("enchantments").isJsonArray()
+                    && predicate.getAsJsonArray("enchantments").size() == 1
+                    && predicate.getAsJsonArray("enchantments").get(0).isJsonPrimitive()
+                    && predicate.getAsJsonArray("enchantments").get(0).getAsJsonPrimitive().isString()
+                ) {
+                    total++;
+                }
+            }
+        }
+        for (var entry : object.entrySet()) {
+            total += countHolderSetArrayEnchantmentOccurrences(entry.getValue());
+        }
+        return total;
+    }
+
+    private static String toAdvancementId(String entryName) {
+        String normalized = entryName.replace('\\', '/');
+        int dataPrefix = normalized.indexOf("data/");
+        int advancementPath = normalized.indexOf("/advancement/");
+        return normalized.substring(dataPrefix + "data/".length(), advancementPath)
+            + ":"
+            + normalized.substring(advancementPath + "/advancement/".length(), normalized.length() - ".json".length());
+    }
+
     private static boolean isAdmittedPack(Path pack, ExternalPack externalPack) {
         return externalPack.getSha1().equalsIgnoreCase(Utils.calculateSHA1(pack))
             || ExternalPackCompatibility.isCompatibleWorldCopy(pack, externalPack);
@@ -1238,6 +1664,9 @@ class ExternalPackCompatibilityTest {
         properties.setProperty("fileName", fileName);
         properties.setProperty("sourceSha1", sourceSha1);
         properties.setProperty("rootOverrideSha1", rootOverrideSha1);
+        if ("compat_26_2_r15".equals(version)) {
+            properties.setProperty("llamaCarpetNbtMapping", "equipment.body");
+        }
 
         ByteArrayOutputStream markerBytes = new ByteArrayOutputStream();
         properties.store(markerBytes, null);

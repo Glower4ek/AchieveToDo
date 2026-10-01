@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseASingletonMiracleDrinkCertificationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:59:42.673Z" hostname="LAPTOP-L0LPH8GP" time="3.414">
+  <properties/>
+  <testcase name="frozenSourceAndCatalogMatchTheAssignedSingleton()" classname="com.diskree.achievetodo.certification.PhaseASingletonMiracleDrinkCertificationTest" time="0.005"/>
+  <testcase name="persistentMiracleDrinkReceiptChangesOnlyItsOwnStatus()" classname="com.diskree.achievetodo.certification.PhaseASingletonMiracleDrinkCertificationTest" time="3.397"/>
+  <testcase name="persistentEvidenceCoversOnlyTheMiracleDrinkSingleton()" classname="com.diskree.achievetodo.certification.PhaseASingletonMiracleDrinkCertificationTest" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

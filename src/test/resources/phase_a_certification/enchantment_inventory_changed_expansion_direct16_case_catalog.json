@@ -1,0 +1,672 @@
+{
+  "snapshot": "phase_a_enchantment_inventory_changed_expansion_direct16_case_catalog",
+  "canonicalAdvancementCount": 1152,
+  "compatibilityMarker": "compat_26_2_r15",
+  "canonicalSemanticsSource": "reference/phase_a_preservation/files/final/bacap.zip",
+  "closedCatalogSha256": "D14B6727FFEEF6885D774F0239C9F940EE228A451EC9402E3BEF2D1720275C34",
+  "summary": {
+    "totalCases": 25,
+    "uniqueAdvancements": 16,
+    "selectedRequirementGroups": 25,
+    "storageType": "ENCHANTMENTS",
+    "automationSupported": 25,
+    "automationDeferred": 0,
+    "byEligibility": {
+      "SUPPORTED": 25
+    }
+  },
+  "cases": [
+    {
+      "advancementId": "blazeandcave:enchanting/armor_for_the_masses",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/armor_for_the_masses.json",
+      "criterion": "blast_protection",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:iron_chestplate",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:blast_protection",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/armor_for_the_masses",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/armor_for_the_masses.json",
+      "criterion": "fire_protection",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:iron_chestplate",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:fire_protection",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/armor_for_the_masses",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/armor_for_the_masses.json",
+      "criterion": "projectile_protection",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:iron_chestplate",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:projectile_protection",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/armor_for_the_masses",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/armor_for_the_masses.json",
+      "criterion": "protection",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:iron_chestplate",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:protection",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/bane_of_one_shotting_spiders",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/bane_of_one_shotting_spiders.json",
+      "criterion": "bane_of_arthropods",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:diamond_sword",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:bane_of_arthropods",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 5,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/bow_down_to_me",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/bow_down_to_me.json",
+      "criterion": "power",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:bow",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:power",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 5,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/curses",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/curses.json",
+      "criterion": "binding_curse",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:iron_chestplate",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:binding_curse",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/curses",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/curses.json",
+      "criterion": "vanishing_curse",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:diamond_sword",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:vanishing_curse",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/fiery",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/fiery.json",
+      "criterion": "fire_aspect",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:diamond_sword",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:fire_aspect",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/fiery",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/fiery.json",
+      "criterion": "fire_protection",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:iron_chestplate",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:fire_protection",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/fiery",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/fiery.json",
+      "criterion": "flame",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:bow",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:flame",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/fortunate_son",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/fortunate_son.json",
+      "criterion": "fortune",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:diamond_pickaxe",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:fortune",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 3,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/gotta_go_fast",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/gotta_go_fast.json",
+      "criterion": "soul_speed_boots",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:iron_boots",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:soul_speed",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/knocking_your_socks_off",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/knocking_your_socks_off.json",
+      "criterion": "knockback",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:diamond_sword",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:knockback",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/knocking_your_socks_off",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/knocking_your_socks_off.json",
+      "criterion": "punch",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:bow",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:punch",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_arbalist",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/master_arbalist.json",
+      "criterion": "perfect_bow_multishot",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:crossbow",
+      "allowedItems": [
+        "minecraft:crossbow"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:mending",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:multishot",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:quick_charge",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 3,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:unbreaking",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 3,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_macerator",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/master_macerator.json",
+      "criterion": "perfect_mace_smite",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:mace",
+      "allowedItems": [
+        "minecraft:mace"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:fire_aspect",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 2,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:mending",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:smite",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 5,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:unbreaking",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 3,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:wind_burst",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 3,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_sniper",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/master_sniper.json",
+      "criterion": "perfect_bow_infinity",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:bow",
+      "allowedItems": [
+        "minecraft:bow"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:flame",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:infinity",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:power",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 5,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:punch",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 2,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:unbreaking",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 3,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_tridenteer",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/master_tridenteer.json",
+      "criterion": "perfect_trident_loyalty",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:trident",
+      "allowedItems": [
+        "minecraft:trident"
+      ],
+      "itemPredicateKeys": [
+        "items",
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:channeling",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:impaling",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 5,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:loyalty",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 3,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:mending",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        },
+        {
+          "selector": "minecraft:unbreaking",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 3,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/needle_sharp",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/needle_sharp.json",
+      "criterion": "sharpness",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:diamond_sword",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:sharpness",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 5,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/scuba_gear",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/scuba_gear.json",
+      "criterion": "aqua_affinity",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:iron_helmet",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:aqua_affinity",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/scuba_gear",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/scuba_gear.json",
+      "criterion": "depth_strider",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:iron_boots",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:depth_strider",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/scuba_gear",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/scuba_gear.json",
+      "criterion": "respiration",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:iron_helmet",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:respiration",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 1,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/super_efficient",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/super_efficient.json",
+      "criterion": "efficiency",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:diamond_pickaxe",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:efficiency",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 5,
+          "maxLevel": null
+        }
+      ]
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/undead_slayer",
+      "sourcePath": "data/blazeandcave/advancement/enchanting/undead_slayer.json",
+      "criterion": "smite",
+      "trigger": "minecraft:inventory_changed",
+      "automationEligibility": "SUPPORTED",
+      "deferReason": "SIMPLE_DIRECT_ENCHANTMENT_PICKUP",
+      "selectedItem": "minecraft:diamond_sword",
+      "allowedItems": [],
+      "itemPredicateKeys": [
+        "predicates"
+      ],
+      "componentKeys": [],
+      "enchantmentPredicates": [
+        {
+          "selector": "minecraft:smite",
+          "storageType": "ENCHANTMENTS",
+          "minLevel": 5,
+          "maxLevel": null
+        }
+      ]
+    }
+  ]
+}

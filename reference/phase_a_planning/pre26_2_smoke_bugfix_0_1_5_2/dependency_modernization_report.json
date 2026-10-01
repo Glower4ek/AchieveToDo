@@ -1,0 +1,163 @@
+{
+  "task": "PRE_26_2_USER_SMOKE_BUGFIX_AND_MODERNIZATION_PASS",
+  "verifiedDate": "2026-10-01",
+  "targetMinecraft": "26.2",
+  "targetJava": 25,
+  "directDependencies": [
+    {
+      "dependency": "Fabric Loader",
+      "before": "0.19.3",
+      "after": "0.19.5",
+      "initialClassification": "UPDATE_AVAILABLE_COMPATIBLE",
+      "finalClassification": "CURRENT_LATEST_STABLE_COMPATIBLE",
+      "action": "UPDATED",
+      "officialSource": "https://meta.fabricmc.net/v2/versions/loader/26.2",
+      "evidenceFile": "upstream_loader.txt",
+      "compatibilityConclusion": "Official 26.2 metadata marks 0.19.5 stable=true. Actual native runtime and minimum metadata use 0.19.5."
+    },
+    {
+      "dependency": "Fabric API",
+      "before": "0.158.0+26.2",
+      "after": "0.161.0+26.2",
+      "initialClassification": "UPDATE_AVAILABLE_COMPATIBLE",
+      "finalClassification": "CURRENT_LATEST_STABLE_COMPATIBLE",
+      "action": "UPDATED",
+      "officialSource": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/maven-metadata.xml",
+      "evidenceFile": "upstream_api.txt",
+      "compatibilityConclusion": "Newest stable +26.2 artifact verified by its POM. Numerically newer 0.161.2+26.4 is NEWER_EXISTS_BUT_INCOMPATIBLE with this product target."
+    },
+    {
+      "dependency": "Fabric Loom",
+      "before": "1.17.19",
+      "after": "1.18.2",
+      "initialClassification": "UPDATE_AVAILABLE_COMPATIBLE",
+      "finalClassification": "CURRENT_LATEST_STABLE_COMPATIBLE",
+      "action": "UPDATED",
+      "officialSource": "https://maven.fabricmc.net/net/fabricmc/fabric-loom/maven-metadata.xml",
+      "evidenceFile": "upstream_loom.txt",
+      "compatibilityConclusion": "Upstream stable release is 1.18.2, superseding the prompt candidate 1.18.1. Module declares Java 25 and Gradle plugin API 9.7.0; actual Gradle 9.8 compile/native/build validation covers compatibility."
+    },
+    {
+      "dependency": "Gradle wrapper",
+      "before": "9.5.1",
+      "after": "9.8.0",
+      "initialClassification": "UPDATE_AVAILABLE_COMPATIBLE",
+      "finalClassification": "CURRENT_LATEST_STABLE_COMPATIBLE",
+      "action": "UPDATED",
+      "officialSource": "https://services.gradle.org/versions/current",
+      "evidenceFile": "upstream_gradle.txt",
+      "compatibilityConclusion": "Official current release is final/released, not nightly, snapshot or RC. Wrapper generated normally, distribution and wrapper JAR SHA-256 verified; --version ran under accepted Java 25."
+    },
+    {
+      "dependency": "JUnit Jupiter",
+      "before": "5.12.2",
+      "after": "6.1.3",
+      "initialClassification": "UPDATE_AVAILABLE_COMPATIBLE",
+      "finalClassification": "CURRENT_LATEST_STABLE_COMPATIBLE",
+      "action": "UPDATED",
+      "officialSource": "https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml",
+      "evidenceFile": "upstream_junit.txt",
+      "compatibilityConclusion": "Latest stable release, aligned through JUnit BOM 6.1.3. Java 25 compilation and authoritative tests pass."
+    },
+    {
+      "dependency": "JUnit Platform Launcher",
+      "before": "1.12.2",
+      "after": "6.1.3",
+      "initialClassification": "UPDATE_AVAILABLE_COMPATIBLE",
+      "finalClassification": "CURRENT_LATEST_STABLE_COMPATIBLE",
+      "action": "UPDATED",
+      "officialSource": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/6.1.3/junit-bom-6.1.3.pom",
+      "evidenceFile": "upstream_junit_pom.txt",
+      "compatibilityConclusion": "JUnit 6 uses aligned platform and Jupiter versions. BOM resolves the tightly related group together."
+    },
+    {
+      "dependency": "toml4j bundled library",
+      "before": "0.7.2",
+      "after": "0.7.2",
+      "initialClassification": "CURRENT_LATEST_STABLE_COMPATIBLE",
+      "finalClassification": "CURRENT_LATEST_STABLE_COMPATIBLE",
+      "action": "ALREADY_CURRENT",
+      "officialSource": "https://repo.maven.apache.org/maven2/com/moandjiezana/toml/toml4j/maven-metadata.xml",
+      "evidenceFile": "upstream_toml.txt",
+      "compatibilityConclusion": "Upstream latest release remains 0.7.2; no unnecessary edit."
+    },
+    {
+      "dependency": "JUnit BOM",
+      "before": "not declared",
+      "after": "6.1.3",
+      "initialClassification": "UPDATE_AVAILABLE_COMPATIBLE",
+      "finalClassification": "CURRENT_LATEST_STABLE_COMPATIBLE",
+      "action": "ADDED_FOR_ALIGNED_JUNIT_GROUP",
+      "officialSource": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/6.1.3/junit-bom-6.1.3.pom",
+      "evidenceFile": "upstream_junit_pom.txt",
+      "compatibilityConclusion": "Canonical junitVersion aligns all direct test modules; no independent platform version remains."
+    }
+  ],
+  "pins": [
+    {
+      "name": "Minecraft",
+      "before": "26.2",
+      "after": "26.2",
+      "classification": "INTENTIONALLY_PINNED_WITH_REASON",
+      "reason": "Explicit user product target; 26.3/26.4 excluded."
+    },
+    {
+      "name": "Java target",
+      "before": "25",
+      "after": "25",
+      "classification": "INTENTIONALLY_PINNED_WITH_REASON",
+      "reason": "Explicit user target; accepted authoritative runtime is Temurin 25.0.4+7-LTS."
+    },
+    {
+      "name": "mappingsBuild",
+      "value": "8",
+      "classification": "INTENTIONALLY_PINNED_WITH_REASON",
+      "reason": "Unused historical property; unobfuscated 26.2 build declares no mappings dependency. Avoid unrelated churn."
+    }
+  ],
+  "externallyManaged": {
+    "classification": "TRANSITIVE_MANAGED_EXTERNALLY",
+    "scope": "Loader/API/Loom transitive libraries, including Mixin/MixinExtras and individual Fabric modules; no independent version overrides added."
+  },
+  "inventorySources": [
+    "gradle.properties",
+    "build.gradle",
+    "settings.gradle",
+    "gradle/wrapper/gradle-wrapper.properties",
+    "src/main/resources/fabric.mod.json"
+  ],
+  "otherDirectVersionedPluginsFound": [],
+  "canonicalJUnitVersion": "gradle.properties:junitVersion",
+  "wrapper": {
+    "mechanism": "Gradle wrapper task under old distribution, --version verification, then wrapper refresh under 9.8.0",
+    "distributionUrl": "https://services.gradle.org/distributions/gradle-9.8.0-bin.zip",
+    "distributionSha256": "bafd5ce9cfaea0fbccfdc8439a1ac42fbd4cd9c89dc9a988228d8a2639a58e6c",
+    "wrapperJarSha256": "238e777fcddd7e34f9708186085def2abd6e08e658505b38718d79d74c21abd5",
+    "firstInvocationExit9009": "The running Windows batch wrapper was rewritten after wrapper task BUILD SUCCESSFUL; subsequent new-wrapper --version and wrapper task both passed."
+  },
+  "modernizationOrder": [
+    "Pre-modernization 80-test GREEN baseline",
+    "Loader: update_loader.gradle.log",
+    "API: update_api.gradle.log",
+    "Gradle wrapper before Loom because Loom 1.18 requires plugin API >=9.7: update_gradle.gradle.log",
+    "Loom: update_loom.gradle.log",
+    "Aligned JUnit: update_junit.gradle.log",
+    "Russian/default fixture refinement: localization_04.gradle.log",
+    "Canonical version and truthful metadata: final_gates_03.gradle.log",
+    "Fresh native runtime and standard distributable build"
+  ],
+  "fixtureIncidents": [
+    "Language fixture must use native Language.loadFromJson to normalize %d placeholders. Existing Flex Tape lacks a Russian override and intentionally falls back to its unchanged English key. Full source components include nested siblings, which must be included in rendering expectations.",
+    "Retained worldgen receipt fingerprint includes fabric.mod.json. New namespace adapter permits only exact BUILD-02 Fabric API constraint delta and reconstructs original source SHA-256; historical receipt and validators remain unchanged."
+  ],
+  "stableOnly": true,
+  "snapshotAlphaBetaRcNightlySelected": false,
+  "newerMinecraftSelected": false,
+  "oldLoaderCompatibilityClaimed": false,
+  "metadataRequirements": {
+    "java": ">=25",
+    "minecraft": "~26.2",
+    "fabricloader": ">=0.19.5",
+    "fabric_api": ">=0.161.0+26.2"
+  }
+}

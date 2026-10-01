@@ -1,0 +1,18 @@
+{
+  "snapshot": "phase_a_singleton_redstone_click_case_catalog",
+  "family": "SINGLETON:blazeandcave:redstone/click",
+  "source": "PhaseASingletonRedstoneClickGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "frozenAdvancementPath": "data/blazeandcave/advancement/redstone/click.json",
+  "frozenAdvancementSha256": "e089c1c8fd7f009b327a8e10a5845996635c01214a13c2ceb326a9282314514d",
+  "advancementId": "blazeandcave:redstone/click",
+  "criterion": "oak_button",
+  "requirementGroup": 0,
+  "trigger": "minecraft:default_block_use",
+  "blockTag": "minecraft:buttons",
+  "selectedBlock": "minecraft:oak_button",
+  "productionGate": "NONE",
+  "runtimeBoundary": "ServerPlayerGameMode.useItemOn->BlockState.useWithoutItem->ButtonBlock.press->CriteriaTriggers.DEFAULT_BLOCK_USE"
+}

@@ -1,0 +1,14 @@
+{
+  "snapshot": "phase_a_item_tag_inventory_containment_case_catalog",
+  "family": "ITEM_TAG_INVENTORY_CONTAINMENT",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "trigger": "minecraft:inventory_changed",
+  "runtimeBoundary": "ItemEntity.playerTouch -> Inventory.add -> InventoryChangedTrigger",
+  "cases": [
+    {"advancementId":"blazeandcave:animal/flamboyant_range","criterion":"bundle","itemTag":"minecraft:bundles","predicate":"bundle_contents contains 4 of each of 16 dyes","sourceJsonSha256":"e2d07a16067b9a7fff0b7bcdf2d3733764851e7fb58fdf9fe25ce3012296d1ee"},
+    {"advancementId":"blazeandcave:animal/fractal","criterion":"bundle","itemTag":"minecraft:bundles","predicate":"bundle_contents contains a 16-level nested bundle chain","sourceJsonSha256":"11028bbd6a217cf4da45ede0d2469b04e26974fa1208c5f5167d97b056605747"},
+    {"advancementId":"blazeandcave:end/organizational_wizard","criterion":"shulker_box","itemTag":"minecraft:shulker_boxes","predicate":"custom_name equals Blocks","sourceJsonSha256":"5d39597e70ef53dd1d3ca89b7e1e4ce2ce40bbc3025471e7d5df637f48cd5328"},
+    {"advancementId":"blazeandcave:redstone/sculker_box","criterion":"sculker_box","itemTag":"minecraft:shulker_boxes","predicate":"container has 27 slots of 64 sculk","sourceJsonSha256":"221530a4f87b368a26261ab93a5bffe848b8030116fbb2aa638168a9f534787d"}
+  ],
+  "completionSemantics": "four separate singleton requirement groups; exact four-case coverage is required"
+}

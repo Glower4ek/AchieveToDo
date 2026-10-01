@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockCertificationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:36:51.920Z" hostname="LAPTOP-L0LPH8GP" time="0.032">
+  <properties/>
+  <testcase name="exact30CoversAllSevenAdvancementsWithoutPropagule()" classname="com.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockCertificationTest" time="0.011"/>
+  <testcase name="historicalMinecraftDefinitionsAreGuardedBeyondCriterionIdentity()" classname="com.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockCertificationTest" time="0.003"/>
+  <testcase name="snapshotMatchesFrozenAuthoritativeInputAndUsesLf()" classname="com.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockCertificationTest" time="0.016"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

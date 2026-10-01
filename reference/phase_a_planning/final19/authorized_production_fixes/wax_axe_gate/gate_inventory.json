@@ -1,0 +1,31 @@
+{
+  "authorization": {
+    "id": "AUTHORIZED_FINAL19_WAX_AXE_GATE_PRODUCTION_FIX",
+    "productionFile": "src/main/java/com/diskree/achievetodo/injection/mixin/main/AxeItemMixin.java",
+    "preSha256": "e19c4a65da4df917424a44ff00248220f20dcab57d0668b9ebfbebd01fabbb46",
+    "postSha256": "4247ef44ce7e331f43820d889ecef541f8cbb0a200a31ede2764c8ecbdd46a13",
+    "patchPath": "reference/phase_a_planning/final19/wax_axe_gate_production_fix_proposal.patch",
+    "patchSha256": "8aa346920a42de51dc8ce8756d6fd212d5d055709c633e07ce8e223e7a49f1a3",
+    "scope": "Only existing evaluateNewBlockState injection moved to HEAD; all other bytes preserved",
+    "runtimeRegression": "GREEN_14_NATIVE_PACKET_CONTROLS_INDEPENDENTLY_VALIDATED",
+    "regressionRunId": "566ab631-e69f-43b4-b4a6-690a83c312f6",
+    "regressionEvidencePath": "src/test/resources/final19_certification/axe_gate_postfix_regression.json",
+    "regressionEvidenceSha256": "0b19fd6623ac7a5ea781b0e47cddef7050d3d835ae1f26ad5ae87da5305fddc2"
+  },
+  "persistentEvidenceSha256": "0b19fd6623ac7a5ea781b0e47cddef7050d3d835ae1f26ad5ae87da5305fddc2",
+  "files": {
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/axe_gate_independent_validation.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/axe_gate_independent_validation.gradle.log": "f3ddf868da4d7f530afbf84898836c48c76068fb910b11100b936062c2984a4d",
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/axe_gate_regression-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/axe_gate_regression.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/axe_gate_regression.gradle.log": "1c3c300680e6a2a6495f8c835c2d4e8c618e894a375709572787e870864cc25c",
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/axe_postfix_compile_static.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/axe_postfix_compile_static.gradle.log": "6321beb6afcc3f26c2ed6e3cc786ab1f08b635e3802bf082998516325a5254b8",
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/axe_postfix_compile_static.previous.639263866197757907.gradle.log": "d30d129fe24029d04c28351b02475c6369360319ca59214b3a241481cb2db0c1",
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/TEST-com.diskree.achievetodo.certification.Final19DualTagsStaticTest.xml": "c99e304a9d5ee58c6b888c4519063eb15061f60026237bd5c1d2938c004710f2",
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/TEST-com.diskree.achievetodo.certification.Final19LedgerTest.xml": "ab5825d3e625e2a1f668b21dacf67fccf75997f5ff036961222c3b7e30aa9612",
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/TEST-com.diskree.achievetodo.certification.Final19VariantsAcceptanceTest.xml": "68e030517d4e66e89f45d8a91c6814ccb66cb383e0580e6decbd2c4137afe4a0",
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/TEST-com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest.xml": "92c5da7696e4858acd2e0a35bf93dce6d681cba6f5e5fee878fbf57c11d53d36",
+    "reference/phase_a_planning/final19/authorized_production_fixes/wax_axe_gate/TEST-com.diskree.achievetodo.certification.Final19WorldgenAcceptanceTest.xml": "030828a4b80722096d0389af76726261874806c95da58c18fe429a1105910222"
+  }
+}

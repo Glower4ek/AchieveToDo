@@ -1,0 +1,67 @@
+--- a/src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java
++++ b/src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java
+@@ -35,6 +35,7 @@
+     private static final String MARKER_ENTRY = "achievetodo_compatibility/compat_26_2.properties";
+     private static final String MARKER_VERSION = "compat_26_2_r15";
+     private static final String ROOT_OVERRIDE_SHA1_PROPERTY = "rootOverrideSha1";
++    private static final String LLAMA_CARPET_NBT_PROPERTY = "llamaCarpetNbtMapping";
+     private static final String[] CATEGORY_ROOTS = {
+         "adventure",
+         "animal",
+@@ -218,7 +219,9 @@
+             return MARKER_VERSION.equals(properties.getProperty("version"))
+                 && externalPack.getFileName().equals(properties.getProperty("fileName"))
+                 && externalPack.getSha1().equals(properties.getProperty("sourceSha1"))
+-                && currentRootOverrideSha1().equals(properties.getProperty(ROOT_OVERRIDE_SHA1_PROPERTY));
++                && currentRootOverrideSha1().equals(properties.getProperty(ROOT_OVERRIDE_SHA1_PROPERTY))
++                && (externalPack != ExternalPack.BACAP
++                    || "equipment.body".equals(properties.getProperty(LLAMA_CARPET_NBT_PROPERTY)));
+         } catch (IOException e) {
+             return false;
+         }
+@@ -701,6 +704,13 @@
+             String targetKey = originalKey;
+             Context childContext = Context.NORMAL;
+ 
++            // Exact frozen llama-carpet shape only; arbitrary SNBT remains unchanged.
++            if ("nbt".equals(originalKey) && "#blazeandcave:llamas".equals(getString(object, LEGACY_TYPE))) {
++                JsonElement mapped = normalizeFrozenLlamaCarpetNbt(value);
++                changed |= mapped != value;
++                value = mapped;
++            }
++
+             if (LEGACY_TYPE.equals(originalKey)) {
+                 targetKey = "entity_type";
+                 value = normalizeEntityType(value);
+@@ -747,6 +757,21 @@
+         return changed ? new TransformResult(transformed, true) : new TransformResult(object, false);
+     }
+ 
++    private static @NotNull JsonElement normalizeFrozenLlamaCarpetNbt(@NotNull JsonElement value) {
++        if (!value.isJsonPrimitive() || !value.getAsJsonPrimitive().isString()) {
++            return value;
++        }
++        String nbt = value.getAsString();
++        for (String color : List.of("white", "orange", "magenta", "light_blue", "yellow", "lime",
++            "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black")) {
++            String item = "minecraft:" + color + "_carpet";
++            if (("{body_armor_item:{id:\"" + item + "\"}}").equals(nbt)) {
++                return new com.google.gson.JsonPrimitive("{equipment:{body:{id:\"" + item + "\"}}}");
++            }
++        }
++        return value;
++    }
++
+     private static @NotNull TransformResult transformPotentialEntityPredicateArray(@NotNull JsonElement element) {
+         if (!element.isJsonArray()) {
+             return new TransformResult(element, false);
+@@ -1185,6 +1210,9 @@
+         properties.setProperty("fileName", externalPack.getFileName());
+         properties.setProperty("sourceSha1", externalPack.getSha1());
+         properties.setProperty(ROOT_OVERRIDE_SHA1_PROPERTY, currentRootOverrideSha1());
++        if (externalPack == ExternalPack.BACAP) {
++            properties.setProperty(LLAMA_CARPET_NBT_PROPERTY, "equipment.body");
++        }
+         ByteArrayOutputStream output = new ByteArrayOutputStream();
+         properties.store(output, null);
+         writeEntry(out, MARKER_ENTRY, output.toByteArray());

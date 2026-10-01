@@ -1,0 +1,51 @@
+{
+  "snapshot": "phase_a_singleton_redstone_click_execution_evidence",
+  "schemaVersion": 1,
+  "family": "SINGLETON:blazeandcave:redstone/click",
+  "source": "PhaseASingletonRedstoneClickGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:eabf2da0a8ef6a2faebea93c2c129d2b8c64c042ed9a76c8b179c2309b78000f",
+  "runId": "bc90e1d2-4182-4ecf-a494-ae0317e595cb",
+  "generatedAt": "2026-09-29T11:34:03.918954200Z",
+  "entries": [
+    {
+      "family": "SINGLETON:blazeandcave:redstone/click",
+      "source": "PhaseASingletonRedstoneClickGameTest",
+      "advancementId": "blazeandcave:redstone/click",
+      "criterion": "oak_button",
+      "trigger": "minecraft:default_block_use",
+      "boundary": "ServerPlayerGameMode.useItemOn->BlockState.useWithoutItem->ButtonBlock.press->CriteriaTriggers.DEFAULT_BLOCK_USE",
+      "observedBlock": "minecraft:oak_button",
+      "checkedBlockTag": "minecraft:buttons",
+      "runId": "bc90e1d2-4182-4ecf-a494-ae0317e595cb",
+      "catalogFingerprint": "sha-256:eabf2da0a8ef6a2faebea93c2c129d2b8c64c042ed9a76c8b179c2309b78000f",
+      "result": "GREEN",
+      "gameMode": "SURVIVAL",
+      "playerUuid": "385fc9b0-223f-491d-85e6-bda63fce43c6",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "emptyHand": true,
+      "blockTagMember": true,
+      "poweredBefore": false,
+      "poweredAfter": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "noDirectCriterionTrigger": true,
+      "noManualAward": true,
+      "productionGateWitness": {
+        "productionGate": "NONE",
+        "lockedLandmark": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 2364,
+        "warningCount": 0
+      }
+    }
+  ]
+}

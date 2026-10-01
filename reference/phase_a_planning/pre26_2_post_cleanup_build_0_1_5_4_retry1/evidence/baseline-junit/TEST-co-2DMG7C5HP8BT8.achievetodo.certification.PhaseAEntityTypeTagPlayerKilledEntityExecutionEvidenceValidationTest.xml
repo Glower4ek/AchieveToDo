@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:58:58.655Z" hostname="LAPTOP-L0LPH8GP" time="0.217">
+  <properties/>
+  <testcase name="persistentArtifactValidatesIndependently()" classname="com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest" time="0.004"/>
+  <testcase name="wrongFamilyAndSourceRejected()" classname="com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest" time="0.031"/>
+  <testcase name="promotableValidationStillRequiresExactSupportedSet()" classname="com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest" time="0.011"/>
+  <testcase name="persistentArtifactIgnoresNewerActiveRunState()" classname="com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest" time="0.01"/>
+  <testcase name="persistentArtifactRejectsInternalRunIdMismatch()" classname="com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest" time="0.025"/>
+  <testcase name="booleansAndCountsRejectedWhenInvalid()" classname="com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest" time="0.069"/>
+  <testcase name="wrongTagAndBlankSelectedEntityRejected()" classname="com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest" time="0.024"/>
+  <testcase name="entityKillAndMetadataRequirementsFailClosed()" classname="com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest" time="0.026"/>
+  <testcase name="partialTemporaryArtifactAcceptedForDiagnosticSlice()" classname="com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

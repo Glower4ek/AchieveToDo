@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.MixinsConfigTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-01T15:04:27.109Z" hostname="LAPTOP-L0LPH8GP" time="0.005">
+  <properties/>
+  <testcase name="clientMixinsConfigIncludesGuiMixin()" classname="com.diskree.achievetodo.MixinsConfigTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

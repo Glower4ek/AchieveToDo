@@ -1,0 +1,13 @@
+{
+  "byteIdentical": true,
+  "preCleanSha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b",
+  "postCleanSha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b",
+  "preCleanBytes": 1546595,
+  "postCleanBytes": 1546595,
+  "addedEntries": [],
+  "removedEntries": [],
+  "changedEntries": [],
+  "rebuiltPostCleanup": false,
+  "scope": "Retained accepted JAR only: no post-clean build was run after the additional baseline failure.",
+  "explanation": "The retained accepted archive remains byte-identical to its saved pre-build copy; this does not prove post-clean rebuild equivalence."
+}

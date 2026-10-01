@@ -1,0 +1,10 @@
+package com.diskree.achievetodo.certification;
+import com.google.gson.*;
+import org.junit.jupiter.api.Test;
+import java.nio.file.*;
+import static org.junit.jupiter.api.Assertions.*;
+class Final19MixedWorldgenStaticTest {
+    static final String FAMILY="MIXED_WORLDGEN_PREDICATE_CONTEXT";final Path root=Path.of("").toAbsolutePath();
+    @Test void allFiveExactCriteriaAndBothWorldgenCombinationGroupsParse()throws Exception{try(var context=new Final19StaticContext(root,FAMILY)){var result=context.validate(FAMILY);assertEquals(5,result.get("criteriaCount").getAsInt());assertEquals(2,result.get("requirementGroupCount").getAsInt());result.addProperty("inputFingerprint",Final19StaticContext.inputFingerprint(root,FAMILY));Final19WorldgenEvidence.write(root.resolve("build/tmp/final19_implementation/mixed_worldgen_static.json"),result);}}
+    @Test void missingWorldgenRegistriesAndDeletedVehicleEquipmentDimensionsRemainRejected()throws Exception{try(var context=new Final19StaticContext(root,FAMILY)){for(var value:context.catalog(FAMILY).getAsJsonArray("sources")){var source=value.getAsJsonObject();for(int i=0;i<2;i++){var bad=source.getAsJsonObject("auditedConvertedDefinition").deepCopy();var predicate=bad.getAsJsonObject("criteria").entrySet().iterator().next().getValue().getAsJsonObject().getAsJsonObject("conditions").getAsJsonArray("player").get(0).getAsJsonObject();if(predicate.get("condition").getAsString().equals("minecraft:any_of")){var vehicle=predicate.getAsJsonArray("terms").get(0).getAsJsonObject().getAsJsonObject("predicate").getAsJsonObject("vehicle");if(i==0)vehicle.getAsJsonObject("location").addProperty("structures","minecraft:no_such_shipwreck");else vehicle.remove("entity_type");}else{var p=predicate.getAsJsonObject("predicate");if(i==0)p.getAsJsonObject("location").addProperty("biomes","minecraft:no_such_deep_ocean");else p.remove("equipment");}if(i==0)assertThrows(RuntimeException.class,()->context.parse(bad));assertThrows(RuntimeException.class,()->Final19StaticContext.validateExact(source,bad));}}}}
+}

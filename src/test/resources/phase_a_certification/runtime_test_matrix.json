@@ -1,0 +1,158 @@
+{
+  "snapshot": "phase_a_runtime_test_matrix",
+  "canonicalAdvancementCount": 1152,
+  "scenarios": [
+    {
+      "id": "base",
+      "externalPacks": [
+        "bacap.zip"
+      ],
+      "internalPacks": [
+        "bacap_override",
+        "bacap_rewards_item",
+        "bacap_rewards_experience",
+        "bacap_rewards_trophy",
+        "bacap_cooperative_mode"
+      ],
+      "expectedCanonicalAdvancementCount": 1152,
+      "variantReplacementAdvancementIds": [],
+      "environmentPackAdvancementIds": []
+    },
+    {
+      "id": "hardcore",
+      "externalPacks": [
+        "bacap.zip",
+        "bacap_hardcore.zip"
+      ],
+      "internalPacks": [
+        "bacap_override",
+        "bacap_hardcore_override",
+        "bacap_rewards_item",
+        "bacap_rewards_experience",
+        "bacap_rewards_trophy",
+        "bacap_cooperative_mode"
+      ],
+      "expectedCanonicalAdvancementCount": 1152,
+      "variantReplacementAdvancementIds": [
+        "blazeandcave:adventure/rekt",
+        "blazeandcave:adventure/this_will_be_a_breeze",
+        "blazeandcave:animal/goat_simulator",
+        "blazeandcave:animal/not_the_bees",
+        "blazeandcave:biomes/kung_fu_panda",
+        "blazeandcave:biomes/so_long_and_thanks_for_all_the_fish",
+        "blazeandcave:biomes/were_going_on_a_bear_hunt",
+        "blazeandcave:building/living_dummy",
+        "blazeandcave:challenges/death_from_all",
+        "blazeandcave:enchanting/handmade_blinding",
+        "blazeandcave:end/the_actual_end",
+        "blazeandcave:monsters/aww_man",
+        "blazeandcave:monsters/now_thats_a_lot_of_damage",
+        "blazeandcave:nether/et_tu_brute",
+        "blazeandcave:nether/whole_hog",
+        "blazeandcave:weaponry/loser"
+      ],
+      "environmentPackAdvancementIds": []
+    },
+    {
+      "id": "terralith",
+      "externalPacks": [
+        "bacap.zip",
+        "terralith.zip",
+        "bacap_terralith.zip"
+      ],
+      "internalPacks": [
+        "bacap_override",
+        "bacap_terralith_override",
+        "bacap_rewards_item",
+        "bacap_rewards_experience",
+        "bacap_rewards_trophy",
+        "bacap_cooperative_mode"
+      ],
+      "expectedCanonicalAdvancementCount": 1152,
+      "variantReplacementAdvancementIds": [
+        "blazeandcave:adventure/castle_of_hrrms",
+        "blazeandcave:adventure/raidin_master",
+        "blazeandcave:adventure/remote_shelter",
+        "blazeandcave:adventure/spire_of_ice",
+        "blazeandcave:adventure/totally_not_terraria",
+        "blazeandcave:adventure/under_the_ice",
+        "blazeandcave:biomes/a_cliffhanger",
+        "blazeandcave:biomes/a_grassy_nature",
+        "blazeandcave:biomes/aesthetic",
+        "blazeandcave:biomes/alpha_days",
+        "blazeandcave:biomes/bushranger",
+        "blazeandcave:biomes/choco_mountain",
+        "blazeandcave:biomes/cold_feet",
+        "blazeandcave:biomes/eruption_in_the_air",
+        "blazeandcave:biomes/high_feet",
+        "blazeandcave:biomes/highlander",
+        "blazeandcave:biomes/land_of_icicles",
+        "blazeandcave:biomes/master_spelunker",
+        "blazeandcave:biomes/o_land_o_bloom",
+        "blazeandcave:biomes/one_small_steppe_for_man",
+        "blazeandcave:biomes/one_with_the_forest",
+        "blazeandcave:biomes/over_the_moon",
+        "blazeandcave:biomes/overgrown",
+        "blazeandcave:biomes/pretty_in_purple",
+        "blazeandcave:biomes/skylanders",
+        "blazeandcave:biomes/smarter_than_the_average_bear",
+        "blazeandcave:biomes/terralithic",
+        "blazeandcave:biomes/the_boreal_deal",
+        "blazeandcave:biomes/the_world_is_your_canvas",
+        "blazeandcave:biomes/warm_feet",
+        "blazeandcave:biomes/wet_feet",
+        "blazeandcave:challenges/explorer_of_worlds",
+        "blazeandcave:challenges/i_am_loot",
+        "blazeandcave:mining/oresome",
+        "minecraft:adventure/adventuring_time"
+      ],
+      "environmentPackAdvancementIds": []
+    },
+    {
+      "id": "amplified_nether",
+      "externalPacks": [
+        "bacap.zip",
+        "amplified_nether.zip",
+        "bacap_amplified_nether.zip"
+      ],
+      "internalPacks": [
+        "bacap_override",
+        "bacap_amplified_nether_override",
+        "bacap_rewards_item",
+        "bacap_rewards_experience",
+        "bacap_rewards_trophy",
+        "bacap_cooperative_mode"
+      ],
+      "expectedCanonicalAdvancementCount": 1152,
+      "variantReplacementAdvancementIds": [
+        "blazeandcave:nether/inception",
+        "blazeandcave:nether/limbo_walker"
+      ],
+      "environmentPackAdvancementIds": []
+    },
+    {
+      "id": "nullscape",
+      "externalPacks": [
+        "bacap.zip",
+        "nullscape.zip",
+        "bacap_nullscape.zip"
+      ],
+      "internalPacks": [
+        "bacap_override",
+        "bacap_nullscape_override",
+        "bacap_rewards_item",
+        "bacap_rewards_experience",
+        "bacap_rewards_trophy",
+        "bacap_cooperative_mode"
+      ],
+      "expectedCanonicalAdvancementCount": 1152,
+      "variantReplacementAdvancementIds": [
+        "blazeandcave:end/void_walker",
+        "nullscape:root"
+      ],
+      "environmentPackAdvancementIds": [
+        "nullscape:root"
+      ]
+    }
+  ]
+}

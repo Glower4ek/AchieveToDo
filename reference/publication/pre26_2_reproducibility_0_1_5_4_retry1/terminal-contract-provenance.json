@@ -1,0 +1,23 @@
+{
+  "durableContractPath": "reference/phase_a_planning/phase_a_terminal_reconciliation_20260930.json",
+  "durableContractSha256": "b08e001dd797e783484c3e338122286b98a17276cf289fc50270067b2a4aefb0",
+  "duplicateFixtureCreated": false,
+  "historicalPhaseACertified": 1133,
+  "historicalPhaseAUnfinished": 19,
+  "historicalRuntimePartial": 0,
+  "frontier": {
+    "path": "reference/phase_a_planning/phase_a_frontier_map.json",
+    "sha256": "2cb3d3f835a1d8f1eda97ec782725a72936f346dd8cfeed75da61fc4d9f36662",
+    "bytes": 135114
+  },
+  "canonical": {
+    "path": "src/test/resources/phase_a_certification/phase_a_advancement_rollup.json",
+    "sha256": "439f2aa1c577ffbee275525765ac9229bf5633f0f5e1da498c0adc5702bd2810",
+    "bytes": 1183495
+  },
+  "sourceSkillPath": ".agents/skills/achievetodo-phase-a/SKILL.md",
+  "sourceSkillSha256": "22448f14632d290cee8b0639c88d51f1ee992cafd504231a57cb77384aa9a594",
+  "skillHashMatchesHistoricalCheckpoint": true,
+  "derivation": "One-time comparison of the existing local manual assertions to immutable checkpoint summary/counts and fresh frontier/canonical byte hashes; runtime validation reads only the durable terminal reconciliation JSON.",
+  "scope": "Historical Phase A terminal evidence 1133/1152, separate from FINAL19 product 1152/1152; local manual remains excluded."
+}

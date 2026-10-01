@@ -1,0 +1,52 @@
+{
+  "snapshot": "phase_a_singleton_miracle_drink_execution_evidence",
+  "schemaVersion": 1,
+  "family": "SINGLETON:blazeandcave:monsters/miracle_drink",
+  "source": "PhaseASingletonMiracleDrinkGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:dbb7b68825ca86fe9ba4a2efbe53c57ed3f4d9c9602c27737cbd541a77c408be",
+  "runId": "5365c647-e052-4929-9db0-037b639f791f",
+  "generatedAt": "2026-09-29T18:57:42.643510500Z",
+  "entries": [
+    {
+      "family": "SINGLETON:blazeandcave:monsters/miracle_drink",
+      "source": "PhaseASingletonMiracleDrinkGameTest",
+      "advancementId": "blazeandcave:monsters/miracle_drink",
+      "criterion": "miracle_drink",
+      "trigger": "minecraft:consume_item",
+      "boundary": "ServerboundUseItemPacket.handle->ServerGamePacketListenerImpl.handleUseItem->LivingEntity.completeUsingItem->Consumable.onConsume->CriteriaTriggers.CONSUME_ITEM",
+      "observedItem": "minecraft:milk_bucket",
+      "observedTag": "blazeandcave:poison_cures",
+      "observedEffect": "minecraft:poison",
+      "runId": "5365c647-e052-4929-9db0-037b639f791f",
+      "catalogFingerprint": "sha-256:dbb7b68825ca86fe9ba4a2efbe53c57ed3f4d9c9602c27737cbd541a77c408be",
+      "result": "GREEN",
+      "gameMode": "SURVIVAL",
+      "playerUuid": "a2943e03-3dfa-494a-a81d-be02858b3a57",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "tagVerified": true,
+      "poisonBefore": true,
+      "healthBefore": 1.0,
+      "scoreObjective": "bac_health",
+      "scoreBefore": 1,
+      "usePacketAccepted": true,
+      "poisonRemoved": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "ticksToConsume": 32,
+      "noDirectCriterionTrigger": true,
+      "noManualAward": true,
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 2484,
+        "warningCount": 0
+      }
+    }
+  ]
+}

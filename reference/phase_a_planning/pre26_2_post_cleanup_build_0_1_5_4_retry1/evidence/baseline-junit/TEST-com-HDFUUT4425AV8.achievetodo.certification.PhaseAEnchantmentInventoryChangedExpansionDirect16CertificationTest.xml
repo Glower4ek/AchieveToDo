@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedExpansionDirect16CertificationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:58:56.771Z" hostname="LAPTOP-L0LPH8GP" time="0.362">
+  <properties/>
+  <testcase name="summaryStaysAtAcceptedScope()" classname="com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedExpansionDirect16CertificationTest" time="0.293"/>
+  <testcase name="snapshotMatchesCheckedInCatalog()" classname="com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedExpansionDirect16CertificationTest" time="0.068"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

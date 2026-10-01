@@ -116,6 +116,7 @@ public class AchieveToDoClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         registerPayloads();
+        AdvancementLinkCommand.register();
 
         ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> {
             abilitiesConfiguration = null;

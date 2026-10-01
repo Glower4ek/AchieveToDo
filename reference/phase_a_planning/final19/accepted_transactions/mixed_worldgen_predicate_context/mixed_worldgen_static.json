@@ -1,0 +1,115 @@
+{
+  "family": "MIXED_WORLDGEN_PREDICATE_CONTEXT",
+  "staticSemantics": "EXACT_FROZEN_CURRENT_TYPED_CONTEXT",
+  "criteriaCount": 5,
+  "requirementGroupCount": 2,
+  "sourceBackedTags": {
+    "minecraft:entity_type|blazeandcave:all_boats": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/entity_type/all_boats.json",
+          "sha256": "5b2ab6acf3cabfe9af5de540f807ae3bdde7f7ef5d66c82e578920a7dc8aa366",
+          "definition": {
+            "replace": false,
+            "values": [
+              "#minecraft:boat",
+              "#blazeandcave:chest_boats"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:oak_boat",
+        "minecraft:spruce_boat",
+        "minecraft:birch_boat",
+        "minecraft:jungle_boat",
+        "minecraft:acacia_boat",
+        "minecraft:cherry_boat",
+        "minecraft:dark_oak_boat",
+        "minecraft:pale_oak_boat",
+        "minecraft:mangrove_boat",
+        "minecraft:bamboo_raft",
+        "minecraft:oak_chest_boat",
+        "minecraft:spruce_chest_boat",
+        "minecraft:birch_chest_boat",
+        "minecraft:jungle_chest_boat",
+        "minecraft:acacia_chest_boat",
+        "minecraft:cherry_chest_boat",
+        "minecraft:dark_oak_chest_boat",
+        "minecraft:mangrove_chest_boat",
+        "minecraft:bamboo_chest_raft",
+        "minecraft:pale_oak_chest_boat"
+      ]
+    },
+    "minecraft:entity_type|blazeandcave:chest_boats": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/entity_type/chest_boats.json",
+          "sha256": "bc5c31ae619ea609ab3936a8060ee974fef63a6441b53d0c166932c428660049",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:oak_chest_boat",
+              "minecraft:spruce_chest_boat",
+              "minecraft:birch_chest_boat",
+              "minecraft:jungle_chest_boat",
+              "minecraft:acacia_chest_boat",
+              "minecraft:cherry_chest_boat",
+              "minecraft:dark_oak_chest_boat",
+              "minecraft:mangrove_chest_boat",
+              "minecraft:bamboo_chest_raft",
+              "minecraft:pale_oak_chest_boat"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:oak_chest_boat",
+        "minecraft:spruce_chest_boat",
+        "minecraft:birch_chest_boat",
+        "minecraft:jungle_chest_boat",
+        "minecraft:acacia_chest_boat",
+        "minecraft:cherry_chest_boat",
+        "minecraft:dark_oak_chest_boat",
+        "minecraft:mangrove_chest_boat",
+        "minecraft:bamboo_chest_raft",
+        "minecraft:pale_oak_chest_boat"
+      ]
+    },
+    "minecraft:entity_type|minecraft:boat": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\.gradle-user-home\\caches\\fabric-loom\\minecraftMaven\\net\\minecraft\\minecraft-merged-deobf\\26.2\\minecraft-merged-deobf-26.2.jar!data/minecraft/tags/entity_type/boat.json",
+          "sha256": "ed7fc2d99f7c4add91109f28a25345b972e275368eb0667a5ad8eba51248d8ea",
+          "definition": {
+            "values": [
+              "minecraft:oak_boat",
+              "minecraft:spruce_boat",
+              "minecraft:birch_boat",
+              "minecraft:jungle_boat",
+              "minecraft:acacia_boat",
+              "minecraft:cherry_boat",
+              "minecraft:dark_oak_boat",
+              "minecraft:pale_oak_boat",
+              "minecraft:mangrove_boat",
+              "minecraft:bamboo_raft"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:oak_boat",
+        "minecraft:spruce_boat",
+        "minecraft:birch_boat",
+        "minecraft:jungle_boat",
+        "minecraft:acacia_boat",
+        "minecraft:cherry_boat",
+        "minecraft:dark_oak_boat",
+        "minecraft:pale_oak_boat",
+        "minecraft:mangrove_boat",
+        "minecraft:bamboo_raft"
+      ]
+    }
+  },
+  "inputFingerprint": "f55a05f27f294b33c554f8550f4494686c48f980bdd258f648ce8d13a5196d49"
+}

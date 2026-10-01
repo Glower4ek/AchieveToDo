@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:block/pale_moss_block",
+    "description": {
+      "translate": "achievetodo.description"
+    },
+    "icon": {
+      "id": "minecraft:barrier"
+    },
+    "show_toast": false,
+    "title": "AchieveToDo"
+  },
+  "requirements": [
+    [
+      "tick"
+    ]
+  ]
+}

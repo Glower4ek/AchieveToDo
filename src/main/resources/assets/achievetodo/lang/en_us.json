@@ -75,6 +75,7 @@
   "achievetodo.advancements_tab_mystified_tooltip.challenges": "Kill the ender dragon to unlock this tab",
 
   "achievetodo.suggest_install_advancements_search_mod": "To navigate to advancements, install the ",
+  "achievetodo.advancement_navigation_unavailable": "This advancement cannot be opened with the current AdvancementsSearch integration.",
 
   "achievetodo.ability.eat_apple.name": "Apple",
   "achievetodo.ability.eat_apple.description": "Ability to eat an apple",

@@ -1,0 +1,23 @@
+{
+  "purpose": "Historical localization/location catalog comparison fixture; not frozen production BACAP",
+  "sourceCachePath": "reference/localization/.official_audit_cache/bacap_1.21.zip",
+  "durablePath": "reference/localization/fixtures/bacap_1.21.zip",
+  "sha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+  "size": 3135424,
+  "modrinthVersionId": "Y2zZ5eSs",
+  "modrinthProjectId": "VoVJ47kN",
+  "version": "1.21",
+  "published": "2026-06-17T06:13:32.499541Z",
+  "upstreamFile": {
+    "id": "EdZR962n",
+    "hashes": {
+      "sha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+      "sha512": "10df49e4b53d148309486603a59d8891025fcd405151b54610ac2499a636278c798d26211d2174dd3e161a8ef6ee5998014afe922dcddec67a149717aeac7f42"
+    },
+    "url": "https://cdn.modrinth.com/data/VoVJ47kN/versions/Y2zZ5eSs/BlazeandCave%27s%20Advancements%20Pack%201.21.zip",
+    "filename": "BlazeandCave's Advancements Pack 1.21.zip",
+    "primary": true,
+    "size": 3135424,
+    "file_type": null
+  }
+}

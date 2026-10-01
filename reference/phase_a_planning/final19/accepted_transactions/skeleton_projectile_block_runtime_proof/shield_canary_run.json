@@ -1,0 +1,11 @@
+{
+  "runId": "aa92e71f-a86c-4ca9-b85c-a2eea5427888",
+  "prefix": "shield",
+  "exact": false,
+  "fingerprint": "bf09e6d6baf6294f05136017cb19c5d093c66e4235f81d0ade1020a35eb753a6",
+  "runtimeCopySha256": "6694aeadd744afa96bca4ad3688566a2681c42913f0049470fab71a4be1e7416",
+  "productionConverterSha256": "1bea3ba9caf22963d1ef26de69b19534a4b16d1eab85a39c5e1fc17750227a31",
+  "certificationGain": 1,
+  "stage": "TEMP_DIAGNOSTIC",
+  "expectedEntries": 5
+}

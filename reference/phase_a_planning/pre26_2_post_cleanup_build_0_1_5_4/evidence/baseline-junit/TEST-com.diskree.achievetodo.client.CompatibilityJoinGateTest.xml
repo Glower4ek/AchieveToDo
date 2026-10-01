@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.client.CompatibilityJoinGateTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:38:07.191Z" hostname="LAPTOP-L0LPH8GP" time="0.002">
+  <properties/>
+  <testcase name="initialJoinRunsPreparationButPreparedJoinDoesNotReenter()" classname="com.diskree.achievetodo.client.CompatibilityJoinGateTest" time="0.001"/>
+  <testcase name="preparedJoinGuardClearsWhenInternalJoinThrows()" classname="com.diskree.achievetodo.client.CompatibilityJoinGateTest" time="0.001"/>
+  <testcase name="failedPreparationDoesNotArmPreparedJoin()" classname="com.diskree.achievetodo.client.CompatibilityJoinGateTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

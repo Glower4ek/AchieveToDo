@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionEvidenceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:48:54.760Z" hostname="LAPTOP-L0LPH8GP" time="5.597">
+  <properties/>
+  <testcase name="persistentExactSetIgnoresActiveStateAndRejectsMissingDuplicateOrCorruptedWitnesses(Path)" classname="com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionEvidenceTest" time="0.089"/>
+  <testcase name="evidenceCompletesAllFrozenGroupsAndPreservesOtherCanonicalEntries()" classname="com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionEvidenceTest" time="5.506"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

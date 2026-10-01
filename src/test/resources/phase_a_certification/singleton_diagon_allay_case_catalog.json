@@ -1,0 +1,19 @@
+{
+  "snapshot": "phase_a_singleton_diagon_allay_case_catalog",
+  "family": "SINGLETON:blazeandcave:adventure/diagon_allay",
+  "source": "PhaseASingletonDiagonAllayGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "frozenAdvancementPath": "data/blazeandcave/advancement/adventure/diagon_allay.json",
+  "frozenAdvancementSha256": "6cd5238ac062614baeb05fb7a4c2cbb9ede1b4c1cb9094da0b51c824b431accd",
+  "advancementId": "blazeandcave:adventure/diagon_allay",
+  "criterion": "diagon_allay",
+  "requirementGroup": 0,
+  "trigger": "minecraft:thrown_item_picked_up_by_player",
+  "selectedEntity": "minecraft:allay",
+  "selectedItem": "minecraft:potion",
+  "selectedPlayerLocationAlternative": "minecraft:deep_dark",
+  "productionGate": "LANDMARK_ONLY_FOR_ALLAY_INTERACTION",
+  "runtimeBoundary": "AllayAi.GoAndGiveItemsToTarget->BehaviorUtils.throwItem->ItemEntity.playerTouch->ServerPlayer.onItemPickup->CriteriaTriggers.THROWN_ITEM_PICKED_UP_BY_PLAYER"
+}

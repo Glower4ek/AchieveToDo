@@ -4,6 +4,8 @@ Minecraft, but the world has stolen your abilities. Reclaim them one by one by c
 
 ## About
 
+Current project owner and maintainer: **Glower4ek**. Maintained source: [Glower4ek/AchieveToDo](https://github.com/Glower4ek/AchieveToDo).
+
 This project keeps the vanilla feel—no overpowered features—but flips progression on its head. Instead of starting with every ability, you must earn them through advancements. Explore alternate paths, delve into dungeons, and celebrate every basic resource you manage to unlock.
 
 Built to showcase [BlazeandCave's Advancements Pack](https://modrinth.com/datapack/blazeandcaves-advancements-pack), the mod integrates over 1000 tasks that serve as both a challenge and a tutorial. Whether you’re a newcomer or a veteran, the locked mechanics will force you to rediscover Minecraft in a completely new, demanding way.

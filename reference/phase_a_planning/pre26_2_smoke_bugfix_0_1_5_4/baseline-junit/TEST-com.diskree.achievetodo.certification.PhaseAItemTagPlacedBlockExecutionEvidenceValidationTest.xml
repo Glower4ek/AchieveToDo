@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:48:36.654Z" hostname="LAPTOP-L0LPH8GP" time="0.594">
+  <properties/>
+  <testcase name="rootAndEntryMetadataMismatchesRejected()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.133"/>
+  <testcase name="promotableValidationStillRequiresExactSupportedSet()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.019"/>
+  <testcase name="redReceiptRejected()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.032"/>
+  <testcase name="wrongFamilyRejected()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.021"/>
+  <testcase name="missingAndExtraSupportedReceiptsRejectedForPromotableValidation()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.057"/>
+  <testcase name="tagMembershipAndCountRejectedWhenInvalid()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.039"/>
+  <testcase name="badHandCountsRejected()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.041"/>
+  <testcase name="persistentLoaderRequiresExactCoverage()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.013"/>
+  <testcase name="placementStateRejectedWhenInvalid()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.082"/>
+  <testcase name="wrongItemTagRejected()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.042"/>
+  <testcase name="criterionBooleansRejectedWhenInvalid()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.036"/>
+  <testcase name="duplicateKeyRejected()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.023"/>
+  <testcase name="partialTemporaryArtifactAcceptedForDiagnosticSlice()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.028"/>
+  <testcase name="wrongSourceRejected()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest" time="0.024"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,24 @@
+{
+  "acceptedRegression": {
+    "id": "AUTHORIZED_FINAL19_CAULDRON_GATE_PRODUCTION_FIX",
+    "runId": "50c353c6-aa93-4a48-b0ed-ed96c61ee9f3",
+    "path": "src/test/resources/final19_certification/cauldron_gate_postfix_regression.json",
+    "sha256": "7c01b174501b499d160ec37b04fdfaf6033b7e3ddbd52c48cdff1546a56045d5",
+    "certificationGain": 0
+  },
+  "files": {
+    "reference/phase_a_planning/final19/authorized_production_fixes/cauldron_gate/cauldron_gate_regression.gradle.log": "5c04c217491b3f12005088505844c720a570e4b2ec7bfbd2f4ab016652b048d4",
+    "reference/phase_a_planning/final19/authorized_production_fixes/cauldron_gate/cauldron_gate_regression.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/authorized_production_fixes/cauldron_gate/cauldron_gate_regression-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/authorized_production_fixes/cauldron_gate/cauldron_regression_validation.gradle.log": "011e6ad3ff0fc31826b99258dd5a7587281237c46ec7740e137bee7572302fd1",
+    "reference/phase_a_planning/final19/authorized_production_fixes/cauldron_gate/cauldron_regression_validation.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/authorized_production_fixes/cauldron_gate/cauldron_postfix_compile.gradle.log": "bc92955953765996e6fa0695f33eeda55a95454aa96dd4f8508a88ac75933438",
+    "reference/phase_a_planning/final19/authorized_production_fixes/cauldron_gate/cauldron_postfix_compile.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/authorized_production_fixes/cauldron_gate/cauldron_regression_compile.gradle.log": "66ef19014023e7600769a6684efeb75df483f160916143dc90b446798f6fa807",
+    "reference/phase_a_planning/final19/authorized_production_fixes/cauldron_gate/cauldron_regression_compile.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/authorized_production_fixes/cauldron_gate/TEST-com.diskree.achievetodo.certification.Final19CauldronGateRegressionAcceptanceTest.xml": "da23187f2fb05729debd992fabffd25acc1c04123ffb5c2832906cb44fbcabef"
+  },
+  "nativeWindowWarnings": 0,
+  "mixinAccessorLoading": "GREEN",
+  "controls": 24
+}

@@ -1,0 +1,9 @@
+{
+  "branch": "26.2-port",
+  "head": "a5e1b49539a39f01bb5db13d44d420e653dce225",
+  "indexSha256": "bd0c1882b97105b93ec41c193496cc5587131df9792f28c7bc89e08d1c33a8df",
+  "stagedEmpty": true,
+  "remotes": "origin\thttps://github.com/Glower4ek/AchieveToDo.git (fetch)\norigin\thttps://github.com/Glower4ek/AchieveToDo.git (push)\nupstream\thttps://github.com/AchieveToDo/mod.git (fetch)\nupstream\thttps://github.com/AchieveToDo/mod.git (push)",
+  "gitMutations": false,
+  "phaseB": false
+}

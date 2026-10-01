@@ -1,0 +1,685 @@
+{
+  "snapshot": "phase_a_enchantment_inventory_changed_expansion_direct16_execution_evidence",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:69f6288c7d7194ea856b9b07dee16498af333273348f1a1e6cf22d588e8a6703",
+  "runId": "fe190ff8-c5f5-4f9d-baec-46220f0ce916",
+  "generatedAt": "2026-08-30T06:51:40.235098700Z",
+  "entries": [
+    {
+      "advancementId": "blazeandcave:enchanting/armor_for_the_masses",
+      "criterion": "blast_protection",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:iron_chestplate",
+      "enchantments": [
+        {
+          "selector": "minecraft:blast_protection",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:iron_chestplate]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:iron_chestplate,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:iron_chestplate,pickupDelay=false,pos=-2129619.586,-55.740,-4185891.519",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/armor_for_the_masses",
+      "criterion": "fire_protection",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:iron_chestplate",
+      "enchantments": [
+        {
+          "selector": "minecraft:fire_protection",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:iron_chestplate]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:iron_chestplate,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:iron_chestplate,pickupDelay=false,pos=-2129619.554,-55.740,-4185891.412",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/armor_for_the_masses",
+      "criterion": "projectile_protection",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:iron_chestplate",
+      "enchantments": [
+        {
+          "selector": "minecraft:projectile_protection",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:iron_chestplate]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:iron_chestplate,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:iron_chestplate,pickupDelay=false,pos=-2129619.518,-55.740,-4185891.460",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/armor_for_the_masses",
+      "criterion": "protection",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:iron_chestplate",
+      "enchantments": [
+        {
+          "selector": "minecraft:protection",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:iron_chestplate]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:iron_chestplate,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:iron_chestplate,pickupDelay=false,pos=-2129619.574,-55.740,-4185891.447",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/bane_of_one_shotting_spiders",
+      "criterion": "bane_of_arthropods",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:diamond_sword",
+      "enchantments": [
+        {
+          "selector": "minecraft:bane_of_arthropods",
+          "level": 5,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:diamond_sword, 1=20 minecraft:lapis_lazuli, 2=2 minecraft:diamond]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=-2129619.533,-55.740,-4185891.433",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/bow_down_to_me",
+      "criterion": "power",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:bow",
+      "enchantments": [
+        {
+          "selector": "minecraft:power",
+          "level": 5,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:bow, 1=20 minecraft:lapis_lazuli]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:bow,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:bow,pickupDelay=false,pos=-2129619.498,-55.740,-4185891.467",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/curses",
+      "criterion": "binding_curse",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:iron_chestplate",
+      "enchantments": [
+        {
+          "selector": "minecraft:binding_curse",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:iron_chestplate]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:iron_chestplate,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:iron_chestplate,pickupDelay=false,pos=-2129619.400,-55.740,-4185891.494",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/curses",
+      "criterion": "vanishing_curse",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:diamond_sword",
+      "enchantments": [
+        {
+          "selector": "minecraft:vanishing_curse",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:diamond_sword, 1=2 minecraft:diamond]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=-2129619.405,-55.740,-4185891.500",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/fiery",
+      "criterion": "fire_aspect",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:diamond_sword",
+      "enchantments": [
+        {
+          "selector": "minecraft:fire_aspect",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:diamond_sword, 1=2 minecraft:diamond]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=-2129619.419,-55.740,-4185891.500",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/fiery",
+      "criterion": "fire_protection",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:iron_chestplate",
+      "enchantments": [
+        {
+          "selector": "minecraft:fire_protection",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:iron_chestplate]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:iron_chestplate,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:iron_chestplate,pickupDelay=false,pos=-2129619.556,-55.740,-4185891.590",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/fiery",
+      "criterion": "flame",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:bow",
+      "enchantments": [
+        {
+          "selector": "minecraft:flame",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:bow]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:bow,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:bow,pickupDelay=false,pos=-2129619.489,-55.740,-4185891.442",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/fortunate_son",
+      "criterion": "fortune",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:diamond_pickaxe",
+      "enchantments": [
+        {
+          "selector": "minecraft:fortune",
+          "level": 3,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:diamond_pickaxe, 1=20 minecraft:lapis_lazuli, 2=2 minecraft:diamond]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:diamond_pickaxe,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:diamond_pickaxe,pickupDelay=false,pos=-2129619.424,-55.740,-4185891.483",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/gotta_go_fast",
+      "criterion": "soul_speed_boots",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:iron_boots",
+      "enchantments": [
+        {
+          "selector": "minecraft:soul_speed",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:iron_boots, 1=18 minecraft:gold_ingot]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:iron_boots,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:iron_boots,pickupDelay=false,pos=-2129619.535,-55.740,-4185891.570",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/knocking_your_socks_off",
+      "criterion": "knockback",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:diamond_sword",
+      "enchantments": [
+        {
+          "selector": "minecraft:knockback",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:diamond_sword, 1=2 minecraft:diamond]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=-2129619.578,-55.740,-4185891.546",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/knocking_your_socks_off",
+      "criterion": "punch",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:bow",
+      "enchantments": [
+        {
+          "selector": "minecraft:punch",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:bow]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:bow,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:bow,pickupDelay=false,pos=-2129619.474,-55.740,-4185891.450",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_arbalist",
+      "criterion": "perfect_bow_multishot",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:crossbow",
+      "enchantments": [
+        {
+          "selector": "minecraft:mending",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:multishot",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:quick_charge",
+          "level": 3,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:unbreaking",
+          "level": 3,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:crossbow]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:crossbow,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:crossbow,pickupDelay=false,pos=-2129619.499,-55.740,-4185891.547",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_macerator",
+      "criterion": "perfect_mace_smite",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:mace",
+      "enchantments": [
+        {
+          "selector": "minecraft:fire_aspect",
+          "level": 2,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:mending",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:smite",
+          "level": 5,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:unbreaking",
+          "level": 3,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:wind_burst",
+          "level": 3,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:mace, 1=16 minecraft:wind_charge, 2=20 minecraft:lapis_lazuli]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:mace,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:mace,pickupDelay=false,pos=-2129619.531,-55.740,-4185891.424",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_sniper",
+      "criterion": "perfect_bow_infinity",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:bow",
+      "enchantments": [
+        {
+          "selector": "minecraft:flame",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:infinity",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:power",
+          "level": 5,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:punch",
+          "level": 2,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:unbreaking",
+          "level": 3,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:bow, 1=32 minecraft:lapis_lazuli]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:bow,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:bow,pickupDelay=false,pos=-2129619.513,-55.740,-4185891.572",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_tridenteer",
+      "criterion": "perfect_trident_loyalty",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:trident",
+      "enchantments": [
+        {
+          "selector": "minecraft:channeling",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:impaling",
+          "level": 5,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:loyalty",
+          "level": 3,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:mending",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        },
+        {
+          "selector": "minecraft:unbreaking",
+          "level": 3,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:trident, 1=32 minecraft:lapis_lazuli]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:trident,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:trident,pickupDelay=false,pos=-2129619.423,-55.740,-4185891.416",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/needle_sharp",
+      "criterion": "sharpness",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:diamond_sword",
+      "enchantments": [
+        {
+          "selector": "minecraft:sharpness",
+          "level": 5,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:diamond_sword, 1=2 minecraft:diamond, 2=20 minecraft:lapis_lazuli]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=-2129619.471,-55.740,-4185891.531",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/scuba_gear",
+      "criterion": "aqua_affinity",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:iron_helmet",
+      "enchantments": [
+        {
+          "selector": "minecraft:aqua_affinity",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:iron_helmet]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:iron_helmet,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:iron_helmet,pickupDelay=false,pos=-2129619.421,-55.740,-4185891.438",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/scuba_gear",
+      "criterion": "depth_strider",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:iron_boots",
+      "enchantments": [
+        {
+          "selector": "minecraft:depth_strider",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:iron_boots]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:iron_boots,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:iron_boots,pickupDelay=false,pos=-2129619.575,-55.740,-4185891.484",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/scuba_gear",
+      "criterion": "respiration",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:iron_helmet",
+      "enchantments": [
+        {
+          "selector": "minecraft:respiration",
+          "level": 1,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:iron_helmet]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:iron_helmet,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:iron_helmet,pickupDelay=false,pos=-2129619.422,-55.740,-4185891.582",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/super_efficient",
+      "criterion": "efficiency",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:diamond_pickaxe",
+      "enchantments": [
+        {
+          "selector": "minecraft:efficiency",
+          "level": 5,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:diamond_pickaxe, 1=2 minecraft:diamond, 2=20 minecraft:lapis_lazuli]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:diamond_pickaxe,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:diamond_pickaxe,pickupDelay=false,pos=-2129619.448,-55.740,-4185891.496",
+      "ticksToPickup": 1
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/undead_slayer",
+      "criterion": "smite",
+      "family": "ENCHANTMENT_INVENTORY_CHANGED_EXPANSION_DIRECT16",
+      "selectedItem": "minecraft:diamond_sword",
+      "enchantments": [
+        {
+          "selector": "minecraft:smite",
+          "level": 5,
+          "storageType": "ENCHANTMENTS"
+        }
+      ],
+      "source": "PhaseAEnchantmentInventoryChangedExpansionDirect16GameTest",
+      "result": "GREEN",
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "itemEntityConsumed": true,
+      "matchingStackPresentAfter": true,
+      "inventoryBefore": "[]",
+      "inventoryAfter": "[0=1 minecraft:diamond_sword, 1=2 minecraft:diamond, 2=20 minecraft:lapis_lazuli]",
+      "itemEntityBefore": "alive=true,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=-2129619.500,-55.900,-4185891.500",
+      "itemEntityAfter": "alive=false,stack=1 minecraft:diamond_sword,pickupDelay=false,pos=-2129619.562,-55.740,-4185891.552",
+      "ticksToPickup": 1
+    }
+  ]
+}

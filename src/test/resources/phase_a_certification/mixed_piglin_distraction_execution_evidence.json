@@ -1,0 +1,62 @@
+{
+  "snapshot": "phase_a_mixed_piglin_distraction_execution_evidence",
+  "schemaVersion": 1,
+  "family": "MIXED_PIGLIN_DISTRACTION",
+  "source": "PhaseAMixedPiglinDistractionGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:e86e598b5e8ae3d794dd70f26930234927d12ecd4da4ceb321f22346d0df7ec9",
+  "runId": "e70f0751-7b7c-4f95-9c6a-123e1219b64d",
+  "runMode": "EXACT",
+  "startedAt": "2026-09-30T07:20:26.859958900Z",
+  "selectedKeys": [
+    "minecraft:nether/distract_piglin#distract_piglin_directly"
+  ],
+  "entries": [
+    {
+      "advancementId": "minecraft:nether/distract_piglin",
+      "criterion": "distract_piglin_directly",
+      "requirementGroup": 0,
+      "family": "MIXED_PIGLIN_DISTRACTION",
+      "source": "PhaseAMixedPiglinDistractionGameTest",
+      "runId": "e70f0751-7b7c-4f95-9c6a-123e1219b64d",
+      "catalogFingerprint": "sha-256:e86e598b5e8ae3d794dd70f26930234927d12ecd4da4ceb321f22346d0df7ec9",
+      "trigger": "minecraft:player_interacted_with_entity",
+      "boundary": "ServerboundInteractPacket.handle->ServerGamePacketListenerImpl.handleInteract->Piglin.mobInteract->PiglinAi.mobInteract->CriteriaTriggers.PLAYER_INTERACTED_WITH_ENTITY",
+      "result": "GREEN",
+      "gameMode": "SURVIVAL",
+      "playerUuid": "28ffdb66-bffc-4b8f-8a57-b6e022781bb3",
+      "targetUuid": "9c384aa6-28de-41f4-8a72-b291a274861b",
+      "entityType": "minecraft:piglin",
+      "observedItem": "minecraft:gold_ingot",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "notSpectator": true,
+      "adultPiglin": true,
+      "itemTagMatched": true,
+      "armorEmptyBefore": true,
+      "armorEmptyAfter": true,
+      "packetSent": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "noDirectCriterionTrigger": true,
+      "noManualAward": true,
+      "playerItemBefore": 1,
+      "playerItemAfter": 0,
+      "piglinItemBefore": 0,
+      "piglinItemAfter": 1,
+      "admiringItem": true,
+      "cleanup": {
+        "fixtureEntitiesRemoved": true,
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 81,
+        "warningCount": 0
+      }
+    }
+  ],
+  "generatedAt": "2026-09-30T07:20:27.903640700Z"
+}

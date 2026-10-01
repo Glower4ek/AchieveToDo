@@ -1,0 +1,61 @@
+{
+  "snapshot": "phase_a_singleton_maximum_resistance_execution_evidence",
+  "schemaVersion": 1,
+  "family": "SINGLETON:blazeandcave:monsters/maximum_resistance",
+  "source": "PhaseASingletonMaximumResistanceGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:705d3a4e92b4718ab8693742309d2c03c05e3d17465bd1845a90ed070d12a475",
+  "runId": "792d8618-8742-4536-b74a-0dba1862c8b4",
+  "generatedAt": "2026-09-29T18:35:48.021329200Z",
+  "entries": [
+    {
+      "family": "SINGLETON:blazeandcave:monsters/maximum_resistance",
+      "source": "PhaseASingletonMaximumResistanceGameTest",
+      "advancementId": "blazeandcave:monsters/maximum_resistance",
+      "criterion": "phantom",
+      "trigger": "minecraft:entity_hurt_player",
+      "boundary": "WardenAi.MeleeAttack->Warden.doHurtTarget->LivingEntity.hurtServer->CriteriaTriggers.ENTITY_HURT_PLAYER",
+      "observedSourceEntity": "minecraft:warden",
+      "observedEnchantment": "minecraft:protection",
+      "observedEffect": "minecraft:resistance",
+      "runId": "792d8618-8742-4536-b74a-0dba1862c8b4",
+      "catalogFingerprint": "sha-256:705d3a4e92b4718ab8693742309d2c03c05e3d17465bd1845a90ed070d12a475",
+      "result": "GREEN",
+      "gameMode": "SURVIVAL",
+      "playerUuid": "d054cdfb-9de9-487e-9dac-092c912c6e05",
+      "wardenUuid": "bb6df668-3e55-4a10-9f79-d0a4566a431c",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "armorVerified": true,
+      "armorPieces": 4,
+      "protectionLevelEach": 4,
+      "resistanceBeforeHit": true,
+      "resistanceAmplifier": 3,
+      "nativeWardenTargetAcquired": true,
+      "nativeWardenDamage": true,
+      "unblocked": true,
+      "sourceWarden": true,
+      "healthBefore": 20.0,
+      "healthAfter": 19.0496,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "ticksToHit": 88,
+      "noDirectCriterionTrigger": true,
+      "noManualAward": true,
+      "productionGateWitness": {
+        "productionGate": "NO_WARDEN_DAMAGE_GATE"
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "wardenRemoved": true,
+        "settlementMessages": 2510,
+        "warningCount": 0
+      }
+    }
+  ]
+}

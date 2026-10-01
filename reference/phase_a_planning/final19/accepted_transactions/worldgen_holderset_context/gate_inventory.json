@@ -1,0 +1,28 @@
+{
+  "family": "WORLDGEN_HOLDERSET_CONTEXT",
+  "acceptedPersistentEvidence": {
+    "family": "WORLDGEN_HOLDERSET_CONTEXT",
+    "path": "src\\test\\resources\\final19_certification\\worldgen_holderset_context_evidence.json",
+    "sha256": "63b63643c62ec93dfd86ba0016b07d2d59662fa32379ac5a129df0862bc48b21",
+    "runId": "3b9f481d-4a3b-4b22-9644-cd9dcbda13cb",
+    "catalogSha256": "4d4cad3efb95143c37cf4174f507eb26c6fc0f543f2c3f9bc070e55a319f4ecf"
+  },
+  "files": {
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_canary_evidence.json": "bf4054a7fefb8ab6c2526e519672f7db9359865c69e5c45183901985f08746d6",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_canary_run.json": "e7f6d6f95555a48d89b7becc9d555296b30da91e2b7cbf4f0aa81769ac360cdb",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_run.json": "bc340ef63697d82e889704361d2b880c8cfd6f14341e4ead8dbe8c9a99bf79b2",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_static.json": "64361b9a49524c85f670f40bc29c13cd92ab1f3aeab3a22889b0d5392a7e6c37",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_canary.gradle.log": "2b9305499df0ad4eb5542573f3f55f0a87d07d7a5d870a6e8e7ee213fc0d6c8b",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_canary.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_exact.gradle.log": "e9b110231d5e925e70df3303df2542cc4aab166c04ace4dfa7ce826532873f7e",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_exact.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_independent_validation.gradle.log": "2c685f98e63be44a8f995e18d4f1bcbac059a9e3c96a5941255323077b1d45c9",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_independent_validation.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_promotion.gradle.log": "9e8195c762caa9d84f4b5cbaa45f3dc96401f218c441f377ecd74b686597c152",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_promotion.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_persistent_regression.gradle.log": "ee4ca5f0f4397fdbfbd9e21d07cc83332bf6fa91f4c73a8d5be08ecd13ee192e",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/worldgen_persistent_regression.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/TEST-com.diskree.achievetodo.certification.Final19LedgerTest.xml": "4c24979dbbba83a52db2fcd80b0cb5307b7c5c67f578424fae7cd05d61c8eba6",
+    "reference/phase_a_planning/final19/accepted_transactions/worldgen_holderset_context/TEST-com.diskree.achievetodo.certification.Final19VariantsAcceptanceTest.xml": "fb09620079eea646cf95ab3ded3e1b77f18e6db1aff706bbac61af8aac270cee"
+  }
+}

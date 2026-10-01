@@ -1,0 +1,19 @@
+{
+  "snapshot": "phase_a_item_used_on_block_contextual_case_catalog",
+  "family": "ITEM_USED_ON_BLOCK_CONTEXTUAL",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "frozenAdvancementPath": "data/minecraft/advancement/adventure/play_jukebox_in_meadows.json",
+  "frozenAdvancementSha256": "870fa39f9ae028b81f1a82fdf4c9da864380c2750c528d4b1e420aa798dbbc73",
+  "advancementId": "minecraft:adventure/play_jukebox_in_meadows",
+  "criterion": "play_jukebox_in_meadows",
+  "requirementGroup": 0,
+  "trigger": "minecraft:item_used_on_block",
+  "biome": "minecraft:meadow",
+  "block": "minecraft:jukebox",
+  "toolComponent": "minecraft:jukebox_playable",
+  "selectedDisc": "minecraft:music_disc_13",
+  "productionGate": "USE_JUKEBOX",
+  "runtimeBoundary": "ServerPlayerGameMode.useItemOn->JukeboxBlock.useItemOn->JukeboxPlayable.tryInsertIntoJukebox->CriteriaTriggers.ITEM_USED_ON_BLOCK"
+}

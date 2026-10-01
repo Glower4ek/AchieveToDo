@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:59:19.547Z" hostname="LAPTOP-L0LPH8GP" time="0.454">
+  <properties/>
+  <testcase name="directTriggerClaimMutationIsRejected()" classname="com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidationTest" time="0.078"/>
+  <testcase name="damageSourceMutationIsRejected()" classname="com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidationTest" time="0.086"/>
+  <testcase name="wrongRequirementBoundaryIsRejected()" classname="com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidationTest" time="0.088"/>
+  <testcase name="persistentValidationIgnoresNewerActiveRunState()" classname="com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidationTest" time="0.088"/>
+  <testcase name="catalogSnapshotMatchesFrozenDerivedOutput()" classname="com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidationTest" time="0.011"/>
+  <testcase name="validExactArtifactIsAccepted()" classname="com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidationTest" time="0.101"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

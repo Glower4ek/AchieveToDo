@@ -1,0 +1,16 @@
+{
+  "snapshot": "phase_a_recipe_crafted_wax_on_case_catalog",
+  "family": "RECIPE_CRAFTED_WAX_ON",
+  "advancementId": "minecraft:husbandry/wax_on",
+  "sourcePath": "data/minecraft/advancement/husbandry/wax_on.json",
+  "sourceJsonSha256": "e54c1fd53d5a2d06a7a4775a4f7a30ab83cefdea43e1d8c7d4a00e899e83ca27",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "criteriaCount": 37,
+  "recipeCraftedCriteriaCount": 36,
+  "requirementGroupCount": 1,
+  "requirementGroupAlternativeCount": 37,
+  "selectedCriterion": "minecraft:waxed_copper_block_from_honeycomb",
+  "selectedRecipeId": "minecraft:waxed_copper_block_from_honeycomb",
+  "runtimeBoundary": "ServerGamePacketListenerImpl.handleContainerClick->ResultSlot.onTake->CriteriaTriggers.RECIPE_CRAFTED",
+  "completionSemantics": "one requirement group; one legitimate selected recipe criterion is sufficient"
+}

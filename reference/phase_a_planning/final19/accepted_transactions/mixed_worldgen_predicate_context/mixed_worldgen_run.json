@@ -1,0 +1,9 @@
+{
+  "family": "MIXED_WORLDGEN_PREDICATE_CONTEXT",
+  "runId": "ff2bbdf0-298d-427d-aa38-6530baf9eaf5",
+  "exact": true,
+  "fingerprint": "ffbb07136a5d360a15ca78948924a90cc1ae3eabeba680e4dde42151b984cd05",
+  "expectedEntries": 2,
+  "runtimeCopySha256": "08fcbb23b175e05ff396ae29b9f510c4c32eccaed484d62e57fbde15d68a0ae1",
+  "stage": "TEMP_PROMOTABLE"
+}

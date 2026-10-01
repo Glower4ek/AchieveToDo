@@ -1,0 +1,19 @@
+{
+  "source": "reference/phase_a_preservation/files/final/bacap.zip",
+  "sourceSha256BeforeAndAfter": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "verifiedTemporaryCopy": "build/tmp/publication_runtime_input/bacap.zip",
+  "copySha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "runtime": "build/run/pre26Smoke01/world/datapacks/bacap.zip",
+  "runtimeSha256": "565f6f934a3b71a51874a92379533d63af8d3bf2edafc6d09cfd8da2df75fcb4",
+  "marker": {
+    "fileName": "bacap.zip",
+    "llamaCarpetNbtMapping": "equipment.body",
+    "raiderPredicateKeys": "snake_case",
+    "rootOverrideSha1": "51c2bebe15a2225e11f157753edf2d94c8520b67",
+    "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+    "version": "compat_26_2_r16"
+  },
+  "convertedDefinitionHashesVerified": 1229,
+  "converterUnchanged": true,
+  "result": "GREEN"
+}

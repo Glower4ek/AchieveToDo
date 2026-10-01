@@ -1,0 +1,25 @@
+{
+  "advancementId": "minecraft:husbandry/wax_off",
+  "criterion": "wax_off",
+  "runId": "c01abdba-e443-46d3-93d0-e021716c72f1",
+  "ability": "USE_DIAMOND_TOOLS",
+  "locked": true,
+  "criterionBefore": false,
+  "criterionAfter": true,
+  "mutation": true,
+  "nativeResult": "Success[swingSource=CLIENT, itemContext=ItemContext[wasItemInteraction=true, heldItemTransformedTo=null]]",
+  "blockBefore": "Block{minecraft:waxed_copper_block}",
+  "blockAfter": "Block{minecraft:copper_block}",
+  "itemBefore": "{\"id\":\"minecraft:diamond_axe\",\"count\":1}",
+  "itemAfter": "{\"id\":\"minecraft:diamond_axe\",\"count\":1,\"components\":{\"minecraft:damage\":1}}",
+  "diagnosticOnly": true,
+  "classification": "HARNESS_OR_GATE_ERROR",
+  "cleanup": {
+    "playerRemoved": true,
+    "connectionRemoved": true,
+    "channelSettled": true,
+    "settlementMessages": 68,
+    "fixtureEntitiesRemoved": true,
+    "blocksRestored": true
+  }
+}

@@ -1,0 +1,921 @@
+{
+  "snapshot": "phase_a_mixed_weaponry_multiclassed_case_catalog",
+  "family": "MIXED_WEAPONRY_MULTICLASSED",
+  "source": "PhaseAMixedWeaponryMulticlassedGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "criteriaCount": 18,
+  "requirementGroupCount": 17,
+  "sources": [
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "sha256": "14f649c0cbd49eb848ce7bd1c6ecfae9afa3c79413fc69c8ea1b29e2d09fe0a5",
+      "requirements": [
+        [
+          "axe"
+        ],
+        [
+          "shovel"
+        ],
+        [
+          "pickaxe"
+        ],
+        [
+          "hoe"
+        ],
+        [
+          "sword"
+        ],
+        [
+          "bow"
+        ],
+        [
+          "crossbow"
+        ],
+        [
+          "firework_rocket"
+        ],
+        [
+          "trident_melee",
+          "trident_thrown"
+        ],
+        [
+          "tnt"
+        ],
+        [
+          "snowball"
+        ],
+        [
+          "egg"
+        ],
+        [
+          "fishing_rod"
+        ],
+        [
+          "splash_potion"
+        ],
+        [
+          "lingering_potion"
+        ],
+        [
+          "mace"
+        ],
+        [
+          "wind_charge"
+        ]
+      ],
+      "frozenCriteria": {
+        "axe": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "entity": {
+              "distance": {
+                "absolute": {
+                  "max": 5
+                }
+              }
+            },
+            "damage": {
+              "type": {
+                "source_entity": {
+                  "equipment": {
+                    "mainhand": {
+                      "items": "#minecraft:axes"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "shovel": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "entity": {
+              "distance": {
+                "absolute": {
+                  "max": 5
+                }
+              }
+            },
+            "damage": {
+              "type": {
+                "source_entity": {
+                  "equipment": {
+                    "mainhand": {
+                      "items": "#minecraft:shovels"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "pickaxe": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "entity": {
+              "distance": {
+                "absolute": {
+                  "max": 5
+                }
+              }
+            },
+            "damage": {
+              "type": {
+                "source_entity": {
+                  "equipment": {
+                    "mainhand": {
+                      "items": "#minecraft:pickaxes"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "hoe": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "entity": {
+              "distance": {
+                "absolute": {
+                  "max": 5
+                }
+              }
+            },
+            "damage": {
+              "type": {
+                "source_entity": {
+                  "equipment": {
+                    "mainhand": {
+                      "items": "#minecraft:hoes"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "sword": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "entity": {
+              "distance": {
+                "absolute": {
+                  "max": 5
+                }
+              }
+            },
+            "damage": {
+              "type": {
+                "source_entity": {
+                  "equipment": {
+                    "mainhand": {
+                      "items": "#minecraft:swords"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "bow": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "damage": {
+              "type": {
+                "source_entity": {
+                  "equipment": {
+                    "mainhand": {
+                      "items": [
+                        "minecraft:bow"
+                      ]
+                    }
+                  }
+                },
+                "tags": [
+                  {
+                    "id": "minecraft:is_projectile",
+                    "expected": true
+                  }
+                ],
+                "direct_entity": {
+                  "type": "minecraft:arrow"
+                }
+              }
+            }
+          }
+        },
+        "crossbow": {
+          "trigger": "minecraft:shot_crossbow",
+          "conditions": {
+            "item": {
+              "items": [
+                "minecraft:crossbow"
+              ]
+            }
+          }
+        },
+        "firework_rocket": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "damage": {
+              "type": {
+                "direct_entity": {
+                  "type": "minecraft:firework_rocket"
+                }
+              }
+            }
+          }
+        },
+        "trident_melee": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "entity": {
+              "distance": {
+                "absolute": {
+                  "max": 5
+                }
+              }
+            },
+            "damage": {
+              "type": {
+                "source_entity": {
+                  "equipment": {
+                    "mainhand": {
+                      "items": [
+                        "minecraft:trident"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "trident_thrown": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "damage": {
+              "type": {
+                "tags": [
+                  {
+                    "id": "minecraft:is_projectile",
+                    "expected": true
+                  }
+                ],
+                "direct_entity": {
+                  "type": "minecraft:trident"
+                }
+              }
+            }
+          }
+        },
+        "tnt": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "damage": {
+              "type": {
+                "tags": [
+                  {
+                    "id": "minecraft:is_projectile",
+                    "expected": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "snowball": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "damage": {
+              "type": {
+                "tags": [
+                  {
+                    "id": "minecraft:is_projectile",
+                    "expected": true
+                  }
+                ],
+                "direct_entity": {
+                  "type": "minecraft:snowball"
+                }
+              }
+            }
+          }
+        },
+        "egg": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "damage": {
+              "type": {
+                "tags": [
+                  {
+                    "id": "minecraft:is_projectile",
+                    "expected": true
+                  }
+                ],
+                "direct_entity": {
+                  "type": "minecraft:egg"
+                }
+              }
+            }
+          }
+        },
+        "fishing_rod": {
+          "trigger": "minecraft:fishing_rod_hooked",
+          "conditions": {
+            "entity": {
+              "distance": {
+                "absolute": {
+                  "min": 0
+                }
+              }
+            }
+          }
+        },
+        "splash_potion": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "damage": {
+              "type": {
+                "direct_entity": {
+                  "type": "minecraft:potion"
+                }
+              }
+            }
+          }
+        },
+        "lingering_potion": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "damage": {
+              "type": {
+                "direct_entity": {
+                  "type": "minecraft:area_effect_cloud"
+                }
+              }
+            }
+          }
+        },
+        "mace": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "entity": {
+              "distance": {
+                "absolute": {
+                  "max": 5
+                }
+              }
+            },
+            "damage": {
+              "type": {
+                "source_entity": {
+                  "equipment": {
+                    "mainhand": {
+                      "items": "minecraft:mace"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "wind_charge": {
+          "trigger": "minecraft:player_hurt_entity",
+          "conditions": {
+            "damage": {
+              "type": {
+                "tags": [
+                  {
+                    "id": "minecraft:is_projectile",
+                    "expected": true
+                  }
+                ],
+                "direct_entity": {
+                  "type": "minecraft:wind_charge"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "axe",
+      "requirementGroup": 0,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "MELEE",
+      "selectedItem": "minecraft:wooden_axe",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundAttackPacket.handle->Player.attack->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "USE_WOODEN_TOOLS",
+      "alternatives": [
+        "axe"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "distance": {
+            "absolute": {
+              "max": 5
+            }
+          }
+        },
+        "damage": {
+          "type": {
+            "source_entity": {
+              "equipment": {
+                "mainhand": {
+                  "items": "#minecraft:axes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "shovel",
+      "requirementGroup": 1,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "MELEE",
+      "selectedItem": "minecraft:wooden_shovel",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundAttackPacket.handle->Player.attack->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "USE_WOODEN_TOOLS",
+      "alternatives": [
+        "shovel"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "distance": {
+            "absolute": {
+              "max": 5
+            }
+          }
+        },
+        "damage": {
+          "type": {
+            "source_entity": {
+              "equipment": {
+                "mainhand": {
+                  "items": "#minecraft:shovels"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "pickaxe",
+      "requirementGroup": 2,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "MELEE",
+      "selectedItem": "minecraft:wooden_pickaxe",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundAttackPacket.handle->Player.attack->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "USE_WOODEN_TOOLS",
+      "alternatives": [
+        "pickaxe"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "distance": {
+            "absolute": {
+              "max": 5
+            }
+          }
+        },
+        "damage": {
+          "type": {
+            "source_entity": {
+              "equipment": {
+                "mainhand": {
+                  "items": "#minecraft:pickaxes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "hoe",
+      "requirementGroup": 3,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "MELEE",
+      "selectedItem": "minecraft:wooden_hoe",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundAttackPacket.handle->Player.attack->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "USE_WOODEN_TOOLS",
+      "alternatives": [
+        "hoe"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "distance": {
+            "absolute": {
+              "max": 5
+            }
+          }
+        },
+        "damage": {
+          "type": {
+            "source_entity": {
+              "equipment": {
+                "mainhand": {
+                  "items": "#minecraft:hoes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "sword",
+      "requirementGroup": 4,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "MELEE",
+      "selectedItem": "minecraft:wooden_sword",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundAttackPacket.handle->Player.attack->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "USE_WOODEN_TOOLS",
+      "alternatives": [
+        "sword"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "distance": {
+            "absolute": {
+              "max": 5
+            }
+          }
+        },
+        "damage": {
+          "type": {
+            "source_entity": {
+              "equipment": {
+                "mainhand": {
+                  "items": "#minecraft:swords"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "bow",
+      "requirementGroup": 5,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "BOW",
+      "selectedItem": "minecraft:bow",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundUseItemPacket.handle->native projectile collision->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "SHOOT_BOW",
+      "alternatives": [
+        "bow"
+      ],
+      "frozenConditions": {
+        "damage": {
+          "type": {
+            "source_entity": {
+              "equipment": {
+                "mainhand": {
+                  "items": [
+                    "minecraft:bow"
+                  ]
+                }
+              }
+            },
+            "tags": [
+              {
+                "id": "minecraft:is_projectile",
+                "expected": true
+              }
+            ],
+            "direct_entity": {
+              "type": "minecraft:arrow"
+            }
+          }
+        }
+      },
+      "nativeDirectEntity": "minecraft:arrow"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "crossbow",
+      "requirementGroup": 6,
+      "trigger": "minecraft:shot_crossbow",
+      "action": "CROSSBOW",
+      "selectedItem": "minecraft:crossbow",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundUseItemPacket.handle->CrossbowItem.performShooting->CriteriaTriggers.SHOT_CROSSBOW",
+      "requiredAbility": "SHOOT_CROSSBOW",
+      "alternatives": [
+        "crossbow"
+      ],
+      "frozenConditions": {
+        "item": {
+          "items": [
+            "minecraft:crossbow"
+          ]
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "firework_rocket",
+      "requirementGroup": 7,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "CROSSBOW",
+      "selectedItem": "minecraft:crossbow",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundUseItemPacket.handle->native projectile collision->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "SHOOT_CROSSBOW",
+      "alternatives": [
+        "firework_rocket"
+      ],
+      "frozenConditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "minecraft:firework_rocket"
+            }
+          }
+        }
+      },
+      "nativeDirectEntity": "minecraft:firework_rocket"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "trident_melee",
+      "requirementGroup": 8,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "MELEE",
+      "selectedItem": "minecraft:trident",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundAttackPacket.handle->Player.attack->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "ATTACK_WITH_TRIDENT",
+      "alternatives": [
+        "trident_melee",
+        "trident_thrown"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "distance": {
+            "absolute": {
+              "max": 5
+            }
+          }
+        },
+        "damage": {
+          "type": {
+            "source_entity": {
+              "equipment": {
+                "mainhand": {
+                  "items": [
+                    "minecraft:trident"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "tnt",
+      "requirementGroup": 9,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "BOW",
+      "selectedItem": "minecraft:bow",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundUseItemPacket.handle->native projectile collision->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "SHOOT_BOW",
+      "alternatives": [
+        "tnt"
+      ],
+      "frozenConditions": {
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "id": "minecraft:is_projectile",
+                "expected": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "snowball",
+      "requirementGroup": 10,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "THROW",
+      "selectedItem": "minecraft:snowball",
+      "selectedEntity": "minecraft:blaze",
+      "boundary": "ServerboundUseItemPacket.handle->native projectile collision->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "THROW_SNOWBALL",
+      "alternatives": [
+        "snowball"
+      ],
+      "frozenConditions": {
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "id": "minecraft:is_projectile",
+                "expected": true
+              }
+            ],
+            "direct_entity": {
+              "type": "minecraft:snowball"
+            }
+          }
+        }
+      },
+      "nativeDirectEntity": "minecraft:snowball"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "egg",
+      "requirementGroup": 11,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "THROW",
+      "selectedItem": "minecraft:egg",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundUseItemPacket.handle->native projectile collision->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "THROW_EGG",
+      "alternatives": [
+        "egg"
+      ],
+      "frozenConditions": {
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "id": "minecraft:is_projectile",
+                "expected": true
+              }
+            ],
+            "direct_entity": {
+              "type": "minecraft:egg"
+            }
+          }
+        }
+      },
+      "nativeDirectEntity": "minecraft:egg"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "fishing_rod",
+      "requirementGroup": 12,
+      "trigger": "minecraft:fishing_rod_hooked",
+      "action": "FISHING",
+      "selectedItem": "minecraft:fishing_rod",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundUseItemPacket.handle->FishingRodItem.use->FishingHook.retrieve->CriteriaTriggers.FISHING_ROD_HOOKED",
+      "requiredAbility": "USE_FISHING_ROD",
+      "alternatives": [
+        "fishing_rod"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "distance": {
+            "absolute": {
+              "min": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "splash_potion",
+      "requirementGroup": 13,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "THROW",
+      "selectedItem": "minecraft:splash_potion",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundUseItemPacket.handle->native projectile collision->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "NONE",
+      "alternatives": [
+        "splash_potion"
+      ],
+      "frozenConditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "minecraft:potion"
+            }
+          }
+        }
+      },
+      "nativeDirectEntity": "minecraft:splash_potion",
+      "acceptedProductionEntityMapping": "potion->splash_potion"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "lingering_potion",
+      "requirementGroup": 14,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "THROW",
+      "selectedItem": "minecraft:lingering_potion",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundUseItemPacket.handle->native projectile collision->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "NONE",
+      "alternatives": [
+        "lingering_potion"
+      ],
+      "frozenConditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "minecraft:area_effect_cloud"
+            }
+          }
+        }
+      },
+      "nativeDirectEntity": "minecraft:area_effect_cloud"
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "mace",
+      "requirementGroup": 15,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "MELEE",
+      "selectedItem": "minecraft:mace",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundAttackPacket.handle->Player.attack->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "ATTACK_WITH_MACE",
+      "alternatives": [
+        "mace"
+      ],
+      "frozenConditions": {
+        "entity": {
+          "distance": {
+            "absolute": {
+              "max": 5
+            }
+          }
+        },
+        "damage": {
+          "type": {
+            "source_entity": {
+              "equipment": {
+                "mainhand": {
+                  "items": "minecraft:mace"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "advancementId": "blazeandcave:weaponry/multiclassed",
+      "criterion": "wind_charge",
+      "requirementGroup": 16,
+      "trigger": "minecraft:player_hurt_entity",
+      "action": "THROW",
+      "selectedItem": "minecraft:wind_charge",
+      "selectedEntity": "minecraft:ravager",
+      "boundary": "ServerboundUseItemPacket.handle->native projectile collision->LivingEntity.hurtServer->CriteriaTriggers.PLAYER_HURT_ENTITY",
+      "requiredAbility": "THROW_WIND_CHARGE",
+      "alternatives": [
+        "wind_charge"
+      ],
+      "frozenConditions": {
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "id": "minecraft:is_projectile",
+                "expected": true
+              }
+            ],
+            "direct_entity": {
+              "type": "minecraft:wind_charge"
+            }
+          }
+        }
+      },
+      "nativeDirectEntity": "minecraft:wind_charge"
+    }
+  ]
+}

@@ -1,0 +1,1714 @@
+{
+  "schemaVersion": 1,
+  "status": "PRE_26_2_POST_CLEAN_BUILD_VERIFIED",
+  "task": "PRE_26_2_POST_CLEAN_BUILD_0_1_5_4_RETRY1",
+  "date": "2026-10-01",
+  "timezone": "Asia/Yekaterinburg",
+  "version": "0.1.5.4",
+  "previousStop": {
+    "path": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_planning\\pre26_2_post_cleanup_build_0_1_5_4",
+    "reason": "391 tests, 5 failures: four known historical failures plus stale BetterRuOverlayResourceTest locale pin 532 versus 533.",
+    "disposition": "Human reviewer accepted the intentional BUG-06 locale addition and authorized exactly one test-only pin correction.",
+    "recordHashes": {
+      "manifestSha256": "f14ae35d4290c81f9d00e7a694cef8faf26bd53540570ed3f104091f584d8907",
+      "reportSha256": "f43d06a4b0a9afa25a7ea430396ae7ceaaffcc7a7438479f54babe01a922cd33"
+    },
+    "preservedByteForByte": true
+  },
+  "remediation": {
+    "path": "src/test/java/com/diskree/achievetodo/client/BetterRuOverlayResourceTest.java",
+    "line": 139,
+    "before": 532,
+    "after": 533,
+    "minimumSemanticPatch": true,
+    "beforeSha256": "e7f65c3e4eb3ecc211310f2ad697cbbf4617ffb3886fbbf0da5d70640009eaaf",
+    "afterSha256": "e40570dc905b13be62c891fb721f59d53260621a693bbda1112f9c443c90a6db",
+    "authorizedChangedFiles": [
+      "src/test/java/com/diskree/achievetodo/client/BetterRuOverlayResourceTest.java"
+    ],
+    "protectedFilesUnchanged": 3257,
+    "newProtectedFiles": [],
+    "noProductionResourceChange": true,
+    "previousStopRecordUnchanged": true,
+    "gitBranchHeadIndexStagingPreserved": true
+  },
+  "environment": {
+    "JAVA_HOME": "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.4.7-hotspot",
+    "GRADLE_USER_HOME": "D:\\Vibecode\\AchieveToDo 26.2\\.gradle-user-home",
+    "TEMP": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\codex_java_uds_probe",
+    "TMP": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\codex_java_uds_probe",
+    "wrapper": ".\\gradlew.bat --no-daemon",
+    "routing": "Direct require_escalated, automatic approval review; no restricted Gradle attempt",
+    "requestedSandbox": "unelevated",
+    "requestedPermissionProfile": "achievetodo-gradle",
+    "actualGradle": "9.8.0",
+    "actualLoom": "1.18.2",
+    "actualLoader": "0.19.5",
+    "actualFabricApi": "0.161.0+26.2"
+  },
+  "commands": {
+    "focused": ".\\gradlew.bat --no-daemon test --tests com.diskree.achievetodo.client.BetterRuOverlayResourceTest",
+    "baseline": ".\\gradlew.bat --no-daemon compileJava compileTestJava compileGametestJava test --rerun-tasks",
+    "accepted": {
+      "expandedCommand": ".\\gradlew.bat --no-daemon --init-script reference/phase_a_planning/pre26_2_smoke_bugfix_0_1_5_4/bugfix.init.gradle --init-script build/tmp/pre26_2_post_cleanup_build_0_1_5_4_retry1/report-routing.init.gradle compileJava compileTestJava compileGametestJava test --rerun-tasks --tests com.diskree.achievetodo.AuthorIdentityMetadataTest --tests com.diskree.achievetodo.certification.Final19CombatAcceptanceTest --tests com.diskree.achievetodo.certification.Final19CombatStaticTest --tests com.diskree.achievetodo.certification.Final19DualTagsStaticTest --tests com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest --tests com.diskree.achievetodo.certification.Final19LedgerTest --tests com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest --tests com.diskree.achievetodo.certification.Final19PreservedDualTagsAcceptanceTest --tests com.diskree.achievetodo.certification.Final19PreservedInventoryMastersAcceptanceTest --tests com.diskree.achievetodo.certification.Final19PreservedMixedWorldgenAcceptanceTest --tests com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest --tests com.diskree.achievetodo.certification.Final19PreservedWorldgenAcceptanceTest --tests com.diskree.achievetodo.certification.Final19RaiderIntegrityAcceptanceTest --tests com.diskree.achievetodo.certification.Final19ShieldAcceptanceTest --tests com.diskree.achievetodo.certification.Final19VariantsStaticTest --tests com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest --tests com.diskree.achievetodo.certification.Final19WorldgenStaticTest --tests com.diskree.achievetodo.certification.Pre26SmokeCauldronGateAcceptanceTest --tests com.diskree.achievetodo.certification.Pre26SmokeTerminalAcceptanceTest --tests com.diskree.achievetodo.client.AdvancementLinkCommandTest --tests com.diskree.achievetodo.client.Pre26SmokeExternalPackCompatibilityTest --tests com.diskree.achievetodo.client.Pre26SmokeRegressionTest --tests com.diskree.achievetodo.injection.mixin.client.MovementTutorialStepHandlerMixinTest --tests com.diskree.achievetodo.MixinsConfigTest",
+      "wrapper": ".\\gradlew.bat",
+      "argv": [
+        "--no-daemon",
+        "--init-script",
+        "reference/phase_a_planning/pre26_2_smoke_bugfix_0_1_5_4/bugfix.init.gradle",
+        "--init-script",
+        "build/tmp/pre26_2_post_cleanup_build_0_1_5_4_retry1/report-routing.init.gradle",
+        "compileJava",
+        "compileTestJava",
+        "compileGametestJava",
+        "test",
+        "--rerun-tasks",
+        "--tests",
+        "com.diskree.achievetodo.AuthorIdentityMetadataTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19CombatAcceptanceTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19CombatStaticTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19DualTagsStaticTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19LedgerTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19PreservedDualTagsAcceptanceTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19PreservedInventoryMastersAcceptanceTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19PreservedMixedWorldgenAcceptanceTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19PreservedWorldgenAcceptanceTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19RaiderIntegrityAcceptanceTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19ShieldAcceptanceTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19VariantsStaticTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Final19WorldgenStaticTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Pre26SmokeCauldronGateAcceptanceTest",
+        "--tests",
+        "com.diskree.achievetodo.certification.Pre26SmokeTerminalAcceptanceTest",
+        "--tests",
+        "com.diskree.achievetodo.client.AdvancementLinkCommandTest",
+        "--tests",
+        "com.diskree.achievetodo.client.Pre26SmokeExternalPackCompatibilityTest",
+        "--tests",
+        "com.diskree.achievetodo.client.Pre26SmokeRegressionTest",
+        "--tests",
+        "com.diskree.achievetodo.injection.mixin.client.MovementTutorialStepHandlerMixinTest",
+        "--tests",
+        "com.diskree.achievetodo.MixinsConfigTest"
+      ],
+      "selectionSource": "Immutable accepted 0.1.5.4 manifest tests.accepted.suites; all 24 suites"
+    },
+    "normalBuild": ".\\gradlew.bat --no-daemon build -x test -x runGameTest",
+    "forcedBuildAttempt": ".\\gradlew.bat --no-daemon build -x test -x runGameTest --rerun-tasks",
+    "freshRebuild": ".\\gradlew.bat --no-daemon build -x test -x runGameTest"
+  },
+  "preBuild": {
+    "branch": "26.2-port",
+    "head": "a5e1b49539a39f01bb5db13d44d420e653dce225",
+    "indexSha256": "bd0c1882b97105b93ec41c193496cc5587131df9792f28c7bc89e08d1c33a8df",
+    "staged": "",
+    "tracked": [
+      " M LICENSE",
+      " M README.md",
+      " M build.gradle",
+      " M gradle.properties",
+      " M gradle/BuildConfig.java.txt",
+      " M gradle/wrapper/gradle-wrapper.jar",
+      " M gradle/wrapper/gradle-wrapper.properties",
+      " M gradlew",
+      " M gradlew.bat",
+      " M src/main/java/com/diskree/achievetodo/ability/AbilityType.java",
+      " M src/main/java/com/diskree/achievetodo/client/AchieveToDoClient.java",
+      " M src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+      " M src/main/java/com/diskree/achievetodo/injection/mixin/client/GuiMixin.java",
+      " M src/main/java/com/diskree/achievetodo/injection/mixin/client/MinecraftClientMixin.java",
+      " M src/main/java/com/diskree/achievetodo/injection/mixin/client/MovementTutorialStepHandlerMixin.java",
+      " M src/main/java/com/diskree/achievetodo/injection/mixin/main/AxeItemMixin.java",
+      " D src/main/java/com/diskree/achievetodo/injection/mixin/main/CommandManagerMixin.java",
+      " M src/main/java/com/diskree/achievetodo/server/AchieveToDoServer.java",
+      " M src/main/resources/achievetodo.mixins.json",
+      " M src/main/resources/assets/achievetodo/lang/en_us.json",
+      " M src/main/resources/assets/achievetodo/lang/ru_ru.json",
+      " M src/main/resources/fabric.mod.json",
+      " M src/test/java/com/diskree/achievetodo/client/ExternalPackCompatibilityTest.java",
+      " M src/test/java/com/diskree/achievetodo/injection/mixin/client/MovementTutorialStepHandlerMixinTest.java"
+    ],
+    "untrackedCount": 38911,
+    "cleanupAbsent": [
+      "assets",
+      "com",
+      "net/minecraft",
+      "data/minecraft",
+      "data/.mcassetsroot",
+      "_tmp_mixin",
+      "_tmp_mixin_player",
+      "_tmp_mixin_living/LivingEntity.vanilla.txt",
+      "tmp_decompile",
+      "flightrecorder-config.jfc",
+      "pack.png",
+      "tmp-fabric-api-0.158.0.jar",
+      "tmp-fabric-gametest-api.jar",
+      "tmp-fabric-lifecycle.jar",
+      "tmp-fabric-loader.jar",
+      "tmp-fabric-loom-1.17.19.jar",
+      "tmp-gson-2.14.0.jar"
+    ],
+    "retained": {
+      "tmp-minecraft-merged-deobf-26.2.jar": "cd6665e51e33d43a0bb47d91b41deadbbb5aa44992c52be97c44cd3741152199",
+      "_tmp_mixin_living/LivingEntity.transformed.txt": "f51fdba4ca88b75dda1b0109a761850b5a99263552dc919f3933c115b2bf7ad6",
+      "reference/phase_a_preservation/files/final/bacap.zip": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+      "reference/phase_a_planning/final19/terminal_reconciliation.json": "1ab689c783c6a7e85d2e84dd9c526b2d4333934171b81b4a22d5ae1e4454e962",
+      "reference/phase_a_planning/pre26_2_smoke_bugfix_0_1_5_4/bugfix_manifest.json": "7e2455d069f271aa1f0d6ad8f44307f458e37be280ad88c325ee9ec4bec27b8d",
+      "reference/phase_a_planning/pre26_2_smoke_bugfix_0_1_5_4/bugfix_report.md": "a723981ea13b75db991cbba31647096c8d77845363d32eebdd7d975a64388d13"
+    },
+    "previousStopHashes": {
+      "manifestSha256": "f14ae35d4290c81f9d00e7a694cef8faf26bd53540570ed3f104091f584d8907",
+      "reportSha256": "f43d06a4b0a9afa25a7ea430396ae7ceaaffcc7a7438479f54babe01a922cd33"
+    }
+  },
+  "compileGates": {
+    "compileJava": {
+      "status": "GREEN",
+      "executedFresh": true,
+      "enclosingBaselineExitCode": 1
+    },
+    "compileTestJava": {
+      "status": "GREEN",
+      "executedFresh": true,
+      "enclosingBaselineExitCode": 1
+    },
+    "compileGametestJava": {
+      "status": "GREEN",
+      "executedFresh": true,
+      "enclosingBaselineExitCode": 1
+    }
+  },
+  "focused": {
+    "exitCode": 0,
+    "totals": {
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "suites": [
+      {
+        "name": "com.diskree.achievetodo.client.BetterRuOverlayResourceTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "failures": []
+  },
+  "unfilteredBaseline": {
+    "exitCode": 1,
+    "status": "EXACT_KNOWN_HISTORICAL_FAILURES_ONLY",
+    "current": {
+      "totals": {
+        "tests": 391,
+        "failures": 4,
+        "errors": 0,
+        "skipped": 0
+      },
+      "suites": [
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedExecutionEvidenceValidationTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedExpansionDirect16ExecutionEvidenceValidationTest",
+          "tests": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockExecutionEvidenceValidationTest",
+          "tests": 23,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest",
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedExecutionEvidenceValidationTest",
+          "tests": 15,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedExpansionDirect16CertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidationTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAItemTagInventoryContainmentExecutionEvidenceValidationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedExecutionEvidenceValidationTest",
+          "tests": 17,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAEntityTypeTagStartedRidingExecutionEvidenceValidationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAItemTagPlayerInteractedWithEntityExecutionEvidenceValidationTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAAdvancementRollupTest",
+          "tests": 52,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockCertificationTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseACertificationTest",
+          "tests": 15,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAContainerLootCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAEntityTypeTagStartedRidingCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAFishingRodHookedCertificationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAFishingRodHookedExecutionEvidenceValidationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAFishingRodHookedRollupTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAItemTagInventoryContainmentCertificationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockExecutionEvidenceValidationTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest",
+          "tests": 14,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAItemTagPlayerInteractedWithEntityCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAItemUsedOnBlockContextualCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenCertificationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenEvidenceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseALocationMovementCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAMixedPerfectRunCertificationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAMixedPerfectRunEvidenceTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionCertificationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionEvidenceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAMixedWeaponryMulticlassedCertificationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAMixedWeaponryMulticlassedEvidenceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAPlayerKilledEntityRemainderCertificationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAPlayerKilledEntityRemainderEvidenceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedCertificationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedEvidenceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseARecipeCraftedWaxOnCertificationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest",
+          "tests": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAShotCrossbowExecutionEvidenceValidationTest",
+          "tests": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseASingletonAncientRestorationCertificationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseASingletonAncientRestorationEvidenceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseASingletonAxolotlMonumentCertificationTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseASingletonDiagonAllayCertificationTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseASingletonLlamaBreedingCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseASingletonMangroveGroveCertificationTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseASingletonMaximumResistanceCertificationTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseASingletonMiracleDrinkCertificationTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseASingletonRedstoneClickCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseASingletonSilkTouchNestCertificationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseASingletonSilkTouchNestEvidenceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseASingletonVillageBellCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAStackAllItemsCertificationTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAStackAllItemsEvidenceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseATameAnimalLlamaCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseATerminalReconciliationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedCertificationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedCertificationTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAUsingItemCertificationTest",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAUsingItemExecutionEvidenceValidationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.PhaseAUsingItemRollupTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.AdvancementLinkCommandTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.BetterRuOverlayResourceTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.CompatibilityJoinGateTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.CreateWorldContinuationGateTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest",
+          "tests": 4,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.ExternalPackCompatibilityTest",
+          "tests": 34,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.PhaseALegacyItemTagCompatibilityTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtRegressionTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest",
+          "tests": 3,
+          "failures": 2,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.Pre26SmokeRegressionTest",
+          "tests": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.injection.mixin.client.MovementTutorialStepHandlerMixinTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.MixinsConfigTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "failures": [
+        {
+          "name": "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly()",
+          "type": "org.opentest4j.AssertionFailedError",
+          "message": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+          "trace": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>\n\tat org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:190)\n\tat com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly(ExternalPackCompatibilityPhaseATest.java:41)\n"
+        },
+        {
+          "name": "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies()",
+          "type": "org.opentest4j.AssertionFailedError",
+          "message": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+          "trace": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>\n\tat org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:190)\n\tat com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies(ExternalPackCompatibilityTest.java:867)\n"
+        },
+        {
+          "name": "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive()",
+          "type": "org.opentest4j.AssertionFailedError",
+          "message": "org.opentest4j.AssertionFailedError: data/blazeandcave/advancement/adventure/feeling_ill.json ==> expected: <e06123aa1f567bb2fa83234ab6f1cb7691284b23a5fae985801a827f3284e2fc> but was: <2b98428f5dc509b37e7aa5c307fe94521ab963186fa41797a193639ca24929da>",
+          "trace": "org.opentest4j.AssertionFailedError: data/blazeandcave/advancement/adventure/feeling_ill.json ==> expected: <e06123aa1f567bb2fa83234ab6f1cb7691284b23a5fae985801a827f3284e2fc> but was: <2b98428f5dc509b37e7aa5c307fe94521ab963186fa41797a193639ca24929da>\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1210)\n\tat com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive(PhaseALlamaFestivalNbtScopeTest.java:41)\n"
+        },
+        {
+          "name": "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(Path)",
+          "type": "org.opentest4j.AssertionFailedError",
+          "message": "org.opentest4j.AssertionFailedError: expected: <compat_26_2_r15> but was: <compat_26_2_r16>",
+          "trace": "org.opentest4j.AssertionFailedError: expected: <compat_26_2_r15> but was: <compat_26_2_r16>\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1199)\n\tat com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(PhaseALlamaFestivalNbtScopeTest.java:73)\n"
+        }
+      ]
+    },
+    "acceptedHistoricalTotals": {
+      "tests": 376,
+      "failures": 4,
+      "errors": 0,
+      "skipped": 0
+    },
+    "comparison": [
+      {
+        "name": "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly()",
+        "type": "org.opentest4j.AssertionFailedError",
+        "message": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+        "stackTrace": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>\n\tat org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:190)\n\tat com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly(ExternalPackCompatibilityPhaseATest.java:41)\n",
+        "exactNameMatch": true,
+        "exactTypeMatch": true,
+        "exactMessageMatch": true,
+        "exactStackTraceMatch": true
+      },
+      {
+        "name": "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies()",
+        "type": "org.opentest4j.AssertionFailedError",
+        "message": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+        "stackTrace": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>\n\tat org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:190)\n\tat com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies(ExternalPackCompatibilityTest.java:867)\n",
+        "exactNameMatch": true,
+        "exactTypeMatch": true,
+        "exactMessageMatch": true,
+        "exactStackTraceMatch": true
+      },
+      {
+        "name": "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive()",
+        "type": "org.opentest4j.AssertionFailedError",
+        "message": "org.opentest4j.AssertionFailedError: data/blazeandcave/advancement/adventure/feeling_ill.json ==> expected: <e06123aa1f567bb2fa83234ab6f1cb7691284b23a5fae985801a827f3284e2fc> but was: <2b98428f5dc509b37e7aa5c307fe94521ab963186fa41797a193639ca24929da>",
+        "stackTrace": "org.opentest4j.AssertionFailedError: data/blazeandcave/advancement/adventure/feeling_ill.json ==> expected: <e06123aa1f567bb2fa83234ab6f1cb7691284b23a5fae985801a827f3284e2fc> but was: <2b98428f5dc509b37e7aa5c307fe94521ab963186fa41797a193639ca24929da>\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1210)\n\tat com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive(PhaseALlamaFestivalNbtScopeTest.java:41)\n",
+        "exactNameMatch": true,
+        "exactTypeMatch": true,
+        "exactMessageMatch": true,
+        "exactStackTraceMatch": true
+      },
+      {
+        "name": "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(Path)",
+        "type": "org.opentest4j.AssertionFailedError",
+        "message": "org.opentest4j.AssertionFailedError: expected: <compat_26_2_r15> but was: <compat_26_2_r16>",
+        "stackTrace": "org.opentest4j.AssertionFailedError: expected: <compat_26_2_r15> but was: <compat_26_2_r16>\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1199)\n\tat com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(PhaseALlamaFestivalNbtScopeTest.java:73)\n",
+        "exactNameMatch": true,
+        "exactTypeMatch": true,
+        "exactMessageMatch": true,
+        "exactStackTraceMatch": true
+      }
+    ],
+    "newOrChangedFailures": [],
+    "betterRuFixed": true
+  },
+  "acceptedSuite": {
+    "exitCode": 0,
+    "fresh": true,
+    "selection": {
+      "sourceInitScript": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_planning\\pre26_2_smoke_bugfix_0_1_5_4\\bugfix.init.gradle",
+      "sourceInitSha256": "2d41ac5807f0c23e8d3b031dd1767b4afbacf1c17f364699e5de7084d5062463",
+      "reportOnlyOverlay": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\pre26_2_post_cleanup_build_0_1_5_4_retry1\\report-routing.init.gradle",
+      "reportOnlyOverlaySha256": "488bd520be0db201121004b2a288272776bce1ae7ca95d21c9df0cc6d6747062",
+      "suites": [
+        "com.diskree.achievetodo.AuthorIdentityMetadataTest",
+        "com.diskree.achievetodo.certification.Final19CombatAcceptanceTest",
+        "com.diskree.achievetodo.certification.Final19CombatStaticTest",
+        "com.diskree.achievetodo.certification.Final19DualTagsStaticTest",
+        "com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest",
+        "com.diskree.achievetodo.certification.Final19LedgerTest",
+        "com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest",
+        "com.diskree.achievetodo.certification.Final19PreservedDualTagsAcceptanceTest",
+        "com.diskree.achievetodo.certification.Final19PreservedInventoryMastersAcceptanceTest",
+        "com.diskree.achievetodo.certification.Final19PreservedMixedWorldgenAcceptanceTest",
+        "com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest",
+        "com.diskree.achievetodo.certification.Final19PreservedWorldgenAcceptanceTest",
+        "com.diskree.achievetodo.certification.Final19RaiderIntegrityAcceptanceTest",
+        "com.diskree.achievetodo.certification.Final19ShieldAcceptanceTest",
+        "com.diskree.achievetodo.certification.Final19VariantsStaticTest",
+        "com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest",
+        "com.diskree.achievetodo.certification.Final19WorldgenStaticTest",
+        "com.diskree.achievetodo.certification.Pre26SmokeCauldronGateAcceptanceTest",
+        "com.diskree.achievetodo.certification.Pre26SmokeTerminalAcceptanceTest",
+        "com.diskree.achievetodo.client.AdvancementLinkCommandTest",
+        "com.diskree.achievetodo.client.Pre26SmokeExternalPackCompatibilityTest",
+        "com.diskree.achievetodo.client.Pre26SmokeRegressionTest",
+        "com.diskree.achievetodo.injection.mixin.client.MovementTutorialStepHandlerMixinTest",
+        "com.diskree.achievetodo.MixinsConfigTest"
+      ],
+      "betterRuInAcceptedDefinition": false
+    },
+    "totals": {
+      "tests": 103,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "suites": [
+      {
+        "name": "com.diskree.achievetodo.AuthorIdentityMetadataTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.MixinsConfigTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19CombatAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19CombatStaticTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19DualTagsStaticTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19LedgerTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19PreservedDualTagsAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19PreservedInventoryMastersAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19PreservedMixedWorldgenAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19PreservedWorldgenAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19RaiderIntegrityAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19ShieldAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19VariantsStaticTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19WorldgenStaticTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Pre26SmokeCauldronGateAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Pre26SmokeTerminalAcceptanceTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.client.AdvancementLinkCommandTest",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.client.Pre26SmokeExternalPackCompatibilityTest",
+        "tests": 34,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.client.Pre26SmokeRegressionTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.injection.mixin.client.MovementTutorialStepHandlerMixinTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "failures": []
+  },
+  "preservation": {
+    "status": "GREEN",
+    "productCertified": 1152,
+    "productUncertified": 0,
+    "final19": "CLOSED",
+    "final19Targets": 19,
+    "final19Groups": 79,
+    "final19Criteria": 108,
+    "historicalPhaseACertified": 1133,
+    "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+    "freshPreservationSuites": [
+      {
+        "name": "com.diskree.achievetodo.certification.Final19CombatAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19CombatStaticTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19DualTagsStaticTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19LedgerTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19PreservedDualTagsAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19PreservedInventoryMastersAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19PreservedMixedWorldgenAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19PreservedWorldgenAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19RaiderIntegrityAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19ShieldAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19VariantsStaticTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Final19WorldgenStaticTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.diskree.achievetodo.certification.Pre26SmokeTerminalAcceptanceTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "mechanism": "Fresh accepted 0.1.5.4 Pre26SmokeTerminalAcceptanceTest plus all accepted FINAL19 validators; executed in the fresh accepted-suite gate. Artifact-local validators, no CLOSED GameTest rerun.",
+    "historicalProtectedFilesUnchanged": 2723,
+    "authorizedHistoricalTestPinDelta": "src/test/java/com/diskree/achievetodo/client/BetterRuOverlayResourceTest.java",
+    "currentProductionMarker": "compat_26_2_r16",
+    "historicalFinal19Marker": "compat_26_2_r15",
+    "markersChanged": false,
+    "beforeSha256": "e7f65c3e4eb3ecc211310f2ad697cbbf4617ffb3886fbbf0da5d70640009eaaf",
+    "afterSha256": "e40570dc905b13be62c891fb721f59d53260621a693bbda1112f9c443c90a6db",
+    "authorizedChangedFiles": [
+      "src/test/java/com/diskree/achievetodo/client/BetterRuOverlayResourceTest.java"
+    ],
+    "protectedFilesUnchanged": 3257,
+    "newProtectedFiles": [],
+    "noProductionResourceChange": true,
+    "previousStopRecordUnchanged": true,
+    "gitBranchHeadIndexStagingPreserved": true
+  },
+  "nativeRuntimeGate": {
+    "rerun": false,
+    "reason": "Accepted 0.1.5.4 build excludes runGameTest; fresh artifact-local FINAL19 and terminal validators are authoritative."
+  },
+  "normalBuild": {
+    "exitCode": 0,
+    "result": "BUILD SUCCESSFUL",
+    "freshPackaging": true,
+    "attempts": [
+      {
+        "command": ".\\gradlew.bat --no-daemon build -x test -x runGameTest",
+        "exitCode": 0,
+        "jarTask": "UP-TO-DATE",
+        "log": "evidence/build.log"
+      },
+      {
+        "command": ".\\gradlew.bat --no-daemon build -x test -x runGameTest --rerun-tasks",
+        "exitCode": 1,
+        "jarTask": "Existing smoke-candidate guard refused same-version overwrite",
+        "log": "evidence/build_fresh.log"
+      },
+      {
+        "command": ".\\gradlew.bat --no-daemon build -x test -x runGameTest",
+        "exitCode": 0,
+        "jarTask": "Freshly executed after accepted archive preservation",
+        "log": "evidence/build_after_archive_preservation.log"
+      }
+    ],
+    "archivePreservation": {
+      "reason": "Existing smoke-candidate guard requires an absent destination for same-version fresh rebuild",
+      "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\libs\\achievetodo-mc26.2+0.1.5.4.jar",
+      "sha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b",
+      "secondaryAcceptedCopySha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b",
+      "destination": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\pre26_2_post_cleanup_build_0_1_5_4_retry1\\accepted_pre_clean_guard_saved.jar",
+      "bytes": 1546595,
+      "operation": "Nonrecursive move of accepted build output to in-workspace backup; bytes preserved; no source/build configuration changes or guard bypass"
+    }
+  },
+  "preCleanAcceptedJar": {
+    "path": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\pre26_2_post_cleanup_build_0_1_5_4_retry1\\accepted_pre_clean_0_1_5_4.jar",
+    "bytes": 1546595,
+    "sha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b"
+  },
+  "postCleanJar": {
+    "path": "D:\\Vibecode\\AchieveToDo 26.2\\build\\libs\\achievetodo-mc26.2+0.1.5.4.jar",
+    "bytes": 1546595,
+    "sha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b",
+    "rebuiltPostCleanup": true,
+    "entries": 1911,
+    "fileEntries": 1777,
+    "directoryEntries": 134,
+    "productionClasses": 232,
+    "processedResourceFiles": 1540,
+    "nonClassFileEntries": 1545,
+    "mixinReferences": 157,
+    "metadata": {
+      "schemaVersion": 1,
+      "id": "achievetodo",
+      "version": "0.1.5.4",
+      "name": "AchieveToDo",
+      "description": "Challenging mod with BlazeandCave's that makes advancements a part of the gameplay.",
+      "authors": [
+        "Glower4ek"
+      ],
+      "contact": {
+        "sources": "https://github.com/Glower4ek/AchieveToDo"
+      },
+      "license": "MIT",
+      "icon": "assets/achievetodo/icon.png",
+      "environment": "*",
+      "entrypoints": {
+        "fabric-datagen": [
+          "com.diskree.achievetodo.ability.generation.AbilitiesGenerator"
+        ],
+        "main": [
+          "com.diskree.achievetodo.AchieveToDoMod"
+        ],
+        "client": [
+          "com.diskree.achievetodo.client.AchieveToDoClient"
+        ]
+      },
+      "mixins": [
+        "achievetodo.mixins.json"
+      ],
+      "depends": {
+        "java": ">=25",
+        "minecraft": "~26.2",
+        "fabricloader": ">=0.19.5",
+        "fabric-api": ">=0.161.0+26.2"
+      },
+      "accessWidener": "achievetodo.classtweaker",
+      "jars": [
+        {
+          "file": "META-INF/jars/toml4j-0.7.2.jar"
+        }
+      ]
+    },
+    "copyright": "Copyright (c) 2026 Glower4ek",
+    "namespace": "com.diskree.achievetodo.*",
+    "buildConfigSha256": "9da4f65ee843786408a18b7281e556e3261e3d71568c3fa1ff8f7fddf70ae3eb",
+    "currentProductionMarker": "compat_26_2_r16",
+    "historicalFinal19Marker": "compat_26_2_r15",
+    "mixinAndEntrypointReferencesResolve": true,
+    "mainClassesMatchCompiledOutput": true,
+    "resourcesMatchProcessedOutput": true,
+    "leakage": [],
+    "optionalImplementationReferences": [],
+    "testAndGameTestClassOverlap": [],
+    "duplicateEntries": false,
+    "zipCrcAudit": "GREEN",
+    "embeddedDependencies": [
+      {
+        "path": "META-INF/jars/toml4j-0.7.2.jar",
+        "bytes": 63581,
+        "sha256": "0b4a366e00a7019fb0e3df81ba749183afe037eb276d6d0792950326124ac466"
+      }
+    ]
+  },
+  "jarComparison": {
+    "rebuiltPostCleanup": true,
+    "byteIdentical": true,
+    "preCleanBytes": 1546595,
+    "postCleanBytes": 1546595,
+    "preCleanSha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b",
+    "postCleanSha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b",
+    "addedEntries": [],
+    "removedEntries": [],
+    "changedEntryContents": [],
+    "acceptedPreCleanMtimeNs": 1790842366583290500,
+    "rebuiltPostCleanMtimeNs": 1790867455034271200,
+    "packagingTasksFresh": [
+      "jar"
+    ],
+    "explanation": "Newly rebuilt archive is raw-byte-identical; all entry contents and ZIP metadata are identical. No archive nondeterminism observed."
+  },
+  "cleanupBoundary": {
+    "previousStopToken": "PRE_26_2_CLEANUP_EXECUTED_AND_VERIFIED",
+    "targets": [
+      "assets",
+      "com",
+      "net/minecraft",
+      "data/minecraft",
+      "data/.mcassetsroot",
+      "_tmp_mixin",
+      "_tmp_mixin_player",
+      "_tmp_mixin_living/LivingEntity.vanilla.txt",
+      "tmp_decompile",
+      "flightrecorder-config.jfc",
+      "pack.png",
+      "tmp-fabric-api-0.158.0.jar",
+      "tmp-fabric-gametest-api.jar",
+      "tmp-fabric-lifecycle.jar",
+      "tmp-fabric-loader.jar",
+      "tmp-fabric-loom-1.17.19.jar",
+      "tmp-gson-2.14.0.jar"
+    ],
+    "all17Absent": true,
+    "newCleanupPerformed": false
+  },
+  "compatibilityMarkers": {
+    "currentProduction": "compat_26_2_r16",
+    "historicalFinal19": "compat_26_2_r15",
+    "bothPreserved": true
+  },
+  "accepted054Records": {
+    "manifestSha256": "7e2455d069f271aa1f0d6ad8f44307f458e37be280ad88c325ee9ec4bec27b8d",
+    "reportSha256": "a723981ea13b75db991cbba31647096c8d77845363d32eebdd7d975a64388d13",
+    "unchanged": true
+  },
+  "boundaries": {
+    "productionChanges": false,
+    "resourceChanges": false,
+    "buildConfigurationChanges": false,
+    "dependencyChanges": false,
+    "gitMutation": false,
+    "staging": false,
+    "frozenBacapRegenerated": false,
+    "historicalEvidenceRewritten": false,
+    "releaseFinalization": false,
+    "phaseB": false,
+    "commit": false,
+    "push": false
+  },
+  "anomalies": [
+    {
+      "type": "EXISTING_SMOKE_ARCHIVE_GUARD",
+      "resolved": true,
+      "failedAttemptExitCode": 1,
+      "reason": "Fresh forced packaging refused because the accepted 0.1.5.4 output already existed.",
+      "resolution": "Preserved accepted build output by nonrecursive move to verified build/tmp backup; reran exact normal build with an absent destination. Guard/version/configuration unchanged; fresh build exit 0."
+    }
+  ],
+  "knownBaselineLimitations": [
+    {
+      "name": "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly()",
+      "type": "org.opentest4j.AssertionFailedError",
+      "message": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+      "stackTrace": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>\n\tat org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:190)\n\tat com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly(ExternalPackCompatibilityPhaseATest.java:41)\n",
+      "exactNameMatch": true,
+      "exactTypeMatch": true,
+      "exactMessageMatch": true,
+      "exactStackTraceMatch": true
+    },
+    {
+      "name": "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies()",
+      "type": "org.opentest4j.AssertionFailedError",
+      "message": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+      "stackTrace": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>\n\tat org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:190)\n\tat com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies(ExternalPackCompatibilityTest.java:867)\n",
+      "exactNameMatch": true,
+      "exactTypeMatch": true,
+      "exactMessageMatch": true,
+      "exactStackTraceMatch": true
+    },
+    {
+      "name": "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive()",
+      "type": "org.opentest4j.AssertionFailedError",
+      "message": "org.opentest4j.AssertionFailedError: data/blazeandcave/advancement/adventure/feeling_ill.json ==> expected: <e06123aa1f567bb2fa83234ab6f1cb7691284b23a5fae985801a827f3284e2fc> but was: <2b98428f5dc509b37e7aa5c307fe94521ab963186fa41797a193639ca24929da>",
+      "stackTrace": "org.opentest4j.AssertionFailedError: data/blazeandcave/advancement/adventure/feeling_ill.json ==> expected: <e06123aa1f567bb2fa83234ab6f1cb7691284b23a5fae985801a827f3284e2fc> but was: <2b98428f5dc509b37e7aa5c307fe94521ab963186fa41797a193639ca24929da>\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1210)\n\tat com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive(PhaseALlamaFestivalNbtScopeTest.java:41)\n",
+      "exactNameMatch": true,
+      "exactTypeMatch": true,
+      "exactMessageMatch": true,
+      "exactStackTraceMatch": true
+    },
+    {
+      "name": "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(Path)",
+      "type": "org.opentest4j.AssertionFailedError",
+      "message": "org.opentest4j.AssertionFailedError: expected: <compat_26_2_r15> but was: <compat_26_2_r16>",
+      "stackTrace": "org.opentest4j.AssertionFailedError: expected: <compat_26_2_r15> but was: <compat_26_2_r16>\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1199)\n\tat com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(PhaseALlamaFestivalNbtScopeTest.java:73)\n",
+      "exactNameMatch": true,
+      "exactTypeMatch": true,
+      "exactMessageMatch": true,
+      "exactStackTraceMatch": true
+    }
+  ],
+  "evidenceFiles": {
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.AuthorIdentityMetadataTest.xml": "aa3adc817f2ad13256cfdef1cd6102b7acff1a8e89c022349ccdd0abf0384a29",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19CombatAcceptanceTest.xml": "0306776349483e547f62720b296a30e0acb131d9533e28e1bfa1a806d4938f61",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19CombatStaticTest.xml": "3d373cb47541577f2ea531a7f8bf62728aa16dcbc0e4796f5ae784827f406dc2",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19DualTagsStaticTest.xml": "6a0b1a4f54262e1e43af3adaba7b684d4cba5ac453de0d08cfb520ca976fed5f",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest.xml": "ba775d1147638b275f2e7159e2cb9b54584b0a0110b311f67f566cdaa51df14c",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19LedgerTest.xml": "081b45fc28712e67f82cef3c0571f9625b33adcc4d02285252974c169e87d777",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest.xml": "5c3be9ec35ef0b13c753fd4cbe896584a4312a770513d58a2dff624014da51bf",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19PreservedDualTagsAcceptanceTest.xml": "98704c646813c1ddbfe4245f3b712dac6f6923dee0efdc64c13d55daf96e192c",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19PreservedInventoryMastersAcceptanceTest.xml": "3567e3c3177a51851f9fd1b199ac59ef4e3582bc766ccce2149bddb7bf251b4e",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19PreservedMixedWorldgenAcceptanceTest.xml": "7838279bbbd5e401963507a01d446f9d474af6b157205c7d8c91540d193b76fb",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest.xml": "c7cbdb339e6a3729020cbdb56b0161d19c684b7f10e477b1dd7f18accefba145",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19PreservedWorldgenAcceptanceTest.xml": "98c6995ac2b4cc60fec1f7bb495f3c2445b3dc345102cf221c968438908eaeb0",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19RaiderIntegrityAcceptanceTest.xml": "70eeca3af0a882534574d450678beddb20ab4544873fc5927d9bdbe27ff9beaf",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19ShieldAcceptanceTest.xml": "d6c0cdfdbb7001ef0d5ce52990b10da882e793e1e3cbdc48fb6bb8736df960d5",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19VariantsStaticTest.xml": "44a3d478ba20da27d3c3a6d0ca1526ed2289607cc05e18d9750ac05d66c5c6bb",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest.xml": "af7d78aa3ea8a1dbe1062e30cfab18739019b28b65860b7b899ce27a86093c38",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Final19WorldgenStaticTest.xml": "086e0a00cb25a4ab6f60e2bbff5fbb0f485923bd57a5bb4f3ff78cf994498d58",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Pre26SmokeCauldronGateAcceptanceTest.xml": "33c21e0a4f6d96f5ce3a9c7434f30a159051767f0f5725c120437f2f8e9097c7",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.certification.Pre26SmokeTerminalAcceptanceTest.xml": "323be4cc3529a08822d84c29778904de2f669eb68fd5d1ecdee77a7b30dcab79",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.client.AdvancementLinkCommandTest.xml": "f847318615eb87919ba3406f0af180f5e66327f417b52d5b6965a3f40b0b91b0",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.client.Pre26SmokeExternalPackCompatibilityTest.xml": "79f003e5a2143879935e4f39df65948623223eb7c81c388f669150b083adffb2",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.client.Pre26SmokeRegressionTest.xml": "489f986fd30b9257d804ba52ce2a45f2b7bdd32ca9617d7aea018b10815734e0",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.injection.mixin.client.MovementTutorialStepHandlerMixinTest.xml": "495ffd6f35daf36045395ab99b4b48a1f7dbcf13ccda36f9af86d4ec7aa37a0c",
+    "evidence/accepted-junit/TEST-com.diskree.achievetodo.MixinsConfigTest.xml": "eade9948a8e01d39993e993668ad760a40217756430e2e100185bc7a6127075d",
+    "evidence/accepted.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "evidence/accepted.log": "676b7267b39f348acc7ecdbea71c6aa558865d4e697c4702808b9c5d69d03b46",
+    "evidence/accepted_command.json": "8a2ea0d466b5984cb50f26e7211698b2ff7b74574edcd75016c2a4be0e1c1c49",
+    "evidence/accepted_results.json": "e716ccae54adf2bddc3ca75a53cb833872191e593e9fb4e12c940d02e46e28af",
+    "evidence/accepted_selection.json": "a5f809713a632dd9a4a23298e39f1bb6822c043eeeae0d51a6ce5c64a4cf0257",
+    "evidence/archive_preservation.json": "8270f5e6e0d222a53e52a515a7fc1ef293bec2ef9d592face007d417b2cd65b2",
+    "evidence/authorized_test_pin.patch": "bfd87ec72e279911c5ee3cb97efb6f530332a15ad725392e9ca50c68b9d2eb43",
+    "evidence/authorized_test_pin_audit.json": "222829600f1eb7a245459a349df23aafbbfdc72977848da6ac7a66c104ef58a4",
+    "evidence/baseline-junit/binary/output-events.bin": "909871395c6ea86c0d7dc5cfd338820cbaffdb21711b0760644cf0dab930c776",
+    "evidence/baseline-junit/binary/results-generic.bin": "9b9cb80aad02f4cec277081fd9c5fe4fedb612f569fab7ca125fd3fd6559aafb",
+    "evidence/baseline-junit/TEST-c-BA2QCJ48OE7E8.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedExecutionEvidenceValidationTest.xml": "f48e7d99e964f36df63320cd542b1711fd395a52f1d3dde36e7a99a2b1104190",
+    "evidence/baseline-junit/TEST-c-KK4SF7VM3LMPM.certification.PhaseAEnchantmentInventoryChangedExpansionDirect16ExecutionEvidenceValidationTest.xml": "2c62a8b30c7c98539422155d7cb03b5b330c3697bbce71392ff61b6cad3a3c48",
+    "evidence/baseline-junit/TEST-co-29U46IPBPDSRU.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockExecutionEvidenceValidationTest.xml": "d6cb8547eabf94dbd3e0e2000b71b6f38baeee9b27df31210e1f7abf313c167e",
+    "evidence/baseline-junit/TEST-co-2DMG7C5HP8BT8.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest.xml": "b6a301656ae995f4226b0799f5cf0d4b713c437e0af3253a687a2f6615c5714d",
+    "evidence/baseline-junit/TEST-co-EFJBQJA14FT30.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedExecutionEvidenceValidationTest.xml": "e2fedd79f4072c603da893e2423d5eff2fa51768087e789c3eb97903fff4efe5",
+    "evidence/baseline-junit/TEST-com-HDFUUT4425AV8.achievetodo.certification.PhaseAEnchantmentInventoryChangedExpansionDirect16CertificationTest.xml": "33963b366f21012e84ea02b4eea39917004a8171478f7279f2e65445bd92c273",
+    "evidence/baseline-junit/TEST-com.d-PGG8TD2LRO7IS.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidationTest.xml": "aa75fd584d87e9f4da5bdc826e09232ac6fb7f125d475a5e6439610bdfe4cb12",
+    "evidence/baseline-junit/TEST-com.di-2ROJNQPO3H8V0.achievetodo.certification.PhaseAItemTagInventoryContainmentExecutionEvidenceValidationTest.xml": "b8b29427870d7a17fc0e39c653ab3d4535728e0f31c80c713e3ab3c066f23bd9",
+    "evidence/baseline-junit/TEST-com.di-J0ALK3VDLFUKI.achievetodo.certification.PhaseAEnchantmentInventoryChangedExecutionEvidenceValidationTest.xml": "e4f998797b95b783b508fc8f66074c7199b31d4dbcb2cfc02aae4b6720e96340",
+    "evidence/baseline-junit/TEST-com.dis-GOCS7QAP38HP6.achievetodo.certification.PhaseAEntityTypeTagStartedRidingExecutionEvidenceValidationTest.xml": "39cb4f00ea1a458e69537e79b756e23525e7069989d248b0abdb004c3b929104",
+    "evidence/baseline-junit/TEST-com.diskree.-D8HCCM2LPJGSE.certification.PhaseAItemTagPlayerInteractedWithEntityExecutionEvidenceValidationTest.xml": "a088c4023c6fd2dc124502a73efa92dd802788400024cab8ac98bd2da7e61e74",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAAdvancementRollupTest.xml": "0ff9a06a0f9059324bd90669df2fdd9638e091cc3510c3ee76151f0e62db5db2",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockCertificationTest.xml": "35555fd6e163cf99a0ca654a70d7c62e39381c3eb5527e6b7aa36f737d4624f0",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseACertificationTest.xml": "da67c58a2c14b8e4f995d55313f220ccf301e02f2bf7dae5c264e193226a3fd1",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAContainerLootCertificationTest.xml": "2b2011e57a70da8e3d481144c8acb3ff2dfa442f828e13bbb7c1bdb0d27d9a13",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest.xml": "bb8ed25f8398d7c2fe9ac9504a2263df915a9ef7cc472fbe8b84d9d32bbe7c63",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedCertificationTest.xml": "ad6880622d8ee64ae998134807e5ec431d63bf3ff943586b166738aef3266397",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityCertificationTest.xml": "f6c8c358269ed0cacde7641d11f67d54b75fe0a808663dd29a1723d93bcd45b3",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAEntityTypeTagStartedRidingCertificationTest.xml": "4867759bba47709feb834bdf9958f69b6dd764cccd1b8e1feb35e127fffa6be3",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAFishingRodHookedCertificationTest.xml": "a6008e4cf7890fac741eb5846ef3ab5915cc7c8741033c97f8bed68eff393f27",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAFishingRodHookedExecutionEvidenceValidationTest.xml": "81f84340076b2f65891c1c881c76ec4ee02eae7a2865d7cbc1e22cce39b0e9a0",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAFishingRodHookedRollupTest.xml": "193157afa48075054e5dc272ec0db9dda1971ae50c2b3331458caa18c2682a4a",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedCertificationTest.xml": "285496ccd42160df9337f97f68ebaff0edcbcdf7effaa878b5ef1a1f8e92404b",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagInventoryContainmentCertificationTest.xml": "8afb86a835a751e01423ffcfa7d0b98bbf631f38891701856bfcb2c43b4ed677",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockCertificationTest.xml": "2e549ce31f31e12d7b9c833aede655754b3206f69d06a1a0b8297fbdea62098f",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockExecutionEvidenceValidationTest.xml": "e15417d174786b7cc5e36095ba31cd7573fcb67ae749527537251e32f7dda57b",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockCertificationTest.xml": "46c20e115afa4d3b769376b7f27d3e4cd571c4dab7c620701ae47a6fae8ddf87",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest.xml": "cae77b0ade1a72d648bbd86e8a276a9bdaeec47dc517af4a3833884f2fea997e",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagPlayerInteractedWithEntityCertificationTest.xml": "099e86dbe0aab109d28d84b27b9d5b664d2d35199d6c59d2717c00edcae83928",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemUsedOnBlockContextualCertificationTest.xml": "2755d55395b406219e9c434fba8c6d9bab4d085d923ee557a87f1dc49861d55b",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenCertificationTest.xml": "e459e00598f3e172610eb54679f7a64330cd79fa0c3014e1796fa63c56eeaa96",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenEvidenceTest.xml": "ef868f96a1d23bdd5dc22e33f09c467590553de7bac4ce7328bc8ab0c0c0e841",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseALocationMovementCertificationTest.xml": "b12b50ea2d096ed6916fd5d48c2fdac00f779e20f56ee204698984ccddb52c9c",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAMixedPerfectRunCertificationTest.xml": "ee604dcb98087567cbeef211611de3e5717bbd559aae5e93e84034eb432d66b5",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAMixedPerfectRunEvidenceTest.xml": "f8921f67ca1adc2bebbf2180f681393998dcc68b37b6b87add0bb1fb76527458",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionCertificationTest.xml": "845b8a208f9d522b98498ff4f92b9743dfd64c5e57fe3be4fbd8e5e6fde24518",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionEvidenceTest.xml": "94185fc77cb552c72bfed6659ca68a616ad1d026e9ce23e0bf82cc9bbc5a7f29",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAMixedWeaponryMulticlassedCertificationTest.xml": "e7b468f3cdee98d70644b6068b40db6fc84b6d2cb7e2b78fa5bf875dc7ac4279",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAMixedWeaponryMulticlassedEvidenceTest.xml": "55d5886e9edd8de030f0ad6d49269081b584397314e15d6e2b3588a3347569fb",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceCertificationTest.xml": "1b07bd2f205d841b298f177eea5c251b802a8af8a8e79db04d5c2b6b0160289f",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAPlayerKilledEntityRemainderCertificationTest.xml": "9e501c1e3d149071f8890847e7d222792b0f7bf4bc5d56cd0a88b135fbd8bda0",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAPlayerKilledEntityRemainderEvidenceTest.xml": "8af9206d59a7186686acea55ff3522e9f9f63878f8826115a203f0cf7b9b6d9e",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedCertificationTest.xml": "6e1f8b6cab42b31422527b5fce72c8f2aceb49dc9cec421c2570546bcfdfb3ef",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedEvidenceTest.xml": "dd2519696b37d45a8b995bd53326c262903600f88ac6865d539785faf7dc9f48",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseARecipeCraftedWaxOnCertificationTest.xml": "18c0eed6fb1f74558777ae485c71866ab63124823a7b1fa570d00feb8a5baba2",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest.xml": "dce1f752f246e224653e4328513f512cf08dc532be267f3141bd6d28a57723b3",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAShotCrossbowExecutionEvidenceValidationTest.xml": "3faec0367597e18bd187749f108560f16cac1f6e8d74332170ac269db2175d8f",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonAncientRestorationCertificationTest.xml": "1aa37dcbf9ac7b6612e2701f173cdd36cfe8d144eef050e87a9648bc526d5b9d",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonAncientRestorationEvidenceTest.xml": "6ded0fd3209ad9df764ec610e1028797e148b954999829bca74d6ecd2ac8cb33",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonAxolotlMonumentCertificationTest.xml": "a5a5bca7145567d20439284622857de6fd0e6cdc3878700fdf12825e94fcb52a",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonDiagonAllayCertificationTest.xml": "d212792e4399f158238b4ca0e10272401e8e7581aa237a299f041ba8a1b52ee1",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonLlamaBreedingCertificationTest.xml": "36dbb4376b708e68be7f9b2bd62698f468a91e9bcd20709c0f4afb1f3f5f172d",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonMangroveGroveCertificationTest.xml": "4dea6e0911fbddb6711bfb168a081f8ef7f8a00d51e366be657e8e1764f6a748",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonMaximumResistanceCertificationTest.xml": "07f22c678d7c2b3a28ca6727d478eac49f6d549f850a2afebdf5413c08600f8e",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonMiracleDrinkCertificationTest.xml": "a9262f9c8fbecebc98665fca6ff404fce765264fa888b6ebb7ae7e1cdec8c1d3",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonRedstoneClickCertificationTest.xml": "e7a5513ef86db9b01d4d9a3bf238777d03386117f6dba8053f18991c20196aa0",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonSilkTouchNestCertificationTest.xml": "e9d2775385cfa4b1b6c0b75323c1312928101bbb997808d70a564bd9d765527f",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonSilkTouchNestEvidenceTest.xml": "48ac2262137cd2e0f63dbf1e77ca30d2917f453dfe6fdfebaf046e57ed45daad",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonVillageBellCertificationTest.xml": "466e67ade80669573e201061d56d1f1eb34395de942da46c45698d2fee66a722",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAStackAllItemsCertificationTest.xml": "0f2047c9d45abf40fcb01ae4be802be6c9d55275648bc4e5361aaeb7c33d8367",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAStackAllItemsEvidenceTest.xml": "015f25388282ba7848335cf7baaf817414b9863e34352570c6aede4b849de2aa",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseATameAnimalLlamaCertificationTest.xml": "6600684d9f0bf1afa902ab5eaf63894c35b641afe7a4e3b400f4e72508adf2ad",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseATerminalReconciliationTest.xml": "1b492ea57e8899942bf908293726768d2a27bffed93ae4708e9f6c8b346ecaf7",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedCertificationTest.xml": "6423a1bdf11d19f1057a541107780ed5768951eac0c09dd6f79def9f1c5e250d",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedCertificationTest.xml": "4f9fe2a3406000fa84af8ed03da3b13b755442543d704bdd7f82397a3942c4fc",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAUsingItemCertificationTest.xml": "0bcaee18fa8432218f62e664fe687c58972bf555c25372c00e8525c75bc6733b",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAUsingItemExecutionEvidenceValidationTest.xml": "9cb5db77e7b4c183442a4f4c5cd703d448cd33d5399454b9fbe358a79467caa1",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAUsingItemRollupTest.xml": "20a0a6de3405518f7f769ac91a4a56e55750f8a916955047e4454ae9d46e04bf",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.client.AdvancementLinkCommandTest.xml": "1d2a48625f77d0d48b3c5653aedcec90332c9842e611c4d7aa4f0b3d31ffcaf3",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.client.BetterRuOverlayResourceTest.xml": "9d5afcac93a25c2d06c72d7a0b917cf9bf72d89689c271315ffe94fa5b127d80",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.client.CompatibilityJoinGateTest.xml": "827f7b2ea4b24bdef0e72d94e1544af659aaf9e1a90ac8f0159df9b57a9a9392",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.client.CreateWorldContinuationGateTest.xml": "cea792ab165475952177cd97e9991081098f09d9a79fafc8f65928af7dcf8b50",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.xml": "d3aaf4d7a953bcee2464691604387181623549e634fdd2bc9b988db47caab21b",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.client.ExternalPackCompatibilityTest.xml": "f4db901ba6b189dbe54da9645b873a359abc85268d5c504f0a2d38cfc9619844",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.client.PhaseALegacyItemTagCompatibilityTest.xml": "8032609a3bb13bc694894432bdb4db22d6bbb6cef1c1e1db2059d01e605368a8",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.client.PhaseALlamaFestivalNbtRegressionTest.xml": "2e7be3204ab2322ab432a915c110eb2d1cc0c50a1665b55df03edd3fe73fcc8c",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.xml": "55a29652a2ff2ff3156502e765eed78e7879c44f7dd8b267346dfbb24db0b598",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.client.Pre26SmokeRegressionTest.xml": "5f6b5af5e4c819e7919598bcc825589245a366953ab13497898dc474c4e2c880",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.injection.mixin.client.MovementTutorialStepHandlerMixinTest.xml": "14aac87a59cec80cc131b8b0ca3b27c67f3a9ca7e20cd685a2150df39c25b108",
+    "evidence/baseline-junit/TEST-com.diskree.achievetodo.MixinsConfigTest.xml": "2ebc1ecbf17875d5b940e43f2dac5102871bf3ff5ef66b669e2eb6ae848065c0",
+    "evidence/baseline.exit": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "evidence/baseline.log": "4851799991940a3b1b929f72e4632a3e16d732269836a93a09b7e14454174ec4",
+    "evidence/baseline_comparison.json": "1b1e7c08becf2c9a31d76e5fce27364bd92c921d7cbc172984f62139548c2458",
+    "evidence/build.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "evidence/build.log": "2ddf8f524cca5257cb6418946cfb183945a0b50c4c3cc51fcc0582193b2796b4",
+    "evidence/build_after_archive_preservation.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "evidence/build_after_archive_preservation.log": "b567c0997b562cb92da324900f06b73b68521697a0ca013b439f265a0d7e88c3",
+    "evidence/build_fresh.exit": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "evidence/build_fresh.log": "3ba3766cd48bcf776780984bcdb7f4f44cb6a19753b7b32ae8b14932e4a9b0ae",
+    "evidence/focused-junit/binary/output-events.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/focused-junit/binary/results-generic.bin": "66b20f8317a81255a4a6704c407e236e395e64bee92d1f51c996434a8e88bcca",
+    "evidence/focused-junit/TEST-com.diskree.achievetodo.client.BetterRuOverlayResourceTest.xml": "8ba3ebd564984c8a824f45079b16e1f9d47460446fbbc6b90cc904f789dc9626",
+    "evidence/focused.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "evidence/focused.log": "8efcd6b2dc135831a5d4325966b603dcb4e1bdf2651db26e85493699e6f044ef",
+    "evidence/focused_results.json": "7e9fd648e419535a5605e5e9400115d76c659eaae997fc93b24689c2bb72a843",
+    "evidence/jar_audit.json": "485f5a097bc84ff685defcdcc20ad88f69e84f7a5c2aba3ea9f97c5547578c1d",
+    "evidence/jar_comparison.json": "dd51e95ec071df13f442fd6998934ffe6eecd7ead3dfcc3cfc80a252444b5b60",
+    "evidence/post_build_git_status.txt": "b074ac36618f564608df1e1f5e6828e14350e4d178d57e7495ab9e7bb2236f1a",
+    "evidence/post_clean_jar_entries.json": "5c9a9d2407373ce69ba0d90a75fcff38698be0516b05936f0acf7058740de39e",
+    "evidence/pre_build_verification.json": "0d8fa162d5c23a1eafcb9e501d44ec38f6534da8ff45fdec4c4d9889e0e8d952",
+    "evidence/pre_clean_jar_entries.json": "5c9a9d2407373ce69ba0d90a75fcff38698be0516b05936f0acf7058740de39e",
+    "evidence/pre_remediation_git_status.txt": "a7d95067b7cf163fcb35d976b3958b40fa208ac0f6b32aa45da68ac9894f4734",
+    "evidence/preservation_audit.json": "30748becd4579bdedfd3084679b4a2d1e1ab5fd7f9f53c23a31bfdbd0bce3d41",
+    "evidence/protected_pre_remediation_hashes.json": "de60e5642f096585161d264cfdadeeafcd1058f5aa681d4b22e1063046b4e5ae"
+  },
+  "postBuildGit": {
+    "branch": "26.2-port",
+    "head": "a5e1b49539a39f01bb5db13d44d420e653dce225",
+    "indexSha256": "bd0c1882b97105b93ec41c193496cc5587131df9792f28c7bc89e08d1c33a8df",
+    "staged": "",
+    "tracked": [
+      " M LICENSE",
+      " M README.md",
+      " M build.gradle",
+      " M gradle.properties",
+      " M gradle/BuildConfig.java.txt",
+      " M gradle/wrapper/gradle-wrapper.jar",
+      " M gradle/wrapper/gradle-wrapper.properties",
+      " M gradlew",
+      " M gradlew.bat",
+      " M src/main/java/com/diskree/achievetodo/ability/AbilityType.java",
+      " M src/main/java/com/diskree/achievetodo/client/AchieveToDoClient.java",
+      " M src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+      " M src/main/java/com/diskree/achievetodo/injection/mixin/client/GuiMixin.java",
+      " M src/main/java/com/diskree/achievetodo/injection/mixin/client/MinecraftClientMixin.java",
+      " M src/main/java/com/diskree/achievetodo/injection/mixin/client/MovementTutorialStepHandlerMixin.java",
+      " M src/main/java/com/diskree/achievetodo/injection/mixin/main/AxeItemMixin.java",
+      " D src/main/java/com/diskree/achievetodo/injection/mixin/main/CommandManagerMixin.java",
+      " M src/main/java/com/diskree/achievetodo/server/AchieveToDoServer.java",
+      " M src/main/resources/achievetodo.mixins.json",
+      " M src/main/resources/assets/achievetodo/lang/en_us.json",
+      " M src/main/resources/assets/achievetodo/lang/ru_ru.json",
+      " M src/main/resources/fabric.mod.json",
+      " M src/test/java/com/diskree/achievetodo/client/BetterRuOverlayResourceTest.java",
+      " M src/test/java/com/diskree/achievetodo/client/ExternalPackCompatibilityTest.java",
+      " M src/test/java/com/diskree/achievetodo/injection/mixin/client/MovementTutorialStepHandlerMixinTest.java"
+    ],
+    "untrackedCount": 39085
+  },
+  "gitStatusDelta": {
+    "newTrackedDelta": [
+      " M src/test/java/com/diskree/achievetodo/client/BetterRuOverlayResourceTest.java"
+    ],
+    "newDurableRecordFiles": 141,
+    "expectedGradleOutputFiles": [
+      "?? .gradle-user-home/.tmp/gradle-worker-classpath11149067346455089388txt",
+      "?? .gradle-user-home/.tmp/gradle-worker-classpath16242749266627659916txt",
+      "?? .gradle-user-home/.tmp/gradle-worker-classpath6437782005893346677txt",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/.internal/locks/0c529b6ef2cc55e22a93758d4be5fa15.lock",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/.internal/locks/66a36f8399e7d9dc4a9376de9b757eac.lock",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/0c529b6ef2cc55e22a93758d4be5fa15/classes/init/_BuildScript_$_run_closure1$_closure2$_closure3.class",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/0c529b6ef2cc55e22a93758d4be5fa15/classes/init/_BuildScript_$_run_closure1$_closure2.class",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/0c529b6ef2cc55e22a93758d4be5fa15/classes/init/_BuildScript_$_run_closure1.class",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/0c529b6ef2cc55e22a93758d4be5fa15/classes/init/_BuildScript_.class",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/0c529b6ef2cc55e22a93758d4be5fa15/instrumented/init/_BuildScript_$_run_closure1$_closure2$_closure3.class",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/0c529b6ef2cc55e22a93758d4be5fa15/instrumented/init/_BuildScript_$_run_closure1$_closure2.class",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/0c529b6ef2cc55e22a93758d4be5fa15/instrumented/init/_BuildScript_$_run_closure1.class",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/0c529b6ef2cc55e22a93758d4be5fa15/instrumented/init/_BuildScript_.class",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/0c529b6ef2cc55e22a93758d4be5fa15/metadata.bin",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/0c529b6ef2cc55e22a93758d4be5fa15/metadata/metadata.bin",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/66a36f8399e7d9dc4a9376de9b757eac/metadata.bin",
+      "?? .gradle-user-home/caches/9.8.0/groovy-dsl/66a36f8399e7d9dc4a9376de9b757eac/metadata/metadata.bin",
+      "?? .gradle-user-home/caches/jars-9/f8eaf6a0d3b34a417f09e65aafa0aef3/init.lock",
+      "?? .gradle-user-home/caches/jars-9/f8eaf6a0d3b34a417f09e65aafa0aef3/init.receipt",
+      "?? .gradle-user-home/caches/jars-9/f8eaf6a0d3b34a417f09e65aafa0aef3/init/report_routing_init_ehinjyo7q0pppjp0potppbkq2$_run_closure1$_closure2$_closure3.class",
+      "?? .gradle-user-home/caches/jars-9/f8eaf6a0d3b34a417f09e65aafa0aef3/init/report_routing_init_ehinjyo7q0pppjp0potppbkq2$_run_closure1$_closure2.class",
+      "?? .gradle-user-home/caches/jars-9/f8eaf6a0d3b34a417f09e65aafa0aef3/init/report_routing_init_ehinjyo7q0pppjp0potppbkq2$_run_closure1.class",
+      "?? .gradle-user-home/caches/jars-9/f8eaf6a0d3b34a417f09e65aafa0aef3/init/report_routing_init_ehinjyo7q0pppjp0potppbkq2.class",
+      "?? .gradle-user-home/caches/jars-9/fc30f3819998a03876d45af878d7bf2d/cp_init.lock",
+      "?? .gradle-user-home/caches/jars-9/fc30f3819998a03876d45af878d7bf2d/cp_init.receipt",
+      "?? .gradle-user-home/daemon/9.8.0/daemon-12264.out.log",
+      "?? .gradle-user-home/daemon/9.8.0/daemon-19200.out.log",
+      "?? .gradle-user-home/daemon/9.8.0/daemon-20024.out.log",
+      "?? .gradle-user-home/daemon/9.8.0/daemon-24584.out.log",
+      "?? .gradle-user-home/daemon/9.8.0/daemon-4744.out.log",
+      "?? .gradle-user-home/daemon/9.8.0/daemon-9080.out.log"
+    ],
+    "expectedRuntimeTestLogOutputs": [
+      {
+        "path": "logs/2026-10-01-4.log.gz",
+        "sha256": "1ad9a5906b7a25c4a3cee80c3bab9ebd4568dd5c9f803cc0e88c632a668690ec",
+        "header": [
+          "[19:36:52] [Test worker/INFO]: [STDOUT]: BLOCK_TAG_PROMOTION_MOVE=ATOMIC_MOVE",
+          "[19:36:58] [Test worker/INFO]: [STDOUT]: TRI_STATE_PASS=958",
+          "[19:36:58] [Test worker/INFO]: [STDOUT]: TRI_STATE_FAIL=17",
+          "[19:36:58] [Test worker/INFO]: [STDOUT]: TRI_STATE_DEFERRED=177",
+          "[19:36:58] [Test worker/INFO]: [STDOUT]: SOURCE_STACK_TOTAL=81",
+          "[19:36:58] [Test worker/INFO]: [STDOUT]: SOURCE_STACK_VANILLA_26_2=34",
+          "[19:36:58] [Test worker/INFO]: [STDOUT]: SOURCE_STACK_BACAP_BASE=33",
+          "[19:36:58] [Test worker/INFO]: [STDOUT]: SOURCE_STACK_BASE_INTERNAL_PACK=0"
+        ],
+        "classification": "Expected Minecraft Test-worker logger rollover from authoritative JUnit execution"
+      },
+      {
+        "path": "logs/2026-10-01-5.log.gz",
+        "sha256": "1e5bd1a7f10750900a3af8a04f776a06e59d7ae32c8eec2a96780b70d411657d",
+        "header": [
+          "[19:58:42] [Test worker/INFO]: [STDOUT]: BLOCK_TAG_PROMOTION_MOVE=ATOMIC_MOVE",
+          "[19:58:48] [Test worker/INFO]: [STDOUT]: TRI_STATE_PASS=958",
+          "[19:58:48] [Test worker/INFO]: [STDOUT]: TRI_STATE_FAIL=17",
+          "[19:58:48] [Test worker/INFO]: [STDOUT]: TRI_STATE_DEFERRED=177",
+          "[19:58:48] [Test worker/INFO]: [STDOUT]: SOURCE_STACK_TOTAL=81",
+          "[19:58:48] [Test worker/INFO]: [STDOUT]: SOURCE_STACK_VANILLA_26_2=34",
+          "[19:58:48] [Test worker/INFO]: [STDOUT]: SOURCE_STACK_BACAP_BASE=33",
+          "[19:58:48] [Test worker/INFO]: [STDOUT]: SOURCE_STACK_BASE_INTERNAL_PACK=0"
+        ],
+        "classification": "Expected Minecraft Test-worker logger rollover from authoritative JUnit execution"
+      }
+    ],
+    "removedStatusEntries": [],
+    "unexpectedChanges": []
+  }
+}

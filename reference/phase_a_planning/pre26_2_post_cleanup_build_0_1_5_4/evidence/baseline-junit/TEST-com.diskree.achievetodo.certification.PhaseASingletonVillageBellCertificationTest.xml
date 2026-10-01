@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseASingletonVillageBellCertificationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:37:55.279Z" hostname="LAPTOP-L0LPH8GP" time="2.828">
+  <properties/>
+  <testcase name="frozenCatalogAndPersistentReceiptCoverOnlyTheVillageBellSingleton()" classname="com.diskree.achievetodo.certification.PhaseASingletonVillageBellCertificationTest" time="0.01"/>
+  <testcase name="persistentVillageBellReceiptChangesOnlyItsOwnStatus()" classname="com.diskree.achievetodo.certification.PhaseASingletonVillageBellCertificationTest" time="2.818"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

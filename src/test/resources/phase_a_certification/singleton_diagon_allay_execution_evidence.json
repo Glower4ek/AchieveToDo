@@ -1,0 +1,56 @@
+{
+  "snapshot": "phase_a_singleton_diagon_allay_execution_evidence",
+  "schemaVersion": 1,
+  "family": "SINGLETON:blazeandcave:adventure/diagon_allay",
+  "source": "PhaseASingletonDiagonAllayGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "catalogFingerprint": "sha-256:589ad783a714d789fe3acadf23e7bdf0a6e22a6d9b05b27d29b977ccf0f6433f",
+  "runId": "67e025dd-3f5e-4b95-9b28-ef57b953786c",
+  "generatedAt": "2026-09-29T14:27:14.695923700Z",
+  "entries": [
+    {
+      "family": "SINGLETON:blazeandcave:adventure/diagon_allay",
+      "source": "PhaseASingletonDiagonAllayGameTest",
+      "advancementId": "blazeandcave:adventure/diagon_allay",
+      "criterion": "diagon_allay",
+      "trigger": "minecraft:thrown_item_picked_up_by_player",
+      "boundary": "AllayAi.GoAndGiveItemsToTarget->BehaviorUtils.throwItem->ItemEntity.playerTouch->ServerPlayer.onItemPickup->CriteriaTriggers.THROWN_ITEM_PICKED_UP_BY_PLAYER",
+      "observedThrower": "minecraft:allay",
+      "observedItem": "minecraft:potion",
+      "observedPlayerBiome": "minecraft:deep_dark",
+      "runId": "67e025dd-3f5e-4b95-9b28-ef57b953786c",
+      "catalogFingerprint": "sha-256:589ad783a714d789fe3acadf23e7bdf0a6e22a6d9b05b27d29b977ccf0f6433f",
+      "result": "GREEN",
+      "gameMode": "SURVIVAL",
+      "playerUuid": "183e6383-1c0f-4bb1-baa3-47465a5032ce",
+      "allayUuid": "504a7bff-27dc-4720-b274-2858132bcd21",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "allayGivenMatchingItem": true,
+      "allayPickedUpPotion": true,
+      "allayThrewPotion": true,
+      "thrownEntityOwnerMatchesAllay": true,
+      "potionEntityConsumed": true,
+      "matchingPotionInPlayerInventory": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "noDirectCriterionTrigger": true,
+      "noManualAward": true,
+      "productionGateWitness": {
+        "productionGate": "LANDMARK_ONLY_FOR_ALLAY_INTERACTION",
+        "lockedLandmark": false
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "allayRemoved": true,
+        "settlementMessages": 2446,
+        "warningCount": 0
+      }
+    }
+  ]
+}

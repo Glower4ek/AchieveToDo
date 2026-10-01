@@ -1,0 +1,19 @@
+{
+  "snapshot": "phase_a_singleton_axolotl_monument_case_catalog",
+  "family": "SINGLETON:blazeandcave:animal/thanks_a_lotl",
+  "source": "PhaseASingletonAxolotlMonumentGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "frozenAdvancementPath": "data/blazeandcave/advancement/animal/thanks_a_lotl.json",
+  "frozenAdvancementSha256": "02f5fc9bff59785263ea96e146b15ed26185875f8687569aefb6b8fd8a3afb2f",
+  "advancementId": "blazeandcave:animal/thanks_a_lotl",
+  "criterion": "kill_axolotl_target",
+  "requirementGroup": 0,
+  "trigger": "minecraft:effects_changed",
+  "sourceEntity": "minecraft:axolotl",
+  "sourceStructure": "minecraft:monument",
+  "playerStructure": "minecraft:monument",
+  "productionGate": "LANDMARK_ONLY_FOR_PLAYER_ATTACK",
+  "runtimeBoundary": "ServerboundAttackPacket.handle->ServerGamePacketListenerImpl.handleAttack->ServerPlayer.attack->AxolotlAi.StopAttackingIfTargetInvalid->Axolotl.onStopAttacking->Axolotl.applySupportingEffects->Player.addEffect->ServerPlayer.onEffectAdded->CriteriaTriggers.EFFECTS_CHANGED"
+}

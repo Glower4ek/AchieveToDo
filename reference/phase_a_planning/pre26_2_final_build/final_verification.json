@@ -1,0 +1,12 @@
+{
+  "verdict": "FINAL_VERIFICATION_GREEN",
+  "artifactSha256": "aba207b7d9873cb1a3073894a0948d7953316578ab0fab2c6d88b86dab070f69",
+  "recordHashes": {
+    "pre26_2_final_build_manifest.json": "ebb7bde740748a8c4fd519875a7db063cdd4183e3e9e2e0602d52768a2ba4b6a",
+    "pre26_2_final_build_report.md": "8fc8d24a79f6e860efd577722fde18317c9d783d3450c9cd0912c50989ca8423"
+  },
+  "allProtectedFilesUnchanged": true,
+  "gitIndexUnchanged": true,
+  "userSmoke": "PENDING",
+  "incidentErrorReview": "Unintended broad historical GameTest run produced shared runId/cardinality/channel/score fixture conflicts; these diagnostic harness results were not promoted or used as production evidence. No production parse or mixin-load error was identified in the inspected error lines."
+}

@@ -1,0 +1,15 @@
+{
+  "runtimeCopySha256": "a6176360eb07b398e635ba967e5c3edf72b145e7ca493aad4f1f4373c46cd66c",
+  "marker": {
+    "fileName": "bacap.zip",
+    "llamaCarpetNbtMapping": "equipment.body",
+    "raiderPredicateKeys": "snake_case",
+    "rootOverrideSha1": "51c2bebe15a2225e11f157753edf2d94c8520b67",
+    "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+    "version": "compat_26_2_r15"
+  },
+  "markerMatchesAccepted": true,
+  "definitionsCompared": 1229,
+  "definitionDifferences": [],
+  "conclusion": "Scratch ZIP byte hash changed; accepted marker and all semantic outputs remain identical."
+}

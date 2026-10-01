@@ -1,0 +1,502 @@
+{
+  "family": "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+  "staticSemantics": "EXACT_FROZEN_CURRENT_TYPED_CONTEXT",
+  "criteriaCount": 6,
+  "requirementGroupCount": 6,
+  "sourceBackedTags": {
+    "minecraft:block|blazeandcave:candles_and_cakes": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/block/candles_and_cakes.json",
+          "sha256": "d1f25717464d809a60d312ad37c6085ba687f5c97470401a4aa71062429b136a",
+          "definition": {
+            "replace": false,
+            "values": [
+              "#minecraft:candles",
+              "#minecraft:candle_cakes"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:candle",
+        "minecraft:white_candle",
+        "minecraft:orange_candle",
+        "minecraft:magenta_candle",
+        "minecraft:light_blue_candle",
+        "minecraft:yellow_candle",
+        "minecraft:lime_candle",
+        "minecraft:pink_candle",
+        "minecraft:gray_candle",
+        "minecraft:light_gray_candle",
+        "minecraft:cyan_candle",
+        "minecraft:purple_candle",
+        "minecraft:blue_candle",
+        "minecraft:brown_candle",
+        "minecraft:green_candle",
+        "minecraft:red_candle",
+        "minecraft:black_candle",
+        "minecraft:candle_cake",
+        "minecraft:white_candle_cake",
+        "minecraft:orange_candle_cake",
+        "minecraft:magenta_candle_cake",
+        "minecraft:light_blue_candle_cake",
+        "minecraft:yellow_candle_cake",
+        "minecraft:lime_candle_cake",
+        "minecraft:pink_candle_cake",
+        "minecraft:gray_candle_cake",
+        "minecraft:light_gray_candle_cake",
+        "minecraft:cyan_candle_cake",
+        "minecraft:purple_candle_cake",
+        "minecraft:blue_candle_cake",
+        "minecraft:brown_candle_cake",
+        "minecraft:green_candle_cake",
+        "minecraft:red_candle_cake",
+        "minecraft:black_candle_cake"
+      ]
+    },
+    "minecraft:block|blazeandcave:waxed_copper_blocks": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/block/waxed_copper_blocks.json",
+          "sha256": "8ac010a34b99d8cea1cd56e1a041b7a2e0b8bf271d5e4e5e92122c38d1bde1b1",
+          "definition": {
+            "replace": false,
+            "values": [
+              "waxed_copper_block",
+              "waxed_exposed_copper",
+              "waxed_weathered_copper",
+              "waxed_oxidized_copper",
+              "waxed_cut_copper",
+              "waxed_exposed_cut_copper",
+              "waxed_weathered_cut_copper",
+              "waxed_oxidized_cut_copper",
+              "waxed_cut_copper_stairs",
+              "waxed_exposed_cut_copper_stairs",
+              "waxed_weathered_cut_copper_stairs",
+              "waxed_oxidized_cut_copper_stairs",
+              "waxed_cut_copper_slab",
+              "waxed_exposed_cut_copper_slab",
+              "waxed_weathered_cut_copper_slab",
+              "waxed_oxidized_cut_copper_slab",
+              "waxed_chiseled_copper",
+              "waxed_exposed_chiseled_copper",
+              "waxed_weathered_chiseled_copper",
+              "waxed_oxidized_chiseled_copper",
+              "waxed_copper_grate",
+              "waxed_exposed_copper_grate",
+              "waxed_weathered_copper_grate",
+              "waxed_oxidized_copper_grate",
+              "waxed_copper_door",
+              "waxed_exposed_copper_door",
+              "waxed_weathered_copper_door",
+              "waxed_oxidized_copper_door",
+              "waxed_copper_trapdoor",
+              "waxed_exposed_copper_trapdoor",
+              "waxed_weathered_copper_trapdoor",
+              "waxed_oxidized_copper_trapdoor",
+              "waxed_copper_bulb",
+              "waxed_exposed_copper_bulb",
+              "waxed_weathered_copper_bulb",
+              "waxed_oxidized_copper_bulb"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "waxed_copper_block",
+        "waxed_exposed_copper",
+        "waxed_weathered_copper",
+        "waxed_oxidized_copper",
+        "waxed_cut_copper",
+        "waxed_exposed_cut_copper",
+        "waxed_weathered_cut_copper",
+        "waxed_oxidized_cut_copper",
+        "waxed_cut_copper_stairs",
+        "waxed_exposed_cut_copper_stairs",
+        "waxed_weathered_cut_copper_stairs",
+        "waxed_oxidized_cut_copper_stairs",
+        "waxed_cut_copper_slab",
+        "waxed_exposed_cut_copper_slab",
+        "waxed_weathered_cut_copper_slab",
+        "waxed_oxidized_cut_copper_slab",
+        "waxed_chiseled_copper",
+        "waxed_exposed_chiseled_copper",
+        "waxed_weathered_chiseled_copper",
+        "waxed_oxidized_chiseled_copper",
+        "waxed_copper_grate",
+        "waxed_exposed_copper_grate",
+        "waxed_weathered_copper_grate",
+        "waxed_oxidized_copper_grate",
+        "waxed_copper_door",
+        "waxed_exposed_copper_door",
+        "waxed_weathered_copper_door",
+        "waxed_oxidized_copper_door",
+        "waxed_copper_trapdoor",
+        "waxed_exposed_copper_trapdoor",
+        "waxed_weathered_copper_trapdoor",
+        "waxed_oxidized_copper_trapdoor",
+        "waxed_copper_bulb",
+        "waxed_exposed_copper_bulb",
+        "waxed_weathered_copper_bulb",
+        "waxed_oxidized_copper_bulb"
+      ]
+    },
+    "minecraft:block|minecraft:candle_cakes": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\.gradle-user-home\\caches\\fabric-loom\\minecraftMaven\\net\\minecraft\\minecraft-merged-deobf\\26.2\\minecraft-merged-deobf-26.2.jar!data/minecraft/tags/block/candle_cakes.json",
+          "sha256": "6074402049e9768ee880ce88e7a00a8382ac0190b95a0534fea33b370b8c9289",
+          "definition": {
+            "values": [
+              "minecraft:candle_cake",
+              "minecraft:white_candle_cake",
+              "minecraft:orange_candle_cake",
+              "minecraft:magenta_candle_cake",
+              "minecraft:light_blue_candle_cake",
+              "minecraft:yellow_candle_cake",
+              "minecraft:lime_candle_cake",
+              "minecraft:pink_candle_cake",
+              "minecraft:gray_candle_cake",
+              "minecraft:light_gray_candle_cake",
+              "minecraft:cyan_candle_cake",
+              "minecraft:purple_candle_cake",
+              "minecraft:blue_candle_cake",
+              "minecraft:brown_candle_cake",
+              "minecraft:green_candle_cake",
+              "minecraft:red_candle_cake",
+              "minecraft:black_candle_cake"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:candle_cake",
+        "minecraft:white_candle_cake",
+        "minecraft:orange_candle_cake",
+        "minecraft:magenta_candle_cake",
+        "minecraft:light_blue_candle_cake",
+        "minecraft:yellow_candle_cake",
+        "minecraft:lime_candle_cake",
+        "minecraft:pink_candle_cake",
+        "minecraft:gray_candle_cake",
+        "minecraft:light_gray_candle_cake",
+        "minecraft:cyan_candle_cake",
+        "minecraft:purple_candle_cake",
+        "minecraft:blue_candle_cake",
+        "minecraft:brown_candle_cake",
+        "minecraft:green_candle_cake",
+        "minecraft:red_candle_cake",
+        "minecraft:black_candle_cake"
+      ]
+    },
+    "minecraft:block|minecraft:candles": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\.gradle-user-home\\caches\\fabric-loom\\minecraftMaven\\net\\minecraft\\minecraft-merged-deobf\\26.2\\minecraft-merged-deobf-26.2.jar!data/minecraft/tags/block/candles.json",
+          "sha256": "dc2341cd97a3d8dc1df1d442bacb0a911d1f81c25df08710eea0d7253415f345",
+          "definition": {
+            "values": [
+              "minecraft:candle",
+              "minecraft:white_candle",
+              "minecraft:orange_candle",
+              "minecraft:magenta_candle",
+              "minecraft:light_blue_candle",
+              "minecraft:yellow_candle",
+              "minecraft:lime_candle",
+              "minecraft:pink_candle",
+              "minecraft:gray_candle",
+              "minecraft:light_gray_candle",
+              "minecraft:cyan_candle",
+              "minecraft:purple_candle",
+              "minecraft:blue_candle",
+              "minecraft:brown_candle",
+              "minecraft:green_candle",
+              "minecraft:red_candle",
+              "minecraft:black_candle"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:candle",
+        "minecraft:white_candle",
+        "minecraft:orange_candle",
+        "minecraft:magenta_candle",
+        "minecraft:light_blue_candle",
+        "minecraft:yellow_candle",
+        "minecraft:lime_candle",
+        "minecraft:pink_candle",
+        "minecraft:gray_candle",
+        "minecraft:light_gray_candle",
+        "minecraft:cyan_candle",
+        "minecraft:purple_candle",
+        "minecraft:blue_candle",
+        "minecraft:brown_candle",
+        "minecraft:green_candle",
+        "minecraft:red_candle",
+        "minecraft:black_candle"
+      ]
+    },
+    "minecraft:block|minecraft:cauldrons": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\.gradle-user-home\\caches\\fabric-loom\\minecraftMaven\\net\\minecraft\\minecraft-merged-deobf\\26.2\\minecraft-merged-deobf-26.2.jar!data/minecraft/tags/block/cauldrons.json",
+          "sha256": "12ddaf45c37b545b22dbc7f05da886e6c97300e020e998a9d1bec68cd51b998c",
+          "definition": {
+            "values": [
+              "minecraft:cauldron",
+              "minecraft:water_cauldron",
+              "minecraft:lava_cauldron",
+              "minecraft:powder_snow_cauldron"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:cauldron",
+        "minecraft:water_cauldron",
+        "minecraft:lava_cauldron",
+        "minecraft:powder_snow_cauldron"
+      ]
+    },
+    "minecraft:item|blazeandcave:axes": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/item/axes.json",
+          "sha256": "449066d3460c556659931475e127f62166935b8c18a84ae13c985ca5f81c4499",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:wooden_axe",
+              "minecraft:stone_axe",
+              "minecraft:iron_axe",
+              "minecraft:golden_axe",
+              "minecraft:diamond_axe",
+              "minecraft:netherite_axe"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:wooden_axe",
+        "minecraft:stone_axe",
+        "minecraft:iron_axe",
+        "minecraft:golden_axe",
+        "minecraft:diamond_axe",
+        "minecraft:netherite_axe"
+      ]
+    },
+    "minecraft:item|blazeandcave:candle_lightables": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/blazeandcave/tags/item/candle_lightables.json",
+          "sha256": "c85c2136b327b3e7cc82a7c50eda3550cec6f89c93000b41a18eef10c1b41331",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:flint_and_steel",
+              "minecraft:fire_charge"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:flint_and_steel",
+        "minecraft:fire_charge"
+      ]
+    },
+    "minecraft:item|minecraft:banners": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\.gradle-user-home\\caches\\fabric-loom\\minecraftMaven\\net\\minecraft\\minecraft-merged-deobf\\26.2\\minecraft-merged-deobf-26.2.jar!data/minecraft/tags/item/banners.json",
+          "sha256": "688c77fed1dd1d61f96177df2627aefda7bda84202d46cf424eb2042193ccd92",
+          "definition": {
+            "values": [
+              "minecraft:white_banner",
+              "minecraft:orange_banner",
+              "minecraft:magenta_banner",
+              "minecraft:light_blue_banner",
+              "minecraft:yellow_banner",
+              "minecraft:lime_banner",
+              "minecraft:pink_banner",
+              "minecraft:gray_banner",
+              "minecraft:light_gray_banner",
+              "minecraft:cyan_banner",
+              "minecraft:purple_banner",
+              "minecraft:blue_banner",
+              "minecraft:brown_banner",
+              "minecraft:green_banner",
+              "minecraft:red_banner",
+              "minecraft:black_banner"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:white_banner",
+        "minecraft:orange_banner",
+        "minecraft:magenta_banner",
+        "minecraft:light_blue_banner",
+        "minecraft:yellow_banner",
+        "minecraft:lime_banner",
+        "minecraft:pink_banner",
+        "minecraft:gray_banner",
+        "minecraft:light_gray_banner",
+        "minecraft:cyan_banner",
+        "minecraft:purple_banner",
+        "minecraft:blue_banner",
+        "minecraft:brown_banner",
+        "minecraft:green_banner",
+        "minecraft:red_banner",
+        "minecraft:black_banner"
+      ]
+    },
+    "minecraft:item|minecraft:candles": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\.gradle-user-home\\caches\\fabric-loom\\minecraftMaven\\net\\minecraft\\minecraft-merged-deobf\\26.2\\minecraft-merged-deobf-26.2.jar!data/minecraft/tags/item/candles.json",
+          "sha256": "dc2341cd97a3d8dc1df1d442bacb0a911d1f81c25df08710eea0d7253415f345",
+          "definition": {
+            "values": [
+              "minecraft:candle",
+              "minecraft:white_candle",
+              "minecraft:orange_candle",
+              "minecraft:magenta_candle",
+              "minecraft:light_blue_candle",
+              "minecraft:yellow_candle",
+              "minecraft:lime_candle",
+              "minecraft:pink_candle",
+              "minecraft:gray_candle",
+              "minecraft:light_gray_candle",
+              "minecraft:cyan_candle",
+              "minecraft:purple_candle",
+              "minecraft:blue_candle",
+              "minecraft:brown_candle",
+              "minecraft:green_candle",
+              "minecraft:red_candle",
+              "minecraft:black_candle"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:candle",
+        "minecraft:white_candle",
+        "minecraft:orange_candle",
+        "minecraft:magenta_candle",
+        "minecraft:light_blue_candle",
+        "minecraft:yellow_candle",
+        "minecraft:lime_candle",
+        "minecraft:pink_candle",
+        "minecraft:gray_candle",
+        "minecraft:light_gray_candle",
+        "minecraft:cyan_candle",
+        "minecraft:purple_candle",
+        "minecraft:blue_candle",
+        "minecraft:brown_candle",
+        "minecraft:green_candle",
+        "minecraft:red_candle",
+        "minecraft:black_candle"
+      ]
+    },
+    "minecraft:item|minecraft:leather_armor": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/minecraft/tags/item/leather_armor.json",
+          "sha256": "f72d30f36e532441943db2f49a9e4de17ed95c42128aad64aae309734d1d7e04",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:leather_helmet",
+              "minecraft:leather_chestplate",
+              "minecraft:leather_leggings",
+              "minecraft:leather_boots"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:leather_helmet",
+        "minecraft:leather_chestplate",
+        "minecraft:leather_leggings",
+        "minecraft:leather_boots"
+      ]
+    },
+    "minecraft:item|minecraft:shulker_boxes": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\.gradle-user-home\\caches\\fabric-loom\\minecraftMaven\\net\\minecraft\\minecraft-merged-deobf\\26.2\\minecraft-merged-deobf-26.2.jar!data/minecraft/tags/item/shulker_boxes.json",
+          "sha256": "9bc43c47d90eb246371c67b7d5b631ceed7acdaf489be766f5f03b32cae9d12a",
+          "definition": {
+            "values": [
+              "minecraft:shulker_box",
+              "minecraft:white_shulker_box",
+              "minecraft:orange_shulker_box",
+              "minecraft:magenta_shulker_box",
+              "minecraft:light_blue_shulker_box",
+              "minecraft:yellow_shulker_box",
+              "minecraft:lime_shulker_box",
+              "minecraft:pink_shulker_box",
+              "minecraft:gray_shulker_box",
+              "minecraft:light_gray_shulker_box",
+              "minecraft:cyan_shulker_box",
+              "minecraft:purple_shulker_box",
+              "minecraft:blue_shulker_box",
+              "minecraft:brown_shulker_box",
+              "minecraft:green_shulker_box",
+              "minecraft:red_shulker_box",
+              "minecraft:black_shulker_box"
+            ]
+          }
+        },
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap.zip!data/minecraft/tags/item/shulker_boxes.json",
+          "sha256": "b59280e1de3228f46b2e329f09b56f7bce64cc11cf290d4bd6b612aea7b45c99",
+          "definition": {
+            "replace": false,
+            "values": [
+              "minecraft:shulker_box",
+              "minecraft:white_shulker_box",
+              "minecraft:orange_shulker_box",
+              "minecraft:magenta_shulker_box",
+              "minecraft:light_blue_shulker_box",
+              "minecraft:yellow_shulker_box",
+              "minecraft:lime_shulker_box",
+              "minecraft:pink_shulker_box",
+              "minecraft:gray_shulker_box",
+              "minecraft:light_gray_shulker_box",
+              "minecraft:cyan_shulker_box",
+              "minecraft:purple_shulker_box",
+              "minecraft:blue_shulker_box",
+              "minecraft:brown_shulker_box",
+              "minecraft:green_shulker_box",
+              "minecraft:red_shulker_box",
+              "minecraft:black_shulker_box"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:shulker_box",
+        "minecraft:white_shulker_box",
+        "minecraft:orange_shulker_box",
+        "minecraft:magenta_shulker_box",
+        "minecraft:light_blue_shulker_box",
+        "minecraft:yellow_shulker_box",
+        "minecraft:lime_shulker_box",
+        "minecraft:pink_shulker_box",
+        "minecraft:gray_shulker_box",
+        "minecraft:light_gray_shulker_box",
+        "minecraft:cyan_shulker_box",
+        "minecraft:purple_shulker_box",
+        "minecraft:blue_shulker_box",
+        "minecraft:brown_shulker_box",
+        "minecraft:green_shulker_box",
+        "minecraft:red_shulker_box",
+        "minecraft:black_shulker_box"
+      ]
+    }
+  },
+  "inputFingerprint": "4bd43a90da1c6f17e4c74251d15c9bd022d890af9482f9b2f7d1933ddc1f7a70"
+}

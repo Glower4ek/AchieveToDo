@@ -1,0 +1,35 @@
+{
+  "classification": "KNOWN_MAPPED_PRODUCTION_BUG",
+  "boundary": "FINAL19_RAIDER_PRODUCTION_FIX_PROPOSAL",
+  "date": "2026-10-01",
+  "patchPath": "reference/phase_a_planning/final19/raider_production_fix_proposal.patch",
+  "patchSha256": "518ebaae8587b6276610e02473fac985c12cd9431cf3c344bd31c08f48ddbdbe",
+  "productionPreconditions": {
+    "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java": "dffeb7c2cf6685c5f689cf2a205b435b81da5b524971103804de3e3a6ae1dc11"
+  },
+  "proposedProductionPostconditions": {
+    "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java": "1bea3ba9caf22963d1ef26de69b19534a4b16d1eab85a39c5e1fc17750227a31"
+  },
+  "changedProductionFiles": [
+    "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java"
+  ],
+  "patchApplied": false,
+  "productCertified": 1150,
+  "authorization": "REQUIRED_SEPARATELY",
+  "markerVersionUnchanged": "compat_26_2_r15",
+  "proposedBacapFreshnessProperty": {
+    "raiderPredicateKeys": "snake_case"
+  },
+  "requiredAffectedAdvancements": [
+    "minecraft:adventure/voluntary_exile",
+    "blazeandcave:adventure/feeling_ill",
+    "blazeandcave:monsters/dungeon_crawler"
+  ],
+  "futureNativeCertificationRequired": true,
+  "isolatedProposalCompile": "GREEN_NOT_POSTFIX_NATIVE_CERTIFICATION",
+  "isolatedJUnitTests": 5,
+  "isolatedFailures": 0,
+  "outputScopePath": "reference/phase_a_planning/final19/raider_proposal_output_scope.json",
+  "outputScopeSha256": "fa305ae4d5df31bc12f0cfa929402c46daf3c6a42626c3c6e77606194e26f256",
+  "isolatedValidationInventory": "reference/phase_a_planning/final19/raider_proposal_validation/gate_inventory.json"
+}

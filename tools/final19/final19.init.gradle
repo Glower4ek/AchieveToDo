@@ -1,0 +1,68 @@
+// Separate new-stage validation source roots; production and Phase A semantics are unchanged.
+allprojects {
+    afterEvaluate {
+        sourceSets.test.java.srcDir(file('tools/final19/java'))
+        sourceSets.gametest.java.srcDir(file('tools/final19/gametest'))
+        tasks.register('compileFinal19CauldronProposal', JavaCompile) {
+            dependsOn classes
+            source = fileTree('reference/phase_a_planning/final19/cauldron_gate_production_fix_proposal_sources/src/main/java') { include '**/*.java' }
+            classpath = sourceSets.main.compileClasspath + sourceSets.main.output
+            destinationDirectory = file('build/tmp/final19_implementation/cauldron_proposal_classes')
+            options.release = 25
+        }
+        tasks.register('compileFinal19RaiderPreFixOracle', JavaCompile) {
+            dependsOn classes
+            source = fileTree('reference/phase_a_planning/final19/raider_pre_fix_sources/src/main/java') { include '**/*.java' }
+            classpath = sourceSets.main.compileClasspath + sourceSets.main.output
+            destinationDirectory = file('build/tmp/final19_implementation/raider_pre_fix_classes')
+            options.release = 25
+        }
+        tasks.register('compileFinal19RaiderProposal', JavaCompile) {
+            dependsOn classes
+            source = fileTree('reference/phase_a_planning/final19/raider_production_fix_proposal_sources/src/main/java') { include '**/*.java' }
+            classpath = sourceSets.main.compileClasspath + sourceSets.main.output
+            destinationDirectory = file('build/tmp/final19_implementation/raider_proposal_classes')
+            options.release = 25
+        }
+        tasks.register('promoteFinal19Worldgen', JavaExec) {
+            dependsOn testClasses
+            classpath = sourceSets.test.runtimeClasspath
+            mainClass = 'com.diskree.achievetodo.certification.Final19WorldgenPromotion'
+            args = [projectDir.absolutePath]
+        }
+        ['Variants':'ENTITY_VARIANT_COMPONENT_CONTEXT', 'DualTags':'DUAL_ITEM_BLOCK_TAG_CONTEXT',
+         'InventoryMasters':'INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT', 'MixedWorldgen':'MIXED_WORLDGEN_PREDICATE_CONTEXT'].each { label, family ->
+            tasks.register("promoteFinal19${label}", JavaExec) {
+                dependsOn testClasses
+                classpath = sourceSets.test.runtimeClasspath
+                mainClass = 'com.diskree.achievetodo.certification.Final19FamilyPromotion'
+                args = [projectDir.absolutePath, family]
+            }
+        }
+        tasks.named('test') {
+            reports.junitXml.outputLocation = file('build/tmp/final19_implementation/junit')
+            reports.html.outputLocation = file('build/tmp/final19_implementation/junit-html')
+        }
+        tasks.named('processGametestResources') {
+            inputs.file(file('tools/final19/final19.init.gradle'))
+            doLast {
+                def path = new File(destinationDir, 'fabric.mod.json')
+                def metadata = new groovy.json.JsonSlurper().parse(path)
+                metadata.entrypoints.'fabric-gametest'.add('com.diskree.achievetodo.certification.Final19WorldgenGameTest')
+                metadata.entrypoints.'fabric-gametest'.add('com.diskree.achievetodo.certification.Final19VariantsGameTest')
+                metadata.entrypoints.'fabric-gametest'.add('com.diskree.achievetodo.certification.Final19DualTagsGameTest')
+                metadata.entrypoints.'fabric-gametest'.add('com.diskree.achievetodo.certification.Final19WaxGateDiagnosticGameTest')
+                metadata.entrypoints.'fabric-gametest'.add('com.diskree.achievetodo.certification.Final19WaxGateRegressionGameTest')
+                metadata.entrypoints.'fabric-gametest'.add('com.diskree.achievetodo.certification.Final19CauldronGateDiagnosticGameTest')
+                metadata.entrypoints.'fabric-gametest'.add('com.diskree.achievetodo.certification.Final19CauldronGateRegressionGameTest')
+                metadata.entrypoints.'fabric-gametest'.add('com.diskree.achievetodo.certification.Final19InventoryMastersGameTest')
+                metadata.entrypoints.'fabric-gametest'.add('com.diskree.achievetodo.certification.Final19MixedWorldgenGameTest')
+                metadata.entrypoints.'fabric-gametest'.add('com.diskree.achievetodo.certification.Final19RaiderGameTest')
+                metadata.entrypoints.'fabric-gametest'.add('com.diskree.achievetodo.certification.Final19ShieldGameTest')
+                metadata.mixins.add('final19-cauldron-probe.mixins.json')
+                new File(destinationDir, 'final19-cauldron-probe.mixins.json').text = groovy.json.JsonOutput.toJson([required:true,package:'com.diskree.achievetodo.certification.probe',compatibilityLevel:'JAVA_25',injectors:[defaultRequire:1],mixins:['Final19CauldronPacketResultMixin','Final19ShieldDamageMixin','Final19NativeAiShotMixin']])
+                path.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(metadata))
+            }
+        }
+    }
+}

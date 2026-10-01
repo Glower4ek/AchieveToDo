@@ -136,7 +136,7 @@ class BetterRuOverlayResourceTest {
         JsonObject english = loadJsonObject(ACHIEVETODO_EN);
         JsonObject russian = loadJsonObject(ACHIEVETODO_RU);
 
-        assertEquals(532, english.size(), "This regression test pins the current AchieveToDo-owned keyset");
+        assertEquals(533, english.size(), "This regression test pins the current AchieveToDo-owned keyset");
         assertEquals(
             english.keySet(),
             russian.keySet(),

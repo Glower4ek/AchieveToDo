@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.diskree.achievetodo.injection.mixin.gametest",
+  "compatibilityLevel": "JAVA_21",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "GameTestServerMixin",
+    "PlayerAdvancementsLocationProbeMixin",
+    "PlayerTriggerLocationProbeMixin"
+  ]
+}

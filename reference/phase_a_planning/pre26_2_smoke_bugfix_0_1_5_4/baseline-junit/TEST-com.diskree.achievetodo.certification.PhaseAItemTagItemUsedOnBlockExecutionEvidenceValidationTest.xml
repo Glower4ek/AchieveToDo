@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockExecutionEvidenceValidationTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:48:32.994Z" hostname="LAPTOP-L0LPH8GP" time="0.522">
+  <properties/>
+  <testcase name="diagnosticAcceptsAValidSemanticSubset(Path)" classname="com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockExecutionEvidenceValidationTest" time="0.059"/>
+  <testcase name="promotableRequiresTheExactFifteenKeySet(Path)" classname="com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockExecutionEvidenceValidationTest" time="0.109"/>
+  <testcase name="persistentLoaderIsArtifactLocalAndRejectsWeakProof(Path)" classname="com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockExecutionEvidenceValidationTest" time="0.137"/>
+  <testcase name="duplicateAndUnknownKeysAreRejected(Path)" classname="com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockExecutionEvidenceValidationTest" time="0.215"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,75 @@
+{
+  "path": "D:\\Vibecode\\AchieveToDo 26.2\\build\\libs\\achievetodo-mc26.2+0.1.5.4.jar",
+  "bytes": 1546595,
+  "sha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b",
+  "rebuiltPostCleanup": true,
+  "entries": 1911,
+  "fileEntries": 1777,
+  "directoryEntries": 134,
+  "productionClasses": 232,
+  "processedResourceFiles": 1540,
+  "nonClassFileEntries": 1545,
+  "mixinReferences": 157,
+  "metadata": {
+    "schemaVersion": 1,
+    "id": "achievetodo",
+    "version": "0.1.5.4",
+    "name": "AchieveToDo",
+    "description": "Challenging mod with BlazeandCave's that makes advancements a part of the gameplay.",
+    "authors": [
+      "Glower4ek"
+    ],
+    "contact": {
+      "sources": "https://github.com/Glower4ek/AchieveToDo"
+    },
+    "license": "MIT",
+    "icon": "assets/achievetodo/icon.png",
+    "environment": "*",
+    "entrypoints": {
+      "fabric-datagen": [
+        "com.diskree.achievetodo.ability.generation.AbilitiesGenerator"
+      ],
+      "main": [
+        "com.diskree.achievetodo.AchieveToDoMod"
+      ],
+      "client": [
+        "com.diskree.achievetodo.client.AchieveToDoClient"
+      ]
+    },
+    "mixins": [
+      "achievetodo.mixins.json"
+    ],
+    "depends": {
+      "java": ">=25",
+      "minecraft": "~26.2",
+      "fabricloader": ">=0.19.5",
+      "fabric-api": ">=0.161.0+26.2"
+    },
+    "accessWidener": "achievetodo.classtweaker",
+    "jars": [
+      {
+        "file": "META-INF/jars/toml4j-0.7.2.jar"
+      }
+    ]
+  },
+  "copyright": "Copyright (c) 2026 Glower4ek",
+  "namespace": "com.diskree.achievetodo.*",
+  "buildConfigSha256": "9da4f65ee843786408a18b7281e556e3261e3d71568c3fa1ff8f7fddf70ae3eb",
+  "currentProductionMarker": "compat_26_2_r16",
+  "historicalFinal19Marker": "compat_26_2_r15",
+  "mixinAndEntrypointReferencesResolve": true,
+  "mainClassesMatchCompiledOutput": true,
+  "resourcesMatchProcessedOutput": true,
+  "leakage": [],
+  "optionalImplementationReferences": [],
+  "testAndGameTestClassOverlap": [],
+  "duplicateEntries": false,
+  "zipCrcAudit": "GREEN",
+  "embeddedDependencies": [
+    {
+      "path": "META-INF/jars/toml4j-0.7.2.jar",
+      "bytes": 63581,
+      "sha256": "0b4a366e00a7019fb0e3df81ba749183afe037eb276d6d0792950326124ac466"
+    }
+  ]
+}

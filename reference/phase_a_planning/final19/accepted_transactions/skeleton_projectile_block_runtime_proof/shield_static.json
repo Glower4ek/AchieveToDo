@@ -1,0 +1,35 @@
+{
+  "family": "SKELETON_PROJECTILE_BLOCK_RUNTIME_PROOF",
+  "staticSemantics": "EXACT_FROZEN_CURRENT_TYPED_CONTEXT",
+  "criteriaCount": 1,
+  "requirementGroupCount": 1,
+  "sourceBackedTags": {
+    "minecraft:entity_type|minecraft:skeletons": {
+      "sources": [
+        {
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\.gradle-user-home\\caches\\fabric-loom\\minecraftMaven\\net\\minecraft\\minecraft-merged-deobf\\26.2\\minecraft-merged-deobf-26.2.jar!data/minecraft/tags/entity_type/skeletons.json",
+          "sha256": "33046daddcee0e6caea619db924b35a6c31be459231137af464eb20fb88aa966",
+          "definition": {
+            "values": [
+              "minecraft:skeleton",
+              "minecraft:stray",
+              "minecraft:wither_skeleton",
+              "minecraft:skeleton_horse",
+              "minecraft:bogged",
+              "minecraft:parched"
+            ]
+          }
+        }
+      ],
+      "resolvedMembers": [
+        "minecraft:skeleton",
+        "minecraft:stray",
+        "minecraft:wither_skeleton",
+        "minecraft:skeleton_horse",
+        "minecraft:bogged",
+        "minecraft:parched"
+      ]
+    }
+  },
+  "inputFingerprint": "003c1fe0dc41544494b4c9755bb2c77961d95c2b211ba0b58c565661e0bd0621"
+}

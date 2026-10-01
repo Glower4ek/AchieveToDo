@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseAUsingItemExecutionEvidenceValidationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:38:06.409Z" hostname="LAPTOP-L0LPH8GP" time="0.018">
+  <properties/>
+  <testcase name="persistentUsingItemEvidenceIsFailClosedAndComplete()" classname="com.diskree.achievetodo.certification.PhaseAUsingItemExecutionEvidenceValidationTest" time="0.009"/>
+  <testcase name="persistentArtifactUsesCatalogFingerprint()" classname="com.diskree.achievetodo.certification.PhaseAUsingItemExecutionEvidenceValidationTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

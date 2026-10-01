@@ -1,0 +1,12 @@
+{
+  "comparison": "BYTE_IDENTICAL",
+  "rawBytesEqual": true,
+  "size": 1546595,
+  "sha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b",
+  "entries": 1911,
+  "addedEntries": [],
+  "removedEntries": [],
+  "changedEntryContents": [],
+  "acceptedArtifactUsedOnlyForComparison": true,
+  "acceptedArtifactWasNotASnapshotInput": true
+}

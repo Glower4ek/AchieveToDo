@@ -1,0 +1,124 @@
+{
+    "gradleVersion": "9.8.0",
+    "javaVersion": "25.0.4",
+    "projectRoot": "D:\\Vibecode\\AchieveToDo 26.2",
+    "projectVersion": "mc26.2+0.1.5.3",
+    "archivesName": "achievetodo",
+    "jarTasks": [
+        {
+            "task": ":jar",
+            "type": "org.gradle.api.tasks.bundling.Jar_Decorated",
+            "archive": "D:\\Vibecode\\AchieveToDo 26.2\\build\\libs\\achievetodo-mc26.2+0.1.5.3.jar",
+            "classifier": "",
+            "exists": true,
+            "dependencies": [
+                ":classes",
+                ":compileJava",
+                ":processIncludeJars"
+            ]
+        }
+    ],
+    "sourceSets": [
+        {
+            "name": "gametest",
+            "java": [
+                "D:\\Vibecode\\AchieveToDo 26.2\\src\\gametest\\java"
+            ],
+            "resources": [
+                "D:\\Vibecode\\AchieveToDo 26.2\\src\\gametest\\resources"
+            ],
+            "classes": [
+                "D:\\Vibecode\\AchieveToDo 26.2\\build\\classes\\java\\gametest"
+            ],
+            "resourcesOutput": "D:\\Vibecode\\AchieveToDo 26.2\\build\\resources\\gametest"
+        },
+        {
+            "name": "main",
+            "java": [
+                "D:\\Vibecode\\AchieveToDo 26.2\\src\\main\\java",
+                "D:\\Vibecode\\AchieveToDo 26.2\\src\\main\\generated\\java"
+            ],
+            "resources": [
+                "D:\\Vibecode\\AchieveToDo 26.2\\src\\main\\resources",
+                "D:\\Vibecode\\AchieveToDo 26.2\\src\\main\\generated"
+            ],
+            "classes": [
+                "D:\\Vibecode\\AchieveToDo 26.2\\build\\classes\\java\\main"
+            ],
+            "resourcesOutput": "D:\\Vibecode\\AchieveToDo 26.2\\build\\resources\\main"
+        },
+        {
+            "name": "test",
+            "java": [
+                "D:\\Vibecode\\AchieveToDo 26.2\\src\\test\\java",
+                "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_planning\\pre26_2_smoke_bugfix_0_1_5_2\\java",
+                "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_planning\\pre26_2_final_build\\java",
+                "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_planning\\pre26_2_author_identity_0_1_5_3\\java"
+            ],
+            "resources": [
+                "D:\\Vibecode\\AchieveToDo 26.2\\src\\test\\resources"
+            ],
+            "classes": [
+                "D:\\Vibecode\\AchieveToDo 26.2\\build\\classes\\java\\test"
+            ],
+            "resourcesOutput": "D:\\Vibecode\\AchieveToDo 26.2\\build\\resources\\test"
+        }
+    ],
+    "taskGraph": [
+        {
+            "task": ":generateBuildConfig",
+            "type": "org.gradle.api.DefaultTask_Decorated"
+        },
+        {
+            "task": ":compileJava",
+            "type": "org.gradle.api.tasks.compile.JavaCompile_Decorated"
+        },
+        {
+            "task": ":processResources",
+            "type": "org.gradle.language.jvm.tasks.ProcessResources_Decorated"
+        },
+        {
+            "task": ":classes",
+            "type": "org.gradle.api.DefaultTask_Decorated"
+        },
+        {
+            "task": ":processIncludeJars",
+            "type": "net.fabricmc.loom.build.nesting.NestableJarGenerationTask_Decorated"
+        },
+        {
+            "task": ":jar",
+            "type": "org.gradle.api.tasks.bundling.Jar_Decorated"
+        },
+        {
+            "task": ":assemble",
+            "type": "org.gradle.api.DefaultTask_Decorated"
+        },
+        {
+            "task": ":validateAccessWidener",
+            "type": "net.fabricmc.loom.task.ValidateAccessWidenerTask_Decorated"
+        },
+        {
+            "task": ":check",
+            "type": "org.gradle.api.DefaultTask_Decorated"
+        },
+        {
+            "task": ":build",
+            "type": "org.gradle.api.DefaultTask_Decorated"
+        },
+        {
+            "task": ":pre26BuildMetadata",
+            "type": "org.gradle.api.DefaultTask_Decorated"
+        },
+        {
+            "task": ":pre26ResolvedDependencies",
+            "type": "org.gradle.api.DefaultTask_Decorated"
+        }
+    ],
+    "buildDependencies": [
+        ":assemble",
+        ":check"
+    ],
+    "assembleDependencies": [
+        ":jar"
+    ]
+}

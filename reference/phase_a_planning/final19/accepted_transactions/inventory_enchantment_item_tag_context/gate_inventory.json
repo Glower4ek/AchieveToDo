@@ -1,0 +1,35 @@
+{
+  "family": "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+  "acceptedPersistentEvidence": {
+    "family": "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+    "path": "src\\test\\resources\\final19_certification\\inventory_enchantment_item_tag_context_evidence.json",
+    "sha256": "cbb2b10bd6ebb0f15998e6fe47de8900114820c330cefd93e9b147755e8c6488",
+    "runId": "3e8dbfb4-b0cf-4ec0-890b-d3c224241e25",
+    "catalogSha256": "89aaa078acb8962be5299b76ef98cb9a5a736ee0f1c52fbf9ff4793d1fba3709"
+  },
+  "files": {
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_canary_evidence.json": "744378ee7e97ce6a82f71dbaf86738e285c7bf50e7770bbabeaa6c6f2db16510",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_canary_run.json": "5933b3cfc5e936baf10f97ca5072a9e9d99b47825e160d132ded4c3ca0b7d4c2",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_run.json": "df99f541068e009c5a2f70a623c2dac69c4cb8e5f7903377ad756f652df5b8c2",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_static.json": "d1cf71f181a45ec4603121f3362b51dc9d9b662d7405b1b491959a9d6c837233",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_canary_actual_audit.json": "141e7388c7fbb19e47948bba7868977bd57a37d8cc36d8e0480bec10c9e9c370",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_exact_actual_audit.json": "46462910df1d5956fac8116201fd87c7398705eeafd68bf0912fec7d96c1f972",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_canary.gradle.log": "a3b19104a5ba1edd8ecd2b2d871c480e8a3f865545652116dcc1d1487c627577",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_canary.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_exact.gradle.log": "d08a74468d5cc0cadc9d3a6b7e0e425e145417a5d7ee030520bf155870db964d",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_exact.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_validation.gradle.log": "7392b19caba4a7215b2243666c47b8f0199492502857355703d227035c7b9a3d",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_validation.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_promotion.gradle.log": "a68e5e75f226df65d96d7681d5a09d973674d8125c3d3c8a76865b28254dbb24",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_promotion.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_persistent_regression.gradle.log": "092fca6cd86e23c1a1d3653307f972e038bdd51fe4dc6af2c41fbdb0cbed38c3",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/inventory_masters_persistent_regression.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/TEST-com.diskree.achievetodo.certification.Final19CauldronGateRegressionAcceptanceTest.xml": "ed6bf3aa6a7e091fb207aa6fc67f5039ba9ecd3a4639cae35c5105d05ea6b1e2",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/TEST-com.diskree.achievetodo.certification.Final19DualTagsAcceptanceTest.xml": "0ee3e851d5f907f4c1f98567806056e68f2cd505b98f2a5fd5b47136f8d2e4dc",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/TEST-com.diskree.achievetodo.certification.Final19InventoryMastersAcceptanceTest.xml": "4804a92d04f79a9cf95a5ea49c5008882cc5b7ff9d71efe255076a552f18daf5",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/TEST-com.diskree.achievetodo.certification.Final19LedgerTest.xml": "41c69f06db278cc205c582672c731cfec74030eccf2d7b2a3a31238d6e3e6c3e",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/TEST-com.diskree.achievetodo.certification.Final19VariantsAcceptanceTest.xml": "2f10eb7a5267b3267f6767e138a49d5fdc604dd168b84d18fa9c53831fff87be",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/TEST-com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest.xml": "9d1f7bae3c5d3266fa4d536b5f37bd37699c414dcafc9eed46a9a07feb76391f",
+    "reference/phase_a_planning/final19/accepted_transactions/inventory_enchantment_item_tag_context/TEST-com.diskree.achievetodo.certification.Final19WorldgenAcceptanceTest.xml": "e9dd2d6978070d3f91d07ee33f2b300968725cdcb2a01f0dd94643ab860f114f"
+  }
+}

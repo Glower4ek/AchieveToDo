@@ -1,0 +1,62 @@
+{
+  "classification": "PRODUCTION_BUG",
+  "diagnosticOnly": true,
+  "nativeWarnings": 0,
+  "diagnosticRunId": "30c8e9d9-4710-476a-852f-30e3f4baa96f",
+  "failedExactRunId": "62c46b0a-8e9f-4f26-be99-6299336d8ac3",
+  "expectedExactEntries": 6,
+  "observedPartialEntries": 2,
+  "failedExactNotPromotable": true,
+  "productionPatchApplied": false,
+  "proposal": {
+    "classification": "PRODUCTION_BUG",
+    "diagnosticRunId": "30c8e9d9-4710-476a-852f-30e3f4baa96f",
+    "patchPath": "reference/phase_a_planning/final19/cauldron_gate_production_fix_proposal.patch",
+    "patchSha256": "ec33a350ef1ae9185ac99e1c2425a1cec38ca0d64244819058c3cc610a5a07fe",
+    "productionPreconditions": {
+      "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockAccessor.java": "ABSENT",
+      "src/main/java/com/diskree/achievetodo/injection/mixin/main/ServerPlayerGameModeCauldronGateMixin.java": "ABSENT",
+      "src/main/resources/achievetodo.mixins.json": "ed9368d4cf34f18e2d72b47f764ee1c4674418eff82b7d57fe4a1d6825380339"
+    },
+    "changedProductionFiles": [
+      "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockAccessor.java",
+      "src/main/java/com/diskree/achievetodo/injection/mixin/main/ServerPlayerGameModeCauldronGateMixin.java",
+      "src/main/resources/achievetodo.mixins.json"
+    ],
+    "patchApplied": false,
+    "proposalCompile": "GREEN_STANDALONE_API_COMPILE_ONLY_NOT_RUNTIME_PROOF",
+    "originalCauldronMixinSha256": "c9473d4918c8d31c7215dcb98a388f3a24660b36940940a598861e9d90985394",
+    "proposalCompileLogSha256": "05a7eff371ff0e24df3324bbab195094944ebf61e03c6f8d41e013d1abaedf31"
+  },
+  "files": {
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/cauldron_gate_packet_diagnosis-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/cauldron_gate_packet_diagnosis.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/cauldron_gate_packet_diagnosis.gradle.log": "d3e3c6783aa2e2217fbad16e478e10707e50fedc6e847cb3324980410943ed21",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/cauldron_gate_packet_diagnosis.json": "c15957f3bad0bb4f77cc280f458cecb7f286aa16c7d6b344b692c21d1712e66f",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/cauldron_proposal_compile.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/cauldron_proposal_compile.gradle.log": "05a7eff371ff0e24df3324bbab195094944ebf61e03c6f8d41e013d1abaedf31",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/cauldron_stop_persistent_regression.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/cauldron_stop_persistent_regression.gradle.log": "beb84dbe79522c09a96cf40b36b04fc6224007e583465f3b9ccf6e76c892debf",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_canary-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_canary.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_canary.gradle.log": "1e84f5cda5c2918ef0c281ac6fac2db21bdd93166d032c3706a27a0ae5653d2b",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_canary_actual_audit.json": "5633d8c0b659e4f3600ee6b54f426d886f02cbafb34fd0d6e892bacc7a78d5e2",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_canary_evidence.json": "5a95ae97bfa3ba6ad50cd2b26ef177ac6652f8017a39936d1fa912b55e26453d",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_canary_run.json": "6a5151634393f94f987424fda33fd7567e3fa20ad0852b25b3ce629274ce78d6",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_exact-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_exact.exit": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_exact.gradle.log": "248b44a0c26b14eeb975a118b1fc0c6f27c3938b1ac741d462c82a5eb1ae0e3a",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_failure.json": "dced8f172b132dcbe53c80e12ac29508615f3c934a01e6b53749df02840517e4",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_run.json": "0cfa6986ee7bcee832bace8724079df3d83caeeda660fe89d26a3bab13fa716d",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_static.json": "c0c34e9b84c2e7f7ebca1601af032857d3c3c066247e3bfba0ad7b4d69be1a4b",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/dual_tags_temp.json": "7f0efa935c85885b717c550aa70e24a9b543d8ecb4475eb93ac73c9740b1c725",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/official_26_2_AxeItem_bytecode.txt": "9a3262fab390223d8de153a818359162303cfefebe20bace661d7b29b5aabb7a",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/official_26_2_ServerPlayerGameMode_bytecode.txt": "97aa921a2b91b9d1af4c713328fc0c3cd2d4a2f556072a8f26b01ef56d1c7080",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/TEST-com.diskree.achievetodo.certification.Final19DualTagsStaticTest.xml": "9a126e7d1adf742d4481a868fc91f940d9207d6750e9edac70ac99af91c3817f",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/TEST-com.diskree.achievetodo.certification.Final19LedgerTest.xml": "fc20f7660c55987f92cf000f52e7279e6538da4a364650a12f3f651e88562588",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/TEST-com.diskree.achievetodo.certification.Final19VariantsAcceptanceTest.xml": "036a2504834b3c4e548b8c7afb4c8fc40504978cd1cd8022a4ff91b30685207b",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/TEST-com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest.xml": "8566e637dfac646e838e6fe19c05f5dd6d9acf9364bd9040ba6316e65b804b2e",
+    "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/TEST-com.diskree.achievetodo.certification.Final19WorldgenAcceptanceTest.xml": "92c25a64704ee62efa6c6b8c2edadc7cc994d1bd50119bdeff28da74f29df7a8"
+  },
+  "runtimePackObservedAfterDiagnosticSha256": "d7b921a8726c8cc3167dbbd9cfd88d614295cd7eef235bb10106e2edd29138ac"
+}

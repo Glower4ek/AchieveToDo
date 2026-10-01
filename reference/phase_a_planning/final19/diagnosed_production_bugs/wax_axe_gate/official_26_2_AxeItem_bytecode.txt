@@ -1,0 +1,329 @@
+Compiled from "AxeItem.java"
+public class net.minecraft.world.item.AxeItem extends net.minecraft.world.item.Item {
+  protected static final java.util.Map<net.minecraft.world.level.block.Block, net.minecraft.world.level.block.Block> STRIPPABLES;
+
+  public net.minecraft.world.item.AxeItem(net.minecraft.world.item.ToolMaterial, float, float, net.minecraft.world.item.Item$Properties);
+    Code:
+         0: aload_0
+         1: aload         4
+         3: aload_1
+         4: fload_2
+         5: fload_3
+         6: invokevirtual #1                  // Method net/minecraft/world/item/Item$Properties.axe:(Lnet/minecraft/world/item/ToolMaterial;FF)Lnet/minecraft/world/item/Item$Properties;
+         9: invokespecial #7                  // Method net/minecraft/world/item/Item."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+        12: return
+
+  public net.minecraft.world.InteractionResult useOn(net.minecraft.world.item.context.UseOnContext);
+    Code:
+         0: aload_1
+         1: invokevirtual #13                 // Method net/minecraft/world/item/context/UseOnContext.getLevel:()Lnet/minecraft/world/level/Level;
+         4: astore_2
+         5: aload_1
+         6: invokevirtual #19                 // Method net/minecraft/world/item/context/UseOnContext.getClickedPos:()Lnet/minecraft/core/BlockPos;
+         9: astore_3
+        10: aload_1
+        11: invokevirtual #23                 // Method net/minecraft/world/item/context/UseOnContext.getPlayer:()Lnet/minecraft/world/entity/player/Player;
+        14: astore        4
+        16: aload_1
+        17: invokestatic  #27                 // Method playerHasBlockingItemUseIntent:(Lnet/minecraft/world/item/context/UseOnContext;)Z
+        20: ifeq          27
+        23: getstatic     #33                 // Field net/minecraft/world/InteractionResult.PASS:Lnet/minecraft/world/InteractionResult$Pass;
+        26: areturn
+        27: aload_0
+        28: aload_2
+        29: aload_3
+        30: aload         4
+        32: aload_2
+        33: aload_3
+        34: invokevirtual #39                 // Method net/minecraft/world/level/Level.getBlockState:(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;
+        37: invokevirtual #45                 // Method evaluateNewBlockState:(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/level/block/state/BlockState;)Ljava/util/Optional;
+        40: astore        5
+        42: aload         5
+        44: invokevirtual #49                 // Method java/util/Optional.isEmpty:()Z
+        47: ifeq          54
+        50: getstatic     #33                 // Field net/minecraft/world/InteractionResult.PASS:Lnet/minecraft/world/InteractionResult$Pass;
+        53: areturn
+        54: aload_1
+        55: invokevirtual #55                 // Method net/minecraft/world/item/context/UseOnContext.getItemInHand:()Lnet/minecraft/world/item/ItemStack;
+        58: astore        6
+        60: aload         4
+        62: instanceof    #59                 // class net/minecraft/server/level/ServerPlayer
+        65: ifeq          86
+        68: aload         4
+        70: checkcast     #59                 // class net/minecraft/server/level/ServerPlayer
+        73: astore        7
+        75: getstatic     #61                 // Field net/minecraft/advancements/triggers/CriteriaTriggers.ITEM_USED_ON_BLOCK:Lnet/minecraft/advancements/triggers/ItemUsedOnLocationTrigger;
+        78: aload         7
+        80: aload_3
+        81: aload         6
+        83: invokevirtual #67                 // Method net/minecraft/advancements/triggers/ItemUsedOnLocationTrigger.trigger:(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemInstance;)V
+        86: aload_2
+        87: aload_3
+        88: aload         5
+        90: invokevirtual #73                 // Method java/util/Optional.get:()Ljava/lang/Object;
+        93: checkcast     #77                 // class net/minecraft/world/level/block/state/BlockState
+        96: bipush        11
+        98: invokevirtual #81                 // Method net/minecraft/world/level/Level.setBlock:(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Z
+       101: pop
+       102: aload_2
+       103: getstatic     #85                 // Field net/minecraft/world/level/gameevent/GameEvent.BLOCK_CHANGE:Lnet/minecraft/core/Holder$Reference;
+       106: aload_3
+       107: aload         4
+       109: aload         5
+       111: invokevirtual #73                 // Method java/util/Optional.get:()Ljava/lang/Object;
+       114: checkcast     #77                 // class net/minecraft/world/level/block/state/BlockState
+       117: invokestatic  #91                 // Method net/minecraft/world/level/gameevent/GameEvent$Context.of:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/gameevent/GameEvent$Context;
+       120: invokevirtual #97                 // Method net/minecraft/world/level/Level.gameEvent:(Lnet/minecraft/core/Holder;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/gameevent/GameEvent$Context;)V
+       123: aload         4
+       125: ifnull        143
+       128: aload         6
+       130: iconst_1
+       131: aload         4
+       133: aload_1
+       134: invokevirtual #101                // Method net/minecraft/world/item/context/UseOnContext.getHand:()Lnet/minecraft/world/InteractionHand;
+       137: invokevirtual #105                // Method net/minecraft/world/InteractionHand.asEquipmentSlot:()Lnet/minecraft/world/entity/EquipmentSlot;
+       140: invokevirtual #111                // Method net/minecraft/world/item/ItemStack.hurtAndBreak:(ILnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/EquipmentSlot;)V
+       143: getstatic     #117                // Field net/minecraft/world/InteractionResult.SUCCESS:Lnet/minecraft/world/InteractionResult$Success;
+       146: areturn
+
+  private static boolean playerHasBlockingItemUseIntent(net.minecraft.world.item.context.UseOnContext);
+    Code:
+         0: aload_0
+         1: invokevirtual #23                 // Method net/minecraft/world/item/context/UseOnContext.getPlayer:()Lnet/minecraft/world/entity/player/Player;
+         4: astore_1
+         5: aload_0
+         6: invokevirtual #101                // Method net/minecraft/world/item/context/UseOnContext.getHand:()Lnet/minecraft/world/InteractionHand;
+         9: getstatic     #121                // Field net/minecraft/world/InteractionHand.MAIN_HAND:Lnet/minecraft/world/InteractionHand;
+        12: invokevirtual #125                // Method net/minecraft/world/InteractionHand.equals:(Ljava/lang/Object;)Z
+        15: ifeq          42
+        18: aload_1
+        19: invokevirtual #129                // Method net/minecraft/world/entity/player/Player.getOffhandItem:()Lnet/minecraft/world/item/ItemStack;
+        22: getstatic     #134                // Field net/minecraft/core/component/DataComponents.BLOCKS_ATTACKS:Lnet/minecraft/core/component/DataComponentType;
+        25: invokevirtual #140                // Method net/minecraft/world/item/ItemStack.has:(Lnet/minecraft/core/component/DataComponentType;)Z
+        28: ifeq          42
+        31: aload_1
+        32: invokevirtual #144                // Method net/minecraft/world/entity/player/Player.isSecondaryUseActive:()Z
+        35: ifne          42
+        38: iconst_1
+        39: goto          43
+        42: iconst_0
+        43: ireturn
+
+  private java.util.Optional<net.minecraft.world.level.block.state.BlockState> evaluateNewBlockState(net.minecraft.world.level.Level, net.minecraft.core.BlockPos, net.minecraft.world.entity.player.Player, net.minecraft.world.level.block.state.BlockState);
+    Code:
+         0: aload_0
+         1: aload         4
+         3: invokevirtual #147                // Method getStripped:(Lnet/minecraft/world/level/block/state/BlockState;)Ljava/util/Optional;
+         6: astore        5
+         8: aload         5
+        10: invokevirtual #151                // Method java/util/Optional.isPresent:()Z
+        13: ifeq          33
+        16: aload_1
+        17: aload_3
+        18: aload_2
+        19: getstatic     #154                // Field net/minecraft/sounds/SoundEvents.AXE_STRIP:Lnet/minecraft/sounds/SoundEvent;
+        22: getstatic     #160                // Field net/minecraft/sounds/SoundSource.BLOCKS:Lnet/minecraft/sounds/SoundSource;
+        25: fconst_1
+        26: fconst_1
+        27: invokevirtual #166                // Method net/minecraft/world/level/Level.playSound:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/BlockPos;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V
+        30: aload         5
+        32: areturn
+        33: aload         4
+        35: invokestatic  #170                // InterfaceMethod net/minecraft/world/level/block/WeatheringCopper.getPrevious:(Lnet/minecraft/world/level/block/state/BlockState;)Ljava/util/Optional;
+        38: astore        6
+        40: aload         6
+        42: invokevirtual #151                // Method java/util/Optional.isPresent:()Z
+        45: ifeq          65
+        48: aload_1
+        49: aload_2
+        50: aload_3
+        51: aload         4
+        53: getstatic     #175                // Field net/minecraft/sounds/SoundEvents.AXE_SCRAPE:Lnet/minecraft/sounds/SoundEvent;
+        56: sipush        3005
+        59: invokestatic  #180                // Method spawnSoundAndParticle:(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/sounds/SoundEvent;I)V
+        62: aload         6
+        64: areturn
+        65: getstatic     #184                // Field net/minecraft/world/item/HoneycombItem.WAX_OFF_BY_BLOCK:Ljava/util/function/Supplier;
+        68: invokeinterface #190,  1          // InterfaceMethod java/util/function/Supplier.get:()Ljava/lang/Object;
+        73: checkcast     #193                // class com/google/common/collect/BiMap
+        76: aload         4
+        78: invokevirtual #195                // Method net/minecraft/world/level/block/state/BlockState.getBlock:()Lnet/minecraft/world/level/block/Block;
+        81: invokeinterface #199,  2          // InterfaceMethod com/google/common/collect/BiMap.get:(Ljava/lang/Object;)Ljava/lang/Object;
+        86: checkcast     #79                 // class net/minecraft/world/level/block/Block
+        89: invokestatic  #202                // Method java/util/Optional.ofNullable:(Ljava/lang/Object;)Ljava/util/Optional;
+        92: aload         4
+        94: invokedynamic #206,  0            // InvokeDynamic #0:apply:(Lnet/minecraft/world/level/block/state/BlockState;)Ljava/util/function/Function;
+        99: invokevirtual #210                // Method java/util/Optional.map:(Ljava/util/function/Function;)Ljava/util/Optional;
+       102: astore        7
+       104: aload         7
+       106: invokevirtual #151                // Method java/util/Optional.isPresent:()Z
+       109: ifeq          129
+       112: aload_1
+       113: aload_2
+       114: aload_3
+       115: aload         4
+       117: getstatic     #214                // Field net/minecraft/sounds/SoundEvents.AXE_WAX_OFF:Lnet/minecraft/sounds/SoundEvent;
+       120: sipush        3004
+       123: invokestatic  #180                // Method spawnSoundAndParticle:(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/sounds/SoundEvent;I)V
+       126: aload         7
+       128: areturn
+       129: invokestatic  #217                // Method java/util/Optional.empty:()Ljava/util/Optional;
+       132: areturn
+
+  private static void spawnSoundAndParticle(net.minecraft.world.level.Level, net.minecraft.core.BlockPos, net.minecraft.world.entity.player.Player, net.minecraft.world.level.block.state.BlockState, net.minecraft.sounds.SoundEvent, int);
+    Code:
+         0: aload_0
+         1: aload_2
+         2: aload_1
+         3: aload         4
+         5: getstatic     #160                // Field net/minecraft/sounds/SoundSource.BLOCKS:Lnet/minecraft/sounds/SoundSource;
+         8: fconst_1
+         9: fconst_1
+        10: invokevirtual #166                // Method net/minecraft/world/level/Level.playSound:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/BlockPos;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V
+        13: aload_0
+        14: aload_2
+        15: iload         5
+        17: aload_1
+        18: iconst_0
+        19: invokevirtual #221                // Method net/minecraft/world/level/Level.levelEvent:(Lnet/minecraft/world/entity/Entity;ILnet/minecraft/core/BlockPos;I)V
+        22: aload_3
+        23: invokevirtual #195                // Method net/minecraft/world/level/block/state/BlockState.getBlock:()Lnet/minecraft/world/level/block/Block;
+        26: instanceof    #225                // class net/minecraft/world/level/block/ChestBlock
+        29: ifeq          81
+        32: aload_3
+        33: getstatic     #227                // Field net/minecraft/world/level/block/ChestBlock.TYPE:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+        36: invokevirtual #231                // Method net/minecraft/world/level/block/state/BlockState.getValue:(Lnet/minecraft/world/level/block/state/properties/Property;)Ljava/lang/Comparable;
+        39: getstatic     #235                // Field net/minecraft/world/level/block/state/properties/ChestType.SINGLE:Lnet/minecraft/world/level/block/state/properties/ChestType;
+        42: if_acmpeq     81
+        45: aload_1
+        46: aload_3
+        47: invokestatic  #241                // Method net/minecraft/world/level/block/ChestBlock.getConnectedBlockPos:(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/core/BlockPos;
+        50: astore        6
+        52: aload_0
+        53: getstatic     #85                 // Field net/minecraft/world/level/gameevent/GameEvent.BLOCK_CHANGE:Lnet/minecraft/core/Holder$Reference;
+        56: aload         6
+        58: aload_2
+        59: aload_0
+        60: aload         6
+        62: invokevirtual #39                 // Method net/minecraft/world/level/Level.getBlockState:(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;
+        65: invokestatic  #91                 // Method net/minecraft/world/level/gameevent/GameEvent$Context.of:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/gameevent/GameEvent$Context;
+        68: invokevirtual #97                 // Method net/minecraft/world/level/Level.gameEvent:(Lnet/minecraft/core/Holder;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/gameevent/GameEvent$Context;)V
+        71: aload_0
+        72: aload_2
+        73: iload         5
+        75: aload         6
+        77: iconst_0
+        78: invokevirtual #221                // Method net/minecraft/world/level/Level.levelEvent:(Lnet/minecraft/world/entity/Entity;ILnet/minecraft/core/BlockPos;I)V
+        81: return
+
+  private java.util.Optional<net.minecraft.world.level.block.state.BlockState> getStripped(net.minecraft.world.level.block.state.BlockState);
+    Code:
+         0: getstatic     #245                // Field STRIPPABLES:Ljava/util/Map;
+         3: aload_1
+         4: invokevirtual #195                // Method net/minecraft/world/level/block/state/BlockState.getBlock:()Lnet/minecraft/world/level/block/Block;
+         7: invokeinterface #249,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+        12: checkcast     #79                 // class net/minecraft/world/level/block/Block
+        15: invokestatic  #202                // Method java/util/Optional.ofNullable:(Ljava/lang/Object;)Ljava/util/Optional;
+        18: aload_1
+        19: invokedynamic #252,  0            // InvokeDynamic #1:apply:(Lnet/minecraft/world/level/block/state/BlockState;)Ljava/util/function/Function;
+        24: invokevirtual #210                // Method java/util/Optional.map:(Ljava/util/function/Function;)Ljava/util/Optional;
+        27: areturn
+
+  private static net.minecraft.world.level.block.state.BlockState lambda$getStripped$0(net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.Block);
+    Code:
+         0: aload_1
+         1: invokevirtual #253                // Method net/minecraft/world/level/block/Block.defaultBlockState:()Lnet/minecraft/world/level/block/state/BlockState;
+         4: getstatic     #257                // Field net/minecraft/world/level/block/RotatedPillarBlock.AXIS:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+         7: aload_0
+         8: getstatic     #257                // Field net/minecraft/world/level/block/RotatedPillarBlock.AXIS:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+        11: invokevirtual #231                // Method net/minecraft/world/level/block/state/BlockState.getValue:(Lnet/minecraft/world/level/block/state/properties/Property;)Ljava/lang/Comparable;
+        14: checkcast     #262                // class net/minecraft/core/Direction$Axis
+        17: invokevirtual #264                // Method net/minecraft/world/level/block/state/BlockState.setValue:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Ljava/lang/Object;
+        20: checkcast     #77                 // class net/minecraft/world/level/block/state/BlockState
+        23: areturn
+
+  private static net.minecraft.world.level.block.state.BlockState lambda$evaluateNewBlockState$0(net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.Block);
+    Code:
+         0: aload_1
+         1: aload_0
+         2: invokevirtual #268                // Method net/minecraft/world/level/block/Block.withPropertiesOf:(Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/state/BlockState;
+         5: areturn
+
+  static {};
+    Code:
+         0: new           #272                // class com/google/common/collect/ImmutableMap$Builder
+         3: dup
+         4: invokespecial #274                // Method com/google/common/collect/ImmutableMap$Builder."<init>":()V
+         7: getstatic     #277                // Field net/minecraft/world/level/block/Blocks.OAK_WOOD:Lnet/minecraft/world/level/block/Block;
+        10: getstatic     #283                // Field net/minecraft/world/level/block/Blocks.STRIPPED_OAK_WOOD:Lnet/minecraft/world/level/block/Block;
+        13: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        16: getstatic     #290                // Field net/minecraft/world/level/block/Blocks.OAK_LOG:Lnet/minecraft/world/level/block/Block;
+        19: getstatic     #293                // Field net/minecraft/world/level/block/Blocks.STRIPPED_OAK_LOG:Lnet/minecraft/world/level/block/Block;
+        22: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        25: getstatic     #296                // Field net/minecraft/world/level/block/Blocks.DARK_OAK_WOOD:Lnet/minecraft/world/level/block/Block;
+        28: getstatic     #299                // Field net/minecraft/world/level/block/Blocks.STRIPPED_DARK_OAK_WOOD:Lnet/minecraft/world/level/block/Block;
+        31: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        34: getstatic     #302                // Field net/minecraft/world/level/block/Blocks.DARK_OAK_LOG:Lnet/minecraft/world/level/block/Block;
+        37: getstatic     #305                // Field net/minecraft/world/level/block/Blocks.STRIPPED_DARK_OAK_LOG:Lnet/minecraft/world/level/block/Block;
+        40: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        43: getstatic     #308                // Field net/minecraft/world/level/block/Blocks.PALE_OAK_WOOD:Lnet/minecraft/world/level/block/Block;
+        46: getstatic     #311                // Field net/minecraft/world/level/block/Blocks.STRIPPED_PALE_OAK_WOOD:Lnet/minecraft/world/level/block/Block;
+        49: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        52: getstatic     #314                // Field net/minecraft/world/level/block/Blocks.PALE_OAK_LOG:Lnet/minecraft/world/level/block/Block;
+        55: getstatic     #317                // Field net/minecraft/world/level/block/Blocks.STRIPPED_PALE_OAK_LOG:Lnet/minecraft/world/level/block/Block;
+        58: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        61: getstatic     #320                // Field net/minecraft/world/level/block/Blocks.ACACIA_WOOD:Lnet/minecraft/world/level/block/Block;
+        64: getstatic     #323                // Field net/minecraft/world/level/block/Blocks.STRIPPED_ACACIA_WOOD:Lnet/minecraft/world/level/block/Block;
+        67: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        70: getstatic     #326                // Field net/minecraft/world/level/block/Blocks.ACACIA_LOG:Lnet/minecraft/world/level/block/Block;
+        73: getstatic     #329                // Field net/minecraft/world/level/block/Blocks.STRIPPED_ACACIA_LOG:Lnet/minecraft/world/level/block/Block;
+        76: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        79: getstatic     #332                // Field net/minecraft/world/level/block/Blocks.CHERRY_WOOD:Lnet/minecraft/world/level/block/Block;
+        82: getstatic     #335                // Field net/minecraft/world/level/block/Blocks.STRIPPED_CHERRY_WOOD:Lnet/minecraft/world/level/block/Block;
+        85: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        88: getstatic     #338                // Field net/minecraft/world/level/block/Blocks.CHERRY_LOG:Lnet/minecraft/world/level/block/Block;
+        91: getstatic     #341                // Field net/minecraft/world/level/block/Blocks.STRIPPED_CHERRY_LOG:Lnet/minecraft/world/level/block/Block;
+        94: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        97: getstatic     #344                // Field net/minecraft/world/level/block/Blocks.BIRCH_WOOD:Lnet/minecraft/world/level/block/Block;
+       100: getstatic     #347                // Field net/minecraft/world/level/block/Blocks.STRIPPED_BIRCH_WOOD:Lnet/minecraft/world/level/block/Block;
+       103: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       106: getstatic     #350                // Field net/minecraft/world/level/block/Blocks.BIRCH_LOG:Lnet/minecraft/world/level/block/Block;
+       109: getstatic     #353                // Field net/minecraft/world/level/block/Blocks.STRIPPED_BIRCH_LOG:Lnet/minecraft/world/level/block/Block;
+       112: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       115: getstatic     #356                // Field net/minecraft/world/level/block/Blocks.JUNGLE_WOOD:Lnet/minecraft/world/level/block/Block;
+       118: getstatic     #359                // Field net/minecraft/world/level/block/Blocks.STRIPPED_JUNGLE_WOOD:Lnet/minecraft/world/level/block/Block;
+       121: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       124: getstatic     #362                // Field net/minecraft/world/level/block/Blocks.JUNGLE_LOG:Lnet/minecraft/world/level/block/Block;
+       127: getstatic     #365                // Field net/minecraft/world/level/block/Blocks.STRIPPED_JUNGLE_LOG:Lnet/minecraft/world/level/block/Block;
+       130: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       133: getstatic     #368                // Field net/minecraft/world/level/block/Blocks.SPRUCE_WOOD:Lnet/minecraft/world/level/block/Block;
+       136: getstatic     #371                // Field net/minecraft/world/level/block/Blocks.STRIPPED_SPRUCE_WOOD:Lnet/minecraft/world/level/block/Block;
+       139: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       142: getstatic     #374                // Field net/minecraft/world/level/block/Blocks.SPRUCE_LOG:Lnet/minecraft/world/level/block/Block;
+       145: getstatic     #377                // Field net/minecraft/world/level/block/Blocks.STRIPPED_SPRUCE_LOG:Lnet/minecraft/world/level/block/Block;
+       148: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       151: getstatic     #380                // Field net/minecraft/world/level/block/Blocks.WARPED_STEM:Lnet/minecraft/world/level/block/Block;
+       154: getstatic     #383                // Field net/minecraft/world/level/block/Blocks.STRIPPED_WARPED_STEM:Lnet/minecraft/world/level/block/Block;
+       157: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       160: getstatic     #386                // Field net/minecraft/world/level/block/Blocks.WARPED_HYPHAE:Lnet/minecraft/world/level/block/Block;
+       163: getstatic     #389                // Field net/minecraft/world/level/block/Blocks.STRIPPED_WARPED_HYPHAE:Lnet/minecraft/world/level/block/Block;
+       166: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       169: getstatic     #392                // Field net/minecraft/world/level/block/Blocks.CRIMSON_STEM:Lnet/minecraft/world/level/block/Block;
+       172: getstatic     #395                // Field net/minecraft/world/level/block/Blocks.STRIPPED_CRIMSON_STEM:Lnet/minecraft/world/level/block/Block;
+       175: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       178: getstatic     #398                // Field net/minecraft/world/level/block/Blocks.CRIMSON_HYPHAE:Lnet/minecraft/world/level/block/Block;
+       181: getstatic     #401                // Field net/minecraft/world/level/block/Blocks.STRIPPED_CRIMSON_HYPHAE:Lnet/minecraft/world/level/block/Block;
+       184: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       187: getstatic     #404                // Field net/minecraft/world/level/block/Blocks.MANGROVE_WOOD:Lnet/minecraft/world/level/block/Block;
+       190: getstatic     #407                // Field net/minecraft/world/level/block/Blocks.STRIPPED_MANGROVE_WOOD:Lnet/minecraft/world/level/block/Block;
+       193: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       196: getstatic     #410                // Field net/minecraft/world/level/block/Blocks.MANGROVE_LOG:Lnet/minecraft/world/level/block/Block;
+       199: getstatic     #413                // Field net/minecraft/world/level/block/Blocks.STRIPPED_MANGROVE_LOG:Lnet/minecraft/world/level/block/Block;
+       202: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       205: getstatic     #416                // Field net/minecraft/world/level/block/Blocks.BAMBOO_BLOCK:Lnet/minecraft/world/level/block/Block;
+       208: getstatic     #419                // Field net/minecraft/world/level/block/Blocks.STRIPPED_BAMBOO_BLOCK:Lnet/minecraft/world/level/block/Block;
+       211: invokevirtual #286                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       214: invokevirtual #422                // Method com/google/common/collect/ImmutableMap$Builder.build:()Lcom/google/common/collect/ImmutableMap;
+       217: putstatic     #245                // Field STRIPPABLES:Ljava/util/Map;
+       220: return
+}

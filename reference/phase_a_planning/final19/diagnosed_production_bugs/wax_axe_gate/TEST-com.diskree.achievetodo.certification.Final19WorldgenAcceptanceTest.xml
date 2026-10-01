@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.Final19WorldgenAcceptanceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-30T17:19:11.459Z" hostname="LAPTOP-L0LPH8GP" time="0.495">
+  <properties/>
+  <testcase name="fabricatedStaleDuplicateIncompleteAndWrongContextReceiptsAreRejected()" classname="com.diskree.achievetodo.certification.Final19WorldgenAcceptanceTest" time="0.285"/>
+  <testcase name="actualExactReceiptsAndRetainedJunglePassIndependentValidation()" classname="com.diskree.achievetodo.certification.Final19WorldgenAcceptanceTest" time="0.207"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,11 @@
+--- a/src/test/java/com/diskree/achievetodo/client/BetterRuOverlayResourceTest.java
++++ b/src/test/java/com/diskree/achievetodo/client/BetterRuOverlayResourceTest.java
+@@ -136,7 +136,7 @@
+         JsonObject english = loadJsonObject(ACHIEVETODO_EN);
+         JsonObject russian = loadJsonObject(ACHIEVETODO_RU);
+ 
+-        assertEquals(532, english.size(), "This regression test pins the current AchieveToDo-owned keyset");
++        assertEquals(533, english.size(), "This regression test pins the current AchieveToDo-owned keyset");
+         assertEquals(
+             english.keySet(),
+             russian.keySet(),

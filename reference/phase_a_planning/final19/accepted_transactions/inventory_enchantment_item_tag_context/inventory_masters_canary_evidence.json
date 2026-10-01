@@ -1,0 +1,118 @@
+{
+  "family": "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+  "runId": "30bd71a5-f958-49fc-81b3-d9e8d5e1d803",
+  "exact": false,
+  "fingerprint": "fed4fec7482855d98efd1bef750135de6d73d443be55381acd4c366313dedeb0",
+  "entries": [
+    {
+      "advancementId": "blazeandcave:enchanting/master_armorer",
+      "criterion": "helmet_protection",
+      "requirementGroup": 0,
+      "runId": "30bd71a5-f958-49fc-81b3-d9e8d5e1d803",
+      "playerUuid": "0e7a5e1d-167d-4e93-a898-0df8eaaf85f4",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "groupSatisfied": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "nativeBoundary": "ItemEntity.playerTouch -> Inventory.add",
+      "nativePickup": true,
+      "checkedItemTag": "#blazeandcave:master_helmets",
+      "observedItem": "minecraft:diamond_helmet",
+      "itemTagMember": true,
+      "supportedEnchantments": true,
+      "compatibleEnchantments": true,
+      "observedEnchantments": {
+        "minecraft:respiration": 3,
+        "minecraft:mending": 1,
+        "minecraft:aqua_affinity": 1,
+        "minecraft:protection": 4,
+        "minecraft:unbreaking": 3
+      },
+      "inventoryCount": 1,
+      "missingEnchantmentNegative": true,
+      "underlevelNegative": true,
+      "missingObservedEnchantments": {
+        "minecraft:respiration": 3,
+        "minecraft:mending": 1,
+        "minecraft:aqua_affinity": 1,
+        "minecraft:unbreaking": 3
+      },
+      "underlevelObservedEnchantments": {
+        "minecraft:respiration": 3,
+        "minecraft:mending": 1,
+        "minecraft:aqua_affinity": 1,
+        "minecraft:protection": 3,
+        "minecraft:unbreaking": 3
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 64,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true
+      }
+    },
+    {
+      "advancementId": "blazeandcave:enchanting/master_axeman",
+      "criterion": "perfect_axe_fortune",
+      "requirementGroup": 0,
+      "runId": "30bd71a5-f958-49fc-81b3-d9e8d5e1d803",
+      "playerUuid": "39998e92-afbb-42e0-bc03-1262d989e952",
+      "gameMode": "SURVIVAL",
+      "joined": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "finiteMaterials": true,
+      "criterionBefore": false,
+      "criterionAfter": true,
+      "groupSatisfied": true,
+      "noDirectTrigger": true,
+      "noManualAward": true,
+      "nativeBoundary": "ItemEntity.playerTouch -> Inventory.add",
+      "nativePickup": true,
+      "checkedItemTag": "#blazeandcave:master_axes",
+      "observedItem": "minecraft:diamond_axe",
+      "itemTagMember": true,
+      "supportedEnchantments": true,
+      "compatibleEnchantments": true,
+      "observedEnchantments": {
+        "minecraft:mending": 1,
+        "minecraft:sharpness": 5,
+        "minecraft:fortune": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:efficiency": 5
+      },
+      "inventoryCount": 1,
+      "missingEnchantmentNegative": true,
+      "underlevelNegative": true,
+      "missingObservedEnchantments": {
+        "minecraft:mending": 1,
+        "minecraft:fortune": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:efficiency": 5
+      },
+      "underlevelObservedEnchantments": {
+        "minecraft:mending": 1,
+        "minecraft:sharpness": 4,
+        "minecraft:fortune": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:efficiency": 5
+      },
+      "cleanup": {
+        "playerRemoved": true,
+        "connectionRemoved": true,
+        "channelSettled": true,
+        "settlementMessages": 86,
+        "fixtureEntitiesRemoved": true,
+        "blocksRestored": true
+      }
+    }
+  ]
+}

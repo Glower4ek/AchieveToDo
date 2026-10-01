@@ -1,0 +1,32 @@
+{
+  "runId": "0937d889-b634-4397-b591-96e25f4307ee",
+  "diagnosticOnly": true,
+  "classification": "PRODUCTION_BUG",
+  "nativeBoundary": "ServerboundUseItemOnPacket.handle -> ServerGamePacketListenerImpl.handleUseItemOn -> ServerPlayerGameMode.useItemOn",
+  "playerUuid": "c0568054-4ce8-4c57-8b45-99d8058ed512",
+  "gameMode": "SURVIVAL",
+  "joined": true,
+  "connectionRegistered": true,
+  "clientLoaded": true,
+  "finiteMaterials": true,
+  "ability": "USE_DIAMOND_TOOLS",
+  "liveThreshold": 401,
+  "lockedBefore": true,
+  "lockedAfter": true,
+  "scoreAfter": 1,
+  "heldItem": "minecraft:diamond_axe",
+  "lockedStrippingBlocked": true,
+  "blockBefore": "Block{minecraft:waxed_copper_block}",
+  "blockAfter": "Block{minecraft:copper_block}",
+  "damageBefore": 0,
+  "damageAfter": 1,
+  "criterionBefore": false,
+  "criterionAfter": true,
+  "cleanup": {
+    "playerRemoved": true,
+    "connectionRemoved": true,
+    "channelSettled": true,
+    "settlementMessages": 67,
+    "blocksRestored": true
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "acceptedPersistentEvidence": {
+    "id": "AUTHORIZED_RAIDER_ZERO_GAIN_INTEGRITY",
+    "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+    "path": "src/test/resources/final19_certification/raider_integrity_regression.json",
+    "sha256": "2327d33e34aa862a4ec647c7c858275f42c880729a7296f4448e3e0c7bc9839d",
+    "certificationGain": 0,
+    "feelingIllBranches": 5,
+    "dungeonCrawlerFalseBranches": 3,
+    "nativeRaidNonraidControls": 16
+  },
+  "files": {
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/raider_integrity_diagnostic-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/raider_integrity_diagnostic.exit": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/raider_integrity_diagnostic.gradle.log": "f9ce2c74cf12440db2575834cb9b06c99dfe6edd1c2de54c4e10bdb6f2c004f3",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/raider_integrity_exact_actual_audit.json": "74bf63c9ae1f00ffabad6984e425b94ad45d05a11c6561f2862f002933864793",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/raider_integrity_mutated.json": "ad475d72f3aa8500a0f4d7f3800400bd8e222e0a08cba1884a855a89913eee95",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/raider_integrity_native-processes.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/raider_integrity_native.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/raider_integrity_native.gradle.log": "891aede3050186929c34a3a02254554dd58b9654374d07bc6f34a4d2c12d8a74",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/raider_integrity_run.json": "3cab6f971ca65e5b66d0a5f84de584e53e9894a26f74914b3f009aa674497965",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/raider_integrity_temp.json": "2327d33e34aa862a4ec647c7c858275f42c880729a7296f4448e3e0c7bc9839d",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/raider_integrity_validation.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/raider_integrity_validation.gradle.log": "6e55ad0e6675688ec982a9a10d09a440e972b9d4d2d7a97052a9b965dbe48fd5",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/TEST-com.diskree.achievetodo.certification.Final19CauldronGateRegressionAcceptanceTest.xml": "1ae8414f17a7ca8da687b3e809e0a19fe85404475d4ff426e33de0a2eae12add",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/TEST-com.diskree.achievetodo.certification.Final19CombatStaticTest.xml": "89151b6bd82e05af8c4f59907ab73f42f366d768139e616663841a78a643e88b",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/TEST-com.diskree.achievetodo.certification.Final19LedgerTest.xml": "e970a72bc0503a2dbbc01e0acdce01145da497baa14fe355962c72041d5d82f3",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/TEST-com.diskree.achievetodo.certification.Final19PreservedDualTagsAcceptanceTest.xml": "a02c44a47ae869a71f3faa34ee09e49523ce85e5426c838bab5f86d67da91c1c",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/TEST-com.diskree.achievetodo.certification.Final19PreservedInventoryMastersAcceptanceTest.xml": "d1032ad3671d15c3a6b26690684dd7920812501d7205c884142265038866c1f6",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/TEST-com.diskree.achievetodo.certification.Final19PreservedMixedWorldgenAcceptanceTest.xml": "64709e6461a3c1e036344e0fa3ac222e6fd45d4756250dcc98dc7ab272d315b8",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/TEST-com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest.xml": "d4700c3d134710439692a0029c093b5cafcde5fcbd5a01206a640dbde11cd38d",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/TEST-com.diskree.achievetodo.certification.Final19PreservedWorldgenAcceptanceTest.xml": "eb9d0f8fb3fc61b0a689b385cb9814de68f1212757d4304971632f351fc27ba4",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/TEST-com.diskree.achievetodo.certification.Final19RaiderIntegrityAcceptanceTest.xml": "7f0c98917802471707de0cbb3c03508bceb83e3224947501c4f58f97a61e0476",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/TEST-com.diskree.achievetodo.certification.Final19RaiderProductionTest.xml": "0cf766eda3ad4ea3139a8f38a29e82efa80802060ecae15f5936436e3eecad2c",
+    "reference/phase_a_planning/final19/authorized_production_fixes/raider_integrity/TEST-com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest.xml": "8f4884fe4571881c44fcf124cf90d04a99e74b2bfa6efe24c271922fcd795e58"
+  }
+}

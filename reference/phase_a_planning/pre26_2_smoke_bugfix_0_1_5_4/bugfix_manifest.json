@@ -1,0 +1,713 @@
+{
+  "schemaVersion": 1,
+  "task": "PRE_26_2_USER_SMOKE_BUGFIX_PASS_0_1_5_4",
+  "status": "PRE_26_2_SMOKE_BUGFIX_BUILD_0_1_5_4_READY",
+  "date": "2026-10-01",
+  "scope": [
+    "BUG-05",
+    "BUG-06"
+  ],
+  "version": "0.1.5.4",
+  "runtimeAcceptance": "PENDING_MANUAL",
+  "bug05": {
+    "rootCause": "The 26.2 L-key path is Gui.handleKeybinds -> Gui.setScreen, bypassing the old Minecraft.setScreenAndShow injection. ATD held vanilla MOVEMENT on a process-local acknowledgement; the open event did not durably advance options and the custom toast could remain live.",
+    "sameProcessExplanation": "Native Minecraft.tick calls Tutorial.tick only with a loaded, unpaused level. Disconnect retains the Movement instance while Hud.onDisconnected clears Gui.toastManager; its non-null custom toast reference suppresses another toast. A fresh process reconstructs MOVEMENT from options.txt and has no such reference.",
+    "solution": "Gui.setScreen HEAD retains readiness protection; TAIL acknowledges only the screen actually installed. Once movement/look are complete, the event immediately calls native Tutorial.setStep(FIND_TREE), which saves options, clears the previous instance/toasts, and creates the next vanilla step.",
+    "persistence": "Ordinary completion uses vanilla options.txt tutorialStep. Native Tutorial.start reconstructs from options.tutorialStep. Tutorial.stop/clear do not reset this durable step; shutdown/restart therefore preserves completion.",
+    "dedicatedPersistenceReason": "A screen may be opened before movement/look complete. The six vanilla step enum values have no state for MOVEMENT plus independently completed ATD acknowledgement. Advancing then would skip unrelated prerequisites. Only this early case writes config/achievetodo/early-advancements-tutorial-completion with an open-advancements-v1 receipt; reconstruction retains acknowledgement while MOVEMENT prerequisites remain required.",
+    "toast": "One hide callback per toast; opened and clear hide/release it idempotently. Native setStep also clears movement/look toasts. Gui.update continues native toast updates outside paused level ticks; no render polling or toast manager-wide clearing was added.",
+    "writePolicy": "Ordinary event saves vanilla options once; repeated opens/ticks do not repeat completion. Early receipt is loaded once per handler and written once for the acknowledgement, never per tick.",
+    "localization": "Existing tutorial keys and advancement keybind component preserved. Only navigation-unavailable EN/RU strings were added.",
+    "tests": "Six state-transition tests including real mixin entry call, one hide, duplicate suppression, early completion file reconstruction, modeled vanilla options reconstruction and no repeated advancement over 100 ticks.",
+    "limits": "PersistentTutorialFixture models the bytecode-audited native setStep/save contract. It does not boot a graphical client; full process restart and pixel rendering are manual acceptance."
+  },
+  "bug06": {
+    "rootCause": "Old tellraw links still run advancementssearch highlight <id> obtained_status. Installed Search 1.3 is client-only, ID advancements_search, onInitializeClient is empty, and its complete class inventory has no command registration. ATD inferred absence from a SERVER command parse failure and emitted install guidance without inspecting the client mod. Each failed invocation could repeat it.",
+    "solution": "ATD consumes the legacy link command on the client using Fabric command API v2 and native IdentifierArgument. It resolves the received client advancement node, opens the standard screen, selects its real root and asks the isolated adapter to start Search native centering/flashing. Old server parser/install mixin and its registration were removed.",
+    "contract": {
+      "search": {
+        "path": "D:\\кубы сборки\\atd pre-26.2 v2\\minecraft\\mods\\advancements_search-mc26.2+1.3.jar",
+        "sha256": "7bdc638ad39e482068f6931f91268fd4fd3fef9d03786cf28b2605b8f84894db",
+        "metadata": {
+          "schemaVersion": 1,
+          "id": "advancements_search",
+          "version": "1.3",
+          "name": "AdvancementsSearch",
+          "description": "A client-side mod that adds a search feature to the advancements window.",
+          "authors": [
+            "diskria"
+          ],
+          "contact": {
+            "sources": "https://github.com/diskria/advancements-search"
+          },
+          "license": "MIT",
+          "icon": "assets/advancements_search/icon.png",
+          "environment": "client",
+          "entrypoints": {
+            "client": [
+              "io.github.diskria.advancements_search.AdvancementsSearchMod"
+            ]
+          },
+          "mixins": [
+            "advancements_search.mixins.json"
+          ],
+          "depends": {
+            "java": ">=25",
+            "minecraft": ">=26.2",
+            "fabricloader": ">=0.19.3"
+          },
+          "accessWidener": "advancements_search.accesswidener"
+        }
+      },
+      "fullscreen": {
+        "path": "D:\\кубы сборки\\atd pre-26.2 v2\\minecraft\\mods\\advancements_fullscreen-2.0.1+fabric-mc26.2.jar",
+        "sha256": "26a0d87a1d4621bdcce725e5b30ba3c5315ae33de22efb626ebf8665536b5021",
+        "metadata": {
+          "schemaVersion": 1,
+          "id": "advancements_fullscreen",
+          "version": "2.0.1",
+          "name": "Advancements Fullscreen",
+          "description": "A client-side mod that makes the advancements window bigger by expanding it to full screen. Continuation of the Advancements Enlarger mod.",
+          "authors": [
+            "diskria"
+          ],
+          "license": "MIT",
+          "icon": "icon.png",
+          "environment": "client",
+          "mixins": [
+            "META-INF/advancements_fullscreen.mixins.json"
+          ],
+          "accessWidener": "META-INF/advancements_fullscreen.classtweaker",
+          "contact": {},
+          "entrypoints": {
+            "client": [
+              "io.github.diskria.advancements_fullscreen.client.MinecraftClientMod"
+            ]
+          },
+          "depends": {
+            "java": ">=25",
+            "minecraft": ">=26.2",
+            "fabricloader": ">=0.19.3",
+            "fabric-language-kotlin": ">=1.13.8+kotlin.2.3.0"
+          }
+        }
+      },
+      "method": "Installed 26.2 metadata + complete javap bytecode; isolated reflection into Search 1.3 native flashing state.",
+      "classLoading": "No optional class names/types/imports in product bytecode; absent-mod JUnit classpath and changed-API regressions passed.",
+      "command": "ATD registers a Fabric CLIENT command: advancementssearch highlight <Identifier> [obtained_status].",
+      "installedContract": "FabricLoader ID advancements_search; no command registration in installed Search 1.3; AdvancementsScreen has public advancements_search$stopFlashing() and private Identifier flashingAdvancementId. Native startFlashing centers and flashes the matching widget.",
+      "absentBehavior": "Client consumes one recognized command and emits one localized install message; no server retry/fallback.",
+      "changedOrUnusableBehavior": "One localized unavailable message, never install guidance for a detected mod; reflection/linkage failures return unavailable.",
+      "fullscreenMethod": "Reuse the ordinary AdvancementsScreen and vanilla root selection; native Search geometry/rendering remains owned by Search plus Fullscreen.",
+      "fullscreenProductPatched": false,
+      "officialSourceFetch": "GitHub source location was identified from installed metadata; web fetch unavailable and raw HTTPS failed. Installed exact artifact bytecode supplied the integration evidence.",
+      "runtimeAcceptance": "PENDING_MANUAL; no new graphical client test was run or falsely counted GREEN."
+    },
+    "tests": "Eleven tests: actual Brigadier tree/identifiers, present/absent/unavailable branches, exactly one fallback per dispatched action, absent optional implementation, exact identifier delivery, native-state fixture, changed field type and linkage failure.",
+    "limitations": "The adapter is intentionally tied to verified Search 1.3 screen fields rather than claiming a stable public highlight API. Future incompatible fields fail safely with unavailable guidance."
+  },
+  "changedFiles": [
+    {
+      "path": "src/main/generated/java/com/diskree/achievetodo/BuildConfig.java",
+      "beforeSha256": "915c6b2a683bcbd2a6dea831f1dcfacc4545f6d341ee48d67004cdd6cd35151c",
+      "afterSha256": "af3573d736c95be985a0f8cc185ca259442f12a95f8d13ae4658b36cf94005eb"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/AchieveToDoClient.java",
+      "beforeSha256": "90fe52ccc8b26528c06d912a40b307b1e0d5661768c18743485e23bf4ac25116",
+      "afterSha256": "461c9e952bca0bfdbbd6621666c0440e363286fb02f87af620b98e0eae56c40a"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/injection/mixin/client/GuiMixin.java",
+      "beforeSha256": "18f45013c7666961a8e49c63508f780e2d93721aa882ba215558fb580c715a86",
+      "afterSha256": "f5334817452f4a66c058f3a8a6d5aaa2793647902b1457f8e0e867ae1c65b501"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/injection/mixin/client/MinecraftClientMixin.java",
+      "beforeSha256": "ed2c67c314706fed936c1dee4199585a158bf32eaf13522c113645d1006c66ac",
+      "afterSha256": "b033ff4e9b019da87b2654c20bdd106c710d8e5944456a10656420a9005561a0"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/injection/mixin/client/MovementTutorialStepHandlerMixin.java",
+      "beforeSha256": "5a10b610f04c2af216ae9651e6344fcc22dd78b2b4a553582dbecd94f9417971",
+      "afterSha256": "7caf7f66de26c7bbfba768e08aa96ff6644a3cd883fbc8d23117c47e4a452427"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/injection/mixin/main/CommandManagerMixin.java",
+      "beforeSha256": "dff0441987c6e7a877b953294d145986dd91ff604097fe5c4543db58d22a43d1",
+      "afterSha256": null
+    },
+    {
+      "path": "src/main/resources/achievetodo.mixins.json",
+      "beforeSha256": "5c63a34c43f85e7106a12540d5cb3fbcd61426e1101bf5b7f3d09aa0c75ed13d",
+      "afterSha256": "06ededd5a3f73e7556e053f9c031f8b354f1ef82f63a7e0e77ae89235faa35e7"
+    },
+    {
+      "path": "src/main/resources/assets/achievetodo/lang/en_us.json",
+      "beforeSha256": "16b3d8f07f3e87e45803ff460e470cef4821db2cd531f6537ffb03bbc214cada",
+      "afterSha256": "2fe18b7a28dc1797bc4c7c470d0e59e7a87c7475cbe10966b8db45feb48d01c1"
+    },
+    {
+      "path": "src/main/resources/assets/achievetodo/lang/ru_ru.json",
+      "beforeSha256": "4c510531c96d726fe099ba8b677b01dd325c15f57a7e43b32b01c182b1b68f88",
+      "afterSha256": "74918b4e5fca10c5a54b295efae3321a07bb8b0f21c272ab2af39d6c2081e628"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/injection/mixin/client/MovementTutorialStepHandlerMixinTest.java",
+      "beforeSha256": "f882f2529da6ec14071844e1a438fcc3d404a90450acea8f51dbda4a935a212e",
+      "afterSha256": "fcbfe9ebac9c44dee6edf618fdd256e2ccd28b6f1f03e56b5ebaa6398ece96d5"
+    },
+    {
+      "path": "gradle.properties",
+      "beforeSha256": "6442c3caccc0e134c3b0824a0b7d4712765cc4bfaaf87a4a88ca6097b89d6088",
+      "afterSha256": "2a1f8feecdba016f57fd5d0cb9eb6864dbf220894f23d089a73e202bf418d724"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/AdvancementsTutorialProgress.java",
+      "beforeSha256": null,
+      "afterSha256": "45409af1cc17f0f95d9a94c561d48f8d0dadba18399099b7c93ceefe193d36e1"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/AdvancementLinkCommand.java",
+      "beforeSha256": null,
+      "afterSha256": "5c2e09935d610d610a29374e4cc52cfea1a66553710fd13c61302aa92bdfb3ea"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/OptionalAdvancementSearch.java",
+      "beforeSha256": null,
+      "afterSha256": "6164fcfed2b675af7388c39d3a956c1beb83dc686bd1d7b9a5cb85cb5188e07e"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/client/AdvancementLinkCommandTest.java",
+      "beforeSha256": null,
+      "afterSha256": "3e7272f2b4430d12c739d3c1b7a005bc096f3a658aa4755e90e5185143a09c2f"
+    }
+  ],
+  "tests": {
+    "baseline": {
+      "tests": 376,
+      "failures": 4,
+      "errors": 0,
+      "skipped": 0
+    },
+    "baselineFailures": [
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies()",
+      "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive()",
+      "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(Path)"
+    ],
+    "focusedFinal": {
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "accepted": {
+      "totals": {
+        "tests": 103,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "suites": [
+        {
+          "name": "com.diskree.achievetodo.AuthorIdentityMetadataTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19CombatAcceptanceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19CombatStaticTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19DualTagsStaticTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19LedgerTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19PreservedDualTagsAcceptanceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19PreservedInventoryMastersAcceptanceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19PreservedMixedWorldgenAcceptanceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19PreservedWorldgenAcceptanceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19RaiderIntegrityAcceptanceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19ShieldAcceptanceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19VariantsStaticTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Final19WorldgenStaticTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Pre26SmokeCauldronGateAcceptanceTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.certification.Pre26SmokeTerminalAcceptanceTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.AdvancementLinkCommandTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.Pre26SmokeExternalPackCompatibilityTest",
+          "tests": 34,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.client.Pre26SmokeRegressionTest",
+          "tests": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.injection.mixin.client.MovementTutorialStepHandlerMixinTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.diskree.achievetodo.MixinsConfigTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    }
+  },
+  "compileGates": {
+    "compileJava": "GREEN",
+    "compileTestJava": "GREEN",
+    "compileGametestJava": "GREEN"
+  },
+  "build": {
+    "command": ".\\gradlew.bat --no-daemon build -x test -x runGameTest",
+    "exitCode": 0,
+    "result": "BUILD SUCCESSFUL"
+  },
+  "environment": {
+    "JAVA_HOME": "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.4.7-hotspot",
+    "GRADLE_USER_HOME": "D:\\Vibecode\\AchieveToDo 26.2\\.gradle-user-home",
+    "TEMP": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\codex_java_uds_probe",
+    "TMP": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\codex_java_uds_probe",
+    "routing": "direct require_escalated; no restricted Gradle attempt"
+  },
+  "artifact": {
+    "path": "D:\\Vibecode\\AchieveToDo 26.2\\build\\libs\\achievetodo-mc26.2+0.1.5.4.jar",
+    "bytes": 1546595,
+    "sha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b",
+    "version": "0.1.5.4",
+    "metadata": {
+      "schemaVersion": 1,
+      "id": "achievetodo",
+      "version": "0.1.5.4",
+      "name": "AchieveToDo",
+      "description": "Challenging mod with BlazeandCave's that makes advancements a part of the gameplay.",
+      "authors": [
+        "Glower4ek"
+      ],
+      "contact": {
+        "sources": "https://github.com/Glower4ek/AchieveToDo"
+      },
+      "license": "MIT",
+      "icon": "assets/achievetodo/icon.png",
+      "environment": "*",
+      "entrypoints": {
+        "fabric-datagen": [
+          "com.diskree.achievetodo.ability.generation.AbilitiesGenerator"
+        ],
+        "main": [
+          "com.diskree.achievetodo.AchieveToDoMod"
+        ],
+        "client": [
+          "com.diskree.achievetodo.client.AchieveToDoClient"
+        ]
+      },
+      "mixins": [
+        "achievetodo.mixins.json"
+      ],
+      "depends": {
+        "java": ">=25",
+        "minecraft": "~26.2",
+        "fabricloader": ">=0.19.5",
+        "fabric-api": ">=0.161.0+26.2"
+      },
+      "accessWidener": "achievetodo.classtweaker",
+      "jars": [
+        {
+          "file": "META-INF/jars/toml4j-0.7.2.jar"
+        }
+      ]
+    },
+    "entries": 1911,
+    "classes": 232,
+    "mixinReferences": 157,
+    "addedEntries": [
+      "com/diskree/achievetodo/client/AdvancementLinkCommand$1.class",
+      "com/diskree/achievetodo/client/AdvancementLinkCommand$Navigation.class",
+      "com/diskree/achievetodo/client/AdvancementLinkCommand$Result.class",
+      "com/diskree/achievetodo/client/AdvancementLinkCommand.class",
+      "com/diskree/achievetodo/client/AdvancementsTutorialProgress.class",
+      "com/diskree/achievetodo/client/OptionalAdvancementSearch.class"
+    ],
+    "removedEntries": [
+      "com/diskree/achievetodo/injection/mixin/main/CommandManagerMixin.class"
+    ],
+    "changedEntries": [
+      "achievetodo.mixins.json",
+      "assets/achievetodo/lang/en_us.json",
+      "assets/achievetodo/lang/ru_ru.json",
+      "com/diskree/achievetodo/BuildConfig.class",
+      "com/diskree/achievetodo/client/AchieveToDoClient.class",
+      "com/diskree/achievetodo/injection/mixin/client/GuiMixin.class",
+      "com/diskree/achievetodo/injection/mixin/client/MinecraftClientMixin.class",
+      "com/diskree/achievetodo/injection/mixin/client/MovementTutorialStepHandlerMixin.class",
+      "fabric.mod.json"
+    ],
+    "productResourceLoss": false,
+    "hardOptionalDependency": false,
+    "bundledOptionalImplementation": false,
+    "leakage": [],
+    "mainOutputByteEquivalent": true
+  },
+  "preservation": {
+    "protectedFilesPreserved": 2724,
+    "changedFiles": [
+      {
+        "path": "src/main/generated/java/com/diskree/achievetodo/BuildConfig.java",
+        "beforeSha256": "915c6b2a683bcbd2a6dea831f1dcfacc4545f6d341ee48d67004cdd6cd35151c",
+        "afterSha256": "af3573d736c95be985a0f8cc185ca259442f12a95f8d13ae4658b36cf94005eb"
+      },
+      {
+        "path": "src/main/java/com/diskree/achievetodo/client/AchieveToDoClient.java",
+        "beforeSha256": "90fe52ccc8b26528c06d912a40b307b1e0d5661768c18743485e23bf4ac25116",
+        "afterSha256": "461c9e952bca0bfdbbd6621666c0440e363286fb02f87af620b98e0eae56c40a"
+      },
+      {
+        "path": "src/main/java/com/diskree/achievetodo/injection/mixin/client/GuiMixin.java",
+        "beforeSha256": "18f45013c7666961a8e49c63508f780e2d93721aa882ba215558fb580c715a86",
+        "afterSha256": "f5334817452f4a66c058f3a8a6d5aaa2793647902b1457f8e0e867ae1c65b501"
+      },
+      {
+        "path": "src/main/java/com/diskree/achievetodo/injection/mixin/client/MinecraftClientMixin.java",
+        "beforeSha256": "ed2c67c314706fed936c1dee4199585a158bf32eaf13522c113645d1006c66ac",
+        "afterSha256": "b033ff4e9b019da87b2654c20bdd106c710d8e5944456a10656420a9005561a0"
+      },
+      {
+        "path": "src/main/java/com/diskree/achievetodo/injection/mixin/client/MovementTutorialStepHandlerMixin.java",
+        "beforeSha256": "5a10b610f04c2af216ae9651e6344fcc22dd78b2b4a553582dbecd94f9417971",
+        "afterSha256": "7caf7f66de26c7bbfba768e08aa96ff6644a3cd883fbc8d23117c47e4a452427"
+      },
+      {
+        "path": "src/main/java/com/diskree/achievetodo/injection/mixin/main/CommandManagerMixin.java",
+        "beforeSha256": "dff0441987c6e7a877b953294d145986dd91ff604097fe5c4543db58d22a43d1",
+        "afterSha256": null
+      },
+      {
+        "path": "src/main/resources/achievetodo.mixins.json",
+        "beforeSha256": "5c63a34c43f85e7106a12540d5cb3fbcd61426e1101bf5b7f3d09aa0c75ed13d",
+        "afterSha256": "06ededd5a3f73e7556e053f9c031f8b354f1ef82f63a7e0e77ae89235faa35e7"
+      },
+      {
+        "path": "src/main/resources/assets/achievetodo/lang/en_us.json",
+        "beforeSha256": "16b3d8f07f3e87e45803ff460e470cef4821db2cd531f6537ffb03bbc214cada",
+        "afterSha256": "2fe18b7a28dc1797bc4c7c470d0e59e7a87c7475cbe10966b8db45feb48d01c1"
+      },
+      {
+        "path": "src/main/resources/assets/achievetodo/lang/ru_ru.json",
+        "beforeSha256": "4c510531c96d726fe099ba8b677b01dd325c15f57a7e43b32b01c182b1b68f88",
+        "afterSha256": "74918b4e5fca10c5a54b295efae3321a07bb8b0f21c272ab2af39d6c2081e628"
+      },
+      {
+        "path": "src/test/java/com/diskree/achievetodo/injection/mixin/client/MovementTutorialStepHandlerMixinTest.java",
+        "beforeSha256": "f882f2529da6ec14071844e1a438fcc3d404a90450acea8f51dbda4a935a212e",
+        "afterSha256": "fcbfe9ebac9c44dee6edf618fdd256e2ccd28b6f1f03e56b5ebaa6398ece96d5"
+      },
+      {
+        "path": "gradle.properties",
+        "beforeSha256": "6442c3caccc0e134c3b0824a0b7d4712765cc4bfaaf87a4a88ca6097b89d6088",
+        "afterSha256": "2a1f8feecdba016f57fd5d0cb9eb6864dbf220894f23d089a73e202bf418d724"
+      },
+      {
+        "path": "src/main/java/com/diskree/achievetodo/client/AdvancementsTutorialProgress.java",
+        "beforeSha256": null,
+        "afterSha256": "45409af1cc17f0f95d9a94c561d48f8d0dadba18399099b7c93ceefe193d36e1"
+      },
+      {
+        "path": "src/main/java/com/diskree/achievetodo/client/AdvancementLinkCommand.java",
+        "beforeSha256": null,
+        "afterSha256": "5c2e09935d610d610a29374e4cc52cfea1a66553710fd13c61302aa92bdfb3ea"
+      },
+      {
+        "path": "src/main/java/com/diskree/achievetodo/client/OptionalAdvancementSearch.java",
+        "beforeSha256": null,
+        "afterSha256": "6164fcfed2b675af7388c39d3a956c1beb83dc686bd1d7b9a5cb85cb5188e07e"
+      },
+      {
+        "path": "src/test/java/com/diskree/achievetodo/client/AdvancementLinkCommandTest.java",
+        "beforeSha256": null,
+        "afterSha256": "3e7272f2b4430d12c739d3c1b7a005bc096f3a658aa4755e90e5185143a09c2f"
+      }
+    ],
+    "terminal": "PRE_26_2_FINAL19_1152_CERTIFIED",
+    "productCertified": 1152,
+    "productUncertified": 0,
+    "historicalPhaseACertified": 1133,
+    "gitIndexSha256": "bd0c1882b97105b93ec41c193496cc5587131df9792f28c7bc89e08d1c33a8df",
+    "gitMutations": false,
+    "priorCandidateJarPreserved": true,
+    "fullscreenProductPatched": false
+  },
+  "fullscreenProductPatched": false,
+  "acceptedRouteAuthorization": "User explicitly approved the test-only route after automatic approval review rejection; no historical files modified.",
+  "report": {
+    "path": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_planning\\pre26_2_smoke_bugfix_0_1_5_4\\bugfix_report.md",
+    "sha256": "a723981ea13b75db991cbba31647096c8d77845363d32eebdd7d975a64388d13"
+  },
+  "evidenceHashes": {
+    "accepted_gates.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "accepted_gates.log": "575564150c0cd02b76c6772c457da5f18f4101ea9634e69aa2a0b0a860b3d73d",
+    "accepted_suites.json": "a8dcf072ee138d1ecf302e968e9da00a3c61c208ff0c7910ac35346b53789df2",
+    "audit_candidate.py": "bb614e6fe83a1f0d94c2a2298322c93bdf3e6b8a9aa5457d301329e7bfa6a89b",
+    "audit_stdout.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline-junit/binary/output-events.bin": "90c77981a1353fd5f968fde6fa4428991c1ed23b4714463c5d065cab8781084f",
+    "baseline-junit/binary/results-generic.bin": "dde15b7ea338f0fe864d394325f1782c0ce06f473f1403a922f6297a27021834",
+    "baseline-junit/TEST-c-BA2QCJ48OE7E8.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedExecutionEvidenceValidationTest.xml": "1bff4d4b988f5823502a527531aa454f4eb5ceb7dd0995659813ba5b31b96bba",
+    "baseline-junit/TEST-c-KK4SF7VM3LMPM.certification.PhaseAEnchantmentInventoryChangedExpansionDirect16ExecutionEvidenceValidationTest.xml": "06863f7a11ae16d3a9a1b2eeabc6f8a261056855d603ff59d251df82cbebba88",
+    "baseline-junit/TEST-co-29U46IPBPDSRU.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockExecutionEvidenceValidationTest.xml": "61ae14e86b8276bc544fd0915572ac19afcf48b38d3b9c01714908a0f6b80420",
+    "baseline-junit/TEST-co-2DMG7C5HP8BT8.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityExecutionEvidenceValidationTest.xml": "66ffdc608d572aecb3b056d6a4eceddf8fba403bcd73abd85dfa65cbe1c2673e",
+    "baseline-junit/TEST-co-EFJBQJA14FT30.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedExecutionEvidenceValidationTest.xml": "1e52eed71615fe2ba74f87e8bc495e023481a632106d4ac264e7b0f6cdce3504",
+    "baseline-junit/TEST-com-HDFUUT4425AV8.achievetodo.certification.PhaseAEnchantmentInventoryChangedExpansionDirect16CertificationTest.xml": "f07c20eaac965d823d8fc1cf6b924e2af0438318f3825755304456bc4830d485",
+    "baseline-junit/TEST-com.d-PGG8TD2LRO7IS.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceExecutionEvidenceValidationTest.xml": "c728806923adbd11014818a9370ebe613675d8aec1437f639c353df2674f0df9",
+    "baseline-junit/TEST-com.di-2ROJNQPO3H8V0.achievetodo.certification.PhaseAItemTagInventoryContainmentExecutionEvidenceValidationTest.xml": "02af127ba3530f477d3239dec4c60ee8a8a387264c0ab4a03fe9ab3d088f4b00",
+    "baseline-junit/TEST-com.di-J0ALK3VDLFUKI.achievetodo.certification.PhaseAEnchantmentInventoryChangedExecutionEvidenceValidationTest.xml": "7a623781812cce24790e36e25e0a8f7352e398f42298c1dfa3afae82adb31efd",
+    "baseline-junit/TEST-com.dis-GOCS7QAP38HP6.achievetodo.certification.PhaseAEntityTypeTagStartedRidingExecutionEvidenceValidationTest.xml": "b89e87e8aac69f8c4aed3780abacd28860b2a2eccd5dea04570bb40c3f40450b",
+    "baseline-junit/TEST-com.diskree.-D8HCCM2LPJGSE.certification.PhaseAItemTagPlayerInteractedWithEntityExecutionEvidenceValidationTest.xml": "b4a7181a9d0df427bc7931414f7d61d02b2af17b426f1c3d44ddd1fe085cf13e",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAAdvancementRollupTest.xml": "1d02ca696dc3915e22c76745051159a94c68762f75e542267309cd3c6618108a",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseABlockTagItemUsedOnBlockCertificationTest.xml": "ade030c47c661372afdba2f9beada6416d949add6ac669287ffda4da840b7290",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseACertificationTest.xml": "d62d65fc7757d180fdd0c156f2d9d78746370d5ae06978bb467e66bb5c934c36",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAContainerLootCertificationTest.xml": "35d73d38d5b07631a1effe864bdd153ba5d142c0495b578f0cd39e4c297bac1c",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest.xml": "d20e120aa920e04f8d6db9ad5a63b95b2e574548c0edcc0820d8deac9cf094b8",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedCertificationTest.xml": "a74d671ed69e7d51020593f9c50b87bc9cd6c669ee8f08ed6a03ba38fc27adb0",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAEntityTypeTagPlayerKilledEntityCertificationTest.xml": "11cbf5ee6f930d1fda0368fac4698a26dedd498669caa4a05db3511636395ad2",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAEntityTypeTagStartedRidingCertificationTest.xml": "4c4eaab14f27e26e0ca6fa8118f9986b00bceda91af928c94bf2e8ddc68e3592",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAFishingRodHookedCertificationTest.xml": "4a9d36cd678c3c440e26a85336d19d4e97831d83cf5012db041a163e51d8e418",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAFishingRodHookedExecutionEvidenceValidationTest.xml": "188b828b45387c2d46a0cffec505b754b943de3375a8b0a42ceebfd3c0d8cf48",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAFishingRodHookedRollupTest.xml": "84fbaecd61a1d5961204f2f5870f202debad283ef485c005754696ae69205f71",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedCertificationTest.xml": "9bc37395a0f61d9a3e131af2568b3cbb0d0a3073473535c29130530538759391",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagInventoryContainmentCertificationTest.xml": "ad773e94a00da68d1e273a7f8df2786fdebf9ca245010069bcf1a29cec826cb9",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockCertificationTest.xml": "ada23ea730da781f52225aa658fdc4f11c3245ef933edee57e9969771eba4a82",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagItemUsedOnBlockExecutionEvidenceValidationTest.xml": "9b58ff209e292269c33b74280f6e9e0ae047a760d4652b571f2fb0503d0f80fa",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockCertificationTest.xml": "522709ce97337fb1afc745d88969e2dac13dbc132add15e215c463265838eecb",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockExecutionEvidenceValidationTest.xml": "66ad92c3fd5d15fe265452ead608f54b4c7f6b37cda6227cdddb64bae380102c",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemTagPlayerInteractedWithEntityCertificationTest.xml": "0b4ad77fc723ab692d5d48467f3899e3a1f2f96862323e50aab7b51cdae096b7",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAItemUsedOnBlockContextualCertificationTest.xml": "8eeea0516b201e1512633467c29c636ae5bbc0c4a2a722c973d000ee5ea5e928",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenCertificationTest.xml": "b9b3663c7dddf22fbf9e3f0cb5997f374943471c8ef201d8b298d0eb9440ea97",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenEvidenceTest.xml": "0336e8d2b74aeab786639bfa1eda4a455525b870658048234fd1ae7be6c91743",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseALocationMovementCertificationTest.xml": "90a109218a52cd78dfb3728e3d3d910e7aac4001707271b6c47cf3346cecb1d7",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAMixedPerfectRunCertificationTest.xml": "b384a363f0ba655303fb8ff037e69c5c71f67b36138a2e60b30d824953d55ac1",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAMixedPerfectRunEvidenceTest.xml": "c0306050807ce3d0ee21ca19dfed0588072964fb6f5e33fba0a2618526db841f",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionCertificationTest.xml": "5022462b32858c99a8e4daea5b6220b838377a45ea3bfeb8ca9617b67c021aa0",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAMixedPiglinDistractionEvidenceTest.xml": "4009e22b757b070562d39de5d91423e1dcfb2a40d5ebdfaed8884fbc9cf0d4cf",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAMixedWeaponryMulticlassedCertificationTest.xml": "f3451627ff8d79a88f6c681031eb21a30748de410a63e8834a5974acfdc6db60",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAMixedWeaponryMulticlassedEvidenceTest.xml": "0d263162f4754c3fac815f6f7f795472c5367b85b3d285d4397876cfb9006045",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAPlayerHurtEntityDamageSourceCertificationTest.xml": "17f6d64329fedcbde02c2db379c1ccd89244d1cdd1ac8ed18bdc6d41e65f097b",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAPlayerKilledEntityRemainderCertificationTest.xml": "7510a43d64d136a1dc1e0e06d1dce928d38d8e86da8fbc6fdce0205e291a5237",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAPlayerKilledEntityRemainderEvidenceTest.xml": "35dba93d00e6faa2419064ceb0e79d3001b7f83e9ff0282a27da797efe5cb15d",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedCertificationTest.xml": "93fa445798eeb21d0076f26d72d955b86eca22489205a2f5b7b2f328de740fc2",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedEvidenceTest.xml": "be9282841290df23bb801fb5b94b46211d52dcd4a915cca34f4c989684ad9ed3",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseARecipeCraftedWaxOnCertificationTest.xml": "26c22067290c7061c0076fd8564a40d65a945eeaf9fc24e005940517214f31f1",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseARuntimeExecutionEvidenceValidationTest.xml": "c9fca61f8c6eaf80060e81ffa987419ebadfacb60f6ac551cdfeebb684e44d26",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAShotCrossbowExecutionEvidenceValidationTest.xml": "b3a6393c72cc356a70eca5a603dd1fc0ee3eb42d00c33bddf6477d9b655d62c8",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonAncientRestorationCertificationTest.xml": "384efa5605ca4b80c5dd54296daa5d7223d7e3baf5571e03083e3b389e9138ce",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonAncientRestorationEvidenceTest.xml": "537e14562cf59e260ad1ba61953c196ae9e09eb5e8333c9cbde1fc66df58eaee",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonAxolotlMonumentCertificationTest.xml": "387880f1b0b3fc9dac3a970020ee66e835b38a11be1015a3a425f0b618943cea",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonDiagonAllayCertificationTest.xml": "21c894ed4f0619ff865ab3f4caa7bf36cf46f7798579e6ef911308eebc0d3a4b",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonLlamaBreedingCertificationTest.xml": "9f8a18e382b57441381d1b46e210123dfc03df1ab47c6342186e1337f162b892",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonMangroveGroveCertificationTest.xml": "c1fa52dd208b4d6a1e4a099afbd5f5c75f180ed157fbb0e8a8e5952eee74f516",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonMaximumResistanceCertificationTest.xml": "d41eb3dce5d3fbc5268c87c5833b864288c965ee69f25d1d56e1210b80b70812",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonMiracleDrinkCertificationTest.xml": "1f78700290a32b8dbc3610c8907532170e3c95fcf043282ed94360209b07ba95",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonRedstoneClickCertificationTest.xml": "4d87e40a167e44dc8585feb41d11d240988f7e17afce8dd9bfaff6ef85353109",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonSilkTouchNestCertificationTest.xml": "f5a7ed948ea665d213bfe0f3f76faaaba25899d69579920b9e35e6b6fc7476ae",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonSilkTouchNestEvidenceTest.xml": "32fcf802840c356a4ee0179d5e28ccc2b4f99d6f00af30014933e52201e42e46",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseASingletonVillageBellCertificationTest.xml": "93b01ca52011065646339edf7ae6146895c2bb90e068926cf8ac1f996def0caa",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAStackAllItemsCertificationTest.xml": "aaa662859d9f1bd74c344a5540bfbd4addef8a0abc719640f3768a864e4b3010",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAStackAllItemsEvidenceTest.xml": "757cdf21b68d424a0b437f43a415bc8929037b3dce81b26319e93b9ea0f71007",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseATameAnimalLlamaCertificationTest.xml": "3b4b8dfbee881574f05be815cb2d72f6b21a759f151186a043fc69ee66aad9e4",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseATerminalReconciliationTest.xml": "a1f46acad279f9a4756942d9abd042a8bce20f19fdab2f2650eb2872940bf7cd",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedCertificationTest.xml": "d54b5b2f5c5398be9ae284c039703eec2782187f680967af741d4aa9c65219aa",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedCertificationTest.xml": "4be1cc2212a7b0828461d1227daf612d7b0c816919e92a990535c56ec5491b17",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAUsingItemCertificationTest.xml": "403a41438d5589e56dbf1301b7f998717bc29f5e2700993d2776ebe0ab28235f",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAUsingItemExecutionEvidenceValidationTest.xml": "2481202c641ed7826657377b08e52487e40af70c108c1b4824233cdd6bd1c98c",
+    "baseline-junit/TEST-com.diskree.achievetodo.certification.PhaseAUsingItemRollupTest.xml": "f2ed08a024dce049308376742e2f24a70ac565a7d86466c7e4a140ca09311a22",
+    "baseline-junit/TEST-com.diskree.achievetodo.client.BetterRuOverlayResourceTest.xml": "2ca41209ecafdc4f762918bbf795297bc92ca2d0d5820c0ff214a63edffb17db",
+    "baseline-junit/TEST-com.diskree.achievetodo.client.CompatibilityJoinGateTest.xml": "e06dea9531c7e23e5c3ca0c8bfcdc98fca3569a4d2d94783c0f959ce906229ed",
+    "baseline-junit/TEST-com.diskree.achievetodo.client.CreateWorldContinuationGateTest.xml": "58d55cd7eb7a3d83960fc2820122cbde242697131b6d7ede78ebe65c71f04c17",
+    "baseline-junit/TEST-com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.xml": "77b7c79ac4feee32fc19d48d50c6448038548732532e6b5bc441f2b7264778ed",
+    "baseline-junit/TEST-com.diskree.achievetodo.client.ExternalPackCompatibilityTest.xml": "41b6b9fbb38c1d567088d5c072a7441b7a43003e1cddaa36ce1fb8c29a32551b",
+    "baseline-junit/TEST-com.diskree.achievetodo.client.PhaseALegacyItemTagCompatibilityTest.xml": "415cd7ec0e70478525934af7893d3a1120f01a8ec62f835395ce3036745c09af",
+    "baseline-junit/TEST-com.diskree.achievetodo.client.PhaseALlamaFestivalNbtRegressionTest.xml": "7d7e544704dde43bf443d6a3d3f76ad3ce80e7ad3c79078b3ed0db5a8eb42ead",
+    "baseline-junit/TEST-com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.xml": "5288916f33b37855a818f48e6018df3429b235b7fb0d85e7a89c892347ac9f45",
+    "baseline-junit/TEST-com.diskree.achievetodo.client.Pre26SmokeRegressionTest.xml": "a6ecc64ab1ed6ed4aa8ebfc83107e0070a3049ff4723b737cda648de3a400f0b",
+    "baseline-junit/TEST-com.diskree.achievetodo.injection.mixin.client.MovementTutorialStepHandlerMixinTest.xml": "0925148a44022ff8c9426bf5d08f95b9cf77ecd7d55f1a015c65e4e25a9a4346",
+    "baseline-junit/TEST-com.diskree.achievetodo.MixinsConfigTest.xml": "c1f8ae12548850b7753a7979464b91a7797f1f789f1eb7cd2ba0d2d4a95dda8e",
+    "baseline.exit": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "baseline.log": "f8fb440b42edd67cba4e7309f328775ac81b770f22b4b49275a82b9cfb02e2a8",
+    "bugfix.init.gradle": "2d41ac5807f0c23e8d3b031dd1767b4afbacf1c17f364699e5de7084d5062463",
+    "bugfix_report.md": "a723981ea13b75db991cbba31647096c8d77845363d32eebdd7d975a64388d13",
+    "build.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "build.log": "b567c0997b562cb92da324900f06b73b68521697a0ca013b439f265a0d7e88c3",
+    "fabric_command.txt": "2b39611c9c46925648c7bc84f67360b50c7512edad008d39d883dfd481e4b3a2",
+    "finalize_records.py": "f26dc9a0551fb84235571d67f1c39857777d061459d1271add5ffdc6d3f0b6d4",
+    "focused.exit": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "focused.log": "50726ec602db089a95a4918ebd74774b90dbd52110f4e6dffb61947d198e1ded",
+    "focused_final.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "focused_final.log": "8cd1029f4c7a083b049ab4e3e853d66fad75115bc029bb3ffc3f37db71b72f04",
+    "focused_green.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "focused_green.log": "da93a4b5e0defaebef9cd890c19ba374a7ef4dd9ce7af78368c40d9d094a245b",
+    "fullscreen_bytecode.txt": "a7b4714185bdb132ddb0c6a21d0b0f65cb3ebf686109726cf5204a27e797a9d4",
+    "fullscreen_fabric.mod.json": "204b56eb2e31916751f25201b1c65e6892b48a8e490800828adb4c957f13bc49",
+    "jar_audit.json": "2c31c845321a2ff1ea5351d69aa832cc45fed0db0b0a0ceccf3bd33e36abe42f",
+    "java/com/diskree/achievetodo/AuthorIdentityMetadataTest.java": "c528c60345517059b28e9ae5d74001d4a62149759b54d9fd61d85058406bb41e",
+    "java/com/diskree/achievetodo/certification/Pre26SmokeAcceptedSources.java": "55c4c8f53c165837e95bbd9adcc7aaa4c7d322316c1cb5b9a9271eed00a4102b",
+    "junit/TEST-com.diskree.achievetodo.AuthorIdentityMetadataTest.xml": "d5623e960b40f6269baa254e1f1d43ece464bbd972b52e0cede08ec070195467",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19CombatAcceptanceTest.xml": "f4825aa1c8d5ac9d20e2e5f3e4fafe8c9855da3f0622a316934fd55512278c1d",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19CombatStaticTest.xml": "7ede1594b84b1c06582074a628bba1d6552cdc520679a1654607258710617d2a",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19DualTagsStaticTest.xml": "033136a98c194fcb8f7cd1420cbc88a655b85706e7d106f6fdfa62fa1d22e472",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest.xml": "fa3d5a8cf875af3d43aafd42c6a24c876202cc00c179e2faec2cdd67943e8c74",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19LedgerTest.xml": "b14a16506b3ab7117cb6baa52ec413acd40f242ea6611cec9ce3c2c04dd6b85d",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest.xml": "a93ed35b5a9a0031ddd511c6bfcdd7fa0b648728351a4953a4999ab8ca70cf8e",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19PreservedDualTagsAcceptanceTest.xml": "ddd5d270a086991c7decd73c3b7f80580ca5767297c69f3e065ee8a700949fb0",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19PreservedInventoryMastersAcceptanceTest.xml": "36df63453d1298351e980ef7bf3a4a2331d058e321f7705dae01746e8dc3d55c",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19PreservedMixedWorldgenAcceptanceTest.xml": "4046ab65d09298bdf55c9892c8243bc9ba35f34c627d09294f98b0edb10cc615",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest.xml": "3f60b2addb5a8edd07e103a4e32878d8c10adad16d05f3802c5a5499ba78e5d2",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19PreservedWorldgenAcceptanceTest.xml": "573fa10e3d8c27d1643f6f62196b4163359e797c0839c84b86c04da54223fabb",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19RaiderIntegrityAcceptanceTest.xml": "942eae615f5eafa83778781b02768388a650feaea1a0d78689682c9aecaf42e7",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19ShieldAcceptanceTest.xml": "43af448d3edca3608277d0084e03852a8116f45ca12112ff91c259a7b20d005e",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19VariantsStaticTest.xml": "80bddef0b50002197748757ef6cdb9e7ec4285125b166bee4b01f5e4a630a763",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest.xml": "1306fdf6dfca1de8b43a9f61882e7d4e4bc6397f96e99d288177a6fffd6c7144",
+    "junit/TEST-com.diskree.achievetodo.certification.Final19WorldgenStaticTest.xml": "e042843c14510bfc649a3f62f703fe6aeb97270dab2b70203480dc494127d7d0",
+    "junit/TEST-com.diskree.achievetodo.certification.Pre26SmokeCauldronGateAcceptanceTest.xml": "6fcb01983f85ed2a51840ed04ec95bfd9661ac590c91023d6c7c5f3956839482",
+    "junit/TEST-com.diskree.achievetodo.certification.Pre26SmokeTerminalAcceptanceTest.xml": "98482a7980d6ec9c7b73d93636a43c87c73db45cfcbebac26abe901a0175311c",
+    "junit/TEST-com.diskree.achievetodo.client.AdvancementLinkCommandTest.xml": "9b7af0aa40306ba4f31f55fdbef98fc1ace8e3d42748bf8a9d71ec5d82946314",
+    "junit/TEST-com.diskree.achievetodo.client.Pre26SmokeExternalPackCompatibilityTest.xml": "066e087e79f63038804f109aaceb215ba76b32516377fb795b95c6dd74c150fa",
+    "junit/TEST-com.diskree.achievetodo.client.Pre26SmokeRegressionTest.xml": "ed6d9b0ddb8bd110a4eec5b3d4db15f2cdba60f4ac8cbcb399d654476b717232",
+    "junit/TEST-com.diskree.achievetodo.injection.mixin.client.MovementTutorialStepHandlerMixinTest.xml": "94117ede5d6126de4b02b5dc14ba5902db231b9ccede52576feea02c2230e0f0",
+    "junit/TEST-com.diskree.achievetodo.MixinsConfigTest.xml": "466fd4c7d744046cebab04d7b1a87ba56ead29a77a00e20ac153612d0a860753",
+    "preservation_audit.json": "db501c4afec04ce81c7a13a83b822d4342b1be8cfbe8fd04cffe5252b50f8557",
+    "search_bytecode.txt": "343e9e32afd9a215befdb619e8c4c4cbfd986eac9b5b52596d752b6522199cb9",
+    "search_fabric.mod.json": "d65c4628d368bec42799e63f2280df4d9a85a0c866ec1eeadf09e1dd3158cd11",
+    "test_results.json": "f530b99439a24de70ade43c9bdd1055009d22d9f85fe0fbde22062b383178ff3",
+    "vanilla_gui.txt": "49e90f8400408b4c292128af1f09cd4950a177b17d9d50188aff3de6c4873356",
+    "vanilla_hud.txt": "147f09970f3e0640bf0dfe4f0feb7679e3e11cabe318f2f6eab9a34cbf4e012f",
+    "vanilla_minecraft.txt": "5823dafeeba8a69146229722c0a52434e85b75b25ae3bef5d596ba5ac835ce67",
+    "vanilla_toast.txt": "621546f105b75767d784d3d1c5808ed45998c859ea191786564339b8ef316285",
+    "vanilla_tutorial.txt": "6c10b6aed9331fbccd823b3b60888050cd30d9c8743b3b6af866e8f59afcc9ab"
+  }
+}

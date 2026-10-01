@@ -1,0 +1,370 @@
+{
+  "task": "PRE_26_2_FINAL19_IMPLEMENTATION_LOOP",
+  "schemaVersion": 1,
+  "productCertified": 1152,
+  "denominator": 1152,
+  "historicalPhaseACertified": 1133,
+  "historicalPhaseAState": "PHASE_A_ACTIONABLE_FRONTIER_EXHAUSTED",
+  "remainingTargets": [],
+  "completedFamilies": [
+    "WORLDGEN_HOLDERSET_CONTEXT",
+    "ENTITY_VARIANT_COMPONENT_CONTEXT",
+    "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+    "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+    "MIXED_WORLDGEN_PREDICATE_CONTEXT",
+    "RAIDER_PREDICATE_KEY_MIGRATION",
+    "SKELETON_PROJECTILE_BLOCK_RUNTIME_PROOF"
+  ],
+  "activeFamily": null,
+  "transactionStage": "PRE_26_2_FINAL19_1152_CERTIFIED",
+  "nextOperationalFamily": null,
+  "familyOrder": [
+    "WORLDGEN_HOLDERSET_CONTEXT",
+    "ENTITY_VARIANT_COMPONENT_CONTEXT",
+    "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+    "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+    "MIXED_WORLDGEN_PREDICATE_CONTEXT",
+    "RAIDER_PREDICATE_KEY_MIGRATION",
+    "SKELETON_PROJECTILE_BLOCK_RUNTIME_PROOF"
+  ],
+  "reorders": [],
+  "persistentEvidenceInventory": [
+    {
+      "family": "WORLDGEN_HOLDERSET_CONTEXT",
+      "path": "src\\test\\resources\\final19_certification\\worldgen_holderset_context_evidence.json",
+      "sha256": "63b63643c62ec93dfd86ba0016b07d2d59662fa32379ac5a129df0862bc48b21",
+      "runId": "3b9f481d-4a3b-4b22-9644-cd9dcbda13cb",
+      "catalogSha256": "4d4cad3efb95143c37cf4174f507eb26c6fc0f543f2c3f9bc070e55a319f4ecf"
+    },
+    {
+      "family": "ENTITY_VARIANT_COMPONENT_CONTEXT",
+      "path": "src\\test\\resources\\final19_certification\\entity_variant_component_context_evidence.json",
+      "sha256": "4a8e8fa49fad280fc6080e2ac2a7b189ebae65f82ff9046a2ad756fb11108d58",
+      "runId": "a45e9e2c-8d99-41a5-84e2-8dffdf5d3d86",
+      "catalogSha256": "9d963d7610d45d911c19b9312c7c605c64eb0d6e244fc1704d1e3670ec3cac64"
+    },
+    {
+      "family": "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+      "path": "src\\test\\resources\\final19_certification\\dual_item_block_tag_context_evidence.json",
+      "sha256": "79b07b937f4cce9e73a091ab8e8356741352513b468e4a15a8fa17ec4e73c894",
+      "runId": "606d24ad-2cf0-409d-ab75-7a50d969bcaa",
+      "catalogSha256": "bded440355ba7c2b56ad5f629605fbc2ccc23af6b47256c812238fe927e11c92"
+    },
+    {
+      "family": "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+      "path": "src\\test\\resources\\final19_certification\\inventory_enchantment_item_tag_context_evidence.json",
+      "sha256": "cbb2b10bd6ebb0f15998e6fe47de8900114820c330cefd93e9b147755e8c6488",
+      "runId": "3e8dbfb4-b0cf-4ec0-890b-d3c224241e25",
+      "catalogSha256": "89aaa078acb8962be5299b76ef98cb9a5a736ee0f1c52fbf9ff4793d1fba3709"
+    },
+    {
+      "family": "MIXED_WORLDGEN_PREDICATE_CONTEXT",
+      "path": "src\\test\\resources\\final19_certification\\mixed_worldgen_predicate_context_evidence.json",
+      "sha256": "5c68cac42e56ed282adfb045216e1a6a3ad0d88851ff3fe3ae07368aa186ec90",
+      "runId": "ff2bbdf0-298d-427d-aa38-6530baf9eaf5",
+      "catalogSha256": "c73009ee985871c96c4df5a0f414c3e7cdc45aea591f331fdce29bab7f0044c2"
+    },
+    {
+      "family": "RAIDER_PREDICATE_KEY_MIGRATION",
+      "path": "src/test/resources/final19_certification/raider_predicate_key_migration_evidence.json",
+      "sha256": "af54781762c0f315fdf72d825505acde7ae86666ea87cb358d868296c0665c45",
+      "runId": "c30e2c9f-013f-4c33-98e6-924904c77908",
+      "catalogSha256": "61fa7c89327a8ebeae083e0b4259f1d3d826dbfc91c8b18e67726a5783ad36ed"
+    },
+    {
+      "family": "SKELETON_PROJECTILE_BLOCK_RUNTIME_PROOF",
+      "path": "src/test/resources/final19_certification/skeleton_projectile_block_runtime_proof_evidence.json",
+      "sha256": "e90c3d11c61818337fae68a708a6f91b023d608d79e37bac90b40703cabe8797",
+      "runId": "0522eec1-c39d-4789-88fc-9208f74dd472",
+      "catalogSha256": "7adda1ec1c3400de855b27cc0673b32f43f0f340a768713d25ba4ae7dc2c838c"
+    }
+  ],
+  "foundationalFixState": {
+    "F_CONTEXT": "WORLDGEN_TYPED_CONTEXT_STATIC_GREEN",
+    "F_ACCOUNTING": "SEPARATE_LEDGER_GREEN_1135",
+    "F_NATIVE_LIFECYCLE": "WORLDGEN_NATIVE_CANARY_GREEN"
+  },
+  "zeroGainRegressionDebt": {
+    "blazeandcave:adventure/feeling_ill": "REPAIRED_NATIVE_FIVE_BRANCHES_ZERO_GAIN_GREEN",
+    "blazeandcave:monsters/dungeon_crawler": "THREE_FALSE_BRANCHES_NATIVE_RAID_NONRAID_ZERO_GAIN_GREEN"
+  },
+  "raiderProductionAuthorization": "AUTHORIZED_FINAL19_RAIDER_PRODUCTION_FIX",
+  "productionPatchApplied": true,
+  "runtimeCopyFingerprints": [
+    {
+      "path": "run/datapacks/bacap.zip",
+      "sha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70"
+    },
+    {
+      "path": "build/run/gameTest/world/datapacks/bacap.zip",
+      "sha256": "4be16ae72aa2a006a84d72ee7375d015bdea1611a4b2512b64bd7f8817d6f749"
+    },
+    {
+      "path": "run/saves/New World/datapacks/bacap.zip",
+      "sha256": "28d73437ae0fb77ba7e837f6abc1c570149107da5f4d9efc6efed903852bad88"
+    },
+    {
+      "path": "run/saves/New World (1)/datapacks/bacap.zip",
+      "sha256": "5e23feec54d8a8c78a734729bb5fc9eea98afcbe1ba641d1881f66c61ed9ecee"
+    },
+    {
+      "path": "run/saves/New World (2)/datapacks/bacap.zip",
+      "sha256": "e0822f6a402b9bf90a52e301577d72fe568b6afa71941a26c55bac4c5a09cde5"
+    },
+    {
+      "path": "run/saves/New World (3)/datapacks/bacap.zip",
+      "sha256": "c0cda49a655e8c3307cb1420450ccb76c8a0804d877144a3a6593fdb1a1fb028"
+    },
+    {
+      "path": "run/saves/New World (4)/datapacks/bacap.zip",
+      "sha256": "e2e7ed8fbb1bdf6058d19ebf2a6d2d415ce26173dd594d927c21405245076528"
+    },
+    {
+      "path": "run/saves/New World (5)/datapacks/bacap.zip",
+      "sha256": "985b652d4d3115ed3ce49b7a0182bcbc8bd36c2099e25398cfc801d4b9b0c074"
+    },
+    {
+      "path": "run/saves/New World (6)/datapacks/bacap.zip",
+      "sha256": "58afc927fd8dfbd4aa2ea9b97008eef93be8b82956f1deab446fdf8e9a7f697d"
+    },
+    {
+      "path": "run/saves/New World (7)/datapacks/bacap.zip",
+      "sha256": "8bcbb1411874020c03af23837068cbe9b7347fdb977dbb5564a89e61e02d26d3"
+    },
+    {
+      "path": "run/saves/New World (8)/datapacks/bacap.zip",
+      "sha256": "dae5a10d6c2bbe932ec331554f09ac72a8cac27a508e17d962cea12378b2ff38"
+    },
+    {
+      "path": "run/saves/New World (9)/datapacks/bacap.zip",
+      "sha256": "8ac56b5839cbcb418c8b22696e497294753f104779c485451d4e8e37d7a7dc0b"
+    },
+    {
+      "path": "run/saves/QuickplayWorld9/datapacks/bacap.zip",
+      "sha256": "d66527570bd8015391aaca5fb1c1d7ee2d90708948e8db0e6ba49645c6425fa6"
+    },
+    {
+      "path": "run/saves/РќРѕРІС‹Р№ РјРёСЂ/datapacks/bacap.zip",
+      "sha256": "2416e224611efbb4ae2e87d3a02f0c7807c0cdf5dab397162674a26914ba8041"
+    },
+    {
+      "path": "run/saves/РќРѕРІС‹Р№ РјРёСЂ (1)/datapacks/bacap.zip",
+      "sha256": "0129325341a7f4bade79db63d3a67286b65d71338b9ce89eec2cfc52d3ac14c6"
+    },
+    {
+      "path": "run/saves/РќРѕРІС‹Р№ РјРёСЂ (2)/datapacks/bacap.zip",
+      "sha256": "b6107ab7971ded27fc7583d970efb14edf00e751c7d2c5c7592deebacc60085f"
+    },
+    {
+      "path": "run/saves/РќРѕРІС‹Р№ РјРёСЂ (3)/datapacks/bacap.zip",
+      "sha256": "03d40bc5f9086dab2e230c836c42f9d316197010274f7619f96f84de930bf985"
+    },
+    {
+      "path": "run/saves/РќРѕРІС‹Р№ РјРёСЂ (4)/datapacks/bacap.zip",
+      "sha256": "1745248fa273cc5ed648fdbf084f1620d23a3f0e7f911ed0028aad9683081962"
+    }
+  ],
+  "converterSha256": "1bea3ba9caf22963d1ef26de69b19534a4b16d1eab85a39c5e1fc17750227a31",
+  "planningHashes": {
+    "pre26_2_final19_audit.json": "357f8cfe218ab15cfd23608dfedd15cdda70e297ab4c533fe7ac76b9f04ed408",
+    "pre26_2_final19_master_map.json": "221c0041f7668cbdcbe9e647a4a3aec2705b16a304fccfb30c4ff8881fd4b913",
+    "pre26_2_final19_report.md": "10425ae261f3747279feb5b56cfb881998859341f35fc4ab357f2c2885f4064d"
+  },
+  "historicalHashes": {
+    "src/test/resources/phase_a_certification/phase_a_advancement_rollup.json": "439f2aa1c577ffbee275525765ac9229bf5633f0f5e1da498c0adc5702bd2810",
+    "reference/phase_a_planning/phase_a_frontier_map.json": "2cb3d3f835a1d8f1eda97ec782725a72936f346dd8cfeed75da61fc4d9f36662",
+    ".agents/skills/achievetodo-phase-a/SKILL.md": "22448f14632d290cee8b0639c88d51f1ee992cafd504231a57cb77384aa9a594",
+    "reference/phase_a_preservation/files/final/bacap.zip": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+    "reference/phase_a_planning/phase_a_terminal_reconciliation_20260930.json": "b08e001dd797e783484c3e338122286b98a17276cf289fc50270067b2a4aefb0"
+  },
+  "acceptedRunIds": [
+    "3b9f481d-4a3b-4b22-9644-cd9dcbda13cb",
+    "a45e9e2c-8d99-41a5-84e2-8dffdf5d3d86",
+    "606d24ad-2cf0-409d-ab75-7a50d969bcaa",
+    "3e8dbfb4-b0cf-4ec0-890b-d3c224241e25",
+    "ff2bbdf0-298d-427d-aa38-6530baf9eaf5",
+    "c30e2c9f-013f-4c33-98e6-924904c77908",
+    "0522eec1-c39d-4789-88fc-9208f74dd472"
+  ],
+  "gates": [
+    {
+      "family": "WORLDGEN_HOLDERSET_CONTEXT",
+      "compileTestJava": "GREEN",
+      "compileGametestJava": "GREEN",
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "validationLog": "build/tmp/final19_implementation/worldgen_independent_validation.gradle.log",
+      "validationLogSha256": "2c685f98e63be44a8f995e18d4f1bcbac059a9e3c96a5941255323077b1d45c9",
+      "canaryRunId": "0a8f997f-2510-40f0-b486-a4b0c6d1dc19",
+      "exactRunId": "3b9f481d-4a3b-4b22-9644-cd9dcbda13cb",
+      "nativeWindowWarnings": 0,
+      "retainedJungleRunId": "a166f66f-6938-41ce-8310-1b261f16faca"
+    },
+    {
+      "family": "ENTITY_VARIANT_COMPONENT_CONTEXT",
+      "compileTestJava": "GREEN",
+      "compileGametestJava": "GREEN",
+      "independentTests": 7,
+      "persistentRegressionTests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "canaryRunId": "04923d95-c7e6-411f-9aba-231d00db2949",
+      "canaryReceipts": 4,
+      "exactRunId": "a45e9e2c-8d99-41a5-84e2-8dffdf5d3d86",
+      "exactReceipts": 23,
+      "nativeWindowWarnings": 0
+    },
+    {
+      "family": "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+      "compileTestJava": "GREEN",
+      "compileGametestJava": "GREEN",
+      "exactRunId": "606d24ad-2cf0-409d-ab75-7a50d969bcaa",
+      "exactReceipts": 6,
+      "actualTempRunAudit": "GREEN",
+      "nativeWindowWarnings": 0,
+      "independentValidation": "GREEN",
+      "persistentRegression": "GREEN",
+      "transactionSeal": "GREEN"
+    },
+    {
+      "family": "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+      "compileTestJava": "GREEN",
+      "compileGametestJava": "GREEN",
+      "exactRunId": "3e8dbfb4-b0cf-4ec0-890b-d3c224241e25",
+      "exactReceipts": 9,
+      "actualTempRunAudit": "GREEN",
+      "nativeWindowWarnings": 0,
+      "independentValidation": "GREEN",
+      "persistentRegression": "GREEN",
+      "transactionSeal": "GREEN"
+    },
+    {
+      "family": "MIXED_WORLDGEN_PREDICATE_CONTEXT",
+      "compileTestJava": "GREEN",
+      "compileGametestJava": "GREEN",
+      "exactRunId": "ff2bbdf0-298d-427d-aa38-6530baf9eaf5",
+      "exactReceipts": 2,
+      "actualTempRunAudit": "GREEN",
+      "nativeWindowWarnings": 0,
+      "independentValidation": "GREEN",
+      "persistentRegression": "GREEN",
+      "transactionSeal": "GREEN"
+    },
+    {
+      "family": "RAIDER_PREDICATE_KEY_MIGRATION",
+      "compileTestJava": "GREEN",
+      "compileGametestJava": "GREEN",
+      "exactRunId": "c30e2c9f-013f-4c33-98e6-924904c77908",
+      "canaryRunId": "dd65b03f-8790-4bba-a246-9b1861898ce5",
+      "exactReceipts": 5,
+      "actualTempRunAudit": "GREEN",
+      "nativeWindowWarnings": 0,
+      "independentValidation": "GREEN",
+      "persistentRegression": "GREEN",
+      "transactionSeal": "GREEN"
+    },
+    {
+      "family": "SKELETON_PROJECTILE_BLOCK_RUNTIME_PROOF",
+      "compileTestJava": "GREEN",
+      "compileGametestJava": "GREEN",
+      "exactRunId": "0522eec1-c39d-4789-88fc-9208f74dd472",
+      "canaryRunId": "aa92e71f-a86c-4ca9-b85c-a2eea5427888",
+      "exactReceipts": 5,
+      "actualTempRunAudit": "GREEN",
+      "nativeWindowWarnings": 0,
+      "independentValidation": "GREEN",
+      "persistentRegression": "GREEN",
+      "transactionSeal": "GREEN"
+    }
+  ],
+  "firstUnfinishedTransaction": "NONE_FINAL19_TERMINAL_CERTIFICATION_COMPLETE",
+  "unmappedProductionBug": {
+    "id": "AXE_WAX_OFF_LOCKED_TOOL_GATE_BYPASS",
+    "classification": "PRODUCTION_BUG",
+    "diagnosticRunId": "0937d889-b634-4397-b591-96e25f4307ee",
+    "failedCanaryRunId": "c01abdba-e443-46d3-93d0-e021716c72f1",
+    "persistentDiagnosticInventory": "reference/phase_a_planning/final19/diagnosed_production_bugs/wax_axe_gate/diagnostic_inventory.json",
+    "productionFile": "src/main/java/com/diskree/achievetodo/injection/mixin/main/AxeItemMixin.java",
+    "productionSha256": "e19c4a65da4df917424a44ff00248220f20dcab57d0668b9ebfbebd01fabbb46",
+    "proposalPath": "reference/phase_a_planning/final19/wax_axe_gate_production_fix_proposal.patch",
+    "proposalSha256": "8aa346920a42de51dc8ce8756d6fd212d5d055709c633e07ce8e223e7a49f1a3",
+    "patchApplied": true,
+    "authorization": "AUTHORIZED_FINAL19_WAX_AXE_GATE_PRODUCTION_FIX",
+    "nextStep": "Continue the first unfinished dual-tags transaction",
+    "resolution": "AUTHORIZED_EXACT_PATCH_APPLIED_NATIVE_REGRESSION_GREEN"
+  },
+  "auxiliaryRegressionEvidence": [
+    {
+      "id": "AUTHORIZED_WAX_AXE_GATE_FIX",
+      "runId": "566ab631-e69f-43b4-b4a6-690a83c312f6",
+      "path": "src/test/resources/final19_certification/axe_gate_postfix_regression.json",
+      "sha256": "0b19fd6623ac7a5ea781b0e47cddef7050d3d835ae1f26ad5ae87da5305fddc2",
+      "certificationGain": 0
+    },
+    {
+      "id": "AUTHORIZED_FINAL19_CAULDRON_GATE_PRODUCTION_FIX",
+      "runId": "50c353c6-aa93-4a48-b0ed-ed96c61ee9f3",
+      "path": "src/test/resources/final19_certification/cauldron_gate_postfix_regression.json",
+      "sha256": "7c01b174501b499d160ec37b04fdfaf6033b7e3ddbd52c48cdff1546a56045d5",
+      "certificationGain": 0
+    },
+    {
+      "id": "AUTHORIZED_RAIDER_ZERO_GAIN_INTEGRITY",
+      "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+      "path": "src/test/resources/final19_certification/raider_integrity_regression.json",
+      "sha256": "2327d33e34aa862a4ec647c7c858275f42c880729a7296f4448e3e0c7bc9839d",
+      "certificationGain": 0,
+      "feelingIllBranches": 5,
+      "dungeonCrawlerFalseBranches": 3,
+      "nativeRaidNonraidControls": 16
+    }
+  ],
+  "blockingProductionBug": {
+    "id": "LOCKED_CAULDRON_FALSE_ADVANCEMENT_PROGRESS",
+    "classification": "PRODUCTION_BUG",
+    "diagnosticRunId": "30c8e9d9-4710-476a-852f-30e3f4baa96f",
+    "failedExactRunId": "62c46b0a-8e9f-4f26-be99-6299336d8ac3",
+    "diagnosticInventory": "reference/phase_a_planning/final19/diagnosed_production_bugs/cauldron_gate/diagnostic_inventory.json",
+    "proposalPath": "reference/phase_a_planning/final19/cauldron_gate_production_fix_proposal.patch",
+    "proposalSha256": "ec33a350ef1ae9185ac99e1c2425a1cec38ca0d64244819058c3cc610a5a07fe",
+    "patchApplied": true,
+    "authorization": "AUTHORIZED_FINAL19_CAULDRON_GATE_PRODUCTION_FIX",
+    "waxFixStatus": "EXACT_AUTHORIZED_PATCH_APPLIED_14_NATIVE_PACKET_CASES_GREEN_PERSISTENTLY_VALIDATED",
+    "resolution": "EXACT_AUTHORIZED_PATCH_APPLIED_24_NATIVE_CONTROLS_PERSISTENTLY_VALIDATED",
+    "postfixRegressionRunId": "50c353c6-aa93-4a48-b0ed-ed96c61ee9f3"
+  },
+  "raiderProposal": {
+    "patchPath": "reference/phase_a_planning/final19/raider_production_fix_proposal.patch",
+    "patchSha256": "518ebaae8587b6276610e02473fac985c12cd9431cf3c344bd31c08f48ddbdbe",
+    "productionPreconditions": {
+      "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java": "dffeb7c2cf6685c5f689cf2a205b435b81da5b524971103804de3e3a6ae1dc11"
+    },
+    "proposedProductionPostconditions": {
+      "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java": "1bea3ba9caf22963d1ef26de69b19534a4b16d1eab85a39c5e1fc17750227a31"
+    },
+    "patchApplied": true,
+    "isolatedValidation": "GREEN_5_TESTS_NOT_NATIVE_CERTIFICATION"
+  },
+  "terminalReconciliation": "reference/phase_a_planning/final19/terminal_reconciliation.json",
+  "finalAuthoritativeGates": {
+    "tests": 40,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "finalRuntimeCopy": {
+    "path": "build/run/gameTest/world/datapacks/bacap.zip",
+    "sha256": "43f31e06ab1a940f9292091b52abc9df4f613f0ea49e2e57071255598cab6c32",
+    "marker": {
+      "fileName": "bacap.zip",
+      "llamaCarpetNbtMapping": "equipment.body",
+      "raiderPredicateKeys": "snake_case",
+      "rootOverrideSha1": "51c2bebe15a2225e11f157753edf2d94c8520b67",
+      "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+      "version": "compat_26_2_r15"
+    }
+  }
+}

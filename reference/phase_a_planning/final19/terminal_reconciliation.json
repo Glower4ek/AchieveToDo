@@ -1,0 +1,133 @@
+{
+  "verdict": "PRE_26_2_FINAL19_1152_CERTIFIED",
+  "date": "2026-10-01",
+  "originalFinal19TargetsResolved": 19,
+  "requirementGroupsCertified": 79,
+  "criteriaAccounted": 108,
+  "totalUniqueAdvancements": 1152,
+  "productCertified": 1152,
+  "productUncertified": 0,
+  "historicalPhaseACertified": 1133,
+  "familyResults": [
+    {
+      "family": "WORLDGEN_HOLDERSET_CONTEXT",
+      "runId": "3b9f481d-4a3b-4b22-9644-cd9dcbda13cb",
+      "evidenceSha256": "63b63643c62ec93dfd86ba0016b07d2d59662fa32379ac5a129df0862bc48b21",
+      "requirementGroups": 37,
+      "advancements": 2,
+      "verdict": "DURABLY_GREEN"
+    },
+    {
+      "family": "ENTITY_VARIANT_COMPONENT_CONTEXT",
+      "runId": "a45e9e2c-8d99-41a5-84e2-8dffdf5d3d86",
+      "evidenceSha256": "4a8e8fa49fad280fc6080e2ac2a7b189ebae65f82ff9046a2ad756fb11108d58",
+      "requirementGroups": 23,
+      "advancements": 3,
+      "verdict": "DURABLY_GREEN"
+    },
+    {
+      "family": "DUAL_ITEM_BLOCK_TAG_CONTEXT",
+      "runId": "606d24ad-2cf0-409d-ab75-7a50d969bcaa",
+      "evidenceSha256": "79b07b937f4cce9e73a091ab8e8356741352513b468e4a15a8fa17ec4e73c894",
+      "requirementGroups": 6,
+      "advancements": 4,
+      "verdict": "DURABLY_GREEN"
+    },
+    {
+      "family": "INVENTORY_ENCHANTMENT_ITEM_TAG_CONTEXT",
+      "runId": "3e8dbfb4-b0cf-4ec0-890b-d3c224241e25",
+      "evidenceSha256": "cbb2b10bd6ebb0f15998e6fe47de8900114820c330cefd93e9b147755e8c6488",
+      "requirementGroups": 9,
+      "advancements": 6,
+      "verdict": "DURABLY_GREEN"
+    },
+    {
+      "family": "MIXED_WORLDGEN_PREDICATE_CONTEXT",
+      "runId": "ff2bbdf0-298d-427d-aa38-6530baf9eaf5",
+      "evidenceSha256": "5c68cac42e56ed282adfb045216e1a6a3ad0d88851ff3fe3ae07368aa186ec90",
+      "requirementGroups": 2,
+      "advancements": 2,
+      "verdict": "DURABLY_GREEN"
+    },
+    {
+      "family": "RAIDER_PREDICATE_KEY_MIGRATION",
+      "runId": "c30e2c9f-013f-4c33-98e6-924904c77908",
+      "evidenceSha256": "af54781762c0f315fdf72d825505acde7ae86666ea87cb358d868296c0665c45",
+      "requirementGroups": 1,
+      "advancements": 1,
+      "verdict": "DURABLY_GREEN"
+    },
+    {
+      "family": "SKELETON_PROJECTILE_BLOCK_RUNTIME_PROOF",
+      "runId": "0522eec1-c39d-4789-88fc-9208f74dd472",
+      "evidenceSha256": "e90c3d11c61818337fae68a708a6f91b023d608d79e37bac90b40703cabe8797",
+      "requirementGroups": 1,
+      "advancements": 1,
+      "verdict": "DURABLY_GREEN"
+    }
+  ],
+  "zeroGainRaiderRegression": {
+    "runId": "f8572b69-4c50-49e4-a4a3-25a306af667b",
+    "sha256": "2327d33e34aa862a4ec647c7c858275f42c880729a7296f4448e3e0c7bc9839d",
+    "feelingIllTrueBranches": 5,
+    "dungeonCrawlerFalseBranches": 3,
+    "nativeRaidNonraidControls": 16,
+    "certificationGain": 0
+  },
+  "authorizedProductionFixes": [
+    "AUTHORIZED_FINAL19_WAX_AXE_GATE_PRODUCTION_FIX",
+    "AUTHORIZED_FINAL19_CAULDRON_GATE_PRODUCTION_FIX",
+    "AUTHORIZED_FINAL19_RAIDER_PRODUCTION_FIX"
+  ],
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "frozenBacapSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+  "currentRuntimeCopySha256": "43f31e06ab1a940f9292091b52abc9df4f613f0ea49e2e57071255598cab6c32",
+  "marker": {
+    "fileName": "bacap.zip",
+    "llamaCarpetNbtMapping": "equipment.body",
+    "raiderPredicateKeys": "snake_case",
+    "rootOverrideSha1": "51c2bebe15a2225e11f157753edf2d94c8520b67",
+    "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+    "version": "compat_26_2_r15"
+  },
+  "productionScopeSha256": "e2b0ad1e98b119f4bfb78758f9497f3247dc0916b2fbcbbf559cf225f0c881a4",
+  "productLedgerSha256": "49f001ffe29719d03e1dfc5f75048e1424f7f681458c2d709828872d4eb11349",
+  "executionStateSha256": "d1317e64613abde43ec89f613068fec111b7d7e74513e0e284f0fdef7cea8f9b",
+  "authoritativeTests": {
+    "tests": 40,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "junitXmlHashes": {
+    "TEST-com.diskree.achievetodo.certification.Final19CauldronGateRegressionAcceptanceTest.xml": "826ca1ea720a6a0a92acac1f89a00087fcdae4f4e9c07655ce49871093a7f561",
+    "TEST-com.diskree.achievetodo.certification.Final19CombatAcceptanceTest.xml": "fe1060d15161b7a73b935d3602bae79c36ed31469ab8146213116d57a643e7e6",
+    "TEST-com.diskree.achievetodo.certification.Final19CombatStaticTest.xml": "71328ef83764bf1653c3264587095c9703cebd819c604d2c42e7d88718a99c6c",
+    "TEST-com.diskree.achievetodo.certification.Final19DualTagsStaticTest.xml": "13c2bb51b4a541867cf10d457ccf7d243ba29bf3edd91f2f2f9a8e90fed30e8b",
+    "TEST-com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest.xml": "a8ce357aefba53d3c07f84ba3d217a143eb085158987d95617fb9453ccff35b1",
+    "TEST-com.diskree.achievetodo.certification.Final19LedgerTest.xml": "4c0646df22eeb4e6086f91da378eda7e4de377108f8482fc39412c27753170f4",
+    "TEST-com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest.xml": "900715055d0e29ef72ccf8baba7f00f009aceae7a4c16d13c4d5dc04f4523b41",
+    "TEST-com.diskree.achievetodo.certification.Final19PreservedDualTagsAcceptanceTest.xml": "5bc35e1ba32e43c433c371652221258141c27f4428dc9a4ab3f4b52099ccea04",
+    "TEST-com.diskree.achievetodo.certification.Final19PreservedInventoryMastersAcceptanceTest.xml": "b20639ecbaee80803f2aff5bfd5de55b75204745fec92fda160afd54c3fad09b",
+    "TEST-com.diskree.achievetodo.certification.Final19PreservedMixedWorldgenAcceptanceTest.xml": "0001e757e494386f96255b0c35043d13c1663b12b63116b64de2859a4d26cf60",
+    "TEST-com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest.xml": "322d04dc89cdcf7723fd6f9e57edd71894426784584b269e119c921979251b8f",
+    "TEST-com.diskree.achievetodo.certification.Final19PreservedWorldgenAcceptanceTest.xml": "a30c54d90565f406716d7bdd7511c874bca67c822cc4a9c359f2fecd6b6fe0d7",
+    "TEST-com.diskree.achievetodo.certification.Final19RaiderIntegrityAcceptanceTest.xml": "66fbc102be532d1b8e3bcef6b81f55f3a4a817268d2a3380a22924e7224b0659",
+    "TEST-com.diskree.achievetodo.certification.Final19RaiderProductionTest.xml": "a8a896b2b7928c9f3b472432bf054a888030692ffc1d38e4935aa98149ab133c",
+    "TEST-com.diskree.achievetodo.certification.Final19ShieldAcceptanceTest.xml": "3f845ebc5edbd81ad6c6b162e28c474e3cb82bc71e046f82838d902fefbed16b",
+    "TEST-com.diskree.achievetodo.certification.Final19TerminalAcceptanceTest.xml": "3c450d7f768d0ee41239e560ed5bce80bb0b3d7b0cafd983ae80a28e79880e01",
+    "TEST-com.diskree.achievetodo.certification.Final19VariantsStaticTest.xml": "e6129b4e1ccce457ffd981ee4e18a6bd15c63aa37d7ad851bb71584a64fe0757",
+    "TEST-com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest.xml": "3072224e6bb9e2bac24d50323184c50a6f7cd8c4b440e5b9ae43b247c11f1a22",
+    "TEST-com.diskree.achievetodo.certification.Final19WorldgenStaticTest.xml": "b79481af907eb1c05113715d754ffed533be13ab93b685d3c94e2f8c32eb3c7a",
+    "TEST-com.diskree.achievetodo.MixinsConfigTest.xml": "bad5885b4ca266c1e665fc882030ce6918ba84e7e2a36485fb0ab99eabf52987"
+  },
+  "historicalPhaseAPreservation": "GREEN_IMMUTABLE_1133_OF_1152",
+  "gitSafety": {
+    "head": "a5e1b49539a39f01bb5db13d44d420e653dce225",
+    "branch": "26.2-port",
+    "indexSha256": "bd0c1882b97105b93ec41c193496cc5587131df9792f28c7bc89e08d1c33a8df",
+    "verifiedPreserved": true,
+    "gitMutations": false,
+    "unrelatedDirtyWork": "PRESERVED_NO_CLEANUP"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "scope": "BEFORE_NATIVE_TEST_INVOCATION_NO_OWNED_ACTORS",
+  "observedWarnings": [
+    "[19:45:50] [main/ERROR] (HkeyPerformanceDataUtil) Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: ",
+    "[19:45:50] [main/WARN] (PerfCounterQuery) Unable to locate English counter names in registry Perflib 009. Assuming English counters. Error 0x80070057. See https://support.microsoft.com/en-us/help/300956/how-to-manually-rebuild-performance-counter-library-values",
+    "[19:45:50] [main/WARN] (PerfCounterWildcardQuery) Failed to locate performance object for Process in the registry. Performance counters may be corrupt. Pdh call failed with error code 0xC0000BB8",
+    "[19:46:36] [Server thread/WARN] (TranslationConventionLogWarnings) ",
+    "[19:46:40] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 4063ms or 81 ticks behind"
+  ]
+}

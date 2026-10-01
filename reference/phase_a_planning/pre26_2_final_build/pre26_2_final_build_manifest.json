@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "verdict": "PRE_26_2_FINAL_BUILD_READY_FOR_USER_SMOKE",
+  "artifact": {
+    "filename": "achievetodo-mc26.2+0.1.5.jar",
+    "absolutePath": "D:\\Vibecode\\AchieveToDo 26.2\\build\\libs\\achievetodo-mc26.2+0.1.5.jar",
+    "repositoryRelativePath": "build/libs/achievetodo-mc26.2+0.1.5.jar",
+    "bytes": 1528289,
+    "sha256": "aba207b7d9873cb1a3073894a0948d7953316578ab0fab2c6d88b86dab070f69",
+    "sha1": "1e07a5288b79b85aadadc4e78e85f052fbd6bbd6",
+    "mtimeUtcMetadataOnly": "2026-09-30T21:10:38.125614+00:00",
+    "producingTask": ":jar",
+    "kind": "normal distributable Fabric mod JAR"
+  },
+  "build": {
+    "command": ".\\gradlew.bat --no-daemon -I reference/phase_a_planning/pre26_2_final_build/release_inspection.init.gradle build -x test -x runGameTest pre26BuildMetadata",
+    "releaseTask": "build",
+    "archiveTask": ":jar",
+    "exitCode": 0,
+    "gradleVersion": "9.5.1",
+    "javaVersion": "25.0.4",
+    "testExclusionReason": "72 selected authoritative release tests passed. Fabric build/check also depends on runGameTest; explicitly exclude both test and runGameTest to prevent broad historical certification execution.",
+    "artifactIdentification": "Gradle task graph and unclassified Jar archive output; current unobfuscated Minecraft 26.2 Loom pipeline produces jar directly. No remapJar task is configured.",
+    "allJarTasks": [
+      {
+        "task": ":jar",
+        "type": "org.gradle.api.tasks.bundling.Jar_Decorated",
+        "archive": "D:\\Vibecode\\AchieveToDo 26.2\\build\\libs\\achievetodo-mc26.2+0.1.5.jar",
+        "classifier": "",
+        "exists": true,
+        "dependencies": [
+          ":classes",
+          ":compileJava",
+          ":processIncludeJars"
+        ]
+      }
+    ]
+  },
+  "environment": {
+    "JAVA_HOME": "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.4.7-hotspot",
+    "GRADLE_USER_HOME": "D:\\Vibecode\\AchieveToDo 26.2\\.gradle-user-home",
+    "TEMP": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\codex_java_uds_probe",
+    "TMP": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\codex_java_uds_probe",
+    "projectRoot": "D:\\Vibecode\\AchieveToDo 26.2",
+    "routing": "direct require_escalated authoritative route; no restricted Gradle attempt"
+  },
+  "gates": {
+    "compileJava": "GREEN_FRESH_RECOMPILE",
+    "compileTestJava": "GREEN_FRESH_RECOMPILE",
+    "compileGametestJava": "GREEN_FRESH_RECOMPILE",
+    "junit": {
+      "tests": 72,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "suites": [
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19CauldronGateRegressionAcceptanceTest",
+        "tests": 2,
+        "sha256": "26b494b16bf3cb4709cfb7b6a5193857a40ac80cb531374d9a1dd631c3b700ba"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19CombatAcceptanceTest",
+        "tests": 2,
+        "sha256": "4927f3f636fb7aaf5216f5ce632f1cd7fb09235b1130a005bbdfeb06da9257c7"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19CombatStaticTest",
+        "tests": 1,
+        "sha256": "5cc46cba79f30e82a5b78466446f53214c726ca888c4fae871a1794c9ab26fa2"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19DualTagsStaticTest",
+        "tests": 2,
+        "sha256": "38c6b2cf1ee25905771aafee0d9edef733228e8f47a7a282b3fa35a842d04f54"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest",
+        "tests": 2,
+        "sha256": "95b73b60aaa6b5df085a89bc0f31c65eb0d124e3f1c600f91a9aad15d382f1b0"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19LedgerTest",
+        "tests": 1,
+        "sha256": "a358f3282f65313f4b0765e279100cf90e5634d9443f01c6a92d3845a9960d64"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19MixedWorldgenStaticTest",
+        "tests": 2,
+        "sha256": "2026e51fa412584242a7d1fb79ad31409fe51c10338bd13adeb36e1402234378"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19PreservedDualTagsAcceptanceTest",
+        "tests": 2,
+        "sha256": "eb1b22e5095d9d291b806a343248e0ef21796e8974dd806fc7e98f5f9d8e6c05"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19PreservedInventoryMastersAcceptanceTest",
+        "tests": 2,
+        "sha256": "be9ef36ecdb9ee7f9602905f404593306ac3e39b18255e258252515b129d51e5"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19PreservedMixedWorldgenAcceptanceTest",
+        "tests": 2,
+        "sha256": "888fbf962d154987898b61a52b1d1cf72e2e0d70112ecd354b60db1a253f154a"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest",
+        "tests": 2,
+        "sha256": "501779cdbdd13c9d1cf3a6979c2e044bfe1089c52c8d4078a12fadea6fe53d77"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19PreservedWorldgenAcceptanceTest",
+        "tests": 2,
+        "sha256": "ef43da2d651e0dd3939c37ad19f453df70ab708217fdf9daf673dc7c444af9ae"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19RaiderIntegrityAcceptanceTest",
+        "tests": 2,
+        "sha256": "1843fc0c2cea7013056357f0761b8c30f91c8d39e88649fc8c76e1118ba883aa"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19ShieldAcceptanceTest",
+        "tests": 2,
+        "sha256": "bd6e2a7e002dd50878fa226a3802d9d64d1dd099a0e2a12a4f3fedf613e6b153"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19TerminalAcceptanceTest",
+        "tests": 3,
+        "sha256": "bd8b317fe3ce67eec6c917f816bcbd3fa8e9b5753e439721b93689709b16dd06"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19VariantsStaticTest",
+        "tests": 2,
+        "sha256": "73858eb94b081015712768d754e4d8eb0b4d11ca45190125a1b755a2793f3720"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19WaxGateRegressionAcceptanceTest",
+        "tests": 2,
+        "sha256": "62d18331552546c62c3b575c537505ba178fc37dcb8f97cfe120434d23f0c201"
+      },
+      {
+        "suite": "com.diskree.achievetodo.certification.Final19WorldgenStaticTest",
+        "tests": 4,
+        "sha256": "7af62332270d3f4bc685116b69458d2c930c74cdbde7d973d3c53c9a11b12674"
+      },
+      {
+        "suite": "com.diskree.achievetodo.client.Pre26ReleaseExternalPackCompatibilityTest",
+        "tests": 34,
+        "sha256": "d53de5fff63dd6a6fcccd31a5c35c54a02b102c381ff06dbbb9192ad886645a4"
+      },
+      {
+        "suite": "com.diskree.achievetodo.MixinsConfigTest",
+        "tests": 1,
+        "sha256": "6119d798decde4c2193fd222eae18851f7f9f3cd87bfef7d11733b1f5340add6"
+      }
+    ],
+    "argumentsFile": "reference/phase_a_planning/pre26_2_final_build/gate_arguments.json",
+    "nativeGameTestsRerun": "UNINTENDED_ATTEMPT_INTERRUPTED_NO_RESULTS_ACCEPTED",
+    "excludedEvidenceWriters": [
+      "Final19RaiderProductionTest.realProductionExhaustiveScopeAndCodecSemantics",
+      "Final19RaiderProductionTest.normalPipelineFreshCopyAndStrictFreshnessGuards"
+    ],
+    "staleFixtureDiagnosis": {
+      "classification": "STALE_TEST_FIXTURE_NO_PRODUCTION_BUG",
+      "failedTest": "ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies",
+      "failedLine": 867,
+      "cause": "The historical current marker fixture lacks the authorized FINAL19 mandatory raiderPredicateKeys=snake_case property. Production correctly rejects it.",
+      "sourcePath": "src/test/java/com/diskree/achievetodo/client/ExternalPackCompatibilityTest.java",
+      "sourceSha256": "bd0345e10ea907f8a295c1e90698bda9a07fb0c57a24e9a139887e373e8af60a",
+      "releaseTestPath": "reference/phase_a_planning/pre26_2_final_build/java/com/diskree/achievetodo/client/Pre26ReleaseExternalPackCompatibilityTest.java",
+      "releaseTestSha256": "17ef854d4d21933acdcb4fee02f72f85f3e2a31ac749753452326e0c47169858",
+      "adaptation": "Class renamed to Pre26ReleaseExternalPackCompatibilityTest; one fixture property added; every original assertion retained.",
+      "productionChanges": false,
+      "historicalTestChanged": false,
+      "acceptedEvidenceRegenerated": false,
+      "originalGateCounts": {
+        "tests": 72,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0
+      }
+    }
+  },
+  "certification": {
+    "productCertified": 1152,
+    "denominator": 1152,
+    "productUncertified": 0,
+    "historicalPhaseACertified": 1133,
+    "targetsResolved": 19,
+    "requirementGroups": 79,
+    "criteria": 108,
+    "familiesGreen": 7,
+    "productLedgerSha256": "49f001ffe29719d03e1dfc5f75048e1424f7f681458c2d709828872d4eb11349",
+    "terminalReconciliationSha256": "1ab689c783c6a7e85d2e84dd9c526b2d4333934171b81b4a22d5ae1e4454e962",
+    "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+    "frozenBacapSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+    "auxiliaryNativeRegressionCases": [
+      14,
+      24,
+      16
+    ],
+    "feelingIll": "GREEN_FIVE_BRANCHES",
+    "dungeonCrawler": "GREEN_THREE_FALSE_BRANCHES"
+  },
+  "audit": {
+    "verdict": "JAR_AUDIT_GREEN",
+    "entries": 1901,
+    "productionClasses": 222,
+    "productionResources": 1540,
+    "mixinReferences": 156,
+    "duplicateEntries": [],
+    "packagedTestClasses": [],
+    "testClassesCompared": 662,
+    "forbiddenPaths": [],
+    "absoluteWindowsPaths": [],
+    "credentialSignatureHits": [],
+    "nestedJars": [
+      {
+        "entry": "META-INF/jars/toml4j-0.7.2.jar",
+        "bytes": 63581,
+        "sha256": "0b4a366e00a7019fb0e3df81ba749183afe037eb276d6d0792950326124ac466",
+        "entries": 53
+      }
+    ],
+    "metadata": {
+      "schemaVersion": 1,
+      "id": "achievetodo",
+      "version": "0.1.5",
+      "name": "AchieveToDo",
+      "description": "Challenging mod with BlazeandCave's that makes advancements a part of the gameplay.",
+      "authors": [
+        "diskree"
+      ],
+      "contact": {
+        "sources": "https://github.com/diskree/AchieveToDo"
+      },
+      "license": "MIT",
+      "icon": "assets/achievetodo/icon.png",
+      "environment": "*",
+      "entrypoints": {
+        "fabric-datagen": [
+          "com.diskree.achievetodo.ability.generation.AbilitiesGenerator"
+        ],
+        "main": [
+          "com.diskree.achievetodo.AchieveToDoMod"
+        ],
+        "client": [
+          "com.diskree.achievetodo.client.AchieveToDoClient"
+        ]
+      },
+      "mixins": [
+        "achievetodo.mixins.json"
+      ],
+      "depends": {
+        "java": ">=25",
+        "minecraft": "~26.2",
+        "fabricloader": ">=0.19.3",
+        "fabric-api": "*"
+      },
+      "accessWidener": "achievetodo.classtweaker",
+      "jars": [
+        {
+          "file": "META-INF/jars/toml4j-0.7.2.jar"
+        }
+      ]
+    },
+    "authorizedFixFingerprints": {
+      "src/main/java/com/diskree/achievetodo/injection/mixin/main/AxeItemMixin.java": {
+        "sourceSha256": "4247ef44ce7e331f43820d889ecef541f8cbb0a200a31ede2764c8ecbdd46a13",
+        "compiledClassSha256": "2d99b81331a81dc9a222d69a436183ee768179a3b9c5365e99e31a3cc383858b",
+        "jarClassSha256": "2d99b81331a81dc9a222d69a436183ee768179a3b9c5365e99e31a3cc383858b"
+      },
+      "src/main/resources/achievetodo.mixins.json": {
+        "sourceSha256": "56fcb41d75273382681cbeede45882a876de68babcd6580ae63d5c20c0ac211f",
+        "jarResourceSha256": "56fcb41d75273382681cbeede45882a876de68babcd6580ae63d5c20c0ac211f"
+      },
+      "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockMixin.java": {
+        "sourceSha256": "c9473d4918c8d31c7215dcb98a388f3a24660b36940940a598861e9d90985394",
+        "compiledClassSha256": "68e6b586ab304305d4ecc1ec315839b88ccf698e0fd7a75583636f098d2b9276",
+        "jarClassSha256": "68e6b586ab304305d4ecc1ec315839b88ccf698e0fd7a75583636f098d2b9276"
+      },
+      "src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockAccessor.java": {
+        "sourceSha256": "63c46d242eeecabe946be353a8a2353a5ef6555d93982f8e0f8c6846ca4dfd2e",
+        "compiledClassSha256": "f39ea9c168589cac17783460b20d3ef4cb8b0c04574a322666b4da181286c99f",
+        "jarClassSha256": "f39ea9c168589cac17783460b20d3ef4cb8b0c04574a322666b4da181286c99f"
+      },
+      "src/main/java/com/diskree/achievetodo/injection/mixin/main/ServerPlayerGameModeCauldronGateMixin.java": {
+        "sourceSha256": "3f21c817198c59fd650c6384e5cc73bcda2b743ef252003b00ec8278d5193e78",
+        "compiledClassSha256": "41b7c34fa78bb6eb76a71c1f79cbe7e4a9b176526d133dac2f9dc38481730a86",
+        "jarClassSha256": "41b7c34fa78bb6eb76a71c1f79cbe7e4a9b176526d133dac2f9dc38481730a86"
+      },
+      "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java": {
+        "sourceSha256": "1bea3ba9caf22963d1ef26de69b19534a4b16d1eab85a39c5e1fc17750227a31",
+        "compiledClassSha256": "e0b2513631a456c279013d1e09c7832709920494cca5fdbfc235d5314a2f7cd1",
+        "jarClassSha256": "e0b2513631a456c279013d1e09c7832709920494cca5fdbfc235d5314a2f7cd1"
+      }
+    },
+    "resourcesComplete": true,
+    "allPackagedClassesMatchFreshGradleMainOutput": true,
+    "generatedJavaSourcePackaged": false,
+    "externalBacapDesign": "Frozen BACAP is external pinned data, not embedded; intentional production resourcepacks/* overrides are included. Runtime converter marker compat_26_2_r15 requires equipment.body and snake_case."
+  },
+  "gitSafety": {
+    "head": "a5e1b49539a39f01bb5db13d44d420e653dce225",
+    "branch": "26.2-port",
+    "indexSha256": "bd0c1882b97105b93ec41c193496cc5587131df9792f28c7bc89e08d1c33a8df",
+    "statusPreserved": true,
+    "protectedFilesUnchanged": 2539,
+    "productionChanges": false,
+    "gitMutations": false,
+    "cleanup": false,
+    "phaseB": false,
+    "published": false,
+    "pushed": false,
+    "preservedBuildGradle": true
+  },
+  "headlessStartup": {
+    "performed": false,
+    "reason": "No existing bounded unattended production-artifact startup path identified; runGameTest is certification infrastructure. User smoke remains required."
+  },
+  "userSmoke": "NOT_PERFORMED_PENDING_USER",
+  "evidenceHashes": {
+    "input_verification.json": "72a91f0e631bff056803efed401e2dbb6b4cbf05d0e272bce65e8777feb2fc6b",
+    "jar_content_audit.json": "25452a29c75d6f5a2b6afdecf2dbb070b15aa3d928651c5e9aabea783d394d00",
+    "gradle_output_metadata.json": "b5163e12d0c132db2cff13d316e5553950172663353d0943c4d762ea7647d070",
+    "pre_release_gates.gradle.log": "563c8b4ad3a95ab37d37bb3f589c5938de76491324fc987f7ebdc2c33b441726",
+    "production_build.gradle.log": "8f125f650c3acc33365d5811762a3326a3933016084e470e1093f1b78f521cf0",
+    "stale_fixture_diagnosis.json": "09b2d2e8d54ef50383c034f03bc13b2d88474c5bbce618ef82be732da77129d4"
+  },
+  "diagnosticIncidents": {
+    "unintendedNativeDependency": {
+      "cause": "Fabric configureTests adds runGameTest to the standard build/check task graph; -x test does not exclude it.",
+      "selectedTests": 101,
+      "outcome": "Interrupted owned native process; no results accepted or promoted.",
+      "protectedFilesUnchanged": 2539,
+      "retry": "build -x test -x runGameTest",
+      "cleanup": false
+    },
+    "runtimeSemanticCheck": {
+      "runtimeCopySha256": "a6176360eb07b398e635ba967e5c3edf72b145e7ca493aad4f1f4373c46cd66c",
+      "marker": {
+        "fileName": "bacap.zip",
+        "llamaCarpetNbtMapping": "equipment.body",
+        "raiderPredicateKeys": "snake_case",
+        "rootOverrideSha1": "51c2bebe15a2225e11f157753edf2d94c8520b67",
+        "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "version": "compat_26_2_r15"
+      },
+      "markerMatchesAccepted": true,
+      "definitionsCompared": 1229,
+      "definitionDifferences": [],
+      "conclusion": "Scratch ZIP byte hash changed; accepted marker and all semantic outputs remain identical."
+    }
+  }
+}

@@ -1,0 +1,8 @@
+[
+  "--no-daemon",
+  "compileJava",
+  "compileTestJava",
+  "compileGametestJava",
+  "test",
+  "--rerun-tasks"
+]

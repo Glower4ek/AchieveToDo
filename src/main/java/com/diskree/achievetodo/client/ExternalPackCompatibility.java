@@ -33,8 +33,10 @@ import java.util.zip.ZipOutputStream;
 public final class ExternalPackCompatibility {
 
     private static final String MARKER_ENTRY = "achievetodo_compatibility/compat_26_2.properties";
-    private static final String MARKER_VERSION = "compat_26_2_r15";
+    private static final String MARKER_VERSION = "compat_26_2_r16";
     private static final String ROOT_OVERRIDE_SHA1_PROPERTY = "rootOverrideSha1";
+    private static final String LLAMA_CARPET_NBT_PROPERTY = "llamaCarpetNbtMapping";
+    private static final String RAIDER_PREDICATE_KEYS_PROPERTY = "raiderPredicateKeys";
     private static final String[] CATEGORY_ROOTS = {
         "adventure",
         "animal",
@@ -74,7 +76,6 @@ public final class ExternalPackCompatibility {
     private static final String LEGACY_IS_CAPTAIN = "is_captain";
     private static final String LEGACY_TAG = "tag";
     private static final String LEGACY_ENTITY_STRUCK = "entity_struck";
-
     private ExternalPackCompatibility() {
     }
 
@@ -219,7 +220,10 @@ public final class ExternalPackCompatibility {
             return MARKER_VERSION.equals(properties.getProperty("version"))
                 && externalPack.getFileName().equals(properties.getProperty("fileName"))
                 && externalPack.getSha1().equals(properties.getProperty("sourceSha1"))
-                && currentRootOverrideSha1().equals(properties.getProperty(ROOT_OVERRIDE_SHA1_PROPERTY));
+                && currentRootOverrideSha1().equals(properties.getProperty(ROOT_OVERRIDE_SHA1_PROPERTY))
+                && (externalPack != ExternalPack.BACAP
+                    || ("equipment.body".equals(properties.getProperty(LLAMA_CARPET_NBT_PROPERTY))
+                        && "snake_case".equals(properties.getProperty(RAIDER_PREDICATE_KEYS_PROPERTY))));
         } catch (IOException e) {
             return false;
         }
@@ -274,6 +278,7 @@ public final class ExternalPackCompatibility {
             convertedLine = convertedLine.replace("minecraft:chain", "minecraft:iron_chain");
             convertedLine = convertedLine.replace(LEGACY_DAYTIME_QUERY, MODERN_DAY_QUERY);
             convertedLine = rewriteLegacyGameruleLine(convertedLine);
+            convertedLine = LegacyItemText.migrateCommand(convertedLine);
 
             if (!convertedLine.equals(originalLine)) {
                 lines[i] = convertedLine;
@@ -438,6 +443,11 @@ public final class ExternalPackCompatibility {
                 childContext = Context.CONDITIONS;
             } else if ("predicate".equals(key) && ENTITY_PROPERTIES_CONDITION.equals(condition) && value.isJsonObject()) {
                 childContext = Context.ENTITY_PREDICATE;
+            } else if ("predicates".equals(key) && value.isJsonObject() && looksLikeItemPredicate(object)) {
+                TransformResult childResult = transformItemPredicatesObject(value.getAsJsonObject());
+                transformed.add(key, childResult.element());
+                changed |= childResult.changed();
+                continue;
             } else if (value.isJsonObject()
                 && isDirectEntityPredicateKey(key)
                 && looksLikeLegacyEntityPredicate(value.getAsJsonObject())) {
@@ -454,6 +464,66 @@ public final class ExternalPackCompatibility {
         }
 
         return changed ? new TransformResult(transformed, true) : new TransformResult(object, false);
+    }
+
+    private static @NotNull TransformResult transformItemPredicatesObject(@NotNull JsonObject object) {
+        boolean changed = false;
+        JsonObject transformed = new JsonObject();
+
+        for (var entry : object.entrySet()) {
+            String key = entry.getKey();
+            JsonElement value = entry.getValue();
+
+            if (("enchantments".equals(key) || "stored_enchantments".equals(key)) && value.isJsonArray()) {
+                TransformResult childResult = transformItemEnchantmentPredicateArray(value.getAsJsonArray());
+                transformed.add(key, childResult.element());
+                changed |= childResult.changed();
+                continue;
+            }
+
+            TransformResult childResult = transformElement(value, Context.NORMAL);
+            transformed.add(key, childResult.element());
+            changed |= childResult.changed();
+        }
+
+        return changed ? new TransformResult(transformed, true) : new TransformResult(object, false);
+    }
+
+    private static @NotNull TransformResult transformItemEnchantmentPredicateArray(@NotNull JsonArray array) {
+        boolean changed = false;
+        JsonArray transformed = new JsonArray();
+
+        for (JsonElement child : array) {
+            if (!child.isJsonObject()) {
+                TransformResult childResult = transformElement(child, Context.NORMAL);
+                transformed.add(childResult.element());
+                changed |= childResult.changed();
+                continue;
+            }
+
+            JsonObject predicate = child.getAsJsonObject();
+            JsonObject transformedPredicate = new JsonObject();
+            boolean predicateChanged = false;
+            for (var entry : predicate.entrySet()) {
+                String key = entry.getKey();
+                JsonElement value = entry.getValue();
+                if ("enchantments".equals(key) && value.isJsonPrimitive() && value.getAsJsonPrimitive().isString()) {
+                    JsonArray singletonArray = new JsonArray();
+                    singletonArray.add(value.getAsString());
+                    transformedPredicate.add(key, singletonArray);
+                    predicateChanged = true;
+                    continue;
+                }
+
+                TransformResult childResult = transformElement(value, Context.NORMAL);
+                transformedPredicate.add(key, childResult.element());
+                predicateChanged |= childResult.changed();
+            }
+            transformed.add(predicateChanged ? transformedPredicate : predicate);
+            changed |= predicateChanged;
+        }
+
+        return changed ? new TransformResult(transformed, true) : new TransformResult(array, false);
     }
 
     private static boolean suppressVanillaAnnouncementForBacapRewards(@NotNull JsonObject object) {
@@ -637,6 +707,13 @@ public final class ExternalPackCompatibility {
             String targetKey = originalKey;
             Context childContext = Context.NORMAL;
 
+            // Exact frozen llama-carpet shape only; arbitrary SNBT remains unchanged.
+            if ("nbt".equals(originalKey) && "#blazeandcave:llamas".equals(getString(object, LEGACY_TYPE))) {
+                JsonElement mapped = normalizeFrozenLlamaCarpetNbt(value);
+                changed |= mapped != value;
+                value = mapped;
+            }
+
             if (LEGACY_TYPE.equals(originalKey)) {
                 targetKey = "entity_type";
                 value = normalizeEntityType(value);
@@ -683,6 +760,21 @@ public final class ExternalPackCompatibility {
         return changed ? new TransformResult(transformed, true) : new TransformResult(object, false);
     }
 
+    private static @NotNull JsonElement normalizeFrozenLlamaCarpetNbt(@NotNull JsonElement value) {
+        if (!value.isJsonPrimitive() || !value.getAsJsonPrimitive().isString()) {
+            return value;
+        }
+        String nbt = value.getAsString();
+        for (String color : List.of("white", "orange", "magenta", "light_blue", "yellow", "lime",
+            "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black")) {
+            String item = "minecraft:" + color + "_carpet";
+            if (("{body_armor_item:{id:\"" + item + "\"}}").equals(nbt)) {
+                return new com.google.gson.JsonPrimitive("{equipment:{body:{id:\"" + item + "\"}}}");
+            }
+        }
+        return value;
+    }
+
     private static @NotNull TransformResult transformPotentialEntityPredicateArray(@NotNull JsonElement element) {
         if (!element.isJsonArray()) {
             return new TransformResult(element, false);
@@ -712,10 +804,7 @@ public final class ExternalPackCompatibility {
             String targetKey = key;
             Context childContext = Context.NORMAL;
 
-            if (LEGACY_GAMEMODE.equals(key)) {
-                targetKey = "gameMode";
-                changed = true;
-            } else if (LEGACY_LOOKING_AT.equals(key)) {
+            if (LEGACY_LOOKING_AT.equals(key)) {
                 targetKey = "lookingAt";
                 childContext = Context.ENTITY_PREDICATE;
                 changed = true;
@@ -740,13 +829,7 @@ public final class ExternalPackCompatibility {
             JsonElement value = entry.getValue();
             String targetKey = key;
 
-            if (LEGACY_HAS_RAID.equals(key)) {
-                targetKey = "hasRaid";
-                changed = true;
-            } else if (LEGACY_IS_CAPTAIN.equals(key)) {
-                targetKey = "isCaptain";
-                changed = true;
-            }
+            // RaiderPredicate.CODEC reads snake_case; preserve explicit and omitted booleans.
 
             TransformResult childResult = transformElement(value, Context.NORMAL);
             transformed.add(targetKey, childResult.element());
@@ -1124,6 +1207,10 @@ public final class ExternalPackCompatibility {
         properties.setProperty("fileName", externalPack.getFileName());
         properties.setProperty("sourceSha1", externalPack.getSha1());
         properties.setProperty(ROOT_OVERRIDE_SHA1_PROPERTY, currentRootOverrideSha1());
+        if (externalPack == ExternalPack.BACAP) {
+            properties.setProperty(LLAMA_CARPET_NBT_PROPERTY, "equipment.body");
+            properties.setProperty(RAIDER_PREDICATE_KEYS_PROPERTY, "snake_case");
+        }
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         properties.store(output, null);
         writeEntry(out, MARKER_ENTRY, output.toByteArray());

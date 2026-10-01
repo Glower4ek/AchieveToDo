@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:48:20.579Z" hostname="LAPTOP-L0LPH8GP" time="0.394">
+  <properties/>
+  <testcase name="duplicateReceiptKeyRejected()" classname="com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest" time="0.052"/>
+  <testcase name="extraReceiptMissingCatalogCaseRejected()" classname="com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest" time="0.024"/>
+  <testcase name="staleFingerprintRejected()" classname="com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest" time="0.027"/>
+  <testcase name="wrongLootTableRejected()" classname="com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest" time="0.041"/>
+  <testcase name="deferredCatalogCaseDoesNotRequireReceipt()" classname="com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest" time="0.026"/>
+  <testcase name="blankRunIdRejected()" classname="com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest" time="0.034"/>
+  <testcase name="missingPersistentArtifactReturnsEmptyEvidence()" classname="com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest" time="0.008"/>
+  <testcase name="unsupportedFamilyRejected()" classname="com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest" time="0.024"/>
+  <testcase name="oneSupportedCatalogCaseMissingFromArtifactRejected()" classname="com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest" time="0.042"/>
+  <testcase name="completeSupportedArtifactAccepted()" classname="com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest" time="0.03"/>
+  <testcase name="redRejected()" classname="com.diskree.achievetodo.certification.PhaseAContainerLootExecutionEvidenceValidationTest" time="0.08"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

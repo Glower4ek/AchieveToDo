@@ -1,0 +1,26 @@
+{
+  "snapshot": "phase_a_singleton_ancient_restoration_case_catalog",
+  "family": "SINGLETON:blazeandcave:nether/ancient_restoration",
+  "source": "PhaseASingletonAncientRestorationGameTest",
+  "minecraftVersion": "26.2",
+  "compatibilityMarker": "compat_26_2_r15",
+  "frozenBacapSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+  "frozenAdvancementPath": "data/blazeandcave/advancement/nether/ancient_restoration.json",
+  "frozenAdvancementSha256": "e2fad1c3275fef2039856fa4e58ed0c724f2bfdb5d5a4816d556c7169d31c107",
+  "advancementId": "blazeandcave:nether/ancient_restoration",
+  "criterion": "entered_nether_portal",
+  "requirementGroup": 0,
+  "trigger": "minecraft:enter_block",
+  "block": "minecraft:nether_portal",
+  "structures": [
+    "minecraft:ruined_portal",
+    "minecraft:ruined_portal_desert",
+    "minecraft:ruined_portal_jungle",
+    "minecraft:ruined_portal_mountain",
+    "minecraft:ruined_portal_nether",
+    "minecraft:ruined_portal_ocean",
+    "minecraft:ruined_portal_swamp"
+  ],
+  "excludedGameMode": "spectator",
+  "runtimeBoundary": "Entity.checkInsideBlocks->ServerPlayer.onInsideBlock->CriteriaTriggers.ENTER_BLOCK"
+}
