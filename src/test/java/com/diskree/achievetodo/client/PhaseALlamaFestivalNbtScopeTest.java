@@ -35,11 +35,29 @@ class PhaseALlamaFestivalNbtScopeTest {
         try(var zip=new ZipFile(ARCHIVE.toFile())){var entries=zip.entries();while(entries.hasMoreElements()){var entry=entries.nextElement();if(entry.getName().contains("/advancement/")&&entry.getName().endsWith(".json")){try(var input=zip.getInputStream(entry)){output.add(entry.getName(),convert(new String(input.readAllBytes(),StandardCharsets.UTF_8)));}}}}
         return output;
     }
-    @Test void onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive()throws Exception {
-        var fixture=JsonParser.parseString(Files.readString(SCOPE_FIXTURE)).getAsJsonObject();assertEquals(FROZEN_SHA,fixture.get("frozenArchiveSha256").getAsString());
-        var expected=fixture.getAsJsonObject("convertedAdvancementSha256");var actual=convertedAdvancements();assertEquals(expected.keySet(),actual.keySet());
-        for(String path:expected.keySet())assertEquals(expected.get(path).getAsString(),shaText(actual.get(path).toString()),path);
-        assertEquals(FROZEN_SHA,sha(ARCHIVE));
+    @Test void onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive() throws Exception {
+        Path prePath = Path.of("src/test/resources/phase_a_certification/llama_pre_fix_converted_advancements.json");
+        assertEquals("85abf71601b31edf88dcd510dea34496ca1d1d9399e801bfa373f9b5319f116c", sha(prePath));
+        var before = JsonParser.parseString(Files.readString(prePath)).getAsJsonObject();
+        var after = before.deepCopy(); assertEquals(1229, before.size());
+        var criteria = after.getAsJsonObject("data/blazeandcave/advancement/animal/llama_festival.json").getAsJsonObject("criteria");
+        assertEquals(16, criteria.size());
+        for (var row : criteria.entrySet()) {
+            var vehicle = row.getValue().getAsJsonObject().getAsJsonObject("conditions").getAsJsonArray("player").get(0)
+                .getAsJsonObject().getAsJsonObject("predicate").getAsJsonObject("vehicle");
+            assertEquals("{body_armor_item:{id:\"minecraft:" + row.getKey() + "\"}}", vehicle.get("nbt").getAsString());
+            vehicle.addProperty("nbt", "{equipment:{body:{id:\"minecraft:" + row.getKey() + "\"}}}");
+        }
+        var fixture = JsonParser.parseString(Files.readString(SCOPE_FIXTURE)).getAsJsonObject();
+        assertEquals(FROZEN_SHA, fixture.get("frozenArchiveSha256").getAsString());
+        var expected = fixture.getAsJsonObject("convertedAdvancementSha256"); assertEquals(expected.keySet(), after.keySet());
+        for (String path : after.keySet()) {
+            assertEquals(expected.get(path).getAsString(), shaText(after.get(path).toString()), path);
+            if (!path.equals("data/blazeandcave/advancement/animal/llama_festival.json")) assertEquals(before.get(path), after.get(path), path);
+        }
+        var restored = after.deepCopy(); restored.add("data/blazeandcave/advancement/animal/llama_festival.json", before.get("data/blazeandcave/advancement/animal/llama_festival.json"));
+        assertEquals(before, restored, "No seventeenth change outside the sixteen NBT values");
+        assertEquals(FROZEN_SHA, sha(ARCHIVE));
     }
     private static String shaText(String text)throws Exception{return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(text.getBytes(StandardCharsets.UTF_8)));}
     private static void writeFingerprintFixture()throws Exception {
@@ -67,13 +85,76 @@ class PhaseALlamaFestivalNbtScopeTest {
         for(var entry:cases){var first=predicate(entry.getKey(),entry.getValue());assertEquals(entry.getValue(),first.getAsJsonObject("entity").get("nbt").getAsString());assertEquals(first,predicate(entry.getKey(),entry.getValue()));assertEquals(first,convert(first.toString()));}
         var first=predicate("#blazeandcave:llamas",legacy("minecraft:white_carpet"));assertEquals(first,convert(first.toString()));
     }
-    @Test void bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(@TempDir Path dir)throws Exception {
-        Path fresh=dir.resolve("fresh.zip");ExternalPackCompatibility.copyForWorld(ARCHIVE,fresh,ExternalPack.BACAP);
-        Properties properties=new Properties();try(var zip=new ZipFile(fresh.toFile());var input=zip.getInputStream(zip.getEntry(MARKER))){properties.load(input);}
-        assertEquals("compat_26_2_r15",properties.getProperty("version"));assertEquals("equipment.body",properties.getProperty("llamaCarpetNbtMapping"));assertTrue(ExternalPackCompatibility.isCompatibleWorldCopy(fresh,ExternalPack.BACAP));
-        properties.remove("llamaCarpetNbtMapping");Path stale=dir.resolve("stale.zip");writeMarker(stale,properties);assertFalse(ExternalPackCompatibility.isCompatibleWorldCopy(stale,ExternalPack.BACAP));
-        properties.setProperty("llamaCarpetNbtMapping","obsolete");Path wrong=dir.resolve("wrong.zip");writeMarker(wrong,properties);assertFalse(ExternalPackCompatibility.isCompatibleWorldCopy(wrong,ExternalPack.BACAP));
-        properties.remove("llamaCarpetNbtMapping");properties.setProperty("fileName",ExternalPack.BACAP_HARDCORE.getFileName());properties.setProperty("sourceSha1",ExternalPack.BACAP_HARDCORE.getSha1());Path other=dir.resolve("other.zip");writeMarker(other,properties);assertTrue(ExternalPackCompatibility.isCompatibleWorldCopy(other,ExternalPack.BACAP_HARDCORE));assertEquals(FROZEN_SHA,sha(ARCHIVE));
+    @Test void bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(@TempDir Path dir) throws Exception {
+        Path fresh = dir.resolve("historical.zip");
+        ExternalPackCompatibility.copyForWorld(PhaseBPackTestFixtures.historical(), fresh, ExternalPack.BACAP);
+        var properties = PhaseBPackTestFixtures.marker(fresh);
+        assertEquals("compat_26_2_r19", properties.getProperty("version"));
+        assertEquals(PhaseBPackTestFixtures.HISTORICAL_SHA1, properties.getProperty("sourceSha1"));
+        assertEquals("equipment.body", properties.getProperty("llamaCarpetNbtMapping"));
+        assertEquals("snake_case", properties.getProperty("raiderPredicateKeys"));
+        assertEquals(PhaseBPackTestFixtures.ROOT_SHA1, properties.getProperty("rootOverrideSha1"));
+        assertFalse(ExternalPackCompatibility.isCompatibleWorldCopy(fresh, ExternalPack.BACAP));
+        assertFalse(ExternalPackCompatibility.isCurrentWorldPack(fresh, ExternalPack.BACAP));
+        assertEquals(FROZEN_SHA, sha(ARCHIVE));
     }
+    @Test
+    void currentMainMappingFreshnessAndCompanionMarkerExemption(@TempDir Path dir) throws Exception {
+        Path valid = PhaseBPackTestFixtures.currentCopy(dir);
+        PhaseBPackTestFixtures.assertIsolatedMarkerNegatives(dir, valid);
+        Path source = Path.of("reference/phase_a_preservation/files/final/bacap_terralith.zip");
+        assertEquals("0b3cd387fe6e80ac6fe9a05b22091fce6abf6c38dd9656b3086629ec4031d3de", sha(source));
+        assertTrue(ExternalPackCompatibility.isPinnedHistoricalSource(source, ExternalPack.BACAP_TERRALITH));
+        Path target = dir.resolve("terralith-copy.zip");
+        ExternalPackCompatibility.copyForWorld(source, target, ExternalPack.BACAP_TERRALITH);
+        assertTrue(ExternalPackCompatibility.isCompatibleWorldCopy(target, ExternalPack.BACAP_TERRALITH));
+        var properties = PhaseBPackTestFixtures.marker(target);
+        assertEquals("compat_26_2_r19", properties.getProperty("version"));
+        assertEquals(ExternalPack.BACAP_TERRALITH.getSha1(), properties.getProperty("sourceSha1"));
+        assertEquals(ExternalPack.BACAP_TERRALITH.getFileName(), properties.getProperty("fileName"));
+        assertFalse(properties.containsKey("llamaCarpetNbtMapping")); assertFalse(properties.containsKey("raiderPredicateKeys"));
+        assertFalse(ExternalPackCompatibility.isCompatibleWorldCopy(target, ExternalPack.BACAP));
+        assertEquals("0b3cd387fe6e80ac6fe9a05b22091fce6abf6c38dd9656b3086629ec4031d3de", sha(source));
+    }
+
+    @Test
+    void currentConverterRetainsAcceptedLlamaAndRaiderArchiveSemantics() throws Exception {
+        var report = PhaseBPackTestFixtures.json(Path.of("reference/phase_a_planning/final19/raider_production_output_scope.json"));
+        var expected = report.getAsJsonObject("outputFingerprints"); assertEquals(1229, expected.size());
+        Set<String> changed = new TreeSet<>();
+        for (var row : expected.entrySet()) {
+            var v = row.getValue().getAsJsonObject();
+            if (!v.get("preFixOutputSha256").equals(v.get("productionOutputSha256"))) changed.add(row.getKey());
+        }
+        assertEquals(Set.of("data/blazeandcave/advancement/adventure/feeling_ill.json", "data/blazeandcave/advancement/monsters/dungeon_crawler.json", "data/minecraft/advancement/adventure/voluntary_exile.json"), changed);
+        Set<String> actualIds = new TreeSet<>();
+        try (var zip = new ZipFile(ARCHIVE.toFile())) {
+            for (var entry : Collections.list(zip.entries())) {
+                String path = entry.getName();
+                if (!path.contains("/advancement/") || !path.endsWith(".json")) continue;
+                actualIds.add(path);
+                String raw; try (var in = zip.getInputStream(entry)) { raw = new String(in.readAllBytes(), StandardCharsets.UTF_8); }
+                String actual = conversionText(raw);
+                assertEquals(expected.getAsJsonObject(path).get("productionOutputSha256").getAsString(), shaText(actual), path);
+                assertEquals(actual, conversionText(actual), path + " idempotence");
+                if (changed.contains(path)) { assertFalse(actual.contains("\"hasRaid\"")); assertFalse(actual.contains("\"isCaptain\"")); }
+                if (path.equals("data/blazeandcave/advancement/animal/llama_festival.json")) {
+                    var criteria = JsonParser.parseString(actual).getAsJsonObject().getAsJsonObject("criteria"); assertEquals(16, criteria.size());
+                    for (var row : criteria.entrySet()) {
+                        var vehicle = row.getValue().getAsJsonObject().getAsJsonObject("conditions").getAsJsonArray("player").get(0).getAsJsonObject().getAsJsonObject("predicate").getAsJsonObject("vehicle");
+                        assertEquals("{equipment:{body:{id:\"minecraft:" + row.getKey() + "\"}}}", vehicle.get("nbt").getAsString());
+                    }
+                }
+            }
+        }
+        assertEquals(expected.keySet(), actualIds); assertEquals(FROZEN_SHA, sha(ARCHIVE));
+    }
+
+    private static String conversionText(String raw) throws Exception {
+        Method convert = ExternalPackCompatibility.class.getDeclaredMethod("convertJson", String.class); convert.setAccessible(true);
+        Object result = convert.invoke(null, raw); Method text = result.getClass().getDeclaredMethod("text"); text.setAccessible(true);
+        return (String) text.invoke(result);
+    }
+
     private static void writeMarker(Path file,Properties properties)throws Exception {try(var out=new ZipOutputStream(Files.newOutputStream(file))){out.putNextEntry(new ZipEntry(MARKER));ByteArrayOutputStream bytes=new ByteArrayOutputStream();properties.store(bytes,null);out.write(bytes.toByteArray());out.closeEntry();}}
 }

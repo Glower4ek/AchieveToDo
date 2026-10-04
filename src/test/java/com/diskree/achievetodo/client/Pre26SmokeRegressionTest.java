@@ -205,26 +205,114 @@ class Pre26SmokeRegressionTest {
     }
 
     @Test void everyShippedAdvancementMessageRetainsHoverClickAndFrameMetadata() throws Exception {
-        int count = 0;
+        Set<String> identities = new TreeSet<>(); int legacy = 0, modern = 0, resolvedSearchTargets = 0;
+        String search = "/advancementssearch highlight blazeandcave:nether/inception";
+        assertEquals("blazeandcave:nether/inception", searchTarget(search));
+        assertEquals("blazeandcave:nether/inception", searchTarget(search + " obtained_status"));
+        for (String invalid : List.of("/advancementssearch highlight", search + " garbage", search + " obtained_status garbage", search + " obtained_status obtained_status", search + " ", "/advancementssearch highlight  ")) {
+            assertThrows(IllegalArgumentException.class, () -> searchTarget(invalid), invalid);
+        }
+        var effective = PhaseBPackTestFixtures.currentLocalization();
+        Set<String> targets = new HashSet<>();
+        for (var id : effective.getAsJsonArray("advancementIds")) targets.add(id.getAsString());
         try (var files = Files.walk(Path.of("src/main/resources/resourcepacks"))) {
-            for (var file : files.filter(p -> p.toString().endsWith(".mcfunction")).toList()) {
-                String raw = Files.readString(file);
-                if (!raw.contains("/advancementssearch highlight ") || !raw.contains("hoverEvent")) continue;
-                for (String line : raw.lines().toList()) {
-                    if (line.stripLeading().startsWith("#") || !line.contains("tellraw ") || !line.contains("hoverEvent")) continue;
+            for (var file : files.filter(p -> p.toString().endsWith(".mcfunction")).sorted().toList()) {
+                var lines = Files.readAllLines(file);
+                for (int i = 0; i < lines.size(); i++) {
+                    String line = lines.get(i); if (line.stripLeading().startsWith("#")) continue;
+                    int tellraw = line.indexOf("tellraw "); if (tellraw < 0) continue;
+                    int start = line.indexOf(' ', tellraw + 8) + 1;
+                    var original = JsonParser.parseString(line.substring(start));
+                    Set<String> beforeLinks = searchCommands(original);
+                    if (beforeLinks.isEmpty()) continue;
+                    String id = file.toString().replace('\\', '/') + ":" + (i + 1);
+                    assertTrue(identities.add(id), id);
+                    boolean old = containsField(original, "hoverEvent");
+                    assertTrue(old || containsField(original, "hover_event"), id + " hover missing");
+                    if (old) legacy++; else modern++;
                     String migrated = LegacyChatText.migrateCommand(line);
-                    int at = migrated.indexOf("tellraw "); at = migrated.indexOf(' ', at + 8) + 1;
-                    var json = JsonParser.parseString(migrated.substring(at));
+                    assertEquals(line.substring(0, start), migrated.substring(0, start), id + " selector/execute target");
+                    var json = JsonParser.parseString(migrated.substring(start));
+                    assertEquals(metadata(original), metadata(json), id + " component/style/frame semantics");
                     var component = ComponentSerialization.CODEC.parse(JsonOps.INSTANCE, json).getOrThrow();
-                    assertTrue(hasHover(component), file.toString());
-                    var roundtrip = ComponentSerialization.CODEC.parse(JsonOps.INSTANCE, ComponentSerialization.CODEC.encodeStart(JsonOps.INSTANCE, component).getOrThrow()).getOrThrow();
-                    assertEquals(component, roundtrip);
+                    assertTrue(hasHover(component), id);
+                    var encoded = ComponentSerialization.CODEC.encodeStart(JsonOps.INSTANCE, component).getOrThrow();
+                    assertEquals(beforeLinks, searchCommands(encoded), id + " decoded click action");
+                    assertEquals(translationKeys(original), translationKeys(encoded), id + " frame/title/description");
+                    for (String command : beforeLinks) {
+                        String target = searchTarget(command);
+                        assertTrue(targets.contains(target), id + " unresolved Search " + target);
+                        resolvedSearchTargets++;
+                    }
+                    assertEquals(component, ComponentSerialization.CODEC.parse(JsonOps.INSTANCE, encoded).getOrThrow());
                     assertEquals(migrated, LegacyChatText.migrateCommand(migrated));
-                    count++;
                 }
             }
         }
-        assertEquals(1202, count);
+        assertEquals(1162, legacy); assertEquals(138, modern); assertEquals(1300, identities.size());
+        assertEquals(1300, resolvedSearchTargets);
+        assertEquals("e62356a2a77b91253710b22a67747ff8d97c237a4235cf9265c796c8178e4c32", PhaseBPackTestFixtures.hash((String.join("\n", identities) + "\n").getBytes(java.nio.charset.StandardCharsets.UTF_8), "SHA-256"));
+        String positive = "execute as @a run tellraw @s {\"text\":\"x\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":{\"text\":\"hover\"}},\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/help\"}}";
+        String migrated = LegacyChatText.migrateCommand(positive);
+        assertNotEquals(positive, migrated); assertEquals(metadata(JsonParser.parseString(positive.substring(positive.indexOf('{')))), metadata(JsonParser.parseString(migrated.substring(migrated.indexOf('{')))));
+        for (String negative : List.of("# " + positive, "say hoverEvent clickEvent", "tellraw @s invalid-json")) assertEquals(negative, LegacyChatText.migrateCommand(negative));
+    }
+
+    private static String searchTarget(String command) {
+        var match = java.util.regex.Pattern.compile("/advancementssearch highlight ([a-z0-9_.-]+:[a-z0-9_./-]+)(?: obtained_status)?").matcher(command);
+        if (!match.matches()) throw new IllegalArgumentException("Unsupported Search command: " + command);
+        return match.group(1);
+    }
+
+    private static boolean containsField(com.google.gson.JsonElement e, String field) {
+        if (e.isJsonObject()) return e.getAsJsonObject().has(field) || e.getAsJsonObject().entrySet().stream().anyMatch(v -> containsField(v.getValue(), field));
+        if (e.isJsonArray()) return e.getAsJsonArray().asList().stream().anyMatch(v -> containsField(v, field));
+        return false;
+    }
+
+    private static Set<String> searchCommands(com.google.gson.JsonElement e) {
+        Set<String> result = new TreeSet<>();
+        if (e.isJsonObject()) {
+            var o = e.getAsJsonObject();
+            for (String field : List.of("clickEvent", "click_event")) if (o.has(field)) {
+                var event = o.getAsJsonObject(field);
+                var value = event.has("command") ? event.get("command") : event.get("value");
+                if (value != null && value.isJsonPrimitive() && value.getAsString().startsWith("/advancementssearch highlight ")) {
+                    assertEquals("run_command", event.get("action").getAsString()); result.add(value.getAsString());
+                }
+            }
+            for (var entry : o.entrySet()) result.addAll(searchCommands(entry.getValue()));
+        } else if (e.isJsonArray()) for (var child : e.getAsJsonArray()) result.addAll(searchCommands(child));
+        return result;
+    }
+
+    private static List<String> translationKeys(com.google.gson.JsonElement e) {
+        List<String> result = new ArrayList<>();
+        if (e.isJsonObject()) {
+            var o = e.getAsJsonObject(); if (o.has("translate")) result.add(o.get("translate").getAsString());
+            for (var entry : o.entrySet()) result.addAll(translationKeys(entry.getValue()));
+        } else if (e.isJsonArray()) for (var child : e.getAsJsonArray()) result.addAll(translationKeys(child));
+        Collections.sort(result); return result;
+    }
+
+    private static Map<String, String> metadata(com.google.gson.JsonElement e) {
+        Map<String, String> result = new TreeMap<>(); metadata(e, "$", result); return result;
+    }
+
+    private static void metadata(com.google.gson.JsonElement e, String path, Map<String, String> result) {
+        if (e.isJsonObject()) {
+            var o = e.getAsJsonObject();
+            for (var entry : o.entrySet()) {
+                String field = entry.getKey();
+                if (field.equals("hoverEvent") || field.equals("hover_event")) field = "hover";
+                if (field.equals("clickEvent") || field.equals("click_event")) field = "click";
+                if (path.endsWith("/hover") && (field.equals("value") || field.equals("contents"))) field = "content";
+                if (path.endsWith("/click") && List.of("value", "command", "url", "page").contains(field)) field = "destination";
+                metadata(entry.getValue(), path + "/" + field, result);
+            }
+        } else if (e.isJsonArray()) {
+            for (int i = 0; i < e.getAsJsonArray().size(); i++) metadata(e.getAsJsonArray().get(i), path + "/" + i, result);
+        } else assertNull(result.put(path, e.toString()), "Duplicate semantic metadata path " + path);
     }
 
     private static boolean hasHover(Component component) {

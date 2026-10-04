@@ -821,12 +821,14 @@ class ExternalPackCompatibilityTest {
         byte[] before = Files.readAllBytes(frozen);
         assertEquals("8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
             java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(before)));
-        assertEquals(ExternalPack.BACAP.getSha1(),
+        assertEquals(PhaseBPackTestFixtures.HISTORICAL_SHA1,
             java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-1").digest(before)));
         Path target = tempDir.resolve("historical-sign-honey.zip");
         ExternalPackCompatibility.copyForWorld(frozen, target, ExternalPack.BACAP);
         org.junit.jupiter.api.Assertions.assertArrayEquals(before, Files.readAllBytes(frozen));
-        assertTrue(ExternalPackCompatibility.isCompatibleWorldCopy(target, ExternalPack.BACAP));
+        assertFalse(ExternalPackCompatibility.isCompatibleWorldCopy(target, ExternalPack.BACAP));
+        assertFalse(ExternalPackCompatibility.isCurrentWorldPack(target, ExternalPack.BACAP));
+        assertEquals(PhaseBPackTestFixtures.HISTORICAL_SHA1, PhaseBPackTestFixtures.marker(target).getProperty("sourceSha1"));
         try (ZipFile source = new ZipFile(frozen.toFile()); ZipFile converted = new ZipFile(target.toFile())) {
             for (String[] binding : new String[][]{
                 {"make_a_sign_glow", "glow_ink_sac", "cephalight", "glow_and_behold"},
@@ -849,55 +851,35 @@ class ExternalPackCompatibilityTest {
     }
 
     @Test
+    void currentNativeGlowAndHoneyBindingsAndSourceIdentityRemainExact() throws Exception {
+        Path sourcePath = PhaseBPackTestFixtures.current(); byte[] before = Files.readAllBytes(sourcePath);
+        Path output = PhaseBPackTestFixtures.currentCopy(tempDir);
+        try (var source = new ZipFile(sourcePath.toFile()); var target = new ZipFile(output.toFile())) {
+            for (String[] binding : new String[][] {
+                {"make_a_sign_glow", "glow_ink_sac", "cephalight", "glow_and_behold"},
+                {"safely_harvest_honey", "safely_harvest_honey", "ya_like_jazz", "bee_our_guest"}
+            }) {
+                String path = "data/minecraft/advancement/husbandry/" + binding[0] + ".json";
+                var original = readJson(source, path); var actual = readJson(target, path);
+                assertEquals(Set.of(binding[1]), actual.getAsJsonObject("criteria").keySet());
+                assertEquals("blazeandcave:animal/" + binding[2], actual.get("parent").getAsString());
+                assertEquals("bacap_rewards:animal/" + binding[3], actual.getAsJsonObject("rewards").get("function").getAsString());
+                assertTrue(original.getAsJsonObject("display").get("announce_to_chat").getAsBoolean());
+                assertFalse(actual.getAsJsonObject("display").get("announce_to_chat").getAsBoolean());
+                original.getAsJsonObject("display").addProperty("announce_to_chat", false);
+                assertEquals(original, actual, "Native conversion changes only announcement policy");
+            }
+        }
+        org.junit.jupiter.api.Assertions.assertArrayEquals(before, Files.readAllBytes(sourcePath));
+        PhaseBPackTestFixtures.assertCurrentMarker(output);
+    }
+
+    @Test
     void admitsOnlyRawOrCurrentCompatiblePackCopies() throws Exception {
-        ExternalPack externalPack = ExternalPack.BACAP;
-        Path rawPack = Path.of("reference", "phase_a_preservation", "files", "final", externalPack.getFileName());
-        assertTrue(Files.exists(rawPack));
-        assertTrue(isAdmittedPack(rawPack, externalPack));
-
-        Path currentCompatiblePack = tempDir.resolve("bacap-current.zip");
-        writeMarkerOnlyPack(
-            currentCompatiblePack,
-            "achievetodo_compatibility/compat_26_2.properties",
-            "compat_26_2_r15",
-            externalPack.getFileName(),
-            externalPack.getSha1(),
-            ExternalPackCompatibility.currentRootOverrideSha1()
-        );
-        assertTrue(isAdmittedPack(currentCompatiblePack, externalPack));
-
-        Path staleCompatiblePack = tempDir.resolve("bacap-stale.zip");
-        writeMarkerOnlyPack(
-            staleCompatiblePack,
-            "achievetodo_compatibility/phase_b_26_2.properties",
-            "phase_b_26_2_r6",
-            externalPack.getFileName(),
-            externalPack.getSha1(),
-            ExternalPackCompatibility.currentRootOverrideSha1()
-        );
-        assertFalse(isAdmittedPack(staleCompatiblePack, externalPack));
-
-        Path wrongSourceCompatiblePack = tempDir.resolve("bacap-wrong-source.zip");
-        writeMarkerOnlyPack(
-            wrongSourceCompatiblePack,
-            "achievetodo_compatibility/compat_26_2.properties",
-            "compat_26_2_r15",
-            externalPack.getFileName(),
-            "deadbeef",
-            ExternalPackCompatibility.currentRootOverrideSha1()
-        );
-        assertFalse(isAdmittedPack(wrongSourceCompatiblePack, externalPack));
-
-        Path wrongRootsCompatiblePack = tempDir.resolve("bacap-wrong-roots.zip");
-        writeMarkerOnlyPack(
-            wrongRootsCompatiblePack,
-            "achievetodo_compatibility/compat_26_2.properties",
-            "compat_26_2_r13",
-            externalPack.getFileName(),
-            externalPack.getSha1(),
-            "deadbeef"
-        );
-        assertFalse(isAdmittedPack(wrongRootsCompatiblePack, externalPack));
+        assertTrue(ExternalPackCompatibility.isCurrentWorldPack(PhaseBPackTestFixtures.current(), ExternalPack.BACAP));
+        assertFalse(ExternalPackCompatibility.isCurrentWorldPack(PhaseBPackTestFixtures.historical(), ExternalPack.BACAP));
+        Path valid = PhaseBPackTestFixtures.currentCopy(tempDir);
+        PhaseBPackTestFixtures.assertIsolatedMarkerNegatives(tempDir, valid);
     }
 
     @Test

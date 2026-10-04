@@ -50,7 +50,7 @@ class BetterRuOverlayResourceTest {
 
     @Test
     void productionRuOverlayMatchesApprovedFinalManualDecisions() throws IOException {
-        JsonObject overlay = loadJsonObject(BETTER_RU_OVERLAY);
+        JsonObject overlay = loadJsonObject(PhaseBPackTestFixtures.FROZEN_RU);
         List<Map<String, String>> rows = loadTsvRows(FINAL_MANUAL_REMAINING);
         Set<String> intentionalEnglishKeys = loadIntentionalEnglishKeys(rows);
 
@@ -106,8 +106,8 @@ class BetterRuOverlayResourceTest {
 
     @Test
     void productionRuOverlayKeepsPinnedPhaseARuntimeResolvable() throws IOException {
-        Set<String> runtimeTranslateKeys = collectCurrentRuntimeTranslateKeys();
-        JsonObject overlay = loadJsonObject(BETTER_RU_OVERLAY);
+        Set<String> runtimeTranslateKeys = collectHistoricalRuntimeTranslateKeys();
+        JsonObject overlay = loadJsonObject(PhaseBPackTestFixtures.FROZEN_RU);
         JsonObject achievetodoRu = loadJsonObject(ACHIEVETODO_RU);
         Set<String> allowedFallbackKeys = loadAllowedFallbackKeys();
         Set<String> intentionalEnglishKeys = loadIntentionalEnglishKeys();
@@ -160,12 +160,61 @@ class BetterRuOverlayResourceTest {
     }
 
     @Test
-    void pinnedHistoricalBacapSourceRemainsUnchanged() {
-        assertTrue(Files.exists(PHASE_A_BACAP), "Pinned historical BACAP source should exist in the preservation bundle");
-        assertTrue(
-            ExternalPackCompatibility.isPinnedHistoricalSource(PHASE_A_BACAP, ExternalPack.BACAP),
-            "The Phase A overlay step must not alter the preserved historical BACAP source zip"
-        );
+    void pinnedHistoricalBacapSourceRemainsUnchanged() throws Exception {
+        assertEquals(PHASE_A_BACAP, PhaseBPackTestFixtures.historical());
+        assertFalse(ExternalPackCompatibility.isPinnedHistoricalSource(PHASE_A_BACAP, ExternalPack.BACAP));
+        assertTrue(ExternalPackCompatibility.isPinnedHistoricalSource(PhaseBPackTestFixtures.current(), ExternalPack.BACAP));
+    }
+
+    @Test
+    void productionRuOverlayResolvesCurrentPhaseBEffectiveConsumers() throws Exception {
+        var actual = PhaseBPackTestFixtures.currentLocalization();
+        var receipt = PhaseBPackTestFixtures.json(Path.of("reference/phase_b/b7_m2_current_consumer_set_refresh.json"));
+        var expected = receipt.getAsJsonObject("currentConsumerOracle");
+        assertEquals(4301, actual.get("totalRequirements").getAsInt());
+        assertEquals(expected.get("requirements"), actual.get("totalRequirements"));
+        assertEquals(expected.get("providerPartition"), actual.get("providerCounts"));
+        assertEquals(receipt.get("effectiveCoverage"), actual.get("effectiveCoverage"));
+        assertEquals(4290, actual.get("placeholderChecked").getAsInt());
+        assertEquals(expected.get("placeholderContracts"), actual.get("placeholderChecked"));
+        assertTrue(actual.getAsJsonArray("placeholderMismatches").isEmpty());
+        assertEquals(3482, actual.get("dictionaryCount").getAsInt());
+        var provenance = actual.getAsJsonObject("provenance");
+        assertEquals(receipt.getAsJsonObject("provenance").get("partition"), provenance.get("partition"));
+        for (String field : List.of("missing", "duplicates", "hashMismatch")) assertEquals(0, provenance.get(field).getAsInt());
+        for (var row : actual.getAsJsonArray("requirements")) assertFalse(row.getAsJsonObject().get("provider").getAsString().equals("MISSING"));
+        var selected = actual.getAsJsonObject("selectedCompanionCoverage"); assertEquals(53, selected.size());
+        for (var entry : selected.entrySet()) assertFalse(entry.getValue().getAsString().equals("MISSING"));
+    }
+
+    @Test
+    void productionRuOverlayMatchesCurrentB6ManualDecisions() throws Exception {
+        var overlay = loadJsonObject(BETTER_RU_OVERLAY); var frozen = loadJsonObject(PhaseBPackTestFixtures.FROZEN_RU);
+        assertFalse(frozen.has("and")); assertEquals("и", overlay.get("and").getAsString());
+        var b6 = PhaseBPackTestFixtures.json(Path.of("reference/phase_b/b6_ru_translation_manifest.json"));
+        var ownership = b6.getAsJsonArray("perChangedKeyProvenance").asList().stream()
+            .map(com.google.gson.JsonElement::getAsJsonObject).filter(r -> r.get("key").getAsString().equals("and")).findFirst().orElseThrow();
+        assertEquals("MANUAL_B6", ownership.get("sourceType").getAsString());
+        assertEquals(ownership.get("finalValueSha256").getAsString(), PhaseBPackTestFixtures.hash("и".getBytes(StandardCharsets.UTF_8), "SHA-256"));
+        var current = PhaseBPackTestFixtures.currentLocalization();
+        var conjunction = current.getAsJsonArray("requirements").asList().stream().map(com.google.gson.JsonElement::getAsJsonObject)
+            .filter(r -> r.get("key").getAsString().equals("and")).findFirst().orElseThrow();
+        assertEquals("MINECRAFT_RU_OVERLAY", conjunction.get("provider").getAsString());
+        assertFalse(conjunction.getAsJsonArray("consumers").isEmpty());
+        int changed = 0;
+        for (var row : loadTsvRows(FINAL_MANUAL_REMAINING)) {
+            String key = row.get("key");
+            if (key.equals("and")) { changed++; continue; }
+            if (key.startsWith("In the jungle, the mighty jungle,")) {
+                assertTrue(frozen.has(key)); assertFalse(overlay.has(key));
+                assertTrue(current.getAsJsonArray("requirements").asList().stream()
+                    .noneMatch(r -> r.getAsJsonObject().get("key").getAsString().equals(key)));
+                var removal = b6.getAsJsonArray("actualRemovals").asList().stream().map(com.google.gson.JsonElement::getAsJsonObject)
+                    .filter(r -> r.get("key").getAsString().equals(key)).findFirst().orElseThrow();
+                assertEquals(0, removal.get("consumerCount").getAsInt()); changed++;
+            } else assertEquals(frozen.get(key), overlay.get(key), key);
+        }
+        assertEquals(2, changed);
     }
 
     private static JsonObject loadJsonObject(Path path) throws IOException {
@@ -176,13 +225,9 @@ class BetterRuOverlayResourceTest {
         return parsed;
     }
 
-    private static Set<String> collectCurrentRuntimeTranslateKeys() throws IOException {
+    private static Set<String> collectHistoricalRuntimeTranslateKeys() throws IOException {
         Set<String> keys = new HashSet<>();
-        addTranslateKeysFromDirectory(Path.of("src", "main", "resources", "resourcepacks", "bacap_override"), keys);
-        addTranslateKeysFromDirectory(Path.of("src", "main", "resources", "resourcepacks", "bacap_hardcore_override"), keys);
-        addTranslateKeysFromDirectory(Path.of("src", "main", "resources", "resourcepacks", "bacap_terralith_override"), keys);
-        addTranslateKeysFromDirectory(Path.of("src", "main", "resources", "resourcepacks", "bacap_amplified_nether_override"), keys);
-        addTranslateKeysFromDirectory(Path.of("src", "main", "resources", "resourcepacks", "bacap_nullscape_override"), keys);
+        addTranslateKeysFromZip(PhaseBPackTestFixtures.FROZEN_INTERNAL, keys);
         addTranslateKeysFromZip(PHASE_A_BACAP, keys);
         return keys;
     }

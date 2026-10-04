@@ -24,7 +24,9 @@ class PhaseACertificationTest {
 
     @Test
     void canonicalInventorySnapshotMatchesGeneratedArtifacts() throws IOException {
-        PhaseACertification.CertificationArtifacts artifacts = PhaseACertification.generate(PROJECT_ROOT);
+        PhaseACertification.CertificationArtifacts artifacts = PhaseACertification.generate(PROJECT_ROOT,
+            Path.of("src/test/resources/phase_a_certification/frozen_runtime_ru_overlay.json"),
+            Path.of("src/test/resources/phase_a_certification/frozen_internal_resourcepacks.zip"));
         Path inventory = PROJECT_ROOT.resolve(PhaseACertification.INVENTORY_SNAPSHOT);
         assertTrue(Files.exists(inventory), "Canonical inventory snapshot must be generated and checked in");
         assertEquals(
@@ -32,6 +34,44 @@ class PhaseACertificationTest {
             Files.readString(inventory, StandardCharsets.UTF_8),
             "Canonical advancement inventory snapshot is stale. Run writePhaseACertificationAssets."
         );
+    }
+
+    @Test
+    void canonicalInventoryCurrentBindingsMatchPhaseB() throws IOException {
+        var current = com.google.gson.JsonParser.parseString(PhaseACertification.generate(PROJECT_ROOT).inventoryJson()).getAsJsonObject();
+        var historical = com.google.gson.JsonParser.parseString(Files.readString(PROJECT_ROOT.resolve(PhaseACertification.INVENTORY_SNAPSHOT))).getAsJsonObject();
+        var oldEntries = historical.remove("entries").getAsJsonArray();
+        var newEntries = current.remove("entries").getAsJsonArray();
+        assertEquals(historical, current, "Every non-entry inventory field remains exact");
+        assertEquals(1152, oldEntries.size()); assertEquals(oldEntries.size(), newEntries.size());
+        var b6 = com.google.gson.JsonParser.parseString(Files.readString(Path.of("reference/phase_b/b6_ru_translation_manifest.json"))).getAsJsonObject();
+        Set<String> removed = new LinkedHashSet<>();
+        for (var row : b6.getAsJsonArray("actualRemovals")) {
+            assertEquals(0, row.getAsJsonObject().get("consumerCount").getAsInt());
+            removed.add(row.getAsJsonObject().get("key").getAsString());
+        }
+        int locale = 0, owner = 0;
+        for (int i = 0; i < oldEntries.size(); i++) {
+            var before = oldEntries.get(i).getAsJsonObject(); var after = newEntries.get(i).getAsJsonObject();
+            assertEquals(before.keySet(), after.keySet()); assertEquals(before.get("id"), after.get("id"));
+            for (String field : before.keySet()) {
+                if (before.get(field).equals(after.get(field))) continue;
+                if (field.equals("titleKeyPresentInRuntimeRussian") || field.equals("descriptionKeyPresentInRuntimeRussian")) {
+                    assertTrue(before.get(field).getAsBoolean()); assertFalse(after.get(field).getAsBoolean());
+                    String key = before.get(field.startsWith("title") ? "titleKey" : "descriptionKey").getAsString();
+                    assertTrue(removed.contains(key), key); locale++;
+                } else {
+                    assertEquals("rewardFunctionSources", field); assertEquals("minecraft:story/root", before.get("id").getAsString());
+                    var expectedBefore = new com.google.gson.JsonObject();
+                    expectedBefore.addProperty("bacap_rewards:bacap/benchmarking", "bacap.zip::data/bacap_rewards/function/bacap/benchmarking.mcfunction");
+                    assertEquals(expectedBefore, before.get(field));
+                    var expectedAfter = new com.google.gson.JsonObject();
+                    expectedAfter.addProperty("bacap_rewards:bacap/benchmarking", "bacap_override::" + Path.of("bacap_override/data/bacap_rewards/function/bacap/benchmarking.mcfunction"));
+                    assertEquals(expectedAfter, after.get(field)); owner++;
+                }
+            }
+        }
+        assertEquals(21, locale); assertEquals(1, owner); assertEquals(22, locale + owner);
     }
 
     @Test

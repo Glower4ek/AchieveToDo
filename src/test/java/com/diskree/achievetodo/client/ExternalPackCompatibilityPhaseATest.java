@@ -23,85 +23,38 @@ class ExternalPackCompatibilityPhaseATest {
 
     @Test
     void treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly() throws Exception {
-        ExternalPack externalPack = ExternalPack.BACAP;
-        Path rawPack = Path.of("reference", "phase_a_preservation", "files", "final", externalPack.getFileName());
-        assertTrue(Files.exists(rawPack));
-        assertTrue(ExternalPackCompatibility.isPinnedHistoricalSource(rawPack, externalPack));
-
-        Path currentCompatiblePack = tempDir.resolve("bacap-current.zip");
-        writeMarkerOnlyPack(
-            currentCompatiblePack,
-            "achievetodo_compatibility/compat_26_2.properties",
-            "compat_26_2_r15",
-            externalPack.getFileName(),
-            externalPack.getSha1(),
-            ExternalPackCompatibility.currentRootOverrideSha1()
-        );
-        assertFalse(ExternalPackCompatibility.isPinnedHistoricalSource(currentCompatiblePack, externalPack));
-        assertTrue(ExternalPackCompatibility.isCompatibleWorldCopy(currentCompatiblePack, externalPack));
-
-        Path staleCompatiblePack = tempDir.resolve("bacap-stale.zip");
-        writeMarkerOnlyPack(
-            staleCompatiblePack,
-            "achievetodo_compatibility/phase_b_26_2.properties",
-            "phase_b_26_2_r6",
-            externalPack.getFileName(),
-            externalPack.getSha1(),
-            ExternalPackCompatibility.currentRootOverrideSha1()
-        );
-        assertFalse(ExternalPackCompatibility.isCompatibleWorldCopy(staleCompatiblePack, externalPack));
-
-        Path wrongSourceCompatiblePack = tempDir.resolve("bacap-wrong-source.zip");
-        writeMarkerOnlyPack(
-            wrongSourceCompatiblePack,
-            "achievetodo_compatibility/compat_26_2.properties",
-            "compat_26_2_r15",
-            externalPack.getFileName(),
-            "deadbeef",
-            ExternalPackCompatibility.currentRootOverrideSha1()
-        );
-        assertFalse(ExternalPackCompatibility.isCompatibleWorldCopy(wrongSourceCompatiblePack, externalPack));
-
-        Path wrongRootsCompatiblePack = tempDir.resolve("bacap-wrong-roots.zip");
-        writeMarkerOnlyPack(
-            wrongRootsCompatiblePack,
-            "achievetodo_compatibility/compat_26_2.properties",
-            "compat_26_2_r13",
-            externalPack.getFileName(),
-            externalPack.getSha1(),
-            "deadbeef"
-        );
-        assertFalse(ExternalPackCompatibility.isCompatibleWorldCopy(wrongRootsCompatiblePack, externalPack));
+        assertTrue(ExternalPackCompatibility.isPinnedHistoricalSource(PhaseBPackTestFixtures.current(), ExternalPack.BACAP));
+        assertFalse(ExternalPackCompatibility.isPinnedHistoricalSource(PhaseBPackTestFixtures.historical(), ExternalPack.BACAP));
+        Path valid = PhaseBPackTestFixtures.currentCopy(tempDir);
+        PhaseBPackTestFixtures.assertIsolatedMarkerNegatives(tempDir, valid);
     }
 
     @Test
     void ensureWorldPacksUpToDateRepairsStaleWorldPackToCurrentCompatibleCopy() throws Exception {
-        ExternalPack externalPack = ExternalPack.BACAP;
-        Path globalDir = tempDir.resolve("global");
-        Path worldDir = tempDir.resolve("world");
-        Files.createDirectories(globalDir);
-        Files.createDirectories(worldDir);
-
-        Path rawPack = Path.of("reference", "phase_a_preservation", "files", "final", externalPack.getFileName());
-        Path globalPack = globalDir.resolve(externalPack.getFileName());
-        Files.copy(rawPack, globalPack);
-        assertTrue(ExternalPackCompatibility.isPinnedHistoricalSource(globalPack, externalPack));
-
-        Path worldPack = worldDir.resolve(externalPack.getFileName());
-        writeMarkerOnlyPack(
-            worldPack,
-            "achievetodo_compatibility/phase_b_26_2.properties",
-            "phase_b_26_2_r6",
-            externalPack.getFileName(),
-            externalPack.getSha1(),
-            ExternalPackCompatibility.currentRootOverrideSha1()
-        );
-
-        assertEquals(
-            ExternalPackCompatibility.WorldPackSyncResult.UPDATED,
-            ExternalPackCompatibility.ensureWorldPacksUpToDate(globalDir, worldDir, true)
-        );
-        assertTrue(ExternalPackCompatibility.isCompatibleWorldCopy(worldPack, externalPack));
+        Path global = Files.createDirectories(tempDir.resolve("global"));
+        Path world = Files.createDirectories(tempDir.resolve("world"));
+        Files.copy(PhaseBPackTestFixtures.current(), global.resolve(ExternalPack.BACAP.getFileName()));
+        Path valid = PhaseBPackTestFixtures.currentCopy(tempDir);
+        var stale = PhaseBPackTestFixtures.marker(valid); stale.setProperty("version", "compat_26_2_r18");
+        Path target = world.resolve(ExternalPack.BACAP.getFileName());
+        PhaseBPackTestFixtures.writeMarker(target, PhaseBPackTestFixtures.MARKER, stale);
+        assertFalse(ExternalPackCompatibility.isCurrentWorldPack(target, ExternalPack.BACAP));
+        assertEquals(ExternalPackCompatibility.WorldPackSyncResult.UPDATED,
+            ExternalPackCompatibility.ensureWorldPacksUpToDate(global, world, true));
+        PhaseBPackTestFixtures.assertCurrentMarker(target);
+        assertTrue(ExternalPackCompatibility.isCurrentWorldPack(target, ExternalPack.BACAP));
+        assertEquals(ExternalPackCompatibility.WorldPackSyncResult.ALREADY_CURRENT,
+            ExternalPackCompatibility.ensureWorldPacksUpToDate(global, world, true));
+        Path oldGlobal = Files.createDirectories(tempDir.resolve("old-global"));
+        Path oldWorld = Files.createDirectories(tempDir.resolve("old-world"));
+        Files.copy(PhaseBPackTestFixtures.historical(), oldGlobal.resolve(ExternalPack.BACAP.getFileName()));
+        Path staleTarget = oldWorld.resolve(ExternalPack.BACAP.getFileName());
+        PhaseBPackTestFixtures.writeMarker(staleTarget, PhaseBPackTestFixtures.MARKER, stale);
+        byte[] before = Files.readAllBytes(staleTarget);
+        assertEquals(ExternalPackCompatibility.WorldPackSyncResult.MISSING_REQUIRED_PACK,
+            ExternalPackCompatibility.ensureWorldPacksUpToDate(oldGlobal, oldWorld, true));
+        org.junit.jupiter.api.Assertions.assertArrayEquals(before, Files.readAllBytes(staleTarget));
+        PhaseBPackTestFixtures.historical(); PhaseBPackTestFixtures.current();
     }
 
     @Test

@@ -130,6 +130,11 @@ public final class PhaseACertification {
     }
 
     public static CertificationArtifacts generate(Path projectRoot) throws IOException {
+        return generate(projectRoot, projectRoot.resolve("src/main/resources/assets/minecraft/lang/ru_ru.json"), null);
+    }
+
+    /** Historical callers supply authenticated inputs; default callers retain the current view. */
+    public static CertificationArtifacts generate(Path projectRoot, Path russianDictionary, Path internalPackZip) throws IOException {
         Path frozenPacks = projectRoot.resolve("reference").resolve("phase_a_preservation").resolve("files").resolve("final");
         Path resourcepacks = projectRoot.resolve("src").resolve("main").resolve("resources").resolve("resourcepacks");
 
@@ -144,9 +149,20 @@ public final class PhaseACertification {
         variantVisibleIds.put("nullscape.zip", loadZipVisibleAdvancementIds(frozenPacks.resolve("nullscape.zip")));
 
         Map<String, String> englishLang = loadBacapEnglishLang(frozenPacks.resolve("bacap.zip"));
-        Map<String, String> ruOverlay = loadLangFile(projectRoot.resolve("src").resolve("main").resolve("resources").resolve("assets").resolve("minecraft").resolve("lang").resolve("ru_ru.json"));
+        Map<String, String> ruOverlay = loadLangFile(russianDictionary);
         Map<String, String> achievetodoRu = loadLangFile(projectRoot.resolve("src").resolve("main").resolve("resources").resolve("assets").resolve("achievetodo").resolve("lang").resolve("ru_ru.json"));
-        Map<String, String> functionSources = loadFunctionSources(frozenPacks, resourcepacks);
+        Map<String, String> functionSources = loadFunctionSources(frozenPacks, internalPackZip == null ? resourcepacks : null);
+        if (internalPackZip != null) {
+            try (ZipFile zip = new ZipFile(internalPackZip.toFile())) {
+                for (var entry : zip.stream().sorted(Comparator.comparing(ZipEntry::getName)).toList()) {
+                    String name = entry.getName();
+                    if (!name.matches("^[^/]+/data/[^/]+/function/.+\\.mcfunction$")) continue;
+                    String[] parts = name.split("/", 5);
+                    String id = parts[2] + ":" + parts[4].replaceFirst("\\.mcfunction$", "");
+                    functionSources.put(id, parts[0] + "::" + Path.of(name));
+                }
+            }
+        }
 
         List<InventoryEntry> inventory = buildCanonicalInventory(bacap, englishLang, ruOverlay, achievetodoRu, functionSources);
         if (inventory.size() != EXPECTED_CANONICAL_ADVANCEMENTS) {
@@ -534,7 +550,7 @@ public final class PhaseACertification {
                 }
             }
         }
-        if (Files.exists(resourcepacks)) {
+        if (resourcepacks != null && Files.exists(resourcepacks)) {
             Files.walkFileTree(resourcepacks, new SimpleFileVisitor<>() {
                 @Override
                 public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
