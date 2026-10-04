@@ -1,0 +1,2070 @@
+{
+  "advancementMerges": {
+    "codecValidated": false,
+    "implemented": 0,
+    "jsonParsePassed": true,
+    "preparedTemporary": 14,
+    "records": [
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:adventure/raidin_master",
+        "companion": "BACAP_TERRALITH",
+        "fieldsMerged": [
+          {
+            "criterion": "desert_outpost",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/desert_outpost"
+          },
+          {
+            "criterion": "fortified_desert_village",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village"
+          },
+          {
+            "criterion": "fortified_village",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village"
+          },
+          {
+            "criterion": "glacial_hut",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/glacial_hut"
+          },
+          {
+            "criterion": "mage_tower",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/mage_tower"
+          },
+          {
+            "criterion": "rubble_desert",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/rubble_desert"
+          },
+          {
+            "criterion": "rubble_forest",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/rubble_forest"
+          },
+          {
+            "criterion": "rubble_jungle",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/rubble_jungle"
+          },
+          {
+            "criterion": "rubble_mesa",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/rubble_mesa"
+          },
+          {
+            "criterion": "rubble_mountain",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/rubble_mountain"
+          },
+          {
+            "criterion": "rubble_taiga",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/rubble_taiga"
+          },
+          {
+            "criterion": "spire",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/spire"
+          },
+          {
+            "criterion": "terralith_igloo",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/terralith_igloo"
+          },
+          {
+            "criterion": "underground_frosted_dungeon",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/underground_frosted_dungeon"
+          },
+          {
+            "criterion": "underground_giant_bee_hive",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/underground_giant_bee_hive"
+          },
+          {
+            "criterion": "underground_mining_outpost",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/underground_mining_outpost"
+          },
+          {
+            "criterion": "underground_oak_cabin",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/underground_oak_cabin"
+          },
+          {
+            "criterion": "underground_old_refinery",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/underground_old_refinery"
+          },
+          {
+            "criterion": "underground_sunken_tower",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/underground_sunken_tower"
+          },
+          {
+            "criterion": "underground_witch_hut",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/underground_witch_hut"
+          },
+          {
+            "criterion": "valley_lodge",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/valley_lodge"
+          },
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          }
+        ],
+        "historicalCompanionSha256": "a385632b787464c9c3dc06b4e92dd20298c3d0d6c145904572bba560e4a3dce8",
+        "nativeTargetSha256": "f11e94cf02cd3bb09fb42c61e648a790d503a538ba517054215fe923313eb77b",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/adventure/raidin_master.json",
+        "resultingSha256": "03b47708c5444bd4ae5bb50c1a69a93205775c8e720260b17404ec2e49d8fcb4",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "1904c8613fccede948f2842458188c749888df2888908df329c9e1678a7e2ea6",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/cold_feet",
+        "companion": "BACAP_TERRALITH",
+        "fieldsMerged": [
+          {
+            "criterion": "alpine_grove",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/alpine_grove"
+          },
+          {
+            "criterion": "glacial_chasm",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/glacial_chasm"
+          },
+          {
+            "criterion": "gravel_desert",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/gravel_desert"
+          },
+          {
+            "criterion": "ice_marsh",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/ice_marsh"
+          },
+          {
+            "criterion": "snowy_badlands",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/snowy_badlands"
+          },
+          {
+            "criterion": "snowy_slopes",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/snowy_slopes"
+          },
+          {
+            "criterion": "snowy_taiga",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          }
+        ],
+        "historicalCompanionSha256": "3c1187ba36f344a8d1bf3308019e4007670678e7c5378ae1669dc1cd93af15c0",
+        "nativeTargetSha256": "ca3e6a0ae56ab17d7eef650b2e60a8b340a933e59d20a3c72e392322944a2351",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/cold_feet.json",
+        "resultingSha256": "6e926e82b5314f066271b3b1352a5c5fa7cb4e6b347defaed3e39b15d7936333",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "94e9439469275b8a3e2fd60ff21942d9c03270feb03fcbeb53cb5029a01d1a6e",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/high_feet",
+        "companion": "BACAP_TERRALITH",
+        "fieldsMerged": [
+          {
+            "criterion": "blooming_plateau",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/blooming_plateau"
+          },
+          {
+            "criterion": "caldera",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/caldera"
+          },
+          {
+            "criterion": "emerald_peaks",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/emerald_peaks"
+          },
+          {
+            "criterion": "haze_mountain",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/haze_mountain"
+          },
+          {
+            "criterion": "painted_mountains",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/painted_mountains"
+          },
+          {
+            "criterion": "rocky_mountains",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/rocky_mountains"
+          },
+          {
+            "criterion": "scarlet_mountains",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/scarlet_mountains"
+          },
+          {
+            "criterion": "stony_spires",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/stony_spires"
+          },
+          {
+            "criterion": "windswept_spires",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/windswept_spires"
+          },
+          {
+            "criterion": "grove",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "criterion": "meadow",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "criterion": "snowy_slopes",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "criterion": "stony_shore",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          }
+        ],
+        "historicalCompanionSha256": "48ab54ceb8df4ad6f0f89d0810dce7aefe33bb3210d3ace5280d947fc6d34d52",
+        "nativeTargetSha256": "803b099bf0b7ff4edaa127736156902edf8d92da33a52e677cfff9c9950c0115",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/high_feet.json",
+        "resultingSha256": "821ea4d93580ac6df8e73a4a6d97d207b9bb07ac96e027b64f0bb4f1a012c51e",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "22bb22caa2a751479f7faab988f8db3a171c883a8c0bd5d1d4e21596ff72d474",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/one_with_the_forest",
+        "companion": "BACAP_TERRALITH",
+        "fieldsMerged": [
+          {
+            "criterion": "blooming_valley",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/blooming_valley"
+          },
+          {
+            "criterion": "cloud_forest",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/cloud_forest"
+          },
+          {
+            "criterion": "moonlight_grove",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/moonlight_grove"
+          },
+          {
+            "criterion": "moonlight_valley",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/moonlight_valley"
+          },
+          {
+            "criterion": "valley_clearing",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/valley_clearing"
+          },
+          {
+            "criterion": "yosemite_lowlands",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/yosemite_lowlands"
+          },
+          {
+            "criterion": "old_growth_pine_taiga",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "criterion": "old_growth_spruce_taiga",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "criterion": "plains",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "criterion": "sunflower_plains",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "criterion": "taiga",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          }
+        ],
+        "historicalCompanionSha256": "8aecd3036f78550c770a3584c63fc2c770e8876f7676a843fa21a4de6bd862d7",
+        "nativeTargetSha256": "6e6da5996beba950b8508d244adea063eedf5c626c0e4bf1a853a0030b638c4b",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/one_with_the_forest.json",
+        "resultingSha256": "502d8a1df32a2a8366b6a6c4d63277be263eee7c8f60687865fa4f91f65c3eec",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "66e75fdc8998a5b87408010312e79c79f036c453141a3d8c0f738d371d01801b",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/overgrown",
+        "companion": "BACAP_TERRALITH",
+        "fieldsMerged": [
+          {
+            "criterion": "jungle_mountains",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/jungle_mountains"
+          },
+          {
+            "criterion": "orchid_swamp",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/orchid_swamp"
+          },
+          {
+            "criterion": "rocky_jungle",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/rocky_jungle"
+          },
+          {
+            "criterion": "tropical_jungle",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/tropical_jungle"
+          },
+          {
+            "criterion": "cherry_grove",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          }
+        ],
+        "historicalCompanionSha256": "ba029bd740149d07373b10cfef740931f420851ec0746b6452c8e389be0b341e",
+        "nativeTargetSha256": "e055b9a379568351e23944147882afaf7bae460559281536975fe757aa4077e0",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/overgrown.json",
+        "resultingSha256": "6402ac1330710195a2bfa4b293a0b709539f29d7ee04ef0893d5bc6780a39b57",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "6d871dcbcba3ec4289b2ea197b2d085311cb85d985bb76860cc696c9af18d32c",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/warm_feet",
+        "companion": "BACAP_TERRALITH",
+        "fieldsMerged": [
+          {
+            "criterion": "ancient_sands",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/ancient_sands"
+          },
+          {
+            "criterion": "bryce_canyon",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/bryce_canyon"
+          },
+          {
+            "criterion": "desert_oasis",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/desert_oasis"
+          },
+          {
+            "criterion": "desert_spires",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/desert_spires"
+          },
+          {
+            "criterion": "lush_desert",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/lush_desert"
+          },
+          {
+            "criterion": "red_oasis",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/red_oasis"
+          },
+          {
+            "criterion": "sandstone_valley",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/sandstone_valley"
+          },
+          {
+            "criterion": "warped_mesa",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/warped_mesa"
+          },
+          {
+            "criterion": "white_mesa",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/white_mesa"
+          },
+          {
+            "criterion": "savanna",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "criterion": "savanna_plateau",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "criterion": "windswept_savanna",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "criterion": "desert",
+            "operation": "EXTEND_NATIVE_LOCATION_PREDICATE_ANY_OF",
+            "semantics": "Replace native desert location term by native any_of combining current native desert term and terralith:desert_canyon term; preserve target remaining conditions and spectator predicate.",
+            "sourcePointer": "/criteria/desert/conditions/player/0",
+            "targetPointer": "/criteria/desert/conditions/player/0"
+          },
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          }
+        ],
+        "historicalCompanionSha256": "c528f9bddb84df99481e0c68e2a80b0f41294fff50b0413c1bc24358721023d2",
+        "nativeTargetSha256": "d6204d2e1c8e5ca3d18e380a4a260ab68d684d7ddda2f71a2cf148d0a2672765",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/warm_feet.json",
+        "resultingSha256": "1ff5672f0edaf30045816d8b2c6c52946f6a583dbc69e7c66bcc29efa179f641",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "1817afcdc233e3eff7625eba4a763c44724b6e8b4e983fb41195e2e7290bf137",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/wet_feet",
+        "companion": "BACAP_TERRALITH",
+        "fieldsMerged": [
+          {
+            "criterion": "deep_warm_ocean",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/deep_warm_ocean"
+          },
+          {
+            "criterion": "gravel_beach",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/gravel_beach"
+          },
+          {
+            "criterion": "warm_river",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/warm_river"
+          },
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          }
+        ],
+        "historicalCompanionSha256": "f473b124424686e8939aaf6b9105fb770687c15fca9f05d3a8d6abbdc213b6d4",
+        "nativeTargetSha256": "fecc0ceafb0cea0ada8ee6906641c9eee58aef016159de424839fda0737f0a25",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/wet_feet.json",
+        "resultingSha256": "4bc4d303ae0235ab183bba680842caa2b0365c3f4da48eb946a47fed7dafd879",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "7d46867f9eff8051895bf31412adf22c474aa0adaa03a28da6cd745fab8cf343",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:challenges/explorer_of_worlds",
+        "companion": "BACAP_TERRALITH",
+        "fieldsMerged": [
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/description/translate",
+            "value": "Discover every vanilla biome from every dimension"
+          }
+        ],
+        "historicalCompanionSha256": "adb4511afabb9fda31b28a9bae01b1db5c21faffa8ed5d40df2e2fe0a553c617",
+        "nativeTargetSha256": "31065c64d0b7b57ed20a20f2f169adfdbe670767cdc1533e19253ed821425d7a",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/explorer_of_worlds.json",
+        "resultingSha256": "9914c463197994ce6d8d4adeb24ac9d44e82fdc38c7d78c81f7b989544310c41",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "d33fb65ffafa4994a40c1d4503168cf0dd3724a8bb0770f3738856d074d5204a",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:challenges/i_am_loot",
+        "companion": "BACAP_TERRALITH",
+        "fieldsMerged": [
+          {
+            "criterion": "desert_outpost",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/desert_outpost"
+          },
+          {
+            "criterion": "fortified_desert_village_archer",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village_archer"
+          },
+          {
+            "criterion": "fortified_desert_village_butcher",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village_butcher"
+          },
+          {
+            "criterion": "fortified_desert_village_cartographer",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village_cartographer"
+          },
+          {
+            "criterion": "fortified_desert_village_fisherman",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village_fisherman"
+          },
+          {
+            "criterion": "fortified_desert_village_food",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village_food"
+          },
+          {
+            "criterion": "fortified_desert_village_generic",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village_generic"
+          },
+          {
+            "criterion": "fortified_desert_village_generic_low",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village_generic_low"
+          },
+          {
+            "criterion": "fortified_desert_village_junk",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village_junk"
+          },
+          {
+            "criterion": "fortified_desert_village_library",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village_library"
+          },
+          {
+            "criterion": "fortified_desert_village_mason",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village_mason"
+          },
+          {
+            "criterion": "fortified_desert_village_smith",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village_smith"
+          },
+          {
+            "criterion": "fortified_desert_village_treasure",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_desert_village_treasure"
+          },
+          {
+            "criterion": "fortified_village_archer",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_archer"
+          },
+          {
+            "criterion": "fortified_village_attic",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_attic"
+          },
+          {
+            "criterion": "fortified_village_cartographer",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_cartographer"
+          },
+          {
+            "criterion": "fortified_village_fisherman",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_fisherman"
+          },
+          {
+            "criterion": "fortified_village_food",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_food"
+          },
+          {
+            "criterion": "fortified_village_generic",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_generic"
+          },
+          {
+            "criterion": "fortified_village_generic_low",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_generic_low"
+          },
+          {
+            "criterion": "fortified_village_library",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_library"
+          },
+          {
+            "criterion": "fortified_village_mason",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_mason"
+          },
+          {
+            "criterion": "fortified_village_smith",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_smith"
+          },
+          {
+            "criterion": "fortified_village_tavern_downstairs",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_tavern_downstairs"
+          },
+          {
+            "criterion": "fortified_village_tavern_upstairs",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_tavern_upstairs"
+          },
+          {
+            "criterion": "fortified_village_treasure",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/fortified_village_treasure"
+          },
+          {
+            "criterion": "giant_bee_hive",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/giant_bee_hive"
+          },
+          {
+            "criterion": "glacial_hut_junk",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/glacial_hut_junk"
+          },
+          {
+            "criterion": "glacial_hut_main",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/glacial_hut_main"
+          },
+          {
+            "criterion": "jungle_temple_dispenser",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/jungle_temple_dispenser"
+          },
+          {
+            "criterion": "lodge_drinkables",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/lodge_drinkables"
+          },
+          {
+            "criterion": "mage_extras",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/mage_extras"
+          },
+          {
+            "criterion": "mage_treasure",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/mage_treasure"
+          },
+          {
+            "criterion": "spire_common",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/spire_common"
+          },
+          {
+            "criterion": "spire_junk",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/spire_junk"
+          },
+          {
+            "criterion": "spire_rare",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/spire_rare"
+          },
+          {
+            "criterion": "spire_treasure",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/spire_treasure"
+          },
+          {
+            "criterion": "terralith_igloo",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/terralith_igloo"
+          },
+          {
+            "criterion": "underground_cabin",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/underground_cabin"
+          },
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          }
+        ],
+        "historicalCompanionSha256": "9347d749ee9b171768a782a577b4621ccdfc76e3692a29a9fdf5162073621399",
+        "nativeTargetSha256": "217a98c989d64566eef6be2ada2474dbd525f0d8630466b19f09e62b8f0b6e7b",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/i_am_loot.json",
+        "resultingSha256": "8baae0a97a0627897ea5fa299ea7874ce454f736d5cc79f4257ba005a696ce26",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "93f18421409d6a2f3706c94f39c7f4338cb1c1dd1e0fe2d9bb54e1309e477bcf",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:mining/oresome",
+        "companion": "BACAP_TERRALITH",
+        "fieldsMerged": [
+          {
+            "criterion": "deepslate_emerald_ore",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/deepslate_emerald_ore"
+          },
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          },
+          {
+            "operation": "REMOVE",
+            "pointer": "/display/description/extra",
+            "reason": "Retained Terralith extension requires deepslate emerald criterion; native main-only exemption annotation would be false."
+          }
+        ],
+        "historicalCompanionSha256": "c66a0d7b3468c6d3e2f4d22655e4b38d3f545e3492000b38b4017f11d7d6d1e1",
+        "nativeTargetSha256": "d69f1e6c5dbc8673b57fc110a43ac05ac4f4b0e274670c6a4c25f4d6476ccbed",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/mining/oresome.json",
+        "resultingSha256": "631424ae45d316f8b22ea65245d08f0c4b7a9a98b192d3e9662b934ead858a26",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "edbfc29bae7c340ec58bca98f94c54ce9a0540fc2f6b6809706c25f429b5025a",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "minecraft:adventure/adventuring_time",
+        "companion": "BACAP_TERRALITH",
+        "fieldsMerged": [
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/description/translate",
+            "value": "Discover every vanilla surface biome in the Overworld"
+          }
+        ],
+        "historicalCompanionSha256": "3ac22f73b7d755621ec10ab936147f8a78a41ec86d0e2ef53d8ddfaafe40a8bf",
+        "nativeTargetSha256": "56661cf54a19dc4fc9598137ec35264c5880bc48947b272bb2b6e6b3b29c38fb",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/minecraft/advancement/adventure/adventuring_time.json",
+        "resultingSha256": "95215b5319fd4800bb38751463b7cba38e30fd290a177ab621b4e0235d06bf63",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "7888a59de8e08c5b56a242fae7d9f6815a61ec8dd076ad56f428713c615a35e1",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:nether/inception",
+        "companion": "BACAP_AMPLIFIED_NETHER",
+        "fieldsMerged": [
+          {
+            "criterion": "world_height",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/world_height"
+          },
+          {
+            "criterion": "enter_cave",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          },
+          {
+            "operation": "COPY_NATIVE_COMPONENT_FROM_COMPANION",
+            "preserveTargetColor": true,
+            "sourcePointer": "/display/description",
+            "targetPointer": "/display/description"
+          }
+        ],
+        "historicalCompanionSha256": "a33ba85ce73e29d36b44f57515278b4818f8fb02e19494f969f8c1b787514d04",
+        "nativeTargetSha256": "b3972c426d8408cb74e8cbd21e53c067e0ea6eb83a1ab7a85bab0cabc9db207a",
+        "path": "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/inception.json",
+        "resultingSha256": "39b63c2c40cebbea358d54545485384cd2ea53cc540079cc719061d21c39b626",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "2b7f61e6a56f193d432e65ba20a44d4b67fc2da33f4445311df7a808aa7b9317",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:nether/limbo_walker",
+        "companion": "BACAP_AMPLIFIED_NETHER",
+        "fieldsMerged": [
+          {
+            "criterion": "world_height",
+            "operation": "SET_NATIVE_Y_MIN",
+            "targetPointer": "/criteria/world_height/conditions/player/0/predicate/location/position/y/min",
+            "value": 256.0
+          },
+          {
+            "operation": "KEEP_TARGET_PARENT"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          }
+        ],
+        "historicalCompanionSha256": "afb645e7fadc659bd295fa1557fcb643ea87a3379efc0725d7cb83a7678b07f7",
+        "nativeTargetSha256": "763ef8827bfd6c9be43f3f2758dc2302b72f60c2fcb7949197560fa177a2ca03",
+        "path": "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/limbo_walker.json",
+        "resultingSha256": "09c35fb2bf72a783396e14ffa17ba783502f63495ca9761f8e900f58b8a9c03e",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "52a9e0dc7768b6866e56668088aee6ce953c4d08eb79900b12cab2b73c4463d5",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:end/void_walker",
+        "companion": "BACAP_NULLSCAPE",
+        "fieldsMerged": [
+          {
+            "criterion": "crystal_peaks",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/crystal_peaks"
+          },
+          {
+            "criterion": "shadowlands",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/shadowlands"
+          },
+          {
+            "criterion": "void_barrens",
+            "modernization": "Existing historical converter family normalization; preserve semantics; use target spectator syntax.",
+            "operation": "COPY_MODERNIZED_CRITERION_FROM_COMPANION",
+            "sourcePointer": "/criteria/void_barrens"
+          },
+          {
+            "criterion": "end_barrens",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "criterion": "end_midlands",
+            "operation": "REMOVE_TARGET_CRITERION_IF_PRESENT"
+          },
+          {
+            "operation": "SET_PARENT",
+            "value": "nullscape:root"
+          },
+          {
+            "operation": "SET",
+            "pointer": "/display/announce_to_chat",
+            "value": false
+          }
+        ],
+        "historicalCompanionSha256": "c43c3391a3a58e7784f9407f5f7d9f812ad03d1a72b6f061028380be542e0111",
+        "nativeTargetSha256": "006a96845bf695baac5c927a270105592eff5e7f57909ffd8057b267247f6ebe",
+        "path": "src/main/resources/resourcepacks/bacap_nullscape_override/data/blazeandcave/advancement/end/void_walker.json",
+        "resultingSha256": "f9f3598c3de814481694f03b6df951db0fcf530d945fcb7450a6ea9a571b14cd",
+        "role": "ADVANCEMENT_MERGE",
+        "semanticSha256": "3470d5c8128c306cde7b4fce1605551c9ed60d26834047e92a8a02fd932477f9",
+        "validation": "TEMPORARY_PREPARATION_ONLY_NOT_CERTIFIED"
+      }
+    ],
+    "total": 14
+  },
+  "baselineHead": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+  "blockers": [
+    {
+      "advancementId": "blazeandcave:technical/unwanted_passenger_fail",
+      "allFourEffectiveCombinationsAffected": true,
+      "declaredMissingFunctionId": "blazeandcave:unwanted_passenger_fail",
+      "existingCandidateFunctionId": "blazeandcave:advancement/unwanted_passenger_fail",
+      "existingCandidateFunctionPath": "data/blazeandcave/function/advancement/unwanted_passenger_fail.mcfunction",
+      "existingCandidateFunctionSha256": "07578a096ab8c51467152033bfae649c1d960e63e56f28b3a6e77b988f5089f8",
+      "introducedByB5_6": false,
+      "jsonPointer": "/rewards/function",
+      "kind": "UNAUTHORIZED_UPSTREAM_REWARD_FUNCTION_DEFECT",
+      "missingFunctionPath": "data/blazeandcave/function/unwanted_passenger_fail.mcfunction",
+      "presentInExactPinnedMainTarget": true,
+      "reason": "Effective advancement reward references an absent function. The exact 45-path B4 transaction contains no correction or forwarding shim; user requires STOP before production writes on another B4/upstream contradiction.",
+      "repairImplemented": false,
+      "repairIncludedInB4B5_6Manifest": false,
+      "scopeExpansionAuthorized": false,
+      "targetAdvancementPath": "data/blazeandcave/advancement/technical/unwanted_passenger_fail.json",
+      "targetAdvancementSha256": "7d11b849bfd58aca9c39bfe06d7e6f55db52fe6ec964be51851d41a456839a05",
+      "triggerTypes": [
+        "minecraft:started_riding"
+      ]
+    }
+  ],
+  "codecValidation": {
+    "reason": "Blocking exact-target reward-function defect discovered during projected reference preflight; transaction stopped before production writes or further certification.",
+    "result": "NOT_RUN"
+  },
+  "companionPins": [
+    {
+      "changedInB5_6": false,
+      "enum": "BACAP_HARDCORE",
+      "identity": {
+        "dependencies": [
+          {
+            "dependency_type": "required",
+            "file_name": null,
+            "project_id": "VoVJ47kN",
+            "version_id": null
+          }
+        ],
+        "downloadUrl": "https://cdn.modrinth.com/data/QEv1xmKi/versions/ZHHHw5wF/BlazeandCave%27s%20Advancements%20Pack%20Hardcore.zip",
+        "filename": "BlazeandCave's Advancements Pack Hardcore.zip",
+        "gameVersions": [
+          "26.2",
+          "26.3"
+        ],
+        "hashes": {
+          "sha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+          "sha256": "1baf5f1bc7c48c819cb6b3081cb124793a316b3568352c853b94757bb4237446",
+          "sha512": "8597879561cc73b515cd74e62af723ad4994a626243e25878c32c27742d815acb1761cc938f7341c91073e9531edf050f7f4f992a7001024452c094358aec56b"
+        },
+        "loaders": [
+          "datapack"
+        ],
+        "projectId": "QEv1xmKi",
+        "publishedAt": "2026-06-17T06:15:07.547685Z",
+        "size": 23279,
+        "source": "https://api.modrinth.com/v2/project/QEv1xmKi/version",
+        "upstreamHashesVerified": true,
+        "version": "1.21",
+        "versionId": "ZHHHw5wF",
+        "versionUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack-hardcore-version/version/ZHHHw5wF",
+        "wrapperSha1": null
+      },
+      "pinState": "B5_1_CURRENT_VERIFIED_TARGET"
+    },
+    {
+      "changedInB5_6": false,
+      "enum": "TERRALITH",
+      "identity": {
+        "dependencies": [],
+        "downloadUrl": "https://cdn.modrinth.com/data/8oi3bsk5/versions/CzijfXJQ/Terralith_26.2_v2.6.4.zip",
+        "filename": "Terralith_26.2_v2.6.4.zip",
+        "gameVersions": [
+          "26.2"
+        ],
+        "hashes": {
+          "sha1": "96ccd25be9ba5240ebe8150cc29240aca781f0e1",
+          "sha256": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e",
+          "sha512": "f5283548323149ecd3f218b8efbe03c1c582df3f40b6bb3b095ba9e4cac0c87108b98adabd6ebd3a8037ec239773a253f75b8bee7db52e6f5663bf9dc63c2ea3"
+        },
+        "loaders": [
+          "datapack"
+        ],
+        "projectId": "8oi3bsk5",
+        "publishedAt": "2026-07-08T15:20:28.216422Z",
+        "size": 3001471,
+        "source": "https://api.modrinth.com/v2/project/8oi3bsk5/version",
+        "upstreamHashesVerified": true,
+        "version": "2.6.4",
+        "versionId": "CzijfXJQ",
+        "versionUrl": "https://modrinth.com/datapack/terralith/version/CzijfXJQ",
+        "wrapperSha1": null
+      },
+      "pinState": "B5_1_CURRENT_VERIFIED_TARGET"
+    },
+    {
+      "changedInB5_6": false,
+      "enum": "AMPLIFIED_NETHER",
+      "identity": {
+        "dependencies": [],
+        "downloadUrl": "https://cdn.modrinth.com/data/wXiGiyGX/versions/xIayvf8F/Amplified_Nether_v1.2.15.zip",
+        "filename": "Amplified_Nether_v1.2.15.zip",
+        "gameVersions": [
+          "1.20",
+          "1.20.1",
+          "1.20.2",
+          "1.20.3",
+          "1.20.4",
+          "1.20.5",
+          "1.20.6",
+          "1.21",
+          "1.21.1",
+          "1.21.2",
+          "1.21.3",
+          "1.21.4",
+          "1.21.5",
+          "1.21.6",
+          "1.21.7",
+          "1.21.8",
+          "1.21.9",
+          "1.21.10",
+          "1.21.11",
+          "26.1",
+          "26.1.1",
+          "26.1.2",
+          "26.2"
+        ],
+        "hashes": {
+          "sha1": "94d9604cebbfca667aeb59e4b1ac03e9c6e5cb5d",
+          "sha256": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa",
+          "sha512": "686edbd22e5cfc0956e6d5b2c606400480e6ec19c1b287cddbe59a0840836160ef2291224a411d23687c4e342bc322ecf19ffad763259db99f56ebb83f8200af"
+        },
+        "loaders": [
+          "datapack"
+        ],
+        "projectId": "wXiGiyGX",
+        "publishedAt": "2026-07-08T22:07:03.516456Z",
+        "size": 105555,
+        "source": "https://api.modrinth.com/v2/project/wXiGiyGX/version",
+        "upstreamHashesVerified": true,
+        "version": "1.2.15",
+        "versionId": "xIayvf8F",
+        "versionUrl": "https://modrinth.com/datapack/amplified-nether/version/xIayvf8F",
+        "wrapperSha1": null
+      },
+      "pinState": "B5_1_CURRENT_VERIFIED_TARGET"
+    },
+    {
+      "changedInB5_6": false,
+      "enum": "NULLSCAPE",
+      "identity": {
+        "dependencies": [],
+        "downloadUrl": "https://cdn.modrinth.com/data/LPjGiSO4/versions/prWWpjSv/Nullscape_26.2_v1.2.20.zip",
+        "filename": "Nullscape_26.2_v1.2.20.zip",
+        "gameVersions": [
+          "26.2"
+        ],
+        "hashes": {
+          "sha1": "bee4a2182593fdfc5da4b253a342feddf02b88b9",
+          "sha256": "ec7b0dfcd1add8c127c985dac1466a44168449b3b6641dd20e6b2e16153b66aa",
+          "sha512": "3ace54c904600e449305547064b2e0087eb05827c06f406490e7fa18dfbe6ef42c357078d5e6ad9cc32129de30bc0de9e89dd1c7ff966f1812b1393581d82294"
+        },
+        "loaders": [
+          "datapack"
+        ],
+        "projectId": "LPjGiSO4",
+        "publishedAt": "2026-07-08T22:03:12.940256Z",
+        "size": 343740,
+        "source": "https://api.modrinth.com/v2/project/LPjGiSO4/version",
+        "upstreamHashesVerified": true,
+        "version": "1.2.20",
+        "versionId": "prWWpjSv",
+        "versionUrl": "https://modrinth.com/datapack/nullscape/version/prWWpjSv",
+        "wrapperSha1": null
+      },
+      "pinState": "B5_1_CURRENT_VERIFIED_TARGET"
+    },
+    {
+      "changedInB5_6": false,
+      "enum": "BACAP_TERRALITH",
+      "identity": {
+        "automaticDownload": false,
+        "downloadUrl": "https://www.mediafire.com/file/ljb8qwofxk4dq9i/%255BUNZIP_ME%255D_BlazeandCave%2527s_Advancements_Pack_Terralith_1.18.zip/file",
+        "localFilename": "bacap_terralith.zip",
+        "pageUrl": "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
+        "sha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+        "wrapperSha1": "2699070cf5040ab519c223178ee64ee9eafe3691"
+      },
+      "pinState": "INTENTIONALLY_RETAINED_HISTORICAL_BACAP_COMPANION"
+    },
+    {
+      "changedInB5_6": false,
+      "enum": "BACAP_AMPLIFIED_NETHER",
+      "identity": {
+        "automaticDownload": false,
+        "downloadUrl": "https://www.mediafire.com/file/ak5sjemiz60mzrc/%255BUNZIP_ME%255D_BlazeandCave%2527s_Advancements_Pack_Amplified_Nether_1.18.zip/file",
+        "localFilename": "bacap_amplified_nether.zip",
+        "pageUrl": "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
+        "sha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+        "wrapperSha1": "981ff801e3cf7eace1ddc2fff8b6165c12ea52b0"
+      },
+      "pinState": "INTENTIONALLY_RETAINED_HISTORICAL_BACAP_COMPANION"
+    },
+    {
+      "changedInB5_6": false,
+      "enum": "BACAP_NULLSCAPE",
+      "identity": {
+        "automaticDownload": false,
+        "downloadUrl": "https://www.mediafire.com/file/hsj4koctw778e43/%255BUNZIP_ME%255D_BlazeandCave%2527s_Advancements_Pack_Nullscape_1.18.zip/file",
+        "localFilename": "bacap_nullscape.zip",
+        "pageUrl": "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
+        "sha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+        "wrapperSha1": "029c29644a9e94dd8c4111dc3ab2165e79fe4d66"
+      },
+      "pinState": "INTENTIONALLY_RETAINED_HISTORICAL_BACAP_COMPANION"
+    }
+  ],
+  "cumulativeDiff": {
+    "ADD": 132,
+    "DELETE": 9,
+    "MODIFY": 64
+  },
+  "diffCheck": {
+    "command": "git diff --check",
+    "exitCode": 0,
+    "result": "PASS"
+  },
+  "effectiveLayerValidation": {
+    "amplifiedNether": {
+      "advancementsChecked": 2894,
+      "benchmarkingScoreHolderClassification": "Native bac_obtained fake-player score names, not literal advancement-ID arguments or Search targets. No alteration authorized or made.",
+      "benchmarkingScoreHolderOccurrences": 17,
+      "cycles": [],
+      "directDanglingCalls": [
+        {
+          "advancementId": "blazeandcave:technical/unwanted_passenger_fail",
+          "callee": "blazeandcave:unwanted_passenger_fail",
+          "contract": "advancement reward"
+        }
+      ],
+      "externalExtensionHooks": {
+        "calleeIds": [
+          "#bacap_fanpacks:progress_trigger",
+          "#bacap_fanpacks:update_points"
+        ],
+        "count": 2
+      },
+      "guardedOptionalCalls": {
+        "classifications": {
+          "Hardcore-supplied hook; optional main hook when Hardcore absent": 1,
+          "native guarded sparse optional macro resource": 108
+        },
+        "count": 109
+      },
+      "layers": [
+        "vanilla",
+        "BACAP",
+        "bacap_override",
+        "AMPLIFIED_NETHER",
+        "BACAP_AMPLIFIED_NETHER",
+        "bacap_amplified_nether_override",
+        "bacap_rewards_item",
+        "bacap_rewards_experience",
+        "bacap_rewards_trophy",
+        "bacap_cooperative_mode"
+      ],
+      "malformedLiteralWrapperAdvancementIds": [],
+      "missingParents": [],
+      "missingSelectedWorldgenCriterionReferences": [],
+      "newDirectDanglingCallsIntroducedByPreparedB5_6": [],
+      "optionalUnselectedWorldgenLootMatchKeys": 41,
+      "result": "STOP_UNRESOLVED_ADVANCEMENT_REWARD_FUNCTION",
+      "state": "PROJECTED_ONLY",
+      "unresolvedSearchIds": []
+    },
+    "hardcore": {
+      "advancementsChecked": 2894,
+      "benchmarkingScoreHolderClassification": "Native bac_obtained fake-player score names, not literal advancement-ID arguments or Search targets. No alteration authorized or made.",
+      "benchmarkingScoreHolderOccurrences": 17,
+      "cycles": [],
+      "directDanglingCalls": [
+        {
+          "advancementId": "blazeandcave:technical/unwanted_passenger_fail",
+          "callee": "blazeandcave:unwanted_passenger_fail",
+          "contract": "advancement reward"
+        }
+      ],
+      "externalExtensionHooks": {
+        "calleeIds": [
+          "#bacap_fanpacks:progress_trigger",
+          "#bacap_fanpacks:update_points"
+        ],
+        "count": 2
+      },
+      "guardedOptionalCalls": {
+        "classifications": {
+          "native guarded sparse optional macro resource": 108
+        },
+        "count": 108
+      },
+      "layers": [
+        "vanilla",
+        "BACAP",
+        "bacap_override",
+        "BACAP_HARDCORE",
+        "bacap_hardcore_override",
+        "bacap_rewards_item",
+        "bacap_rewards_experience",
+        "bacap_rewards_trophy",
+        "bacap_cooperative_mode"
+      ],
+      "malformedLiteralWrapperAdvancementIds": [],
+      "missingParents": [],
+      "missingSelectedWorldgenCriterionReferences": [],
+      "newDirectDanglingCallsIntroducedByPreparedB5_6": [],
+      "optionalUnselectedWorldgenLootMatchKeys": 41,
+      "result": "STOP_UNRESOLVED_ADVANCEMENT_REWARD_FUNCTION",
+      "state": "PROJECTED_ONLY",
+      "unresolvedSearchIds": []
+    },
+    "nullscape": {
+      "advancementsChecked": 2895,
+      "benchmarkingScoreHolderClassification": "Native bac_obtained fake-player score names, not literal advancement-ID arguments or Search targets. No alteration authorized or made.",
+      "benchmarkingScoreHolderOccurrences": 17,
+      "cycles": [],
+      "directDanglingCalls": [
+        {
+          "advancementId": "blazeandcave:technical/unwanted_passenger_fail",
+          "callee": "blazeandcave:unwanted_passenger_fail",
+          "contract": "advancement reward"
+        }
+      ],
+      "externalExtensionHooks": {
+        "calleeIds": [
+          "#bacap_fanpacks:progress_trigger",
+          "#bacap_fanpacks:update_points"
+        ],
+        "count": 2
+      },
+      "guardedOptionalCalls": {
+        "classifications": {
+          "Hardcore-supplied hook; optional main hook when Hardcore absent": 1,
+          "native guarded sparse optional macro resource": 108
+        },
+        "count": 109
+      },
+      "layers": [
+        "vanilla",
+        "BACAP",
+        "bacap_override",
+        "NULLSCAPE",
+        "BACAP_NULLSCAPE",
+        "bacap_nullscape_override",
+        "bacap_rewards_item",
+        "bacap_rewards_experience",
+        "bacap_rewards_trophy",
+        "bacap_cooperative_mode"
+      ],
+      "malformedLiteralWrapperAdvancementIds": [],
+      "missingParents": [],
+      "missingSelectedWorldgenCriterionReferences": [],
+      "newDirectDanglingCallsIntroducedByPreparedB5_6": [],
+      "optionalUnselectedWorldgenLootMatchKeys": 41,
+      "result": "STOP_UNRESOLVED_ADVANCEMENT_REWARD_FUNCTION",
+      "state": "PROJECTED_ONLY",
+      "unresolvedSearchIds": []
+    },
+    "terralith": {
+      "advancementsChecked": 2922,
+      "benchmarkingScoreHolderClassification": "Native bac_obtained fake-player score names, not literal advancement-ID arguments or Search targets. No alteration authorized or made.",
+      "benchmarkingScoreHolderOccurrences": 17,
+      "cycles": [],
+      "directDanglingCalls": [
+        {
+          "advancementId": "blazeandcave:technical/unwanted_passenger_fail",
+          "callee": "blazeandcave:unwanted_passenger_fail",
+          "contract": "advancement reward"
+        }
+      ],
+      "externalExtensionHooks": {
+        "calleeIds": [
+          "#bacap_fanpacks:adventure/a_journey_begins",
+          "#bacap_fanpacks:adventure/expedition_of_discovery",
+          "#bacap_fanpacks:progress_trigger",
+          "#bacap_fanpacks:update_points"
+        ],
+        "count": 4
+      },
+      "guardedOptionalCalls": {
+        "classifications": {
+          "Hardcore-supplied hook; optional main hook when Hardcore absent": 1,
+          "native guarded sparse optional macro resource": 108
+        },
+        "count": 109
+      },
+      "layers": [
+        "vanilla",
+        "BACAP",
+        "bacap_override",
+        "TERRALITH",
+        "BACAP_TERRALITH",
+        "bacap_terralith_override",
+        "bacap_rewards_item",
+        "bacap_rewards_experience",
+        "bacap_rewards_trophy",
+        "bacap_cooperative_mode"
+      ],
+      "malformedLiteralWrapperAdvancementIds": [],
+      "missingParents": [],
+      "missingSelectedWorldgenCriterionReferences": [],
+      "newDirectDanglingCallsIntroducedByPreparedB5_6": [],
+      "optionalUnselectedWorldgenLootMatchKeys": 0,
+      "result": "STOP_UNRESOLVED_ADVANCEMENT_REWARD_FUNCTION",
+      "state": "PROJECTED_ONLY",
+      "unresolvedSearchIds": []
+    }
+  },
+  "expectedCumulativeAfterAuthorizedSuccess": {
+    "ADD": 176,
+    "DELETE": 9,
+    "MODIFY": 65
+  },
+  "hardcoreMessages": {
+    "implemented": 0,
+    "preparedTemporary": 6,
+    "records": [
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/kung_fu_panda",
+        "nativeAdvancementSha256": "41560b947b3fd764f79492211e2b16cc4041212ff93b67971469a14774d1417e",
+        "nativeMessageFromMain": false,
+        "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/biomes/kung_fu_panda.mcfunction",
+        "resultingSha256": "f543b55dcbfcd7a0af9a88f4db3813fe06fee719d2d1c9d6fb19c3f035e1b8c1",
+        "role": "HARDCORE_MESSAGE",
+        "sourceMessageSha256": "56a7d2d36e5a020c314ce15ace9d3198e340c4749b95650efeb42fbb69dc6331",
+        "specialCommandCount": 0,
+        "validation": "PROJECTED_SEARCH_IDS_RESOLVE; FULL_COMPONENT_CERTIFICATION_NOT_COMPLETED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/were_going_on_a_bear_hunt",
+        "nativeAdvancementSha256": "1c41db15ead2ec7ce5e96bf64af53ad1301777a9671d5e9d0a9f70632afe0ff9",
+        "nativeMessageFromMain": false,
+        "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/biomes/were_going_on_a_bear_hunt.mcfunction",
+        "resultingSha256": "a282c40a76a09cb6be053bd2528717399a2315a41d5b5969d5b18f829e4452a5",
+        "role": "HARDCORE_MESSAGE",
+        "sourceMessageSha256": "6faa95e4879adeaebadaabc7400cc0b60889b1bc0e359d0a4be52a051acf9bd0",
+        "specialCommandCount": 0,
+        "validation": "PROJECTED_SEARCH_IDS_RESOLVE; FULL_COMPONENT_CERTIFICATION_NOT_COMPLETED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:mining/stink_bomb",
+        "nativeAdvancementSha256": "a035c6fd92ead7448521059133abec40491fb2a15e5410e54e3f32a44dadf73d",
+        "nativeMessageFromMain": true,
+        "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/mining/stink_bomb.mcfunction",
+        "resultingSha256": "04cd8b42a0d79875423721c0a3132b2c58a2d0b0bd36d25c656409357bd8eb16",
+        "role": "HARDCORE_MESSAGE",
+        "sourceMessageSha256": "50e4c494cb47b1dd54166755e93752eaadd9ce1e240e61eb9b801c42c88f2fd5",
+        "specialCommandCount": 0,
+        "validation": "PROJECTED_SEARCH_IDS_RESOLVE; FULL_COMPONENT_CERTIFICATION_NOT_COMPLETED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:monsters/aww_man",
+        "nativeAdvancementSha256": "4fd8739d5f1ba1945f95ecc7ed147cbcb6aa2bd92be05039a5a4ce3859d8dc8c",
+        "nativeMessageFromMain": false,
+        "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/monsters/aww_man.mcfunction",
+        "resultingSha256": "24756844979c789c90b116ec3e221a8b212d9cbc6a6410c418cfe9709d38dc3f",
+        "role": "HARDCORE_MESSAGE",
+        "sourceMessageSha256": "0da24ba0b169a071546cff87c1455da1324f46bdc4155c6eca9c4e1fc02ad6f7",
+        "specialCommandCount": 0,
+        "validation": "PROJECTED_SEARCH_IDS_RESOLVE; FULL_COMPONENT_CERTIFICATION_NOT_COMPLETED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:monsters/now_thats_a_lot_of_damage",
+        "nativeAdvancementSha256": "39e2f7f659e0e81324b287d68679c08575f9f2b9666bba30749c1f9821b78d6f",
+        "nativeMessageFromMain": false,
+        "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/monsters/now_thats_a_lot_of_damage.mcfunction",
+        "resultingSha256": "012ff15a898238c4a9de04ed2e7509b408fc276ef4c3f77d44ff70d4fcb016f3",
+        "role": "HARDCORE_MESSAGE",
+        "sourceMessageSha256": "bf387e936a4e227f9e560020d6f00c1edffdbad2cb1b21c226c78fa17814dfb2",
+        "specialCommandCount": 0,
+        "validation": "PROJECTED_SEARCH_IDS_RESOLVE; FULL_COMPONENT_CERTIFICATION_NOT_COMPLETED"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:nether/whole_hog",
+        "nativeAdvancementSha256": "3da4d48fa5696a5721c5c71ca6f9eb748c11e68c5a06007dac603d2df0907177",
+        "nativeMessageFromMain": false,
+        "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/nether/whole_hog.mcfunction",
+        "resultingSha256": "8892fc6771e40b459674d2285d8a559b557aab573c034ef5edeafc573596c2a7",
+        "role": "HARDCORE_MESSAGE",
+        "sourceMessageSha256": "9f5a868811f55bd13ad478416eb2fb85be73c7ce99dcaeedf95a3da4e1302397",
+        "specialCommandCount": 0,
+        "validation": "PROJECTED_SEARCH_IDS_RESOLVE; FULL_COMPONENT_CERTIFICATION_NOT_COMPLETED"
+      }
+    ],
+    "russianTextAuthored": false,
+    "total": 6
+  },
+  "modifiedExistingCompanionResource": {
+    "implemented": 0,
+    "plannedTotal": 1,
+    "record": {
+      "action": "MODIFY",
+      "advancementId": "nullscape:root",
+      "beforeSha256": "53fd1b3c0683d669b6f22fbf0cc12bf1fb0911a2d0cb662c58b91b4f5507ffd6",
+      "onlySearchIdChanged": true,
+      "path": "src/main/resources/resourcepacks/bacap_nullscape_override/data/bacap_rewards/function/msg/end/desolation.mcfunction",
+      "resultingSha256": "777e7991880a9cacc132cf6a1355be031c87a3de629082652a674d6d06705788",
+      "role": "NULLSCAPE_MESSAGE"
+    },
+    "semanticChange": "Only Search ID data:advancement/root -> nullscape:root; prepared in ignored temp, original product bytes unchanged."
+  },
+  "phase": "B",
+  "plannedTransactionDelta": {
+    "ADD": 44,
+    "DELETE": 0,
+    "MODIFY": 1
+  },
+  "preflightEvidence": {
+    "convertedSources": {
+      "count": 8,
+      "markerFreshnessPassed": true,
+      "productionConverterUsed": true,
+      "sha256": "df26076258c5d1b4a29076382099ff784afa0726e686ba34e29de9673c3d54df",
+      "temporaryPath": "build/tmp/phase_b_b5_6/converted_sources.json"
+    },
+    "plan": {
+      "sha256": "56ed63816de4065ae1b5620b08bddae0fea7a9fdcb8f7649c84f5b21cc422a9c",
+      "temporaryPath": "build/tmp/phase_b_b5_6/preflight_plan.json"
+    },
+    "preparedFiles": {
+      "sha256": "3ff78cc0ad0f4d57a378f1e0732d290e10f7532150be09c3b183f51d7836acf8",
+      "temporaryPath": "build/tmp/phase_b_b5_6/prepared_files.json"
+    },
+    "rawProjectedGraphFindings": {
+      "interpretation": "Unselected Terralith loot-table criteria are optional match keys. Benchmarking score-holder tokens are not malformed advancement arguments. Unwanted-passenger reward edge is an actual absent function.",
+      "sha256": "f02eb1d38a6dee4b279ceb089be6332ad5439203335d218af57e754313445a10",
+      "temporaryPath": "build/tmp/phase_b_b5_6/effective_layer_validation.json"
+    }
+  },
+  "priorEvidence": {
+    "b5_1_pins_pack_metadata.json": {
+      "path": "reference/phase_b/b5_1_pins_pack_metadata.json",
+      "sha256": "ffc533dec326412f807e7d16667e5d8968aed0331d1a5ba0b9438a76a8279ab8"
+    },
+    "b5_2_converter_r17.json": {
+      "path": "reference/phase_b/b5_2_converter_r17.json",
+      "sha256": "fcd6b4c9e9c5005ad253370871139bb26dadf944f0d7dceede76f112ad437a24"
+    },
+    "b5_3_setup_resource_contracts.json": {
+      "path": "reference/phase_b/b5_3_setup_resource_contracts.json",
+      "sha256": "e1aa6aae5cb3f6f8127f7a83e94c3a48c18fa9fa0aaebb89719389ba89d3db5d"
+    },
+    "b5_4_benchmarking_contract_resolution.json": {
+      "path": "reference/phase_b/b5_4_benchmarking_contract_resolution.json",
+      "sha256": "c17dff35ec9a709b5e9522455f4c74d7450ea0b36a685bffd3936d5e1c69a208"
+    },
+    "b5_4_naughtylus_contract_resolution.json": {
+      "path": "reference/phase_b/b5_4_naughtylus_contract_resolution.json",
+      "sha256": "e318f8cb0051a52fe1a3a1e1d92c3c2f6993ce2985ce301842016ee28dd2c844"
+    },
+    "b5_4_root_reward_messages_resumed.json": {
+      "path": "reference/phase_b/b5_4_root_reward_messages_resumed.json",
+      "sha256": "874f3f20da41948f1039f9a53c0dba18c8ad1549d8d5961574b208e8e1b234e0"
+    },
+    "b5_5_trackers_gui.json": {
+      "path": "reference/phase_b/b5_5_trackers_gui.json",
+      "sha256": "15b923f01570ab38f9d3c4db557732f9eabdbb0dfdb13f4a77f3f837106e78b0"
+    }
+  },
+  "priorTransactionHashesPreserved": {
+    "b4HistoryUnchanged": true,
+    "b5_4HistoricalStopsUnchanged": true,
+    "b5_5EvidenceUnchanged": true,
+    "evidenceFilesChecked": 25,
+    "noTransactionPathOverlap": true,
+    "passed": true,
+    "priorDeletedFilesStillAbsent": 9,
+    "productFilesChecked": 196,
+    "protectedArchivesChecked": 10
+  },
+  "processResources": {
+    "command": ".\\gradlew.bat --no-daemon --offline processResources -x generateBuildConfig",
+    "outputsChecked": 0,
+    "reason": "No B5.6 production writes occurred.",
+    "result": "NOT_RUN"
+  },
+  "safety": {
+    "abilityBalanceThresholdChanged": false,
+    "b0ThroughB4EvidenceUnchanged": true,
+    "b5_7Started": false,
+    "branch": "phase-b-bacap-26.2",
+    "cacheDeleted": false,
+    "cleanExecuted": false,
+    "commit": false,
+    "dependencyUpgrade": false,
+    "downloaderChanged": false,
+    "externalPinsChanged": false,
+    "generatedSourceResourcesChanged": false,
+    "githubMutation": false,
+    "head": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+    "javaChanged": false,
+    "langJsonChanged": false,
+    "marker": "compat_26_2_r17",
+    "nothingStaged": true,
+    "packOrderChanged": false,
+    "priorB5EvidenceUnchanged": true,
+    "productWritesInB5_6": false,
+    "progressMigration": false,
+    "push": false,
+    "russianResearchOrAuthoring": false,
+    "sourceArchivesChanged": false,
+    "tag": false,
+    "temporaryProbesOnlyUnderIgnoredBuildTmp": true,
+    "testsChanged": false
+  },
+  "stage": "B5.6",
+  "status": "PHASE_B_B5_6_STOP",
+  "stoppedBeforeProductionWrites": true,
+  "terralithWrappers": {
+    "b5_3HelperUnchanged": true,
+    "gatingCertification": "NOT_COMPLETED_AFTER_PREFLIGHT_STOP",
+    "implemented": 0,
+    "preparedTemporary": 24,
+    "records": [
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:adventure/castle_of_hrrms",
+        "arguments": {
+          "adv_id": "blazeandcave:adventure/castle_of_hrrms",
+          "reward_id": "adventure/castle_of_hrrms",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/castle_of_hrrms.mcfunction",
+        "resultingSha256": "9b903fedc3472f4d0759e3bdba7c550813b4e437ae66f524cd37d57fe7e5c9ab",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:adventure/remote_shelter",
+        "arguments": {
+          "adv_id": "blazeandcave:adventure/remote_shelter",
+          "reward_id": "adventure/remote_shelter",
+          "tier": "task"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/remote_shelter.mcfunction",
+        "resultingSha256": "cbea2cf1c21fc868bee0e173ffb5fea6a600d6778c34851414256eb9e9219368",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:adventure/spire_of_ice",
+        "arguments": {
+          "adv_id": "blazeandcave:adventure/spire_of_ice",
+          "reward_id": "adventure/spire_of_ice",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/spire_of_ice.mcfunction",
+        "resultingSha256": "7e9bcd554b4b3c8f66c85b9b2300116c67d07c1a1dd3bd75e8ca0b1b217367e0",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:adventure/totally_not_terraria",
+        "arguments": {
+          "adv_id": "blazeandcave:adventure/totally_not_terraria",
+          "reward_id": "adventure/totally_not_terraria",
+          "tier": "task"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/totally_not_terraria.mcfunction",
+        "resultingSha256": "3927068dd5f5a0de8430f51859f7ccde6e806fc4cbaf356940245732468863a3",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:adventure/under_the_ice",
+        "arguments": {
+          "adv_id": "blazeandcave:adventure/under_the_ice",
+          "reward_id": "adventure/under_the_ice",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/under_the_ice.mcfunction",
+        "resultingSha256": "1f07c73dc917cceed1304ad1a7f3268ca196ab4ed998a813655e5fdc28be7d43",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/a_cliffhanger",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/a_cliffhanger",
+          "reward_id": "biomes/a_cliffhanger",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/a_cliffhanger.mcfunction",
+        "resultingSha256": "9f659c4a5872ed67080734c6203529f27d894b170ffd4b9b342c011e75af6201",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/a_grassy_nature",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/a_grassy_nature",
+          "reward_id": "biomes/a_grassy_nature",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/a_grassy_nature.mcfunction",
+        "resultingSha256": "000d23f9395f04d7adb2aa79c1aa0854476c5fcfbc6df7249007779cc9447d27",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/aesthetic",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/aesthetic",
+          "reward_id": "biomes/aesthetic",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/aesthetic.mcfunction",
+        "resultingSha256": "7f47addedd14cf5263100a8b44d0d1cf1e4bbdcc867c06403b5ddb8442ce4c35",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/alpha_days",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/alpha_days",
+          "reward_id": "biomes/alpha_days",
+          "tier": "challenge"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/alpha_days.mcfunction",
+        "resultingSha256": "ce753d211bbdef085a8409eee59c8b4a3faf1f68dc9dde4704b043a3bbc853b2",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/bushranger",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/bushranger",
+          "reward_id": "biomes/bushranger",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/bushranger.mcfunction",
+        "resultingSha256": "14e811896d1afed0e5436ceaa5fdee2a64a503e0cc684aa57efb5e7cf10a12d4",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/choco_mountain",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/choco_mountain",
+          "reward_id": "biomes/choco_mountain",
+          "tier": "task"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/choco_mountain.mcfunction",
+        "resultingSha256": "822444df9356c644e17fa41e9eb093b3ecad989e78f7e965eb08fc4aa4340a8b",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/eruption_in_the_air",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/eruption_in_the_air",
+          "reward_id": "biomes/eruption_in_the_air",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/eruption_in_the_air.mcfunction",
+        "resultingSha256": "d5a08b3438359d169831c5af1ade634935d16f904d947e02cd410ac84d91e599",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/highlander",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/highlander",
+          "reward_id": "biomes/highlander",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/highlander.mcfunction",
+        "resultingSha256": "07a1d2a4fa24e94fe3af0f2a6a53eb26b692a0a6a0b02294f50249e947af50f1",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/land_of_icicles",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/land_of_icicles",
+          "reward_id": "biomes/land_of_icicles",
+          "tier": "task"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/land_of_icicles.mcfunction",
+        "resultingSha256": "2d15989ae1fae87d09119ae8c69e54a9fa9fbd73d392d0a667bf9e24bf794c9a",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/master_spelunker",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/master_spelunker",
+          "reward_id": "biomes/master_spelunker",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/master_spelunker.mcfunction",
+        "resultingSha256": "f4d5f9f14d9959c519648d9d7b9a43bef37a49bb6b6196a8ae14ac6677cf7c35",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/o_land_o_bloom",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/o_land_o_bloom",
+          "reward_id": "biomes/o_land_o_bloom",
+          "tier": "task"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/o_land_o_bloom.mcfunction",
+        "resultingSha256": "4a54a32a082f6027324dfa02b24ba8fbc7b1dbfd4057c282ed0a976439086641",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/one_small_steppe_for_man",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/one_small_steppe_for_man",
+          "reward_id": "biomes/one_small_steppe_for_man",
+          "tier": "task"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/one_small_steppe_for_man.mcfunction",
+        "resultingSha256": "2367ef832ede0a717a5af0e5e5b1d1e26e97059e794832e82d54ca4e54e62cd8",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/over_the_moon",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/over_the_moon",
+          "reward_id": "biomes/over_the_moon",
+          "tier": "task"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/over_the_moon.mcfunction",
+        "resultingSha256": "7fa03c48e900f7d41ad29b33b578b03dfa1918f9b675a7ed86fbbb200d01733b",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/pretty_in_purple",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/pretty_in_purple",
+          "reward_id": "biomes/pretty_in_purple",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/pretty_in_purple.mcfunction",
+        "resultingSha256": "df6c5d367e7fde5b76d004503227fb9c4d40609eba7814b7e3204216f0c687e5",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/skylanders",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/skylanders",
+          "reward_id": "biomes/skylanders",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/skylanders.mcfunction",
+        "resultingSha256": "51df50dfc19a10bd7f258f84b9e9903c8de76ab435cfc4171020ab9e9dfa1664",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/smarter_than_the_average_bear",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/smarter_than_the_average_bear",
+          "reward_id": "biomes/smarter_than_the_average_bear",
+          "tier": "task"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/smarter_than_the_average_bear.mcfunction",
+        "resultingSha256": "7c262b748129dac3df36c427a0bcc7f47e224b6f533ab3cf962a0604ee5fe081",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/terralithic",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/terralithic",
+          "reward_id": "biomes/terralithic",
+          "tier": "challenge"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/terralithic.mcfunction",
+        "resultingSha256": "a334c9a7ecce3f45590f7e039bc4b8b4df35d264df2b7f58322eb435382d514f",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/the_boreal_deal",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/the_boreal_deal",
+          "reward_id": "biomes/the_boreal_deal",
+          "tier": "goal"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/the_boreal_deal.mcfunction",
+        "resultingSha256": "62d3f4d39ca88922232952f8f0d93734fa4ea28746b41ecbe19f6769f9f1f170",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      },
+      {
+        "action": "ADD",
+        "advancementId": "blazeandcave:biomes/the_world_is_your_canvas",
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/the_world_is_your_canvas",
+          "reward_id": "biomes/the_world_is_your_canvas",
+          "tier": "task"
+        },
+        "macroTarget": "bacap_rewards:terralith_advancement_made_macro",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/the_world_is_your_canvas.mcfunction",
+        "resultingSha256": "58cfeea9de08fd2a99d31a93ea463802e49375f14c1ff1a42fc310f91e700047",
+        "role": "TERRALITH_WRAPPER",
+        "validation": "TEMPORARY_PREPARATION_ONLY"
+      }
+    ],
+    "total": 24
+  },
+  "transactionDelta": {
+    "ADD": 0,
+    "DELETE": 0,
+    "MODIFY": 0
+  },
+  "transactionManifest": {
+    "ADD": 44,
+    "DELETE": 0,
+    "MODIFY": 1,
+    "dependencies": [
+      "B5.1",
+      "B5.3",
+      "B5.4"
+    ],
+    "filesChanged": [
+      "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/inception.json",
+      "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/limbo_walker.json",
+      "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/biomes/kung_fu_panda.mcfunction",
+      "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/biomes/were_going_on_a_bear_hunt.mcfunction",
+      "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/mining/stink_bomb.mcfunction",
+      "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/monsters/aww_man.mcfunction",
+      "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/monsters/now_thats_a_lot_of_damage.mcfunction",
+      "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/nether/whole_hog.mcfunction",
+      "src/main/resources/resourcepacks/bacap_nullscape_override/data/bacap_rewards/function/msg/end/desolation.mcfunction",
+      "src/main/resources/resourcepacks/bacap_nullscape_override/data/blazeandcave/advancement/end/void_walker.json",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/castle_of_hrrms.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/remote_shelter.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/spire_of_ice.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/totally_not_terraria.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/under_the_ice.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/a_cliffhanger.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/a_grassy_nature.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/aesthetic.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/alpha_days.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/bushranger.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/choco_mountain.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/eruption_in_the_air.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/highlander.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/land_of_icicles.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/master_spelunker.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/o_land_o_bloom.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/one_small_steppe_for_man.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/over_the_moon.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/pretty_in_purple.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/skylanders.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/smarter_than_the_average_bear.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/terralithic.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/the_boreal_deal.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/the_world_is_your_canvas.mcfunction",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/adventure/raidin_master.json",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/cold_feet.json",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/high_feet.json",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/one_with_the_forest.json",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/overgrown.json",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/warm_feet.json",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/wet_feet.json",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/explorer_of_worlds.json",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/mining/oresome.json",
+      "src/main/resources/resourcepacks/bacap_terralith_override/data/minecraft/advancement/adventure/adventuring_time.json"
+    ],
+    "paths": 45,
+    "reconciled": true
+  },
+  "transactionName": "companion_merges"
+}

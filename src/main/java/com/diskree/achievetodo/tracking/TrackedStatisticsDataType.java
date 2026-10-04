@@ -24,13 +24,6 @@ public enum TrackedStatisticsDataType {
         100,
         false
     ),
-    WHERES_THE_HONEY_LEBOWSKI(
-        "blazeandcave:animal/wheres_the_honey_lebowski",
-        Stats.ITEM_USED,
-        Items.HONEY_BOTTLE,
-        200,
-        false
-    ),
     INSOMNIAC(
         "blazeandcave:building/insomniac",
         Stats.CUSTOM,
@@ -58,13 +51,6 @@ public enum TrackedStatisticsDataType {
         Blocks.STONE,
         10_000,
         true
-    ),
-    PUPIL_POPPERS(
-        "blazeandcave:monsters/pupil_poppers",
-        Stats.ITEM_USED,
-        Items.SPIDER_EYE,
-        1_000,
-        false
     ),
     OUT_FOR_A_STROLL(
         "blazeandcave:statistics/out_for_a_stroll",
@@ -333,7 +319,7 @@ public enum TrackedStatisticsDataType {
         false
     ),
     TWO_BY_TWO(
-        "blazeandcave:statistics/two_by_two",
+        "blazeandcave:statistics/overpopulation",
         Stats.CUSTOM,
         Stats.ANIMALS_BRED,
         2_500,

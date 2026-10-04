@@ -1,0 +1,1 @@
+function bacap_rewards:trophy/animal/tropical_collection

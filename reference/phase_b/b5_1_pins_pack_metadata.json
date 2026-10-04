@@ -1,0 +1,536 @@
+{
+  "authorityFiles": [
+    {
+      "path": "reference/phase_b/b0_baseline.json",
+      "sha256": "747877d0a7685c12cf41b3e2f8f446eea0ce5e5bf976990fd3e681f5ea0e6390"
+    },
+    {
+      "path": "reference/phase_b/b1_official_bacap_pin.json",
+      "sha256": "b39bdf2a190131c8b13b0820d26c0f67430935c9fe330122655911d1dc435110"
+    },
+    {
+      "path": "reference/phase_b/B1_OFFICIAL_BACAP_PIN.md",
+      "sha256": "82314a7f91569d4e2f6358ff6d562499a2f4c07e2322b1fd6ebdfbc702e1222a"
+    },
+    {
+      "path": "reference/phase_b/b1_target_inventory.json",
+      "sha256": "2219f38681a7dbbe19deb109c7b0abeb16f01051fb22fa41dbee464fe00656eb"
+    },
+    {
+      "path": "reference/phase_b/b2_atd_integration_map.json",
+      "sha256": "9214f2d027738486cd4be91fb0b6f3fbfe06b5c346c46b3163bef369a0f4999d"
+    },
+    {
+      "path": "reference/phase_b/B2_ATD_INTEGRATION_MAP.md",
+      "sha256": "58c77b0d51574dab337a151baf973ff5573485572f6a2c9d95134bf9529d8f81"
+    },
+    {
+      "path": "reference/phase_b/b2_bacap_occurrences.json",
+      "sha256": "771e89d60dc00ecef0a9abe80dc6e27b4b7c55bde457b61df34f8f8b52ce34b2"
+    },
+    {
+      "path": "reference/phase_b/b3_advancement_diff.json",
+      "sha256": "a402baa19657c3ec14c089affed19cdedf077f21eece39c7d1d07ecdd60a1980"
+    },
+    {
+      "path": "reference/phase_b/b3_atd_impact_matrix.json",
+      "sha256": "682994595bb25dd6334aa4ce384d2e9eddfd77e706de531d1693b58bc26564a5"
+    },
+    {
+      "path": "reference/phase_b/B3_BACAP_SEMANTIC_DIFF.md",
+      "sha256": "066bedd333586121f07f5abe8cec90b21be63cf108bbc4e82a18d90790c45d31"
+    },
+    {
+      "path": "reference/phase_b/b3_resource_graph_diff.json",
+      "sha256": "a56188f03d15c37817117cfcf68422d5d7085635a4373e25519fed1847cdd693"
+    },
+    {
+      "path": "reference/phase_b/OPERATING_CONTRACT.md",
+      "sha256": "765f7c2d9874ea0df7086589dfa5c23d4a466e3ba3fcd6e812034b2a163cf921"
+    },
+    {
+      "path": "tools/phase_b/b3_bacap_semantic_diff.py",
+      "sha256": "ea070dd7fdd894c34a6d4b910310ea98138f38111d2b3f9587f6ecd15aff4fbf"
+    },
+    {
+      "path": "reference/phase_b/B4_EXACT_PRODUCT_CHANGE_PLAN.md",
+      "sha256": "478406877f89ddceaaf790b75ae650c542f3832092f40a83cbd046230b62f1bd",
+      "size": 15472
+    },
+    {
+      "path": "reference/phase_b/b4_product_change_manifest.json",
+      "sha256": "feb0b2bd8020adf314c74bef05dba184342088fc7d8fb8bf5df1d5f4be51d000",
+      "size": 8006012
+    },
+    {
+      "path": "reference/phase_b/b4_converter_decision.json",
+      "sha256": "33900472aa72d1891e86065534a87f3bde4f4b8fcb534403a6677b6d99184f5e",
+      "size": 70793
+    },
+    {
+      "path": "reference/phase_b/b4_companion_matrix.json",
+      "sha256": "142d9fb5c7c905c10b87b07480043812b149a4622381fe9204b29fd5bdb26710",
+      "size": 125820
+    },
+    {
+      "path": "reference/phase_b/b4_localization_handoff.json",
+      "sha256": "21dc8a27f9edf05b1970d030eaaf3e084859d0bfe3923483546dc81830ac1d67",
+      "size": 3151300
+    }
+  ],
+  "baselineHead": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+  "branch": "phase-b-bacap-26.2",
+  "compatibilityMarker": {
+    "after": "compat_26_2_r16",
+    "before": "compat_26_2_r16",
+    "sourceFileSha256": "20c73be41c3cb218d90339aedee740e5269dc8e6acd9012f952249cefe5fa767",
+    "unchanged": true
+  },
+  "hardcorePin": {
+    "after": {
+      "blockSha256": "86d995afef776cf525c830e94b90d3dfa119fe9b4730f6d9a97950bdff578ee4",
+      "downloadUrl": "https://cdn.modrinth.com/data/QEv1xmKi/versions/ZHHHw5wF/BlazeandCave%27s%20Advancements%20Pack%20Hardcore.zip",
+      "inGameDownloadSupported": true,
+      "localFilename": "bacap_hardcore.zip",
+      "pageUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack-hardcore-version",
+      "sha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+      "title": "BACAP (Hardcore version)",
+      "wrapperSha1": null
+    },
+    "before": {
+      "blockSha256": "51c6f8cf555bc68e4fc0ef832fd6d20389aedb8d75f66ec50bc138b52520644d",
+      "downloadUrl": "https://cdn.modrinth.com/data/QEv1xmKi/versions/uRKM9Bou/BlazeandCave%27s%20Advancements%20Pack%20Hardcore.zip",
+      "inGameDownloadSupported": true,
+      "localFilename": "bacap_hardcore.zip",
+      "pageUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack-hardcore-version",
+      "sha1": "ec5203496a822e6145562cd81e781ca0eea2c968",
+      "title": "BACAP (Hardcore version)",
+      "wrapperSha1": null
+    },
+    "enum": "BACAP_HARDCORE",
+    "exactB4AuthorityMatches": true,
+    "version": "1.21",
+    "versionId": "ZHHHw5wF"
+  },
+  "mainBACAPPin": {
+    "after": {
+      "blockSha256": "3877013b7f6ecd4ae23ff3c2c93cf0cb6f4d38f957fff4e25c1e907df5a24dbb",
+      "downloadUrl": "https://cdn.modrinth.com/data/VoVJ47kN/versions/Y2zZ5eSs/BlazeandCave%27s%20Advancements%20Pack%201.21.zip",
+      "inGameDownloadSupported": true,
+      "localFilename": "bacap.zip",
+      "pageUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack",
+      "sha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+      "title": "BlazeandCave's Advancements Pack (BACAP)",
+      "wrapperSha1": null
+    },
+    "before": {
+      "blockSha256": "04abe3d7a64fd448844e3bdfb831eb8c637bf0c08b95fd2a4adbcb0984c65690",
+      "downloadUrl": "https://cdn.modrinth.com/data/VoVJ47kN/versions/i8N5hYLH/BlazeandCave%27s%20Advancements%20Pack%201.18.1.zip",
+      "inGameDownloadSupported": true,
+      "localFilename": "bacap.zip",
+      "pageUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack",
+      "sha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+      "title": "BlazeandCave's Advancements Pack (BACAP)",
+      "wrapperSha1": null
+    },
+    "enum": "BACAP",
+    "exactB4AuthorityMatches": true,
+    "version": "1.21",
+    "versionId": "Y2zZ5eSs"
+  },
+  "modifiedFiles": [
+    {
+      "action": "MODIFY",
+      "afterSha256": "b2933f441909bde0312f354d003cf04ebb4a7938fba23ff0a41a5dd05c3af3a5",
+      "beforeSha256": "9d870586c5cd4507876e1350dc62422b5cd707d5bd42505b882f8f25e399f821",
+      "path": "src/main/java/com/diskree/achievetodo/client/ExternalPack.java"
+    },
+    {
+      "action": "MODIFY",
+      "afterSha256": "2e86aa0b971e2e30bf113a761b91a876bde3e5cd76f3a8fd75006a8b4672bc94",
+      "beforeSha256": "2453ec192e8a588deb8731ea1fe8b67e080f8cc0a68ce2140fe7a917b1d13826",
+      "path": "src/main/resources/resourcepacks/bacap_amplified_nether_override/pack.mcmeta"
+    },
+    {
+      "action": "MODIFY",
+      "afterSha256": "2e86aa0b971e2e30bf113a761b91a876bde3e5cd76f3a8fd75006a8b4672bc94",
+      "beforeSha256": "2453ec192e8a588deb8731ea1fe8b67e080f8cc0a68ce2140fe7a917b1d13826",
+      "path": "src/main/resources/resourcepacks/bacap_cooperative_mode/pack.mcmeta"
+    },
+    {
+      "action": "MODIFY",
+      "afterSha256": "2e86aa0b971e2e30bf113a761b91a876bde3e5cd76f3a8fd75006a8b4672bc94",
+      "beforeSha256": "2453ec192e8a588deb8731ea1fe8b67e080f8cc0a68ce2140fe7a917b1d13826",
+      "path": "src/main/resources/resourcepacks/bacap_hardcore_override/pack.mcmeta"
+    },
+    {
+      "action": "MODIFY",
+      "afterSha256": "2e86aa0b971e2e30bf113a761b91a876bde3e5cd76f3a8fd75006a8b4672bc94",
+      "beforeSha256": "2453ec192e8a588deb8731ea1fe8b67e080f8cc0a68ce2140fe7a917b1d13826",
+      "path": "src/main/resources/resourcepacks/bacap_nullscape_override/pack.mcmeta"
+    },
+    {
+      "action": "MODIFY",
+      "afterSha256": "2e86aa0b971e2e30bf113a761b91a876bde3e5cd76f3a8fd75006a8b4672bc94",
+      "beforeSha256": "2453ec192e8a588deb8731ea1fe8b67e080f8cc0a68ce2140fe7a917b1d13826",
+      "path": "src/main/resources/resourcepacks/bacap_override/pack.mcmeta"
+    },
+    {
+      "action": "MODIFY",
+      "afterSha256": "2e86aa0b971e2e30bf113a761b91a876bde3e5cd76f3a8fd75006a8b4672bc94",
+      "beforeSha256": "2453ec192e8a588deb8731ea1fe8b67e080f8cc0a68ce2140fe7a917b1d13826",
+      "path": "src/main/resources/resourcepacks/bacap_rewards_experience/pack.mcmeta"
+    },
+    {
+      "action": "MODIFY",
+      "afterSha256": "2e86aa0b971e2e30bf113a761b91a876bde3e5cd76f3a8fd75006a8b4672bc94",
+      "beforeSha256": "2453ec192e8a588deb8731ea1fe8b67e080f8cc0a68ce2140fe7a917b1d13826",
+      "path": "src/main/resources/resourcepacks/bacap_rewards_item/pack.mcmeta"
+    },
+    {
+      "action": "MODIFY",
+      "afterSha256": "2e86aa0b971e2e30bf113a761b91a876bde3e5cd76f3a8fd75006a8b4672bc94",
+      "beforeSha256": "2453ec192e8a588deb8731ea1fe8b67e080f8cc0a68ce2140fe7a917b1d13826",
+      "path": "src/main/resources/resourcepacks/bacap_rewards_trophy/pack.mcmeta"
+    },
+    {
+      "action": "MODIFY",
+      "afterSha256": "2e86aa0b971e2e30bf113a761b91a876bde3e5cd76f3a8fd75006a8b4672bc94",
+      "beforeSha256": "2453ec192e8a588deb8731ea1fe8b67e080f8cc0a68ce2140fe7a917b1d13826",
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/pack.mcmeta"
+    }
+  ],
+  "packMetadata": {
+    "descriptionsPreserved": true,
+    "files": [
+      {
+        "descriptionAfter": "",
+        "descriptionBefore": "",
+        "maxFormat": [
+          107,
+          1
+        ],
+        "minFormat": [
+          107,
+          1
+        ],
+        "path": "src/main/resources/resourcepacks/bacap_amplified_nether_override/pack.mcmeta",
+        "validJson": true
+      },
+      {
+        "descriptionAfter": "",
+        "descriptionBefore": "",
+        "maxFormat": [
+          107,
+          1
+        ],
+        "minFormat": [
+          107,
+          1
+        ],
+        "path": "src/main/resources/resourcepacks/bacap_cooperative_mode/pack.mcmeta",
+        "validJson": true
+      },
+      {
+        "descriptionAfter": "",
+        "descriptionBefore": "",
+        "maxFormat": [
+          107,
+          1
+        ],
+        "minFormat": [
+          107,
+          1
+        ],
+        "path": "src/main/resources/resourcepacks/bacap_hardcore_override/pack.mcmeta",
+        "validJson": true
+      },
+      {
+        "descriptionAfter": "",
+        "descriptionBefore": "",
+        "maxFormat": [
+          107,
+          1
+        ],
+        "minFormat": [
+          107,
+          1
+        ],
+        "path": "src/main/resources/resourcepacks/bacap_nullscape_override/pack.mcmeta",
+        "validJson": true
+      },
+      {
+        "descriptionAfter": "",
+        "descriptionBefore": "",
+        "maxFormat": [
+          107,
+          1
+        ],
+        "minFormat": [
+          107,
+          1
+        ],
+        "path": "src/main/resources/resourcepacks/bacap_override/pack.mcmeta",
+        "validJson": true
+      },
+      {
+        "descriptionAfter": "",
+        "descriptionBefore": "",
+        "maxFormat": [
+          107,
+          1
+        ],
+        "minFormat": [
+          107,
+          1
+        ],
+        "path": "src/main/resources/resourcepacks/bacap_rewards_experience/pack.mcmeta",
+        "validJson": true
+      },
+      {
+        "descriptionAfter": "",
+        "descriptionBefore": "",
+        "maxFormat": [
+          107,
+          1
+        ],
+        "minFormat": [
+          107,
+          1
+        ],
+        "path": "src/main/resources/resourcepacks/bacap_rewards_item/pack.mcmeta",
+        "validJson": true
+      },
+      {
+        "descriptionAfter": "",
+        "descriptionBefore": "",
+        "maxFormat": [
+          107,
+          1
+        ],
+        "minFormat": [
+          107,
+          1
+        ],
+        "path": "src/main/resources/resourcepacks/bacap_rewards_trophy/pack.mcmeta",
+        "validJson": true
+      },
+      {
+        "descriptionAfter": "",
+        "descriptionBefore": "",
+        "maxFormat": [
+          107,
+          1
+        ],
+        "minFormat": [
+          107,
+          1
+        ],
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/pack.mcmeta",
+        "validJson": true
+      }
+    ],
+    "maxFormat": [
+      107,
+      1
+    ],
+    "minFormat": [
+      107,
+      1
+    ]
+  },
+  "phase": "B",
+  "retainedBACAPCompanionPins": [
+    {
+      "blockSha256": "dee0bc64e14b1988a1ac6712e45f70dae03beab15ae083d161021dd8b9c7e26c",
+      "byteIdenticalEnumBlock": true,
+      "downloadUrl": "https://www.mediafire.com/file/ljb8qwofxk4dq9i/%255BUNZIP_ME%255D_BlazeandCave%2527s_Advancements_Pack_Terralith_1.18.zip/file",
+      "enum": "BACAP_TERRALITH",
+      "inGameDownloadSupported": false,
+      "localFilename": "bacap_terralith.zip",
+      "pageUrl": "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
+      "sha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+      "title": "BACAP (Terralith version)",
+      "wrapperSha1": "2699070cf5040ab519c223178ee64ee9eafe3691"
+    },
+    {
+      "blockSha256": "d18d29def927afbf073c95fadcf5619dfcf33389de4e3318a8bc50fbbaeb18ab",
+      "byteIdenticalEnumBlock": true,
+      "downloadUrl": "https://www.mediafire.com/file/ak5sjemiz60mzrc/%255BUNZIP_ME%255D_BlazeandCave%2527s_Advancements_Pack_Amplified_Nether_1.18.zip/file",
+      "enum": "BACAP_AMPLIFIED_NETHER",
+      "inGameDownloadSupported": false,
+      "localFilename": "bacap_amplified_nether.zip",
+      "pageUrl": "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
+      "sha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+      "title": "BACAP (Amplified Nether version)",
+      "wrapperSha1": "981ff801e3cf7eace1ddc2fff8b6165c12ea52b0"
+    },
+    {
+      "blockSha256": "f3725123e88bb54d74cf3a62a30383a37fceedfcd89e12a2b00743f8220e00d1",
+      "byteIdenticalEnumBlock": true,
+      "downloadUrl": "https://www.mediafire.com/file/hsj4koctw778e43/%255BUNZIP_ME%255D_BlazeandCave%2527s_Advancements_Pack_Nullscape_1.18.zip/file",
+      "enum": "BACAP_NULLSCAPE",
+      "inGameDownloadSupported": false,
+      "localFilename": "bacap_nullscape.zip",
+      "pageUrl": "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
+      "sha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+      "title": "BACAP (Nullscape version)",
+      "wrapperSha1": "029c29644a9e94dd8c4111dc3ab2165e79fe4d66"
+    }
+  ],
+  "safety": {
+    "allowedTrackedFilesOnly": true,
+    "b0ThroughB4EvidenceUnchanged": true,
+    "b5_2Started": false,
+    "commit": false,
+    "dependenciesAndCachesUnchanged": true,
+    "downloaderUnchanged": true,
+    "generatedResourcesUnchanged": true,
+    "githubMutation": false,
+    "historicalEvidenceUnchanged": true,
+    "localizationUnchanged": true,
+    "noNewDownload": true,
+    "noStagedFiles": true,
+    "protectedArchivesUnchanged": true,
+    "push": false,
+    "tag": false,
+    "testsUnchanged": true,
+    "worldCopyAndFreshnessUnchanged": true,
+    "wrapperLogicUnchanged": true
+  },
+  "stage": "B5.1",
+  "status": "PHASE_B_B5_1_COMPLETE",
+  "transactionName": "pins_pack_metadata",
+  "validation": {
+    "allDownloadBooleansUnchanged": true,
+    "allEightEnumIdentitiesValidated": true,
+    "allNineMetadataParsed": true,
+    "allStableFilenamesUnchanged": true,
+    "b4AuthorityVerified": true,
+    "diffCheckPassed": true,
+    "diffCounts": {
+      "ADD": 0,
+      "DELETE": 0,
+      "MODIFY": 10
+    },
+    "enumLogicByteIdenticalExceptUrlAndSha1Literals": true,
+    "fiveUpdatedPinsMatchAuthority": true,
+    "gradleSuiteRun": false,
+    "javaCompileRun": false,
+    "priorEvidenceHashVerified": 18,
+    "sourceIdentitiesVerifiedFromExistingIgnoredDownloads": [
+      {
+        "enum": "BACAP",
+        "path": "build/tmp/phase_b_b1/BlazeandCave's Advancements Pack 1.21.zip",
+        "sha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "sha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2"
+      },
+      {
+        "enum": "BACAP_HARDCORE",
+        "path": "build/tmp/phase_b_b4/BlazeandCave's Advancements Pack Hardcore.zip",
+        "sha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+        "sha256": "1baf5f1bc7c48c819cb6b3081cb124793a316b3568352c853b94757bb4237446"
+      },
+      {
+        "enum": "TERRALITH",
+        "path": "build/tmp/phase_b_b4/Terralith_26.2_v2.6.4.zip",
+        "sha1": "96ccd25be9ba5240ebe8150cc29240aca781f0e1",
+        "sha256": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e"
+      },
+      {
+        "enum": "AMPLIFIED_NETHER",
+        "path": "build/tmp/phase_b_b4/Amplified_Nether_v1.2.15.zip",
+        "sha1": "94d9604cebbfca667aeb59e4b1ac03e9c6e5cb5d",
+        "sha256": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa"
+      },
+      {
+        "enum": "NULLSCAPE",
+        "path": "build/tmp/phase_b_b4/Nullscape_26.2_v1.2.20.zip",
+        "sha1": "bee4a2182593fdfc5da4b253a342feddf02b88b9",
+        "sha256": "ec7b0dfcd1add8c127c985dac1466a44168449b3b6641dd20e6b2e16153b66aa"
+      }
+    ],
+    "threeRetainedBlocksByteIdentical": true,
+    "validationScope": "Literal-only Java identity substitutions and JSON structural validation; no runtime or converter certification claimed."
+  },
+  "worldgenPins": [
+    {
+      "after": {
+        "blockSha256": "ed852bcd0e85d0f503c69dde0548ee1b5d5818e22751cddb00d6db63da0d707d",
+        "downloadUrl": "https://cdn.modrinth.com/data/8oi3bsk5/versions/CzijfXJQ/Terralith_26.2_v2.6.4.zip",
+        "inGameDownloadSupported": true,
+        "localFilename": "terralith.zip",
+        "pageUrl": "https://www.planetminecraft.com/data-pack/terralith-overworld-evolved-100-biomes-caves-and-more/",
+        "sha1": "96ccd25be9ba5240ebe8150cc29240aca781f0e1",
+        "title": "Terralith",
+        "wrapperSha1": null
+      },
+      "before": {
+        "blockSha256": "3db888480245196339b838ccc99492991b5513ff22f783ab01e059ecd6212998",
+        "downloadUrl": "https://cdn.modrinth.com/data/8oi3bsk5/versions/PcYlKx8w/Terralith_1.21_v2.5.7.zip",
+        "inGameDownloadSupported": true,
+        "localFilename": "terralith.zip",
+        "pageUrl": "https://www.planetminecraft.com/data-pack/terralith-overworld-evolved-100-biomes-caves-and-more/",
+        "sha1": "9645d4c557e8419154cc5775c5fe3ba9e82bfb8f",
+        "title": "Terralith",
+        "wrapperSha1": null
+      },
+      "enum": "TERRALITH",
+      "exactB4AuthorityMatches": true,
+      "version": "2.6.4",
+      "versionId": "CzijfXJQ"
+    },
+    {
+      "after": {
+        "blockSha256": "ffb8f47b804bb0c42a0eaa4a9f3cef4db63ab38dbe35b9aeb52da5e7cfc3d0f7",
+        "downloadUrl": "https://cdn.modrinth.com/data/wXiGiyGX/versions/xIayvf8F/Amplified_Nether_v1.2.15.zip",
+        "inGameDownloadSupported": true,
+        "localFilename": "amplified_nether.zip",
+        "pageUrl": "https://www.planetminecraft.com/data-pack/amplified-nether-1-18/",
+        "sha1": "94d9604cebbfca667aeb59e4b1ac03e9c6e5cb5d",
+        "title": "Amplified Nether",
+        "wrapperSha1": null
+      },
+      "before": {
+        "blockSha256": "80a8d1062c23d0bc29d0db4e855911116604e4000770a338f72479c3eb7a893b",
+        "downloadUrl": "https://cdn.modrinth.com/data/wXiGiyGX/versions/jfHNaJaE/Amplified_Nether_1.21_v1.2.7.zip",
+        "inGameDownloadSupported": true,
+        "localFilename": "amplified_nether.zip",
+        "pageUrl": "https://www.planetminecraft.com/data-pack/amplified-nether-1-18/",
+        "sha1": "473ddf1042ae7d4c19eff01944d0b9da0f11c831",
+        "title": "Amplified Nether",
+        "wrapperSha1": null
+      },
+      "enum": "AMPLIFIED_NETHER",
+      "exactB4AuthorityMatches": true,
+      "version": "1.2.15",
+      "versionId": "xIayvf8F"
+    },
+    {
+      "after": {
+        "blockSha256": "1c2fa82f28dbf8b14edca93430049d6e6c4fd68367e6a2fd8052ec8cb1ac06f6",
+        "downloadUrl": "https://cdn.modrinth.com/data/LPjGiSO4/versions/prWWpjSv/Nullscape_26.2_v1.2.20.zip",
+        "inGameDownloadSupported": true,
+        "localFilename": "nullscape.zip",
+        "pageUrl": "https://www.planetminecraft.com/data-pack/nullscape/",
+        "sha1": "bee4a2182593fdfc5da4b253a342feddf02b88b9",
+        "title": "Nullscape",
+        "wrapperSha1": null
+      },
+      "before": {
+        "blockSha256": "504b0e81fa69557893da5fd0d1c9147d6e65e3b1e53d648c2c85b8cc853d5fb6",
+        "downloadUrl": "https://cdn.modrinth.com/data/LPjGiSO4/versions/J4B2BaWk/Nullscape_1.21_v1.2.10.zip",
+        "inGameDownloadSupported": true,
+        "localFilename": "nullscape.zip",
+        "pageUrl": "https://www.planetminecraft.com/data-pack/nullscape/",
+        "sha1": "0a55bff36ab26b13963213ed1482d1b8b84ab568",
+        "title": "Nullscape",
+        "wrapperSha1": null
+      },
+      "enum": "NULLSCAPE",
+      "exactB4AuthorityMatches": true,
+      "version": "1.2.20",
+      "versionId": "prWWpjSv"
+    }
+  ]
+}

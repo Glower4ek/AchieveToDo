@@ -1,0 +1,1676 @@
+{
+  "b5_1EvidenceSha256": "ffc533dec326412f807e7d16667e5d8968aed0331d1a5ba0b9438a76a8279ab8",
+  "baselineHead": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+  "branch": "phase-b-bacap-26.2",
+  "compile": {
+    "command": ".\\gradlew.bat --no-daemon --offline compileJava -x generateBuildConfig",
+    "environment": {
+      "GRADLE_USER_HOME": ".gradle-user-home",
+      "JAVA_HOME": "C:/Program Files/Eclipse Adoptium/jdk-25.0.4.7-hotspot",
+      "TEMP": "build/tmp/codex_java_uds_probe",
+      "TMP": "build/tmp/codex_java_uds_probe"
+    },
+    "exitCode": 0,
+    "finalVerification": "BUILD SUCCESSFUL; compileJava UP-TO-DATE, 9s",
+    "generatedBuildConfig": "Existing generated BuildConfig reused without changing any generator/source. Initial unexcluded attempt failed solely on sandbox denial of generator write.",
+    "initialCompilation": "BUILD SUCCESSFUL; compileJava executed, 16s",
+    "logPath": "build/tmp/phase_b_b5_2/compile.log",
+    "logSha256": "722bc55cc32de9b96dbe807969f03e71e2c65bd22b3e9cf8d9ce49ccfc4dbbce",
+    "result": "GREEN"
+  },
+  "converterFamilies": [
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "function_chain_id",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 1,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 1,
+        "r16DiagnosticChangedCount": 1,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "function_daytime_query",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 1,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 1,
+        "r16DiagnosticChangedCount": 1,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "function_dyed_color_with_tooltip",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 9,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 9,
+        "r16DiagnosticChangedCount": 9,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "function_enchantments_levels",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 6,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 6,
+        "r16DiagnosticChangedCount": 6,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "function_enchantments_with_tooltip",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 22,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 22,
+        "r16DiagnosticChangedCount": 22,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "function_gamerule",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 30,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 30,
+        "r16DiagnosticChangedCount": 30,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 34,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "function_hide_additional_tooltip",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 176,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 176,
+        "r16DiagnosticChangedCount": 176,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "function_legacy_item_text",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 215,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 215,
+        "r16DiagnosticChangedCount": 215,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 235,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "function_stored_enchantments_levels",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "function_stored_enchantments_with_tooltip",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "function_trim_with_tooltip",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 11,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 11,
+        "r16DiagnosticChangedCount": 11,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "function_unbreakable_with_tooltip",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 35,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 35,
+        "r16DiagnosticChangedCount": 35,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 35,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 35,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "NOOP_FOR_TARGET",
+      "family": "item_snbt_parse",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 215,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Native function bypass avoids item parser; historical parser unchanged",
+      "implementedPolicy": "NOOP_FOR_TARGET",
+      "markerImpact": "No independent marker impact",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 235,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "No runtime-chat adapter change; no analysis instrumentation in production.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "NOOP_FOR_TARGET",
+      "family": "item_snbt_parse_failure",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Native function bypass avoids item parser; historical parser unchanged",
+      "implementedPolicy": "NOOP_FOR_TARGET",
+      "markerImpact": "No independent marker impact",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "No runtime-chat adapter change; no analysis instrumentation in production.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_background",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 16,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 16,
+        "r16DiagnosticChangedCount": 16,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 16,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_chain_id",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 1319,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 4,
+        "r16DiagnosticChangedCount": 4,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 17,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 1479,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_context_aware_predicate",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 194,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 161,
+        "r16DiagnosticChangedCount": 161,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 214,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 8,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_damage",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 47,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 35,
+        "r16DiagnosticChangedCount": 35,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 15,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 54,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_damage_type",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 33,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 17,
+        "r16DiagnosticChangedCount": 17,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 2,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 36,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_enchantment_predicates",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 50,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 50,
+        "r16DiagnosticChangedCount": 50,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 1,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 55,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 55,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_entity_predicate",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 557,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 496,
+        "r16DiagnosticChangedCount": 496,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 2,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 393,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 9,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_entity_struck",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 1,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 1,
+        "r16DiagnosticChangedCount": 1,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_entity_tags",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 256,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 1,
+        "r16DiagnosticChangedCount": 1,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 2,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 332,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_entity_type",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 322,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 151,
+        "r16DiagnosticChangedCount": 151,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_entity_variant_components",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 3,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 3,
+        "r16DiagnosticChangedCount": 3,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_generic_type_specific",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 1,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 1,
+        "r16DiagnosticChangedCount": 1,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_killing_blow",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 31,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 23,
+        "r16DiagnosticChangedCount": 23,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 40,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_lightning_type_specific",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_llama_carpet_nbt",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 3,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 1,
+        "r16DiagnosticChangedCount": 1,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_player_type_specific",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 185,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 7,
+        "r16DiagnosticChangedCount": 7,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "family": "json_raider_type_specific",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 4,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Exact source SHA1 gate bypasses legacy adapter for native ZIP; historical adapter byte-identical",
+      "implementedPolicy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "r16DiagnosticChangedCount": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_TARGET_AS_INTENTIONAL_ATD_TRANSFORM",
+      "family": "json_vanilla_announcement_suppression",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "candidateCount": 1319,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 1152,
+        "r16DiagnosticChangedCount": 1152,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Existing reward-namespace-scoped suppression reused in native-only traversal",
+      "implementedPolicy": "KEEP_TARGET_AS_INTENTIONAL_ATD_TRANSFORM",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeHardcoreProbe": {
+        "candidateCount": 17,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 17,
+        "r16DiagnosticChangedCount": 17,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "candidateCount": 1479,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 1244,
+        "r16DiagnosticChangedCount": 1244,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_ALL_SOURCES",
+      "family": "runtime_chat_json_parse",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "archiveMigration": false,
+        "candidateCount": 1163,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "note": "Parser diagnostics are separate from unchanged runtime adapter behavior; actual scoped command changes measured independently.",
+        "r16DiagnosticChangedCount": 0,
+        "runtimeCommandChangedFiles": 1148,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Unchanged separate runtime chat bridge",
+      "implementedPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "No independent marker impact",
+      "nativeHardcoreProbe": {
+        "archiveMigration": false,
+        "candidateCount": 16,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "note": "Parser diagnostics are separate from unchanged runtime adapter behavior; actual scoped command changes measured independently.",
+        "r16DiagnosticChangedCount": 0,
+        "runtimeCommandChangedFiles": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "archiveMigration": false,
+        "candidateCount": 1255,
+        "candidateDefinition": "r16 instrumented method/token candidates; native bypass means zero applications for legacy families; runtime calls remain separate",
+        "changedCount": 0,
+        "note": "Parser diagnostics are separate from unchanged runtime adapter behavior; actual scoped command changes measured independently.",
+        "r16DiagnosticChangedCount": 0,
+        "runtimeCommandChangedFiles": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "No runtime-chat adapter change; no analysis instrumentation in production.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "B4Policy": "KEEP_ALL_SOURCES",
+      "family": "runtime_chat_json_parse_failure",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "historicalProbe": {
+        "archiveMigration": false,
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "note": "Parser diagnostics are separate from unchanged runtime adapter behavior; actual scoped command changes measured independently.",
+        "r16DiagnosticChangedCount": 0,
+        "runtimeCommandChangedFiles": 1148,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "implementation": "Unchanged separate runtime chat bridge",
+      "implementedPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "No independent marker impact",
+      "nativeHardcoreProbe": {
+        "archiveMigration": false,
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "note": "Parser diagnostics are separate from unchanged runtime adapter behavior; actual scoped command changes measured independently.",
+        "r16DiagnosticChangedCount": 0,
+        "runtimeCommandChangedFiles": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "nativeMainProbe": {
+        "archiveMigration": false,
+        "candidateCount": 0,
+        "candidateDefinition": "No matching invocation/token in this archive under the B3 diagnostic instrumentation.",
+        "changedCount": 0,
+        "note": "Parser diagnostics are separate from unchanged runtime adapter behavior; actual scoped command changes measured independently.",
+        "r16DiagnosticChangedCount": 0,
+        "runtimeCommandChangedFiles": 0,
+        "semanticChangedCount": null,
+        "semanticCountNote": "Family instrumentation counts files with nested/inclusive effects; archive-wide semantic totals are independently parsed. Per-family semantics are not summed.",
+        "validationResult": "PASS"
+      },
+      "plannedCodeChange": "No runtime-chat adapter change; no analysis instrumentation in production.",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    }
+  ],
+  "cumulativeDiff": {
+    "ADD": 0,
+    "B5_1AfterHashesExact": true,
+    "DELETE": 0,
+    "MODIFY": 11,
+    "modifiedPaths": [
+      "src/main/java/com/diskree/achievetodo/client/ExternalPack.java",
+      "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+      "src/main/resources/resourcepacks/bacap_amplified_nether_override/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_cooperative_mode/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_hardcore_override/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_nullscape_override/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_override/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_rewards_experience/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_rewards_item/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_rewards_trophy/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_terralith_override/pack.mcmeta"
+    ],
+    "newModifiedFiles": [
+      "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java"
+    ]
+  },
+  "freshness": {
+    "markerFormatUnchanged": true,
+    "r16RejectedAsCurrent": true,
+    "r17AcceptedAsCurrent": true,
+    "repeatedSourcePayloadDeterministic": true,
+    "rootOverrideFingerprintValidationUnchanged": true,
+    "sourceHashValidated": true,
+    "verifiedOn": [
+      "nativeMain121",
+      "nativeHardcore121"
+    ],
+    "wrongMarkerVersionRejected": true,
+    "wrongSourceSha1Rejected": true
+  },
+  "historicalRegression": {
+    "archiveSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+    "changedFiles": 1474,
+    "exceptions": 0,
+    "expectedHistoricalCompatibilityPreserved": true,
+    "historicalAdapterImplementationByteIdentical": true,
+    "idempotence": true,
+    "idempotenceScope": "Selected-policy entry transforms and repeated conversion from the exact pinned source; derived world ZIPs are not download inputs.",
+    "markerHandledSeparately": true,
+    "parseFailures": 0,
+    "payloadComparison": "Every ZIP entry byte-identical between compiled original r16 source and production r17 output, excluding compatibility-marker entry. Both harness copies use the same accepted enum metadata.",
+    "runtimeChatChangedFiles": 1148,
+    "semanticChangedJsonFiles": 1214
+  },
+  "marker": {
+    "after": "compat_26_2_r17",
+    "before": "compat_26_2_r16",
+    "formatUnchanged": true,
+    "reason": "Legacy-to-native source policy changes actual production conversion, including fixing target treasure_hunter tag codec breakage. Source SHA1 invalidates historical→target copies, but same target-source r16 converted world copies would otherwise remain accepted; r17 invalidates those copies. RootOverrideSha1 continues to record bundled root content changes independently."
+  },
+  "modifiedProductFile": {
+    "afterSha256": "1292f5df6d322bf60147cabc729a26ec24b572c732132d8ac56e20d565e4f45d",
+    "beforeSha256": "20c73be41c3cb218d90339aedee740e5269dc8e6acd9012f952249cefe5fa767",
+    "path": "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java"
+  },
+  "nativeHardcoreProbe": {
+    "changedFiles": 17,
+    "changedFunctionFiles": 0,
+    "changedJsonFiles": 17,
+    "exceptions": 0,
+    "idempotence": true,
+    "idempotenceScope": "Selected-policy entry transforms and repeated conversion from the exact pinned source; derived world ZIPs are not download inputs.",
+    "intentionalAnnouncementSuppressionFiles": 17,
+    "legacyMigrationChangedFiles": 0,
+    "parseFailures": 0,
+    "proof": "Every native entry compared against independent recursive reward-namespace-scoped announcement-only expected structure; all functions and unrelated entries byte-identical; no needless JSON serialization.",
+    "runtimeChatCandidateFiles": 16,
+    "runtimeChatChangedFiles": 0,
+    "semanticChangedJsonFiles": 17,
+    "sourceSha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+    "sourceSha256": "1baf5f1bc7c48c819cb6b3081cb124793a316b3568352c853b94757bb4237446"
+  },
+  "nativeMainProbe": {
+    "changedFiles": 1244,
+    "changedFunctionFiles": 0,
+    "changedJsonFiles": 1244,
+    "exceptions": 0,
+    "idempotence": true,
+    "idempotenceScope": "Selected-policy entry transforms and repeated conversion from the exact pinned source; derived world ZIPs are not download inputs.",
+    "intentionalAnnouncementSuppressionFiles": 1244,
+    "legacyMigrationChangedFiles": 0,
+    "parseFailures": 0,
+    "proof": "Every native entry compared against independent recursive reward-namespace-scoped announcement-only expected structure; all functions and unrelated entries byte-identical; no needless JSON serialization.",
+    "runtimeChatCandidateFiles": 1304,
+    "runtimeChatChangedFiles": 0,
+    "semanticChangedJsonFiles": 1244,
+    "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+    "sourceSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2"
+  },
+  "phase": "B",
+  "protectedArchiveHashes": {
+    "build/tmp/phase_b_b1/BlazeandCave's Advancements Pack 1.21.zip": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+    "build/tmp/phase_b_b4/Amplified_Nether_v1.2.15.zip": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa",
+    "build/tmp/phase_b_b4/BlazeandCave's Advancements Pack Hardcore.zip": "1baf5f1bc7c48c819cb6b3081cb124793a316b3568352c853b94757bb4237446",
+    "build/tmp/phase_b_b4/Nullscape_26.2_v1.2.20.zip": "ec7b0dfcd1add8c127c985dac1466a44168449b3b6641dd20e6b2e16153b66aa",
+    "build/tmp/phase_b_b4/Terralith_26.2_v2.6.4.zip": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e",
+    "reference/phase_a_preservation/files/final/bacap.zip": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+    "reference/phase_a_preservation/files/final/bacap_amplified_nether.zip": "be7f9c646a8ea8616e34ddef0beab3397995fe66da371cee7cb5cc929f03ad68",
+    "reference/phase_a_preservation/files/final/bacap_hardcore.zip": "8e69adc9f5777aed8013e2b7e857667f0619d200c9152b8efd70c6e74b34cd2f",
+    "reference/phase_a_preservation/files/final/bacap_nullscape.zip": "5ad60435dded0a786d4c6320a6af456f640b2e713a080b942c3bed3c2cb85a20",
+    "reference/phase_a_preservation/files/final/bacap_terralith.zip": "0b3cd387fe6e80ac6fe9a05b22091fce6abf6c38dd9656b3086629ec4031d3de"
+  },
+  "safety": {
+    "archivesUnchanged": true,
+    "b0ThroughB4EvidenceUnchanged": true,
+    "b5_1EvidenceUnchanged": true,
+    "b5_1ProductFilesUnchanged": true,
+    "b5_3Started": false,
+    "commit": false,
+    "generatedResourcesUnchanged": true,
+    "githubMutation": false,
+    "historicalEvidenceUnchanged": true,
+    "localizationUnchanged": true,
+    "noAbilityOrBalanceChange": true,
+    "noAdvancementProgressMigration": true,
+    "noCompanionEdit": true,
+    "noDependencyChange": true,
+    "noMixinEdit": true,
+    "noNewDownload": true,
+    "noStagedFiles": true,
+    "normalBuildCacheUseOnly": true,
+    "onlyAuthorizedProductFileChangedInB5_2": true,
+    "push": false,
+    "tag": false,
+    "testsUnchanged": true
+  },
+  "sourceDiscriminator": {
+    "codePath": "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+    "discriminator": "Exact independently verified source ZIP SHA1, using main1.21 and official Hardcore1.21 identity when selected; not arbitrary filename/version-string/pack-format heuristics. Historical fixture/archive hashes continue through legacy conversion.",
+    "exactSelectionRule": "Compute Utils.calculateSHA1(sourcePack) once before ZIP traversal; native policy only when actual source bytes hash to mainSha1 or hardcoreSha1. Do not select by the updated enum SHA1 alone: frozen historical inputs must still select historical conversion when inspected through test metadata.",
+    "hardcoreSha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+    "mainSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+    "noOtherProductionPathChange": true,
+    "plannedChange": "In copyForWorld determine native verified source once before ZIP loop. Native mcfunction copies pass-through. Native JSON parse/traverse solely existing announcement suppression; leave all criteria/references unchanged and preserve source bytes when no announcement change. Historical convertJson/convertFunction implementation remains intact. Retain original String-signature methods for existing historical regressions; use a narrow overload/helper for native policy. Compute native identity from actual source ZIP bytes once, using Utils.calculateSHA1(sourcePack) and the two exact SHA1 constants; no filename/enum-only trust.",
+    "scope": "Main BACAP1.21 and Hardcore1.21 only. Historical variants and all other sources retain existing conversion. No broad metadata heuristic."
+  },
+  "sourcePolicies": {
+    "bacapAmplifiedNether": {
+      "classification": "HISTORICAL_COMPANION",
+      "enumPinUnchanged": true,
+      "existingMigrationsPreserved": true,
+      "nativeClassificationRejected": true,
+      "sha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+      "sourcePolicyProbe": "Actual production isNativeBacapSource called on exact preserved archive in all three Java probes."
+    },
+    "bacapNullscape": {
+      "classification": "HISTORICAL_COMPANION",
+      "enumPinUnchanged": true,
+      "existingMigrationsPreserved": true,
+      "nativeClassificationRejected": true,
+      "sha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+      "sourcePolicyProbe": "Actual production isNativeBacapSource called on exact preserved archive in all three Java probes."
+    },
+    "bacapTerralith": {
+      "classification": "HISTORICAL_COMPANION",
+      "enumPinUnchanged": true,
+      "existingMigrationsPreserved": true,
+      "nativeClassificationRejected": true,
+      "sha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+      "sourcePolicyProbe": "Actual production isNativeBacapSource called on exact preserved archive in all three Java probes."
+    },
+    "historicalMain": {
+      "classification": "HISTORICAL",
+      "existingMigrationsPreserved": true,
+      "sha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70"
+    },
+    "nativeHardcore121": {
+      "classification": "NATIVE_VERIFIED_SHA1",
+      "sha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+      "versionId": "ZHHHw5wF"
+    },
+    "nativeMain121": {
+      "classification": "NATIVE_VERIFIED_SHA1",
+      "sha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+      "versionId": "Y2zZ5eSs"
+    }
+  },
+  "stage": "B5.2",
+  "status": "PHASE_B_B5_2_COMPLETE",
+  "temporaryProbeEvidence": [
+    {
+      "path": "build/tmp/phase_b_b5_2/B52Probe.java",
+      "sha256": "d63a67efd75981b1004ea12e6362938b59b45b88ddf714588f57819599f5146e"
+    },
+    {
+      "path": "build/tmp/phase_b_b5_2/run_probes.py",
+      "sha256": "0eedcea30ee69cfd97666a26a5f1efd151aab1f55ca1c98518bb6c4693bea9c3"
+    },
+    {
+      "path": "build/tmp/phase_b_b5_2/r16_source.java",
+      "sha256": "20c73be41c3cb218d90339aedee740e5269dc8e6acd9012f952249cefe5fa767"
+    },
+    {
+      "path": "build/tmp/phase_b_b5_2/historical/probe.json",
+      "sha256": "8f666c0e1b7d5b57cf5d31f603a9ab83d9716d0e6b8c527246b77387c82d8b0c"
+    },
+    {
+      "path": "build/tmp/phase_b_b5_2/main/probe.json",
+      "sha256": "f39b7bae5ccdeb6d972eff0eac5261eddc518d6212d6f6e6ea96946e62670c36"
+    },
+    {
+      "path": "build/tmp/phase_b_b5_2/hardcore/probe.json",
+      "sha256": "0e124ee0df2a44848861a2dd9d8ad91e4a3a00eb697816930f73ce8094c6a695"
+    }
+  ],
+  "transactionName": "converter_policy_r17",
+  "treasureHunterRegression": {
+    "jsonLocation": "/criteria/fishing_rod/conditions/item/predicates/enchantments/0/enchantments",
+    "method": "Actual cached MC26.2 RegistryCodecs.homogeneousList, same holder-set codec used by EnchantmentPredicate; exact raw/r16/r17 target values, bound fishing_rod tag. Isolated codec proof, not full world boot.",
+    "minecraftJar": ".gradle/loom-cache/minecraftMaven/net/minecraft/minecraft-merged-84afe0508c/26.2/minecraft-merged-84afe0508c-26.2.jar",
+    "minecraftJarSha256": "4beaad36aebac56874c1feef75a680638fed2d733387b5977481e5b21406d1ef",
+    "passed": true,
+    "r16Behavior": "Legacy adapter wraps native enchantment tag scalar into ordinary-holder array; exact cached codec rejects it.",
+    "r16CodecAccepted": false,
+    "r17Behavior": "Native source gate bypasses all historical adapters; exact upstream scalar predicate preserved.",
+    "rawCodecAccepted": true,
+    "real26_2CodecAccepted": true,
+    "resourceId": "blazeandcave:animal/treasure_hunter",
+    "resourcePath": "data/blazeandcave/advancement/animal/treasure_hunter.json"
+  },
+  "validation": {
+    "all18PriorAuthorityHashesVerified": true,
+    "all34B4FamiliesAccountedFor": true,
+    "allTenB5_1HashesVerified": true,
+    "diffCheckPassed": true,
+    "existingTestsRun": false,
+    "historicalMigrationsByteIdentical": true,
+    "intentionalAnnouncementPolicyRetained": true,
+    "legacy29HistoricalOnly": true,
+    "noFilenameOrVersionHeuristic": true,
+    "probeClasspath": "Production build/classes/java/main precedes B3 annotation fixture classes; actual production ExternalPackCompatibility, ExternalPack, Utils, LegacyItemText and LegacyChatText are exercised. Original r16 is compiled as separate temporary R16Compatibility; B3 diagnostic copies never enter production.",
+    "runtimeChat2Unchanged": true,
+    "scope": "Targeted archive, codec and compilation proof only; full runtime certification remains later stages.",
+    "snbt2NativeNoop": true
+  }
+}

@@ -1,5 +1,13 @@
 {
   "pack": {
-	"pack_format": 61, "description": ""
+    "min_format": [
+      107,
+      1
+    ],
+    "max_format": [
+      107,
+      1
+    ],
+    "description": ""
   }
 }

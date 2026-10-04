@@ -1,0 +1,2082 @@
+{
+  "phase": "B",
+  "stage": "B8",
+  "status": "PHASE_B_B8_STATIC_CERTIFIED",
+  "baselineHead": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+  "branch": "phase-b-bacap-26.2",
+  "chronology": [
+    {
+      "path": "reference/phase_b/b8_static_certification.json",
+      "sha256": "6fef5b8841f4014b0d8340418b23d1f7d74c3883975ecfc858ab3fe08bc26090",
+      "status": "PHASE_B_B8_STOP"
+    },
+    {
+      "path": "reference/phase_b/b8_r1_terralith_player_predicate_repair.json",
+      "sha256": "ef1f59d01b13db8811adf2012346d123ca698a1c1ba8fa78ba4cd7a6d66ff2a7",
+      "status": "PHASE_B_B8_R1_REPAIRED"
+    },
+    {
+      "path": "reference/phase_b/b8_static_certification_post_r1_stop.json",
+      "sha256": "999fbd095acb7e4ab2c11988da80447c38fcb80e2cdcab7994eb3a3321dbece8",
+      "status": "PHASE_B_B8_STOP"
+    },
+    {
+      "path": "reference/phase_b/b8_r2_message_binding_repair.json",
+      "sha256": "14af195151852d1103a52deb0c753e77fd2f608a3b62ef6ed4935504dbb3babf",
+      "status": "PHASE_B_B8_R2_REPAIRED"
+    },
+    {
+      "event": "FINAL_RESUMED_B8_CERTIFICATION",
+      "status": "PHASE_B_B8_STATIC_CERTIFIED"
+    }
+  ],
+  "currentProductAuthority": {
+    "converterSha256": "6ab0674902b4783c39c08dfd802cd0067d1436d973345834f092a001a4db9fec",
+    "marker": "compat_26_2_r19",
+    "ruSha256": "8961ad9d573ab72f63969e4a808b19ce733bc9a60b7ab589fc44dfb6148e1a0a",
+    "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6"
+  },
+  "repairClosure": {
+    "R1": {
+      "directHelpers": {
+        "checked": 2,
+        "passed": 2,
+        "failed": 0
+      },
+      "terralith": {
+        "checked": 2922,
+        "passed": 2922,
+        "failed": 0,
+        "negativeControlRejected": true,
+        "resourceContextSha256": "00caa904cf1844e26335d7b536c5bebb5f193902f43ea6959cca5843352cbd34",
+        "advancementInputsSha256": "19757c09dbebf2d089003b9b724687754d7713535e430d2fca6925525f90b484",
+        "resultSha256": "98189be9f42fcc433ebadfa268d110ae8099ef51b6d8030a5491efb188831f32"
+      },
+      "sourceIdentityFreshness": {
+        "historical": {
+          "enum": "BACAP",
+          "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+          "sourceSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+          "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+          "rawPinned": false,
+          "rawCurrent": false,
+          "markerWritten": true,
+          "markerVersion": "compat_26_2_r19",
+          "markerSourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+          "markerRecordsActualSource": true,
+          "derivedCompatible": false,
+          "derivedCurrent": false,
+          "sourceBytesUnchanged": true
+        },
+        "current": {
+          "enum": "BACAP",
+          "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+          "sourceSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+          "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+          "rawPinned": true,
+          "rawCurrent": true,
+          "markerWritten": true,
+          "markerVersion": "compat_26_2_r19",
+          "markerSourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+          "markerRecordsActualSource": true,
+          "derivedCompatible": true,
+          "derivedCurrent": true,
+          "sourceBytesUnchanged": true
+        },
+        "malformedR17Rejected": true,
+        "oldR18Rejected": true
+      }
+    },
+    "R2": {
+      "messages": 1300,
+      "targetBindingFailures": 0,
+      "componentFailures": 0,
+      "metadataFailures": 0,
+      "preR2DigestRejected": true,
+      "postR2DigestAccepted": true,
+      "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6"
+    },
+    "compiledProductionProbe": {
+      "path": "build/tmp/phase_b_b8/post_r2/identity/identity_probe.json",
+      "sha256": "a1040c7b471a324412726c1d0e330de4e7ebe668d458e0bd0c6d14711cad1a6b",
+      "passed": true
+    }
+  },
+  "targetIdentity": {
+    "sha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+    "sha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+    "version": "1.21",
+    "versionId": "Y2zZ5eSs",
+    "versionName": "1.21 — Chaos Takeover of Mayhem",
+    "projectId": "VoVJ47kN",
+    "minecraftVersion": "26.2"
+  },
+  "targetInventory": {
+    "all": 1332,
+    "noDisplay": 72,
+    "hidden": 17,
+    "excludedRoot": 1,
+    "canonical": 1242,
+    "blazeandcaveCanonical": 1116,
+    "minecraftCanonical": 126,
+    "duplicates": 0
+  },
+  "targetCodec": {
+    "checked": 1332,
+    "passed": 1332,
+    "failed": 0,
+    "negativeControlRejected": true,
+    "resourceContextSha256": "83c2d4f99f26e7be15271266f936c9a569589b786eed4dc9db676f3382ef5ac6",
+    "advancementInputsSha256": "d1e42bd659af40e4256b881da4e4d6e661bf719ec25deb647232cb45aac5d319",
+    "resultSha256": "e9f4e7978a3e9f5e2d300160fe9b25e97c600075436d4ddfb7c6f37e8fe86205"
+  },
+  "registryContext": {
+    "minecraftJar": ".gradle\\loom-cache\\minecraftMaven\\net\\minecraft\\minecraft-merged-3b5d97e58c\\26.2\\minecraft-merged-3b5d97e58c-26.2.jar",
+    "minecraftJarSha256": "49353b010c1f426ab441140e2ff0692d4cd6b7b32c681308d37d833e8b89b14a",
+    "resourceContextSha256": "83c2d4f99f26e7be15271266f936c9a569589b786eed4dc9db676f3382ef5ac6",
+    "targetSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2"
+  },
+  "oldTargetReconciliation": {
+    "oldAll": 1229,
+    "common": 1222,
+    "oldOnly": 7,
+    "targetOnly": 110,
+    "byteIdentical": 594,
+    "semanticIdenticalBytesDiffer": 4,
+    "semanticChanged": 624,
+    "oldOnlyIds": [
+      "blazeandcave:adventure/spear_fishing",
+      "blazeandcave:animal/birdkeeper",
+      "blazeandcave:animal/chatterbox",
+      "blazeandcave:nether/get_a_lode_of_this",
+      "blazeandcave:nether/lodes_of_applications",
+      "blazeandcave:statistics/two_by_two",
+      "minecraft:nether/use_lodestone"
+    ],
+    "targetOnlyIds": [
+      "blazeandcave:adventure/all_around_the_world",
+      "blazeandcave:adventure/seafood_skewer",
+      "blazeandcave:animal/beef_moover",
+      "blazeandcave:animal/chick_buffet",
+      "blazeandcave:animal/counting_sheep",
+      "blazeandcave:animal/fountain_of_youth",
+      "blazeandcave:animal/omelette",
+      "blazeandcave:animal/piglets_big_advancement",
+      "blazeandcave:animal/the_three_little_pigs",
+      "blazeandcave:animal/whole_horse",
+      "blazeandcave:biomes/20_leagues_under_the_sea",
+      "blazeandcave:biomes/a_scute_off_the_old_shell",
+      "blazeandcave:biomes/birdkeeper",
+      "blazeandcave:biomes/chatterbox",
+      "blazeandcave:biomes/coralful_shell",
+      "blazeandcave:biomes/equiangular_spiral",
+      "blazeandcave:biomes/le_creak_cest_chic",
+      "blazeandcave:biomes/naughtylus",
+      "blazeandcave:biomes/submarine_fleet",
+      "blazeandcave:biomes/welcome_to_neverland",
+      "blazeandcave:building/chartreuse",
+      "blazeandcave:building/cinnabar_island",
+      "blazeandcave:building/locked_and_loaded",
+      "blazeandcave:building/shelfception",
+      "blazeandcave:building/the_smell_of_rotten_eggs",
+      "blazeandcave:challenges/at_the_rim_of_the_sky",
+      "blazeandcave:challenges/lets_take_it_up_a_notch",
+      "blazeandcave:enchanting/classic_cartoon_comedy",
+      "blazeandcave:enchanting/echidna",
+      "blazeandcave:enchanting/master_jouster",
+      "blazeandcave:enchanting/oh_baby_a_triple",
+      "blazeandcave:end/taking_the_scenic_route",
+      "blazeandcave:end/unstoppable_force_vs_immovable_object",
+      "blazeandcave:end/why_do_i_hear_boss_music",
+      "blazeandcave:end/youre_doing_it_wrong",
+      "blazeandcave:farming/booshes",
+      "blazeandcave:farming/certified_spud_chomper",
+      "blazeandcave:farming/you_cant_take_the_sky_from_me",
+      "blazeandcave:mining/all_the_balls",
+      "blazeandcave:mining/beep_bop",
+      "blazeandcave:mining/bouncy_beats",
+      "blazeandcave:mining/chain_gang",
+      "blazeandcave:mining/conductive_conglomerate",
+      "blazeandcave:mining/copper_age",
+      "blazeandcave:mining/copper_computer",
+      "blazeandcave:mining/copper_golem_overlord",
+      "blazeandcave:mining/d_b_copper",
+      "blazeandcave:mining/get_a_lode_of_this",
+      "blazeandcave:mining/gratest_of_all_time",
+      "blazeandcave:mining/green_lanterns",
+      "blazeandcave:mining/life_sentence",
+      "blazeandcave:mining/lodes_of_applications",
+      "blazeandcave:mining/mitosis",
+      "blazeandcave:mining/punching_bag",
+      "blazeandcave:mining/school_of_hard_knocks",
+      "blazeandcave:mining/statue_of_limitations",
+      "blazeandcave:mining/stink_bomb",
+      "blazeandcave:mining/such_a_poser",
+      "blazeandcave:mining/total_copout",
+      "blazeandcave:mining/truly_an_all_purpose_tool",
+      "blazeandcave:mining/wax_treatment",
+      "blazeandcave:monsters/absolute_cinema",
+      "blazeandcave:monsters/grim_neigh",
+      "blazeandcave:monsters/jockey_jamboree",
+      "blazeandcave:monsters/lancelot",
+      "blazeandcave:monsters/look_out",
+      "blazeandcave:monsters/ride_or_dry",
+      "blazeandcave:monsters/sands_the_skeleton",
+      "blazeandcave:monsters/the_wicked_witch_of_the_west",
+      "blazeandcave:monsters/unwanted_passenger",
+      "blazeandcave:nether/collateral_damage",
+      "blazeandcave:nether/hot_air_balloon",
+      "blazeandcave:nether/lead_zeppelin",
+      "blazeandcave:nether/midport_village",
+      "blazeandcave:nether/pillow_fight",
+      "blazeandcave:nether/snow_cone",
+      "blazeandcave:potion/string_shot",
+      "blazeandcave:potion/water_balloon",
+      "blazeandcave:redstone/splatfest",
+      "blazeandcave:statistics/big_blimp_enthusiast",
+      "blazeandcave:statistics/captain_nemo",
+      "blazeandcave:statistics/lord_helix",
+      "blazeandcave:statistics/overpopulation",
+      "blazeandcave:statistics/shell_testing",
+      "blazeandcave:statistics/test_flight",
+      "blazeandcave:statistics/who_needs_elytra",
+      "blazeandcave:technical/boss_music_check",
+      "blazeandcave:technical/consume_apple",
+      "blazeandcave:technical/consume_honey_bottle",
+      "blazeandcave:technical/consume_poisonous_potato",
+      "blazeandcave:technical/consume_spider_eye",
+      "blazeandcave:technical/dive_bomb_check",
+      "blazeandcave:technical/multishot_crossbow_check",
+      "blazeandcave:technical/place_warped_button",
+      "blazeandcave:technical/scenic_route_fail",
+      "blazeandcave:technical/shoot_crossbow",
+      "blazeandcave:technical/unwanted_passenger_fail",
+      "blazeandcave:weaponry/arrow_of_ultimate_obliteration",
+      "blazeandcave:weaponry/britney_spears",
+      "blazeandcave:weaponry/death_star",
+      "blazeandcave:weaponry/hit_and_run",
+      "blazeandcave:weaponry/impiled",
+      "blazeandcave:weaponry/spear_fishing",
+      "blazeandcave:weaponry/time_to_hunt",
+      "blazeandcave:weaponry/toasted_marshmallow",
+      "minecraft:adventure/heart_transplanter",
+      "minecraft:adventure/spear_many_mobs",
+      "minecraft:adventure/use_lodestone",
+      "minecraft:husbandry/place_dried_ghast_in_water",
+      "minecraft:husbandry/uh_oh"
+    ]
+  },
+  "canonicalReconciliation": {
+    "old": 1152,
+    "removed": 7,
+    "added": 97,
+    "target": 1242,
+    "targetOnlyNonCanonical": [
+      {
+        "canonical": false,
+        "criteriaCount": 1,
+        "displayPresent": true,
+        "frame": "challenge",
+        "hidden": true,
+        "id": "blazeandcave:monsters/jockey_jamboree",
+        "namespace": "blazeandcave",
+        "parent": "blazeandcave:monsters/absolute_cinema",
+        "path": "data/blazeandcave/advancement/monsters/jockey_jamboree.json",
+        "requirementsSha256": "0c6a6e36290f812d552a9134f8971d05a77e03206a91419cde185daa1f3e8927",
+        "requirementsShape": [
+          1
+        ],
+        "rewardFunction": "bacap_rewards:monsters/jockey_jamboree",
+        "semanticSha256": "fb057b29ae002ecad4e6710ba455a150f544593884382d86df1cd3740888f606",
+        "sha256": "cafeb8cfa329757795a3327577895900dac2efc0979d8633021dbf407f0fe0a3",
+        "nonCanonicalReason": "HIDDEN"
+      },
+      {
+        "canonical": false,
+        "criteriaCount": 1,
+        "displayPresent": true,
+        "frame": "challenge",
+        "hidden": true,
+        "id": "blazeandcave:monsters/the_wicked_witch_of_the_west",
+        "namespace": "blazeandcave",
+        "parent": "blazeandcave:monsters/jockey_jamboree",
+        "path": "data/blazeandcave/advancement/monsters/the_wicked_witch_of_the_west.json",
+        "requirementsSha256": "1ec66c2b0c9c36e0418fe6f7a7e49b8e654e6fb5bd7d5c3119a063dfc7d025b9",
+        "requirementsShape": [
+          1
+        ],
+        "rewardFunction": "bacap_rewards:monsters/the_wicked_witch_of_the_west",
+        "semanticSha256": "3ced0686474ec72c6c980ec631a021cfa8670b322b0a9897428b471d91c693c6",
+        "sha256": "e7705555aec232fc51f54901b65b971c0d83ccf7df1ac09bc3656eec2c6d07c4",
+        "nonCanonicalReason": "HIDDEN"
+      },
+      {
+        "canonical": false,
+        "criteriaCount": 1,
+        "displayPresent": false,
+        "frame": "task",
+        "hidden": false,
+        "id": "blazeandcave:technical/boss_music_check",
+        "namespace": "blazeandcave",
+        "parent": null,
+        "path": "data/blazeandcave/advancement/technical/boss_music_check.json",
+        "requirementsSha256": "3c5a070aeb35d01bffbac25db11cca80780e2c6d23ecb34a8462a92ff0c42bd6",
+        "requirementsShape": [
+          1
+        ],
+        "rewardFunction": "blazeandcave:advancement/check/boss_music",
+        "semanticSha256": "8f36eface7a458d0073d5690627d301436ce4b143d45de79507bfb1f4c745ac0",
+        "sha256": "0eb7d8684f8e713a34cc5e3568c69d2b9fcb12abf767ee607d1bdb4ad5a18864",
+        "nonCanonicalReason": "NO_DISPLAY"
+      },
+      {
+        "canonical": false,
+        "criteriaCount": 1,
+        "displayPresent": false,
+        "frame": "task",
+        "hidden": false,
+        "id": "blazeandcave:technical/consume_apple",
+        "namespace": "blazeandcave",
+        "parent": null,
+        "path": "data/blazeandcave/advancement/technical/consume_apple.json",
+        "requirementsSha256": "39489ab1408a3f9fc4a3ef87f0f7a4d6376927fb0e577fd899209c9dac47ed91",
+        "requirementsShape": [
+          1
+        ],
+        "rewardFunction": "blazeandcave:advancement/statistics/consume_apple",
+        "semanticSha256": "c4a4c15991e9bd375a4185e11c13d7d5831555ed0480b8ae328a030b9543fe7e",
+        "sha256": "cd7787fc6d0f7c7aaada5802ba0e567e65f564adf64e351853f42c62f27820c6",
+        "nonCanonicalReason": "NO_DISPLAY"
+      },
+      {
+        "canonical": false,
+        "criteriaCount": 1,
+        "displayPresent": false,
+        "frame": "task",
+        "hidden": false,
+        "id": "blazeandcave:technical/consume_honey_bottle",
+        "namespace": "blazeandcave",
+        "parent": null,
+        "path": "data/blazeandcave/advancement/technical/consume_honey_bottle.json",
+        "requirementsSha256": "8793a60a5016be79c8043b5b9d4490753106cc843e927792b567023bf9fc571e",
+        "requirementsShape": [
+          1
+        ],
+        "rewardFunction": "blazeandcave:advancement/statistics/consume_honey_bottle",
+        "semanticSha256": "1968cd8073e3ce39fdcdfb40ab230cd6e73763f270321376c2cba56ae582fa1e",
+        "sha256": "337a769a0a4fcd93264cc5b50b2a36f70bd6b32529f7b86707b6c9ee559a38ec",
+        "nonCanonicalReason": "NO_DISPLAY"
+      },
+      {
+        "canonical": false,
+        "criteriaCount": 1,
+        "displayPresent": false,
+        "frame": "task",
+        "hidden": false,
+        "id": "blazeandcave:technical/consume_poisonous_potato",
+        "namespace": "blazeandcave",
+        "parent": null,
+        "path": "data/blazeandcave/advancement/technical/consume_poisonous_potato.json",
+        "requirementsSha256": "c7889adca555425b084bc88c78be1f093b34f9fa12926db09d02e7685a863a70",
+        "requirementsShape": [
+          1
+        ],
+        "rewardFunction": "blazeandcave:advancement/statistics/consume_poisonous_potato",
+        "semanticSha256": "ad0a9fd0e2e0e041ed9d35de8c6323f373e3f1763e115139d09749cad28a842f",
+        "sha256": "5f647808b4298b0993280a9a85a5acb05267ba2c5c4704c8bf37cc8cdb091858",
+        "nonCanonicalReason": "NO_DISPLAY"
+      },
+      {
+        "canonical": false,
+        "criteriaCount": 1,
+        "displayPresent": false,
+        "frame": "task",
+        "hidden": false,
+        "id": "blazeandcave:technical/consume_spider_eye",
+        "namespace": "blazeandcave",
+        "parent": null,
+        "path": "data/blazeandcave/advancement/technical/consume_spider_eye.json",
+        "requirementsSha256": "39489ab1408a3f9fc4a3ef87f0f7a4d6376927fb0e577fd899209c9dac47ed91",
+        "requirementsShape": [
+          1
+        ],
+        "rewardFunction": "blazeandcave:advancement/statistics/consume_spider_eye",
+        "semanticSha256": "7ed0f94e61c67215484312a1473047beefc22802a71f51061f9b3ad1edc578ec",
+        "sha256": "ea066f1d776763554bba5329c502d249484318a758422cf150c2ca29be6195e0",
+        "nonCanonicalReason": "NO_DISPLAY"
+      },
+      {
+        "canonical": false,
+        "criteriaCount": 1,
+        "displayPresent": false,
+        "frame": "task",
+        "hidden": false,
+        "id": "blazeandcave:technical/dive_bomb_check",
+        "namespace": "blazeandcave",
+        "parent": null,
+        "path": "data/blazeandcave/advancement/technical/dive_bomb_check.json",
+        "requirementsSha256": "e3e4708c1a67b109c7ce87529e23e7c8027abcd51f7c7e5298ddc0a0908275e2",
+        "requirementsShape": [
+          1
+        ],
+        "rewardFunction": null,
+        "semanticSha256": "55a91fccc61ef4e79bd08a45079c76dd7de5a0175f8580612653ccdb324619cd",
+        "sha256": "bae639965269a8d81e5d7f3356ec5ed0ea14a03cd0f5e6ca44b561fc383f5702",
+        "nonCanonicalReason": "NO_DISPLAY"
+      },
+      {
+        "canonical": false,
+        "criteriaCount": 1,
+        "displayPresent": false,
+        "frame": "task",
+        "hidden": false,
+        "id": "blazeandcave:technical/multishot_crossbow_check",
+        "namespace": "blazeandcave",
+        "parent": null,
+        "path": "data/blazeandcave/advancement/technical/multishot_crossbow_check.json",
+        "requirementsSha256": "9f5e5a203739ba30be26ac5aac8fa16b1732e7d4432b42dec7a719d39c289f2e",
+        "requirementsShape": [
+          1
+        ],
+        "rewardFunction": "blazeandcave:advancement/check/multishot_crossbow",
+        "semanticSha256": "83b48fdd9bf9a3e2cb1676096494a8fa6cd74e71e0cd71e553f928d3bcd4c990",
+        "sha256": "1a51b231ffdb0a29e562173b94f93cb6c16a98e9aaccd8cce0ea27cc1677f46c",
+        "nonCanonicalReason": "NO_DISPLAY"
+      },
+      {
+        "canonical": false,
+        "criteriaCount": 1,
+        "displayPresent": false,
+        "frame": "task",
+        "hidden": false,
+        "id": "blazeandcave:technical/place_warped_button",
+        "namespace": "blazeandcave",
+        "parent": null,
+        "path": "data/blazeandcave/advancement/technical/place_warped_button.json",
+        "requirementsSha256": "c3b9eb7f840d099125acaf666087fd3ce6f3361a20ae927716650163c23fe9b8",
+        "requirementsShape": [
+          1
+        ],
+        "rewardFunction": "blazeandcave:advancement/statistics/place_warped_button",
+        "semanticSha256": "e852caa8f8ea4ba4eec5b4071f38c8a1ec7a7b4e609ff45d3c3909a50177bc55",
+        "sha256": "944698286ac689c729468b6551cc4d1a79444a2bab212b7eb4151688b1fb79a0",
+        "nonCanonicalReason": "NO_DISPLAY"
+      },
+      {
+        "canonical": false,
+        "criteriaCount": 3,
+        "displayPresent": false,
+        "frame": "task",
+        "hidden": false,
+        "id": "blazeandcave:technical/scenic_route_fail",
+        "namespace": "blazeandcave",
+        "parent": null,
+        "path": "data/blazeandcave/advancement/technical/scenic_route_fail.json",
+        "requirementsSha256": "a626a669a1dc65ced0accfcf5636127c56da616dd90ad8f0457677ff4f37abf1",
+        "requirementsShape": [
+          3
+        ],
+        "rewardFunction": null,
+        "semanticSha256": "ba2fe5b4467a03df0086f6deb76cf414be442d234c5961f47622cb32435b2fa8",
+        "sha256": "289e4b873deaa19f324499bd88de408c9be26482d7810beb0cf1562d48e2f446",
+        "nonCanonicalReason": "NO_DISPLAY"
+      },
+      {
+        "canonical": false,
+        "criteriaCount": 1,
+        "displayPresent": false,
+        "frame": "task",
+        "hidden": false,
+        "id": "blazeandcave:technical/shoot_crossbow",
+        "namespace": "blazeandcave",
+        "parent": null,
+        "path": "data/blazeandcave/advancement/technical/shoot_crossbow.json",
+        "requirementsSha256": "6a531c7303ff0431b257a30051252ef1c937cf8ae437aec83aa0ca98c77130ce",
+        "requirementsShape": [
+          1
+        ],
+        "rewardFunction": "blazeandcave:advancement/shoot_crossbow",
+        "semanticSha256": "ca0daa5f7c8be423b536b968d394ef9d4b8b6f04def9c00ecdfe5523fc497315",
+        "sha256": "4cee5d6ab825218334e714acd975d02b98d114ca5f0a0397fd51d68a42b3f492",
+        "nonCanonicalReason": "NO_DISPLAY"
+      },
+      {
+        "canonical": false,
+        "criteriaCount": 1,
+        "displayPresent": false,
+        "frame": "task",
+        "hidden": false,
+        "id": "blazeandcave:technical/unwanted_passenger_fail",
+        "namespace": "blazeandcave",
+        "parent": null,
+        "path": "data/blazeandcave/advancement/technical/unwanted_passenger_fail.json",
+        "requirementsSha256": "9850a116ce69fc769b0fb26ba73e12e4bab3aa96911b6d7679e5c8117805cd0a",
+        "requirementsShape": [
+          1
+        ],
+        "rewardFunction": "blazeandcave:unwanted_passenger_fail",
+        "semanticSha256": "bd8b3513d88468596fde9ba07d65c6742279bd0a17a6341fde08614e3c3a767e",
+        "sha256": "7d11b849bfd58aca9c39bfe06d7e6f55db52fe6ec964be51851d41a456839a05",
+        "nonCanonicalReason": "NO_DISPLAY"
+      }
+    ]
+  },
+  "renameMoveMappings": [
+    {
+      "newId": "blazeandcave:adventure/seafood_skewer",
+      "newPresentTarget": true,
+      "oldAbsentTarget": true,
+      "oldId": "blazeandcave:adventure/spear_fishing",
+      "oldPresent": true,
+      "oldSha256": "eb146aecd64c139794c95fb97baf46fb3bced468007d7d5c2b000b7f4f5fe5b6",
+      "progressMigration": false,
+      "targetSha256": "c521669339559a49536a876143aefdc516815759cdf23404b6eb74467a31cc94"
+    },
+    {
+      "newId": "blazeandcave:biomes/birdkeeper",
+      "newPresentTarget": true,
+      "oldAbsentTarget": true,
+      "oldId": "blazeandcave:animal/birdkeeper",
+      "oldPresent": true,
+      "oldSha256": "e1f54274fafc35cb05f591c36c221003e0e71bfce29c386f653d5771fac29d30",
+      "progressMigration": false,
+      "targetSha256": "ea7b0f63eb221727c685e38aa8ec48c6161ad0ad8b58ae49604f5a78b0dfbf01"
+    },
+    {
+      "newId": "blazeandcave:biomes/chatterbox",
+      "newPresentTarget": true,
+      "oldAbsentTarget": true,
+      "oldId": "blazeandcave:animal/chatterbox",
+      "oldPresent": true,
+      "oldSha256": "559b8865012e2ebd9d82bc38b9e1630d689da80c085361ff9737e71468181523",
+      "progressMigration": false,
+      "targetSha256": "d8bf11c4a693595a519268131c59337f56ae67ae2ce9fec82ff089ca031f3879"
+    },
+    {
+      "newId": "blazeandcave:mining/get_a_lode_of_this",
+      "newPresentTarget": true,
+      "oldAbsentTarget": true,
+      "oldId": "blazeandcave:nether/get_a_lode_of_this",
+      "oldPresent": true,
+      "oldSha256": "66d209a796a3ca33840a34c3670183d0a80f79ff4822646d1d4f5b860a12bcbc",
+      "progressMigration": false,
+      "targetSha256": "eb6f411df84a142724ac4f98ff84e45864891ec92d632c2a5ec236e8f54d3244"
+    },
+    {
+      "newId": "blazeandcave:mining/lodes_of_applications",
+      "newPresentTarget": true,
+      "oldAbsentTarget": true,
+      "oldId": "blazeandcave:nether/lodes_of_applications",
+      "oldPresent": true,
+      "oldSha256": "cd1a1d2fdbdad65a5c1941d8e0f224de1247fcc598fc2f4a770094f3915edb35",
+      "progressMigration": false,
+      "targetSha256": "f7f2314c4645b88a04de19e2d4c45ecdb5efcee5384e5aec7715353f9a7bca47"
+    },
+    {
+      "newId": "blazeandcave:statistics/overpopulation",
+      "newPresentTarget": true,
+      "oldAbsentTarget": true,
+      "oldId": "blazeandcave:statistics/two_by_two",
+      "oldPresent": true,
+      "oldSha256": "b2202f5f01c1b86a161a7801080b2bf624b821841d46de85b63bd632a2a046d2",
+      "progressMigration": false,
+      "targetSha256": "da25e50a9f3d6cd391b19cae607a453824fe104b04d7b4778eb1b8a9fdf8bca9"
+    },
+    {
+      "newId": "minecraft:adventure/use_lodestone",
+      "newPresentTarget": true,
+      "oldAbsentTarget": true,
+      "oldId": "minecraft:nether/use_lodestone",
+      "oldPresent": true,
+      "oldSha256": "14f47cf5caca2db9182a1faebd6b667b39d6487ef75453e087387c224b64a5f9",
+      "progressMigration": false,
+      "targetSha256": "2821d7fa137a8a1c8b61a45b595a1d8185313795787443879f6bc65c8e48ea82"
+    }
+  ],
+  "staleIdScan": {
+    "activeRemovedOrMalformedIds": [],
+    "progressAliasesAdded": false
+  },
+  "parentGraph": {
+    "amplifiedNether": {
+      "advancements": 2894,
+      "duplicates": 0,
+      "missingParents": 0,
+      "cycles": 0,
+      "selfParents": 0
+    },
+    "hardcore": {
+      "advancements": 2894,
+      "duplicates": 0,
+      "missingParents": 0,
+      "cycles": 0,
+      "selfParents": 0
+    },
+    "main": {
+      "advancements": 2894,
+      "duplicates": 0,
+      "missingParents": 0,
+      "cycles": 0,
+      "selfParents": 0
+    },
+    "nullscape": {
+      "advancements": 2895,
+      "duplicates": 0,
+      "missingParents": 0,
+      "cycles": 0,
+      "selfParents": 0
+    },
+    "terralith": {
+      "advancements": 2922,
+      "duplicates": 0,
+      "missingParents": 0,
+      "cycles": 0,
+      "selfParents": 0
+    }
+  },
+  "wrapperScan": {
+    "checked": 1256,
+    "malformed": 0
+  },
+  "rewardFunctionScan": {
+    "checked": 1294,
+    "missing": 0
+  },
+  "postB4Shims": [
+    {
+      "correctId": "blazeandcave:biomes/naughtylus",
+      "function": "bacap_rewards:biomes/naughtylus",
+      "invalidId": "blazeandcave:biomes/naughty_lus",
+      "onlyIdTokenChanged": true,
+      "sha256": "ac527d3328d44ead2e4a24f088c2919057e4d98ca88213c34739e6125128c6a0"
+    },
+    {
+      "correctId": "minecraft:story/root",
+      "function": "bacap_rewards:bacap/benchmarking",
+      "invalidId": "blazeandcave:bacap/benchmarking",
+      "onlyIdTokenChanged": true,
+      "sha256": "4eef913de9a1829a277f03624b0c3d6dc65ccfd6789e4dda3b2c1934e353b779"
+    },
+    {
+      "function": "blazeandcave:unwanted_passenger_fail",
+      "oneLineForwarder": true,
+      "target": "blazeandcave:advancement/unwanted_passenger_fail"
+    }
+  ],
+  "guardedOptionalContractProof": {
+    "guardsVerified": true,
+    "scope": "Native sparse reward/exp/trophy calls plus B4 Hardcore-only damage-score selector hook; runtime execution belongs to B10.",
+    "hardcoreOnlyHelper": "blazeandcave:advancement/loser_hurt",
+    "hardcoreHelperExists": true,
+    "b4AuthoritySha256": "142d9fb5c7c905c10b87b07480043812b149a4622381fe9204b29fd5bdb26710"
+  },
+  "resourceGraph": {
+    "amplifiedNether": {
+      "directReferencesChecked": 1631,
+      "unexplainedDirectMissingResources": 0,
+      "typedRegistryReferencesChecked": 6066,
+      "predicatesCodecChecked": 58,
+      "typedRegistryAndPredicateFailures": 0,
+      "functionCalls": {
+        "DYNAMIC_MACRO_TARGET": 38,
+        "EXTERNAL_BACAP_FANPACK_HOOK": 2,
+        "GUARDED_OPTIONAL_RESOURCE": 109,
+        "RESOLVED": 1740
+      },
+      "unexpectedDirectDanglingCalls": 0
+    },
+    "hardcore": {
+      "directReferencesChecked": 1631,
+      "unexplainedDirectMissingResources": 0,
+      "typedRegistryReferencesChecked": 6066,
+      "predicatesCodecChecked": 58,
+      "typedRegistryAndPredicateFailures": 0,
+      "functionCalls": {
+        "DYNAMIC_MACRO_TARGET": 38,
+        "EXTERNAL_BACAP_FANPACK_HOOK": 2,
+        "GUARDED_OPTIONAL_RESOURCE": 108,
+        "RESOLVED": 1741
+      },
+      "unexpectedDirectDanglingCalls": 0
+    },
+    "main": {
+      "directReferencesChecked": 1631,
+      "unexplainedDirectMissingResources": 0,
+      "typedRegistryReferencesChecked": 6066,
+      "predicatesCodecChecked": 58,
+      "typedRegistryAndPredicateFailures": 0,
+      "functionCalls": {
+        "DYNAMIC_MACRO_TARGET": 38,
+        "EXTERNAL_BACAP_FANPACK_HOOK": 2,
+        "GUARDED_OPTIONAL_RESOURCE": 109,
+        "RESOLVED": 1740
+      },
+      "unexpectedDirectDanglingCalls": 0
+    },
+    "nullscape": {
+      "directReferencesChecked": 1631,
+      "unexplainedDirectMissingResources": 0,
+      "typedRegistryReferencesChecked": 6160,
+      "predicatesCodecChecked": 58,
+      "typedRegistryAndPredicateFailures": 0,
+      "functionCalls": {
+        "DYNAMIC_MACRO_TARGET": 38,
+        "EXTERNAL_BACAP_FANPACK_HOOK": 2,
+        "GUARDED_OPTIONAL_RESOURCE": 109,
+        "RESOLVED": 1744
+      },
+      "unexpectedDirectDanglingCalls": 0
+    },
+    "terralith": {
+      "directReferencesChecked": 1648,
+      "unexplainedDirectMissingResources": 0,
+      "typedRegistryReferencesChecked": 7060,
+      "predicatesCodecChecked": 59,
+      "typedRegistryAndPredicateFailures": 0,
+      "functionCalls": {
+        "DYNAMIC_MACRO_TARGET": 38,
+        "EXTERNAL_BACAP_FANPACK_HOOK": 4,
+        "GUARDED_OPTIONAL_RESOURCE": 109,
+        "RESOLVED": 1907
+      },
+      "unexpectedDirectDanglingCalls": 0
+    }
+  },
+  "scoreboardContract": {
+    "pointsSeparate": true,
+    "rawProgressionObjectives": [
+      "bac_advancements",
+      "bac_advfirst",
+      "bac_advancements_team",
+      "bac_advfirst_team_sum",
+      "bac_advfirst_sum",
+      "bac_advfirst_team"
+    ],
+    "summary": {
+      "addedDefinedObjectives": 25,
+      "atdSetupAndRootWrapperFilesAccounted": 0,
+      "oldDefinedObjectives": 87,
+      "oldReferencedObjectives": 135,
+      "removedDefinedObjectives": 2,
+      "targetDefinedObjectives": 110,
+      "targetReferencedObjectives": 143
+    },
+    "targetObjectiveIdentityMatchesB3": true
+  },
+  "trackers": {
+    "total": 86,
+    "resolved": 86,
+    "keep": 80,
+    "updated": 6,
+    "missingAdvancementRefs": 0,
+    "missingScoreboardRefs": 0,
+    "invalidRegistryRefs": 0,
+    "registryReferencesChecked": 74,
+    "updatedBindings": [
+      {
+        "binding": {
+          "advancementId": "blazeandcave:animal/wheres_the_honey_lebowski",
+          "babySeparated": null,
+          "declarationSha256": "e92d83992163deb5d643527b86e8d5632f626088ff74dc3b362442ec82376b2a",
+          "effectiveFinalValue": 100,
+          "literalParameter": 100,
+          "name": "WHERES_THE_HONEY_LEBOWSKI",
+          "nearbyEntities": null,
+          "path": "src/main/java/com/diskree/achievetodo/tracking/TrackedScoreType.java",
+          "scoreboardObjectives": [
+            "bac_consume_honey_bottle"
+          ],
+          "statOrItemOrEntityReferences": [],
+          "type": "SCORE"
+        },
+        "disposition": "UPDATED",
+        "name": "WHERES_THE_HONEY_LEBOWSKI",
+        "resolved": true
+      },
+      {
+        "binding": {
+          "advancementId": "blazeandcave:monsters/pupil_poppers",
+          "babySeparated": null,
+          "declarationSha256": "8040e6e4b1d5cd571cae31cbaab06e121081666db7150a0454017f2bc957b157",
+          "effectiveFinalValue": 1000,
+          "literalParameter": 1000,
+          "name": "PUPIL_POPPERS",
+          "nearbyEntities": null,
+          "path": "src/main/java/com/diskree/achievetodo/tracking/TrackedScoreType.java",
+          "scoreboardObjectives": [
+            "bac_consume_spider_eye"
+          ],
+          "statOrItemOrEntityReferences": [],
+          "type": "SCORE"
+        },
+        "disposition": "UPDATED",
+        "name": "PUPIL_POPPERS",
+        "resolved": true
+      },
+      {
+        "binding": {
+          "advancementId": "blazeandcave:statistics/overpopulation",
+          "babySeparated": null,
+          "declarationSha256": "cf898e5319125979e78c291a66d888b074ce09130b80c60e12b61743eef1c0cd",
+          "effectiveFinalValue": 2500,
+          "literalParameter": 2500,
+          "name": "TWO_BY_TWO",
+          "nearbyEntities": null,
+          "path": "src/main/java/com/diskree/achievetodo/tracking/TrackedStatisticsDataType.java",
+          "scoreboardObjectives": [],
+          "statOrItemOrEntityReferences": [
+            "Stats.CUSTOM",
+            "Stats.ANIMALS_BRED"
+          ],
+          "type": "STATISTIC"
+        },
+        "disposition": "UPDATED",
+        "name": "TWO_BY_TWO",
+        "resolved": true
+      },
+      {
+        "binding": {
+          "advancementId": "blazeandcave:animal/animal_kingdom",
+          "babySeparated": false,
+          "declarationSha256": "b0165673cb91b1cd2bd14bd1b2cfb86e060e8bf669aad761acbb62c68e31d0a3",
+          "effectiveFinalValue": 41,
+          "literalParameter": 32,
+          "name": "ANIMAL_KINGDOM",
+          "nearbyEntities": [
+            "AXOLOTL",
+            "BAT",
+            "CAT",
+            "CHICKEN",
+            "COD",
+            "COW",
+            "DONKEY",
+            "FOX",
+            "FROG",
+            "GLOW_SQUID",
+            "HORSE",
+            "MOOSHROOM",
+            "MULE",
+            "OCELOT",
+            "PARROT",
+            "PIG",
+            "PUFFERFISH",
+            "RABBIT",
+            "SALMON",
+            "SHEEP",
+            "SQUID",
+            "STRIDER",
+            "TROPICAL_FISH",
+            "TURTLE",
+            "BEE",
+            "DOLPHIN",
+            "GOAT",
+            "LLAMA",
+            "PANDA",
+            "POLAR_BEAR",
+            "WOLF",
+            "CAMEL",
+            "SNIFFER",
+            "SKELETON_HORSE",
+            "ARMADILLO",
+            "TADPOLE",
+            "HOGLIN",
+            "NAUTILUS",
+            "ZOMBIE_NAUTILUS",
+            "ZOMBIE_HORSE",
+            "CAMEL_HUSK"
+          ],
+          "path": "src/main/java/com/diskree/achievetodo/tracking/TrackedNearbyEntitiesType.java",
+          "scoreboardObjectives": [],
+          "statOrItemOrEntityReferences": [
+            "EntityTypes.AXOLOTL",
+            "EntityTypes.BAT",
+            "EntityTypes.CAT",
+            "EntityTypes.CHICKEN",
+            "EntityTypes.COD",
+            "EntityTypes.COW",
+            "EntityTypes.DONKEY",
+            "EntityTypes.FOX",
+            "EntityTypes.FROG",
+            "EntityTypes.GLOW_SQUID",
+            "EntityTypes.HORSE",
+            "EntityTypes.MOOSHROOM",
+            "EntityTypes.MULE",
+            "EntityTypes.OCELOT",
+            "EntityTypes.PARROT",
+            "EntityTypes.PIG",
+            "EntityTypes.PUFFERFISH",
+            "EntityTypes.RABBIT",
+            "EntityTypes.SALMON",
+            "EntityTypes.SHEEP",
+            "EntityTypes.SQUID",
+            "EntityTypes.STRIDER",
+            "EntityTypes.TROPICAL_FISH",
+            "EntityTypes.TURTLE",
+            "EntityTypes.BEE",
+            "EntityTypes.DOLPHIN",
+            "EntityTypes.GOAT",
+            "EntityTypes.LLAMA",
+            "EntityTypes.PANDA",
+            "EntityTypes.POLAR_BEAR",
+            "EntityTypes.WOLF",
+            "EntityTypes.CAMEL",
+            "EntityTypes.SNIFFER",
+            "EntityTypes.SKELETON_HORSE",
+            "EntityTypes.ARMADILLO",
+            "EntityTypes.TADPOLE",
+            "EntityTypes.HOGLIN",
+            "EntityTypes.NAUTILUS",
+            "EntityTypes.ZOMBIE_NAUTILUS",
+            "EntityTypes.ZOMBIE_HORSE",
+            "EntityTypes.CAMEL_HUSK"
+          ],
+          "type": "NEARBY_ENTITIES"
+        },
+        "disposition": "UPDATED",
+        "name": "ANIMAL_KINGDOM",
+        "resolved": true
+      },
+      {
+        "binding": {
+          "advancementId": "blazeandcave:monsters/family_reunion",
+          "babySeparated": true,
+          "declarationSha256": "0e3901f10b586dee49011af6b6f5a4b68339d5a445d8667920c1ec081757aa17",
+          "effectiveFinalValue": 10,
+          "literalParameter": 10,
+          "name": "FAMILY_REUNION",
+          "nearbyEntities": [
+            "HUSK",
+            "ZOMBIE_VILLAGER",
+            "DROWNED",
+            "ZOMBIFIED_PIGLIN",
+            "ZOMBIE"
+          ],
+          "path": "src/main/java/com/diskree/achievetodo/tracking/TrackedNearbyEntitiesType.java",
+          "scoreboardObjectives": [],
+          "statOrItemOrEntityReferences": [
+            "EntityTypes.HUSK",
+            "EntityTypes.ZOMBIE_VILLAGER",
+            "EntityTypes.DROWNED",
+            "EntityTypes.ZOMBIFIED_PIGLIN",
+            "EntityTypes.ZOMBIE"
+          ],
+          "type": "NEARBY_ENTITIES"
+        },
+        "disposition": "UPDATED",
+        "name": "FAMILY_REUNION",
+        "resolved": true
+      },
+      {
+        "binding": {
+          "advancementId": "blazeandcave:monsters/bone_to_party",
+          "babySeparated": false,
+          "declarationSha256": "6e678ae58bf47742e3daf77b56ad85c993c9498df5dd17b2b7ce2558c2828919",
+          "effectiveFinalValue": 7,
+          "literalParameter": 10,
+          "name": "BONE_TO_PARTY",
+          "nearbyEntities": [
+            "SKELETON_HORSE",
+            "WITHER",
+            "STRAY",
+            "BOGGED",
+            "WITHER_SKELETON",
+            "SKELETON",
+            "PARCHED"
+          ],
+          "path": "src/main/java/com/diskree/achievetodo/tracking/TrackedNearbyEntitiesType.java",
+          "scoreboardObjectives": [],
+          "statOrItemOrEntityReferences": [
+            "EntityTypes.SKELETON_HORSE",
+            "EntityTypes.WITHER",
+            "EntityTypes.STRAY",
+            "EntityTypes.BOGGED",
+            "EntityTypes.WITHER_SKELETON",
+            "EntityTypes.SKELETON",
+            "EntityTypes.PARCHED"
+          ],
+          "type": "NEARBY_ENTITIES"
+        },
+        "disposition": "UPDATED",
+        "name": "BONE_TO_PARTY",
+        "resolved": true
+      }
+    ],
+    "unchangedSpecialCases": [
+      "ON_A_RAIL",
+      "HALF_HEART_LIFE"
+    ]
+  },
+  "gui": {
+    "tabs": 17,
+    "explicit": 27,
+    "historicalExplicit": 28,
+    "removedOnly": "blazeandcave:challenges/constellation",
+    "unresolved": 0,
+    "architectureUnchanged": true,
+    "categories": 17,
+    "explicitAfter": 27,
+    "explicitBefore": 28,
+    "missing": 0,
+    "orderedChildren": {
+      "blazeandcave:challenges/root": [
+        "blazeandcave:challenges/nuclear_fusion",
+        "blazeandcave:challenges/ad_astra",
+        "blazeandcave:challenges/all_the_blocks",
+        "blazeandcave:challenges/ultimate_enchanter",
+        "blazeandcave:challenges/i_am_loot",
+        "blazeandcave:challenges/telescopic",
+        "blazeandcave:challenges/were_in_the_endgame_now"
+      ],
+      "blazeandcave:statistics/root": [
+        "blazeandcave:statistics/out_for_a_stroll",
+        "blazeandcave:statistics/natural_sprinter",
+        "blazeandcave:statistics/sneaky_snitch",
+        "blazeandcave:statistics/laps_in_the_pool",
+        "blazeandcave:statistics/luxury_cruise",
+        "blazeandcave:technical/big_cheater",
+        "blazeandcave:statistics/minecart_rider",
+        "blazeandcave:statistics/pig_training",
+        "blazeandcave:statistics/taking_it_in_stride",
+        "blazeandcave:statistics/horse_training",
+        "blazeandcave:statistics/take_to_the_skies"
+      ],
+      "blazeandcave:technical/you_are_a_big_cheater": [
+        "blazeandcave:statistics/the_first_night",
+        "blazeandcave:statistics/spring_in_your_step",
+        "blazeandcave:statistics/om_nom_nom",
+        "blazeandcave:statistics/mob_hunter",
+        "blazeandcave:statistics/level_up",
+        "blazeandcave:statistics/loot_em",
+        "blazeandcave:statistics/the_parrots_and_the_bats",
+        "blazeandcave:statistics/novice_enchanter",
+        "blazeandcave:statistics/the_haggler"
+      ]
+    },
+    "parentFailures": 0,
+    "parentMaps": 3
+  },
+  "search": {
+    "broadCounts": {
+      "amplifiedNether": 1261,
+      "hardcore": 1261,
+      "main": 1261,
+      "nullscape": 1262,
+      "terralith": 1287
+    },
+    "activeCounts": {
+      "amplifiedNether": 1257,
+      "hardcore": 1257,
+      "main": 1257,
+      "nullscape": 1258,
+      "terralith": 1283
+    },
+    "fourCommentedExamples": [
+      {
+        "advancementId": "blazeandcave:animal/fractal",
+        "function": "bacap_rewards:msg/animal/fractal",
+        "line": 2
+      },
+      {
+        "advancementId": "blazeandcave:animal/humble_bundle",
+        "function": "bacap_rewards:msg/animal/humble_bundle",
+        "line": 2
+      },
+      {
+        "advancementId": "blazeandcave:redstone/vibe_check",
+        "function": "bacap_rewards:msg/redstone/vibe_check",
+        "line": 3
+      },
+      {
+        "advancementId": "blazeandcave:redstone/vibe_check",
+        "function": "bacap_rewards:msg/redstone/vibe_check",
+        "line": 5
+      }
+    ],
+    "broadDefinition": "Lexical highlight occurrences including four commented examples.",
+    "activeDefinition": "Executable, non-comment mcfunction commands only.",
+    "unresolvedActive": 0,
+    "inactiveCommentProof": {
+      "count": 4,
+      "independentlyReadByJUnit": true,
+      "notExecutable": true
+    }
+  },
+  "messages": {
+    "currentCorpus": 1300,
+    "componentFailures": 0,
+    "hoverClickStyleFailures": 0,
+    "targetBindingFailures": 0,
+    "searchDestinationFailures": 0,
+    "codecReceiptSha256": "fa128723859407a970cc2c89faf7436f707a8c79c268861a72b118e80c7841a8",
+    "bindingReceiptSha256": "fd8268bba8b40d677afe4a6935e3819964d769914f7f026e19421332de5a255e",
+    "R2RepairReceiptHash": "14af195151852d1103a52deb0c753e77fd2f608a3b62ef6ed4935504dbb3babf"
+  },
+  "rootWrappers": {
+    "total": 17,
+    "passed": 17,
+    "contracts": [
+      {
+        "arguments": {
+          "adv_id": "minecraft:adventure/root",
+          "reward_id": "adventure/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/adventure/root.mcfunction",
+        "sha256": "54ae2d084069a61f550afee4149ef4e211f52ef4aaa3c73278923368624953a0"
+      },
+      {
+        "arguments": {
+          "adv_id": "minecraft:husbandry/root",
+          "reward_id": "animal/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/animal/root.mcfunction",
+        "sha256": "9fbcae258ad761ba8fd095815961010ac93d4200a6388189be2c2de215a3a037"
+      },
+      {
+        "arguments": {
+          "adv_id": "blazeandcave:bacap/advancement_legend",
+          "reward_id": "bacap/advancement_legend",
+          "tier": "advancement_legend"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/bacap/advancement_legend.mcfunction",
+        "sha256": "2ecdafff1ac93e21874847395546216a2824a43092ce929544fbe13cdbd971b7"
+      },
+      {
+        "arguments": {
+          "adv_id": "blazeandcave:biomes/root",
+          "reward_id": "biomes/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/biomes/root.mcfunction",
+        "sha256": "15005cd26c267ab8eb0e7c372d1aceff88bf8edaf8f424084eca8e3daed9b89b"
+      },
+      {
+        "arguments": {
+          "adv_id": "blazeandcave:building/root",
+          "reward_id": "building/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/building/root.mcfunction",
+        "sha256": "52afed556a5e4cfc64ccd3851f79fa693ea443fd312ff89cab21e4bd2fbed1a9"
+      },
+      {
+        "arguments": {
+          "adv_id": "blazeandcave:challenges/root",
+          "reward_id": "challenges/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/challenges/root.mcfunction",
+        "sha256": "d3956b858a0032334fa28b289a89de026f7abd8a23fe40ba73fd6f519e5a1c57"
+      },
+      {
+        "arguments": {
+          "adv_id": "blazeandcave:enchanting/root",
+          "reward_id": "enchanting/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/enchanting/root.mcfunction",
+        "sha256": "cb7233a5bce28c9c16d06baa9cbd391fc8a368f260667350ad86a5f539d632a6"
+      },
+      {
+        "arguments": {
+          "adv_id": "minecraft:end/root",
+          "reward_id": "end/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/end/root.mcfunction",
+        "sha256": "f91b342a107d450d79fcfef7d7eb0bdc7437a8e74eaf53e77cf979833272c694"
+      },
+      {
+        "arguments": {
+          "adv_id": "blazeandcave:farming/root",
+          "reward_id": "farming/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/farming/root.mcfunction",
+        "sha256": "715b51a30acb9d583328bb060379782cd2181e3219763dd1957689c12b516579"
+      },
+      {
+        "arguments": {
+          "adv_id": "blazeandcave:mining/root",
+          "reward_id": "mining/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/mining/root.mcfunction",
+        "sha256": "c3075138b9cd6e0f983fa2e66fb7c4d2f79c102110ab1c761692582367eb30b6"
+      },
+      {
+        "arguments": {
+          "adv_id": "blazeandcave:monsters/root",
+          "reward_id": "monsters/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/monsters/root.mcfunction",
+        "sha256": "1644b8487c02727a01275010ad95ae89366dfe239f15a8e3626252245a99a4ed"
+      },
+      {
+        "arguments": {
+          "adv_id": "minecraft:nether/root",
+          "reward_id": "nether/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/nether/root.mcfunction",
+        "sha256": "00a1a220b80332279ed634db9d46aa820ddb5c17e1ae82c9252fd75f4f0ee0d8"
+      },
+      {
+        "arguments": {
+          "adv_id": "blazeandcave:potion/root",
+          "reward_id": "potion/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/potion/root.mcfunction",
+        "sha256": "4c650f38dcb23f4842a230f3c41e6d79cb05ee66c68a3be49cba5889912c305c"
+      },
+      {
+        "arguments": {
+          "adv_id": "blazeandcave:redstone/root",
+          "reward_id": "redstone/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/redstone/root.mcfunction",
+        "sha256": "6948a730d1ff829e7b5cf770200be1d37456ce4d3b0eb117d9d9f57d4215bb3a"
+      },
+      {
+        "arguments": {
+          "adv_id": "blazeandcave:statistics/root",
+          "reward_id": "statistics/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/statistics/root.mcfunction",
+        "sha256": "ca615195a36445ba54aceb8723114f7f74dd383aeaa61e68e179c7c5b4548699"
+      },
+      {
+        "arguments": {
+          "adv_id": "blazeandcave:weaponry/root",
+          "reward_id": "weaponry/root",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/weaponry/root.mcfunction",
+        "sha256": "fe3baca43cc1678a6683b2a039ba2baf4ec2f362821e1d5767297dd97fee4ea5"
+      },
+      {
+        "arguments": {
+          "adv_id": "nullscape:root",
+          "reward_id": "end/desolation",
+          "tier": "task"
+        },
+        "delegate": "bacap_rewards:terralith_advancement_made_macro",
+        "passed": true,
+        "path": "src/main/resources/resourcepacks/bacap_nullscape_override/data/bacap_rewards/function/end/desolation.mcfunction",
+        "sha256": "663ceb0cb8c33e05a786c39a4271a3fd7d28f1e748eb10153730620d683a2e22"
+      }
+    ],
+    "nativeBookkeepingMacroByteIdentical": true,
+    "preserved": [
+      "raw advancement counts",
+      "first completion",
+      "cooperative/team counts",
+      "BACAP points",
+      "reward items",
+      "experience/trophy optional guards",
+      "localized messages and Search",
+      "fanpack extension hooks"
+    ],
+    "runtimeExecutionClaimed": false
+  },
+  "effectiveViews": {
+    "amplifiedNether": {
+      "advancements": 2894,
+      "codec": {
+        "checked": 2894,
+        "passed": 2894,
+        "failed": 0,
+        "negativeControlRejected": true,
+        "resourceContextSha256": "987d282d43d1b0f84d85a5ae8a2d5ebe266601b1d920480e6fb330f1a39a6b7e",
+        "advancementInputsSha256": "253657dc73747ddee1c60702e886f4c1a4c9aad402a6faf0e4a3b5702ff6707f",
+        "resultSha256": "1654c343a9e0f599947a3c2c5cb7da774f582fa5a26942c59b4aaa864ab16c44"
+      },
+      "duplicates": 0,
+      "missingParents": 0,
+      "cycles": 0,
+      "selfParents": 0,
+      "missingRewards": 0,
+      "unresolvedSearch": 0,
+      "unexpectedDirectDanglingCalls": 0,
+      "layerOrder": [
+        "vanilla",
+        "BACAP",
+        "BACAP_OVERRIDE",
+        "AMPLIFIED_NETHER",
+        "BACAP_AMPLIFIED_NETHER",
+        "BACAP_AMPLIFIED_NETHER_OVERRIDE",
+        "BACAP_REWARDS_ITEM",
+        "BACAP_REWARDS_EXPERIENCE",
+        "BACAP_REWARDS_TROPHY",
+        "BACAP_COOPERATIVE_MODE"
+      ]
+    },
+    "hardcore": {
+      "advancements": 2894,
+      "codec": {
+        "checked": 2894,
+        "passed": 2894,
+        "failed": 0,
+        "negativeControlRejected": true,
+        "resourceContextSha256": "68e39c19d63c9b2c4f3271227e78e25d0e43d9679e5d2a16fe53bd0cb9e0259e",
+        "advancementInputsSha256": "1eb6140f626eb3dab7729e3fe84fefa3742fed9d3e5f7a7fe4bb5c72f1f11970",
+        "resultSha256": "dee63dc80d23363d2a987cee565b884f9bdca916f27ed4a0a27ec499d245ebcb"
+      },
+      "duplicates": 0,
+      "missingParents": 0,
+      "cycles": 0,
+      "selfParents": 0,
+      "missingRewards": 0,
+      "unresolvedSearch": 0,
+      "unexpectedDirectDanglingCalls": 0,
+      "layerOrder": [
+        "vanilla",
+        "BACAP",
+        "BACAP_OVERRIDE",
+        "BACAP_HARDCORE",
+        "BACAP_HARDCORE_OVERRIDE",
+        "BACAP_REWARDS_ITEM",
+        "BACAP_REWARDS_EXPERIENCE",
+        "BACAP_REWARDS_TROPHY",
+        "BACAP_COOPERATIVE_MODE"
+      ]
+    },
+    "main": {
+      "advancements": 2894,
+      "codec": {
+        "checked": 2894,
+        "passed": 2894,
+        "failed": 0,
+        "negativeControlRejected": true,
+        "resourceContextSha256": "5114df18e55b3c32fe27c8624db6a9c810e125ba503c480150db0b781ce23117",
+        "advancementInputsSha256": "2dd09d7138004709c3f540f8f5ff72810cc1681bf64318a35277a780ae1a8bed",
+        "resultSha256": "dee63dc80d23363d2a987cee565b884f9bdca916f27ed4a0a27ec499d245ebcb"
+      },
+      "duplicates": 0,
+      "missingParents": 0,
+      "cycles": 0,
+      "selfParents": 0,
+      "missingRewards": 0,
+      "unresolvedSearch": 0,
+      "unexpectedDirectDanglingCalls": 0,
+      "layerOrder": [
+        "vanilla",
+        "BACAP",
+        "BACAP_OVERRIDE",
+        "BACAP_REWARDS_ITEM",
+        "BACAP_REWARDS_EXPERIENCE",
+        "BACAP_REWARDS_TROPHY",
+        "BACAP_COOPERATIVE_MODE"
+      ]
+    },
+    "nullscape": {
+      "advancements": 2895,
+      "codec": {
+        "checked": 2895,
+        "passed": 2895,
+        "failed": 0,
+        "negativeControlRejected": true,
+        "resourceContextSha256": "5fe3c5dd908a8c38f0dfab669cfbfbf9b673ffb47f3d697b693bfdf232bb5f90",
+        "advancementInputsSha256": "d55c31fc04afea7a1e1416078a4390393d52347da8102890b8e98027c380b569",
+        "resultSha256": "046f60db58c11f7e9a49e99cd498ee6517449ec63333da39b911879b01a50a15"
+      },
+      "duplicates": 0,
+      "missingParents": 0,
+      "cycles": 0,
+      "selfParents": 0,
+      "missingRewards": 0,
+      "unresolvedSearch": 0,
+      "unexpectedDirectDanglingCalls": 0,
+      "layerOrder": [
+        "vanilla",
+        "BACAP",
+        "BACAP_OVERRIDE",
+        "NULLSCAPE",
+        "BACAP_NULLSCAPE",
+        "BACAP_NULLSCAPE_OVERRIDE",
+        "BACAP_REWARDS_ITEM",
+        "BACAP_REWARDS_EXPERIENCE",
+        "BACAP_REWARDS_TROPHY",
+        "BACAP_COOPERATIVE_MODE"
+      ]
+    },
+    "terralith": {
+      "advancements": 2922,
+      "codec": {
+        "checked": 2922,
+        "passed": 2922,
+        "failed": 0,
+        "negativeControlRejected": true,
+        "resourceContextSha256": "00caa904cf1844e26335d7b536c5bebb5f193902f43ea6959cca5843352cbd34",
+        "advancementInputsSha256": "19757c09dbebf2d089003b9b724687754d7713535e430d2fca6925525f90b484",
+        "resultSha256": "98189be9f42fcc433ebadfa268d110ae8099ef51b6d8030a5491efb188831f32"
+      },
+      "duplicates": 0,
+      "missingParents": 0,
+      "cycles": 0,
+      "selfParents": 0,
+      "missingRewards": 0,
+      "unresolvedSearch": 0,
+      "unexpectedDirectDanglingCalls": 0,
+      "layerOrder": [
+        "vanilla",
+        "BACAP",
+        "BACAP_OVERRIDE",
+        "TERRALITH",
+        "BACAP_TERRALITH",
+        "BACAP_TERRALITH_OVERRIDE",
+        "BACAP_REWARDS_ITEM",
+        "BACAP_REWARDS_EXPERIENCE",
+        "BACAP_REWARDS_TROPHY",
+        "BACAP_COOPERATIVE_MODE"
+      ]
+    }
+  },
+  "companionMerges": {
+    "distribution": {
+      "amplifiedNether": 2,
+      "nullscape": 1,
+      "terralith": 11
+    },
+    "hardcoreMessages": 6,
+    "merges": [
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/desert_outpost",
+            "/criteria/fortified_desert_village",
+            "/criteria/fortified_village",
+            "/criteria/glacial_hut",
+            "/criteria/mage_tower",
+            "/criteria/rubble_desert",
+            "/criteria/rubble_forest",
+            "/criteria/rubble_jungle",
+            "/criteria/rubble_mesa",
+            "/criteria/rubble_mountain",
+            "/criteria/rubble_taiga",
+            "/criteria/spire",
+            "/criteria/terralith_igloo",
+            "/criteria/underground_frosted_dungeon",
+            "/criteria/underground_giant_bee_hive",
+            "/criteria/underground_mining_outpost",
+            "/criteria/underground_oak_cabin",
+            "/criteria/underground_old_refinery",
+            "/criteria/underground_sunken_tower",
+            "/criteria/underground_witch_hut",
+            "/criteria/valley_lodge",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:adventure/raidin_master",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/adventure/raidin_master.json",
+        "sha256": "03b47708c5444bd4ae5bb50c1a69a93205775c8e720260b17404ec2e49d8fcb4"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/alpine_grove",
+            "/criteria/glacial_chasm",
+            "/criteria/gravel_desert",
+            "/criteria/ice_marsh",
+            "/criteria/snowy_badlands",
+            "/criteria/snowy_slopes",
+            "/criteria/snowy_taiga",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:biomes/cold_feet",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/cold_feet.json",
+        "sha256": "6e926e82b5314f066271b3b1352a5c5fa7cb4e6b347defaed3e39b15d7936333"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/blooming_plateau",
+            "/criteria/caldera",
+            "/criteria/emerald_peaks",
+            "/criteria/grove",
+            "/criteria/haze_mountain",
+            "/criteria/meadow",
+            "/criteria/painted_mountains",
+            "/criteria/rocky_mountains",
+            "/criteria/scarlet_mountains",
+            "/criteria/snowy_slopes",
+            "/criteria/stony_shore",
+            "/criteria/stony_spires",
+            "/criteria/windswept_spires",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:biomes/high_feet",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/high_feet.json",
+        "sha256": "821ea4d93580ac6df8e73a4a6d97d207b9bb07ac96e027b64f0bb4f1a012c51e"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/blooming_valley",
+            "/criteria/cloud_forest",
+            "/criteria/moonlight_grove",
+            "/criteria/moonlight_valley",
+            "/criteria/old_growth_pine_taiga",
+            "/criteria/old_growth_spruce_taiga",
+            "/criteria/plains",
+            "/criteria/sunflower_plains",
+            "/criteria/taiga",
+            "/criteria/valley_clearing",
+            "/criteria/yosemite_lowlands",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:biomes/one_with_the_forest",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/one_with_the_forest.json",
+        "sha256": "502d8a1df32a2a8366b6a6c4d63277be263eee7c8f60687865fa4f91f65c3eec"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/cherry_grove",
+            "/criteria/jungle_mountains",
+            "/criteria/orchid_swamp",
+            "/criteria/rocky_jungle",
+            "/criteria/tropical_jungle",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:biomes/overgrown",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/overgrown.json",
+        "sha256": "6402ac1330710195a2bfa4b293a0b709539f29d7ee04ef0893d5bc6780a39b57"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/ancient_sands",
+            "/criteria/bryce_canyon",
+            "/criteria/desert/conditions/player/0/condition",
+            "/criteria/desert/conditions/player/0/entity",
+            "/criteria/desert/conditions/player/0/predicate",
+            "/criteria/desert/conditions/player/0/terms",
+            "/criteria/desert_oasis",
+            "/criteria/desert_spires",
+            "/criteria/lush_desert",
+            "/criteria/red_oasis",
+            "/criteria/sandstone_valley",
+            "/criteria/savanna",
+            "/criteria/savanna_plateau",
+            "/criteria/warped_mesa",
+            "/criteria/white_mesa",
+            "/criteria/windswept_savanna",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:biomes/warm_feet",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/warm_feet.json",
+        "sha256": "1ff5672f0edaf30045816d8b2c6c52946f6a583dbc69e7c66bcc29efa179f641"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/deep_warm_ocean",
+            "/criteria/gravel_beach",
+            "/criteria/warm_river",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:biomes/wet_feet",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/wet_feet.json",
+        "sha256": "4bc4d303ae0235ab183bba680842caa2b0365c3f4da48eb946a47fed7dafd879"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/display/announce_to_chat",
+            "/display/description/translate"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:challenges/explorer_of_worlds",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/explorer_of_worlds.json",
+        "sha256": "9914c463197994ce6d8d4adeb24ac9d44e82fdc38c7d78c81f7b989544310c41"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/desert_outpost",
+            "/criteria/fortified_desert_village_archer",
+            "/criteria/fortified_desert_village_butcher",
+            "/criteria/fortified_desert_village_cartographer",
+            "/criteria/fortified_desert_village_fisherman",
+            "/criteria/fortified_desert_village_food",
+            "/criteria/fortified_desert_village_generic",
+            "/criteria/fortified_desert_village_generic_low",
+            "/criteria/fortified_desert_village_junk",
+            "/criteria/fortified_desert_village_library",
+            "/criteria/fortified_desert_village_mason",
+            "/criteria/fortified_desert_village_smith",
+            "/criteria/fortified_desert_village_treasure",
+            "/criteria/fortified_village_archer",
+            "/criteria/fortified_village_attic",
+            "/criteria/fortified_village_cartographer",
+            "/criteria/fortified_village_fisherman",
+            "/criteria/fortified_village_food",
+            "/criteria/fortified_village_generic",
+            "/criteria/fortified_village_generic_low",
+            "/criteria/fortified_village_library",
+            "/criteria/fortified_village_mason",
+            "/criteria/fortified_village_smith",
+            "/criteria/fortified_village_tavern_downstairs",
+            "/criteria/fortified_village_tavern_upstairs",
+            "/criteria/fortified_village_treasure",
+            "/criteria/giant_bee_hive",
+            "/criteria/glacial_hut_junk",
+            "/criteria/glacial_hut_main",
+            "/criteria/jungle_temple_dispenser",
+            "/criteria/lodge_drinkables",
+            "/criteria/mage_extras",
+            "/criteria/mage_treasure",
+            "/criteria/spire_common",
+            "/criteria/spire_junk",
+            "/criteria/spire_rare",
+            "/criteria/spire_treasure",
+            "/criteria/terralith_igloo",
+            "/criteria/underground_cabin",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:challenges/i_am_loot",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/i_am_loot.json",
+        "sha256": "8baae0a97a0627897ea5fa299ea7874ce454f736d5cc79f4257ba005a696ce26"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/deepslate_emerald_ore",
+            "/display/announce_to_chat",
+            "/display/description/extra"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:mining/oresome",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/mining/oresome.json",
+        "sha256": "631424ae45d316f8b22ea65245d08f0c4b7a9a98b192d3e9662b934ead858a26"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/display/announce_to_chat",
+            "/display/description/translate"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "minecraft:adventure/adventuring_time",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/minecraft/advancement/adventure/adventuring_time.json",
+        "sha256": "95215b5319fd4800bb38751463b7cba38e30fd290a177ab621b4e0235d06bf63"
+      },
+      {
+        "codecPassed": true,
+        "companion": "amplifiedNether",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/enter_cave",
+            "/criteria/world_height",
+            "/display/announce_to_chat",
+            "/display/description/extra",
+            "/display/description/translate"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:nether/inception",
+        "path": "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/inception.json",
+        "sha256": "39b63c2c40cebbea358d54545485384cd2ea53cc540079cc719061d21c39b626"
+      },
+      {
+        "codecPassed": true,
+        "companion": "amplifiedNether",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/world_height/conditions/player/0/predicate/location/position/y/min",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:nether/limbo_walker",
+        "path": "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/limbo_walker.json",
+        "sha256": "09c35fb2bf72a783396e14ffa17ba783502f63495ca9761f8e900f58b8a9c03e"
+      },
+      {
+        "codecPassed": true,
+        "companion": "nullscape",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/crystal_peaks",
+            "/criteria/end_barrens",
+            "/criteria/end_midlands",
+            "/criteria/shadowlands",
+            "/criteria/void_barrens",
+            "/display/announce_to_chat",
+            "/parent"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:end/void_walker",
+        "path": "src/main/resources/resourcepacks/bacap_nullscape_override/data/blazeandcave/advancement/end/void_walker.json",
+        "sha256": "f9f3598c3de814481694f03b6df951db0fcf530d945fcb7450a6ea9a571b14cd"
+      }
+    ],
+    "nullscapeSearch": "nullscape:root",
+    "passed": 14,
+    "terralithWrappers": 24,
+    "total": 14
+  },
+  "terralith": {
+    "wrappers": 24,
+    "wrappersPassed": 24,
+    "gatedStatements": 34,
+    "nonIncrementNativeLinesByteIdentical": true,
+    "repairedHelpers": 2,
+    "repairedHelpersPassed": 2,
+    "helpers": [
+      {
+        "id": "blazeandcave:technical/biome_branch1_end",
+        "accepted": true,
+        "criteriaPreserved": true
+      },
+      {
+        "id": "blazeandcave:technical/biome_branch2_end",
+        "accepted": true,
+        "criteriaPreserved": true
+      }
+    ]
+  },
+  "hardcore": {
+    "versionId": "ZHHHw5wF",
+    "messages": 6,
+    "passed": 6
+  },
+  "amplifiedNether": {
+    "merges": 2,
+    "staticResult": "PASS"
+  },
+  "nullscape": {
+    "merges": 1,
+    "SearchRoot": "nullscape:root",
+    "staticResult": "PASS"
+  },
+  "historicalSuccessorClosure": {
+    "currentTargetInventory": "CURRENT_SUCCESSOR_CERTIFIED",
+    "currentMessageCorpus": "CURRENT_SUCCESSOR_CERTIFIED",
+    "historicalTestsModified": false
+  },
+  "certificationArtifacts": [
+    {
+      "path": "tools/phase_b/b8_bacap_static_certification.py",
+      "sha256": "18acf4be8234587916a72a2aa0a8b48bbacaccf796055b40b8a4cf76ff26936b"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/PhaseBStaticCertificationTest.java",
+      "sha256": "fcdcb7ea610eb48543d680536951fffe791554d6d2de3f50f14ac02de00285ea"
+    },
+    {
+      "path": "src/test/resources/phase_b_certification/bacap_1_21_codec_receipt.json",
+      "sha256": "eeddcb746eefe5175be3d1b2e9c30fe2cdfb99b79d2e8d290d00346aa9333a38"
+    },
+    {
+      "path": "src/test/resources/phase_b_certification/bacap_1_21_static_receipt.json",
+      "sha256": "204b79d5ced64f57a85f2ff8981d8216f8e8e6b3f17e2f99e2f5f14672c81bf3"
+    },
+    {
+      "path": "src/test/resources/phase_b_certification/bacap_1_21_target_inventory.json",
+      "sha256": "a8f76fc43819c875737c02be04885bbfb03b5ab69eab220358554a207d1a9fcf"
+    }
+  ],
+  "toolSelfTests": {
+    "command": "python -B -X utf8 tools/phase_b/b8_bacap_static_certification.py --self-test",
+    "tests": 14,
+    "passed": 14,
+    "failed": 0,
+    "result": "GREEN"
+  },
+  "compileTestJava": {
+    "command": ".\\gradlew.bat --no-daemon --offline compileTestJava -x generateBuildConfig",
+    "result": "GREEN"
+  },
+  "filteredJUnit": {
+    "command": ".\\gradlew.bat --no-daemon --offline test -x generateBuildConfig --tests \"com.diskree.achievetodo.certification.PhaseBStaticCertificationTest\"",
+    "result": "GREEN",
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "fullGradleSuiteRun": false
+  },
+  "processResources": {
+    "command": ".\\gradlew.bat --no-daemon --offline processResources -x generateBuildConfig",
+    "result": "GREEN",
+    "task": "UP-TO-DATE",
+    "R2OutputsByteIdentical": 4,
+    "ruProcessedHash": "8961ad9d573ab72f63969e4a808b19ce733bc9a60b7ab589fc44dfb6148e1a0a",
+    "priorDeletedProcessedResourcesAbsent": 9,
+    "cleanRun": false
+  },
+  "diffCheck": {
+    "command": "git diff --check",
+    "result": "PASS"
+  },
+  "runtimeProductDelta": {
+    "ADD": 0,
+    "MODIFY": 0,
+    "DELETE": 0
+  },
+  "uniqueCumulativeRuntimeDiff": {
+    "ADD": 177,
+    "MODIFY": 69,
+    "DELETE": 9
+  },
+  "uniqueRuntimePaths": 255,
+  "currentHashModel": {
+    "originalB5Exact": 249,
+    "supersededB5": 2,
+    "supersededPaths": [
+      {
+        "path": "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+        "authority": "B8-R1/r19",
+        "sha256": "6ab0674902b4783c39c08dfd802cd0067d1436d973345834f092a001a4db9fec"
+      },
+      {
+        "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/potion/root.mcfunction",
+        "authority": "B8-R2",
+        "sha256": "4c650f38dcb23f4842a230f3c41e6d79cb05ee66c68a3be49cba5889912c305c"
+      }
+    ],
+    "B6AdditionalRuntime": 1,
+    "B8R2AdditionalRuntime": 3,
+    "additionalPaths": [
+      "src/main/resources/assets/minecraft/lang/ru_ru.json",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/ive_got_a_bad_feeling_about_this.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/turtle_army.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/dogfight.mcfunction"
+    ],
+    "terminalReconciliationOwner": "B12"
+  },
+  "readyForB9": true,
+  "safety": {
+    "noPriorEvidenceModified": true,
+    "priorEvidenceHashes": {
+      "reference/phase_b/B1_OFFICIAL_BACAP_PIN.md": "82314a7f91569d4e2f6358ff6d562499a2f4c07e2322b1fd6ebdfbc702e1222a",
+      "reference/phase_b/B2_ATD_INTEGRATION_MAP.md": "58c77b0d51574dab337a151baf973ff5573485572f6a2c9d95134bf9529d8f81",
+      "reference/phase_b/B3_BACAP_SEMANTIC_DIFF.md": "066bedd333586121f07f5abe8cec90b21be63cf108bbc4e82a18d90790c45d31",
+      "reference/phase_b/B4_EXACT_PRODUCT_CHANGE_PLAN.md": "478406877f89ddceaaf790b75ae650c542f3832092f40a83cbd046230b62f1bd",
+      "reference/phase_b/B6_RUSSIAN_LOCALIZATION.md": "7966a55cc7c917f2c0fa80153d8d98193f43ccce5435602d79d0c6a510e2460d",
+      "reference/phase_b/B7_LOCALIZATION_CERTIFICATION.md": "54dfc4184345431cf28e41609a51010338949ca4706b894ba0499d821a1157fc",
+      "reference/phase_b/B7_LOCALIZATION_CERTIFICATION_RESUMED.md": "b3db519877e892ec97e369e0be3bcb8e1fb3aae59027f0471349a7cd7e1eedb2",
+      "reference/phase_b/B8_STATIC_CERTIFICATION.md": "12e677631bb6a24ef92e0520883b6dfef0c25020ee052ae48b27180a1493a912",
+      "reference/phase_b/OPERATING_CONTRACT.md": "765f7c2d9874ea0df7086589dfa5c23d4a466e3ba3fcd6e812034b2a163cf921",
+      "reference/phase_b/b0_baseline.json": "747877d0a7685c12cf41b3e2f8f446eea0ce5e5bf976990fd3e681f5ea0e6390",
+      "reference/phase_b/b1_official_bacap_pin.json": "b39bdf2a190131c8b13b0820d26c0f67430935c9fe330122655911d1dc435110",
+      "reference/phase_b/b1_target_inventory.json": "2219f38681a7dbbe19deb109c7b0abeb16f01051fb22fa41dbee464fe00656eb",
+      "reference/phase_b/b2_atd_integration_map.json": "9214f2d027738486cd4be91fb0b6f3fbfe06b5c346c46b3163bef369a0f4999d",
+      "reference/phase_b/b2_bacap_occurrences.json": "771e89d60dc00ecef0a9abe80dc6e27b4b7c55bde457b61df34f8f8b52ce34b2",
+      "reference/phase_b/b3_advancement_diff.json": "a402baa19657c3ec14c089affed19cdedf077f21eece39c7d1d07ecdd60a1980",
+      "reference/phase_b/b3_atd_impact_matrix.json": "682994595bb25dd6334aa4ce384d2e9eddfd77e706de531d1693b58bc26564a5",
+      "reference/phase_b/b3_resource_graph_diff.json": "a56188f03d15c37817117cfcf68422d5d7085635a4373e25519fed1847cdd693",
+      "reference/phase_b/b4_companion_matrix.json": "142d9fb5c7c905c10b87b07480043812b149a4622381fe9204b29fd5bdb26710",
+      "reference/phase_b/b4_converter_decision.json": "33900472aa72d1891e86065534a87f3bde4f4b8fcb534403a6677b6d99184f5e",
+      "reference/phase_b/b4_localization_handoff.json": "21dc8a27f9edf05b1970d030eaaf3e084859d0bfe3923483546dc81830ac1d67",
+      "reference/phase_b/b4_product_change_manifest.json": "feb0b2bd8020adf314c74bef05dba184342088fc7d8fb8bf5df1d5f4be51d000",
+      "reference/phase_b/b5_1_pins_pack_metadata.json": "ffc533dec326412f807e7d16667e5d8968aed0331d1a5ba0b9438a76a8279ab8",
+      "reference/phase_b/b5_2_converter_r17.json": "fcd6b4c9e9c5005ad253370871139bb26dadf944f0d7dceede76f112ad437a24",
+      "reference/phase_b/b5_3_setup_resource_contracts.json": "e1aa6aae5cb3f6f8127f7a83e94c3a48c18fa9fa0aaebb89719389ba89d3db5d",
+      "reference/phase_b/b5_4_benchmarking_contract_resolution.json": "c17dff35ec9a709b5e9522455f4c74d7450ea0b36a685bffd3936d5e1c69a208",
+      "reference/phase_b/b5_4_naughtylus_contract_resolution.json": "e318f8cb0051a52fe1a3a1e1d92c3c2f6993ce2985ce301842016ee28dd2c844",
+      "reference/phase_b/b5_4_root_reward_messages.json": "6ed40af0fff9bf081f075ed277c1984bcc5843113be7a902f8d8d52493018c15",
+      "reference/phase_b/b5_4_root_reward_messages_resumed.json": "874f3f20da41948f1039f9a53c0dba18c8ad1549d8d5961574b208e8e1b234e0",
+      "reference/phase_b/b5_5_trackers_gui.json": "15b923f01570ab38f9d3c4db557732f9eabdbb0dfdb13f4a77f3f837106e78b0",
+      "reference/phase_b/b5_6_companions.json": "3c8647d0218ba44486ce0d310ba270ffc7965bedce963660c193fc1d751484aa",
+      "reference/phase_b/b5_6_companions_resumed.json": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67",
+      "reference/phase_b/b5_6_unwanted_passenger_contract_resolution.json": "e5b95c8b772e8e73c42ba5b573adace4e1994bdfb0b224adc73c7c9d71673837",
+      "reference/phase_b/b5_7_structural_reconciliation.json": "4a3f796e7b898096888fa0ac18d5a1877e439f19bbca15a0e36c34c4c3d9064c",
+      "reference/phase_b/b6_localization_sources.json": "1bf99568edfc12bcd28b705f1d572cd6b418dacd1eae4fac58241e73f212d0d8",
+      "reference/phase_b/b6_ru_translation_manifest.json": "e6f8159de3f19e4aa44bc8e24b790c6d73e45bf8e0928bba39391a6689d26ede",
+      "reference/phase_b/b7_full_test_gate_resolution.json": "651edf4ec09d32bdca86dd60a0b30be323f4e25b9efd41b54abd6c650107ee4b",
+      "reference/phase_b/b7_localization_certification.json": "e0866de8bf91d079de75935e6b21b2396b0cc84c8605096eb81e28d68e54ca7c",
+      "reference/phase_b/b7_localization_certification_resumed.json": "be3aca8716e68e48b293bb5299418a87aec98bda340b4836f9f50e70705e92d3",
+      "reference/phase_b/b7_post_r1_test_gate_resolution.json": "ad3ebac32d495036a70792e6b6968319aec358cc91f670eb55a518c4e42b0720",
+      "reference/phase_b/b7_r1_source_identity_marker_repair.json": "3da33837b2f1e46962520c146216cd6ee9a9fda48052f9b902cbb892fd9e71b9",
+      "reference/phase_b/b8_r1_terralith_player_predicate_repair.json": "ef1f59d01b13db8811adf2012346d123ca698a1c1ba8fa78ba4cd7a6d66ff2a7",
+      "reference/phase_b/b8_r2_message_binding_repair.json": "14af195151852d1103a52deb0c753e77fd2f608a3b62ef6ed4935504dbb3babf",
+      "reference/phase_b/b8_static_certification.json": "6fef5b8841f4014b0d8340418b23d1f7d74c3883975ecfc858ab3fe08bc26090",
+      "reference/phase_b/b8_static_certification_post_r1_stop.json": "999fbd095acb7e4ab2c11988da80447c38fcb80e2cdcab7994eb3a3321dbece8"
+    },
+    "historicalTestsModified": false,
+    "historicalSnapshotsRegenerated": false,
+    "runtimeHashesUnchanged": true,
+    "noRuntimeJavaChange": true,
+    "noRuntimeResourceChange": true,
+    "noLocalizationChange": true,
+    "noConverterChange": true,
+    "noPinChange": true,
+    "noDownloaderChange": true,
+    "noAbilityBalanceThresholdChange": true,
+    "noProgressMigration": true,
+    "nothingStaged": true,
+    "noCommit": true,
+    "noPush": true,
+    "noTag": true,
+    "noGitHubMutation": true,
+    "B9Started": false,
+    "sourceArchivesUnchanged": [
+      {
+        "enum": "BACAP",
+        "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b1\\BlazeandCave's Advancements Pack 1.21.zip",
+        "sourceSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+        "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739"
+      },
+      {
+        "enum": "BACAP_HARDCORE",
+        "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b4\\BlazeandCave's Advancements Pack Hardcore.zip",
+        "sourceSha256": "1baf5f1bc7c48c819cb6b3081cb124793a316b3568352c853b94757bb4237446",
+        "sourceSha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475"
+      },
+      {
+        "enum": "BACAP_TERRALITH",
+        "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap_terralith.zip",
+        "sourceSha256": "0b3cd387fe6e80ac6fe9a05b22091fce6abf6c38dd9656b3086629ec4031d3de",
+        "sourceSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea"
+      },
+      {
+        "enum": "BACAP_AMPLIFIED_NETHER",
+        "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap_amplified_nether.zip",
+        "sourceSha256": "be7f9c646a8ea8616e34ddef0beab3397995fe66da371cee7cb5cc929f03ad68",
+        "sourceSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44"
+      },
+      {
+        "enum": "BACAP_NULLSCAPE",
+        "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap_nullscape.zip",
+        "sourceSha256": "5ad60435dded0a786d4c6320a6af456f640b2e713a080b942c3bed3c2cb85a20",
+        "sourceSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1"
+      },
+      {
+        "enum": "TERRALITH",
+        "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b4\\Terralith_26.2_v2.6.4.zip",
+        "sourceSha256": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e",
+        "sourceSha1": "96ccd25be9ba5240ebe8150cc29240aca781f0e1"
+      },
+      {
+        "enum": "AMPLIFIED_NETHER",
+        "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b4\\Amplified_Nether_v1.2.15.zip",
+        "sourceSha256": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa",
+        "sourceSha1": "94d9604cebbfca667aeb59e4b1ac03e9c6e5cb5d"
+      },
+      {
+        "enum": "NULLSCAPE",
+        "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b4\\Nullscape_26.2_v1.2.20.zip",
+        "sourceSha256": "ec7b0dfcd1add8c127c985dac1466a44168449b3b6641dd20e6b2e16153b66aa",
+        "sourceSha1": "bee4a2182593fdfc5da4b253a342feddf02b88b9"
+      }
+    ],
+    "certificationToolBeforeSha256": "cc5417bca80b4b4919dfc68cebf681d1b9f0d8f932ee6b5e42c7fda3c9ba2e01",
+    "certificationToolAfterSha256": "18acf4be8234587916a72a2aa0a8b48bbacaccf796055b40b8a4cf76ff26936b",
+    "allowedTestArtifactsAdded": [
+      "src/test/java/com/diskree/achievetodo/certification/PhaseBStaticCertificationTest.java",
+      "src/test/resources/phase_b_certification/bacap_1_21_codec_receipt.json",
+      "src/test/resources/phase_b_certification/bacap_1_21_static_receipt.json",
+      "src/test/resources/phase_b_certification/bacap_1_21_target_inventory.json"
+    ],
+    "runtimeWorldSmokeClaimed": false
+  }
+}

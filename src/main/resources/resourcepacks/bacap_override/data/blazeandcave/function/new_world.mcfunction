@@ -10,6 +10,13 @@ scoreboard players set intro_msg bac_settings 1
 scoreboard players set extra_reward bac_settings 0
 scoreboard players set extra_trophy bac_settings 0
 
+scoreboard players set task bac_points 1
+scoreboard players set goal bac_points 2
+scoreboard players set challenge bac_points 5
+scoreboard players set super_challenge bac_points 20
+scoreboard players set milestone bac_points 50
+scoreboard players set hidden bac_points 0
+scoreboard players set advancement_legend bac_points 500
 # achievetodo compatibility: removed unsupported gamerule command
 # achievetodo compatibility: removed unsupported gamerule command
 # achievetodo compatibility: removed unsupported gamerule command

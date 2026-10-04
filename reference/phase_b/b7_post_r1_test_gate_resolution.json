@@ -1,0 +1,3694 @@
+{
+  "finalized": 7,
+  "fullTestAfterR1": {
+    "acceptedBaselineCount": 4,
+    "acceptedBaselineNames": [
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies()",
+      "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive()",
+      "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(Path)"
+    ],
+    "command": ".\\gradlew.bat --no-daemon --offline test -x generateBuildConfig",
+    "errors": 0,
+    "exitCode": 1,
+    "failureNames": [
+      "com.diskree.achievetodo.certification.PhaseACertificationTest.canonicalInventorySnapshotMatchesGeneratedArtifacts()",
+      "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.pinnedHistoricalBacapSourceRemainsUnchanged()",
+      "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.productionRuOverlayKeepsPinnedPhaseARuntimeResolvable()",
+      "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.productionRuOverlayMatchesApprovedFinalManualDecisions()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.ensureWorldPacksUpToDateRepairsStaleWorldPackToCurrentCompatibleCopy()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.worldCopyPreservesHistoricalGlowAndHoneyDefinitionsAndFrozenSource()",
+      "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(Path)",
+      "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive()",
+      "com.diskree.achievetodo.client.Pre26SmokeRegressionTest.everyShippedAdvancementMessageRetainsHoverClickAndFrameMetadata()"
+    ],
+    "failures": 11,
+    "gateResult": "PASS_KNOWN_FAILURE_PARTITION",
+    "gradleResult": "FAILED_VISIBLE_HISTORICAL_ASSERTIONS",
+    "log": {
+      "path": "build/tmp/phase_b_b7/post_r1/gradle_test.log",
+      "sha256": "527ca8ef21d126c502cf8117e335e36f796036fda22b0f7d170e2b96821bc009"
+    },
+    "newFailureNames": [],
+    "previouslyFailingNowPassing": [],
+    "realRegressionNames": [],
+    "remainingHistoricalOracleCount": 7,
+    "remainingHistoricalOracleNames": [
+      "com.diskree.achievetodo.certification.PhaseACertificationTest.canonicalInventorySnapshotMatchesGeneratedArtifacts()",
+      "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.productionRuOverlayMatchesApprovedFinalManualDecisions()",
+      "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.pinnedHistoricalBacapSourceRemainsUnchanged()",
+      "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.productionRuOverlayKeepsPinnedPhaseARuntimeResolvable()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.ensureWorldPacksUpToDateRepairsStaleWorldPackToCurrentCompatibleCopy()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.worldCopyPreservesHistoricalGlowAndHoneyDefinitionsAndFrozenSource()",
+      "com.diskree.achievetodo.client.Pre26SmokeRegressionTest.everyShippedAdvancementMessageRetainsHoverClickAndFrameMetadata()"
+    ],
+    "runCountThisTransaction": 1,
+    "skipped": 0,
+    "tests": 391,
+    "unresolvedNames": []
+  },
+  "historicalClassificationRewritten": false,
+  "historicalTestsModified": false,
+  "kind": "POST_R1_TEST_GATE_RESOLUTION",
+  "originalSevenFailures": 7,
+  "phase": "B",
+  "r1Repair": {
+    "evidence": {
+      "path": "reference/phase_b/b7_r1_source_identity_marker_repair.json",
+      "sha256": "3da33837b2f1e46962520c146216cd6ee9a9fda48052f9b902cbb892fd9e71b9"
+    },
+    "marker": "compat_26_2_r18",
+    "productionHash": "801634641b388c06b4c564c0bd16b0dd040c48a7a8228d602712bacd4b6b780a"
+  },
+  "realRegressions": 0,
+  "records": [
+    {
+      "B2Classification": "IMMUTABLE_HISTORICAL",
+      "authorizedPhaseBChangeResponsible": "B6 removes obsolete no-current-consumer keys; B5.4 authorized Benchmarking wrapper shim.",
+      "b7R1Relevant": false,
+      "b7R1RepairEvidence": null,
+      "containsHistoricalOracle": false,
+      "currentRegression": false,
+      "currentSuccessorEvidence": {
+        "R1CompiledProductionProbePreserved": true,
+        "passed": true,
+        "tests": 8,
+        "tool": "tools/phase_b/b7_localization_certification.py"
+      },
+      "failingTest": "com.diskree.achievetodo.certification.PhaseACertificationTest.canonicalInventorySnapshotMatchesGeneratedArtifacts()",
+      "finalOracleDisposition": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+      "futureSuccessorStage": "B8",
+      "historicalAssertionsMustBePreserved": true,
+      "historicalRegressionDetected": false,
+      "historicalTestModified": false,
+      "originalB7Failure": {
+        "messageSha256": "6bc01804a64863d58f5c75c2cf74995b623a1195af6cd10a339b7147508e3a22",
+        "messageSummary": "org.opentest4j.AssertionFailedError: Canonical advancement inventory snapshot is stale. Run writePhaseACertificationAssets.",
+        "status": "FAIL"
+      },
+      "postR1TestStatus": "FAIL",
+      "preR1Disposition": "NOT_COMPLETED_DUE_TO_REAL_REGRESSION_STOP",
+      "proof": {
+        "evidence": {
+          "path": "build/tmp/phase_b_b7/post_r1/phase_a_inventory_mismatch_analysis.json",
+          "sha256": "0737489a6ae7b748a5d1e55c676367edf83c275e8ac2d204cf800ccdc896a43b"
+        },
+        "finding": "Historical snapshot matches HEAD bytes; old generator observes current runtime. All 22 differences are authorized: 21 removed-key RU availability flags and the Benchmarking wrapper source ownership. Frozen advancement identity/structure and all other fields match."
+      }
+    },
+    {
+      "B2Classification": "ACTIVE_PRODUCT_TEST",
+      "authorizedPhaseBChangeResponsible": "B6 deliberate live-conjunction localization.",
+      "b7R1Relevant": false,
+      "b7R1RepairEvidence": null,
+      "containsHistoricalOracle": true,
+      "currentRegression": false,
+      "currentSuccessorEvidence": {
+        "R1CompiledProductionProbePreserved": true,
+        "passed": true,
+        "tests": 8,
+        "tool": "tools/phase_b/b7_localization_certification.py"
+      },
+      "failingTest": "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.productionRuOverlayMatchesApprovedFinalManualDecisions()",
+      "finalOracleDisposition": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+      "futureSuccessorStage": "B7",
+      "historicalAssertionsMustBePreserved": true,
+      "historicalRegressionDetected": false,
+      "historicalTestModified": false,
+      "originalB7Failure": {
+        "messageSha256": "e243a4c451353dfb8218ffb37927ab5587518221c2810f75148717381e2bb8b0",
+        "messageSummary": "org.opentest4j.AssertionFailedError: Intentional English fragment should stay absent from RU overlay: and ==> expected: <false> but was: <true>",
+        "status": "FAIL"
+      },
+      "postR1TestStatus": "FAIL",
+      "preR1Disposition": "NOT_COMPLETED_DUE_TO_REAL_REGRESSION_STOP",
+      "proof": {
+        "consumerPaths": [
+          "data/blazeandcave/function/config.mcfunction",
+          "data/blazeandcave/function/msg/intro.mcfunction",
+          "data/blazeandcave/function/msg/welcome.mcfunction"
+        ],
+        "finding": "Exact key and resolves to и. Live main config/intro/welcome join Blaze and Cave; conjunction semantics preserved, no placeholders. B6 MANUAL_B6 ownership and value hash match. Current successor independently certifies consumer, meaning, and provenance; old Phase A prohibition is stale.",
+        "key": "and",
+        "russianValue": "и"
+      }
+    },
+    {
+      "B2Classification": "ACTIVE_PRODUCT_TEST",
+      "authorizedPhaseBChangeResponsible": "B5.1 current official BACAP pin update.",
+      "b7R1Relevant": true,
+      "b7R1RepairEvidence": {
+        "path": "reference/phase_b/b7_r1_source_identity_marker_repair.json",
+        "sha256": "3da33837b2f1e46962520c146216cd6ee9a9fda48052f9b902cbb892fd9e71b9"
+      },
+      "containsHistoricalOracle": true,
+      "currentRegression": false,
+      "currentSuccessorEvidence": {
+        "R1CompiledProductionProbePreserved": true,
+        "passed": true,
+        "tests": 8,
+        "tool": "tools/phase_b/b7_localization_certification.py"
+      },
+      "failingTest": "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.pinnedHistoricalBacapSourceRemainsUnchanged()",
+      "finalOracleDisposition": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+      "futureSuccessorStage": "B7",
+      "historicalAssertionsMustBePreserved": true,
+      "historicalRegressionDetected": false,
+      "historicalTestModified": false,
+      "originalB7Failure": {
+        "messageSha256": "f18a2692300cf320d9f6e6917359bd56982b930f4bf6d9d8a10255017133257b",
+        "messageSummary": "org.opentest4j.AssertionFailedError: The Phase A overlay step must not alter the preserved historical BACAP source zip ==> expected: <true> but was: <false>",
+        "status": "FAIL"
+      },
+      "postR1TestStatus": "FAIL",
+      "preR1Disposition": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+      "proof": {
+        "currentMainSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "finding": "Frozen source bytes still match historical SHA1/SHA256. The old test calls isPinnedHistoricalSource, which compares those bytes against the intentionally different current enum pin. R1 probe rejects historical raw as current; both identities are explicitly certified by the B7 successor.",
+        "historicalSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "historicalSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70"
+      }
+    },
+    {
+      "B2Classification": "ACTIVE_PRODUCT_TEST",
+      "authorizedPhaseBChangeResponsible": "B5 authorized target messages/resources + B6 effective localization.",
+      "b7R1Relevant": false,
+      "b7R1RepairEvidence": null,
+      "containsHistoricalOracle": true,
+      "currentRegression": false,
+      "currentSuccessorEvidence": {
+        "R1CompiledProductionProbePreserved": true,
+        "passed": true,
+        "tests": 8,
+        "tool": "tools/phase_b/b7_localization_certification.py"
+      },
+      "failingTest": "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.productionRuOverlayKeepsPinnedPhaseARuntimeResolvable()",
+      "finalOracleDisposition": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+      "futureSuccessorStage": "B7",
+      "historicalAssertionsMustBePreserved": true,
+      "historicalRegressionDetected": false,
+      "historicalTestModified": false,
+      "originalB7Failure": {
+        "messageSha256": "946008716cebc70e0e7ade35a16d468205f3160464eae24d27f2acc487eb7576",
+        "messageSummary": "org.opentest4j.AssertionFailedError: Pinned Phase A historical BACAP content should not change during the production RU overlay step ==> expected: <3507> but was: <3714>",
+        "status": "FAIL"
+      },
+      "postR1TestStatus": "FAIL",
+      "preR1Disposition": "NOT_COMPLETED_DUE_TO_REAL_REGRESSION_STOP",
+      "proof": {
+        "currentOnlyIdentities": [
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/20_leagues_under_the_sea.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/20_leagues_under_the_sea.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/20_leagues_under_the_sea.mcfunction"
+              }
+            ],
+            "key": "20 Leagues Under the Sea",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/a_scute_off_the_old_shell.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/a_scute_off_the_old_shell.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/a_scute_off_the_old_shell.mcfunction"
+              }
+            ],
+            "key": "A Scute Off the Old Shell",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/absolute_cinema.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/absolute_cinema.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/absolute_cinema.mcfunction"
+              }
+            ],
+            "key": "Absolute Cinema",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/all_around_the_world.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/all_around_the_world.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/all_around_the_world.mcfunction"
+              }
+            ],
+            "key": "All Around the World",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/all_the_balls.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/all_the_balls.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/all_the_balls.mcfunction"
+              }
+            ],
+            "key": "All the Balls!",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/wax_treatment.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/wax_treatment.mcfunction"
+              }
+            ],
+            "key": "Apply Honeycomb to a Copper Golem to stop it from oxidizing",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/arrow_of_ultimate_obliteration.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/arrow_of_ultimate_obliteration.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/arrow_of_ultimate_obliteration.mcfunction"
+              }
+            ],
+            "key": "Arrow of Ultimate Obliteration",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/at_the_rim_of_the_sky.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/at_the_rim_of_the_sky.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/at_the_rim_of_the_sky.mcfunction"
+              }
+            ],
+            "key": "At the Rim of the Sky",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/lead_zeppelin.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/lead_zeppelin.mcfunction"
+              }
+            ],
+            "key": "Attach a Boat to a Happy Ghast using a Lead",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/axeman.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/axeman.mcfunction"
+              }
+            ],
+            "key": "Attack mobs using every kind of axe",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/beef_moover.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/beef_moover.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/beef_moover.mcfunction"
+              }
+            ],
+            "key": "Beef Moover",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/beep_bop.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/beep_bop.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/beep_bop.mcfunction"
+              }
+            ],
+            "key": "Beep Bop",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/big_blimp_enthusiast.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/big_blimp_enthusiast.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/big_blimp_enthusiast.mcfunction"
+              }
+            ],
+            "key": "Big Blimp Enthusiast",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/booshes.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/booshes.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/booshes.mcfunction"
+              }
+            ],
+            "key": "Booshes",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/bouncy_beats.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/bouncy_beats.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/bouncy_beats.mcfunction"
+              }
+            ],
+            "key": "Bouncy Beats",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/weve_broken_our_last_shovel.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/weve_broken_our_last_shovel.mcfunction"
+              }
+            ],
+            "key": "Break every kind of shovel",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/a_scute_off_the_old_shell.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/a_scute_off_the_old_shell.mcfunction"
+              }
+            ],
+            "key": "Breed two Nautiluses together using fish",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/piglets_big_advancement.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/piglets_big_advancement.mcfunction"
+              }
+            ],
+            "key": "Breed two pigs to get this little piggy",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/britney_spears.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/britney_spears.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/britney_spears.mcfunction"
+              }
+            ],
+            "key": "Britney Spears",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/beep_bop.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/beep_bop.mcfunction"
+              }
+            ],
+            "key": "Build a Copper Golem",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/all_around_the_world.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/all_around_the_world.mcfunction"
+              }
+            ],
+            "key": "Buy every kind of Explorer Map that can be bought from Cartographers",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/captain_nemo.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/captain_nemo.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/captain_nemo.mcfunction"
+              }
+            ],
+            "key": "Captain Nemo",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/certified_spud_chomper.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/certified_spud_chomper.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/certified_spud_chomper.mcfunction"
+              }
+            ],
+            "key": "Certified Spud Chomper",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/chain_gang.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/chain_gang.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/chain_gang.mcfunction"
+              }
+            ],
+            "key": "Chain Gang",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/chartreuse.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/chartreuse.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/chartreuse.mcfunction"
+              }
+            ],
+            "key": "Chartreuse!",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/chick_buffet.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/chick_buffet.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/chick_buffet.mcfunction"
+              }
+            ],
+            "key": "Chick Buffet",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/cinnabar_island.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/cinnabar_island.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/cinnabar_island.mcfunction"
+              }
+            ],
+            "key": "Cinnabar Island",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/classic_cartoon_comedy.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/classic_cartoon_comedy.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/classic_cartoon_comedy.mcfunction"
+              }
+            ],
+            "key": "Classic Cartoon Comedy",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/collateral_damage.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/collateral_damage.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/collateral_damage.mcfunction"
+              }
+            ],
+            "key": "Collateral Damage",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/lets_take_it_up_a_notch.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/lets_take_it_up_a_notch.mcfunction"
+              }
+            ],
+            "key": "Collect 64 Enchanted Golden Apples",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/omelette.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/omelette.mcfunction"
+              }
+            ],
+            "key": "Collect a stack of all kinds of Chicken Eggs",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/life_sentence.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/life_sentence.mcfunction"
+              }
+            ],
+            "key": "Collect a stack of every oxidizing stage of Copper Bars, including all of their waxed variants",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/sly_copper_the_copper_heist.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/sly_copper_the_copper_heist.mcfunction"
+              }
+            ],
+            "key": "Collect a stack of every oxidizing stage of Copper Blocks, Chiseled Copper, and Cut Copper Blocks, Slabs and Stairs, including all of their waxed variants",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_computer.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_computer.mcfunction"
+              }
+            ],
+            "key": "Collect a stack of every oxidizing stage of Copper Bulbs, including all of their waxed variants",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/chain_gang.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/chain_gang.mcfunction"
+              }
+            ],
+            "key": "Collect a stack of every oxidizing stage of Copper Chains, including all of their waxed variants",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/d_b_copper.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/d_b_copper.mcfunction"
+              }
+            ],
+            "key": "Collect a stack of every oxidizing stage of Copper Chests, including all of their waxed variants",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/school_of_hard_knocks.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/school_of_hard_knocks.mcfunction"
+              }
+            ],
+            "key": "Collect a stack of every oxidizing stage of Copper Doors and Trapdoors, including all of their waxed variants",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/statue_of_limitations.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/statue_of_limitations.mcfunction"
+              }
+            ],
+            "key": "Collect a stack of every oxidizing stage of Copper Golem Statues, including all of their waxed variants",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/gratest_of_all_time.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/gratest_of_all_time.mcfunction"
+              }
+            ],
+            "key": "Collect a stack of every oxidizing stage of Copper Grates, including all of their waxed variants",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/green_lanterns.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/green_lanterns.mcfunction"
+              }
+            ],
+            "key": "Collect a stack of every oxidizing stage of Copper Lanterns, including all of their waxed variants",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/conductive_conglomerate.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/conductive_conglomerate.mcfunction"
+              }
+            ],
+            "key": "Collect a stack of every oxidizing stage of Lightning Rods, including all of their waxed variants",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/booshes.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/booshes.mcfunction"
+              }
+            ],
+            "key": "Collect some Bushes",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/conductive_conglomerate.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/conductive_conglomerate.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/conductive_conglomerate.mcfunction"
+              }
+            ],
+            "key": "Conductive Conglomerate",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/the_wicked_witch_of_the_west.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/the_wicked_witch_of_the_west.mcfunction"
+              }
+            ],
+            "key": "Convert your way to a Witch Chicken Jockey",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_age.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_age.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_age.mcfunction"
+              }
+            ],
+            "key": "Copper Age",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_computer.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_computer.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_computer.mcfunction"
+              }
+            ],
+            "key": "Copper Computer",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_golem_overlord.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_golem_overlord.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_golem_overlord.mcfunction"
+              }
+            ],
+            "key": "Copper Golem Overlord",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/coralful_shell.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/coralful_shell.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/coralful_shell.mcfunction"
+              }
+            ],
+            "key": "Coralful Shell",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/counting_sheep.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/counting_sheep.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/counting_sheep.mcfunction"
+              }
+            ],
+            "key": "Counting Sheep",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/hot_air_balloon.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/hot_air_balloon.mcfunction"
+              }
+            ],
+            "key": "Craft a Harness, place it on a Happy Ghast, and ride it",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/lead_the_way.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/lead_the_way.mcfunction"
+              }
+            ],
+            "key": "Craft a Lead using String, then attach it to a mob",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/get_a_lode_of_this.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/get_a_lode_of_this.mcfunction"
+              }
+            ],
+            "key": "Craft a Lodestone using Chiseled Stone Bricks and an Iron Ingot",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_age.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_age.mcfunction"
+              }
+            ],
+            "key": "Craft a slightly better pickaxe",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/no_chain_no_gain.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/no_chain_no_gain.mcfunction"
+              }
+            ],
+            "key": "Craft an Iron Chain using an Iron Ingot and Iron Nuggets",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/cinnabar_island.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/cinnabar_island.mcfunction"
+              }
+            ],
+            "key": "Craft or collect all forms of Cinnabar, Polished Cinnabar, and Cinnabar Bricks",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/the_smell_of_rotten_eggs.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/the_smell_of_rotten_eggs.mcfunction"
+              }
+            ],
+            "key": "Craft or collect all forms of Sulfur, Polished Sulfur, and Sulfur Bricks",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/master_jouster.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/master_jouster.mcfunction"
+              }
+            ],
+            "key": "Create a spear with all possible enchantments at max level",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/all_the_balls.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/all_the_balls.mcfunction"
+              }
+            ],
+            "key": "Create every Sulfur Cube archetype from putting different blocks into them",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/such_a_poser.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/such_a_poser.mcfunction"
+              }
+            ],
+            "key": "Cycle a Copper Golem Statue through all its poses",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/d_b_copper.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/d_b_copper.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/d_b_copper.mcfunction"
+              }
+            ],
+            "key": "D. B. Copper",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/overkill.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/overkill.mcfunction"
+              }
+            ],
+            "key": "Deal eight hearts of damage in a single melee blow without using a Mace or a Spear's charge attack",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/over_overkill.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/over_overkill.mcfunction"
+              }
+            ],
+            "key": "Deal sixteen hearts of damage in a single melee blow without using a Mace or a Spear's charge attack",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/death_star.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/death_star.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/death_star.mcfunction"
+              }
+            ],
+            "key": "Death Star",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/absolute_cinema.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/absolute_cinema.mcfunction"
+              }
+            ],
+            "key": "Defeat a Chicken Jockey in a Woodland Mansion",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/toasted_marshmallow.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/toasted_marshmallow.mcfunction"
+              }
+            ],
+            "key": "Defeat a Ghast using a Spear enchanted with Fire Aspect",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/naughtylus.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/naughtylus.mcfunction"
+              }
+            ],
+            "key": "Defeat a Zombie Nautilus Jockey",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/collateral_damage.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/collateral_damage.mcfunction"
+              }
+            ],
+            "key": "Deflect a Ghast fireball into a Happy Ghast",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/explorer_of_worlds.json"
+            ],
+            "currentConsumers": [
+              {
+                "line": 11,
+                "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/explorer_of_worlds.json"
+              }
+            ],
+            "key": "Discover every vanilla biome from every dimension",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_terralith_override/data/minecraft/advancement/adventure/adventuring_time.json"
+            ],
+            "currentConsumers": [
+              {
+                "line": 11,
+                "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/minecraft/advancement/adventure/adventuring_time.json"
+              }
+            ],
+            "key": "Discover every vanilla surface biome in the Overworld",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/dragon_vs_dragon_ii_electric_boogaloo.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/dragon_vs_dragon_ii_electric_boogaloo.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/dragon_vs_dragon_ii_electric_boogaloo.mcfunction"
+              }
+            ],
+            "key": "Dragon vs Dragon II: Electric Boogaloo",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/dragon_vs_wither_the_pre_sequel.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/dragon_vs_wither_the_pre_sequel.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/dragon_vs_wither_the_pre_sequel.mcfunction"
+              }
+            ],
+            "key": "Dragon vs Wither: The Pre-Sequel",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/certified_spud_chomper.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/certified_spud_chomper.mcfunction"
+              }
+            ],
+            "key": "Eat 100 Poisonous Potatoes",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/echidna.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/echidna.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/echidna.mcfunction"
+              }
+            ],
+            "key": "Echidna",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/equiangular_spiral.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/equiangular_spiral.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/equiangular_spiral.mcfunction"
+              }
+            ],
+            "key": "Equiangular Spiral",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/snow_cone.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/snow_cone.mcfunction"
+              }
+            ],
+            "key": "Feed snowballs to a Ghastling",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/desert_rider.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/desert_rider.mcfunction"
+              }
+            ],
+            "key": "Find a Camel in a Desert and ride it",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/bouncy_beats.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/bouncy_beats.mcfunction"
+              }
+            ],
+            "key": "Find the Bounce music disc in an Abandoned Mineshaft that intersects with a Sulfur Cave",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/fountain_of_youth.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/fountain_of_youth.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/fountain_of_youth.mcfunction"
+              }
+            ],
+            "key": "Fountain of Youth",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/mining/stink_bomb.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/mining/stink_bomb.mcfunction"
+              }
+            ],
+            "key": "Get hurt by an explosive Sulfur Cube",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/stink_bomb.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/stink_bomb.mcfunction"
+              }
+            ],
+            "key": "Get killed by an explosive Sulfur Cube",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/death_from_all.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/death_from_all.mcfunction"
+              }
+            ],
+            "key": "Get killed by every mob that can kill you",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/classic_cartoon_comedy.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/classic_cartoon_comedy.mcfunction"
+              }
+            ],
+            "key": "Get squashed by an anvil",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/gratest_of_all_time.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/gratest_of_all_time.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/gratest_of_all_time.mcfunction"
+              }
+            ],
+            "key": "Gratest of All Time",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/green_lanterns.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/green_lanterns.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/green_lanterns.mcfunction"
+              }
+            ],
+            "key": "Green Lanterns",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/grim_neigh.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/grim_neigh.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/grim_neigh.mcfunction"
+              }
+            ],
+            "key": "Grim Neigh",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/counting_sheep.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/counting_sheep.mcfunction"
+              }
+            ],
+            "key": "Have 100 Sheep within 16 blocks of you",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/the_statue_of_liberty.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/the_statue_of_liberty.mcfunction"
+              }
+            ],
+            "key": "Have a Copper Golem completely oxidize into a statue, then mine it",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/uh_oh.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/uh_oh.mcfunction"
+              }
+            ],
+            "key": "Have a Sulfur Cube absorb a TNT block",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/punching_bag.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/punching_bag.mcfunction"
+              }
+            ],
+            "key": "Have a Sulfur Cube swallow up a block",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/redstone/splatfest.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/redstone/splatfest.mcfunction"
+              }
+            ],
+            "key": "Have at least 100 of each type of Chicken Egg fired in the air at once within 48 blocks of you",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/heart_transplanter.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/heart_transplanter.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/heart_transplanter.mcfunction"
+              }
+            ],
+            "key": "Heart Transplanter",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/unstoppable_force_vs_immovable_object.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/unstoppable_force_vs_immovable_object.mcfunction"
+              }
+            ],
+            "key": "Hit a Shulker with a thrown Wind Charge",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/hit_and_run.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/hit_and_run.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/hit_and_run.mcfunction"
+              }
+            ],
+            "key": "Hit and Run",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/impiled.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/impiled.mcfunction"
+              }
+            ],
+            "key": "Hit fifty mobs in the same charge attack using a Spear",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/mob_kabob.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/mob_kabob.mcfunction"
+              }
+            ],
+            "key": "Hit five mobs in the same charge attack using a Spear",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/shovel_knight.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/shovel_knight.mcfunction"
+              }
+            ],
+            "key": "Hit mobs using every kind of shovel",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/britney_spears.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/britney_spears.mcfunction"
+              }
+            ],
+            "key": "Hit mobs with all kinds of Spears",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/hot_air_balloon.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/hot_air_balloon.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/hot_air_balloon.mcfunction"
+              }
+            ],
+            "key": "Hot Air Balloon",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/impiled.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/impiled.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/impiled.mcfunction"
+              }
+            ],
+            "key": "Impiled",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/jockey_jamboree.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/jockey_jamboree.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/jockey_jamboree.mcfunction"
+              }
+            ],
+            "key": "Jockey Jamboree",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/ride_or_dry.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/ride_or_dry.mcfunction"
+              }
+            ],
+            "key": "Kill a Husk, Parched and the Camel Husk they are riding with a single piercing arrow",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/sands_the_skeleton.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/sands_the_skeleton.mcfunction"
+              }
+            ],
+            "key": "Kill a Parched. Be careful around weakness arrows!",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/justice.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/justice.mcfunction"
+              }
+            ],
+            "key": "Kill a Pillager, Vindicator, Evoker, Ravager and Witch with a single crossbow arrow",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/hit_and_run.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/hit_and_run.mcfunction"
+              }
+            ],
+            "key": "Kill a mob using the charge attack of a Spear while riding a high-speed Minecart",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/youre_doing_it_wrong.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/youre_doing_it_wrong.mcfunction"
+              }
+            ],
+            "key": "Kill a mob with a Mace while levitating upwards",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/death_star.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/death_star.mcfunction"
+              }
+            ],
+            "key": "Kill a mob with a Nether Star",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/water_balloon.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/water_balloon.mcfunction"
+              }
+            ],
+            "key": "Kill a mob with a Splash Water Bottle. Just, water you doing?",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/oh_baby_a_triple.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/oh_baby_a_triple.mcfunction"
+              }
+            ],
+            "key": "Kill three mobs at the same time using a Multishot Crossbow from at least 30 blocks away",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/lancelot.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/lancelot.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/lancelot.mcfunction"
+              }
+            ],
+            "key": "Lancelot",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/le_creak_cest_chic.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/le_creak_cest_chic.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/le_creak_cest_chic.mcfunction"
+              }
+            ],
+            "key": "Le creak, c'est chic",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/lead_zeppelin.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/lead_zeppelin.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/lead_zeppelin.mcfunction"
+              }
+            ],
+            "key": "Lead Zeppelin",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/lets_take_it_up_a_notch.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/lets_take_it_up_a_notch.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/lets_take_it_up_a_notch.mcfunction"
+              }
+            ],
+            "key": "Let's take it up a notch",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/life_sentence.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/life_sentence.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/life_sentence.mcfunction"
+              }
+            ],
+            "key": "Life Sentence",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/chartreuse.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/chartreuse.mcfunction"
+              }
+            ],
+            "key": "Light up the area with Copper Torches and Copper Lanterns!",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/locked_and_loaded.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/locked_and_loaded.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/locked_and_loaded.mcfunction"
+              }
+            ],
+            "key": "Locked and Loaded",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/look_out.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/look_out.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/look_out.mcfunction"
+              }
+            ],
+            "key": "Look Out!",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/loot_em.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/loot_em.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/loot_em.mcfunction"
+              }
+            ],
+            "key": "Loot 'em!",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/lord_helix.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/lord_helix.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/lord_helix.mcfunction"
+              }
+            ],
+            "key": "Lord Helix",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/master_jouster.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/master_jouster.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/master_jouster.mcfunction"
+              }
+            ],
+            "key": "Master Jouster",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/midport_village.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/midport_village.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/midport_village.mcfunction"
+              }
+            ],
+            "key": "Midport Village",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/mitosis.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/mitosis.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/mitosis.mcfunction"
+              }
+            ],
+            "key": "Mitosis",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/mob_kabob.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/mob_kabob.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/mob_kabob.mcfunction"
+              }
+            ],
+            "key": "Mob Kabob",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/inception.json"
+            ],
+            "currentConsumers": [
+              {
+                "line": 17,
+                "path": "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/inception.json"
+              }
+            ],
+            "key": "Modified by the Amplified Nether version",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/naughtylus.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/naughtylus.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/naughtylus.mcfunction"
+              }
+            ],
+            "key": "Naughty-lus",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/echidna.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/echidna.mcfunction"
+              }
+            ],
+            "key": "Obtain Thorns III on a piece of armour",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/you_cant_take_the_sky_from_me.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/you_cant_take_the_sky_from_me.mcfunction"
+              }
+            ],
+            "key": "Obtain a Firefly Bush",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/oh_baby_a_triple.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/oh_baby_a_triple.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/oh_baby_a_triple.mcfunction"
+              }
+            ],
+            "key": "Oh baby a triple!",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/omelette.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/omelette.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/omelette.mcfunction"
+              }
+            ],
+            "key": "Omelette",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/piglets_big_advancement.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/piglets_big_advancement.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/piglets_big_advancement.mcfunction"
+              }
+            ],
+            "key": "Piglet's BIG Advancement",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/pillow_fight.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/pillow_fight.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/pillow_fight.mcfunction"
+              }
+            ],
+            "key": "Pillow Fight",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/heart_transplanter.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/heart_transplanter.mcfunction"
+              }
+            ],
+            "key": "Place a Creaking Heart with the correct alignment between two Pale Oak Log blocks",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/stay_hydrated.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/stay_hydrated.mcfunction"
+              }
+            ],
+            "key": "Place a Dried Ghast block into water",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/le_creak_cest_chic.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/le_creak_cest_chic.mcfunction"
+              }
+            ],
+            "key": "Place fifty Creaking Hearts and inundate yourself with an absolute nightmare",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/why_do_i_hear_boss_music.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/why_do_i_hear_boss_music.mcfunction"
+              }
+            ],
+            "key": "Play a Music Disc while fighting the Ender Dragon",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/arrow_of_ultimate_obliteration.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/arrow_of_ultimate_obliteration.mcfunction"
+              }
+            ],
+            "key": "Plow into a mob with the charge attack of a Spear while flying at a speed of at least 70 blocks per second",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/punching_bag.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/punching_bag.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/punching_bag.mcfunction"
+              }
+            ],
+            "key": "Punching Bag",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/shelfception.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/shelfception.mcfunction"
+              }
+            ],
+            "key": "Put a Shelf on a Shelf",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/armor_display.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/armor_display.mcfunction"
+              }
+            ],
+            "key": "Put every full set of armor on different armor stands",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/test_flight.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/test_flight.mcfunction"
+              }
+            ],
+            "key": "Ride 100m on a Happy Ghast",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/big_blimp_enthusiast.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/big_blimp_enthusiast.mcfunction"
+              }
+            ],
+            "key": "Ride 10km on a Happy Ghast",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/who_needs_elytra.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/who_needs_elytra.mcfunction"
+              }
+            ],
+            "key": "Ride 1km on a Happy Ghast",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/shell_testing.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/shell_testing.mcfunction"
+              }
+            ],
+            "key": "Ride 1km on a Nautilus",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/lord_helix.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/lord_helix.mcfunction"
+              }
+            ],
+            "key": "Ride 25km on a Nautilus",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/captain_nemo.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/captain_nemo.mcfunction"
+              }
+            ],
+            "key": "Ride 5km on a Nautilus",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/whole_horse.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/whole_horse.mcfunction"
+              }
+            ],
+            "key": "Ride Horses with every kind of Horse Armor",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/submarine_fleet.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/submarine_fleet.mcfunction"
+              }
+            ],
+            "key": "Ride Nautiluses with every kind of Nautilus Armor",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/unwanted_passenger.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/unwanted_passenger.mcfunction"
+              }
+            ],
+            "key": "Ride a Camel Husk with a Parched still riding it for 30 seconds",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/midport_village.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/midport_village.mcfunction"
+              }
+            ],
+            "key": "Ride a Happy Ghast into a village",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/20_leagues_under_the_sea.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/20_leagues_under_the_sea.mcfunction"
+              }
+            ],
+            "key": "Ride a Nautilus below y-level -20 in the Overworld",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/grim_neigh.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/grim_neigh.mcfunction"
+              }
+            ],
+            "key": "Ride a Zombie Horse",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/coralful_shell.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/coralful_shell.mcfunction"
+              }
+            ],
+            "key": "Ride a coral-encrusted Zombie Nautilus",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/ride_or_dry.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/ride_or_dry.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/ride_or_dry.mcfunction"
+              }
+            ],
+            "key": "Ride or Dry",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/sands_the_skeleton.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/sands_the_skeleton.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/sands_the_skeleton.mcfunction"
+              }
+            ],
+            "key": "Sands the Skeleton",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/school_of_hard_knocks.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/school_of_hard_knocks.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/school_of_hard_knocks.mcfunction"
+              }
+            ],
+            "key": "School of Hard Knocks",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/seafood_skewer.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/seafood_skewer.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/seafood_skewer.mcfunction"
+              }
+            ],
+            "key": "Seafood Skewer",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/shelfception.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/shelfception.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/shelfception.mcfunction"
+              }
+            ],
+            "key": "Shelfception",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/shell_testing.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/shell_testing.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/shell_testing.mcfunction"
+              }
+            ],
+            "key": "Shell Testing",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/string_shot.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/string_shot.mcfunction"
+              }
+            ],
+            "key": "Shoot a mob with an Arrow of Weaving",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/anti_air.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/anti_air.mcfunction"
+              }
+            ],
+            "key": "Shoot down a phantom with an arrow from 30 blocks away",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/spear_fishing.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/spear_fishing.mcfunction"
+              }
+            ],
+            "key": "Skewer a fish with a Spear",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/pillow_fight.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/pillow_fight.mcfunction"
+              }
+            ],
+            "key": "Slay a Ghast while riding a Happy Ghast",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/at_the_rim_of_the_sky.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/at_the_rim_of_the_sky.mcfunction"
+              }
+            ],
+            "key": "Slay the Ender Dragon in one hit using a Mace",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/mitosis.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/mitosis.mcfunction"
+              }
+            ],
+            "key": "Slice a Sulfur Cube in two",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/total_copout.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/total_copout.mcfunction"
+              }
+            ],
+            "key": "Smash a living Copper Golem into scrap",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/silent_but_deadly.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/silent_but_deadly.mcfunction"
+              }
+            ],
+            "key": "Sneak and sprint on sculk with Speed II while wearing Swift Sneak III leggings. Try saying that six times swiftly",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/snow_cone.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/snow_cone.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/snow_cone.mcfunction"
+              }
+            ],
+            "key": "Snow Cone?",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/redstone/splatfest.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/redstone/splatfest.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/redstone/splatfest.mcfunction"
+              }
+            ],
+            "key": "Splatfest",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/statue_of_limitations.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/statue_of_limitations.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/statue_of_limitations.mcfunction"
+              }
+            ],
+            "key": "Statue of Limitations",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/stay_hydrated.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/stay_hydrated.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/stay_hydrated.mcfunction"
+              }
+            ],
+            "key": "Stay Hydrated",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/string_shot.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/string_shot.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/string_shot.mcfunction"
+              }
+            ],
+            "key": "String Shot",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/submarine_fleet.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/submarine_fleet.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/submarine_fleet.mcfunction"
+              }
+            ],
+            "key": "Submarine Fleet",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/such_a_poser.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/such_a_poser.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/such_a_poser.mcfunction"
+              }
+            ],
+            "key": "Such a poser",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/locked_and_loaded.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/locked_and_loaded.mcfunction"
+              }
+            ],
+            "key": "Swap your entire hotbar of items with a trio of powered Shelves",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/taking_the_scenic_route.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/taking_the_scenic_route.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/taking_the_scenic_route.mcfunction"
+              }
+            ],
+            "key": "Taking the Scenic Route",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/equiangular_spiral.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/equiangular_spiral.mcfunction"
+              }
+            ],
+            "key": "Tame a Nautilus using Pufferfish",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/test_flight.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/test_flight.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/test_flight.mcfunction"
+              }
+            ],
+            "key": "Test Flight",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/the_three_little_pigs.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/the_three_little_pigs.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/the_three_little_pigs.mcfunction"
+              }
+            ],
+            "key": "The Three Little Pigs",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/the_wicked_witch_of_the_west.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/the_wicked_witch_of_the_west.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/the_wicked_witch_of_the_west.mcfunction"
+              }
+            ],
+            "key": "The Wicked Witch of the West",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/the_smell_of_rotten_eggs.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/the_smell_of_rotten_eggs.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/the_smell_of_rotten_eggs.mcfunction"
+              }
+            ],
+            "key": "The smell of rotten eggs",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/time_to_hunt.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/time_to_hunt.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/time_to_hunt.mcfunction"
+              }
+            ],
+            "key": "Time to Hunt!",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/toasted_marshmallow.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/toasted_marshmallow.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/toasted_marshmallow.mcfunction"
+              }
+            ],
+            "key": "Toasted Marshmallow",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/total_copout.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/total_copout.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/total_copout.mcfunction"
+              }
+            ],
+            "key": "Total Copout",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/taking_the_scenic_route.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/taking_the_scenic_route.mcfunction"
+              }
+            ],
+            "key": "Travel to the outer End islands using a bridge",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/truly_an_all_purpose_tool.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/truly_an_all_purpose_tool.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/truly_an_all_purpose_tool.mcfunction"
+              }
+            ],
+            "key": "Truly an all-purpose tool",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/uh_oh.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/uh_oh.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/uh_oh.mcfunction"
+              }
+            ],
+            "key": "Uh Oh",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/chick_buffet.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/chick_buffet.mcfunction"
+              }
+            ],
+            "key": "Unite all Chicken variants in one place",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/beef_moover.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/beef_moover.mcfunction"
+              }
+            ],
+            "key": "Unite all Cow variants in one place",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/the_three_little_pigs.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/the_three_little_pigs.mcfunction"
+              }
+            ],
+            "key": "Unite all Pig variants in one place",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/jockey_jamboree.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/jockey_jamboree.mcfunction"
+              }
+            ],
+            "key": "Unite every kind of jockey mob in one place",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/unstoppable_force_vs_immovable_object.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/unstoppable_force_vs_immovable_object.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/unstoppable_force_vs_immovable_object.mcfunction"
+              }
+            ],
+            "key": "Unstoppable Force vs Immovable Object",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/unwanted_passenger.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/unwanted_passenger.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/unwanted_passenger.mcfunction"
+              }
+            ],
+            "key": "Unwanted Passenger",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/truly_an_all_purpose_tool.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/truly_an_all_purpose_tool.mcfunction"
+              }
+            ],
+            "key": "Use Shears to remove the block from inside a Sulfur Cube",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/fountain_of_youth.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/fountain_of_youth.mcfunction"
+              }
+            ],
+            "key": "Use a Golden Dandelion on every baby mob",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/welcome_to_neverland.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/welcome_to_neverland.mcfunction"
+              }
+            ],
+            "key": "Use a Golden Dandelion to stop a baby from growing up",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/time_to_hunt.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/time_to_hunt.mcfunction"
+              }
+            ],
+            "key": "Use planks and sticks to make a spear",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/the_devils_distance.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/the_devils_distance.mcfunction"
+              }
+            ],
+            "key": "Use the Nether to travel at least 666km in the Overworld",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/subspace_bubble.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/subspace_bubble.mcfunction"
+              }
+            ],
+            "key": "Use the Nether to travel at least 7km in the Overworld",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/water_balloon.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/water_balloon.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/water_balloon.mcfunction"
+              }
+            ],
+            "key": "Water Balloon",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/wax_treatment.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/wax_treatment.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/wax_treatment.mcfunction"
+              }
+            ],
+            "key": "Wax Treatment",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_golem_overlord.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_golem_overlord.mcfunction"
+              }
+            ],
+            "key": "Wear a full suit of Copper Armor while surrounded by at least ten living Copper Golems",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/welcome_to_neverland.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/welcome_to_neverland.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/welcome_to_neverland.mcfunction"
+              }
+            ],
+            "key": "Welcome to Neverland",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/lancelot.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/lancelot.mcfunction"
+              }
+            ],
+            "key": "While riding a Horse, defeat a Zombie Horseman using a Spear",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/who_needs_elytra.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/who_needs_elytra.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/who_needs_elytra.mcfunction"
+              }
+            ],
+            "key": "Who Needs Elytra?",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/whole_horse.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/whole_horse.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/whole_horse.mcfunction"
+              }
+            ],
+            "key": "Whole Horse",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/why_do_i_hear_boss_music.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/why_do_i_hear_boss_music.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/why_do_i_hear_boss_music.mcfunction"
+              }
+            ],
+            "key": "Why do I hear boss music?",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/you_cant_take_the_sky_from_me.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/you_cant_take_the_sky_from_me.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/you_cant_take_the_sky_from_me.mcfunction"
+              }
+            ],
+            "key": "You can't take the sky from me",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/youre_doing_it_wrong.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/youre_doing_it_wrong.mcfunction"
+              },
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/youre_doing_it_wrong.mcfunction"
+              }
+            ],
+            "key": "You're doing it wrong",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          },
+          {
+            "authorizedConsumerPaths": [
+              "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/look_out.mcfunction"
+            ],
+            "currentConsumers": [
+              {
+                "line": 1,
+                "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/look_out.mcfunction"
+              }
+            ],
+            "key": "Zoom in on a Creeper with a Spyglass from less than a block away",
+            "provider": "MINECRAFT_RU_OVERLAY"
+          }
+        ],
+        "currentOnlySetSha256": "6c02f8e7e18c28eb5514aec497c4503aed4b50e4e41968e0b1cca0a95f0d1029",
+        "evidence": {
+          "path": "build/tmp/phase_b_b7/post_r1/runtime_keyset_reconciliation.json",
+          "sha256": "66b2aedff0dc0f1dd53ec6d14ba9aaadbf20eff634e95f11648127e7e598b8d4"
+        },
+        "finding": "Historical test extracts frozen old BACAP plus CURRENT ATD overlays, then compares with fixed historical count. HEAD overlays reproduce 3507; current overlays reproduce 3714. Intersection 3506, historical-only 1, current-only 208. Every current-only key has authorized B5 ownership and a current independent provider; effective coverage has zero missing keys.",
+        "historicalOnlyIdentities": [
+          "You have completed "
+        ],
+        "setReconciliation": {
+          "currentExtracted": 3714,
+          "currentOnly": 208,
+          "historicalExpected": 3507,
+          "historicalOnly": 1,
+          "intersection": 3506
+        }
+      }
+    },
+    {
+      "B2Classification": "IMMUTABLE_HISTORICAL",
+      "authorizedPhaseBChangeResponsible": "B5.1 official current-main pin; B7-R1 strict actual-source freshness.",
+      "b7R1Relevant": true,
+      "b7R1RepairEvidence": {
+        "path": "reference/phase_b/b7_r1_source_identity_marker_repair.json",
+        "sha256": "3da33837b2f1e46962520c146216cd6ee9a9fda48052f9b902cbb892fd9e71b9"
+      },
+      "containsHistoricalOracle": true,
+      "currentRegression": false,
+      "currentSuccessorEvidence": {
+        "R1CompiledProductionProbePreserved": true,
+        "passed": true,
+        "tests": 8,
+        "tool": "tools/phase_b/b7_localization_certification.py"
+      },
+      "failingTest": "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.ensureWorldPacksUpToDateRepairsStaleWorldPackToCurrentCompatibleCopy()",
+      "finalOracleDisposition": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+      "futureSuccessorStage": "B9",
+      "historicalAssertionsMustBePreserved": true,
+      "historicalRegressionDetected": false,
+      "historicalTestModified": false,
+      "originalB7Failure": {
+        "messageSha256": "c69bff436adb86e96ddbe86afad4b7bcad753d04f4093d0c8fc954bdfc276bc5",
+        "messageSummary": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+        "status": "FAIL"
+      },
+      "postR1TestStatus": "FAIL",
+      "preR1Disposition": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+      "proof": {
+        "assertionLocation": "ExternalPackCompatibilityPhaseATest.java:88",
+        "finding": "Test copies frozen 1.18.1 to global/bacap.zip and immediately asserts that it is the CURRENT enum source. It fails at that initial assertion before world-sync repair. Current r18 correctly rejects this raw old source, and the accepted R1 production probe proves sync repair with verified current 1.21 input."
+      }
+    },
+    {
+      "B2Classification": "ACTIVE_PRODUCT_TEST",
+      "authorizedPhaseBChangeResponsible": "B5.1 current-main pin causes stale raw-source assertion; B7-R1 fixes the independently proven r17 marker defect.",
+      "b7R1Relevant": true,
+      "b7R1RepairEvidence": {
+        "path": "reference/phase_b/b7_r1_source_identity_marker_repair.json",
+        "sha256": "3da33837b2f1e46962520c146216cd6ee9a9fda48052f9b902cbb892fd9e71b9"
+      },
+      "containsHistoricalOracle": true,
+      "currentRegression": false,
+      "currentSuccessorEvidence": {
+        "R1CompiledProductionProbePreserved": true,
+        "passed": true,
+        "tests": 8,
+        "tool": "tools/phase_b/b7_localization_certification.py"
+      },
+      "failingTest": "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.worldCopyPreservesHistoricalGlowAndHoneyDefinitionsAndFrozenSource()",
+      "finalOracleDisposition": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+      "futureSuccessorStage": "B9",
+      "historicalAssertionsMustBePreserved": true,
+      "historicalRegressionDetected": true,
+      "historicalTestModified": false,
+      "originalB7Failure": {
+        "messageSha256": "bbd5c6c3fc95c80323a4f4c5ef6cb12ed544032261d61d8b513d19195c79081f",
+        "messageSummary": "org.opentest4j.AssertionFailedError: expected: <14da3f07b5467e8b59ffc0253fd8212c938cd739> but was: <45b8bb0076bbf5b92fde7dc9590c6686937abbc0>",
+        "status": "FAIL"
+      },
+      "postR1TestStatus": "FAIL",
+      "preR1Disposition": "REAL_PHASE_B_REGRESSION",
+      "proof": {
+        "assertionLocation": "ExternalPackCompatibilityTest.java:824",
+        "currentProductionProbePasses": true,
+        "currentRegression": false,
+        "finding": "After R1 this same method still fails at line 824 BEFORE conversion: it compares the frozen archive SHA1 with CURRENT ExternalPack.BACAP.getSha1(). That remaining oracle is stale. The separate production defect originally discovered during its investigation was real and is now repaired: historical r18 markers record actual historical SHA and cannot validate as current-main copies.",
+        "historicalRegressionDetected": true,
+        "productionProbe": {
+          "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+          "frozenSourceBytesUnchanged": true,
+          "historicalDerivedAcceptedAsCurrent": false,
+          "historicalDerivedCompatibleWithCurrentMain": false,
+          "historicalRawAcceptedAsCurrent": false,
+          "markerRecordsActualSource": true,
+          "markerSourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+          "markerVersion": "compat_26_2_r18",
+          "passed": true,
+          "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0"
+        },
+        "remainingOracleDisposition": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+        "repair": "B7-R1"
+      }
+    },
+    {
+      "B2Classification": "ACTIVE_PRODUCT_TEST",
+      "authorizedPhaseBChangeResponsible": "B5.4 moves/current component spelling and B5.6 authorized new companion messages.",
+      "b7R1Relevant": false,
+      "b7R1RepairEvidence": null,
+      "containsHistoricalOracle": true,
+      "currentRegression": false,
+      "currentSuccessorEvidence": {
+        "R1CompiledProductionProbePreserved": true,
+        "passed": true,
+        "tests": 8,
+        "tool": "tools/phase_b/b7_localization_certification.py"
+      },
+      "failingTest": "com.diskree.achievetodo.client.Pre26SmokeRegressionTest.everyShippedAdvancementMessageRetainsHoverClickAndFrameMetadata()",
+      "finalOracleDisposition": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+      "futureSuccessorStage": "B8/B9",
+      "historicalAssertionsMustBePreserved": true,
+      "historicalRegressionDetected": false,
+      "historicalTestModified": false,
+      "originalB7Failure": {
+        "messageSha256": "432dd839a5f2b37633baece7b8c9c4bab79d547216b75965f320ebd8459f2553",
+        "messageSummary": "org.opentest4j.AssertionFailedError: expected: <1202> but was: <1162>",
+        "status": "FAIL"
+      },
+      "postR1TestStatus": "FAIL",
+      "preR1Disposition": "NOT_COMPLETED_DUE_TO_REAL_REGRESSION_STOP",
+      "proof": {
+        "allCurrentApplicable": 1300,
+        "common": 1162,
+        "currentMetadataFailures": 0,
+        "currentOnlyLegacy": 0,
+        "evidence": {
+          "path": "build/tmp/phase_b_b7/post_r1/message_count_reconciliation.json",
+          "sha256": "208a618dff2181c44418d9c6a4526ebe4da7c8539a73acec1c353b10b16e2db0"
+        },
+        "finding": "Legacy detector requires hoverEvent spelling and fixed count 1202. Current detector yields 1162: 31 authorized MODIFY files use modern hover_event/click_event, 9 authorized DELETE files have existing validated move destinations. Historical-only 40, common 1162, current-only legacy 0. Independently enumerated current corpus contains 1300 messages, all passing real MC26.2 component codec, hover, Search click, frame/style, roundtrip and migration-idempotence checks.",
+        "historicalOnly": 40,
+        "metadataEvidence": {
+          "path": "build/tmp/phase_b_b7/post_r1/message_metadata_validation.json",
+          "sha256": "6876435ddc882af52bf56211690be21b54bc88ad322cc10959a95d6d7f74f29d"
+        },
+        "removedHistoricalMessages": [
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/justice.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "MOVED_OR_REPLACED",
+            "detail": "Explicit B5 DELETE; target message/ID replacement is certified by B5.4.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/spear_fishing.mcfunction",
+            "replacementExistsAndMetadataValidated": true,
+            "replacementPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/seafood_skewer.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/vault_hunter.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "MOVED_OR_REPLACED",
+            "detail": "Explicit B5 DELETE; target message/ID replacement is certified by B5.4.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/birdkeeper.mcfunction",
+            "replacementExistsAndMetadataValidated": true,
+            "replacementPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/birdkeeper.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "MOVED_OR_REPLACED",
+            "detail": "Explicit B5 DELETE; target message/ID replacement is certified by B5.4.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/chatterbox.mcfunction",
+            "replacementExistsAndMetadataValidated": true,
+            "replacementPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/chatterbox.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/desert_rider.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "MOVED_OR_REPLACED",
+            "detail": "Explicit B5 DELETE; target message/ID replacement is certified by B5.4.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/is_it_a_bird.mcfunction",
+            "replacementExistsAndMetadataValidated": true,
+            "replacementPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/is_it_a_bird.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/lead_the_way.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "MOVED_OR_REPLACED",
+            "detail": "Explicit B5 DELETE; target message/ID replacement is certified by B5.4.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/overpopulation.mcfunction",
+            "replacementExistsAndMetadataValidated": true,
+            "replacementPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/two_by_two.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/wheres_the_honey_lebowski.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/armor_display.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/no_chain_no_gain.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/death_from_all.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/dragon_vs_dragon_ii_electric_boogaloo.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/dragon_vs_wither_the_pre_sequel.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/overwarden.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/stack_all_the_items.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/the_devils_distance.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/the_perfect_run.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/over_overkill.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/overkill.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/silent_but_deadly.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/dragon_vs_dragon.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/a_gluttonous_diet.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_miner.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/master_copper_miner.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/sly_copper_the_copper_heist.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/the_statue_of_liberty.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/weve_broken_our_last_shovel.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/anti_air.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/pupil_poppers.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/a_piglins_best_friend.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "MOVED_OR_REPLACED",
+            "detail": "Explicit B5 DELETE; target message/ID replacement is certified by B5.4.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/country_lode_take_me_home.mcfunction",
+            "replacementExistsAndMetadataValidated": true,
+            "replacementPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/country_lode_take_me_home.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "MOVED_OR_REPLACED",
+            "detail": "Explicit B5 DELETE; target message/ID replacement is certified by B5.4.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/get_a_lode_of_this.mcfunction",
+            "replacementExistsAndMetadataValidated": true,
+            "replacementPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/get_a_lode_of_this.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "MOVED_OR_REPLACED",
+            "detail": "Explicit B5 DELETE; target message/ID replacement is certified by B5.4.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/lodes_of_applications.mcfunction",
+            "replacementExistsAndMetadataValidated": true,
+            "replacementPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/lodes_of_applications.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/subspace_bubble.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/loot_em.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "MOVED_OR_REPLACED",
+            "detail": "Explicit B5 DELETE; target message/ID replacement is certified by B5.4.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/two_by_two.mcfunction",
+            "replacementExistsAndMetadataValidated": true,
+            "replacementPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/overpopulation.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/axeman.mcfunction"
+          },
+          {
+            "b5Owner": "B5.4",
+            "classification": "OTHER_EXPLICIT_B5_CHANGE",
+            "detail": "Authorized B5 message now uses current hover_event/click_event fields, excluded by legacy spelling detector.",
+            "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/shovel_knight.mcfunction"
+          }
+        ],
+        "unexplainedLoss": 0
+      }
+    }
+  ],
+  "stage": "B7",
+  "status": "PHASE_B_B7_TEST_GATE_RESOLVED",
+  "unresolved": 0
+}

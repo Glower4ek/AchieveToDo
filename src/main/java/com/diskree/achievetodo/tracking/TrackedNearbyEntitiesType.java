@@ -52,11 +52,15 @@ public enum TrackedNearbyEntitiesType {
         EntityTypes.SKELETON_HORSE,
         EntityTypes.ARMADILLO,
         EntityTypes.TADPOLE,
-        EntityTypes.HOGLIN
+        EntityTypes.HOGLIN,
+        EntityTypes.NAUTILUS,
+        EntityTypes.ZOMBIE_NAUTILUS,
+        EntityTypes.ZOMBIE_HORSE,
+        EntityTypes.CAMEL_HUSK
     ),
     FAMILY_REUNION(
         "blazeandcave:monsters/family_reunion",
-        5,
+        10,
         true,
         EntityTypes.HUSK,
         EntityTypes.ZOMBIE_VILLAGER,
@@ -66,14 +70,15 @@ public enum TrackedNearbyEntitiesType {
     ),
     BONE_TO_PARTY(
         "blazeandcave:monsters/bone_to_party",
-        5,
+        10,
         false,
         EntityTypes.SKELETON_HORSE,
         EntityTypes.WITHER,
         EntityTypes.STRAY,
         EntityTypes.BOGGED,
         EntityTypes.WITHER_SKELETON,
-        EntityTypes.SKELETON
+        EntityTypes.SKELETON,
+        EntityTypes.PARCHED
     );
 
     private final String advancementId;

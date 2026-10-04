@@ -1,0 +1,227 @@
+{
+  "phase": "B",
+  "stage": "B7",
+  "kind": "POST_STOP_TEST_GATE_RESOLUTION",
+  "status": "PHASE_B_B7_STOP",
+  "previousStopEvidence": {
+    "B7_LOCALIZATION_CERTIFICATION.md": "54dfc4184345431cf28e41609a51010338949ca4706b894ba0499d821a1157fc",
+    "b7_localization_certification.json": "e0866de8bf91d079de75935e6b21b2396b0cc84c8605096eb81e28d68e54ca7c"
+  },
+  "fullTest": {
+    "tests": 391,
+    "failures": 11,
+    "errors": 0,
+    "skipped": 0,
+    "acceptedBaselineFailures": 4,
+    "additionalFailures": 7
+  },
+  "sevenFailures": [
+    {
+      "failingTest": "com.diskree.achievetodo.certification.PhaseACertificationTest.canonicalInventorySnapshotMatchesGeneratedArtifacts()",
+      "classification": null,
+      "B2FileClassification": "IMMUTABLE_HISTORICAL",
+      "containsHistoricalOracle": false,
+      "historicalAssertionsMustBePreserved": true,
+      "B2RecordedHistoricalAssertionsMustBePreserved": false,
+      "historicalTestModified": false,
+      "reviewStatus": "NOT_COMPLETED_DUE_TO_REAL_REGRESSION_STOP",
+      "notFinalReason": "The mandated immediate STOP on the independently reproduced section 4.6 regression precludes claiming an uncompleted triage as expected."
+    },
+    {
+      "failingTest": "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.productionRuOverlayMatchesApprovedFinalManualDecisions()",
+      "classification": null,
+      "B2FileClassification": "ACTIVE_PRODUCT_TEST",
+      "containsHistoricalOracle": true,
+      "historicalAssertionsMustBePreserved": true,
+      "B2RecordedHistoricalAssertionsMustBePreserved": true,
+      "historicalTestModified": false,
+      "reviewStatus": "NOT_COMPLETED_DUE_TO_REAL_REGRESSION_STOP",
+      "notFinalReason": "The mandated immediate STOP on the independently reproduced section 4.6 regression precludes claiming an uncompleted triage as expected."
+    },
+    {
+      "failingTest": "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.pinnedHistoricalBacapSourceRemainsUnchanged()",
+      "classification": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+      "B2FileClassification": "ACTIVE_PRODUCT_TEST",
+      "containsHistoricalOracle": true,
+      "historicalAssertionsMustBePreserved": true,
+      "B2RecordedHistoricalAssertionsMustBePreserved": true,
+      "historicalTestModified": false,
+      "reviewStatus": "FINAL",
+      "proof": {
+        "frozenSourceSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+        "frozenSourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "frozenBytesUnchanged": true,
+        "currentMainSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "actualRawCurrentCheck": false,
+        "assertionMechanism": "isPinnedHistoricalSource compares actual archive SHA1 to CURRENT enum SHA1. This test incorrectly equates preserved historical identity and current download identity."
+      },
+      "authorizedPhaseBChangeResponsible": "B5.1 official BACAP 1.21 pin update.",
+      "futureSuccessorStage": "B7 preservation/current-pin successor incomplete because overall resume stopped."
+    },
+    {
+      "failingTest": "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.productionRuOverlayKeepsPinnedPhaseARuntimeResolvable()",
+      "classification": null,
+      "B2FileClassification": "ACTIVE_PRODUCT_TEST",
+      "containsHistoricalOracle": true,
+      "historicalAssertionsMustBePreserved": true,
+      "B2RecordedHistoricalAssertionsMustBePreserved": true,
+      "historicalTestModified": false,
+      "reviewStatus": "NOT_COMPLETED_DUE_TO_REAL_REGRESSION_STOP",
+      "notFinalReason": "The mandated immediate STOP on the independently reproduced section 4.6 regression precludes claiming an uncompleted triage as expected."
+    },
+    {
+      "failingTest": "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.ensureWorldPacksUpToDateRepairsStaleWorldPackToCurrentCompatibleCopy()",
+      "classification": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+      "B2FileClassification": "IMMUTABLE_HISTORICAL",
+      "containsHistoricalOracle": true,
+      "historicalAssertionsMustBePreserved": true,
+      "B2RecordedHistoricalAssertionsMustBePreserved": true,
+      "historicalTestModified": false,
+      "reviewStatus": "FINAL",
+      "proof": {
+        "exactSetup": "Test copies reference/phase_a_preservation/files/final/bacap.zip into global/bacap.zip and immediately asserts isPinnedHistoricalSource(globalPack, ExternalPack.BACAP). It fails before the repair call.",
+        "historicalSourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "currentMainSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "historicalRawCorrectlyRejectedAsCurrent": true
+      },
+      "authorizedPhaseBChangeResponsible": "B5.1 main pin update; r17 raw freshness correctly distinguishes those raw source identities.",
+      "futureSuccessorStage": "B9 current pack-sync/freshness successor, not implemented."
+    },
+    {
+      "failingTest": "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.worldCopyPreservesHistoricalGlowAndHoneyDefinitionsAndFrozenSource()",
+      "classification": "REAL_PHASE_B_REGRESSION",
+      "B2FileClassification": "ACTIVE_PRODUCT_TEST",
+      "containsHistoricalOracle": true,
+      "historicalAssertionsMustBePreserved": true,
+      "B2RecordedHistoricalAssertionsMustBePreserved": true,
+      "historicalTestModified": false,
+      "reviewStatus": "FINAL",
+      "proof": {
+        "productionClassLocation": "file:/D:/Vibecode/AchieveToDo%2026.2/build/classes/java/main/",
+        "enumClassLocation": "file:/D:/Vibecode/AchieveToDo%2026.2/build/classes/java/main/",
+        "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "sourceSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+        "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "markerSourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "markerVersion": "compat_26_2_r17",
+        "markerRecordsActualSource": false,
+        "historicalRawAcceptedAsCurrent": false,
+        "historicalDerivedAcceptedAsCurrent": true,
+        "historicalDerivedCompatibleWithCurrentMain": true,
+        "frozenSourceBytesUnchanged": true
+      },
+      "exactTestFailureLocation": "ExternalPackCompatibilityTest.java:824; the observed failure is a raw-source identity assertion BEFORE copyForWorld, not a marker assertion. The additional production probe independently demonstrates the marker/freshness defect.",
+      "productionCause": {
+        "copyForWorld": "ExternalPackCompatibility.java:171 computes actual native/legacy policy but supplies only externalPack metadata when writing marker.",
+        "writeCompatibilityMarker": "ExternalPackCompatibility.java:1247 sets sourceSha1 to externalPack.getSha1() rather than the actual input hash.",
+        "isCompatibleWorldCopy": "ExternalPackCompatibility.java:232 compares that marker value to the same current enum hash, so the misattributed copy passes."
+      },
+      "authorizedPhaseBChangeResponsible": "B5.1 changed the BACAP enum pin from historical 1.18.1 to native 1.21; B5.2 retained enum-derived marker writing while adding actual-source-aware migration gating. The identities now diverge on historical main conversion.",
+      "currentSuccessorEvidence": "Ignored compiled-production probe HistoricalIdentityProbe.java, loading real production classes and real ExternalPack enum from build/classes/java/main. No fake enum/harness converter.",
+      "futureSuccessorStage": "B9 after an explicitly authorized converter repair; not implemented in B7."
+    },
+    {
+      "failingTest": "com.diskree.achievetodo.client.Pre26SmokeRegressionTest.everyShippedAdvancementMessageRetainsHoverClickAndFrameMetadata()",
+      "classification": null,
+      "B2FileClassification": "ACTIVE_PRODUCT_TEST",
+      "containsHistoricalOracle": true,
+      "historicalAssertionsMustBePreserved": true,
+      "B2RecordedHistoricalAssertionsMustBePreserved": true,
+      "historicalTestModified": false,
+      "reviewStatus": "NOT_COMPLETED_DUE_TO_REAL_REGRESSION_STOP",
+      "notFinalReason": "The mandated immediate STOP on the independently reproduced section 4.6 regression precludes claiming an uncompleted triage as expected."
+    }
+  ],
+  "readyForB8": false,
+  "stopReason": "REAL_PHASE_B_REGRESSION_HISTORICAL_SOURCE_MARKER_MISATTRIBUTION",
+  "resolvedClassificationCounts": {
+    "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS": 2,
+    "REAL_PHASE_B_REGRESSION": 1,
+    "NOT_COMPLETED_AFTER_STOP": 4
+  },
+  "acceptedBaselineFailures": {
+    "classification": "PRE_EXISTING_ACCEPTED_BASELINE_FAILURE",
+    "count": 4,
+    "names": [
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies()",
+      "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive()",
+      "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(Path)"
+    ]
+  },
+  "productionProbe": {
+    "result": {
+      "productionClassLocation": "file:/D:/Vibecode/AchieveToDo%2026.2/build/classes/java/main/",
+      "enumClassLocation": "file:/D:/Vibecode/AchieveToDo%2026.2/build/classes/java/main/",
+      "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+      "sourceSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+      "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+      "markerSourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+      "markerVersion": "compat_26_2_r17",
+      "markerRecordsActualSource": false,
+      "historicalRawAcceptedAsCurrent": false,
+      "historicalDerivedAcceptedAsCurrent": true,
+      "historicalDerivedCompatibleWithCurrentMain": true,
+      "frozenSourceBytesUnchanged": true
+    },
+    "resultPath": "build/tmp/phase_b_b7/resume/historical_identity_result.json",
+    "resultSha256": "693a143f4fe83e6528697ea6615ab4ef52f5a6101d5fbd25856c142d65b7a273",
+    "probePath": "build/tmp/phase_b_b7/resume/HistoricalIdentityProbe.java",
+    "probeSha256": "cf226891934450f610447a9d029bb9d525f77eb869b0b2e599c6aabd0bd89035",
+    "commandsPath": "build/tmp/phase_b_b7/resume/identity_commands.json",
+    "commandsSha256": "e2e259f7dbc7700a13722801ccd33aa99396dc437e3aee6df6a955e50619e3e8",
+    "javacExit": 0,
+    "javaExit": 0,
+    "outputOnlyIgnoredTemporaryCopy": true,
+    "compiledProductionClassSha256": "df8434af1ecbb28363b526fe413cefe5ed7228e5938e5b9f2bd818c671ef7e7e",
+    "currentProductionSourceSha256": "1292f5df6d322bf60147cabc729a26ec24b572c732132d8ac56e20d565e4f45d"
+  },
+  "correctionToOriginalStopDiagnosis": "The original B7 STOP diagnosis overclaimed that historical-derived copies reject as current. Exact inspection shows the failing test stops before conversion; the fresh compiled-production probe proves the opposite for derived copies. The immutable original STOP evidence remains unchanged.",
+  "remainingCertification": {
+    "changedComponent42Review": "NOT_RESUMED_AFTER_REAL_REGRESSION_STOP",
+    "narrowB7SelfTests": "NOT_RERUN_AFTER_REAL_REGRESSION_STOP",
+    "fullGradleTask": "NOT_RERUN: immediate STOP required by section 4.6",
+    "processResources": "NOT_RERUN: no product writes, immediate STOP required",
+    "resumedSuccessRecordsCreated": false
+  },
+  "priorPassedGatesPreservedByHash": {
+    "originalStopEvidence": {
+      "B7_LOCALIZATION_CERTIFICATION.md": "54dfc4184345431cf28e41609a51010338949ca4706b894ba0499d821a1157fc",
+      "b7_localization_certification.json": "e0866de8bf91d079de75935e6b21b2396b0cc84c8605096eb81e28d68e54ca7c"
+    },
+    "priorB0ThroughB6Evidence": true,
+    "all251B5ProductPaths": true,
+    "B6RuntimeDictionary": true,
+    "licensesAndNotices": true,
+    "historicalTestBytes": true
+  },
+  "runtimeProductDelta": {
+    "ADD": 0,
+    "MODIFY": 0,
+    "DELETE": 0
+  },
+  "cumulativeRuntimeProductDiff": {
+    "ADD": 177,
+    "MODIFY": 66,
+    "DELETE": 9
+  },
+  "safety": {
+    "noPriorEvidenceModified": true,
+    "originalB7StopEvidenceUnchanged": true,
+    "noHistoricalTestsModified": true,
+    "noSnapshotsRegenerated": true,
+    "noProductionJavaModified": true,
+    "noRuntimeResourceModified": true,
+    "noB7SuccessorToolModification": true,
+    "noTranslationAuthoring": true,
+    "noSourceArchiveChanged": true,
+    "noPinConverterDownloaderModification": true,
+    "noProgressMigrationOrBalanceThresholdChange": true,
+    "nothingStaged": true,
+    "noCommit": true,
+    "noPush": true,
+    "noTag": true,
+    "noGitHubMutation": true,
+    "B8NotStarted": true
+  }
+}

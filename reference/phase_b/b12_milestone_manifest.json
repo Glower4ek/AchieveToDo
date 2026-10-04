@@ -1,0 +1,3665 @@
+{
+  "phase": "B",
+  "stage": "B12",
+  "status": "PHASE_B_B12_STOP",
+  "baselineHead": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+  "readyForB13": false,
+  "stagingAuthorized": false,
+  "blockers": [
+    {
+      "code": "NON_TEST_ASSEMBLY_BLOCKED_BY_EXISTING_PUBLISHED_VERSION_JAR_GUARD",
+      "task": ":jar",
+      "source": "build.gradle:359-360",
+      "productionRegressionProven": false,
+      "requiredGate": "non-test assembly GREEN",
+      "actualResult": "FAIL",
+      "resolutionOutsideB12Scope": true,
+      "versionOrArtifactMutationAuthorized": false
+    }
+  ],
+  "add": [
+    "licenses/bacap-rus-translate/LICENSE",
+    "reference/phase_b/B10_RUNTIME_SMOKE.md",
+    "reference/phase_b/B10_RUNTIME_SMOKE_RESUMED.md",
+    "reference/phase_b/B11_MANUAL_ADVANCEMENT_REVIEW.md",
+    "reference/phase_b/B12_TERMINAL_RECONCILIATION.md",
+    "reference/phase_b/B1_OFFICIAL_BACAP_PIN.md",
+    "reference/phase_b/B2_ATD_INTEGRATION_MAP.md",
+    "reference/phase_b/B3_BACAP_SEMANTIC_DIFF.md",
+    "reference/phase_b/B4_EXACT_PRODUCT_CHANGE_PLAN.md",
+    "reference/phase_b/B6_RUSSIAN_LOCALIZATION.md",
+    "reference/phase_b/B7_LOCALIZATION_CERTIFICATION.md",
+    "reference/phase_b/B7_LOCALIZATION_CERTIFICATION_RESUMED.md",
+    "reference/phase_b/B8_STATIC_CERTIFICATION.md",
+    "reference/phase_b/B8_STATIC_CERTIFICATION_RESUMED.md",
+    "reference/phase_b/B9_REGRESSION_CERTIFICATION.md",
+    "reference/phase_b/B9_REGRESSION_CERTIFICATION_RESUMED.md",
+    "reference/phase_b/OPERATING_CONTRACT.md",
+    "reference/phase_b/b0_baseline.json",
+    "reference/phase_b/b10_c1_live_advancement_contract_refresh.json",
+    "reference/phase_b/b10_d1_main_deep_runtime.json",
+    "reference/phase_b/b10_d2_companion_runtime.json",
+    "reference/phase_b/b10_runtime_smoke.json",
+    "reference/phase_b/b10_runtime_smoke_resumed.json",
+    "reference/phase_b/b11_manual_advancement_review.json",
+    "reference/phase_b/b12_milestone_manifest.json",
+    "reference/phase_b/b12_product_ledger.json",
+    "reference/phase_b/b12_terminal_reconciliation.json",
+    "reference/phase_b/b1_official_bacap_pin.json",
+    "reference/phase_b/b1_target_inventory.json",
+    "reference/phase_b/b2_atd_integration_map.json",
+    "reference/phase_b/b2_bacap_occurrences.json",
+    "reference/phase_b/b3_advancement_diff.json",
+    "reference/phase_b/b3_atd_impact_matrix.json",
+    "reference/phase_b/b3_resource_graph_diff.json",
+    "reference/phase_b/b4_companion_matrix.json",
+    "reference/phase_b/b4_converter_decision.json",
+    "reference/phase_b/b4_localization_handoff.json",
+    "reference/phase_b/b4_product_change_manifest.json",
+    "reference/phase_b/b5_1_pins_pack_metadata.json",
+    "reference/phase_b/b5_2_converter_r17.json",
+    "reference/phase_b/b5_3_setup_resource_contracts.json",
+    "reference/phase_b/b5_4_benchmarking_contract_resolution.json",
+    "reference/phase_b/b5_4_naughtylus_contract_resolution.json",
+    "reference/phase_b/b5_4_root_reward_messages.json",
+    "reference/phase_b/b5_4_root_reward_messages_resumed.json",
+    "reference/phase_b/b5_5_trackers_gui.json",
+    "reference/phase_b/b5_6_companions.json",
+    "reference/phase_b/b5_6_companions_resumed.json",
+    "reference/phase_b/b5_6_unwanted_passenger_contract_resolution.json",
+    "reference/phase_b/b5_7_structural_reconciliation.json",
+    "reference/phase_b/b6_localization_sources.json",
+    "reference/phase_b/b6_ru_translation_manifest.json",
+    "reference/phase_b/b7_full_test_gate_resolution.json",
+    "reference/phase_b/b7_localization_certification.json",
+    "reference/phase_b/b7_localization_certification_resumed.json",
+    "reference/phase_b/b7_m1_current_successor_authority_refresh.json",
+    "reference/phase_b/b7_m2_current_consumer_set_refresh.json",
+    "reference/phase_b/b7_post_r1_test_gate_resolution.json",
+    "reference/phase_b/b7_r1_source_identity_marker_repair.json",
+    "reference/phase_b/b8_r1_terralith_player_predicate_repair.json",
+    "reference/phase_b/b8_r2_message_binding_repair.json",
+    "reference/phase_b/b8_static_certification.json",
+    "reference/phase_b/b8_static_certification_post_r1_stop.json",
+    "reference/phase_b/b8_static_certification_resumed.json",
+    "reference/phase_b/b9_regression_certification.json",
+    "reference/phase_b/b9_regression_certification_resumed.json",
+    "src/gametest/java/com/diskree/achievetodo/certification/B10CompanionRuntimeWitness.java",
+    "src/gametest/java/com/diskree/achievetodo/certification/B10MainDeepWitness.java",
+    "src/gametest/java/com/diskree/achievetodo/certification/PhaseBRuntimeSmoke.java",
+    "src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10GameTestServerMixin.java",
+    "src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10HistoricalBootstrapIsolationMixin.java",
+    "src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10MixinPlugin.java",
+    "src/gametest/resources/achievetodo-b10.mixins.json",
+    "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/inception.json",
+    "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/limbo_walker.json",
+    "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/biomes/kung_fu_panda.mcfunction",
+    "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/biomes/were_going_on_a_bear_hunt.mcfunction",
+    "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/mining/stink_bomb.mcfunction",
+    "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/monsters/aww_man.mcfunction",
+    "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/monsters/now_thats_a_lot_of_damage.mcfunction",
+    "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/nether/whole_hog.mcfunction",
+    "src/main/resources/resourcepacks/bacap_nullscape_override/data/blazeandcave/advancement/end/void_walker.json",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/bacap/benchmarking.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/biomes/naughtylus.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/all_around_the_world.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/seafood_skewer.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/beef_moover.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/chick_buffet.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/counting_sheep.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/fountain_of_youth.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/omelette.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/piglets_big_advancement.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/the_three_little_pigs.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/two_by_two.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/whole_horse.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/20_leagues_under_the_sea.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/a_scute_off_the_old_shell.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/birdkeeper.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/chatterbox.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/coralful_shell.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/equiangular_spiral.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/heart_transplanter.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/is_it_a_bird.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/le_creak_cest_chic.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/naughtylus.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/submarine_fleet.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/welcome_to_neverland.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/chartreuse.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/cinnabar_island.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/locked_and_loaded.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/shelfception.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/the_smell_of_rotten_eggs.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/at_the_rim_of_the_sky.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/lets_take_it_up_a_notch.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/classic_cartoon_comedy.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/echidna.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/master_jouster.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/oh_baby_a_triple.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/taking_the_scenic_route.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/unstoppable_force_vs_immovable_object.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/why_do_i_hear_boss_music.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/youre_doing_it_wrong.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/booshes.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/certified_spud_chomper.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/you_cant_take_the_sky_from_me.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/all_the_balls.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/beep_bop.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/bouncy_beats.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/chain_gang.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/conductive_conglomerate.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_age.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_computer.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_golem_overlord.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/country_lode_take_me_home.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/d_b_copper.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/get_a_lode_of_this.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/gratest_of_all_time.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/green_lanterns.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/life_sentence.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/lodes_of_applications.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/mitosis.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/punching_bag.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/school_of_hard_knocks.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/statue_of_limitations.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/stink_bomb.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/such_a_poser.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/total_copout.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/truly_an_all_purpose_tool.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/uh_oh.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/wax_treatment.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/absolute_cinema.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/grim_neigh.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/jockey_jamboree.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/lancelot.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/look_out.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/ride_or_dry.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/sands_the_skeleton.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/the_wicked_witch_of_the_west.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/unwanted_passenger.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/collateral_damage.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/hot_air_balloon.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/lead_zeppelin.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/midport_village.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/pillow_fight.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/snow_cone.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/stay_hydrated.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/string_shot.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/water_balloon.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/redstone/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/redstone/splatfest.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/big_blimp_enthusiast.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/captain_nemo.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/lord_helix.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/overpopulation.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/shell_testing.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/test_flight.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/who_needs_elytra.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/arrow_of_ultimate_obliteration.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/britney_spears.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/death_star.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/hit_and_run.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/impiled.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/mob_kabob.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/spear_fishing.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/time_to_hunt.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/toasted_marshmallow.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/terralith_advancement_made_macro.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/bone_to_party.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/camouflage.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/custom_boss_fight.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/family_reunion.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/freezing.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/handsome_jack.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/impossible.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/melting.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/monsters_hunted.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/iceologer_shouldve_won.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/nest_quick.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/tropical_collection.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/terralith_check.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/unwanted_passenger_fail.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/castle_of_hrrms.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/remote_shelter.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/spire_of_ice.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/totally_not_terraria.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/under_the_ice.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/a_cliffhanger.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/a_grassy_nature.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/aesthetic.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/alpha_days.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/bushranger.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/choco_mountain.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/eruption_in_the_air.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/highlander.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/land_of_icicles.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/master_spelunker.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/o_land_o_bloom.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/one_small_steppe_for_man.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/over_the_moon.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/pretty_in_purple.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/skylanders.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/smarter_than_the_average_bear.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/terralithic.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/the_boreal_deal.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/the_world_is_your_canvas.mcfunction",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/adventure/raidin_master.json",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/cold_feet.json",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/high_feet.json",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/one_with_the_forest.json",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/overgrown.json",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/warm_feet.json",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/wet_feet.json",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/explorer_of_worlds.json",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/i_am_loot.json",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/mining/oresome.json",
+    "src/main/resources/resourcepacks/bacap_terralith_override/data/minecraft/advancement/adventure/adventuring_time.json",
+    "src/test/java/com/diskree/achievetodo/certification/PhaseBStaticCertificationTest.java",
+    "src/test/java/com/diskree/achievetodo/client/PhaseBBacapSearchTreeResourceTest.java",
+    "src/test/java/com/diskree/achievetodo/client/PhaseBNativeBacapCompatibilityTest.java",
+    "src/test/java/com/diskree/achievetodo/tracking/PhaseBBacapTrackerContractTest.java",
+    "src/test/resources/phase_b_certification/b9_regression_receipt.json",
+    "src/test/resources/phase_b_certification/bacap_1_21_codec_receipt.json",
+    "src/test/resources/phase_b_certification/bacap_1_21_static_receipt.json",
+    "src/test/resources/phase_b_certification/bacap_1_21_target_inventory.json",
+    "tools/phase_b/b10_runtime_smoke.py",
+    "tools/phase_b/b11_manual_advancement_review.py",
+    "tools/phase_b/b12_terminal_reconciliation.py",
+    "tools/phase_b/b3_bacap_semantic_diff.py",
+    "tools/phase_b/b7_localization_certification.py",
+    "tools/phase_b/b8_bacap_static_certification.py",
+    "tools/phase_b/b9_regression_certification.py"
+  ],
+  "modify": [
+    "src/gametest/resources/achievetodo-test.mixins.json",
+    "src/gametest/resources/fabric.mod.json",
+    "src/main/java/com/diskree/achievetodo/client/ExternalPack.java",
+    "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/PlacedAdvancementMixin.java",
+    "src/main/java/com/diskree/achievetodo/tracking/TrackedNearbyEntitiesType.java",
+    "src/main/java/com/diskree/achievetodo/tracking/TrackedScoreType.java",
+    "src/main/java/com/diskree/achievetodo/tracking/TrackedStatisticsDataType.java",
+    "src/main/resources/assets/minecraft/lang/ru_ru.json",
+    "src/main/resources/resourcepacks/bacap_amplified_nether_override/pack.mcmeta",
+    "src/main/resources/resourcepacks/bacap_cooperative_mode/pack.mcmeta",
+    "src/main/resources/resourcepacks/bacap_hardcore_override/pack.mcmeta",
+    "src/main/resources/resourcepacks/bacap_nullscape_override/data/bacap_rewards/function/end/desolation.mcfunction",
+    "src/main/resources/resourcepacks/bacap_nullscape_override/data/bacap_rewards/function/msg/end/desolation.mcfunction",
+    "src/main/resources/resourcepacks/bacap_nullscape_override/pack.mcmeta",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/adventure/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/animal/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/bacap/advancement_legend.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/biomes/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/building/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/challenges/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/enchanting/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/end/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/farming/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/mining/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/monsters/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/ive_got_a_bad_feeling_about_this.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/justice.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/vault_hunter.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/desert_rider.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/lead_the_way.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/turtle_army.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/wheres_the_honey_lebowski.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/armor_display.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/no_chain_no_gain.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/death_from_all.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/dragon_vs_dragon_ii_electric_boogaloo.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/dragon_vs_wither_the_pre_sequel.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/overwarden.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/stack_all_the_items.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/the_devils_distance.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/the_perfect_run.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/over_overkill.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/overkill.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/silent_but_deadly.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/dogfight.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/dragon_vs_dragon.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/a_gluttonous_diet.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_miner.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/master_copper_miner.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/sly_copper_the_copper_heist.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/the_statue_of_liberty.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/weve_broken_our_last_shovel.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/anti_air.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/pupil_poppers.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/a_piglins_best_friend.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/subspace_bubble.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/loot_em.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/axeman.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/shovel_knight.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/nether/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/potion/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/redstone/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/statistics/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/weaponry/root.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/new_world.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/pack.mcmeta",
+    "src/main/resources/resourcepacks/bacap_rewards_experience/pack.mcmeta",
+    "src/main/resources/resourcepacks/bacap_rewards_item/pack.mcmeta",
+    "src/main/resources/resourcepacks/bacap_rewards_trophy/pack.mcmeta",
+    "src/main/resources/resourcepacks/bacap_terralith_override/pack.mcmeta"
+  ],
+  "delete": [
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/spear_fishing.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/birdkeeper.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/chatterbox.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/is_it_a_bird.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/overpopulation.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/country_lode_take_me_home.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/get_a_lode_of_this.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/lodes_of_applications.mcfunction",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/two_by_two.mcfunction"
+  ],
+  "counts": {
+    "ADD": 265,
+    "MODIFY": 71,
+    "DELETE": 9
+  },
+  "paths": 345,
+  "classifications": [
+    {
+      "path": "licenses/bacap-rus-translate/LICENSE",
+      "category": "LOCALIZATION_OR_LICENSE",
+      "action": "ADD",
+      "originStage": "B6",
+      "latestAuthority": "B6",
+      "currentSha256": "d0f06f79ec97de797d9311587945d1475260778d066f54f5e7686aa48a981e69",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b6_localization_sources.json",
+          "pointer": "/nonRuntimeLegalArtifacts/0",
+          "sha256": "1bf99568edfc12bcd28b705f1d572cd6b418dacd1eae4fac58241e73f212d0d8"
+        },
+        {
+          "path": "reference/phase_b/b6_localization_sources.json",
+          "pointer": "/sources/3/notice",
+          "sha256": "1bf99568edfc12bcd28b705f1d572cd6b418dacd1eae4fac58241e73f212d0d8"
+        },
+        {
+          "path": "reference/phase_b/b6_ru_translation_manifest.json",
+          "pointer": "/nonRuntimeLegalArtifacts/0",
+          "sha256": "e6f8159de3f19e4aa44bc8e24b790c6d73e45bf8e0928bba39391a6689d26ede"
+        },
+        {
+          "path": "reference/phase_b/b7_localization_certification.json",
+          "pointer": "/bsdNoticeCertification",
+          "sha256": "e0866de8bf91d079de75935e6b21b2396b0cc84c8605096eb81e28d68e54ca7c"
+        },
+        {
+          "path": "reference/phase_b/b7_localization_certification_resumed.json",
+          "pointer": "/licenseNoticeCertification/notice",
+          "sha256": "be3aca8716e68e48b293bb5299418a87aec98bda340b4836f9f50e70705e92d3"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B10_RUNTIME_SMOKE.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B10",
+      "latestAuthority": "B10",
+      "currentSha256": "647a14ae77f4c9b770bcd122d28e6b5943ca968518fa6d7c0f7817bba88180d7",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B10_RUNTIME_SMOKE.md",
+          "sha256": "647a14ae77f4c9b770bcd122d28e6b5943ca968518fa6d7c0f7817bba88180d7",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B10_RUNTIME_SMOKE_RESUMED.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B10",
+      "latestAuthority": "B10",
+      "currentSha256": "bfa687ae872b85ae6740ca03a7a2e8b2c294e13d72a91a15ce2503fb59ead7fe",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B10_RUNTIME_SMOKE_RESUMED.md",
+          "sha256": "bfa687ae872b85ae6740ca03a7a2e8b2c294e13d72a91a15ce2503fb59ead7fe",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B11_MANUAL_ADVANCEMENT_REVIEW.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B11",
+      "latestAuthority": "B11",
+      "currentSha256": "df9b0a58de77db087cc36b77dbcb669c5ed5623d7f39b3138ef8e19f9c3bbdf5",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B11_MANUAL_ADVANCEMENT_REVIEW.md",
+          "sha256": "df9b0a58de77db087cc36b77dbcb669c5ed5623d7f39b3138ef8e19f9c3bbdf5",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B12_TERMINAL_RECONCILIATION.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B12",
+      "latestAuthority": "B12",
+      "authorization": "Exact user B12 write allowlist"
+    },
+    {
+      "path": "reference/phase_b/B1_OFFICIAL_BACAP_PIN.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B1",
+      "latestAuthority": "B1",
+      "currentSha256": "82314a7f91569d4e2f6358ff6d562499a2f4c07e2322b1fd6ebdfbc702e1222a",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B1_OFFICIAL_BACAP_PIN.md",
+          "sha256": "82314a7f91569d4e2f6358ff6d562499a2f4c07e2322b1fd6ebdfbc702e1222a",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B2_ATD_INTEGRATION_MAP.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B2",
+      "latestAuthority": "B2",
+      "currentSha256": "58c77b0d51574dab337a151baf973ff5573485572f6a2c9d95134bf9529d8f81",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B2_ATD_INTEGRATION_MAP.md",
+          "sha256": "58c77b0d51574dab337a151baf973ff5573485572f6a2c9d95134bf9529d8f81",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B3_BACAP_SEMANTIC_DIFF.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B3",
+      "latestAuthority": "B3",
+      "currentSha256": "066bedd333586121f07f5abe8cec90b21be63cf108bbc4e82a18d90790c45d31",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B3_BACAP_SEMANTIC_DIFF.md",
+          "sha256": "066bedd333586121f07f5abe8cec90b21be63cf108bbc4e82a18d90790c45d31",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B4_EXACT_PRODUCT_CHANGE_PLAN.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B4",
+      "latestAuthority": "B4",
+      "currentSha256": "478406877f89ddceaaf790b75ae650c542f3832092f40a83cbd046230b62f1bd",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B4_EXACT_PRODUCT_CHANGE_PLAN.md",
+          "sha256": "478406877f89ddceaaf790b75ae650c542f3832092f40a83cbd046230b62f1bd",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B6_RUSSIAN_LOCALIZATION.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B6",
+      "latestAuthority": "B6",
+      "currentSha256": "7966a55cc7c917f2c0fa80153d8d98193f43ccce5435602d79d0c6a510e2460d",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B6_RUSSIAN_LOCALIZATION.md",
+          "sha256": "7966a55cc7c917f2c0fa80153d8d98193f43ccce5435602d79d0c6a510e2460d",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B7_LOCALIZATION_CERTIFICATION.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B7",
+      "latestAuthority": "B7",
+      "currentSha256": "54dfc4184345431cf28e41609a51010338949ca4706b894ba0499d821a1157fc",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B7_LOCALIZATION_CERTIFICATION.md",
+          "sha256": "54dfc4184345431cf28e41609a51010338949ca4706b894ba0499d821a1157fc",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B7_LOCALIZATION_CERTIFICATION_RESUMED.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B7",
+      "latestAuthority": "B7",
+      "currentSha256": "b3db519877e892ec97e369e0be3bcb8e1fb3aae59027f0471349a7cd7e1eedb2",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B7_LOCALIZATION_CERTIFICATION_RESUMED.md",
+          "sha256": "b3db519877e892ec97e369e0be3bcb8e1fb3aae59027f0471349a7cd7e1eedb2",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B8_STATIC_CERTIFICATION.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B8",
+      "latestAuthority": "B8",
+      "currentSha256": "12e677631bb6a24ef92e0520883b6dfef0c25020ee052ae48b27180a1493a912",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B8_STATIC_CERTIFICATION.md",
+          "sha256": "12e677631bb6a24ef92e0520883b6dfef0c25020ee052ae48b27180a1493a912",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B8_STATIC_CERTIFICATION_RESUMED.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B8",
+      "latestAuthority": "B8",
+      "currentSha256": "708fb9edf12389889fc4c325dd5c65f86bd6cdb2005454f6142c977a04107d15",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B8_STATIC_CERTIFICATION_RESUMED.md",
+          "sha256": "708fb9edf12389889fc4c325dd5c65f86bd6cdb2005454f6142c977a04107d15",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B9_REGRESSION_CERTIFICATION.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B9",
+      "latestAuthority": "B9",
+      "currentSha256": "2f852d707a908596af16f99170cfbe4e6eaa049ba175197632f49d287083e30f",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B9_REGRESSION_CERTIFICATION.md",
+          "sha256": "2f852d707a908596af16f99170cfbe4e6eaa049ba175197632f49d287083e30f",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/B9_REGRESSION_CERTIFICATION_RESUMED.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B9",
+      "latestAuthority": "B9",
+      "currentSha256": "8b02622ca716a730d5ba4bc93730110c343f1e3f4272772f7d2004a2037e4d03",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/B9_REGRESSION_CERTIFICATION_RESUMED.md",
+          "sha256": "8b02622ca716a730d5ba4bc93730110c343f1e3f4272772f7d2004a2037e4d03",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/OPERATING_CONTRACT.md",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B0",
+      "latestAuthority": "B0",
+      "currentSha256": "765f7c2d9874ea0df7086589dfa5c23d4a466e3ba3fcd6e812034b2a163cf921",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/OPERATING_CONTRACT.md",
+          "sha256": "765f7c2d9874ea0df7086589dfa5c23d4a466e3ba3fcd6e812034b2a163cf921",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b0_baseline.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B0",
+      "latestAuthority": "B0",
+      "currentSha256": "747877d0a7685c12cf41b3e2f8f446eea0ce5e5bf976990fd3e681f5ea0e6390",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b0_baseline.json",
+          "sha256": "747877d0a7685c12cf41b3e2f8f446eea0ce5e5bf976990fd3e681f5ea0e6390",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b10_c1_live_advancement_contract_refresh.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B10-C1",
+      "latestAuthority": "B10-C1",
+      "currentSha256": "80dd8f01d4ab173b430c2434027ee7824ab650ef8e4c1ea3001560298cb72728",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_c1_live_advancement_contract_refresh.json",
+          "sha256": "80dd8f01d4ab173b430c2434027ee7824ab650ef8e4c1ea3001560298cb72728",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b10_d1_main_deep_runtime.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B10-D1",
+      "latestAuthority": "B10-D1",
+      "currentSha256": "24f6efc356f44d7fa1923af92b12767f47c5825c91276a2049afc6a0905223af",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_d1_main_deep_runtime.json",
+          "sha256": "24f6efc356f44d7fa1923af92b12767f47c5825c91276a2049afc6a0905223af",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b10_d2_companion_runtime.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B10-D2",
+      "latestAuthority": "B10-D2",
+      "currentSha256": "069ffa12ad93ffd8cd0a454fed1549c4b84f97925bba5f1a726888fc3e3cd4d2",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_d2_companion_runtime.json",
+          "sha256": "069ffa12ad93ffd8cd0a454fed1549c4b84f97925bba5f1a726888fc3e3cd4d2",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b10_runtime_smoke.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B10",
+      "latestAuthority": "B10",
+      "currentSha256": "db227d1bf3a946e5dff2677b4ab2af8a795a3b97d1966f23949ad705b5398055",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_runtime_smoke.json",
+          "sha256": "db227d1bf3a946e5dff2677b4ab2af8a795a3b97d1966f23949ad705b5398055",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b10_runtime_smoke_resumed.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B10",
+      "latestAuthority": "B10",
+      "currentSha256": "4dd644d3404bddc322434fc4ebf0cb131e3912d245f9b7827397e7e95aa51738",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_runtime_smoke_resumed.json",
+          "sha256": "4dd644d3404bddc322434fc4ebf0cb131e3912d245f9b7827397e7e95aa51738",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b11_manual_advancement_review.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B11",
+      "latestAuthority": "B11",
+      "currentSha256": "d49c0360153a61fd5002c19cb6869e792bced2f32b22b93e623cb26e2c0140c8",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b11_manual_advancement_review.json",
+          "sha256": "d49c0360153a61fd5002c19cb6869e792bced2f32b22b93e623cb26e2c0140c8",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b12_milestone_manifest.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B12",
+      "latestAuthority": "B12",
+      "authorization": "Exact user B12 write allowlist"
+    },
+    {
+      "path": "reference/phase_b/b12_product_ledger.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B12",
+      "latestAuthority": "B12",
+      "authorization": "Exact user B12 write allowlist"
+    },
+    {
+      "path": "reference/phase_b/b12_terminal_reconciliation.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B12",
+      "latestAuthority": "B12",
+      "authorization": "Exact user B12 write allowlist"
+    },
+    {
+      "path": "reference/phase_b/b1_official_bacap_pin.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B1",
+      "latestAuthority": "B1",
+      "currentSha256": "b39bdf2a190131c8b13b0820d26c0f67430935c9fe330122655911d1dc435110",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b1_official_bacap_pin.json",
+          "sha256": "b39bdf2a190131c8b13b0820d26c0f67430935c9fe330122655911d1dc435110",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b1_target_inventory.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B1",
+      "latestAuthority": "B1",
+      "currentSha256": "2219f38681a7dbbe19deb109c7b0abeb16f01051fb22fa41dbee464fe00656eb",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b1_target_inventory.json",
+          "sha256": "2219f38681a7dbbe19deb109c7b0abeb16f01051fb22fa41dbee464fe00656eb",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b2_atd_integration_map.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B2",
+      "latestAuthority": "B2",
+      "currentSha256": "9214f2d027738486cd4be91fb0b6f3fbfe06b5c346c46b3163bef369a0f4999d",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b2_atd_integration_map.json",
+          "sha256": "9214f2d027738486cd4be91fb0b6f3fbfe06b5c346c46b3163bef369a0f4999d",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b2_bacap_occurrences.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B2",
+      "latestAuthority": "B2",
+      "currentSha256": "771e89d60dc00ecef0a9abe80dc6e27b4b7c55bde457b61df34f8f8b52ce34b2",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b2_bacap_occurrences.json",
+          "sha256": "771e89d60dc00ecef0a9abe80dc6e27b4b7c55bde457b61df34f8f8b52ce34b2",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b3_advancement_diff.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B3",
+      "latestAuthority": "B3",
+      "currentSha256": "a402baa19657c3ec14c089affed19cdedf077f21eece39c7d1d07ecdd60a1980",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b3_advancement_diff.json",
+          "sha256": "a402baa19657c3ec14c089affed19cdedf077f21eece39c7d1d07ecdd60a1980",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b3_atd_impact_matrix.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B3",
+      "latestAuthority": "B3",
+      "currentSha256": "682994595bb25dd6334aa4ce384d2e9eddfd77e706de531d1693b58bc26564a5",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b3_atd_impact_matrix.json",
+          "sha256": "682994595bb25dd6334aa4ce384d2e9eddfd77e706de531d1693b58bc26564a5",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b3_resource_graph_diff.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B3",
+      "latestAuthority": "B3",
+      "currentSha256": "a56188f03d15c37817117cfcf68422d5d7085635a4373e25519fed1847cdd693",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b3_resource_graph_diff.json",
+          "sha256": "a56188f03d15c37817117cfcf68422d5d7085635a4373e25519fed1847cdd693",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b4_companion_matrix.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B4",
+      "latestAuthority": "B4",
+      "currentSha256": "142d9fb5c7c905c10b87b07480043812b149a4622381fe9204b29fd5bdb26710",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b4_companion_matrix.json",
+          "sha256": "142d9fb5c7c905c10b87b07480043812b149a4622381fe9204b29fd5bdb26710",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b4_converter_decision.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B4",
+      "latestAuthority": "B4",
+      "currentSha256": "33900472aa72d1891e86065534a87f3bde4f4b8fcb534403a6677b6d99184f5e",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b4_converter_decision.json",
+          "sha256": "33900472aa72d1891e86065534a87f3bde4f4b8fcb534403a6677b6d99184f5e",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b4_localization_handoff.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B4",
+      "latestAuthority": "B4",
+      "currentSha256": "21dc8a27f9edf05b1970d030eaaf3e084859d0bfe3923483546dc81830ac1d67",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b4_localization_handoff.json",
+          "sha256": "21dc8a27f9edf05b1970d030eaaf3e084859d0bfe3923483546dc81830ac1d67",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b4_product_change_manifest.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B4",
+      "latestAuthority": "B4",
+      "currentSha256": "feb0b2bd8020adf314c74bef05dba184342088fc7d8fb8bf5df1d5f4be51d000",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b4_product_change_manifest.json",
+          "sha256": "feb0b2bd8020adf314c74bef05dba184342088fc7d8fb8bf5df1d5f4be51d000",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b5_1_pins_pack_metadata.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B5.1",
+      "latestAuthority": "B5.1",
+      "currentSha256": "ffc533dec326412f807e7d16667e5d8968aed0331d1a5ba0b9438a76a8279ab8",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b5_1_pins_pack_metadata.json",
+          "sha256": "ffc533dec326412f807e7d16667e5d8968aed0331d1a5ba0b9438a76a8279ab8",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b5_2_converter_r17.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B5.2",
+      "latestAuthority": "B5.2",
+      "currentSha256": "fcd6b4c9e9c5005ad253370871139bb26dadf944f0d7dceede76f112ad437a24",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b5_2_converter_r17.json",
+          "sha256": "fcd6b4c9e9c5005ad253370871139bb26dadf944f0d7dceede76f112ad437a24",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b5_3_setup_resource_contracts.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.3",
+      "currentSha256": "e1aa6aae5cb3f6f8127f7a83e94c3a48c18fa9fa0aaebb89719389ba89d3db5d",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b5_3_setup_resource_contracts.json",
+          "sha256": "e1aa6aae5cb3f6f8127f7a83e94c3a48c18fa9fa0aaebb89719389ba89d3db5d",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b5_4_benchmarking_contract_resolution.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.4",
+      "currentSha256": "c17dff35ec9a709b5e9522455f4c74d7450ea0b36a685bffd3936d5e1c69a208",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b5_4_benchmarking_contract_resolution.json",
+          "sha256": "c17dff35ec9a709b5e9522455f4c74d7450ea0b36a685bffd3936d5e1c69a208",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b5_4_naughtylus_contract_resolution.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.4",
+      "currentSha256": "e318f8cb0051a52fe1a3a1e1d92c3c2f6993ce2985ce301842016ee28dd2c844",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b5_4_naughtylus_contract_resolution.json",
+          "sha256": "e318f8cb0051a52fe1a3a1e1d92c3c2f6993ce2985ce301842016ee28dd2c844",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b5_4_root_reward_messages.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.4",
+      "currentSha256": "6ed40af0fff9bf081f075ed277c1984bcc5843113be7a902f8d8d52493018c15",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b5_4_root_reward_messages.json",
+          "sha256": "6ed40af0fff9bf081f075ed277c1984bcc5843113be7a902f8d8d52493018c15",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b5_4_root_reward_messages_resumed.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.4",
+      "currentSha256": "874f3f20da41948f1039f9a53c0dba18c8ad1549d8d5961574b208e8e1b234e0",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b5_4_root_reward_messages_resumed.json",
+          "sha256": "874f3f20da41948f1039f9a53c0dba18c8ad1549d8d5961574b208e8e1b234e0",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b5_5_trackers_gui.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B5.5",
+      "latestAuthority": "B5.5",
+      "currentSha256": "15b923f01570ab38f9d3c4db557732f9eabdbb0dfdb13f4a77f3f837106e78b0",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b5_5_trackers_gui.json",
+          "sha256": "15b923f01570ab38f9d3c4db557732f9eabdbb0dfdb13f4a77f3f837106e78b0",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b5_6_companions.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.6",
+      "currentSha256": "3c8647d0218ba44486ce0d310ba270ffc7965bedce963660c193fc1d751484aa",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b5_6_companions.json",
+          "sha256": "3c8647d0218ba44486ce0d310ba270ffc7965bedce963660c193fc1d751484aa",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b5_6_companions_resumed.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.6",
+      "currentSha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b5_6_unwanted_passenger_contract_resolution.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.6",
+      "currentSha256": "e5b95c8b772e8e73c42ba5b573adace4e1994bdfb0b224adc73c7c9d71673837",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b5_6_unwanted_passenger_contract_resolution.json",
+          "sha256": "e5b95c8b772e8e73c42ba5b573adace4e1994bdfb0b224adc73c7c9d71673837",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b5_7_structural_reconciliation.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B5.7",
+      "latestAuthority": "B5.7",
+      "currentSha256": "4a3f796e7b898096888fa0ac18d5a1877e439f19bbca15a0e36c34c4c3d9064c",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b5_7_structural_reconciliation.json",
+          "sha256": "4a3f796e7b898096888fa0ac18d5a1877e439f19bbca15a0e36c34c4c3d9064c",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b6_localization_sources.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B6",
+      "latestAuthority": "B6",
+      "currentSha256": "1bf99568edfc12bcd28b705f1d572cd6b418dacd1eae4fac58241e73f212d0d8",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b6_localization_sources.json",
+          "sha256": "1bf99568edfc12bcd28b705f1d572cd6b418dacd1eae4fac58241e73f212d0d8",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b6_ru_translation_manifest.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B6",
+      "latestAuthority": "B6",
+      "currentSha256": "e6f8159de3f19e4aa44bc8e24b790c6d73e45bf8e0928bba39391a6689d26ede",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b6_ru_translation_manifest.json",
+          "sha256": "e6f8159de3f19e4aa44bc8e24b790c6d73e45bf8e0928bba39391a6689d26ede",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b7_full_test_gate_resolution.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B7",
+      "latestAuthority": "B7",
+      "currentSha256": "651edf4ec09d32bdca86dd60a0b30be323f4e25b9efd41b54abd6c650107ee4b",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b7_full_test_gate_resolution.json",
+          "sha256": "651edf4ec09d32bdca86dd60a0b30be323f4e25b9efd41b54abd6c650107ee4b",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b7_localization_certification.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B7",
+      "latestAuthority": "B7",
+      "currentSha256": "e0866de8bf91d079de75935e6b21b2396b0cc84c8605096eb81e28d68e54ca7c",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b7_localization_certification.json",
+          "sha256": "e0866de8bf91d079de75935e6b21b2396b0cc84c8605096eb81e28d68e54ca7c",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b7_localization_certification_resumed.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B7",
+      "latestAuthority": "B7",
+      "currentSha256": "be3aca8716e68e48b293bb5299418a87aec98bda340b4836f9f50e70705e92d3",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b7_localization_certification_resumed.json",
+          "sha256": "be3aca8716e68e48b293bb5299418a87aec98bda340b4836f9f50e70705e92d3",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b7_m1_current_successor_authority_refresh.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B7-M1",
+      "latestAuthority": "B7-M1",
+      "currentSha256": "893ff1a66e84e44595002104e7c476078e40e00cc0996506a5cf9d5a09909d4f",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b7_m1_current_successor_authority_refresh.json",
+          "sha256": "893ff1a66e84e44595002104e7c476078e40e00cc0996506a5cf9d5a09909d4f",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b7_m2_current_consumer_set_refresh.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B7-M2",
+      "latestAuthority": "B7-M2",
+      "currentSha256": "943bfc15b65923461b8004559a3a5ac6e225c5b0ad74d8f4a5d009d8ea4fbd4b",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b7_m2_current_consumer_set_refresh.json",
+          "sha256": "943bfc15b65923461b8004559a3a5ac6e225c5b0ad74d8f4a5d009d8ea4fbd4b",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b7_post_r1_test_gate_resolution.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B7",
+      "latestAuthority": "B7",
+      "currentSha256": "ad3ebac32d495036a70792e6b6968319aec358cc91f670eb55a518c4e42b0720",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b7_post_r1_test_gate_resolution.json",
+          "sha256": "ad3ebac32d495036a70792e6b6968319aec358cc91f670eb55a518c4e42b0720",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b7_r1_source_identity_marker_repair.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B7-R1",
+      "latestAuthority": "B7-R1",
+      "currentSha256": "3da33837b2f1e46962520c146216cd6ee9a9fda48052f9b902cbb892fd9e71b9",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b7_r1_source_identity_marker_repair.json",
+          "sha256": "3da33837b2f1e46962520c146216cd6ee9a9fda48052f9b902cbb892fd9e71b9",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b8_r1_terralith_player_predicate_repair.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B8-R1",
+      "latestAuthority": "B8-R1",
+      "currentSha256": "ef1f59d01b13db8811adf2012346d123ca698a1c1ba8fa78ba4cd7a6d66ff2a7",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b8_r1_terralith_player_predicate_repair.json",
+          "sha256": "ef1f59d01b13db8811adf2012346d123ca698a1c1ba8fa78ba4cd7a6d66ff2a7",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b8_r2_message_binding_repair.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B8-R2",
+      "latestAuthority": "B8-R2",
+      "currentSha256": "14af195151852d1103a52deb0c753e77fd2f608a3b62ef6ed4935504dbb3babf",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b8_r2_message_binding_repair.json",
+          "sha256": "14af195151852d1103a52deb0c753e77fd2f608a3b62ef6ed4935504dbb3babf",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b8_static_certification.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B8",
+      "latestAuthority": "B8",
+      "currentSha256": "6fef5b8841f4014b0d8340418b23d1f7d74c3883975ecfc858ab3fe08bc26090",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b8_static_certification.json",
+          "sha256": "6fef5b8841f4014b0d8340418b23d1f7d74c3883975ecfc858ab3fe08bc26090",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b8_static_certification_post_r1_stop.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B8",
+      "latestAuthority": "B8",
+      "currentSha256": "999fbd095acb7e4ab2c11988da80447c38fcb80e2cdcab7994eb3a3321dbece8",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b8_static_certification_post_r1_stop.json",
+          "sha256": "999fbd095acb7e4ab2c11988da80447c38fcb80e2cdcab7994eb3a3321dbece8",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b8_static_certification_resumed.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B8",
+      "latestAuthority": "B8",
+      "currentSha256": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b8_static_certification_resumed.json",
+          "sha256": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b9_regression_certification.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B9",
+      "latestAuthority": "B9",
+      "currentSha256": "b36cc25b95de898c23b6975376742c935946bfee2bf4304add823d81801c1d78",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b9_regression_certification.json",
+          "sha256": "b36cc25b95de898c23b6975376742c935946bfee2bf4304add823d81801c1d78",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "reference/phase_b/b9_regression_certification_resumed.json",
+      "category": "PHASE_B_EVIDENCE",
+      "action": "ADD",
+      "originStage": "B9",
+      "latestAuthority": "B9",
+      "currentSha256": "0036f3332974029b58f0895e9f5c5ed509c28b3a42658cf0b0bc9eac18ec2f07",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b9_regression_certification_resumed.json",
+          "sha256": "0036f3332974029b58f0895e9f5c5ed509c28b3a42658cf0b0bc9eac18ec2f07",
+          "role": "Immutable durable stage evidence"
+        }
+      ]
+    },
+    {
+      "path": "src/gametest/java/com/diskree/achievetodo/certification/B10CompanionRuntimeWitness.java",
+      "category": "GAMETEST_RUNTIME_CERTIFICATION",
+      "action": "ADD",
+      "originStage": "B10-D2",
+      "latestAuthority": "B10-D2",
+      "currentSha256": "a93b51cfd3c09b1932ec4a7cec56b28bb0a9f1190813c4ca33f48a2ec716ed10",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_d2_companion_runtime.json",
+          "pointer": "/harness/newFiles/0",
+          "sha256": "069ffa12ad93ffd8cd0a454fed1549c4b84f97925bba5f1a726888fc3e3cd4d2"
+        }
+      ]
+    },
+    {
+      "path": "src/gametest/java/com/diskree/achievetodo/certification/B10MainDeepWitness.java",
+      "category": "GAMETEST_RUNTIME_CERTIFICATION",
+      "action": "ADD",
+      "originStage": "B10-D1",
+      "latestAuthority": "B10-D1",
+      "currentSha256": "f5f70d0763ca1d1b80e22469308c12b8da6c3272b0134d8b706cc4d6a56f6010",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_d1_main_deep_runtime.json",
+          "pointer": "/harnessChanges/addedFiles/0",
+          "sha256": "24f6efc356f44d7fa1923af92b12767f47c5825c91276a2049afc6a0905223af"
+        }
+      ]
+    },
+    {
+      "path": "src/gametest/java/com/diskree/achievetodo/certification/PhaseBRuntimeSmoke.java",
+      "category": "GAMETEST_RUNTIME_CERTIFICATION",
+      "action": "ADD",
+      "originStage": "B10",
+      "latestAuthority": "B10-D2",
+      "currentSha256": "4afc2bef3b7097f9746f9c54bfe3abc11f5538fb5ac41af7e78340a81aa80af8",
+      "modifiedAfterOriginStage": true,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_d2_companion_runtime.json",
+          "pointer": "/harness/modifiedFiles/0",
+          "sha256": "069ffa12ad93ffd8cd0a454fed1549c4b84f97925bba5f1a726888fc3e3cd4d2"
+        }
+      ]
+    },
+    {
+      "path": "src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10GameTestServerMixin.java",
+      "category": "GAMETEST_RUNTIME_CERTIFICATION",
+      "action": "ADD",
+      "originStage": "B10",
+      "latestAuthority": "B10-D2",
+      "currentSha256": "f06f71d753419c9dc97a766a92a4aa094593d1f0b80ebebe6fb23317d7139376",
+      "modifiedAfterOriginStage": true,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_d2_companion_runtime.json",
+          "pointer": "/harness/modifiedFiles/1",
+          "sha256": "069ffa12ad93ffd8cd0a454fed1549c4b84f97925bba5f1a726888fc3e3cd4d2"
+        }
+      ]
+    },
+    {
+      "path": "src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10HistoricalBootstrapIsolationMixin.java",
+      "category": "GAMETEST_RUNTIME_CERTIFICATION",
+      "action": "ADD",
+      "originStage": "B10",
+      "latestAuthority": "B10",
+      "currentSha256": "b6a0536da48464b8e4e509aa15a7cba1b13afeb0ca0c8aab575e2a9e9c02f02c",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_c1_live_advancement_contract_refresh.json",
+          "pointer": "/harnessChanges/supportingMixinHashesUnchanged/src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10HistoricalBootstrapIsolationMixin.java",
+          "sha256": "80dd8f01d4ab173b430c2434027ee7824ab650ef8e4c1ea3001560298cb72728"
+        },
+        {
+          "path": "reference/phase_b/b10_runtime_smoke.json",
+          "pointer": "/testInfrastructureArtifacts/src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10HistoricalBootstrapIsolationMixin.java",
+          "sha256": "db227d1bf3a946e5dff2677b4ab2af8a795a3b97d1966f23949ad705b5398055"
+        }
+      ]
+    },
+    {
+      "path": "src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10MixinPlugin.java",
+      "category": "GAMETEST_RUNTIME_CERTIFICATION",
+      "action": "ADD",
+      "originStage": "B10",
+      "latestAuthority": "B10",
+      "currentSha256": "019df72c22c534314de4f7135da5f685e5c15aab6baed730c86d3a97eb3512ce",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_c1_live_advancement_contract_refresh.json",
+          "pointer": "/harnessChanges/supportingMixinHashesUnchanged/src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10MixinPlugin.java",
+          "sha256": "80dd8f01d4ab173b430c2434027ee7824ab650ef8e4c1ea3001560298cb72728"
+        },
+        {
+          "path": "reference/phase_b/b10_runtime_smoke.json",
+          "pointer": "/testInfrastructureArtifacts/src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10MixinPlugin.java",
+          "sha256": "db227d1bf3a946e5dff2677b4ab2af8a795a3b97d1966f23949ad705b5398055"
+        }
+      ]
+    },
+    {
+      "path": "src/gametest/resources/achievetodo-b10.mixins.json",
+      "category": "GAMETEST_RUNTIME_CERTIFICATION",
+      "action": "ADD",
+      "originStage": "B10",
+      "latestAuthority": "B10",
+      "currentSha256": "b7e43d37ec7dc918f75ca34a6ae6c4da1a1cfd9bb206b73e434ab80f0c27b62a",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_runtime_smoke.json",
+          "pointer": "/testInfrastructureArtifacts/src/gametest/resources/achievetodo-b10.mixins.json",
+          "sha256": "db227d1bf3a946e5dff2677b4ab2af8a795a3b97d1966f23949ad705b5398055"
+        }
+      ]
+    },
+    {
+      "path": "src/gametest/resources/achievetodo-test.mixins.json",
+      "category": "GAMETEST_RUNTIME_CERTIFICATION",
+      "action": "MODIFY",
+      "originStage": "B10",
+      "latestAuthority": "B10",
+      "currentSha256": "56008f1eb449446890a00860f18ab373aed0336b348e88090d6977d4ca67108c",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_runtime_smoke.json",
+          "pointer": "/harnessAudit/registrationChanges/1",
+          "sha256": "db227d1bf3a946e5dff2677b4ab2af8a795a3b97d1966f23949ad705b5398055"
+        }
+      ]
+    },
+    {
+      "path": "src/gametest/resources/fabric.mod.json",
+      "category": "GAMETEST_RUNTIME_CERTIFICATION",
+      "action": "MODIFY",
+      "originStage": "B10",
+      "latestAuthority": "B10",
+      "currentSha256": "3a0f755ed552a53879fc92a933459b025465a28e155199260f0c19fe32ed3d73",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_runtime_smoke.json",
+          "pointer": "/harnessAudit/registrationChanges/0",
+          "sha256": "db227d1bf3a946e5dff2677b4ab2af8a795a3b97d1966f23949ad705b5398055"
+        }
+      ]
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/ExternalPack.java",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.1",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.2",
+      "latestAuthority": "B8-R1"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/injection/mixin/main/PlacedAdvancementMixin.java",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.5",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/tracking/TrackedNearbyEntitiesType.java",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.5",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/tracking/TrackedScoreType.java",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.5",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/tracking/TrackedStatisticsDataType.java",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.5",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/assets/minecraft/lang/ru_ru.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B6",
+      "latestAuthority": "B6"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/inception.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/limbo_walker.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_amplified_nether_override/pack.mcmeta",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.1",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_cooperative_mode/pack.mcmeta",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.1",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/biomes/kung_fu_panda.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/biomes/were_going_on_a_bear_hunt.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/mining/stink_bomb.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/monsters/aww_man.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/monsters/now_thats_a_lot_of_damage.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_hardcore_override/data/bacap_rewards/function/msg/nether/whole_hog.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_hardcore_override/pack.mcmeta",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.1",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_nullscape_override/data/bacap_rewards/function/end/desolation.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_nullscape_override/data/bacap_rewards/function/msg/end/desolation.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_nullscape_override/data/blazeandcave/advancement/end/void_walker.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_nullscape_override/pack.mcmeta",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.1",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/adventure/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/animal/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/bacap/advancement_legend.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/bacap/benchmarking.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/biomes/naughtylus.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/biomes/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/building/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/challenges/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/enchanting/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/end/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/farming/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/mining/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/monsters/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/all_around_the_world.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/ive_got_a_bad_feeling_about_this.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B8-R2",
+      "latestAuthority": "B8-R2"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/justice.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/seafood_skewer.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/spear_fishing.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "DELETE",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/vault_hunter.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/beef_moover.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/birdkeeper.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "DELETE",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/chatterbox.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "DELETE",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/chick_buffet.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/counting_sheep.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/desert_rider.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/fountain_of_youth.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/is_it_a_bird.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "DELETE",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/lead_the_way.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/omelette.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/overpopulation.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "DELETE",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/piglets_big_advancement.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/the_three_little_pigs.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/turtle_army.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B8-R2",
+      "latestAuthority": "B8-R2"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/two_by_two.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/wheres_the_honey_lebowski.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/whole_horse.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/20_leagues_under_the_sea.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/a_scute_off_the_old_shell.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/birdkeeper.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/chatterbox.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/coralful_shell.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/equiangular_spiral.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/heart_transplanter.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/is_it_a_bird.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/le_creak_cest_chic.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/naughtylus.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/submarine_fleet.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/biomes/welcome_to_neverland.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/armor_display.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/chartreuse.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/cinnabar_island.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/locked_and_loaded.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/no_chain_no_gain.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/shelfception.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/building/the_smell_of_rotten_eggs.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/at_the_rim_of_the_sky.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/death_from_all.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/dragon_vs_dragon_ii_electric_boogaloo.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/dragon_vs_wither_the_pre_sequel.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/lets_take_it_up_a_notch.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/overwarden.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/stack_all_the_items.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/the_devils_distance.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/challenges/the_perfect_run.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/classic_cartoon_comedy.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/echidna.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/master_jouster.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/oh_baby_a_triple.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/over_overkill.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/overkill.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/enchanting/silent_but_deadly.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/dogfight.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B8-R2",
+      "latestAuthority": "B8-R2"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/dragon_vs_dragon.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/taking_the_scenic_route.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/unstoppable_force_vs_immovable_object.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/why_do_i_hear_boss_music.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/youre_doing_it_wrong.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/a_gluttonous_diet.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/booshes.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/certified_spud_chomper.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/farming/you_cant_take_the_sky_from_me.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/all_the_balls.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/beep_bop.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/bouncy_beats.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/chain_gang.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/conductive_conglomerate.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_age.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_computer.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_golem_overlord.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/copper_miner.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/country_lode_take_me_home.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/d_b_copper.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/get_a_lode_of_this.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/gratest_of_all_time.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/green_lanterns.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/life_sentence.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/lodes_of_applications.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/master_copper_miner.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/mitosis.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/punching_bag.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/school_of_hard_knocks.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/sly_copper_the_copper_heist.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/statue_of_limitations.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/stink_bomb.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/such_a_poser.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/the_statue_of_liberty.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/total_copout.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/truly_an_all_purpose_tool.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/uh_oh.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/wax_treatment.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/mining/weve_broken_our_last_shovel.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/absolute_cinema.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/anti_air.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/grim_neigh.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/jockey_jamboree.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/lancelot.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/look_out.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/pupil_poppers.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/ride_or_dry.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/sands_the_skeleton.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/the_wicked_witch_of_the_west.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/monsters/unwanted_passenger.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/a_piglins_best_friend.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/collateral_damage.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/country_lode_take_me_home.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "DELETE",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/get_a_lode_of_this.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "DELETE",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/hot_air_balloon.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/lead_zeppelin.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/lodes_of_applications.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "DELETE",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/midport_village.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/pillow_fight.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/snow_cone.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/stay_hydrated.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/nether/subspace_bubble.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/string_shot.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/potion/water_balloon.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/redstone/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/redstone/splatfest.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/big_blimp_enthusiast.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/captain_nemo.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/loot_em.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/lord_helix.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/overpopulation.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/shell_testing.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/test_flight.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/two_by_two.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "DELETE",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/statistics/who_needs_elytra.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/arrow_of_ultimate_obliteration.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/axeman.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/britney_spears.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/death_star.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/hit_and_run.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/impiled.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/mob_kabob.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/shovel_knight.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/spear_fishing.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/time_to_hunt.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/weaponry/toasted_marshmallow.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/nether/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/potion/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B8-R2"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/redstone/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/statistics/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/terralith_advancement_made_macro.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/bone_to_party.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/camouflage.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/custom_boss_fight.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/family_reunion.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/freezing.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/handsome_jack.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/impossible.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/melting.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/monsters_hunted.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/iceologer_shouldve_won.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/nest_quick.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/tropical_collection.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/weaponry/root.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.4",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/new_world.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/terralith_check.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.3",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/unwanted_passenger_fail.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_override/pack.mcmeta",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.1",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_rewards_experience/pack.mcmeta",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.1",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_rewards_item/pack.mcmeta",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.1",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_rewards_trophy/pack.mcmeta",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.1",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/castle_of_hrrms.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/remote_shelter.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/spire_of_ice.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/totally_not_terraria.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/adventure/under_the_ice.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/a_cliffhanger.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/a_grassy_nature.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/aesthetic.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/alpha_days.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/bushranger.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/choco_mountain.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/eruption_in_the_air.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/highlander.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/land_of_icicles.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/master_spelunker.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/o_land_o_bloom.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/one_small_steppe_for_man.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/over_the_moon.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/pretty_in_purple.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/skylanders.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/smarter_than_the_average_bear.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/terralithic.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/the_boreal_deal.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/bacap_rewards/function/biomes/the_world_is_your_canvas.mcfunction",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/adventure/raidin_master.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/cold_feet.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/high_feet.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/one_with_the_forest.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/overgrown.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/warm_feet.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/wet_feet.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/explorer_of_worlds.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/i_am_loot.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/mining/oresome.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/minecraft/advancement/adventure/adventuring_time.json",
+      "category": "RUNTIME_PRODUCT",
+      "action": "ADD",
+      "originStage": "B5.6",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/main/resources/resourcepacks/bacap_terralith_override/pack.mcmeta",
+      "category": "RUNTIME_PRODUCT",
+      "action": "MODIFY",
+      "originStage": "B5.1",
+      "latestAuthority": "B5.7"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/PhaseBStaticCertificationTest.java",
+      "category": "CURRENT_TEST",
+      "action": "ADD",
+      "originStage": "B8",
+      "latestAuthority": "B8",
+      "currentSha256": "fcdcb7ea610eb48543d680536951fffe791554d6d2de3f50f14ac02de00285ea",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b8_static_certification_resumed.json",
+          "pointer": "/certificationArtifacts/1",
+          "sha256": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3"
+        },
+        {
+          "path": "reference/phase_b/b9_regression_certification.json",
+          "pointer": "/precheck/currentHashes/src/test/java/com/diskree/achievetodo/certification/PhaseBStaticCertificationTest.java",
+          "sha256": "b36cc25b95de898c23b6975376742c935946bfee2bf4304add823d81801c1d78"
+        }
+      ]
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/client/PhaseBBacapSearchTreeResourceTest.java",
+      "category": "CURRENT_TEST",
+      "action": "ADD",
+      "originStage": "B9",
+      "latestAuthority": "B9",
+      "currentSha256": "34e6e8c27d637ebffc7c4c6632ad0efa520f05f26d0491674d90ff20cfcc8c02",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b9_regression_certification_resumed.json",
+          "pointer": "/certificationArtifacts/src/test/java/com/diskree/achievetodo/client/PhaseBBacapSearchTreeResourceTest.java",
+          "sha256": "0036f3332974029b58f0895e9f5c5ed509c28b3a42658cf0b0bc9eac18ec2f07"
+        }
+      ]
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/client/PhaseBNativeBacapCompatibilityTest.java",
+      "category": "CURRENT_TEST",
+      "action": "ADD",
+      "originStage": "B9",
+      "latestAuthority": "B9",
+      "currentSha256": "2efbe92850653b099f48149772e6b88c4e0317f25165e4823edeb113364f1695",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b9_regression_certification_resumed.json",
+          "pointer": "/certificationArtifacts/src/test/java/com/diskree/achievetodo/client/PhaseBNativeBacapCompatibilityTest.java",
+          "sha256": "0036f3332974029b58f0895e9f5c5ed509c28b3a42658cf0b0bc9eac18ec2f07"
+        }
+      ]
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/tracking/PhaseBBacapTrackerContractTest.java",
+      "category": "CURRENT_TEST",
+      "action": "ADD",
+      "originStage": "B9",
+      "latestAuthority": "B9",
+      "currentSha256": "84a9d6317c406b8dfb01c453fd41777441ec6447e45cf1381bd0d9f54dbc9474",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b9_regression_certification_resumed.json",
+          "pointer": "/certificationArtifacts/src/test/java/com/diskree/achievetodo/tracking/PhaseBBacapTrackerContractTest.java",
+          "sha256": "0036f3332974029b58f0895e9f5c5ed509c28b3a42658cf0b0bc9eac18ec2f07"
+        }
+      ]
+    },
+    {
+      "path": "src/test/resources/phase_b_certification/b9_regression_receipt.json",
+      "category": "CURRENT_TEST",
+      "action": "ADD",
+      "originStage": "B9",
+      "latestAuthority": "B9",
+      "currentSha256": "8124de39525fdde9a84d90d638c30ba9fcc19737ce986852f7644f04a0ab7335",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b9_regression_certification_resumed.json",
+          "pointer": "/certificationArtifacts/src/test/resources/phase_b_certification/b9_regression_receipt.json",
+          "sha256": "0036f3332974029b58f0895e9f5c5ed509c28b3a42658cf0b0bc9eac18ec2f07"
+        }
+      ]
+    },
+    {
+      "path": "src/test/resources/phase_b_certification/bacap_1_21_codec_receipt.json",
+      "category": "CURRENT_TEST",
+      "action": "ADD",
+      "originStage": "B8",
+      "latestAuthority": "B8",
+      "currentSha256": "eeddcb746eefe5175be3d1b2e9c30fe2cdfb99b79d2e8d290d00346aa9333a38",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b8_static_certification_resumed.json",
+          "pointer": "/certificationArtifacts/2",
+          "sha256": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3"
+        },
+        {
+          "path": "reference/phase_b/b9_regression_certification.json",
+          "pointer": "/precheck/currentHashes/src/test/resources/phase_b_certification/bacap_1_21_codec_receipt.json",
+          "sha256": "b36cc25b95de898c23b6975376742c935946bfee2bf4304add823d81801c1d78"
+        }
+      ]
+    },
+    {
+      "path": "src/test/resources/phase_b_certification/bacap_1_21_static_receipt.json",
+      "category": "CURRENT_TEST",
+      "action": "ADD",
+      "originStage": "B8",
+      "latestAuthority": "B8",
+      "currentSha256": "204b79d5ced64f57a85f2ff8981d8216f8e8e6b3f17e2f99e2f5f14672c81bf3",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b8_static_certification_resumed.json",
+          "pointer": "/certificationArtifacts/3",
+          "sha256": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3"
+        },
+        {
+          "path": "reference/phase_b/b9_regression_certification.json",
+          "pointer": "/precheck/currentHashes/src/test/resources/phase_b_certification/bacap_1_21_static_receipt.json",
+          "sha256": "b36cc25b95de898c23b6975376742c935946bfee2bf4304add823d81801c1d78"
+        }
+      ]
+    },
+    {
+      "path": "src/test/resources/phase_b_certification/bacap_1_21_target_inventory.json",
+      "category": "CURRENT_TEST",
+      "action": "ADD",
+      "originStage": "B8",
+      "latestAuthority": "B8",
+      "currentSha256": "a8f76fc43819c875737c02be04885bbfb03b5ab69eab220358554a207d1a9fcf",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b8_static_certification_resumed.json",
+          "pointer": "/certificationArtifacts/4",
+          "sha256": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3"
+        },
+        {
+          "path": "reference/phase_b/b9_regression_certification.json",
+          "pointer": "/precheck/currentHashes/src/test/resources/phase_b_certification/bacap_1_21_target_inventory.json",
+          "sha256": "b36cc25b95de898c23b6975376742c935946bfee2bf4304add823d81801c1d78"
+        }
+      ]
+    },
+    {
+      "path": "tools/phase_b/b10_runtime_smoke.py",
+      "category": "PHASE_B_TOOL",
+      "action": "ADD",
+      "originStage": "B10",
+      "latestAuthority": "B10-D2",
+      "currentSha256": "dfc5e997446ea2b4a9a47cfa3fd087565e6928fdba5a64d6c54dd7ca9e4c8d8a",
+      "modifiedAfterOriginStage": true,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_d2_companion_runtime.json",
+          "pointer": "/harness/modifiedFiles/2",
+          "sha256": "069ffa12ad93ffd8cd0a454fed1549c4b84f97925bba5f1a726888fc3e3cd4d2"
+        }
+      ]
+    },
+    {
+      "path": "tools/phase_b/b11_manual_advancement_review.py",
+      "category": "PHASE_B_TOOL",
+      "action": "ADD",
+      "originStage": "B11",
+      "latestAuthority": "B11",
+      "currentSha256": "676371845eeffd01e0d486ce8ab768a9a6fcf50c581f0fe8e5800c81e12539bb",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b11_manual_advancement_review.json",
+          "pointer": "/toolSelfTests",
+          "sha256": "d49c0360153a61fd5002c19cb6869e792bced2f32b22b93e623cb26e2c0140c8"
+        }
+      ]
+    },
+    {
+      "path": "tools/phase_b/b12_terminal_reconciliation.py",
+      "category": "PHASE_B_TOOL",
+      "action": "ADD",
+      "originStage": "B12",
+      "latestAuthority": "B12",
+      "authorization": "Exact user B12 write allowlist"
+    },
+    {
+      "path": "tools/phase_b/b3_bacap_semantic_diff.py",
+      "category": "PHASE_B_TOOL",
+      "action": "ADD",
+      "originStage": "B3",
+      "latestAuthority": "B3",
+      "currentSha256": "ea070dd7fdd894c34a6d4b910310ea98138f38111d2b3f9587f6ecd15aff4fbf",
+      "modifiedAfterOriginStage": false,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b3_advancement_diff.json",
+          "pointer": "/identities/analysisTool",
+          "sha256": "a402baa19657c3ec14c089affed19cdedf077f21eece39c7d1d07ecdd60a1980"
+        },
+        {
+          "path": "reference/phase_b/b3_atd_impact_matrix.json",
+          "pointer": "/identities/analysisTool",
+          "sha256": "682994595bb25dd6334aa4ce384d2e9eddfd77e706de531d1693b58bc26564a5"
+        },
+        {
+          "path": "reference/phase_b/b3_resource_graph_diff.json",
+          "pointer": "/identities/analysisTool",
+          "sha256": "a56188f03d15c37817117cfcf68422d5d7085635a4373e25519fed1847cdd693"
+        },
+        {
+          "path": "reference/phase_b/b4_product_change_manifest.json",
+          "pointer": "/safety/priorInputRecords/12",
+          "sha256": "feb0b2bd8020adf314c74bef05dba184342088fc7d8fb8bf5df1d5f4be51d000"
+        },
+        {
+          "path": "reference/phase_b/b5_1_pins_pack_metadata.json",
+          "pointer": "/authorityFiles/12",
+          "sha256": "ffc533dec326412f807e7d16667e5d8968aed0331d1a5ba0b9438a76a8279ab8"
+        }
+      ]
+    },
+    {
+      "path": "tools/phase_b/b7_localization_certification.py",
+      "category": "PHASE_B_TOOL",
+      "action": "ADD",
+      "originStage": "B7",
+      "latestAuthority": "B7-M2",
+      "currentSha256": "032c866f0eca68dbf7508c86034f00d6a06bf52f98e43efdee2c52e7fbc5a732",
+      "modifiedAfterOriginStage": true,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_runtime_smoke.json",
+          "pointer": "/currentSuccessors/B7",
+          "sha256": "db227d1bf3a946e5dff2677b4ab2af8a795a3b97d1966f23949ad705b5398055"
+        },
+        {
+          "path": "reference/phase_b/b7_m2_current_consumer_set_refresh.json",
+          "pointer": "/tool",
+          "sha256": "943bfc15b65923461b8004559a3a5ac6e225c5b0ad74d8f4a5d009d8ea4fbd4b"
+        }
+      ]
+    },
+    {
+      "path": "tools/phase_b/b8_bacap_static_certification.py",
+      "category": "PHASE_B_TOOL",
+      "action": "ADD",
+      "originStage": "B8",
+      "latestAuthority": "B8_RESUMED",
+      "currentSha256": "18acf4be8234587916a72a2aa0a8b48bbacaccf796055b40b8a4cf76ff26936b",
+      "modifiedAfterOriginStage": true,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_runtime_smoke.json",
+          "pointer": "/currentSuccessors/B8",
+          "sha256": "db227d1bf3a946e5dff2677b4ab2af8a795a3b97d1966f23949ad705b5398055"
+        },
+        {
+          "path": "reference/phase_b/b8_static_certification_resumed.json",
+          "pointer": "/certificationArtifacts/0",
+          "sha256": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3"
+        },
+        {
+          "path": "reference/phase_b/b9_regression_certification.json",
+          "pointer": "/precheck/currentHashes/tools/phase_b/b8_bacap_static_certification.py",
+          "sha256": "b36cc25b95de898c23b6975376742c935946bfee2bf4304add823d81801c1d78"
+        }
+      ]
+    },
+    {
+      "path": "tools/phase_b/b9_regression_certification.py",
+      "category": "PHASE_B_TOOL",
+      "action": "ADD",
+      "originStage": "B9",
+      "latestAuthority": "B9_RESUMED",
+      "currentSha256": "839fc8e591863b4eb78d3f589acd3a3613da88252456894b9590522b826bb634",
+      "modifiedAfterOriginStage": true,
+      "acceptedEvidence": [
+        {
+          "path": "reference/phase_b/b10_runtime_smoke.json",
+          "pointer": "/currentSuccessors/B9",
+          "sha256": "db227d1bf3a946e5dff2677b4ab2af8a795a3b97d1966f23949ad705b5398055"
+        },
+        {
+          "path": "reference/phase_b/b9_regression_certification_resumed.json",
+          "pointer": "/certificationArtifacts/tools/phase_b/b9_regression_certification.py",
+          "sha256": "0036f3332974029b58f0895e9f5c5ed509c28b3a42658cf0b0bc9eac18ec2f07"
+        }
+      ]
+    }
+  ],
+  "categoryCounts": {
+    "LOCALIZATION_OR_LICENSE": 1,
+    "PHASE_B_EVIDENCE": 65,
+    "GAMETEST_RUNTIME_CERTIFICATION": 9,
+    "RUNTIME_PRODUCT": 255,
+    "CURRENT_TEST": 8,
+    "PHASE_B_TOOL": 7
+  },
+  "stagingRule": "B13 must refuse this STOP manifest. A complete path inventory does not waive the non-green assembly gate. No git add .; no staging occurred.",
+  "persistentRuntimePaths": 255,
+  "generatedArtifactsIncluded": false
+}

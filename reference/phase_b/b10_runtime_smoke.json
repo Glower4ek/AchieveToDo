@@ -1,0 +1,1402 @@
+{
+  "phase": "B",
+  "stage": "B10",
+  "status": "PHASE_B_B10_STOP",
+  "stopReason": "LIVE_ADVANCEMENT_COUNT_CONTRACT_OMITS_ALWAYS_ENABLED_ATD_BASE_PACK",
+  "stopClassification": "CERTIFICATION_COUNT_CONTRACT_CONTRADICTION",
+  "productionRegressionProven": false,
+  "branch": "phase-b-bacap-26.2",
+  "baselineHead": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+  "currentProductAuthority": {
+    "converterSha256": "6ab0674902b4783c39c08dfd802cd0067d1436d973345834f092a001a4db9fec",
+    "marker": "compat_26_2_r19",
+    "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+    "runtimeRuSha256": "8961ad9d573ab72f63969e4a808b19ce733bc9a60b7ab589fc44dfb6148e1a0a"
+  },
+  "currentSuccessors": {
+    "B7": {
+      "path": "tools/phase_b/b7_localization_certification.py",
+      "sha256": "032c866f0eca68dbf7508c86034f00d6a06bf52f98e43efdee2c52e7fbc5a732"
+    },
+    "B8": {
+      "path": "tools/phase_b/b8_bacap_static_certification.py",
+      "sha256": "18acf4be8234587916a72a2aa0a8b48bbacaccf796055b40b8a4cf76ff26936b"
+    },
+    "B9": {
+      "path": "tools/phase_b/b9_regression_certification.py",
+      "sha256": "839fc8e591863b4eb78d3f589acd3a3613da88252456894b9590522b826bb634"
+    }
+  },
+  "priorEvidenceHashesVerifiedUnchanged": {
+    "reference/phase_b/b0_baseline.json": "747877d0a7685c12cf41b3e2f8f446eea0ce5e5bf976990fd3e681f5ea0e6390",
+    "reference/phase_b/b1_official_bacap_pin.json": "b39bdf2a190131c8b13b0820d26c0f67430935c9fe330122655911d1dc435110",
+    "reference/phase_b/B1_OFFICIAL_BACAP_PIN.md": "82314a7f91569d4e2f6358ff6d562499a2f4c07e2322b1fd6ebdfbc702e1222a",
+    "reference/phase_b/b1_target_inventory.json": "2219f38681a7dbbe19deb109c7b0abeb16f01051fb22fa41dbee464fe00656eb",
+    "reference/phase_b/b2_atd_integration_map.json": "9214f2d027738486cd4be91fb0b6f3fbfe06b5c346c46b3163bef369a0f4999d",
+    "reference/phase_b/B2_ATD_INTEGRATION_MAP.md": "58c77b0d51574dab337a151baf973ff5573485572f6a2c9d95134bf9529d8f81",
+    "reference/phase_b/b2_bacap_occurrences.json": "771e89d60dc00ecef0a9abe80dc6e27b4b7c55bde457b61df34f8f8b52ce34b2",
+    "reference/phase_b/b3_advancement_diff.json": "a402baa19657c3ec14c089affed19cdedf077f21eece39c7d1d07ecdd60a1980",
+    "reference/phase_b/b3_atd_impact_matrix.json": "682994595bb25dd6334aa4ce384d2e9eddfd77e706de531d1693b58bc26564a5",
+    "reference/phase_b/B3_BACAP_SEMANTIC_DIFF.md": "066bedd333586121f07f5abe8cec90b21be63cf108bbc4e82a18d90790c45d31",
+    "reference/phase_b/b3_resource_graph_diff.json": "a56188f03d15c37817117cfcf68422d5d7085635a4373e25519fed1847cdd693",
+    "reference/phase_b/b4_companion_matrix.json": "142d9fb5c7c905c10b87b07480043812b149a4622381fe9204b29fd5bdb26710",
+    "reference/phase_b/b4_converter_decision.json": "33900472aa72d1891e86065534a87f3bde4f4b8fcb534403a6677b6d99184f5e",
+    "reference/phase_b/B4_EXACT_PRODUCT_CHANGE_PLAN.md": "478406877f89ddceaaf790b75ae650c542f3832092f40a83cbd046230b62f1bd",
+    "reference/phase_b/b4_localization_handoff.json": "21dc8a27f9edf05b1970d030eaaf3e084859d0bfe3923483546dc81830ac1d67",
+    "reference/phase_b/b4_product_change_manifest.json": "feb0b2bd8020adf314c74bef05dba184342088fc7d8fb8bf5df1d5f4be51d000",
+    "reference/phase_b/b5_1_pins_pack_metadata.json": "ffc533dec326412f807e7d16667e5d8968aed0331d1a5ba0b9438a76a8279ab8",
+    "reference/phase_b/b5_2_converter_r17.json": "fcd6b4c9e9c5005ad253370871139bb26dadf944f0d7dceede76f112ad437a24",
+    "reference/phase_b/b5_3_setup_resource_contracts.json": "e1aa6aae5cb3f6f8127f7a83e94c3a48c18fa9fa0aaebb89719389ba89d3db5d",
+    "reference/phase_b/b5_4_benchmarking_contract_resolution.json": "c17dff35ec9a709b5e9522455f4c74d7450ea0b36a685bffd3936d5e1c69a208",
+    "reference/phase_b/b5_4_naughtylus_contract_resolution.json": "e318f8cb0051a52fe1a3a1e1d92c3c2f6993ce2985ce301842016ee28dd2c844",
+    "reference/phase_b/b5_4_root_reward_messages.json": "6ed40af0fff9bf081f075ed277c1984bcc5843113be7a902f8d8d52493018c15",
+    "reference/phase_b/b5_4_root_reward_messages_resumed.json": "874f3f20da41948f1039f9a53c0dba18c8ad1549d8d5961574b208e8e1b234e0",
+    "reference/phase_b/b5_5_trackers_gui.json": "15b923f01570ab38f9d3c4db557732f9eabdbb0dfdb13f4a77f3f837106e78b0",
+    "reference/phase_b/b5_6_companions.json": "3c8647d0218ba44486ce0d310ba270ffc7965bedce963660c193fc1d751484aa",
+    "reference/phase_b/b5_6_companions_resumed.json": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67",
+    "reference/phase_b/b5_6_unwanted_passenger_contract_resolution.json": "e5b95c8b772e8e73c42ba5b573adace4e1994bdfb0b224adc73c7c9d71673837",
+    "reference/phase_b/b5_7_structural_reconciliation.json": "4a3f796e7b898096888fa0ac18d5a1877e439f19bbca15a0e36c34c4c3d9064c",
+    "reference/phase_b/b6_localization_sources.json": "1bf99568edfc12bcd28b705f1d572cd6b418dacd1eae4fac58241e73f212d0d8",
+    "reference/phase_b/B6_RUSSIAN_LOCALIZATION.md": "7966a55cc7c917f2c0fa80153d8d98193f43ccce5435602d79d0c6a510e2460d",
+    "reference/phase_b/b6_ru_translation_manifest.json": "e6f8159de3f19e4aa44bc8e24b790c6d73e45bf8e0928bba39391a6689d26ede",
+    "reference/phase_b/b7_full_test_gate_resolution.json": "651edf4ec09d32bdca86dd60a0b30be323f4e25b9efd41b54abd6c650107ee4b",
+    "reference/phase_b/b7_localization_certification.json": "e0866de8bf91d079de75935e6b21b2396b0cc84c8605096eb81e28d68e54ca7c",
+    "reference/phase_b/B7_LOCALIZATION_CERTIFICATION.md": "54dfc4184345431cf28e41609a51010338949ca4706b894ba0499d821a1157fc",
+    "reference/phase_b/b7_localization_certification_resumed.json": "be3aca8716e68e48b293bb5299418a87aec98bda340b4836f9f50e70705e92d3",
+    "reference/phase_b/B7_LOCALIZATION_CERTIFICATION_RESUMED.md": "b3db519877e892ec97e369e0be3bcb8e1fb3aae59027f0471349a7cd7e1eedb2",
+    "reference/phase_b/b7_m1_current_successor_authority_refresh.json": "893ff1a66e84e44595002104e7c476078e40e00cc0996506a5cf9d5a09909d4f",
+    "reference/phase_b/b7_m2_current_consumer_set_refresh.json": "943bfc15b65923461b8004559a3a5ac6e225c5b0ad74d8f4a5d009d8ea4fbd4b",
+    "reference/phase_b/b7_post_r1_test_gate_resolution.json": "ad3ebac32d495036a70792e6b6968319aec358cc91f670eb55a518c4e42b0720",
+    "reference/phase_b/b7_r1_source_identity_marker_repair.json": "3da33837b2f1e46962520c146216cd6ee9a9fda48052f9b902cbb892fd9e71b9",
+    "reference/phase_b/b8_r1_terralith_player_predicate_repair.json": "ef1f59d01b13db8811adf2012346d123ca698a1c1ba8fa78ba4cd7a6d66ff2a7",
+    "reference/phase_b/b8_r2_message_binding_repair.json": "14af195151852d1103a52deb0c753e77fd2f608a3b62ef6ed4935504dbb3babf",
+    "reference/phase_b/b8_static_certification.json": "6fef5b8841f4014b0d8340418b23d1f7d74c3883975ecfc858ab3fe08bc26090",
+    "reference/phase_b/B8_STATIC_CERTIFICATION.md": "12e677631bb6a24ef92e0520883b6dfef0c25020ee052ae48b27180a1493a912",
+    "reference/phase_b/b8_static_certification_post_r1_stop.json": "999fbd095acb7e4ab2c11988da80447c38fcb80e2cdcab7994eb3a3321dbece8",
+    "reference/phase_b/b8_static_certification_resumed.json": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3",
+    "reference/phase_b/B8_STATIC_CERTIFICATION_RESUMED.md": "708fb9edf12389889fc4c325dd5c65f86bd6cdb2005454f6142c977a04107d15",
+    "reference/phase_b/b9_regression_certification.json": "b36cc25b95de898c23b6975376742c935946bfee2bf4304add823d81801c1d78",
+    "reference/phase_b/B9_REGRESSION_CERTIFICATION.md": "2f852d707a908596af16f99170cfbe4e6eaa049ba175197632f49d287083e30f",
+    "reference/phase_b/b9_regression_certification_resumed.json": "0036f3332974029b58f0895e9f5c5ed509c28b3a42658cf0b0bc9eac18ec2f07",
+    "reference/phase_b/B9_REGRESSION_CERTIFICATION_RESUMED.md": "8b02622ca716a730d5ba4bc93730110c343f1e3f4272772f7d2004a2037e4d03",
+    "reference/phase_b/OPERATING_CONTRACT.md": "765f7c2d9874ea0df7086589dfa5c23d4a466e3ba3fcd6e812034b2a163cf921"
+  },
+  "harnessAudit": {
+    "existingBootstrapSha256": "7c83a8e0a8f8f31b5889b275410b1c3fa60497141123c2789cec31bafdd7510f",
+    "existingGameTestServerMixinSha256": "d7569c63025fd5c718c2b738e554b18e9965c2ccd538dd40242f5fc559d0095a",
+    "historicalDefects": [
+      "Frozen Phase A BACAP installer cannot pass current-main freshness",
+      "Phase A initializer resets closed evidence",
+      "Vanilla GameTestServer.create enables all available packs"
+    ],
+    "activeB10BootstrapClasses": [
+      "B10MixinPlugin",
+      "B10HistoricalBootstrapIsolationMixin",
+      "B10GameTestServerMixin",
+      "PhaseBRuntimeSmoke"
+    ],
+    "explicitProperty": "achievetodo.b10.mode=MAIN",
+    "packSeedingMethod": "B10GameTestServerMixin.create HEAD -> PhaseBRuntimeSmoke.install -> compiled ExternalPackCompatibility.copyForWorld",
+    "selectionMethod": "Guarded redirect of GameTestServer.create PackRepository.getAvailableIds; exact base and production order",
+    "productionFidelityProved": true,
+    "fidelityScope": "MAIN_ONLY",
+    "allFiveCompositionsProved": false,
+    "configurationName": "normal / DEFAULT",
+    "historicalTestsModified": false,
+    "historicalGameTestBodiesModified": false,
+    "historicalBootstrapEvidenceResetSuppressedOnlyForB10": true,
+    "absentB10PropertyHistoricalMixinsStillApply": true,
+    "existingEntriesAndRelativeOrderUnchanged": true,
+    "registrationChanges": [
+      {
+        "path": "src/gametest/resources/fabric.mod.json",
+        "beforeSha256": "22ff356d26d5fb48cc5a0939ab3718a5716d770c5fb4c64c450b81ca61d294a2",
+        "afterSha256": "3a0f755ed552a53879fc92a933459b025465a28e155199260f0c19fe32ed3d73"
+      },
+      {
+        "path": "src/gametest/resources/achievetodo-test.mixins.json",
+        "beforeSha256": "9691de9b64cca1e8353615b9ca73b61e39e8e3e9a63570aabc46911e14011eae",
+        "afterSha256": "56008f1eb449446890a00860f18ab373aed0336b348e88090d6977d4ca67108c"
+      }
+    ],
+    "productionSelections": {
+      "MAIN": {
+        "basePackIds": [
+          "vanilla",
+          "achievetodo",
+          "fabric-convention-tags-v2",
+          "fabric-gametest-api-v1"
+        ],
+        "productionPackIds": [
+          "file/bacap.zip",
+          "achievetodo:bacap_override",
+          "achievetodo:bacap_rewards_item",
+          "achievetodo:bacap_rewards_experience",
+          "achievetodo:bacap_rewards_trophy",
+          "achievetodo:bacap_cooperative_mode"
+        ],
+        "rewardOptionsAllEnabled": true,
+        "expectedB8CoreCount": 2894
+      },
+      "HARDCORE": {
+        "basePackIds": [
+          "vanilla",
+          "achievetodo",
+          "fabric-convention-tags-v2",
+          "fabric-gametest-api-v1"
+        ],
+        "productionPackIds": [
+          "file/bacap.zip",
+          "achievetodo:bacap_override",
+          "file/bacap_hardcore.zip",
+          "achievetodo:bacap_hardcore_override",
+          "achievetodo:bacap_rewards_item",
+          "achievetodo:bacap_rewards_experience",
+          "achievetodo:bacap_rewards_trophy",
+          "achievetodo:bacap_cooperative_mode"
+        ],
+        "rewardOptionsAllEnabled": true,
+        "expectedB8CoreCount": 2894
+      },
+      "TERRALITH": {
+        "basePackIds": [
+          "vanilla",
+          "achievetodo",
+          "fabric-convention-tags-v2",
+          "fabric-gametest-api-v1"
+        ],
+        "productionPackIds": [
+          "file/bacap.zip",
+          "achievetodo:bacap_override",
+          "file/terralith.zip",
+          "file/bacap_terralith.zip",
+          "achievetodo:bacap_terralith_override",
+          "achievetodo:bacap_rewards_item",
+          "achievetodo:bacap_rewards_experience",
+          "achievetodo:bacap_rewards_trophy",
+          "achievetodo:bacap_cooperative_mode"
+        ],
+        "rewardOptionsAllEnabled": true,
+        "expectedB8CoreCount": 2922
+      },
+      "AMPLIFIED_NETHER": {
+        "basePackIds": [
+          "vanilla",
+          "achievetodo",
+          "fabric-convention-tags-v2",
+          "fabric-gametest-api-v1"
+        ],
+        "productionPackIds": [
+          "file/bacap.zip",
+          "achievetodo:bacap_override",
+          "file/amplified_nether.zip",
+          "file/bacap_amplified_nether.zip",
+          "achievetodo:bacap_amplified_nether_override",
+          "achievetodo:bacap_rewards_item",
+          "achievetodo:bacap_rewards_experience",
+          "achievetodo:bacap_rewards_trophy",
+          "achievetodo:bacap_cooperative_mode"
+        ],
+        "rewardOptionsAllEnabled": true,
+        "expectedB8CoreCount": 2894
+      },
+      "NULLSCAPE": {
+        "basePackIds": [
+          "vanilla",
+          "achievetodo",
+          "fabric-convention-tags-v2",
+          "fabric-gametest-api-v1"
+        ],
+        "productionPackIds": [
+          "file/bacap.zip",
+          "achievetodo:bacap_override",
+          "file/nullscape.zip",
+          "file/bacap_nullscape.zip",
+          "achievetodo:bacap_nullscape_override",
+          "achievetodo:bacap_rewards_item",
+          "achievetodo:bacap_rewards_experience",
+          "achievetodo:bacap_rewards_trophy",
+          "achievetodo:bacap_cooperative_mode"
+        ],
+        "rewardOptionsAllEnabled": true,
+        "expectedB8CoreCount": 2895
+      }
+    },
+    "initialDiagnostic": {
+      "path": "build/tmp/phase_b_b10/MAIN/gradle.log",
+      "sha256": "7642adaf3f5dbfaf3562337c461a52b93a890a43771103d1e9c6e5817adb00c6",
+      "excludedFromCertification": true,
+      "reason": "Initial selection receipt omitted automatically inserted base packs and Loom runDir was not yet isolated; corrected before fresh confirmation"
+    }
+  },
+  "runtimeProcesses": {
+    "MAIN": {
+      "mode": "MAIN",
+      "selector": "achievetodo-test:phase_bruntime_smoke_production_smoke",
+      "matchedTests": 1,
+      "testsExecuted": 1,
+      "exitCode": 1,
+      "pid": 23192,
+      "Minecraft": "26.2",
+      "fabricLoader": "0.19.5",
+      "fabricAPI": "0.161.0+26.2",
+      "worldDatapacks": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b10\\MAIN_FRESH\\runtime\\.\\world\\datapacks",
+      "isolatedWorld": true,
+      "availablePackIds": [
+        "achievetodo",
+        "achievetodo:bacap_amplified_nether_override",
+        "achievetodo:bacap_cooperative_mode",
+        "achievetodo:bacap_hardcore_override",
+        "achievetodo:bacap_nullscape_override",
+        "achievetodo:bacap_override",
+        "achievetodo:bacap_rewards_experience",
+        "achievetodo:bacap_rewards_item",
+        "achievetodo:bacap_rewards_trophy",
+        "achievetodo:bacap_terralith_override",
+        "fabric-convention-tags-v2",
+        "fabric-gametest-api-v1",
+        "file/bacap.zip",
+        "minecart_improvements",
+        "redstone_experiments",
+        "trade_rebalance",
+        "vanilla"
+      ],
+      "selectedPackIds": [
+        "vanilla",
+        "achievetodo",
+        "fabric-convention-tags-v2",
+        "fabric-gametest-api-v1",
+        "file/bacap.zip",
+        "achievetodo:bacap_override",
+        "achievetodo:bacap_rewards_item",
+        "achievetodo:bacap_rewards_experience",
+        "achievetodo:bacap_rewards_trophy",
+        "achievetodo:bacap_cooperative_mode"
+      ],
+      "externalSourceAndWorldCopyIdentities": [
+        {
+          "enum": "BACAP",
+          "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b1\\BlazeandCave's Advancements Pack 1.21.zip",
+          "sourceSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+          "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+          "worldCopySha256": "3a13254034a048c038ada01600234ed9644122bf169ca3319dfdcb7a7c9de18d",
+          "isCurrentWorldPack": true,
+          "marker": {
+            "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+            "fileName": "bacap.zip",
+            "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+            "raiderPredicateKeys": "snake_case",
+            "llamaCarpetNbtMapping": "equipment.body",
+            "version": "compat_26_2_r19"
+          }
+        }
+      ],
+      "liveAdvancementCount": 3046,
+      "expectedB8Count": 2894,
+      "liveIdsSha256": "6add865f2c7ab59b131183e8707ba46e3d808eb8a8f3adc526467541a8b697cd",
+      "logPath": "build/tmp/phase_b_b10/MAIN_FRESH/gradle.log",
+      "logSha256": "eb2f3cc5d11f1cad8dcfbf62dcb832cc9541e2d3be0a65a9f427d7d622f905b6",
+      "receiptPath": "build/tmp/phase_b_b10/MAIN_FRESH/live.json",
+      "receiptSha256": "091cae53ad9235fdf7d9f4b3086edc45285b05dd6d961de01f9313d0c8453148",
+      "processInspectionPath": "build/tmp/phase_b_b10/MAIN_FRESH/process_preflight.json",
+      "competingJavaProcesses": [],
+      "serverStarted": true,
+      "resourceParseErrors": 0,
+      "runtimeErrors": [
+        "java.lang.IllegalStateException: live count mismatch: 3046"
+      ],
+      "result": "FAIL_COUNT_CONTRACT",
+      "certified": false
+    },
+    "HARDCORE": {
+      "result": "NOT_EXECUTED",
+      "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+      "certified": false,
+      "selector": "achievetodo-test:phase_bruntime_smoke_production_smoke",
+      "matchedTests": null,
+      "exitCode": null,
+      "plannedComposition": {
+        "basePackIds": [
+          "vanilla",
+          "achievetodo",
+          "fabric-convention-tags-v2",
+          "fabric-gametest-api-v1"
+        ],
+        "productionPackIds": [
+          "file/bacap.zip",
+          "achievetodo:bacap_override",
+          "file/bacap_hardcore.zip",
+          "achievetodo:bacap_hardcore_override",
+          "achievetodo:bacap_rewards_item",
+          "achievetodo:bacap_rewards_experience",
+          "achievetodo:bacap_rewards_trophy",
+          "achievetodo:bacap_cooperative_mode"
+        ],
+        "rewardOptionsAllEnabled": true,
+        "expectedB8CoreCount": 2894
+      }
+    },
+    "TERRALITH": {
+      "result": "NOT_EXECUTED",
+      "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+      "certified": false,
+      "selector": "achievetodo-test:phase_bruntime_smoke_production_smoke",
+      "matchedTests": null,
+      "exitCode": null,
+      "plannedComposition": {
+        "basePackIds": [
+          "vanilla",
+          "achievetodo",
+          "fabric-convention-tags-v2",
+          "fabric-gametest-api-v1"
+        ],
+        "productionPackIds": [
+          "file/bacap.zip",
+          "achievetodo:bacap_override",
+          "file/terralith.zip",
+          "file/bacap_terralith.zip",
+          "achievetodo:bacap_terralith_override",
+          "achievetodo:bacap_rewards_item",
+          "achievetodo:bacap_rewards_experience",
+          "achievetodo:bacap_rewards_trophy",
+          "achievetodo:bacap_cooperative_mode"
+        ],
+        "rewardOptionsAllEnabled": true,
+        "expectedB8CoreCount": 2922
+      }
+    },
+    "AMPLIFIED_NETHER": {
+      "result": "NOT_EXECUTED",
+      "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+      "certified": false,
+      "selector": "achievetodo-test:phase_bruntime_smoke_production_smoke",
+      "matchedTests": null,
+      "exitCode": null,
+      "plannedComposition": {
+        "basePackIds": [
+          "vanilla",
+          "achievetodo",
+          "fabric-convention-tags-v2",
+          "fabric-gametest-api-v1"
+        ],
+        "productionPackIds": [
+          "file/bacap.zip",
+          "achievetodo:bacap_override",
+          "file/amplified_nether.zip",
+          "file/bacap_amplified_nether.zip",
+          "achievetodo:bacap_amplified_nether_override",
+          "achievetodo:bacap_rewards_item",
+          "achievetodo:bacap_rewards_experience",
+          "achievetodo:bacap_rewards_trophy",
+          "achievetodo:bacap_cooperative_mode"
+        ],
+        "rewardOptionsAllEnabled": true,
+        "expectedB8CoreCount": 2894
+      }
+    },
+    "NULLSCAPE": {
+      "result": "NOT_EXECUTED",
+      "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+      "certified": false,
+      "selector": "achievetodo-test:phase_bruntime_smoke_production_smoke",
+      "matchedTests": null,
+      "exitCode": null,
+      "plannedComposition": {
+        "basePackIds": [
+          "vanilla",
+          "achievetodo",
+          "fabric-convention-tags-v2",
+          "fabric-gametest-api-v1"
+        ],
+        "productionPackIds": [
+          "file/bacap.zip",
+          "achievetodo:bacap_override",
+          "file/nullscape.zip",
+          "file/bacap_nullscape.zip",
+          "achievetodo:bacap_nullscape_override",
+          "achievetodo:bacap_rewards_item",
+          "achievetodo:bacap_rewards_experience",
+          "achievetodo:bacap_rewards_trophy",
+          "achievetodo:bacap_cooperative_mode"
+        ],
+        "rewardOptionsAllEnabled": true,
+        "expectedB8CoreCount": 2895
+      }
+    }
+  },
+  "countReconciliation": {
+    "expectedB8CoreCount": 2894,
+    "actualLiveCount": 3046,
+    "coreIdsSha256": "c7640b78c95b1ba62a264d1f8654eb4dac878ec43f6fd10599f0d088402796e4",
+    "missingCoreIds": [],
+    "additionalLiveIds": [
+      "achievetodo:abilities/attack_with_mace",
+      "achievetodo:abilities/attack_with_trident",
+      "achievetodo:abilities/break_blocks",
+      "achievetodo:abilities/break_blocks_in_negative_y",
+      "achievetodo:abilities/charge_respawn_anchor",
+      "achievetodo:abilities/eat_apple",
+      "achievetodo:abilities/eat_baked_potato",
+      "achievetodo:abilities/eat_beef",
+      "achievetodo:abilities/eat_beetroot",
+      "achievetodo:abilities/eat_beetroot_soup",
+      "achievetodo:abilities/eat_bread",
+      "achievetodo:abilities/eat_carrot",
+      "achievetodo:abilities/eat_chicken",
+      "achievetodo:abilities/eat_chorus_fruit",
+      "achievetodo:abilities/eat_cod",
+      "achievetodo:abilities/eat_cooked_beef",
+      "achievetodo:abilities/eat_cooked_chicken",
+      "achievetodo:abilities/eat_cooked_cod",
+      "achievetodo:abilities/eat_cooked_mutton",
+      "achievetodo:abilities/eat_cooked_porkchop",
+      "achievetodo:abilities/eat_cooked_rabbit",
+      "achievetodo:abilities/eat_cooked_salmon",
+      "achievetodo:abilities/eat_cookie",
+      "achievetodo:abilities/eat_dried_kelp",
+      "achievetodo:abilities/eat_enchanted_golden_apple",
+      "achievetodo:abilities/eat_glow_berries",
+      "achievetodo:abilities/eat_golden_apple",
+      "achievetodo:abilities/eat_golden_carrot",
+      "achievetodo:abilities/eat_honey",
+      "achievetodo:abilities/eat_melon_slice",
+      "achievetodo:abilities/eat_mushroom_stew",
+      "achievetodo:abilities/eat_mutton",
+      "achievetodo:abilities/eat_poisonous_potato",
+      "achievetodo:abilities/eat_porkchop",
+      "achievetodo:abilities/eat_potato",
+      "achievetodo:abilities/eat_pufferfish",
+      "achievetodo:abilities/eat_pumpkin_pie",
+      "achievetodo:abilities/eat_rabbit",
+      "achievetodo:abilities/eat_rabbit_stew",
+      "achievetodo:abilities/eat_rotten_flesh",
+      "achievetodo:abilities/eat_salmon",
+      "achievetodo:abilities/eat_spider_eye",
+      "achievetodo:abilities/eat_suspicious_stew",
+      "achievetodo:abilities/eat_sweet_berries",
+      "achievetodo:abilities/eat_tropical_fish",
+      "achievetodo:abilities/enter_end",
+      "achievetodo:abilities/enter_nether",
+      "achievetodo:abilities/equip_chainmail_armor",
+      "achievetodo:abilities/equip_diamond_armor",
+      "achievetodo:abilities/equip_elytra",
+      "achievetodo:abilities/equip_golden_armor",
+      "achievetodo:abilities/equip_iron_armor",
+      "achievetodo:abilities/equip_leather_armor",
+      "achievetodo:abilities/equip_netherite_armor",
+      "achievetodo:abilities/equip_turtle_helmet",
+      "achievetodo:abilities/get_into_boat",
+      "achievetodo:abilities/get_into_minecart",
+      "achievetodo:abilities/glide_with_fireworks",
+      "achievetodo:abilities/ignite_tnt",
+      "achievetodo:abilities/interact_inside_ancient_city",
+      "achievetodo:abilities/interact_inside_bastion_remnant",
+      "achievetodo:abilities/interact_inside_buried_treasure",
+      "achievetodo:abilities/interact_inside_desert_pyramid",
+      "achievetodo:abilities/interact_inside_desert_well",
+      "achievetodo:abilities/interact_inside_end_city",
+      "achievetodo:abilities/interact_inside_fortress",
+      "achievetodo:abilities/interact_inside_igloo",
+      "achievetodo:abilities/interact_inside_jungle_pyramid",
+      "achievetodo:abilities/interact_inside_mansion",
+      "achievetodo:abilities/interact_inside_mineshaft",
+      "achievetodo:abilities/interact_inside_monster_room",
+      "achievetodo:abilities/interact_inside_monument",
+      "achievetodo:abilities/interact_inside_ocean_ruin",
+      "achievetodo:abilities/interact_inside_pillager_outpost",
+      "achievetodo:abilities/interact_inside_ruined_portal",
+      "achievetodo:abilities/interact_inside_shipwreck",
+      "achievetodo:abilities/interact_inside_stronghold",
+      "achievetodo:abilities/interact_inside_swamp_hut",
+      "achievetodo:abilities/interact_inside_trail_ruins",
+      "achievetodo:abilities/interact_inside_trial_chambers",
+      "achievetodo:abilities/interact_inside_village",
+      "achievetodo:abilities/jump",
+      "achievetodo:abilities/open_anvil",
+      "achievetodo:abilities/open_barrel",
+      "achievetodo:abilities/open_beacon",
+      "achievetodo:abilities/open_blast_furnace",
+      "achievetodo:abilities/open_brewing_stand",
+      "achievetodo:abilities/open_cartography_table",
+      "achievetodo:abilities/open_chest",
+      "achievetodo:abilities/open_crafting_table",
+      "achievetodo:abilities/open_door",
+      "achievetodo:abilities/open_enchanting_table",
+      "achievetodo:abilities/open_ender_chest",
+      "achievetodo:abilities/open_fence_gate",
+      "achievetodo:abilities/open_furnace",
+      "achievetodo:abilities/open_grindstone",
+      "achievetodo:abilities/open_inventory",
+      "achievetodo:abilities/open_loom",
+      "achievetodo:abilities/open_shulker_box",
+      "achievetodo:abilities/open_smithing_table",
+      "achievetodo:abilities/open_smoker",
+      "achievetodo:abilities/open_stonecutter",
+      "achievetodo:abilities/open_trapdoor",
+      "achievetodo:abilities/place_end_crystal",
+      "achievetodo:abilities/put_in_bundle",
+      "achievetodo:abilities/root",
+      "achievetodo:abilities/shoot_bow",
+      "achievetodo:abilities/shoot_crossbow",
+      "achievetodo:abilities/sleep",
+      "achievetodo:abilities/sneak",
+      "achievetodo:abilities/sprint",
+      "achievetodo:abilities/swim",
+      "achievetodo:abilities/teleport_outer_islands",
+      "achievetodo:abilities/throw_egg",
+      "achievetodo:abilities/throw_ender_pearl",
+      "achievetodo:abilities/throw_snowball",
+      "achievetodo:abilities/throw_wind_charge",
+      "achievetodo:abilities/trade_with_armorer",
+      "achievetodo:abilities/trade_with_butcher",
+      "achievetodo:abilities/trade_with_cartographer",
+      "achievetodo:abilities/trade_with_cleric",
+      "achievetodo:abilities/trade_with_farmer",
+      "achievetodo:abilities/trade_with_fisherman",
+      "achievetodo:abilities/trade_with_fletcher",
+      "achievetodo:abilities/trade_with_leatherworker",
+      "achievetodo:abilities/trade_with_librarian",
+      "achievetodo:abilities/trade_with_mason",
+      "achievetodo:abilities/trade_with_shepherd",
+      "achievetodo:abilities/trade_with_toolsmith",
+      "achievetodo:abilities/trade_with_wandering_trader",
+      "achievetodo:abilities/trade_with_weaponsmith",
+      "achievetodo:abilities/unlock_vault",
+      "achievetodo:abilities/use_brush",
+      "achievetodo:abilities/use_campfire",
+      "achievetodo:abilities/use_cauldron",
+      "achievetodo:abilities/use_composter",
+      "achievetodo:abilities/use_diamond_tools",
+      "achievetodo:abilities/use_ender_eye",
+      "achievetodo:abilities/use_fishing_rod",
+      "achievetodo:abilities/use_flint_and_steel",
+      "achievetodo:abilities/use_golden_tools",
+      "achievetodo:abilities/use_iron_tools",
+      "achievetodo:abilities/use_jukebox",
+      "achievetodo:abilities/use_netherite_tools",
+      "achievetodo:abilities/use_ominous_bottle",
+      "achievetodo:abilities/use_shears",
+      "achievetodo:abilities/use_shield",
+      "achievetodo:abilities/use_spyglass",
+      "achievetodo:abilities/use_stone_tools",
+      "achievetodo:abilities/use_water_bucket",
+      "achievetodo:abilities/use_wooden_tools",
+      "achievetodo:abilities/vision"
+    ],
+    "additionalResources": {
+      "achievetodo:abilities/attack_with_mace": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/attack_with_mace.json",
+        "sha256": "f191b7fd2b07f7d869096b957e1cef8eaa3972148b3da7367fadd09d9de7edb3"
+      },
+      "achievetodo:abilities/attack_with_trident": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/attack_with_trident.json",
+        "sha256": "14bd231354cc7df5710e260c8c0a491f1214e1c197fd1ecc94ad6218c1683fc1"
+      },
+      "achievetodo:abilities/break_blocks": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/break_blocks.json",
+        "sha256": "7bc6b19b9464cd923702c210cf0618ef8862b9ee249cffeaf37cbdc3be9062da"
+      },
+      "achievetodo:abilities/break_blocks_in_negative_y": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/break_blocks_in_negative_y.json",
+        "sha256": "5222126c2fc067da53cea9383ed75651a08c355f5baa17d5a497c1f4281d02b3"
+      },
+      "achievetodo:abilities/charge_respawn_anchor": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/charge_respawn_anchor.json",
+        "sha256": "cb6ed837ac24547487f1662b50006703538587ad392c03aac1b47a4809a637f8"
+      },
+      "achievetodo:abilities/eat_apple": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_apple.json",
+        "sha256": "53f6cd8a61e6a1f03572b14086d6e1580698bcd4ca958375cfe92e3f0f5355cf"
+      },
+      "achievetodo:abilities/eat_baked_potato": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_baked_potato.json",
+        "sha256": "54f6891352cc49bdb7b0b8dcb1984e798d835f79bd769c8a8a37841c62b16d02"
+      },
+      "achievetodo:abilities/eat_beef": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_beef.json",
+        "sha256": "09dcd32dfb6ccbcd30ff89c124eeaf6e96d47c7678fecdc31dfd640841fbeae7"
+      },
+      "achievetodo:abilities/eat_beetroot": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_beetroot.json",
+        "sha256": "cf1aa48f4f5e376b5b2b11c2a843cfe87467894d0368f21af859521f3001228e"
+      },
+      "achievetodo:abilities/eat_beetroot_soup": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_beetroot_soup.json",
+        "sha256": "84da2ef988b3f7a2f02e7ab1b6d1fb412dc5ca53632e6408041e1005b871c831"
+      },
+      "achievetodo:abilities/eat_bread": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_bread.json",
+        "sha256": "f4c2dcd781a7fba2b612395345129190158537d9ff3c39273dbbe8f5a9a110e1"
+      },
+      "achievetodo:abilities/eat_carrot": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_carrot.json",
+        "sha256": "6218d1741527a36390f56559468d60ed3e1bc614ee5729ab14835eb00ba2ce2a"
+      },
+      "achievetodo:abilities/eat_chicken": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_chicken.json",
+        "sha256": "6adacc6300869f2bdbba3d8b69c1ebe04e171191b3a2508e45f1a2ccc7d5fad7"
+      },
+      "achievetodo:abilities/eat_chorus_fruit": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_chorus_fruit.json",
+        "sha256": "5373b475fda4063e3f9a0faa18bf7cb2b877ddec92801e6b573149d0f71e9d64"
+      },
+      "achievetodo:abilities/eat_cod": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_cod.json",
+        "sha256": "ddedef8a4be66dec844077ccc6b416b528b50ad8a86b22620724cdaef32bff55"
+      },
+      "achievetodo:abilities/eat_cooked_beef": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_cooked_beef.json",
+        "sha256": "b7d6ceb48228b03b81def5bcfe35337a5138c61b8ec10d6f69da6cf1899ae101"
+      },
+      "achievetodo:abilities/eat_cooked_chicken": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_cooked_chicken.json",
+        "sha256": "54cfe4b51c7777fe2c7444bd33c2127146da6b15c30c7eba16a856e489e658ff"
+      },
+      "achievetodo:abilities/eat_cooked_cod": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_cooked_cod.json",
+        "sha256": "96015621e3606f0ed6c54c41b8019215f452fc162daf13ea434c29588bec3430"
+      },
+      "achievetodo:abilities/eat_cooked_mutton": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_cooked_mutton.json",
+        "sha256": "71aff1eda3e6e5626d6c929def536b851be173263e40391f8af84607769b7c55"
+      },
+      "achievetodo:abilities/eat_cooked_porkchop": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_cooked_porkchop.json",
+        "sha256": "1ae0088901e4df27692a95217b45ba50a7b3f8911749d0f63540093b7fee2a1b"
+      },
+      "achievetodo:abilities/eat_cooked_rabbit": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_cooked_rabbit.json",
+        "sha256": "e9387c9397f9888eccecb2a2bddac4f89f54efee5a466c2efc7ba4958b8dad8b"
+      },
+      "achievetodo:abilities/eat_cooked_salmon": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_cooked_salmon.json",
+        "sha256": "3ad2106f6e336294463f72195f72dfb933bc3567a5c6d91e19838da5799e72f2"
+      },
+      "achievetodo:abilities/eat_cookie": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_cookie.json",
+        "sha256": "d613000800b29d2f5c428e7ba8026b29f764763eb116faf073d424e66f5ec028"
+      },
+      "achievetodo:abilities/eat_dried_kelp": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_dried_kelp.json",
+        "sha256": "638342ace75d4088b043e9b4b72530300645b6bb8b755d4225ca7bd6fd32e0ac"
+      },
+      "achievetodo:abilities/eat_enchanted_golden_apple": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_enchanted_golden_apple.json",
+        "sha256": "3d670e5f00731c26b3aa43e9699a0e61d1ef06e1f8bcc10e6a56ea3c1d1e2170"
+      },
+      "achievetodo:abilities/eat_glow_berries": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_glow_berries.json",
+        "sha256": "4ea365f768cfb8b9b14175d972d971b813fb2a44b3b203366a0426d2102f384c"
+      },
+      "achievetodo:abilities/eat_golden_apple": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_golden_apple.json",
+        "sha256": "7164b1c51f66afb8025c78c115c01bf2074b5b99974b2db8b939f8dc55d00cd3"
+      },
+      "achievetodo:abilities/eat_golden_carrot": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_golden_carrot.json",
+        "sha256": "fcea13a6e36124db0fdb594ecd5e16784994d36509aff38c5fbb466ef57201eb"
+      },
+      "achievetodo:abilities/eat_honey": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_honey.json",
+        "sha256": "67c7cb2df2f66091e4afefbec5e524618d57504f35f8ec45065ac7f47611ae58"
+      },
+      "achievetodo:abilities/eat_melon_slice": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_melon_slice.json",
+        "sha256": "d60ac968460365cebc1da3f452a678b1e47abdca85d737b8100400aa9ede1aef"
+      },
+      "achievetodo:abilities/eat_mushroom_stew": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_mushroom_stew.json",
+        "sha256": "9ad56295ce0b92986f735585fbf3bfef0b7162ddcb42e10f415ec94d8dc80973"
+      },
+      "achievetodo:abilities/eat_mutton": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_mutton.json",
+        "sha256": "12627b84b9be1a338678a2a2a770e283668bac46bead34367aca1473a91d67e0"
+      },
+      "achievetodo:abilities/eat_poisonous_potato": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_poisonous_potato.json",
+        "sha256": "0e10a46b1b251180cff1c09513d2a72ab2e0e8819c47ba280535630d146cbcfb"
+      },
+      "achievetodo:abilities/eat_porkchop": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_porkchop.json",
+        "sha256": "921115aca5e1c5a1ef1476c254c33abf8524a44c37c49c348febfc33287c90e2"
+      },
+      "achievetodo:abilities/eat_potato": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_potato.json",
+        "sha256": "54f7383c38a40cf66f837962af5f2675d78db249b7f2df63b7b64998f5c31a81"
+      },
+      "achievetodo:abilities/eat_pufferfish": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_pufferfish.json",
+        "sha256": "d8e9aa8778c08d9b211d785e69a37069b9647de326c1c268c04359c2e141e58f"
+      },
+      "achievetodo:abilities/eat_pumpkin_pie": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_pumpkin_pie.json",
+        "sha256": "b32aa06b194e6f747f9bbee61b0b0a134ad8882d8df878fdd48bb9d77d154777"
+      },
+      "achievetodo:abilities/eat_rabbit": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_rabbit.json",
+        "sha256": "abdc9dd52260a5657f96bc5049625e592c21bd82a2ec0737b1a9407c1cbf63e1"
+      },
+      "achievetodo:abilities/eat_rabbit_stew": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_rabbit_stew.json",
+        "sha256": "91766e246ff6e6a398e9c48143a97eb9a182e43f9cff5691a85b34d1f413159d"
+      },
+      "achievetodo:abilities/eat_rotten_flesh": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_rotten_flesh.json",
+        "sha256": "48d10e896dc8d65988909b69ae4e5f9cebea8e3c27d1bd6980b6496486674358"
+      },
+      "achievetodo:abilities/eat_salmon": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_salmon.json",
+        "sha256": "2d369598e47a793f35080769eadc11eaf11167523b56385d3b0b985b8c4a15fd"
+      },
+      "achievetodo:abilities/eat_spider_eye": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_spider_eye.json",
+        "sha256": "6b7541d1a79923d975a4c0f920ba96d243797be95f7834e7fe93026e7e4fc168"
+      },
+      "achievetodo:abilities/eat_suspicious_stew": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_suspicious_stew.json",
+        "sha256": "556eebb401e3e71bdb8658fd2debd9448ec474782c22cc37bf25b1865579977c"
+      },
+      "achievetodo:abilities/eat_sweet_berries": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_sweet_berries.json",
+        "sha256": "f1d3629d35fe33280bfb0aeb134fd44e0594545837ebede8797600e275a857e0"
+      },
+      "achievetodo:abilities/eat_tropical_fish": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/eat_tropical_fish.json",
+        "sha256": "0258b68bdd3cc45b749a8ea92eed58798882b160d4d3e9983ddf0be93dbdbfe4"
+      },
+      "achievetodo:abilities/enter_end": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/enter_end.json",
+        "sha256": "614704dbb99cea44daf7a305ae27a955a99b600497609cbd288772000a5fbdb2"
+      },
+      "achievetodo:abilities/enter_nether": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/enter_nether.json",
+        "sha256": "6fed39dd0ac547e915fa1ce7779a9a764fff37fb9f3f75aa0d23422b90691dd4"
+      },
+      "achievetodo:abilities/equip_chainmail_armor": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/equip_chainmail_armor.json",
+        "sha256": "2e3ae05a033ee174d71a29e14fff49eb0bb7214ad7062c8a7d7055a2dc44f2a5"
+      },
+      "achievetodo:abilities/equip_diamond_armor": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/equip_diamond_armor.json",
+        "sha256": "60e4b017316254903997c4a629b738a4faee5632bad341802a583878f8c1acbe"
+      },
+      "achievetodo:abilities/equip_elytra": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/equip_elytra.json",
+        "sha256": "75d02957439cec5912536903720688c43d9dfe51693ba4ce99c0dc5f5b57f767"
+      },
+      "achievetodo:abilities/equip_golden_armor": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/equip_golden_armor.json",
+        "sha256": "9bf37024ccc55233c76f2d333c151fd5d6a4af57b57c606d45b771bb0dec39a1"
+      },
+      "achievetodo:abilities/equip_iron_armor": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/equip_iron_armor.json",
+        "sha256": "2ec3bcd28ab4d4cc12e81a6190a6dd4fb4426d98b7f1cb165e37831401590971"
+      },
+      "achievetodo:abilities/equip_leather_armor": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/equip_leather_armor.json",
+        "sha256": "f857345bf50a21ab55b45a734808924a600e6dd2c93afed13ce07064fb2ef66d"
+      },
+      "achievetodo:abilities/equip_netherite_armor": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/equip_netherite_armor.json",
+        "sha256": "95ef587d165e76468b87cc21ff87b887d62d86a0d74f2b0bd232f0d211c42a97"
+      },
+      "achievetodo:abilities/equip_turtle_helmet": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/equip_turtle_helmet.json",
+        "sha256": "9693602b394bad092a139e4168b4a8a7bfed5f6a5ac440b749ddda69a9d2dc88"
+      },
+      "achievetodo:abilities/get_into_boat": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/get_into_boat.json",
+        "sha256": "0440c02cd895c297d20132e26e06e1bdb6abf0c15d14ab3df90983c258bd1998"
+      },
+      "achievetodo:abilities/get_into_minecart": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/get_into_minecart.json",
+        "sha256": "519bad0c227e67e1b4d81434934ab53082637defb797b559dca88d124db1979e"
+      },
+      "achievetodo:abilities/glide_with_fireworks": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/glide_with_fireworks.json",
+        "sha256": "d27b1827d2cfc0587ec67c514628e88deda955a9d29918cb750dcae6ac452e7c"
+      },
+      "achievetodo:abilities/ignite_tnt": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/ignite_tnt.json",
+        "sha256": "f698f657a394eab68ca891c166bea314b09ee97abbf6c1a8fc1da7466c3d7412"
+      },
+      "achievetodo:abilities/interact_inside_ancient_city": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_ancient_city.json",
+        "sha256": "7ac14556a4404789d14be14ac50a95798db5132c7aafb042af3c9c2f0f90a4dd"
+      },
+      "achievetodo:abilities/interact_inside_bastion_remnant": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_bastion_remnant.json",
+        "sha256": "41a114e419fb6397ded35551c24b8e53b4f84df937650c0cdfa81e8f9788cf01"
+      },
+      "achievetodo:abilities/interact_inside_buried_treasure": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_buried_treasure.json",
+        "sha256": "042baff6b3bab8b423998f7669526c0015adfc7ca384192cd726d18d96c29863"
+      },
+      "achievetodo:abilities/interact_inside_desert_pyramid": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_desert_pyramid.json",
+        "sha256": "5bc1e915ec2368723b297c4d5e941752f601c31b2d31e436534b9ed2d7447c3c"
+      },
+      "achievetodo:abilities/interact_inside_desert_well": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_desert_well.json",
+        "sha256": "474406346814918efaa1ebc5f11fee67c1ae47a41b65cae626112de9ddce8ff6"
+      },
+      "achievetodo:abilities/interact_inside_end_city": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_end_city.json",
+        "sha256": "ca1126f244d645c16eaefc44a26e16fa4d66f68d00dce9dc87502b233fd05fd1"
+      },
+      "achievetodo:abilities/interact_inside_fortress": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_fortress.json",
+        "sha256": "9e313d54b5a695a1c952cb1bb55bf63e91a1a2b1395c47091addc4893faa78e8"
+      },
+      "achievetodo:abilities/interact_inside_igloo": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_igloo.json",
+        "sha256": "863032e6cbd22e30b2f82020bdb109e3aea057b1749c9b432553dce07c2775cd"
+      },
+      "achievetodo:abilities/interact_inside_jungle_pyramid": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_jungle_pyramid.json",
+        "sha256": "cecb152543ef1e7135c86835b977b8ef13979bb16f2630e9bc9e185c5f80de91"
+      },
+      "achievetodo:abilities/interact_inside_mansion": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_mansion.json",
+        "sha256": "cf576669c28e72052756cad528704bb73a2296a03df2241a2ae5d85b27a8f5bb"
+      },
+      "achievetodo:abilities/interact_inside_mineshaft": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_mineshaft.json",
+        "sha256": "166953ec4cc6c25ece529e1728e3d7c903a1849c21a57a0d97dcb4d21f57df58"
+      },
+      "achievetodo:abilities/interact_inside_monster_room": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_monster_room.json",
+        "sha256": "38afe3c608033b4ec0d059c0043e3d49edd73e3699f59e95cce09be4ed036601"
+      },
+      "achievetodo:abilities/interact_inside_monument": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_monument.json",
+        "sha256": "7ee1dc11c3a4a865758607a8ef9843c7aeddacb678f97f1dec414a22f1212ab9"
+      },
+      "achievetodo:abilities/interact_inside_ocean_ruin": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_ocean_ruin.json",
+        "sha256": "dd91c7a56f3f177ca65194ad94f43caea93ab8c6140914b5eabf67f844669d45"
+      },
+      "achievetodo:abilities/interact_inside_pillager_outpost": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_pillager_outpost.json",
+        "sha256": "712276fa51acb14d6fad1295414638e53abb8fcccdfa95bd3b2a1c09ebba9bf6"
+      },
+      "achievetodo:abilities/interact_inside_ruined_portal": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_ruined_portal.json",
+        "sha256": "df1ef239d723264463928d73b6facca78fb6eb121cdcb80f62ce3fc959827534"
+      },
+      "achievetodo:abilities/interact_inside_shipwreck": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_shipwreck.json",
+        "sha256": "f7edf8824da7672959b440d7c58abf70cf85e33bc49abe0bf69fa9757358a85c"
+      },
+      "achievetodo:abilities/interact_inside_stronghold": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_stronghold.json",
+        "sha256": "4691fb490ef9e5a3bd6d93f3ce6f39678f4913ad2f0eda3896710e6f11e6008f"
+      },
+      "achievetodo:abilities/interact_inside_swamp_hut": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_swamp_hut.json",
+        "sha256": "27d6d9b25fbbd42a453854dee3cdb70ef30693acaea35aaf7f1889231b5f9dc0"
+      },
+      "achievetodo:abilities/interact_inside_trail_ruins": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_trail_ruins.json",
+        "sha256": "a3de27461f389588f03a01047ebc9b7daa2bd7aa5c1cb245784adbe9be57cf02"
+      },
+      "achievetodo:abilities/interact_inside_trial_chambers": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_trial_chambers.json",
+        "sha256": "3439705dfb7e335d09c86f936ddb73c0daa1ea0a19317bbfbf89cc36d3c21d50"
+      },
+      "achievetodo:abilities/interact_inside_village": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/interact_inside_village.json",
+        "sha256": "97349dd60d7609f79f61d255bed53e5090e33b0701e6e6e6e6a320a39f73d70a"
+      },
+      "achievetodo:abilities/jump": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/jump.json",
+        "sha256": "022ece2762321c04d8374d7d3343faee8681ecaa0b081ada77d75692430f5eed"
+      },
+      "achievetodo:abilities/open_anvil": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_anvil.json",
+        "sha256": "f64d9bf24b5658e117a7ff81ad10ff55d39e41506f9df5b41c4204afed2163d8"
+      },
+      "achievetodo:abilities/open_barrel": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_barrel.json",
+        "sha256": "15634c5fc28f81b1deda36f4adedea10d898d11ded5de943cd5cc6abac8e0c84"
+      },
+      "achievetodo:abilities/open_beacon": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_beacon.json",
+        "sha256": "6f1c993899b3085ea2ac739eb392daec57a0a1b545133a9c2504c2fcfd9c2c43"
+      },
+      "achievetodo:abilities/open_blast_furnace": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_blast_furnace.json",
+        "sha256": "09e4c1c476de9a5cbe1dff193c895f3cb2a9040a8ddf93aefac39df5efc9921e"
+      },
+      "achievetodo:abilities/open_brewing_stand": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_brewing_stand.json",
+        "sha256": "d496da8e8be3dc244afad4b7531ec2aecd8acd710039320287fc1df12afa05df"
+      },
+      "achievetodo:abilities/open_cartography_table": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_cartography_table.json",
+        "sha256": "5b4e0534e8e6331c7622a0cdb0fd807b4cccd1ebf84971065aed2b8739ee9748"
+      },
+      "achievetodo:abilities/open_chest": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_chest.json",
+        "sha256": "915b6d0708656a510a4758a4f2ce32b6bf6519d49de759f7de3076a1363adc25"
+      },
+      "achievetodo:abilities/open_crafting_table": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_crafting_table.json",
+        "sha256": "8a5c18b2f5b50725b7166cce9da8b943f1d38ae8ecd85a2ccbc6be0e544ff42e"
+      },
+      "achievetodo:abilities/open_door": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_door.json",
+        "sha256": "5dcc4dfec06afff45c16bf2183493c46d78cda45c41f02f494b1128fd26ed483"
+      },
+      "achievetodo:abilities/open_enchanting_table": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_enchanting_table.json",
+        "sha256": "c06208b02b638015fef1e6376a73d9b3f31a977ff557b98fd518600b611a3235"
+      },
+      "achievetodo:abilities/open_ender_chest": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_ender_chest.json",
+        "sha256": "7c2ba83efb0826dbf41a1a629f0dae56916046d6703e5a482577d641f912707f"
+      },
+      "achievetodo:abilities/open_fence_gate": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_fence_gate.json",
+        "sha256": "783ae11a206ae73eb404180da59966767445565f2f225ffdb0a19ab28fb0477d"
+      },
+      "achievetodo:abilities/open_furnace": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_furnace.json",
+        "sha256": "f1cce2ac7cdc9dbde25935bfd082016d40f4a72e4bf4a789aacd3f389c965a0b"
+      },
+      "achievetodo:abilities/open_grindstone": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_grindstone.json",
+        "sha256": "1605ae1068a3138b64fba8baeb4db74a93dd92bc056d80f9b7b0e3f5710a33bf"
+      },
+      "achievetodo:abilities/open_inventory": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_inventory.json",
+        "sha256": "b9a7c446b0e95f88130a5c8b957ce22c1516c144f04f4526d0b71c58df25b66a"
+      },
+      "achievetodo:abilities/open_loom": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_loom.json",
+        "sha256": "a5f41690192bcd843230f81ad67a4f81aaabd24f8df54d6859d6cd46d85103e0"
+      },
+      "achievetodo:abilities/open_shulker_box": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_shulker_box.json",
+        "sha256": "c222d5ff91cfff50eaaf2a170edb9bc8b845d4938e6c79c1465ed208fbabddc4"
+      },
+      "achievetodo:abilities/open_smithing_table": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_smithing_table.json",
+        "sha256": "5b94d5e103c092acbfb4b8b398cd11ff45c29dfac13cd7ae8545c1e954ea9495"
+      },
+      "achievetodo:abilities/open_smoker": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_smoker.json",
+        "sha256": "f78ed6ae96c2be8616444bd5a1219e5603e9bb34679d18e41506e8dd8d451179"
+      },
+      "achievetodo:abilities/open_stonecutter": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_stonecutter.json",
+        "sha256": "a332d965543360d86a0fd498ed4ea8b8731bb192d21e6a91e98dd783c08e8d3d"
+      },
+      "achievetodo:abilities/open_trapdoor": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/open_trapdoor.json",
+        "sha256": "58e5387a0b049c8d4897fb50467fab41a659718719e339687af6dd835517df03"
+      },
+      "achievetodo:abilities/place_end_crystal": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/place_end_crystal.json",
+        "sha256": "5c17837f46cfbf892df016019e6357a9b599da343b5ac11136134307592b511c"
+      },
+      "achievetodo:abilities/put_in_bundle": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/put_in_bundle.json",
+        "sha256": "19d7e31a8e4d1cd7780712c84dceee3418d289b688817cecd2f95e1bd80477d9"
+      },
+      "achievetodo:abilities/root": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/root.json",
+        "sha256": "4f30dbe34e412dbc4da8cbf661324b5a2fab78919652d5c7e1a551e5208c9c48"
+      },
+      "achievetodo:abilities/shoot_bow": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/shoot_bow.json",
+        "sha256": "9b1361cbfdbf6b6451c63eed3a1658c6fc17ea46c35170e1a99c5cc494bea601"
+      },
+      "achievetodo:abilities/shoot_crossbow": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/shoot_crossbow.json",
+        "sha256": "24dd55895b6cd445f34c3714bc372e4a385eda0e264957f3f0dd14fad7fc8c27"
+      },
+      "achievetodo:abilities/sleep": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/sleep.json",
+        "sha256": "f5126561439bd010faba1e3aae211b92729c33b746cace0e97df3e04e3a4b18a"
+      },
+      "achievetodo:abilities/sneak": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/sneak.json",
+        "sha256": "62ce652106919ae5a713354c2ab42ebfd4296e74c0d2ade5d533312284223e8a"
+      },
+      "achievetodo:abilities/sprint": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/sprint.json",
+        "sha256": "218ceefa649b9b46e516f95343e2081f0fab02f3a1ccdf53f9ac0c2bc50fe2a7"
+      },
+      "achievetodo:abilities/swim": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/swim.json",
+        "sha256": "fd8116d2f6fc4561f78f0e1d7352fe61bcdc0f38036b82da365b1a48dd4f3db1"
+      },
+      "achievetodo:abilities/teleport_outer_islands": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/teleport_outer_islands.json",
+        "sha256": "933d9eabebdd47fa96b2c5b1d29f61200d1ca608bd7d7c5dff6f4c35ec17b849"
+      },
+      "achievetodo:abilities/throw_egg": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/throw_egg.json",
+        "sha256": "7702dc54bc9b058d4a1b64ca1fc816be24a89aadf4e9fceaa0c25bb3d59f56fc"
+      },
+      "achievetodo:abilities/throw_ender_pearl": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/throw_ender_pearl.json",
+        "sha256": "c34995962992bf49dd7e66e2cf4d3a69de734743fd8434ea31fdf3cb6baddfaa"
+      },
+      "achievetodo:abilities/throw_snowball": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/throw_snowball.json",
+        "sha256": "9cfb23187b6027116ff563fee89a15defb5a9fb5a521a08b8cf1b64c0e03c8d6"
+      },
+      "achievetodo:abilities/throw_wind_charge": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/throw_wind_charge.json",
+        "sha256": "539bc8a91af7371c26ce3c0915173d6e7e35998cab2aabc892375ddd5789a1bc"
+      },
+      "achievetodo:abilities/trade_with_armorer": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_armorer.json",
+        "sha256": "e24c7e7fbffb3d6cb1543e0c55bca5485eee6edc767b9187e2aad11cd3bdfcf9"
+      },
+      "achievetodo:abilities/trade_with_butcher": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_butcher.json",
+        "sha256": "660950023ca85e094b97b53e35b0531b78247187221a6020e98d9d64534881f8"
+      },
+      "achievetodo:abilities/trade_with_cartographer": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_cartographer.json",
+        "sha256": "e6f534baf88f65deffdf49a7bdd1caef3804bcb033ae7ece762bf3c157cde9e5"
+      },
+      "achievetodo:abilities/trade_with_cleric": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_cleric.json",
+        "sha256": "ab7ceeed3b521a9d1c05e49036a1ccc18d05d5ff80c8651696b09458016d50a6"
+      },
+      "achievetodo:abilities/trade_with_farmer": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_farmer.json",
+        "sha256": "e4e50124639854d71e715e762625c4c706e2e27fa1987f3d85170ef2e74db250"
+      },
+      "achievetodo:abilities/trade_with_fisherman": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_fisherman.json",
+        "sha256": "8288c0de3aeefd660f999c5d1c2bda4f625a96ce34ca809090c2406ce4bb60ef"
+      },
+      "achievetodo:abilities/trade_with_fletcher": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_fletcher.json",
+        "sha256": "28fad08fd1f7df47b83476327638a77ebdd5df93f801e0d734f89cf337eab7e8"
+      },
+      "achievetodo:abilities/trade_with_leatherworker": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_leatherworker.json",
+        "sha256": "c84c1fbb9410d97ce548723ea152fdd764fe905a07eb0d6fe9d485f87f6fe0c6"
+      },
+      "achievetodo:abilities/trade_with_librarian": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_librarian.json",
+        "sha256": "7070196a853d33b04eced97aa26f821530584f55b91fe248e1c54dc190724003"
+      },
+      "achievetodo:abilities/trade_with_mason": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_mason.json",
+        "sha256": "d55d7372965d90d452f5e16f5c1d71a2d1305785189f0ec598edabe7a82aff2a"
+      },
+      "achievetodo:abilities/trade_with_shepherd": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_shepherd.json",
+        "sha256": "285eb75ce2a639c55b3800396618328f5c8f6e3993b304ea08c96152e88338a3"
+      },
+      "achievetodo:abilities/trade_with_toolsmith": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_toolsmith.json",
+        "sha256": "ac885c9fc9a5137a199b26bafe4117e8cae086c345b7b79da737922b293fa013"
+      },
+      "achievetodo:abilities/trade_with_wandering_trader": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_wandering_trader.json",
+        "sha256": "d56ef03ae4628f064e065ccf6115efa7ebccc38a8262f22215a792f232670a97"
+      },
+      "achievetodo:abilities/trade_with_weaponsmith": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/trade_with_weaponsmith.json",
+        "sha256": "b73cea633d4988de77c0cb18605945355040e7a5b8ed9f290ad6d1baa95d7ecd"
+      },
+      "achievetodo:abilities/unlock_vault": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/unlock_vault.json",
+        "sha256": "b0d22e12b2b7f4520e318630d562603cb0a537521b3fe23f9a05c7c420848ae2"
+      },
+      "achievetodo:abilities/use_brush": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_brush.json",
+        "sha256": "517c45c75ea034648a564af46735fbc70244bdb24e4791fb7ace6a1b017a2ce9"
+      },
+      "achievetodo:abilities/use_campfire": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_campfire.json",
+        "sha256": "0899545df1940d1d5d55138c8674e72adae89ca22a727f07e8fde79abcab6d67"
+      },
+      "achievetodo:abilities/use_cauldron": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_cauldron.json",
+        "sha256": "038a25e02d330a7b59eb873a5efa0ffe8188f78a67855f7af50c396778d09f72"
+      },
+      "achievetodo:abilities/use_composter": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_composter.json",
+        "sha256": "f3d2fc096ed09cdd76479bcd00d9fb33979d6e8258570e0a3d1d02f687abcd0b"
+      },
+      "achievetodo:abilities/use_diamond_tools": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_diamond_tools.json",
+        "sha256": "67d15a1a176a6b01dfcc0235eca93ac4c547842fef1cfdec0d38b92ed0e3dca6"
+      },
+      "achievetodo:abilities/use_ender_eye": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_ender_eye.json",
+        "sha256": "5efa2aa16ab5b4b791609f9f3e701aed32634b9e122ed337dd43f15d76ce4306"
+      },
+      "achievetodo:abilities/use_fishing_rod": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_fishing_rod.json",
+        "sha256": "f99d4e5f06784f98f025e599c9f14cd0789d9a09e16c6ff54c60e309fa044ef6"
+      },
+      "achievetodo:abilities/use_flint_and_steel": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_flint_and_steel.json",
+        "sha256": "1ea85bf9a7aa6dfda9bb751e9b13163e2478de8ba6c4e6bb30838aac0d15a0e7"
+      },
+      "achievetodo:abilities/use_golden_tools": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_golden_tools.json",
+        "sha256": "dec3d9e41fba466d5374e0f9f5b1514a331105bb683a0c491fccb832d38976d9"
+      },
+      "achievetodo:abilities/use_iron_tools": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_iron_tools.json",
+        "sha256": "6b39c8665b793d00b4035fc689465e9d0d137a0af0f61424a60eb78401e73024"
+      },
+      "achievetodo:abilities/use_jukebox": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_jukebox.json",
+        "sha256": "d98cc1ff5d67d8487cc4d055707ce93ac5c29d254bdff13379807d7f4b28975e"
+      },
+      "achievetodo:abilities/use_netherite_tools": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_netherite_tools.json",
+        "sha256": "0f63f6386269594070c02f2437b1e03795c57d517c148429d9aa2e008a2c2718"
+      },
+      "achievetodo:abilities/use_ominous_bottle": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_ominous_bottle.json",
+        "sha256": "b538b115930de045d6bc7a98fbf0ced228bfa10490f90bdbb67161f398b9d679"
+      },
+      "achievetodo:abilities/use_shears": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_shears.json",
+        "sha256": "2652e64ae76ab90f86ccbe16ec7f2da1de31cf450502ddbdc6c32a82ab10d3ed"
+      },
+      "achievetodo:abilities/use_shield": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_shield.json",
+        "sha256": "4239f40ec4d710b10c6be3a38f087671f9ad32f5ef1d81a93c88f338f6a850f5"
+      },
+      "achievetodo:abilities/use_spyglass": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_spyglass.json",
+        "sha256": "df02ae03b0aec2ee4d6f163fd2dc9cc069a1ef70eeac8b0e56921e11f7125784"
+      },
+      "achievetodo:abilities/use_stone_tools": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_stone_tools.json",
+        "sha256": "cb163f460a76d3ecf6642751e075b96eafba0276a8d872c2d4feafe07bdf627c"
+      },
+      "achievetodo:abilities/use_water_bucket": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_water_bucket.json",
+        "sha256": "124401402f7f0e2f5a647d9d22aefdf4ac0868d01f2134abf220c19bb7eb324a"
+      },
+      "achievetodo:abilities/use_wooden_tools": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/use_wooden_tools.json",
+        "sha256": "c6efa57d29a8bd451c2edd8b68722d4d49aa21b871decf7a840b88598a37ffca"
+      },
+      "achievetodo:abilities/vision": {
+        "path": "src/main/generated/data/achievetodo/advancement/abilities/vision.json",
+        "sha256": "6a198b9f4ed49c39a45ecd5f2d450f4fe6a9db168cd463e7a34863af147de3a5"
+      }
+    },
+    "additionalCount": 152,
+    "additionalOrigin": "ALWAYS_ENABLED_ATD_PRODUCTION_BASE_PACK",
+    "testModAdvancementCount": 0,
+    "unexplainedAdditionalIds": [],
+    "countGatePassed": false,
+    "b8LayerOrderOmitsBaseModPack": true,
+    "productionSelectionFaithful": true
+  },
+  "requiredResolution": "Define the B10 live-count contract to include the exact always-enabled ATD production advancement set, or explicitly authorize reporting the B8 core separately from the full live manager. Do not delete or exclude ATD abilities to obtain 2894.",
+  "mainSmoke": {
+    "result": "NOT_EXECUTED",
+    "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+    "certified": false,
+    "joinedPlayer": false,
+    "sixRawObjectives": "NOT_CERTIFIED",
+    "chosenAdvancement": null,
+    "criterionProgressWitness": null,
+    "rawScoreWitness": null,
+    "firstDuplicateWitness": null,
+    "rootMacroWitness": null,
+    "abilityThresholdWitness": null
+  },
+  "searchSmoke": {
+    "result": "NOT_EXECUTED",
+    "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+    "certified": false,
+    "ordinaryMessageWitness": null,
+    "potionRootWitness": null,
+    "clientUiClaimed": false,
+    "clientUiStatus": "CLIENT_SEARCH_UI_NOT_CLAIMED"
+  },
+  "b8R2RuntimeWitnesses": {
+    "BadFeeling": {
+      "result": "NOT_EXECUTED",
+      "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+      "certified": false
+    },
+    "TurtleArmy": {
+      "result": "NOT_EXECUTED",
+      "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+      "certified": false
+    },
+    "Dogfight": {
+      "result": "NOT_EXECUTED",
+      "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+      "certified": false
+    },
+    "PotionRoot": {
+      "result": "NOT_EXECUTED",
+      "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+      "certified": false
+    }
+  },
+  "companions": {
+    "HARDCORE": {
+      "result": "NOT_EXECUTED",
+      "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+      "certified": false
+    },
+    "TERRALITH": {
+      "result": "NOT_EXECUTED",
+      "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+      "certified": false
+    },
+    "AMPLIFIED_NETHER": {
+      "result": "NOT_EXECUTED",
+      "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+      "certified": false
+    },
+    "NULLSCAPE": {
+      "result": "NOT_EXECUTED",
+      "reason": "STOP_AT_MAIN_LIVE_COUNT_CONTRACT",
+      "certified": false
+    }
+  },
+  "logAudit": {
+    "scope": "Fresh MAIN only",
+    "unexplainedAtdBacapResourceErrors": 0,
+    "resourceCommandParseErrors": 0,
+    "classifiedEvents": [
+      {
+        "event": "OSHI Perflib 009 exception",
+        "classification": "HOST_DIAGNOSTIC_COUNTER_LOOKUP",
+        "productError": false
+      },
+      {
+        "event": "Missing fresh server.properties / eula.txt",
+        "classification": "FRESH_GAME_TEST_DIRECTORY_INITIALIZATION; server starts normally",
+        "productError": false
+      },
+      {
+        "event": "Fabric item-tag translation dev warning / tick lag",
+        "classification": "NON_FATAL_DEVELOPMENT_RUNTIME_WARNING",
+        "productError": false
+      },
+      {
+        "event": "java.lang.IllegalStateException: live count mismatch: 3046",
+        "classification": "B10_COUNT_ORACLE_GATE_FAILURE",
+        "productErrorProven": false
+      }
+    ],
+    "otherCompositionsAudited": false
+  },
+  "compileGametestJava": {
+    "result": "GREEN",
+    "command": ".\\gradlew.bat --no-daemon --offline compileGametestJava processGametestResources -x generateBuildConfig",
+    "logSha256": "9933915bec88528cd4dcd1abc02a40a4296927b1dda7817422d3654a3986c849"
+  },
+  "B9FilteredJUnit": {
+    "errors": 0,
+    "failures": 0,
+    "names": [
+      "com.diskree.achievetodo.client.PhaseBBacapSearchTreeResourceTest.potionRootTargetsItsOwnTabAndAnnouncesOnce()",
+      "com.diskree.achievetodo.client.PhaseBBacapSearchTreeResourceTest.allCurrentMessagesAndSearchViewsRemainCertified()",
+      "com.diskree.achievetodo.client.PhaseBBacapSearchTreeResourceTest.currentDescriptionKeysResolveWithoutPruningHistoricalRuEntries()",
+      "com.diskree.achievetodo.client.PhaseBBacapSearchTreeResourceTest.orderedTreeKeepsThreeMapsAnd27Entries()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.nativeMainOnlySuppressesAnnouncements()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.actualSourceIdentityIsDistinctFromCurrentPin()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.historicalGlowHoneyPayloadAndBothShaIdentitiesArePreserved()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.rootDigestAndEveryMarkerFieldFailClosed()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.currentR19AuthorityIsExact()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.historicalFamiliesAndModernCorporaHaveNoUnexpectedDrift()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.currentB7OracleIsM2AndHistoricalSnapshotRemainsDistinct()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.currentB8ReceiptAndToolAuthoritiesRemainExact()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.verifiedCurrentSourceRepairsEveryStaleWorldFixture()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.bothTerralithHelpersUseRealAdvancementCodec()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.nativeHardcoreOnlySuppressesAnnouncements()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.treasureHunterNativeTagCodecRejectsObsoleteR16Rewrite()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.legacyPlayerMigrationIsScopedHistoricalOnlyAndIdempotent()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.nativeSelectedPolicySecondPassIsByteIdempotent()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.allHistoricalSecondPassesAreByteIdempotent()",
+      "com.diskree.achievetodo.tracking.PhaseBBacapTrackerContractTest.reviewedRailAndHalfHeartSpecialCasesRemainExact()",
+      "com.diskree.achievetodo.tracking.PhaseBBacapTrackerContractTest.all86BindingsRemainBoundToCurrentProductionDefinitions()",
+      "com.diskree.achievetodo.tracking.PhaseBBacapTrackerContractTest.updatedScoreAndBreedingContractsAreCurrent()",
+      "com.diskree.achievetodo.tracking.PhaseBBacapTrackerContractTest.nearbySetsAndRadiiRetainExactTargetContracts()"
+    ],
+    "passed": true,
+    "skipped": 0,
+    "tests": 23
+  },
+  "diffCheck": {
+    "result": "PASS",
+    "exitCode": 0
+  },
+  "runtimeProductDelta": {
+    "ADD": 0,
+    "MODIFY": 0,
+    "DELETE": 0
+  },
+  "uniqueCumulativeRuntimeDiff": {
+    "ADD": 177,
+    "MODIFY": 69,
+    "DELETE": 9
+  },
+  "uniqueRuntimePaths": 255,
+  "testInfrastructureArtifacts": {
+    "src/gametest/resources/achievetodo-b10.mixins.json": "b7e43d37ec7dc918f75ca34a6ae6c4da1a1cfd9bb206b73e434ab80f0c27b62a",
+    "src/gametest/java/com/diskree/achievetodo/certification/PhaseBRuntimeSmoke.java": "da91467ff45a4281d8ddd3c1a941946bdd4f7e6a02b302d337ddaa587f7fad8b",
+    "src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10GameTestServerMixin.java": "7d3e55fdfdd76116d380cfe40d72586c9295bbb2be73ddca7b7306b246da6787",
+    "src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10HistoricalBootstrapIsolationMixin.java": "b6a0536da48464b8e4e509aa15a7cba1b13afeb0ca0c8aab575e2a9e9c02f02c",
+    "src/gametest/java/com/diskree/achievetodo/injection/mixin/gametest/B10MixinPlugin.java": "019df72c22c534314de4f7135da5f685e5c15aab6baed730c86d3a97eb3512ce",
+    "tools/phase_b/b10_runtime_smoke.py": "fbd4fb9bd06de23dd36c4a650002d3d0f034ab98e3efe4f557450d61e8ad2f5b"
+  },
+  "readyForB11": false,
+  "safety": {
+    "B9": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 23
+    },
+    "buildGradleUnchanged": true,
+    "evidenceFilesChecked": 52,
+    "existingRegistrationEntriesAndOrderUnchanged": true,
+    "historicalGameTestBodiesUnchanged": true,
+    "priorEvidenceUnchanged": true,
+    "productDiff": {
+      "A": 177,
+      "D": 9,
+      "M": 69
+    },
+    "runtimeBytesUnchanged": true,
+    "runtimeFilesChecked": 1923,
+    "testFilesChecked": 271,
+    "testFilesUnchanged": true,
+    "branch": "phase-b-bacap-26.2",
+    "head": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+    "marker": "compat_26_2_r19",
+    "nothingStaged": true,
+    "srcMainWrites": false,
+    "srcTestWrites": false,
+    "frozenArchivesChanged": false,
+    "priorEvidenceModified": false,
+    "pinsChanged": false,
+    "converterChanged": false,
+    "localizationChanged": false,
+    "abilityBalanceChanged": false,
+    "progressMigration": false,
+    "commit": false,
+    "push": false,
+    "tag": false,
+    "githubMutation": false,
+    "B11Started": false,
+    "B12Started": false,
+    "B13Started": false
+  }
+}

@@ -1,0 +1,2022 @@
+{
+  "B7Current": {
+    "dictionaryKeys": 3482,
+    "effectiveCoverage": {
+      "amplifiedNether": {
+        "missing": [],
+        "required": 3699,
+        "resolved": 3699
+      },
+      "hardcore": {
+        "missing": [],
+        "required": 3699,
+        "resolved": 3699
+      },
+      "main": {
+        "missing": [],
+        "required": 3699,
+        "resolved": 3699
+      },
+      "nullscape": {
+        "missing": [],
+        "required": 3702,
+        "resolved": 3702
+      },
+      "terralith": {
+        "missing": [],
+        "required": 3753,
+        "resolved": 3753
+      }
+    },
+    "exactHistoricalTransition": {
+      "currentOnly": [],
+      "currentRequirements": 4301,
+      "effectiveViewDeltas": {
+        "amplifiedNether": {
+          "currentOnly": [],
+          "delta": -3,
+          "historicalOnly": [
+            "Collect a stack of scutes",
+            "Kill a Skeleton or Stray while both you and it have levitation",
+            "Kill a raid captain. Maybe consider staying away from villages for the time being..."
+          ]
+        },
+        "hardcore": {
+          "currentOnly": [],
+          "delta": -3,
+          "historicalOnly": [
+            "Collect a stack of scutes",
+            "Kill a Skeleton or Stray while both you and it have levitation",
+            "Kill a raid captain. Maybe consider staying away from villages for the time being..."
+          ]
+        },
+        "main": {
+          "currentOnly": [],
+          "delta": -3,
+          "historicalOnly": [
+            "Collect a stack of scutes",
+            "Kill a Skeleton or Stray while both you and it have levitation",
+            "Kill a raid captain. Maybe consider staying away from villages for the time being..."
+          ]
+        },
+        "nullscape": {
+          "currentOnly": [],
+          "delta": -3,
+          "historicalOnly": [
+            "Collect a stack of scutes",
+            "Kill a Skeleton or Stray while both you and it have levitation",
+            "Kill a raid captain. Maybe consider staying away from villages for the time being..."
+          ]
+        },
+        "terralith": {
+          "currentOnly": [],
+          "delta": -3,
+          "historicalOnly": [
+            "Collect a stack of scutes",
+            "Kill a Skeleton or Stray while both you and it have levitation",
+            "Kill a raid captain. Maybe consider staying away from villages for the time being..."
+          ]
+        }
+      },
+      "historicalCertifiedExtraction": {
+        "path": "build/tmp/phase_b_b7/post_r1/independent_extraction.json",
+        "sha256": "f918655abbe0e17a41974a23de5b593602eab9207d012a29a1356e271bc89bc8"
+      },
+      "historicalOnly": [
+        "Collect a stack of scutes",
+        "Kill a Skeleton or Stray while both you and it have levitation",
+        "Kill a raid captain. Maybe consider staying away from villages for the time being..."
+      ],
+      "historicalRequirements": 4304,
+      "placeholderAdded": [],
+      "placeholderRemoved": [
+        "Collect a stack of scutes",
+        "Kill a Skeleton or Stray while both you and it have levitation",
+        "Kill a raid captain. Maybe consider staying away from villages for the time being..."
+      ],
+      "potionTranslationKeySetUnchanged": true,
+      "providerDelta": {
+        "ATD_RU_DICTIONARY": 0,
+        "INTENTIONALLY_LANGUAGE_NEUTRAL": 0,
+        "MINECRAFT_RU_OVERLAY": -3,
+        "VANILLA_26_2_RU": 0
+      },
+      "replacements": [
+        {
+          "new": "Kill a raid captain. I’d warn against drinking that bottle they dropped…",
+          "newCurrentConsumers": 10,
+          "newPlaceholderPassed": true,
+          "newProvenanceOwner": "RETAINED_PHASE_A",
+          "newProvider": "MINECRAFT_RU_OVERLAY",
+          "old": "Kill a raid captain. Maybe consider staying away from villages for the time being...",
+          "oldAvailableInRu": true,
+          "oldCurrentConsumers": 0
+        },
+        {
+          "new": "Collect a stack of Turtle Scutes",
+          "newCurrentConsumers": 10,
+          "newPlaceholderPassed": true,
+          "newProvenanceOwner": "RETAINED_PHASE_A",
+          "newProvider": "MINECRAFT_RU_OVERLAY",
+          "old": "Collect a stack of scutes",
+          "oldAvailableInRu": true,
+          "oldCurrentConsumers": 0
+        },
+        {
+          "new": "Kill a Skeleton while both you and it have levitation",
+          "newCurrentConsumers": 10,
+          "newPlaceholderPassed": true,
+          "newProvenanceOwner": "RETAINED_PHASE_A",
+          "newProvider": "MINECRAFT_RU_OVERLAY",
+          "old": "Kill a Skeleton or Stray while both you and it have levitation",
+          "oldAvailableInRu": true,
+          "oldCurrentConsumers": 0
+        }
+      ],
+      "unexpectedAdded": [],
+      "unexpectedRemoved": []
+    },
+    "placeholders": 4290,
+    "provenance": {
+      "bsdNotice": {
+        "attributionPreserved": true,
+        "availableFiles": [
+          "DISCLAIMER.txt",
+          "pack.mcmeta",
+          "pack.png",
+          "README.md",
+          "assets/minecraft/lang/base_language_file.json",
+          "assets/minecraft/lang/ru_ru.json"
+        ],
+        "canonicalTemplateExact": true,
+        "disclaimerExact": true,
+        "inventedHolderOrYear": false,
+        "limitation": "NOTICE_SOURCE_INCOMPLETE_UPSTREAM",
+        "path": "licenses/bacap-rus-translate/LICENSE",
+        "result": "PASS_WITH_DOCUMENTED_LIMITATION",
+        "sha256": "d0f06f79ec97de797d9311587945d1475260778d066f54f5e7686aa48a981e69"
+      },
+      "duplicates": 0,
+      "englishLeaks": {
+        "acceptedExceptions": [
+          {
+            "key": "As a child you yearned for the Craftmines... perhaps a bit too much",
+            "reason": "Exact mod/track/game names, acronym, or Roman numeral; remaining prose is Russian.",
+            "tokens": [
+              "Craftmine."
+            ]
+          },
+          {
+            "key": "Dragon vs Dragon II: Electric Boogaloo",
+            "reason": "Exact mod/track/game names, acronym, or Roman numeral; remaining prose is Russian.",
+            "tokens": [
+              "II"
+            ]
+          },
+          {
+            "key": "Find the Bounce music disc in an Abandoned Mineshaft that intersects with a Sulfur Cave",
+            "reason": "Exact mod/track/game names, acronym, or Roman numeral; remaining prose is Russian.",
+            "tokens": [
+              "Bounce"
+            ]
+          },
+          {
+            "key": "M.O.A.B stands for Massive Ornary Air Blimp, not Mother Of All Bloons",
+            "reason": "Exact mod/track/game names, acronym, or Roman numeral; remaining prose is Russian.",
+            "tokens": [
+              "M.O.A.B."
+            ]
+          },
+          {
+            "key": "M.O.A.B.",
+            "reason": "Exact mod/track/game names, acronym, or Roman numeral; remaining prose is Russian.",
+            "tokens": [
+              "M.O.A.B."
+            ]
+          },
+          {
+            "key": "Obtain Thorns III on a piece of armour",
+            "reason": "Exact mod/track/game names, acronym, or Roman numeral; remaining prose is Russian.",
+            "tokens": [
+              "III"
+            ]
+          },
+          {
+            "key": "Sneak and sprint on sculk with Speed II while wearing Swift Sneak III leggings. Try saying that six times swiftly",
+            "reason": "Exact mod/track/game names, acronym, or Roman numeral; remaining prose is Russian.",
+            "tokens": [
+              "II",
+              "III"
+            ]
+          },
+          {
+            "key": "The mod in question is named Advancement Info Reloaded, which displays the requirements that have been completed on each advancement.",
+            "reason": "Exact mod/track/game names, acronym, or Roman numeral; remaining prose is Russian.",
+            "tokens": [
+              "Advancement",
+              "Info",
+              "Reloaded"
+            ]
+          },
+          {
+            "key": "You are currently eligible for Dragon vs Dragon II: Electric Boogaloo. Defeat the Ender Dragon without taking off your Dragon Head or touching the ground to achieve it!",
+            "reason": "Exact mod/track/game names, acronym, or Roman numeral; remaining prose is Russian.",
+            "tokens": [
+              "II"
+            ]
+          }
+        ],
+        "checked": 296,
+        "genuineLeaks": []
+      },
+      "evidenceQuirk": {
+        "actualLicense": "CC0-1.0",
+        "bucketCount": 0,
+        "classification": "EVIDENCE_LABEL_ONLY",
+        "label": "BETTER_RU_BSD_2_CLAUSE",
+        "licenseUseImpact": "NONE",
+        "runtimeImpact": "NONE"
+      },
+      "hashMismatch": 0,
+      "missing": 0,
+      "officialPermission": {
+        "passed": true,
+        "path": "reference/localization/phase_a_ru_full_reaudit_summary.json",
+        "projectSpecific": true,
+        "sha256": "1e50f4f16caa9ee70d3b6913c134352c4dd80be852e7bbef1bb281c66dab8a06"
+      },
+      "partition": {
+        "MANUAL_B6": 64,
+        "OFFICIAL_LP_1_21_PERMISSION": 211,
+        "OTHER_PERMITTED_SOURCE": 21,
+        "RETAINED_PHASE_A": 3186
+      },
+      "sourceIdentities": [
+        {
+          "archiveSha256": "63b82a4251cac526f9677480f3ba14a1f93fab89206c29004fe63adfb44ca864",
+          "license": "LicenseRef-All-Rights-Reserved",
+          "metadataSha256": "cb74cc8de6b56e075fb4040857f83dc20e0f77c94d745b1585d9b8545c1c22a0",
+          "projectId": "YX5bAAJN",
+          "sourceDuplicateKeys": [
+            "On A Rail",
+            "Reach 1000 experience levels",
+            "Super Challenges",
+            "Zork Chop",
+            "Stink Bomb",
+            "Advancement Scoreboard Display Settings",
+            "Discover every cave biome",
+            "Thank you for your patience and understanding."
+          ],
+          "sourceDuplicatePolicy": "Last declaration wins, matching runtime JSON parsing; final product dictionary separately rejects duplicates.",
+          "version": "1.21",
+          "versionId": "hsqY3G3V"
+        },
+        {
+          "archiveSha256": "d232eae263de9d643438caad44a3557f08735b8727770edd3c7fe904877adc89",
+          "license": "BSD-2-Clause",
+          "metadataSha256": "619897c3184e188238e3985ba52a40ba55ada5fcc71d96a1e7172a599e234533",
+          "projectId": "47BuT3SL",
+          "sourceDuplicateKeys": [],
+          "sourceDuplicatePolicy": "Last declaration wins, matching runtime JSON parsing; final product dictionary separately rejects duplicates.",
+          "version": "26.2",
+          "versionId": "ULq4UdnT"
+        },
+        {
+          "archiveSha256": "b25db2b87c675041cd002fa0a631e724b99a66c23e388642aed122aec16b50b6",
+          "license": "CC0-1.0",
+          "metadataSha256": "666ae93c727e233061942d859fa4d3f82c5facef4301c1b0ca0b35f3bb04281b",
+          "projectId": "yiLJxtqH",
+          "sourceDuplicateKeys": [
+            "_comment"
+          ],
+          "sourceDuplicatePolicy": "Last declaration wins, matching runtime JSON parsing; final product dictionary separately rejects duplicates.",
+          "version": "2.3",
+          "versionId": "uzX2ogEd"
+        },
+        {
+          "archiveSha256": "6d0c3801c5d61d4d9adeae71fb7770163d3c59edc5ea630ec9327075c5d9dc63",
+          "license": "BSD-2-Clause",
+          "metadataSha256": "7b4ce9b2867d5904fd6e58adb7c82b82e1bac350277518a576e7f5f251a4d92d",
+          "projectId": "DlwNJUii",
+          "sourceDuplicateKeys": [
+            "Monstrous Music",
+            "Play Note Blocks with each type of mob head above it",
+            "Bamboozled",
+            "Craft every item made out of bamboo wood",
+            "Cherry Bomb",
+            "Craft every item made out of cherry wood",
+            "Shelf Expression",
+            "Fill a Chiseled Bookshelf with books",
+            "The Power of Books",
+            "Read the power signal of a Chiseled Bookshelf using a comparator"
+          ],
+          "sourceDuplicatePolicy": "Last declaration wins, matching runtime JSON parsing; final product dictionary separately rejects duplicates.",
+          "version": "3",
+          "versionId": "wNkafeLO"
+        },
+        {
+          "archiveSha256": "3ecb5be40e25453f4a65a346196ee0c62201861332b7d7eeb0be11e07d286222",
+          "license": "CC-BY-4.0",
+          "metadataSha256": "1aa5bce7a6d71b12c4fe24134baa7380b2c8977d96740ec869dc898dcb1479a8",
+          "projectId": "CGFOvwcX",
+          "sourceDuplicateKeys": [],
+          "sourceDuplicatePolicy": "Last declaration wins, matching runtime JSON parsing; final product dictionary separately rejects duplicates.",
+          "version": "2.9.2",
+          "versionId": "BItBGCl9"
+        }
+      ]
+    },
+    "providers": {
+      "ATD_RU_DICTIONARY": 533,
+      "INTENTIONALLY_LANGUAGE_NEUTRAL": 11,
+      "MINECRAFT_RU_OVERLAY": 3432,
+      "VANILLA_26_2_RU": 325
+    },
+    "requirements": 4301,
+    "toolHash": "032c866f0eca68dbf7508c86034f00d6a06bf52f98e43efdee2c52e7fbc5a732"
+  },
+  "B7Historical": {
+    "immutable": true,
+    "overlayProviders": 3435,
+    "placeholders": 4293,
+    "requirements": 4304
+  },
+  "B8Lock": {
+    "canonical": 1242,
+    "effectiveCodecs": {
+      "amplifiedNether": {
+        "advancementInputsSha256": "253657dc73747ddee1c60702e886f4c1a4c9aad402a6faf0e4a3b5702ff6707f",
+        "checked": 2894,
+        "failed": 0,
+        "negativeControlRejected": true,
+        "passed": 2894,
+        "resourceContextSha256": "987d282d43d1b0f84d85a5ae8a2d5ebe266601b1d920480e6fb330f1a39a6b7e",
+        "resultSha256": "1654c343a9e0f599947a3c2c5cb7da774f582fa5a26942c59b4aaa864ab16c44"
+      },
+      "hardcore": {
+        "advancementInputsSha256": "1eb6140f626eb3dab7729e3fe84fefa3742fed9d3e5f7a7fe4bb5c72f1f11970",
+        "checked": 2894,
+        "failed": 0,
+        "negativeControlRejected": true,
+        "passed": 2894,
+        "resourceContextSha256": "68e39c19d63c9b2c4f3271227e78e25d0e43d9679e5d2a16fe53bd0cb9e0259e",
+        "resultSha256": "dee63dc80d23363d2a987cee565b884f9bdca916f27ed4a0a27ec499d245ebcb"
+      },
+      "main": {
+        "advancementInputsSha256": "2dd09d7138004709c3f540f8f5ff72810cc1681bf64318a35277a780ae1a8bed",
+        "checked": 2894,
+        "failed": 0,
+        "negativeControlRejected": true,
+        "passed": 2894,
+        "resourceContextSha256": "5114df18e55b3c32fe27c8624db6a9c810e125ba503c480150db0b781ce23117",
+        "resultSha256": "dee63dc80d23363d2a987cee565b884f9bdca916f27ed4a0a27ec499d245ebcb"
+      },
+      "nullscape": {
+        "advancementInputsSha256": "d55c31fc04afea7a1e1416078a4390393d52347da8102890b8e98027c380b569",
+        "checked": 2895,
+        "failed": 0,
+        "negativeControlRejected": true,
+        "passed": 2895,
+        "resourceContextSha256": "5fe3c5dd908a8c38f0dfab669cfbfbf9b673ffb47f3d697b693bfdf232bb5f90",
+        "resultSha256": "046f60db58c11f7e9a49e99cd498ee6517449ec63333da39b911879b01a50a15"
+      },
+      "target": {
+        "advancementInputsSha256": "d1e42bd659af40e4256b881da4e4d6e661bf719ec25deb647232cb45aac5d319",
+        "checked": 1332,
+        "failed": 0,
+        "negativeControlRejected": true,
+        "passed": 1332,
+        "resourceContextSha256": "83c2d4f99f26e7be15271266f936c9a569589b786eed4dc9db676f3382ef5ac6",
+        "resultSha256": "e9f4e7978a3e9f5e2d300160fe9b25e97c600075436d4ddfb7c6f37e8fe86205"
+      },
+      "terralith": {
+        "advancementInputsSha256": "19757c09dbebf2d089003b9b724687754d7713535e430d2fca6925525f90b484",
+        "checked": 2922,
+        "failed": 0,
+        "negativeControlRejected": true,
+        "passed": 2922,
+        "resourceContextSha256": "00caa904cf1844e26335d7b536c5bebb5f193902f43ea6959cca5843352cbd34",
+        "resultSha256": "98189be9f42fcc433ebadfa268d110ae8099ef51b6d8030a5491efb188831f32"
+      }
+    },
+    "gui": 27,
+    "malformed": 0,
+    "messages": 1300,
+    "missingRewards": 0,
+    "receiptHashes": {
+      "bacap_1_21_codec_receipt.json": "eeddcb746eefe5175be3d1b2e9c30fe2cdfb99b79d2e8d290d00346aa9333a38",
+      "bacap_1_21_static_receipt.json": "204b79d5ced64f57a85f2ff8981d8216f8e8e6b3f17e2f99e2f5f14672c81bf3",
+      "bacap_1_21_target_inventory.json": "a8f76fc43819c875737c02be04885bbfb03b5ab69eab220358554a207d1a9fcf"
+    },
+    "rewardRefs": 1294,
+    "target": 1332,
+    "toolHash": "18acf4be8234587916a72a2aa0a8b48bbacaccf796055b40b8a4cf76ff26936b",
+    "trackers": 86,
+    "wrappers": 1256
+  },
+  "authorityHashes": {
+    "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java": "6ab0674902b4783c39c08dfd802cd0067d1436d973345834f092a001a4db9fec",
+    "src/main/resources/assets/minecraft/lang/ru_ru.json": "8961ad9d573ab72f63969e4a808b19ce733bc9a60b7ab589fc44dfb6148e1a0a",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/ive_got_a_bad_feeling_about_this.mcfunction": "b33b9a471c612c7ff7bb906fe8fbd541691f5b155a40f258fde8cc544aee5d6c",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/turtle_army.mcfunction": "0d0afad93978dd15f5e0e1cdf2a4596f7dff90469be710b42f6d63b56502818f",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/dogfight.mcfunction": "2ebd20b7c69026e1e6c4d6bfb34b527543fc94276cf853875d764f6d2b011f75",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/potion/root.mcfunction": "4c650f38dcb23f4842a230f3c41e6d79cb05ee66c68a3be49cba5889912c305c",
+    "tools/phase_b/b7_localization_certification.py": "032c866f0eca68dbf7508c86034f00d6a06bf52f98e43efdee2c52e7fbc5a732",
+    "tools/phase_b/b8_bacap_static_certification.py": "18acf4be8234587916a72a2aa0a8b48bbacaccf796055b40b8a4cf76ff26936b"
+  },
+  "companionAcceptedPayloadComparison": {
+    "BACAP_AMPLIFIED_NETHER": {
+      "changed": [],
+      "checked": 6
+    },
+    "BACAP_NULLSCAPE": {
+      "changed": [],
+      "checked": 7
+    },
+    "BACAP_TERRALITH": {
+      "changed": [],
+      "checked": 148
+    }
+  },
+  "compiledProductionProbe": {
+    "companions": [
+      {
+        "currentEnumSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+        "derivedCompatible": true,
+        "derivedCurrent": true,
+        "enum": "BACAP_TERRALITH",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+        "markerVersion": "compat_26_2_r19",
+        "markerWritten": true,
+        "oldR18Rejected": true,
+        "oldR18WorldSync": "UPDATED",
+        "rawCurrent": true,
+        "rawPinned": true,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+        "sourceSha256": "0b3cd387fe6e80ac6fe9a05b22091fce6abf6c38dd9656b3086629ec4031d3de"
+      },
+      {
+        "acceptedPayloadComparison": {
+          "differences": 0,
+          "nonMarkerEntriesCompared": 14,
+          "passed": true
+        },
+        "currentEnumSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+        "derivedCompatible": true,
+        "derivedCurrent": true,
+        "enum": "BACAP_AMPLIFIED_NETHER",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+        "markerVersion": "compat_26_2_r19",
+        "markerWritten": true,
+        "oldR18Rejected": true,
+        "oldR18WorldSync": "UPDATED",
+        "rawCurrent": true,
+        "rawPinned": true,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+        "sourceSha256": "be7f9c646a8ea8616e34ddef0beab3397995fe66da371cee7cb5cc929f03ad68"
+      },
+      {
+        "acceptedPayloadComparison": {
+          "differences": 0,
+          "nonMarkerEntriesCompared": 21,
+          "passed": true
+        },
+        "currentEnumSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+        "derivedCompatible": true,
+        "derivedCurrent": true,
+        "enum": "BACAP_NULLSCAPE",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+        "markerVersion": "compat_26_2_r19",
+        "markerWritten": true,
+        "oldR18Rejected": true,
+        "oldR18WorldSync": "UPDATED",
+        "rawCurrent": true,
+        "rawPinned": true,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+        "sourceSha256": "5ad60435dded0a786d4c6320a6af456f640b2e713a080b942c3bed3c2cb85a20"
+      }
+    ],
+    "extraFamilyWitnesses": {
+      "daytime": {
+        "historicalMigrationOccurs": true,
+        "inputSha256": "d21f303f0b6cd06675b58e9711c787f431228993e20146349aa948b8c4365a8f",
+        "modernHistoricalMigrationChanges": 0,
+        "passed": true,
+        "secondPassChanges": 0
+      },
+      "gamerule": {
+        "historicalMigrationOccurs": true,
+        "inputSha256": "136084e32d8af56bec899da0c463fe7dbdef8b49eb22ac4eaac75eff21a6747e",
+        "modernHistoricalMigrationChanges": 0,
+        "passed": true,
+        "secondPassChanges": 0
+      },
+      "itemComponents": {
+        "historicalMigrationOccurs": true,
+        "inputSha256": "b4bf364faed15ac3f1d856db4c77b28770f8f71a139347a487b62f7df8cb9214",
+        "modernHistoricalMigrationChanges": 0,
+        "passed": true,
+        "secondPassChanges": 0
+      },
+      "llamaNbt": {
+        "historicalMigrationOccurs": true,
+        "inputSha256": "c99bd11ad457256c277820a4bb4dfa1e0ca7d08e10aaa229cf057514463b5c50",
+        "modernHistoricalMigrationChanges": 0,
+        "passed": true,
+        "secondPassChanges": 0
+      }
+    },
+    "familyWitness": {
+      "booleanPayloadPreserved": true,
+      "historicalScalarSingletonWitness": true,
+      "negativeShapesUnchanged": 8,
+      "passed": true,
+      "syntheticDifferentIdsMigrate": true
+    },
+    "historicalMainPayloadComparison": {
+      "differences": 0,
+      "nonMarkerEntriesCompared": 6489,
+      "passed": true
+    },
+    "idempotence": {
+      "checked": 2,
+      "passed": true,
+      "productionCopyForWorldHelperOnlyRoundTrip": true,
+      "records": [
+        {
+          "contractPreserved": true,
+          "path": "data/blazeandcave/advancement/technical/biome_branch1_end.json",
+          "secondPassByteChanges": 0,
+          "secondPassSemanticChanges": 0
+        },
+        {
+          "contractPreserved": true,
+          "path": "data/blazeandcave/advancement/technical/biome_branch2_end.json",
+          "secondPassByteChanges": 0,
+          "secondPassSemanticChanges": 0
+        }
+      ],
+      "scope": "The two repaired r19 entries, also converted individually by compiled production convertJson; not a claim about unrelated already-derived pack reprocessing.",
+      "secondPassByteChanges": 0,
+      "secondPassSemanticChanges": 0
+    },
+    "identityMatrix": {
+      "current": {
+        "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "derivedCompatible": true,
+        "derivedCurrent": true,
+        "enum": "BACAP",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "markerVersion": "compat_26_2_r19",
+        "markerWritten": true,
+        "rawCurrent": true,
+        "rawPinned": true,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "sourceSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2"
+      },
+      "historical": {
+        "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "derivedCompatible": false,
+        "derivedCurrent": false,
+        "enum": "BACAP",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "markerVersion": "compat_26_2_r19",
+        "markerWritten": true,
+        "rawCurrent": false,
+        "rawPinned": false,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "sourceSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70"
+      },
+      "malformedR17Rejected": true,
+      "oldR18Rejected": true
+    },
+    "mainWorldSync": {
+      "current": {
+        "currentAfterSync": true,
+        "firstResult": "ALREADY_CURRENT",
+        "thenAlreadyCurrent": true
+      },
+      "historicalDerived": {
+        "currentAfterSync": true,
+        "firstResult": "UPDATED",
+        "thenAlreadyCurrent": true
+      },
+      "malformedR17": {
+        "currentAfterSync": true,
+        "firstResult": "UPDATED",
+        "thenAlreadyCurrent": true
+      },
+      "oldR18": {
+        "currentAfterSync": true,
+        "firstResult": "UPDATED",
+        "thenAlreadyCurrent": true
+      },
+      "preR2Root": {
+        "currentAfterSync": true,
+        "firstResult": "UPDATED",
+        "thenAlreadyCurrent": true
+      }
+    },
+    "markerIntegrity": {
+      "fileNameRejected": true,
+      "rootOverrideSha1Rejected": true,
+      "sourceSha1Rejected": true,
+      "versionRejected": true
+    },
+    "nativeHardcoreWitness": {
+      "actualShaSourcePolicy": true,
+      "changedFiles": 17,
+      "exceptions": 0,
+      "functionsChecked": 18,
+      "historicalRuleFunctionChanges": 0,
+      "intentionalAnnouncementSuppressions": 17,
+      "jsonChecked": 17,
+      "legacyMigrationSemanticChanges": 0,
+      "parseFailures": 0,
+      "passed": true,
+      "r18NonMarkerComparison": {
+        "differences": 0,
+        "nonMarkerEntriesCompared": 66,
+        "passed": true
+      },
+      "semanticJsonChanges": 17
+    },
+    "nativeMainWitness": {
+      "actualShaSourcePolicy": true,
+      "changedFiles": 1244,
+      "exceptions": 0,
+      "functionsChecked": 5436,
+      "historicalRuleFunctionChanges": 0,
+      "intentionalAnnouncementSuppressions": 1244,
+      "jsonChecked": 1479,
+      "legacyMigrationSemanticChanges": 0,
+      "parseFailures": 0,
+      "passed": true,
+      "r18NonMarkerComparison": {
+        "differences": 0,
+        "nonMarkerEntriesCompared": 7091,
+        "passed": true
+      },
+      "semanticJsonChanges": 1244
+    },
+    "passed": true,
+    "postR2DigestCopyAccepted": true,
+    "preR2DigestCopyRejected": true,
+    "productionClassLocation": "file:/D:/Vibecode/AchieveToDo%2026.2/build/classes/java/main/",
+    "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+    "secondPassCorpus": {
+      "BACAP_AMPLIFIED_NETHER": {
+        "changedPaths": [],
+        "entriesChecked": 14,
+        "method": "Compiled production selected-policy entry transforms; derived archive SHA is not reused as a native download identity.",
+        "passed": true,
+        "secondPassByteChanges": 0,
+        "secondPassSemanticChanges": 0
+      },
+      "BACAP_NULLSCAPE": {
+        "changedPaths": [],
+        "entriesChecked": 21,
+        "method": "Compiled production selected-policy entry transforms; derived archive SHA is not reused as a native download identity.",
+        "passed": true,
+        "secondPassByteChanges": 0,
+        "secondPassSemanticChanges": 0
+      },
+      "BACAP_TERRALITH": {
+        "changedPaths": [],
+        "entriesChecked": 177,
+        "method": "Compiled production selected-policy entry transforms; derived archive SHA is not reused as a native download identity.",
+        "passed": true,
+        "secondPassByteChanges": 0,
+        "secondPassSemanticChanges": 0
+      },
+      "historicalMain": {
+        "changedPaths": [],
+        "entriesChecked": 6489,
+        "method": "Compiled production selected-policy entry transforms; derived archive SHA is not reused as a native download identity.",
+        "passed": true,
+        "secondPassByteChanges": 0,
+        "secondPassSemanticChanges": 0
+      },
+      "nativeHardcore": {
+        "changedPaths": [],
+        "entriesChecked": 66,
+        "method": "Compiled production selected-policy entry transforms; derived archive SHA is not reused as a native download identity.",
+        "passed": true,
+        "secondPassByteChanges": 0,
+        "secondPassSemanticChanges": 0
+      },
+      "nativeMain": {
+        "changedPaths": [],
+        "entriesChecked": 7091,
+        "method": "Compiled production selected-policy entry transforms; derived archive SHA is not reused as a native download identity.",
+        "passed": true,
+        "secondPassByteChanges": 0,
+        "secondPassSemanticChanges": 0
+      }
+    },
+    "terralithWorldSync": {
+      "helperHashes": {
+        "data/blazeandcave/advancement/technical/biome_branch1_end.json": "68833ba5dd256488596bb07f797d311bf381003cea47fd5e19307eb904accf58",
+        "data/blazeandcave/advancement/technical/biome_branch2_end.json": "a88b6dc0dcc7840e115743b4a501910697d84869b0f850588e5cd78745824c4b"
+      },
+      "markerVersion": "compat_26_2_r19",
+      "oldR18Rejected": true,
+      "passed": true,
+      "result": "UPDATED",
+      "sourceSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+      "thenAlreadyCurrent": true
+    },
+    "treasureHunterWitness": {
+      "method": "Real cached Minecraft 26.2 RegistryCodecs.homogeneousList holder-set codec; exact enchantment-tag value; same isolated typed-registry method as B5.2, not a full world boot.",
+      "nativePredicatePreserved": true,
+      "passed": true,
+      "r16Accepted": false,
+      "r17Accepted": true,
+      "r19Accepted": true,
+      "rawAccepted": true,
+      "resourceId": "blazeandcave:animal/treasure_hunter"
+    }
+  },
+  "converterSha256": "6ab0674902b4783c39c08dfd802cd0067d1436d973345834f092a001a4db9fec",
+  "directHelperCodec": {
+    "checked": 2,
+    "codec": "Advancement.CODEC",
+    "failed": 0,
+    "minecraftVersion": "26.2",
+    "negativeControlRejected": true,
+    "passed": 2
+  },
+  "historicalFamilyMatrix": {
+    "candidateCountersAreDiagnosticOnly": true,
+    "modernUnexpectedChanges": 0,
+    "schemaGuards": {
+      "booleanPayloadPreserved": true,
+      "historicalScalarSingletonWitness": true,
+      "negativeShapesUnchanged": 8,
+      "passed": true,
+      "syntheticDifferentIdsMigrate": true
+    },
+    "scopedMigrations": {
+      "daytime": {
+        "historicalMigrationOccurs": true,
+        "inputSha256": "d21f303f0b6cd06675b58e9711c787f431228993e20146349aa948b8c4365a8f",
+        "modernHistoricalMigrationChanges": 0,
+        "passed": true,
+        "secondPassChanges": 0
+      },
+      "gamerule": {
+        "historicalMigrationOccurs": true,
+        "inputSha256": "136084e32d8af56bec899da0c463fe7dbdef8b49eb22ac4eaac75eff21a6747e",
+        "modernHistoricalMigrationChanges": 0,
+        "passed": true,
+        "secondPassChanges": 0
+      },
+      "itemComponents": {
+        "historicalMigrationOccurs": true,
+        "inputSha256": "b4bf364faed15ac3f1d856db4c77b28770f8f71a139347a487b62f7df8cb9214",
+        "modernHistoricalMigrationChanges": 0,
+        "passed": true,
+        "secondPassChanges": 0
+      },
+      "llamaNbt": {
+        "historicalMigrationOccurs": true,
+        "inputSha256": "c99bd11ad457256c277820a4bb4dfa1e0ca7d08e10aaa229cf057514463b5c50",
+        "modernHistoricalMigrationChanges": 0,
+        "passed": true,
+        "secondPassChanges": 0
+      }
+    },
+    "secondPassDrift": 0
+  },
+  "marker": "compat_26_2_r19",
+  "modernFalsePositiveScan": {
+    "AMPLIFIED_NETHER": {
+      "acceptedSerializationOnlyFiles": 0,
+      "families": [
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_chain_id",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_daytime_query",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_dyed_color_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_enchantments_levels",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_enchantments_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_gamerule",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_hide_additional_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_legacy_item_text",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_stored_enchantments_levels",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_stored_enchantments_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_trim_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_unbreakable_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "item_snbt_parse",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "item_snbt_parse_failure",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_background",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 124,
+          "family": "json_chain_id",
+          "modernNoopCount": 124
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_context_aware_predicate",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_damage",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_damage_type",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_enchantment_predicates",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_predicate",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_struck",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_tags",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_type",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_variant_components",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_generic_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_killing_blow",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_legacy_player_advancements",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_lightning_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_llama_carpet_nbt",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_player_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_raider_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 124,
+          "family": "json_vanilla_announcement_suppression",
+          "modernNoopCount": 124
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "runtime_chat_json_parse",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "runtime_chat_json_parse_failure",
+          "modernNoopCount": 0
+        }
+      ],
+      "functionChanges": 0,
+      "functionsChecked": 1,
+      "jsonChecked": 124,
+      "runtimeChatChanges": 0,
+      "sourcePolicy": "existing general historical seam",
+      "unexpectedHistoricalSemanticChanges": 0
+    },
+    "BACAP": {
+      "acceptedSerializationOnlyFiles": 0,
+      "families": [
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_chain_id",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_daytime_query",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_dyed_color_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_enchantments_levels",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_enchantments_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 34,
+          "family": "function_gamerule",
+          "modernNoopCount": 34
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_hide_additional_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 235,
+          "family": "function_legacy_item_text",
+          "modernNoopCount": 235
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_stored_enchantments_levels",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_stored_enchantments_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_trim_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 35,
+          "family": "function_unbreakable_with_tooltip",
+          "modernNoopCount": 35
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 235,
+          "family": "item_snbt_parse",
+          "modernNoopCount": 235
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "item_snbt_parse_failure",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 16,
+          "family": "json_background",
+          "modernNoopCount": 16
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 1479,
+          "family": "json_chain_id",
+          "modernNoopCount": 1479
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 214,
+          "family": "json_context_aware_predicate",
+          "modernNoopCount": 214
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 54,
+          "family": "json_damage",
+          "modernNoopCount": 54
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 36,
+          "family": "json_damage_type",
+          "modernNoopCount": 36
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 55,
+          "family": "json_enchantment_predicates",
+          "modernNoopCount": 55
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 393,
+          "family": "json_entity_predicate",
+          "modernNoopCount": 393
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_struck",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 332,
+          "family": "json_entity_tags",
+          "modernNoopCount": 332
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_type",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_variant_components",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_generic_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 40,
+          "family": "json_killing_blow",
+          "modernNoopCount": 40
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_legacy_player_advancements",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_lightning_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_llama_carpet_nbt",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_player_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_raider_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 1244,
+          "candidateCount": 1479,
+          "family": "json_vanilla_announcement_suppression",
+          "modernNoopCount": 235
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "runtime_chat_json_parse",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "runtime_chat_json_parse_failure",
+          "modernNoopCount": 0
+        }
+      ],
+      "functionChanges": 0,
+      "functionsChecked": 5436,
+      "jsonChecked": 1479,
+      "runtimeChatChanges": 0,
+      "sourcePolicy": "native announcement-only",
+      "unexpectedHistoricalSemanticChanges": 0
+    },
+    "BACAP_HARDCORE": {
+      "acceptedSerializationOnlyFiles": 0,
+      "families": [
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_chain_id",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_daytime_query",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_dyed_color_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_enchantments_levels",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_enchantments_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_gamerule",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_hide_additional_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_legacy_item_text",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_stored_enchantments_levels",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_stored_enchantments_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_trim_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_unbreakable_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "item_snbt_parse",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "item_snbt_parse_failure",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_background",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 17,
+          "family": "json_chain_id",
+          "modernNoopCount": 17
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_context_aware_predicate",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 15,
+          "family": "json_damage",
+          "modernNoopCount": 15
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 2,
+          "family": "json_damage_type",
+          "modernNoopCount": 2
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 1,
+          "family": "json_enchantment_predicates",
+          "modernNoopCount": 1
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 2,
+          "family": "json_entity_predicate",
+          "modernNoopCount": 2
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_struck",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 2,
+          "family": "json_entity_tags",
+          "modernNoopCount": 2
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_type",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_variant_components",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_generic_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_killing_blow",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_legacy_player_advancements",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_lightning_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_llama_carpet_nbt",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_player_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_raider_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 17,
+          "candidateCount": 17,
+          "family": "json_vanilla_announcement_suppression",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "runtime_chat_json_parse",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "runtime_chat_json_parse_failure",
+          "modernNoopCount": 0
+        }
+      ],
+      "functionChanges": 0,
+      "functionsChecked": 18,
+      "jsonChecked": 17,
+      "runtimeChatChanges": 0,
+      "sourcePolicy": "native announcement-only",
+      "unexpectedHistoricalSemanticChanges": 0
+    },
+    "NULLSCAPE": {
+      "acceptedSerializationOnlyFiles": 1,
+      "families": [
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_chain_id",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_daytime_query",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_dyed_color_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_enchantments_levels",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_enchantments_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_gamerule",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_hide_additional_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_legacy_item_text",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_stored_enchantments_levels",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_stored_enchantments_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_trim_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_unbreakable_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "item_snbt_parse",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "item_snbt_parse_failure",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_background",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 416,
+          "family": "json_chain_id",
+          "modernNoopCount": 416
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_context_aware_predicate",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_damage",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_damage_type",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_enchantment_predicates",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 1,
+          "family": "json_entity_predicate",
+          "modernNoopCount": 1
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_struck",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 1,
+          "family": "json_entity_tags",
+          "modernNoopCount": 1
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_type",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_variant_components",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_generic_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_killing_blow",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_legacy_player_advancements",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_lightning_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_llama_carpet_nbt",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_player_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_raider_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 416,
+          "family": "json_vanilla_announcement_suppression",
+          "modernNoopCount": 416
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "runtime_chat_json_parse",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "runtime_chat_json_parse_failure",
+          "modernNoopCount": 0
+        }
+      ],
+      "functionChanges": 0,
+      "functionsChecked": 6,
+      "jsonChecked": 416,
+      "runtimeChatChanges": 0,
+      "sourcePolicy": "existing general historical seam",
+      "unexpectedHistoricalSemanticChanges": 0
+    },
+    "TERRALITH": {
+      "acceptedSerializationOnlyFiles": 0,
+      "families": [
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_chain_id",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_daytime_query",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_dyed_color_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_enchantments_levels",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_enchantments_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_gamerule",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_hide_additional_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_legacy_item_text",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_stored_enchantments_levels",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_stored_enchantments_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_trim_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "function_unbreakable_with_tooltip",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "item_snbt_parse",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "item_snbt_parse_failure",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_background",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 1897,
+          "family": "json_chain_id",
+          "modernNoopCount": 1897
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_context_aware_predicate",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_damage",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_damage_type",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_enchantment_predicates",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 1,
+          "family": "json_entity_predicate",
+          "modernNoopCount": 1
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_struck",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_tags",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_type",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_entity_variant_components",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_generic_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_killing_blow",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_legacy_player_advancements",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_lightning_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_llama_carpet_nbt",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_player_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "json_raider_type_specific",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 1897,
+          "family": "json_vanilla_announcement_suppression",
+          "modernNoopCount": 1897
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "runtime_chat_json_parse",
+          "modernNoopCount": 0
+        },
+        {
+          "actualChangedCount": 0,
+          "candidateCount": 0,
+          "family": "runtime_chat_json_parse_failure",
+          "modernNoopCount": 0
+        }
+      ],
+      "functionChanges": 0,
+      "functionsChecked": 3,
+      "jsonChecked": 1897,
+      "runtimeChatChanges": 0,
+      "sourcePolicy": "existing general historical seam",
+      "unexpectedHistoricalSemanticChanges": 0
+    }
+  },
+  "phase": "B",
+  "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+  "runtimeHashes": {
+    "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java": "6ab0674902b4783c39c08dfd802cd0067d1436d973345834f092a001a4db9fec",
+    "src/main/java/com/diskree/achievetodo/client/gui/AdvancementsTabType.java": "499125b9a85984adf5230cd2836fdd5a76c2e9ecf9743eae31485aa12c74c3ae",
+    "src/main/java/com/diskree/achievetodo/injection/mixin/main/PlacedAdvancementMixin.java": "726d3d61472cfc5f32342ad31290c49d5a8c1fe8aaa7db8cc066c4379d991fdb",
+    "src/main/java/com/diskree/achievetodo/tracking/TrackedNearbyEntitiesType.java": "889b25d620e7c51a75b388ea7e62b0afa397bcb1d4561378f6525e7367f144c2",
+    "src/main/java/com/diskree/achievetodo/tracking/TrackedScoreType.java": "15c90ff6b8927cdbd692a7ebbe03ff65ae63f967cbda1b575f55514296df67ac",
+    "src/main/java/com/diskree/achievetodo/tracking/TrackedStatisticsDataType.java": "402c49c50fccb55c7add70033069f1e28890f8fe486ddbf30b0dea95238f8383",
+    "src/main/resources/assets/minecraft/lang/ru_ru.json": "8961ad9d573ab72f63969e4a808b19ce733bc9a60b7ab589fc44dfb6148e1a0a",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/adventure/ive_got_a_bad_feeling_about_this.mcfunction": "b33b9a471c612c7ff7bb906fe8fbd541691f5b155a40f258fde8cc544aee5d6c",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/animal/turtle_army.mcfunction": "0d0afad93978dd15f5e0e1cdf2a4596f7dff90469be710b42f6d63b56502818f",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/end/dogfight.mcfunction": "2ebd20b7c69026e1e6c4d6bfb34b527543fc94276cf853875d764f6d2b011f75",
+    "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/potion/root.mcfunction": "4c650f38dcb23f4842a230f3c41e6d79cb05ee66c68a3be49cba5889912c305c",
+    "tools/phase_b/b7_localization_certification.py": "032c866f0eca68dbf7508c86034f00d6a06bf52f98e43efdee2c52e7fbc5a732",
+    "tools/phase_b/b8_bacap_static_certification.py": "18acf4be8234587916a72a2aa0a8b48bbacaccf796055b40b8a4cf76ff26936b"
+  },
+  "runtimeProductDelta": {
+    "ADD": 0,
+    "DELETE": 0,
+    "MODIFY": 0
+  },
+  "runtimeSnapshotSha256": "2ea155fdc8be0e23f79c6da6e0b1158bbe10b3b5f28f6df0499fc29d52070dba",
+  "sources": [
+    {
+      "enum": "BACAP",
+      "nativePolicy": true,
+      "path": "build/tmp/phase_b_b1/BlazeandCave's Advancements Pack 1.21.zip",
+      "sha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+      "sha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+      "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+      "sourceSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2"
+    },
+    {
+      "enum": "BACAP_HARDCORE",
+      "nativePolicy": true,
+      "path": "build/tmp/phase_b_b4/BlazeandCave's Advancements Pack Hardcore.zip",
+      "sha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+      "sha256": "1baf5f1bc7c48c819cb6b3081cb124793a316b3568352c853b94757bb4237446",
+      "sourceSha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+      "sourceSha256": "1baf5f1bc7c48c819cb6b3081cb124793a316b3568352c853b94757bb4237446"
+    },
+    {
+      "enum": "BACAP_TERRALITH",
+      "nativePolicy": false,
+      "path": "reference/phase_a_preservation/files/final/bacap_terralith.zip",
+      "sha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+      "sha256": "0b3cd387fe6e80ac6fe9a05b22091fce6abf6c38dd9656b3086629ec4031d3de",
+      "sourceSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+      "sourceSha256": "0b3cd387fe6e80ac6fe9a05b22091fce6abf6c38dd9656b3086629ec4031d3de"
+    },
+    {
+      "enum": "BACAP_AMPLIFIED_NETHER",
+      "nativePolicy": false,
+      "path": "reference/phase_a_preservation/files/final/bacap_amplified_nether.zip",
+      "sha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+      "sha256": "be7f9c646a8ea8616e34ddef0beab3397995fe66da371cee7cb5cc929f03ad68",
+      "sourceSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+      "sourceSha256": "be7f9c646a8ea8616e34ddef0beab3397995fe66da371cee7cb5cc929f03ad68"
+    },
+    {
+      "enum": "BACAP_NULLSCAPE",
+      "nativePolicy": false,
+      "path": "reference/phase_a_preservation/files/final/bacap_nullscape.zip",
+      "sha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+      "sha256": "5ad60435dded0a786d4c6320a6af456f640b2e713a080b942c3bed3c2cb85a20",
+      "sourceSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+      "sourceSha256": "5ad60435dded0a786d4c6320a6af456f640b2e713a080b942c3bed3c2cb85a20"
+    },
+    {
+      "enum": "TERRALITH",
+      "nativePolicy": false,
+      "path": "build/tmp/phase_b_b4/Terralith_26.2_v2.6.4.zip",
+      "sha1": "96ccd25be9ba5240ebe8150cc29240aca781f0e1",
+      "sha256": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e",
+      "sourceSha1": "96ccd25be9ba5240ebe8150cc29240aca781f0e1",
+      "sourceSha256": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e"
+    },
+    {
+      "enum": "AMPLIFIED_NETHER",
+      "nativePolicy": false,
+      "path": "build/tmp/phase_b_b4/Amplified_Nether_v1.2.15.zip",
+      "sha1": "94d9604cebbfca667aeb59e4b1ac03e9c6e5cb5d",
+      "sha256": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa",
+      "sourceSha1": "94d9604cebbfca667aeb59e4b1ac03e9c6e5cb5d",
+      "sourceSha256": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa"
+    },
+    {
+      "enum": "NULLSCAPE",
+      "nativePolicy": false,
+      "path": "build/tmp/phase_b_b4/Nullscape_26.2_v1.2.20.zip",
+      "sha1": "bee4a2182593fdfc5da4b253a342feddf02b88b9",
+      "sha256": "ec7b0dfcd1add8c127c985dac1466a44168449b3b6641dd20e6b2e16153b66aa",
+      "sourceSha1": "bee4a2182593fdfc5da4b253a342feddf02b88b9",
+      "sourceSha256": "ec7b0dfcd1add8c127c985dac1466a44168449b3b6641dd20e6b2e16153b66aa"
+    },
+    {
+      "enum": "HISTORICAL_MAIN",
+      "nativePolicy": false,
+      "path": "reference/phase_a_preservation/files/final/bacap.zip",
+      "sha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+      "sha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70"
+    }
+  ],
+  "stage": "B9",
+  "toolSha256": "839fc8e591863b4eb78d3f589acd3a3613da88252456894b9590522b826bb634",
+  "uniqueCumulativeRuntimeDiff": {
+    "ADD": 177,
+    "DELETE": 9,
+    "MODIFY": 69
+  },
+  "uniqueRuntimePaths": 255,
+  "unresolvedLegacyPlayerPredicates": []
+}

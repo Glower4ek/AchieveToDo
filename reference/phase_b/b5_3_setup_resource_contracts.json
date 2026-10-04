@@ -1,0 +1,653 @@
+{
+  "analysisTooling": [
+    {
+      "path": "build/tmp/phase_b_b5_3/precheck.py",
+      "sha256": "0804c4e86488330c23db97f47f636cadd5cdc1be2f68500ac39221135c79ce7f"
+    },
+    {
+      "path": "build/tmp/phase_b_b5_3/apply_changes.py",
+      "sha256": "40ee61a6b0463acc3565cc7527fab08af9f57fe2704206b94c257fee40391f5f"
+    },
+    {
+      "path": "build/tmp/phase_b_b5_3/validate_and_record.py",
+      "sha256": "1b367965de90fdf81dea09f25c2c96bf85f63ad1a9caa9367358fc38d7080221"
+    }
+  ],
+  "b5_1EvidenceSha256": "ffc533dec326412f807e7d16667e5d8968aed0331d1a5ba0b9438a76a8279ab8",
+  "b5_2EvidenceSha256": "fcd6b4c9e9c5005ad253370871139bb26dadf944f0d7dceede76f112ad437a24",
+  "baselineHead": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+  "branch": "phase-b-bacap-26.2",
+  "cumulativeDiff": {
+    "ADD": 14,
+    "DELETE": 0,
+    "MODIFY": 12,
+    "modifiedTrackedPaths": [
+      "src/main/java/com/diskree/achievetodo/client/ExternalPack.java",
+      "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+      "src/main/resources/resourcepacks/bacap_amplified_nether_override/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_cooperative_mode/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_hardcore_override/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_nullscape_override/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/new_world.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_rewards_experience/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_rewards_item/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_rewards_trophy/pack.mcmeta",
+      "src/main/resources/resourcepacks/bacap_terralith_override/pack.mcmeta"
+    ],
+    "newPaths": [
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/terralith_advancement_made_macro.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/bone_to_party.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/camouflage.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/custom_boss_fight.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/family_reunion.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/freezing.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/handsome_jack.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/impossible.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/melting.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/monsters_hunted.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/iceologer_shouldve_won.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/nest_quick.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/tropical_collection.mcfunction",
+      "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/terralith_check.mcfunction"
+    ],
+    "newProductFileTrackingState": "Fourteen new files are untracked and unstaged, eligible for the future publication set; twelve existing tracked files are modified. Nothing staged."
+  },
+  "directMissingCalleeResolution": {
+    "B3DirectMissing": 14,
+    "remainingMainCallees": [
+      "blazeandcave:advancement/loser_hurt"
+    ],
+    "remainingPolicy": "Hardcore-only loser_hurt is not supplied as a dummy main shim; B4 identifies the official Hardcore resource. Later companion integration remains outside this transaction.",
+    "resolvedInMainAfterOverlay": 13,
+    "terralithHookResolvedInMain": true,
+    "trophyAliasesResolved": 12
+  },
+  "modifiedNewWorld": {
+    "abilityProgressionUsesPoints": false,
+    "afterSha256": "1c6009e2d0879c906fbc41f3c2f7326a4aab58073046cf963ad992eb0f9040b9",
+    "beforeSha256": "f840bece9ee7dfee5436c8d5483f414a77f5b320f7513a94c30676681afe64c0",
+    "path": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/new_world.mcfunction",
+    "placementVerified": true,
+    "pointDefaultCommandOrder": [
+      "task",
+      "goal",
+      "challenge",
+      "super_challenge",
+      "milestone",
+      "hidden",
+      "advancement_legend"
+    ],
+    "pointDefaults": {
+      "advancement_legend": 500,
+      "challenge": 5,
+      "goal": 2,
+      "hidden": 0,
+      "milestone": 50,
+      "super_challenge": 20,
+      "task": 1
+    },
+    "preservedATDContracts": [
+      "sidebar bac_advancements",
+      "displayname {\"translate\":\"gui.advancements\"}",
+      "function blazeandcave:setup_item_rewards",
+      "function blazeandcave:setup_experience_rewards",
+      "function blazeandcave:setup_trophy_rewards",
+      "function blazeandcave:setup_cooperative_mode",
+      "scoreboard players set intro_msg bac_settings 0",
+      "scoreboard players set introduced bac_settings 1",
+      "All original bytes preserved after removing the sole inserted point-default block",
+      "Three Phase A removed-gamerule comments preserved"
+    ]
+  },
+  "phase": "B",
+  "productFiles": [
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/terralith_advancement_made_macro.mcfunction",
+      "sha256": "8d23b9a4b2fc7b75285749c8c6d3eb0841c3d157a7b53de99c42716e6bd895c7"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/bone_to_party.mcfunction",
+      "sha256": "82614d4bfc63a8a5093c913dc8284327392075a996cdb3e03c39d5fce61944ef"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/camouflage.mcfunction",
+      "sha256": "158dc15eebc034fa930c4e600d3b4360b662be3e1c5f52f5aca495d05445bcc0"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/custom_boss_fight.mcfunction",
+      "sha256": "4a956a5aa30467e65c53ac19185ffabe28c714fe8cb60eb6dc17fc4088ba1220"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/family_reunion.mcfunction",
+      "sha256": "7efcbf232938ee9a1468a81b64f7e803d24b227b9c57120b8a1e2905b0ae9043"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/freezing.mcfunction",
+      "sha256": "3bdc71c08653678ef786bf2c37b29fd17ef1d95a42ef3114bb43ec19b481fa86"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/handsome_jack.mcfunction",
+      "sha256": "b772678d64b66656d9e5dac163990a932bb8f7c34042ec9c3ab3d4083db306a4"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/impossible.mcfunction",
+      "sha256": "3740dee7f4d4c22d291e0f2fc6201541f5e695aec329af52bc7784e36e39916a"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/melting.mcfunction",
+      "sha256": "99eea27a28d68305b9e9fc98a216977112c0574618b60993004272c58ab6ac29"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/monsters_hunted.mcfunction",
+      "sha256": "ecfe32ea03d20eb9876c2291bce6cce59ae704e1674048f032127153a48323ab"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/iceologer_shouldve_won.mcfunction",
+      "sha256": "89fdfc0c241439abedb7797001d4e16fd17fd05bf3276facb8e672b6b437ac54"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/nest_quick.mcfunction",
+      "sha256": "a58a0e8246c7c8f82103a742018adac301ba7792375c532283adbd79271de810"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/tropical_collection.mcfunction",
+      "sha256": "1e132dc661e54a4c0e3872028107e1878257903eecc9dc34a8f01068155f5325"
+    },
+    {
+      "action": "MODIFY",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/new_world.mcfunction",
+      "sha256": "1c6009e2d0879c906fbc41f3c2f7326a4aab58073046cf963ad992eb0f9040b9"
+    },
+    {
+      "action": "ADD",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/terralith_check.mcfunction",
+      "sha256": "fbbf9196ea5330603d79d503dab1022a4e3be5ef3fe2bf41d5ebdea0f61dd33d"
+    }
+  ],
+  "safety": {
+    "archivesUnchanged": true,
+    "b5_1EvidenceUnchanged": true,
+    "b5_2EvidenceUnchanged": true,
+    "b5_4Started": false,
+    "b6Started": false,
+    "commit": false,
+    "githubMutation": false,
+    "javaUnchangedInB5_3": true,
+    "localizationUnchanged": true,
+    "marker": "compat_26_2_r17",
+    "noAbilityBalanceThresholdOrClampChange": true,
+    "noDependencyChange": true,
+    "noNewDownload": true,
+    "noProgressMigration": true,
+    "noStagedFiles": true,
+    "normalBuildCacheUseOnly": true,
+    "pinsUnchanged": true,
+    "previousImplementationProductFilesUnchanged": true,
+    "priorEvidenceUnchanged": true,
+    "push": false,
+    "sourceGeneratedResourcesUnchanged": true,
+    "tag": false,
+    "testsUnchanged": true
+  },
+  "setupConfiguration": {
+    "bacDontCountNotOverridden": true,
+    "keepFiles": [
+      {
+        "afterSha256": "a8a864be53cf2388df98d52942df8c2e20d9e8703a1b0a75f0afb046c03b2872",
+        "beforeSha256": "a8a864be53cf2388df98d52942df8c2e20d9e8703a1b0a75f0afb046c03b2872",
+        "byteIdentical": true,
+        "path": "src/main/resources/resourcepacks/bacap_cooperative_mode/data/blazeandcave/function/setup_cooperative_mode.mcfunction"
+      },
+      {
+        "afterSha256": "cbba6034185442ae8944ae15a53b7c4de67a4ebf7aa55f569bfe7680b0e5a645",
+        "beforeSha256": "cbba6034185442ae8944ae15a53b7c4de67a4ebf7aa55f569bfe7680b0e5a645",
+        "byteIdentical": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/config/update_number_format.mcfunction"
+      },
+      {
+        "afterSha256": "031aa1f5da447de83de2a271567a991f88a734f376b379bff6b6ab974111f9ce",
+        "beforeSha256": "031aa1f5da447de83de2a271567a991f88a734f376b379bff6b6ab974111f9ce",
+        "byteIdentical": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/setup_cooperative_mode.mcfunction"
+      },
+      {
+        "afterSha256": "229df694e9104746ecb062a1ec8e4cbb3e75b91befc8f369cc477d1613611c0a",
+        "beforeSha256": "229df694e9104746ecb062a1ec8e4cbb3e75b91befc8f369cc477d1613611c0a",
+        "byteIdentical": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/setup_experience_rewards.mcfunction"
+      },
+      {
+        "afterSha256": "e3ec7579037ee0d7c24416559f98f0373a1183799f6d0d01b86c4c08bd0b7719",
+        "beforeSha256": "e3ec7579037ee0d7c24416559f98f0373a1183799f6d0d01b86c4c08bd0b7719",
+        "byteIdentical": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/setup_item_rewards.mcfunction"
+      },
+      {
+        "afterSha256": "3fc9e5fe8d8dae1eb6fb0ea1a015cb7386288795d2a363e384391e8575ec5aea",
+        "beforeSha256": "3fc9e5fe8d8dae1eb6fb0ea1a015cb7386288795d2a363e384391e8575ec5aea",
+        "byteIdentical": true,
+        "path": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/setup_trophy_rewards.mcfunction"
+      },
+      {
+        "afterSha256": "cd80c7d19e30b8be02e1ad142f1bd5e41c03eb387cbbf16366021f2fe9081afc",
+        "beforeSha256": "cd80c7d19e30b8be02e1ad142f1bd5e41c03eb387cbbf16366021f2fe9081afc",
+        "byteIdentical": true,
+        "path": "src/main/resources/resourcepacks/bacap_rewards_experience/data/blazeandcave/function/setup_experience_rewards.mcfunction"
+      },
+      {
+        "afterSha256": "5516c8a6149a227dbbec8877f57367ba42dd2c7699de3ad3be0a5f257e727c26",
+        "beforeSha256": "5516c8a6149a227dbbec8877f57367ba42dd2c7699de3ad3be0a5f257e727c26",
+        "byteIdentical": true,
+        "path": "src/main/resources/resourcepacks/bacap_rewards_item/data/blazeandcave/function/setup_item_rewards.mcfunction"
+      },
+      {
+        "afterSha256": "2bc3d7f950ad2e2b450ada4e4ea72c532a0dedafd92176a31814baa51c43e7d0",
+        "beforeSha256": "2bc3d7f950ad2e2b450ada4e4ea72c532a0dedafd92176a31814baa51c43e7d0",
+        "byteIdentical": true,
+        "path": "src/main/resources/resourcepacks/bacap_rewards_trophy/data/blazeandcave/function/setup_trophy_rewards.mcfunction"
+      }
+    ],
+    "modifiedCount": 1,
+    "nativeHiddenBacDontCount": 1,
+    "nativeObjectiveCreationNotDuplicated": true,
+    "nativeUpdatePointsDelegatePreserved": true,
+    "nineKeepFilesByteIdentical": true,
+    "noPlayerOrScoreboardMigration": true,
+    "obsoleteObjectivesNotRecreated": true,
+    "originalFileCount": 10,
+    "rawATDObjectives": [
+      "bac_advancements",
+      "bac_advfirst",
+      "bac_advancements_team",
+      "bac_advfirst_team_sum",
+      "bac_advfirst_sum",
+      "bac_advfirst_team"
+    ],
+    "rawATDProgressionPreserved": true,
+    "tenOriginalFilesAccounted": true,
+    "updateScoreDelegatePreserved": true
+  },
+  "stage": "B5.3",
+  "status": "PHASE_B_B5_3_COMPLETE",
+  "terralithCheck": {
+    "allPresentIntegerValuesPreserved": true,
+    "behavior": "Default absent terralith_score bac_settings to 1; preserve every existing integer setting.",
+    "conditionalStyle": "Existing frozen companion unless-score-matches default style; full signed score range implements the explicitly required absent-only contract. Historical ..1000 bound is not used, because it would overwrite existing values above 1000.",
+    "existing0Preserved": true,
+    "existing1Preserved": true,
+    "missingDefaultsTo1": true,
+    "path": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/terralith_check.mcfunction",
+    "sha256": "fbbf9196ea5330603d79d503dab1022a4e3be5ef3fe2bf41d5ebdea0f61dd33d",
+    "staticBoundaryCases": [
+      {
+        "after": 1,
+        "before": null
+      },
+      {
+        "after": -2147483648,
+        "before": -2147483648
+      },
+      {
+        "after": -1,
+        "before": -1
+      },
+      {
+        "after": 0,
+        "before": 0
+      },
+      {
+        "after": 1,
+        "before": 1
+      },
+      {
+        "after": 2,
+        "before": 2
+      },
+      {
+        "after": 1001,
+        "before": 1001
+      },
+      {
+        "after": 2147483647,
+        "before": 2147483647
+      }
+    ],
+    "validationMethod": "Exact conditional parsed with full signed score range; absent score fails matches, every existing scoreboard int matches. Static behavior proof, not live world execution."
+  },
+  "terralithMacro": {
+    "dynamicReferencePatterns": [
+      "#bacap_fanpacks:$(reward_id)",
+      "bacap_rewards:exp/$(reward_id)",
+      "bacap_rewards:first_score_add",
+      "bacap_rewards:first_team_score_add",
+      "bacap_rewards:msg/$(reward_id)",
+      "bacap_rewards:reward/$(reward_id)",
+      "bacap_rewards:trophy/$(reward_id)"
+    ],
+    "gateCondition": "if score terralith_score bac_settings matches 1",
+    "gateCounts": {
+      "bac_advancements": 1,
+      "bac_advancements_points": 1,
+      "bac_advancements_team": 16,
+      "bac_advancements_team_points": 16
+    },
+    "gatedNativeLines": [
+      {
+        "nativeLine": 82,
+        "objective": "bac_advancements"
+      },
+      {
+        "nativeLine": 83,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 84,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 85,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 86,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 87,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 88,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 89,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 90,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 91,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 92,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 93,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 94,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 95,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 96,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 97,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 98,
+        "objective": "bac_advancements_team"
+      },
+      {
+        "nativeLine": 101,
+        "objective": "bac_advancements_points"
+      },
+      {
+        "nativeLine": 102,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 103,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 104,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 105,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 106,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 107,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 108,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 109,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 110,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 111,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 112,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 113,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 114,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 115,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 116,
+        "objective": "bac_advancements_team_points"
+      },
+      {
+        "nativeLine": 117,
+        "objective": "bac_advancements_team_points"
+      }
+    ],
+    "nativeBodyRecoveredExactlyAfterRemovingOnlyGates": true,
+    "nonIncrementNativeBehaviorPreserved": true,
+    "normalization": "Native CRCRLF/CRLF line endings normalized to LF; commands and all non-gated behavior unchanged.",
+    "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/terralith_advancement_made_macro.mcfunction",
+    "rawCountGateVerified": true,
+    "rawPointsGateVerified": true,
+    "sha256": "8d23b9a4b2fc7b75285749c8c6d3eb0841c3d157a7b53de99c42716e6bd895c7",
+    "sourceContract": "bacap_rewards:advancement_made_macro from exact pinned BACAP 1.21 Y2zZ5eSs",
+    "sourceResourcePath": "data/bacap_rewards/function/advancement_made_macro.mcfunction",
+    "sourceSha256": "78f7b1b020d09e6e5c57bdac56b5263faf77a2d89e3f4d755b38e597f8f00cb6",
+    "sparseConventionNote": "Original configuration/tier/first/team command guards preserved exactly. They are not existence guards; optional missing effects retain the native contained-command-error convention. No placeholder resources invented.",
+    "sparseOptionalConventionPreserved": true,
+    "staticCallees": [
+      "bacap_rewards:first_score_add",
+      "bacap_rewards:first_team_score_add"
+    ],
+    "teamCountGateVerified": true,
+    "teamPointsGateVerified": true
+  },
+  "transactionDelta": {
+    "ADD": 14,
+    "DELETE": 0,
+    "MODIFY": 1
+  },
+  "transactionName": "setup_resource_contracts",
+  "trophyAliases": [
+    {
+      "exactOneLineForwarder": true,
+      "newFunctionId": "bacap_rewards:trophy/monsters/bone_to_party",
+      "oldFunctionId": "bacap_rewards:trophy/combat/bone_to_party",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/bone_to_party.mcfunction",
+      "targetExists": true,
+      "targetResourcePath": "data/bacap_rewards/function/trophy/monsters/bone_to_party.mcfunction",
+      "targetSha256": "0089fc9302424f7d5a3c298e1ef4473e51688a316484426420931e1d27e253b5"
+    },
+    {
+      "exactOneLineForwarder": true,
+      "newFunctionId": "bacap_rewards:trophy/monsters/camouflage",
+      "oldFunctionId": "bacap_rewards:trophy/combat/camouflage",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/camouflage.mcfunction",
+      "targetExists": true,
+      "targetResourcePath": "data/bacap_rewards/function/trophy/monsters/camouflage.mcfunction",
+      "targetSha256": "d83b44c2d456aacc9cabd16d3bdf63f70bdc651b43ed3771bda2364de6ff2e97"
+    },
+    {
+      "exactOneLineForwarder": true,
+      "newFunctionId": "bacap_rewards:trophy/monsters/custom_boss_fight",
+      "oldFunctionId": "bacap_rewards:trophy/combat/custom_boss_fight",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/custom_boss_fight.mcfunction",
+      "targetExists": true,
+      "targetResourcePath": "data/bacap_rewards/function/trophy/monsters/custom_boss_fight.mcfunction",
+      "targetSha256": "c1eaa388a836a0337203e4a7124002c4eef527449f39972f8243ba6b94f923f9"
+    },
+    {
+      "exactOneLineForwarder": true,
+      "newFunctionId": "bacap_rewards:trophy/monsters/family_reunion",
+      "oldFunctionId": "bacap_rewards:trophy/combat/family_reunion",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/family_reunion.mcfunction",
+      "targetExists": true,
+      "targetResourcePath": "data/bacap_rewards/function/trophy/monsters/family_reunion.mcfunction",
+      "targetSha256": "6834bb567c98060481e2f8567dedb778bc7ccba9dbcf6fb6965f5d4a64a0b0d1"
+    },
+    {
+      "exactOneLineForwarder": true,
+      "newFunctionId": "bacap_rewards:trophy/monsters/freezing",
+      "oldFunctionId": "bacap_rewards:trophy/combat/freezing",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/freezing.mcfunction",
+      "targetExists": true,
+      "targetResourcePath": "data/bacap_rewards/function/trophy/monsters/freezing.mcfunction",
+      "targetSha256": "edc9cff7e6441fd4a9a23c5c1c14798b8c919a417c246c2366af55c6f506f97d"
+    },
+    {
+      "exactOneLineForwarder": true,
+      "newFunctionId": "bacap_rewards:trophy/monsters/handsome_jack",
+      "oldFunctionId": "bacap_rewards:trophy/combat/handsome_jack",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/handsome_jack.mcfunction",
+      "targetExists": true,
+      "targetResourcePath": "data/bacap_rewards/function/trophy/monsters/handsome_jack.mcfunction",
+      "targetSha256": "46b0f0cb4190c971e2d285904fa30cbdb4c823db0a25b5b04c5958350c87d65f"
+    },
+    {
+      "exactOneLineForwarder": true,
+      "newFunctionId": "bacap_rewards:trophy/monsters/impossible",
+      "oldFunctionId": "bacap_rewards:trophy/combat/impossible",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/impossible.mcfunction",
+      "targetExists": true,
+      "targetResourcePath": "data/bacap_rewards/function/trophy/monsters/impossible.mcfunction",
+      "targetSha256": "266b8c3521473fb97823c5427a8bef0355b97692baac0909e00e66c47bbbede5"
+    },
+    {
+      "exactOneLineForwarder": true,
+      "newFunctionId": "bacap_rewards:trophy/monsters/melting",
+      "oldFunctionId": "bacap_rewards:trophy/combat/melting",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/melting.mcfunction",
+      "targetExists": true,
+      "targetResourcePath": "data/bacap_rewards/function/trophy/monsters/melting.mcfunction",
+      "targetSha256": "0fec514af9a9028284a1a827413097933f5019fff5fb9c02e39ced85add1731b"
+    },
+    {
+      "exactOneLineForwarder": true,
+      "newFunctionId": "bacap_rewards:trophy/monsters/monsters_hunted",
+      "oldFunctionId": "bacap_rewards:trophy/combat/monsters_hunted",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/monsters_hunted.mcfunction",
+      "targetExists": true,
+      "targetResourcePath": "data/bacap_rewards/function/trophy/monsters/monsters_hunted.mcfunction",
+      "targetSha256": "a70f5145e95833f0fd4440ee717b32f649601c77b9883f2066ff26ea772f5467"
+    },
+    {
+      "exactOneLineForwarder": true,
+      "newFunctionId": "bacap_rewards:trophy/animal/iceologer_shouldve_won",
+      "oldFunctionId": "bacap_rewards:trophy/farming/iceologer_shouldve_won",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/iceologer_shouldve_won.mcfunction",
+      "targetExists": true,
+      "targetResourcePath": "data/bacap_rewards/function/trophy/animal/iceologer_shouldve_won.mcfunction",
+      "targetSha256": "7b02f546da2faa9015d1ae4c249dccec1e98605e7e5cecc9d16499e2cc9b150c"
+    },
+    {
+      "exactOneLineForwarder": true,
+      "newFunctionId": "bacap_rewards:trophy/animal/nest_quick",
+      "oldFunctionId": "bacap_rewards:trophy/farming/nest_quick",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/nest_quick.mcfunction",
+      "targetExists": true,
+      "targetResourcePath": "data/bacap_rewards/function/trophy/animal/nest_quick.mcfunction",
+      "targetSha256": "3bd3843c7e0b8c270460d5ed757a6a763922e5c778f7ea5d7215a8b08528a44b"
+    },
+    {
+      "exactOneLineForwarder": true,
+      "newFunctionId": "bacap_rewards:trophy/animal/tropical_collection",
+      "oldFunctionId": "bacap_rewards:trophy/farming/tropical_collection",
+      "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/tropical_collection.mcfunction",
+      "targetExists": true,
+      "targetResourcePath": "data/bacap_rewards/function/trophy/animal/tropical_collection.mcfunction",
+      "targetSha256": "b007c78dd083010371716f75f9502aef883b3b584c810df9dd27081ac0c1853a"
+    }
+  ],
+  "validation": {
+    "addedFilesNoIndexDiffChecks": "PASS (all fourteen unstaged additions separately checked)",
+    "all15ProcessedOutputsMatchSourceBytes": true,
+    "all18PriorAuthorityHashesExact": true,
+    "b5_1AllTenAfterHashesExact": true,
+    "b5_2AfterHashExact": true,
+    "diffCheck": "PASS",
+    "noNewStaticDanglingMacroCalls": true,
+    "nonIncrementMacroCommandsUnchanged": true,
+    "processResources": {
+      "command": ".\\gradlew.bat --no-daemon --offline processResources -x generateBuildConfig",
+      "environment": {
+        "GRADLE_USER_HOME": ".gradle-user-home",
+        "JAVA_HOME": "C:/Program Files/Eclipse Adoptium/jdk-25.0.4.7-hotspot",
+        "TEMP": "build/tmp/codex_java_uds_probe",
+        "TMP": "build/tmp/codex_java_uds_probe"
+      },
+      "exitCode": 0,
+      "logPath": "build/tmp/phase_b_b5_3/processResources.log",
+      "logSha256": "aa8f1157e81f2df6cfe1a16c95d808b8d71cfb7e714e839ecf0534dde1a60b4c",
+      "result": "GREEN",
+      "taskExecuted": true,
+      "upToDate": false
+    },
+    "scope": "Deterministic static contracts and resource-copy validation; full Minecraft runtime checks remain later authorized stages.",
+    "sevenDefaultsExactAndUnique": true,
+    "singularFunctionLayoutVerified": true,
+    "structuralChecks": "PASS",
+    "targetCalleeCount": 12,
+    "targetCallees12of12": true,
+    "utf8AllAdded": true
+  }
+}

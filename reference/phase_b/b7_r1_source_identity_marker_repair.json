@@ -1,0 +1,411 @@
+{
+  "baselineHead": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+  "companionPinMatrix": [
+    {
+      "currentEnumSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+      "derivedCompatible": true,
+      "derivedCurrent": true,
+      "enum": "BACAP_TERRALITH",
+      "markerRecordsActualSource": true,
+      "markerSourceSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+      "markerVersion": "compat_26_2_r18",
+      "markerWritten": true,
+      "r17NonMarkerComparison": {
+        "differences": 0,
+        "nonMarkerEntriesCompared": 177,
+        "passed": true
+      },
+      "rawCurrent": true,
+      "rawPinned": true,
+      "sourceBytesUnchanged": true,
+      "sourceSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+      "sourceSha256": "0b3cd387fe6e80ac6fe9a05b22091fce6abf6c38dd9656b3086629ec4031d3de"
+    },
+    {
+      "currentEnumSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+      "derivedCompatible": true,
+      "derivedCurrent": true,
+      "enum": "BACAP_AMPLIFIED_NETHER",
+      "markerRecordsActualSource": true,
+      "markerSourceSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+      "markerVersion": "compat_26_2_r18",
+      "markerWritten": true,
+      "r17NonMarkerComparison": {
+        "differences": 0,
+        "nonMarkerEntriesCompared": 14,
+        "passed": true
+      },
+      "rawCurrent": true,
+      "rawPinned": true,
+      "sourceBytesUnchanged": true,
+      "sourceSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+      "sourceSha256": "be7f9c646a8ea8616e34ddef0beab3397995fe66da371cee7cb5cc929f03ad68"
+    },
+    {
+      "currentEnumSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+      "derivedCompatible": true,
+      "derivedCurrent": true,
+      "enum": "BACAP_NULLSCAPE",
+      "markerRecordsActualSource": true,
+      "markerSourceSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+      "markerVersion": "compat_26_2_r18",
+      "markerWritten": true,
+      "r17NonMarkerComparison": {
+        "differences": 0,
+        "nonMarkerEntriesCompared": 21,
+        "passed": true
+      },
+      "rawCurrent": true,
+      "rawPinned": true,
+      "sourceBytesUnchanged": true,
+      "sourceSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+      "sourceSha256": "5ad60435dded0a786d4c6320a6af456f640b2e713a080b942c3bed3c2cb85a20"
+    }
+  ],
+  "compileJava": {
+    "command": ".\\gradlew.bat --no-daemon --offline compileJava -x generateBuildConfig",
+    "existingCachesUsed": true,
+    "exitCode": 0,
+    "javaHome": "C:/Program Files/Eclipse Adoptium/jdk-25.0.4.7-hotspot",
+    "log": {
+      "path": "build/tmp/phase_b_b7_r1/compileJava.log",
+      "sha256": "9e6afc10c829e316785287d397bb89d46fbe056d9e51118aebc69ced2abd9138"
+    },
+    "noClean": true,
+    "offline": true,
+    "result": "GREEN"
+  },
+  "compiledProductionProbe": {
+    "commands": {
+      "path": "build/tmp/phase_b_b7_r1/commands.json",
+      "sha256": "ca93ca7bfe9cf538a8f7feddf2aa397679bc0cfc2aa5390f69ee8490f9bf39f9"
+    },
+    "compiledClassSha256": "1416b672b6dc8a3b5a4726ea957826b172e3c17540ffa082456c2d08efe197d2",
+    "enumClassLocation": "file:/D:/Vibecode/AchieveToDo%2026.2/build/classes/java/main/",
+    "exceptions": 0,
+    "fakeConverterUsed": false,
+    "historicalIdentityProbeEquivalent": {
+      "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+      "frozenSourceBytesUnchanged": true,
+      "historicalDerivedAcceptedAsCurrent": false,
+      "historicalDerivedCompatibleWithCurrentMain": false,
+      "historicalRawAcceptedAsCurrent": false,
+      "markerRecordsActualSource": true,
+      "markerSourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+      "markerVersion": "compat_26_2_r18",
+      "passed": true,
+      "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0"
+    },
+    "javaExit": 0,
+    "javacExit": 0,
+    "probe": {
+      "path": "build/tmp/phase_b_b7_r1/SourceIdentityProbe.java",
+      "sha256": "24d56eac6de7071dcdf8982c80e352679a47604cf7864f5eb5027f3e648788e0"
+    },
+    "productionClassLocation": "file:/D:/Vibecode/AchieveToDo%2026.2/build/classes/java/main/",
+    "realProductionClassesUsed": true,
+    "result": "PASS",
+    "resultEvidence": {
+      "path": "build/tmp/phase_b_b7_r1/probe.json",
+      "sha256": "ce7c3803d88fc53a00197fee7362618eb04a5bebf027ce6953e975b4bbe83564"
+    }
+  },
+  "defect": {
+    "actualHistoricalSourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+    "cause": "r17 writer recorded the enum pin rather than actual input provenance; the strict reader accepted that falsely attributed identity.",
+    "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+    "falseHistoricalDerivedAcceptance": true,
+    "r17MarkerWrittenSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739"
+  },
+  "diffCheck": {
+    "command": "git diff --check",
+    "exitCode": 0,
+    "result": "PASS"
+  },
+  "discoveredBy": "reference/phase_b/b7_full_test_gate_resolution.json",
+  "discoveredBySha256": "651edf4ec09d32bdca86dd60a0b30be323f4e25b9efd41b54abd6c650107ee4b",
+  "freshnessContract": {
+    "allowedHistoricalHashListAdded": false,
+    "currentDerivedSourceAccepted": true,
+    "currentRawSourceAccepted": true,
+    "historicalDerivedRejected": true,
+    "historicalRawRejected": true,
+    "mainIdentityMatrix": {
+      "current": {
+        "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "derivedCompatible": true,
+        "derivedCurrent": true,
+        "enum": "BACAP",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "markerVersion": "compat_26_2_r18",
+        "markerWritten": true,
+        "rawCurrent": true,
+        "rawPinned": true,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "sourceSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2"
+      },
+      "hardcore": {
+        "currentEnumSha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+        "derivedCompatible": true,
+        "derivedCurrent": true,
+        "enum": "BACAP_HARDCORE",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+        "markerVersion": "compat_26_2_r18",
+        "markerWritten": true,
+        "rawCurrent": true,
+        "rawPinned": true,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+        "sourceSha256": "1baf5f1bc7c48c819cb6b3081cb124793a316b3568352c853b94757bb4237446"
+      },
+      "historical": {
+        "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "derivedCompatible": false,
+        "derivedCurrent": false,
+        "enum": "BACAP",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "markerVersion": "compat_26_2_r18",
+        "markerWritten": true,
+        "rawCurrent": false,
+        "rawPinned": false,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "sourceSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70"
+      },
+      "malformedR17": {
+        "compatible": false,
+        "current": false,
+        "historicalPayloadComparison": {
+          "differences": 0,
+          "nonMarkerEntriesCompared": 6489,
+          "passed": true
+        },
+        "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "version": "compat_26_2_r17"
+      }
+    },
+    "malformedOldR17DerivedRejected": true,
+    "markerIntegrity": {
+      "fileNameRejected": true,
+      "rootOverrideSha1Rejected": true,
+      "sourceSha1Rejected": true,
+      "versionRejected": true
+    },
+    "readerStillRequiresCurrentEnumPin": true,
+    "worldSync": {
+      "current": {
+        "currentAfterSync": true,
+        "firstResult": "ALREADY_CURRENT",
+        "thenAlreadyCurrent": true
+      },
+      "historicalDerived": {
+        "currentAfterSync": true,
+        "firstResult": "UPDATED",
+        "thenAlreadyCurrent": true
+      },
+      "malformedR17": {
+        "currentAfterSync": true,
+        "firstResult": "UPDATED",
+        "thenAlreadyCurrent": true
+      }
+    }
+  },
+  "historicalConversionComparison": {
+    "differences": 0,
+    "excludedEntry": "achievetodo_compatibility/compat_26_2.properties",
+    "freshPreRepairR17Baseline": {
+      "path": "build/tmp/phase_b_b7/resume/historical_actual_production_r17.zip",
+      "sha256": "d65f26ee0c4be0164473b6f04a2cef05adcdd012fd8c0d2131aa8e4cf6baaee3"
+    },
+    "freshPreRepairR17Comparison": {
+      "differences": 0,
+      "nonMarkerEntriesCompared": 6489,
+      "passed": true
+    },
+    "nonMarkerEntriesCompared": 6489,
+    "note": "Properties serialization timestamps are non-payload metadata; all non-marker entry bytes and path sets compared exactly.",
+    "onlyMarkerSemanticsChanged": [
+      "version",
+      "sourceSha1"
+    ],
+    "passed": true,
+    "r17Baseline": {
+      "path": "build/tmp/phase_b_b5_2/historical/r17.zip",
+      "sha256": "911bb4c079ede444c836d31a5de8a4035fca016f25fe6437dd28a64c56dbe6ef"
+    }
+  },
+  "marker": {
+    "after": "compat_26_2_r18",
+    "before": "compat_26_2_r17",
+    "bumpReason": "Invalidate existing r17 historical-derived markers that falsely claim current BACAP source identity.",
+    "entry": "achievetodo_compatibility/compat_26_2.properties",
+    "entryUnchanged": true
+  },
+  "nativeHardcoreWitness": {
+    "actualShaSourcePolicy": true,
+    "changedFiles": 17,
+    "exceptions": 0,
+    "functionsChecked": 18,
+    "historicalRuleFunctionChanges": 0,
+    "intentionalAnnouncementSuppressions": 17,
+    "jsonChecked": 17,
+    "legacyMigrationSemanticChanges": 0,
+    "parseFailures": 0,
+    "passed": true,
+    "r17NonMarkerComparison": {
+      "differences": 0,
+      "nonMarkerEntriesCompared": 66,
+      "passed": true
+    },
+    "semanticJsonChanges": 17
+  },
+  "nativeMainWitness": {
+    "actualShaSourcePolicy": true,
+    "changedFiles": 1244,
+    "exceptions": 0,
+    "functionsChecked": 5436,
+    "historicalRuleFunctionChanges": 0,
+    "intentionalAnnouncementSuppressions": 1244,
+    "jsonChecked": 1479,
+    "legacyMigrationSemanticChanges": 0,
+    "parseFailures": 0,
+    "passed": true,
+    "r17NonMarkerComparison": {
+      "differences": 0,
+      "nonMarkerEntriesCompared": 7091,
+      "passed": true
+    },
+    "semanticJsonChanges": 1244
+  },
+  "phase": "B",
+  "postB5Repair": {
+    "B12MustReconcilePostB5Repair": true,
+    "B5.2HistoricalEvidenceRewritten": false,
+    "B5.7HistoricalEvidenceRewritten": false,
+    "currentAuthority": "reference/phase_b/b7_r1_source_identity_marker_repair.json",
+    "intentionallySuperseded": {
+      "afterSha256": "801634641b388c06b4c564c0bd16b0dd040c48a7a8228d602712bacd4b6b780a",
+      "beforeSha256": "1292f5df6d322bf60147cabc729a26ec24b572c732132d8ac56e20d565e4f45d",
+      "path": "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java"
+    },
+    "modifiesExistingB5Path": true,
+    "newUniqueProductPath": false,
+    "originalB5PathHashesPreserved": 250,
+    "originalB5TotalPaths": 251
+  },
+  "productionFile": {
+    "afterSha256": "801634641b388c06b4c564c0bd16b0dd040c48a7a8228d602712bacd4b6b780a",
+    "beforeSha256": "1292f5df6d322bf60147cabc729a26ec24b572c732132d8ac56e20d565e4f45d",
+    "exactChanges": [
+      "Compute actual source SHA1 once before ZIP traversal",
+      "Classify native source using that SHA1",
+      "Pass that SHA1 into marker writer",
+      "Write actual input SHA1 into sourceSha1",
+      "Bump marker r17 to r18"
+    ],
+    "migrationImplementationsUnchanged": true,
+    "path": "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+    "readerUnchanged": true
+  },
+  "readyToResumeB7": true,
+  "repairTransactionDelta": {
+    "ADD": 0,
+    "DELETE": 0,
+    "MODIFY": 1
+  },
+  "safety": {
+    "B7RemainingCertificationResumed": false,
+    "B8Started": false,
+    "B9Started": false,
+    "abilityBalanceThresholdsUnchanged": true,
+    "advancementProgressMigration": false,
+    "allHistoricalTestsAndToolsUnchanged": true,
+    "allOtherRuntimeHashesUnchanged": true,
+    "allVerifiedArchivesUnchanged": true,
+    "branch": "phase-b-bacap-26.2",
+    "downloaderArchitectureUnchanged": true,
+    "externalPinsUnchanged": true,
+    "fullGradleTestTaskRun": false,
+    "headUnchanged": true,
+    "historicalEvidenceHashesUnchanged": {
+      "reference/phase_b/B1_OFFICIAL_BACAP_PIN.md": "82314a7f91569d4e2f6358ff6d562499a2f4c07e2322b1fd6ebdfbc702e1222a",
+      "reference/phase_b/B2_ATD_INTEGRATION_MAP.md": "58c77b0d51574dab337a151baf973ff5573485572f6a2c9d95134bf9529d8f81",
+      "reference/phase_b/B3_BACAP_SEMANTIC_DIFF.md": "066bedd333586121f07f5abe8cec90b21be63cf108bbc4e82a18d90790c45d31",
+      "reference/phase_b/B4_EXACT_PRODUCT_CHANGE_PLAN.md": "478406877f89ddceaaf790b75ae650c542f3832092f40a83cbd046230b62f1bd",
+      "reference/phase_b/B6_RUSSIAN_LOCALIZATION.md": "7966a55cc7c917f2c0fa80153d8d98193f43ccce5435602d79d0c6a510e2460d",
+      "reference/phase_b/B7_LOCALIZATION_CERTIFICATION.md": "54dfc4184345431cf28e41609a51010338949ca4706b894ba0499d821a1157fc",
+      "reference/phase_b/OPERATING_CONTRACT.md": "765f7c2d9874ea0df7086589dfa5c23d4a466e3ba3fcd6e812034b2a163cf921",
+      "reference/phase_b/b0_baseline.json": "747877d0a7685c12cf41b3e2f8f446eea0ce5e5bf976990fd3e681f5ea0e6390",
+      "reference/phase_b/b1_official_bacap_pin.json": "b39bdf2a190131c8b13b0820d26c0f67430935c9fe330122655911d1dc435110",
+      "reference/phase_b/b1_target_inventory.json": "2219f38681a7dbbe19deb109c7b0abeb16f01051fb22fa41dbee464fe00656eb",
+      "reference/phase_b/b2_atd_integration_map.json": "9214f2d027738486cd4be91fb0b6f3fbfe06b5c346c46b3163bef369a0f4999d",
+      "reference/phase_b/b2_bacap_occurrences.json": "771e89d60dc00ecef0a9abe80dc6e27b4b7c55bde457b61df34f8f8b52ce34b2",
+      "reference/phase_b/b3_advancement_diff.json": "a402baa19657c3ec14c089affed19cdedf077f21eece39c7d1d07ecdd60a1980",
+      "reference/phase_b/b3_atd_impact_matrix.json": "682994595bb25dd6334aa4ce384d2e9eddfd77e706de531d1693b58bc26564a5",
+      "reference/phase_b/b3_resource_graph_diff.json": "a56188f03d15c37817117cfcf68422d5d7085635a4373e25519fed1847cdd693",
+      "reference/phase_b/b4_companion_matrix.json": "142d9fb5c7c905c10b87b07480043812b149a4622381fe9204b29fd5bdb26710",
+      "reference/phase_b/b4_converter_decision.json": "33900472aa72d1891e86065534a87f3bde4f4b8fcb534403a6677b6d99184f5e",
+      "reference/phase_b/b4_localization_handoff.json": "21dc8a27f9edf05b1970d030eaaf3e084859d0bfe3923483546dc81830ac1d67",
+      "reference/phase_b/b4_product_change_manifest.json": "feb0b2bd8020adf314c74bef05dba184342088fc7d8fb8bf5df1d5f4be51d000",
+      "reference/phase_b/b5_1_pins_pack_metadata.json": "ffc533dec326412f807e7d16667e5d8968aed0331d1a5ba0b9438a76a8279ab8",
+      "reference/phase_b/b5_2_converter_r17.json": "fcd6b4c9e9c5005ad253370871139bb26dadf944f0d7dceede76f112ad437a24",
+      "reference/phase_b/b5_3_setup_resource_contracts.json": "e1aa6aae5cb3f6f8127f7a83e94c3a48c18fa9fa0aaebb89719389ba89d3db5d",
+      "reference/phase_b/b5_4_benchmarking_contract_resolution.json": "c17dff35ec9a709b5e9522455f4c74d7450ea0b36a685bffd3936d5e1c69a208",
+      "reference/phase_b/b5_4_naughtylus_contract_resolution.json": "e318f8cb0051a52fe1a3a1e1d92c3c2f6993ce2985ce301842016ee28dd2c844",
+      "reference/phase_b/b5_4_root_reward_messages.json": "6ed40af0fff9bf081f075ed277c1984bcc5843113be7a902f8d8d52493018c15",
+      "reference/phase_b/b5_4_root_reward_messages_resumed.json": "874f3f20da41948f1039f9a53c0dba18c8ad1549d8d5961574b208e8e1b234e0",
+      "reference/phase_b/b5_5_trackers_gui.json": "15b923f01570ab38f9d3c4db557732f9eabdbb0dfdb13f4a77f3f837106e78b0",
+      "reference/phase_b/b5_6_companions.json": "3c8647d0218ba44486ce0d310ba270ffc7965bedce963660c193fc1d751484aa",
+      "reference/phase_b/b5_6_companions_resumed.json": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67",
+      "reference/phase_b/b5_6_unwanted_passenger_contract_resolution.json": "e5b95c8b772e8e73c42ba5b573adace4e1994bdfb0b224adc73c7c9d71673837",
+      "reference/phase_b/b5_7_structural_reconciliation.json": "4a3f796e7b898096888fa0ac18d5a1877e439f19bbca15a0e36c34c4c3d9064c",
+      "reference/phase_b/b6_localization_sources.json": "1bf99568edfc12bcd28b705f1d572cd6b418dacd1eae4fac58241e73f212d0d8",
+      "reference/phase_b/b6_ru_translation_manifest.json": "e6f8159de3f19e4aa44bc8e24b790c6d73e45bf8e0928bba39391a6689d26ede",
+      "reference/phase_b/b7_full_test_gate_resolution.json": "651edf4ec09d32bdca86dd60a0b30be323f4e25b9efd41b54abd6c650107ee4b",
+      "reference/phase_b/b7_localization_certification.json": "e0866de8bf91d079de75935e6b21b2396b0cc84c8605096eb81e28d68e54ca7c"
+    },
+    "localizationUnchanged": true,
+    "marker": "compat_26_2_r18",
+    "noCommit": true,
+    "noGitHubMutation": true,
+    "noPush": true,
+    "noTag": true,
+    "nothingStaged": true,
+    "resourcepackContentUnchanged": true,
+    "runtimeChangedPaths": [
+      "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java"
+    ]
+  },
+  "stage": "B7-R1",
+  "status": "PHASE_B_B7_R1_REPAIRED",
+  "transactionName": "ACTUAL_SOURCE_IDENTITY_MARKER_REPAIR",
+  "treasureHunterWitness": {
+    "method": "Real cached Minecraft 26.2 RegistryCodecs.homogeneousList holder-set codec; exact enchantment-tag value; same isolated typed-registry method as B5.2, not a full world boot.",
+    "nativePredicatePreserved": true,
+    "passed": true,
+    "r16Accepted": false,
+    "r17Accepted": true,
+    "r18Accepted": true,
+    "rawAccepted": true,
+    "resourceId": "blazeandcave:animal/treasure_hunter"
+  },
+  "uniqueRuntimeProductCountsRelativeToBaseline": {
+    "ADD": 177,
+    "DELETE": 9,
+    "MODIFY": 66
+  },
+  "writerContract": {
+    "actualSourceShaComputedOnce": true,
+    "computedBeforeZipTraversal": true,
+    "exactNarrowSourceEditVerified": true,
+    "fileNameUsesEnum": true,
+    "markerUsesActualSourceSha1": true,
+    "notFromFilenameEnumUrlOrContentsHeuristics": true,
+    "rootOverrideShaUsesCurrentResourceFingerprint": true,
+    "sameValueUsedForSourceClassificationAndMarker": true
+  }
+}

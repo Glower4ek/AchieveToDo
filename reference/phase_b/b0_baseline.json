@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 1,
+  "phase": "B",
+  "stage": "B0",
+  "status": "PHASE_B_B0_READY",
+  "recordedDate": "2026-10-02",
+  "baseline": {
+    "gitBranchBeforePhaseB": "26.2-port",
+    "gitCommit": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+    "releaseTag": "v0.1.5.4",
+    "releaseTagCommit": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+    "releaseVersion": "0.1.5.4",
+    "minecraftVersion": "26.2",
+    "startingWorkingTreeClean": true,
+    "currentBACAPCanonicalPath": "reference/phase_a_preservation/files/final/bacap.zip",
+    "currentBACAPSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+    "currentBACAPSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+    "currentBACAPAdvancementCount": 1152,
+    "currentBACAPVersion": "1.18.1",
+    "currentBACAPVersionDerivation": "Production ExternalPack.BACAP download filename; BACAP pack version, not Minecraft version.",
+    "currentCompatibilityMarker": "compat_26_2_r16",
+    "currentCompatibilityMarkerEntry": "achievetodo_compatibility/compat_26_2.properties",
+    "advancementCountRule": "Visible display advancements from frozen bacap.zip excluding blazeandcave:bacap/root",
+    "advancementArchiveCounts": {
+      "allAdvancementJson": 1229,
+      "noDisplayHelpers": 61,
+      "hiddenDisplayEntries": 15,
+      "excludedRootEntries": 1,
+      "canonicalByNamespace": {
+        "blazeandcave": 1030,
+        "minecraft": 122
+      }
+    },
+    "currentBACAPCanonicalPathTracked": true,
+    "historicalBACAPInputs": [
+      {
+        "id": "bacap",
+        "path": "reference/phase_a_preservation/files/final/bacap.zip",
+        "sha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+        "sha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "source": "https://cdn.modrinth.com/data/VoVJ47kN/versions/i8N5hYLH/BlazeandCave%27s%20Advancements%20Pack%201.18.1.zip"
+      },
+      {
+        "id": "bacap_hardcore",
+        "path": "reference/phase_a_preservation/files/final/bacap_hardcore.zip",
+        "sha256": "8e69adc9f5777aed8013e2b7e857667f0619d200c9152b8efd70c6e74b34cd2f",
+        "sha1": "ec5203496a822e6145562cd81e781ca0eea2c968",
+        "source": "https://cdn.modrinth.com/data/QEv1xmKi/versions/uRKM9Bou/BlazeandCave%27s%20Advancements%20Pack%20Hardcore.zip"
+      },
+      {
+        "id": "bacap_terralith",
+        "path": "reference/phase_a_preservation/files/final/bacap_terralith.zip",
+        "sha256": "0b3cd387fe6e80ac6fe9a05b22091fce6abf6c38dd9656b3086629ec4031d3de",
+        "sha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+        "source": "https://www.mediafire.com/file/ljb8qwofxk4dq9i/%255BUNZIP_ME%255D_BlazeandCave%2527s_Advancements_Pack_Terralith_1.18.zip/file"
+      },
+      {
+        "id": "bacap_amplified_nether",
+        "path": "reference/phase_a_preservation/files/final/bacap_amplified_nether.zip",
+        "sha256": "be7f9c646a8ea8616e34ddef0beab3397995fe66da371cee7cb5cc929f03ad68",
+        "sha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+        "source": "https://www.mediafire.com/file/ak5sjemiz60mzrc/%255BUNZIP_ME%255D_BlazeandCave%2527s_Advancements_Pack_Amplified_Nether_1.18.zip/file"
+      },
+      {
+        "id": "bacap_nullscape",
+        "path": "reference/phase_a_preservation/files/final/bacap_nullscape.zip",
+        "sha256": "5ad60435dded0a786d4c6320a6af456f640b2e713a080b942c3bed3c2cb85a20",
+        "sha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+        "source": "https://www.mediafire.com/file/hsj4koctw778e43/%255BUNZIP_ME%255D_BlazeandCave%2527s_Advancements_Pack_Nullscape_1.18.zip/file"
+      }
+    ],
+    "historicalMarkerNote": "Phase A/FINAL19 historical records use compat_26_2_r15. The verified release production source uses compat_26_2_r16. Historical records remain immutable.",
+    "runtimeAcquisition": "ExternalPack.BACAP pins the download URL and SHA1. ExternalPackDownloader validates acquisition into <gameDirectory>/datapacks/bacap.zip. CreateWorldScreenMixin selects external and bundled internal packs and invokes ExternalPackCompatibility.copyForWorld for the world datapacks copy. Existing-world freshness is handled by ExternalPackCompatibility.ensureWorldPacksUpToDate. The frozen repository ZIP is the preserved/certification input, not a bundled replacement for the external pack download."
+  },
+  "phaseBBranch": "phase-b-bacap-26.2",
+  "remotes": {
+    "origin": "https://github.com/Glower4ek/AchieveToDo.git",
+    "upstream": "https://github.com/AchieveToDo/mod.git"
+  },
+  "scope": {
+    "abilityChangesAllowed": false,
+    "balanceChangesAllowed": false,
+    "thresholdChangesAllowed": false,
+    "oldProgressMigrationRequired": false,
+    "originalATDArchitectureAuthoritative": true
+  },
+  "target": {
+    "minecraftVersion": "26.2",
+    "bacapVersion": null,
+    "bacapSource": null,
+    "bacapSha256": null,
+    "state": "TO_BE_PINNED_IN_B1"
+  },
+  "baselineDiscoverySources": [
+    {
+      "path": "gradle.properties",
+      "derives": [
+        "releaseVersion",
+        "minecraftVersion"
+      ],
+      "method": "Read modVersion and minMinecraftVersion."
+    },
+    {
+      "path": "reference/phase_a_preservation/files/final/bacap.zip",
+      "derives": [
+        "currentBACAPSha256",
+        "currentBACAPSha1",
+        "currentBACAPAdvancementCount",
+        "advancementArchiveCounts"
+      ],
+      "method": "Read-only SHA256/SHA1 and ZIP JSON scan using the existing canonical rule; no extraction or rewriting."
+    },
+    {
+      "path": "reference/phase_a_preservation/artifact-report.json",
+      "derives": [
+        "currentBACAPCanonicalPath",
+        "currentBACAPSha256",
+        "currentBACAPSha1",
+        "historicalBACAPInputs"
+      ],
+      "method": "Match preserved path/hash/acquisition records against freshly hashed final ZIPs."
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/ExternalPack.java",
+      "derives": [
+        "currentBACAPVersion",
+        "currentBACAPSha1",
+        "runtimeAcquisition"
+      ],
+      "method": "Read production BACAP URL, expected SHA1, filename, and variant pins."
+    },
+    {
+      "path": "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+      "derives": [
+        "currentCompatibilityMarker",
+        "currentCompatibilityMarkerEntry",
+        "runtimeAcquisition"
+      ],
+      "method": "Read current release MARKER_VERSION/MARKER_ENTRY and world-copy/freshness mechanisms."
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/PhaseACertification.java",
+      "derives": [
+        "advancementCountRule",
+        "currentBACAPAdvancementCount"
+      ],
+      "method": "Read CANONICAL_ROOT_EXCLUSION, EXPECTED_CANONICAL_ADVANCEMENTS, isCanonical, and documented archive-count formula."
+    },
+    {
+      "path": "src/test/resources/phase_a_certification/advancement_inventory.json",
+      "derives": [
+        "currentBACAPAdvancementCount",
+        "advancementArchiveCounts.canonicalByNamespace"
+      ],
+      "method": "Reconcile fresh ZIP scan with 1152 canonical entries: 1030 blazeandcave and 122 minecraft."
+    },
+    {
+      "path": "reference/phase_a_planning/final19/pre26_2_final19_audit.json",
+      "derives": [
+        "currentBACAPSha256",
+        "currentBACAPAdvancementCount",
+        "historicalMarkerNote"
+      ],
+      "method": "Read verifiedCanonicalBaseline and baselineSha256; preserve historical r15 context."
+    },
+    {
+      "path": "reference/phase_a_planning/final19/terminal_reconciliation.json",
+      "derives": [
+        "currentBACAPAdvancementCount",
+        "historicalMarkerNote"
+      ],
+      "method": "Read the immutable FINAL19 terminal 1152/1152 record; this is old-state evidence, not Phase B certification."
+    },
+    {
+      "path": "tools/publication/verify.ps1",
+      "derives": [
+        "currentBACAPSha256",
+        "releaseVersion",
+        "minecraftVersion"
+      ],
+      "method": "Read published-snapshot input hash assertion, version pins, and generated-resource verification; do not execute gates during B0."
+    }
+  ],
+  "sourceDependencyInventory": [
+    {
+      "surface": "production Java and original acquisition",
+      "paths": [
+        "src/main/java/com/diskree/achievetodo/client/ExternalPack.java",
+        "src/main/java/com/diskree/achievetodo/client/gui/ExternalPackDownloader.java",
+        "src/main/java/com/diskree/achievetodo/client/InternalPack.java",
+        "src/main/java/com/diskree/achievetodo/injection/mixin/client/CreateWorldScreenMixin.java",
+        "src/main/java/com/diskree/achievetodo/injection/mixin/client/PackScreenMixin.java",
+        "src/main/java/com/diskree/achievetodo/server/AchieveToDoServer.java",
+        "src/main/java/com/diskree/achievetodo/server/AdvancementsMode.java"
+      ],
+      "observations": [
+        "External URL/hash pins and downloaded pack selection are separate from bundled ATD overrides.",
+        "Server ability progression consumes BACAP advancement-counter scoreboard objectives; existing ability thresholds stay fixed.",
+        "Internal packs are registered by AchieveToDoServer and selected during world creation."
+      ]
+    },
+    {
+      "surface": "direct BACAP IDs and tracking",
+      "paths": [
+        "src/main/java/com/diskree/achievetodo/tracking/TrackedStatisticsDataType.java",
+        "src/main/java/com/diskree/achievetodo/tracking/TrackedScoreType.java",
+        "src/main/java/com/diskree/achievetodo/tracking/TrackedNearbyEntitiesType.java",
+        "src/main/java/com/diskree/achievetodo/injection/mixin/main/PlacedAdvancementMixin.java",
+        "src/main/java/com/diskree/achievetodo/client/gui/AdvancementsTabType.java"
+      ],
+      "observations": [
+        "Tracked statistics, BACAP scoreboard names, and nearby-entity groups contain explicit blazeandcave IDs.",
+        "Advancement tree ordering contains explicit BACAP root/child IDs; tab classification also names BACAP."
+      ]
+    },
+    {
+      "surface": "product resources",
+      "paths": [
+        "src/main/resources/resourcepacks/bacap_override",
+        "src/main/resources/resourcepacks/bacap_hardcore_override",
+        "src/main/resources/resourcepacks/bacap_terralith_override",
+        "src/main/resources/resourcepacks/bacap_amplified_nether_override",
+        "src/main/resources/resourcepacks/bacap_nullscape_override",
+        "src/main/resources/resourcepacks/bacap_cooperative_mode",
+        "src/main/resources/resourcepacks/bacap_rewards_item",
+        "src/main/resources/resourcepacks/bacap_rewards_experience",
+        "src/main/resources/resourcepacks/bacap_rewards_trophy"
+      ],
+      "observations": [
+        "Bundled packs override BACAP setup/configuration and reward-message functions, category roots, and optional pack variants.",
+        "Reward messages carry advancement IDs, translation keys, hover text, tab labels, and Search click commands."
+      ]
+    },
+    {
+      "surface": "generated resources and generators",
+      "paths": [
+        "build.gradle",
+        "src/main/generated",
+        "src/data/resources/fabric.mod.json",
+        "src/main/java/com/diskree/achievetodo/ability/generation/AbilitiesGenerator.java",
+        "src/main/java/com/diskree/achievetodo/ability/generation/AbilityAdvancementsGenerator.java",
+        "src/main/java/com/diskree/achievetodo/ability/generation/AbilityUnlockMessagesGenerator.java",
+        "reference/publication/fixtures/generated_gameplay_resources_sha256.json"
+      ],
+      "observations": [
+        "Gradle includes src/main/generated as resources and generated/java as source.",
+        "The existing datagen entrypoint generates ATD ability advancements and unlock messages, not the external BACAP archive.",
+        "No literal bacap/blazeandcave references were found in src/main/generated or src/data during the B0 text search.",
+        "Publication verification pins 303 accepted generated gameplay resource hashes; do not regenerate during B0."
+      ]
+    },
+    {
+      "surface": "Search and resource references",
+      "paths": [
+        "src/main/java/com/diskree/achievetodo/client/AdvancementLinkCommand.java",
+        "src/main/java/com/diskree/achievetodo/client/OptionalAdvancementSearch.java",
+        "src/main/java/com/diskree/achievetodo/client/LegacyChatText.java",
+        "src/main/java/com/diskree/achievetodo/injection/mixin/main/CommandFunctionMixin.java",
+        "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg"
+      ],
+      "observations": [
+        "Reward links use advancementssearch highlight <id> obtained_status.",
+        "ATD resolves the live client advancement tree and delegates centering/flashing to optional Search 1.3 via the advancements_search adapter.",
+        "CommandFunctionMixin migrates legacy reward/configuration chat commands; B0 found no separate ATD BACAP index artifact."
+      ]
+    },
+    {
+      "surface": "external pack compatibility and conversion",
+      "paths": [
+        "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+        "src/test/java/com/diskree/achievetodo/client/ExternalPackSyncTool.java"
+      ],
+      "observations": [
+        "Production converts copies rather than rewriting the frozen input.",
+        "Marker freshness checks include version, source/file identity, category-root override hash, and BACAP conversion properties.",
+        "Production includes existing pack/JSON/NBT/command compatibility mechanisms and category-root resources. Content-version change alone does not require a new marker."
+      ]
+    },
+    {
+      "surface": "tests and certification",
+      "paths": [
+        "src/test/java/com/diskree/achievetodo/client/ExternalPackCompatibilityTest.java",
+        "src/test/java/com/diskree/achievetodo/client/ExternalPackCompatibilityPhaseATest.java",
+        "src/test/java/com/diskree/achievetodo/client/Pre26SmokeRegressionTest.java",
+        "src/test/java/com/diskree/achievetodo/certification",
+        "src/test/resources/phase_a_certification",
+        "src/test/resources/final19_certification",
+        "src/gametest/java/com/diskree/achievetodo/certification",
+        "tools/final19",
+        "tools/publication"
+      ],
+      "observations": [
+        "Static loaders, native runtime family tests, catalogs, evidence, fingerprints, and roll-ups refer to the frozen ZIP and old advancement IDs/requirements.",
+        "Publication and smoke tooling validate source inputs and production-equivalent world copies.",
+        "Historical accepted tests/evidence remain unchanged; no Gradle task or runtime test was run in B0."
+      ]
+    },
+    {
+      "surface": "original localization and provenance",
+      "paths": [
+        "src/main/resources/assets/achievetodo/lang/en_us.json",
+        "src/main/resources/assets/achievetodo/lang/ru_ru.json",
+        "src/main/resources/assets/minecraft/lang/ru_ru.json",
+        "licenses/bacap-better-ru/LICENSE",
+        "tools/generate_phase_a_production_ru.py",
+        "reference/localization/phase_a_manual_ru_manifest.json",
+        "reference/localization/fixtures/bacap_1.21.provenance.json",
+        "reference/localization/fixtures/bacap_1.21.zip"
+      ],
+      "observations": [
+        "Original ATD uses client lang JSON with translation keys embedded in advancement and reward text; Russian BACAP text is provided through the existing minecraft/ATD assets.",
+        "Better RU 2.3 provenance credits diskree and records CC0-1.0; Phase A manual translations have durable manifests/TSV audits.",
+        "The BACAP 1.21 localization fixture explicitly states it is not frozen production BACAP; its metadata is not a B1 official 26.2 target pin.",
+        "Phase B must research all usable Russian sources under their applicable licenses and fill remaining strings through the original architecture."
+      ]
+    },
+    {
+      "surface": "durable Phase A/FINAL19/publication evidence",
+      "paths": [
+        "reference/phase_a_preservation/artifact-report.json",
+        "reference/phase_a_preservation/files/final",
+        "reference/phase_a_planning/phase_a_terminal_reconciliation_20260930.json",
+        "reference/phase_a_planning/final19/pre26_2_final19_audit.json",
+        "reference/phase_a_planning/final19/product_ledger.json",
+        "reference/phase_a_planning/final19/terminal_reconciliation.json",
+        "reference/phase_a_planning/pre26_2_smoke_bugfix_0_1_5_4/bugfix_manifest.json",
+        "reference/publication"
+      ],
+      "observations": [
+        "Frozen inputs, Phase A roll-ups, FINAL19 terminal certification, release smoke fixes, and publication fixtures preserve the completed old-state baseline.",
+        "Preservation README describes an earlier ignored-files layout; git ls-files confirms the canonical BACAP ZIP is tracked in the release snapshot.",
+        "Future Phase B evidence must use Phase-B-specific paths and must not rewrite these records."
+      ]
+    }
+  ],
+  "validationRoadmap": [
+    "B1 official BACAP pin",
+    "B2 original-ATD dependency/integration map",
+    "B3 complete old->new BACAP semantic diff",
+    "B4 exact required product-change inventory",
+    "B5 BACAP integration",
+    "B6 Russian localization update",
+    "B7 localization coverage certification",
+    "B8 BACAP static certification",
+    "B9 regression suite",
+    "B10 runtime smoke",
+    "B11 manual new/changed advancement review",
+    "B12 terminal reconciliation",
+    "B13 milestone commit"
+  ],
+  "b0Safety": {
+    "authorizedNewFiles": [
+      "reference/phase_b/OPERATING_CONTRACT.md",
+      "reference/phase_b/b0_baseline.json"
+    ],
+    "headUnchanged": true,
+    "productCodeChanged": false,
+    "productResourcesChanged": false,
+    "bacapChanged": false,
+    "localizationChanged": false,
+    "testsChanged": false,
+    "historicalEvidenceChanged": false,
+    "newBACAPDownloaded": false,
+    "commitCreated": false,
+    "branchPushed": false,
+    "tagChanged": false,
+    "githubChanged": false,
+    "fetchPerformed": false,
+    "b1Started": false
+  }
+}
+

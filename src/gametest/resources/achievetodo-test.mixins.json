@@ -1,5 +1,6 @@
 {
   "required": true,
+  "plugin": "com.diskree.achievetodo.injection.mixin.gametest.B10MixinPlugin",
   "package": "com.diskree.achievetodo.injection.mixin.gametest",
   "compatibilityLevel": "JAVA_21",
   "injectors": {

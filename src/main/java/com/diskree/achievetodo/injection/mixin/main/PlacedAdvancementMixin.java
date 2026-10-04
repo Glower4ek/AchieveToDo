@@ -48,7 +48,6 @@ public abstract class PlacedAdvancementMixin {
             "blazeandcave:challenges/nuclear_fusion",
             "blazeandcave:challenges/ad_astra",
             "blazeandcave:challenges/all_the_blocks",
-            "blazeandcave:challenges/constellation",
             "blazeandcave:challenges/ultimate_enchanter",
             "blazeandcave:challenges/i_am_loot",
             "blazeandcave:challenges/telescopic",

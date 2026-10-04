@@ -193,6 +193,18 @@ public enum TrackedScoreType {
         true,
         "bac_inv_rocketman"
     ),
+    WHERES_THE_HONEY_LEBOWSKI(
+        "blazeandcave:animal/wheres_the_honey_lebowski",
+        100,
+        false,
+        "bac_consume_honey_bottle"
+    ),
+    PUPIL_POPPERS(
+        "blazeandcave:monsters/pupil_poppers",
+        1_000,
+        false,
+        "bac_consume_spider_eye"
+    ),
     LOSER(
         "blazeandcave:weaponry/loser",
         2,

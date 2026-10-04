@@ -1,0 +1,512 @@
+{
+  "schemaVersion": 1,
+  "phase": "B",
+  "stage": "B1",
+  "status": "PHASE_B_B1_PINNED",
+  "recordedDate": "2026-10-02",
+  "selectedTarget": {
+    "projectId": "VoVJ47kN",
+    "projectSlug": "blazeandcaves-advancements-pack",
+    "projectName": "BlazeandCave's Advancements Pack",
+    "versionId": "Y2zZ5eSs",
+    "versionNumber": "1.21",
+    "versionName": "1.21 (Chaos Takeover of Mayhem)",
+    "versionType": "release",
+    "publishedAt": "2026-06-17T06:13:32.499541Z",
+    "minecraftVersions": [
+      "26.2"
+    ],
+    "loaders": [
+      "datapack"
+    ],
+    "primaryFilename": "BlazeandCave's Advancements Pack 1.21.zip",
+    "primaryDownloadUrl": "https://cdn.modrinth.com/data/VoVJ47kN/versions/Y2zZ5eSs/BlazeandCave%27s%20Advancements%20Pack%201.21.zip",
+    "projectUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack",
+    "versionUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack/version/Y2zZ5eSs",
+    "upstreamFileId": "EdZR962n",
+    "upstreamFileSize": 3135424,
+    "upstreamHashes": {
+      "sha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+      "sha512": "10df49e4b53d148309486603a59d8891025fcd405151b54610ac2499a636278c798d26211d2174dd3e161a8ef6ee5998014afe922dcddec67a149717aeac7f42"
+    },
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "upstreamIdentifiesMinecraft26_2Update": true
+  },
+  "selection": {
+    "definition": "Newest official stable release explicitly supporting final Minecraft Java Edition 26.2, ordered by publication time; exclude alpha/beta, snapshot/pre-release/RC-only builds and newer-Minecraft-only releases.",
+    "allOfficialVersionsExamined": 65,
+    "exactFinal26_2MetadataMatches": 1,
+    "candidateEnumeration": "Scan the unfiltered official versions response for exact/family 26.2 game versions and 26.2 mentions in names/changelogs. Independently query the exact game_versions=[26.2] endpoint and selected version endpoint.",
+    "candidates": [
+      {
+        "versionId": "Y2zZ5eSs",
+        "versionNumber": "1.21",
+        "versionName": "1.21 (Chaos Takeover of Mayhem)",
+        "versionType": "release",
+        "publishedAt": "2026-06-17T06:13:32.499541Z",
+        "minecraftVersions": [
+          "26.2"
+        ],
+        "loaders": [
+          "datapack"
+        ],
+        "targetClassification": "FINAL_26_2",
+        "eligible": true,
+        "selected": true,
+        "reason": "Selected: newest stable release explicitly supporting final 26.2.",
+        "versionUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack/version/Y2zZ5eSs"
+      },
+      {
+        "versionId": "YSahQ7UP",
+        "versionNumber": "1.21.b2",
+        "versionName": "1.21 Beta Build 2",
+        "versionType": "beta",
+        "publishedAt": "2026-06-13T23:30:47.48201Z",
+        "minecraftVersions": [
+          "26.2-rc-2"
+        ],
+        "loaders": [
+          "datapack"
+        ],
+        "targetClassification": "RC_TARGETED",
+        "eligible": false,
+        "selected": false,
+        "reason": "Rejected: non-stable beta channel and RC_TARGETED support.",
+        "versionUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack/version/YSahQ7UP"
+      },
+      {
+        "versionId": "IF78xEfk",
+        "versionNumber": "1.21.b1",
+        "versionName": "1.21 Beta Build 1",
+        "versionType": "beta",
+        "publishedAt": "2026-05-31T00:16:13.122729Z",
+        "minecraftVersions": [
+          "26.2-pre-2"
+        ],
+        "loaders": [
+          "datapack"
+        ],
+        "targetClassification": "PRE_RELEASE_TARGETED",
+        "eligible": false,
+        "selected": false,
+        "reason": "Rejected: non-stable beta channel and PRE_RELEASE_TARGETED support.",
+        "versionUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack/version/IF78xEfk"
+      },
+      {
+        "versionId": "lO3WjSLw",
+        "versionNumber": "1.21.a5",
+        "versionName": "1.21 Alpha Build 5",
+        "versionType": "alpha",
+        "publishedAt": "2026-05-24T01:33:58.58275Z",
+        "minecraftVersions": [
+          "26.2-snapshot-8"
+        ],
+        "loaders": [
+          "datapack"
+        ],
+        "targetClassification": "SNAPSHOT_TARGETED",
+        "eligible": false,
+        "selected": false,
+        "reason": "Rejected: non-stable alpha channel and SNAPSHOT_TARGETED support.",
+        "versionUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack/version/lO3WjSLw"
+      },
+      {
+        "versionId": "Rj35m4ll",
+        "versionNumber": "1.21.a4",
+        "versionName": "1.21 Alpha Build 4",
+        "versionType": "alpha",
+        "publishedAt": "2026-05-16T04:42:55.5086Z",
+        "minecraftVersions": [
+          "26.2-snapshot-7"
+        ],
+        "loaders": [
+          "datapack"
+        ],
+        "targetClassification": "SNAPSHOT_TARGETED",
+        "eligible": false,
+        "selected": false,
+        "reason": "Rejected: non-stable alpha channel and SNAPSHOT_TARGETED support.",
+        "versionUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack/version/Rj35m4ll"
+      },
+      {
+        "versionId": "kVx9Imlb",
+        "versionNumber": "1.21.a3",
+        "versionName": "1.21 Alpha Build 3",
+        "versionType": "alpha",
+        "publishedAt": "2026-05-09T10:22:23.433439Z",
+        "minecraftVersions": [
+          "26.2-snapshot-6"
+        ],
+        "loaders": [
+          "datapack"
+        ],
+        "targetClassification": "SNAPSHOT_TARGETED",
+        "eligible": false,
+        "selected": false,
+        "reason": "Rejected: non-stable alpha channel and SNAPSHOT_TARGETED support.",
+        "versionUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack/version/kVx9Imlb"
+      },
+      {
+        "versionId": "RgGa8u6j",
+        "versionNumber": "1.21.a2",
+        "versionName": "1.21 Alpha Build 2",
+        "versionType": "alpha",
+        "publishedAt": "2026-04-19T00:46:27.431624Z",
+        "minecraftVersions": [
+          "26.2-snapshot-3"
+        ],
+        "loaders": [
+          "datapack"
+        ],
+        "targetClassification": "SNAPSHOT_TARGETED",
+        "eligible": false,
+        "selected": false,
+        "reason": "Rejected: non-stable alpha channel and SNAPSHOT_TARGETED support.",
+        "versionUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack/version/RgGa8u6j"
+      },
+      {
+        "versionId": "9Vsieocp",
+        "versionNumber": "1.21.a1",
+        "versionName": "1.21 Alpha Build 1",
+        "versionType": "alpha",
+        "publishedAt": "2026-04-12T01:26:31.037862Z",
+        "minecraftVersions": [
+          "26.2-snapshot-2"
+        ],
+        "loaders": [
+          "datapack"
+        ],
+        "targetClassification": "SNAPSHOT_TARGETED",
+        "eligible": false,
+        "selected": false,
+        "reason": "Rejected: non-stable alpha channel and SNAPSHOT_TARGETED support.",
+        "versionUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack/version/9Vsieocp"
+      }
+    ],
+    "selectedReason": "The only stable release whose exact game_versions contains final 26.2 is 1.21 / Y2zZ5eSs. Its release notes explicitly identify the Minecraft 26.2 update. The later 1.21.1 release supports only 26.3; the later beta supports only 26.3-rc-2. All other 26.2-family candidates are beta/pre-release/RC or alpha/snapshot builds.",
+    "newerOverallProjectVersionExists": true,
+    "newerOverallVersionTargetMinecraft": [
+      "26.3"
+    ],
+    "latestOverallProjectVersion": {
+      "versionId": "YPEkY5bZ",
+      "versionNumber": "1.21.1",
+      "versionType": "release",
+      "minecraftVersions": [
+        "26.3"
+      ],
+      "publishedAt": "2026-09-16T07:12:13.094893Z"
+    },
+    "newerOverallVersionsExcluded": [
+      {
+        "versionId": "YPEkY5bZ",
+        "versionNumber": "1.21.1",
+        "versionType": "release",
+        "publishedAt": "2026-09-16T07:12:13.094893Z",
+        "minecraftVersions": [
+          "26.3"
+        ],
+        "eligible": false,
+        "reason": "Excluded: targets Minecraft 26.3 or its RC, without final 26.2 support."
+      },
+      {
+        "versionId": "3UTpCPex",
+        "versionNumber": "1.21.1.b1",
+        "versionType": "beta",
+        "publishedAt": "2026-09-11T22:31:39.166606Z",
+        "minecraftVersions": [
+          "26.3-rc-2"
+        ],
+        "eligible": false,
+        "reason": "Excluded: targets Minecraft 26.3 or its RC, without final 26.2 support."
+      }
+    ]
+  },
+  "authoritativeSources": [
+    {
+      "url": "https://api.modrinth.com/v2/project/VoVJ47kN",
+      "purpose": "Official project identity and upstream license fields."
+    },
+    {
+      "url": "https://api.modrinth.com/v2/project/VoVJ47kN/version",
+      "purpose": "Unfiltered official candidate enumeration and newer overall version comparison."
+    },
+    {
+      "url": "https://api.modrinth.com/v2/project/VoVJ47kN/version?game_versions=%5B%2226.2%22%5D",
+      "purpose": "Independent exact final 26.2 metadata query; returns only Y2zZ5eSs."
+    },
+    {
+      "url": "https://api.modrinth.com/v2/version/Y2zZ5eSs",
+      "purpose": "Independent selected-version identity, primary file, size and upstream hashes."
+    },
+    {
+      "url": "https://modrinth.com/datapack/blazeandcaves-advancements-pack/version/Y2zZ5eSs",
+      "purpose": "Corroborating official Release channel, final 26.2 compatibility, and release changelog."
+    },
+    {
+      "url": "https://modrinth.com/datapack/blazeandcaves-advancements-pack",
+      "purpose": "Official project page, ARR license display, attribution and redistribution terms."
+    }
+  ],
+  "verifiedDownload": {
+    "temporaryPath": "build/tmp/phase_b_b1/BlazeandCave's Advancements Pack 1.21.zip",
+    "size": 3135424,
+    "sha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+    "sha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+    "sha512": "10df49e4b53d148309486603a59d8891025fcd405151b54610ac2499a636278c798d26211d2174dd3e161a8ef6ee5998014afe922dcddec67a149717aeac7f42",
+    "upstreamHashMatches": {
+      "sha1": true,
+      "sha512": true
+    },
+    "sizeMatches": true,
+    "retrievedAtUtc": "2026-10-02T06:08:17.588919Z"
+  },
+  "archiveInventory": {
+    "totalEntries": 7091,
+    "packMcmetaPresent": true,
+    "packMetadata": {
+      "pack": {
+        "min_format": [
+          107,
+          1
+        ],
+        "max_format": [
+          107,
+          1
+        ],
+        "description": "BACAP 1.21 - Adds over 1000 new advancements!"
+      }
+    },
+    "packMcmetaSha256": "523f29554fec3d86941eb5e6d63f4ca0d4d80f70cb10b01829a2d989921c34c8",
+    "dataNamespaces": [
+      "bacap_fanpacks",
+      "bacap_rewards",
+      "blazeandcave",
+      "minecraft"
+    ],
+    "allAdvancementJson": 1332,
+    "noDisplayHelpers": 72,
+    "hiddenDisplayEntries": 17,
+    "excludedRootEntries": 1,
+    "canonicalAdvancementCount": 1242,
+    "canonicalByNamespace": {
+      "minecraft": 126,
+      "blazeandcave": 1116
+    },
+    "countingRuleCompatibleWithB0": true,
+    "advancementDirectories": {
+      "advancement": 1332
+    },
+    "dataResourceCountsByType": {
+      "predicate": 58,
+      "dialog": 7,
+      "function": 5436,
+      "advancement": 1332,
+      "tags": 82
+    },
+    "duplicateEntryPaths": 0,
+    "duplicateAdvancementIds": 0
+  },
+  "targetInventory": {
+    "path": "reference/phase_b/b1_target_inventory.json",
+    "advancementRecords": 1332,
+    "contents": "Each advancement ID/path, exact-byte SHA256, size, namespace, display/hidden/root/exclusion/canonical flags; aggregate counts and pack metadata. No criteria or complete upstream file text embedded."
+  },
+  "baseline": {
+    "oldBACAPVersion": "1.18.1",
+    "oldBACAPSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70",
+    "oldCanonicalAdvancementCount": 1152,
+    "gitBranch": "phase-b-bacap-26.2",
+    "gitCommit": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+    "currentCompatibilityMarker": "compat_26_2_r16",
+    "b0RecordUnchanged": true,
+    "operatingContractUnchanged": true
+  },
+  "redistribution": {
+    "rawArchiveCommitted": false,
+    "rawArchiveAddedToPublicationSet": false,
+    "reason": "Official project metadata identifies LicenseRef-All-Rights-Reserved and the official page prohibits redistributing the pack, including in modpacks or modified form. This B1 pin publishes metadata, hashes and path/flag inventories only; the new raw ZIP stays in ignored build/tmp/phase_b_b1.",
+    "licenseSource": "https://modrinth.com/datapack/blazeandcaves-advancements-pack",
+    "upstreamLicenseNameNote": "The API license.name is the empty string and license.url is null. Preserve those upstream values; ARR is the official project's display label."
+  },
+  "changelogDiscovery": {
+    "sourceUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack/version/Y2zZ5eSs",
+    "sourceVersionId": "Y2zZ5eSs",
+    "scope": "Paraphrased release-note signals only; not the complete 1.18.1-to-1.21 semantic diff.",
+    "newAdvancements": {
+      "reported": true,
+      "summary": "Adds content across multiple tabs for the three game drops covered by this update."
+    },
+    "renamedOrMovedAdvancements": {
+      "reported": true,
+      "summary": "Renames fishing and breeding titles and rearranges advancement positions, including cross-tab moves."
+    },
+    "changedAdvancements": {
+      "reported": true,
+      "summary": "Expands collections and requirements, corrects predicates and triggers, and revises icons and descriptions."
+    },
+    "newOrChangedRewardsOrTrophies": {
+      "reported": true,
+      "summary": "Adds trophies and revises reward items, experience, and a trophy name."
+    },
+    "scoreboardOrConfigurationChanges": {
+      "reported": true,
+      "summary": "Adds configurable point totals and progress triggers, adjusts counters, and separates hidden message settings."
+    },
+    "functionOrPathReorganizations": {
+      "reported": true,
+      "summary": "Routes reward calls through a common macro and reorganizes functions, update commands, and predicate directories."
+    },
+    "cooperativeModeChanges": {
+      "reported": false,
+      "summary": "No explicit cooperative-mode behavior change is reported; relocated update functions are mentioned beside cooperative updating.",
+      "meaningOfReportedFalse": "No explicit report in the selected changelog; not proof that cooperative resources are unchanged."
+    },
+    "translationKeyRelevantChanges": {
+      "reported": true,
+      "summary": "Adds translatable legend/root text and revises titles, descriptions, and trophy text."
+    }
+  },
+  "companionPackDiscovery": [
+    {
+      "name": "BACAP Hardcore",
+      "status": "FOUND",
+      "official26_2ReleaseAppearsToExist": true,
+      "projectId": "QEv1xmKi",
+      "projectUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack-hardcore-version",
+      "sourceUrl": "https://api.modrinth.com/v2/project/QEv1xmKi/version",
+      "versionUrl": "https://modrinth.com/datapack/blazeandcaves-advancements-pack-hardcore-version/version/ZHHHw5wF",
+      "apparentVersion": "1.21",
+      "versionId": "ZHHHw5wF",
+      "versionType": "release",
+      "publishedAt": "2026-06-17T06:15:07.547685Z",
+      "minecraftVersions": [
+        "26.2",
+        "26.3"
+      ],
+      "loaders": [
+        "datapack"
+      ],
+      "requiredMainProjectId": "VoVJ47kN",
+      "upstreamIdentifiesMinecraft26_2Update": true,
+      "reason": "Official stable release explicitly includes final 26.2. Discovery only; no companion target pin or download.",
+      "downloaded": false,
+      "pinnedAsPhaseBTarget": false
+    },
+    {
+      "name": "BACAP Terralith",
+      "status": "AMBIGUOUS",
+      "official26_2ReleaseAppearsToExist": null,
+      "projectId": null,
+      "projectUrl": "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
+      "sourceUrl": "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
+      "apparentVersion": "1.18.3",
+      "versionId": null,
+      "versionType": null,
+      "publishedAt": "2025-04-24T22:33:54Z",
+      "minecraftVersions": null,
+      "compatibilityTextSummary": "Official page names Minecraft 1.21.5 through 26.1.1; broad latest-version note does not specifically identify 26.2.",
+      "reason": "No explicit final 26.2 release was found. Latest official update log identifies 1.18.3; generic compatibility claim leaves final 26.2 support unconfirmed, not proven absent.",
+      "downloaded": false,
+      "pinnedAsPhaseBTarget": false
+    },
+    {
+      "name": "BACAP Amplified Nether",
+      "status": "AMBIGUOUS",
+      "official26_2ReleaseAppearsToExist": null,
+      "projectId": null,
+      "projectUrl": "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
+      "sourceUrl": "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
+      "apparentVersion": "1.18.3",
+      "versionId": null,
+      "versionType": null,
+      "publishedAt": "2025-04-24T22:33:54Z",
+      "minecraftVersions": null,
+      "compatibilityTextSummary": "Official page names Minecraft 1.21.5 through 26.1.1; broad latest-version note does not specifically identify 26.2.",
+      "reason": "No explicit final 26.2 release was found. Latest official update log identifies 1.18.3; generic compatibility claim leaves final 26.2 support unconfirmed, not proven absent.",
+      "downloaded": false,
+      "pinnedAsPhaseBTarget": false
+    },
+    {
+      "name": "BACAP Nullscape",
+      "status": "AMBIGUOUS",
+      "official26_2ReleaseAppearsToExist": null,
+      "projectId": null,
+      "projectUrl": "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
+      "sourceUrl": "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/",
+      "apparentVersion": "1.18.3",
+      "versionId": null,
+      "versionType": null,
+      "publishedAt": "2025-04-24T22:33:54Z",
+      "minecraftVersions": null,
+      "compatibilityTextSummary": "Official page names Minecraft 1.21.5 through 26.1.1; broad latest-version note does not specifically identify 26.2.",
+      "reason": "No explicit final 26.2 release was found. Latest official update log identifies 1.18.3; generic compatibility claim leaves final 26.2 support unconfirmed, not proven absent.",
+      "downloaded": false,
+      "pinnedAsPhaseBTarget": false
+    }
+  ],
+  "companionDiscoveryCoverage": {
+    "sources": [
+      "https://api.modrinth.com/v2/version/ZHHHw5wF",
+      "https://api.modrinth.com/v2/user/XTAa7v2H/projects",
+      "https://www.planetminecraft.com/data-pack/blazeandcave-s-advancements-pack-terralith-version/"
+    ],
+    "officialAuthorProjectList": [
+      "VoVJ47kN",
+      "QEv1xmKi",
+      "YX5bAAJN"
+    ],
+    "interpretation": "The queried official author's public Modrinth projects contain main BACAP, Hardcore and Language Pack; no official worldgen-variant Modrinth projects were found in this list.",
+    "limitations": "Variant-page text was retrieved through the web tool from a recent crawl. Direct shell HTTP retrieval encountered Cloudflare blocking. No runtime compatibility or global nonexistence is inferred.",
+    "matchingLanguagePackReleaseInvestigated": false,
+    "translationPacksDownloaded": false
+  },
+  "temporaryMetadataSnapshots": [
+    {
+      "temporaryPath": "build/tmp/phase_b_b1/official_project_metadata.json",
+      "sha256": "454eaf304fed8f2904a429f5cb919f621c22f00ac0b37ce2c0801b2624f695c3"
+    },
+    {
+      "temporaryPath": "build/tmp/phase_b_b1/official_all_versions_metadata.json",
+      "sha256": "c241a5ff07fdc73a75f7cab2a3f023ef958fa6c157d03fb635930f326125a4c8"
+    },
+    {
+      "temporaryPath": "build/tmp/phase_b_b1/official_selected_version_metadata.json",
+      "sha256": "ddfd65293a05cab9aeaf8ee48543807a5d15538ec1759731c31b5a576153bb94"
+    },
+    {
+      "temporaryPath": "build/tmp/phase_b_b1/official_final_26_2_versions_metadata.json",
+      "sha256": "789a631fad5b23ea00539b64cc9234e081f305013e6e12be2ee3771875a0f960"
+    }
+  ],
+  "b0PreservationHashes": {
+    "operatingContractSha256": "765f7c2d9874ea0df7086589dfa5c23d4a466e3ba3fcd6e812034b2a163cf921",
+    "baselineJsonSha256": "747877d0a7685c12cf41b3e2f8f446eea0ce5e5bf976990fd3e681f5ea0e6390"
+  },
+  "safety": {
+    "productJavaChanged": false,
+    "productResourcesChanged": false,
+    "existingBACAPArchivesChanged": false,
+    "localizationChanged": false,
+    "testsChanged": false,
+    "historicalPhaseAOrFinal19EvidenceChanged": false,
+    "compatibilityMarkerChanged": false,
+    "b0FilesChanged": false,
+    "semanticDiffPerformed": false,
+    "integrationPerformed": false,
+    "localizationResearchStarted": false,
+    "companionArchivesDownloaded": false,
+    "commitCreated": false,
+    "pushPerformed": false,
+    "tagChanged": false,
+    "githubMutation": false,
+    "b2Started": false
+  },
+  "nextStage": "B2",
+  "nextStageStarted": false
+}
+

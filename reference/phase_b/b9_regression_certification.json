@@ -1,0 +1,522 @@
+{
+  "baselineHead": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+  "branch": "phase-b-bacap-26.2",
+  "compiledProductionProbe": {
+    "companionPinMatrix": [
+      {
+        "currentEnumSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+        "derivedCompatible": true,
+        "derivedCurrent": true,
+        "enum": "BACAP_TERRALITH",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+        "markerVersion": "compat_26_2_r19",
+        "markerWritten": true,
+        "oldR18Rejected": true,
+        "oldR18WorldSync": "UPDATED",
+        "rawCurrent": true,
+        "rawPinned": true,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+        "sourceSha256": "0b3cd387fe6e80ac6fe9a05b22091fce6abf6c38dd9656b3086629ec4031d3de"
+      },
+      {
+        "currentEnumSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+        "derivedCompatible": true,
+        "derivedCurrent": true,
+        "enum": "BACAP_AMPLIFIED_NETHER",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+        "markerVersion": "compat_26_2_r19",
+        "markerWritten": true,
+        "oldR18Rejected": true,
+        "oldR18WorldSync": "UPDATED",
+        "rawCurrent": true,
+        "rawPinned": true,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+        "sourceSha256": "be7f9c646a8ea8616e34ddef0beab3397995fe66da371cee7cb5cc929f03ad68"
+      },
+      {
+        "currentEnumSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+        "derivedCompatible": true,
+        "derivedCurrent": true,
+        "enum": "BACAP_NULLSCAPE",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+        "markerVersion": "compat_26_2_r19",
+        "markerWritten": true,
+        "oldR18Rejected": true,
+        "oldR18WorldSync": "UPDATED",
+        "rawCurrent": true,
+        "rawPinned": true,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+        "sourceSha256": "5ad60435dded0a786d4c6320a6af456f640b2e713a080b942c3bed3c2cb85a20"
+      }
+    ],
+    "extraFamilyWitnesses": {
+      "daytime": {
+        "historicalMigrationOccurs": true,
+        "inputSha256": "d21f303f0b6cd06675b58e9711c787f431228993e20146349aa948b8c4365a8f",
+        "modernHistoricalMigrationChanges": 0,
+        "passed": true,
+        "secondPassChanges": 0
+      },
+      "gamerule": {
+        "historicalMigrationOccurs": true,
+        "inputSha256": "136084e32d8af56bec899da0c463fe7dbdef8b49eb22ac4eaac75eff21a6747e",
+        "modernHistoricalMigrationChanges": 0,
+        "passed": true,
+        "secondPassChanges": 0
+      },
+      "itemComponents": {
+        "historicalMigrationOccurs": true,
+        "inputSha256": "b4bf364faed15ac3f1d856db4c77b28770f8f71a139347a487b62f7df8cb9214",
+        "modernHistoricalMigrationChanges": 0,
+        "passed": true,
+        "secondPassChanges": 0
+      }
+    },
+    "familyWitness": {
+      "booleanPayloadPreserved": true,
+      "historicalScalarSingletonWitness": true,
+      "negativeShapesUnchanged": 8,
+      "passed": true,
+      "syntheticDifferentIdsMigrate": true
+    },
+    "helperIdempotence": {
+      "checked": 2,
+      "passed": true,
+      "productionCopyForWorldHelperOnlyRoundTrip": true,
+      "records": [
+        {
+          "contractPreserved": true,
+          "path": "data/blazeandcave/advancement/technical/biome_branch1_end.json",
+          "secondPassByteChanges": 0,
+          "secondPassSemanticChanges": 0
+        },
+        {
+          "contractPreserved": true,
+          "path": "data/blazeandcave/advancement/technical/biome_branch2_end.json",
+          "secondPassByteChanges": 0,
+          "secondPassSemanticChanges": 0
+        }
+      ],
+      "scope": "The two repaired r19 entries, also converted individually by compiled production convertJson; not a claim about unrelated already-derived pack reprocessing.",
+      "secondPassByteChanges": 0,
+      "secondPassSemanticChanges": 0
+    },
+    "historicalMainPayloadComparison": {
+      "differences": 0,
+      "nonMarkerEntriesCompared": 6489,
+      "passed": true
+    },
+    "identityMatrix": {
+      "current": {
+        "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "derivedCompatible": true,
+        "derivedCurrent": true,
+        "enum": "BACAP",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "markerVersion": "compat_26_2_r19",
+        "markerWritten": true,
+        "rawCurrent": true,
+        "rawPinned": true,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "sourceSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2"
+      },
+      "historical": {
+        "currentEnumSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "derivedCompatible": false,
+        "derivedCurrent": false,
+        "enum": "BACAP",
+        "markerRecordsActualSource": true,
+        "markerSourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "markerVersion": "compat_26_2_r19",
+        "markerWritten": true,
+        "rawCurrent": false,
+        "rawPinned": false,
+        "sourceBytesUnchanged": true,
+        "sourceSha1": "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "sourceSha256": "8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70"
+      },
+      "malformedR17Rejected": true,
+      "oldR18Rejected": true
+    },
+    "mainWorldSync": {
+      "current": {
+        "currentAfterSync": true,
+        "firstResult": "ALREADY_CURRENT",
+        "thenAlreadyCurrent": true
+      },
+      "historicalDerived": {
+        "currentAfterSync": true,
+        "firstResult": "UPDATED",
+        "thenAlreadyCurrent": true
+      },
+      "malformedR17": {
+        "currentAfterSync": true,
+        "firstResult": "UPDATED",
+        "thenAlreadyCurrent": true
+      },
+      "oldR18": {
+        "currentAfterSync": true,
+        "firstResult": "UPDATED",
+        "thenAlreadyCurrent": true
+      },
+      "preR2Root": {
+        "currentAfterSync": true,
+        "firstResult": "UPDATED",
+        "thenAlreadyCurrent": true
+      }
+    },
+    "markerIntegrity": {
+      "fileNameRejected": true,
+      "rootOverrideSha1Rejected": true,
+      "sourceSha1Rejected": true,
+      "versionRejected": true
+    },
+    "nativeHardcore": {
+      "actualShaSourcePolicy": true,
+      "changedFiles": 17,
+      "exceptions": 0,
+      "functionsChecked": 18,
+      "historicalRuleFunctionChanges": 0,
+      "intentionalAnnouncementSuppressions": 17,
+      "jsonChecked": 17,
+      "legacyMigrationSemanticChanges": 0,
+      "parseFailures": 0,
+      "passed": true,
+      "r18NonMarkerComparison": {
+        "differences": 0,
+        "nonMarkerEntriesCompared": 66,
+        "passed": true
+      },
+      "semanticJsonChanges": 17
+    },
+    "nativeMain": {
+      "actualShaSourcePolicy": true,
+      "changedFiles": 1244,
+      "exceptions": 0,
+      "functionsChecked": 5436,
+      "historicalRuleFunctionChanges": 0,
+      "intentionalAnnouncementSuppressions": 1244,
+      "jsonChecked": 1479,
+      "legacyMigrationSemanticChanges": 0,
+      "parseFailures": 0,
+      "passed": true,
+      "r18NonMarkerComparison": {
+        "differences": 0,
+        "nonMarkerEntriesCompared": 7091,
+        "passed": true
+      },
+      "semanticJsonChanges": 1244
+    },
+    "postR2DigestCopyAccepted": true,
+    "preR2DigestCopyRejected": true,
+    "productionClassLocation": "file:/D:/Vibecode/AchieveToDo%2026.2/build/classes/java/main/",
+    "reportSha256": "cbe174891f85af2bdb24af10a3f9e2edc928c5e71be1b6c62fc58750267e0291",
+    "result": "PASS",
+    "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+    "scope": "Preliminary B9 probe, not completed B9 certification",
+    "secondPassCorpus": {
+      "BACAP_AMPLIFIED_NETHER": {
+        "changedPaths": [],
+        "entriesChecked": 14,
+        "method": "Compiled production selected-policy entry transforms; derived archive SHA is not reused as a native download identity.",
+        "passed": true,
+        "secondPassByteChanges": 0,
+        "secondPassSemanticChanges": 0
+      },
+      "BACAP_NULLSCAPE": {
+        "changedPaths": [],
+        "entriesChecked": 21,
+        "method": "Compiled production selected-policy entry transforms; derived archive SHA is not reused as a native download identity.",
+        "passed": true,
+        "secondPassByteChanges": 0,
+        "secondPassSemanticChanges": 0
+      },
+      "BACAP_TERRALITH": {
+        "changedPaths": [],
+        "entriesChecked": 177,
+        "method": "Compiled production selected-policy entry transforms; derived archive SHA is not reused as a native download identity.",
+        "passed": true,
+        "secondPassByteChanges": 0,
+        "secondPassSemanticChanges": 0
+      },
+      "historicalMain": {
+        "changedPaths": [],
+        "entriesChecked": 6489,
+        "method": "Compiled production selected-policy entry transforms; derived archive SHA is not reused as a native download identity.",
+        "passed": true,
+        "secondPassByteChanges": 0,
+        "secondPassSemanticChanges": 0
+      },
+      "nativeHardcore": {
+        "changedPaths": [],
+        "entriesChecked": 66,
+        "method": "Compiled production selected-policy entry transforms; derived archive SHA is not reused as a native download identity.",
+        "passed": true,
+        "secondPassByteChanges": 0,
+        "secondPassSemanticChanges": 0
+      },
+      "nativeMain": {
+        "changedPaths": [],
+        "entriesChecked": 7091,
+        "method": "Compiled production selected-policy entry transforms; derived archive SHA is not reused as a native download identity.",
+        "passed": true,
+        "secondPassByteChanges": 0,
+        "secondPassSemanticChanges": 0
+      }
+    },
+    "terralithWorldSync": {
+      "helperHashes": {
+        "data/blazeandcave/advancement/technical/biome_branch1_end.json": "68833ba5dd256488596bb07f797d311bf381003cea47fd5e19307eb904accf58",
+        "data/blazeandcave/advancement/technical/biome_branch2_end.json": "a88b6dc0dcc7840e115743b4a501910697d84869b0f850588e5cd78745824c4b"
+      },
+      "markerVersion": "compat_26_2_r19",
+      "oldR18Rejected": true,
+      "passed": true,
+      "result": "UPDATED",
+      "sourceSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+      "thenAlreadyCurrent": true
+    },
+    "treasureHunterWitness": {
+      "method": "Real cached Minecraft 26.2 RegistryCodecs.homogeneousList holder-set codec; exact enchantment-tag value; same isolated typed-registry method as B5.2, not a full world boot.",
+      "nativePredicatePreserved": true,
+      "passed": true,
+      "r16Accepted": false,
+      "r17Accepted": true,
+      "r19Accepted": true,
+      "rawAccepted": true,
+      "resourceId": "blazeandcave:animal/treasure_hunter"
+    }
+  },
+  "currentProductAuthority": {
+    "converterSha256": "6ab0674902b4783c39c08dfd802cd0067d1436d973345834f092a001a4db9fec",
+    "marker": "compat_26_2_r19",
+    "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+    "ruSha256": "8961ad9d573ab72f63969e4a808b19ce733bc9a60b7ab589fc44dfb6148e1a0a"
+  },
+  "diffCheck": {
+    "command": "git diff --check",
+    "result": "PASS"
+  },
+  "finalFullSuite": {
+    "result": "NOT_RUN_BECAUSE_REQUIRED_B7_SUCCESSOR_GATE_FAILED"
+  },
+  "phase": "B",
+  "preB9FullSuite": {
+    "allowedFailurePartition": {
+      "baselineAccepted": 4,
+      "historicalOracleStale": 7,
+      "newFailureNames": [],
+      "unresolved": 0
+    },
+    "command": ".\\gradlew.bat --no-daemon --offline test -x generateBuildConfig",
+    "countArithmetic": "391 original methods + 15 accepted B8 successor methods = 406",
+    "errors": 0,
+    "failureNames": [
+      "com.diskree.achievetodo.certification.PhaseACertificationTest.canonicalInventorySnapshotMatchesGeneratedArtifacts()",
+      "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.pinnedHistoricalBacapSourceRemainsUnchanged()",
+      "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.productionRuOverlayKeepsPinnedPhaseARuntimeResolvable()",
+      "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.productionRuOverlayMatchesApprovedFinalManualDecisions()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.ensureWorldPacksUpToDateRepairsStaleWorldPackToCurrentCompatibleCopy()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies()",
+      "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.worldCopyPreservesHistoricalGlowAndHoneyDefinitionsAndFrozenSource()",
+      "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(Path)",
+      "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive()",
+      "com.diskree.achievetodo.client.Pre26SmokeRegressionTest.everyShippedAdvancementMessageRetainsHoverClickAndFrameMetadata()"
+    ],
+    "failureRecords": [
+      {
+        "classification": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+        "messageSha256": "6bc01804a64863d58f5c75c2cf74995b623a1195af6cd10a339b7147508e3a22",
+        "name": "com.diskree.achievetodo.certification.PhaseACertificationTest.canonicalInventorySnapshotMatchesGeneratedArtifacts()",
+        "messageSummary": "org.opentest4j.AssertionFailedError: Canonical advancement inventory snapshot is stale. Run writePhaseACertificationAssets. ==> expected: <{\n  \"snapshot\": \"phase_a_certified_inventory\",\n  \"canonicalRule\": \"visible display advancements from "
+      },
+      {
+        "classification": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+        "messageSha256": "e243a4c451353dfb8218ffb37927ab5587518221c2810f75148717381e2bb8b0",
+        "name": "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.productionRuOverlayMatchesApprovedFinalManualDecisions()",
+        "messageSummary": "org.opentest4j.AssertionFailedError: Intentional English fragment should stay absent from RU overlay: and ==> expected: <false> but was: <true>"
+      },
+      {
+        "classification": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+        "messageSha256": "f18a2692300cf320d9f6e6917359bd56982b930f4bf6d9d8a10255017133257b",
+        "name": "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.pinnedHistoricalBacapSourceRemainsUnchanged()",
+        "messageSummary": "org.opentest4j.AssertionFailedError: The Phase A overlay step must not alter the preserved historical BACAP source zip ==> expected: <true> but was: <false>"
+      },
+      {
+        "classification": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+        "messageSha256": "946008716cebc70e0e7ade35a16d468205f3160464eae24d27f2acc487eb7576",
+        "name": "com.diskree.achievetodo.client.BetterRuOverlayResourceTest.productionRuOverlayKeepsPinnedPhaseARuntimeResolvable()",
+        "messageSummary": "org.opentest4j.AssertionFailedError: Pinned Phase A historical BACAP content should not change during the production RU overlay step ==> expected: <3507> but was: <3714>"
+      },
+      {
+        "classification": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+        "messageSha256": "c69bff436adb86e96ddbe86afad4b7bcad753d04f4093d0c8fc954bdfc276bc5",
+        "name": "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.ensureWorldPacksUpToDateRepairsStaleWorldPackToCurrentCompatibleCopy()",
+        "messageSummary": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>"
+      },
+      {
+        "classification": "PRE_EXISTING_ACCEPTED_BASELINE_FAILURE",
+        "messageSha256": "c69bff436adb86e96ddbe86afad4b7bcad753d04f4093d0c8fc954bdfc276bc5",
+        "name": "com.diskree.achievetodo.client.ExternalPackCompatibilityPhaseATest.treatsPinnedHistoricalSourceAsSourceButMarkerCopyAsWorldCopyOnly()",
+        "messageSummary": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>"
+      },
+      {
+        "classification": "PRE_EXISTING_ACCEPTED_BASELINE_FAILURE",
+        "messageSha256": "c69bff436adb86e96ddbe86afad4b7bcad753d04f4093d0c8fc954bdfc276bc5",
+        "name": "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.admitsOnlyRawOrCurrentCompatiblePackCopies()",
+        "messageSummary": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>"
+      },
+      {
+        "classification": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+        "messageSha256": "bbd5c6c3fc95c80323a4f4c5ef6cb12ed544032261d61d8b513d19195c79081f",
+        "name": "com.diskree.achievetodo.client.ExternalPackCompatibilityTest.worldCopyPreservesHistoricalGlowAndHoneyDefinitionsAndFrozenSource()",
+        "messageSummary": "org.opentest4j.AssertionFailedError: expected: <14da3f07b5467e8b59ffc0253fd8212c938cd739> but was: <45b8bb0076bbf5b92fde7dc9590c6686937abbc0>"
+      },
+      {
+        "classification": "PRE_EXISTING_ACCEPTED_BASELINE_FAILURE",
+        "messageSha256": "3b7ab60c87d4f24d93b24e1e37b3c5808085d0d0758e6544170cef7d78b0d0e4",
+        "name": "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.onlyTheSixteenFrozenCarpetNbtPathsChangeAcrossTheEntireAdvancementArchive()",
+        "messageSummary": "org.opentest4j.AssertionFailedError: data/blazeandcave/advancement/adventure/feeling_ill.json ==> expected: <e06123aa1f567bb2fa83234ab6f1cb7691284b23a5fae985801a827f3284e2fc> but was: <2b98428f5dc509b37e7aa5c307fe94521ab963186fa41797a193639"
+      },
+      {
+        "classification": "PRE_EXISTING_ACCEPTED_BASELINE_FAILURE",
+        "messageSha256": "ecff091370c39528bd63922af82cdf14156ac6a583578cf71185895aa43f44e9",
+        "name": "com.diskree.achievetodo.client.PhaseALlamaFestivalNbtScopeTest.bacapCopyRecordsMappingAndRejectsStaleMarkerWithoutChangingOtherPackMarkerRules(Path)",
+        "messageSummary": "org.opentest4j.AssertionFailedError: expected: <compat_26_2_r15> but was: <compat_26_2_r19>"
+      },
+      {
+        "classification": "EXPECTED_PHASE_B_HISTORICAL_ORACLE_STALENESS",
+        "messageSha256": "432dd839a5f2b37633baece7b8c9c4bab79d547216b75965f320ebd8459f2553",
+        "name": "com.diskree.achievetodo.client.Pre26SmokeRegressionTest.everyShippedAdvancementMessageRetainsHoverClickAndFrameMetadata()",
+        "messageSummary": "org.opentest4j.AssertionFailedError: expected: <1202> but was: <1162>"
+      }
+    ],
+    "failures": 11,
+    "gradleExitCode": 1,
+    "skipped": 0,
+    "tests": 406,
+    "xmlParsed": true
+  },
+  "precheck": {
+    "b5HashModel": {
+      "exact": 249,
+      "original": 251,
+      "superseded": 2
+    },
+    "currentHashes": {
+      "reference/phase_b/b8_static_certification_resumed.json": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3",
+      "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java": "6ab0674902b4783c39c08dfd802cd0067d1436d973345834f092a001a4db9fec",
+      "src/main/resources/assets/minecraft/lang/ru_ru.json": "8961ad9d573ab72f63969e4a808b19ce733bc9a60b7ab589fc44dfb6148e1a0a",
+      "src/test/java/com/diskree/achievetodo/certification/PhaseBStaticCertificationTest.java": "fcdcb7ea610eb48543d680536951fffe791554d6d2de3f50f14ac02de00285ea",
+      "src/test/resources/phase_b_certification/bacap_1_21_codec_receipt.json": "eeddcb746eefe5175be3d1b2e9c30fe2cdfb99b79d2e8d290d00346aa9333a38",
+      "src/test/resources/phase_b_certification/bacap_1_21_static_receipt.json": "204b79d5ced64f57a85f2ff8981d8216f8e8e6b3f17e2f99e2f5f14672c81bf3",
+      "src/test/resources/phase_b_certification/bacap_1_21_target_inventory.json": "a8f76fc43819c875737c02be04885bbfb03b5ab69eab220358554a207d1a9fcf",
+      "tools/phase_b/b8_bacap_static_certification.py": "18acf4be8234587916a72a2aa0a8b48bbacaccf796055b40b8a4cf76ff26936b"
+    },
+    "passed": true,
+    "priorEvidenceHashesVerified": true
+  },
+  "readyForB10": false,
+  "runtimeProductDelta": {
+    "ADD": 0,
+    "DELETE": 0,
+    "MODIFY": 0
+  },
+  "safety": {
+    "B10Started": false,
+    "B7ToolUnchanged": true,
+    "B8ToolUnchanged": true,
+    "historicalTestsUnchanged": true,
+    "noAbilityBalanceThresholdChange": true,
+    "noCommit": true,
+    "noConverterChange": true,
+    "noGitHubMutation": true,
+    "noHistoricalSnapshotRegeneration": true,
+    "noLocalizationChange": true,
+    "noPinsDownloaderChange": true,
+    "noProgressMigration": true,
+    "noPush": true,
+    "noTag": true,
+    "nothingStaged": true,
+    "runtimeHashesUnchanged": true,
+    "priorEvidenceHashManifest": {
+      "path": "build/tmp/phase_b_b9/precheck.json",
+      "sha256": "5f496aa9e369ced4048f14bcb9aa1e377c1dafa775f0a54eb1490a9beaf99d56",
+      "priorEvidenceFilesVerified": 46
+    }
+  },
+  "stage": "B9",
+  "status": "PHASE_B_B9_STOP",
+  "stopReason": "B7_SUCCESSOR_PRECHECK_REQUIRES_SUPERSEDED_R18_AUTHORITY",
+  "successorRegression": {
+    "B7": {
+      "assertion": "MARKER_VERSION = compat_26_2_r18 required; current accepted converter uses compat_26_2_r19",
+      "assertionLocation": "tools/phase_b/b7_localization_certification.py:52",
+      "command": "python -B -X utf8 tools/phase_b/b7_localization_certification.py --self-test",
+      "failed": 1,
+      "failingTest": "ExtractionContractTests.test_current_effective_coverage_and_provenance",
+      "furtherSupersededChecks": {
+        "line57": "Requires B7-R1 converter SHA 801634... instead of accepted B8-R1 SHA 6ab067...",
+        "lines67to75": "B5 hash model excludes converter only; accepted B8-R2 potion/root supersession is not modeled"
+      },
+      "passed": 7,
+      "productionRegressionEstablished": false,
+      "reachedEffectiveCoverage": false,
+      "result": "FAIL",
+      "tests": 8,
+      "toolModified": false
+    },
+    "B8JUnitInPreFullSuite": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 15
+    },
+    "B8Tool": {
+      "failed": 0,
+      "passed": 14,
+      "result": "PASS",
+      "tests": 14
+    },
+    "B9JUnit": {
+      "result": "NOT_CREATED_BECAUSE_REQUIRED_SUCCESSOR_GATE_FAILED"
+    },
+    "B9Tool": {
+      "result": "NOT_CREATED_BECAUSE_REQUIRED_SUCCESSOR_GATE_FAILED"
+    },
+    "filteredB8JUnit": {
+      "result": "NOT_RUN_AFTER_REQUIRED_B7_GATE_FAILED"
+    }
+  },
+  "unfinishedGates": [
+    "Full B9 family/corpus scan",
+    "Fresh direct Advancement.CODEC helper witnesses",
+    "B9 compact receipt and B4-prescribed JUnit successors",
+    "Filtered B8/B9 tasks",
+    "Final full-suite rerun",
+    "B9 processResources/compileJava/compileTestJava completion checks"
+  ],
+  "uniqueCumulativeRuntimeDiff": {
+    "ADD": 177,
+    "DELETE": 9,
+    "MODIFY": 69
+  },
+  "uniqueRuntimePaths": 255,
+  "validationEvidence": {
+    "build/tmp/phase_b_b9/B9Probe.java": "2f78c088c4ca019d49c06bd78f74ac12cfc2c62416d5b4db59f054955b422249",
+    "build/tmp/phase_b_b9/b7_selftest.log": "c2b08d99b19d7895116e3ee3cb0cde5b4cac44cd7bb815f6d27aa20cf3553d37",
+    "build/tmp/phase_b_b9/b8_selftest.log": "58ab61bef8964691dd1f5d61b343021330490a3e559e9b350bbf7e4d1bf9fbf2",
+    "build/tmp/phase_b_b9/pre_full_test.log": "20142a8018dd4d4532953bdf022e73b77a1ed915762b8491f866cf2a23bb3d05",
+    "build/tmp/phase_b_b9/pre_full_test_result.json": "5aaadef0e8ea0a7c36b308382785161bed3bb670b40407aa3d040c2ef43148fe",
+    "build/tmp/phase_b_b9/probe/identity_probe.json": "cbe174891f85af2bdb24af10a3f9e2edc928c5e71be1b6c62fc58750267e0291"
+  }
+}

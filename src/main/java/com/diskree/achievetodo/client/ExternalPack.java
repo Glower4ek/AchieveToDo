@@ -15,18 +15,18 @@ public enum ExternalPack {
         "BlazeandCave's Advancements Pack (BACAP)",
         ChatFormatting.AQUA,
         "https://modrinth.com/datapack/blazeandcaves-advancements-pack",
-        "https://cdn.modrinth.com/data/VoVJ47kN/versions/i8N5hYLH/BlazeandCave%27s%20Advancements%20Pack%201.18.1.zip",
+        "https://cdn.modrinth.com/data/VoVJ47kN/versions/Y2zZ5eSs/BlazeandCave%27s%20Advancements%20Pack%201.21.zip",
         null,
-        "45b8bb0076bbf5b92fde7dc9590c6686937abbc0",
+        "14da3f07b5467e8b59ffc0253fd8212c938cd739",
         true
     ),
     BACAP_HARDCORE(
         "BACAP (Hardcore version)",
         ChatFormatting.RED,
         "https://modrinth.com/datapack/blazeandcaves-advancements-pack-hardcore-version",
-        "https://cdn.modrinth.com/data/QEv1xmKi/versions/uRKM9Bou/BlazeandCave%27s%20Advancements%20Pack%20Hardcore.zip",
+        "https://cdn.modrinth.com/data/QEv1xmKi/versions/ZHHHw5wF/BlazeandCave%27s%20Advancements%20Pack%20Hardcore.zip",
         null,
-        "ec5203496a822e6145562cd81e781ca0eea2c968",
+        "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
         true
     ),
     BACAP_TERRALITH(
@@ -60,27 +60,27 @@ public enum ExternalPack {
         "Terralith",
         ChatFormatting.GREEN,
         "https://www.planetminecraft.com/data-pack/terralith-overworld-evolved-100-biomes-caves-and-more/",
-        "https://cdn.modrinth.com/data/8oi3bsk5/versions/PcYlKx8w/Terralith_1.21_v2.5.7.zip",
+        "https://cdn.modrinth.com/data/8oi3bsk5/versions/CzijfXJQ/Terralith_26.2_v2.6.4.zip",
         null,
-        "9645d4c557e8419154cc5775c5fe3ba9e82bfb8f",
+        "96ccd25be9ba5240ebe8150cc29240aca781f0e1",
         true
     ),
     AMPLIFIED_NETHER(
         "Amplified Nether",
         ChatFormatting.DARK_RED,
         "https://www.planetminecraft.com/data-pack/amplified-nether-1-18/",
-        "https://cdn.modrinth.com/data/wXiGiyGX/versions/jfHNaJaE/Amplified_Nether_1.21_v1.2.7.zip",
+        "https://cdn.modrinth.com/data/wXiGiyGX/versions/xIayvf8F/Amplified_Nether_v1.2.15.zip",
         null,
-        "473ddf1042ae7d4c19eff01944d0b9da0f11c831",
+        "94d9604cebbfca667aeb59e4b1ac03e9c6e5cb5d",
         true
     ),
     NULLSCAPE(
         "Nullscape",
         ChatFormatting.DARK_PURPLE,
         "https://www.planetminecraft.com/data-pack/nullscape/",
-        "https://cdn.modrinth.com/data/LPjGiSO4/versions/J4B2BaWk/Nullscape_1.21_v1.2.10.zip",
+        "https://cdn.modrinth.com/data/LPjGiSO4/versions/prWWpjSv/Nullscape_26.2_v1.2.20.zip",
         null,
-        "0a55bff36ab26b13963213ed1482d1b8b84ab568",
+        "bee4a2182593fdfc5da4b253a342feddf02b88b9",
         true
     );
 

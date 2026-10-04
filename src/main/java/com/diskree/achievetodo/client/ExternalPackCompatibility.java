@@ -9,6 +9,7 @@ import com.diskree.achievetodo.server.Constants;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtAccounter;
 import net.minecraft.nbt.NbtIo;
+import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.ByteArrayOutputStream;
@@ -33,7 +34,9 @@ import java.util.zip.ZipOutputStream;
 public final class ExternalPackCompatibility {
 
     private static final String MARKER_ENTRY = "achievetodo_compatibility/compat_26_2.properties";
-    private static final String MARKER_VERSION = "compat_26_2_r16";
+    private static final String MARKER_VERSION = "compat_26_2_r19";
+    private static final String NATIVE_BACAP_121_SHA1 = "14da3f07b5467e8b59ffc0253fd8212c938cd739";
+    private static final String NATIVE_BACAP_HARDCORE_121_SHA1 = "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475";
     private static final String ROOT_OVERRIDE_SHA1_PROPERTY = "rootOverrideSha1";
     private static final String LLAMA_CARPET_NBT_PROPERTY = "llamaCarpetNbtMapping";
     private static final String RAIDER_PREDICATE_KEYS_PROPERTY = "raiderPredicateKeys";
@@ -165,6 +168,8 @@ public final class ExternalPackCompatibility {
     }
 
     public static void copyForWorld(@NotNull Path sourcePack, @NotNull Path targetPack, @NotNull ExternalPack externalPack) throws IOException {
+        String actualSourceSha1 = Utils.calculateSHA1(sourcePack);
+        boolean nativeSource = isNativeBacapSource(actualSourceSha1);
         Path parent = targetPack.getParent();
         if (parent != null) {
             Files.createDirectories(parent);
@@ -177,19 +182,20 @@ public final class ExternalPackCompatibility {
             while (entries.hasMoreElements()) {
                 ZipEntry sourceEntry = entries.nextElement();
                 byte[] bytes = readEntryBytes(zipFile, sourceEntry);
-                if (sourceEntry.getName().endsWith(".mcfunction")) {
+                if (!nativeSource && sourceEntry.getName().endsWith(".mcfunction")) {
                     ConversionResult conversion = convertFunction(new String(bytes, StandardCharsets.UTF_8));
                     bytes = conversion.text().getBytes(StandardCharsets.UTF_8);
                     changed |= conversion.changed();
                 } else if (sourceEntry.getName().endsWith(".json")) {
-                    ConversionResult conversion = convertJson(new String(bytes, StandardCharsets.UTF_8));
+                    String json = new String(bytes, StandardCharsets.UTF_8);
+                    ConversionResult conversion = nativeSource ? convertNativeJson(json) : convertJson(json);
                     bytes = conversion.text().getBytes(StandardCharsets.UTF_8);
                     changed |= conversion.changed();
                 }
                 writeEntry(out, sourceEntry.getName(), bytes);
             }
             if (changed) {
-                writeCompatibilityMarker(out, externalPack);
+                writeCompatibilityMarker(out, externalPack, actualSourceSha1);
             }
         } catch (IOException e) {
             Files.deleteIfExists(tempPack);
@@ -202,6 +208,11 @@ public final class ExternalPackCompatibility {
             Files.deleteIfExists(tempPack);
             Files.copy(sourcePack, targetPack, StandardCopyOption.REPLACE_EXISTING);
         }
+    }
+
+    private static boolean isNativeBacapSource(@NotNull String sourceSha1) {
+        return NATIVE_BACAP_121_SHA1.equalsIgnoreCase(sourceSha1)
+            || NATIVE_BACAP_HARDCORE_121_SHA1.equalsIgnoreCase(sourceSha1);
     }
 
     public static boolean isCompatibleWorldCopy(@NotNull Path pack, @NotNull ExternalPack externalPack) {
@@ -340,6 +351,35 @@ public final class ExternalPackCompatibility {
             return new ConversionResult(json, false);
         }
         return new ConversionResult(result.element().toString(), true);
+    }
+
+    private static @NotNull ConversionResult convertNativeJson(@NotNull String json) {
+        JsonElement root;
+        try {
+            root = JsonParser.parseString(json);
+        } catch (JsonParseException ignored) {
+            return new ConversionResult(json, false);
+        }
+        if (!suppressNativeAnnouncements(root)) {
+            return new ConversionResult(json, false);
+        }
+        return new ConversionResult(root.toString(), true);
+    }
+
+    private static boolean suppressNativeAnnouncements(@NotNull JsonElement element) {
+        boolean changed = false;
+        if (element.isJsonObject()) {
+            JsonObject object = element.getAsJsonObject();
+            changed = suppressVanillaAnnouncementForBacapRewards(object);
+            for (var entry : object.entrySet()) {
+                changed |= suppressNativeAnnouncements(entry.getValue());
+            }
+        } else if (element.isJsonArray()) {
+            for (JsonElement child : element.getAsJsonArray()) {
+                changed |= suppressNativeAnnouncements(child);
+            }
+        }
+        return changed;
     }
 
     private static @NotNull TransformResult rewriteChainIds(@NotNull TransformResult result) {
@@ -565,6 +605,9 @@ public final class ExternalPackCompatibility {
                 childContext = Context.DAMAGE_PREDICATE;
             } else if ("killing_blow".equals(key) && value.isJsonObject()) {
                 childContext = Context.KILLING_BLOW_PREDICATE;
+            } else if (isDirectEntityPredicateKey(key) && value.isJsonObject()
+                && hasLegacyPlayerAdvancementsPredicate(value.getAsJsonObject())) {
+                childContext = Context.ENTITY_PREDICATE;
             } else if (value.isJsonObject() && looksLikeLegacyEntityPredicate(value.getAsJsonObject())) {
                 childContext = Context.ENTITY_PREDICATE;
             }
@@ -717,6 +760,10 @@ public final class ExternalPackCompatibility {
             if (LEGACY_TYPE.equals(originalKey)) {
                 targetKey = "entity_type";
                 value = normalizeEntityType(value);
+                changed = true;
+            } else if ("player".equals(originalKey) && hasLegacyPlayerAdvancementsPredicate(object)) {
+                targetKey = "type_specific/player";
+                childContext = Context.PLAYER_TYPE_SPECIFIC;
                 changed = true;
             } else if (LEGACY_TYPE_SPECIFIC.equals(originalKey) && value.isJsonObject()) {
                 JsonObject typeSpecific = value.getAsJsonObject();
@@ -884,6 +931,27 @@ public final class ExternalPackCompatibility {
         }
 
         return changed ? new TransformResult(transformed, true) : new TransformResult(object, false);
+    }
+
+    private static boolean hasLegacyPlayerAdvancementsPredicate(@NotNull JsonObject object) {
+        if (object.has("type_specific/player") || object.has("minecraft:type_specific/player")) {
+            return false;
+        }
+        JsonElement player = object.get("player");
+        if (player == null || !player.isJsonObject() || player.getAsJsonObject().size() != 1) {
+            return false;
+        }
+        JsonElement advancements = player.getAsJsonObject().get("advancements");
+        if (advancements == null || !advancements.isJsonObject() || advancements.getAsJsonObject().isEmpty()) {
+            return false;
+        }
+        for (var entry : advancements.getAsJsonObject().entrySet()) {
+            if (Identifier.tryParse(entry.getKey()) == null
+                || !entry.getValue().isJsonPrimitive() || !entry.getValue().getAsJsonPrimitive().isBoolean()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private static boolean looksLikeLegacyEntityPredicate(@NotNull JsonObject object) {
@@ -1201,11 +1269,11 @@ public final class ExternalPackCompatibility {
         out.closeEntry();
     }
 
-    private static void writeCompatibilityMarker(@NotNull ZipOutputStream out, @NotNull ExternalPack externalPack) throws IOException {
+    private static void writeCompatibilityMarker(@NotNull ZipOutputStream out, @NotNull ExternalPack externalPack, @NotNull String actualSourceSha1) throws IOException {
         Properties properties = new Properties();
         properties.setProperty("version", MARKER_VERSION);
         properties.setProperty("fileName", externalPack.getFileName());
-        properties.setProperty("sourceSha1", externalPack.getSha1());
+        properties.setProperty("sourceSha1", actualSourceSha1);
         properties.setProperty(ROOT_OVERRIDE_SHA1_PROPERTY, currentRootOverrideSha1());
         if (externalPack == ExternalPack.BACAP) {
             properties.setProperty(LLAMA_CARPET_NBT_PROPERTY, "equipment.body");

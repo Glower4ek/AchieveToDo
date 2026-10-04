@@ -1,0 +1,443 @@
+{
+  "manualAuthoring": {
+    "count": 64,
+    "method": "Current English target meaning and actual component/criterion context, with permitted candidates reviewed; no runtime translator or external machine-translation service.",
+    "sourceType": "MANUAL_B6"
+  },
+  "nonRuntimeLegalArtifacts": [
+    {
+      "existingJarTaskIncludesLicenseAutomatically": true,
+      "path": "licenses/bacap-rus-translate/LICENSE",
+      "sha256": "d0f06f79ec97de797d9311587945d1475260778d066f54f5e7686aa48a981e69"
+    }
+  ],
+  "permissionScope": "AchieveToDo-specific permission for official LP as recorded by the maintainer; no inferred permission for third-party ARR projects.",
+  "phase": "B",
+  "rawArchivesPublication": false,
+  "researchedAt": "2026-10-02",
+  "sourceIdentityCorrection": "BACAP Better RU yiLJxtqH is CC0-1.0. DlwNJUii [Ru] BACAP is a distinct BSD-2-Clause project. Existing licenses/bacap-better-ru/LICENSE documents the former and is not a BSD notice.",
+  "sources": [
+    {
+      "download": {
+        "filename": "BACAP Language Pack 1.21.zip",
+        "gameVersions": [
+          "26.2"
+        ],
+        "hashes": {
+          "sha1": "ee2d44834304d315c97c0cc080943c9c730a409e",
+          "sha256": "63b82a4251cac526f9677480f3ba14a1f93fab89206c29004fe63adfb44ca864",
+          "sha512": "28f25852e5987eaff0f541d8ce48ccbd7ad641e1d220021b9b3ffd569784cd9b403e690dc59b83029c1411d1f806a01f297afc15ed7eb444b215737ade4d8517"
+        },
+        "license": {
+          "id": "LicenseRef-All-Rights-Reserved",
+          "name": "",
+          "url": null
+        },
+        "projectId": "YX5bAAJN",
+        "publishedAt": "2026-06-20T23:51:29.012348Z",
+        "ruMembers": [
+          "assets/minecraft/lang/ru_ru.json"
+        ],
+        "size": 3101626,
+        "slug": "bacap-language-pack",
+        "url": "https://cdn.modrinth.com/data/YX5bAAJN/versions/hsqY3G3V/BACAP%20Language%20Pack%201.21.zip",
+        "version": "1.21",
+        "versionId": "hsqY3G3V"
+      },
+      "keysApplicableToCurrentTarget": 3418,
+      "keysAvailable": 3615,
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "metadataUrl": "https://api.modrinth.com/v2/project/YX5bAAJN",
+      "permissionEvidence": {
+        "conclusion": "Existing durable evidence identifies exact LP1.21 and allows use in this AchieveToDo project. Historical fallback usage describes Phase A usage, not a claim to permission for unrelated projects or translation forks.",
+        "path": "reference/localization/phase_a_ru_full_reaudit_summary.json",
+        "provenanceQuote": "Russian translations from BACAP Language Pack used with direct permission from the resource-pack owner, permission obtained by the AchieveToDo project maintainer.",
+        "sha256": "1e50f4f16caa9ee70d3b6913c134352c4dd80be852e7bbef1bb281c66dab8a06",
+        "specific121Record": {
+          "download_url": "https://cdn.modrinth.com/data/YX5bAAJN/versions/hsqY3G3V/BACAP%20Language%20Pack%201.21.zip",
+          "game_versions": [
+            "26.2"
+          ],
+          "project_id": "YX5bAAJN",
+          "published": "2026-06-20T23:51:29.012348Z",
+          "ru_ru_path_in_zip": "assets/minecraft/lang/ru_ru.json",
+          "usage": "Allowed for this project via direct permission; used only as compatible fallback over historical 1.18 base.",
+          "version_id": "hsqY3G3V",
+          "version_number": "1.21"
+        }
+      },
+      "project": "BACAP Language Pack",
+      "projectId": "YX5bAAJN",
+      "projectSlug": "bacap-language-pack",
+      "publishedAt": "2026-06-20T23:51:29.012348Z",
+      "reason": "Primary target-aligned permitted LP1.21 source. Selected correct consumed entries, manually corrected inaccurate wording; unused dictionary keys were not imported.",
+      "ruRuPath": "assets/minecraft/lang/ru_ru.json",
+      "sourceUrl": "https://modrinth.com/resourcepack/bacap-language-pack",
+      "targetCompatibility": {
+        "descriptionEvidence": "Translates BlazeandCave's Advancements Pack into other languages.",
+        "minecraft": [
+          "26.2"
+        ],
+        "native26_2": true
+      },
+      "translatorCredits": [
+        "Russian 1.21 update: 1A_KapiBar",
+        "SoSeDiK (1.4-1.10)",
+        "vlad8599 - Some contributions to (1.10)",
+        "KorS1z - (1.11-1.12)",
+        "Marsik_the_alien (1.13-1.13.2)",
+        "_InGlorious_ (1.13.7, 1.19)",
+        "Harrydi﻿ (1.14)",
+        "StrongDeep (1.15-1.16)",
+        "y13gkb (1.17)",
+        "vinelia (1.17 - 1.18.2)"
+      ],
+      "usable": true,
+      "used": true,
+      "usedKeyCount": 211,
+      "version": "1.21",
+      "versionId": "hsqY3G3V"
+    },
+    {
+      "download": {
+        "filename": "BACAP Better RU 2.3.zip",
+        "gameVersions": [
+          "1.21.5"
+        ],
+        "hashes": {
+          "sha1": "5fc234b075ea8ed40328f3743df10ade4fffe623",
+          "sha256": "b25db2b87c675041cd002fa0a631e724b99a66c23e388642aed122aec16b50b6",
+          "sha512": "400a82c2a37c8a1653c01db6f8fcd8b297da946cd56f25245788cca304d87fc1ed658bb7eeb5a14e36f5dbd1b80e9694beba156b9439e07747e0830c9a906120"
+        },
+        "license": {
+          "id": "CC0-1.0",
+          "name": "Creative Commons Zero v1.0 Universal",
+          "url": null
+        },
+        "projectId": "yiLJxtqH",
+        "publishedAt": "2025-03-28T00:48:31.940771Z",
+        "ruMembers": [
+          "assets/minecraft/lang/ru_ru.json"
+        ],
+        "size": 66071,
+        "slug": "bacap-better-ru",
+        "url": "https://cdn.modrinth.com/data/yiLJxtqH/versions/uzX2ogEd/BACAP%20Better%20RU%202.3.zip",
+        "version": "2.3",
+        "versionId": "uzX2ogEd"
+      },
+      "keysApplicableToCurrentTarget": 2078,
+      "keysAvailable": 2102,
+      "license": {
+        "id": "CC0-1.0",
+        "name": "Creative Commons Zero v1.0 Universal",
+        "url": null
+      },
+      "metadataUrl": "https://api.modrinth.com/v2/project/yiLJxtqH",
+      "permissionEvidence": {
+        "publicLicenseMetadataVerified": true,
+        "repositoryLicensePath": "licenses/bacap-better-ru/LICENSE"
+      },
+      "project": "BACAP Better RU",
+      "projectId": "yiLJxtqH",
+      "projectSlug": "bacap-better-ru",
+      "publishedAt": "2025-03-28T00:48:31.940771Z",
+      "reason": "CC0 source rather than BSD. All currently required supplied keys were already resolved by preserved Phase A values; no newly missing key supplied. Existing good ATD-author style retained; no ordering/prose churn for the sake of source use.",
+      "retainedPhaseAExactValueMatches": 2071,
+      "ruRuPath": "assets/minecraft/lang/ru_ru.json",
+      "sourceUrl": "https://modrinth.com/resourcepack/bacap-better-ru",
+      "targetCompatibility": {
+        "descriptionEvidence": "Исправленный и улучшенный перевод набора достижений BlazeandCave на русский язык.",
+        "minecraft": [
+          "1.21.5"
+        ],
+        "native26_2": false
+      },
+      "translatorCredits": [
+        "diskria (Modrinth owner)",
+        "diskree (downloaded pack author/existing repository provenance)"
+      ],
+      "usable": true,
+      "used": false,
+      "usedKeyCount": 0,
+      "version": "2.3",
+      "versionId": "uzX2ogEd"
+    },
+    {
+      "download": {
+        "filename": "ru_BACAP.zip",
+        "gameVersions": [
+          "1.21",
+          "1.21.1",
+          "1.21.2",
+          "1.21.3",
+          "1.21.4",
+          "1.21.5"
+        ],
+        "hashes": {
+          "sha1": "e91f57b078801c26a4d51782d289b08b03ce3967",
+          "sha256": "6d0c3801c5d61d4d9adeae71fb7770163d3c59edc5ea630ec9327075c5d9dc63",
+          "sha512": "8fa0a80de8267febe6e8e4851e95cc73aa309353ae7b05840e26895abd4a92587a9f24bcbd531b5b5389d9ccd89defc291f5973ec712c00e29fde98d54fa4c0c"
+        },
+        "license": {
+          "id": "BSD-2-Clause",
+          "name": "BSD 2-Clause \"Simplified\" License",
+          "url": null
+        },
+        "projectId": "DlwNJUii",
+        "publishedAt": "2025-06-11T09:24:15.976923Z",
+        "ruMembers": [
+          "assets/minecraft/lang/ru_ru.json"
+        ],
+        "size": 85082,
+        "slug": "ru-blaze-and-caves-advancements-pack",
+        "url": "https://cdn.modrinth.com/data/DlwNJUii/versions/wNkafeLO/ru_BACAP.zip",
+        "version": "3",
+        "versionId": "wNkafeLO"
+      },
+      "keysApplicableToCurrentTarget": 163,
+      "keysAvailable": 174,
+      "license": {
+        "id": "BSD-2-Clause",
+        "name": "BSD 2-Clause \"Simplified\" License",
+        "url": null
+      },
+      "metadataUrl": "https://api.modrinth.com/v2/project/DlwNJUii",
+      "permissionEvidence": {
+        "publicLicenseMetadataVerified": true,
+        "repositoryLicensePath": null
+      },
+      "project": "[Ru] Blaze and Cave's Advancements Pack (BACAP)",
+      "projectId": "DlwNJUii",
+      "projectSlug": "ru-blaze-and-caves-advancements-pack",
+      "publishedAt": "2025-06-11T09:24:15.976923Z",
+      "reason": "Separate BSD project, not the existing CC0 Better RU. None of the current unresolved keys had a supplied value; older keys already have adequate preserved translations. No new text imported.",
+      "ruRuPath": "assets/minecraft/lang/ru_ru.json",
+      "sourceUrl": "https://modrinth.com/resourcepack/ru-blaze-and-caves-advancements-pack",
+      "targetCompatibility": {
+        "descriptionEvidence": "Улучшенный русский перевод популярного датапака Blaze and Cave's Advancements! Кликай и скачивай!",
+        "minecraft": [
+          "1.21",
+          "1.21.1",
+          "1.21.2",
+          "1.21.3",
+          "1.21.4",
+          "1.21.5"
+        ],
+        "native26_2": false
+      },
+      "translatorCredits": [
+        "Perchila27",
+        "Limoro (lialimoro)"
+      ],
+      "usable": true,
+      "used": false,
+      "usedKeyCount": 0,
+      "version": "3",
+      "versionId": "wNkafeLO"
+    },
+    {
+      "download": {
+        "filename": "rus_BACAP_26.2.zip",
+        "gameVersions": [
+          "26.2"
+        ],
+        "hashes": {
+          "sha1": "d3ee5d032d379abdf367737a7f9e0ecef8fe27c8",
+          "sha256": "d232eae263de9d643438caad44a3557f08735b8727770edd3c7fe904877adc89",
+          "sha512": "8a93a65796ff68b8a7665771b1700f98c8ed14b8b40aef7c810a6a389ea7edbc13ddac8cf157efe2a103e3eeeb066de823f5dcccabbebe555191745f75b39c3e"
+        },
+        "license": {
+          "id": "BSD-2-Clause",
+          "name": "BSD 2-Clause \"Simplified\" License",
+          "url": null
+        },
+        "projectId": "47BuT3SL",
+        "publishedAt": "2026-08-19T13:04:47.581350Z",
+        "ruMembers": [
+          "assets/minecraft/lang/ru_ru.json"
+        ],
+        "size": 107221,
+        "slug": "bacap-rus-translate",
+        "url": "https://cdn.modrinth.com/data/47BuT3SL/versions/ULq4UdnT/rus_BACAP_26.2.zip",
+        "version": "26.2",
+        "versionId": "ULq4UdnT"
+      },
+      "keysApplicableToCurrentTarget": 2556,
+      "keysAvailable": 2556,
+      "license": {
+        "id": "BSD-2-Clause",
+        "name": "BSD 2-Clause \"Simplified\" License",
+        "url": null
+      },
+      "metadataUrl": "https://api.modrinth.com/v2/project/47BuT3SL",
+      "notice": {
+        "canonicalBSDTemplateRetainedUnmodified": true,
+        "copyrightYearOrHolderNotInvented": true,
+        "existingJarTaskWillInclude": "LICENSE_bacap-rus-translate",
+        "path": "licenses/bacap-rus-translate/LICENSE",
+        "sha256": "d0f06f79ec97de797d9311587945d1475260778d066f54f5e7686aa48a981e69",
+        "upstreamDisclaimerRetainedUnmodified": true,
+        "upstreamStandaloneLicenseSupplied": false
+      },
+      "permissionEvidence": {
+        "publicLicenseMetadataVerified": true,
+        "repositoryLicensePath": "licenses/bacap-rus-translate/LICENSE"
+      },
+      "project": "BACAP RUS Translate",
+      "projectId": "47BuT3SL",
+      "projectSlug": "bacap-rus-translate",
+      "publishedAt": "2026-08-19T13:04:47.581350Z",
+      "reason": "Current 26.2 release explicitly documents BACAP1.21; 21 exact-key values chosen for clearer current meaning/titles after LP comparison. Distributed BSD notice added through the existing licenses packaging mechanism.",
+      "ruRuPath": "assets/minecraft/lang/ru_ru.json",
+      "sourceUrl": "https://modrinth.com/resourcepack/bacap-rus-translate",
+      "targetCompatibility": {
+        "descriptionEvidence": "Русский перевод дата-пака BlazeandCave's Advancements Pack.",
+        "minecraft": [
+          "26.2"
+        ],
+        "native26_2": true
+      },
+      "translatorCredits": [
+        "SHTUKA",
+        "lialimoro",
+        "Original translation: Perchila27 and Limoro"
+      ],
+      "usable": true,
+      "used": true,
+      "usedKeyCount": 21,
+      "version": "26.2",
+      "versionId": "ULq4UdnT"
+    },
+    {
+      "download": {
+        "filename": "Enhanced_Discoveries_Language_Pack.zip",
+        "gameVersions": [
+          "26.2"
+        ],
+        "hashes": {
+          "sha1": "d9933b5da82cb999be800070b05e46f3bbc20d3b",
+          "sha256": "3ecb5be40e25453f4a65a346196ee0c62201861332b7d7eeb0be11e07d286222",
+          "sha512": "f111fa582791a777436902abfbe045db1ae05702c0386cdf182b3fb0b793b4392e4fdb36dbd10b422141a6e0a4a38d5a0644703dc4627f027a4dfb59879b702c"
+        },
+        "license": {
+          "id": "CC-BY-4.0",
+          "name": "Creative Commons Attribution 4.0 International",
+          "url": "https://github.com/Komaru-cats/BACAP-Enhanced-Discoveries/blob/main/LICENSE"
+        },
+        "projectId": "CGFOvwcX",
+        "publishedAt": "2026-08-19T18:25:13.730777Z",
+        "ruMembers": [
+          "assets/minecraft/lang/ru_ru.json"
+        ],
+        "size": 390983,
+        "slug": "bacaped-language-pack",
+        "url": "https://cdn.modrinth.com/data/CGFOvwcX/versions/BItBGCl9/Enhanced_Discoveries_Language_Pack.zip",
+        "version": "2.9.2",
+        "versionId": "BItBGCl9"
+      },
+      "keysApplicableToCurrentTarget": 4,
+      "keysAvailable": 1374,
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "Creative Commons Attribution 4.0 International",
+        "url": "https://github.com/Komaru-cats/BACAP-Enhanced-Discoveries/blob/main/LICENSE"
+      },
+      "metadataUrl": "https://api.modrinth.com/v2/project/CGFOvwcX",
+      "permissionEvidence": {
+        "publicLicenseMetadataVerified": true,
+        "repositoryLicensePath": null
+      },
+      "project": "BACAP Enhanced Discoveries Language Pack",
+      "projectId": "CGFOvwcX",
+      "projectSlug": "bacaped-language-pack",
+      "publishedAt": "2026-08-19T18:25:13.730777Z",
+      "reason": "Permitted CC-BY source targets a different addon. Only four overlapping current keys (Nether, Yes, Timer Progress, Numbers are in seconds), all already adequately translated; no coverage/quality improvement, no text imported.",
+      "ruRuPath": "assets/minecraft/lang/ru_ru.json",
+      "sourceUrl": "https://modrinth.com/resourcepack/bacaped-language-pack",
+      "targetCompatibility": {
+        "descriptionEvidence": "Language pack for translating advancements from BACAP Enhanced Discoveries",
+        "minecraft": [
+          "26.2"
+        ],
+        "native26_2": true
+      },
+      "translatorCredits": [
+        "ItzSkyReed"
+      ],
+      "usable": true,
+      "used": false,
+      "usedKeyCount": 0,
+      "version": "2.9.2",
+      "versionId": "BItBGCl9"
+    },
+    {
+      "download": null,
+      "keysApplicableToCurrentTarget": null,
+      "keysAvailable": null,
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "metadataUrl": "https://api.modrinth.com/v2/project/Gx7jWJvD",
+      "permissionEvidence": {
+        "publicLicenseMetadataVerified": false,
+        "repositoryLicensePath": null
+      },
+      "project": "BACAP_RUS_",
+      "projectId": "Gx7jWJvD",
+      "projectSlug": "bacap_rus_",
+      "publishedAt": "2026-07-19T07:36:20.660210Z",
+      "reason": "ARR, different author, no repository-specific permission; older Minecraft1.21.11 target. Metadata only, no translation copied or archive downloaded.",
+      "ruRuPath": null,
+      "sourceUrl": "https://modrinth.com/resourcepack/bacap_rus_",
+      "targetCompatibility": {
+        "descriptionEvidence": "Russian translation for Blaze and Cave's Advancements (v1.0)",
+        "minecraft": [
+          "1.21.11"
+        ],
+        "native26_2": false
+      },
+      "translatorCredits": [
+        "Dark_Night_W"
+      ],
+      "usable": false,
+      "used": false,
+      "usedKeyCount": 0,
+      "version": "1.0",
+      "versionId": "k2zZNMUB"
+    },
+    {
+      "archived": true,
+      "download": null,
+      "keysApplicableToCurrentTarget": null,
+      "keysAvailable": null,
+      "license": {
+        "id": "NOASSERTION / upstream ARR",
+        "localReadOnlySnapshotSha256": "94c07dee88dfbac1046c6d599da61229a0f9fff25b319006e4f574a403033023",
+        "sourceUrl": "https://github.com/alteamc/blazeandcaves-advancements-pack/blob/master/LICENSE"
+      },
+      "permissionEvidence": null,
+      "project": "Altea Russian BACAP translation",
+      "publishedAt": "2021-12-24T14:35:15Z",
+      "reason": "License reserves upstream rights; no grant for independent translated redistribution. Reference/metadata-only investigation, no translation values copied.",
+      "ruRuPath": null,
+      "sourceUrl": "https://github.com/alteamc/blazeandcaves-advancements-pack",
+      "targetCompatibility": "Historical Minecraft1.18-era repository; no current26.2 claim; LICENSE identifies historical source versions.",
+      "translatorCredits": [
+        "Altea maintainers and contributors; original pack owners retain all rights"
+      ],
+      "updatedAt": "2022-08-03T21:01:45Z",
+      "usable": false,
+      "used": false,
+      "usedKeyCount": 0,
+      "version": "BACAP1.14.5 / Language Pack1.14.0.2 (LICENSE references)"
+    }
+  ],
+  "stage": "B6",
+  "status": "PHASE_B_B6_LOCALIZED"
+}

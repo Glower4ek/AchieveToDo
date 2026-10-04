@@ -1,0 +1,1 @@
+function bacap_rewards:trophy/monsters/custom_boss_fight

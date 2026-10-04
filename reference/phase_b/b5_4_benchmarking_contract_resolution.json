@@ -1,0 +1,64 @@
+{
+  "addedShimPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/bacap/benchmarking.mcfunction",
+  "authorization": "Explicit user-scoped second and final wrapper-defect erratum",
+  "correctAdvancementPath": "data/minecraft/advancement/story/root.json",
+  "correctAdvancementSha256": "a5702157d3aec74a4ff2f1c10abf5761e783dccc533a04bbb05fbc5aab183678",
+  "correctId": "minecraft:story/root",
+  "discoveredBy": "GLOBAL_NATIVE_WRAPPER_ID_SCAN",
+  "evidenceHashes": {
+    "globalScan": {
+      "path": "build/tmp/phase_b_b5_4/global_wrapper_id_scan.json",
+      "sha256": "ff25a49e0fba922243b7b75488ae68713da452d780c45bf41e6db595ab9eb425"
+    },
+    "naughtylusResolution": {
+      "path": "reference/phase_b/b5_4_naughtylus_contract_resolution.json",
+      "sha256": "e318f8cb0051a52fe1a3a1e1d92c3c2f6993ce2985ce301842016ee28dd2c844"
+    },
+    "originalStop": {
+      "path": "reference/phase_b/b5_4_root_reward_messages.json",
+      "sha256": "6ed40af0fff9bf081f075ed277c1984bcc5843113be7a902f8d8d52493018c15"
+    },
+    "priorAcceptedB5": {
+      "b5_1_pins_pack_metadata.json": "ffc533dec326412f807e7d16667e5d8968aed0331d1a5ba0b9438a76a8279ab8",
+      "b5_2_converter_r17.json": "fcd6b4c9e9c5005ad253370871139bb26dadf944f0d7dceede76f112ad437a24",
+      "b5_3_setup_resource_contracts.json": "e1aa6aae5cb3f6f8127f7a83e94c3a48c18fa9fa0aaebb89719389ba89d3db5d"
+    }
+  },
+  "existingBenchmarkingMessage": {
+    "path": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/msg/bacap/benchmarking.mcfunction",
+    "sha256": "c03002cc3176de4dc591cccf34483d54dadd73cd74f4d25403fb434e9533d5a8",
+    "unchangedRequired": true
+  },
+  "facts": {
+    "correctAdvancementExists": true,
+    "correctAdvancementExplicitlyInvokesBenchmarkingWrapper": true,
+    "existingATDMessageSearchAlreadyCorrect": true,
+    "globalMalformedLiteralIdsTotal": 2,
+    "invalidAdvancementAbsent": true
+  },
+  "invalidId": "blazeandcave:bacap/benchmarking",
+  "kind": "POST_B4_CONTRACT_RESOLUTION",
+  "phase": "B",
+  "recordedBeforeProductWrites": true,
+  "resolution": [
+    "Add one narrow ATD wrapper override",
+    "Preserve all upstream wrapper behavior",
+    "Replace only the invalid advancement-ID argument",
+    "Keep existing correct Benchmarking message and Search contract unchanged",
+    "No progress migration",
+    "No B4 historical rewrite"
+  ],
+  "scope": {
+    "ADD": 118,
+    "DELETE": 9,
+    "MODIFY": 48,
+    "effectivePaths": 175,
+    "errataAddedPaths": 2,
+    "originalPaths": 173
+  },
+  "stage": "B5.4",
+  "status": "AUTHORIZED",
+  "wrapperId": "bacap_rewards:bacap/benchmarking",
+  "wrapperPath": "data/bacap_rewards/function/bacap/benchmarking.mcfunction",
+  "wrapperSha256": "4be0f8eea29bd6134e01bef9c4948d5ac08ac101194cabb0250528c65b526298"
+}

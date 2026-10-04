@@ -1,0 +1,3637 @@
+{
+  "phase": "B",
+  "stage": "B10",
+  "status": "PHASE_B_B10_RUNTIME_CERTIFIED",
+  "baselineHead": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+  "chronology": [
+    {
+      "stage": "B10_INITIAL",
+      "path": "reference/phase_b/b10_runtime_smoke.json",
+      "sha256": "db227d1bf3a946e5dff2677b4ab2af8a795a3b97d1966f23949ad705b5398055",
+      "status": "PHASE_B_B10_STOP",
+      "reason": "full live advancement count compared to B8 effective core before always-enabled ATD production set was included"
+    },
+    {
+      "stage": "B10-C1",
+      "path": "reference/phase_b/b10_c1_live_advancement_contract_refresh.json",
+      "sha256": "80dd8f01d4ab173b430c2434027ee7824ab650ef8e4c1ea3001560298cb72728",
+      "status": "PHASE_B_B10_C1_LIVE_CONTRACT_REFRESHED"
+    },
+    {
+      "stage": "B10-D1",
+      "path": "reference/phase_b/b10_d1_main_deep_runtime.json",
+      "sha256": "24f6efc356f44d7fa1923af92b12767f47c5825c91276a2049afc6a0905223af",
+      "status": "PHASE_B_B10_D1_MAIN_DEEP_CERTIFIED"
+    },
+    {
+      "stage": "B10-D2",
+      "path": "reference/phase_b/b10_d2_companion_runtime.json",
+      "sha256": "069ffa12ad93ffd8cd0a454fed1549c4b84f97925bba5f1a726888fc3e3cd4d2",
+      "status": "PHASE_B_B10_D2_COMPANIONS_CERTIFIED"
+    }
+  ],
+  "currentProductAuthority": {
+    "converterSha256": "6ab0674902b4783c39c08dfd802cd0067d1436d973345834f092a001a4db9fec",
+    "marker": "compat_26_2_r19",
+    "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+    "runtimeRuSha256": "8961ad9d573ab72f63969e4a808b19ce733bc9a60b7ab589fc44dfb6148e1a0a"
+  },
+  "liveAdvancementContract": {
+    "definition": "LIVE_IDS = hash-bound B8 effective core IDs UNION exact checked-in ATD ability IDs",
+    "B8CoreSemantics": "BACAP / vanilla / selected companion integration core",
+    "ATDSemantics": "always-enabled AchieveToDo production base pack: 151 current AbilityType advancements plus root",
+    "arbitraryPrefixAllowlist": false,
+    "coreAndATDSetsDisjoint": true,
+    "allFiveExactRuntimeSets": {
+      "MAIN": {
+        "liveCoreCount": 2894,
+        "liveAtdCount": 152,
+        "liveTotal": 3046,
+        "b8CoreIdsSha256": "c7640b78c95b1ba62a264d1f8654eb4dac878ec43f6fd10599f0d088402796e4",
+        "atdAbilityIdsSha256": "8c56a1d04ce0d039be387081273abadd34569162260175a673d0d229811fa658",
+        "expectedFullIdsSha256": "6add865f2c7ab59b131183e8707ba46e3d808eb8a8f3adc526467541a8b697cd",
+        "liveIdsSha256": "6add865f2c7ab59b131183e8707ba46e3d808eb8a8f3adc526467541a8b697cd",
+        "exactSetMatch": true,
+        "duplicateIds": 0,
+        "missingCoreIds": [],
+        "missingAtdAbilityIds": [],
+        "unexpectedLiveIds": []
+      },
+      "HARDCORE": {
+        "liveAdvancementCount": 3046,
+        "b8CoreExpectedCount": 2894,
+        "atdAbilityExpectedCount": 152,
+        "expectedFullLiveCount": 3046,
+        "b8CoreIdsSha256": "c7640b78c95b1ba62a264d1f8654eb4dac878ec43f6fd10599f0d088402796e4",
+        "atdAbilityIdsSha256": "8c56a1d04ce0d039be387081273abadd34569162260175a673d0d229811fa658",
+        "expectedFullIdsSha256": "6add865f2c7ab59b131183e8707ba46e3d808eb8a8f3adc526467541a8b697cd",
+        "liveIdsSha256": "6add865f2c7ab59b131183e8707ba46e3d808eb8a8f3adc526467541a8b697cd",
+        "exactSetMatch": true,
+        "duplicateIds": 0,
+        "missingB8CoreIds": [],
+        "missingAtdAbilityIds": [],
+        "unexpectedLiveIds": []
+      },
+      "TERRALITH": {
+        "liveAdvancementCount": 3074,
+        "b8CoreExpectedCount": 2922,
+        "atdAbilityExpectedCount": 152,
+        "expectedFullLiveCount": 3074,
+        "b8CoreIdsSha256": "46e4cf7a7b48cdaa817d33426cebca82448640e8f4476531419b3c744e74ec77",
+        "atdAbilityIdsSha256": "8c56a1d04ce0d039be387081273abadd34569162260175a673d0d229811fa658",
+        "expectedFullIdsSha256": "f50ebe19a8cc8d19187a2dceeeecab3c23735683d60fefa4e82fb48a26398395",
+        "liveIdsSha256": "f50ebe19a8cc8d19187a2dceeeecab3c23735683d60fefa4e82fb48a26398395",
+        "exactSetMatch": true,
+        "duplicateIds": 0,
+        "missingB8CoreIds": [],
+        "missingAtdAbilityIds": [],
+        "unexpectedLiveIds": []
+      },
+      "AMPLIFIED_NETHER": {
+        "liveAdvancementCount": 3046,
+        "b8CoreExpectedCount": 2894,
+        "atdAbilityExpectedCount": 152,
+        "expectedFullLiveCount": 3046,
+        "b8CoreIdsSha256": "c7640b78c95b1ba62a264d1f8654eb4dac878ec43f6fd10599f0d088402796e4",
+        "atdAbilityIdsSha256": "8c56a1d04ce0d039be387081273abadd34569162260175a673d0d229811fa658",
+        "expectedFullIdsSha256": "6add865f2c7ab59b131183e8707ba46e3d808eb8a8f3adc526467541a8b697cd",
+        "liveIdsSha256": "6add865f2c7ab59b131183e8707ba46e3d808eb8a8f3adc526467541a8b697cd",
+        "exactSetMatch": true,
+        "duplicateIds": 0,
+        "missingB8CoreIds": [],
+        "missingAtdAbilityIds": [],
+        "unexpectedLiveIds": []
+      },
+      "NULLSCAPE": {
+        "liveAdvancementCount": 3047,
+        "b8CoreExpectedCount": 2895,
+        "atdAbilityExpectedCount": 152,
+        "expectedFullLiveCount": 3047,
+        "b8CoreIdsSha256": "e6cf27ac7a01a465ca8ffdbb03b43efd414e27913a46d45fd072fca806945693",
+        "atdAbilityIdsSha256": "8c56a1d04ce0d039be387081273abadd34569162260175a673d0d229811fa658",
+        "expectedFullIdsSha256": "9bd879b307fa4d4e05189fefcc61a5aa63bd08a70a2681a31eb1123a87a6d58c",
+        "liveIdsSha256": "9bd879b307fa4d4e05189fefcc61a5aa63bd08a70a2681a31eb1123a87a6d58c",
+        "exactSetMatch": true,
+        "duplicateIds": 0,
+        "missingB8CoreIds": [],
+        "missingAtdAbilityIds": [],
+        "unexpectedLiveIds": []
+      }
+    }
+  },
+  "mainDeepRuntime": {
+    "joinedPlayer": {
+      "UUID": "207f7771-2b1b-4071-bcfc-44c04273ebd3",
+      "concreteClass": "net.minecraft.server.level.ServerPlayer",
+      "registered": true,
+      "connectionRegistered": true,
+      "clientLoaded": true,
+      "gameMode": "SURVIVAL",
+      "spectator": false,
+      "lifecycle": "GameProfile -> CommonListenerCookie -> ServerPlayer -> Connection/EmbeddedChannel -> ServerConnectionListener registration -> PlayerList.placeNewPlayer -> ServerboundPlayerLoadedPacket"
+    },
+    "progressionMode": {
+      "activeObjective": "bac_advancements",
+      "AdvancementsMode": "DEFAULT",
+      "displaySlot": "SIDEBAR",
+      "obtainedCount": 6,
+      "configuration": "normal"
+    },
+    "rewardWitness": {
+      "advancementId": "blazeandcave:adventure/a_chiptune_relic",
+      "criteria": [
+        "music_disc_relic"
+      ],
+      "rewardFunction": "bacap_rewards:adventure/a_chiptune_relic",
+      "messageFunction": "bacap_rewards:msg/adventure/a_chiptune_relic",
+      "tier": "goal",
+      "experienceFunction": "bacap_rewards:exp/adventure/a_chiptune_relic",
+      "experienceAmount": 50,
+      "advancementSha256": "acfddc1174b3c588ba894ba598a2d2aef4fe3bd1ca67b2fde99d73a9ceca7177",
+      "wrapperSha256": "b3d134c9579d91bfd852e3f852129a0c1dc25d46e853c2669db372831381638e",
+      "messageSha256": "36e5eb4c4a21b9f769aafbeb79744de92abfa67c14ea7b295653bcfe9b0eefe7",
+      "experienceSha256": "fda00f4d20fd0f4f56d9409259692a55b05d8104a7c17f93041e45cd777a54e4",
+      "effectiveRewardPath": {
+        "macroId": "bacap_rewards:advancement_made_macro",
+        "macroSha256": "78f7b1b020d09e6e5c57bdac56b5263faf77a2d89e3f4d755b38e597f8f00cb6",
+        "firstScoreFunctionSha256": "4be983a060641190bfbcc1149ca857fc6dfab762e5a6e031ca9ca426d7c3c185",
+        "rawIncrement": 1,
+        "rawGuardObjective": "bac_dont_count",
+        "pointsObjective": "bac_advancements_points",
+        "tierPointsObjective": "bac_points",
+        "firstIncrement": 1,
+        "firstGuardObjective": "bac_obtained",
+        "rawLine": "$execute unless score $(tier) bac_dont_count matches 1 run scoreboard players add @s bac_advancements 1",
+        "pointsLine": "$scoreboard players operation @s bac_advancements_points += $(tier) bac_points",
+        "firstLine": "$execute unless score $(adv_id) bac_obtained matches 1.. run function bacap_rewards:first_score_add"
+      },
+      "before": {
+        "complete": false,
+        "criteria": {
+          "music_disc_relic": false
+        },
+        "raw": 6,
+        "first": 6,
+        "weighted": 30,
+        "experience": 1750,
+        "obtainedCount": 6,
+        "globalObtained": 0,
+        "inventorySha256": "fddaf9d70557c851efb04875a0a2ce0f43a648745761e7babfd3a56e465c667d",
+        "inventorySlotsChecked": 43,
+        "fullInventoryObservation": "hash-bound MAIN_DEEP/deep.json; source observations compared byte/semantically before evidence compaction"
+      },
+      "expectedDeltas": {
+        "raw": 1,
+        "first": 1,
+        "weighted": 2,
+        "experience": 50
+      },
+      "countGuardValue": 0,
+      "tierPointsValue": 2,
+      "globalObtainedBefore": 0,
+      "expSetting": 1,
+      "realCompletionPath": true,
+      "awardResults": [
+        true
+      ],
+      "after": {
+        "complete": true,
+        "criteria": {
+          "music_disc_relic": true
+        },
+        "raw": 7,
+        "first": 7,
+        "weighted": 32,
+        "experience": 1800,
+        "obtainedCount": 7,
+        "globalObtained": 1,
+        "inventorySha256": "fddaf9d70557c851efb04875a0a2ce0f43a648745761e7babfd3a56e465c667d",
+        "inventorySlotsChecked": 43,
+        "fullInventoryObservation": "hash-bound MAIN_DEEP/deep.json; source observations compared byte/semantically before evidence compaction"
+      },
+      "actualDeltas": {
+        "raw": 1,
+        "first": 1,
+        "weighted": 2,
+        "experience": 50
+      },
+      "completionMessagePacketWitness": {
+        "functionId": "bacap_rewards:msg/adventure/a_chiptune_relic",
+        "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+        "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+        "emittedComponents": [
+          {
+            "translate": "%1$s has reached the goal %2$s%3$s%4$s",
+            "with": [
+              {
+                "text": "b10207f7771",
+                "click_event": {
+                  "command": "/tell b10207f7771 ",
+                  "action": "suggest_command"
+                },
+                "hover_event": {
+                  "id": "minecraft:player",
+                  "uuid": [
+                    545224561,
+                    723206257,
+                    -1124318016,
+                    1114893267
+                  ],
+                  "name": "b10207f7771",
+                  "action": "show_entity"
+                },
+                "insertion": "b10207f7771"
+              },
+              {
+                "text": "[",
+                "color": "#75E1FF"
+              },
+              {
+                "translate": "A Chiptune Relic",
+                "color": "#75E1FF",
+                "click_event": {
+                  "command": "/advancementssearch highlight blazeandcave:adventure/a_chiptune_relic obtained_status",
+                  "action": "run_command"
+                },
+                "hover_event": {
+                  "value": {
+                    "translate": "A Chiptune Relic",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "Excavate an ancient record from within the Trail Ruins",
+                        "color": "#63BDD7"
+                      },
+                      "\n\n",
+                      {
+                        "translate": "%1$s tab",
+                        "with": [
+                          {
+                            "translate": "Adventure"
+                          }
+                        ],
+                        "color": "gray",
+                        "italic": true
+                      }
+                    ],
+                    "color": "#75E1FF"
+                  },
+                  "action": "show_text"
+                }
+              },
+              {
+                "text": "]",
+                "color": "#75E1FF"
+              }
+            ]
+          },
+          {
+            "text": " +50 ",
+            "extra": [
+              {
+                "translate": "Experience"
+              }
+            ],
+            "color": "blue"
+          }
+        ],
+        "translationKeys": [
+          "%1$s has reached the goal %2$s%3$s%4$s",
+          "%1$s tab",
+          "A Chiptune Relic",
+          "Adventure",
+          "Excavate an ancient record from within the Trail Ruins",
+          "Experience"
+        ],
+        "clickAction": "run_command",
+        "command": "/advancementssearch highlight blazeandcave:adventure/a_chiptune_relic obtained_status",
+        "allClickCommands": [
+          "/advancementssearch highlight blazeandcave:adventure/a_chiptune_relic obtained_status"
+        ],
+        "targetAdvancementId": "blazeandcave:adventure/a_chiptune_relic",
+        "liveTargetResolved": true
+      },
+      "rewardExecutionWitness": "real PlayerAdvancements completion caused exact raw/first/weighted/XP writes and emitted the current wrapper completion message",
+      "rawVsWeightedProgressionPassed": true
+    },
+    "duplicateGrant": {
+      "before": {
+        "complete": true,
+        "criteria": {
+          "music_disc_relic": true
+        },
+        "raw": 7,
+        "first": 7,
+        "weighted": 32,
+        "experience": 1800,
+        "obtainedCount": 7,
+        "globalObtained": 1,
+        "inventorySha256": "fddaf9d70557c851efb04875a0a2ce0f43a648745761e7babfd3a56e465c667d",
+        "inventorySlotsChecked": 43,
+        "fullInventoryObservation": "hash-bound MAIN_DEEP/deep.json; source observations compared byte/semantically before evidence compaction"
+      },
+      "awardResult": false,
+      "after": {
+        "complete": true,
+        "criteria": {
+          "music_disc_relic": true
+        },
+        "raw": 7,
+        "first": 7,
+        "weighted": 32,
+        "experience": 1800,
+        "obtainedCount": 7,
+        "globalObtained": 1,
+        "inventorySha256": "fddaf9d70557c851efb04875a0a2ce0f43a648745761e7babfd3a56e465c667d",
+        "inventorySlotsChecked": 43,
+        "fullInventoryObservation": "hash-bound MAIN_DEEP/deep.json; source observations compared byte/semantically before evidence compaction"
+      },
+      "duplicateReward": false,
+      "completionStillDone": true
+    },
+    "abilityThresholdWitness": {
+      "ability": "EAT_SALMON",
+      "requiredCount": 2,
+      "advancementId": "achievetodo:abilities/eat_salmon",
+      "rawObjective": "bac_advancements",
+      "configurationUnmodified": true,
+      "criterionContract": "unlock grants all remaining criteria; relock revokes only unlocked, preserving demystified",
+      "belowThreshold": {
+        "raw": 1,
+        "obtainedCount": 1,
+        "locked": true,
+        "unlocked": false,
+        "demystified": true,
+        "complete": false
+      },
+      "exactThreshold": {
+        "raw": 2,
+        "obtainedCount": 2,
+        "locked": false,
+        "unlocked": true,
+        "demystified": true,
+        "complete": true
+      },
+      "productionCallbackObserved": true,
+      "relock": {
+        "raw": 1,
+        "obtainedCount": 1,
+        "locked": true,
+        "unlocked": false,
+        "demystified": true,
+        "complete": false
+      },
+      "relockClaimed": true
+    },
+    "macroWitness": {
+      "wrapperId": "bacap_rewards:potion/root",
+      "macroId": "bacap_rewards:advancement_made_macro",
+      "realFunctionManagerExecution": true,
+      "runtimeExecutionResult": "RETURNED_WITH_CURRENT_POTIONS_COMPONENT",
+      "optionalHooksSafe": true
+    },
+    "searchRuntime": {
+      "functionId": "bacap_rewards:msg/adventure/a_chiptune_relic",
+      "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+      "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+      "emittedComponents": [
+        {
+          "translate": "%1$s has reached the goal %2$s%3$s%4$s",
+          "with": [
+            {
+              "text": "b10207f7771",
+              "click_event": {
+                "command": "/tell b10207f7771 ",
+                "action": "suggest_command"
+              },
+              "hover_event": {
+                "id": "minecraft:player",
+                "uuid": [
+                  545224561,
+                  723206257,
+                  -1124318016,
+                  1114893267
+                ],
+                "name": "b10207f7771",
+                "action": "show_entity"
+              },
+              "insertion": "b10207f7771"
+            },
+            {
+              "text": "[",
+              "color": "#75E1FF"
+            },
+            {
+              "translate": "A Chiptune Relic",
+              "color": "#75E1FF",
+              "click_event": {
+                "command": "/advancementssearch highlight blazeandcave:adventure/a_chiptune_relic obtained_status",
+                "action": "run_command"
+              },
+              "hover_event": {
+                "value": {
+                  "translate": "A Chiptune Relic",
+                  "extra": [
+                    "\n",
+                    {
+                      "translate": "Excavate an ancient record from within the Trail Ruins",
+                      "color": "#63BDD7"
+                    },
+                    "\n\n",
+                    {
+                      "translate": "%1$s tab",
+                      "with": [
+                        {
+                          "translate": "Adventure"
+                        }
+                      ],
+                      "color": "gray",
+                      "italic": true
+                    }
+                  ],
+                  "color": "#75E1FF"
+                },
+                "action": "show_text"
+              }
+            },
+            {
+              "text": "]",
+              "color": "#75E1FF"
+            }
+          ]
+        }
+      ],
+      "translationKeys": [
+        "%1$s has reached the goal %2$s%3$s%4$s",
+        "%1$s tab",
+        "A Chiptune Relic",
+        "Adventure",
+        "Excavate an ancient record from within the Trail Ruins"
+      ],
+      "clickAction": "run_command",
+      "command": "/advancementssearch highlight blazeandcave:adventure/a_chiptune_relic obtained_status",
+      "allClickCommands": [
+        "/advancementssearch highlight blazeandcave:adventure/a_chiptune_relic obtained_status"
+      ],
+      "targetAdvancementId": "blazeandcave:adventure/a_chiptune_relic",
+      "liveTargetResolved": true,
+      "clientUiClaimed": false,
+      "clientUiStatus": "CLIENT_SEARCH_UI_NOT_CLAIMED"
+    },
+    "b8R2RuntimeWitnesses": [
+      {
+        "functionId": "bacap_rewards:msg/adventure/ive_got_a_bad_feeling_about_this",
+        "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+        "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+        "emittedComponents": [
+          {
+            "translate": "%1$s has made the advancement %2$s%3$s%4$s",
+            "with": [
+              {
+                "text": "b10207f7771",
+                "click_event": {
+                  "command": "/tell b10207f7771 ",
+                  "action": "suggest_command"
+                },
+                "hover_event": {
+                  "id": "minecraft:player",
+                  "uuid": [
+                    545224561,
+                    723206257,
+                    -1124318016,
+                    1114893267
+                  ],
+                  "name": "b10207f7771",
+                  "action": "show_entity"
+                },
+                "insertion": "b10207f7771"
+              },
+              {
+                "text": "[",
+                "color": "green"
+              },
+              {
+                "translate": "I've got a bad feeling about this",
+                "color": "green",
+                "click_event": {
+                  "command": "/advancementssearch highlight minecraft:adventure/voluntary_exile obtained_status",
+                  "action": "run_command"
+                },
+                "hover_event": {
+                  "value": {
+                    "translate": "I've got a bad feeling about this",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "Kill a raid captain. I’d warn against drinking that bottle they dropped…",
+                        "color": "#49DB49"
+                      },
+                      "\n\n",
+                      {
+                        "translate": "%1$s tab",
+                        "with": [
+                          {
+                            "translate": "Adventure"
+                          }
+                        ],
+                        "color": "gray",
+                        "italic": true
+                      }
+                    ],
+                    "color": "green"
+                  },
+                  "action": "show_text"
+                }
+              },
+              {
+                "text": "]",
+                "color": "green"
+              }
+            ]
+          }
+        ],
+        "translationKeys": [
+          "%1$s has made the advancement %2$s%3$s%4$s",
+          "%1$s tab",
+          "Adventure",
+          "I've got a bad feeling about this",
+          "Kill a raid captain. I’d warn against drinking that bottle they dropped…"
+        ],
+        "clickAction": "run_command",
+        "command": "/advancementssearch highlight minecraft:adventure/voluntary_exile obtained_status",
+        "allClickCommands": [
+          "/advancementssearch highlight minecraft:adventure/voluntary_exile obtained_status"
+        ],
+        "targetAdvancementId": "minecraft:adventure/voluntary_exile",
+        "liveTargetResolved": true,
+        "currentDescriptionKey": "Kill a raid captain. I’d warn against drinking that bottle they dropped…",
+        "oldBindingAbsent": true
+      },
+      {
+        "functionId": "bacap_rewards:msg/animal/turtle_army",
+        "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+        "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+        "emittedComponents": [
+          {
+            "translate": "%1$s has reached the goal %2$s%3$s%4$s",
+            "with": [
+              {
+                "text": "b10207f7771",
+                "click_event": {
+                  "command": "/tell b10207f7771 ",
+                  "action": "suggest_command"
+                },
+                "hover_event": {
+                  "id": "minecraft:player",
+                  "uuid": [
+                    545224561,
+                    723206257,
+                    -1124318016,
+                    1114893267
+                  ],
+                  "name": "b10207f7771",
+                  "action": "show_entity"
+                },
+                "insertion": "b10207f7771"
+              },
+              {
+                "text": "[",
+                "color": "#75E1FF"
+              },
+              {
+                "translate": "Turtle Army",
+                "color": "#75E1FF",
+                "click_event": {
+                  "command": "/advancementssearch highlight blazeandcave:animal/turtle_army obtained_status",
+                  "action": "run_command"
+                },
+                "hover_event": {
+                  "value": {
+                    "translate": "Turtle Army",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "Collect a stack of Turtle Scutes",
+                        "color": "#63BDD7"
+                      },
+                      "\n\n",
+                      {
+                        "translate": "%1$s tab",
+                        "with": [
+                          {
+                            "translate": "Animals"
+                          }
+                        ],
+                        "color": "gray",
+                        "italic": true
+                      }
+                    ],
+                    "color": "#75E1FF"
+                  },
+                  "action": "show_text"
+                }
+              },
+              {
+                "text": "]",
+                "color": "#75E1FF"
+              }
+            ]
+          }
+        ],
+        "translationKeys": [
+          "%1$s has reached the goal %2$s%3$s%4$s",
+          "%1$s tab",
+          "Animals",
+          "Collect a stack of Turtle Scutes",
+          "Turtle Army"
+        ],
+        "clickAction": "run_command",
+        "command": "/advancementssearch highlight blazeandcave:animal/turtle_army obtained_status",
+        "allClickCommands": [
+          "/advancementssearch highlight blazeandcave:animal/turtle_army obtained_status"
+        ],
+        "targetAdvancementId": "blazeandcave:animal/turtle_army",
+        "liveTargetResolved": true,
+        "currentDescriptionKey": "Collect a stack of Turtle Scutes",
+        "oldBindingAbsent": true
+      },
+      {
+        "functionId": "bacap_rewards:msg/end/dogfight",
+        "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+        "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+        "emittedComponents": [
+          {
+            "translate": "%1$s has completed the challenge %2$s%3$s%4$s",
+            "with": [
+              {
+                "text": "b10207f7771",
+                "click_event": {
+                  "command": "/tell b10207f7771 ",
+                  "action": "suggest_command"
+                },
+                "hover_event": {
+                  "id": "minecraft:player",
+                  "uuid": [
+                    545224561,
+                    723206257,
+                    -1124318016,
+                    1114893267
+                  ],
+                  "name": "b10207f7771",
+                  "action": "show_entity"
+                },
+                "insertion": "b10207f7771"
+              },
+              {
+                "text": "[",
+                "color": "dark_purple"
+              },
+              {
+                "translate": "Dogfight",
+                "color": "dark_purple",
+                "click_event": {
+                  "command": "/advancementssearch highlight blazeandcave:end/dogfight obtained_status",
+                  "action": "run_command"
+                },
+                "hover_event": {
+                  "value": {
+                    "translate": "Dogfight",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "Kill a Skeleton while both you and it have levitation",
+                        "color": "#C900C7"
+                      },
+                      "\n\n",
+                      {
+                        "translate": "%1$s tab",
+                        "with": [
+                          {
+                            "translate": "The End"
+                          }
+                        ],
+                        "color": "gray",
+                        "italic": true
+                      }
+                    ],
+                    "color": "dark_purple"
+                  },
+                  "action": "show_text"
+                }
+              },
+              {
+                "text": "]",
+                "color": "dark_purple"
+              }
+            ]
+          },
+          {
+            "translate": "%1$s has made the advancement %2$s%3$s%4$s",
+            "with": [
+              {
+                "text": "b10207f7771",
+                "click_event": {
+                  "command": "/tell b10207f7771 ",
+                  "action": "suggest_command"
+                },
+                "hover_event": {
+                  "id": "minecraft:player",
+                  "uuid": [
+                    545224561,
+                    723206257,
+                    -1124318016,
+                    1114893267
+                  ],
+                  "name": "b10207f7771",
+                  "action": "show_entity"
+                },
+                "insertion": "b10207f7771"
+              },
+              {
+                "text": "[",
+                "color": "green"
+              },
+              {
+                "translate": "Level Up",
+                "color": "green",
+                "click_event": {
+                  "command": "/advancementssearch highlight blazeandcave:statistics/level_up obtained_status",
+                  "action": "run_command"
+                },
+                "hover_event": {
+                  "value": {
+                    "translate": "Level Up",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "Reach 30 experience levels",
+                        "color": "#49DB49"
+                      },
+                      "\n\n",
+                      {
+                        "translate": "%1$s tab",
+                        "with": [
+                          {
+                            "translate": "Statistics"
+                          }
+                        ],
+                        "color": "gray",
+                        "italic": true
+                      }
+                    ],
+                    "color": "green"
+                  },
+                  "action": "show_text"
+                }
+              },
+              {
+                "text": "]",
+                "color": "green"
+              }
+            ]
+          },
+          {
+            "translate": "%1$s has made the advancement %2$s%3$s%4$s",
+            "with": [
+              {
+                "text": "b10207f7771",
+                "click_event": {
+                  "command": "/tell b10207f7771 ",
+                  "action": "suggest_command"
+                },
+                "hover_event": {
+                  "id": "minecraft:player",
+                  "uuid": [
+                    545224561,
+                    723206257,
+                    -1124318016,
+                    1114893267
+                  ],
+                  "name": "b10207f7771",
+                  "action": "show_entity"
+                },
+                "insertion": "b10207f7771"
+              },
+              {
+                "text": "[",
+                "color": "green"
+              },
+              {
+                "translate": "DIAM- oh, wait, no.",
+                "color": "green",
+                "click_event": {
+                  "command": "/advancementssearch highlight blazeandcave:mining/diam_oh_wait_no obtained_status",
+                  "action": "run_command"
+                },
+                "hover_event": {
+                  "value": {
+                    "translate": "DIAM- oh, wait, no.",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "It's still useful for enchanting",
+                        "color": "#49DB49"
+                      },
+                      "\n\n",
+                      {
+                        "translate": "%1$s tab",
+                        "with": [
+                          {
+                            "translate": "Mining"
+                          }
+                        ],
+                        "color": "gray",
+                        "italic": true
+                      }
+                    ],
+                    "color": "green"
+                  },
+                  "action": "show_text"
+                }
+              },
+              {
+                "text": "]",
+                "color": "green"
+              }
+            ]
+          },
+          {
+            "text": " +8 ",
+            "extra": [
+              {
+                "translate": "item.minecraft.lapis_lazuli"
+              }
+            ],
+            "color": "green"
+          },
+          {
+            "translate": "achievetodo.ability_unlocked_chat_message",
+            "with": [
+              {
+                "text": "b10207f7771",
+                "click_event": {
+                  "command": "/tell b10207f7771 ",
+                  "action": "suggest_command"
+                },
+                "hover_event": {
+                  "id": "minecraft:player",
+                  "uuid": [
+                    545224561,
+                    723206257,
+                    -1124318016,
+                    1114893267
+                  ],
+                  "name": "b10207f7771",
+                  "action": "show_entity"
+                },
+                "insertion": "b10207f7771"
+              },
+              {
+                "text": "[",
+                "color": "yellow"
+              },
+              {
+                "translate": "achievetodo.ability.eat_salmon.name",
+                "color": "yellow",
+                "click_event": {
+                  "command": "/advancementssearch highlight achievetodo:abilities/eat_salmon obtained_status",
+                  "action": "run_command"
+                },
+                "hover_event": {
+                  "value": {
+                    "translate": "achievetodo.ability.eat_salmon.name",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "achievetodo.ability.eat_salmon.description",
+                        "color": "yellow"
+                      },
+                      "\n\n",
+                      {
+                        "translate": "%1$s tab",
+                        "with": [
+                          "AchieveToDo"
+                        ],
+                        "color": "gray",
+                        "italic": true
+                      }
+                    ],
+                    "color": "yellow"
+                  },
+                  "action": "show_text"
+                }
+              },
+              {
+                "text": "]",
+                "color": "yellow"
+              }
+            ]
+          },
+          {
+            "text": " +12 ",
+            "extra": [
+              {
+                "translate": "item.minecraft.lapis_lazuli"
+              }
+            ],
+            "color": "green"
+          },
+          {
+            "text": " +50 ",
+            "extra": [
+              {
+                "translate": "Experience"
+              }
+            ],
+            "color": "blue"
+          },
+          {
+            "translate": "achievetodo.tab_unlocked_chat_message",
+            "with": [
+              {
+                "text": "[",
+                "color": "#EF233C"
+              },
+              {
+                "translate": "Super Challenges",
+                "color": "#EF233C",
+                "click_event": {
+                  "command": "/advancementssearch highlight blazeandcave:challenges/root obtained_status",
+                  "action": "run_command"
+                },
+                "hover_event": {
+                  "value": {
+                    "translate": "Super Challenges",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "Good luck completing... any of these ;)",
+                        "color": "#EF233C"
+                      }
+                    ],
+                    "color": "#EF233C"
+                  },
+                  "action": "show_text"
+                }
+              },
+              {
+                "text": "]",
+                "color": "#EF233C"
+              }
+            ]
+          },
+          {
+            "translate": "achievetodo.ability_unlocked_chat_message",
+            "with": [
+              {
+                "text": "b10207f7771",
+                "click_event": {
+                  "command": "/tell b10207f7771 ",
+                  "action": "suggest_command"
+                },
+                "hover_event": {
+                  "id": "minecraft:player",
+                  "uuid": [
+                    545224561,
+                    723206257,
+                    -1124318016,
+                    1114893267
+                  ],
+                  "name": "b10207f7771",
+                  "action": "show_entity"
+                },
+                "insertion": "b10207f7771"
+              },
+              {
+                "text": "[",
+                "color": "yellow"
+              },
+              {
+                "translate": "achievetodo.ability.jump.name",
+                "color": "yellow",
+                "click_event": {
+                  "command": "/advancementssearch highlight achievetodo:abilities/jump obtained_status",
+                  "action": "run_command"
+                },
+                "hover_event": {
+                  "value": {
+                    "translate": "achievetodo.ability.jump.name",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "achievetodo.ability.jump.description",
+                        "color": "yellow"
+                      },
+                      "\n\n",
+                      {
+                        "translate": "%1$s tab",
+                        "with": [
+                          "AchieveToDo"
+                        ],
+                        "color": "gray",
+                        "italic": true
+                      }
+                    ],
+                    "color": "yellow"
+                  },
+                  "action": "show_text"
+                }
+              },
+              {
+                "text": "]",
+                "color": "yellow"
+              }
+            ]
+          }
+        ],
+        "translationKeys": [
+          "%1$s has completed the challenge %2$s%3$s%4$s",
+          "%1$s has made the advancement %2$s%3$s%4$s",
+          "%1$s tab",
+          "DIAM- oh, wait, no.",
+          "Dogfight",
+          "Experience",
+          "Good luck completing... any of these ;)",
+          "It's still useful for enchanting",
+          "Kill a Skeleton while both you and it have levitation",
+          "Level Up",
+          "Mining",
+          "Reach 30 experience levels",
+          "Statistics",
+          "Super Challenges",
+          "The End",
+          "achievetodo.ability.eat_salmon.description",
+          "achievetodo.ability.eat_salmon.name",
+          "achievetodo.ability.jump.description",
+          "achievetodo.ability.jump.name",
+          "achievetodo.ability_unlocked_chat_message",
+          "achievetodo.tab_unlocked_chat_message",
+          "item.minecraft.lapis_lazuli"
+        ],
+        "clickAction": "run_command",
+        "command": "/advancementssearch highlight blazeandcave:end/dogfight obtained_status",
+        "allClickCommands": [
+          "/advancementssearch highlight blazeandcave:end/dogfight obtained_status",
+          "/advancementssearch highlight blazeandcave:statistics/level_up obtained_status",
+          "/advancementssearch highlight blazeandcave:mining/diam_oh_wait_no obtained_status",
+          "/advancementssearch highlight achievetodo:abilities/eat_salmon obtained_status",
+          "/advancementssearch highlight blazeandcave:challenges/root obtained_status",
+          "/advancementssearch highlight achievetodo:abilities/jump obtained_status"
+        ],
+        "targetAdvancementId": "blazeandcave:end/dogfight",
+        "liveTargetResolved": true,
+        "currentDescriptionKey": "Kill a Skeleton while both you and it have levitation",
+        "oldBindingAbsent": true
+      },
+      {
+        "functionId": "bacap_rewards:potion/root",
+        "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+        "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+        "emittedComponents": [
+          {
+            "translate": "achievetodo.tab_unlocked_chat_message",
+            "with": [
+              {
+                "text": "[",
+                "color": "#FBDA74"
+              },
+              {
+                "translate": "Potions",
+                "color": "#FBDA74",
+                "click_event": {
+                  "command": "/advancementssearch highlight blazeandcave:potion/root obtained_status",
+                  "action": "run_command"
+                },
+                "hover_event": {
+                  "value": {
+                    "translate": "Potions",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "Brewing potions with helpful and hindering effects",
+                        "color": "#FBDA74"
+                      }
+                    ],
+                    "color": "#FBDA74"
+                  },
+                  "action": "show_text"
+                }
+              },
+              {
+                "text": "]",
+                "color": "#FBDA74"
+              }
+            ]
+          },
+          {
+            "translate": "achievetodo.tab_unlocked_chat_message",
+            "with": [
+              {
+                "text": "[",
+                "color": "#FBDA74"
+              },
+              {
+                "translate": "Potions",
+                "color": "#FBDA74",
+                "click_event": {
+                  "command": "/advancementssearch highlight blazeandcave:potion/root obtained_status",
+                  "action": "run_command"
+                },
+                "hover_event": {
+                  "value": {
+                    "translate": "Potions",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "Brewing potions with helpful and hindering effects",
+                        "color": "#FBDA74"
+                      }
+                    ],
+                    "color": "#FBDA74"
+                  },
+                  "action": "show_text"
+                }
+              },
+              {
+                "text": "]",
+                "color": "#FBDA74"
+              }
+            ]
+          },
+          {
+            "translate": "achievetodo.ability_unlocked_chat_message",
+            "with": [
+              {
+                "text": "b10207f7771",
+                "click_event": {
+                  "command": "/tell b10207f7771 ",
+                  "action": "suggest_command"
+                },
+                "hover_event": {
+                  "id": "minecraft:player",
+                  "uuid": [
+                    545224561,
+                    723206257,
+                    -1124318016,
+                    1114893267
+                  ],
+                  "name": "b10207f7771",
+                  "action": "show_entity"
+                },
+                "insertion": "b10207f7771"
+              },
+              {
+                "text": "[",
+                "color": "yellow"
+              },
+              {
+                "translate": "achievetodo.ability.eat_cod.name",
+                "color": "yellow",
+                "click_event": {
+                  "command": "/advancementssearch highlight achievetodo:abilities/eat_cod obtained_status",
+                  "action": "run_command"
+                },
+                "hover_event": {
+                  "value": {
+                    "translate": "achievetodo.ability.eat_cod.name",
+                    "extra": [
+                      "\n",
+                      {
+                        "translate": "achievetodo.ability.eat_cod.description",
+                        "color": "yellow"
+                      },
+                      "\n\n",
+                      {
+                        "translate": "%1$s tab",
+                        "with": [
+                          "AchieveToDo"
+                        ],
+                        "color": "gray",
+                        "italic": true
+                      }
+                    ],
+                    "color": "yellow"
+                  },
+                  "action": "show_text"
+                }
+              },
+              {
+                "text": "]",
+                "color": "yellow"
+              }
+            ]
+          }
+        ],
+        "translationKeys": [
+          "%1$s tab",
+          "Brewing potions with helpful and hindering effects",
+          "Potions",
+          "achievetodo.ability.eat_cod.description",
+          "achievetodo.ability.eat_cod.name",
+          "achievetodo.ability_unlocked_chat_message",
+          "achievetodo.tab_unlocked_chat_message"
+        ],
+        "clickAction": "run_command",
+        "command": "/advancementssearch highlight blazeandcave:potion/root obtained_status",
+        "allClickCommands": [
+          "/advancementssearch highlight blazeandcave:potion/root obtained_status",
+          "/advancementssearch highlight blazeandcave:potion/root obtained_status",
+          "/advancementssearch highlight achievetodo:abilities/eat_cod obtained_status"
+        ],
+        "targetAdvancementId": "blazeandcave:potion/root",
+        "liveTargetResolved": true,
+        "currentDescriptionKey": "Brewing potions with helpful and hindering effects",
+        "oldBindingAbsent": true
+      }
+    ],
+    "cleanup": {
+      "playerRemoved": true,
+      "connectionRemoved": true,
+      "channelClosed": true
+    },
+    "evidencePath": "reference/phase_b/b10_d1_main_deep_runtime.json",
+    "evidenceSha256": "24f6efc356f44d7fa1923af92b12767f47c5825c91276a2049afc6a0905223af",
+    "carriedByHashBoundReference": true,
+    "rerunInD2": false
+  },
+  "companionRuntime": {
+    "evidencePath": "reference/phase_b/b10_d2_companion_runtime.json",
+    "evidenceSha256": "069ffa12ad93ffd8cd0a454fed1549c4b84f97925bba5f1a726888fc3e3cd4d2",
+    "modes": {
+      "HARDCORE": {
+        "mode": "HARDCORE",
+        "freshDirectory": "build/tmp/phase_b_b10_d2/HARDCORE/FRESH",
+        "selector": "achievetodo-test:phase_bruntime_smoke_companion_smoke",
+        "matched": 1,
+        "executed": 1,
+        "passed": 1,
+        "exitCode": 0,
+        "runtimeReceipt": {
+          "liveAdvancementCount": 3046,
+          "mode": "HARDCORE",
+          "selectedPackIds": [
+            "vanilla",
+            "achievetodo",
+            "fabric-convention-tags-v2",
+            "fabric-gametest-api-v1",
+            "file/bacap.zip",
+            "achievetodo:bacap_override",
+            "file/bacap_hardcore.zip",
+            "achievetodo:bacap_hardcore_override",
+            "achievetodo:bacap_rewards_item",
+            "achievetodo:bacap_rewards_experience",
+            "achievetodo:bacap_rewards_trophy",
+            "achievetodo:bacap_cooperative_mode"
+          ],
+          "b8CoreExpectedCount": 2894,
+          "atdAbilityExpectedCount": 152,
+          "expectedFullLiveCount": 3046,
+          "b8CoreIdsSha256": "c7640b78c95b1ba62a264d1f8654eb4dac878ec43f6fd10599f0d088402796e4",
+          "atdAbilityIdsSha256": "8c56a1d04ce0d039be387081273abadd34569162260175a673d0d229811fa658",
+          "expectedFullIdsSha256": "6add865f2c7ab59b131183e8707ba46e3d808eb8a8f3adc526467541a8b697cd",
+          "liveIdsSha256": "6add865f2c7ab59b131183e8707ba46e3d808eb8a8f3adc526467541a8b697cd",
+          "missingB8CoreIds": [],
+          "missingAtdAbilityIds": [],
+          "unexpectedLiveIds": [],
+          "duplicateIds": 0,
+          "exactSetMatch": true,
+          "compiledAbilityTypeCount": 151,
+          "liveFunctionCount": 5608,
+          "packLoadDiagnostic": "PASS",
+          "mergedAdvancementIdsLive": [],
+          "wrappersLive": [],
+          "joinedPlayer": {
+            "UUID": "967a8d0a-6ac4-4c49-91f7-09cf9f8f45ac",
+            "concreteClass": "net.minecraft.server.level.ServerPlayer",
+            "registered": true,
+            "connectionRegistered": true,
+            "clientLoaded": true,
+            "gameMode": "SURVIVAL",
+            "spectator": false
+          },
+          "messageWitnesses": [
+            {
+              "functionId": "bacap_rewards:msg/biomes/kung_fu_panda",
+              "functionLoaded": true,
+              "runtimeExecutionSucceeded": true,
+              "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+              "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+              "emittedComponents": [
+                {
+                  "translate": "%1$s has made the advancement %2$s%3$s%4$s",
+                  "with": [
+                    {
+                      "text": "b10c967a8d0",
+                      "click_event": {
+                        "command": "/tell b10c967a8d0 ",
+                        "action": "suggest_command"
+                      },
+                      "hover_event": {
+                        "id": "minecraft:player",
+                        "uuid": [
+                          -1770353398,
+                          1791249481,
+                          -1846081073,
+                          -1618000468
+                        ],
+                        "name": "b10c967a8d0",
+                        "action": "show_entity"
+                      },
+                      "insertion": "b10c967a8d0"
+                    },
+                    {
+                      "text": "[",
+                      "color": "green"
+                    },
+                    {
+                      "translate": "Kung Fu Panda!",
+                      "color": "green",
+                      "click_event": {
+                        "command": "/advancementssearch highlight blazeandcave:biomes/kung_fu_panda obtained_status",
+                        "action": "run_command"
+                      },
+                      "hover_event": {
+                        "value": {
+                          "translate": "Kung Fu Panda!",
+                          "extra": [
+                            "\n",
+                            {
+                              "translate": "Get beaten up by an angry panda",
+                              "color": "#49DB49"
+                            },
+                            "\n\n",
+                            {
+                              "translate": "%1$s tab",
+                              "with": [
+                                {
+                                  "translate": "Biomes"
+                                }
+                              ],
+                              "color": "gray",
+                              "italic": true
+                            }
+                          ],
+                          "color": "green"
+                        },
+                        "action": "show_text"
+                      }
+                    },
+                    {
+                      "text": "]",
+                      "color": "green"
+                    }
+                  ]
+                }
+              ],
+              "translationKeys": [
+                "%1$s has made the advancement %2$s%3$s%4$s",
+                "%1$s tab",
+                "Biomes",
+                "Get beaten up by an angry panda",
+                "Kung Fu Panda!"
+              ],
+              "clickAction": "run_command",
+              "command": "/advancementssearch highlight blazeandcave:biomes/kung_fu_panda obtained_status",
+              "allClickCommands": [
+                "/advancementssearch highlight blazeandcave:biomes/kung_fu_panda obtained_status"
+              ],
+              "targetAdvancementId": "blazeandcave:biomes/kung_fu_panda",
+              "liveTargetResolved": true,
+              "staleSearchTargetEmitted": false,
+              "result": "PASS"
+            },
+            {
+              "functionId": "bacap_rewards:msg/biomes/were_going_on_a_bear_hunt",
+              "functionLoaded": true,
+              "runtimeExecutionSucceeded": true,
+              "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+              "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+              "emittedComponents": [
+                {
+                  "translate": "%1$s has made the advancement %2$s%3$s%4$s",
+                  "with": [
+                    {
+                      "text": "b10c967a8d0",
+                      "click_event": {
+                        "command": "/tell b10c967a8d0 ",
+                        "action": "suggest_command"
+                      },
+                      "hover_event": {
+                        "id": "minecraft:player",
+                        "uuid": [
+                          -1770353398,
+                          1791249481,
+                          -1846081073,
+                          -1618000468
+                        ],
+                        "name": "b10c967a8d0",
+                        "action": "show_entity"
+                      },
+                      "insertion": "b10c967a8d0"
+                    },
+                    {
+                      "text": "[",
+                      "color": "green"
+                    },
+                    {
+                      "translate": "We’re Going on a Bear Hunt",
+                      "color": "green",
+                      "click_event": {
+                        "command": "/advancementssearch highlight blazeandcave:biomes/were_going_on_a_bear_hunt obtained_status",
+                        "action": "run_command"
+                      },
+                      "hover_event": {
+                        "value": {
+                          "translate": "We’re Going on a Bear Hunt",
+                          "extra": [
+                            "\n",
+                            {
+                              "translate": "Get hunted by a Polar Bear",
+                              "color": "#49DB49"
+                            },
+                            "\n\n",
+                            {
+                              "translate": "%1$s tab",
+                              "with": [
+                                {
+                                  "translate": "Biomes"
+                                }
+                              ],
+                              "color": "gray",
+                              "italic": true
+                            }
+                          ],
+                          "color": "green"
+                        },
+                        "action": "show_text"
+                      }
+                    },
+                    {
+                      "text": "]",
+                      "color": "green"
+                    }
+                  ]
+                }
+              ],
+              "translationKeys": [
+                "%1$s has made the advancement %2$s%3$s%4$s",
+                "%1$s tab",
+                "Biomes",
+                "Get hunted by a Polar Bear",
+                "We’re Going on a Bear Hunt"
+              ],
+              "clickAction": "run_command",
+              "command": "/advancementssearch highlight blazeandcave:biomes/were_going_on_a_bear_hunt obtained_status",
+              "allClickCommands": [
+                "/advancementssearch highlight blazeandcave:biomes/were_going_on_a_bear_hunt obtained_status"
+              ],
+              "targetAdvancementId": "blazeandcave:biomes/were_going_on_a_bear_hunt",
+              "liveTargetResolved": true,
+              "staleSearchTargetEmitted": false,
+              "result": "PASS"
+            },
+            {
+              "functionId": "bacap_rewards:msg/mining/stink_bomb",
+              "functionLoaded": true,
+              "runtimeExecutionSucceeded": true,
+              "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+              "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+              "emittedComponents": [
+                {
+                  "translate": "%1$s has made the advancement %2$s%3$s%4$s",
+                  "with": [
+                    {
+                      "text": "b10c967a8d0",
+                      "click_event": {
+                        "command": "/tell b10c967a8d0 ",
+                        "action": "suggest_command"
+                      },
+                      "hover_event": {
+                        "id": "minecraft:player",
+                        "uuid": [
+                          -1770353398,
+                          1791249481,
+                          -1846081073,
+                          -1618000468
+                        ],
+                        "name": "b10c967a8d0",
+                        "action": "show_entity"
+                      },
+                      "insertion": "b10c967a8d0"
+                    },
+                    {
+                      "text": "[",
+                      "color": "green"
+                    },
+                    {
+                      "translate": "Stink Bomb",
+                      "color": "green",
+                      "click_event": {
+                        "command": "/advancementssearch highlight blazeandcave:mining/stink_bomb obtained_status",
+                        "action": "run_command"
+                      },
+                      "hover_event": {
+                        "value": {
+                          "translate": "Stink Bomb",
+                          "extra": [
+                            "\n",
+                            {
+                              "translate": "Get hurt by an explosive Sulfur Cube",
+                              "color": "#49DB49"
+                            },
+                            "\n\n",
+                            {
+                              "translate": "%1$s tab",
+                              "with": [
+                                {
+                                  "translate": "Mining"
+                                }
+                              ],
+                              "color": "gray",
+                              "italic": true
+                            }
+                          ],
+                          "color": "green"
+                        },
+                        "action": "show_text"
+                      }
+                    },
+                    {
+                      "text": "]",
+                      "color": "green"
+                    }
+                  ]
+                }
+              ],
+              "translationKeys": [
+                "%1$s has made the advancement %2$s%3$s%4$s",
+                "%1$s tab",
+                "Get hurt by an explosive Sulfur Cube",
+                "Mining",
+                "Stink Bomb"
+              ],
+              "clickAction": "run_command",
+              "command": "/advancementssearch highlight blazeandcave:mining/stink_bomb obtained_status",
+              "allClickCommands": [
+                "/advancementssearch highlight blazeandcave:mining/stink_bomb obtained_status"
+              ],
+              "targetAdvancementId": "blazeandcave:mining/stink_bomb",
+              "liveTargetResolved": true,
+              "staleSearchTargetEmitted": false,
+              "result": "PASS"
+            },
+            {
+              "functionId": "bacap_rewards:msg/monsters/aww_man",
+              "functionLoaded": true,
+              "runtimeExecutionSucceeded": true,
+              "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+              "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+              "emittedComponents": [
+                {
+                  "translate": "%1$s has made the advancement %2$s%3$s%4$s",
+                  "with": [
+                    {
+                      "text": "b10c967a8d0",
+                      "click_event": {
+                        "command": "/tell b10c967a8d0 ",
+                        "action": "suggest_command"
+                      },
+                      "hover_event": {
+                        "id": "minecraft:player",
+                        "uuid": [
+                          -1770353398,
+                          1791249481,
+                          -1846081073,
+                          -1618000468
+                        ],
+                        "name": "b10c967a8d0",
+                        "action": "show_entity"
+                      },
+                      "insertion": "b10c967a8d0"
+                    },
+                    {
+                      "text": "[",
+                      "color": "green"
+                    },
+                    {
+                      "translate": "Aww man!",
+                      "color": "green",
+                      "click_event": {
+                        "command": "/advancementssearch highlight blazeandcave:monsters/aww_man obtained_status",
+                        "action": "run_command"
+                      },
+                      "hover_event": {
+                        "value": {
+                          "translate": "Aww man!",
+                          "extra": [
+                            "\n",
+                            {
+                              "translate": "That was a nice life you had. Shame it had to end at this time time time",
+                              "color": "#49DB49"
+                            },
+                            "\n\n",
+                            {
+                              "translate": "%1$s tab",
+                              "with": [
+                                {
+                                  "translate": "Monsters"
+                                }
+                              ],
+                              "color": "gray",
+                              "italic": true
+                            }
+                          ],
+                          "color": "green"
+                        },
+                        "action": "show_text"
+                      }
+                    },
+                    {
+                      "text": "]",
+                      "color": "green"
+                    }
+                  ]
+                }
+              ],
+              "translationKeys": [
+                "%1$s has made the advancement %2$s%3$s%4$s",
+                "%1$s tab",
+                "Aww man!",
+                "Monsters",
+                "That was a nice life you had. Shame it had to end at this time time time"
+              ],
+              "clickAction": "run_command",
+              "command": "/advancementssearch highlight blazeandcave:monsters/aww_man obtained_status",
+              "allClickCommands": [
+                "/advancementssearch highlight blazeandcave:monsters/aww_man obtained_status"
+              ],
+              "targetAdvancementId": "blazeandcave:monsters/aww_man",
+              "liveTargetResolved": true,
+              "staleSearchTargetEmitted": false,
+              "result": "PASS"
+            },
+            {
+              "functionId": "bacap_rewards:msg/monsters/now_thats_a_lot_of_damage",
+              "functionLoaded": true,
+              "runtimeExecutionSucceeded": true,
+              "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+              "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+              "emittedComponents": [
+                {
+                  "translate": "%1$s has made the advancement %2$s%3$s%4$s",
+                  "with": [
+                    {
+                      "text": "b10c967a8d0",
+                      "click_event": {
+                        "command": "/tell b10c967a8d0 ",
+                        "action": "suggest_command"
+                      },
+                      "hover_event": {
+                        "id": "minecraft:player",
+                        "uuid": [
+                          -1770353398,
+                          1791249481,
+                          -1846081073,
+                          -1618000468
+                        ],
+                        "name": "b10c967a8d0",
+                        "action": "show_entity"
+                      },
+                      "insertion": "b10c967a8d0"
+                    },
+                    {
+                      "text": "[",
+                      "color": "green"
+                    },
+                    {
+                      "translate": "Now that's a lot of damage",
+                      "color": "green",
+                      "click_event": {
+                        "command": "/advancementssearch highlight blazeandcave:monsters/now_thats_a_lot_of_damage obtained_status",
+                        "action": "run_command"
+                      },
+                      "hover_event": {
+                        "value": {
+                          "translate": "Now that's a lot of damage",
+                          "extra": [
+                            "\n",
+                            {
+                              "translate": "Succumb to the Warden",
+                              "color": "#49DB49"
+                            },
+                            "\n\n",
+                            {
+                              "translate": "%1$s tab",
+                              "with": [
+                                {
+                                  "translate": "Monsters"
+                                }
+                              ],
+                              "color": "gray",
+                              "italic": true
+                            }
+                          ],
+                          "color": "green"
+                        },
+                        "action": "show_text"
+                      }
+                    },
+                    {
+                      "text": "]",
+                      "color": "green"
+                    }
+                  ]
+                }
+              ],
+              "translationKeys": [
+                "%1$s has made the advancement %2$s%3$s%4$s",
+                "%1$s tab",
+                "Monsters",
+                "Now that's a lot of damage",
+                "Succumb to the Warden"
+              ],
+              "clickAction": "run_command",
+              "command": "/advancementssearch highlight blazeandcave:monsters/now_thats_a_lot_of_damage obtained_status",
+              "allClickCommands": [
+                "/advancementssearch highlight blazeandcave:monsters/now_thats_a_lot_of_damage obtained_status"
+              ],
+              "targetAdvancementId": "blazeandcave:monsters/now_thats_a_lot_of_damage",
+              "liveTargetResolved": true,
+              "staleSearchTargetEmitted": false,
+              "result": "PASS"
+            },
+            {
+              "functionId": "bacap_rewards:msg/nether/whole_hog",
+              "functionLoaded": true,
+              "runtimeExecutionSucceeded": true,
+              "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+              "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+              "emittedComponents": [
+                {
+                  "translate": "%1$s has made the advancement %2$s%3$s%4$s",
+                  "with": [
+                    {
+                      "text": "b10c967a8d0",
+                      "click_event": {
+                        "command": "/tell b10c967a8d0 ",
+                        "action": "suggest_command"
+                      },
+                      "hover_event": {
+                        "id": "minecraft:player",
+                        "uuid": [
+                          -1770353398,
+                          1791249481,
+                          -1846081073,
+                          -1618000468
+                        ],
+                        "name": "b10c967a8d0",
+                        "action": "show_entity"
+                      },
+                      "insertion": "b10c967a8d0"
+                    },
+                    {
+                      "text": "[",
+                      "color": "green"
+                    },
+                    {
+                      "translate": "Whole Hog",
+                      "color": "green",
+                      "click_event": {
+                        "command": "/advancementssearch highlight blazeandcave:nether/whole_hog obtained_status",
+                        "action": "run_command"
+                      },
+                      "hover_event": {
+                        "value": {
+                          "translate": "Whole Hog",
+                          "extra": [
+                            "\n",
+                            {
+                              "translate": "Get mauled by a Hoglin",
+                              "color": "#49DB49"
+                            },
+                            "\n\n",
+                            {
+                              "translate": "%1$s tab",
+                              "with": [
+                                {
+                                  "translate": "Nether"
+                                }
+                              ],
+                              "color": "gray",
+                              "italic": true
+                            }
+                          ],
+                          "color": "green"
+                        },
+                        "action": "show_text"
+                      }
+                    },
+                    {
+                      "text": "]",
+                      "color": "green"
+                    }
+                  ]
+                }
+              ],
+              "translationKeys": [
+                "%1$s has made the advancement %2$s%3$s%4$s",
+                "%1$s tab",
+                "Get mauled by a Hoglin",
+                "Nether",
+                "Whole Hog"
+              ],
+              "clickAction": "run_command",
+              "command": "/advancementssearch highlight blazeandcave:nether/whole_hog obtained_status",
+              "allClickCommands": [
+                "/advancementssearch highlight blazeandcave:nether/whole_hog obtained_status"
+              ],
+              "targetAdvancementId": "blazeandcave:nether/whole_hog",
+              "liveTargetResolved": true,
+              "staleSearchTargetEmitted": false,
+              "result": "PASS"
+            }
+          ],
+          "cleanup": {
+            "playerRemoved": true,
+            "connectionRemoved": true,
+            "channelClosed": true
+          },
+          "clientSearchUiClaimed": false,
+          "clientSearchUiStatus": "CLIENT_SEARCH_UI_NOT_CLAIMED",
+          "commonDeepSemanticsRepeated": false,
+          "result": "PASS"
+        },
+        "externalCopies": [
+          {
+            "enum": "BACAP",
+            "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b1\\BlazeandCave's Advancements Pack 1.21.zip",
+            "sourceSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+            "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+            "worldCopySha256": "ed0b560a31553fe35dbbd9a401f4dfa0729dfbe303cec79e798df4462354abce",
+            "isCurrentWorldPack": true,
+            "marker": {
+              "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+              "fileName": "bacap.zip",
+              "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+              "raiderPredicateKeys": "snake_case",
+              "llamaCarpetNbtMapping": "equipment.body",
+              "version": "compat_26_2_r19"
+            },
+            "copyPolicy": "TRANSFORMED_R19_ACTUAL_SOURCE_MARKER"
+          },
+          {
+            "enum": "BACAP_HARDCORE",
+            "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b4\\BlazeandCave's Advancements Pack Hardcore.zip",
+            "sourceSha256": "1baf5f1bc7c48c819cb6b3081cb124793a316b3568352c853b94757bb4237446",
+            "sourceSha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+            "worldCopySha256": "a931176b575b1f81857de801cc17bdd61790cc2260190a96e490b7e0703c1cd2",
+            "isCurrentWorldPack": true,
+            "marker": {
+              "sourceSha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+              "fileName": "bacap_hardcore.zip",
+              "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+              "version": "compat_26_2_r19"
+            },
+            "copyPolicy": "TRANSFORMED_R19_ACTUAL_SOURCE_MARKER"
+          }
+        ],
+        "productionSelectionFaithful": true,
+        "b8CoreAuthority": {
+          "evidencePath": "reference/phase_b/b8_static_certification_resumed.json",
+          "evidenceSha256": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3",
+          "outputPath": "build/tmp/phase_b_b8/post_r2/codec_advancements_hardcore.json",
+          "outputSha256": "1eb6140f626eb3dab7729e3fe84fefa3742fed9d3e5f7a7fe4bb5c72f1f11970"
+        },
+        "logAudit": {
+          "result": "PASS",
+          "resourceParseFailures": 0,
+          "unexplainedAtdBacapRuntimeErrors": 0,
+          "unknownRequiredFunctions": 0,
+          "unknownRequiredAdvancements": 0,
+          "companionCommandSyntaxFailures": 0,
+          "classifiedHostDevEvents": [
+            {
+              "line": "[17:20:22] [main/ERROR] (HkeyPerformanceDataUtil) Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: ",
+              "classification": "HOST_OSHI_PERFLIB_009_DIAGNOSTIC",
+              "ATD_or_BACAP": false
+            },
+            {
+              "line": "[17:20:31] [main/ERROR] (Minecraft) Failed to load properties from file: server.properties",
+              "classification": "FRESH_SERVER_DIRECTORY_DEFAULT_PROPERTIES_INITIALIZATION",
+              "ATD_or_BACAP": false
+            }
+          ],
+          "classifiedHostExceptionHeaders": [
+            "com.sun.jna.platform.win32.Win32Exception: Параметр задан неверно.",
+            "java.nio.file.NoSuchFileException: server.properties"
+          ],
+          "unexplainedEvents": [],
+          "completeLogSha256": "bf94365ae4f852f2cb34d232d05514066e607914c89cb49a57bd1976a7dbcc6b"
+        },
+        "result": "PASS",
+        "rawReceiptSha256": "4a2a64c4c33556d2de6bf109d57cf749f34192dbaed440b7cbfb370f576b6a00",
+        "installedReceiptSha256": "448273fe2f2e6ee54046b604f46a80565a264372fc909aa40638c58e74455e25",
+        "planSha256": "a562d235809f129d17143c182d1c9409bbbd680953a2d8784527629a58b0b97f",
+        "processPreflight": [],
+        "bootstrap": {
+          "originalFabricGameTestOrder": [
+            "vanilla",
+            "file/bacap.zip",
+            "file/bacap_hardcore.zip",
+            "achievetodo",
+            "fabric-convention-tags-v2",
+            "fabric-gametest-api-v1",
+            "achievetodo:bacap_override",
+            "achievetodo:bacap_hardcore_override",
+            "achievetodo:bacap_rewards_item",
+            "achievetodo:bacap_rewards_experience",
+            "achievetodo:bacap_rewards_trophy",
+            "achievetodo:bacap_cooperative_mode"
+          ],
+          "productionOrderRestoredBeforeResourceLoad": true,
+          "selectedPackSetUnchanged": true
+        }
+      },
+      "TERRALITH": {
+        "mode": "TERRALITH",
+        "freshDirectory": "build/tmp/phase_b_b10_d2/TERRALITH",
+        "selector": "achievetodo-test:phase_bruntime_smoke_companion_smoke",
+        "matched": 1,
+        "executed": 1,
+        "passed": 1,
+        "exitCode": 0,
+        "runtimeReceipt": {
+          "liveAdvancementCount": 3074,
+          "mode": "TERRALITH",
+          "selectedPackIds": [
+            "vanilla",
+            "achievetodo",
+            "fabric-convention-tags-v2",
+            "fabric-gametest-api-v1",
+            "file/bacap.zip",
+            "achievetodo:bacap_override",
+            "file/terralith.zip",
+            "file/bacap_terralith.zip",
+            "achievetodo:bacap_terralith_override",
+            "achievetodo:bacap_rewards_item",
+            "achievetodo:bacap_rewards_experience",
+            "achievetodo:bacap_rewards_trophy",
+            "achievetodo:bacap_cooperative_mode"
+          ],
+          "b8CoreExpectedCount": 2922,
+          "atdAbilityExpectedCount": 152,
+          "expectedFullLiveCount": 3074,
+          "b8CoreIdsSha256": "46e4cf7a7b48cdaa817d33426cebca82448640e8f4476531419b3c744e74ec77",
+          "atdAbilityIdsSha256": "8c56a1d04ce0d039be387081273abadd34569162260175a673d0d229811fa658",
+          "expectedFullIdsSha256": "f50ebe19a8cc8d19187a2dceeeecab3c23735683d60fefa4e82fb48a26398395",
+          "liveIdsSha256": "f50ebe19a8cc8d19187a2dceeeecab3c23735683d60fefa4e82fb48a26398395",
+          "missingB8CoreIds": [],
+          "missingAtdAbilityIds": [],
+          "unexpectedLiveIds": [],
+          "duplicateIds": 0,
+          "exactSetMatch": true,
+          "compiledAbilityTypeCount": 151,
+          "liveFunctionCount": 5714,
+          "packLoadDiagnostic": "PASS",
+          "mergedAdvancementIdsLive": [
+            "blazeandcave:adventure/raidin_master",
+            "blazeandcave:biomes/cold_feet",
+            "blazeandcave:biomes/high_feet",
+            "blazeandcave:biomes/one_with_the_forest",
+            "blazeandcave:biomes/overgrown",
+            "blazeandcave:biomes/warm_feet",
+            "blazeandcave:biomes/wet_feet",
+            "blazeandcave:challenges/explorer_of_worlds",
+            "blazeandcave:challenges/i_am_loot",
+            "blazeandcave:mining/oresome",
+            "minecraft:adventure/adventuring_time"
+          ],
+          "wrappersLive": [
+            "bacap_rewards:adventure/castle_of_hrrms",
+            "bacap_rewards:adventure/remote_shelter",
+            "bacap_rewards:adventure/spire_of_ice",
+            "bacap_rewards:adventure/totally_not_terraria",
+            "bacap_rewards:adventure/under_the_ice",
+            "bacap_rewards:biomes/a_cliffhanger",
+            "bacap_rewards:biomes/a_grassy_nature",
+            "bacap_rewards:biomes/aesthetic",
+            "bacap_rewards:biomes/alpha_days",
+            "bacap_rewards:biomes/bushranger",
+            "bacap_rewards:biomes/choco_mountain",
+            "bacap_rewards:biomes/eruption_in_the_air",
+            "bacap_rewards:biomes/highlander",
+            "bacap_rewards:biomes/land_of_icicles",
+            "bacap_rewards:biomes/master_spelunker",
+            "bacap_rewards:biomes/o_land_o_bloom",
+            "bacap_rewards:biomes/one_small_steppe_for_man",
+            "bacap_rewards:biomes/over_the_moon",
+            "bacap_rewards:biomes/pretty_in_purple",
+            "bacap_rewards:biomes/skylanders",
+            "bacap_rewards:biomes/smarter_than_the_average_bear",
+            "bacap_rewards:biomes/terralithic",
+            "bacap_rewards:biomes/the_boreal_deal",
+            "bacap_rewards:biomes/the_world_is_your_canvas"
+          ],
+          "repairedHelpersLive": [
+            "blazeandcave:technical/biome_branch1_end",
+            "blazeandcave:technical/biome_branch2_end"
+          ],
+          "joinedPlayer": {
+            "UUID": "c592dab5-9e63-46ec-9e22-e92b71fe0375",
+            "concreteClass": "net.minecraft.server.level.ServerPlayer",
+            "registered": true,
+            "connectionRegistered": true,
+            "clientLoaded": true,
+            "gameMode": "SURVIVAL",
+            "spectator": false
+          },
+          "messageWitnesses": [],
+          "representativeMergeWitness": {
+            "functionId": "bacap_rewards:adventure/raidin_master",
+            "functionLoaded": true,
+            "runtimeExecutionSucceeded": true,
+            "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+            "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+            "emittedComponents": [
+              {
+                "translate": "%1$s has completed the challenge %2$s%3$s%4$s",
+                "with": [
+                  {
+                    "text": "b10cc592dab",
+                    "click_event": {
+                      "command": "/tell b10cc592dab ",
+                      "action": "suggest_command"
+                    },
+                    "hover_event": {
+                      "id": "minecraft:player",
+                      "uuid": [
+                        -980231499,
+                        -1637660948,
+                        -1641879253,
+                        1912472437
+                      ],
+                      "name": "b10cc592dab",
+                      "action": "show_entity"
+                    },
+                    "insertion": "b10cc592dab"
+                  },
+                  {
+                    "text": "[",
+                    "color": "dark_purple"
+                  },
+                  {
+                    "translate": "Raidin' Master",
+                    "color": "dark_purple",
+                    "click_event": {
+                      "command": "/advancementssearch highlight blazeandcave:adventure/raidin_master obtained_status",
+                      "action": "run_command"
+                    },
+                    "hover_event": {
+                      "value": {
+                        "translate": "Raidin' Master",
+                        "extra": [
+                          "\n",
+                          {
+                            "translate": "Discover every structure type",
+                            "color": "#C900C7"
+                          },
+                          "\n\n",
+                          {
+                            "translate": "%1$s tab",
+                            "with": [
+                              {
+                                "translate": "Adventure"
+                              }
+                            ],
+                            "color": "gray",
+                            "italic": true
+                          }
+                        ],
+                        "color": "dark_purple"
+                      },
+                      "action": "show_text"
+                    }
+                  },
+                  {
+                    "text": "]",
+                    "color": "dark_purple"
+                  }
+                ]
+              },
+              {
+                "text": " +100 ",
+                "extra": [
+                  {
+                    "translate": "Experience"
+                  }
+                ],
+                "color": "blue"
+              },
+              {
+                "translate": "%1$s has completed the challenge %2$s%3$s%4$s",
+                "with": [
+                  {
+                    "text": "b10cc592dab",
+                    "click_event": {
+                      "command": "/tell b10cc592dab ",
+                      "action": "suggest_command"
+                    },
+                    "hover_event": {
+                      "id": "minecraft:player",
+                      "uuid": [
+                        -980231499,
+                        -1637660948,
+                        -1641879253,
+                        1912472437
+                      ],
+                      "name": "b10cc592dab",
+                      "action": "show_entity"
+                    },
+                    "insertion": "b10cc592dab"
+                  },
+                  {
+                    "text": "[",
+                    "color": "dark_purple"
+                  },
+                  {
+                    "translate": "Raidin' Master",
+                    "color": "dark_purple",
+                    "click_event": {
+                      "command": "/advancementssearch highlight blazeandcave:adventure/raidin_master obtained_status",
+                      "action": "run_command"
+                    },
+                    "hover_event": {
+                      "value": {
+                        "translate": "Raidin' Master",
+                        "extra": [
+                          "\n",
+                          {
+                            "translate": "Discover every structure type",
+                            "color": "#C900C7"
+                          },
+                          "\n\n",
+                          {
+                            "translate": "%1$s tab",
+                            "with": [
+                              {
+                                "translate": "Adventure"
+                              }
+                            ],
+                            "color": "gray",
+                            "italic": true
+                          }
+                        ],
+                        "color": "dark_purple"
+                      },
+                      "action": "show_text"
+                    }
+                  },
+                  {
+                    "text": "]",
+                    "color": "dark_purple"
+                  }
+                ]
+              },
+              {
+                "text": " +100 ",
+                "extra": [
+                  {
+                    "translate": "Experience"
+                  }
+                ],
+                "color": "blue"
+              },
+              {
+                "translate": "achievetodo.ability_unlocked_chat_message",
+                "with": [
+                  {
+                    "text": "b10cc592dab",
+                    "click_event": {
+                      "command": "/tell b10cc592dab ",
+                      "action": "suggest_command"
+                    },
+                    "hover_event": {
+                      "id": "minecraft:player",
+                      "uuid": [
+                        -980231499,
+                        -1637660948,
+                        -1641879253,
+                        1912472437
+                      ],
+                      "name": "b10cc592dab",
+                      "action": "show_entity"
+                    },
+                    "insertion": "b10cc592dab"
+                  },
+                  {
+                    "text": "[",
+                    "color": "yellow"
+                  },
+                  {
+                    "translate": "achievetodo.ability.eat_tropical_fish.name",
+                    "color": "yellow",
+                    "click_event": {
+                      "command": "/advancementssearch highlight achievetodo:abilities/eat_tropical_fish obtained_status",
+                      "action": "run_command"
+                    },
+                    "hover_event": {
+                      "value": {
+                        "translate": "achievetodo.ability.eat_tropical_fish.name",
+                        "extra": [
+                          "\n",
+                          {
+                            "translate": "achievetodo.ability.eat_tropical_fish.description",
+                            "color": "yellow"
+                          },
+                          "\n\n",
+                          {
+                            "translate": "%1$s tab",
+                            "with": [
+                              "AchieveToDo"
+                            ],
+                            "color": "gray",
+                            "italic": true
+                          }
+                        ],
+                        "color": "yellow"
+                      },
+                      "action": "show_text"
+                    }
+                  },
+                  {
+                    "text": "]",
+                    "color": "yellow"
+                  }
+                ]
+              }
+            ],
+            "translationKeys": [
+              "%1$s has completed the challenge %2$s%3$s%4$s",
+              "%1$s tab",
+              "Adventure",
+              "Discover every structure type",
+              "Experience",
+              "Raidin' Master",
+              "achievetodo.ability.eat_tropical_fish.description",
+              "achievetodo.ability.eat_tropical_fish.name",
+              "achievetodo.ability_unlocked_chat_message"
+            ],
+            "clickAction": "run_command",
+            "command": "/advancementssearch highlight blazeandcave:adventure/raidin_master obtained_status",
+            "allClickCommands": [
+              "/advancementssearch highlight blazeandcave:adventure/raidin_master obtained_status",
+              "/advancementssearch highlight blazeandcave:adventure/raidin_master obtained_status",
+              "/advancementssearch highlight achievetodo:abilities/eat_tropical_fish obtained_status"
+            ],
+            "targetAdvancementId": "blazeandcave:adventure/raidin_master",
+            "liveTargetResolved": true,
+            "staleSearchTargetEmitted": false,
+            "result": "PASS",
+            "selectionReason": "first sorted B5.6 merged ID with an accepted current reward wrapper/message path",
+            "currentRewardAndMessagePathExecuted": true
+          },
+          "terralithMacroGateWitness": {
+            "functionId": "bacap_rewards:terralith_advancement_made_macro",
+            "wrapperId": "bacap_rewards:adventure/castle_of_hrrms",
+            "originalGate": 1,
+            "enabledGate": 1,
+            "rawBefore": 8,
+            "pointsBefore": 40,
+            "tierPoints": 2,
+            "rawAfter": 10,
+            "pointsAfter": 44,
+            "rawDelta": 2,
+            "pointsDelta": 4,
+            "countPointsReachable": true,
+            "balanceAssertion": false,
+            "cooperativeBehaviorPreserved": true,
+            "result": "PASS",
+            "gateRestored": true
+          },
+          "representativeWrapperWitness": {
+            "functionId": "bacap_rewards:adventure/castle_of_hrrms",
+            "functionLoaded": true,
+            "runtimeExecutionSucceeded": true,
+            "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+            "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+            "emittedComponents": [
+              {
+                "translate": "%1$s has reached the goal %2$s%3$s%4$s",
+                "with": [
+                  {
+                    "text": "b10cc592dab",
+                    "click_event": {
+                      "command": "/tell b10cc592dab ",
+                      "action": "suggest_command"
+                    },
+                    "hover_event": {
+                      "id": "minecraft:player",
+                      "uuid": [
+                        -980231499,
+                        -1637660948,
+                        -1641879253,
+                        1912472437
+                      ],
+                      "name": "b10cc592dab",
+                      "action": "show_entity"
+                    },
+                    "insertion": "b10cc592dab"
+                  },
+                  {
+                    "text": "[",
+                    "color": "#75E1FF"
+                  },
+                  {
+                    "translate": "Castle of Hrrms",
+                    "color": "#75E1FF",
+                    "click_event": {
+                      "command": "/advancementssearch highlight blazeandcave:adventure/castle_of_hrrms obtained_status",
+                      "action": "run_command"
+                    },
+                    "hover_event": {
+                      "value": {
+                        "translate": "Castle of Hrrms",
+                        "extra": [
+                          "\n",
+                          {
+                            "translate": "Enter a Fortified Village",
+                            "color": "#63BDD7"
+                          },
+                          "\n\n",
+                          {
+                            "translate": "Adventure",
+                            "color": "gray",
+                            "italic": true
+                          },
+                          " ",
+                          {
+                            "translate": "tab",
+                            "color": "gray",
+                            "italic": true
+                          },
+                          "\n",
+                          {
+                            "translate": "Advancement added by Terralith version",
+                            "color": "dark_green",
+                            "italic": true
+                          }
+                        ],
+                        "color": "#75E1FF"
+                      },
+                      "action": "show_text"
+                    }
+                  },
+                  {
+                    "text": "]",
+                    "color": "#75E1FF"
+                  }
+                ]
+              },
+              {
+                "translate": "%1$s has reached the goal %2$s%3$s%4$s",
+                "with": [
+                  {
+                    "text": "b10cc592dab",
+                    "click_event": {
+                      "command": "/tell b10cc592dab ",
+                      "action": "suggest_command"
+                    },
+                    "hover_event": {
+                      "id": "minecraft:player",
+                      "uuid": [
+                        -980231499,
+                        -1637660948,
+                        -1641879253,
+                        1912472437
+                      ],
+                      "name": "b10cc592dab",
+                      "action": "show_entity"
+                    },
+                    "insertion": "b10cc592dab"
+                  },
+                  {
+                    "text": "[",
+                    "color": "#75E1FF"
+                  },
+                  {
+                    "translate": "Castle of Hrrms",
+                    "color": "#75E1FF",
+                    "click_event": {
+                      "command": "/advancementssearch highlight blazeandcave:adventure/castle_of_hrrms obtained_status",
+                      "action": "run_command"
+                    },
+                    "hover_event": {
+                      "value": {
+                        "translate": "Castle of Hrrms",
+                        "extra": [
+                          "\n",
+                          {
+                            "translate": "Enter a Fortified Village",
+                            "color": "#63BDD7"
+                          },
+                          "\n\n",
+                          {
+                            "translate": "Adventure",
+                            "color": "gray",
+                            "italic": true
+                          },
+                          " ",
+                          {
+                            "translate": "tab",
+                            "color": "gray",
+                            "italic": true
+                          },
+                          "\n",
+                          {
+                            "translate": "Advancement added by Terralith version",
+                            "color": "dark_green",
+                            "italic": true
+                          }
+                        ],
+                        "color": "#75E1FF"
+                      },
+                      "action": "show_text"
+                    }
+                  },
+                  {
+                    "text": "]",
+                    "color": "#75E1FF"
+                  }
+                ]
+              },
+              {
+                "translate": "achievetodo.ability_unlocked_chat_message",
+                "with": [
+                  {
+                    "text": "b10cc592dab",
+                    "click_event": {
+                      "command": "/tell b10cc592dab ",
+                      "action": "suggest_command"
+                    },
+                    "hover_event": {
+                      "id": "minecraft:player",
+                      "uuid": [
+                        -980231499,
+                        -1637660948,
+                        -1641879253,
+                        1912472437
+                      ],
+                      "name": "b10cc592dab",
+                      "action": "show_entity"
+                    },
+                    "insertion": "b10cc592dab"
+                  },
+                  {
+                    "text": "[",
+                    "color": "yellow"
+                  },
+                  {
+                    "translate": "achievetodo.ability.swim.name",
+                    "color": "yellow",
+                    "click_event": {
+                      "command": "/advancementssearch highlight achievetodo:abilities/swim obtained_status",
+                      "action": "run_command"
+                    },
+                    "hover_event": {
+                      "value": {
+                        "translate": "achievetodo.ability.swim.name",
+                        "extra": [
+                          "\n",
+                          {
+                            "translate": "achievetodo.ability.swim.description",
+                            "color": "yellow"
+                          },
+                          "\n\n",
+                          {
+                            "translate": "%1$s tab",
+                            "with": [
+                              "AchieveToDo"
+                            ],
+                            "color": "gray",
+                            "italic": true
+                          }
+                        ],
+                        "color": "yellow"
+                      },
+                      "action": "show_text"
+                    }
+                  },
+                  {
+                    "text": "]",
+                    "color": "yellow"
+                  }
+                ]
+              }
+            ],
+            "translationKeys": [
+              "%1$s has reached the goal %2$s%3$s%4$s",
+              "%1$s tab",
+              "Advancement added by Terralith version",
+              "Adventure",
+              "Castle of Hrrms",
+              "Enter a Fortified Village",
+              "achievetodo.ability.swim.description",
+              "achievetodo.ability.swim.name",
+              "achievetodo.ability_unlocked_chat_message",
+              "tab"
+            ],
+            "clickAction": "run_command",
+            "command": "/advancementssearch highlight blazeandcave:adventure/castle_of_hrrms obtained_status",
+            "allClickCommands": [
+              "/advancementssearch highlight blazeandcave:adventure/castle_of_hrrms obtained_status",
+              "/advancementssearch highlight blazeandcave:adventure/castle_of_hrrms obtained_status",
+              "/advancementssearch highlight achievetodo:abilities/swim obtained_status"
+            ],
+            "targetAdvancementId": "blazeandcave:adventure/castle_of_hrrms",
+            "liveTargetResolved": true,
+            "staleSearchTargetEmitted": false,
+            "result": "PASS"
+          },
+          "cleanup": {
+            "playerRemoved": true,
+            "connectionRemoved": true,
+            "channelClosed": true
+          },
+          "clientSearchUiClaimed": false,
+          "clientSearchUiStatus": "CLIENT_SEARCH_UI_NOT_CLAIMED",
+          "commonDeepSemanticsRepeated": false,
+          "result": "PASS"
+        },
+        "externalCopies": [
+          {
+            "enum": "BACAP",
+            "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b1\\BlazeandCave's Advancements Pack 1.21.zip",
+            "sourceSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+            "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+            "worldCopySha256": "97d4fd8e2e3540732310ffc1cdfb673a0ad1e6ce2a87ab41f8c5f4d2b0241b0b",
+            "isCurrentWorldPack": true,
+            "marker": {
+              "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+              "fileName": "bacap.zip",
+              "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+              "raiderPredicateKeys": "snake_case",
+              "llamaCarpetNbtMapping": "equipment.body",
+              "version": "compat_26_2_r19"
+            },
+            "copyPolicy": "TRANSFORMED_R19_ACTUAL_SOURCE_MARKER"
+          },
+          {
+            "enum": "TERRALITH",
+            "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b4\\Terralith_26.2_v2.6.4.zip",
+            "sourceSha256": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e",
+            "sourceSha1": "96ccd25be9ba5240ebe8150cc29240aca781f0e1",
+            "worldCopySha256": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e",
+            "isCurrentWorldPack": true,
+            "copyPolicy": "EXACT_RAW_BYTE_COPY_NO_MARKER_REQUIRED"
+          },
+          {
+            "enum": "BACAP_TERRALITH",
+            "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap_terralith.zip",
+            "sourceSha256": "0b3cd387fe6e80ac6fe9a05b22091fce6abf6c38dd9656b3086629ec4031d3de",
+            "sourceSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+            "worldCopySha256": "241556db7a921295fd2455889006730c50d556b6065e8ca86ac6cba42d9536a6",
+            "isCurrentWorldPack": true,
+            "marker": {
+              "sourceSha1": "3d8cc170c1bf2a00460a8d7e779acbe9d5034dea",
+              "fileName": "bacap_terralith.zip",
+              "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+              "version": "compat_26_2_r19"
+            },
+            "copyPolicy": "TRANSFORMED_R19_ACTUAL_SOURCE_MARKER"
+          }
+        ],
+        "productionSelectionFaithful": true,
+        "b8CoreAuthority": {
+          "evidencePath": "reference/phase_b/b8_static_certification_resumed.json",
+          "evidenceSha256": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3",
+          "outputPath": "build/tmp/phase_b_b8/post_r2/codec_advancements_terralith.json",
+          "outputSha256": "19757c09dbebf2d089003b9b724687754d7713535e430d2fca6925525f90b484"
+        },
+        "logAudit": {
+          "result": "PASS",
+          "resourceParseFailures": 0,
+          "unexplainedAtdBacapRuntimeErrors": 0,
+          "unknownRequiredFunctions": 0,
+          "unknownRequiredAdvancements": 0,
+          "companionCommandSyntaxFailures": 0,
+          "classifiedHostDevEvents": [
+            {
+              "line": "[17:21:45] [main/ERROR] (HkeyPerformanceDataUtil) Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: ",
+              "classification": "HOST_OSHI_PERFLIB_009_DIAGNOSTIC",
+              "ATD_or_BACAP": false
+            },
+            {
+              "line": "[17:21:53] [main/ERROR] (Minecraft) Failed to load properties from file: server.properties",
+              "classification": "FRESH_SERVER_DIRECTORY_DEFAULT_PROPERTIES_INITIALIZATION",
+              "ATD_or_BACAP": false
+            }
+          ],
+          "classifiedHostExceptionHeaders": [
+            "com.sun.jna.platform.win32.Win32Exception: Параметр задан неверно.",
+            "java.nio.file.NoSuchFileException: server.properties"
+          ],
+          "unexplainedEvents": [],
+          "completeLogSha256": "5847bab51754f60f3b9907a66f4082c30f157767dac953b5590cb4a141ff7fc9"
+        },
+        "result": "PASS",
+        "rawReceiptSha256": "bc5b4c0ced36bb353b34035379ee1c80d30d20e4458b6784605ae7b80bc77347",
+        "installedReceiptSha256": "68f2119811d59ee0af4e5ae3f8d3641dd60da8e21ad24db0c6ebc5b8f7727c07",
+        "planSha256": "0bc9f4b6602954257ba3ce0beda33141fe43527998763b8a8ce48bc01d4b6cbc",
+        "processPreflight": [],
+        "bootstrap": {
+          "originalFabricGameTestOrder": [
+            "vanilla",
+            "file/bacap.zip",
+            "file/terralith.zip",
+            "file/bacap_terralith.zip",
+            "achievetodo",
+            "fabric-convention-tags-v2",
+            "fabric-gametest-api-v1",
+            "achievetodo:bacap_override",
+            "achievetodo:bacap_terralith_override",
+            "achievetodo:bacap_rewards_item",
+            "achievetodo:bacap_rewards_experience",
+            "achievetodo:bacap_rewards_trophy",
+            "achievetodo:bacap_cooperative_mode"
+          ],
+          "productionOrderRestoredBeforeResourceLoad": true,
+          "selectedPackSetUnchanged": true
+        }
+      },
+      "AMPLIFIED_NETHER": {
+        "mode": "AMPLIFIED_NETHER",
+        "freshDirectory": "build/tmp/phase_b_b10_d2/AMPLIFIED_NETHER",
+        "selector": "achievetodo-test:phase_bruntime_smoke_companion_smoke",
+        "matched": 1,
+        "executed": 1,
+        "passed": 1,
+        "exitCode": 0,
+        "runtimeReceipt": {
+          "liveAdvancementCount": 3046,
+          "mode": "AMPLIFIED_NETHER",
+          "selectedPackIds": [
+            "vanilla",
+            "achievetodo",
+            "fabric-convention-tags-v2",
+            "fabric-gametest-api-v1",
+            "file/bacap.zip",
+            "achievetodo:bacap_override",
+            "file/amplified_nether.zip",
+            "file/bacap_amplified_nether.zip",
+            "achievetodo:bacap_amplified_nether_override",
+            "achievetodo:bacap_rewards_item",
+            "achievetodo:bacap_rewards_experience",
+            "achievetodo:bacap_rewards_trophy",
+            "achievetodo:bacap_cooperative_mode"
+          ],
+          "b8CoreExpectedCount": 2894,
+          "atdAbilityExpectedCount": 152,
+          "expectedFullLiveCount": 3046,
+          "b8CoreIdsSha256": "c7640b78c95b1ba62a264d1f8654eb4dac878ec43f6fd10599f0d088402796e4",
+          "atdAbilityIdsSha256": "8c56a1d04ce0d039be387081273abadd34569162260175a673d0d229811fa658",
+          "expectedFullIdsSha256": "6add865f2c7ab59b131183e8707ba46e3d808eb8a8f3adc526467541a8b697cd",
+          "liveIdsSha256": "6add865f2c7ab59b131183e8707ba46e3d808eb8a8f3adc526467541a8b697cd",
+          "missingB8CoreIds": [],
+          "missingAtdAbilityIds": [],
+          "unexpectedLiveIds": [],
+          "duplicateIds": 0,
+          "exactSetMatch": true,
+          "compiledAbilityTypeCount": 151,
+          "liveFunctionCount": 5609,
+          "packLoadDiagnostic": "PASS",
+          "mergedAdvancementIdsLive": [
+            "blazeandcave:nether/inception",
+            "blazeandcave:nether/limbo_walker"
+          ],
+          "wrappersLive": [],
+          "joinedPlayer": {
+            "UUID": "0e93177a-2a41-4a9a-938f-38698e976bfd",
+            "concreteClass": "net.minecraft.server.level.ServerPlayer",
+            "registered": true,
+            "connectionRegistered": true,
+            "clientLoaded": true,
+            "gameMode": "SURVIVAL",
+            "spectator": false
+          },
+          "messageWitnesses": [],
+          "representativeMergeWitness": {
+            "functionId": "bacap_rewards:nether/inception",
+            "functionLoaded": true,
+            "runtimeExecutionSucceeded": true,
+            "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+            "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+            "emittedComponents": [
+              {
+                "translate": "%1$s has completed the challenge %2$s%3$s%4$s",
+                "with": [
+                  {
+                    "text": "b10c0e93177",
+                    "click_event": {
+                      "command": "/tell b10c0e93177 ",
+                      "action": "suggest_command"
+                    },
+                    "hover_event": {
+                      "id": "minecraft:player",
+                      "uuid": [
+                        244520826,
+                        708922010,
+                        -1819330455,
+                        -1902679043
+                      ],
+                      "name": "b10c0e93177",
+                      "action": "show_entity"
+                    },
+                    "insertion": "b10c0e93177"
+                  },
+                  {
+                    "text": "[",
+                    "color": "dark_purple"
+                  },
+                  {
+                    "translate": "Inception",
+                    "color": "dark_purple",
+                    "click_event": {
+                      "command": "/advancementssearch highlight blazeandcave:nether/inception obtained_status",
+                      "action": "run_command"
+                    },
+                    "hover_event": {
+                      "value": {
+                        "translate": "Inception",
+                        "extra": [
+                          "\n",
+                          {
+                            "translate": "Get above the roof in the nether",
+                            "color": "#C900C7"
+                          },
+                          "\n\n",
+                          {
+                            "translate": "Nether",
+                            "color": "gray",
+                            "italic": true
+                          },
+                          " ",
+                          {
+                            "translate": "tab",
+                            "color": "gray",
+                            "italic": true
+                          }
+                        ],
+                        "color": "dark_purple"
+                      },
+                      "action": "show_text"
+                    }
+                  },
+                  {
+                    "text": "]",
+                    "color": "dark_purple"
+                  }
+                ]
+              },
+              {
+                "text": " +1 ",
+                "extra": [
+                  {
+                    "translate": "Spinny Top"
+                  }
+                ],
+                "color": "gold"
+              },
+              {
+                "text": " +100 ",
+                "extra": [
+                  {
+                    "translate": "Experience"
+                  }
+                ],
+                "color": "blue"
+              },
+              {
+                "translate": "%1$s has completed the challenge %2$s%3$s%4$s",
+                "with": [
+                  {
+                    "text": "b10c0e93177",
+                    "click_event": {
+                      "command": "/tell b10c0e93177 ",
+                      "action": "suggest_command"
+                    },
+                    "hover_event": {
+                      "id": "minecraft:player",
+                      "uuid": [
+                        244520826,
+                        708922010,
+                        -1819330455,
+                        -1902679043
+                      ],
+                      "name": "b10c0e93177",
+                      "action": "show_entity"
+                    },
+                    "insertion": "b10c0e93177"
+                  },
+                  {
+                    "text": "[",
+                    "color": "dark_purple"
+                  },
+                  {
+                    "translate": "Inception",
+                    "color": "dark_purple",
+                    "click_event": {
+                      "command": "/advancementssearch highlight blazeandcave:nether/inception obtained_status",
+                      "action": "run_command"
+                    },
+                    "hover_event": {
+                      "value": {
+                        "translate": "Inception",
+                        "extra": [
+                          "\n",
+                          {
+                            "translate": "Get above the roof in the nether",
+                            "color": "#C900C7"
+                          },
+                          "\n\n",
+                          {
+                            "translate": "Nether",
+                            "color": "gray",
+                            "italic": true
+                          },
+                          " ",
+                          {
+                            "translate": "tab",
+                            "color": "gray",
+                            "italic": true
+                          }
+                        ],
+                        "color": "dark_purple"
+                      },
+                      "action": "show_text"
+                    }
+                  },
+                  {
+                    "text": "]",
+                    "color": "dark_purple"
+                  }
+                ]
+              },
+              {
+                "text": " +1 ",
+                "extra": [
+                  {
+                    "translate": "Spinny Top"
+                  }
+                ],
+                "color": "gold"
+              },
+              {
+                "text": " +100 ",
+                "extra": [
+                  {
+                    "translate": "Experience"
+                  }
+                ],
+                "color": "blue"
+              },
+              {
+                "translate": "achievetodo.ability_unlocked_chat_message",
+                "with": [
+                  {
+                    "text": "b10c0e93177",
+                    "click_event": {
+                      "command": "/tell b10c0e93177 ",
+                      "action": "suggest_command"
+                    },
+                    "hover_event": {
+                      "id": "minecraft:player",
+                      "uuid": [
+                        244520826,
+                        708922010,
+                        -1819330455,
+                        -1902679043
+                      ],
+                      "name": "b10c0e93177",
+                      "action": "show_entity"
+                    },
+                    "insertion": "b10c0e93177"
+                  },
+                  {
+                    "text": "[",
+                    "color": "yellow"
+                  },
+                  {
+                    "translate": "achievetodo.ability.eat_tropical_fish.name",
+                    "color": "yellow",
+                    "click_event": {
+                      "command": "/advancementssearch highlight achievetodo:abilities/eat_tropical_fish obtained_status",
+                      "action": "run_command"
+                    },
+                    "hover_event": {
+                      "value": {
+                        "translate": "achievetodo.ability.eat_tropical_fish.name",
+                        "extra": [
+                          "\n",
+                          {
+                            "translate": "achievetodo.ability.eat_tropical_fish.description",
+                            "color": "yellow"
+                          },
+                          "\n\n",
+                          {
+                            "translate": "%1$s tab",
+                            "with": [
+                              "AchieveToDo"
+                            ],
+                            "color": "gray",
+                            "italic": true
+                          }
+                        ],
+                        "color": "yellow"
+                      },
+                      "action": "show_text"
+                    }
+                  },
+                  {
+                    "text": "]",
+                    "color": "yellow"
+                  }
+                ]
+              }
+            ],
+            "translationKeys": [
+              "%1$s has completed the challenge %2$s%3$s%4$s",
+              "%1$s tab",
+              "Experience",
+              "Get above the roof in the nether",
+              "Inception",
+              "Nether",
+              "Spinny Top",
+              "achievetodo.ability.eat_tropical_fish.description",
+              "achievetodo.ability.eat_tropical_fish.name",
+              "achievetodo.ability_unlocked_chat_message",
+              "tab"
+            ],
+            "clickAction": "run_command",
+            "command": "/advancementssearch highlight blazeandcave:nether/inception obtained_status",
+            "allClickCommands": [
+              "/advancementssearch highlight blazeandcave:nether/inception obtained_status",
+              "/advancementssearch highlight blazeandcave:nether/inception obtained_status",
+              "/advancementssearch highlight achievetodo:abilities/eat_tropical_fish obtained_status"
+            ],
+            "targetAdvancementId": "blazeandcave:nether/inception",
+            "liveTargetResolved": true,
+            "staleSearchTargetEmitted": false,
+            "result": "PASS",
+            "selectionReason": "first sorted B5.6 merged ID with an accepted current reward wrapper/message path",
+            "currentRewardAndMessagePathExecuted": true
+          },
+          "cleanup": {
+            "playerRemoved": true,
+            "connectionRemoved": true,
+            "channelClosed": true
+          },
+          "clientSearchUiClaimed": false,
+          "clientSearchUiStatus": "CLIENT_SEARCH_UI_NOT_CLAIMED",
+          "commonDeepSemanticsRepeated": false,
+          "result": "PASS"
+        },
+        "externalCopies": [
+          {
+            "enum": "BACAP",
+            "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b1\\BlazeandCave's Advancements Pack 1.21.zip",
+            "sourceSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+            "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+            "worldCopySha256": "525d6ae175072ee8d3fd80c0d58c0782defeff3186b0d63cd74972015bcd0c1a",
+            "isCurrentWorldPack": true,
+            "marker": {
+              "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+              "fileName": "bacap.zip",
+              "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+              "raiderPredicateKeys": "snake_case",
+              "llamaCarpetNbtMapping": "equipment.body",
+              "version": "compat_26_2_r19"
+            },
+            "copyPolicy": "TRANSFORMED_R19_ACTUAL_SOURCE_MARKER"
+          },
+          {
+            "enum": "AMPLIFIED_NETHER",
+            "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b4\\Amplified_Nether_v1.2.15.zip",
+            "sourceSha256": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa",
+            "sourceSha1": "94d9604cebbfca667aeb59e4b1ac03e9c6e5cb5d",
+            "worldCopySha256": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa",
+            "isCurrentWorldPack": true,
+            "copyPolicy": "EXACT_RAW_BYTE_COPY_NO_MARKER_REQUIRED"
+          },
+          {
+            "enum": "BACAP_AMPLIFIED_NETHER",
+            "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap_amplified_nether.zip",
+            "sourceSha256": "be7f9c646a8ea8616e34ddef0beab3397995fe66da371cee7cb5cc929f03ad68",
+            "sourceSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+            "worldCopySha256": "b78d47268a8151d927868954b166fce9e3f953f4a9d50a708cd95f952920a680",
+            "isCurrentWorldPack": true,
+            "marker": {
+              "sourceSha1": "9956d0a7d26e0b7d166711fa4b6bf856d2993a44",
+              "fileName": "bacap_amplified_nether.zip",
+              "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+              "version": "compat_26_2_r19"
+            },
+            "copyPolicy": "TRANSFORMED_R19_ACTUAL_SOURCE_MARKER"
+          }
+        ],
+        "productionSelectionFaithful": true,
+        "b8CoreAuthority": {
+          "evidencePath": "reference/phase_b/b8_static_certification_resumed.json",
+          "evidenceSha256": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3",
+          "outputPath": "build/tmp/phase_b_b8/post_r2/codec_advancements_amplifiedNether.json",
+          "outputSha256": "253657dc73747ddee1c60702e886f4c1a4c9aad402a6faf0e4a3b5702ff6707f"
+        },
+        "logAudit": {
+          "result": "PASS",
+          "resourceParseFailures": 0,
+          "unexplainedAtdBacapRuntimeErrors": 0,
+          "unknownRequiredFunctions": 0,
+          "unknownRequiredAdvancements": 0,
+          "companionCommandSyntaxFailures": 0,
+          "classifiedHostDevEvents": [
+            {
+              "line": "[17:23:15] [main/ERROR] (HkeyPerformanceDataUtil) Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: ",
+              "classification": "HOST_OSHI_PERFLIB_009_DIAGNOSTIC",
+              "ATD_or_BACAP": false
+            },
+            {
+              "line": "[17:23:24] [main/ERROR] (Minecraft) Failed to load properties from file: server.properties",
+              "classification": "FRESH_SERVER_DIRECTORY_DEFAULT_PROPERTIES_INITIALIZATION",
+              "ATD_or_BACAP": false
+            }
+          ],
+          "classifiedHostExceptionHeaders": [
+            "com.sun.jna.platform.win32.Win32Exception: Параметр задан неверно.",
+            "java.nio.file.NoSuchFileException: server.properties"
+          ],
+          "unexplainedEvents": [],
+          "completeLogSha256": "9e1da8d4910813ea6c044d7e8555968431cf85e151d210549813d934820637f0"
+        },
+        "result": "PASS",
+        "rawReceiptSha256": "6c387bb8bd9d043452427faa32f6a37be2555a9e3d34a4441fd3a5f45fdd1e7d",
+        "installedReceiptSha256": "bfe71d0b2e32b9aed59af1ccc115036ab5ee1bf9d9df87652eaea1f80ea1b309",
+        "planSha256": "e3b96c907bbe8bf5731e58d564641d6c833195d07450d7b5f63e8e928b2ac677",
+        "processPreflight": [],
+        "bootstrap": {
+          "originalFabricGameTestOrder": [
+            "vanilla",
+            "file/bacap.zip",
+            "file/amplified_nether.zip",
+            "file/bacap_amplified_nether.zip",
+            "achievetodo",
+            "fabric-convention-tags-v2",
+            "fabric-gametest-api-v1",
+            "achievetodo:bacap_override",
+            "achievetodo:bacap_amplified_nether_override",
+            "achievetodo:bacap_rewards_item",
+            "achievetodo:bacap_rewards_experience",
+            "achievetodo:bacap_rewards_trophy",
+            "achievetodo:bacap_cooperative_mode"
+          ],
+          "productionOrderRestoredBeforeResourceLoad": true,
+          "selectedPackSetUnchanged": true
+        }
+      },
+      "NULLSCAPE": {
+        "mode": "NULLSCAPE",
+        "freshDirectory": "build/tmp/phase_b_b10_d2/NULLSCAPE",
+        "selector": "achievetodo-test:phase_bruntime_smoke_companion_smoke",
+        "matched": 1,
+        "executed": 1,
+        "passed": 1,
+        "exitCode": 0,
+        "runtimeReceipt": {
+          "liveAdvancementCount": 3047,
+          "mode": "NULLSCAPE",
+          "selectedPackIds": [
+            "vanilla",
+            "achievetodo",
+            "fabric-convention-tags-v2",
+            "fabric-gametest-api-v1",
+            "file/bacap.zip",
+            "achievetodo:bacap_override",
+            "file/nullscape.zip",
+            "file/bacap_nullscape.zip",
+            "achievetodo:bacap_nullscape_override",
+            "achievetodo:bacap_rewards_item",
+            "achievetodo:bacap_rewards_experience",
+            "achievetodo:bacap_rewards_trophy",
+            "achievetodo:bacap_cooperative_mode"
+          ],
+          "b8CoreExpectedCount": 2895,
+          "atdAbilityExpectedCount": 152,
+          "expectedFullLiveCount": 3047,
+          "b8CoreIdsSha256": "e6cf27ac7a01a465ca8ffdbb03b43efd414e27913a46d45fd072fca806945693",
+          "atdAbilityIdsSha256": "8c56a1d04ce0d039be387081273abadd34569162260175a673d0d229811fa658",
+          "expectedFullIdsSha256": "9bd879b307fa4d4e05189fefcc61a5aa63bd08a70a2681a31eb1123a87a6d58c",
+          "liveIdsSha256": "9bd879b307fa4d4e05189fefcc61a5aa63bd08a70a2681a31eb1123a87a6d58c",
+          "missingB8CoreIds": [],
+          "missingAtdAbilityIds": [],
+          "unexpectedLiveIds": [],
+          "duplicateIds": 0,
+          "exactSetMatch": true,
+          "compiledAbilityTypeCount": 151,
+          "liveFunctionCount": 5615,
+          "packLoadDiagnostic": "PASS",
+          "mergedAdvancementIdsLive": [
+            "blazeandcave:end/void_walker"
+          ],
+          "wrappersLive": [],
+          "joinedPlayer": {
+            "UUID": "68a2dfe4-d103-4e48-bf61-32692021d2a3",
+            "concreteClass": "net.minecraft.server.level.ServerPlayer",
+            "registered": true,
+            "connectionRegistered": true,
+            "clientLoaded": true,
+            "gameMode": "SURVIVAL",
+            "spectator": false
+          },
+          "messageWitnesses": [
+            {
+              "functionId": "bacap_rewards:msg/end/desolation",
+              "functionLoaded": true,
+              "runtimeExecutionSucceeded": true,
+              "packetType": "net.minecraft.network.protocol.game.ClientboundSystemChatPacket",
+              "capturePath": "real Connection -> EmbeddedChannel.readOutbound -> packet.content -> Component Style",
+              "emittedComponents": [
+                {
+                  "translate": "%1$s has made the advancement %2$s%3$s%4$s",
+                  "with": [
+                    {
+                      "text": "b10c68a2dfe",
+                      "click_event": {
+                        "command": "/tell b10c68a2dfe ",
+                        "action": "suggest_command"
+                      },
+                      "hover_event": {
+                        "id": "minecraft:player",
+                        "uuid": [
+                          1755504612,
+                          -788312504,
+                          -1084149143,
+                          539087523
+                        ],
+                        "name": "b10c68a2dfe",
+                        "action": "show_entity"
+                      },
+                      "insertion": "b10c68a2dfe"
+                    },
+                    {
+                      "text": "[",
+                      "color": "green"
+                    },
+                    {
+                      "translate": "Desolation",
+                      "color": "green",
+                      "click_event": {
+                        "command": "/advancementssearch highlight nullscape:root obtained_status",
+                        "action": "run_command"
+                      },
+                      "hover_event": {
+                        "value": {
+                          "translate": "Desolation",
+                          "extra": [
+                            "\n",
+                            {
+                              "translate": "Visit any Nullscape biome",
+                              "color": "#49DB49"
+                            },
+                            "\n\n",
+                            {
+                              "translate": "The End",
+                              "color": "gray",
+                              "italic": true
+                            },
+                            " ",
+                            {
+                              "translate": "tab",
+                              "color": "gray",
+                              "italic": true
+                            },
+                            "\n",
+                            {
+                              "translate": "Advancement added by Nullscape",
+                              "color": "dark_purple",
+                              "italic": true
+                            }
+                          ],
+                          "color": "green"
+                        },
+                        "action": "show_text"
+                      }
+                    },
+                    {
+                      "text": "]",
+                      "color": "green"
+                    }
+                  ]
+                }
+              ],
+              "translationKeys": [
+                "%1$s has made the advancement %2$s%3$s%4$s",
+                "Advancement added by Nullscape",
+                "Desolation",
+                "The End",
+                "Visit any Nullscape biome",
+                "tab"
+              ],
+              "clickAction": "run_command",
+              "command": "/advancementssearch highlight nullscape:root obtained_status",
+              "allClickCommands": [
+                "/advancementssearch highlight nullscape:root obtained_status"
+              ],
+              "targetAdvancementId": "nullscape:root",
+              "liveTargetResolved": true,
+              "staleSearchTargetEmitted": false,
+              "result": "PASS"
+            }
+          ],
+          "cleanup": {
+            "playerRemoved": true,
+            "connectionRemoved": true,
+            "channelClosed": true
+          },
+          "clientSearchUiClaimed": false,
+          "clientSearchUiStatus": "CLIENT_SEARCH_UI_NOT_CLAIMED",
+          "commonDeepSemanticsRepeated": false,
+          "result": "PASS"
+        },
+        "externalCopies": [
+          {
+            "enum": "BACAP",
+            "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b1\\BlazeandCave's Advancements Pack 1.21.zip",
+            "sourceSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+            "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+            "worldCopySha256": "3dc0145ca7839621f13bffe1dcebda1d5728a42d2897e8d5f6eb60109cb68d27",
+            "isCurrentWorldPack": true,
+            "marker": {
+              "sourceSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+              "fileName": "bacap.zip",
+              "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+              "raiderPredicateKeys": "snake_case",
+              "llamaCarpetNbtMapping": "equipment.body",
+              "version": "compat_26_2_r19"
+            },
+            "copyPolicy": "TRANSFORMED_R19_ACTUAL_SOURCE_MARKER"
+          },
+          {
+            "enum": "NULLSCAPE",
+            "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\phase_b_b4\\Nullscape_26.2_v1.2.20.zip",
+            "sourceSha256": "ec7b0dfcd1add8c127c985dac1466a44168449b3b6641dd20e6b2e16153b66aa",
+            "sourceSha1": "bee4a2182593fdfc5da4b253a342feddf02b88b9",
+            "worldCopySha256": "b324285a89826a06abc01e1c5d5c8f82f18300184b88d244c81408429a9ceca2",
+            "isCurrentWorldPack": true,
+            "marker": {
+              "sourceSha1": "bee4a2182593fdfc5da4b253a342feddf02b88b9",
+              "fileName": "nullscape.zip",
+              "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+              "version": "compat_26_2_r19"
+            },
+            "copyPolicy": "TRANSFORMED_R19_ACTUAL_SOURCE_MARKER"
+          },
+          {
+            "enum": "BACAP_NULLSCAPE",
+            "source": "D:\\Vibecode\\AchieveToDo 26.2\\reference\\phase_a_preservation\\files\\final\\bacap_nullscape.zip",
+            "sourceSha256": "5ad60435dded0a786d4c6320a6af456f640b2e713a080b942c3bed3c2cb85a20",
+            "sourceSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+            "worldCopySha256": "836d66f17ee959f802a5d77ec8339bc1185fb3da46f4d211ee552646f6dc887f",
+            "isCurrentWorldPack": true,
+            "marker": {
+              "sourceSha1": "6a50de576558b6b9079a60ffdff73cd9e622eac1",
+              "fileName": "bacap_nullscape.zip",
+              "rootOverrideSha1": "cbc432be35d5525001872c430877541cfa1fcad6",
+              "version": "compat_26_2_r19"
+            },
+            "copyPolicy": "TRANSFORMED_R19_ACTUAL_SOURCE_MARKER"
+          }
+        ],
+        "productionSelectionFaithful": true,
+        "b8CoreAuthority": {
+          "evidencePath": "reference/phase_b/b8_static_certification_resumed.json",
+          "evidenceSha256": "2ff1b6df46a9bfd7a076b2336fa1dd147ef0df064c76543e665d8a3f726878b3",
+          "outputPath": "build/tmp/phase_b_b8/post_r2/codec_advancements_nullscape.json",
+          "outputSha256": "d55c31fc04afea7a1e1416078a4390393d52347da8102890b8e98027c380b569"
+        },
+        "logAudit": {
+          "result": "PASS",
+          "resourceParseFailures": 0,
+          "unexplainedAtdBacapRuntimeErrors": 0,
+          "unknownRequiredFunctions": 0,
+          "unknownRequiredAdvancements": 0,
+          "companionCommandSyntaxFailures": 0,
+          "classifiedHostDevEvents": [
+            {
+              "line": "[17:24:37] [main/ERROR] (HkeyPerformanceDataUtil) Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: ",
+              "classification": "HOST_OSHI_PERFLIB_009_DIAGNOSTIC",
+              "ATD_or_BACAP": false
+            },
+            {
+              "line": "[17:24:46] [main/ERROR] (Minecraft) Failed to load properties from file: server.properties",
+              "classification": "FRESH_SERVER_DIRECTORY_DEFAULT_PROPERTIES_INITIALIZATION",
+              "ATD_or_BACAP": false
+            }
+          ],
+          "classifiedHostExceptionHeaders": [
+            "com.sun.jna.platform.win32.Win32Exception: Параметр задан неверно.",
+            "java.nio.file.NoSuchFileException: server.properties"
+          ],
+          "unexplainedEvents": [],
+          "completeLogSha256": "b9be8b74734d1ee11a0752013fd29f99b4f37821c1f9441a8d6ddf37b448825a"
+        },
+        "result": "PASS",
+        "rawReceiptSha256": "77874defd14643969ac4293ca04647d69555c3938b71f3590844e01e41430068",
+        "installedReceiptSha256": "34810477cc536a97e0034bb75628d5473447dbb0c919dcd8f154794c310a6298",
+        "planSha256": "838fae487792280aad51d4adc90095569a8ed6f0e9574efca6151cb78348dccb",
+        "processPreflight": [],
+        "bootstrap": {
+          "originalFabricGameTestOrder": [
+            "vanilla",
+            "file/bacap.zip",
+            "file/nullscape.zip",
+            "file/bacap_nullscape.zip",
+            "achievetodo",
+            "fabric-convention-tags-v2",
+            "fabric-gametest-api-v1",
+            "achievetodo:bacap_override",
+            "achievetodo:bacap_nullscape_override",
+            "achievetodo:bacap_rewards_item",
+            "achievetodo:bacap_rewards_experience",
+            "achievetodo:bacap_rewards_trophy",
+            "achievetodo:bacap_cooperative_mode"
+          ],
+          "productionOrderRestoredBeforeResourceLoad": true,
+          "selectedPackSetUnchanged": true
+        }
+      }
+    }
+  },
+  "searchClaim": {
+    "serverRuntimeComponentBindingsCertified": true,
+    "clientVisualSearchUICertified": false,
+    "status": "CLIENT_SEARCH_UI_NOT_CLAIMED"
+  },
+  "logAudit": {
+    "MAIN_C1": {
+      "path": "build/tmp/phase_b_b10_c1/MAIN_FRESH/gradle.log",
+      "sha256": "9f2db218a8a3e00d71e534408ab449da254830843533110efeb5fff6024067d8",
+      "audit": {
+        "classifications": [
+          {
+            "ATD_or_BACAP": false,
+            "classification": "HOST_OSHI_PERFLIB_009_DIAGNOSTIC_COUNTER_LOOKUP",
+            "event": "[16:00:10] [main/ERROR] (HkeyPerformanceDataUtil) Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: "
+          },
+          {
+            "ATD_or_BACAP": false,
+            "classification": "FRESH_SERVER_DIRECTORY_DEFAULT_PROPERTIES_INITIALIZATION",
+            "event": "[16:00:21] [main/ERROR] (Minecraft) Failed to load properties from file: server.properties"
+          }
+        ],
+        "countMismatchExceptionAbsent": true,
+        "rawErrorLines": [
+          "[16:00:10] [main/ERROR] (HkeyPerformanceDataUtil) Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: ",
+          "[16:00:21] [main/ERROR] (Minecraft) Failed to load properties from file: server.properties"
+        ],
+        "resourceParseFailures": 0,
+        "result": "PASS",
+        "unexpectedErrors": [],
+        "unexplainedAtdBacapRuntimeErrors": 0,
+        "warnings": [
+          "Fresh eula.txt initialization",
+          "Fabric tag-translation development warning",
+          "Transient tick lag"
+        ]
+      }
+    },
+    "MAIN_D1": {
+      "result": "PASS",
+      "resourceParseFailures": 0,
+      "unexplainedAtdBacapRuntimeErrors": 0,
+      "unknownRequiredFunctions": 0,
+      "unknownRequiredAdvancements": 0,
+      "commandSyntaxFailuresInD1Witnesses": 0,
+      "classifiedHostDevEvents": [
+        {
+          "line": "[16:35:52] [main/ERROR] (HkeyPerformanceDataUtil) Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: ",
+          "classification": "HOST_OSHI_PERFLIB_009_DIAGNOSTIC",
+          "ATD_or_BACAP": false
+        },
+        {
+          "line": "[16:36:03] [main/ERROR] (Minecraft) Failed to load properties from file: server.properties",
+          "classification": "FRESH_SERVER_DIRECTORY_DEFAULT_PROPERTIES_INITIALIZATION",
+          "ATD_or_BACAP": false
+        }
+      ],
+      "classifiedHostExceptionHeaders": [
+        "com.sun.jna.platform.win32.Win32Exception: Параметр задан неверно.",
+        "java.nio.file.NoSuchFileException: server.properties"
+      ],
+      "ordinaryWarnings": [
+        "Windows performance counters",
+        "fresh eula/server.properties initialization",
+        "Fabric item-tag translation development warning",
+        "Gradle deprecation and JOML Unsafe warnings"
+      ],
+      "unexplainedEvents": [],
+      "completeLogPath": "build/tmp/phase_b_b10_d1/MAIN_DEEP/gradle.log",
+      "completeLogSha256": "dbfb149aa8677cbb41770cc6159e43c72d83db92036503a2c8ff959b7156c947"
+    },
+    "HARDCORE": {
+      "result": "PASS",
+      "resourceParseFailures": 0,
+      "unexplainedAtdBacapRuntimeErrors": 0,
+      "unknownRequiredFunctions": 0,
+      "unknownRequiredAdvancements": 0,
+      "companionCommandSyntaxFailures": 0,
+      "classifiedHostDevEvents": [
+        {
+          "line": "[17:20:22] [main/ERROR] (HkeyPerformanceDataUtil) Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: ",
+          "classification": "HOST_OSHI_PERFLIB_009_DIAGNOSTIC",
+          "ATD_or_BACAP": false
+        },
+        {
+          "line": "[17:20:31] [main/ERROR] (Minecraft) Failed to load properties from file: server.properties",
+          "classification": "FRESH_SERVER_DIRECTORY_DEFAULT_PROPERTIES_INITIALIZATION",
+          "ATD_or_BACAP": false
+        }
+      ],
+      "classifiedHostExceptionHeaders": [
+        "com.sun.jna.platform.win32.Win32Exception: Параметр задан неверно.",
+        "java.nio.file.NoSuchFileException: server.properties"
+      ],
+      "unexplainedEvents": [],
+      "completeLogSha256": "bf94365ae4f852f2cb34d232d05514066e607914c89cb49a57bd1976a7dbcc6b"
+    },
+    "TERRALITH": {
+      "result": "PASS",
+      "resourceParseFailures": 0,
+      "unexplainedAtdBacapRuntimeErrors": 0,
+      "unknownRequiredFunctions": 0,
+      "unknownRequiredAdvancements": 0,
+      "companionCommandSyntaxFailures": 0,
+      "classifiedHostDevEvents": [
+        {
+          "line": "[17:21:45] [main/ERROR] (HkeyPerformanceDataUtil) Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: ",
+          "classification": "HOST_OSHI_PERFLIB_009_DIAGNOSTIC",
+          "ATD_or_BACAP": false
+        },
+        {
+          "line": "[17:21:53] [main/ERROR] (Minecraft) Failed to load properties from file: server.properties",
+          "classification": "FRESH_SERVER_DIRECTORY_DEFAULT_PROPERTIES_INITIALIZATION",
+          "ATD_or_BACAP": false
+        }
+      ],
+      "classifiedHostExceptionHeaders": [
+        "com.sun.jna.platform.win32.Win32Exception: Параметр задан неверно.",
+        "java.nio.file.NoSuchFileException: server.properties"
+      ],
+      "unexplainedEvents": [],
+      "completeLogSha256": "5847bab51754f60f3b9907a66f4082c30f157767dac953b5590cb4a141ff7fc9"
+    },
+    "AMPLIFIED_NETHER": {
+      "result": "PASS",
+      "resourceParseFailures": 0,
+      "unexplainedAtdBacapRuntimeErrors": 0,
+      "unknownRequiredFunctions": 0,
+      "unknownRequiredAdvancements": 0,
+      "companionCommandSyntaxFailures": 0,
+      "classifiedHostDevEvents": [
+        {
+          "line": "[17:23:15] [main/ERROR] (HkeyPerformanceDataUtil) Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: ",
+          "classification": "HOST_OSHI_PERFLIB_009_DIAGNOSTIC",
+          "ATD_or_BACAP": false
+        },
+        {
+          "line": "[17:23:24] [main/ERROR] (Minecraft) Failed to load properties from file: server.properties",
+          "classification": "FRESH_SERVER_DIRECTORY_DEFAULT_PROPERTIES_INITIALIZATION",
+          "ATD_or_BACAP": false
+        }
+      ],
+      "classifiedHostExceptionHeaders": [
+        "com.sun.jna.platform.win32.Win32Exception: Параметр задан неверно.",
+        "java.nio.file.NoSuchFileException: server.properties"
+      ],
+      "unexplainedEvents": [],
+      "completeLogSha256": "9e1da8d4910813ea6c044d7e8555968431cf85e151d210549813d934820637f0"
+    },
+    "NULLSCAPE": {
+      "result": "PASS",
+      "resourceParseFailures": 0,
+      "unexplainedAtdBacapRuntimeErrors": 0,
+      "unknownRequiredFunctions": 0,
+      "unknownRequiredAdvancements": 0,
+      "companionCommandSyntaxFailures": 0,
+      "classifiedHostDevEvents": [
+        {
+          "line": "[17:24:37] [main/ERROR] (HkeyPerformanceDataUtil) Unable to locate English counter names in registry Perflib 009. Counters may need to be rebuilt: ",
+          "classification": "HOST_OSHI_PERFLIB_009_DIAGNOSTIC",
+          "ATD_or_BACAP": false
+        },
+        {
+          "line": "[17:24:46] [main/ERROR] (Minecraft) Failed to load properties from file: server.properties",
+          "classification": "FRESH_SERVER_DIRECTORY_DEFAULT_PROPERTIES_INITIALIZATION",
+          "ATD_or_BACAP": false
+        }
+      ],
+      "classifiedHostExceptionHeaders": [
+        "com.sun.jna.platform.win32.Win32Exception: Параметр задан неверно.",
+        "java.nio.file.NoSuchFileException: server.properties"
+      ],
+      "unexplainedEvents": [],
+      "completeLogSha256": "b9be8b74734d1ee11a0752013fd29f99b4f37821c1f9441a8d6ddf37b448825a"
+    },
+    "resourceParseFailures": 0,
+    "unexplainedAtdBacapRuntimeErrors": 0,
+    "requiredFunctionFailures": 0,
+    "requiredAdvancementFailures": 0
+  },
+  "B9RegressionLock": {
+    "command": ".\\gradlew.bat --no-daemon --offline test --rerun --tests com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest --tests com.diskree.achievetodo.tracking.PhaseBBacapTrackerContractTest --tests com.diskree.achievetodo.client.PhaseBBacapSearchTreeResourceTest -x generateBuildConfig",
+    "result": "PASS",
+    "exitCode": 0,
+    "tests": 23,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "testNames": [
+      "com.diskree.achievetodo.client.PhaseBBacapSearchTreeResourceTest#potionRootTargetsItsOwnTabAndAnnouncesOnce()",
+      "com.diskree.achievetodo.client.PhaseBBacapSearchTreeResourceTest#allCurrentMessagesAndSearchViewsRemainCertified()",
+      "com.diskree.achievetodo.client.PhaseBBacapSearchTreeResourceTest#currentDescriptionKeysResolveWithoutPruningHistoricalRuEntries()",
+      "com.diskree.achievetodo.client.PhaseBBacapSearchTreeResourceTest#orderedTreeKeepsThreeMapsAnd27Entries()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#nativeMainOnlySuppressesAnnouncements()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#actualSourceIdentityIsDistinctFromCurrentPin()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#historicalGlowHoneyPayloadAndBothShaIdentitiesArePreserved()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#rootDigestAndEveryMarkerFieldFailClosed()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#currentR19AuthorityIsExact()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#historicalFamiliesAndModernCorporaHaveNoUnexpectedDrift()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#currentB7OracleIsM2AndHistoricalSnapshotRemainsDistinct()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#currentB8ReceiptAndToolAuthoritiesRemainExact()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#verifiedCurrentSourceRepairsEveryStaleWorldFixture()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#bothTerralithHelpersUseRealAdvancementCodec()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#nativeHardcoreOnlySuppressesAnnouncements()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#treasureHunterNativeTagCodecRejectsObsoleteR16Rewrite()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#legacyPlayerMigrationIsScopedHistoricalOnlyAndIdempotent()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#nativeSelectedPolicySecondPassIsByteIdempotent()",
+      "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest#allHistoricalSecondPassesAreByteIdempotent()",
+      "com.diskree.achievetodo.tracking.PhaseBBacapTrackerContractTest#reviewedRailAndHalfHeartSpecialCasesRemainExact()",
+      "com.diskree.achievetodo.tracking.PhaseBBacapTrackerContractTest#all86BindingsRemainBoundToCurrentProductionDefinitions()",
+      "com.diskree.achievetodo.tracking.PhaseBBacapTrackerContractTest#updatedScoreAndBreedingContractsAreCurrent()",
+      "com.diskree.achievetodo.tracking.PhaseBBacapTrackerContractTest#nearbySetsAndRadiiRetainExactTargetContracts()"
+    ],
+    "xmlReports": [
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.client.PhaseBBacapSearchTreeResourceTest.xml",
+        "sha256": "c17cd899b860b5190a0264fd88d229582b937ef972eed91ad0dadc1d1121373e",
+        "class": "com.diskree.achievetodo.client.PhaseBBacapSearchTreeResourceTest",
+        "tests": 4
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest.xml",
+        "sha256": "267fc489b7b0a48aeaa70dff2812fdb67eba07294931d70e0008ada89acc6228",
+        "class": "com.diskree.achievetodo.client.PhaseBNativeBacapCompatibilityTest",
+        "tests": 15
+      },
+      {
+        "path": "build/test-results/test/TEST-com.diskree.achievetodo.tracking.PhaseBBacapTrackerContractTest.xml",
+        "sha256": "8dd1bb21983a32d412fd0faf6bf7d9f31847d123ae88a0afbdeaedc86b955ace",
+        "class": "com.diskree.achievetodo.tracking.PhaseBBacapTrackerContractTest",
+        "tests": 4
+      }
+    ],
+    "logPath": "build/tmp/phase_b_b10_d2/b9_filtered.log",
+    "logSha256": "b1b02a750ae7c69f03820049a272c529055653f1a534e48d3d855425dea56bd3"
+  },
+  "compileGametestJava": {
+    "command": ".\\gradlew.bat --no-daemon --offline compileGametestJava processGametestResources -x generateBuildConfig",
+    "result": "GREEN",
+    "exitCode": 0,
+    "logPath": "build/tmp/phase_b_b10_d2/compile_retry.log",
+    "logSha256": "a62411be67f6263f729a2b0b4382e7b00ca002e57ae8b152e0fd91522fbc327c"
+  },
+  "diffCheck": "PASS",
+  "runtimeProductDelta": {
+    "ADD": 0,
+    "MODIFY": 0,
+    "DELETE": 0
+  },
+  "uniqueCumulativeRuntimeDiff": {
+    "ADD": 177,
+    "MODIFY": 69,
+    "DELETE": 9
+  },
+  "uniqueRuntimePaths": 255,
+  "readyForB11": true,
+  "safety": {
+    "srcMainFilesChecked": 1923,
+    "priorEvidenceChecked": 56,
+    "historicalTestFilesChecked": 271,
+    "allRuntimeBytesUnchanged": true,
+    "allPriorEvidenceUnchanged": true,
+    "allHistoricalTestsUnchanged": true,
+    "B7B8B9SuccessorsUnchanged": true,
+    "D1HelperUnchanged": true,
+    "C1AndD1OriginalJavaRecoveredByteIdentical": true,
+    "noStagingCommitPushTagGithubMutation": true,
+    "noLocalizationConverterPinsProgressMigrationBalanceChange": true,
+    "B11Started": false
+  }
+}

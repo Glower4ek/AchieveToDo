@@ -1,0 +1,436 @@
+{
+  "phase": "B",
+  "stage": "B8",
+  "minecraftVersion": "26.2",
+  "codec": "Advancement.CODEC",
+  "officialTargetSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
+  "registryContext": {
+    "minecraftJar": ".gradle\\loom-cache\\minecraftMaven\\net\\minecraft\\minecraft-merged-3b5d97e58c\\26.2\\minecraft-merged-3b5d97e58c-26.2.jar",
+    "minecraftJarSha256": "49353b010c1f426ab441140e2ff0692d4cd6b7b32c681308d37d833e8b89b14a",
+    "resourceContextSha256": "83c2d4f99f26e7be15271266f936c9a569589b786eed4dc9db676f3382ef5ac6",
+    "targetSha256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2"
+  },
+  "registryPolicy": "Real vanilla typed registries plus selected pack-backed keys and recursively bound tags; unknown biome negative control rejected.",
+  "views": {
+    "target": {
+      "checked": 1332,
+      "passed": 1332,
+      "failed": 0,
+      "negativeControlRejected": true,
+      "resourceContextSha256": "83c2d4f99f26e7be15271266f936c9a569589b786eed4dc9db676f3382ef5ac6",
+      "advancementInputsSha256": "d1e42bd659af40e4256b881da4e4d6e661bf719ec25deb647232cb45aac5d319",
+      "resultSha256": "e9f4e7978a3e9f5e2d300160fe9b25e97c600075436d4ddfb7c6f37e8fe86205"
+    },
+    "main": {
+      "checked": 2894,
+      "passed": 2894,
+      "failed": 0,
+      "negativeControlRejected": true,
+      "resourceContextSha256": "5114df18e55b3c32fe27c8624db6a9c810e125ba503c480150db0b781ce23117",
+      "advancementInputsSha256": "2dd09d7138004709c3f540f8f5ff72810cc1681bf64318a35277a780ae1a8bed",
+      "resultSha256": "dee63dc80d23363d2a987cee565b884f9bdca916f27ed4a0a27ec499d245ebcb"
+    },
+    "hardcore": {
+      "checked": 2894,
+      "passed": 2894,
+      "failed": 0,
+      "negativeControlRejected": true,
+      "resourceContextSha256": "68e39c19d63c9b2c4f3271227e78e25d0e43d9679e5d2a16fe53bd0cb9e0259e",
+      "advancementInputsSha256": "1eb6140f626eb3dab7729e3fe84fefa3742fed9d3e5f7a7fe4bb5c72f1f11970",
+      "resultSha256": "dee63dc80d23363d2a987cee565b884f9bdca916f27ed4a0a27ec499d245ebcb"
+    },
+    "terralith": {
+      "checked": 2922,
+      "passed": 2922,
+      "failed": 0,
+      "negativeControlRejected": true,
+      "resourceContextSha256": "00caa904cf1844e26335d7b536c5bebb5f193902f43ea6959cca5843352cbd34",
+      "advancementInputsSha256": "19757c09dbebf2d089003b9b724687754d7713535e430d2fca6925525f90b484",
+      "resultSha256": "98189be9f42fcc433ebadfa268d110ae8099ef51b6d8030a5491efb188831f32"
+    },
+    "amplifiedNether": {
+      "checked": 2894,
+      "passed": 2894,
+      "failed": 0,
+      "negativeControlRejected": true,
+      "resourceContextSha256": "987d282d43d1b0f84d85a5ae8a2d5ebe266601b1d920480e6fb330f1a39a6b7e",
+      "advancementInputsSha256": "253657dc73747ddee1c60702e886f4c1a4c9aad402a6faf0e4a3b5702ff6707f",
+      "resultSha256": "1654c343a9e0f599947a3c2c5cb7da774f582fa5a26942c59b4aaa864ab16c44"
+    },
+    "nullscape": {
+      "checked": 2895,
+      "passed": 2895,
+      "failed": 0,
+      "negativeControlRejected": true,
+      "resourceContextSha256": "5fe3c5dd908a8c38f0dfab669cfbfbf9b673ffb47f3d697b693bfdf232bb5f90",
+      "advancementInputsSha256": "d55c31fc04afea7a1e1416078a4390393d52347da8102890b8e98027c380b569",
+      "resultSha256": "046f60db58c11f7e9a49e99cd498ee6517449ec63333da39b911879b01a50a15"
+    }
+  },
+  "companionMerges": {
+    "distribution": {
+      "amplifiedNether": 2,
+      "nullscape": 1,
+      "terralith": 11
+    },
+    "hardcoreMessages": 6,
+    "merges": [
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/desert_outpost",
+            "/criteria/fortified_desert_village",
+            "/criteria/fortified_village",
+            "/criteria/glacial_hut",
+            "/criteria/mage_tower",
+            "/criteria/rubble_desert",
+            "/criteria/rubble_forest",
+            "/criteria/rubble_jungle",
+            "/criteria/rubble_mesa",
+            "/criteria/rubble_mountain",
+            "/criteria/rubble_taiga",
+            "/criteria/spire",
+            "/criteria/terralith_igloo",
+            "/criteria/underground_frosted_dungeon",
+            "/criteria/underground_giant_bee_hive",
+            "/criteria/underground_mining_outpost",
+            "/criteria/underground_oak_cabin",
+            "/criteria/underground_old_refinery",
+            "/criteria/underground_sunken_tower",
+            "/criteria/underground_witch_hut",
+            "/criteria/valley_lodge",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:adventure/raidin_master",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/adventure/raidin_master.json",
+        "sha256": "03b47708c5444bd4ae5bb50c1a69a93205775c8e720260b17404ec2e49d8fcb4"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/alpine_grove",
+            "/criteria/glacial_chasm",
+            "/criteria/gravel_desert",
+            "/criteria/ice_marsh",
+            "/criteria/snowy_badlands",
+            "/criteria/snowy_slopes",
+            "/criteria/snowy_taiga",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:biomes/cold_feet",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/cold_feet.json",
+        "sha256": "6e926e82b5314f066271b3b1352a5c5fa7cb4e6b347defaed3e39b15d7936333"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/blooming_plateau",
+            "/criteria/caldera",
+            "/criteria/emerald_peaks",
+            "/criteria/grove",
+            "/criteria/haze_mountain",
+            "/criteria/meadow",
+            "/criteria/painted_mountains",
+            "/criteria/rocky_mountains",
+            "/criteria/scarlet_mountains",
+            "/criteria/snowy_slopes",
+            "/criteria/stony_shore",
+            "/criteria/stony_spires",
+            "/criteria/windswept_spires",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:biomes/high_feet",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/high_feet.json",
+        "sha256": "821ea4d93580ac6df8e73a4a6d97d207b9bb07ac96e027b64f0bb4f1a012c51e"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/blooming_valley",
+            "/criteria/cloud_forest",
+            "/criteria/moonlight_grove",
+            "/criteria/moonlight_valley",
+            "/criteria/old_growth_pine_taiga",
+            "/criteria/old_growth_spruce_taiga",
+            "/criteria/plains",
+            "/criteria/sunflower_plains",
+            "/criteria/taiga",
+            "/criteria/valley_clearing",
+            "/criteria/yosemite_lowlands",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:biomes/one_with_the_forest",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/one_with_the_forest.json",
+        "sha256": "502d8a1df32a2a8366b6a6c4d63277be263eee7c8f60687865fa4f91f65c3eec"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/cherry_grove",
+            "/criteria/jungle_mountains",
+            "/criteria/orchid_swamp",
+            "/criteria/rocky_jungle",
+            "/criteria/tropical_jungle",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:biomes/overgrown",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/overgrown.json",
+        "sha256": "6402ac1330710195a2bfa4b293a0b709539f29d7ee04ef0893d5bc6780a39b57"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/ancient_sands",
+            "/criteria/bryce_canyon",
+            "/criteria/desert/conditions/player/0/condition",
+            "/criteria/desert/conditions/player/0/entity",
+            "/criteria/desert/conditions/player/0/predicate",
+            "/criteria/desert/conditions/player/0/terms",
+            "/criteria/desert_oasis",
+            "/criteria/desert_spires",
+            "/criteria/lush_desert",
+            "/criteria/red_oasis",
+            "/criteria/sandstone_valley",
+            "/criteria/savanna",
+            "/criteria/savanna_plateau",
+            "/criteria/warped_mesa",
+            "/criteria/white_mesa",
+            "/criteria/windswept_savanna",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:biomes/warm_feet",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/warm_feet.json",
+        "sha256": "1ff5672f0edaf30045816d8b2c6c52946f6a583dbc69e7c66bcc29efa179f641"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/deep_warm_ocean",
+            "/criteria/gravel_beach",
+            "/criteria/warm_river",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:biomes/wet_feet",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/biomes/wet_feet.json",
+        "sha256": "4bc4d303ae0235ab183bba680842caa2b0365c3f4da48eb946a47fed7dafd879"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/display/announce_to_chat",
+            "/display/description/translate"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:challenges/explorer_of_worlds",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/explorer_of_worlds.json",
+        "sha256": "9914c463197994ce6d8d4adeb24ac9d44e82fdc38c7d78c81f7b989544310c41"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/desert_outpost",
+            "/criteria/fortified_desert_village_archer",
+            "/criteria/fortified_desert_village_butcher",
+            "/criteria/fortified_desert_village_cartographer",
+            "/criteria/fortified_desert_village_fisherman",
+            "/criteria/fortified_desert_village_food",
+            "/criteria/fortified_desert_village_generic",
+            "/criteria/fortified_desert_village_generic_low",
+            "/criteria/fortified_desert_village_junk",
+            "/criteria/fortified_desert_village_library",
+            "/criteria/fortified_desert_village_mason",
+            "/criteria/fortified_desert_village_smith",
+            "/criteria/fortified_desert_village_treasure",
+            "/criteria/fortified_village_archer",
+            "/criteria/fortified_village_attic",
+            "/criteria/fortified_village_cartographer",
+            "/criteria/fortified_village_fisherman",
+            "/criteria/fortified_village_food",
+            "/criteria/fortified_village_generic",
+            "/criteria/fortified_village_generic_low",
+            "/criteria/fortified_village_library",
+            "/criteria/fortified_village_mason",
+            "/criteria/fortified_village_smith",
+            "/criteria/fortified_village_tavern_downstairs",
+            "/criteria/fortified_village_tavern_upstairs",
+            "/criteria/fortified_village_treasure",
+            "/criteria/giant_bee_hive",
+            "/criteria/glacial_hut_junk",
+            "/criteria/glacial_hut_main",
+            "/criteria/jungle_temple_dispenser",
+            "/criteria/lodge_drinkables",
+            "/criteria/mage_extras",
+            "/criteria/mage_treasure",
+            "/criteria/spire_common",
+            "/criteria/spire_junk",
+            "/criteria/spire_rare",
+            "/criteria/spire_treasure",
+            "/criteria/terralith_igloo",
+            "/criteria/underground_cabin",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:challenges/i_am_loot",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/challenges/i_am_loot.json",
+        "sha256": "8baae0a97a0627897ea5fa299ea7874ce454f736d5cc79f4257ba005a696ce26"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/deepslate_emerald_ore",
+            "/display/announce_to_chat",
+            "/display/description/extra"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:mining/oresome",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/blazeandcave/advancement/mining/oresome.json",
+        "sha256": "631424ae45d316f8b22ea65245d08f0c4b7a9a98b192d3e9662b934ead858a26"
+      },
+      {
+        "codecPassed": true,
+        "companion": "terralith",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/display/announce_to_chat",
+            "/display/description/translate"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "minecraft:adventure/adventuring_time",
+        "path": "src/main/resources/resourcepacks/bacap_terralith_override/data/minecraft/advancement/adventure/adventuring_time.json",
+        "sha256": "95215b5319fd4800bb38751463b7cba38e30fd290a177ab621b4e0235d06bf63"
+      },
+      {
+        "codecPassed": true,
+        "companion": "amplifiedNether",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/enter_cave",
+            "/criteria/world_height",
+            "/display/announce_to_chat",
+            "/display/description/extra",
+            "/display/description/translate"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:nether/inception",
+        "path": "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/inception.json",
+        "sha256": "39b63c2c40cebbea358d54545485384cd2ea53cc540079cc719061d21c39b626"
+      },
+      {
+        "codecPassed": true,
+        "companion": "amplifiedNether",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/world_height/conditions/player/0/predicate/location/position/y/min",
+            "/display/announce_to_chat"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:nether/limbo_walker",
+        "path": "src/main/resources/resourcepacks/bacap_amplified_nether_override/data/blazeandcave/advancement/nether/limbo_walker.json",
+        "sha256": "09c35fb2bf72a783396e14ffa17ba783502f63495ca9761f8e900f58b8a9c03e"
+      },
+      {
+        "codecPassed": true,
+        "companion": "nullscape",
+        "criteriaPreserved": true,
+        "fieldOwnershipEvidence": {
+          "changedPointers": [
+            "/criteria/crystal_peaks",
+            "/criteria/end_barrens",
+            "/criteria/end_midlands",
+            "/criteria/shadowlands",
+            "/criteria/void_barrens",
+            "/display/announce_to_chat",
+            "/parent"
+          ],
+          "path": "reference/phase_b/b5_6_companions_resumed.json",
+          "sha256": "9adb081041ddd4e285d64fa95a726c213824e4f61a40f3bc9edebeee7d9f9e67"
+        },
+        "id": "blazeandcave:end/void_walker",
+        "path": "src/main/resources/resourcepacks/bacap_nullscape_override/data/blazeandcave/advancement/end/void_walker.json",
+        "sha256": "f9f3598c3de814481694f03b6df951db0fcf530d945fcb7450a6ea9a571b14cd"
+      }
+    ],
+    "nullscapeSearch": "nullscape:root",
+    "passed": 14,
+    "terralithWrappers": 24,
+    "total": 14
+  },
+  "terralithRepairedHelpers": [
+    {
+      "id": "blazeandcave:technical/biome_branch1_end",
+      "accepted": true,
+      "criteriaPreserved": true
+    },
+    {
+      "id": "blazeandcave:technical/biome_branch2_end",
+      "accepted": true,
+      "criteriaPreserved": true
+    }
+  ]
+}

@@ -1,0 +1,1196 @@
+{
+  "codecEvidence": {
+    "limitations": "Generic registered-holder codec uses the exact homogeneousList implementation invoked by EnchantmentPredicate; Unit.CODEC directly tested. This is isolated codec validation, not full world boot or the entire advancement codec corpus.",
+    "minecraftJar": ".gradle/loom-cache/minecraftMaven/net/minecraft/minecraft-merged-84afe0508c/26.2/minecraft-merged-84afe0508c-26.2.jar",
+    "minecraftJarSha256": "4beaad36aebac56874c1feef75a680638fed2d733387b5977481e5b21406d1ef",
+    "probe": "build/tmp/phase_b_b4/converter/B4CodecProbe.java",
+    "results": [
+      {
+        "accepted": true,
+        "case": "\"minecraft:sharpness\"",
+        "selectedHolderCount": 1
+      },
+      {
+        "accepted": true,
+        "case": "[\"minecraft:sharpness\"]",
+        "selectedHolderCount": 1
+      },
+      {
+        "accepted": true,
+        "case": "\"#blazeandcave:fishing_rod\"",
+        "selectedHolderCount": 1
+      },
+      {
+        "accepted": false,
+        "case": "[\"#blazeandcave:fishing_rod\"]",
+        "error": "Not a valid resource location: #blazeandcave:fishing_rod Non [a-z0-9_.-] character in namespace of identifier: #blazeandcave:fishing_rod",
+        "selectedHolderCount": -1
+      },
+      {
+        "accepted": true,
+        "case": "{}",
+        "decodedUnit": "INSTANCE"
+      },
+      {
+        "accepted": true,
+        "case": "{\"show_in_tooltip\":false}",
+        "decodedUnit": "INSTANCE"
+      },
+      {
+        "accepted": true,
+        "case": "{\"show_in_tooltip\":true}",
+        "decodedUnit": "INSTANCE"
+      }
+    ]
+  },
+  "evidenceFiles": [
+    {
+      "path": "build/tmp/phase_b_b4/converter/codec_function_javap.txt",
+      "sha256": "1a32aed76107bceceeebf2ded55c1cdd1ad47bcdf3e6e4e7607b1b7f05ddb30c"
+    },
+    {
+      "path": "build/tmp/phase_b_b4/converter/codec_more.txt",
+      "sha256": "0111d36f2c9674aa5c26afa1fae0c05e4f076e0c9b0c71d64ddecff60301cc9f"
+    },
+    {
+      "path": "build/tmp/phase_b_b4/converter/datacomponents.txt",
+      "sha256": "311739b2c4b89d965e22fca2746aed9d159cbc2ea3f300b215472a4c1820f380"
+    },
+    {
+      "path": "build/tmp/phase_b_b4/converter/function_executor.txt",
+      "sha256": "bf5d26060c3a720904f5b33bef9e744e76cb11b469ccc8cd7d50e78f03b5c601"
+    },
+    {
+      "path": "build/tmp/phase_b_b4/converter/function_manager.txt",
+      "sha256": "62480483064dc6f4ddddb8f7999557575a837a8fbad9df77ee8f2d53d6ca8e34"
+    },
+    {
+      "path": "build/tmp/phase_b_b4/converter/reward_library.txt",
+      "sha256": "c5ec6c450f40307ff708d3df8e074b534223325b8616b47c4ed89fc15095e3ba"
+    }
+  ],
+  "families": [
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.function_chain_id"
+      ],
+      "family": "function_chain_id",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.function_daytime_query"
+      ],
+      "family": "function_daytime_query",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.function_dyed_color_with_tooltip"
+      ],
+      "family": "function_dyed_color_with_tooltip",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.function_enchantments_levels"
+      ],
+      "family": "function_enchantments_levels",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.function_enchantments_with_tooltip"
+      ],
+      "family": "function_enchantments_with_tooltip",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.function_gamerule"
+      ],
+      "family": "function_gamerule",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 34,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.function_hide_additional_tooltip"
+      ],
+      "family": "function_hide_additional_tooltip",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.function_legacy_item_text"
+      ],
+      "family": "function_legacy_item_text",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 235,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.function_stored_enchantments_levels"
+      ],
+      "family": "function_stored_enchantments_levels",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.function_stored_enchantments_with_tooltip"
+      ],
+      "family": "function_stored_enchantments_with_tooltip",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.function_trim_with_tooltip"
+      ],
+      "family": "function_trim_with_tooltip",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.function_unbreakable_with_tooltip",
+        "MC26.2 DataComponents.UNBREAKABLE uses Unit.CODEC",
+        "Local Unit.CODEC accepts empty, show_in_tooltip:false and show_in_tooltip:true maps identically"
+      ],
+      "family": "function_unbreakable_with_tooltip",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 35,
+      "nativeChangedFilesUnderR16": 35,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "35 replacements are unnecessary for native codec acceptance. Unit ignores the obsolete field, so removing it cannot restore historical tooltip intent; preserve upstream native bytes and verify trophy tooltip visibility in B10.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.item_snbt_parse"
+      ],
+      "family": "item_snbt_parse",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "No independent marker impact",
+      "nativeCandidateFiles": 235,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "No runtime-chat adapter change; no analysis instrumentation in production.",
+      "reason": "Analysis parser instrumentation is not a production conversion family. Native function bypass naturally avoids legacy item parsing; no diagnostic instrumentation will be added to production.",
+      "target121Policy": "NOOP_FOR_TARGET",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.item_snbt_parse_failure"
+      ],
+      "family": "item_snbt_parse_failure",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "No independent marker impact",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "No runtime-chat adapter change; no analysis instrumentation in production.",
+      "reason": "Analysis parser instrumentation is not a production conversion family. Native function bypass naturally avoids legacy item parsing; no diagnostic instrumentation will be added to production.",
+      "target121Policy": "NOOP_FOR_TARGET",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_background"
+      ],
+      "family": "json_background",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 16,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_chain_id"
+      ],
+      "family": "json_chain_id",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 1479,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_context_aware_predicate"
+      ],
+      "family": "json_context_aware_predicate",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 214,
+      "nativeChangedFilesUnderR16": 8,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities. Inclusive entity/context counts primarily reflect nested enchantment changes; 70 parsed-identical serializations are false-positive changed flags, not required native port transformations. Native bypass preserves the original bytes for those files.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_damage"
+      ],
+      "family": "json_damage",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 54,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities. Inclusive entity/context counts primarily reflect nested enchantment changes; 70 parsed-identical serializations are false-positive changed flags, not required native port transformations. Native bypass preserves the original bytes for those files.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_damage_type"
+      ],
+      "family": "json_damage_type",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 36,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities. Inclusive entity/context counts primarily reflect nested enchantment changes; 70 parsed-identical serializations are false-positive changed flags, not required native port transformations. Native bypass preserves the original bytes for those files.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_enchantment_predicates",
+        "MC26.2 EnchantmentPredicate.CODEC -> RegistryCodecs.homogeneousList default false -> HolderSetCodec.compactListCodec",
+        "Local B4CodecProbe raw tag scalar accepted; singleton array containing tag rejected",
+        "blazeandcave:animal/treasure_hunter /criteria/fishing_rod/conditions/item/predicates/enchantments/0/enchantments"
+      ],
+      "family": "json_enchantment_predicates",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 55,
+      "nativeChangedFilesUnderR16": 55,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "54 changed native files contain ordinary IDs accepted in either scalar/list form; treasure_hunter contains a scalar #blazeandcave:fishing_rod that becomes an invalid list element under r16. Native bypass is required. Keep historical implementation unchanged for historical corpus, and add a regression forbidding tag wrapping for native source.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_entity_predicate"
+      ],
+      "family": "json_entity_predicate",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 393,
+      "nativeChangedFilesUnderR16": 9,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities. Inclusive entity/context counts primarily reflect nested enchantment changes; 70 parsed-identical serializations are false-positive changed flags, not required native port transformations. Native bypass preserves the original bytes for those files.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_entity_struck"
+      ],
+      "family": "json_entity_struck",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_entity_tags"
+      ],
+      "family": "json_entity_tags",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 332,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_entity_type"
+      ],
+      "family": "json_entity_type",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_entity_variant_components"
+      ],
+      "family": "json_entity_variant_components",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_generic_type_specific"
+      ],
+      "family": "json_generic_type_specific",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_killing_blow"
+      ],
+      "family": "json_killing_blow",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 40,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities. Inclusive entity/context counts primarily reflect nested enchantment changes; 70 parsed-identical serializations are false-positive changed flags, not required native port transformations. Native bypass preserves the original bytes for those files.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_lightning_type_specific"
+      ],
+      "family": "json_lightning_type_specific",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_llama_carpet_nbt"
+      ],
+      "family": "json_llama_carpet_nbt",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_player_type_specific"
+      ],
+      "family": "json_player_type_specific",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_raider_type_specific"
+      ],
+      "family": "json_raider_type_specific",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Observed native structures need no legacy migration; preserve the complete r16 historical-source implementation and bypass it only for independently verified native source identities.",
+      "target121Policy": "KEEP_HISTORICAL_SOURCE_ONLY",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.json_vanilla_announcement_suppression"
+      ],
+      "family": "json_vanilla_announcement_suppression",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "compat_26_2_r17 source-conversion policy revision",
+      "nativeCandidateFiles": 1479,
+      "nativeChangedFilesUnderR16": 1244,
+      "plannedCodeChange": "Native verified-source gate in copyForWorld; keep historical methods byte-for-byte. Native JSON calls announcement-only traversal; native mcfunction payloads pass through byte-for-byte.",
+      "reason": "Keep the existing reward-namespace-scoped display.announce_to_chat=false policy on both native and historical packs to avoid duplicate vanilla announcements alongside localized ATD reward messages. For native source run only this narrow transformation and serialize only files whose display actually changes.",
+      "target121Policy": "KEEP_TARGET_AS_INTENTIONAL_ATD_TRANSFORM",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.runtime_chat_json_parse"
+      ],
+      "family": "runtime_chat_json_parse",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "No independent marker impact",
+      "nativeCandidateFiles": 1255,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "No runtime-chat adapter change; no analysis instrumentation in production.",
+      "reason": "Retain the existing scoped runtime chat migration because bundled ATD and retained companion overrides still contain original-format JSON text. Native BACAP messages are already modern and are no-ops; this runtime bridge is separate from source-archive conversion.",
+      "target121Policy": "KEEP_ALL_SOURCES",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    },
+    {
+      "evidence": [
+        "B3 converterAnalysis.target.families.runtime_chat_json_parse_failure"
+      ],
+      "family": "runtime_chat_json_parse_failure",
+      "historicalInputPolicy": "KEEP_ALL_SOURCES",
+      "markerImpact": "No independent marker impact",
+      "nativeCandidateFiles": 0,
+      "nativeChangedFilesUnderR16": 0,
+      "plannedCodeChange": "No runtime-chat adapter change; no analysis instrumentation in production.",
+      "reason": "Retain the existing scoped runtime chat migration because bundled ATD and retained companion overrides still contain original-format JSON text. Native BACAP messages are already modern and are no-ops; this runtime bridge is separate from source-archive conversion.",
+      "target121Policy": "KEEP_ALL_SOURCES",
+      "validationRequired": [
+        "B9 source-policy discrimination / historical converter regression / native byte preservation",
+        "B8 native registry codecs including treasure_hunter enchantment tag",
+        "B10 observed reward/announcement behavior"
+      ]
+    }
+  ],
+  "finalMarkerDecision": "BUMP compat_26_2_r17",
+  "nativeSourceGate": {
+    "codePath": "src/main/java/com/diskree/achievetodo/client/ExternalPackCompatibility.java",
+    "discriminator": "Exact independently verified source ZIP SHA1, using main1.21 and official Hardcore1.21 identity when selected; not arbitrary filename/version-string/pack-format heuristics. Historical fixture/archive hashes continue through legacy conversion.",
+    "exactSelectionRule": "Compute Utils.calculateSHA1(sourcePack) once before ZIP traversal; native policy only when actual source bytes hash to mainSha1 or hardcoreSha1. Do not select by the updated enum SHA1 alone: frozen historical inputs must still select historical conversion when inspected through test metadata.",
+    "hardcoreSha1": "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475",
+    "mainSha1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+    "noOtherProductionPathChange": true,
+    "plannedChange": "In copyForWorld determine native verified source once before ZIP loop. Native mcfunction copies pass-through. Native JSON parse/traverse solely existing announcement suppression; leave all criteria/references unchanged and preserve source bytes when no announcement change. Historical convertJson/convertFunction implementation remains intact. Retain original String-signature methods for existing historical regressions; use a narrow overload/helper for native policy. Compute native identity from actual source ZIP bytes once, using Utils.calculateSHA1(sourcePack) and the two exact SHA1 constants; no filename/enum-only trust.",
+    "scope": "Main BACAP1.21 and Hardcore1.21 only. Historical variants and all other sources retain existing conversion. No broad metadata heuristic."
+  },
+  "optionalMacroConvention": {
+    "byResourceType": {
+      "exp": 24,
+      "reward": 28,
+      "trophy": 1023
+    },
+    "classification": "NO_PRODUCT_CHANGE",
+    "count": 1075,
+    "guardContract": "Each reward/trophy/experience macro line has score-option and, for first/team modes, obtained/team guards. These are activation guards, NOT resource-existence guards. Disabled options avoid lookup. Enabled absent optional resources yield a per-command CommandSyntaxException; CustomCommandExecutor.WithErrorHandling handles the error and returns without discarding the remaining parent function commands. AdvancementRewards invokes functions withSuppressedOutput. Therefore absence is an optional-effect no-op and does not block score, points, first-obtained or cooperative commands. Preserve upstream sparse reward corpus; no1075 fake files.",
+    "proof": [
+      "FunctionArgument.parse reads Identifier without resolving existence",
+      "FunctionArgument.getFunction resolves at execution and throws arguments.function.unknown for missing ID",
+      "FunctionCommand.FunctionCustomExecutor extends CustomCommandExecutor.WithErrorHandling",
+      "CustomCommandExecutor.WithErrorHandling.run catches CommandSyntaxException, onError, callback.onFailure and returns; no queue discard",
+      "AdvancementRewards.grant lambda creates source.withSuppressedOutput before ServerFunctionManager.execute",
+      "Shared macro places count/points/first/coop commands after optional reward blocks"
+    ],
+    "unsafeSubsetRequiringB5": [],
+    "validationRequired": "B10 enable all optional rewards on an advancement with absent effect files, assert remaining existing effects, raw/points/first/coop updates and localized message execute; disabled options skip lookup. Trace failure may remain visible to explicit function debug tracing, so do not claim literally zero diagnostic errors."
+  },
+  "phase": "B",
+  "predicateTagContracts": {
+    "functionTagExtensionPolicy": {
+      "action": "NO_PRODUCT_CHANGE",
+      "count": 1258,
+      "reason": "Unprovided bacap_fanpacks tags are extension hooks. ServerFunctionLibrary.getTag returns an empty list; FunctionCommand reports no_functions for empty lists, contained per command. No stub tag corpus."
+    },
+    "historicalAliases": [
+      {
+        "action": "KEEP",
+        "path": "src/main/resources/data/minecraft/tags/item/nether_fungus.json",
+        "reason": "Preserved historical conversion/companion compatibility alias; target1.21 does not refer to it."
+      },
+      {
+        "action": "KEEP",
+        "path": "src/main/resources/data/minecraft/tags/item/nether_roots.json",
+        "reason": "Preserved historical conversion/companion compatibility alias; target1.21 does not refer to it."
+      }
+    ],
+    "nativeEnchantmentTag": {
+      "action": "PRESERVE_NATIVE_SCALAR_REFERENCE",
+      "id": "blazeandcave:fishing_rod",
+      "reason": "Actual native tag path exists; current r16 incorrectly wraps tag string into an ordinary-holder list and causes codec rejection.",
+      "registry": "enchantment",
+      "targetPath": "data/blazeandcave/tags/enchantment/fishing_rod.json"
+    },
+    "packLocalPredicateMissing": 0,
+    "packNamespaceRegistryTagMissing": 0,
+    "removedOldPackTags": [
+      {
+        "action": "NO_PRODUCT_CHANGE",
+        "existsInMinecraft262": true,
+        "kind": "registry_tag",
+        "localResourcePaths": [],
+        "location": "/criteria/clean_shulker_box/conditions/location/1/predicate/items",
+        "oldPackLocalPaths": [
+          "data/minecraft/tags/item/shulker_boxes.json"
+        ],
+        "proofPath": "data/minecraft/tags/item/shulker_boxes.json",
+        "registryType": "item",
+        "resolution": "REMOVED_OLD_PACK_TAG_REGISTRY_EXISTENCE_REVIEW",
+        "resourceId": "minecraft:shulker_boxes",
+        "source": "data/blazeandcave/advancement/building/washing_machine.json"
+      },
+      {
+        "action": "NO_PRODUCT_CHANGE",
+        "existsInMinecraft262": true,
+        "kind": "registry_tag",
+        "localResourcePaths": [],
+        "location": "/criteria/shulker_box/conditions/items/0/items",
+        "oldPackLocalPaths": [
+          "data/minecraft/tags/item/shulker_boxes.json"
+        ],
+        "proofPath": "data/minecraft/tags/item/shulker_boxes.json",
+        "registryType": "item",
+        "resolution": "REMOVED_OLD_PACK_TAG_REGISTRY_EXISTENCE_REVIEW",
+        "resourceId": "minecraft:shulker_boxes",
+        "source": "data/blazeandcave/advancement/end/organizational_wizard.json"
+      },
+      {
+        "action": "NO_PRODUCT_CHANGE",
+        "existsInMinecraft262": true,
+        "kind": "registry_tag",
+        "localResourcePaths": [],
+        "location": "/criteria/shulker_box/conditions/items/0/items",
+        "oldPackLocalPaths": [
+          "data/minecraft/tags/item/shulker_boxes.json"
+        ],
+        "proofPath": "data/minecraft/tags/item/shulker_boxes.json",
+        "registryType": "item",
+        "resolution": "REMOVED_OLD_PACK_TAG_REGISTRY_EXISTENCE_REVIEW",
+        "resourceId": "minecraft:shulker_boxes",
+        "source": "data/blazeandcave/advancement/end/portable_storage.json"
+      },
+      {
+        "action": "NO_PRODUCT_CHANGE",
+        "existsInMinecraft262": true,
+        "kind": "registry_tag",
+        "localResourcePaths": [],
+        "location": "/criteria/sculker_box/conditions/items/0/items",
+        "oldPackLocalPaths": [
+          "data/minecraft/tags/item/shulker_boxes.json"
+        ],
+        "proofPath": "data/minecraft/tags/item/shulker_boxes.json",
+        "registryType": "item",
+        "resolution": "REMOVED_OLD_PACK_TAG_REGISTRY_EXISTENCE_REVIEW",
+        "resourceId": "minecraft:shulker_boxes",
+        "source": "data/blazeandcave/advancement/redstone/sculker_box.json"
+      }
+    ]
+  },
+  "reason": "Legacy-to-native source policy changes actual production conversion, including fixing target treasure_hunter tag codec breakage. Source SHA1 invalidates historical→target copies, but same target-source r16 converted world copies would otherwise remain accepted; r17 invalidates those copies. RootOverrideSha1 continues to record bundled root content changes independently.",
+  "safety": {
+    "archivesModified": false,
+    "commitPushTag": false,
+    "probeOutputIgnored": true,
+    "productionEdited": false,
+    "testsEdited": false
+  },
+  "stage": "B4",
+  "status": "PHASE_B_B4_PLANNED",
+  "upstreamDangling": [
+    {
+      "action": "ADD_ALIAS",
+      "aliasCommand": "function bacap_rewards:trophy/monsters/monsters_hunted",
+      "callSiteOccurrences": 1,
+      "callee": "bacap_rewards:trophy/combat/monsters_hunted",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 13,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/monsters_hunted.mcfunction",
+      "reachable": true,
+      "reason": "Reachable explicit grant-all trophy configuration has a stale category path while corresponding actual target trophy resource exists. Original ATD exposes trophy options. A one-line forwarding alias repairs only these 12 concrete calls without copying or rewriting upstream config/trophy bodies.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "blazeandcave:config/trophies_ru_sure",
+        "blazeandcave:config/trophies_begin_grant",
+        "blazeandcave:config/grant_trophies"
+      ],
+      "source": "blazeandcave:config/grant_trophies",
+      "sourceLines": [
+        13
+      ],
+      "sourcePath": "data/blazeandcave/function/config/grant_trophies.mcfunction",
+      "targetCallee": "bacap_rewards:trophy/monsters/monsters_hunted",
+      "validation": "B8 alias resolution; B10 explicit grant-all trophy operation delivers the corresponding actual trophies once."
+    },
+    {
+      "action": "ADD_ALIAS",
+      "aliasCommand": "function bacap_rewards:trophy/monsters/freezing",
+      "callSiteOccurrences": 1,
+      "callee": "bacap_rewards:trophy/combat/freezing",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 63,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/freezing.mcfunction",
+      "reachable": true,
+      "reason": "Reachable explicit grant-all trophy configuration has a stale category path while corresponding actual target trophy resource exists. Original ATD exposes trophy options. A one-line forwarding alias repairs only these 12 concrete calls without copying or rewriting upstream config/trophy bodies.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "blazeandcave:config/trophies_ru_sure",
+        "blazeandcave:config/trophies_begin_grant",
+        "blazeandcave:config/grant_trophies"
+      ],
+      "source": "blazeandcave:config/grant_trophies",
+      "sourceLines": [
+        63
+      ],
+      "sourcePath": "data/blazeandcave/function/config/grant_trophies.mcfunction",
+      "targetCallee": "bacap_rewards:trophy/monsters/freezing",
+      "validation": "B8 alias resolution; B10 explicit grant-all trophy operation delivers the corresponding actual trophies once."
+    },
+    {
+      "action": "ADD_ALIAS",
+      "aliasCommand": "function bacap_rewards:trophy/monsters/melting",
+      "callSiteOccurrences": 1,
+      "callee": "bacap_rewards:trophy/combat/melting",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 64,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/melting.mcfunction",
+      "reachable": true,
+      "reason": "Reachable explicit grant-all trophy configuration has a stale category path while corresponding actual target trophy resource exists. Original ATD exposes trophy options. A one-line forwarding alias repairs only these 12 concrete calls without copying or rewriting upstream config/trophy bodies.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "blazeandcave:config/trophies_ru_sure",
+        "blazeandcave:config/trophies_begin_grant",
+        "blazeandcave:config/grant_trophies"
+      ],
+      "source": "blazeandcave:config/grant_trophies",
+      "sourceLines": [
+        64
+      ],
+      "sourcePath": "data/blazeandcave/function/config/grant_trophies.mcfunction",
+      "targetCallee": "bacap_rewards:trophy/monsters/melting",
+      "validation": "B8 alias resolution; B10 explicit grant-all trophy operation delivers the corresponding actual trophies once."
+    },
+    {
+      "action": "ADD_ALIAS",
+      "aliasCommand": "function bacap_rewards:trophy/monsters/custom_boss_fight",
+      "callSiteOccurrences": 1,
+      "callee": "bacap_rewards:trophy/combat/custom_boss_fight",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 65,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/custom_boss_fight.mcfunction",
+      "reachable": true,
+      "reason": "Reachable explicit grant-all trophy configuration has a stale category path while corresponding actual target trophy resource exists. Original ATD exposes trophy options. A one-line forwarding alias repairs only these 12 concrete calls without copying or rewriting upstream config/trophy bodies.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "blazeandcave:config/trophies_ru_sure",
+        "blazeandcave:config/trophies_begin_grant",
+        "blazeandcave:config/grant_trophies"
+      ],
+      "source": "blazeandcave:config/grant_trophies",
+      "sourceLines": [
+        65
+      ],
+      "sourcePath": "data/blazeandcave/function/config/grant_trophies.mcfunction",
+      "targetCallee": "bacap_rewards:trophy/monsters/custom_boss_fight",
+      "validation": "B8 alias resolution; B10 explicit grant-all trophy operation delivers the corresponding actual trophies once."
+    },
+    {
+      "action": "ADD_ALIAS",
+      "aliasCommand": "function bacap_rewards:trophy/monsters/handsome_jack",
+      "callSiteOccurrences": 1,
+      "callee": "bacap_rewards:trophy/combat/handsome_jack",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 66,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/handsome_jack.mcfunction",
+      "reachable": true,
+      "reason": "Reachable explicit grant-all trophy configuration has a stale category path while corresponding actual target trophy resource exists. Original ATD exposes trophy options. A one-line forwarding alias repairs only these 12 concrete calls without copying or rewriting upstream config/trophy bodies.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "blazeandcave:config/trophies_ru_sure",
+        "blazeandcave:config/trophies_begin_grant",
+        "blazeandcave:config/grant_trophies"
+      ],
+      "source": "blazeandcave:config/grant_trophies",
+      "sourceLines": [
+        66
+      ],
+      "sourcePath": "data/blazeandcave/function/config/grant_trophies.mcfunction",
+      "targetCallee": "bacap_rewards:trophy/monsters/handsome_jack",
+      "validation": "B8 alias resolution; B10 explicit grant-all trophy operation delivers the corresponding actual trophies once."
+    },
+    {
+      "action": "ADD_ALIAS",
+      "aliasCommand": "function bacap_rewards:trophy/monsters/camouflage",
+      "callSiteOccurrences": 1,
+      "callee": "bacap_rewards:trophy/combat/camouflage",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 67,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/camouflage.mcfunction",
+      "reachable": true,
+      "reason": "Reachable explicit grant-all trophy configuration has a stale category path while corresponding actual target trophy resource exists. Original ATD exposes trophy options. A one-line forwarding alias repairs only these 12 concrete calls without copying or rewriting upstream config/trophy bodies.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "blazeandcave:config/trophies_ru_sure",
+        "blazeandcave:config/trophies_begin_grant",
+        "blazeandcave:config/grant_trophies"
+      ],
+      "source": "blazeandcave:config/grant_trophies",
+      "sourceLines": [
+        67
+      ],
+      "sourcePath": "data/blazeandcave/function/config/grant_trophies.mcfunction",
+      "targetCallee": "bacap_rewards:trophy/monsters/camouflage",
+      "validation": "B8 alias resolution; B10 explicit grant-all trophy operation delivers the corresponding actual trophies once."
+    },
+    {
+      "action": "ADD_ALIAS",
+      "aliasCommand": "function bacap_rewards:trophy/monsters/family_reunion",
+      "callSiteOccurrences": 1,
+      "callee": "bacap_rewards:trophy/combat/family_reunion",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 68,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/family_reunion.mcfunction",
+      "reachable": true,
+      "reason": "Reachable explicit grant-all trophy configuration has a stale category path while corresponding actual target trophy resource exists. Original ATD exposes trophy options. A one-line forwarding alias repairs only these 12 concrete calls without copying or rewriting upstream config/trophy bodies.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "blazeandcave:config/trophies_ru_sure",
+        "blazeandcave:config/trophies_begin_grant",
+        "blazeandcave:config/grant_trophies"
+      ],
+      "source": "blazeandcave:config/grant_trophies",
+      "sourceLines": [
+        68
+      ],
+      "sourcePath": "data/blazeandcave/function/config/grant_trophies.mcfunction",
+      "targetCallee": "bacap_rewards:trophy/monsters/family_reunion",
+      "validation": "B8 alias resolution; B10 explicit grant-all trophy operation delivers the corresponding actual trophies once."
+    },
+    {
+      "action": "ADD_ALIAS",
+      "aliasCommand": "function bacap_rewards:trophy/monsters/bone_to_party",
+      "callSiteOccurrences": 1,
+      "callee": "bacap_rewards:trophy/combat/bone_to_party",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 69,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/bone_to_party.mcfunction",
+      "reachable": true,
+      "reason": "Reachable explicit grant-all trophy configuration has a stale category path while corresponding actual target trophy resource exists. Original ATD exposes trophy options. A one-line forwarding alias repairs only these 12 concrete calls without copying or rewriting upstream config/trophy bodies.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "blazeandcave:config/trophies_ru_sure",
+        "blazeandcave:config/trophies_begin_grant",
+        "blazeandcave:config/grant_trophies"
+      ],
+      "source": "blazeandcave:config/grant_trophies",
+      "sourceLines": [
+        69
+      ],
+      "sourcePath": "data/blazeandcave/function/config/grant_trophies.mcfunction",
+      "targetCallee": "bacap_rewards:trophy/monsters/bone_to_party",
+      "validation": "B8 alias resolution; B10 explicit grant-all trophy operation delivers the corresponding actual trophies once."
+    },
+    {
+      "action": "ADD_ALIAS",
+      "aliasCommand": "function bacap_rewards:trophy/monsters/impossible",
+      "callSiteOccurrences": 1,
+      "callee": "bacap_rewards:trophy/combat/impossible",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 70,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/combat/impossible.mcfunction",
+      "reachable": true,
+      "reason": "Reachable explicit grant-all trophy configuration has a stale category path while corresponding actual target trophy resource exists. Original ATD exposes trophy options. A one-line forwarding alias repairs only these 12 concrete calls without copying or rewriting upstream config/trophy bodies.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "blazeandcave:config/trophies_ru_sure",
+        "blazeandcave:config/trophies_begin_grant",
+        "blazeandcave:config/grant_trophies"
+      ],
+      "source": "blazeandcave:config/grant_trophies",
+      "sourceLines": [
+        70
+      ],
+      "sourcePath": "data/blazeandcave/function/config/grant_trophies.mcfunction",
+      "targetCallee": "bacap_rewards:trophy/monsters/impossible",
+      "validation": "B8 alias resolution; B10 explicit grant-all trophy operation delivers the corresponding actual trophies once."
+    },
+    {
+      "action": "ADD_ALIAS",
+      "aliasCommand": "function bacap_rewards:trophy/animal/tropical_collection",
+      "callSiteOccurrences": 1,
+      "callee": "bacap_rewards:trophy/farming/tropical_collection",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 176,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/tropical_collection.mcfunction",
+      "reachable": true,
+      "reason": "Reachable explicit grant-all trophy configuration has a stale category path while corresponding actual target trophy resource exists. Original ATD exposes trophy options. A one-line forwarding alias repairs only these 12 concrete calls without copying or rewriting upstream config/trophy bodies.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "blazeandcave:config/trophies_ru_sure",
+        "blazeandcave:config/trophies_begin_grant",
+        "blazeandcave:config/grant_trophies"
+      ],
+      "source": "blazeandcave:config/grant_trophies",
+      "sourceLines": [
+        176
+      ],
+      "sourcePath": "data/blazeandcave/function/config/grant_trophies.mcfunction",
+      "targetCallee": "bacap_rewards:trophy/animal/tropical_collection",
+      "validation": "B8 alias resolution; B10 explicit grant-all trophy operation delivers the corresponding actual trophies once."
+    },
+    {
+      "action": "ADD_ALIAS",
+      "aliasCommand": "function bacap_rewards:trophy/animal/nest_quick",
+      "callSiteOccurrences": 1,
+      "callee": "bacap_rewards:trophy/farming/nest_quick",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 177,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/nest_quick.mcfunction",
+      "reachable": true,
+      "reason": "Reachable explicit grant-all trophy configuration has a stale category path while corresponding actual target trophy resource exists. Original ATD exposes trophy options. A one-line forwarding alias repairs only these 12 concrete calls without copying or rewriting upstream config/trophy bodies.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "blazeandcave:config/trophies_ru_sure",
+        "blazeandcave:config/trophies_begin_grant",
+        "blazeandcave:config/grant_trophies"
+      ],
+      "source": "blazeandcave:config/grant_trophies",
+      "sourceLines": [
+        177
+      ],
+      "sourcePath": "data/blazeandcave/function/config/grant_trophies.mcfunction",
+      "targetCallee": "bacap_rewards:trophy/animal/nest_quick",
+      "validation": "B8 alias resolution; B10 explicit grant-all trophy operation delivers the corresponding actual trophies once."
+    },
+    {
+      "action": "ADD_ALIAS",
+      "aliasCommand": "function bacap_rewards:trophy/animal/iceologer_shouldve_won",
+      "callSiteOccurrences": 1,
+      "callee": "bacap_rewards:trophy/farming/iceologer_shouldve_won",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 178,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/trophy/farming/iceologer_shouldve_won.mcfunction",
+      "reachable": true,
+      "reason": "Reachable explicit grant-all trophy configuration has a stale category path while corresponding actual target trophy resource exists. Original ATD exposes trophy options. A one-line forwarding alias repairs only these 12 concrete calls without copying or rewriting upstream config/trophy bodies.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "blazeandcave:config/trophies_ru_sure",
+        "blazeandcave:config/trophies_begin_grant",
+        "blazeandcave:config/grant_trophies"
+      ],
+      "source": "blazeandcave:config/grant_trophies",
+      "sourceLines": [
+        178
+      ],
+      "sourcePath": "data/blazeandcave/function/config/grant_trophies.mcfunction",
+      "targetCallee": "bacap_rewards:trophy/animal/iceologer_shouldve_won",
+      "validation": "B8 alias resolution; B10 explicit grant-all trophy operation delivers the corresponding actual trophies once."
+    },
+    {
+      "action": "NO_PRODUCT_CHANGE",
+      "callSiteOccurrences": 1,
+      "callee": "blazeandcave:advancement/loser_hurt",
+      "classification": "COMPANION_SUPPLIED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 140,
+      "macroExpanded": false,
+      "reachable": true,
+      "reason": "Upstream inline comment identifies Hardcore-only function; official Hardcore1.21 archive supplies exact target path. Main also defines bac_loser_hurt and reaches guard after damage, so missing main-only lookup is not strictly unreachable but is error-contained per command. Preserve companion hook; no main dummy function.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "minecraft:tick",
+        "blazeandcave:one_second_timer"
+      ],
+      "source": "blazeandcave:one_second_timer",
+      "sourceLines": [
+        140
+      ],
+      "sourcePath": "data/blazeandcave/function/one_second_timer.mcfunction",
+      "validation": "B10 main-only player damage retains timer behavior; Hardcore mode exact function resolves and Loser semantics work."
+    },
+    {
+      "action": "ADD_SETUP_HOOK",
+      "callSiteOccurrences": 1,
+      "callee": "blazeandcave:terralith_check",
+      "classification": "ATD_SHIM_REQUIRED",
+      "dynamic": false,
+      "functionTag": false,
+      "line": 263,
+      "macroExpanded": false,
+      "plannedPath": "src/main/resources/resourcepacks/bacap_override/data/blazeandcave/function/terralith_check.mcfunction",
+      "reachable": true,
+      "reason": "Preserve exact recognized Terralith setup-hook default in base ATD override so Nullscape-only selection also receives its required count setting; companion-supplied function is otherwise absent for that selection.",
+      "resolution": "MISSING_STATIC_CALLEE",
+      "roots": [
+        "minecraft:load",
+        "blazeandcave:start_timers"
+      ],
+      "source": "blazeandcave:start_timers",
+      "sourceLines": [
+        263
+      ],
+      "sourcePath": "data/blazeandcave/function/start_timers.mcfunction",
+      "validation": "B8 base override exports exact original default-if-missing hook; B10 main-only, Terralith-only, Nullscape-only and combined selections initialize missing setting and preserve explicit0/1, with correct raw/point counts."
+    }
+  ]
+}

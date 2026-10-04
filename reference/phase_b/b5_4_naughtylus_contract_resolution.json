@@ -1,0 +1,128 @@
+{
+  "actualCumulativeProductDiff": {
+    "ADD": 14,
+    "DELETE": 0,
+    "MODIFY": 12
+  },
+  "actualTransactionDelta": {
+    "ADD": 0,
+    "DELETE": 0,
+    "MODIFY": 0
+  },
+  "addedShimPath": "src/main/resources/resourcepacks/bacap_override/data/bacap_rewards/function/biomes/naughtylus.mcfunction",
+  "authorization": "Explicit user-scoped resolution; authorization does not extend to additional defects found by the required global scan.",
+  "authorizedAmendedManifest": {
+    "ADD": 117,
+    "DELETE": 9,
+    "MODIFY": 48,
+    "paths": 174
+  },
+  "baselineHead": "b261b02cd03b4aeae2835c63f982c9aa53c46eed",
+  "branch": "phase-b-bacap-26.2",
+  "correctId": "blazeandcave:biomes/naughtylus",
+  "diffCheck": "PASS",
+  "discoveredDuring": "PHASE_B_B5_4_STOP",
+  "executionStatus": "PHASE_B_B5_4_STOP",
+  "executionStoppedBeforeProductWrites": true,
+  "globalWrapperIdScan": {
+    "additionalMismatch": {
+      "actualAdvancementPath": "data/minecraft/advancement/story/root.json",
+      "actualAdvancementSha256": "a5702157d3aec74a4ff2f1c10abf5761e783dccc533a04bbb05fbc5aab183678",
+      "actualRewardOwnerId": "minecraft:story/root",
+      "additionalAuthorizationRequired": true,
+      "declaredAdvancementRewardInvokesDefectiveWrapper": true,
+      "invalidAdvancementAbsent": true,
+      "invalidId": "blazeandcave:bacap/benchmarking",
+      "notCoveredByNaughtylusResolution": true,
+      "wrapperId": "bacap_rewards:bacap/benchmarking",
+      "wrapperPath": "data/bacap_rewards/function/bacap/benchmarking.mcfunction",
+      "wrapperSha256": "4be0f8eea29bd6134e01bef9c4948d5ac08ac101194cabb0250528c65b526298"
+    },
+    "additionalMismatchCount": 1,
+    "knownAuthorizedMismatchCount": 1,
+    "literalArgumentCount": 1256,
+    "mismatchCount": 2,
+    "mismatches": [
+      {
+        "advancementId": "blazeandcave:bacap/benchmarking",
+        "callee": "bacap_rewards:advancement_made_macro",
+        "exists": false,
+        "line": 2,
+        "path": "data/bacap_rewards/function/bacap/benchmarking.mcfunction"
+      },
+      {
+        "advancementId": "blazeandcave:biomes/naughty_lus",
+        "callee": "bacap_rewards:advancement_made_macro",
+        "exists": false,
+        "line": 1,
+        "path": "data/bacap_rewards/function/biomes/naughtylus.mcfunction"
+      }
+    ],
+    "passed": false,
+    "scope": "Every native mcfunction command passing a literal adv_id argument to function machinery; comment lines excluded. Dynamic template arguments reported separately.",
+    "targetAdvancementCount": 1332,
+    "temporaryScanPath": "build/tmp/phase_b_b5_4/global_wrapper_id_scan.json",
+    "temporaryScanSha256": "ff25a49e0fba922243b7b75488ae68713da452d780c45bf41e6db595ab9eb425",
+    "wrappersScanned": 1256
+  },
+  "invalidId": "blazeandcave:biomes/naughty_lus",
+  "kind": "POST_B4_CONTRACT_RESOLUTION",
+  "marker": "compat_26_2_r17",
+  "originalManifest": {
+    "ADD": 116,
+    "DELETE": 9,
+    "MODIFY": 48,
+    "paths": 173
+  },
+  "originalStopEvidence": {
+    "path": "reference/phase_b/b5_4_root_reward_messages.json",
+    "sha256": "6ed40af0fff9bf081f075ed277c1984bcc5843113be7a902f8d8d52493018c15",
+    "status": "PHASE_B_B5_4_STOP",
+    "unchanged": true
+  },
+  "phase": "B",
+  "priorAcceptedB5Evidence": {
+    "b5_1_pins_pack_metadata.json": "ffc533dec326412f807e7d16667e5d8968aed0331d1a5ba0b9438a76a8279ab8",
+    "b5_2_converter_r17.json": "fcd6b4c9e9c5005ad253370871139bb26dadf944f0d7dceede76f112ad437a24",
+    "b5_3_setup_resource_contracts.json": "e1aa6aae5cb3f6f8127f7a83e94c3a48c18fa9fa0aaebb89719389ba89d3db5d"
+  },
+  "processResources": {
+    "noProcessedOutputCleanup": true,
+    "result": "NOT_RUN_PREFLIGHT_STOP"
+  },
+  "resolution": [
+    "Use correct advancement ID in the exact Naughtylus ATD message/Search contract",
+    "Add one narrow ATD wrapper override correcting the upstream bad advancement-ID argument",
+    "Preserve all other upstream wrapper semantics",
+    "No progress migration",
+    "No B4 historical rewrite"
+  ],
+  "safety": {
+    "B0ThroughB4EvidenceUnchanged": true,
+    "allPriorProductHashesPreserved": true,
+    "archivesUnchanged": true,
+    "b5_5Started": false,
+    "commit": false,
+    "githubMutation": false,
+    "noAbilityBalanceThresholdChanges": true,
+    "noJavaTestLangGeneratedSourceOrPinChanges": true,
+    "noProductBytesChanged": true,
+    "noProgressMigration": true,
+    "noTranslationResearch": true,
+    "nothingStaged": true,
+    "originalStopUnchanged": true,
+    "priorB5EvidenceUnchanged": true,
+    "push": false,
+    "tag": false
+  },
+  "stage": "B5.4",
+  "status": "AUTHORIZED",
+  "stopReason": "User section 4B requires another STOP if any additional malformed wrapper advancement-ID argument exists. Benchmarking is an additional active reward wrapper defect. No scope expansion applied.",
+  "successEvidenceCreated": false,
+  "targetAdvancementPath": "data/blazeandcave/advancement/biomes/naughtylus.json",
+  "targetAdvancementSha256": "5d249063bbbbf68a4cd9ea4b60bb45c1d5a8a9d9c31a28fc8f6762631f9d845a",
+  "upstreamWrapperId": "bacap_rewards:biomes/naughtylus",
+  "upstreamWrapperInvalidArgument": "blazeandcave:biomes/naughty_lus",
+  "upstreamWrapperPath": "data/bacap_rewards/function/biomes/naughtylus.mcfunction",
+  "upstreamWrapperSha256": "398b2208b345937d0ebac15ff542b1b04fbbcefacf1706303db785c9a96c6675"
+}
