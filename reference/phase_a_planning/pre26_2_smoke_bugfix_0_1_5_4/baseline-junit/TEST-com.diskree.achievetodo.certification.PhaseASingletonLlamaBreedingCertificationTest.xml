@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseASingletonLlamaBreedingCertificationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:49:23.758Z" hostname="LAPTOP-L0LPH8GP" time="3.279">
-  <properties/>
-  <testcase name="persistentLlamaBreedingReceiptChangesOnlyItsOwnStatus()" classname="com.diskree.achievetodo.certification.PhaseASingletonLlamaBreedingCertificationTest" time="3.264"/>
-  <testcase name="frozenCatalogAndPersistentReceiptCoverOnlyTheLlamaBreedingSingleton()" classname="com.diskree.achievetodo.certification.PhaseASingletonLlamaBreedingCertificationTest" time="0.014"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

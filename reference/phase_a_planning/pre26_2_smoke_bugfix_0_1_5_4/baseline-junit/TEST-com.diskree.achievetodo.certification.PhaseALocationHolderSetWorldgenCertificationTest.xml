@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenCertificationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:48:44.367Z" hostname="LAPTOP-L0LPH8GP" time="0.03">
-  <properties/>
-  <testcase name="everyFrozenRequirementHasOneDistinctSelectedKill()" classname="com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenCertificationTest" time="0.028"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

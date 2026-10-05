@@ -25,10 +25,7 @@ def publication_paths():
         if "/__pycache__/" in name or name.endswith("/audit_stdout.json"):
             continue
         if name.startswith(("src/main/java/", "src/main/resources/", "src/test/", "src/gametest/",
-                            "tools/final19/", "tools/publication/", "reference/phase_a_planning/",
-                            "reference/localization/fixtures/", "reference/publication/")):
-            accepted.append(name)
-        elif name == "PRE26_RELEASE_REPRODUCIBILITY.md":
+                            "tools/final19/", "reference/localization/fixtures/")):
             accepted.append(name)
         elif name.startswith(("src/main/generated/data/achievetodo/advancement/abilities/",
                               "src/main/generated/data/achievetodo/function/abilities/")):
@@ -43,7 +40,7 @@ def inventory():
     return {"schemaVersion": 1, "head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT).decode().strip(),
             "included": {name: sha(ROOT / name) for name in included}, "deleted": deleted,
             "excludedVisibleUntracked": excluded,
-            "note": "Ignored outputs/caches/local tooling are absent. Sealed XML/log/binary and runtime ZIP evidence are included."}
+            "note": "Existing tracked inputs and narrowly allowed untracked inputs are inventoried; missing tracked inputs are reported. Archived documents are included once tracked. Untracked historical publication/planning/reference inputs are excluded; ignored outputs/caches/local tooling are absent."}
 
 
 def main():

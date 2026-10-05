@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseAItemUsedOnBlockContextualCertificationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:48:37.773Z" hostname="LAPTOP-L0LPH8GP" time="6.588">
-  <properties/>
-  <testcase name="persistedReceiptChangesOnlyJukeboxAdvancementStatus()" classname="com.diskree.achievetodo.certification.PhaseAItemUsedOnBlockContextualCertificationTest" time="6.526"/>
-  <testcase name="frozenCatalogAndPersistentReceiptCoverTheExactSingleton()" classname="com.diskree.achievetodo.certification.PhaseAItemUsedOnBlockContextualCertificationTest" time="0.059"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

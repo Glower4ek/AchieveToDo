@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockCertificationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:37:09.418Z" hostname="LAPTOP-L0LPH8GP" time="1.241">
-  <properties/>
-  <testcase name="itemTagPlacedBlockSnapshotMatchesGeneratedArtifacts()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockCertificationTest" time="0.635"/>
-  <testcase name="itemTagPlacedBlockCatalogMatchesAcceptedFrontier()" classname="com.diskree.achievetodo.certification.PhaseAItemTagPlacedBlockCertificationTest" time="0.604"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

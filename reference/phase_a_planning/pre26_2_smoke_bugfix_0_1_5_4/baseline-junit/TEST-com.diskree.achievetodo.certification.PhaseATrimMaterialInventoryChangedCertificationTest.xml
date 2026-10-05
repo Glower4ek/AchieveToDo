@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedCertificationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:49:48.508Z" hostname="LAPTOP-L0LPH8GP" time="3.356">
-  <properties/>
-  <testcase name="exactEvidenceChangesOnlyTheTwoFamilyAdvancementStatuses()" classname="com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedCertificationTest" time="3.344"/>
-  <testcase name="frozenCatalogAndPersistentRuntimeCoverTheExactFamily()" classname="com.diskree.achievetodo.certification.PhaseATrimMaterialInventoryChangedCertificationTest" time="0.012"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

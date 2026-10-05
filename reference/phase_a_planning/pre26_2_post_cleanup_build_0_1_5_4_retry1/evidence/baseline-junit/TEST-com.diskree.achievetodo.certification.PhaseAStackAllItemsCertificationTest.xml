@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseAStackAllItemsCertificationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:59:52.916Z" hostname="LAPTOP-L0LPH8GP" time="0.027">
-  <properties/>
-  <testcase name="exactFrozenComplementPreservesImmutableAcceptedSlice()" classname="com.diskree.achievetodo.certification.PhaseAStackAllItemsCertificationTest" time="0.027"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

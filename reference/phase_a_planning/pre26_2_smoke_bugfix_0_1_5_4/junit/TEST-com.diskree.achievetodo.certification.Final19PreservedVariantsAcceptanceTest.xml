@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T08:11:16.683Z" hostname="LAPTOP-L0LPH8GP" time="0.624">
-  <properties/>
-  <testcase name="missingDuplicateStalePreTamedWrongVariantAndUnexecutedNegativesAreRejected()" classname="com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest" time="0.471"/>
-  <testcase name="all23NativeVariantGroupsAreIndependentlyValid()" classname="com.diskree.achievetodo.certification.Final19PreservedVariantsAcceptanceTest" time="0.148"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

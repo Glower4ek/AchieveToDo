@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.Final19VariantsStaticTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-30T21:05:55.892Z" hostname="LAPTOP-L0LPH8GP" time="0.301">
-  <properties/>
-  <testcase name="all23FrozenVariantsResolveThroughTheirRealTypedRegistries()" classname="com.diskree.achievetodo.certification.Final19VariantsStaticTest" time="0.09"/>
-  <testcase name="unknownVariantMalformedComponentsDeletedGroupsAndWrongRegistryRemainRejected()" classname="com.diskree.achievetodo.certification.Final19VariantsStaticTest" time="0.209"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

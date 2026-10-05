@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.Pre26SmokeCauldronGateAcceptanceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T06:49:57.653Z" hostname="LAPTOP-L0LPH8GP" time="0.027">
-  <properties/>
-  <testcase name="all24FreshNativeControlsAndExactProductionBytesPass()" classname="com.diskree.achievetodo.certification.Pre26SmokeCauldronGateAcceptanceTest" time="0.01"/>
-  <testcase name="malformedMissingReusedStaleFalseAwardFalseStateDispatcherCleanupAndFallbackClaimsAreRejected()" classname="com.diskree.achievetodo.certification.Pre26SmokeCauldronGateAcceptanceTest" time="0.016"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenEvidenceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:37:14.360Z" hostname="LAPTOP-L0LPH8GP" time="2.77">
-  <properties/>
-  <testcase name="persistentExactSetIgnoresActiveStateAndRejectsMissingDuplicateOrCorruptedWitnesses(Path)" classname="com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenEvidenceTest" time="0.111"/>
-  <testcase name="evidenceCompletesAllFrozenGroupsAndPreservesOtherCanonicalEntries()" classname="com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenEvidenceTest" time="2.659"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -1,9 +1,0 @@
-// Current destinations for reproduction; never overwrite the immutable retry1 evidence.
-allprojects {
-    afterEvaluate {
-        tasks.withType(Test).configureEach {
-            reports.junitXml.outputLocation = file('build/tmp/publication_validation/accepted-junit')
-            reports.html.outputLocation = file('build/tmp/publication_validation/accepted-html')
-        }
-    }
-}

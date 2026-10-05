@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedCertificationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:37:29.397Z" hostname="LAPTOP-L0LPH8GP" time="0.01">
-  <properties/>
-  <testcase name="frozenOrGroupsHaveExactlyOneDistinctExecutableWitness()" classname="com.diskree.achievetodo.certification.PhaseAPureEnchantmentInventoryChangedCertificationTest" time="0.01"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.Pre26SmokeTerminalAcceptanceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-01T15:04:45.059Z" hostname="LAPTOP-L0LPH8GP" time="0.127">
-  <properties/>
-  <testcase name="acceptedSevenFamiliesAndZeroGainArtifactsRemainExactAndHashBound()" classname="com.diskree.achievetodo.certification.Pre26SmokeTerminalAcceptanceTest" time="0.005"/>
-  <testcase name="independentlyDerivedTerminalCountsAndExactFrozenRequirementGroupsReconcile()" classname="com.diskree.achievetodo.certification.Pre26SmokeTerminalAcceptanceTest" time="0.045"/>
-  <testcase name="currentProductionAndFreshRuntimeCopyMatchAll1229SemanticBridgeOutputs()" classname="com.diskree.achievetodo.certification.Pre26SmokeTerminalAcceptanceTest" time="0.076"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedCertificationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:38:05.866Z" hostname="LAPTOP-L0LPH8GP" time="0.167">
-  <properties/>
-  <testcase name="snapshotMatchesCheckedInCatalog()" classname="com.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedCertificationTest" time="0.093"/>
-  <testcase name="exactSentryMappingIsPresent()" classname="com.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedCertificationTest" time="0.001"/>
-  <testcase name="summaryStaysAtAcceptedExact18Scope()" classname="com.diskree.achievetodo.certification.PhaseATrimPatternRecipeCraftedCertificationTest" time="0.072"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

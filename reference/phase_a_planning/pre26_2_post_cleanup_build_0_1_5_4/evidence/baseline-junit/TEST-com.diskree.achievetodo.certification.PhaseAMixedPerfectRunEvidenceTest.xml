@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseAMixedPerfectRunEvidenceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:37:17.400Z" hostname="LAPTOP-L0LPH8GP" time="3.073">
-  <properties/>
-  <testcase name="persistentExactSetIgnoresActiveStateAndRejectsMissingDuplicateOrCorruptedWitnesses(Path)" classname="com.diskree.achievetodo.certification.PhaseAMixedPerfectRunEvidenceTest" time="0.102"/>
-  <testcase name="evidenceCompletesAllFrozenGroupsAndPreservesOtherCanonicalEntries()" classname="com.diskree.achievetodo.certification.PhaseAMixedPerfectRunEvidenceTest" time="2.817"/>
-  <testcase name="rejectsDamageIdentityTimerAndNativeLifecycleCorruption(Path)" classname="com.diskree.achievetodo.certification.PhaseAMixedPerfectRunEvidenceTest" time="0.151"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

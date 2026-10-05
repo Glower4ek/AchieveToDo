@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T15:04:40.189Z" hostname="LAPTOP-L0LPH8GP" time="0.915">
-  <properties/>
-  <testcase name="all35FrozenBranchesHaveTypedTagContextAndLegalSupportedCompatibleWitnesses()" classname="com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest" time="0.704"/>
-  <testcase name="deletedTagsConjunctionAndOrderedGroupsRemainRejected()" classname="com.diskree.achievetodo.certification.Final19InventoryMastersStaticTest" time="0.208"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

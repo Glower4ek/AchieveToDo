@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedCertificationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:58:54.184Z" hostname="LAPTOP-L0LPH8GP" time="2.338">
-  <properties/>
-  <testcase name="enchantmentInventoryChangedCatalogMatchesAcceptedFrontier()" classname="com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedCertificationTest" time="1.818"/>
-  <testcase name="enchantmentInventoryChangedSnapshotMatchesGeneratedArtifacts()" classname="com.diskree.achievetodo.certification.PhaseAEnchantmentInventoryChangedCertificationTest" time="0.52"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

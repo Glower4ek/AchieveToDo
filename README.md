@@ -6,6 +6,8 @@ Minecraft, but the world has stolen your abilities. Reclaim them one by one by c
 
 Current project owner and maintainer: **Glower4ek**. Maintained source: [Glower4ek/AchieveToDo](https://github.com/Glower4ek/AchieveToDo).
 
+Current release: **AchieveToDo 0.1.5.5** for **Minecraft 26.2**, requiring **Java 25**.
+
 This project keeps the vanilla feel—no overpowered features—but flips progression on its head. Instead of starting with every ability, you must earn them through advancements. Explore alternate paths, delve into dungeons, and celebrate every basic resource you manage to unlock.
 
 Built to showcase [BlazeandCave's Advancements Pack](https://modrinth.com/datapack/blazeandcaves-advancements-pack), the mod integrates over 1000 tasks that serve as both a challenge and a tutorial. Whether you’re a newcomer or a veteran, the locked mechanics will force you to rediscover Minecraft in a completely new, demanding way.
@@ -34,7 +36,7 @@ From that moment on, the “Jumping” ability is revealed in AchieveToDo tab, s
 
 ![Replace this with a description](https://cdn.modrinth.com/data/DTTu3Q4G/images/835bd6f2cfe1c65029d02a9737174b71b6f58dcd.png)
 
-Once you’ve completed the required 7 advancements, a notification will pop up, proudly announcing **your new power to jump**:
+Once you’ve completed the required advancements (7 in the illustrated configuration), a notification will pop up, proudly announcing **your new power to jump**:
 
 ![Replace this with a description](https://cdn.modrinth.com/data/DTTu3Q4G/images/3fd02a0562dfcf894a15f4a5286c44e8b7608c56.png)
 
@@ -98,6 +100,26 @@ This makes it easy to create all kinds of custom challenges or special gameplay 
 - The "Goat Simulator" advancement is buggy in vanilla Minecraft, use [MC-264204 Fix](https://modrinth.com/mod/mc+264204-fix) to solve it.
 
 </details>
+
+## Building and verification
+
+Use Java 25 and the checked-in Gradle wrapper from the repository root. On Windows PowerShell:
+
+```powershell
+$env:JAVA_HOME = 'C:\Program Files\Eclipse Adoptium\jdk-25.0.4.7-hotspot'
+$env:GRADLE_USER_HOME = Join-Path (Get-Location) '.gradle-user-home'
+$env:TEMP = Join-Path (Get-Location) 'build/tmp/codex_java_uds_probe'
+$env:TMP = $env:TEMP
+New-Item -ItemType Directory -Force -Path $env:TEMP | Out-Null
+.\gradlew.bat --no-daemon compileJava compileTestJava compileGametestJava
+.\gradlew.bat --no-daemon test --rerun-tasks
+```
+
+The default `test` task is the current standard verification entrypoint; the released 0.1.5.5 baseline is 435 tests with zero failures, errors or skips. Local Phase B fixtures require the established ignored acquisition/cache inputs, including earlier converted-source metadata, acquired pack archives and resolved Minecraft assets. Those prerequisites are not supplied by a fresh checkout, and fixture acquisition has not been redesigned.
+
+Use `.\gradlew.bat --no-daemon assemble` to package after verification. The existing same-version archive guard rejects overwriting a release archive; preserve certified artifacts before packaging.
+
+Contributor references: [Minecraft 26.2 mixin rationale](docs/compatibility/mixin-26.2-map.md) and [historical 0.1.5.4 reproduction](docs/history/reproduction-0.1.5.4.md). Retained Phase A/B stage CLIs and the archived publication route describe historical checkpoints; they are not the current supported verification flow.
 
 ## Acknowledgments
 

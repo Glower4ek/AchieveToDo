@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedCertificationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:48:31.952Z" hostname="LAPTOP-L0LPH8GP" time="0.607">
-  <properties/>
-  <testcase name="itemTagInventoryChangedSnapshotMatchesGeneratedArtifacts()" classname="com.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedCertificationTest" time="0.276"/>
-  <testcase name="itemTagInventoryChangedCatalogMatchesExpectedSemanticFrontier()" classname="com.diskree.achievetodo.certification.PhaseAItemTagInventoryChangedCertificationTest" time="0.329"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

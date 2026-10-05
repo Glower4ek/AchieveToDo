@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.Final19CombatAcceptanceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-01T08:11:04.428Z" hostname="LAPTOP-L0LPH8GP" time="0.532">
-  <properties/>
-  <testcase name="freshRaiderExactHasCaptainKillAndAllFourNativeNegativeControls()" classname="com.diskree.achievetodo.certification.Final19CombatAcceptanceTest" time="0.152"/>
-  <testcase name="fakeRaiderControlsAndStaleReceiptsAreRejected()" classname="com.diskree.achievetodo.certification.Final19CombatAcceptanceTest" time="0.377"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

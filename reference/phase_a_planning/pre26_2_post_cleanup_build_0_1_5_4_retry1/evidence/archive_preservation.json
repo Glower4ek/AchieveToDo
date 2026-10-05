@@ -1,9 +1,0 @@
-{
-  "reason": "Existing smoke-candidate guard requires an absent destination for same-version fresh rebuild",
-  "source": "D:\\Vibecode\\AchieveToDo 26.2\\build\\libs\\achievetodo-mc26.2+0.1.5.4.jar",
-  "sha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b",
-  "secondaryAcceptedCopySha256": "0fc29fd0fbe1d874ca037ba2bd932f4e667593d95a1f2d3bb42936765710978b",
-  "destination": "D:\\Vibecode\\AchieveToDo 26.2\\build\\tmp\\pre26_2_post_cleanup_build_0_1_5_4_retry1\\accepted_pre_clean_guard_saved.jar",
-  "bytes": 1546595,
-  "operation": "Nonrecursive move of accepted build output to in-workspace backup; bytes preserved; no source/build configuration changes or guard bypass"
-}

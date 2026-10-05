@@ -1,6 +1,0 @@
-[
-  "--no-daemon",
-  "compileJava",
-  "compileTestJava",
-  "compileGametestJava"
-]

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.diskree.achievetodo.certification.PhaseASingletonDiagonAllayCertificationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-01T14:37:35.992Z" hostname="LAPTOP-L0LPH8GP" time="3.156">
-  <properties/>
-  <testcase name="frozenAllayPotionPickupCatalogMatchesExactly()" classname="com.diskree.achievetodo.certification.PhaseASingletonDiagonAllayCertificationTest" time="0.005"/>
-  <testcase name="persistentAllayDeliveryReceiptCoversOnlyTheFrozenCriterion()" classname="com.diskree.achievetodo.certification.PhaseASingletonDiagonAllayCertificationTest" time="0.006"/>
-  <testcase name="persistentAllayReceiptChangesOnlyItsOwnStatus()" classname="com.diskree.achievetodo.certification.PhaseASingletonDiagonAllayCertificationTest" time="3.143"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
