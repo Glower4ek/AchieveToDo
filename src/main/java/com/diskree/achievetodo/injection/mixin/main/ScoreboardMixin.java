@@ -7,9 +7,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.server.ServerScoreboard;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.players.PlayerList;
 import net.minecraft.world.scores.Objective;
-import net.minecraft.world.scores.PlayerTeam;
 import net.minecraft.world.scores.Score;
 import net.minecraft.world.scores.ScoreHolder;
 import net.minecraft.world.scores.Scoreboard;
@@ -47,22 +45,11 @@ public class ScoreboardMixin {
                 String objectiveName = objective.getName();
                 AdvancementsMode advancementsMode = AchieveToDoMod.getServer().currentAdvancementsMode;
                 if (advancementsMode != null &&
-                    advancementsMode == AdvancementsMode.findByObjectiveName(objectiveName)
+                    objective == AchieveToDoMod.getServer().currentScoreboardObjective
                 ) {
-                    if (advancementsMode.isTeamsMode()) {
-                        PlayerTeam team = scoreboard.getPlayersTeam(scoreHolder.getScoreboardName());
-                        if (team != null) {
-                            PlayerList playerManager = serverScoreboard.server.getPlayerList();
-                            for (String playerName : team.getPlayers()) {
-                                ServerPlayer serverPlayer = playerManager.getPlayerByName(playerName);
-                                if (serverPlayer != null) {
-                                    AchieveToDoMod.getServer().setObtainedCount(serverPlayer, score);
-                                }
-                            }
-                        }
-                    } else if (scoreHolder instanceof ServerPlayer serverPlayer) {
-                        AchieveToDoMod.getServer().setObtainedCount(serverPlayer, score);
-                    }
+                    AchieveToDoMod.getServer().reconcileScoreHolder(
+                        serverScoreboard, scoreHolder.getScoreboardName()
+                    );
                 } else if (scoreHolder instanceof ServerPlayer serverPlayer) {
                     Set<TrackedScoreType> progressTypes = TrackedScoreType.findByObjectiveName(objectiveName);
                     if (progressTypes != null) {

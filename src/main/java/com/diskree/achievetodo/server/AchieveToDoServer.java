@@ -470,6 +470,10 @@ public class AchieveToDoServer implements ServerModInitializer {
         ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resources, success) -> {
             if (success) {
                 scoreboardInitializationComplete = false;
+                prepareScoreboard(server.getScoreboard());
+                for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+                    updateObtainedCount(server.getScoreboard(), player);
+                }
             }
         });
 
@@ -553,18 +557,13 @@ public class AchieveToDoServer implements ServerModInitializer {
         }
     }
 
-    private void updateObtainedCount(ServerScoreboard scoreboard, @NotNull ServerPlayer player) {
-        if (isNotReady()) {
-            return;
-        }
-        int count = 0;
-        String playerName = player.getScoreboardName();
+    private int computeCurrentObtainedCount(Scoreboard scoreboard, String playerName) {
         if (currentAdvancementsMode.isTeamsMode()) {
             PlayerTeam team = scoreboard.getPlayersTeam(playerName);
             if (team == null) {
-                AchieveToDoMod.logger.warn("Player [{}] is not a member of any team!", playerName);
-                return;
+                return 0;
             }
+            int count = 0;
             for (String teamMemberName : team.getPlayers()) {
                 ReadOnlyScoreInfo teamMemberScore = scoreboard.getPlayerScoreInfo(
                     ScoreHolder.forNameOnly(teamMemberName),
@@ -574,16 +573,56 @@ public class AchieveToDoServer implements ServerModInitializer {
                     count += teamMemberScore.value();
                 }
             }
-        } else {
-            ReadOnlyScoreInfo playerScore = scoreboard.getPlayerScoreInfo(
-                ScoreHolder.forNameOnly(playerName),
-                currentScoreboardObjective
-            );
-            if (playerScore != null) {
-                count = playerScore.value();
+            return count;
+        }
+        ReadOnlyScoreInfo playerScore = scoreboard.getPlayerScoreInfo(
+            ScoreHolder.forNameOnly(playerName),
+            currentScoreboardObjective
+        );
+        return playerScore == null ? 0 : playerScore.value();
+    }
+
+    private void reconcileObtainedCount(ServerScoreboard scoreboard, @NotNull ServerPlayer player) {
+        if (isNotReady()) {
+            return;
+        }
+        setObtainedCount(player, computeCurrentObtainedCount(scoreboard, player.getScoreboardName()));
+    }
+
+    private void updateObtainedCount(ServerScoreboard scoreboard, @NotNull ServerPlayer player) {
+        reconcileObtainedCount(scoreboard, player);
+    }
+
+    public void reconcileScoreHolder(ServerScoreboard scoreboard, String holderName) {
+        if (isNotReady()) {
+            return;
+        }
+        Set<String> affectedNames = new HashSet<>();
+        affectedNames.add(holderName);
+        if (currentAdvancementsMode.isTeamsMode()) {
+            PlayerTeam team = scoreboard.getPlayersTeam(holderName);
+            if (team != null) {
+                affectedNames.addAll(team.getPlayers());
             }
         }
-        setObtainedCount(player, count);
+        reconcilePlayers(scoreboard, affectedNames);
+    }
+
+    public void reconcileTeamMembers(ServerScoreboard scoreboard, PlayerTeam team) {
+        if (isNotReady() || !currentAdvancementsMode.isTeamsMode()) {
+            return;
+        }
+        reconcilePlayers(scoreboard, new HashSet<>(team.getPlayers()));
+    }
+
+    private void reconcilePlayers(ServerScoreboard scoreboard, Set<String> playerNames) {
+        PlayerList playerList = scoreboard.server.getPlayerList();
+        for (String playerName : playerNames) {
+            ServerPlayer player = playerList.getPlayerByName(playerName);
+            if (player != null) {
+                reconcileObtainedCount(scoreboard, player);
+            }
+        }
     }
 
     private void syncPlayer(@NotNull net.minecraft.server.MinecraftServer server, @NotNull ServerPlayer player) {
