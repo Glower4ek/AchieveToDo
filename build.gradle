@@ -1,8 +1,32 @@
+// CACHE-BASELINE-LIMITED selected bytes, not publisher-origin authentication.
+// This supplementary check's ordering relative to plugin resolution is UNPROVED.
+// A later authorized Gradle lifecycle/tamper audit is required.
+buildscript {
+    if (gradle.startParameter.dependencyVerificationMode.toString() != 'STRICT') {
+        throw new GradleException('Strict dependency verification required')
+    }
+    def python = System.getenv('ACHIEVETODO_PYTHON')
+    if (!python) throw new GradleException('Explicit ACHIEVETODO_PYTHON executable required')
+    def verifierFile = new File(projectDir, 'tools/build/verify_inputs.py')
+    def manifestFile = new File(projectDir, 'src/test/resources/build_inputs/manifest.json')
+    if (java.security.MessageDigest.getInstance('SHA-256').digest(verifierFile.bytes).encodeHex().toString() != '92617b59c39cf94f708f895d81a3b2c763b0d7434271716cadb6315b5bf392ce' ||
+        java.security.MessageDigest.getInstance('SHA-256').digest(manifestFile.bytes).encodeHex().toString() != '1dbe9d7cd2fe653454f8692b7cdf5e54787c3df74eb12461c01164b99190ac77') {
+        throw new GradleException('Verifier/manifest byte identity mismatch')
+    }
+    def verifier = new ProcessBuilder(python, '-B', '-X', 'utf8', verifierFile.absolutePath,
+        '--dependencies', '--source-root', projectDir.absolutePath,
+        '--gradle-user-home', gradle.gradleUserHomeDir.absolutePath)
+        .directory(projectDir).redirectErrorStream(true).start()
+    def output = verifier.inputStream.getText('UTF-8')
+    if (verifier.waitFor() != 0) throw new GradleException(output)
+    logger.lifecycle(output.trim())
+}
+
 plugins {
     id 'net.fabricmc.fabric-loom' version "${loomVersion}"
 }
 
-def modId = project.modName.toLowerCase()
+def modId = project.modName.toLowerCase(Locale.ROOT)
 def repoUrl = project.repoUrl
 
 version = "mc${minMinecraftVersion}+${modVersion}"
@@ -45,10 +69,12 @@ processResources {
     }
 }
 
+def generatedBuildConfigDir = layout.buildDirectory.dir('generated/sources/buildConfig/java/main')
 sourceSets {
     main {
         resources.srcDirs += ['src/main/generated']
-        java.srcDirs += ['src/main/generated/java']
+        resources.exclude('.cache/**', 'java/**')
+        java.srcDir(generatedBuildConfigDir)
     }
 }
 
@@ -59,6 +85,40 @@ tasks.withType(JavaCompile).configureEach {
 
 tasks.withType(Test).configureEach {
     useJUnitPlatform()
+}
+
+def verifyCleanSourceInputs = tasks.register('verifyCleanSourceInputs', Exec) {
+    inputs.file('src/test/resources/build_inputs/manifest.json')
+    commandLine System.getenv('ACHIEVETODO_PYTHON'), '-B', '-X', 'utf8',
+        file('tools/build/verify_inputs.py').absolutePath,
+        '--external-root', System.getenv('ACHIEVETODO_TEST_INPUTS_DIR') ?: ''
+}
+tasks.withType(Test).configureEach {
+    dependsOn verifyCleanSourceInputs
+    inputs.files(loom.namedMinecraftJars)
+    inputs.file('src/test/resources/build_inputs/manifest.json')
+    outputs.upToDateWhen { false }
+    environment 'ACHIEVETODO_TEST_INPUTS_DIR', System.getenv('ACHIEVETODO_TEST_INPUTS_DIR') ?: ''
+    systemProperty 'achievetodo.python', System.getenv('ACHIEVETODO_PYTHON')
+    doFirst {
+        // Resolve task/provider values; do not execute asset download/acquisition.
+        def assetTask = tasks.named('downloadAssets').get()
+        def assetIndex = loom.minecraftProvider.versionInfo.assetIndex()
+        def assetsRoot = assetTask.assetsDirectory.get().asFile
+        def indexFile = new File(assetsRoot, "indexes/${assetIndex.fabricId(minMinecraftVersion)}.json")
+        def indexBytes = indexFile.bytes
+        if (indexBytes.length != assetIndex.size() || java.security.MessageDigest.getInstance('SHA-1').digest(indexBytes).encodeHex().toString() != assetIndex.sha1()) {
+            throw new GradleException('Vanilla asset index identity mismatch')
+        }
+        def object = new groovy.json.JsonSlurper().parse(indexFile, 'UTF-8').objects['minecraft/lang/ru_ru.json']
+        def ruFile = new File(assetsRoot, "objects/${object.hash.substring(0,2)}/${object.hash}")
+        if (ruFile.length() != object.size || java.security.MessageDigest.getInstance('SHA-1').digest(ruFile.bytes).encodeHex().toString() != object.hash) {
+            throw new GradleException('Vanilla RU asset identity mismatch')
+        }
+        systemProperty 'achievetodo.minecraftJar', loom.namedMinecraftJars.singleFile.absolutePath
+        systemProperty 'achievetodo.vanillaRu', ruFile.absolutePath
+        systemProperty 'achievetodo.vanillaRuSha1', object.hash
+    }
 }
 
 fabricApi {
@@ -336,21 +396,25 @@ tasks.register('promotePhaseAFishingRodHookedExecutionEvidence', JavaExec) {
 }
 
 tasks.register('generateBuildConfig', DefaultTask) {
+    inputs.file(layout.projectDirectory.file('gradle/BuildConfig.java.txt'))
+    inputs.properties([javaNamespace: javaNamespace, modId: modId, modName: modName, modVersion: modVersion])
+    outputs.dir(generatedBuildConfigDir)
     doLast {
         def templateFile = file("$projectDir/gradle/BuildConfig.java.txt")
         def namespacePath = project.javaNamespace.replace('.', '/')
-        def configFile = file("$projectDir/src/main/generated/java/${namespacePath}/${modId}/BuildConfig.java")
+        def configFile = generatedBuildConfigDir.get().file("${namespacePath}/${modId}/BuildConfig.java").asFile
         configFile.getParentFile().mkdirs()
 
-        configFile.text = templateFile.text
+        configFile.setText(templateFile.getText('UTF-8')
             .replace('${javaNamespace}', javaNamespace)
             .replace('${modId}', modId)
             .replace('${modName}', modName)
-            .replace('${modVersion}', modVersion)
+            .replace('${modVersion}', modVersion), 'UTF-8')
     }
 }
 
 java {
+    toolchain.languageVersion = JavaLanguageVersion.of(minJavaVersion.toInteger())
     sourceCompatibility = targetCompatibility = minJavaVersion.toInteger()
 }
 

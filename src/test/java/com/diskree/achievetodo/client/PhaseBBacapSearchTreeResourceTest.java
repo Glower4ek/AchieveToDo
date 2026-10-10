@@ -25,7 +25,9 @@ class PhaseBBacapSearchTreeResourceTest {
         return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(p)));
     }
     private static void exactHashes(JsonObject hashes) throws Exception {
-        for (var e : hashes.entrySet()) assertEquals(e.getValue().getAsString(), hash(ROOT.resolve(e.getKey())), e.getKey());
+        PhaseBPackTestFixtures.assertCurrentToolAuthority();
+        for (var e : hashes.entrySet()) assertEquals(e.getValue().getAsString(), (e.getKey().equals("tools/phase_b/b7_localization_certification.py")
+            ? PhaseBPackTestFixtures.hash(PhaseBPackTestFixtures.historicalToolBytes(), "SHA-256") : hash(ROOT.resolve(e.getKey()))), e.getKey());
     }
 
     @Test void orderedTreeKeepsThreeMapsAnd27Entries() throws Exception {

@@ -22,6 +22,45 @@ public final class PhaseBPackTestFixtures {
 
     private PhaseBPackTestFixtures() {}
 
+    private static String exactReplacement(String text, String old, String replacement) {
+        int first = text.indexOf(old);
+        assertTrue(first >= 0 && text.indexOf(old, first + old.length()) < 0, "Ambiguous historical-tool inverse delta");
+        return text.substring(0, first) + replacement + text.substring(first + old.length());
+    }
+
+    public static byte[] historicalToolBytes() throws Exception {
+        String text = Files.readString(Path.of("tools/phase_b/b7_localization_certification.py"), StandardCharsets.UTF_8);
+        text = exactReplacement(text, "with zipfile.ZipFile(b6temp/'bacap-rus-translate.zip') as z:", "with zipfile.ZipFile(b6temp/'rus_BACAP_26.2.zip') as z:");
+        text = exactReplacement(text, "with zipfile.ZipFile(b6temp/(prefix+'.zip')) as z:", "with zipfile.ZipFile(b6temp/acquisition['filename']) as z:");
+        text = exactReplacement(text, "archive = (b6temp/(prefix+'.zip')).read_bytes()", "archive = (b6temp/acquisition['filename']).read_bytes()");
+        text = exactReplacement(text, "    # Explicit current input root; historical CLI callers must supply it too.\n    import os\n    b6temp = pathlib.Path(input_root or os.environ['ACHIEVETODO_TEST_INPUTS_DIR'])", "    b6temp = ROOT/'build/tmp/phase_b_b6'");
+        text = exactReplacement(text, "def provenance_certification(ru, changed, requirements, input_root=None):", "def provenance_certification(ru, changed, requirements):");
+        byte[] bytes = text.getBytes(StandardCharsets.UTF_8);
+        assertEquals("032c866f0eca68dbf7508c86034f00d6a06bf52f98e43efdee2c52e7fbc5a732", hash(bytes, "SHA-256"));
+        return bytes;
+    }
+
+    public static JsonObject inputManifest() throws Exception {
+        byte[] bytes = Files.readAllBytes(Path.of("src/test/resources/build_inputs/manifest.json"));
+        assertEquals("1dbe9d7cd2fe653454f8692b7cdf5e54787c3df74eb12461c01164b99190ac77", hash(bytes, "SHA-256"));
+        return JsonParser.parseString(new String(bytes, StandardCharsets.UTF_8)).getAsJsonObject();
+    }
+
+    public static void assertCurrentToolAuthority() throws Exception {
+        String path = "tools/phase_b/b7_localization_certification.py";
+        for (var value : inputManifest().getAsJsonArray("sourceFiles")) {
+            var row = value.getAsJsonObject();
+            if (row.get("path").getAsString().equals(path)) {
+                byte[] bytes = Files.readAllBytes(Path.of(path));
+                assertEquals(row.get("size").getAsInt(), bytes.length);
+                assertEquals(row.get("SHA256").getAsString(), hash(bytes, "SHA-256"));
+                return;
+            }
+        }
+        fail("Missing current extractor authority");
+    }
+
+
     public static String hash(byte[] bytes, String algorithm) throws Exception {
         return HexFormat.of().formatHex(MessageDigest.getInstance(algorithm).digest(bytes));
     }
@@ -115,20 +154,27 @@ public final class PhaseBPackTestFixtures {
      * not its historical Git-state precheck or a saved result as the actual value. */
     public static synchronized JsonObject currentLocalization() throws Exception {
         if (localization != null) return localization;
-        Path dir = Path.of("build/tmp/phase_b_b16a1/current-localization"); Files.createDirectories(dir);
+        Path dir = Path.of("build/tmp/current-test-inputs/localization"); Files.createDirectories(dir);
+        historicalToolBytes(); assertCurrentToolAuthority();
+        String suppliedRoot = System.getenv("ACHIEVETODO_TEST_INPUTS_DIR");
+        assertNotNull(suppliedRoot, "Explicit external fixture directory required");
+        Path external = Path.of(suppliedRoot);
         JsonObject paths = new JsonObject();
         var acquisition = json(Path.of("reference/phase_b/b5_7_structural_reconciliation.json"))
             .getAsJsonObject("acquisition").getAsJsonObject("archiveIdentityValidation");
-        for (var x : JsonParser.parseString(Files.readString(Path.of("build/tmp/phase_b_b5_6/converted_sources.json"))).getAsJsonArray()) {
+        for (var x : inputManifest().getAsJsonArray("packSources")) {
             var row = x.getAsJsonObject(); String name = row.get("enum").getAsString();
             ExternalPack pack = ExternalPack.valueOf(name);
-            Path input = name.equals("BACAP") ? current() : Path.of(row.get("source").getAsString());
+            Path input = row.get("authority").getAsString().equals("external")
+                ? external.resolve(row.get("path").getAsString()) : Path.of(row.get("path").getAsString());
+            if (name.equals("BACAP")) assertEquals(current(), input);
             byte[] bytes = Files.readAllBytes(input);
-            assertEquals(row.get("sourceSha256").getAsString(), hash(bytes, "SHA-256"));
+            assertEquals(row.get("size").getAsInt(), bytes.length);
+            assertEquals(row.get("SHA256").getAsString(), hash(bytes, "SHA-256"));
             assertEquals(pack.getSha1(), hash(bytes, "SHA-1"));
             if (!name.equals("BACAP")) {
-                String relative = Path.of("").toAbsolutePath().relativize(input).toString().replace('\\', '/');
-                assertEquals(row.get("sourceSha256").getAsString(), acquisition.getAsJsonObject(relative).get("sha256").getAsString());
+                String relative = row.get("historicalAcquisitionKey").getAsString();
+                assertEquals(row.get("SHA256").getAsString(), acquisition.getAsJsonObject(relative).get("sha256").getAsString());
             }
             Path output = dir.resolve(name + ".zip");
             ExternalPackCompatibility.copyForWorld(input, output, pack);
@@ -140,8 +186,12 @@ public final class PhaseBPackTestFixtures {
             import importlib.util,json,pathlib,sys,collections,hashlib,zipfile
             p=pathlib.Path('tools/phase_b/b7_localization_certification.py')
             authority=json.loads(pathlib.Path('reference/phase_b/b7_m2_current_consumer_set_refresh.json').read_bytes())
-            assert hashlib.sha256(p.read_bytes()).hexdigest()==authority['tool']['afterSha256']
+            current=json.loads(pathlib.Path('src/test/resources/build_inputs/manifest.json').read_bytes())
+            row=next(r for r in current['sourceFiles'] if r['path']==p.as_posix())
+            assert len(p.read_bytes())==row['size'] and hashlib.sha256(p.read_bytes()).hexdigest()==row['SHA256']
+            assert authority['tool']['afterSha256']=='032c866f0eca68dbf7508c86034f00d6a06bf52f98e43efdee2c52e7fbc5a732'
             spec=importlib.util.spec_from_file_location('b7',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+            supplied_root=pathlib.Path(sys.argv[5])
             paths=json.loads(pathlib.Path(sys.argv[1]).read_bytes())
             converted={k:m.pack_zip(pathlib.Path(v),k) for k,v in paths.items()}
             ru=m.strict_dictionary((m.ROOT/m.RU_PATH).read_bytes())
@@ -149,10 +199,8 @@ public final class PhaseBPackTestFixtures {
             en=m.strict_dictionary(pathlib.Path('src/main/resources/assets/achievetodo/lang/en_us.json').read_bytes())
             atd=m.strict_dictionary(pathlib.Path('src/main/resources/assets/achievetodo/lang/ru_ru.json').read_bytes())
             assert set(en)==set(atd)
-            index=m.load(m.ROOT/'.gradle-user-home/caches/fabric-loom/assets/indexes/26.2-32.json')
-            vid=index['objects']['minecraft/lang/ru_ru.json']['hash'];vpath=m.ROOT/'.gradle-user-home/caches/fabric-loom/assets/objects'/vid[:2]/vid
-            vb=vpath.read_bytes();assert hashlib.sha1(vb).hexdigest()==vid;vr=m.strict_dictionary(vb)
-            mc=m.ROOT/'.gradle/loom-cache/minecraftMaven/net/minecraft/minecraft-merged-84afe0508c/26.2/minecraft-merged-84afe0508c-26.2.jar'
+            vpath=pathlib.Path(sys.argv[3]);vb=vpath.read_bytes();assert hashlib.sha1(vb).hexdigest()==sys.argv[4];vr=m.strict_dictionary(vb)
+            mc=pathlib.Path(sys.argv[2])
             vanilla=m.pack_zip(mc,'VANILLA')
             with zipfile.ZipFile(mc) as z: ve=m.strict_dictionary(z.read('assets/minecraft/lang/en_us.json'))
             definitions={'main':['BACAP','bacap_override'],'hardcore':['BACAP','bacap_override','BACAP_HARDCORE','bacap_hardcore_override'],'terralith':['BACAP','bacap_override','TERRALITH','BACAP_TERRALITH','bacap_terralith_override'],'amplifiedNether':['BACAP','bacap_override','AMPLIFIED_NETHER','BACAP_AMPLIFIED_NETHER','bacap_amplified_nether_override'],'nullscape':['BACAP','bacap_override','NULLSCAPE','BACAP_NULLSCAPE','bacap_nullscape_override']}
@@ -177,14 +225,16 @@ public final class PhaseBPackTestFixtures {
                 checked+=1
                 if m.formats(english)!=m.formats(value):mismatches.append(k)
             changed=sorted(k for k in ru if k not in old or ru[k]!=old[k])
-            provenance=m.provenance_certification(ru,changed,rows)
+            provenance=m.provenance_certification(ru,changed,rows,supplied_root)
             coverage={v:{'required':len(keys),'resolved':sum(provider(k)!='MISSING' for k in keys),'missing':sorted(k for k in keys if provider(k)=='MISSING')} for v,keys in views.items()}
             handoff=m.load(m.PHASE/'b4_localization_handoff.json')
             selected={k:provider(k) for k in handoff['selectedCompanionKeys']}
             print(json.dumps({'totalRequirements':len(union),'providerCounts':counts,'effectiveCoverage':coverage,'placeholderChecked':checked,'placeholderMismatches':mismatches,'dictionaryCount':len(ru),'provenance':provenance,'requirements':rows,'selectedCompanionCoverage':selected,'advancementIds':sorted(ids)},ensure_ascii=False))
             """;
         Path log = dir.resolve("calculation.json"), err = dir.resolve("calculation.stderr");
-        var process = new ProcessBuilder("python", "-B", "-X", "utf8", "-c", script, inputs.toString())
+        var process = new ProcessBuilder(System.getProperty("achievetodo.python"), "-B", "-X", "utf8", "-c", script, inputs.toString(),
+                System.getProperty("achievetodo.minecraftJar"), System.getProperty("achievetodo.vanillaRu"),
+                System.getProperty("achievetodo.vanillaRuSha1"), suppliedRoot)
             .redirectOutput(log.toFile()).redirectError(err.toFile()).start();
         assertEquals(0, process.waitFor(), () -> { try { return Files.readString(err); } catch (Exception e) { return e.toString(); } });
         localization = json(log);

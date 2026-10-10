@@ -25,7 +25,8 @@ class PhaseBNativeBacapCompatibilityTest {
         return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(p)));
     }
     private static void exactHashes(JsonObject hashes) throws Exception {
-        for (var e : hashes.entrySet()) assertEquals(e.getValue().getAsString(), hash(ROOT.resolve(e.getKey())), e.getKey());
+        for (var e : hashes.entrySet()) assertEquals(e.getValue().getAsString(), (e.getKey().equals("tools/phase_b/b7_localization_certification.py")
+            ? PhaseBPackTestFixtures.hash(PhaseBPackTestFixtures.historicalToolBytes(), "SHA-256") : hash(ROOT.resolve(e.getKey()))), e.getKey());
     }
 
     private static String transform(String name, String input) throws Exception {
@@ -78,7 +79,7 @@ class PhaseBNativeBacapCompatibilityTest {
         assertTrue(b(h,"markerRecordsActualSource"));assertTrue(b(c,"rawCurrent"));assertTrue(b(c,"derivedCurrent"));
         assertTrue(b(m,"oldR18Rejected"));assertTrue(b(m,"malformedR17Rejected"));
         assertFalse(ExternalPackCompatibility.isCurrentWorldPack(ROOT.resolve("reference/phase_a_preservation/files/final/bacap.zip"),ExternalPack.BACAP));
-        assertTrue(ExternalPackCompatibility.isCurrentWorldPack(ROOT.resolve("build/tmp/phase_b_b1/BlazeandCave's Advancements Pack 1.21.zip"),ExternalPack.BACAP));
+        assertTrue(ExternalPackCompatibility.isCurrentWorldPack(PhaseBPackTestFixtures.current(),ExternalPack.BACAP));
         for(var value:probe().getAsJsonArray("companions")){
             var row=value.getAsJsonObject();assertTrue(b(row,"rawCurrent"));assertTrue(b(row,"derivedCurrent"));assertTrue(b(row,"markerRecordsActualSource"));assertTrue(b(row,"oldR18Rejected"));
         }
@@ -109,7 +110,8 @@ class PhaseBNativeBacapCompatibilityTest {
         var r=receipt();var current=r.getAsJsonObject("B7Current");var historical=r.getAsJsonObject("B7Historical");
         assertEquals(4301,n(current,"requirements"));assertEquals(4290,n(current,"placeholders"));assertEquals(3432,n(current.getAsJsonObject("providers"),"MINECRAFT_RU_OVERLAY"));
         assertEquals(4304,n(historical,"requirements"));assertEquals(4293,n(historical,"placeholders"));
-        assertEquals(current.get("toolHash").getAsString(),hash(ROOT.resolve("tools/phase_b/b7_localization_certification.py")));
+        assertEquals(current.get("toolHash").getAsString(), PhaseBPackTestFixtures.hash(PhaseBPackTestFixtures.historicalToolBytes(), "SHA-256"));
+        PhaseBPackTestFixtures.assertCurrentToolAuthority();
     }
     @Test void currentB8ReceiptAndToolAuthoritiesRemainExact() throws Exception {
         var lock=receipt().getAsJsonObject("B8Lock");

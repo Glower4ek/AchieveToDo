@@ -1,0 +1,827 @@
+<?xml version='1.0' encoding='utf8'?>
+<verification-metadata xmlns="https://schema.gradle.org/dependency-verification">
+  <configuration>
+    <verify-metadata>false</verify-metadata>
+    <verify-signatures>false</verify-signatures>
+  </configuration>
+  <components>
+    <component group="at.yawk.lz4" name="lz4-java" version="1.10.1">
+      <artifact name="lz4-java-1.10.1.jar">
+        <sha256 value="a58a84c4271e50df4c96ed916ccb7e48a869f8ed9cdcda1ad5d3d4c33b0214a3" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.azure" name="azure-json" version="1.4.0">
+      <artifact name="azure-json-1.4.0.jar">
+        <sha256 value="c50bc998cd1a6c689f8644b51c206217bf2da09d5b949e777490a60290cc3a0d" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.github.oshi" name="oshi-core" version="6.9.0">
+      <artifact name="oshi-core-6.9.0.jar">
+        <sha256 value="b29ba9bce041e6ea822203d5b5a692660c87551241510ebc76eedffe684844c7" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.google.code.gson" name="gson" version="2.14.0">
+      <artifact name="gson-2.14.0.jar">
+        <sha256 value="2cbd119bf1961c28788310963dc80ba65f58cdeec1dd139c8bdb1240faa2c36f" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.google.code.gson" name="gson" version="2.8.1">
+      <artifact name="gson-2.8.1.jar">
+        <sha256 value="4f65e7dca6528d644031c43d159f1614f2ed58db7daf75f1e91a9fc1b57818d4" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.google.errorprone" name="error_prone_annotations" version="2.48.0">
+      <artifact name="error_prone_annotations-2.48.0.jar">
+        <sha256 value="b49c5c958316ed67a09c699dda9aa749caf434d51d863dea599ef36a49b9c855" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.google.guava" name="failureaccess" version="1.0.3">
+      <artifact name="failureaccess-1.0.3.jar">
+        <sha256 value="cbfc3906b19b8f55dd7cfd6dfe0aa4532e834250d7f080bd8d211a3e246b59cb" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.google.guava" name="guava" version="33.6.0-jre">
+      <artifact name="guava-33.6.0-jre.jar">
+        <sha256 value="dc573e1fca4fd5454f4a5fd3d7da2df03002876a4175bafc14a95980dd7713b3" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.ibm.icu" name="icu4j" version="78.3">
+      <artifact name="icu4j-78.3.jar">
+        <sha256 value="e962c1758d9659ea1e1fbab99c58683f654d304e1126ace19aaabfe39e0edb25" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.microsoft.azure" name="msal4j" version="1.24.1">
+      <artifact name="msal4j-1.24.1.jar">
+        <sha256 value="12e62f79d1a71d176a41c168c0587f8167f0add99b78f006f39595bd7242aebe" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.moandjiezana.toml" name="toml4j" version="0.7.2">
+      <artifact name="toml4j-0.7.2.jar">
+        <sha256 value="f5475e63e7e89e5db62223489aec7a56bd303543772077a17c2cb54c19ca3a20" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.mojang" name="authlib" version="9.0.75">
+      <artifact name="authlib-9.0.75.jar">
+        <sha256 value="1f77e70240548b9cd233da0e12938bbbe5597ac9e94f6c6b07577faf1461a951" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.mojang" name="blocklist" version="1.0.10">
+      <artifact name="blocklist-1.0.10.jar">
+        <sha256 value="830bfd639c8db49236bbd8e45d3a2b8c96c56ff654a10118654958a6235d4c44" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.mojang" name="brigadier" version="1.3.10">
+      <artifact name="brigadier-1.3.10.jar">
+        <sha256 value="c8ee4136e474ac7723ca2b432ec8d1a2bc88ef7d1ec57c314ba9e33cdc83dd75" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.mojang" name="datafixerupper" version="10.0.21">
+      <artifact name="datafixerupper-10.0.21.jar">
+        <sha256 value="3547cb1da8993fb7ebd42494d0e78997d2cfbe90c421f5efd022863e6909941e" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.mojang" name="jtracy" version="1.0.37">
+      <artifact name="jtracy-1.0.37-natives-windows.jar">
+        <sha256 value="219c2aab0f1453901df8cd39886659dc5159a9c1139264c14f06baebf49b9730" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="jtracy-1.0.37.jar">
+        <sha256 value="8bb68d0b65e8eceb92de2bd1d9e1443a8c9a9dd1b5818a5e54870b0f8253672a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.mojang" name="logging" version="1.7.12">
+      <artifact name="logging-1.7.12.jar">
+        <sha256 value="3c7ac9742fa98c773275379eb1046c048b5d2ee989152a8c69e7ba696c3f8538" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.mojang" name="patchy" version="2.2.10">
+      <artifact name="patchy-2.2.10.jar">
+        <sha256 value="16d70e7968b45caffc81576268eb000f473fb60bf257182d3447dea8ec919d5a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="com.mojang" name="text2speech" version="1.19.12">
+      <artifact name="text2speech-1.19.12.jar">
+        <sha256 value="63769a6f662ad8943adf6be14a45e375d76a567d7ba50c2a7f1f95082c93b816" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="commons-codec" name="commons-codec" version="1.22.0">
+      <artifact name="commons-codec-1.22.0.jar">
+        <sha256 value="d164fe79f262c32d9b18a0b5b2d317d1c27653d5e98fd2b998c24bf901c72ce4" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="commons-io" name="commons-io" version="2.20.0">
+      <artifact name="commons-io-2.20.0.jar">
+        <sha256 value="df90bba0fe3cb586b7f164e78fe8f8f4da3f2dd5c27fa645f888100ccc25dd72" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.github.llamalad7" name="mixinextras-fabric" version="0.5.5">
+      <artifact name="mixinextras-fabric-0.5.5.jar">
+        <sha256 value="5da883dc4bfb16e4ceca3f16d8c4ad937bdfb1ce337ed5ba15472d4d81dd6242" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-buffer" version="4.2.15.Final">
+      <artifact name="netty-buffer-4.2.15.Final.jar">
+        <sha256 value="1361fd9c9ba85b9831cf54a1b2e45ddc3ce34a768931726c099d3f5ef0efe4a3" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-codec-base" version="4.2.15.Final">
+      <artifact name="netty-codec-base-4.2.15.Final.jar">
+        <sha256 value="2c6d39d7270628b8cfc3166fbd7a93d595958e59c461bc32ddb383c8c91bf811" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-codec-compression" version="4.2.15.Final">
+      <artifact name="netty-codec-compression-4.2.15.Final.jar">
+        <sha256 value="4adaa5cdd4d2e9b50b23e4c3eff42e73de6eb40848718b3aa84cd5b454da6ce8" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-codec-http" version="4.2.15.Final">
+      <artifact name="netty-codec-http-4.2.15.Final.jar">
+        <sha256 value="76ae57e87af37b3c4107140f50b9244b1456163a6a225510838f7c5a4458ec22" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-common" version="4.2.15.Final">
+      <artifact name="netty-common-4.2.15.Final.jar">
+        <sha256 value="78206aa7f6d197caa926291408c01889b6b910ca0f74017d3fcbdaccf9562959" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-handler" version="4.2.15.Final">
+      <artifact name="netty-handler-4.2.15.Final.jar">
+        <sha256 value="99b59e4bea72220d2aed52df8baf37d97431b06ade0b135226cdf73168975eab" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-resolver" version="4.2.15.Final">
+      <artifact name="netty-resolver-4.2.15.Final.jar">
+        <sha256 value="24318497f2a3a645964fed418f48879ba11365cab8e1f8d66c47fa7da15ef19a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-transport" version="4.2.15.Final">
+      <artifact name="netty-transport-4.2.15.Final.jar">
+        <sha256 value="9fb671e96651066cf1a28dad3f1382c7c99df5b8326d4a214d9a375b311f8dc1" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-transport-classes-epoll" version="4.2.15.Final">
+      <artifact name="netty-transport-classes-epoll-4.2.15.Final.jar">
+        <sha256 value="be509407fd71a4b83378567c613420db544d659bb522df7b253a1dbe8ca297fe" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-transport-classes-kqueue" version="4.2.15.Final">
+      <artifact name="netty-transport-classes-kqueue-4.2.15.Final.jar">
+        <sha256 value="2a15e2213a1fe49e73b4bb39bc746e7196dba8c1b182bc0d21a719a4d1be2c00" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-transport-native-epoll" version="4.2.15.Final">
+      <artifact name="netty-transport-native-epoll-4.2.15.Final-linux-aarch_64.jar">
+        <sha256 value="5a401e9dfb4f937e37a2221f6b91da25a008eac1f08ddd4bb0d9ed20e0e32668" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="netty-transport-native-epoll-4.2.15.Final-linux-x86_64.jar">
+        <sha256 value="5440e38f5ca2858fee8d7898e65291e05b665736c9e8a14c832e707511f5dba6" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-transport-native-kqueue" version="4.2.15.Final">
+      <artifact name="netty-transport-native-kqueue-4.2.15.Final-osx-aarch_64.jar">
+        <sha256 value="c9696a41e549eb42432f1e2cc3f387c85435034b73a3bf8748ffff40d00f921a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="netty-transport-native-kqueue-4.2.15.Final-osx-x86_64.jar">
+        <sha256 value="6095c29661abe1f2fbc2c79c54a94de4fdaddd6e99c702927fd3c00e66872574" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="io.netty" name="netty-transport-native-unix-common" version="4.2.15.Final">
+      <artifact name="netty-transport-native-unix-common-4.2.15.Final.jar">
+        <sha256 value="b9ea9fc5ad5eba04e99afdff75b2eb97b5ddfb2ad772e2f2ef5d8f277f3cbd76" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="it.unimi.dsi" name="fastutil" version="8.5.18">
+      <artifact name="fastutil-8.5.18.jar">
+        <sha256 value="9094ae67d01d0ad246f886f11ad557fc2e79c72cbf3feed83e1512a8ae90a74a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="class-tweaker" version="0.3.0">
+      <artifact name="class-tweaker-0.3.0.jar">
+        <sha256 value="83bf284909d13c7b4ae953c3fe141628dfedbe56120217f61891c341f0be2f1f" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="dev-launch-injector" version="0.2.1+build.8">
+      <artifact name="dev-launch-injector-0.2.1+build.8.jar">
+        <sha256 value="63bebba2a134d891ac9ac1fec6746ae055cbb19a187e2e2e05a0b9ea857952d8" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="fabric-loader" version="0.19.5">
+      <artifact name="fabric-loader-0.19.5.jar">
+        <sha256 value="93044e4dd46de5d8136701292f05e868da096d2c9fddb4793e4fdbcc63efc695" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="fabric-log4j-util" version="1.0.2">
+      <artifact name="fabric-log4j-util-1.0.2.jar">
+        <sha256 value="538e845a086d58301b7dfb2135db52213666374ee9a23f0d9dc776c6e37c25b2" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="fabric-loom" version="1.18.2">
+      <artifact name="fabric-loom-1.18.2.jar">
+        <sha256 value="ddf02af43acad911e120999cb6c3ebc11d739115299d8ed0d8e3efa1c225c6c9" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="lorenz-tiny" version="4.0.2">
+      <artifact name="lorenz-tiny-4.0.2.jar">
+        <sha256 value="9ea2b49f6149cf29917576af5024489b3927e2ec673aced27687a14f3aa99e7e" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="mapping-io" version="0.8.0">
+      <artifact name="mapping-io-0.8.0.jar">
+        <sha256 value="cf137c7f9049a8d4c0ada8e765180462bf1cda42172300821229ac2d46b6548c" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="mercury" version="0.4.3">
+      <artifact name="mercury-0.4.3.jar">
+        <sha256 value="25eac582a574329b75c9c224782de0ca2b3ce3c9e627d2242f7bc6fd0cb22086" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="mercurymixin" version="0.2.2">
+      <artifact name="mercurymixin-0.2.2.jar">
+        <sha256 value="85ec7d9edb40f90f24b3383df31202dc1f6869a81baa823840b74ea76a7ee2e5" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="sponge-mixin" version="0.17.4+mixin.0.8.7">
+      <artifact name="sponge-mixin-0.17.4+mixin.0.8.7.jar">
+        <sha256 value="1f0ae44db7295f8626f33b1dc0ad7f043d8954a8d6847247875fcc5dfcecc934" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="stitch" version="0.6.2">
+      <artifact name="stitch-0.6.2.jar">
+        <sha256 value="3209f1fefba59f3ded04935463f2aabd137f1bf409cb42dab9a5870dd058b1a1" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="tiny-mappings-parser" version="0.3.0+build.17">
+      <artifact name="tiny-mappings-parser-0.3.0+build.17.jar">
+        <sha256 value="ab91038c4b1bff9b0999eb6959e012cd0e0bf116401ebab37001ec325d877ba6" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc" name="tiny-remapper" version="0.14.1">
+      <artifact name="tiny-remapper-0.14.1.jar">
+        <sha256 value="c4d3b3e27089a5b96d21eb5184a75898c6e5062ebca4fee5f92db34c389b8952" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-advancement-api-v1" version="1.0.0+58719a3b9e">
+      <artifact name="fabric-advancement-api-v1-1.0.0+58719a3b9e.jar">
+        <sha256 value="221ddba7ff60ac669394e04edfaeae21d60844a2c093ec4929539e20403a6222" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-api" version="0.161.0+26.2">
+      <artifact name="fabric-api-0.161.0+26.2.jar">
+        <sha256 value="e5b858ceb13290c274e31cb888ff5a1a40cb91067e7ffab0b5b775aec51e216a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-api-base" version="2.0.4+ece063239e">
+      <artifact name="fabric-api-base-2.0.4+ece063239e.jar">
+        <sha256 value="91679a213120ca9fe8681461f4e9ff65f296a80a844d50c7dfc2113787b8b41a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-api-lookup-api-v1" version="2.0.18+11e1c9a39e">
+      <artifact name="fabric-api-lookup-api-v1-2.0.18+11e1c9a39e.jar">
+        <sha256 value="319e6bad3a47ba64a3df19e460a029cc21ae23ab47f4703693edcc0aa0a9906a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-biome-api-v1" version="18.0.6+c7bd5b8e9e">
+      <artifact name="fabric-biome-api-v1-18.0.6+c7bd5b8e9e.jar">
+        <sha256 value="be7eb427937567cebbebb08921c9bd9108632ef30c3596f0a8cc05401c028311" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-block-api-v1" version="3.1.0+53515aab9e">
+      <artifact name="fabric-block-api-v1-3.1.0+53515aab9e.jar">
+        <sha256 value="74db9db9e1315231598c1e6bbaba1f4f8fcb85a329253c4771b6b19a68b28a0c" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-block-getter-api-v2" version="2.0.7+ec56b6019e">
+      <artifact name="fabric-block-getter-api-v2-2.0.7+ec56b6019e.jar">
+        <sha256 value="208062c773a81e0c6993550239df84ba79b0d899f852a137f6d3a5fd9e9aa9fe" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-client-gametest-api-v1" version="6.0.2+0f4f1dca9e">
+      <artifact name="fabric-client-gametest-api-v1-6.0.2+0f4f1dca9e.jar">
+        <sha256 value="6284f9946eab0aea38db8238067e1e15f731e98ba3aa759d3ccd31592105db0f" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-command-api-v2" version="3.1.0+00cb03469e">
+      <artifact name="fabric-command-api-v2-3.1.0+00cb03469e.jar">
+        <sha256 value="067dc4f579ba2810826bd13538f8968cf3643795a6948cfac231ebd5209851e1" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-content-registries-v0" version="11.3.2+37b1aa249e">
+      <artifact name="fabric-content-registries-v0-11.3.2+37b1aa249e.jar">
+        <sha256 value="b4101d1ba8811c413d12acbcadeb6fadcaf35fcbf305d4974f2a9557d8f15060" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-convention-tags-v2" version="4.7.1+1f023a9e9e">
+      <artifact name="fabric-convention-tags-v2-4.7.1+1f023a9e9e.jar">
+        <sha256 value="ddfce65cad99011b13a993714f8f07aeb8a964a73ddbd09139c5857152d2313d" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-crash-report-info-v1" version="1.0.5+086d547a9e">
+      <artifact name="fabric-crash-report-info-v1-1.0.5+086d547a9e.jar">
+        <sha256 value="d8c17e57d942b44b0fb8fbb56bb963b280c9b89fdc5bbfaa12975912bfea2080" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-creative-tab-api-v1" version="5.0.15+6468574f9e">
+      <artifact name="fabric-creative-tab-api-v1-5.0.15+6468574f9e.jar">
+        <sha256 value="b126dbac5cfc4b07568609089c23eaeb1e9dc968e9c04a336e2995a12df3d7ba" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-data-attachment-api-v1" version="2.2.19+515ac5339e">
+      <artifact name="fabric-data-attachment-api-v1-2.2.19+515ac5339e.jar">
+        <sha256 value="d4669cb34e150e023018fca95ebdc0cbb3a829895df63f6f652d1ae8c62e2840" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-data-generation-api-v1" version="25.6.0+c0da0b829e">
+      <artifact name="fabric-data-generation-api-v1-25.6.0+c0da0b829e.jar">
+        <sha256 value="857c428b1481af2d29b05a7c0e1840a14fb3fc37e6317e669c43f45f36a9e6ff" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-debug-api-v1" version="1.0.2+c792624d9e">
+      <artifact name="fabric-debug-api-v1-1.0.2+c792624d9e.jar">
+        <sha256 value="0bc72d315d131f46ff2ec5221602655d911fcea9522538ae54347ea0e62c4f9b" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-dimensions-v1" version="5.1.12+515ac5339e">
+      <artifact name="fabric-dimensions-v1-5.1.12+515ac5339e.jar">
+        <sha256 value="b09397e9bbdcb8bd5cc1384400ae4dc7076a858d42ce39def2d0d326be13d56c" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-entity-events-v1" version="5.0.5+06488ac19e">
+      <artifact name="fabric-entity-events-v1-5.0.5+06488ac19e.jar">
+        <sha256 value="d9912622f0ae615ec4df8aada79309b0b52dbade87cf70a7be21536cfc1fc916" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-events-interaction-v0" version="5.2.8+515ac5339e">
+      <artifact name="fabric-events-interaction-v0-5.2.8+515ac5339e.jar">
+        <sha256 value="2adc42c9e1072dedd0eabcfd9e6a858cbab451cdfc9bf8ff195f3403add7bda2" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-game-rule-api-v1" version="4.0.8+46a6d00c9e">
+      <artifact name="fabric-game-rule-api-v1-4.0.8+46a6d00c9e.jar">
+        <sha256 value="1047e34202656da44f64fb56e633654bc09a3112c6c3c90fd9de8762c8fa7816" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-gametest-api-v1" version="4.0.22+4a7fa0819e">
+      <artifact name="fabric-gametest-api-v1-4.0.22+4a7fa0819e.jar">
+        <sha256 value="b4cc93c8de8c3546bf725939e09a85e43f4716775dd99076940a1b9bb9d7d702" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-item-api-v1" version="14.5.0+c68f6cbe9e">
+      <artifact name="fabric-item-api-v1-14.5.0+c68f6cbe9e.jar">
+        <sha256 value="f0110e23a4ba1e8b09e6361c2977dbe9a424192e96d33ceb88571aa39789fcfe" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-key-mapping-api-v1" version="2.0.5+e2bdee789e">
+      <artifact name="fabric-key-mapping-api-v1-2.0.5+e2bdee789e.jar">
+        <sha256 value="b240f6e96c270d7f2bf469f63ddf593db315bea35d76640915a39644e869a3ba" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-lifecycle-events-v1" version="4.1.4+29b6eb019e">
+      <artifact name="fabric-lifecycle-events-v1-4.1.4+29b6eb019e.jar">
+        <sha256 value="7aedcc52990513b4157ee3ecfcbb2d6ea92d0802d76ceb2060e73c37d96b72ee" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-loot-api-v3" version="3.0.17+06488ac19e">
+      <artifact name="fabric-loot-api-v3-3.0.17+06488ac19e.jar">
+        <sha256 value="8bd58904a3582e3ccbe41b533cc7a50b6734ead684a02e41f6546a93994b6ecd" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-menu-api-v1" version="2.0.17+086d547a9e">
+      <artifact name="fabric-menu-api-v1-2.0.17+086d547a9e.jar">
+        <sha256 value="6f1b81c71bdf4e5fc2fb2485f127d537fd1d6ec8fa2ad507e773310f1cfe7161" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-message-api-v1" version="7.0.8+bb2ed3f79e">
+      <artifact name="fabric-message-api-v1-7.0.8+bb2ed3f79e.jar">
+        <sha256 value="6eb12f310c41797583812588ab055174d9741bb6f8301ed9e3640cb5fe3be601" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-model-loading-api-v1" version="8.0.17+c80601bb9e">
+      <artifact name="fabric-model-loading-api-v1-8.0.17+c80601bb9e.jar">
+        <sha256 value="cf7869db9e762b87832fc33677bf9edd7ef1646eff83245a27faf7fa4827c6c9" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-networking-api-v1" version="6.3.4+2989c6a09e">
+      <artifact name="fabric-networking-api-v1-6.3.4+2989c6a09e.jar">
+        <sha256 value="10b88a11d0c534810bee2ce10b3e70482200f20ba92f1fa5457ce81b6649b923" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-object-builder-api-v1" version="24.1.1+6fcd5f039e">
+      <artifact name="fabric-object-builder-api-v1-24.1.1+6fcd5f039e.jar">
+        <sha256 value="dd335d64ec99b68ee64c661287058e307593a9352e8590205fa2c951e7ebecb5" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-particles-v1" version="5.0.19+d1756aa99e">
+      <artifact name="fabric-particles-v1-5.0.19+d1756aa99e.jar">
+        <sha256 value="2fb8820ea89d5821d12baa2c95633098f083a49614bf292001478d80100cc806" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-permission-api-v1" version="1.0.5+e442d8d09e">
+      <artifact name="fabric-permission-api-v1-1.0.5+e442d8d09e.jar">
+        <sha256 value="d334ff3af4e641255d444558e847f68dfb923fcc5d5c5c9cfbd5d25310e3fefb" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-recipe-api-v1" version="9.0.22+11e1c9a39e">
+      <artifact name="fabric-recipe-api-v1-9.0.22+11e1c9a39e.jar">
+        <sha256 value="9a3b476ffce2f9a9c05dcae50ed8aa5448d23de746483bfdff82f534de95f7df" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-registry-sync-v0" version="7.1.1+c7bd5b8e9e">
+      <artifact name="fabric-registry-sync-v0-7.1.1+c7bd5b8e9e.jar">
+        <sha256 value="4c0d4b6e81b872ac63396d99ebb45bc83ce955c1234e55d53e744a26cde4df9c" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-renderer-api-v1" version="14.1.4+2b0d8a229e">
+      <artifact name="fabric-renderer-api-v1-14.1.4+2b0d8a229e.jar">
+        <sha256 value="009fbd08973418844ffcc4fcd03ba91a73793d4247243e6b3f685dcb9fde9088" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-renderer-indigo" version="9.1.4+2b0d8a229e">
+      <artifact name="fabric-renderer-indigo-9.1.4+2b0d8a229e.jar">
+        <sha256 value="b1536275a386caf9b3325b9c517159a610cfb144613675e923414508c7391c04" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-rendering-fluids-v1" version="6.0.4+06488ac19e">
+      <artifact name="fabric-rendering-fluids-v1-6.0.4+06488ac19e.jar">
+        <sha256 value="76435c2503d95b8d4f642bdddf653b2cba95486f40c23cf1988eb8c4a11b4362" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-rendering-v1" version="25.3.3+515ac5339e">
+      <artifact name="fabric-rendering-v1-25.3.3+515ac5339e.jar">
+        <sha256 value="a7ad4bca52ffb4897984bc8c894a7c4b43e99f9362194c41cc3a0cf0e8ef6098" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-resource-conditions-api-v1" version="6.1.0+10e9a28b9e">
+      <artifact name="fabric-resource-conditions-api-v1-6.1.0+10e9a28b9e.jar">
+        <sha256 value="bedf189c0fc5a1314efab58ec1b168f236740ddfcfe54f766aa204a260f369b8" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-resource-loader-v0" version="3.3.20+4fc5413f9e">
+      <artifact name="fabric-resource-loader-v0-3.3.20+4fc5413f9e.jar">
+        <sha256 value="9c62b5b85e903a07542ed4825890afb70fe533795e791dc6515a9484f8221654" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-resource-loader-v1" version="2.0.13+9edec1269e">
+      <artifact name="fabric-resource-loader-v1-2.0.13+9edec1269e.jar">
+        <sha256 value="e9e71603cfe29960eff8cc7b5be799e17463bb8267c16dafd232be2238281e7a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-screen-api-v1" version="5.2.1+5087f8249e">
+      <artifact name="fabric-screen-api-v1-5.2.1+5087f8249e.jar">
+        <sha256 value="07a949e860eea28e6f175f35436e212c4c83ff9a6e034082c2f9dab039164840" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-serialization-api-v1" version="2.0.4+11a26f319e">
+      <artifact name="fabric-serialization-api-v1-2.0.4+11a26f319e.jar">
+        <sha256 value="bfe2d8d7c5b4120ddb0b0598857deb2fc875d47633c33ffca8fe394ca5063e0e" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-sound-api-v1" version="2.0.5+11a26f319e">
+      <artifact name="fabric-sound-api-v1-2.0.5+11a26f319e.jar">
+        <sha256 value="18de3ffca29b0a58beab0d94d8481c9d8240e3a00cd53c243b98cc58a16ed5e5" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-tag-api-v1" version="2.1.4+515ac5339e">
+      <artifact name="fabric-tag-api-v1-2.1.4+515ac5339e.jar">
+        <sha256 value="fed81d2a3faa06757dbb245c084a9a91e85df6cf4c776c9427d86322280aeaed" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-transfer-api-v1" version="8.0.13+11dbb7d79e">
+      <artifact name="fabric-transfer-api-v1-8.0.13+11dbb7d79e.jar">
+        <sha256 value="518098d287c4ef0ec119c7ab9d07c0c20f70e27be0db782bde9b93aa460f2586" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.fabric-api" name="fabric-transitive-access-wideners-v1" version="8.1.4+67c847259e">
+      <artifact name="fabric-transitive-access-wideners-v1-8.1.4+67c847259e.jar">
+        <sha256 value="8d1aa1e30aebf6acb255bd93f1fcac897331068b61ce1ca11f34a4102996210a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.unpick" name="unpick" version="3.0.0-beta.13">
+      <artifact name="unpick-3.0.0-beta.13.jar">
+        <sha256 value="5baf1cca1af85d256559e85a73a82c5d5ae31001d27add259d42860ef4aba182" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.fabricmc.unpick" name="unpick-format-utils" version="3.0.0-beta.13">
+      <artifact name="unpick-format-utils-3.0.0-beta.13.jar">
+        <sha256 value="7fb61b82db3f400a7408957daf66341e62b144d758c5062aedc062f6eaf04d22" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.java.dev.jna" name="jna" version="5.17.0">
+      <artifact name="jna-5.17.0.jar">
+        <sha256 value="b3a9408e7c51e08ef0e3bfcc08f443f6ec0f6191ba8cd7c18d53d2b22e5bdbc0" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.java.dev.jna" name="jna-platform" version="5.17.0">
+      <artifact name="jna-platform-5.17.0.jar">
+        <sha256 value="b7e3d46c87bad2eb409b0e704916bcd81206168e357312dfddd0e253679cd9e0" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.minecraft" name="minecraft-merged-3b5d97e58c" version="26.2">
+      <artifact name="minecraft-merged-3b5d97e58c-26.2.jar">
+        <sha256 value="49353b010c1f426ab441140e2ff0692d4cd6b7b32c681308d37d833e8b89b14a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="net.sf.jopt-simple" name="jopt-simple" version="5.0.4">
+      <artifact name="jopt-simple-5.0.4.jar">
+        <sha256 value="df26cc58f235f477db07f753ba5a3ab243ebe5789d9f89ecf68dd62ea9a66c28" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.apache.commons" name="commons-compress" version="1.28.0">
+      <artifact name="commons-compress-1.28.0.jar">
+        <sha256 value="e1522945218456f3649a39bc4afd70ce4bd466221519dba7d378f2141a4642ca" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.apache.commons" name="commons-lang3" version="3.20.0">
+      <artifact name="commons-lang3-3.20.0.jar">
+        <sha256 value="69e5c9fa35da7a51a5fd2099dfe56a2d8d32cf233e2f6d770e796146440263f4" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.apache.logging.log4j" name="log4j-api" version="2.26.0">
+      <artifact name="log4j-api-2.26.0.jar">
+        <sha256 value="820de7bbaf430eaf2e3e5ccb92f23e2085797c5ac4d4f7fc6c8b660fbefa1dbc" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.apache.logging.log4j" name="log4j-core" version="2.26.0">
+      <artifact name="log4j-core-2.26.0.jar">
+        <sha256 value="406bb3132c47a5d322e5c571feb0787ca84496469f346eb51f1ef2ee45499902" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.apache.logging.log4j" name="log4j-slf4j2-impl" version="2.26.0">
+      <artifact name="log4j-slf4j2-impl-2.26.0.jar">
+        <sha256 value="cfc1bddbd39e684b698ae968291d8a3b3a55ee0ec2ef3d3ea5c2336a9e151598" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.apiguardian" name="apiguardian-api" version="1.1.2">
+      <artifact name="apiguardian-api-1.1.2.jar">
+        <sha256 value="b509448ac506d607319f182537f0b35d71007582ec741832a1f111e5b5b70b38" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.cadixdev" name="at" version="0.1.0-rc1">
+      <artifact name="at-0.1.0-rc1.jar">
+        <sha256 value="2a98a0deaa235ceea135ec65754dfab3813e658d5ea97d2888a5d751005bcd5e" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.cadixdev" name="bombe" version="0.3.4">
+      <artifact name="bombe-0.3.4.jar">
+        <sha256 value="fb6ae164dc3d7d9c0e9d9d593168dd7faea7b19332ecd83d154a2f7979558d1b" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.cadixdev" name="lorenz" version="0.5.7">
+      <artifact name="lorenz-0.5.7.jar">
+        <sha256 value="223022f33fef6d5d88903b7c4fc8d7096ad6fd869acbc0fd241b0fcf8391d031" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.jcraft" name="jorbis" version="0.0.17">
+      <artifact name="jorbis-0.0.17.jar">
+        <sha256 value="e067f29a3701426b67ed973036949c6e58ca5bb53eef7240b2e71e286d252a9e" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.jetbrains" name="annotations" version="26.0.2">
+      <artifact name="annotations-26.0.2.jar">
+        <sha256 value="2037be378980d3ba9333e97955f3b2cde392aa124d04ca73ce2eee6657199297" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.jetbrains.kotlin" name="kotlin-metadata-jvm" version="2.4.0">
+      <artifact name="kotlin-metadata-jvm-2.4.0.jar">
+        <sha256 value="9aadc51c588e76c8cf3d83d4090e46a4b687f2edaa1fdf65aa9fe44223294927" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.joml" name="joml" version="1.10.8">
+      <artifact name="joml-1.10.8.jar">
+        <sha256 value="bf19510145178df82cd3bd37edd514c13f411531ec5545299fd3abcbc98fe7c2" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.jspecify" name="jspecify" version="1.0.0">
+      <artifact name="jspecify-1.0.0.jar">
+        <sha256 value="1fad6e6be7557781e4d33729d49ae1cdc8fdda6fe477bb0cc68ce351eafdfbab" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.junit.jupiter" name="junit-jupiter" version="6.1.3">
+      <artifact name="junit-jupiter-6.1.3.jar">
+        <sha256 value="6b0a14075c74221de53047e363860b7d19fce802bebc152df2c35c4089c6c379" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.junit.jupiter" name="junit-jupiter-api" version="6.1.3">
+      <artifact name="junit-jupiter-api-6.1.3.jar">
+        <sha256 value="555d6cf20fa1710884dd01b86cc5785397ba73e21ada2d4b784f5f1a14dcafc4" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.junit.jupiter" name="junit-jupiter-engine" version="6.1.3">
+      <artifact name="junit-jupiter-engine-6.1.3.jar">
+        <sha256 value="414559e78bbfa3bdb2eab009ac3ab1e22369ac31117c270a0bd666da115c5c6c" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.junit.jupiter" name="junit-jupiter-params" version="6.1.3">
+      <artifact name="junit-jupiter-params-6.1.3.jar">
+        <sha256 value="05c51cedba2c06a9770707391e006cee825876937dea580b94a265ce145d4939" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.junit.platform" name="junit-platform-commons" version="6.1.3">
+      <artifact name="junit-platform-commons-6.1.3.jar">
+        <sha256 value="a4774ae923c109544034aeae7c762cf017fbcdd1342403ba90e0921984b608c3" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.junit.platform" name="junit-platform-engine" version="6.1.3">
+      <artifact name="junit-platform-engine-6.1.3.jar">
+        <sha256 value="21ad7ad3a35beda16387979317be1833a72a71d812f9a66ee4b9a7bafb56334c" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.junit.platform" name="junit-platform-launcher" version="6.1.3">
+      <artifact name="junit-platform-launcher-6.1.3.jar">
+        <sha256 value="1dec64b1fc0b7c47a11302aa5b4d37d8160c041b396e27067709ce775601a7b6" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.lwjgl" name="lwjgl" version="3.4.1">
+      <artifact name="lwjgl-3.4.1-natives-windows-arm64.jar">
+        <sha256 value="87cbeacc58dc4a77d7f6eb9929424a34cf34c3e09e4ad8344cdc4e9898366a40" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-3.4.1-natives-windows-x86.jar">
+        <sha256 value="04238aa47ddde7789a44a1b9bfe2b88d80b900c1130a6ed9cc7b82a8ababf06d" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-3.4.1-natives-windows.jar">
+        <sha256 value="21872776b9be0a93c746d6f28797c12ac47a75e0f0188e5a4fad0c20c9a6a07e" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-3.4.1-unsafe.jar">
+        <sha256 value="28b8dd3421e11e90d4d93dd3b7c9261aeda2d67645324bee0194e175f6963de2" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.lwjgl" name="lwjgl-freetype" version="3.4.1">
+      <artifact name="lwjgl-freetype-3.4.1-natives-windows-arm64.jar">
+        <sha256 value="dfd620b415a537eb452e8a16825cbd41ece2b5496794114305a8ddb1efb94dbb" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-freetype-3.4.1-natives-windows-x86.jar">
+        <sha256 value="3079ac0b1bc60be2893dbef788a2ca25255b0e91a997658a20da297298c7e88d" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-freetype-3.4.1-natives-windows.jar">
+        <sha256 value="963c76cbc89f1c97c8448621f5f0e67da58a6bc43128e197b7fb616dc2395557" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-freetype-3.4.1.jar">
+        <sha256 value="c57a40cedf39c4f3dfe25df596c0933cecb91d323c3fc4c2ed08661d1b79d8c7" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.lwjgl" name="lwjgl-glfw" version="3.4.1">
+      <artifact name="lwjgl-glfw-3.4.1-natives-windows-arm64.jar">
+        <sha256 value="a4ba37d3ed241371c8e83f71acbea81d690e0784b22086d98486ec02363250a6" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-glfw-3.4.1-natives-windows-x86.jar">
+        <sha256 value="ca0270e9a6fb66f7877d5edcb1a7aa939d07a5bc1d781bfa7af38ffa47fe27ef" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-glfw-3.4.1-natives-windows.jar">
+        <sha256 value="20adab06c8f5bf1e3515a7e64db261cd83ca8131d674dc5f0af93b514deedac8" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-glfw-3.4.1.jar">
+        <sha256 value="c2d93964f0a8b2a846708c7fb1b0a095e7d79dce8ea4c543969ffef508027190" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.lwjgl" name="lwjgl-jemalloc" version="3.4.1">
+      <artifact name="lwjgl-jemalloc-3.4.1-natives-windows-arm64.jar">
+        <sha256 value="9da797a1957442e37b1eeba503a099a47c859cab17e0b3d222cfb03d0d3bfce9" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-jemalloc-3.4.1-natives-windows-x86.jar">
+        <sha256 value="710d97b446e88ca1ee5a1af8335f3c06b60cb49e29f2c9ce4c49bf1a49d4a4a1" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-jemalloc-3.4.1-natives-windows.jar">
+        <sha256 value="71785f161a015a1a8941a1a3ed7bb007570bb0ef7d95d8725f6acb0634ec577e" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-jemalloc-3.4.1.jar">
+        <sha256 value="184866f4dcb444666e9062f690c389d69e4a62dd7fd9e2bb13ab7bdf3d03bd1e" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.lwjgl" name="lwjgl-openal" version="3.4.1">
+      <artifact name="lwjgl-openal-3.4.1-natives-windows-arm64.jar">
+        <sha256 value="738145e659b5cd6353d7caa99f53af190ec430e0343db723e91204d3e3fef63e" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-openal-3.4.1-natives-windows-x86.jar">
+        <sha256 value="30bbb758865b104a9079703eb87862318341e3b1f0c504e369f97e4ff7f675fd" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-openal-3.4.1-natives-windows.jar">
+        <sha256 value="28d4065b9c6be68454eb4d7c0da665bd4bc7cc77d854c1f67afbd2f38ff730a3" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-openal-3.4.1.jar">
+        <sha256 value="824a68b6f22220feb45cdaf06ebd5496b96e38c50e2588fc3ea0e819f910cf28" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.lwjgl" name="lwjgl-opengl" version="3.4.1">
+      <artifact name="lwjgl-opengl-3.4.1-natives-windows-arm64.jar">
+        <sha256 value="976d4a24cceebfcf84ec3ba06ba2ab23aa077e4cd25f0aedb74d3b1828534b41" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-opengl-3.4.1-natives-windows-x86.jar">
+        <sha256 value="7f5b16207a9fc292ccf113f94b2b49bd5a4582b1b8a001498e6a2b4a2eddb0cb" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-opengl-3.4.1-natives-windows.jar">
+        <sha256 value="e174a206709a91c89a840b5d935831bdb386f435ed224e570a0f15b063b4d9b4" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-opengl-3.4.1.jar">
+        <sha256 value="a76b8fd9ff7428ae5e0f01b8f91a4e44debba87285048e965757742093418702" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.lwjgl" name="lwjgl-shaderc" version="3.4.1">
+      <artifact name="lwjgl-shaderc-3.4.1-natives-windows-arm64.jar">
+        <sha256 value="1ced6adc0187334b0eaace8e7afde299c8fef2ee7721e4427a92f6a06676f002" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-shaderc-3.4.1-natives-windows-x86.jar">
+        <sha256 value="093a6c27a669a3e48cf7ba9a707103f3409c2a16b67b0d716373f7c1a38ec723" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-shaderc-3.4.1-natives-windows.jar">
+        <sha256 value="d1449f6e4969797230545ec77c2f7478862379e586b35530c3d3651c926cc9ca" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-shaderc-3.4.1.jar">
+        <sha256 value="72293c0d58aa07205f67233efed3769111e8312c73bd8e1f4c13a44ab255f27f" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.lwjgl" name="lwjgl-spvc" version="3.4.1">
+      <artifact name="lwjgl-spvc-3.4.1-natives-windows-arm64.jar">
+        <sha256 value="c33f9780b1cf1b2c0df34df7d1c311d8b495ed364dcc5dc6a9bbbc5f124ed703" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-spvc-3.4.1-natives-windows-x86.jar">
+        <sha256 value="bd19824bd17cb0f9fabb1291e2dc4cfaa597cf60b5767adee1f29933cf62b6f7" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-spvc-3.4.1-natives-windows.jar">
+        <sha256 value="4ed243f8895a5bf026461b2534b48290d2c06ffd1ad6398cb59368eb76ea1146" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-spvc-3.4.1.jar">
+        <sha256 value="3c453700ea383d6f9ad736ed1d268d45b716d5acf27e9cc4f8c15c8fca1c421c" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.lwjgl" name="lwjgl-stb" version="3.4.1">
+      <artifact name="lwjgl-stb-3.4.1-natives-windows-arm64.jar">
+        <sha256 value="7e67e1d44580a212f59b46d9160e3a6671826d4ea612eb706a32a090a926a122" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-stb-3.4.1-natives-windows-x86.jar">
+        <sha256 value="f24ea6265ff1a6996ca568fdc8f7ee3f10b34b71f16b30a91a01933465ced66b" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-stb-3.4.1-natives-windows.jar">
+        <sha256 value="f782d33034d90967e92d45633f4a5c11658802f083507d2323f78aede8752b04" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-stb-3.4.1.jar">
+        <sha256 value="3d77b0a242b8a52788934356560191db910ed242ab23c521d55f030b4e867970" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.lwjgl" name="lwjgl-tinyfd" version="3.4.1">
+      <artifact name="lwjgl-tinyfd-3.4.1-natives-windows-arm64.jar">
+        <sha256 value="8a08098521d0e3db27eb936f9d1352b48e795caf629f458d83cc7fa9a5528749" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-tinyfd-3.4.1-natives-windows-x86.jar">
+        <sha256 value="bf801c166340aafab8ddfbf005111edff9b25dfa6fb3ef1728945e6e40a01fe1" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-tinyfd-3.4.1-natives-windows.jar">
+        <sha256 value="1d459b70aa8b23d3a4f800e6eee5441792751112980df8f6c08572e7d21f15b6" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-tinyfd-3.4.1.jar">
+        <sha256 value="3ffad01103b6cbc8c12c7156691fd87a96f063600a5ff5c9087d321c6736963a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.lwjgl" name="lwjgl-vma" version="3.4.1">
+      <artifact name="lwjgl-vma-3.4.1-natives-windows-arm64.jar">
+        <sha256 value="7e4ea965c20c9a31bdcbd1f9d8089ddaf7e23ff9b16fb62e436e26fdea055200" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-vma-3.4.1-natives-windows-x86.jar">
+        <sha256 value="53afdca1052ef63ba1b71dde92491a1ddf179b26be2db2a577161e75281a9c2a" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-vma-3.4.1-natives-windows.jar">
+        <sha256 value="b79a4f0679fa5902fafb345792314e400dfdcf04b4c15df700363c448c27ba15" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+      <artifact name="lwjgl-vma-3.4.1.jar">
+        <sha256 value="d6a9677b5d487c97b874c18cb9c726197e9a8773f6a1c031ea9f5950b8c0b3c2" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.lwjgl" name="lwjgl-vulkan" version="3.4.1">
+      <artifact name="lwjgl-vulkan-3.4.1.jar">
+        <sha256 value="7f39be7c1e7b14b47d18ec5e23dd25240d2e41c090393524615d760203bf14a6" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.opentest4j" name="opentest4j" version="1.3.0">
+      <artifact name="opentest4j-1.3.0.jar">
+        <sha256 value="48e2df636cab6563ced64dcdff8abb2355627cb236ef0bf37598682ddf742f1b" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.ow2.asm" name="asm" version="9.10.1">
+      <artifact name="asm-9.10.1.jar">
+        <sha256 value="ed825d10ab1399c8c0cb669e688cf0c8c82629b4c8399b58352b68e92ca10fcb" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.ow2.asm" name="asm-analysis" version="9.10.1">
+      <artifact name="asm-analysis-9.10.1.jar">
+        <sha256 value="dede75a21306b65974ecd8f87114ff6970f09fb794157a4ca09ab25c888c2bfc" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.ow2.asm" name="asm-commons" version="9.10.1">
+      <artifact name="asm-commons-9.10.1.jar">
+        <sha256 value="6d0abefb7cbf972ea16edb37ec14835372505063a45f976ab7ea889ed9497895" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.ow2.asm" name="asm-tree" version="9.10.1">
+      <artifact name="asm-tree-9.10.1.jar">
+        <sha256 value="3dfb0d5b6a106cd40b5b250e39935fbf2f927f4477546a5369a3ac609cf0506b" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.ow2.asm" name="asm-util" version="9.10.1">
+      <artifact name="asm-util-9.10.1.jar">
+        <sha256 value="1bb99d091fba2597dc6d51193e9bbcf0d8447e7ed96bd8f0198b18152f09655c" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+    <component group="org.slf4j" name="slf4j-api" version="2.0.17">
+      <artifact name="slf4j-api-2.0.17.jar">
+        <sha256 value="7b751d952061954d5abfed7181c1f645d336091b679891591d63329c622eb832" origin="CACHE-BASELINE-LIMITED reviewed selected bytes; no universal publisher-origin certification" />
+      </artifact>
+    </component>
+  </components>
+</verification-metadata>

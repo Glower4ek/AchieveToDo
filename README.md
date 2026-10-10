@@ -103,21 +103,29 @@ This makes it easy to create all kinds of custom challenges or special gameplay 
 
 ## Building and verification
 
-Use Java 25 and the checked-in Gradle wrapper from the repository root. On Windows PowerShell:
+Use the installed Temurin Java 25.0.4+7 and the checked-in Gradle 9.8.0 wrapper from the repository root. Use an explicit Python executable (the reviewed local environment uses Python 3.14); do not rely on a PATH alias. The commands below use STRICT verification and online metadata resolution. Seed a disposable Gradle User Home with the 372 exact approved inputs before running them; a new empty cache is not an approved binary trust root. On Windows PowerShell:
 
 ```powershell
 $env:JAVA_HOME = 'C:\Program Files\Eclipse Adoptium\jdk-25.0.4.7-hotspot'
-$env:GRADLE_USER_HOME = Join-Path (Get-Location) '.gradle-user-home'
+$env:ACHIEVETODO_PYTHON = 'C:\path\to\python.exe'
+$env:ACHIEVETODO_TEST_INPUTS_DIR = 'C:\private\AchieveToDoInputs'
+$env:GRADLE_USER_HOME = Join-Path (Get-Location) 'build/tmp/c7-local-verify/gradle-user-home'
+$projectCache = Join-Path (Get-Location) 'build/tmp/c7-local-verify/project-cache'
 $env:TEMP = Join-Path (Get-Location) 'build/tmp/codex_java_uds_probe'
 $env:TMP = $env:TEMP
 New-Item -ItemType Directory -Force -Path $env:TEMP | Out-Null
-.\gradlew.bat --no-daemon compileJava compileTestJava compileGametestJava
-.\gradlew.bat --no-daemon test --rerun-tasks
+.\gradlew.bat --no-daemon --no-watch-fs --project-cache-dir $projectCache --dependency-verification strict verifyCleanSourceInputs
+.\gradlew.bat --no-daemon --no-watch-fs --project-cache-dir $projectCache --dependency-verification strict compileJava compileTestJava compileGametestJava
+.\gradlew.bat --no-daemon --no-watch-fs --project-cache-dir $projectCache --dependency-verification strict test --rerun-tasks
 ```
 
-The default `test` task is the current standard verification entrypoint; the released 0.1.5.5 baseline is 435 tests with zero failures, errors or skips. Local Phase B fixtures require the established ignored acquisition/cache inputs, including earlier converted-source metadata, acquired pack archives and resolved Minecraft assets. Those prerequisites are not supplied by a fresh checkout, and fixture acquisition has not been redesigned.
+The default `test` task is the current standard verification entrypoint; the released 0.1.5.5 baseline is 435 tests with zero failures, errors or skips. The accepted Phase C runtime checkpoint requires 443 standard test cases; C7 autonomous verification executed all 443 cases with zero failures, errors or skips. Compilation of the 42 GameTest registration classes does not certify a new Minecraft runtime run. DISTRIBUTION-B requires the exact 20 original inputs listed in `src/test/resources/build_inputs/manifest.json` under the explicit `ACHIEVETODO_TEST_INPUTS_DIR` directory outside the checkout. This private local bundle contains nine original ZIPs, five acquisition JSONs, five metadata JSONs and the BSD template. Missing, extra or changed bytes and symlink/junction inputs fail closed; tests cannot use historical `build/tmp` fallback or automatically download originals. The selected dependency cache and resolved Minecraft assets are separate prerequisites; a fresh checkout alone does not supply them.
 
-Use `.\gradlew.bat --no-daemon assemble` to package after verification. The existing same-version archive guard rejects overwriting a release archive; preserve certified artifacts before packaging.
+For a verification packaging probe, use the existing `jar` task with an isolated output configuration that validates every archive destination before task execution. The pinned Minecraft 26.2 setup has no `remapJar` task. Preserve the same-version guard and the historical published JAR; never use its destination for a changed probe artifact.
+
+CACHE-BASELINE-LIMITED permits reviewed exact selected cache bytes as a limited reproducibility trust root; it does not certify publisher origin or trust all cache files. The native XML pins 178 selected binaries; STRICT rejected an isolated Gson checksum mismatch. The supplementary verifier enforces the 372 listed inputs, including their listed descriptors. `verify-metadata=false` leaves newly resolved POM/module metadata outside native checksum enforcement; newly acquired metadata also remains outside the 372-input manifest. Documented provenance does not grant publisher authentication or permanent trust. An isolated corrupt Gson witness proved supplementary rejection before Loom application, not universal pre-consumption ordering for Gradle metadata or all bootstrap inputs.
+
+C7 tooling has actual compilation, full-suite, integrity-control and isolated packaging evidence. Metadata coverage remains limited as described above; no independent clean-source reproducibility claim follows. Future C8 clean-source and independent two-build certification has not started. The ignored `tools/build/verify_inputs.py` must be explicitly included with its exact reviewed bytes in a separately authorized checkpoint; source closure is not certified before that checkpoint exists.
 
 Contributor references: [Minecraft 26.2 mixin rationale](docs/compatibility/mixin-26.2-map.md) and [historical 0.1.5.4 reproduction](docs/history/reproduction-0.1.5.4.md). Retained Phase A/B stage CLIs and the archived publication route describe historical checkpoints; they are not the current supported verification flow.
 

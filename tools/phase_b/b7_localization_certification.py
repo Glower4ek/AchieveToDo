@@ -257,7 +257,7 @@ def formats(text):
             unnumbered.append(token)
     return {'arguments':sorted(numbered, key=str), 'unnumberedOrder':unnumbered, 'literalPercentEscapes':literal, 'newlineTokens':newline}
 
-def provenance_certification(ru, changed, requirements):
+def provenance_certification(ru, changed, requirements, input_root=None):
     manifest = load(PHASE/'b6_ru_translation_manifest.json')
     records = manifest['perChangedKeyProvenance']
     keys = [r['key'] for r in records]
@@ -269,7 +269,9 @@ def provenance_certification(ru, changed, requirements):
         'yiLJxtqH':'bacap-better-ru', 'DlwNJUii':'ru-blaze-and-caves-advancements-pack',
         'CGFOvwcX':'bacaped-language-pack',
     }
-    b6temp = ROOT/'build/tmp/phase_b_b6'
+    # Explicit current input root; historical CLI callers must supply it too.
+    import os
+    b6temp = pathlib.Path(input_root or os.environ['ACHIEVETODO_TEST_INPUTS_DIR'])
     source_identities = []
     for project, prefix in source_files.items():
         acquisition = load(b6temp/(prefix+'_acquisition.json'))
@@ -277,11 +279,11 @@ def provenance_certification(ru, changed, requirements):
         assert acquisition['projectId'] == metadata['project']['id'] == project
         version = next(v for v in metadata['versions'] if v['id']==acquisition['versionId'])
         assert version['version_number'] == acquisition['version']
-        archive = (b6temp/acquisition['filename']).read_bytes()
+        archive = (b6temp/(prefix+'.zip')).read_bytes()
         assert len(archive) == acquisition['size']
         for algorithm, expected in acquisition['hashes'].items():
             assert hashlib.new(algorithm, archive).hexdigest() == expected
-        with zipfile.ZipFile(b6temp/acquisition['filename']) as z:
+        with zipfile.ZipFile(b6temp/(prefix+'.zip')) as z:
             text = z.read('assets/minecraft/lang/ru_ru.json').decode('utf-8-sig')
             # Source comment headers are not dictionary declarations.
             text = '\n'.join(l for l in text.splitlines() if not l.lstrip().startswith(('#','//')))
@@ -315,7 +317,7 @@ def provenance_certification(ru, changed, requirements):
     assert dict(imports) == {'OFFICIAL_LP_1_21_PERMISSION':211,'OTHER_PERMITTED_SOURCE':21,'MANUAL_B6':64}, imports
     notice_path = ROOT/'licenses/bacap-rus-translate/LICENSE'
     notice = notice_path.read_text(encoding='utf8')
-    with zipfile.ZipFile(b6temp/'rus_BACAP_26.2.zip') as z:
+    with zipfile.ZipFile(b6temp/'bacap-rus-translate.zip') as z:
         files = z.namelist(); disclaimer = z.read('DISCLAIMER.txt').decode('utf8').replace('\r\n','\n')
         readme = z.read('README.md').decode('utf8')
         assert not [f for f in files if pathlib.PurePosixPath(f).name.upper() in ('LICENSE','COPYING','COPYRIGHT','LICENSE.TXT')]
