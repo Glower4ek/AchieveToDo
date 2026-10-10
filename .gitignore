@@ -37,7 +37,12 @@ reference/phase_a_preservation/files/final/*
 /reference/localization/.official_audit_cache/
 /reference/phase_a_preservation/author-search/
 __pycache__/
-/.agents/
+/.agents/*
+!/.agents/skills/
+/.agents/skills/*
+!/.agents/skills/achievetodo/
+/.agents/skills/achievetodo/*
+!/.agents/skills/achievetodo/SKILL.md
 /skills-lock.json
 /src/data/resources/fabric.mod.json
 /evidence/worlds/new_world_biomes_root_regression_2026-08-19/
