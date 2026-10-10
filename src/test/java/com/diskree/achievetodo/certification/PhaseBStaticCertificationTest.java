@@ -90,7 +90,9 @@ class PhaseBStaticCertificationTest {
         assertEquals("26.2", codec.get("minecraftVersion").getAsString());
         assertEquals(TARGET_SHA, codec.get("officialTargetSha256").getAsString());
         var context = codec.getAsJsonObject("registryContext");
-        assertEquals(context.get("minecraftJarSha256").getAsString(), hash(ROOT.resolve(context.get("minecraftJar").getAsString())));
+        String minecraftJar = System.getProperty("achievetodo.minecraftJar");
+        assertNotNull(minecraftJar, "Explicit verified Minecraft classpath input is required");
+        assertEquals(context.get("minecraftJarSha256").getAsString(), hash(Path.of(minecraftJar)));
         var views = codec.getAsJsonObject("views");
         greenCodec(views.getAsJsonObject("target"), 1332);
         greenCodec(views.getAsJsonObject("main"), 2894);

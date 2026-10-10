@@ -2135,7 +2135,20 @@ public final class PhaseACertification {
         return new RuntimeTagSourceIndex(sources);
     }
 
+    private static boolean usesConfiguredVanillaTagSource(Path projectRoot) {
+        String configured = System.getProperty("achievetodo.minecraftJar");
+        return configured != null && !configured.isBlank()
+            && projectRoot.toAbsolutePath().normalize().equals(Path.of("").toAbsolutePath().normalize());
+    }
+
     private static List<Path> vanillaTagSourceCandidates(Path projectRoot) {
+        if (usesConfiguredVanillaTagSource(projectRoot)) {
+            Path vanillaJar = Path.of(System.getProperty("achievetodo.minecraftJar")).toAbsolutePath().normalize();
+            if (!Files.isRegularFile(vanillaJar)) {
+                throw new IllegalStateException("Configured verified Minecraft tag source is missing: " + vanillaJar);
+            }
+            return List.of(vanillaJar);
+        }
         return List.of(
             projectRoot.resolve(".gradle-user-home").resolve("caches").resolve("fabric-loom").resolve("minecraftMaven")
                 .resolve("net").resolve("minecraft").resolve("minecraft-merged-deobf").resolve("26.2").resolve("minecraft-merged-deobf-26.2.jar"),
@@ -2148,7 +2161,11 @@ public final class PhaseACertification {
     private static void indexVanillaTagSources(Path projectRoot, Map<String, List<RuntimeTagSource>> sources) throws IOException {
         for (Path vanillaJar : vanillaTagSourceCandidates(projectRoot)) {
             if (Files.exists(vanillaJar)) {
-                indexArchiveTagSources(vanillaJar, RuntimeTagSourceCategory.VANILLA_26_2, vanillaJar.getFileName().toString(), sources);
+                // Certified snapshots use this stable logical container label. The actual
+                // Gradle-provided file is independently checked by strict dependency verification.
+                String sourceLabel = usesConfiguredVanillaTagSource(projectRoot)
+                    ? "minecraft-merged-deobf-26.2.jar" : vanillaJar.getFileName().toString();
+                indexArchiveTagSources(vanillaJar, RuntimeTagSourceCategory.VANILLA_26_2, sourceLabel, sources);
                 return;
             }
         }
