@@ -3,6 +3,7 @@ package com.diskree.achievetodo.client.gui;
 import com.diskree.achievetodo.client.AchieveToDoClient;
 import com.diskree.achievetodo.client.ExternalPack;
 import com.diskree.achievetodo.client.Utils;
+import com.diskree.achievetodo.AchieveToDoMod;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -29,12 +30,12 @@ import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.util.Enumeration;
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Consumer;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -49,11 +50,12 @@ public class ExternalPackDownloader extends ConfirmScreen {
     private final ExternalPack externalPack;
     private final BooleanConsumer exitCallback;
     private boolean isFileDownloaded;
+    private boolean closed;
 
     private final boolean inGameDownloadSupported;
     private Button downloadButton;
     private Button backButton;
-    private static final AtomicBoolean isDownloadingCanceled = new AtomicBoolean(true);
+    private DownloadAttempt downloadAttempt;
 
     public ExternalPackDownloader(
         Screen parent,
@@ -90,10 +92,18 @@ public class ExternalPackDownloader extends ConfirmScreen {
 
     @Override
     public void onClose() {
-        if (minecraft != null) {
+        cancelDownload();
+        if (!closed && minecraft != null) {
+            closed = true;
             minecraft.setScreenAndShow(parent);
             exitCallback.accept(isFileDownloaded);
         }
+    }
+
+    @Override
+    public void removed() {
+        cancelDownload();
+        super.removed();
     }
 
     @Override
@@ -103,8 +113,6 @@ public class ExternalPackDownloader extends ConfirmScreen {
                     AchieveToDoClient.translate("downloader.download"),
                     button -> {
                         if (inGameDownloadSupported) {
-                            backButton.setMessage(CommonComponents.GUI_CANCEL);
-                            button.active = false;
                             startDownload();
                         } else {
                             Util.getPlatform().openUri(externalPack.getDownloadUrl());
@@ -150,8 +158,9 @@ public class ExternalPackDownloader extends ConfirmScreen {
             Button.builder(
                     CommonComponents.GUI_BACK,
                     button -> {
-                        if (!isDownloadingCanceled.get()) {
-                            isDownloadingCanceled.set(true);
+                        if (downloadAttempt != null && downloadAttempt.isActive()) {
+                            cancelDownload();
+                            hideDownloadingUI();
                         } else {
                             onClose();
                         }
@@ -182,101 +191,65 @@ public class ExternalPackDownloader extends ConfirmScreen {
     }
 
     private void handleDatapackFile(Path path) {
-        if (minecraft == null) {
+        if (minecraft == null || closed) {
             return;
         }
-        boolean isWrapper;
-        try {
-            String sha1 = Utils.calculateSHA1(path);
-            if (sha1 == null) {
-                return;
-            }
-            isWrapper = sha1.equals(externalPack.getWrapperSha1());
-            if (!isWrapper && !sha1.equalsIgnoreCase(externalPack.getSha1())) {
-                minecraft.setScreenAndShow(new ErrorScreen(this, "error.wrong_datapack_file"));
-                return;
-            }
-        } catch (Exception e) {
-            return;
-        }
-        Path globalPacksDirectory = new File(minecraft.gameDirectory, "datapacks").toPath();
-        try {
-            if (Files.notExists(globalPacksDirectory)) {
-                Files.createDirectory(globalPacksDirectory);
-            }
-            if (isWrapper) {
-                Path extractedArchive = unzip(path, globalPacksDirectory);
-                Files.move(extractedArchive, globalPacksDirectory.resolve(externalPack.getFileName()));
-            } else {
-                Files.copy(path, globalPacksDirectory.resolve(externalPack.getFileName()));
-            }
-        } catch (IOException e) {
-            return;
-        }
-        isFileDownloaded = true;
-        onClose();
+        cancelDownload();
+        downloadAttempt = new DownloadAttempt();
+        completeInstallation(downloadAttempt, path);
     }
 
-    private Path unzip(Path source, Path destination) throws IOException {
-        Path firstExtractedFile = null;
-        try (ZipFile zipFile = new ZipFile(source.toFile())) {
-            Enumeration<? extends ZipEntry> entries = zipFile.entries();
-            while (entries.hasMoreElements()) {
-                ZipEntry entry = entries.nextElement();
-                Path outputPath = destination.resolve(entry.getName());
-                if (entry.isDirectory()) {
-                    Files.createDirectories(outputPath);
-                } else {
-                    if (firstExtractedFile == null) {
-                        firstExtractedFile = outputPath;
-                    }
-                    try (InputStream in = zipFile.getInputStream(entry);
-                         OutputStream out = Files.newOutputStream(outputPath)) {
-                        byte[] buffer = new byte[1024];
-                        int len;
-                        while ((len = in.read(buffer)) != -1) {
-                            out.write(buffer, 0, len);
-                        }
-                    }
-                }
-            }
+    private void completeInstallation(DownloadAttempt attempt, Path path) {
+        if (!isCurrent(attempt)) {
+            return;
         }
-        return firstExtractedFile;
+        Path target = new File(minecraft.gameDirectory, "datapacks").toPath().resolve(externalPack.getFileName());
+        attempt.complete(
+            () -> PackInstaller.install(path, target, externalPack.getSha1(), externalPack.getWrapperSha1()),
+            () -> {
+                isFileDownloaded = true;
+                onClose();
+            },
+            error -> showFailure(error, "installation")
+        );
     }
 
     private void startDownload() {
-        if (minecraft == null) {
+        if (minecraft == null || closed) {
             return;
         }
-        isDownloadingCanceled.set(false);
+        cancelDownload();
+        DownloadAttempt attempt = new DownloadAttempt();
+        downloadAttempt = attempt;
+        backButton.setMessage(CommonComponents.GUI_CANCEL);
+        downloadButton.active = false;
         String url = externalPack.getDownloadUrl();
         Path downloadTempDirectory = new File(minecraft.gameDirectory, ".datapacks_temp").toPath();
-        if (Files.notExists(downloadTempDirectory)) {
-            try {
-                Files.createDirectory(downloadTempDirectory);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        Path tempFile = downloadTempDirectory.resolve(String.valueOf(UUID.randomUUID()));
         CompletableFuture.runAsync(() -> {
             HttpURLConnection connection = null;
-
+            Path tempFile = null;
             try {
+                if (!attempt.isActive()) {
+                    return;
+                }
+                Files.createDirectories(downloadTempDirectory);
+                tempFile = Files.createTempFile(downloadTempDirectory, "download-", ".zip");
                 URI uri = URI.create(url);
                 connection = (HttpURLConnection) uri.toURL().openConnection();
                 connection.setDoInput(true);
                 connection.setDoOutput(false);
+                connection.setConnectTimeout(15000);
+                connection.setReadTimeout(15000);
                 connection.connect();
 
                 int responseCode = connection.getResponseCode();
                 if (responseCode / 100 != 2) {
-                    throw new IOException("Failed to open " + url + ", HTTP error code: " + responseCode);
+                    throw new IOException("HTTP error code: " + responseCode);
                 }
 
-                int totalBytes = connection.getContentLength();
-                if (totalBytes == -1) {
-                    throw new IOException("Unable to determine file size for " + url);
+                long totalBytes = connection.getContentLengthLong();
+                if (totalBytes <= 0) {
+                    throw new IOException("Missing download size");
                 }
 
                 try (InputStream in = connection.getInputStream();
@@ -284,50 +257,213 @@ public class ExternalPackDownloader extends ConfirmScreen {
 
                     byte[] buffer = new byte[8192];
                     int bytesRead;
-                    int downloadedBytes = 0;
+                    long downloadedBytes = 0;
 
                     while ((bytesRead = in.read(buffer)) != -1) {
-                        if (isDownloadingCanceled.get()) {
-                            hideDownloadingUI();
-                            break;
+                        if (!attempt.isActive()) {
+                            return;
                         }
                         out.write(buffer, 0, bytesRead);
                         downloadedBytes += bytesRead;
 
-                        int progress = (downloadedBytes * 100) / totalBytes;
-                        minecraft.execute(() -> downloadButton.setMessage(
-                            Component.translatable("mco.download.downloading").append(": " + progress + "%"))
-                        );
+                        // Installation/identity validation, not received bytes, completes the operation.
+                        long progress = Math.min(99, (downloadedBytes * 100) / totalBytes);
+                        minecraft.execute(() -> {
+                            if (isCurrent(attempt)) {
+                                downloadButton.setMessage(Component.translatable("mco.download.downloading").append(": " + progress + "%"));
+                            }
+                        });
                     }
-
-                    if (isDownloadingCanceled.get()) {
-                        Files.deleteIfExists(tempFile);
-                        hideDownloadingUI();
+                    if (downloadedBytes != totalBytes) {
+                        throw new IOException("Incomplete download");
                     }
-                    minecraft.execute(() -> {
-                        handleDatapackFile(tempFile);
-                        try {
-                            Files.deleteIfExists(tempFile);
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                    });
-                } catch (IOException e) {
-                    Files.deleteIfExists(tempFile);
-                    throw e;
                 }
+                // Close the worker's streams before the client thread reads or removes the file.
+                Path completedFile = tempFile;
+                minecraft.execute(() -> {
+                    try {
+                        completeInstallation(attempt, completedFile);
+                    } finally {
+                        deleteDownload(completedFile);
+                    }
+                });
+                tempFile = null; // Client-thread completion now owns cleanup, including stale/cancelled completion.
             } catch (Exception e) {
-                throw new RuntimeException("Failed to download file: " + e.getMessage(), e);
+                minecraft.execute(() -> {
+                    if (isCurrent(attempt)) {
+                        attempt.fail(e, error -> showFailure(error, "download"));
+                    }
+                });
             } finally {
+                if (tempFile != null) {
+                    deleteDownload(tempFile);
+                }
                 if (connection != null) {
                     connection.disconnect();
                 }
             }
+        }).exceptionally(error -> {
+            logFailure(error, "download completion");
+            return null;
         });
+    }
+
+    private boolean isCurrent(DownloadAttempt attempt) {
+        return !closed && minecraft != null && downloadAttempt == attempt && attempt.isActive();
+    }
+
+    private void cancelDownload() {
+        if (downloadAttempt != null) {
+            downloadAttempt.cancel();
+        }
+    }
+
+    private void showFailure(Exception error, String stage) {
+        logFailure(error, stage);
+        hideDownloadingUI();
+        minecraft.setScreenAndShow(new ErrorScreen(this,
+            error instanceof InvalidPackException ? "error.wrong_datapack_file" : "error.unknown"));
+    }
+
+    private void logFailure(Throwable error, String stage) {
+        // Exception messages can contain local paths. Keep the pack/stage/type, not those paths.
+        AchieveToDoMod.logger.warn("External pack {} failed during {} ({}, cleanup failures: {})",
+            externalPack.name(), stage, error.getClass().getSimpleName(), error.getSuppressed().length);
+    }
+
+    private void deleteDownload(Path path) {
+        try {
+            Files.deleteIfExists(path);
+        } catch (IOException | SecurityException error) {
+            logFailure(error, "temporary file cleanup");
+        }
     }
 
     private void hideDownloadingUI() {
         backButton.setMessage(CommonComponents.GUI_BACK);
+        downloadButton.setMessage(AchieveToDoClient.translate("downloader.download"));
         downloadButton.active = true;
+    }
+
+    static final class InvalidPackException extends IOException {
+        InvalidPackException() {
+            super("External pack identity does not match the pinned source");
+        }
+    }
+
+    /** Shared by downloaded, selected and dropped files; only validated source bytes enter the global cache. */
+    static final class PackInstaller {
+        static void install(Path source, Path destination, String expectedSha1, String wrapperSha1) throws IOException {
+            String sourceSha1 = digest(source);
+            boolean wrapper = wrapperSha1 != null && wrapperSha1.equalsIgnoreCase(sourceSha1);
+            if (!wrapper && !expectedSha1.equalsIgnoreCase(sourceSha1)) {
+                throw new InvalidPackException();
+            }
+            Path target = destination.toAbsolutePath();
+            Files.createDirectories(target.getParent());
+            Path staged = Files.createTempFile(target.getParent(), ".achievetodo-pack-", ".zip");
+            Throwable failure = null;
+            boolean committed = false;
+            try {
+                if (wrapper) {
+                    extractPinnedArchive(source, staged, expectedSha1);
+                } else {
+                    Files.copy(source, staged, StandardCopyOption.REPLACE_EXISTING);
+                }
+                if (!expectedSha1.equalsIgnoreCase(digest(staged))) {
+                    throw new InvalidPackException();
+                }
+                // Fail closed if atomic replacement is unavailable: never truncate the old destination.
+                Files.move(staged, target, StandardCopyOption.ATOMIC_MOVE, StandardCopyOption.REPLACE_EXISTING);
+                committed = true;
+            } catch (IOException | RuntimeException error) {
+                failure = error;
+                throw error;
+            } finally {
+                if (!committed) {
+                    try {
+                        Files.deleteIfExists(staged);
+                    } catch (IOException cleanup) {
+                        if (failure != null) {
+                            failure.addSuppressed(cleanup);
+                        } else {
+                            throw cleanup;
+                        }
+                    }
+                }
+            }
+        }
+
+        private static void extractPinnedArchive(Path wrapper, Path staged, String expectedSha1) throws IOException {
+            try (ZipFile zip = new ZipFile(wrapper.toFile())) {
+                Enumeration<? extends ZipEntry> entries = zip.entries();
+                while (entries.hasMoreElements()) {
+                    ZipEntry entry = entries.nextElement();
+                    if (entry.isDirectory()) {
+                        continue;
+                    }
+                    // Never extract wrapper paths into the cache or choose an unvalidated README/first entry.
+                    try (InputStream input = zip.getInputStream(entry)) {
+                        Files.copy(input, staged, StandardCopyOption.REPLACE_EXISTING);
+                    }
+                    if (expectedSha1.equalsIgnoreCase(digest(staged))) {
+                        return;
+                    }
+                }
+            }
+            throw new InvalidPackException();
+        }
+
+        private static String digest(Path path) throws IOException {
+            try {
+                String result = Utils.calculateSHA1(path);
+                if (result == null) {
+                    throw new IOException("Missing external pack source");
+                }
+                return result;
+            } catch (RuntimeException error) {
+                throw new IOException("Cannot read external pack source", error);
+            }
+        }
+    }
+
+    @FunctionalInterface
+    interface Installation {
+        void run() throws IOException;
+    }
+
+    /** One attempt owns its queued completions; cancellation and commit have a single ordering point. */
+    static final class DownloadAttempt {
+        private boolean cancelled;
+        private boolean completed;
+
+        synchronized boolean isActive() {
+            return !cancelled && !completed;
+        }
+
+        synchronized void cancel() {
+            cancelled = true;
+        }
+
+        synchronized void fail(Exception error, Consumer<Exception> failure) {
+            if (isActive()) {
+                cancelled = true;
+                failure.accept(error);
+            }
+        }
+
+        synchronized void complete(Installation installation, Runnable success, Consumer<Exception> failure) {
+            if (!isActive()) {
+                return;
+            }
+            try {
+                installation.run();
+            } catch (IOException | RuntimeException error) {
+                fail(error, failure);
+                return;
+            }
+            completed = true;
+            success.run();
+        }
     }
 }

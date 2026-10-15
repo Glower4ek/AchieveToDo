@@ -21,6 +21,8 @@ public class Progressions {
             GET_INTO_BOAT
         );
         addFixedProgressionCycles(progression, 0);
+        progression.put(USE_COPPER_TOOLS, 98);
+        progression.put(EQUIP_COPPER_ARMOR, 68);
         return progression;
     }
 
@@ -33,6 +35,8 @@ public class Progressions {
             EAT_SUSPICIOUS_STEW, PUT_IN_BUNDLE, BREAK_BLOCKS_IN_NEGATIVE_Y, USE_GOLDEN_TOOLS, OPEN_CHEST, GET_INTO_BOAT
         );
         addFixedProgressionCycles(progression, 1);
+        progression.put(USE_COPPER_TOOLS, 128);
+        progression.put(EQUIP_COPPER_ARMOR, 83);
         return progression;
     }
 
@@ -45,6 +49,8 @@ public class Progressions {
             PUT_IN_BUNDLE
         );
         addFixedProgressionCycles(progression, 2);
+        progression.put(USE_COPPER_TOOLS, 158);
+        progression.put(EQUIP_COPPER_ARMOR, 98);
         return progression;
     }
 

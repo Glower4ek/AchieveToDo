@@ -9,6 +9,15 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.Leashable;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.equipment.Equippable;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
+import java.util.LinkedHashSet;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.throwableitemprojectile.ThrownEnderpearl;
 import net.minecraft.world.entity.vehicle.minecart.Minecart;
@@ -25,6 +34,60 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin {
+
+    @Inject(method = "interact", at = @At(value = "INVOKE",
+        target = "Lnet/minecraft/world/entity/Entity;shearOffAllLeashConnections(Lnet/minecraft/world/entity/player/Player;)Z"), cancellable = true)
+    private void lockManualLeashShears(Player player, InteractionHand hand, Vec3 hit,
+                                      CallbackInfoReturnable<InteractionResult> cir) {
+        Entity target = (Entity) (Object) this;
+        var incoming = Leashable.leashableLeashedTo(target);
+        boolean ownConnection = target instanceof Leashable leashable && leashable.isLeashed();
+        if (!ownConnection && incoming.isEmpty()) {
+            return;
+        }
+        if (AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_SHEARS)) {
+            cir.setReturnValue(InteractionResult.FAIL);
+            return;
+        }
+        var affected = new LinkedHashSet<Entity>();
+        affected.add(target);
+        if (ownConnection) {
+            Entity holder = ((Leashable) target).getLeashHolder();
+            if (holder != null) {
+                affected.add(holder);
+            }
+        }
+        // Vanilla's query contains Entity instances and is also used by dropAllLeashConnections.
+        for (Leashable connection : incoming) {
+            affected.add((Entity) connection);
+        }
+        for (Entity entity : affected) {
+            if (AchieveToDoMod.isTargetInLockedLandmark(player, entity)) {
+                cir.setReturnValue(InteractionResult.FAIL);
+                return;
+            }
+        }
+    }
+
+    @Inject(method = "interact", at = @At(value = "INVOKE",
+        target = "Lnet/minecraft/world/entity/Mob;attemptToShearEquipment(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;)Z"), cancellable = true)
+    private void lockManualEquipmentShears(Player player, InteractionHand hand, Vec3 hit,
+                                          CallbackInfoReturnable<InteractionResult> cir) {
+        Mob target = (Mob) (Object) this;
+        // canShearEquipment, the actual shears hand and secondary-use have already been checked.
+        for (EquipmentSlot slot : EquipmentSlot.VALUES) {
+            ItemStack equipment = target.getItemBySlot(slot);
+            Equippable component = equipment.get(DataComponents.EQUIPPABLE);
+            if (component != null && component.canBeSheared() &&
+                (!EnchantmentHelper.has(equipment, EnchantmentEffectComponents.PREVENT_ARMOR_CHANGE) || player.isCreative())) {
+                if (AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_SHEARS) ||
+                    AchieveToDoMod.isTargetInLockedLandmark(player, target)) {
+                    cir.setReturnValue(InteractionResult.FAIL);
+                }
+                return;
+            }
+        }
+    }
 
     @Unique
     private boolean isEndGatewayOnCentralIsland(@NotNull BlockPos pos) {

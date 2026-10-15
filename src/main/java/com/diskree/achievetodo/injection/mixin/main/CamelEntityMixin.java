@@ -16,6 +16,18 @@ public class CamelEntityMixin {
 
     @Inject(
         method = "mobInteract",
+        at = @At(value = "INVOKE",
+            target = "Lnet/minecraft/world/entity/animal/camel/Camel;openCustomInventoryScreen(Lnet/minecraft/world/entity/player/Player;)V"),
+        cancellable = true
+    )
+    private void lockInventoryOpening(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
+        if (AchieveToDoMod.isTargetInLockedLandmark(player, (Camel) (Object) this)) {
+            cir.setReturnValue(InteractionResult.FAIL);
+        }
+    }
+
+    @Inject(
+        method = "mobInteract",
         at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/world/entity/animal/camel/Camel;doPlayerRide(Lnet/minecraft/world/entity/player/Player;)V",

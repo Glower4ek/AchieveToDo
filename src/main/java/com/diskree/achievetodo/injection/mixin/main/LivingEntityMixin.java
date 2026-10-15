@@ -2,6 +2,7 @@ package com.diskree.achievetodo.injection.mixin.main;
 
 import com.diskree.achievetodo.AchieveToDoMod;
 import com.diskree.achievetodo.ability.AbilityType;
+import com.diskree.achievetodo.server.AchieveToDoServer;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -14,6 +15,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin {
+
+    @Inject(method = "postPiercingAttack()V", at = @At("HEAD"), cancellable = true)
+    public void lockPostPiercing(CallbackInfo ci) {
+        LivingEntity actor = (LivingEntity) (Object) this;
+        if (actor instanceof Player player && AchieveToDoServer.isRegisteredSpear(player.getWeaponItem().getItem()) &&
+            AchieveToDoServer.isCombatAbilityLocked(
+                player, AbilityType.findToolMaterialUsageAbility(player.getWeaponItem().getItem()), true
+            )) {
+            ci.cancel();
+        }
+    }
 
     @Inject(
         method = "isEquippableInSlot",

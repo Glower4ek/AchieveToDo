@@ -50,7 +50,12 @@
       "com.diskree.achievetodo.certification.PhaseALocationHolderSetWorldgenGameTest",
       "com.diskree.achievetodo.certification.PhaseAPlayerKilledEntityRemainderGameTest",
       "com.diskree.achievetodo.certification.PhaseBRuntimeSmoke",
-      "com.diskree.achievetodo.certification.ProgressionReconciliationGameTest"
+      "com.diskree.achievetodo.certification.ProgressionReconciliationGameTest",
+      "com.diskree.achievetodo.certification.PhaseDAbilityRoutesGameTest",
+      "com.diskree.achievetodo.certification.PhaseDEquipmentGameTest",
+      "com.diskree.achievetodo.certification.PhaseDCopperTransitionsGameTest",
+      "com.diskree.achievetodo.certification.PhaseDContextRoutesGameTest",
+      "com.diskree.achievetodo.certification.PhaseDCombatRoutesGameTest"
     ]
   },
   "mixins": [

@@ -1,19 +1,27 @@
 package com.diskree.achievetodo.client;
 
 import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.io.StringReader;
+import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
@@ -37,6 +45,26 @@ class BetterRuOverlayResourceTest {
     private static final Pattern JSON_TRANSLATE_PATTERN = Pattern.compile("\"translate\"\\s*:\\s*\"((?:\\\\.|[^\"\\\\])*)\"");
     private static final Pattern COMMAND_TRANSLATE_PATTERN = Pattern.compile("translate\\s*:\\s*\"((?:\\\\.|[^\"\\\\])*)\"");
     private static final Pattern JSON_KEY_PATTERN = Pattern.compile("^\\s+\"((?:\\\\.|[^\"\\\\])+)\":", Pattern.MULTILINE);
+
+    private static final Set<String> COPPER_KEYS = Set.of(
+        "achievetodo.ability.use_copper_tools.name",
+        "achievetodo.ability.use_copper_tools.description",
+        "achievetodo.ability.use_copper_tools.locked_message",
+        "achievetodo.ability.equip_copper_armor.name",
+        "achievetodo.ability.equip_copper_armor.description",
+        "achievetodo.ability.equip_copper_armor.locked_message"
+    );
+    private static final Path PHASE_B_ORACLE = Path.of("reference/phase_b/b7_localization_certification.json");
+    private static final Path PHASE_B_SUCCESSOR = Path.of("reference/phase_b/b7_m2_current_consumer_set_refresh.json");
+    private static final String PHASE_B_ORACLE_SHA256 = "e0866de8bf91d079de75935e6b21b2396b0cc84c8605096eb81e28d68e54ca7c";
+    private static final String PHASE_B_SUCCESSOR_SHA256 = "943bfc15b65923461b8004559a3a5ac6e225c5b0ad74d8f4a5d009d8ea4fbd4b";
+    // D-S01 ZIP 7b9fb984de6bb7bec5588bb1acc1671da5ddfc6ab6e617e85c953b2c4219c378,
+    // before/src/main/resources/assets/achievetodo/lang/{en_us,ru_ru}.json (533 entries each).
+    // Raw SHA256: EN 2fe18b7a28dc1797bc4c7c470d0e59e7a87c7475cbe10966b8db45feb48d01c1,
+    // RU 74918b4e5fca10c5a54b295efae3321a07bb8b0f21c272ab2af39d6c2081e628.
+    // Fingerprints frame sorted UTF8 key/value bytes with their signed int32 big-endian lengths.
+    private static final String HISTORICAL_EN_VALUES = "91c03bdfe9a34f02a7a7a99e997fe3b9c8e940cba65a7c5d7b7844eafd4b4a3a";
+    private static final String HISTORICAL_RU_VALUES = "40757eaf940ae781b9d15b272d0136261e948dfa14603cf53d12bb2a630ab8f8";
 
     @Test
     void integratedBetterRuOverlayParsesWithoutDuplicateKeys() throws IOException {
@@ -132,16 +160,31 @@ class BetterRuOverlayResourceTest {
     }
 
     @Test
-    void achievetodoRussianLocaleStillCoversAllModOwnedKeys() throws IOException {
-        JsonObject english = loadJsonObject(ACHIEVETODO_EN);
-        JsonObject russian = loadJsonObject(ACHIEVETODO_RU);
-
-        assertEquals(533, english.size(), "This regression test pins the current AchieveToDo-owned keyset");
+    void achievetodoRussianLocaleStillCoversAllModOwnedKeys() throws Exception {
+        JsonObject english = loadStrictLocale(ACHIEVETODO_EN);
+        JsonObject russian = loadStrictLocale(ACHIEVETODO_RU);
+        Set<String> historicalKeys = new HashSet<>();
+        for (var row : historicalRequirements().entrySet()) {
+            if (row.getValue().get("provider").getAsString().equals("ATD_RU_DICTIONARY")) historicalKeys.add(row.getKey());
+        }
+        assertEquals(533, historicalKeys.size(), "Independent frozen Phase B ATD keyset");
+        assertTrue(java.util.Collections.disjoint(historicalKeys, COPPER_KEYS));
+        Set<String> expectedKeys = new HashSet<>(historicalKeys);
+        expectedKeys.addAll(COPPER_KEYS);
+        assertEquals(expectedKeys, english.keySet(), "Only the six approved copper keys may extend the historical set");
         assertEquals(
             english.keySet(),
             russian.keySet(),
             "Existing AchieveToDo-owned Russian keys should remain intact while Better RU is integrated separately"
         );
+        assertEquals(539, english.size());
+        assertEquals(539, russian.size());
+        assertEquals(HISTORICAL_EN_VALUES, localeFingerprint(english, historicalKeys), "All 533 historical EN values must remain exact");
+        assertEquals(HISTORICAL_RU_VALUES, localeFingerprint(russian, historicalKeys), "All 533 historical RU values must remain exact");
+        for (String key : COPPER_KEYS) {
+            assertFalse(english.get(key).getAsString().isBlank(), key + " EN");
+            assertFalse(russian.get(key).getAsString().isBlank(), key + " RU");
+        }
     }
 
     @Test
@@ -169,22 +212,190 @@ class BetterRuOverlayResourceTest {
     @Test
     void productionRuOverlayResolvesCurrentPhaseBEffectiveConsumers() throws Exception {
         var actual = PhaseBPackTestFixtures.currentLocalization();
-        var receipt = PhaseBPackTestFixtures.json(Path.of("reference/phase_b/b7_m2_current_consumer_set_refresh.json"));
+        var receipt = loadFrozenReceipt(PHASE_B_SUCCESSOR, PHASE_B_SUCCESSOR_SHA256);
         var expected = receipt.getAsJsonObject("currentConsumerOracle");
-        assertEquals(4301, actual.get("totalRequirements").getAsInt());
-        assertEquals(expected.get("requirements"), actual.get("totalRequirements"));
-        assertEquals(expected.get("providerPartition"), actual.get("providerCounts"));
+        Map<String, JsonObject> current = indexRequirements(actual.getAsJsonArray("requirements"));
+        Map<String, JsonObject> historical = historicalRequirements();
+        Set<String> extendedKeys = new HashSet<>(historical.keySet());
+        extendedKeys.addAll(COPPER_KEYS);
+        assertEquals(extendedKeys, current.keySet(), "No historical requirement may disappear or unrelated requirement appear");
+
+        Map<String, JsonObject> projection = new LinkedHashMap<>(current);
+        JsonObject declaration = new JsonObject();
+        declaration.addProperty("owner", "ATD_DICTIONARY_DECLARATION");
+        declaration.addProperty("path", ACHIEVETODO_EN.toString().replace('\\', '/'));
+        JsonArray copperConsumers = new JsonArray(); copperConsumers.add(declaration);
+        for (String key : COPPER_KEYS) {
+            JsonObject row = projection.remove(key);
+            assertNotNull(row, key);
+            assertEquals("ATD_RU_DICTIONARY", row.get("provider").getAsString(), key);
+            assertEquals(copperConsumers, row.getAsJsonArray("consumers"), "Only the approved copper dictionary declaration is new: " + key);
+        }
+        for (var row : historical.entrySet()) {
+            JsonObject projected = projection.get(row.getKey());
+            assertNotNull(projected, row.getKey());
+            assertEquals(row.getValue().get("provider"), projected.get("provider"), row.getKey());
+            assertEquals(consumerMultiset(row.getValue()), consumerMultiset(projected), "Historical consumers: " + row.getKey());
+        }
+        assertEquals(4301, projection.size());
+        assertEquals(expected.get("requirements").getAsInt(), projection.size());
+        assertEquals(expected.get("providerPartition"), providerPartition(projection));
+        assertEquals(receipt.get("effectiveCoverage"), effectiveCoverage(projection, receipt.getAsJsonObject("effectiveCoverage").keySet()));
         assertEquals(receipt.get("effectiveCoverage"), actual.get("effectiveCoverage"));
-        assertEquals(4290, actual.get("placeholderChecked").getAsInt());
-        assertEquals(expected.get("placeholderContracts"), actual.get("placeholderChecked"));
+        assertEquals(4290, placeholderRequirements(projection));
+        assertEquals(expected.get("placeholderContracts").getAsInt(), placeholderRequirements(projection));
+
+        assertEquals(4307, current.size());
+        assertEquals(current.size(), actual.get("totalRequirements").getAsInt());
+        JsonObject extendedProviders = expected.getAsJsonObject("providerPartition").deepCopy();
+        extendedProviders.addProperty("ATD_RU_DICTIONARY", extendedProviders.get("ATD_RU_DICTIONARY").getAsInt() + COPPER_KEYS.size());
+        assertEquals(extendedProviders, providerPartition(current));
+        assertEquals(extendedProviders, actual.get("providerCounts"));
+        assertEquals(4296, placeholderRequirements(current));
+        assertEquals(placeholderRequirements(current), actual.get("placeholderChecked").getAsInt());
         assertTrue(actual.getAsJsonArray("placeholderMismatches").isEmpty());
         assertEquals(3482, actual.get("dictionaryCount").getAsInt());
+        assertEquals(receipt.getAsJsonObject("dictionary").get("sha256").getAsString(),
+            PhaseBPackTestFixtures.hash(Files.readAllBytes(BETTER_RU_OVERLAY), "SHA-256"));
         var provenance = actual.getAsJsonObject("provenance");
         assertEquals(receipt.getAsJsonObject("provenance").get("partition"), provenance.get("partition"));
         for (String field : List.of("missing", "duplicates", "hashMismatch")) assertEquals(0, provenance.get(field).getAsInt());
         for (var row : actual.getAsJsonArray("requirements")) assertFalse(row.getAsJsonObject().get("provider").getAsString().equals("MISSING"));
         var selected = actual.getAsJsonObject("selectedCompanionCoverage"); assertEquals(53, selected.size());
         for (var entry : selected.entrySet()) assertFalse(entry.getValue().getAsString().equals("MISSING"));
+    }
+
+    private static JsonObject loadFrozenReceipt(Path path, String sha256) throws Exception {
+        byte[] bytes = Files.readAllBytes(path);
+        assertEquals(sha256, PhaseBPackTestFixtures.hash(bytes, "SHA-256"), "Immutable historical authority: " + path);
+        return JsonParser.parseString(new String(bytes, StandardCharsets.UTF_8)).getAsJsonObject();
+    }
+
+    /** B7-M2 is reconstructed from frozen B7 rows and its three explicitly recorded message replacements. */
+    private static Map<String, JsonObject> historicalRequirements() throws Exception {
+        JsonObject successor = loadFrozenReceipt(PHASE_B_SUCCESSOR, PHASE_B_SUCCESSOR_SHA256);
+        Map<String, JsonObject> historical = frozenRequirementRows();
+        assertEquals(4304, historical.size());
+        Set<String> retired = new HashSet<>();
+        for (var replacement : successor.getAsJsonArray("b8R2ReplacementMapping")) {
+            JsonObject mapping = replacement.getAsJsonObject();
+            String oldKey = mapping.get("old").getAsString(), newKey = mapping.get("new").getAsString();
+            assertTrue(retired.add(oldKey), "Duplicate historical replacement");
+            JsonObject old = historical.remove(oldKey), retained = historical.get(newKey);
+            assertNotNull(old, oldKey); assertNotNull(retained, newKey);
+            assertEquals(mapping.get("newProvider"), retained.get("provider"));
+            assertEquals(0, mapping.get("oldCurrentConsumers").getAsInt());
+            // Copies only: the original receipt and its row objects remain historical evidence.
+            JsonObject merged = retained.deepCopy();
+            merged.getAsJsonArray("consumers").addAll(old.getAsJsonArray("consumers").deepCopy());
+            assertEquals(mapping.get("newCurrentConsumers").getAsInt(), merged.getAsJsonArray("consumers").size());
+            historical.put(newKey, merged);
+        }
+        Set<String> recordedRetired = new HashSet<>();
+        for (var key : successor.getAsJsonObject("exactRequirementSetDelta").getAsJsonArray("historicalOnly")) recordedRetired.add(key.getAsString());
+        assertEquals(recordedRetired, retired);
+        assertTrue(successor.getAsJsonObject("exactRequirementSetDelta").getAsJsonArray("currentOnly").isEmpty());
+        assertEquals(4301, historical.size());
+        return historical;
+    }
+
+    /** The large B7 receipt also contains unrelated audit data; retain only the independently pinned rows. */
+    private static Map<String, JsonObject> frozenRequirementRows() throws Exception {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        try (var stream = Files.newInputStream(PHASE_B_ORACLE)) {
+            byte[] buffer = new byte[64 * 1024];
+            for (int count; (count = stream.read(buffer)) >= 0;) digest.update(buffer, 0, count);
+        }
+        assertEquals(PHASE_B_ORACLE_SHA256, java.util.HexFormat.of().formatHex(digest.digest()));
+        JsonArray requirements = null;
+        try (JsonReader reader = new JsonReader(Files.newBufferedReader(PHASE_B_ORACLE, StandardCharsets.UTF_8))) {
+            reader.beginObject();
+            while (reader.hasNext()) {
+                if (!reader.nextName().equals("independentExtraction")) { reader.skipValue(); continue; }
+                reader.beginObject();
+                while (reader.hasNext()) {
+                    if (reader.nextName().equals("requirements")) requirements = JsonParser.parseReader(reader).getAsJsonArray();
+                    else reader.skipValue();
+                }
+                reader.endObject();
+            }
+            reader.endObject(); assertEquals(JsonToken.END_DOCUMENT, reader.peek());
+        }
+        assertNotNull(requirements, "Frozen B7 requirements");
+        return indexRequirements(requirements);
+    }
+
+    private static Map<String, JsonObject> indexRequirements(JsonArray requirements) {
+        Map<String, JsonObject> rows = new LinkedHashMap<>();
+        for (var element : requirements) {
+            JsonObject row = element.getAsJsonObject(); String key = row.get("key").getAsString();
+            assertFalse(rows.containsKey(key), "Duplicate requirement: " + key); rows.put(key, row);
+        }
+        return rows;
+    }
+
+    private static Map<JsonElement, Integer> consumerMultiset(JsonObject row) {
+        Map<JsonElement, Integer> counts = new LinkedHashMap<>();
+        for (var consumer : row.getAsJsonArray("consumers")) counts.merge(consumer, 1, Integer::sum);
+        return counts;
+    }
+
+    private static JsonObject providerPartition(Map<String, JsonObject> rows) {
+        JsonObject counts = new JsonObject();
+        for (var row : rows.values()) {
+            String provider = row.get("provider").getAsString();
+            counts.addProperty(provider, (counts.has(provider) ? counts.get(provider).getAsInt() : 0) + 1);
+        }
+        return counts;
+    }
+
+    private static int placeholderRequirements(Map<String, JsonObject> rows) {
+        return (int) rows.values().stream().filter(r -> !r.get("provider").getAsString().equals("INTENTIONALLY_LANGUAGE_NEUTRAL")
+            && !r.get("provider").getAsString().equals("MISSING")).count();
+    }
+
+    private static JsonObject effectiveCoverage(Map<String, JsonObject> rows, Set<String> views) {
+        JsonObject coverage = new JsonObject();
+        for (String view : views) {
+            int required = 0, resolved = 0; Set<String> missing = new TreeSet<>();
+            for (var row : rows.entrySet()) {
+                boolean used = row.getValue().getAsJsonArray("consumers").asList().stream().map(JsonElement::getAsJsonObject)
+                    .anyMatch(c -> c.has("combination") && c.get("combination").getAsString().equals(view));
+                if (used) {
+                    required++;
+                    if (row.getValue().get("provider").getAsString().equals("MISSING")) missing.add(row.getKey()); else resolved++;
+                }
+            }
+            JsonObject result = new JsonObject(); result.addProperty("required", required); result.addProperty("resolved", resolved);
+            JsonArray absent = new JsonArray(); missing.forEach(absent::add); result.add("missing", absent); coverage.add(view, result);
+        }
+        return coverage;
+    }
+
+    /** Streaming names are checked before parsing can collapse duplicate locale keys, regardless of layout. */
+    private static JsonObject loadStrictLocale(Path path) throws IOException {
+        JsonObject result = new JsonObject();
+        try (JsonReader reader = new JsonReader(new StringReader(Files.readString(path, StandardCharsets.UTF_8)))) {
+            reader.setLenient(false); reader.beginObject();
+            while (reader.hasNext()) {
+                String key = reader.nextName(); assertFalse(result.has(key), "Duplicate locale key in " + path + ": " + key);
+                assertEquals(JsonToken.STRING, reader.peek(), "Locale value must be a string: " + key);
+                result.addProperty(key, reader.nextString());
+            }
+            reader.endObject(); assertEquals(JsonToken.END_DOCUMENT, reader.peek());
+        }
+        return result;
+    }
+
+    private static String localeFingerprint(JsonObject locale, Set<String> historicalKeys) throws Exception {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        for (String key : new TreeSet<>(historicalKeys)) {
+            for (String value : List.of(key, locale.get(key).getAsString())) {
+                byte[] bytes = value.getBytes(StandardCharsets.UTF_8);
+                digest.update(ByteBuffer.allocate(4).putInt(bytes.length).array()); digest.update(bytes);
+            }
+        }
+        return java.util.HexFormat.of().formatHex(digest.digest());
     }
 
     @Test

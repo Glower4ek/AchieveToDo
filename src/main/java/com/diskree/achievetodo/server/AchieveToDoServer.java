@@ -36,6 +36,13 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.players.PlayerList;
 import net.minecraft.resources.Identifier;
 import net.minecraft.stats.ServerStatsCounter;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
@@ -264,6 +271,16 @@ public class AchieveToDoServer implements ServerModInitializer {
         @NotNull DimensionType targetDimensionType,
         @NotNull AABB targetBox
     ) {
+        return isTargetInLockedLandmark(actor, targetDimensionType, targetBox, false);
+    }
+
+    /** CP-S13: preserve the historical first-match result; only dispatch can be silent. */
+    public boolean isTargetInLockedLandmark(
+        @NotNull ServerPlayer actor,
+        @NotNull DimensionType targetDimensionType,
+        @NotNull AABB targetBox,
+        boolean checkOnly
+    ) {
         BoundingBox targetBlockBox = Utils.toBlockBox(targetBox);
         for (var entry : playersByLockedLandmarkTypes.entrySet()) {
             if (entry.getValue().contains(actor.getUUID())) {
@@ -278,11 +295,8 @@ public class AchieveToDoServer implements ServerModInitializer {
                                 AbilityType abilityType = AbilityType.findByLandmarkType(landmarkType);
                                 if (abilityType != null) {
                                     boolean isAbilityLocked = isAbilityLocked(actor, abilityType, true);
-                                    if (isAbilityLocked) {
-                                        ServerPlayNetworking.send(actor, new CheckTargetInLockedLandmarkPayload(
-                                            targetDimensionType,
-                                            targetBox
-                                        ));
+                                    if (isAbilityLocked && !checkOnly) {
+                                        notifyLockedLandmark(actor, targetDimensionType, targetBox);
                                     }
                                     return isAbilityLocked;
                                 }
@@ -293,6 +307,137 @@ public class AchieveToDoServer implements ServerModInitializer {
             }
         }
         return false;
+    }
+
+    protected void notifyLockedLandmark(ServerPlayer actor, DimensionType dimension, AABB box) {
+        ServerPlayNetworking.send(actor, new CheckTargetInLockedLandmarkPayload(dimension, box));
+    }
+
+    // Invocation identity and one reporter; no saved permission allowance.
+    private static final ThreadLocal<CombatInvocation> COMBAT_INVOCATION = new ThreadLocal<>();
+
+    public static boolean isRegisteredSpear(Item item) {
+        return item == Items.WOODEN_SPEAR || item == Items.STONE_SPEAR || item == Items.COPPER_SPEAR ||
+            item == Items.IRON_SPEAR || item == Items.GOLDEN_SPEAR || item == Items.DIAMOND_SPEAR ||
+            item == Items.NETHERITE_SPEAR;
+    }
+
+    public static CombatInvocation openCombatInvocation(
+        LivingEntity actor, EquipmentSlot slot, ItemStack stack, boolean report
+    ) {
+        if (!(actor instanceof ServerPlayer player) || !isRegisteredSpear(stack.getItem()) ||
+            player.getItemBySlot(slot) != stack
+        ) {
+            return null;
+        }
+        if (!player.level().getServer().isSameThread()) {
+            throw new IllegalStateException("Combat invocation must belong to the server thread");
+        }
+        return new CombatInvocation(player, slot, stack, report);
+    }
+
+    public static boolean isCombatAbilityLocked(Player actor, AbilityType ability, boolean report) {
+        AchieveToDoServer server = AchieveToDoMod.getServer();
+        if (!(actor instanceof ServerPlayer player) || ability == null || server == null) {
+            return false;
+        }
+        if (!server.isAbilityLocked(player, ability, true)) {
+            return false;
+        }
+        recordCombatDenial(player, () -> server.isAbilityLocked(player, ability, false), report);
+        return true;
+    }
+
+    public static boolean isCombatTargetLocked(Player actor, Entity target, boolean report) {
+        AchieveToDoServer server = AchieveToDoMod.getServer();
+        DimensionType dimension = DimensionType.findByWorld(target.level().dimension());
+        if (!(actor instanceof ServerPlayer player) || server == null || dimension == null) {
+            return false;
+        }
+        AABB box = target.getBoundingBox();
+        if (!server.isTargetInLockedLandmark(player, dimension, box, true)) {
+            return false;
+        }
+        recordCombatDenial(player, () -> server.notifyLockedLandmark(player, dimension, box), report);
+        return true;
+    }
+
+    /** Standalone predicates and invocations without a matching selected spear stay native. */
+    public static boolean isScopedCombatTargetLocked(Entity actor, Entity target) {
+        CombatInvocation frame = COMBAT_INVOCATION.get();
+        if (frame == null || frame.actor != actor || frame.actor.getItemBySlot(frame.slot) != frame.stack ||
+            frame.stack.getItem() != frame.item
+        ) {
+            return false;
+        }
+        return isCombatTargetLocked(frame.actor, target, true);
+    }
+
+    private static void recordCombatDenial(ServerPlayer actor, Runnable reporter, boolean report) {
+        CombatInvocation frame = COMBAT_INVOCATION.get();
+        if (frame != null && frame.actor == actor) {
+            if (report && frame.report && frame.root.denial == null) {
+                frame.root.denial = reporter;
+            }
+        } else if (report) {
+            reporter.run();
+        }
+    }
+
+    public static final class CombatInvocation implements AutoCloseable {
+        private final Thread thread = Thread.currentThread();
+        private final ServerPlayer actor;
+        private final EquipmentSlot slot;
+        private final ItemStack stack;
+        private final Item item;
+        private final CombatInvocation previous;
+        private final CombatInvocation root;
+        private final boolean report;
+        private Runnable denial;
+        private boolean reported;
+        private boolean closed;
+
+        private CombatInvocation(ServerPlayer actor, EquipmentSlot slot, ItemStack stack, boolean report) {
+            this.actor = actor;
+            this.slot = slot;
+            this.stack = stack;
+            item = stack.getItem();
+            previous = COMBAT_INVOCATION.get();
+            boolean sameActor = previous != null && previous.actor == actor;
+            root = sameActor ? previous.root : this;
+            this.report = report && (!sameActor || previous.report);
+            COMBAT_INVOCATION.set(this);
+        }
+
+        public void reportDenial() {
+            if (Thread.currentThread() != thread || closed) {
+                throw new IllegalStateException("Combat reporter outside its invocation");
+            }
+            if (root == this && report && !reported && denial != null) {
+                reported = true;
+                denial.run();
+            }
+        }
+
+        @Override
+        public void close() {
+            if (Thread.currentThread() != thread) {
+                throw new IllegalStateException("Combat invocation closed on another thread");
+            }
+            if (closed) {
+                return;
+            }
+            if (COMBAT_INVOCATION.get() != this) {
+                throw new IllegalStateException("Combat invocations must close in reverse order");
+            }
+            if (previous == null) {
+                COMBAT_INVOCATION.remove();
+            } else {
+                COMBAT_INVOCATION.set(previous);
+            }
+            closed = true;
+            denial = null;
+        }
     }
 
     public void onLandmarksLoadedStatusChanged(
@@ -428,6 +573,7 @@ public class AchieveToDoServer implements ServerModInitializer {
             obtainedAdvancementsCountByPlayers.clear();
             playersAwaitingInitialSync.clear();
             landmarksByChunks.clear();
+            pendingLandmarkChunks.clear();
             playersByLockedLandmarkTypes.clear();
             trackedScores.clear();
             trackedStats.clear();
@@ -439,6 +585,12 @@ public class AchieveToDoServer implements ServerModInitializer {
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             if (!scoreboardInitializationComplete) {
                 finishScoreboardInitialization(server.getScoreboard());
+            }
+            if (!isNotReady()) {
+                pendingLandmarkChunks.replay(
+                    (world, pos) -> world.getChunkSource().getChunkNow(pos.x(), pos.z()),
+                    (world, chunk) -> onChunkLoadedStatusChanged(world, chunk, true)
+                );
             }
             if (playersAwaitingInitialSync.isEmpty()) {
                 return;
@@ -524,6 +676,7 @@ public class AchieveToDoServer implements ServerModInitializer {
     }
 
     private void onChunkLoadedStatusChanged(@NotNull ServerLevel world, @NotNull ChunkAccess chunk, boolean isLoaded) {
+        pendingLandmarkChunks.remove(world, chunk.getPos());
         DimensionType dimensionType = DimensionType.findByWorld(world.dimension());
         if (dimensionType == null) {
             return;
@@ -553,7 +706,11 @@ public class AchieveToDoServer implements ServerModInitializer {
             }
         }
         if (landmarks != null) {
-            onLandmarksLoadedStatusChanged(world, chunk.getPos(), landmarks, isLoaded);
+            if (isLoaded && isNotReady()) {
+                pendingLandmarkChunks.observe(world, chunk.getPos(), chunk);
+            } else {
+                onLandmarksLoadedStatusChanged(world, chunk.getPos(), landmarks, isLoaded);
+            }
         }
     }
 
@@ -677,6 +834,51 @@ public class AchieveToDoServer implements ServerModInitializer {
             for (String criterion : advancementTracker.getOrStartProgress(advancement).getRemainingCriteria()) {
                 advancementTracker.award(advancement, criterion);
             }
+        }
+    }
+
+
+    private final PendingLandmarkChunks pendingLandmarkChunks = new PendingLandmarkChunks();
+
+    /** Server-thread observations only; never loads chunks or retains saved permission state. */
+    static final class PendingLandmarkChunks {
+        private final Map<ServerLevel, Map<ChunkPos, ChunkAccess>> chunks = new IdentityHashMap<>();
+
+        void remove(ServerLevel world, ChunkPos pos) {
+            Map<ChunkPos, ChunkAccess> byPosition = chunks.get(world);
+            if (byPosition != null) {
+                byPosition.remove(pos);
+                if (byPosition.isEmpty()) {
+                    chunks.remove(world);
+                }
+            }
+        }
+
+        void observe(ServerLevel world, ChunkPos pos, ChunkAccess chunk) {
+            chunks.computeIfAbsent(world, ignored -> new HashMap<>()).put(pos, chunk);
+        }
+
+        void replay(
+            java.util.function.BiFunction<ServerLevel, ChunkPos, ChunkAccess> loadedChunk,
+            java.util.function.BiConsumer<ServerLevel, ChunkAccess> admit
+        ) {
+            for (var worldEntry : new ArrayList<>(chunks.entrySet())) {
+                ServerLevel world = worldEntry.getKey();
+                for (var chunkEntry : new ArrayList<>(worldEntry.getValue().entrySet())) {
+                    ChunkAccess current = loadedChunk.apply(world, chunkEntry.getKey());
+                    if (current == null) {
+                        continue;
+                    }
+                    remove(world, chunkEntry.getKey());
+                    if (current == chunkEntry.getValue()) {
+                        admit.accept(world, current);
+                    }
+                }
+            }
+        }
+
+        void clear() {
+            chunks.clear();
         }
     }
 

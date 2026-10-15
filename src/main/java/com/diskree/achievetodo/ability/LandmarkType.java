@@ -49,7 +49,8 @@ public enum LandmarkType {
         BuiltinStructures.RUINED_PORTAL_JUNGLE,
         BuiltinStructures.RUINED_PORTAL_SWAMP,
         BuiltinStructures.RUINED_PORTAL_MOUNTAIN,
-        BuiltinStructures.RUINED_PORTAL_OCEAN
+        BuiltinStructures.RUINED_PORTAL_OCEAN,
+        BuiltinStructures.RUINED_PORTAL_NETHER
     ),
     BURIED_TREASURE(
         BuiltinStructures.BURIED_TREASURE

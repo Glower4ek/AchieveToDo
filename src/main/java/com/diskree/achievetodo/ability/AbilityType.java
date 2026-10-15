@@ -190,7 +190,9 @@ public enum AbilityType {
     EAT_GOLDEN_CARROT(AbilityUnlockedToastType.FOOD, AbilitiesHierarchyLayerType.FOOD, Foods.GOLDEN_CARROT),
     TRADE_WITH_TOOLSMITH(AbilityUnlockedToastType.TRADING, AbilitiesHierarchyLayerType.TRADING, VillagerProfession.TOOLSMITH),
     TRADE_WITH_LIBRARIAN(AbilityUnlockedToastType.TRADING, AbilitiesHierarchyLayerType.TRADING, VillagerProfession.LIBRARIAN),
-    OPEN_ENCHANTING_TABLE(AbilityUnlockedToastType.BLOCK, AbilitiesHierarchyLayerType.BLOCKS, Blocks.ENCHANTING_TABLE);
+    OPEN_ENCHANTING_TABLE(AbilityUnlockedToastType.BLOCK, AbilitiesHierarchyLayerType.BLOCKS, Blocks.ENCHANTING_TABLE),
+    USE_COPPER_TOOLS(AbilityUnlockedToastType.TOOL, AbilitiesHierarchyLayerType.UPGRADE, ToolMaterial.COPPER),
+    EQUIP_COPPER_ARMOR(AbilityUnlockedToastType.EQUIPMENT, AbilitiesHierarchyLayerType.UPGRADE, ArmorMaterials.COPPER);
 
     private final AbilitiesHierarchyLayerType hierarchyLayerType;
     private final AbilityUnlockedToastType unlockToastType;
@@ -297,6 +299,12 @@ public enum AbilityType {
     }
 
     public @Nullable Item getIcon() {
+        if (this == USE_COPPER_TOOLS) {
+            return Items.COPPER_PICKAXE;
+        }
+        if (this == EQUIP_COPPER_ARMOR) {
+            return Items.COPPER_CHESTPLATE;
+        }
         if (item != null) {
             return item;
         }
@@ -392,7 +400,8 @@ public enum AbilityType {
         ) {
             return 80;
         }
-        if (this == USE_GOLDEN_TOOLS ||
+        if (this == USE_COPPER_TOOLS ||
+            this == USE_GOLDEN_TOOLS ||
             this == USE_WOODEN_TOOLS ||
             this == USE_STONE_TOOLS ||
             this == USE_IRON_TOOLS ||
@@ -402,7 +411,8 @@ public enum AbilityType {
         ) {
             return 70;
         }
-        if (this == EQUIP_LEATHER_ARMOR ||
+        if (this == EQUIP_COPPER_ARMOR ||
+            this == EQUIP_LEATHER_ARMOR ||
             this == EQUIP_CHAINMAIL_ARMOR ||
             this == EQUIP_IRON_ARMOR ||
             this == EQUIP_ELYTRA
@@ -562,7 +572,8 @@ public enum AbilityType {
             item == Items.WOODEN_PICKAXE ||
             item == Items.WOODEN_AXE ||
             item == Items.WOODEN_SHOVEL ||
-            item == Items.WOODEN_HOE
+            item == Items.WOODEN_HOE ||
+            item == Items.WOODEN_SPEAR
         ) {
             return USE_WOODEN_TOOLS;
         }
@@ -571,19 +582,25 @@ public enum AbilityType {
             item == Items.STONE_AXE ||
             item == Items.STONE_SHOVEL ||
             item == Items.STONE_HOE ||
-            item == Items.COPPER_SWORD ||
+            item == Items.STONE_SPEAR
+        ) {
+            return USE_STONE_TOOLS;
+        }
+        if (item == Items.COPPER_SWORD ||
             item == Items.COPPER_PICKAXE ||
             item == Items.COPPER_AXE ||
             item == Items.COPPER_SHOVEL ||
-            item == Items.COPPER_HOE
+            item == Items.COPPER_HOE ||
+            item == Items.COPPER_SPEAR
         ) {
-            return USE_STONE_TOOLS;
+            return USE_COPPER_TOOLS;
         }
         if (item == Items.GOLDEN_SWORD ||
             item == Items.GOLDEN_PICKAXE ||
             item == Items.GOLDEN_AXE ||
             item == Items.GOLDEN_SHOVEL ||
-            item == Items.GOLDEN_HOE
+            item == Items.GOLDEN_HOE ||
+            item == Items.GOLDEN_SPEAR
         ) {
             return USE_GOLDEN_TOOLS;
         }
@@ -591,7 +608,8 @@ public enum AbilityType {
             item == Items.IRON_PICKAXE ||
             item == Items.IRON_AXE ||
             item == Items.IRON_SHOVEL ||
-            item == Items.IRON_HOE
+            item == Items.IRON_HOE ||
+            item == Items.IRON_SPEAR
         ) {
             return USE_IRON_TOOLS;
         }
@@ -599,7 +617,8 @@ public enum AbilityType {
             item == Items.DIAMOND_PICKAXE ||
             item == Items.DIAMOND_AXE ||
             item == Items.DIAMOND_SHOVEL ||
-            item == Items.DIAMOND_HOE
+            item == Items.DIAMOND_HOE ||
+            item == Items.DIAMOND_SPEAR
         ) {
             return USE_DIAMOND_TOOLS;
         }
@@ -607,7 +626,8 @@ public enum AbilityType {
             item == Items.NETHERITE_PICKAXE ||
             item == Items.NETHERITE_AXE ||
             item == Items.NETHERITE_SHOVEL ||
-            item == Items.NETHERITE_HOE
+            item == Items.NETHERITE_HOE ||
+            item == Items.NETHERITE_SPEAR
         ) {
             return USE_NETHERITE_TOOLS;
         }
@@ -711,6 +731,13 @@ public enum AbilityType {
     }
 
     private static @Nullable ArmorMaterial getArmorMaterial(Item item) {
+        if (item == Items.COPPER_HELMET ||
+            item == Items.COPPER_CHESTPLATE ||
+            item == Items.COPPER_LEGGINGS ||
+            item == Items.COPPER_BOOTS
+        ) {
+            return ArmorMaterials.COPPER;
+        }
         if (item == Items.LEATHER_HELMET ||
             item == Items.LEATHER_CHESTPLATE ||
             item == Items.LEATHER_LEGGINGS ||

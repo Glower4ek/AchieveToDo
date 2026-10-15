@@ -347,7 +347,7 @@ public abstract class CreateWorldScreenMixin extends Screen implements CreateWor
     }
 
     @ModifyReturnValue(
-        method = "createLevelSettings",
+        method = "createLevelSettings(Z)Lnet/minecraft/world/level/LevelSettings;",
         at = @At(
             value = "RETURN",
             ordinal = 1
@@ -357,6 +357,7 @@ public abstract class CreateWorldScreenMixin extends Screen implements CreateWor
         if (uiState instanceof WorldCreatorExtension worldCreatorExtension) {
             LevelInfoExtension levelInfoExtension = MixinCasting.levelInfo(levelInfo);
             levelInfoExtension.achievetodo$setConfigName(worldCreatorExtension.achievetodo$getConfigName());
+            levelInfoExtension.achievetodo$setConfigurationOrigin(LevelInfoExtension.ConfigurationOrigin.FRESH);
         }
         return levelInfo;
     }

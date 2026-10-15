@@ -340,6 +340,9 @@
   "achievetodo.ability.equip_iron_armor.name": "Iron armor",
   "achievetodo.ability.equip_iron_armor.description": "Ability to equip iron armor",
   "achievetodo.ability.equip_iron_armor.locked_message": "You can't equip iron armor",
+  "achievetodo.ability.equip_copper_armor.name": "Copper armor",
+  "achievetodo.ability.equip_copper_armor.description": "Ability to equip copper armor",
+  "achievetodo.ability.equip_copper_armor.locked_message": "You can't equip copper armor",
 
   "achievetodo.ability.equip_netherite_armor.name": "Netherite armor",
   "achievetodo.ability.equip_netherite_armor.description": "Ability to equip netherite armor",
@@ -388,6 +391,9 @@
   "achievetodo.ability.use_iron_tools.name": "Iron tools",
   "achievetodo.ability.use_iron_tools.description": "Ability to use iron tools",
   "achievetodo.ability.use_iron_tools.locked_message": "You can't use iron tools",
+  "achievetodo.ability.use_copper_tools.name": "Copper tools",
+  "achievetodo.ability.use_copper_tools.description": "Ability to use copper tools",
+  "achievetodo.ability.use_copper_tools.locked_message": "You can't use copper tools",
 
   "achievetodo.ability.use_netherite_tools.name": "Netherite tools",
   "achievetodo.ability.use_netherite_tools.description": "Ability to use netherite tools",

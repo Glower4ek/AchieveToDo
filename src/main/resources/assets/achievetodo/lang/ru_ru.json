@@ -340,6 +340,9 @@
   "achievetodo.ability.equip_iron_armor.name": "Железная броня",
   "achievetodo.ability.equip_iron_armor.description": "Возможность надевать железную броню",
   "achievetodo.ability.equip_iron_armor.locked_message": "Вы не можете надеть железную броню",
+  "achievetodo.ability.equip_copper_armor.name": "Медная броня",
+  "achievetodo.ability.equip_copper_armor.description": "Возможность надевать медную броню",
+  "achievetodo.ability.equip_copper_armor.locked_message": "Вы не можете надеть медную броню",
 
   "achievetodo.ability.equip_netherite_armor.name": "Незеритовая броня",
   "achievetodo.ability.equip_netherite_armor.description": "Возможность надевать незеритовую броню",
@@ -388,6 +391,9 @@
   "achievetodo.ability.use_iron_tools.name": "Железные инструменты",
   "achievetodo.ability.use_iron_tools.description": "Возможность пользоваться железными инструментами",
   "achievetodo.ability.use_iron_tools.locked_message": "Вы не можете пользоваться железными инструментами",
+  "achievetodo.ability.use_copper_tools.name": "Медные инструменты",
+  "achievetodo.ability.use_copper_tools.description": "Возможность пользоваться медными инструментами",
+  "achievetodo.ability.use_copper_tools.locked_message": "Вы не можете пользоваться медными инструментами",
 
   "achievetodo.ability.use_netherite_tools.name": "Незеритовые инструменты",
   "achievetodo.ability.use_netherite_tools.description": "Возможность пользоваться незеритовыми инструментами",

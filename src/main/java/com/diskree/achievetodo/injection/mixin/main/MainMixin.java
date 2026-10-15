@@ -50,6 +50,7 @@ public class MainMixin {
         );
         LevelInfoExtension levelInfoExtension = MixinCasting.levelInfo(levelInfo);
         levelInfoExtension.achievetodo$setConfigName(configName);
+        levelInfoExtension.achievetodo$setConfigurationOrigin(LevelInfoExtension.ConfigurationOrigin.FRESH);
         return levelInfo;
     }
 }
