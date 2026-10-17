@@ -98,6 +98,7 @@ public class AdvancementWidgetMixin {
         CallbackInfo ci
     ) {
         Identifier advancementId = advancement.holder().id();
+        if (!com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()) return;
         trackedScoreType = TrackedScoreType.findByAdvancement(advancementId);
         if (trackedScoreType == null) {
             trackedNearbyEntitiesType = TrackedNearbyEntitiesType.findByAdvancement(advancementId);

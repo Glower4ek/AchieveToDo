@@ -26,6 +26,19 @@ plugins {
     id 'net.fabricmc.fabric-loom' version "${loomVersion}"
 }
 
+// Narrow standalone runner; no historical certification suite or external fixture acquisition.
+sourceSets {
+    bridgeTest {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+tasks.register('bridgeTest', JavaExec) {
+    dependsOn 'bridgeTestClasses'
+    classpath = sourceSets.bridgeTest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.bridge.ClientCodecFixtureTest'
+}
+
 def modId = project.modName.toLowerCase(Locale.ROOT)
 def repoUrl = project.repoUrl
 

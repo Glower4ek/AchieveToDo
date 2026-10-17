@@ -37,6 +37,7 @@ public abstract class AdvancementProgressMixin implements AdvancementProgressExt
 
     @Override
     public void achievetodo$setAdvancementId(Identifier advancementId) {
+        if (!com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()) return;
         trackedScoreType = TrackedScoreType.findByAdvancement(advancementId);
         if (trackedScoreType == null) {
             trackedNearbyEntitiesType = TrackedNearbyEntitiesType.findByAdvancement(advancementId);

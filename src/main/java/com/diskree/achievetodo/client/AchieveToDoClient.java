@@ -115,6 +115,7 @@ public class AchieveToDoClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        com.diskree.achievetodo.client.bridge.BridgeClient.initialize();
         registerPayloads();
         AdvancementLinkCommand.register();
 
@@ -129,13 +130,14 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     private void registerPayloads() {
-        ClientPlayNetworking.registerGlobalReceiver(SyncAbilitiesConfigurationPayload.ID, (payload, context) ->
+        ClientPlayNetworking.registerGlobalReceiver(SyncAbilitiesConfigurationPayload.ID, (payload, context) -> {
+            com.diskree.achievetodo.client.bridge.BridgeClient.observeFabric();
             context.client().execute(() -> {
                 abilitiesConfiguration = payload.abilitiesConfiguration();
                 abilityRows.clear();
                 calculateLockedLandmarkBoxes();
-            })
-        );
+            });
+        });
         ClientPlayNetworking.registerGlobalReceiver(SyncObtainedAdvancementsCountPayload.ID, (payload, context) ->
             context.client().execute(() -> obtainedAdvancementsCount = payload.obtainedAdvancementsCount())
         );
@@ -254,6 +256,7 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static boolean isAbilityLocked(@NotNull AbilityType abilityType, boolean checkOnly) {
+        if (!com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()) return false;
         LocalPlayer player = Minecraft.getInstance().player;
         if (player == null || player.isCreative() || player.isSpectator()) {
             return false;
