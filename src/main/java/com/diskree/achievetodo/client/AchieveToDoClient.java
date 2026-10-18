@@ -43,15 +43,19 @@ public class AchieveToDoClient implements ClientModInitializer {
     private static final List<List<AbilityType>> abilityRows = new ArrayList<>();
 
     public static int getRequiredAdvancementsCount(AbilityType ability) {
+        var projection=com.diskree.achievetodo.client.bridge.BridgeClient.presentation();
+        if(projection!=null)return projection.state().abilities().get(ability.getName()).threshold();
         return abilitiesConfiguration.get(ability);
     }
 
     public static boolean isNotReady() {
+        if(com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend())return !com.diskree.achievetodo.client.bridge.BridgeClient.presentationReady();
         return abilitiesConfiguration == null || obtainedAdvancementsCount == Integer.MIN_VALUE;
     }
 
     public static int getObtainedAdvancementsCount() {
-        return obtainedAdvancementsCount;
+        var projection=com.diskree.achievetodo.client.bridge.BridgeClient.presentation();
+        return projection==null?obtainedAdvancementsCount:projection.state().count();
     }
 
     public static int getTrackedScore(@NotNull TrackedScoreType progressType) {
@@ -302,6 +306,9 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static @Nullable List<List<AbilityType>> getAbilityRows() {
+        boolean purpur=com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend();
+        Map<AbilityType,Integer> abilitiesConfiguration=purpur?com.diskree.achievetodo.client.bridge.BridgePresentation.thresholds():AchieveToDoClient.abilitiesConfiguration;
+        List<List<AbilityType>> abilityRows=purpur?com.diskree.achievetodo.client.bridge.BridgePresentation.rows():AchieveToDoClient.abilityRows;
         if (isNotReady()) {
             return null;
         }

@@ -33,7 +33,19 @@ public final class BridgeClient {
         if (hello!=null) { connection.disconnect(Component.literal("ATD_BACKEND_CONFLICT"));return; }
         fabricObserved=true;
     }
+    public static synchronized boolean isPurpurBackend() { return hello!=null; }
+    public static synchronized BridgeWire.Projection presentation() { return hello==null?null:cache.current(); }
+    public static synchronized boolean presentationReady() {
+        var client=Minecraft.getInstance();
+        return uiActive && connection!=null && connection.isConnected() && cache.admitted() && cache.current()!=null && client.level!=null &&
+            client.level.dimension().identifier().toString().equals(cache.current().worldKey());
+    }
+    public static synchronized String presentationStatus() {
+        var p=presentation();
+        return p==null?"Progression unavailable":(presentationReady()?"Progression preview":"Progression syncing")+" | "+p.state().difficulty()+" | "+p.state().count()+" | gameplay enforcement incomplete";
+    }
     private static void clear() {
+        Minecraft.getInstance().execute(BridgePresentation::clear);
         generation++;cache.clear();hello=null;configurationListener=null;playListener=null;
         uiActive=false;resyncRequested=false;fabricObserved=false;
     }
@@ -56,12 +68,16 @@ public final class BridgeClient {
             // Pinned Fabric6.3.4 native channel advertisement, not proof of compatibility.
             ClientConfigurationNetworking.getSender().sendPacket(
                 new RegistrationPayload(RegistrationPayload.REGISTER,List.of(BridgePayload.ID.id()))));
-        ClientConfigurationConnectionEvents.COMPLETE.register((listener,client) -> {
+        // Native COMPLETE can overtake already-received custom ADMIT tasks on the reentrant loop.
+        // Validate on the same owner queue, preserving order without weakening admission.
+        ClientConfigurationConnectionEvents.COMPLETE.register((listener,client) -> client.execute(() -> {
             synchronized (BridgeClient.class) {
-                if (configurationListener==listener && hello!=null && !cache.admitted())
-                    connection.disconnect(Component.literal("ATD_FINISH_BEFORE_ADMIT"));
+                if (configurationListener==listener && hello!=null) {
+                    if(!cache.admitted())connection.disconnect(Component.literal("ATD_FINISH_BEFORE_ADMIT"));
+                    else log("CONFIGURATION_FINISH_VERIFIED session="+hello.session());
+                }
             }
-        });
+        }));
         ClientConfigurationConnectionEvents.DISCONNECT.register((listener,client) -> {
             synchronized (BridgeClient.class) {
                 if (configurationListener==listener) { clear();connection=null;configuring=false;log("CLEANUP configuration"); }
@@ -95,7 +111,11 @@ public final class BridgeClient {
             }
         });
         ClientConfigurationNetworking.registerGlobalReceiver(BridgePayload.ID,(payload,context) -> {
+            long receivedGeneration; synchronized(BridgeClient.class){receivedGeneration=generation;}
+            Minecraft.getInstance().execute(() -> {
             synchronized (BridgeClient.class) {
+                if(receivedGeneration!=generation)return;
+                if(connection==null || !connection.isConnected())return;
                 if (configurationListener!=context.packetListener() || connection!=context.packetContext().get(PacketContext.CONNECTION)) return;
                 try {
                     var frame=BridgeWire.decode(payload.bytes());
@@ -104,7 +124,7 @@ public final class BridgeClient {
                                 || frame.minor()!=BridgeWire.MINOR || frame.features()!=BridgeWire.FEATURES || !frame.catalog().equals(BridgeWire.CATALOG))
                             throw new IllegalArgumentException("ATD_PROTOCOL_INCOMPATIBLE");
                         hello=frame;
-                        var ack=new BridgeWire.Frame(BridgeWire.ACK,BridgeWire.MAJOR,BridgeWire.MINOR,frame.server(),frame.session(),frame.challenge(),BridgeWire.FEATURES,BridgeWire.CATALOG,"universal-0.2.0-dev.s2p-r2");
+                        var ack=new BridgeWire.Frame(BridgeWire.ACK,BridgeWire.MAJOR,BridgeWire.MINOR,frame.server(),frame.session(),frame.challenge(),BridgeWire.FEATURES,BridgeWire.CATALOG,"universal-0.2.0-dev.s3c");
                         context.responseSender().sendPacket(new BridgePayload(BridgeWire.encode(ack)));
                         log("HELLO_ACK_SENT phase=configuration session="+hello.session());
                     } else {
@@ -120,13 +140,32 @@ public final class BridgeClient {
                     }
                 } catch (IllegalArgumentException failure) { context.responseSender().disconnect(Component.literal(failure.getMessage())); }
             }
+            });
         });
         ClientPlayNetworking.registerGlobalReceiver(BridgePayload.ID,(payload,context) -> {
+            long receivedGeneration; synchronized(BridgeClient.class){receivedGeneration=generation;}
+            Minecraft.getInstance().execute(() -> {
             synchronized (BridgeClient.class) {
+                if(receivedGeneration!=generation)return;
+                if(connection==null || !connection.isConnected())return;
                 if (playListener!=context.player().connection || connection!=context.packetContext().get(PacketContext.CONNECTION)) return;
                 try {
                     var frame=BridgeWire.decode(payload.bytes());
                     if (hello==null || !BridgeWire.sameContext(hello,frame)) return;
+                    if (frame.kind()==BridgeWire.SUSPEND) {
+                        var suspension=BridgeWire.suspension(frame.body());
+                        if(suspension.control()!=null) {
+                            var control=suspension.control();
+                            if(cache.current()==null || !BridgeWire.reference(cache.current()).equals(control.reference()))throw new IllegalArgumentException("ATD_SUSPEND_REFERENCE");
+                            cache.beginResync(control.request(),System.nanoTime(),BridgeWire.TRANSITION_BUDGET_NANOS);uiActive=false;resyncRequested=true;
+                            log("SOURCE_RELOAD_SUSPENDED");return;
+                        }
+                        var message=suspension.transition();
+                        cache.stageTransition(message,System.nanoTime(),BridgeWire.TRANSITION_BUDGET_NANOS);
+                        uiActive=false;resyncRequested=true;
+                        context.responseSender().sendPacket(new BridgePayload(BridgeWire.encode(hello.with(BridgeWire.READY,BridgeWire.ticket(new BridgeWire.Ticket(message.request(),cache.stagedReference()))))));
+                        log("WORLD_SNAPSHOT_STAGED epoch="+message.projection().epoch()+" world="+message.projection().worldKey());return;
+                    }
                     if (frame.kind()==BridgeWire.SNAPSHOT) {
                         var message=BridgeWire.resyncSnapshot(frame.body());
                         var result=cache.stageResync(message,System.nanoTime());
@@ -158,6 +197,7 @@ public final class BridgeClient {
                     }
                 } catch (IllegalArgumentException invalid) { context.responseSender().disconnect(Component.literal(invalid.getMessage())); }
             }
+            });
         });
     }
     private BridgeClient() {}
