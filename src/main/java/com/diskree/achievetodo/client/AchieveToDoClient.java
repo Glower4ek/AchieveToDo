@@ -260,7 +260,16 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static boolean isAbilityLocked(@NotNull AbilityType abilityType, boolean checkOnly) {
-        if (!com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()) return false;
+        if (!com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()) {
+            // Brush has continuous local particles/sound before the server can reject a use tick.
+            // Suppress prediction using the admitted S3C projection; every native transaction
+            // still independently queries server authority. Purpur prediction stays silent.
+            if (abilityType != AbilityType.USE_BRUSH ||
+                !com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) return false;
+            LocalPlayer predictedPlayer = Minecraft.getInstance().player;
+            return predictedPlayer != null && !predictedPlayer.isCreative() && !predictedPlayer.isSpectator()
+                && com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType);
+        }
         LocalPlayer player = Minecraft.getInstance().player;
         if (player == null || player.isCreative() || player.isSpectator()) {
             return false;
