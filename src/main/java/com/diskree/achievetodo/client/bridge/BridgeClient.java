@@ -17,6 +17,8 @@ import net.minecraft.network.chat.Component;
 /** Session cache is staged without a Minecraft world; only JOIN publishes diagnostic readiness. */
 public final class BridgeClient {
     private static final BridgeProjectionCache cache=new BridgeProjectionCache();
+    private static final BridgeLandmarks.Cache landmarks=new BridgeLandmarks.Cache();
+    public static synchronized BridgeLandmarks.Snapshot landmarks() { return presentationReady()?landmarks.current(cache.current()):null; }
     private static Connection connection;
     private static Object configurationListener,playListener;
     private static BridgeWire.Frame hello;
@@ -46,7 +48,7 @@ public final class BridgeClient {
     }
     private static void clear() {
         Minecraft.getInstance().execute(BridgePresentation::clear);
-        generation++;cache.clear();hello=null;configurationListener=null;playListener=null;
+        generation++;cache.clear();landmarks.clear();hello=null;configurationListener=null;playListener=null;
         uiActive=false;resyncRequested=false;fabricObserved=false;
     }
     public static void initialize() {
@@ -152,7 +154,14 @@ public final class BridgeClient {
                 try {
                     var frame=BridgeWire.decode(payload.bytes());
                     if (hello==null || !BridgeWire.sameContext(hello,frame)) return;
+                    if(frame.kind()==BridgeWire.LANDMARKS) {
+                        if(!presentationReady() || cache.resyncPending())return;
+                        if(landmarks.accept(BridgeLandmarks.decode(frame.body()),cache.current()))
+                            log("LANDMARKS_APPLIED revision="+cache.current().revision()+" enabled="+landmarks.current(cache.current()).enabled()+" boxes="+landmarks.current(cache.current()).boxes().size());
+                        return;
+                    }
                     if (frame.kind()==BridgeWire.SUSPEND) {
+                        landmarks.clear();
                         var suspension=BridgeWire.suspension(frame.body());
                         if(suspension.control()!=null) {
                             var control=suspension.control();

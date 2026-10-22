@@ -10,10 +10,10 @@ import java.util.*;
 public final class BridgeWire {
     public static final String CHANNEL="achievetodo:bridge";
     public static final String CATALOG="762de1ac54aa980415c9813d946a8c4836993072531c483b4cf310c01015c5d2";
-    public static final int MAX_FRAME=24*1024, MAX_BODY=20*1024, MAJOR=1, MINOR=3;
-    public static final long FEATURES=27;
+    public static final int MAX_FRAME=24*1024, MAX_BODY=20*1024, MAJOR=1, MINOR=4;
+    public static final long FEATURES=59;
     public static final long TRANSITION_BUDGET_NANOS=20_000_000_000L;
-    public static final int HELLO=1, ACK=2, SNAPSHOT=3, READY=4, ADMIT=5, DELTA=6, RESYNC=7, SUSPEND=8;
+    public static final int HELLO=1, ACK=2, SNAPSHOT=3, READY=4, ADMIT=5, DELTA=6, RESYNC=7, SUSPEND=8, LANDMARKS=9;
     private static final int MAGIC=0x41544431;
     public record Frame(int kind,int major,int minor,UUID server,UUID session,UUID challenge,
                         long features,String catalog,String build,byte[] body) {
@@ -85,7 +85,7 @@ public final class BridgeWire {
         return read(data,MAX_FRAME,in -> {
             if (in.readInt()!=MAGIC) throw new IllegalArgumentException("magic");
             int major=in.readUnsignedShort(),minor=in.readUnsignedShort(),kind=in.readUnsignedByte();
-            if (kind<HELLO || kind>SUSPEND) throw new IllegalArgumentException("kind");
+            if (kind<HELLO || kind>LANDMARKS) throw new IllegalArgumentException("kind");
             UUID server=uuid(in),session=uuid(in),challenge=uuid(in);long features=in.readLong();
             String catalog=string(in),build=string(in);int size=in.readInt();
             if (size<0 || size>MAX_BODY || size>in.available()) throw new IllegalArgumentException("body bound");

@@ -67,6 +67,7 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static List<LockedLandmarkBox> getLockedLandmarkBoxes() {
+        if(com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend())return com.diskree.achievetodo.client.bridge.BridgeLandmarkPresentation.boxes();
         return lockedLandmarkBoxes;
     }
 
@@ -267,7 +268,8 @@ public class AchieveToDoClient implements ClientModInitializer {
             if ((abilityType != AbilityType.USE_BRUSH && abilityType != AbilityType.JUMP
                 && abilityType != AbilityType.SNEAK && abilityType != AbilityType.SPRINT
                 && abilityType != AbilityType.SWIM && abilityType != AbilityType.VISION
-                && abilityType != AbilityType.OPEN_INVENTORY && abilityType != AbilityType.USE_SPYGLASS) ||
+                && abilityType != AbilityType.OPEN_INVENTORY && abilityType != AbilityType.USE_SPYGLASS
+                && abilityType.getLandmarkType()==null) ||
                 !com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) return false;
             LocalPlayer predictedPlayer = Minecraft.getInstance().player;
             return predictedPlayer != null && !predictedPlayer.isCreative() && !predictedPlayer.isSpectator()
@@ -304,7 +306,7 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static boolean isTargetInLockedLandmark(@NotNull DimensionType targetDimensionType, @NotNull AABB targetBox) {
-        for (LockedLandmarkBox lockedLandmarksBox : lockedLandmarkBoxes) {
+        for (LockedLandmarkBox lockedLandmarksBox : getLockedLandmarkBoxes()) {
             if (lockedLandmarksBox.dimensionType() == targetDimensionType &&
                 lockedLandmarksBox.box().intersects(targetBox)
             ) {
