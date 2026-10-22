@@ -261,12 +261,13 @@ public class AchieveToDoClient implements ClientModInitializer {
 
     public static boolean isAbilityLocked(@NotNull AbilityType abilityType, boolean checkOnly) {
         if (!com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()) {
-            // Canonical mixins must suppress movement and brush prediction before native side effects.
+            // Canonical mixins also own local rendering, inventory input and item prediction.
             // Suppress prediction using the admitted S3C projection; every native transaction
             // still independently queries server authority. Purpur prediction stays silent.
             if ((abilityType != AbilityType.USE_BRUSH && abilityType != AbilityType.JUMP
                 && abilityType != AbilityType.SNEAK && abilityType != AbilityType.SPRINT
-                && abilityType != AbilityType.SWIM) ||
+                && abilityType != AbilityType.SWIM && abilityType != AbilityType.VISION
+                && abilityType != AbilityType.OPEN_INVENTORY && abilityType != AbilityType.USE_SPYGLASS) ||
                 !com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) return false;
             LocalPlayer predictedPlayer = Minecraft.getInstance().player;
             return predictedPlayer != null && !predictedPlayer.isCreative() && !predictedPlayer.isSpectator()
