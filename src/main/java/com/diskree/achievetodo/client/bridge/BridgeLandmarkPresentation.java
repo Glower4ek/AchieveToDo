@@ -11,9 +11,10 @@ public final class BridgeLandmarkPresentation {
     private static BridgeLandmarks.Snapshot previous;
     private static BridgeWire.Reference reference;
     private static List<LockedLandmarkBox> boxes=List.of();
+    public static void clear() { previous=null;reference=null;boxes=List.of(); }
     public static List<LockedLandmarkBox> boxes() {
         var geometry=BridgeClient.landmarks();var projection=BridgeClient.presentation();
-        if(geometry==null || projection==null || !geometry.enabled()) { previous=null;reference=null;boxes=List.of();return boxes; }
+        if(geometry==null || projection==null || !geometry.enabled()) { clear();return boxes; }
         var ref=BridgeWire.reference(projection);
         if(geometry==previous && ref.equals(reference))return boxes;
         var result=new ArrayList<LockedLandmarkBox>();

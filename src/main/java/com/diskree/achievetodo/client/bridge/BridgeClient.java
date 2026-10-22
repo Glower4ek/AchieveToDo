@@ -47,7 +47,7 @@ public final class BridgeClient {
         return p==null?"Progression unavailable":(presentationReady()?"Progression preview":"Progression syncing")+" | "+p.state().difficulty()+" | "+p.state().count()+" | gameplay enforcement incomplete";
     }
     private static void clear() {
-        Minecraft.getInstance().execute(BridgePresentation::clear);
+        Minecraft.getInstance().execute(()->{BridgePresentation.clear();BridgeLandmarkPresentation.clear();});
         generation++;cache.clear();landmarks.clear();hello=null;configurationListener=null;playListener=null;
         uiActive=false;resyncRequested=false;fabricObserved=false;
     }
