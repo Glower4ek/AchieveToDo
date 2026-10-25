@@ -70,16 +70,17 @@ public final class BridgeClient {
             // Pinned Fabric6.3.4 native channel advertisement, not proof of compatibility.
             ClientConfigurationNetworking.getSender().sendPacket(
                 new RegistrationPayload(RegistrationPayload.REGISTER,List.of(BridgePayload.ID.id()))));
-        // Native COMPLETE can overtake already-received custom ADMIT tasks on the reentrant loop.
-        // Validate on the same owner queue, preserving order without weakening admission.
-        ClientConfigurationConnectionEvents.COMPLETE.register((listener,client) -> client.execute(() -> {
+        // Configuration authority is applied synchronously on the ordered receive path.
+        // COMPLETE must verify it before native play initialization, never enqueue a check
+        // which a reentrant Minecraft task loop could run after admission to play.
+        ClientConfigurationConnectionEvents.COMPLETE.register((listener,client) -> {
             synchronized (BridgeClient.class) {
                 if (configurationListener==listener && hello!=null) {
                     if(!cache.admitted())connection.disconnect(Component.literal("ATD_FINISH_BEFORE_ADMIT"));
                     else log("CONFIGURATION_FINISH_VERIFIED session="+hello.session());
                 }
             }
-        }));
+        });
         ClientConfigurationConnectionEvents.DISCONNECT.register((listener,client) -> {
             synchronized (BridgeClient.class) {
                 if (configurationListener==listener) { clear();connection=null;configuring=false;log("CLEANUP configuration"); }
@@ -113,10 +114,11 @@ public final class BridgeClient {
             }
         });
         ClientConfigurationNetworking.registerGlobalReceiver(BridgePayload.ID,(payload,context) -> {
-            long receivedGeneration; synchronized(BridgeClient.class){receivedGeneration=generation;}
-            Minecraft.getInstance().execute(() -> {
+            // Fabric 6.3.4 invokes configuration receivers on the connection's network
+            // thread. Only immutable wire data and the synchronized session cache are
+            // touched here; no world, presentation or render state is accessed. Applying
+            // ADMIT before returning establishes a wire-order barrier before FINISH.
             synchronized (BridgeClient.class) {
-                if(receivedGeneration!=generation)return;
                 if(connection==null || !connection.isConnected())return;
                 if (configurationListener!=context.packetListener() || connection!=context.packetContext().get(PacketContext.CONNECTION)) return;
                 try {
@@ -142,7 +144,6 @@ public final class BridgeClient {
                     }
                 } catch (IllegalArgumentException failure) { context.responseSender().disconnect(Component.literal(failure.getMessage())); }
             }
-            });
         });
         ClientPlayNetworking.registerGlobalReceiver(BridgePayload.ID,(payload,context) -> {
             long receivedGeneration; synchronized(BridgeClient.class){receivedGeneration=generation;}
