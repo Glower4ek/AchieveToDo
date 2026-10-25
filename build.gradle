@@ -26,6 +26,12 @@ plugins {
     id 'net.fabricmc.fabric-loom' version "${loomVersion}"
 }
 
+// Explorer folder metadata can occur in multiple resource roots after a Windows
+// workspace move. It is not a game resource and must never enter the mod JAR.
+tasks.withType(ProcessResources).configureEach {
+    exclude '**/desktop.ini'
+}
+
 // Narrow standalone runner; no historical certification suite or external fixture acquisition.
 sourceSets {
     bridgeTest {
