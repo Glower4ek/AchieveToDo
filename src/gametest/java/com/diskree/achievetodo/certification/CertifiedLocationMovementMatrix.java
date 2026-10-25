@@ -22,6 +22,7 @@ import java.util.Set;
 
 public final class CertifiedLocationMovementMatrix {
     private static final String MATRIX_RELATIVE_PATH = "src/test/resources/phase_a_certification/location_movement_matrix.json";
+    private static final String RUNTIME_BACAP_RELATIVE_PATH = "src/test/resources/phase_b_certification/bacap_1_21_pinned.zip";
     private static final Map<Identifier, List<CaseDefinition>> AUTOMATION_SUPPORTED_CASES = loadAutomationSupportedCases();
 
     private CertifiedLocationMovementMatrix() {
@@ -127,7 +128,14 @@ public final class CertifiedLocationMovementMatrix {
         Path matrixPath = resolveMatrixPath();
         try (Reader reader = Files.newBufferedReader(matrixPath)) {
             JsonObject root = JsonParser.parseReader(reader).getAsJsonObject();
-            Path runtimeCompatiblePackPath = resolveRelativePath(root.get("runtimeCompatibleSource").getAsString());
+            // The matrix retains the historical acquisition location as provenance.
+            // Execute against the original archive sealed by the current build-input
+            // authority, rather than requiring a historical, machine-local audit cache.
+            Path runtimeCompatiblePackPath = resolveRelativePath(RUNTIME_BACAP_RELATIVE_PATH);
+            String digest = java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256")
+                .digest(Files.readAllBytes(runtimeCompatiblePackPath)));
+            if (!"c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2".equals(digest))
+                throw new IllegalStateException("Unpinned location/movement BACAP archive");
             JsonArray cases = root.getAsJsonArray("cases");
             Map<Identifier, List<CaseDefinition>> groupedCases = new LinkedHashMap<>();
             try (FileSystem runtimePackFileSystem = openZipFileSystem(runtimeCompatiblePackPath)) {
@@ -153,7 +161,7 @@ public final class CertifiedLocationMovementMatrix {
             }
             groupedCases.values().forEach(caseDefinitions -> caseDefinitions.sort(Comparator.comparing(CaseDefinition::criterion)));
             return Map.copyOf(groupedCases);
-        } catch (IOException e) {
+        } catch (IOException | java.security.NoSuchAlgorithmException e) {
             throw new IllegalStateException("Failed to load certified LOCATION_MOVEMENT matrix from " + matrixPath, e);
         }
     }
