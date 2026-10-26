@@ -203,3 +203,6 @@ src/main/resources/META-INF/NOTICE-R9.txt -text
 
 # Published Purpur mirror: independent source bytes, no EOL transformation.
 port/AchieveToDo-Purpur-26.2/** -text
+
+# Standalone bridge fixture is LF in the source authority.
+src/bridgeTest/java/com/diskree/achievetodo/bridge/ClientCodecFixtureTest.java -text
