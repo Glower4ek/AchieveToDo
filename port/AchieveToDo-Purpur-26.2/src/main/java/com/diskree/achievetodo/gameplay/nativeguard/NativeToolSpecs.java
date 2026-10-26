@@ -1,0 +1,35 @@
+package com.diskree.achievetodo.gameplay.nativeguard;
+import java.util.*;
+/** Exact descriptors and complete class pins after all retained transforms. */
+final class NativeToolSpecs {
+    record Spec(String id,String owner,String method,String descriptor,String anchor,int ordinal,String mode,int actor,int subject,String result,int sites) {}
+    static final Map<String,List<String>> INPUTS=Map.ofEntries(
+        Map.entry("net/minecraft/world/entity/LivingEntity",List.of("816238b3fb284c66d8884cb663f0113ebfcc73ac709f8e2f20fe94ca8c5806e0","816238b3fb284c66d8884cb663f0113ebfcc73ac709f8e2f20fe94ca8c5806e0")),
+        Map.entry("net/minecraft/world/entity/animal/golem/CopperGolem",List.of("88bb4c16f8fbcdb007473b605218f400e060877c6854bf8a2cb1f38cb2a93067","88bb4c16f8fbcdb007473b605218f400e060877c6854bf8a2cb1f38cb2a93067")),
+        Map.entry("net/minecraft/world/entity/player/Player",List.of("5d53149e18012e04188340c34c6c9bde4e23aa4c23cbdfa936de175c57b072cf","08fc40477f82dfbd59cf419f6a8f50d18150565f18b6dba73dddcea93b411202")),
+        Map.entry("net/minecraft/world/item/AxeItem",List.of("7815209bfa095c7210c087435d0495251450e4892e8f0d214266cef7cdd8cb1d","7815209bfa095c7210c087435d0495251450e4892e8f0d214266cef7cdd8cb1d")),
+        Map.entry("net/minecraft/world/item/HoeItem",List.of("35f50d23201a64cd532cfe47b0baa38831f4b62203a3ce4c414f75c96d81b36c","771dcb51f74d025ca37f60c81e837fa5f96a0e9eb5da2e76270127b022d6eda1")),
+        Map.entry("net/minecraft/world/item/Item",List.of("ae2c84854b68b1e6ce412489d45d894a8b34d166ba5dc22bb78f026bfbd3a213","ae2c84854b68b1e6ce412489d45d894a8b34d166ba5dc22bb78f026bfbd3a213")),
+        Map.entry("net/minecraft/world/item/ShovelItem",List.of("19a58161e37e601b64e37122ac30ce138bed25f5640518f6de244317ead5c392","812d72e740638ddfe358d174bc8efe515b4138fbc6d9194c173e421eee33a950")),
+        Map.entry("net/minecraft/world/item/component/KineticWeapon",List.of("6d78cc25b40cdcb776727fdad8124b1fb340162be46a8c2204152a4a9ebdfcd1","6d78cc25b40cdcb776727fdad8124b1fb340162be46a8c2204152a4a9ebdfcd1")),
+        Map.entry("net/minecraft/world/item/component/PiercingWeapon",List.of("5ca1b8c47bf973f9d2e23c2b442525b230b268d3935210fa23f68351c4cd2b9f","5ca1b8c47bf973f9d2e23c2b442525b230b268d3935210fa23f68351c4cd2b9f")),
+        Map.entry("net/minecraft/world/level/block/WeatheringCopperGolemStatueBlock",List.of("98b8ef3568318876c2ddd5d099d479fc0d55a3f5d68bf2b1eee2e366046765f3","98b8ef3568318876c2ddd5d099d479fc0d55a3f5d68bf2b1eee2e366046765f3")));
+    static final List<Spec> SPECS=List.of(
+        new Spec("mining-start-and-completion","net/minecraft/world/entity/player/Player","blockActionRestricted","(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/GameType;)Z","RETURN",-1,"mine",0,-1,"false",4),
+        new Spec("melee","net/minecraft/world/entity/player/Player","attack","(Lnet/minecraft/world/entity/Entity;)V","HEAD",-1,"attack",0,-1,"void",1),
+        new Spec("stab","net/minecraft/world/entity/player/Player","stabAttack","(Lnet/minecraft/world/entity/EquipmentSlot;Lnet/minecraft/world/entity/Entity;FZZZ)Z","HEAD",-1,"slot",0,1,"false",1),
+        new Spec("post-pierce","net/minecraft/world/entity/LivingEntity","postPiercingAttack","()V","HEAD",-1,"post",0,-1,"void",1),
+        new Spec("pierce","net/minecraft/world/item/component/PiercingWeapon","attack","(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/EquipmentSlot;)V","HEAD",-1,"slot",1,2,"void",1),
+        new Spec("kinetic-contact","net/minecraft/world/item/component/KineticWeapon","damageEntities","(Lnet/minecraft/world/item/ItemStack;ILnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/EquipmentSlot;)V","Lnet/minecraft/world/entity/LivingEntity;getLookAngle()Lnet/minecraft/world/phys/Vec3;",-1,"spear",3,1,"void",1),
+        new Spec("kinetic-start","net/minecraft/world/item/Item","use","(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;","Lnet/minecraft/world/entity/player/Player;startUsingItem(Lnet/minecraft/world/InteractionHand;)V",1,"spear",2,4,"FAIL",2),
+        new Spec("Axe-constructor","net/minecraft/world/item/AxeItem","<init>","(Lnet/minecraft/world/item/ToolMaterial;FFLnet/minecraft/world/item/Item$Properties;)V","RETURN",-1,"capture",0,1,"void",1),
+        new Spec("Shovel-constructor","net/minecraft/world/item/ShovelItem","<init>","(Lnet/minecraft/world/item/ToolMaterial;FFLnet/minecraft/world/item/Item$Properties;)V","RETURN",-1,"capture",0,1,"void",1),
+        new Spec("Hoe-constructor","net/minecraft/world/item/HoeItem","<init>","(Lnet/minecraft/world/item/ToolMaterial;FFLnet/minecraft/world/item/Item$Properties;)V","RETURN",-1,"capture",0,1,"void",1),
+        new Spec("axe-native-evaluator","net/minecraft/world/item/AxeItem","evaluateActionable","(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/level/block/state/BlockState;)Ljava/util/Optional;","HEAD",-1,"axe",3,0,"empty",1),
+        new Spec("shovel-flatten-and-dowse","net/minecraft/world/item/ShovelItem","useOn","(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;","Lnet/minecraft/world/level/Level;isClientSide()Z",-1,"context",1,0,"PASS",1),
+        new Spec("hoe-before-custom-sound","net/minecraft/world/item/HoeItem","useOn","(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;","Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/BlockPos;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V",-1,"context",1,0,"PASS",1),
+        new Spec("hoe-before-consumer","net/minecraft/world/item/HoeItem","useOn","(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;","Lnet/minecraft/world/level/Level;isClientSide()Z",-1,"context",1,0,"PASS",1),
+        new Spec("golem-wax-off-and-deoxidize","net/minecraft/world/entity/animal/golem/CopperGolem","mobInteract","(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;","Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V",-1,"identity",1,3,"FAIL",2),
+        new Spec("statue-reanimation","net/minecraft/world/level/block/WeatheringCopperGolemStatueBlock","useItemOn","(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;","Lnet/minecraft/world/level/block/entity/CopperGolemStatueBlockEntity;removeStatue(Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/entity/animal/golem/CopperGolem;",-1,"identity",5,1,"FAIL",1));
+    private NativeToolSpecs() {}
+}
