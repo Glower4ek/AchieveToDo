@@ -192,6 +192,10 @@ public final class PhaseBPackTestFixtures {
             assert authority['tool']['afterSha256']=='032c866f0eca68dbf7508c86034f00d6a06bf52f98e43efdee2c52e7fbc5a732'
             spec=importlib.util.spec_from_file_location('b7',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
             supplied_root=pathlib.Path(sys.argv[5])
+            import os
+            if os.environ.get('ACHIEVETODO_INPUT_AUTHORITY') is not None:
+                from tools.phase_b import r3_localization_authority as r3
+                r3.bind(m,supplied_root)
             paths=json.loads(pathlib.Path(sys.argv[1]).read_bytes())
             converted={k:m.pack_zip(pathlib.Path(v),k) for k,v in paths.items()}
             ru=m.strict_dictionary((m.ROOT/m.RU_PATH).read_bytes())

@@ -59,7 +59,10 @@ public final class PhaseASingletonAxolotlMonumentGameTest implements CustomTestM
         try {
             var root = PhaseASingletonAxolotlMonumentExecutionEvidence.projectRoot();
             c.runId = PhaseASingletonAxolotlMonumentExecutionEvidence.beginRun(root);
-            BlockPos center = h.absolutePos(CENTER);
+            BlockPos requestedCenter = h.absolutePos(CENTER);
+            // The synthetic start/references live in one chunk; keep every witness inside it.
+            BlockPos center = new BlockPos((requestedCenter.getX() & ~15) + 8,
+                requestedCenter.getY(), (requestedCenter.getZ() & ~15) + 8);
             c.center = center;
             for (int x = -2; x <= 2; x++) for (int z = -2; z <= 2; z++) {
                 BlockPos floor = center.offset(x, -1, z);
@@ -122,7 +125,8 @@ public final class PhaseASingletonAxolotlMonumentGameTest implements CustomTestM
         try {
             var player = c.joined.player();
             var attackTarget = c.axolotl.getBrain().getMemory(MemoryModuleType.ATTACK_TARGET);
-            if (!c.attacked && attackTarget.isPresent() && attackTarget.get() == c.target) {
+            if (!c.attacked && attackTarget.isPresent() && attackTarget.get() == c.target
+                && player.getAttackStrengthScale(0.0F) >= 1.0F) {
                 require(!criterionDone(player, c.advancement), "criterion completed before native assist");
                 c.target.teleportTo(c.center.getX() + .5D, c.center.getY() + .1D, c.center.getZ() + .5D);
                 player.teleportTo(c.center.getX() + .5D, c.center.getY(), c.center.getZ() + 1.5D);

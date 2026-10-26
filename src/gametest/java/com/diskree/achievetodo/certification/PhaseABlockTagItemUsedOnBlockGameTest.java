@@ -75,7 +75,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         var connection = new Connection(PacketFlow.SERVERBOUND);
         try {
             PhaseABlockTagItemUsedOnBlockExecutionEvidence.beginRun();
-            new EmbeddedChannel(connection);
+            R3NativeCleanup.register(connection, new EmbeddedChannel(connection));
             server.getConnection().getConnections().add(connection);
             server.getPlayerList().placeNewPlayer(connection, player, CommonListenerCookie.createInitial(profile, false));
             player.setGameMode(GameType.SURVIVAL);
@@ -105,7 +105,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         var connection = new Connection(PacketFlow.SERVERBOUND);
         try {
             PhaseABlockTagItemUsedOnBlockExecutionEvidence.beginRun();
-            new EmbeddedChannel(connection);
+            R3NativeCleanup.register(connection, new EmbeddedChannel(connection));
             server.getConnection().getConnections().add(connection);
             server.getPlayerList().placeNewPlayer(connection, player, CommonListenerCookie.createInitial(profile, false));
             player.setGameMode(GameType.SURVIVAL);
@@ -134,7 +134,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         var connection = new Connection(PacketFlow.SERVERBOUND);
         try {
             PhaseABlockTagItemUsedOnBlockExecutionEvidence.beginRun();
-            new EmbeddedChannel(connection);
+            R3NativeCleanup.register(connection, new EmbeddedChannel(connection));
             server.getConnection().getConnections().add(connection);
             server.getPlayerList().placeNewPlayer(connection, player, CommonListenerCookie.createInitial(profile, false));
             player.setGameMode(GameType.SURVIVAL);
@@ -165,7 +165,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         var connection = new Connection(PacketFlow.SERVERBOUND);
         try {
             PhaseABlockTagItemUsedOnBlockExecutionEvidence.beginRun();
-            new EmbeddedChannel(connection);
+            R3NativeCleanup.register(connection, new EmbeddedChannel(connection));
             server.getConnection().getConnections().add(connection);
             server.getPlayerList().placeNewPlayer(connection, player, CommonListenerCookie.createInitial(profile, false));
             player.setGameMode(GameType.SURVIVAL);
@@ -200,7 +200,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
             require("BOTTLE_HONEY".equals(definition.get("action").getAsString()), "Wrong honey action");
             require("minecraft:glass_bottle".equals(definition.get("heldItem").getAsString()), "Wrong honey held item");
             PhaseABlockTagItemUsedOnBlockExecutionEvidence.beginRun();
-            new EmbeddedChannel(connection);
+            R3NativeCleanup.register(connection, new EmbeddedChannel(connection));
             server.getConnection().getConnections().add(connection);
             server.getPlayerList().placeNewPlayer(connection, player, CommonListenerCookie.createInitial(profile, false));
             player.setGameMode(GameType.SURVIVAL);
@@ -234,7 +234,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
                 "blazeandcave:building/delicious_hot_schmoes", "porkchop");
             require("PLACE_FOOD".equals(definition.get("action").getAsString()), "Wrong porkchop action");
             PhaseABlockTagItemUsedOnBlockExecutionEvidence.beginRun();
-            new EmbeddedChannel(connection);
+            R3NativeCleanup.register(connection, new EmbeddedChannel(connection));
             server.getConnection().getConnections().add(connection);
             server.getPlayerList().placeNewPlayer(connection, player, CommonListenerCookie.createInitial(profile, false));
             player.setGameMode(GameType.SURVIVAL);
@@ -404,7 +404,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         var player = new ServerPlayer(server, helper.getLevel(), profile, ClientInformation.createDefault());
         var connection = new Connection(PacketFlow.SERVERBOUND);
         try {
-            new EmbeddedChannel(connection);
+            R3NativeCleanup.register(connection, new EmbeddedChannel(connection));
             server.getConnection().getConnections().add(connection);
             server.getPlayerList().placeNewPlayer(connection, player, CommonListenerCookie.createInitial(profile, false));
             player.setGameMode(GameType.SURVIVAL);
@@ -461,7 +461,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         var player = new ServerPlayer(server, helper.getLevel(), profile, ClientInformation.createDefault());
         var connection = new Connection(PacketFlow.SERVERBOUND);
         try {
-            new EmbeddedChannel(connection);
+            R3NativeCleanup.register(connection, new EmbeddedChannel(connection));
             server.getConnection().getConnections().add(connection);
             server.getPlayerList().placeNewPlayer(connection, player, CommonListenerCookie.createInitial(profile, false));
             player.setGameMode(GameType.SURVIVAL);
@@ -1253,7 +1253,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         var player = new ServerPlayer(server, helper.getLevel(), profile, ClientInformation.createDefault());
         var connection = new Connection(PacketFlow.SERVERBOUND);
         try {
-            new EmbeddedChannel(connection);
+            R3NativeCleanup.register(connection, new EmbeddedChannel(connection));
             server.getConnection().getConnections().add(connection);
             server.getPlayerList().placeNewPlayer(connection, player, CommonListenerCookie.createInitial(profile, false));
             player.setGameMode(GameType.SURVIVAL);
@@ -1506,7 +1506,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         var player = new ServerPlayer(server, helper.getLevel(), profile, ClientInformation.createDefault());
         var connection = new Connection(PacketFlow.SERVERBOUND);
         try {
-            new EmbeddedChannel(connection);
+            R3NativeCleanup.register(connection, new EmbeddedChannel(connection));
             server.getConnection().getConnections().add(connection);
             server.getPlayerList().placeNewPlayer(connection, player, CommonListenerCookie.createInitial(profile, false));
             player.setGameMode(GameType.SURVIVAL);
@@ -1546,7 +1546,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         var player = new ServerPlayer(server, helper.getLevel(), profile, ClientInformation.createDefault());
         var connection = new Connection(PacketFlow.SERVERBOUND);
         try {
-            new EmbeddedChannel(connection);
+            R3NativeCleanup.register(connection, new EmbeddedChannel(connection));
             server.getConnection().getConnections().add(connection);
             server.getPlayerList().placeNewPlayer(connection, player, CommonListenerCookie.createInitial(profile, false));
             player.setGameMode(GameType.SURVIVAL);
@@ -1751,6 +1751,8 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         require(level.getBlockEntity(pos) == sign && sign.isWaxed(), "Sign did not become waxed");
         var heldAfter = player.getMainHandItem();
         int interactionStackCountAfter = heldBefore.getCount();
+        receipt.addProperty("selectedHandSlotAfter", player.getInventory().getSelectedSlot());
+        receipt.addProperty("infiniteMaterials", player.hasInfiniteMaterials());
         String selectedHandItemAfter = heldAfter.isEmpty() ? "minecraft:air" : heldAfter.getItem().toString();
         require(interactionStackCountAfter == 0, "Honeycomb interaction stack not consumed: result=" + result
             + ", gameMode=" + player.gameMode()
@@ -1795,6 +1797,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         try {
             if (server.getPlayerList().getPlayer(player.getUUID()) == player) server.getPlayerList().remove(player);
         } finally {
+            R3NativeCleanup.settle(connection);
             try { connection.disconnect(Component.literal("GameTest cleanup")); }
             finally { server.getConnection().getConnections().remove(connection); }
         }

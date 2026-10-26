@@ -628,6 +628,10 @@ public final class PhaseAPlayerHurtEntityDamageSourceGameTest implements CustomT
     }
 
     private static void installArena(ServerLevel level, BlockPos playerBlock, BlockPos targetBlock, boolean wind) {
+        // Keep ambient sunlight damage out of the controlled native damage-source proof.
+        for (int x = -2; x <= 2; x++) for (int z = -2; z <= 2; z++) {
+            level.setBlock(targetBlock.offset(x, 5, z), Blocks.STONE.defaultBlockState(), 3);
+        }
         level.setBlock(playerBlock, Blocks.STONE.defaultBlockState(), 3);
         level.setBlock(targetBlock.below(), Blocks.STONE.defaultBlockState(), 3);
         if (wind) {

@@ -1,0 +1,41 @@
+package com.diskree.achievetodo.certification;
+
+import com.google.gson.*;
+import java.nio.file.*;
+import java.time.Instant;
+import java.util.*;
+
+public final class R4CurrentV1PhaseAPlayerKilledEntityRemainderExecutionEvidence {
+    private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
+    private static JsonObject active;
+    private static Map<String, JsonObject> rows;
+    private R4CurrentV1PhaseAPlayerKilledEntityRemainderExecutionEvidence() { }
+    public static Path root() { return Path.of(Objects.requireNonNull(System.getProperty("achievetodo.phaseA.projectRoot"))).toAbsolutePath().normalize(); }
+    public static String begin(Path root, boolean exact) throws Exception {
+        if (R4CurrentRunGuard.claim("PhaseAPlayerKilledEntityRemainderGameTest")) throw new IllegalStateException("Refusing CLOSED family rerun");
+        var cases = PhaseAPlayerKilledEntityRemainderCertification.cases(root); rows = new LinkedHashMap<>();
+        var canary = PhaseAPlayerKilledEntityRemainderEvidenceValidation.canaryKeys(cases);
+        for (var row : cases) { var key = PhaseAPlayerKilledEntityRemainderCertification.key(row); if (exact || canary.contains(key)) rows.put(key, row); }
+        active = new JsonObject(); active.addProperty("snapshot", "phase_a_player_killed_entity_remainder_execution_evidence"); active.addProperty("schemaVersion", 1);
+        active.addProperty("family", PhaseAPlayerKilledEntityRemainderCertification.FAMILY); active.addProperty("source", PhaseAPlayerKilledEntityRemainderCertification.SOURCE);
+        active.addProperty("minecraftVersion", "26.2"); active.addProperty("compatibilityMarker", "compat_26_2_r15"); active.addProperty("catalogFingerprint", PhaseAPlayerKilledEntityRemainderEvidenceValidation.fingerprint(root));
+        active.addProperty("runId", UUID.randomUUID().toString()); active.addProperty("runMode", exact ? "EXACT" : "DIAGNOSTIC"); active.addProperty("startedAt", Instant.now().toString());
+        JsonArray keys = new JsonArray(); for (var key : rows.keySet()) keys.add(key); active.add("selectedKeys", keys);
+        write(root.resolve(PhaseAPlayerKilledEntityRemainderEvidenceValidation.RUN_STATE), active);
+        active.add("entries", new JsonArray()); write(root.resolve(PhaseAPlayerKilledEntityRemainderEvidenceValidation.TEMP), active);
+        return active.get("runId").getAsString();
+    }
+    public static List<JsonObject> selected() { return new ArrayList<>(rows.values()); }
+    public static void append(Path root, JsonObject receipt) throws Exception {
+        String runId = active.get("runId").getAsString(), hash = active.get("catalogFingerprint").getAsString();
+        var state = PhaseAPlayerKilledEntityRemainderEvidenceValidation.read(root.resolve(PhaseAPlayerKilledEntityRemainderEvidenceValidation.RUN_STATE));
+        if (!runId.equals(state.get("runId").getAsString())) throw new IllegalStateException("Competing evidence writer");
+        String key = PhaseAPlayerKilledEntityRemainderCertification.key(receipt);
+        PhaseAPlayerKilledEntityRemainderEvidenceValidation.validateReceipt(receipt, rows.get(key), runId, hash);
+        for (var old : active.getAsJsonArray("entries")) if (PhaseAPlayerKilledEntityRemainderCertification.key(old.getAsJsonObject()).equals(key)) throw new IllegalStateException("Duplicate receipt");
+        active.getAsJsonArray("entries").add(receipt); active.addProperty("generatedAt", Instant.now().toString());
+        write(root.resolve(PhaseAPlayerKilledEntityRemainderEvidenceValidation.TEMP), active);
+    }
+    public static void main(String[] args) throws Exception { throw new IllegalStateException("R4 current-only recorder has no historical promotion authority"); }
+    private static void write(Path path, JsonObject json) throws Exception { Files.createDirectories(path.getParent()); Files.writeString(path, GSON.toJson(json) + "\n"); }
+}
