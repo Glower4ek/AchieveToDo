@@ -1,8 +1,8 @@
 {
   "fabricBuildHead": "28d7b0200f96607dcea89fa2b9c83502ba91b9d7",
   "fabricBuildTree": "49e9f4aba7d7b651a414146a83ab6cec85bdf92a",
-  "purpurHead": "9250c0566499536ccfe59c911521d95a36049444",
-  "purpurTree": "741b30260dc0c78405fe362555e83b2e440e8b76",
+  "purpurHead": "101c56b6ac57da39bcfe030e05f649ddcce4839c",
+  "purpurTree": "7ff60afc81e8f34bec60ae09ed31ede7c4a684b8",
   "purpurPath": "port/AchieveToDo-Purpur-26.2",
   "purpurMirrorFiles": {
     ".gitignore": {
@@ -2572,6 +2572,10 @@
     "src/test/resources/META-INF/services/io.papermc.paper.registry.RegistryAccess": {
       "bytes": 56,
       "sha256": "d6b8ec0bc47431f0f6ba906e82fc77fe99bad1f646dc5e8475630c1b98db5f15"
+    },
+    ".gitattributes": {
+      "bytes": 79,
+      "sha256": "c2e9541ac420a0ac3fa0ef09648897f9721a162a3b8427c36c6713d8c4ed5986"
     }
   },
   "artifactIdentities": {
