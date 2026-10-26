@@ -191,4 +191,4 @@ tools/certification/notices/bacap-better-ru.LICENSE.txt -text
 tools/certification/r8_network.py -text
 tools/certification/r8_release.py -text
 tools/certification/R8.md -text
-licenses/bacap-better-ru/LICENSE text eol=crlf
+licenses/bacap-better-ru/LICENSE text eol=lf
