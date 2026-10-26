@@ -1688,7 +1688,7 @@
     "src/main/java/com/diskree/achievetodo/injection/extension/main/MountInventoryMenuExtension.java": "5688c60e4280c313360de6a2fd6fbaa2932d024ebeeb2395ddfb1a39c2363bb9",
     "src/main/java/com/diskree/achievetodo/injection/extension/main/SerializedChunkExtension.java": "a634bee5d936660b6f4fff5341aeb2f13f8ce49882194b225975da3dfecc061f",
     "src/main/java/com/diskree/achievetodo/injection/extension/main/StructureStartExtension.java": "8150960cd5431c722857b75e41ea7656c43c3c0f7d6757d89baf4b254db359e9",
-    "src/main/java/com/diskree/achievetodo/client/bridge/BridgeClient.java": "247aab26f76c212f0a04ba3c10e5095f2f5c11ffdb6207062b4a386d8e6bfa99",
+    "src/main/java/com/diskree/achievetodo/client/bridge/BridgeClient.java": "1c59e963f92963b3c32f63a5f01aebd67218343a54ade259f0f856ba013b1fc4",
     "src/main/java/com/diskree/achievetodo/client/bridge/BridgeLandmarkPresentation.java": "d9468081d5e59bdb73c4307757a5f3e682d7af18ae9cfc0d732034781d98e1ea",
     "src/main/java/com/diskree/achievetodo/client/bridge/BridgePresentation.java": "16e9ee2a6ed2b995dcab4bdf3bc71c5e3756a5e9d0979235da649ff952dc8970",
     "src/main/java/com/diskree/achievetodo/client/bridge/PurpurMovementInput.java": "e725ea2aa5483f25a95fc14d3e72b065ea783eaff3f113df98ebfa5adb7d5e96",
@@ -2013,5 +2013,5 @@
   },
   "finalPolicyAccepted": false,
   "r8Base": "6d3914949dbff97be10e869a82b5f2a5a0be06be",
-  "r9Change": "Only scoped metadata license declaration; all gameplay source pins retained"
+  "r9Change": "Scoped metadata license declaration and diagnostic bridge ACK build label; wire contracts unchanged"
 }

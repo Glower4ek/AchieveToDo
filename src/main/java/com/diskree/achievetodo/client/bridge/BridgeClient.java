@@ -128,7 +128,7 @@ public final class BridgeClient {
                                 || frame.minor()!=BridgeWire.MINOR || frame.features()!=BridgeWire.FEATURES || !frame.catalog().equals(BridgeWire.CATALOG))
                             throw new IllegalArgumentException("ATD_PROTOCOL_INCOMPATIBLE");
                         hello=frame;
-                        var ack=new BridgeWire.Frame(BridgeWire.ACK,BridgeWire.MAJOR,BridgeWire.MINOR,frame.server(),frame.session(),frame.challenge(),BridgeWire.FEATURES,BridgeWire.CATALOG,"universal-0.2.0-dev.s3c");
+                        var ack=new BridgeWire.Frame(BridgeWire.ACK,BridgeWire.MAJOR,BridgeWire.MINOR,frame.server(),frame.session(),frame.challenge(),BridgeWire.FEATURES,BridgeWire.CATALOG,"universal-"+com.diskree.achievetodo.BuildConfig.MOD_VERSION);
                         context.responseSender().sendPacket(new BridgePayload(BridgeWire.encode(ack)));
                         log("HELLO_ACK_SENT phase=configuration session="+hello.session());
                     } else {
