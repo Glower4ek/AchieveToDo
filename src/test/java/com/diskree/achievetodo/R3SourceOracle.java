@@ -4,9 +4,10 @@ public final class R3SourceOracle {
  public static String expected(String historical,String path) throws Exception {
   String selected=System.getenv("ACHIEVETODO_SOURCE_ORACLE");
   if(selected==null)return historical;
-  if(!selected.equals("S5_R3_FABRIC_SOURCE_ORACLE_V1"))throw new IllegalStateException("Wrong source oracle authority");
+  boolean r9=selected.equals("S5_R9_FABRIC_SOURCE_ORACLE_V1");
+  if(!r9&&!selected.equals("S5_R3_FABRIC_SOURCE_ORACLE_V1"))throw new IllegalStateException("Wrong source oracle authority");
   byte[] raw=Files.readAllBytes(Path.of(System.getenv("ACHIEVETODO_SOURCE_ORACLE_FILE")));
-  if(!HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(raw)).equals("162bcbcf7c7e2a9947fa642082dc9c6edd709bb914cda6ac4fb520afd42837f1"))throw new IllegalStateException("Oracle manifest tampered");
+  if(!HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(raw)).equals(r9?"bfa74faee5eab7e513f071abccac2da654a1e43bacf36ce17d7d17d804817c88":"162bcbcf7c7e2a9947fa642082dc9c6edd709bb914cda6ac4fb520afd42837f1"))throw new IllegalStateException("Oracle manifest tampered");
   var m=JsonParser.parseString(new String(raw,java.nio.charset.StandardCharsets.UTF_8)).getAsJsonObject();
   for(var e:m.getAsJsonObject("productionSource").entrySet()){
    var b=Files.readAllBytes(Path.of(e.getKey()));
