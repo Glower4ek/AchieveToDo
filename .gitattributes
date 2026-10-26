@@ -187,7 +187,8 @@ tools/certification/r7.init.gradle -text
 src/test/java/com/diskree/achievetodo/client/R7ArchiveProbe.java -text
 
 # R8 notice and executable tooling exact bytes.
-licenses/bacap-better-ru/LICENSE -text
+tools/certification/notices/bacap-better-ru.LICENSE.txt -text
 tools/certification/r8_network.py -text
 tools/certification/r8_release.py -text
 tools/certification/R8.md -text
+licenses/bacap-better-ru/LICENSE text eol=crlf

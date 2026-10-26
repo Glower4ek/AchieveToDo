@@ -20,7 +20,7 @@ def require(ok, message):
 def package(kind, original, out, source, purpur_notices=None):
     require(identity(original)['sha256'] == ACCEPTED[kind], 'WRONG_ACCEPTED_'+kind.upper())
     if kind == 'fabric':
-        replacements = {'LICENSE_bacap-better-ru': (source/'licenses/bacap-better-ru/LICENSE').read_bytes()}
+        replacements = {'LICENSE_bacap-better-ru': (source/'tools/certification/notices/bacap-better-ru.LICENSE.txt').read_bytes()}
         require(b'No BACAP Language Pack ARR content is included' not in next(iter(replacements.values())), 'FALSE_ARR_ABSENCE_NOTICE')
         additions = {}
     else:
