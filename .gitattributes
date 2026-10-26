@@ -185,3 +185,9 @@ tools/certification/authority/r7-minecraft-v1.json -text
 tools/certification/authority/r7-b10-v1.json -text
 tools/certification/r7.init.gradle -text
 src/test/java/com/diskree/achievetodo/client/R7ArchiveProbe.java -text
+
+# R8 notice and executable tooling exact bytes.
+licenses/bacap-better-ru/LICENSE -text
+tools/certification/r8_network.py -text
+tools/certification/r8_release.py -text
+tools/certification/R8.md -text

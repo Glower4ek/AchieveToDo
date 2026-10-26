@@ -9,4 +9,10 @@ Author information:
 - Downloaded pack metadata: _author = "diskree"
 
 Only the localized client resource entries required for the Phase A Russian overlay are bundled.
-No BACAP Language Pack ARR content is included in this project.
+This notice covers only the selected BACAP Better RU material.
+The merged Russian overlay also uses other sources. The retained localization
+provenance records identify BACAP Language Pack content under project-specific
+permission attested by the maintainer; they do not independently prove public
+redistribution or derivative-use terms. This CC0 notice does not license those
+other sources. Public redistribution of the complete merged payload remains
+unproven pending the exact applicable permission records.
