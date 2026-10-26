@@ -177,3 +177,11 @@ src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV2PhaseAMixedWe
 src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV2PhaseAMixedWeaponryMulticlassedGameTest.java -text
 src/gametest/java/com/diskree/achievetodo/certification/R4MulticlassedCurrentContract.java -text
 src/gametest/r4-profile/fabric.mod.json -text
+
+# R7 executable and generated-output authority exact byte identities.
+tools/certification/r7_bootstrap.py -text
+tools/certification/r7_generated.py -text
+tools/certification/authority/r7-minecraft-v1.json -text
+tools/certification/authority/r7-b10-v1.json -text
+tools/certification/r7.init.gradle -text
+src/test/java/com/diskree/achievetodo/client/R7ArchiveProbe.java -text
