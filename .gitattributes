@@ -1,3 +1,5 @@
+# R9 portable checkout default; explicit historical rules below take precedence.
+* text=auto eol=lf
 # Keep certified text byte identities reproducible across clean checkouts.
 # These committed LF blobs have historical byte oracles for CRLF checkouts.
 # No content or expected-result changes; all other paths retain Git defaults.
@@ -192,3 +194,9 @@ tools/certification/r8_network.py -text
 tools/certification/r8_release.py -text
 tools/certification/R8.md -text
 licenses/bacap-better-ru/LICENSE text eol=lf
+
+# R9 exact authority and packaging bytes.
+tools/certification/authority/r9-source-oracle-v1.json -text
+tools/certification/r9.init.gradle -text
+tools/certification/notices/bacap-better-ru-R9.LICENSE.txt -text
+src/main/resources/META-INF/NOTICE-R9.txt -text
