@@ -60,6 +60,7 @@ public class AdvancementWidgetMixin {
 
     @Unique
     private boolean shouldRenderMystifiedMask() {
+        if(com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend())return false;
         if (progress == null || abilityType == null || !AchieveToDoClient.isAbilityLocked(abilityType, true)) {
             return false;
         }
@@ -82,6 +83,12 @@ public class AdvancementWidgetMixin {
     @Final
     private Minecraft minecraft;
 
+    @WrapOperation(method={"extractRenderState","extractHover"},at=@At(value="INVOKE",target="Lnet/minecraft/advancements/AdvancementProgress;isDone()Z"))
+    private boolean bridgeNumericFrame(AdvancementProgress value,Operation<Boolean> original) {
+        if(abilityType!=null && com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend())return !com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType);
+        return original.call(value);
+    }
+
     @Inject(
         method = "<init>",
         at = @At(
@@ -98,6 +105,10 @@ public class AdvancementWidgetMixin {
         CallbackInfo ci
     ) {
         Identifier advancementId = advancement.holder().id();
+        if (com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) {
+            abilityType=AbilityType.findByAdvancement(advancementId);return;
+        }
+        if (!com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()) return;
         trackedScoreType = TrackedScoreType.findByAdvancement(advancementId);
         if (trackedScoreType == null) {
             trackedNearbyEntitiesType = TrackedNearbyEntitiesType.findByAdvancement(advancementId);
@@ -169,6 +180,9 @@ public class AdvancementWidgetMixin {
         cancellable = true
     )
     public void overrideProgressTextWidth(CallbackInfoReturnable<Integer> cir) {
+        if(abilityType!=null && com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) {
+            cir.setReturnValue(8+minecraft.font.width(Component.literal(AchieveToDoClient.getObtainedAdvancementsCount()+" / "+AchieveToDoClient.getRequiredAdvancementsCount(abilityType)+" "+(com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType)?"locked":"unlocked"))));return;
+        }
         if (abilityType != null) {
             int requiredCount = AchieveToDoClient.getRequiredAdvancementsCount(abilityType);
             if (requiredCount == Constants.Progression.INITIALLY_UNLOCKED_FLAG ||

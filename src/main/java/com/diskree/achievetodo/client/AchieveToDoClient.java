@@ -43,15 +43,19 @@ public class AchieveToDoClient implements ClientModInitializer {
     private static final List<List<AbilityType>> abilityRows = new ArrayList<>();
 
     public static int getRequiredAdvancementsCount(AbilityType ability) {
+        var projection=com.diskree.achievetodo.client.bridge.BridgeClient.presentation();
+        if(projection!=null)return projection.state().abilities().get(ability.getName()).threshold();
         return abilitiesConfiguration.get(ability);
     }
 
     public static boolean isNotReady() {
+        if(com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend())return !com.diskree.achievetodo.client.bridge.BridgeClient.presentationReady();
         return abilitiesConfiguration == null || obtainedAdvancementsCount == Integer.MIN_VALUE;
     }
 
     public static int getObtainedAdvancementsCount() {
-        return obtainedAdvancementsCount;
+        var projection=com.diskree.achievetodo.client.bridge.BridgeClient.presentation();
+        return projection==null?obtainedAdvancementsCount:projection.state().count();
     }
 
     public static int getTrackedScore(@NotNull TrackedScoreType progressType) {
@@ -63,6 +67,7 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static List<LockedLandmarkBox> getLockedLandmarkBoxes() {
+        if(com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend())return com.diskree.achievetodo.client.bridge.BridgeLandmarkPresentation.boxes();
         return lockedLandmarkBoxes;
     }
 
@@ -115,6 +120,7 @@ public class AchieveToDoClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        com.diskree.achievetodo.client.bridge.BridgeClient.initialize();
         registerPayloads();
         AdvancementLinkCommand.register();
 
@@ -129,13 +135,14 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     private void registerPayloads() {
-        ClientPlayNetworking.registerGlobalReceiver(SyncAbilitiesConfigurationPayload.ID, (payload, context) ->
+        ClientPlayNetworking.registerGlobalReceiver(SyncAbilitiesConfigurationPayload.ID, (payload, context) -> {
+            com.diskree.achievetodo.client.bridge.BridgeClient.observeFabric();
             context.client().execute(() -> {
                 abilitiesConfiguration = payload.abilitiesConfiguration();
                 abilityRows.clear();
                 calculateLockedLandmarkBoxes();
-            })
-        );
+            });
+        });
         ClientPlayNetworking.registerGlobalReceiver(SyncObtainedAdvancementsCountPayload.ID, (payload, context) ->
             context.client().execute(() -> obtainedAdvancementsCount = payload.obtainedAdvancementsCount())
         );
@@ -254,6 +261,20 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static boolean isAbilityLocked(@NotNull AbilityType abilityType, boolean checkOnly) {
+        if (!com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()) {
+            // Canonical mixins also own local rendering, inventory input and item prediction.
+            // Suppress prediction using the admitted S3C projection; every native transaction
+            // still independently queries server authority. Purpur prediction stays silent.
+            if ((abilityType != AbilityType.USE_BRUSH && abilityType != AbilityType.JUMP
+                && abilityType != AbilityType.SNEAK && abilityType != AbilityType.SPRINT
+                && abilityType != AbilityType.SWIM && abilityType != AbilityType.VISION
+                && abilityType != AbilityType.OPEN_INVENTORY && abilityType != AbilityType.USE_SPYGLASS
+                && abilityType.getLandmarkType()==null) ||
+                !com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) return false;
+            LocalPlayer predictedPlayer = Minecraft.getInstance().player;
+            return predictedPlayer != null && !predictedPlayer.isCreative() && !predictedPlayer.isSpectator()
+                && com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType);
+        }
         LocalPlayer player = Minecraft.getInstance().player;
         if (player == null || player.isCreative() || player.isSpectator()) {
             return false;
@@ -285,7 +306,7 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static boolean isTargetInLockedLandmark(@NotNull DimensionType targetDimensionType, @NotNull AABB targetBox) {
-        for (LockedLandmarkBox lockedLandmarksBox : lockedLandmarkBoxes) {
+        for (LockedLandmarkBox lockedLandmarksBox : getLockedLandmarkBoxes()) {
             if (lockedLandmarksBox.dimensionType() == targetDimensionType &&
                 lockedLandmarksBox.box().intersects(targetBox)
             ) {
@@ -299,6 +320,9 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static @Nullable List<List<AbilityType>> getAbilityRows() {
+        boolean purpur=com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend();
+        Map<AbilityType,Integer> abilitiesConfiguration=purpur?com.diskree.achievetodo.client.bridge.BridgePresentation.thresholds():AchieveToDoClient.abilitiesConfiguration;
+        List<List<AbilityType>> abilityRows=purpur?com.diskree.achievetodo.client.bridge.BridgePresentation.rows():AchieveToDoClient.abilityRows;
         if (isNotReady()) {
             return null;
         }

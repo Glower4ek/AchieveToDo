@@ -117,7 +117,7 @@ src/main/java/com/diskree/achievetodo/ability/Progressions.java fbf656576a22c0d1
     }
     @Test void noDeltaWorldgenGeometryIndexActionsAndLegacyReconstructionScope() throws Exception {
         for(String row:NO_DELTA.lines().map(String::trim).filter(s -> !s.isEmpty()).toList()) {
-            String[] c=row.split(" ");assertEquals(c[1],HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(Path.of(c[0])))),c[0]);
+            String[] c=row.split(" ");assertEquals(com.diskree.achievetodo.R3SourceOracle.expected(c[1], c[0]),HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(Path.of(c[0])))),c[0]);
         }
         String read=Files.readString(Path.of("src/main/java/com/diskree/achievetodo/injection/mixin/main/StructureStartMixin.java"));
         assertTrue(read.contains("nbt.getCompoundOrEmpty(Constants.NbtKey.STRUCTURE_LANDMARK)"));

@@ -1,0 +1,41 @@
+// Explicit current authority; historical test/check tasks keep their original gates.
+gradle.projectsEvaluated {
+    def p = gradle.rootProject
+    def assets = System.getenv('ACHIEVETODO_R6_ASSETS')
+    def output = System.getenv('ACHIEVETODO_R6_OUTPUT')
+    if (!assets || !output || System.getenv('ACHIEVETODO_INPUT_AUTHORITY') != 'S5_R3_ALT_METADATA_V1')
+        throw new GradleException('Explicit R6 assets, output and S5_R3_ALT_METADATA_V1 authority required')
+    def a = new File(assets).canonicalFile
+    def o = new File(output).canonicalFile
+    if (o.toPath().startsWith(p.projectDir.canonicalFile.toPath()) || o == a || o.toPath().startsWith(a.toPath()))
+        throw new GradleException('External output separate from source and authority assets required')
+    def admission = p.tasks.register('r6VerifyAlternativeInputs', Exec) {
+        commandLine System.getenv('ACHIEVETODO_PYTHON'), '-B', '-X', 'utf8',
+                new File(p.projectDir, 'tools/certification/r6_inputs.py'), 'verify',
+                '--source', p.projectDir, '--assets', a, '--authority', 'S5_R3_ALT_METADATA_V1'
+    }
+    p.tasks.register('r6AlternativeJUnit', Test) {
+        setDependsOn([p.tasks.named('testClasses'), admission])
+        testClassesDirs = p.sourceSets.test.output.classesDirs
+        classpath = p.sourceSets.test.runtimeClasspath
+        useJUnitPlatform()
+        environment 'ACHIEVETODO_INPUT_AUTHORITY', 'S5_R3_ALT_METADATA_V1'
+        environment 'ACHIEVETODO_ALTERNATIVE_MANIFEST', new File(a, 'r3_alternative_metadata_manifest.json').absolutePath
+        environment 'ACHIEVETODO_SOURCE_ORACLE', 'S5_R3_FABRIC_SOURCE_ORACLE_V1'
+        environment 'ACHIEVETODO_SOURCE_ORACLE_FILE', new File(a, 'r3_fabric_source_oracle.json').absolutePath
+        reports.junitXml.outputLocation.set(new File(o, 'junit-xml'))
+        reports.html.outputLocation.set(new File(o, 'junit-html'))
+    }
+    p.tasks.register('r6ExportJUnitBinary') {
+        doLast {
+            def store = new org.gradle.api.internal.tasks.testing.results.serializable.SerializableTestResultStore(
+                    new File(p.projectDir, 'build/test-results/r6AlternativeJUnit/binary').toPath())
+            def rows = []
+            def processor = { id, parent, result, ranges ->
+                rows.add([id:id, parent:parent, name:result.name, className:result.className, result:result.resultType.toString()])
+            } as org.gradle.api.internal.tasks.testing.results.serializable.SerializableTestResultStore.ResultProcessor
+            store.forEachResult(processor)
+            new File(o, 'junit-binary.json').text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(rows))
+        }
+    }
+}

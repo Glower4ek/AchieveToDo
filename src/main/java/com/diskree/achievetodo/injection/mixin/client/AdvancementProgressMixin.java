@@ -37,6 +37,10 @@ public abstract class AdvancementProgressMixin implements AdvancementProgressExt
 
     @Override
     public void achievetodo$setAdvancementId(Identifier advancementId) {
+        if (com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) {
+            abilityType=AbilityType.findByAdvancement(advancementId);return;
+        }
+        if (!com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()) return;
         trackedScoreType = TrackedScoreType.findByAdvancement(advancementId);
         if (trackedScoreType == null) {
             trackedNearbyEntitiesType = TrackedNearbyEntitiesType.findByAdvancement(advancementId);
@@ -51,6 +55,7 @@ public abstract class AdvancementProgressMixin implements AdvancementProgressExt
 
     @Shadow
     public abstract boolean isDone();
+
 
     @Inject(
         method = "countCompletedRequirements",
@@ -121,6 +126,7 @@ public abstract class AdvancementProgressMixin implements AdvancementProgressExt
         cancellable = true
     )
     public void overrideProgressPercentage(CallbackInfoReturnable<Float> cir) {
+        if(abilityType!=null && com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) {cir.setReturnValue(com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType)?0.0f:1.0f);return;}
         if (abilityType != null) {
             int requiredCount = AchieveToDoClient.getRequiredAdvancementsCount(abilityType);
             if (requiredCount == Constants.Progression.PERMANENTLY_LOCKED_FLAG) {
@@ -147,6 +153,7 @@ public abstract class AdvancementProgressMixin implements AdvancementProgressExt
         cancellable = true
     )
     public void overrideProgressText(CallbackInfoReturnable<Component> cir) {
+        if(abilityType!=null && com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) {cir.setReturnValue(Component.literal(AchieveToDoClient.getObtainedAdvancementsCount()+" / "+AchieveToDoClient.getRequiredAdvancementsCount(abilityType)+" "+(com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType)?"locked":"unlocked")));return;}
         if (abilityType != null) {
             int requiredCount = AchieveToDoClient.getRequiredAdvancementsCount(abilityType);
             if (requiredCount == Constants.Progression.INITIALLY_UNLOCKED_FLAG ||

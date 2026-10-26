@@ -665,7 +665,7 @@ public final class PhaseAEntityTypeTagPlayerKilledEntityGameTest implements Cust
         CommonListenerCookie cookie = CommonListenerCookie.createInitial(profile, false);
         ServerPlayer player = new ServerPlayer(server, helper.getLevel(), profile, clientInformation);
         Connection connection = new Connection(PacketFlow.SERVERBOUND);
-        new EmbeddedChannel(connection);
+        R3NativeCleanup.register(connection, new EmbeddedChannel(connection));
         server.getConnection().getConnections().add(connection);
         server.getPlayerList().placeNewPlayer(connection, player, cookie);
         return new JoinedPlayer(player, connection);
@@ -677,6 +677,7 @@ public final class PhaseAEntityTypeTagPlayerKilledEntityGameTest implements Cust
             joinedPlayer.player().closeContainer();
         }
         server.getPlayerList().remove(joinedPlayer.player());
+        R3NativeCleanup.settle(joinedPlayer.connection());
         joinedPlayer.connection().disconnect(Component.literal("GameTest cleanup"));
         server.getConnection().getConnections().remove(joinedPlayer.connection());
     }

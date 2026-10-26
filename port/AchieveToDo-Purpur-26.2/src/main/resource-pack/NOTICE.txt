@@ -1,0 +1,14 @@
+AchieveToDo UI Resource Pack
+
+This resource pack is distributed for the AchieveToDo Purpur port.
+
+Reused original upstream assets:
+- assets/achievetodo/textures/item/ui/ability_unknown.png
+
+Source project:
+https://github.com/AchieveToDo/mod
+
+Upstream repository license:
+MIT License
+
+The full upstream MIT license text is included in licenses/UPSTREAM_MIT_LICENSE.txt.

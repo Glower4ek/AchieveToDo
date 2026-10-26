@@ -25,7 +25,9 @@ public abstract class GuiMixin {
 
     @Inject(method = "setScreen", at = @At("HEAD"), cancellable = true)
     private void achievetodo$checkAdvancementsReady(Screen nextScreen, CallbackInfo ci) {
-        if (nextScreen instanceof AdvancementsScreen && AchieveToDoClient.isNotReady()) {
+        if (nextScreen instanceof AdvancementsScreen
+            && com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()
+            && AchieveToDoClient.isNotReady()) {
             if (minecraft.player != null) {
                 minecraft.player.sendOverlayMessage(AchieveToDoClient.translate("error.not_ready_yet")
                     .withStyle(ChatFormatting.RED));

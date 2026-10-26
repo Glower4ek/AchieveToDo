@@ -1,3 +1,5 @@
+# R9 portable checkout default; explicit historical rules below take precedence.
+* text=auto eol=lf
 # Keep certified text byte identities reproducible across clean checkouts.
 # These committed LF blobs have historical byte oracles for CRLF checkouts.
 # No content or expected-result changes; all other paths retain Git defaults.
@@ -128,3 +130,79 @@ tools/publication/snapshot.py text eol=crlf
 # Preserve certified mixed EOLs verbatim where frozen receipts bind full bytes.
 src/main/java/com/diskree/achievetodo/client/gui/AdvancementsTabType.java -text
 src/main/java/com/diskree/achievetodo/injection/mixin/main/AbstractCauldronBlockMixin.java -text
+
+# R6: preserve all sealed R5 test/tool byte identities across checkouts.
+src/test/java/com/diskree/achievetodo/R3SourceOracle.java -text
+src/test/java/com/diskree/achievetodo/PhaseDProtectedScopeTest.java -text
+src/test/java/com/diskree/achievetodo/ability/PhaseDRuinedPortalSelectorTest.java -text
+tools/build/verify_alternative_r3.py -text
+tools/phase_b/r3_localization_authority.py -text
+src/test/java/com/diskree/achievetodo/client/PhaseBPackTestFixtures.java -text
+src/gametest/java/com/diskree/achievetodo/certification/PhaseASingletonAxolotlMonumentGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/PhaseAPlayerHurtEntityDamageSourceGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R3WaxSignContract.java -text
+src/gametest/java/com/diskree/achievetodo/certification/PhaseABlockTagItemUsedOnBlockExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R3NativeCleanup.java -text
+src/gametest/java/com/diskree/achievetodo/certification/PhaseABlockTagItemUsedOnBlockGameTest.java -text
+tools/phase_b/r3_b10_current_source_v1.py -text
+src/gametest/java/com/diskree/achievetodo/certification/PhaseBRuntimeSmoke.java -text
+src/gametest/java/com/diskree/achievetodo/certification/PhaseAContainerLootGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/PhaseAEntityTypeTagPlayerKilledEntityGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R3CleanupControls.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentLocationContract.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentRunGuard.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAFishingRodHookedExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAFishingRodHookedGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseALocationHolderSetWorldgenEvidenceValidation.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseALocationHolderSetWorldgenExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseALocationHolderSetWorldgenGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAMixedPerfectRunExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAMixedPerfectRunGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAMixedPiglinDistractionExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAMixedPiglinDistractionGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAMixedWeaponryMulticlassedExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAMixedWeaponryMulticlassedGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAPlayerKilledEntityRemainderExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAPlayerKilledEntityRemainderGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAPureEnchantmentInventoryChangedExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAPureEnchantmentInventoryChangedGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseASingletonAncientRestorationExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseASingletonAncientRestorationGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseASingletonDiagonAllayExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseASingletonDiagonAllayGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseASingletonSilkTouchNestExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseASingletonSilkTouchNestGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAStackAllItemsExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV1PhaseAStackAllItemsInventoryBacklogGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV2PhaseAMixedWeaponryMulticlassedEvidenceValidation.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV2PhaseAMixedWeaponryMulticlassedExecutionEvidence.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4CurrentV2PhaseAMixedWeaponryMulticlassedGameTest.java -text
+src/gametest/java/com/diskree/achievetodo/certification/R4MulticlassedCurrentContract.java -text
+src/gametest/r4-profile/fabric.mod.json -text
+
+# R7 executable and generated-output authority exact byte identities.
+tools/certification/r7_bootstrap.py -text
+tools/certification/r7_generated.py -text
+tools/certification/authority/r7-minecraft-v1.json -text
+tools/certification/authority/r7-b10-v1.json -text
+tools/certification/r7.init.gradle -text
+src/test/java/com/diskree/achievetodo/client/R7ArchiveProbe.java -text
+
+# R8 notice and executable tooling exact bytes.
+tools/certification/notices/bacap-better-ru.LICENSE.txt -text
+tools/certification/r8_network.py -text
+tools/certification/r8_release.py -text
+tools/certification/R8.md -text
+licenses/bacap-better-ru/LICENSE text eol=lf
+
+# R9 exact authority and packaging bytes.
+tools/certification/authority/r9-source-oracle-v1.json -text
+tools/certification/r9.init.gradle -text
+tools/certification/notices/bacap-better-ru-R9.LICENSE.txt -text
+src/main/resources/META-INF/NOTICE-R9.txt -text
+
+# Published Purpur mirror: independent source bytes, no EOL transformation.
+port/AchieveToDo-Purpur-26.2/** -text
+
+# Standalone bridge fixture is LF in the source authority.
+src/bridgeTest/java/com/diskree/achievetodo/bridge/ClientCodecFixtureTest.java -text

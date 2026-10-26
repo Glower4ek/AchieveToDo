@@ -1,0 +1,12 @@
+// Additive external candidate probes. Historical/current R6 gates remain intact.
+gradle.projectsEvaluated {
+    def p = gradle.rootProject
+    p.tasks.register('r7ArchiveProbe', JavaExec) {
+        dependsOn p.tasks.named('testClasses'), p.tasks.named('r6VerifyAlternativeInputs')
+        classpath = p.sourceSets.test.runtimeClasspath
+        mainClass = 'com.diskree.achievetodo.client.R7ArchiveProbe'
+        args System.getenv('R7_PROBE_ACTION'), System.getenv('R7_PROBE_INPUT'), System.getenv('R7_PROBE_OUTPUT')
+        systemProperty 'user.timezone', System.getenv('R7_PROBE_TIMEZONE') ?: 'UTC'
+        systemProperty 'user.language', System.getenv('R7_PROBE_LANGUAGE') ?: 'en'
+    }
+}

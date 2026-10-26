@@ -1,0 +1,15 @@
+package com.diskree.achievetodo.restriction;
+
+public enum RestrictionFlag {
+    OPENS_CONTAINER,
+    CLOSES_CONTAINER,
+    OPENS_UI,
+    OFFHAND_PATH,
+    AUTOMATION_PATH,
+    SECONDARY_PATH,
+    PROJECTILE_OWNER_IS_ACTOR,
+    VEHICLE_DRIVER_IS_ACTOR,
+    PASSENGER_PATH,
+    WATERLOGGING_PATH,
+    SHARED_STATE_PATH
+}

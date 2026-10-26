@@ -210,10 +210,14 @@ public final class PhaseBRuntimeSmoke implements CustomTestMethodInvoker {
         SortedSet<String> union = new TreeSet<>(core); union.addAll(atd);
         require(expected.equals(union), "full expected set is not the exact union");
         require(core.size() == contract.get("b8CoreExpectedCount").getAsInt(), "core contract count mismatch");
-        require(atd.size() == contract.get("atdAbilityExpectedCount").getAsInt() && atd.size() == 152, "ATD contract count mismatch");
+        if ("S5_R3_B10_CURRENT_SOURCE_V1".equals(System.getProperty("achievetodo.r3.b10Contract"))) {
+            require(plan.get("r3Authority").getAsString().equals("S5_R3_B10_CURRENT_SOURCE_V1") && atd.size() == contract.get("atdAbilityExpectedCount").getAsInt() && atd.size()==154, "R3 ATD resource count mismatch");
+        } else { require(atd.size() == contract.get("atdAbilityExpectedCount").getAsInt() && atd.size() == 152, "ATD contract count mismatch"); }
         SortedSet<String> compiledAbilities = new TreeSet<>();
         for (AbilityType ability : AbilityType.values()) compiledAbilities.add("achievetodo:abilities/" + ability.getName());
-        require(AbilityType.values().length == 151 && compiledAbilities.size() == 151, "compiled AbilityType count mismatch");
+        if ("S5_R3_B10_CURRENT_SOURCE_V1".equals(System.getProperty("achievetodo.r3.b10Contract"))) {
+            require(AbilityType.values().length == 153 && compiledAbilities.size() == 153, "R3 compiled AbilityType count mismatch");
+        } else { require(AbilityType.values().length == 151 && compiledAbilities.size() == 151, "compiled AbilityType count mismatch"); }
         compiledAbilities.add("achievetodo:abilities/root");
         require(atd.equals(compiledAbilities), "ATD expected set differs from compiled AbilityType plus root");
         SortedSet<String> live = new TreeSet<>(liveIds);

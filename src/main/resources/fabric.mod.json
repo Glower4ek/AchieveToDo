@@ -10,7 +10,7 @@
 	"contact": {
 		"sources": "${repoUrl}"
 	},
-	"license": "MIT",
+	"license": "LicenseRef-AchieveToDo-Scoped-Components",
 	"icon": "assets/achievetodo/icon.png",
 	"environment": "*",
 	"entrypoints": {

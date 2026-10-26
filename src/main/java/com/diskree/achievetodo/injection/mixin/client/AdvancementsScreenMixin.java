@@ -58,6 +58,17 @@ public abstract class AdvancementsScreenMixin extends Screen {
         super(null);
     }
 
+    @Inject(method="extractRenderState",at=@At("TAIL"))
+    private void progressionPreviewHeader(GuiGraphicsExtractor graphics,int mouseX,int mouseY,float delta,CallbackInfo ci) {
+        if(com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) {
+            graphics.fill(0,0,width,25,0xDD151515);
+            var p=com.diskree.achievetodo.client.bridge.BridgeClient.presentation();
+            String line=p==null?"Progression unavailable":"Purpur "+(com.diskree.achievetodo.client.bridge.BridgeClient.presentationReady()?"progression":"syncing")+" | "+p.state().difficulty()+" | count "+p.state().count();
+            graphics.text(minecraft.font,line,6,3,0xFFFFFFFF);
+            graphics.text(minecraft.font,"Preview only: gameplay enforcement incomplete",6,14,0xFFFFC66D);
+        }
+    }
+
     @Shadow
     @Final
     private Map<AdvancementHolder, AdvancementTab> tabs;

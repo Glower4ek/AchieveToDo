@@ -26,6 +26,25 @@ plugins {
     id 'net.fabricmc.fabric-loom' version "${loomVersion}"
 }
 
+// Explorer folder metadata can occur in multiple resource roots after a Windows
+// workspace move. It is not a game resource and must never enter the mod JAR.
+tasks.withType(ProcessResources).configureEach {
+    exclude '**/desktop.ini'
+}
+
+// Narrow standalone runner; no historical certification suite or external fixture acquisition.
+sourceSets {
+    bridgeTest {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+tasks.register('bridgeTest', JavaExec) {
+    dependsOn 'bridgeTestClasses'
+    classpath = sourceSets.bridgeTest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.bridge.ClientCodecFixtureTest'
+}
+
 def modId = project.modName.toLowerCase(Locale.ROOT)
 def repoUrl = project.repoUrl
 
@@ -424,6 +443,9 @@ jar {
             throw new GradleException("Smoke candidate ${modVersion} already exists; increment the final modVersion component before producing a changed JAR.")
         }
     }
+    from('tools/certification/notices/bacap-better-ru-R9.LICENSE.txt') {
+        rename { 'LICENSE_bacap-better-ru' }
+    }
     from('LICENSE') {
         rename { "${it}_${modId}" }
     }
@@ -433,6 +455,7 @@ jar {
         .each { dir ->
             from(dir) {
                 include 'LICENSE'
+                if (dir.name == 'bacap-better-ru') exclude 'LICENSE'
                 rename {
                     "LICENSE_${dir.name}"
                 }

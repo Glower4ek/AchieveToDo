@@ -1,0 +1,28 @@
+AchieveToDo 0.2.1-rc.1 for Minecraft 26.2 — third-party and permission notice
+
+Original AchieveToDo project material: copyright diskree and project contributors;
+MIT applies only to original material covered by the included project MIT text.
+Purpur port contributions: project contributors; publication permission is
+represented by the owner's S5-R9 attestation, not a new public MIT grant.
+
+BlazeandCave's Advancements Pack (BACAP): BlazeandCave/Cavinator1 and relevant
+authors. Selected derived resources remain subject to their applicable terms
+and separately obtained permission represented by the owner. No public MIT or
+CC0 relicensing is claimed. https://modrinth.com/datapack/blazeandcaves-advancements-pack
+
+Russian merged localization includes BACAP Better RU 2.3 (diskree, CC0-1.0),
+BACAP Rus Translate (BSD-2-Clause; retain the bundled scoped license), and
+BACAP Language Pack material under project-specific permission. CC0/BSD
+applies only to the respective source material. Other translation/derivative
+publication permission rests on the owner's attestation.
+
+toml4j 0.7.2: MIT; exact bundled license retained in the Fabric artifact.
+UI material ability_unknown.png: copyright 2022 diskree, upstream
+https://github.com/AchieveToDo/mod ; MIT text retained separately.
+
+Owner statement: "I have personally contacted the relevant rightsholders. They
+have given me permission to publish the project and the relevant materials.
+I authorize completing the release process."
+This is an owner attestation, not independently inspected rightsholder-signed
+proof. Private correspondence has not been published. Custom permissions are
+not an unrestricted downstream public license; obtain permission where required.
