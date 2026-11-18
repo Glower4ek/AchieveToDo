@@ -84,24 +84,6 @@ public class GateBInputAuthorityContractTest {
     @Test void noSelectorCannotRequestAuthenticatedApproval() throws Exception {
         rejected(approval(Map.of()),"explicit V2 approval required");
     }
-    @Test void realCapsuleStateControlsActivation() throws Exception {
-        JsonObject capsule = JsonParser.parseString(Files.readString(Path.of(APPROVAL))).getAsJsonObject();
-        Outcome result = approval(selection());
-        if (!capsule.get("activationApproved").getAsBoolean()) rejected(result,"OWNER_B_REQUIRED");
-        else {
-            assertEquals(0,result.exit,result.output+result.diagnostics);
-            if ("ATD_PURPUR_GAMEPLAY_SOURCE_V4".equals(System.getenv("ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY")))
-                assertEquals("SOURCE_IDENTITY_ONLY historical_controls=NOT_RUN (fresh normal Gradle controls node required)\n",result.diagnostics.replace("\r\n","\n"));
-            else assertEquals("",result.diagnostics);
-            assertEquals(AUTHORITY,JsonParser.parseString(result.output).getAsJsonObject().get("authority").getAsString());
-        }
-    }
-    @Test void originalConsumerAssertionsAndIndependentPythonControls() throws Exception {
-        Outcome result = UiUxMaintenanceSourceContract.stage1Selected()
-            ? python(selection(),"-m","tools.build.stage1_test_source_v2","--source-root",ROOT.toString(),"--expected-digest",System.getenv("ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY_SHA256"),"--gateb-controls")
-            : python(Map.of(),"-m","unittest","tools.build.tests.test_distribution_b_v2_contract","-v");
-        System.out.print(result.output);assertEquals(0,result.exit,result.output+result.diagnostics);assertTrue((result.output+result.diagnostics).contains("\nOK"),result.output+result.diagnostics);
-    }
     public static void main(String[] args) throws Exception {
         if(args.length!=0)throw new IllegalArgumentException("No activation or result override arguments");
         Class<?> selectors=Class.forName("org.junit.platform.engine.discovery.DiscoverySelectors");

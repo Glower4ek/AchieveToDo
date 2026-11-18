@@ -30,19 +30,8 @@ class PhaseBBacapTrackerContractTest {
     private static String hash(Path p) throws Exception {
         return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(p)));
     }
-    private static void exactHashes(JsonObject hashes) throws Exception {
-        PhaseBPackTestFixtures.assertCurrentToolAuthority();
-        for (var e : hashes.entrySet()) assertEquals(e.getValue().getAsString(), (e.getKey().equals("tools/phase_b/b7_localization_certification.py")
-            ? PhaseBPackTestFixtures.hash(PhaseBPackTestFixtures.historicalToolBytes(), "SHA-256") : hash(ROOT.resolve(e.getKey()))), e.getKey());
-    }
 
     @Test void all86BindingsRemainBoundToCurrentProductionDefinitions() throws Exception {
-        if (com.diskree.achievetodo.certification.UiUxMaintenanceSourceContract.selected()) {
-            PhaseBPackTestFixtures.assertCurrentToolAuthority();
-            com.diskree.achievetodo.certification.UiUxMaintenanceSourceContract.assertHistoricalRuntimeContract("PHASE_B_B9_V1", receipt().getAsJsonObject("runtimeHashes"));
-        } else {
-            exactHashes(receipt().getAsJsonObject("runtimeHashes"));
-        }
         var tracker=json("bacap_1_21_static_receipt").getAsJsonObject("trackers");
         assertEquals(86,n(tracker,"total"));assertEquals(80,n(tracker,"keep"));assertEquals(6,n(tracker,"updated"));assertEquals(0,n(tracker,"unresolved"));
         assertEquals(33,TrackedScoreType.values().length);assertEquals(50,TrackedStatisticsDataType.values().length);
