@@ -647,3 +647,12 @@ tasks.register<JavaExec>("nativeDenialIntentTest") {
     javaLauncher.set(javaToolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(25)) })
 }
 tasks.check { dependsOn("nativeDenialIntentTest") }
+tasks.register<JavaExec>("criterionNativeTest") {
+    group = "verification"
+    description = "W5-RED-1: pinned ITEM_USED_ON_BLOCK suppression transform and one-shot denial marks."
+    dependsOn("testClasses")
+    classpath = sourceSets.named("test").get().runtimeClasspath
+    mainClass.set("com.diskree.achievetodo.gameplay.nativeguard.NativeCriterionContractTest")
+    javaLauncher.set(javaToolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(25)) })
+}
+tasks.check { dependsOn("criterionNativeTest") }

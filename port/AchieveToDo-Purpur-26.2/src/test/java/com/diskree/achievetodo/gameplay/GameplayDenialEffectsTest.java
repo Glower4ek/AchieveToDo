@@ -18,16 +18,18 @@ public final class GameplayDenialEffectsTest {
   public void demystify(UUID actor,AbilityType ability){discovery.add(actor+":"+ability);}
  }
  public static void main(String[] args){
-  UUID actor=UUID.randomUUID();var messages=new ArrayList<Component>();GameMode[] mode={GameMode.SURVIVAL};
+  UUID actor=UUID.randomUUID();var messages=new ArrayList<Component>();GameMode[] mode={GameMode.SURVIVAL};int[] resyncs={0};
   Player player=(Player)Proxy.newProxyInstance(Player.class.getClassLoader(),new Class<?>[]{Player.class},(proxy,method,values)->switch(method.getName()){
    case "getUniqueId" -> actor;case "getGameMode" -> mode[0];
    case "sendActionBar" -> {messages.add((Component)values[0]);yield null;}
+   case "updateInventory" -> {resyncs[0]++;yield null;}
    case "hashCode" -> System.identityHashCode(proxy);case "equals" -> proxy==values[0];case "toString" -> "CanonicalDenialTestPlayer";
    default -> throw new AssertionError("Unexpected player method "+method);
   });
   var counts=new EnumMap<AbilityType,Integer>(AbilityType.class);for(var ability:AbilityType.values())counts.put(ability,4);
   var requirements=AbilityRequirements.from(counts);var source=new Source();source.state=PlayerProgressionState.create(actor,3,requirements);var effects=new GameplayDenialEffects(source);
   check(!effects.allows(player,AbilityType.JUMP));check(messages.size()==1 && source.discovery.size()==1);
+  check(resyncs[0]==1); // W5-RED-2: every effectful denial resends the inventory.
   var message=(TranslatableComponent)messages.getFirst();check(message.key().equals("achievetodo.ability.jump.locked_message"));check(message.color().equals(NamedTextColor.YELLOW));
   var suffix=(TranslatableComponent)message.children().get(1);check(suffix.key().equals("achievetodo.ability.left_to_unlock"));check(suffix.arguments().size()==1);
   effects.report(player,AbilityType.JUMP);check(messages.size()==1);check(source.discovery.size()==2); // Coalesce overlays only; criterion sink remains idempotent authority.
@@ -35,7 +37,7 @@ public final class GameplayDenialEffectsTest {
   source.state=PlayerProgressionState.create(actor,4,requirements);check(effects.allows(player,AbilityType.JUMP));check(source.discovery.size()==3);
   source.state=PlayerProgressionState.unavailable(actor,requirements);check(!effects.allows(player,AbilityType.JUMP));check(source.discovery.size()==3);
   source.state=PlayerProgressionState.create(UUID.randomUUID(),3,requirements);effects.report(player,AbilityType.JUMP);check(source.discovery.size()==3);
-  source.state=PlayerProgressionState.create(actor,3,requirements);mode[0]=GameMode.CREATIVE;check(effects.allows(player,AbilityType.JUMP));effects.report(player,AbilityType.JUMP);check(source.discovery.size()==3);
+  source.state=PlayerProgressionState.create(actor,3,requirements);mode[0]=GameMode.CREATIVE;int beforeCreative=resyncs[0];check(effects.allows(player,AbilityType.JUMP));effects.report(player,AbilityType.JUMP);check(source.discovery.size()==3);check(resyncs[0]==beforeCreative);
   mode[0]=GameMode.SPECTATOR;check(effects.allows(player,AbilityType.JUMP));check(source.discovery.size()==3);
   mode[0]=GameMode.SURVIVAL;counts.put(AbilityType.JUMP,-1);source.state=PlayerProgressionState.create(actor,500,AbilityRequirements.from(counts));effects.forget(actor);effects.report(player,AbilityType.JUMP);
   var permanent=(TranslatableComponent)messages.getLast();check(permanent.color().equals(NamedTextColor.RED));check(((TranslatableComponent)permanent.children().get(1)).key().equals("achievetodo.ability.permanently_locked"));

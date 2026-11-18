@@ -41,6 +41,7 @@ public final class GameplayDenialEffects {
     /** Call only where the matching Fabric call is effectful, never for a silent query. */
     public void report(Player player,AbilityType ability) {
         if(player.getGameMode()==GameMode.CREATIVE || player.getGameMode()==GameMode.SPECTATOR)return;
+        afterDenial(player);
         var state=progression.getProgressionState(player.getUniqueId());
         if(state==null || !state.isReady() || !player.getUniqueId().equals(state.getPlayerId()) || state.getAbilityState(ability).isUnlocked())return;
         discovery.demystify(player.getUniqueId(),ability);
@@ -48,6 +49,22 @@ public final class GameplayDenialEffects {
         Long previous=times.get(ability);if(previous!=null && now-previous<250_000_000L)return;
         times.put(ability,now);
         player.sendActionBar(message(ability,state.getRequirements().getRequiredCount(ability),state.getObtainedAdvancementCount()));
+    }
+    /** W5-RED-1/2: suppress the post-result use criterion and undo client-side item prediction. */
+    private static void afterDenial(Player player) {
+        if(MARK_DENIED!=null){
+            try{MARK_DENIED.invoke(null,player.getUniqueId());}
+            catch(ReflectiveOperationException|RuntimeException ignored){}
+        }
+        // The client may already have predicted consumption; the server stack is unchanged, so its
+        // remote-slot snapshot sees no delta. Resend the inventory like Paper does for cancelled uses.
+        player.updateInventory();
+    }
+    private static final java.lang.reflect.Method MARK_DENIED=markDenied();
+    private static java.lang.reflect.Method markDenied(){
+        try{return Class.forName("com.diskree.achievetodo.gameplay.nativeguard.NativeCriterionAgent",false,null)
+            .getMethod("markDenied",UUID.class);}
+        catch(ReflectiveOperationException|LinkageError unavailable){return null;}
     }
     public void forget(UUID actor){reported.remove(actor);}
     public void clear(){reported.clear();}
