@@ -42,6 +42,24 @@ public class AchieveToDoClient implements ClientModInitializer {
 
     private static final List<List<AbilityType>> abilityRows = new ArrayList<>();
 
+    // Purpur backend: abilities whose server guard refuses before the native use starts
+    // (before startUsingItem / consumeTicks / canConsume, or before the shot), so the client
+    // must not predict the use locally either. Without this the client raises the shield,
+    // draws the bow or plays the eating animation while the server has refused (W5-RED-3).
+    // Every attempt still reaches the server as a packet; the server stays the authority.
+    private static final Set<AbilityType> PURPUR_PREDICTION_SUPPRESSED = EnumSet.of(
+        AbilityType.USE_BRUSH, AbilityType.JUMP, AbilityType.SNEAK, AbilityType.SPRINT,
+        AbilityType.SWIM, AbilityType.VISION, AbilityType.OPEN_INVENTORY, AbilityType.USE_SPYGLASS,
+        AbilityType.USE_SHIELD, AbilityType.SHOOT_BOW, AbilityType.SHOOT_CROSSBOW,
+        AbilityType.ATTACK_WITH_TRIDENT, AbilityType.USE_OMINOUS_BOTTLE, AbilityType.USE_ENDER_EYE
+    );
+
+    private static boolean isPurpurPredictionSuppressed(@NotNull AbilityType abilityType) {
+        return PURPUR_PREDICTION_SUPPRESSED.contains(abilityType)
+            || abilityType.name().startsWith("EAT_")
+            || abilityType.getLandmarkType() != null;
+    }
+
     public static int getRequiredAdvancementsCount(AbilityType ability) {
         var projection=com.diskree.achievetodo.client.bridge.BridgeClient.presentation();
         if(projection!=null)return projection.state().abilities().get(ability.getName()).threshold();
@@ -265,11 +283,7 @@ public class AchieveToDoClient implements ClientModInitializer {
             // Canonical mixins also own local rendering, inventory input and item prediction.
             // Suppress prediction using the admitted S3C projection; every native transaction
             // still independently queries server authority. Only actual attempts report discovery.
-            if ((abilityType != AbilityType.USE_BRUSH && abilityType != AbilityType.JUMP
-                && abilityType != AbilityType.SNEAK && abilityType != AbilityType.SPRINT
-                && abilityType != AbilityType.SWIM && abilityType != AbilityType.VISION
-                && abilityType != AbilityType.OPEN_INVENTORY && abilityType != AbilityType.USE_SPYGLASS
-                && abilityType.getLandmarkType()==null) ||
+            if (!isPurpurPredictionSuppressed(abilityType) ||
                 !com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) return false;
             LocalPlayer predictedPlayer = Minecraft.getInstance().player;
             boolean locked=predictedPlayer != null && !predictedPlayer.isCreative() && !predictedPlayer.isSpectator()
