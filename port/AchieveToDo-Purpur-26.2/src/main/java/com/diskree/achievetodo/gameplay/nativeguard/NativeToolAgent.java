@@ -105,6 +105,17 @@ public final class NativeToolAgent {
     public static boolean restricted(boolean original, Object actor) {
         return original || denied(actor, null, "mine");
     }
+    public static boolean restricted(boolean original,Object actor,Object level,Object target) {
+        if(original)return true;
+        if(!player(actor))return false;
+        try {
+            var callback=guard;if(callback==null)return true;
+            int targetY=(int)NativeLandmarkCapture.call(target,"getY");
+            if(targetY<0 && callback.test(actor,"BASIC:BREAK_BLOCKS_IN_NEGATIVE_Y"))return true;
+            if(callback.test(actor,"BASIC:BREAK_BLOCKS"))return true;
+            return denied(actor,null,"mine");
+        } catch(RuntimeException | LinkageError unavailable){return true;}
+    }
 
     public static boolean permitted(boolean original, Object item, Object context) {
         return original && !denied(context, item, "context");
@@ -125,11 +136,13 @@ public final class NativeToolAgent {
                     case "slot" -> slot(actor, subject);
                     default -> subject;
                 };
-                ability = identity(call(stack, "getItem"), Set.of("post", "slot", "spear").contains(mode));
+                ability = identity(call(stack, "getItem"), Set.of("post", "slot", "spear", "kinetic").contains(mode));
             }
             if (ability == null) return false;
             var callback = guard;
-            return callback == null || callback.test(actor, ability);
+            String reporting=mode.equals("kinetic")?"SILENT:"
+                : Set.of("attack","post","slot","spear").contains(mode)?"COMBAT:":"";
+            return callback == null || callback.test(actor, reporting+ability);
         } catch (ReflectiveOperationException | RuntimeException | LinkageError unavailable) { return true; }
     }
 
@@ -160,7 +173,21 @@ public final class NativeToolAgent {
         return false;
     }
 
+    public static boolean combatTargetDenied(Object actor,Object target) {
+        return Boolean.getBoolean("achievetodo.landmarks.exactPrototype") && NativeLandmarkActions.combatEntityDenied(actor,target);
+    }
+    private static void verifyCombatMethods(String name,byte[] bytes) {
+        var parsed=ClassFile.of().parse(bytes);
+        for(var site:NativeToolSpecs.COMBAT_SITES)if(site.owner().equals(name)) {
+            var methods=parsed.methods().stream().filter(m->m.methodName().equalsString(site.method()) && m.methodType().equalsString(site.descriptor())).toList();
+            if(methods.size()!=1 || methods.getFirst().code().isEmpty())throw new IllegalStateException("Missing combat method "+site);
+            long returns=methods.getFirst().code().orElseThrow().elementStream().filter(e->e instanceof ReturnInstruction).count();
+            if(returns!=site.nativeReturns())throw new IllegalStateException("Changed native combat returns "+site+"="+returns);
+        }
+    }
     static byte[] transformNative(String name, byte[] bytes, ClassLoader loader) {
+        verifyCombatMethods(name,bytes);
+
         var cf = ClassFile.of(ClassFile.ClassHierarchyResolverOption.of(ClassHierarchyResolver.ofResourceParsing(loader)));
         var specs = NativeToolSpecs.SPECS.stream().filter(s -> s.owner().equals(name)).toList();
         Map<NativeToolSpecs.Spec, Integer> counts = new HashMap<>();
@@ -181,7 +208,7 @@ public final class NativeToolAgent {
                             b.aload(0).aload(1).putfield(ClassDesc.ofInternalName(name), MATERIAL_FIELD, OBJECT);
                             counts.merge(s, 1, Integer::sum);
                         } else if (s.mode().equals("mine") && element instanceof ReturnInstruction r && r.opcode() == Opcode.IRETURN) {
-                            b.aload(0).invokestatic(SELF, "restricted", MethodTypeDesc.of(ConstantDescs.CD_boolean, ConstantDescs.CD_boolean, OBJECT));
+                            b.aload(0).aload(1).aload(2).invokestatic(SELF, "restricted", MethodTypeDesc.of(ConstantDescs.CD_boolean, ConstantDescs.CD_boolean, OBJECT, OBJECT, OBJECT));
                             counts.merge(s, 1, Integer::sum);
                         } else if (element instanceof InvokeInstruction i && s.anchor().equals("L" + i.owner().asInternalName() + ";" + i.name().stringValue() + i.type().stringValue())) {
                             int ordinal = counts.getOrDefault(s, 0); counts.merge(s, 1, Integer::sum);
@@ -197,17 +224,62 @@ public final class NativeToolAgent {
         // Add the constructor-captured field once, without changing Item components or registry identity.
         if (capture) output = cf.transformClass(cf.parse(output), ClassTransform.endHandler(cb ->
             cb.withField(MATERIAL_FIELD, OBJECT, ClassFile.ACC_PRIVATE | ClassFile.ACC_FINAL)));
-        return output;
+        return transformCombatScopes(name,output,loader);
+    }
+
+    private static byte[] transformCombatScopes(String name,byte[] bytes,ClassLoader loader) {
+        var cf=ClassFile.of(ClassFile.ClassHierarchyResolverOption.of(ClassHierarchyResolver.ofResourceParsing(loader)));
+        var scope=ClassDesc.of(NativeToolCombatInvocation.class.getName());
+        var owner=ClassDesc.ofInternalName(name);
+        return cf.transformClass(cf.parse(bytes),(cb,e)->{
+            if(!(e instanceof MethodModel m)){cb.with(e);return;}
+            if(m.methodName().stringValue().startsWith("achievetodo$combatBody$"))throw new IllegalStateException("Duplicate combat transform "+name);
+            var selected=NativeToolSpecs.COMBAT_SITES.stream().filter(s->s.owner().equals(name) && m.methodName().equalsString(s.method()) && m.methodType().equalsString(s.descriptor())).findFirst();
+            if(selected.isEmpty() || selected.get().kind().equals("stab")){cb.with(e);return;}
+            String kind=selected.get().kind();
+            if(kind.equals("predicate")) {
+                int[] returns={0};
+                cb.transformMethod(m,MethodTransform.transformingCode((b,element)->{
+                    if(element instanceof ReturnInstruction r && r.opcode()==Opcode.IRETURN){returns[0]++;b.aload(0).aload(1).invokestatic(scope,"scopedTargetAllowed",MethodTypeDesc.of(ConstantDescs.CD_boolean,ConstantDescs.CD_boolean,OBJECT,OBJECT));}
+                    b.with(element);
+                }));
+                if(returns[0]!=1)throw new IllegalStateException("Scoped predicate return count "+returns[0]);return;
+            }
+            boolean piercing=kind.equals("piercing");String body="achievetodo$combatBody$"+m.methodName().stringValue();
+            cb.withMethod(body,m.methodTypeSymbol(),ClassFile.ACC_PRIVATE|ClassFile.ACC_SYNTHETIC,mb->mb.with(m.code().orElseThrow()));
+            cb.withMethod(m.methodName().stringValue(),m.methodTypeSymbol(),m.flags().flagsMask(),mb->{
+                for(MethodElement element:m)if(!(element instanceof AccessFlags) && !(element instanceof CodeModel))mb.with(element);
+                mb.withCode(b->{
+                    int token=piercing?3:5,thrown=token+1;
+                    b.aload(piercing?1:3).aload(piercing?2:4);
+                    if(piercing)b.aconst_null();else b.aload(1);
+                    b.ldc(piercing?1:0).invokestatic(scope,"open",MethodTypeDesc.of(scope,OBJECT,OBJECT,OBJECT,ConstantDescs.CD_boolean)).astore(token);
+                    var start=b.newBoundLabel();var end=b.newLabel();var handler=b.newLabel();
+                    b.aload(0).aload(1);
+                    if(piercing)b.aload(2);else b.iload(2).aload(3).aload(4);
+                    b.invokespecial(owner,body,m.methodTypeSymbol());
+                    if(piercing)b.aload(token).invokestatic(scope,"normal",MethodTypeDesc.of(ConstantDescs.CD_void,scope));
+                    b.labelBinding(end).aload(token).invokestatic(scope,"finish",MethodTypeDesc.of(ConstantDescs.CD_void,scope)).return_();
+                    b.labelBinding(handler).astore(thrown).aload(token).aload(thrown).invokestatic(scope,"failed",MethodTypeDesc.of(ConstantDescs.CD_void,scope,ClassDesc.of("java.lang.Throwable")))
+                        .aload(thrown).athrow().exceptionCatchAll(start,end,handler);
+                });
+            });
+        });
     }
 
     private static void emit(CodeBuilder b, NativeToolSpecs.Spec s) {
+        if(s.id().equals("stab")) {
+            var targetAllowed=b.newLabel();
+            b.aload(0).aload(2).invokestatic(SELF,"combatTargetDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT))
+                .ifeq(targetAllowed).iconst_0().ireturn().labelBinding(targetAllowed);
+        }
         var pass = b.newLabel();
         if (s.mode().equals("axe"))
             b.aload(0).aload(3).aload(4).invokestatic(SELF, "axeDenied", MethodTypeDesc.of(ConstantDescs.CD_boolean, OBJECT, OBJECT, OBJECT));
         else {
             b.aload(s.actor());
             if (s.subject() < 0) b.aconst_null(); else b.aload(s.subject());
-            b.ldc(s.mode()).invokestatic(SELF, "denied", DENIED);
+            b.ldc(s.id().equals("kinetic-contact")?"kinetic":s.mode()).invokestatic(SELF, "denied", DENIED);
         }
         b.ifeq(pass);
         switch (s.result()) {
@@ -218,5 +290,7 @@ public final class NativeToolAgent {
         }
         b.labelBinding(pass);
     }
+    /** Live health only; never installs or repairs a missing guard. */
+    public static synchronized boolean installed() { return started && owner != null && guard != null && failures.isEmpty() && transformed.equals(NativeToolSpecs.INPUTS.keySet()); }
     private NativeToolAgent() {}
 }

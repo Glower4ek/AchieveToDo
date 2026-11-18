@@ -132,7 +132,33 @@ public final class NativeLandmarkActions {
             case "shelfPowered" -> b.aload(0).aload(s.level()).aload(s.pos())
                 .invokestatic(OPERATIONS,"shelfPoweredDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT,OBJECT));
             case "shelfFallback" -> b.aload(s.pos()).invokestatic(OPERATIONS,"shelfFallbackDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT));
-            case "block" -> b.aload(s.level()).aload(s.pos()).invokestatic(SELF,"blockDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT));
+            case "block" -> {
+                String opening=switch(s.owner()) {
+                    case "net/minecraft/world/level/block/DoorBlock" -> "OPEN_DOOR";
+                    case "net/minecraft/world/level/block/TrapDoorBlock" -> "OPEN_TRAPDOOR";
+                    case "net/minecraft/world/level/block/FenceGateBlock" -> "OPEN_FENCE_GATE";
+                    default -> null;
+                };
+                b.aload(s.level()).aload(s.pos());
+                String menuAbility = s.method().equals("useWithoutItem") ? switch(s.owner()) {
+                    case "net/minecraft/world/level/block/CraftingTableBlock" -> "OPEN_CRAFTING_TABLE";
+                    case "net/minecraft/world/level/block/GrindstoneBlock" -> "OPEN_GRINDSTONE";
+                    case "net/minecraft/world/level/block/CartographyTableBlock" -> "OPEN_CARTOGRAPHY_TABLE";
+                    case "net/minecraft/world/level/block/LoomBlock" -> "OPEN_LOOM";
+                    case "net/minecraft/world/level/block/EnchantingTableBlock" -> "OPEN_ENCHANTING_TABLE";
+                    default -> null;
+                } : null;
+                if (s.id().equals("AbstractFurnaceBlockMixin:40"))
+                    b.aload(0).invokestatic(SELF, "furnaceDenied",
+                        MethodTypeDesc.of(ConstantDescs.CD_boolean, OBJECT, OBJECT, OBJECT, OBJECT));
+                else if(menuAbility != null)
+                    b.ldc(menuAbility)
+                        .invokestatic(ClassDesc.of(NativeLandmarkAgent.class.getName()),"targetAndAbilityDenied",
+                            MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT,ConstantDescs.CD_String));
+                else if(opening==null)b.invokestatic(SELF,"blockDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT));
+                else b.aload(1).ldc(s.owner().replace('/','.')).ldc(opening)
+                    .invokestatic(SELF,"openingDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT,OBJECT,ConstantDescs.CD_String,ConstantDescs.CD_String));
+            }
             case "entity" -> b.aload(0).invokestatic(SELF,"entityDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT));
             case "injuredEntity" -> b.aload(0).invokestatic(SELF,"injuredEntityDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT));
             case "leashShears", "equipmentShears" -> b.aload(0).invokestatic(OPERATIONS,
@@ -141,7 +167,13 @@ public final class NativeLandmarkActions {
                 .invokestatic(OPERATIONS,"mountDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,ConstantDescs.CD_int,ConstantDescs.CD_boolean));
             case "happyRide", "nautilusRide", "wolfShears", "sulfurReplacement", "copperInteraction" -> b.aload(0).aload(2).ldc(s.mode())
                 .invokestatic(OPERATIONS,"candidateEntityDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT,ConstantDescs.CD_String));
-            case "targetEntity" -> b.aload(s.pos()).invokestatic(SELF,"entityDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT));
+            case "targetEntity" -> {
+                b.aload(s.pos());
+                if(s.owner().equals("net/minecraft/world/item/equipment/Equippable") && s.method().equals("equipOnTarget"))
+                    b.aload(3).invokestatic(SELF,"equipmentEntityDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT));
+                else b.invokestatic(SELF,s.owner().equals("net/minecraft/world/entity/player/Player") && s.method().equals("attack")
+                    ?"combatEntityDenied":"entityDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT));
+            }
             case "damage" -> b.aload(0).invokestatic(SELF,"damageDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT));
             case "playerBlock" -> b.aload(s.level()).aload(s.pos()).invokestatic(SELF,"playerBlockDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT));
             case "projectile", "pointedProjectile" -> b.aload(s.level()).aload(s.pos()).aload(0).ldc(s.mode())
@@ -172,6 +204,24 @@ public final class NativeLandmarkActions {
                 NativeLandmarkCapture.call(context,"getClickedPos"));
         } catch (RuntimeException | LinkageError unavailable) { return true; }
     }
+    public static boolean furnaceDenied(Object actor, Object level, Object pos, Object furnace) {
+        String ability = furnaceAbility(furnace.getClass());
+        return NativeLandmarkAgent.targetAndAbilityDenied(actor, level, pos, ability);
+    }
+
+    private static String furnaceAbility(Class<?> type) {
+        for (Class<?> current = type; current != null; current = current.getSuperclass()) {
+            String ability = switch (current.getName()) {
+                case "net.minecraft.world.level.block.FurnaceBlock" -> "OPEN_FURNACE";
+                case "net.minecraft.world.level.block.SmokerBlock" -> "OPEN_SMOKER";
+                case "net.minecraft.world.level.block.BlastFurnaceBlock" -> "OPEN_BLAST_FURNACE";
+                default -> null;
+            };
+            if (ability != null) return ability;
+        }
+        return null;
+    }
+
     public static boolean blockDenied(Object actor, Object level, Object position) {
         return NativeLandmarkAgent.targetDenied(actor,level,position);
     }
@@ -210,7 +260,7 @@ public final class NativeLandmarkActions {
     public static boolean entityReturnAllowed(boolean original, Object argument, Object entity, String mode) {
         if (!original) return false;
         try {
-            if (mode.equals("mountValidity")) return !entityDenied(argument,NativeLandmarkOperations.mount(entity));
+            if (mode.equals("mountValidity")) return !entityQueryDenied(argument,NativeLandmarkOperations.mount(entity));
             if (mode.equals("projectileEntity")) {
                 Object actor = NativeLandmarkCapture.call(entity,"getOwner");
                 return !player(actor) || actor == argument || !entityDenied(actor,argument);
@@ -241,6 +291,18 @@ public final class NativeLandmarkActions {
                 NativeLandmarkCapture.call(context,"getClickedPos"),ability);
         } catch (ReflectiveOperationException | RuntimeException | LinkageError unavailable) { return true; }
     }
+    public static boolean openingDenied(Object actor,Object level,Object position,Object state,String owner,String ability) {
+        try {
+            Object property=Class.forName(owner,false,state.getClass().getClassLoader()).getField("OPEN").get(null);
+            boolean open=(boolean)NativeLandmarkCapture.call(state,"getValue",property);
+            return NativeLandmarkAgent.targetAndAbilityDenied(actor,level,position,open?null:ability);
+        } catch(ReflectiveOperationException | RuntimeException | LinkageError unavailable){return true;}
+    }
+    private static boolean entityQueryDenied(Object actor,Object entity) {
+        if(actor==null)return false;
+        try{return boxDenied(actor,NativeLandmarkCapture.call(entity,"level"),NativeLandmarkCapture.call(entity,"getBoundingBox"),null,"SILENT");}
+        catch(RuntimeException | LinkageError unavailable){return true;}
+    }
     public static boolean entityDenied(Object actor, Object entity) {
         return entityDenied(actor,entity,null);
     }
@@ -251,14 +313,50 @@ public final class NativeLandmarkActions {
         return boxDenied(actor,NativeLandmarkCapture.call(entity,"level"),box,additionalAbility);
         } catch (RuntimeException | LinkageError unavailable) { return true; }
     }
+    private static boolean nativeType(Object target,String name) throws ClassNotFoundException {
+        return Class.forName("net.minecraft."+name,false,target.getClass().getClassLoader()).isInstance(target);
+    }
+    private static boolean equipmentReports(Object player,Object target,Object stack) throws ReflectiveOperationException {
+        var context=StackWalker.getInstance().walk(frames->frames.filter(f->f.getClassName().startsWith("net.minecraft.world.entity."))
+            .map(f->f.getClassName()+"#"+f.getMethodName()).toList());
+        boolean outer=context.contains("net.minecraft.world.entity.player.Player#interactOn");
+        boolean subtype=context.stream().anyMatch(f->f.endsWith("#mobInteract"));
+        if(outer && subtype)return false;
+        boolean branch=false;
+        if(nativeType(target,"world.entity.animal.camel.Camel") && !(boolean)NativeLandmarkCapture.call(target,"isBaby"))
+            branch=(boolean)NativeLandmarkCapture.call(player,"isSecondaryUseActive")
+                || !(boolean)NativeLandmarkCapture.call(target,"isFood",stack) && ((List<?>)NativeLandmarkCapture.call(target,"getPassengers")).size()<2;
+        else if(nativeType(target,"world.entity.animal.nautilus.AbstractNautilus") && !(boolean)NativeLandmarkCapture.call(target,"isBaby")
+                && (boolean)NativeLandmarkCapture.call(target,"isTame"))
+            branch=(boolean)NativeLandmarkCapture.call(player,"isSecondaryUseActive")
+                || !(boolean)NativeLandmarkCapture.call(target,"isFood",stack) && !(boolean)NativeLandmarkCapture.call(target,"isVehicle");
+        else if(nativeType(target,"world.entity.animal.equine.AbstractHorse") && (boolean)NativeLandmarkCapture.call(target,"isTamed")
+                && !(boolean)NativeLandmarkCapture.call(target,"isBaby") && !(boolean)NativeLandmarkCapture.call(target,"isVehicle"))
+            branch=!(boolean)NativeLandmarkCapture.call(target,"isFood",stack);
+        return !(branch && (outer || subtype));
+    }
+    public static boolean equipmentEntityDenied(Object actor,Object target,Object stack) {
+        try{return boxDenied(actor,NativeLandmarkCapture.call(target,"level"),NativeLandmarkCapture.call(target,"getBoundingBox"),null,
+            equipmentReports(actor,target,stack)?"ORDINARY":"SILENT");}
+        catch(ReflectiveOperationException | RuntimeException | LinkageError unavailable){return true;}
+    }
+    public static boolean combatEntityDenied(Object actor,Object entity) {
+        if(actor==null)return false;
+        try{return boxDenied(actor,NativeLandmarkCapture.call(entity,"level"),NativeLandmarkCapture.call(entity,"getBoundingBox"),null,"COMBAT");}
+        catch(RuntimeException | LinkageError unavailable){return true;}
+    }
     static boolean boxDenied(Object actor,Object level,Object box,String additionalAbility) {
+        return boxDenied(actor,level,box,additionalAbility,"ORDINARY");
+    }
+    static boolean boxDenied(Object actor,Object level,Object box,String additionalAbility,String reporting) {
+
         if (actor == null) return false;
         try {
         double[] bounds = new double[6];
         String[] fields = {"minX","minY","minZ","maxX","maxY","maxZ"};
         try { for (int i=0;i<6;i++) bounds[i]=box.getClass().getField(fields[i]).getDouble(box); }
         catch (ReflectiveOperationException failure) { return true; }
-        return NativeLandmarkAgent.targetAndAbilityDenied(actor,level,bounds,additionalAbility);
+        return NativeLandmarkAgent.targetAndAbilityDenied(actor,level,bounds,additionalAbility,reporting);
         } catch (RuntimeException | LinkageError unavailable) { return true; }
     }
     public static Object interaction(Object nativeArgument, String field) {

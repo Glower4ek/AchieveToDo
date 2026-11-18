@@ -28,12 +28,18 @@ import org.bukkit.inventory.InventoryHolder;
 /** Cancels native transactions before their effects; never creates replacement gameplay effects. */
 public final class BukkitExpandedGameplayListener implements Listener {
     private final PlayerProgressionLookup progression;
+    private final GameplayDenialEffects denialEffects;
 
     public BukkitExpandedGameplayListener(PlayerProgressionLookup progression) {
+        this(progression,null);
+    }
+    public BukkitExpandedGameplayListener(PlayerProgressionLookup progression,GameplayDenialEffects effects) {
+        this.denialEffects=effects;
         this.progression = progression;
     }
 
     private boolean locked(Player p, AbilityType ability) {
+        if(denialEffects!=null)return !denialEffects.allows(p,ability);
         return !GameplayGate.allows(progression.getProgressionState(p.getUniqueId()), p.getUniqueId(),
             p.getGameMode() == GameMode.CREATIVE || p.getGameMode() == GameMode.SPECTATOR, ability);
     }
@@ -50,6 +56,8 @@ public final class BukkitExpandedGameplayListener implements Listener {
     public void interact(PlayerInteractEvent e) {
         if (e.getAction() != Action.RIGHT_CLICK_BLOCK || e.getClickedBlock() == null
             || e.useInteractedBlock() == Event.Result.DENY) return;
+        // Exact composition gates the actual native useWithoutItem branch after item-use fallback.
+        if(denialEffects!=null && Boolean.getBoolean("achievetodo.landmarks.exactPrototype"))return;
         AbilityType ability = openingAbility(e.getClickedBlock().getBlockData());
         if (ability != null && locked(e.getPlayer(), ability)) {
             // Keep the item-use decision intact: buckets/tools can run before useWithoutItem.

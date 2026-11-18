@@ -2,6 +2,123 @@
 // This supplementary check's ordering relative to plugin resolution is UNPROVED.
 // A later authorized Gradle lifecycle/tamper audit is required.
 buildscript {
+    // Explicit Stage1 test-source successor; frozen V5 remains the parent authority.
+    def STAGE1_MANIFEST_SHA256='ea142886cccf8e7c35f266b859b05275e3e3fb80f0f59d692173df8fe1d45fc8'
+    def stage1Selected=['ATD_STAGE1_AUTHORITY','ATD_STAGE1_AUTHORITY_FILE','ATD_STAGE1_AUTHORITY_SHA256'].any { System.getenv(it)!=null }
+    def stage1Manifest=null
+    if(stage1Selected) {
+        def stage1File=new File(projectDir,'tools/certification/authority/stage1-test-source-v2.json')
+        if(System.getenv('ATD_STAGE1_AUTHORITY')!='ATD_STAGE1_R5_TEST_SOURCE_V2' || System.getenv('ATD_STAGE1_AUTHORITY_FILE')!=stage1File.absolutePath || System.getenv('ATD_STAGE1_AUTHORITY_SHA256')!=STAGE1_MANIFEST_SHA256 || System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY')!='ATD_PURPUR_GAMEPLAY_SOURCE_V5') throw new GradleException('STAGE1_UNKNOWN_OR_ORPHAN_SELECTOR')
+        if(java.security.MessageDigest.getInstance('SHA-256').digest(stage1File.bytes).encodeHex().toString()!=STAGE1_MANIFEST_SHA256) throw new GradleException('STAGE1_MANIFEST_IDENTITY')
+        stage1Manifest=new groovy.json.JsonSlurper().parse(stage1File)
+        if(stage1Manifest.authority!='ATD_STAGE1_R5_TEST_SOURCE_V2' || stage1Manifest.state!='BOUNDED_TEST_SOURCE_SUCCESSOR_ONLY' || stage1Manifest.PRODUCT_GAMEPLAY_READY!=false) throw new GradleException('STAGE1_SCOPE')
+        stage1Manifest.codeBindings.each { path,pin ->
+            def f=new File(projectDir,path).toPath()
+            if(!java.nio.file.Files.isRegularFile(f,java.nio.file.LinkOption.NOFOLLOW_LINKS) || java.nio.file.Files.isSymbolicLink(f) || f.toRealPath()!=f.toAbsolutePath().normalize() || java.security.MessageDigest.getInstance('SHA-256').digest(f.toFile().bytes).encodeHex().toString()!=pin) throw new GradleException('STAGE1_BOOTSTRAP_CODE_IDENTITY '+path)
+        }
+        def review=new File(projectDir,stage1Manifest.independentReview.path)
+        if(java.security.MessageDigest.getInstance('SHA-256').digest(review.bytes).encodeHex().toString()!=stage1Manifest.independentReview.sha256) throw new GradleException('STAGE1_REVIEW_IDENTITY')
+        gradle.ext.set('atdStage1Manifest',stage1Manifest)
+    }
+    def repairSelector=System.getenv("ACHIEVETODO_GAMEPLAY_JUNIT_REPAIR")
+    def repairFile=System.getenv("ACHIEVETODO_GAMEPLAY_JUNIT_REPAIR_FILE")
+    def fixtureSelector=System.getenv("ACHIEVETODO_GAMEPLAY_JUNIT_FIXTURE_AUTHORITY")
+    def fixtureFile=System.getenv("ACHIEVETODO_GAMEPLAY_JUNIT_FIXTURE_AUTHORITY_FILE")
+    def fixtureDigest=System.getenv("ACHIEVETODO_GAMEPLAY_JUNIT_FIXTURE_AUTHORITY_SHA256")
+    def selectedGameplay=System.getenv("ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY")
+    def selectedV5=selectedGameplay=="ATD_PURPUR_GAMEPLAY_SOURCE_V5"
+    if(repairSelector!=null || repairFile!=null) {
+        def expectedFixture=selectedV5 ? "ATD_GAMEPLAY_JUNIT_FIXTURE_SOURCE_V2" : "ATD_GAMEPLAY_JUNIT_FIXTURE_SOURCE_V1"
+        def expectedFixturePath=selectedV5 ? "tools/certification/authority/gameplay-junit-fixture-successor-v2.json" : "tools/certification/authority/gameplay-junit-fixture-successor-v1.json"
+        def expectedFixtureDigest=selectedV5 ? "d5e4361d87b4023927ecf32c15ac1e2d6fe8ad0aa367001dfc0d13f501b6112f" : "74650d947ccc695af15fe6985cac53638dc8d0b102ca742b5be8c131dcaad3d4"
+        def expectedSourceContract=stage1Selected ? stage1Manifest.codeBindings["src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java"] : (selectedV5 ? "50af0ee3e5552f71056d267af8eb3682fac88e32356d328fa0faab37692e8cf8" : "972d84da4d56ae72a09d7d1032ef6d799b97bd3edea59218b81ca4aceee14b4d")
+        if(repairSelector!="ATD_GAMEPLAY_JUNIT_REPAIR_V1" || repairFile!=new File(projectDir,"tools/certification/authority/gameplay-junit-overlay-v1.json").absolutePath || fixtureSelector!=expectedFixture || fixtureFile!=new File(projectDir,expectedFixturePath).absolutePath || fixtureDigest!=expectedFixtureDigest || !(selectedGameplay in ["ATD_PURPUR_GAMEPLAY_SOURCE_V4","ATD_PURPUR_GAMEPLAY_SOURCE_V5"]) || System.getenv("ACHIEVETODO_GATE_B_AUTHORITY")!="ATD_DISTRIBUTION_B_V2_RAW_CAPTURE_V1") throw new GradleException("JUNIT_REPAIR_UNKNOWN_OR_ORPHAN")
+        def repairPins=["tools/certification/authority/gameplay-junit-overlay-v1.json":"5bec165c457465e7c9fd61c21689f8cffa7238289826c6f658a12310ef284a5f","tools/build/gameplay_junit_overlay_v1.py":"3bb547ce24c9b0bbf05e889d3c1eb6865477b93ce5601bc8334b474d68519b85","tools/build/distribution_b_v2_contract.py":"f2650bcca64212a0bbeb3e38990f301f8becf74ffe472139e3d6992949621a76","src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java":expectedSourceContract]
+        repairPins[expectedFixturePath]=expectedFixtureDigest
+        repairPins.each { path,pin ->
+            def f=new File(projectDir,path).toPath()
+            def attrs=java.nio.file.Files.readAttributes(f,java.nio.file.attribute.BasicFileAttributes,java.nio.file.LinkOption.NOFOLLOW_LINKS)
+            if(!attrs.isRegularFile() || java.nio.file.Files.isSymbolicLink(f) || f.toRealPath()!=f.toAbsolutePath().normalize() || java.security.MessageDigest.getInstance("SHA-256").digest(f.toFile().bytes).encodeHex().toString()!=pin) throw new GradleException("JUNIT_REPAIR_BOOTSTRAP_BYTES "+path)
+        }
+    } else if(fixtureSelector!=null || fixtureFile!=null || fixtureDigest!=null) throw new GradleException("JUNIT_FIXTURE_SUCCESSOR_ORPHAN")
+    // Owner A implements the route; only a later exact Owner B pin can open it.
+    def gameplaySelector = System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY')
+    def gameplayFile = System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY_FILE')
+    if (gameplaySelector != null || gameplayFile != null) {
+        if (!(gameplaySelector in ['ATD_PURPUR_GAMEPLAY_SOURCE_V1', 'ATD_PURPUR_GAMEPLAY_SOURCE_V2', 'ATD_PURPUR_GAMEPLAY_SOURCE_V3', 'ATD_PURPUR_GAMEPLAY_SOURCE_V4', 'ATD_PURPUR_GAMEPLAY_SOURCE_V5']) || System.getenv('ACHIEVETODO_UI07_AUTHORITY') != 'ATD_UI07_SCOPED_SUCCESSOR_V1' || System.getenv('ACHIEVETODO_GATE_B_AUTHORITY') != 'ATD_DISTRIBUTION_B_V2_RAW_CAPTURE_V1') throw new GradleException('GAMEPLAY_UNKNOWN_OR_ORPHAN_SELECTOR')
+        def v4 = gameplaySelector == 'ATD_PURPUR_GAMEPLAY_SOURCE_V4'
+        def v5 = gameplaySelector == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5'
+        def gameplayPycPrefix = v5 ? 'atdGameplayV5PycPrefix' : 'atdGameplayV4PycPrefix'
+        if ((v4 || v5) && !gradle.ext.has(gameplayPycPrefix)) {
+            def prefixDir = java.nio.file.Files.createTempDirectory(v5 ? 'atd-gameplay-v5-pycache-' : 'atd-gameplay-v4-pycache-').toFile()
+            if (prefixDir.listFiles() == null || prefixDir.listFiles().length != 0) throw new GradleException(v5 ? 'V5_PYCACHE_PREFIX_NOT_EMPTY' : 'V4_PYCACHE_PREFIX_NOT_EMPTY')
+            gradle.ext.set(gameplayPycPrefix, prefixDir.absolutePath)
+            gradle.buildFinished { prefixDir.deleteDir() }
+        }
+        def v3 = gameplaySelector == 'ATD_PURPUR_GAMEPLAY_SOURCE_V3'
+        def v2 = gameplaySelector == 'ATD_PURPUR_GAMEPLAY_SOURCE_V2'
+        def expected = new File(projectDir, v5 ? 'tools/certification/authority/gameplay-successor-v5.json' : (v4 ? 'tools/certification/authority/gameplay-successor-v4.json' : (v3 ? 'tools/certification/authority/gameplay-successor-v3.json' : (v2 ? 'tools/certification/authority/gameplay-successor-v2.json' : 'tools/certification/authority/gameplay-successor-v1.json')))).canonicalFile
+        if (!gameplayFile || !new File(gameplayFile).isAbsolute() || new File(gameplayFile).canonicalFile != expected) throw new GradleException('GAMEPLAY_AUTHORITY_PATH')
+        if (java.security.MessageDigest.getInstance('SHA-256').digest(expected.bytes).encodeHex().toString() != (v5 ? '225c0d70f862db2260648a432526465b969fa958d10d92c60e696ddb7f496294' : (v4 ? 'e069f6109cbbf2dd679859b10e814d987e77ba8c9c9338899e13be9b4abcce53' : (v3 ? '179a8fb1fce386cfd4f78aa4d96e5f6dfab94701fac35a2f27ccbb17b78ed44c' : (v2 ? '522fecccba5e2c3f657afe2db0bc2b2db54c93d674c95206a2061bf695c48bab' : '64b9f7cefac0b862366e5b6988e0e95847986fcf7868e4734327790b7e838693'))))) throw new GradleException('GAMEPLAY_AUTHORITY_IDENTITY')
+        if (v5 && System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY_SHA256') != '225c0d70f862db2260648a432526465b969fa958d10d92c60e696ddb7f496294') throw new GradleException('GAMEPLAY_AUTHORITY_DIGEST_SELECTOR')
+        // Authenticate V5 Python code before Python imports the authority helper.
+        if (v5) {
+            def v5BootstrapBindings = new groovy.json.JsonSlurper().parse(expected).codeBindings
+            // V5 binds its helper; the shared Gate B module is pinned by its frozen contract digest.
+            [
+                'tools/build/gameplay_successor_v5.py': '3d3592b7343c755dfe32a354035e70762cf79a0f7e5c8e8ea1e71e868b43d7e9',
+                'tools/build/distribution_b_v2_contract.py': 'f2650bcca64212a0bbeb3e38990f301f8becf74ffe472139e3d6992949621a76'
+            ].each { path, expectedCodeHash ->
+                def importedCode = new File(projectDir, path).toPath()
+                def attrs = java.nio.file.Files.readAttributes(importedCode, java.nio.file.attribute.BasicFileAttributes, java.nio.file.LinkOption.NOFOLLOW_LINKS)
+                if (!attrs.isRegularFile() || java.nio.file.Files.isSymbolicLink(importedCode) || importedCode.toRealPath() != importedCode.toAbsolutePath().normalize()) throw new GradleException('V5_BOOTSTRAP_CODE_PATH '+path)
+                def actualHash = java.security.MessageDigest.getInstance('SHA-256').digest(importedCode.toFile().bytes).encodeHex().toString()
+                def manifestHash = path == 'tools/build/gameplay_successor_v5.py' ? v5BootstrapBindings[path] : expectedCodeHash
+                if (manifestHash != expectedCodeHash || actualHash != expectedCodeHash) throw new GradleException('V5_BOOTSTRAP_CODE_IDENTITY '+path)
+            }
+        }
+    }
+    def ui07Selector = System.getenv('ACHIEVETODO_UI07_AUTHORITY')
+    def ui07File = System.getenv('ACHIEVETODO_UI07_AUTHORITY_FILE')
+    if (ui07Selector != null || ui07File != null) {
+        if (ui07Selector != 'ATD_UI07_SCOPED_SUCCESSOR_V1' || System.getenv('ACHIEVETODO_GATE_B_AUTHORITY') != 'ATD_DISTRIBUTION_B_V2_RAW_CAPTURE_V1') throw new GradleException('UI07_UNKNOWN_OR_ORPHAN_SELECTOR')
+        def expectedUi07 = new File(projectDir, 'tools/certification/authority/ui07-successor-v1.json').canonicalFile
+        if (!ui07File || !new File(ui07File).isAbsolute() || new File(ui07File).canonicalFile != expectedUi07) throw new GradleException('UI07_AUTHORITY_PATH')
+        def ui07SHA256 = '57e44e6d13df96fb427c4509576fbcb87061eeef377d47d50d070016acdafe2e'
+        if (java.security.MessageDigest.getInstance('SHA-256').digest(expectedUi07.bytes).encodeHex().toString() != ui07SHA256) throw new GradleException('UI07_AUTHORITY_IDENTITY')
+    }
+    def gateBSelector = System.getenv('ACHIEVETODO_GATE_B_AUTHORITY')
+    def gateBFile = System.getenv('ACHIEVETODO_GATE_B_APPROVAL_FILE')
+    if (gateBSelector != null || gateBFile != null) {
+        if (gateBSelector != 'ATD_DISTRIBUTION_B_V2_RAW_CAPTURE_V1') throw new GradleException('GATE_B_UNKNOWN_OR_ORPHAN_SELECTOR')
+        if (['ACHIEVETODO_INPUT_AUTHORITY', 'ACHIEVETODO_ALTERNATIVE_MANIFEST', 'ACHIEVETODO_SOURCE_ORACLE', 'ACHIEVETODO_SOURCE_ORACLE_FILE'].any { System.getenv(it) != null }) throw new GradleException('GATE_B_MIXED_SELECTOR')
+        def expectedGateBFile = new File(projectDir, 'tools/certification/authority/distribution-b-v2-approval.json').canonicalFile
+        if (!gateBFile || !new File(gateBFile).isAbsolute() || new File(gateBFile).canonicalFile != expectedGateBFile) throw new GradleException('GATE_B_WRONG_APPROVAL_PATH')
+        def gateBOwnerBCapsuleSHA256 = '39116d736a8c352aca6a05453474f0fae965cc300a075fdabdbf266523a3f9f9' // Owner B not granted. Never populated by capture/tests/environment.
+        if (!(gateBOwnerBCapsuleSHA256 ==~ /[0-9a-f]{64}/)) throw new GradleException('GATE_B_OWNER_B_REQUIRED')
+        if (java.security.MessageDigest.getInstance('SHA-256').digest(expectedGateBFile.bytes).encodeHex().toString() != gateBOwnerBCapsuleSHA256) throw new GradleException('GATE_B_CAPSULE_IDENTITY')
+        def gateBPython = System.getenv('ACHIEVETODO_PYTHON')
+        if (!gateBPython) throw new GradleException('Explicit ACHIEVETODO_PYTHON required for Gate B authority')
+        def approvalCommand = [gateBPython, '-B', '-X', 'utf8']
+        if (gameplaySelector == 'ATD_PURPUR_GAMEPLAY_SOURCE_V4')
+            approvalCommand.addAll(['-X', 'pycache_prefix='+gradle.ext.get('atdGameplayV4PycPrefix')])
+        if (gameplaySelector == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5')
+            approvalCommand.addAll(['-X', 'pycache_prefix='+gradle.ext.get('atdGameplayV5PycPrefix')])
+        if (gameplaySelector == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5')
+            approvalCommand.addAll(['-m', (System.getenv('ATD_STAGE1_AUTHORITY')!=null ? 'tools.build.stage1_test_source_v2' : 'tools.build.gameplay_successor_v5'), '--approval-only', '--source-root', projectDir.absolutePath, '--expected-digest', '225c0d70f862db2260648a432526465b969fa958d10d92c60e696ddb7f496294'])
+        else approvalCommand.addAll([new File(projectDir, 'tools/build/verify_inputs_v2.py').absolutePath,
+            '--source-root', projectDir.absolutePath, '--approval-only'])
+        def approvalBuilder = new ProcessBuilder(approvalCommand)
+        if (gameplaySelector == 'ATD_PURPUR_GAMEPLAY_SOURCE_V4' || gameplaySelector == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5') {
+            approvalBuilder.environment().put('PYTHONPYCACHEPREFIX', gradle.ext.get(gameplaySelector == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5' ? 'atdGameplayV5PycPrefix' : 'atdGameplayV4PycPrefix'))
+            approvalBuilder.environment().put('PYTHONDONTWRITEBYTECODE', '1')
+            approvalBuilder.environment().remove('PYTHONPATH')
+        }
+        def approval = approvalBuilder.directory(projectDir).redirectErrorStream(true).start()
+        def receipt = approval.inputStream.getText('UTF-8')
+        if (approval.waitFor() != 0) throw new GradleException('Gate B V2 authority rejected: '+receipt)
+        logger.lifecycle((gameplaySelector == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5' ? 'GATE_B_V5_SOURCE_IDENTITY_ONLY ' : (gameplaySelector == 'ATD_PURPUR_GAMEPLAY_SOURCE_V4' ? 'GATE_B_V4_SOURCE_IDENTITY_ONLY ' : 'GATE_B_V2_AUTHENTICATED '))+receipt.trim())
+    }
     if (gradle.startParameter.dependencyVerificationMode.toString() != 'STRICT') {
         throw new GradleException('Strict dependency verification required')
     }
@@ -13,10 +130,20 @@ buildscript {
         java.security.MessageDigest.getInstance('SHA-256').digest(manifestFile.bytes).encodeHex().toString() != '1dbe9d7cd2fe653454f8692b7cdf5e54787c3df74eb12461c01164b99190ac77') {
         throw new GradleException('Verifier/manifest byte identity mismatch')
     }
-    def verifier = new ProcessBuilder(python, '-B', '-X', 'utf8', verifierFile.absolutePath,
-        '--dependencies', '--source-root', projectDir.absolutePath,
-        '--gradle-user-home', gradle.gradleUserHomeDir.absolutePath)
-        .directory(projectDir).redirectErrorStream(true).start()
+    def verifierCommand = [python, '-B', '-X', 'utf8']
+    if (System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY') == 'ATD_PURPUR_GAMEPLAY_SOURCE_V4')
+        verifierCommand.addAll(['-X', 'pycache_prefix='+gradle.ext.get('atdGameplayV4PycPrefix')])
+    if (System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY') == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5')
+        verifierCommand.addAll(['-X', 'pycache_prefix='+gradle.ext.get('atdGameplayV5PycPrefix')])
+    verifierCommand.addAll([verifierFile.absolutePath, '--dependencies', '--source-root', projectDir.absolutePath,
+        '--gradle-user-home', gradle.gradleUserHomeDir.absolutePath])
+    def verifierBuilder = new ProcessBuilder(verifierCommand)
+    if (System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY') == 'ATD_PURPUR_GAMEPLAY_SOURCE_V4' || System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY') == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5') {
+        verifierBuilder.environment().put('PYTHONPYCACHEPREFIX', gradle.ext.get(System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY') == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5' ? 'atdGameplayV5PycPrefix' : 'atdGameplayV4PycPrefix'))
+        verifierBuilder.environment().put('PYTHONDONTWRITEBYTECODE', '1')
+        verifierBuilder.environment().remove('PYTHONPATH')
+    }
+    def verifier = verifierBuilder.directory(projectDir).redirectErrorStream(true).start()
     def output = verifier.inputStream.getText('UTF-8')
     if (verifier.waitFor() != 0) throw new GradleException(output)
     logger.lifecycle(output.trim())
@@ -108,9 +235,24 @@ tasks.withType(Test).configureEach {
 
 def verifyCleanSourceInputs = tasks.register('verifyCleanSourceInputs', Exec) {
     inputs.file('src/test/resources/build_inputs/manifest.json')
-    commandLine System.getenv('ACHIEVETODO_PYTHON'), '-B', '-X', 'utf8',
-        file('tools/build/verify_inputs.py').absolutePath,
-        '--external-root', System.getenv('ACHIEVETODO_TEST_INPUTS_DIR') ?: ''
+    // Same mandatory Exec task, explicit authenticated profile; default unchanged.
+    def gateBSelected = System.getenv('ACHIEVETODO_GATE_B_AUTHORITY') != null
+    if (gateBSelected) inputs.files('tools/certification/authority/distribution-b-v2-policy.json',
+        'tools/certification/authority/distribution-b-v2-approval.json')
+    def selectedGameplay = System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY')
+    def v5 = selectedGameplay == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5'
+    def verifierCommand = [System.getenv('ACHIEVETODO_PYTHON'), '-B', '-X', 'utf8']
+    if (selectedGameplay == 'ATD_PURPUR_GAMEPLAY_SOURCE_V4' || v5) {
+        def prefix = gradle.ext.get(v5 ? 'atdGameplayV5PycPrefix' : 'atdGameplayV4PycPrefix')
+        verifierCommand.addAll(['-X', 'pycache_prefix='+prefix])
+        environment 'PYTHONPYCACHEPREFIX', prefix
+        environment 'PYTHONDONTWRITEBYTECODE', '1'
+        environment 'PYTHONPATH', ''
+    }
+    if (v5) verifierCommand.addAll(['-m',(System.getenv('ATD_STAGE1_AUTHORITY')!=null ? 'tools.build.stage1_test_source_v2' : 'tools.build.gameplay_successor_v5'),'--verify-inputs','--source-root',projectDir.absolutePath,'--expected-digest','225c0d70f862db2260648a432526465b969fa958d10d92c60e696ddb7f496294','--external-root',System.getenv('ACHIEVETODO_TEST_INPUTS_DIR') ?: ''])
+    else verifierCommand.addAll([file(gateBSelected ? 'tools/build/verify_inputs_v2.py' : 'tools/build/verify_inputs.py').absolutePath,
+        '--external-root', System.getenv('ACHIEVETODO_TEST_INPUTS_DIR') ?: ''])
+    commandLine verifierCommand
 }
 tasks.withType(Test).configureEach {
     dependsOn verifyCleanSourceInputs
@@ -118,6 +260,11 @@ tasks.withType(Test).configureEach {
     inputs.file('src/test/resources/build_inputs/manifest.json')
     outputs.upToDateWhen { false }
     environment 'ACHIEVETODO_TEST_INPUTS_DIR', System.getenv('ACHIEVETODO_TEST_INPUTS_DIR') ?: ''
+    if (System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY') == 'ATD_PURPUR_GAMEPLAY_SOURCE_V4' || System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY') == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5') {
+        environment 'PYTHONPYCACHEPREFIX', gradle.ext.get(System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY') == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5' ? 'atdGameplayV5PycPrefix' : 'atdGameplayV4PycPrefix')
+        environment 'PYTHONDONTWRITEBYTECODE', '1'
+        environment 'PYTHONPATH', ''
+    }
     systemProperty 'achievetodo.python', System.getenv('ACHIEVETODO_PYTHON')
     doFirst {
         // Resolve task/provider values; do not execute asset download/acquisition.
@@ -823,5 +970,279 @@ tasks.register('promotePhaseASingletonRedstoneClickExecutionEvidence', JavaExec)
             mainClass = "com.diskree.achievetodo.certification.PhaseASingleton${front}ExecutionEvidence"
             args = [mode, projectDir.absolutePath]
         }
+    }
+}
+
+// Independent client-copy denial codec vectors; source authority still required.
+tasks.register('bridgeDenialIntentTest', JavaExec) {
+    dependsOn 'bridgeTestClasses'
+    classpath = sourceSets.bridgeTest.runtimeClasspath
+    mainClass = 'com.diskree.achievetodo.bridge.BridgeDenialIntentTest'
+}
+tasks.named('check') { dependsOn 'bridgeDenialIntentTest' }
+
+
+// V4: fresh historical controls are one task node per actual acceptance invocation.
+// Identity-only configuration/CLI results are never historical-control certificates.
+if (System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY') == 'ATD_PURPUR_GAMEPLAY_SOURCE_V4') {
+    if (gradle.startParameter.configurationCacheRequested) throw new GradleException('V4_CONFIGURATION_CACHE_NOT_ACCEPTANCE')
+    def pycachePrefix = gradle.ext.get('atdGameplayV4PycPrefix')
+    // All task-spawned Python interpreters use a fresh cache namespace and never write bytecode.
+    tasks.configureEach { t ->
+        if (t instanceof Exec || t instanceof JavaExec || t instanceof Test) {
+            t.environment 'PYTHONPYCACHEPREFIX', pycachePrefix
+            t.environment 'PYTHONDONTWRITEBYTECODE', '1'
+            t.environment 'PYTHONPATH', ''
+        }
+    }
+    def controlName = 'gameplaySuccessorV4AuthorityControls'
+    def verifierName = 'verifyCleanSourceInputs'
+    def historicalComplete = false
+    def identityComplete = false
+    def controlNode = tasks.register(controlName, Exec) {
+        workingDir projectDir
+        commandLine System.getenv('ACHIEVETODO_PYTHON'), '-B', '-X', 'utf8',
+            '-X', 'pycache_prefix='+pycachePrefix, '-m', 'tools.build.gameplay_successor_v4', '--controls'
+        environment 'PYTHONPYCACHEPREFIX', pycachePrefix
+        environment 'PYTHONDONTWRITEBYTECODE', '1'
+        outputs.upToDateWhen { false }
+        outputs.cacheIf { false }
+        doFirst {
+            def manifest = file('tools/certification/authority/gameplay-successor-v4.json')
+            if (java.security.MessageDigest.getInstance('SHA-256').digest(manifest.bytes).encodeHex().toString() != 'e069f6109cbbf2dd679859b10e814d987e77ba8c9c9338899e13be9b4abcce53') throw new GradleException('V4_CONTROL_MANIFEST_CHANGED')
+            def bound = new groovy.json.JsonSlurper().parse(manifest)
+            def helper = file('tools/build/gameplay_successor_v4.py')
+            if (java.security.MessageDigest.getInstance('SHA-256').digest(helper.bytes).encodeHex().toString() != bound.codeBindings['tools/build/gameplay_successor_v4.py']) throw new GradleException('V4_CONTROL_HELPER_CHANGED')
+        }
+        doLast {
+            if (executionResult.get().exitValue != 0) throw new GradleException('V4_CONTROL_NONZERO')
+            historicalComplete = true
+        }
+    }
+    def diagnostic = ['help','tasks','properties','projects','components','model','dependencies','dependencyInsight','buildEnvironment','outgoingVariants','resolvableConfigurations','javaToolchains','clean'] as Set
+    def acceptance = { t -> t.name != controlName && t.name != "gameplayJunitRepairAuthorityControls" && !diagnostic.contains(t.name) }
+    // configureEach includes lazy tasks from plugins and external init scripts, including all
+    // compile/Test/Exec/JavaExec/Jar/remap/package/publication and promotion entrypoints.
+    tasks.configureEach { t ->
+        if (acceptance(t)) {
+            t.dependsOn(controlNode)
+            if (t.name != verifierName) t.dependsOn(tasks.named(verifierName))
+        }
+    }
+    def controls = controlNode.get()
+    def controlActions = new ArrayList(controls.actions)
+    def controlOnlyIf = controls.onlyIf
+    def controlCommand = new ArrayList(controls.commandLine)
+    def controlEnvironment = new LinkedHashMap(controls.environment)
+    def identityNode = tasks.named(verifierName).get()
+    def identityActions = new ArrayList(identityNode.actions)
+    def identityOnlyIf = identityNode.onlyIf
+    def identityCommand = new ArrayList(identityNode.commandLine)
+    def identityEnvironment = new LinkedHashMap(identityNode.environment)
+    gradle.taskGraph.whenReady { graph ->
+        def selected = graph.allTasks.findAll { it.project == project && acceptance(it) }
+        if (!selected.empty || graph.hasTask(controls)) {
+            if (gradle.startParameter.dryRun) throw new GradleException('V4_DRY_RUN_IDENTITY_ONLY_NOT_ACCEPTANCE')
+            if (!graph.hasTask(controls) || (!selected.empty && !graph.hasTask(tasks.named(verifierName).get())))
+                throw new GradleException('V4_MANDATORY_CONTROL_OR_VERIFIER_EXCLUDED')
+            if (!controls.enabled || controls.onlyIf != controlOnlyIf || controls.actions != controlActions || controls.commandLine != controlCommand || controls.environment != controlEnvironment)
+                throw new GradleException('V4_CONTROL_TASK_DISABLED_OR_MUTATED')
+            if (!selected.empty && (!identityNode.enabled || identityNode.onlyIf != identityOnlyIf || identityNode.actions != identityActions || identityNode.commandLine != identityCommand || identityNode.environment != identityEnvironment))
+                throw new GradleException('V4_CURRENT_VERIFIER_DISABLED_OR_MUTATED')
+            if (graph.allTasks.any { it.project == project && it.name in ['check','build'] } && !graph.hasTask(tasks.named('test').get()))
+                throw new GradleException('V4_STANDARD_SUITE_EXCLUDED')
+            graph.allTasks.findAll { it instanceof Test }.each { t ->
+                if (!t.enabled || t.ignoreFailures || !t.filter.includePatterns.empty || !t.filter.excludePatterns.empty || !t.excludes.empty || !t.includes.empty)
+                    throw new GradleException('V4_FILTERED_OR_DISABLED_MANDATORY_TESTS')
+                if (t.environment['PYTHONPYCACHEPREFIX'] != pycachePrefix || t.environment['PYTHONDONTWRITEBYTECODE'] != '1' || t.environment['PYTHONPATH'] != '')
+                    throw new GradleException('V4_TEST_PYCACHE_ENVIRONMENT_MUTATED')
+            }
+        }
+    }
+    gradle.taskGraph.beforeTask { t ->
+        if (t.project == project && acceptance(t)) {
+            if (!historicalComplete || controls.state.skipped || controls.state.upToDate || controls.state.failure != null)
+                throw new GradleException('V4_FRESH_CONTROL_EXECUTION_REQUIRED')
+            if (t.name != verifierName && !identityComplete) throw new GradleException('V4_CURRENT_VERIFIER_EXECUTION_REQUIRED')
+            if (!t.enabled) throw new GradleException('V4_ACCEPTANCE_TASK_DISABLED')
+            if ((t instanceof Exec || t instanceof JavaExec || t instanceof Test) &&
+                (t.environment['PYTHONPYCACHEPREFIX'] != pycachePrefix || t.environment['PYTHONDONTWRITEBYTECODE'] != '1' || t.environment['PYTHONPATH'] != ''))
+                throw new GradleException('V4_ACCEPTANCE_PYCACHE_ENVIRONMENT_MUTATED')
+        }
+    }
+    gradle.taskGraph.afterTask { t, state ->
+        if (t.project == project && t.name == verifierName) {
+            if (state.failure != null || state.skipped || state.upToDate || t.executionResult.get().exitValue != 0) throw new GradleException('V4_CURRENT_VERIFIER_SKIPPED_OR_FAILED')
+            identityComplete = true
+        }
+        if (t.project == project && t instanceof Test && (state.skipped || state.failure != null)) throw new GradleException('V4_MANDATORY_TEST_SKIPPED_OR_FAILED')
+        if (t.project == project && t.name == controlName && (!historicalComplete || state.failure != null || state.skipped || state.upToDate))
+            throw new GradleException('V4_HISTORICAL_CONTROL_SKIPPED_OR_FAILED')
+    }
+}
+
+// V5: fresh V4 projection and current-source controls guard every acceptance task.
+// V5: fresh historical controls are one task node per actual acceptance invocation.
+// Identity-only configuration/CLI results are never historical-control certificates.
+if (System.getenv('ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY') == 'ATD_PURPUR_GAMEPLAY_SOURCE_V5') {
+    if (gradle.startParameter.configurationCacheRequested) throw new GradleException('V5_CONFIGURATION_CACHE_NOT_ACCEPTANCE')
+    def pycachePrefix = gradle.ext.get('atdGameplayV5PycPrefix')
+    // All task-spawned Python interpreters use a fresh cache namespace and never write bytecode.
+    tasks.configureEach { t ->
+        if (t instanceof Exec || t instanceof JavaExec || t instanceof Test) {
+            t.environment 'PYTHONPYCACHEPREFIX', pycachePrefix
+            t.environment 'PYTHONDONTWRITEBYTECODE', '1'
+            t.environment 'PYTHONPATH', ''
+        }
+    }
+    def controlName = 'gameplaySuccessorV5AuthorityControls'
+    def verifierName = 'verifyCleanSourceInputs'
+    def historicalComplete = false
+    def identityComplete = false
+    def controlNode = tasks.register(controlName, Exec) {
+        workingDir projectDir
+        commandLine System.getenv('ACHIEVETODO_PYTHON'), '-B', '-X', 'utf8',
+            '-X', 'pycache_prefix='+pycachePrefix, '-m', (System.getenv('ATD_STAGE1_AUTHORITY')!=null ? 'tools.build.stage1_test_source_v2' : 'tools.build.gameplay_successor_v5'), '--controls', '--expected-digest', '225c0d70f862db2260648a432526465b969fa958d10d92c60e696ddb7f496294'
+        environment 'PYTHONPYCACHEPREFIX', pycachePrefix
+        environment 'PYTHONDONTWRITEBYTECODE', '1'
+        outputs.upToDateWhen { false }
+        outputs.cacheIf { false }
+        doFirst {
+            def manifest = file('tools/certification/authority/gameplay-successor-v5.json')
+            if (java.security.MessageDigest.getInstance('SHA-256').digest(manifest.bytes).encodeHex().toString() != '225c0d70f862db2260648a432526465b969fa958d10d92c60e696ddb7f496294') throw new GradleException('V5_CONTROL_MANIFEST_CHANGED')
+            def bound = new groovy.json.JsonSlurper().parse(manifest)
+            if(gradle.ext.has('atdStage1Manifest')) bound.codeBindings.putAll(gradle.ext.get('atdStage1Manifest').codeBindings)
+            def helper = file('tools/build/gameplay_successor_v5.py')
+            if (java.security.MessageDigest.getInstance('SHA-256').digest(helper.bytes).encodeHex().toString() != bound.codeBindings['tools/build/gameplay_successor_v5.py']) throw new GradleException('V5_CONTROL_HELPER_CHANGED')
+            ['tools/build/tests/test_gameplay_successor_v5.py','tools/certification/authority/gameplay-independent-code-review-v11.json','tools/certification/fixtures/gameplay-source-v5-predecessor.zip','tools/certification/authority/gameplay-junit-fixture-successor-v2.json','src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java','src/test/java/com/diskree/achievetodo/certification/GameplaySuccessorAuthorityTest.java'].each { path ->
+                def f=file(path)
+                if (java.security.MessageDigest.getInstance('SHA-256').digest(f.bytes).encodeHex().toString() != bound.codeBindings[path]) throw new GradleException('V5_CONTROL_CODE_BINDING_CHANGED '+path)
+            }
+        }
+        doLast {
+            if (executionResult.get().exitValue != 0) throw new GradleException('V5_CONTROL_NONZERO')
+            historicalComplete = true
+        }
+    }
+    def diagnostic = ['help','tasks','properties','projects','components','model','dependencies','dependencyInsight','buildEnvironment','outgoingVariants','resolvableConfigurations','javaToolchains','clean'] as Set
+    def acceptance = { t -> t.name != controlName && t.name != "gameplayJunitRepairAuthorityControls" && !diagnostic.contains(t.name) }
+    // configureEach includes lazy tasks from plugins and external init scripts, including all
+    // compile/Test/Exec/JavaExec/Jar/remap/package/publication and promotion entrypoints.
+    tasks.configureEach { t ->
+        if (acceptance(t)) {
+            t.dependsOn(controlNode)
+            if (t.name != verifierName) t.dependsOn(tasks.named(verifierName))
+        }
+    }
+    def controls = controlNode.get()
+    def controlActions = new ArrayList(controls.actions)
+    def controlOnlyIf = controls.onlyIf
+    def controlCommand = new ArrayList(controls.commandLine)
+    def controlEnvironment = new LinkedHashMap(controls.environment)
+    def identityNode = tasks.named(verifierName).get()
+    def identityActions = new ArrayList(identityNode.actions)
+    def identityOnlyIf = identityNode.onlyIf
+    def identityCommand = new ArrayList(identityNode.commandLine)
+    def identityEnvironment = new LinkedHashMap(identityNode.environment)
+    gradle.taskGraph.whenReady { graph ->
+        def selected = graph.allTasks.findAll { it.project == project && acceptance(it) }
+        if (!selected.empty || graph.hasTask(controls)) {
+            if (gradle.startParameter.dryRun) throw new GradleException('V5_DRY_RUN_IDENTITY_ONLY_NOT_ACCEPTANCE')
+            if (!graph.hasTask(controls) || (!selected.empty && !graph.hasTask(tasks.named(verifierName).get())))
+                throw new GradleException('V5_MANDATORY_CONTROL_OR_VERIFIER_EXCLUDED')
+            if (!controls.enabled || controls.onlyIf != controlOnlyIf || controls.actions != controlActions || controls.commandLine != controlCommand || controls.environment != controlEnvironment)
+                throw new GradleException('V5_CONTROL_TASK_DISABLED_OR_MUTATED')
+            if (!selected.empty && (!identityNode.enabled || identityNode.onlyIf != identityOnlyIf || identityNode.actions != identityActions || identityNode.commandLine != identityCommand || identityNode.environment != identityEnvironment))
+                throw new GradleException('V5_CURRENT_VERIFIER_DISABLED_OR_MUTATED')
+            if (graph.allTasks.any { it.project == project && it.name in ['check','build'] } && !graph.hasTask(tasks.named('test').get()))
+                throw new GradleException('V5_STANDARD_SUITE_EXCLUDED')
+            graph.allTasks.findAll { it instanceof Test }.each { t ->
+                if (!t.enabled || t.ignoreFailures || !t.filter.includePatterns.empty || !t.filter.excludePatterns.empty || !t.excludes.empty || !t.includes.empty)
+                    throw new GradleException('V5_FILTERED_OR_DISABLED_MANDATORY_TESTS')
+                if (t.environment['PYTHONPYCACHEPREFIX'] != pycachePrefix || t.environment['PYTHONDONTWRITEBYTECODE'] != '1' || t.environment['PYTHONPATH'] != '')
+                    throw new GradleException('V5_TEST_PYCACHE_ENVIRONMENT_MUTATED')
+            }
+        }
+    }
+    gradle.taskGraph.beforeTask { t ->
+        if (t.project == project && acceptance(t)) {
+            if (!historicalComplete || controls.state.skipped || controls.state.upToDate || controls.state.failure != null)
+                throw new GradleException('V5_FRESH_CONTROL_EXECUTION_REQUIRED')
+            if (t.name != verifierName && !identityComplete) throw new GradleException('V5_CURRENT_VERIFIER_EXECUTION_REQUIRED')
+            if (!t.enabled) throw new GradleException('V5_ACCEPTANCE_TASK_DISABLED')
+            if ((t instanceof Exec || t instanceof JavaExec || t instanceof Test) &&
+                (t.environment['PYTHONPYCACHEPREFIX'] != pycachePrefix || t.environment['PYTHONDONTWRITEBYTECODE'] != '1' || t.environment['PYTHONPATH'] != ''))
+                throw new GradleException('V5_ACCEPTANCE_PYCACHE_ENVIRONMENT_MUTATED')
+        }
+    }
+    gradle.taskGraph.afterTask { t, state ->
+        if (t.project == project && t.name == verifierName) {
+            if (state.failure != null || state.skipped || state.upToDate || t.executionResult.get().exitValue != 0) throw new GradleException('V5_CURRENT_VERIFIER_SKIPPED_OR_FAILED')
+            identityComplete = true
+        }
+        if (t.project == project && t instanceof Test && (state.skipped || state.failure != null)) throw new GradleException('V5_MANDATORY_TEST_SKIPPED_OR_FAILED')
+        if (t.project == project && t.name == controlName && (!historicalComplete || state.failure != null || state.skipped || state.upToDate))
+            throw new GradleException('V5_HISTORICAL_CONTROL_SKIPPED_OR_FAILED')
+    }
+}
+
+// Narrow JUnit fixture successor controls remain separate from gameplay readiness.
+if (System.getenv("ACHIEVETODO_GAMEPLAY_JUNIT_REPAIR")!=null || System.getenv("ACHIEVETODO_GAMEPLAY_JUNIT_REPAIR_FILE")!=null) {
+    def v5=System.getenv("ACHIEVETODO_GAMEPLAY_SOURCE_AUTHORITY")=="ATD_PURPUR_GAMEPLAY_SOURCE_V5"
+    def newName="gameplayJunitRepairAuthorityControls"
+    def gameplayControlsName=v5 ? "gameplaySuccessorV5AuthorityControls" : "gameplaySuccessorV4AuthorityControls"
+    def pycachePrefix=gradle.ext.get(v5 ? "atdGameplayV5PycPrefix" : "atdGameplayV4PycPrefix")
+    def diagnostic=["help","tasks","properties","projects","components","model","dependencies","dependencyInsight","buildEnvironment","outgoingVariants","resolvableConfigurations","javaToolchains","clean"] as Set
+    def accepted={ t -> t.name!=newName && t.name!="gameplaySuccessorV4AuthorityControls" && t.name!="gameplaySuccessorV5AuthorityControls" && t.name!="verifyCleanSourceInputs" && !diagnostic.contains(t.name) }
+    def complete=false
+    def pins=v5 ? [
+        "tools/certification/authority/gameplay-junit-overlay-v1.json":"5bec165c457465e7c9fd61c21689f8cffa7238289826c6f658a12310ef284a5f",
+        "tools/build/gameplay_junit_overlay_v1.py":"3bb547ce24c9b0bbf05e889d3c1eb6865477b93ce5601bc8334b474d68519b85",
+        "tools/build/distribution_b_v2_contract.py":"f2650bcca64212a0bbeb3e38990f301f8becf74ffe472139e3d6992949621a76",
+        "tools/certification/authority/gameplay-junit-fixture-successor-v2.json":"d5e4361d87b4023927ecf32c15ac1e2d6fe8ad0aa367001dfc0d13f501b6112f",
+        "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java":"50af0ee3e5552f71056d267af8eb3682fac88e32356d328fa0faab37692e8cf8",
+        "tools/certification/authority/gameplay-successor-v5.json":"225c0d70f862db2260648a432526465b969fa958d10d92c60e696ddb7f496294",
+        "tools/certification/authority/gameplay-independent-code-review-v11.json":"3c6dfa518174902006138c18c73ec8d7eb847357b791c2e27416b799c810e147",
+        "tools/certification/fixtures/gameplay-source-v5-predecessor.zip":"0840dc91bc7b74496a93c513d3d7741b033a7a1b7da98441c1dd751e2071d7ed",
+        "tools/build/gameplay_successor_v5.py":"3d3592b7343c755dfe32a354035e70762cf79a0f7e5c8e8ea1e71e868b43d7e9",
+        "tools/build/tests/test_gameplay_successor_v5.py":"79ada4306a29b19c763fe7d2ae3df3f7374f0290e46379fb5648edbc84dcf63d",
+        "src/test/java/com/diskree/achievetodo/certification/GameplaySuccessorAuthorityTest.java":"e379b27f818f821d63226a569eb36981377e9447d0bc5370ed5ea0f4275325a4"
+    ] : [
+        "tools/certification/authority/gameplay-junit-overlay-v1.json":"5bec165c457465e7c9fd61c21689f8cffa7238289826c6f658a12310ef284a5f",
+        "tools/build/gameplay_junit_overlay_v1.py":"3bb547ce24c9b0bbf05e889d3c1eb6865477b93ce5601bc8334b474d68519b85",
+        "tools/build/distribution_b_v2_contract.py":"f2650bcca64212a0bbeb3e38990f301f8becf74ffe472139e3d6992949621a76",
+        "tools/certification/authority/gameplay-junit-fixture-successor-v1.json":"74650d947ccc695af15fe6985cac53638dc8d0b102ca742b5be8c131dcaad3d4",
+        "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java":"972d84da4d56ae72a09d7d1032ef6d799b97bd3edea59218b81ca4aceee14b4d"
+    ]
+    if(v5 && gradle.ext.has('atdStage1Manifest')) pins.putAll(gradle.ext.get('atdStage1Manifest').codeBindings)
+    def buildBefore=java.security.MessageDigest.getInstance("SHA-256").digest(file("build.gradle").bytes).encodeHex().toString()
+    def checkPins={ ->
+        pins.each { p,h -> if(java.security.MessageDigest.getInstance("SHA-256").digest(file(p).bytes).encodeHex().toString()!=h) throw new GradleException("JUNIT_REPAIR_CURRENT_BINDING "+p) }
+        if(java.security.MessageDigest.getInstance("SHA-256").digest(file("build.gradle").bytes).encodeHex().toString()!=buildBefore) throw new GradleException("JUNIT_REPAIR_BOOTSTRAP_CHANGED_DURING_RUN")
+    }
+    def node=tasks.register(newName,Exec) {
+        dependsOn tasks.named(gameplayControlsName),tasks.named("verifyCleanSourceInputs")
+        workingDir projectDir
+        if(v5) commandLine System.getenv("ACHIEVETODO_PYTHON"),"-B","-X","utf8","-X","pycache_prefix="+pycachePrefix,"-m",(System.getenv("ATD_STAGE1_AUTHORITY")!=null ? "tools.build.stage1_test_source_v2" : "tools.build.gameplay_successor_v5"),"--junit-fixture-only","--source-root",projectDir.absolutePath,"--expected-digest","225c0d70f862db2260648a432526465b969fa958d10d92c60e696ddb7f496294"
+        else commandLine System.getenv("ACHIEVETODO_PYTHON"),"-B","-X","utf8","-X","pycache_prefix="+pycachePrefix,"-m","tools.build.gameplay_junit_overlay_v1","--controls"
+        environment "PYTHONPYCACHEPREFIX",pycachePrefix
+        environment "PYTHONDONTWRITEBYTECODE","1"
+        outputs.upToDateWhen { false };outputs.cacheIf { false }
+        doFirst { checkPins() }
+        doLast { checkPins();if(executionResult.get().exitValue!=0) throw new GradleException("JUNIT_REPAIR_NONZERO");complete=true }
+    }
+    tasks.configureEach { t -> if(accepted(t)) t.dependsOn(node) }
+    def current=node.get();def actions=new ArrayList(current.actions);def condition=current.onlyIf;def cmd=new ArrayList(current.commandLine);def env=new LinkedHashMap(current.environment)
+    gradle.taskGraph.whenReady { graph ->
+        def selected=graph.allTasks.any { it.project==project && accepted(it) }
+        if(selected || graph.hasTask(current)) {
+            if(gradle.startParameter.dryRun || gradle.startParameter.configurationCacheRequested || !graph.hasTask(current) || !graph.hasTask(tasks.named(gameplayControlsName).get()) || !graph.hasTask(tasks.named("verifyCleanSourceInputs").get())) throw new GradleException("JUNIT_REPAIR_FRESH_NODES_REQUIRED")
+            if(!current.enabled || current.actions!=actions || current.onlyIf!=condition || current.commandLine!=cmd || current.environment!=env) throw new GradleException("JUNIT_REPAIR_NODE_MUTATED")
+        }
+    }
+    gradle.taskGraph.beforeTask { t -> if(t.project==project && accepted(t)) { checkPins();if(!complete || current.state.skipped || current.state.upToDate || current.state.failure!=null) throw new GradleException("JUNIT_REPAIR_FRESH_EXECUTION_REQUIRED") } }
+    gradle.taskGraph.afterTask { t,state ->
+        if(t.project==project && (t.name==newName || accepted(t))) checkPins()
+        if(t.project==project && t.name==newName && (!complete || state.skipped || state.upToDate || state.failure!=null)) throw new GradleException("JUNIT_REPAIR_SKIPPED_OR_FAILED")
     }
 }

@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "authority": "ATD_UI07_SCOPED_SUCCESSOR_V1",
+  "state": "AUTHORIZED_SCOPED_SUCCESSOR",
+  "oldGateA": "3f04f19ba716eaa9cb8515ef45564bf4b23417005262070b5517d42ebdc59072",
+  "oldOwnerB": "39116d736a8c352aca6a05453474f0fae965cc300a075fdabdbf266523a3f9f9",
+  "productionDelta": {
+    "path": "src/main/java/com/diskree/achievetodo/injection/mixin/client/AdvancementsScreenMixin.java",
+    "beforeSHA256": "77af9c32177f9df4e9e64d159f91b24ff980e66be2f4c90a57aba28960fc9bec",
+    "afterSHA256": "6e4bb3de338094c0f83638899236c1c7c19a7ab3dfede3b4468f0440fddeb6e2"
+  },
+  "codeBindings": {
+    "tools/build/ui07_successor.py": "7602ca5f01602e1e30c8edd0935b0fbf05afecef481e81724ee410f10b3c399f",
+    "src/test/java/com/diskree/achievetodo/certification/Ui07NativeLayoutContractTest.java": "a4212c8e3eda1884de8e26c179a8affc11f1b6bd67d318d3a2faf13b9cbac58b",
+    "tools/certification/authority/ui07-owner-decision.json": "7bf1b9d21a41a8baa36839b93ab988ab68464a297e0d200fbd29b33b767a3231",
+    "tools/certification/authority/ui07-independent-repair-review.json": "2087e2b68878c047b9d34bcd701624951a4a086c08fb197e2a10950520a44f47"
+  },
+  "ownerDecision": {
+    "path": "tools/certification/authority/ui07-owner-decision.json",
+    "SHA256": "7bf1b9d21a41a8baa36839b93ab988ab68464a297e0d200fbd29b33b767a3231"
+  },
+  "independentReview": {
+    "path": "tools/certification/authority/ui07-independent-repair-review.json",
+    "SHA256": "2087e2b68878c047b9d34bcd701624951a4a086c08fb197e2a10950520a44f47"
+  }
+}

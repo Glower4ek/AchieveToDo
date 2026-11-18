@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "origin": "human-owner:current-task-attachment",
+  "requestSHA256": "9c5e4da583a2d172f0298c5ea3900f8c98f1e10cd34453420f55ee679bbf5409",
+  "authorization": "EXISTING_APPROVED_FABRIC_PURPUR_PARITY_ENGINEERING",
+  "newContentDesignAuthorized": false,
+  "gitPublicationAuthorized": false,
+  "authorityScope": "Bounded engineering, independent technical review and source successor binding; no invented owner/controller identity or signature",
+  "productReadyRequiresActualRuntimeAndIndependentAcceptance": true
+}

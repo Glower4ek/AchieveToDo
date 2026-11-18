@@ -183,7 +183,11 @@ class PhaseBStaticCertificationTest {
         assertTrue(trackers.getAsJsonArray("unchangedSpecialCases").toString().contains("ON_A_RAIL"));
         assertTrue(trackers.getAsJsonArray("unchangedSpecialCases").toString().contains("HALF_HEART_LIFE"));
         assertTrue(r.getAsJsonObject("registryValidation").get("passed").getAsBoolean());
-        for (var entry : r.getAsJsonObject("productionFileHashes").entrySet()) assertEquals(entry.getValue().getAsString(), hash(ROOT.resolve(entry.getKey())));
+        if (com.diskree.achievetodo.certification.UiUxMaintenanceSourceContract.selected()) {
+            com.diskree.achievetodo.certification.UiUxMaintenanceSourceContract.assertHistoricalRuntimeContract("PHASE_B_STATIC_V1", r.getAsJsonObject("productionFileHashes"));
+        } else {
+            for (var entry : r.getAsJsonObject("productionFileHashes").entrySet()) assertEquals(entry.getValue().getAsString(), hash(ROOT.resolve(entry.getKey())));
+        }
     }
 
     @Test void guiRetains17TabsAnd27CorrectlyParentedOrderedChildren() throws Exception {

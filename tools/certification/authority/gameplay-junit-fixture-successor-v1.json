@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "authority": "ATD_GAMEPLAY_JUNIT_FIXTURE_SOURCE_V1",
+  "state": "AUTHORIZED_BOUNDED_TEST_FIXTURE_SUCCESSOR_ONLY",
+  "parents": {
+    "junitOverlayV1": {
+      "path": "tools/certification/authority/gameplay-junit-overlay-v1.json",
+      "sha256": "5bec165c457465e7c9fd61c21689f8cffa7238289826c6f658a12310ef284a5f"
+    },
+    "gameplaySourceV4": {
+      "path": "tools/certification/authority/gameplay-successor-v4.json",
+      "sha256": "e069f6109cbbf2dd679859b10e814d987e77ba8c9c9338899e13be9b4abcce53"
+    }
+  },
+  "sourceBeforeSHA256": "65f7805efe8c8f44cb14cf2832fa33dc43f13766eed014543407186cf610e124",
+  "sourcePostimage": {
+    "path": "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java",
+    "sha256": "972d84da4d56ae72a09d7d1032ef6d799b97bd3edea59218b81ca4aceee14b4d"
+  },
+  "v4ArchiveEntries": [
+    "build.gradle",
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkActions.java",
+    "src/test/java/com/diskree/achievetodo/certification/GameplaySuccessorAuthorityTest.java",
+    "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java",
+    "tools/build/distribution_b_v2_contract.py"
+  ],
+  "scope": "V4 JUnit fixture closure only; copy exact V4 archiveEntries for disposable source validation.",
+  "ownerBApproval": "NOT_GRANTED",
+  "PRODUCT_GAMEPLAY_READY": false
+}

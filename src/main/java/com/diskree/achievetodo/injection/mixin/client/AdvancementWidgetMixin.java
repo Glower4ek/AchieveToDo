@@ -60,7 +60,17 @@ public class AdvancementWidgetMixin {
 
     @Unique
     private boolean shouldRenderMystifiedMask() {
-        if(com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend())return false;
+        if (abilityType != null && com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) {
+            // Native advancement progress already persists discovery per player. The
+            // numeric bridge projection supplies unlock state, not discovery state.
+            if (!com.diskree.achievetodo.client.bridge.BridgeClient.presentationReady()) return true;
+            CriterionProgress discovered = progress == null ? null
+                : progress.getCriterion(AbilityAdvancementsGenerator.DEMYSTIFIED_CRITERION);
+            return com.diskree.achievetodo.client.gui.AbilityPresentationState.mystified(
+                AchieveToDoClient.getRequiredAdvancementsCount(abilityType),
+                !com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType),
+                discovered != null && discovered.isDone());
+        }
         if (progress == null || abilityType == null || !AchieveToDoClient.isAbilityLocked(abilityType, true)) {
             return false;
         }
@@ -180,9 +190,6 @@ public class AdvancementWidgetMixin {
         cancellable = true
     )
     public void overrideProgressTextWidth(CallbackInfoReturnable<Integer> cir) {
-        if(abilityType!=null && com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) {
-            cir.setReturnValue(8+minecraft.font.width(Component.literal(AchieveToDoClient.getObtainedAdvancementsCount()+" / "+AchieveToDoClient.getRequiredAdvancementsCount(abilityType)+" "+(com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType)?"locked":"unlocked"))));return;
-        }
         if (abilityType != null) {
             int requiredCount = AchieveToDoClient.getRequiredAdvancementsCount(abilityType);
             if (requiredCount == Constants.Progression.INITIALLY_UNLOCKED_FLAG ||

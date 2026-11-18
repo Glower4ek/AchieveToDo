@@ -153,7 +153,6 @@ public abstract class AdvancementProgressMixin implements AdvancementProgressExt
         cancellable = true
     )
     public void overrideProgressText(CallbackInfoReturnable<Component> cir) {
-        if(abilityType!=null && com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) {cir.setReturnValue(Component.literal(AchieveToDoClient.getObtainedAdvancementsCount()+" / "+AchieveToDoClient.getRequiredAdvancementsCount(abilityType)+" "+(com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType)?"locked":"unlocked")));return;}
         if (abilityType != null) {
             int requiredCount = AchieveToDoClient.getRequiredAdvancementsCount(abilityType);
             if (requiredCount == Constants.Progression.INITIALLY_UNLOCKED_FLAG ||

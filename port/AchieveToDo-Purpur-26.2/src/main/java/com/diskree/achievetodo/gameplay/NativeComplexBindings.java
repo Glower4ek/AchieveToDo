@@ -16,8 +16,10 @@ final class NativeComplexBindings implements AutoCloseable {
         AbilityType.USE_SHEARS, AbilityType.USE_WATER_BUCKET);
     private final Object token = new Object();
     private final Method retire;
+    private final GameplayDenialEffects denialEffects;
 
     NativeComplexBindings(PlayerProgressionLookup progression) {
+        denialEffects=new GameplayDenialEffects(progression);
         try {
             Class<?> nativePlayer = Class.forName("net.minecraft.world.entity.player.Player");
             Method bukkit = nativePlayer.getMethod("getBukkitEntity");
@@ -25,10 +27,13 @@ final class NativeComplexBindings implements AutoCloseable {
                 try {
                     Player player = (Player) bukkit.invoke(actor);
                     if (player.getGameMode() == GameMode.CREATIVE || player.getGameMode() == GameMode.SPECTATOR) return false;
-                    AbilityType ability = AbilityType.valueOf(id);
+                    boolean silent=id.startsWith("SILENT:");
+                    AbilityType ability = AbilityType.valueOf(silent?id.substring(7):id);
                     if (!ABILITIES.contains(ability)) throw new IllegalArgumentException("Unknown native action " + id);
-                    return !GameplayGate.allows(progression.getProgressionState(player.getUniqueId()),
+                    boolean denied=!GameplayGate.allows(progression.getProgressionState(player.getUniqueId()),
                         player.getUniqueId(), false, ability);
+                    if(denied && !silent)denialEffects.report(player,ability);
+                    return denied;
                 } catch (ReflectiveOperationException failure) { throw new IllegalStateException(failure); }
             };
             Class<?> agent = ClassLoader.getSystemClassLoader().loadClass(
@@ -42,6 +47,7 @@ final class NativeComplexBindings implements AutoCloseable {
     }
 
     @Override public void close() {
+        denialEffects.clear();
         try { retire.invoke(null, token); }
         catch (ReflectiveOperationException failure) { throw new IllegalStateException("S4J retirement failed", failure); }
     }

@@ -144,11 +144,15 @@ public final class NativeMovementAgent {
         return result;
     }
     public static boolean ascent(Object actor, Object packet) {
-        return NativeMovementAscent.reject(actor, packet, locked(actor, "JUMP"));
+        boolean rejected=NativeMovementAscent.reject(actor,packet,locked(actor,"SILENT:JUMP"));
+        if(rejected)locked(actor,"JUMP");
+        return rejected;
     }
     public static void velocity(Object actor, Object vector) {
         if (player(actor)) NativeMovementAscent.velocity(actor, vector);
     }
     public static void resetAscent(Object actor) { NativeMovementAscent.reset(actor); }
+    /** Live health only; never installs or repairs a missing guard. */
+    public static synchronized boolean installed() { return started && owner != null && guard != null && failures.isEmpty() && transformed.equals(INPUTS.keySet()); }
     private NativeMovementAgent() {}
 }

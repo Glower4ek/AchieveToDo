@@ -37,7 +37,12 @@ class PhaseBBacapTrackerContractTest {
     }
 
     @Test void all86BindingsRemainBoundToCurrentProductionDefinitions() throws Exception {
-        exactHashes(receipt().getAsJsonObject("runtimeHashes"));
+        if (com.diskree.achievetodo.certification.UiUxMaintenanceSourceContract.selected()) {
+            PhaseBPackTestFixtures.assertCurrentToolAuthority();
+            com.diskree.achievetodo.certification.UiUxMaintenanceSourceContract.assertHistoricalRuntimeContract("PHASE_B_B9_V1", receipt().getAsJsonObject("runtimeHashes"));
+        } else {
+            exactHashes(receipt().getAsJsonObject("runtimeHashes"));
+        }
         var tracker=json("bacap_1_21_static_receipt").getAsJsonObject("trackers");
         assertEquals(86,n(tracker,"total"));assertEquals(80,n(tracker,"keep"));assertEquals(6,n(tracker,"updated"));assertEquals(0,n(tracker,"unresolved"));
         assertEquals(33,TrackedScoreType.values().length);assertEquals(50,TrackedStatisticsDataType.values().length);

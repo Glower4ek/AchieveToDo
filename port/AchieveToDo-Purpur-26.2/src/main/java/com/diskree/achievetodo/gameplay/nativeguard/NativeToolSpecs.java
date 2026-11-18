@@ -31,5 +31,13 @@ final class NativeToolSpecs {
         new Spec("hoe-before-consumer","net/minecraft/world/item/HoeItem","useOn","(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;","Lnet/minecraft/world/level/Level;isClientSide()Z",-1,"context",1,0,"PASS",1),
         new Spec("golem-wax-off-and-deoxidize","net/minecraft/world/entity/animal/golem/CopperGolem","mobInteract","(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;","Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V",-1,"identity",1,3,"FAIL",2),
         new Spec("statue-reanimation","net/minecraft/world/level/block/WeatheringCopperGolemStatueBlock","useItemOn","(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;","Lnet/minecraft/world/level/block/entity/CopperGolemStatueBlockEntity;removeStatue(Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/entity/animal/golem/CopperGolem;",-1,"identity",5,1,"FAIL",1));
+
+    public record CombatSite(String owner,String method,String descriptor,String kind,int nativeReturns) {}
+    public static final List<CombatSite> COMBAT_SITES=List.of(
+        new CombatSite("net/minecraft/world/entity/player/Player","stabAttack","(Lnet/minecraft/world/entity/EquipmentSlot;Lnet/minecraft/world/entity/Entity;FZZZ)Z","stab",4),
+        new CombatSite("net/minecraft/world/item/component/PiercingWeapon","attack","(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/EquipmentSlot;)V","piercing",1),
+        new CombatSite("net/minecraft/world/item/component/KineticWeapon","damageEntities","(Lnet/minecraft/world/item/ItemStack;ILnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/EquipmentSlot;)V","kinetic",1),
+        new CombatSite("net/minecraft/world/item/component/PiercingWeapon","canHitEntity","(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;)Z","predicate",1));
     private NativeToolSpecs() {}
+
 }

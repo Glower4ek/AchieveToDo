@@ -156,5 +156,7 @@ public final class NativePortalAgent {
         if (count[0] != 1) throw new IllegalStateException("S4K exact method count="+count[0]);
         return output;
     }
+    /** Live health only; never installs or repairs a missing guard. */
+    public static synchronized boolean installed() { return started && owner != null && guard != null && failures.isEmpty() && transformed.equals(INPUTS.keySet()); }
     private NativePortalAgent() {}
 }

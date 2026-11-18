@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "reviewer": "independent agent /root/independent_v7_review",
+  "observedAtUtc": "2026-11-01T16:04:36.258888+00:00",
+  "verdict": "NO_CODE_LEVEL_BLOCKER_IDENTIFIED_PENDING_AUTHORITY_BUILD_AND_RUNTIME_REGRESSION",
+  "scope": "Only exact CraftingTableBlock.useWithoutItem native pre-openMenu workbench gate. Code review, not tested acceptance; no other menu approval.",
+  "acceptedForNextEngineeringChecks": true,
+  "sourceAuthorityAccepted": false,
+  "compiledAccepted": false,
+  "runtimeAccepted": false,
+  "productReady": false,
+  "sourceChanges": [
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkActions.java",
+      "beforeSHA256": "b1a65b3447e3c90a789ca14ead6a4c382755de7691ce8a1d25455393697a7dc0",
+      "afterSHA256": "8c401975413d9350f10618425cf7fd05b31e656a8422a6ff806e2a7865c4c4ca"
+    }
+  ],
+  "productionClosure": {
+    "paths": 2504,
+    "otherPathsExactV7": 2503,
+    "all2504OriginalBytesIndependentlyHashVerified": true
+  },
+  "actualDiff": "--- \n+++ \n@@ -140,7 +140,12 @@\n                     default -> null;\n                 };\n                 b.aload(s.level()).aload(s.pos());\n-                if(opening==null)b.invokestatic(SELF,\"blockDenied\",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT));\n+                if(s.owner().equals(\"net/minecraft/world/level/block/CraftingTableBlock\")\n+                    && s.method().equals(\"useWithoutItem\"))\n+                    b.ldc(\"OPEN_CRAFTING_TABLE\")\n+                        .invokestatic(ClassDesc.of(NativeLandmarkAgent.class.getName()),\"targetAndAbilityDenied\",\n+                            MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT,ConstantDescs.CD_String));\n+                else if(opening==null)b.invokestatic(SELF,\"blockDenied\",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT));\n                 else b.aload(1).ldc(s.owner().replace('/','.')).ldc(opening)\n                     .invokestatic(SELF,\"openingDenied\",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT,OBJECT,ConstantDescs.CD_String,ConstantDescs.CD_String));\n             }\n",
+  "findings": [],
+  "analysis": [
+    "Canonical CraftingTableBlockMixin injects immediately before Player.openMenu; short circuit target landmark before OPEN_CRAFTING_TABLE and returns InteractionResult.PASS. Existing spec selects identical owner, exact descriptor, original invocation anchor, actor local4, level2, position3, result PASS and one site. New conditional is restricted to exact owner/useWithoutItem in block mode.",
+    "Emitter already pushes actor; changed branch pushes level, position, OPEN_CRAFTING_TABLE and calls existing public static boolean(Object,Object,Object,String). The call consumes exactly its four appended references, leaving preexisting native openMenu operands unchanged. ifeq rejoins original invocation on allow; denial uses existing PASS cast/areturn. No new local, handler or original instruction replacement. This is source-level stack reasoning; actual ClassFile verifier remains required.",
+    "Existing targetAndAbilityDenied defaults ORDINARY and existing BukkitExactLandmarkRuntime resolves landmark first; ExactLandmarkGate denies locked/unavailable membership before additional ability. Reporter selects landmark on LOCKED, otherwise additional workbench only for OUTSIDE/UNLOCKED. Thus both-locked does not discover workbench prematurely. Existing CREATIVE/SPECTATOR bypass is retained; canonical server has same bypass.",
+    "Existing missing callback, unavailable progression/world/membership and callback RuntimeException/LinkageError deny. Null actor remains existing allow behavior; real selected native call actor is Player local4. No new grants, score writes, thresholds, wire, reward or client-authority path.",
+    "Whole native ServerPlayerGameMode.useItemOn may continue held-item fallback after block PASS; correcting the block return must not be conflated with forbidding canonical cod consumption or proving full game-mode PASS for every held item. Compare exact canonical branch and native result, menus, food/use/stat changes."
+  ],
+  "requiredMeaningfulChecks": [
+    "Normal strict source authority successor checks, Purpur check/jar and native transform anchor counts/ClassFile.verify over actual pinned complete transformation pipeline. Inspect transformed crafting method exact helper descriptor and PASS path; include other transformed native classes to detect pipeline/verification effects.",
+    "Gate regression: outside landmark workbench locked yields PASS/no menu/stat increment; unlocked yields original menu/stat; both landmark and workbench locked reports only landmark; landmark unlocked but workbench locked reports workbench. Include not-ready/missing authority fail closed and CREATIVE/SPECTATOR bypass, using existing actual native guard behavior rather than fabricated reward mutations.",
+    "Actual two alive ready clients rerun known V11 RED workbench boundary cases using built successor artifact: block and game-mode, air and cod, locked B/unlocked A with exact return/consumes/menu/stat/food/use/raw-client evidence. Compare canonical item fallback; actual ordinary client unlocked crafting positive control, locked no craft/reward/item duplication and other actor conservation.",
+    "Bind newly built artifact and installed transformed classes/source closure; retain old RED and V7 artifact labels. Run required normal Fabric checks/source controls and both-platform reproducibility under successor authority before broader acceptance."
+  ],
+  "authoritySuccessorApproach": [
+    "Preserve old nine V2 authority files, three final literal anchors and their exact original hashes as historical V7. Current V2 must reject changed production byte; never silently re-pin old V7 receipt or reinterpret old acceptance.",
+    "Create explicitly reviewed versioned successor manifest/review/helper/test namespace and explicit Java/Python/Groovy dispatch/pins as needed within separately bounded mutation envelope. Bind original UI base, exact V7 predecessor closure/review, this one-source before/after delta, final complete successor 2504 closure and exact unchanged other gameplay/test/build paths; do not broaden allowed production set.",
+    "Use immutable predecessor evidence, no hash cycle: final independent code receipt excludes self hash; manifest pins that receipt/helper identities; external final implementation review pins final dispatch anchors. Preserve/authenticate old helper and actual predecessor ZIP and run old negative controls unconditionally plus new semantic wrong delta/hash/context/orphan/mixed-selector/tamper controls. Source acceptance remains separate from runtime and primary acceptance."
+  ],
+  "unchangedNineAuthorityBindings": [
+    {
+      "path": "build.gradle",
+      "sha256": "2312f103474c7113b9d2514af3bf5a5d62396290ad53ef69e05ea62e03a9963e"
+    },
+    {
+      "path": "tools/build/distribution_b_v2_contract.py",
+      "sha256": "848ec3a0bc651ddb1567d0d576baa6d9c73b276b2098268590b132c3a1b594b6"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java",
+      "sha256": "d05d19e55e156005e9061a707f2ea64e8c785dde0b02d12fbd1369a63de199f3"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/GameplaySuccessorAuthorityTest.java",
+      "sha256": "1c2b0f510e2b28cac34de5212999f85b269ae82ddc972211c2b254fa4a5afa5e"
+    },
+    {
+      "path": "tools/build/gameplay_successor_v2.py",
+      "sha256": "b69de43a4d196710e1205c76e44f99ed2a73f89e1028bb88f2f2a7386fe86b09"
+    },
+    {
+      "path": "tools/build/tests/test_gameplay_successor_v2.py",
+      "sha256": "f3dad9f6a0d51426aca6db4ba8603767ad168b49398b6b8b78b491315befb1fa"
+    },
+    {
+      "path": "tools/certification/authority/gameplay-successor-v2.json",
+      "sha256": "522fecccba5e2c3f657afe2db0bc2b2db54c93d674c95206a2061bf695c48bab"
+    },
+    {
+      "path": "tools/certification/authority/gameplay-independent-code-review-v7.json",
+      "sha256": "fd6b8b5fd7c376055b92a2b165efbb15737525c9cbae1dfc424c41d4c2444dda"
+    },
+    {
+      "path": "tools/certification/fixtures/gameplay-source-v1-predecessor.zip",
+      "sha256": "5c810a2e234f189ee5f77984899c9ad4e282e8dc2faecdf00d4e5dd2c1988d9f"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "V8_WORKBENCH_NATIVE_RETURN_FIX_SOURCE_CHANGE_v1.json",
+      "sha256": "2e3d4fb7ab1c801fbb53328e66bff6a15e5f645196e5a65fcdfb8f17d2b34a67"
+    },
+    {
+      "path": "V8_WORKBENCH_NATIVE_RETURN_FIX_SOURCE_DIFF_v1.patch",
+      "sha256": "11da0b344fe18189d562353fc962fd2cf176aeef111192e570e6c09f1dbea72c"
+    },
+    {
+      "path": "CURRENT_GAMEPLAY_SOURCE_CLOSURE_v7_PRE_REVIEW_v3.json",
+      "sha256": "16851eb365b3c76cdcf0d7394c14ac7246f49c4acf2bd4fbea727b399da86c44"
+    },
+    {
+      "path": "source-snapshots/v7-before-workbench-return-fix/manifest.json",
+      "sha256": "1a239c1626229b106b4a796b412d588248a5ea631ac4d0a67574741bded565ab"
+    },
+    {
+      "path": "V11_NATIVE_WORKBENCH_RETURN_PARITY_AND_CRAFT_INDEPENDENT_REVIEW_v1.json",
+      "sha256": "064aae65730ffab538deefcc3ba45a39b340a44e9220d738dbeeb5539fe76078"
+    },
+    {
+      "path": "SOURCE_AUTHORITY_V2_FINAL_INDEPENDENT_REVIEW_v1.json",
+      "sha256": "4cae9524426cff6355e12e281477d8954be9787bd7ceb5a7223a99f27579a350"
+    }
+  ]
+}

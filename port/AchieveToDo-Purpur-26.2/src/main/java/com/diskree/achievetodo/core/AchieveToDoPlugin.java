@@ -19,6 +19,7 @@ public final class AchieveToDoPlugin extends JavaPlugin {
     private BukkitUiRuntime uiRuntime;
     private BukkitBridgeRuntime bridgeRuntime;
     private BukkitGameplayRuntime gameplayRuntime;
+    private ProductGameplayAdmission productAdmission;
 
     @Override
     public void onEnable() {
@@ -28,11 +29,37 @@ public final class AchieveToDoPlugin extends JavaPlugin {
             PinnedStartupContract.runtime(Runtime.version().feature(), build.minecraftVersionId(),
                 build.brandName(), build.buildNumber().orElse(-1));
             PinnedStartupContract.installation(getFile().toPath());
+            com.diskree.achievetodo.ui.advancement.AdvancementVisibilityAgent.verify(getServer().getClass().getClassLoader());
+            var gameplayMode = ProductGameplayAdmission.mode(System.getProperty("achievetodo.gameplay.mode", "diagnostic"));
+            if (gameplayMode != ProductGameplayAdmission.Mode.DIAGNOSTIC) {
+                if (!Boolean.getBoolean("achievetodo.landmarks.exactPrototype") || !Boolean.getBoolean("achievetodo.bridge.real")
+                    || !Boolean.getBoolean("achievetodo.bridge.groupScope")
+                    || (gameplayMode == ProductGameplayAdmission.Mode.CERTIFICATION &&
+                        (!Boolean.getBoolean("achievetodo.bridge.spike") || !Boolean.getBoolean("achievetodo.progression.foundation")))
+                    || (gameplayMode == ProductGameplayAdmission.Mode.PRODUCT && Boolean.getBoolean("achievetodo.bridge.spike")))
+                    throw new IllegalStateException("ATD_GAMEPLAY_MODE_PRECONDITIONS");
+                String certificate = System.getProperty("achievetodo.gameplay.certificate");
+                productAdmission = new ProductGameplayAdmission(gameplayMode, getFile().toPath(),
+                    certificate == null ? null : java.nio.file.Path.of(certificate), System.getProperty("achievetodo.gameplay.certificate.sha256"));
+            }
             readiness.startService("bridge", () -> {
-                bridgeRuntime = new BukkitBridgeRuntime(this, () -> progressionRuntime);
+                bridgeRuntime = new BukkitBridgeRuntime(this, () -> progressionRuntime,
+                    productAdmission == null ? null : this::gameplayOperational, this::productGameplayReady,
+                    () -> { if (productAdmission != null) productAdmission.refreshIntegrity(); });
                 bridgeRuntime.setLandmarks(id -> gameplayRuntime==null ? com.diskree.achievetodo.bridge.BridgeLandmarks.Snapshot.disabled() : gameplayRuntime.landmarkPresentation(id));
                 bridgeRuntime.start();
             }, () -> { if (bridgeRuntime != null) bridgeRuntime.close(); });
+            if (productAdmission != null) {
+                // The exact Fabric-parity native path is the sole enforcement composition here.
+                readiness.startService("progression", () -> {
+                    progressionRuntime = new BukkitProgressionRuntime(this); progressionRuntime.start();
+                }, () -> { if (progressionRuntime != null) progressionRuntime.close(); });
+                startGameplay();
+                readiness.markRunning();
+                if (!gameplayRuntime.enforcementReady()) throw new IllegalStateException("ATD_REQUIRED_ENFORCEMENT_UNAVAILABLE");
+                getLogger().warning("ATD_GAMEPLAY_MODE=" + productAdmission.mode() + "; PRODUCT_GAMEPLAY_READY=" + productGameplayReady());
+                return;
+            }
             if (Boolean.getBoolean("achievetodo.bridge.spike")) {
                 if (Boolean.getBoolean("achievetodo.progression.foundation")) {
                     readiness.startService("progression", () -> {
@@ -146,6 +173,21 @@ public final class AchieveToDoPlugin extends JavaPlugin {
             "Controlled AchieveToDo live-validation setup helpers.",
             new AchieveToDoSetupCommand()
         );
+    }
+
+    private boolean gameplayOperational() {
+        try {
+            return productAdmission != null && productAdmission.operational(
+                readiness.snapshot().state() == ServerRuntimeReadiness.State.RUNNING
+                    && bridgeRuntime != null && bridgeRuntime.transportReady(),
+                progressionRuntime != null && progressionRuntime.isReady(),
+                gameplayRuntime != null && gameplayRuntime.enforcementReady(),
+                Boolean.getBoolean("achievetodo.landmarks.exactPrototype"), Boolean.getBoolean("achievetodo.bridge.real"),
+                Boolean.getBoolean("achievetodo.bridge.groupScope"), Boolean.getBoolean("achievetodo.bridge.spike"));
+        } catch (RuntimeException | LinkageError unavailable) { return false; }
+    }
+    public boolean productGameplayReady() {
+        return productAdmission != null && productAdmission.productReady(gameplayOperational());
     }
 
     private void startGameplay() throws Exception {

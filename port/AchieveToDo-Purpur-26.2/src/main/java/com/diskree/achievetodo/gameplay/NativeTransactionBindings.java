@@ -13,8 +13,10 @@ import org.bukkit.entity.Player;
 final class NativeTransactionBindings implements AutoCloseable {
     private final Object token = new Object();
     private final Method retire;
+    private final GameplayDenialEffects denialEffects;
 
     NativeTransactionBindings(PlayerProgressionLookup progression, NativeFoodAbilities foods) {
+        denialEffects=new GameplayDenialEffects(progression);
         try {
             Class<?> nativePlayer = Class.forName("net.minecraft.world.entity.player.Player");
             Method bukkit = nativePlayer.getMethod("getBukkitEntity");
@@ -25,8 +27,7 @@ final class NativeTransactionBindings implements AutoCloseable {
                     if (player.getGameMode() == GameMode.CREATIVE || player.getGameMode() == GameMode.SPECTATOR) return false;
                     var ability = resolver.apply(stack);
                     if (ability == null) return false;
-                    return !GameplayGate.allows(progression.getProgressionState(player.getUniqueId()),
-                        player.getUniqueId(), false, ability);
+                    return !denialEffects.allows(player,ability);
                 } catch (ReflectiveOperationException unavailable) {
                     throw new IllegalStateException("Native actor unavailable", unavailable);
                 }
@@ -46,6 +47,7 @@ final class NativeTransactionBindings implements AutoCloseable {
     }
 
     @Override public void close() {
+        denialEffects.clear();
         try { retire.invoke(null, token); }
         catch (ReflectiveOperationException failure) { throw new IllegalStateException("Native guard retirement failed", failure); }
     }

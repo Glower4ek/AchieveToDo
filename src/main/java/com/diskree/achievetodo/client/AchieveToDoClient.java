@@ -264,7 +264,7 @@ public class AchieveToDoClient implements ClientModInitializer {
         if (!com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()) {
             // Canonical mixins also own local rendering, inventory input and item prediction.
             // Suppress prediction using the admitted S3C projection; every native transaction
-            // still independently queries server authority. Purpur prediction stays silent.
+            // still independently queries server authority. Only actual attempts report discovery.
             if ((abilityType != AbilityType.USE_BRUSH && abilityType != AbilityType.JUMP
                 && abilityType != AbilityType.SNEAK && abilityType != AbilityType.SPRINT
                 && abilityType != AbilityType.SWIM && abilityType != AbilityType.VISION
@@ -272,8 +272,16 @@ public class AchieveToDoClient implements ClientModInitializer {
                 && abilityType.getLandmarkType()==null) ||
                 !com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) return false;
             LocalPlayer predictedPlayer = Minecraft.getInstance().player;
-            return predictedPlayer != null && !predictedPlayer.isCreative() && !predictedPlayer.isSpectator()
+            boolean locked=predictedPlayer != null && !predictedPlayer.isCreative() && !predictedPlayer.isSpectator()
                 && com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType);
+            if(locked && !checkOnly && com.diskree.achievetodo.client.bridge.BridgeClient.reportDeniedAttempt(abilityType)) {
+                var projection=com.diskree.achievetodo.client.bridge.BridgeClient.presentation();
+                int required=projection.state().abilities().get(abilityType.getName()).threshold();
+                predictedPlayer.sendOverlayMessage(required==Constants.Progression.PERMANENTLY_LOCKED_FLAG
+                    ? abilityType.buildPermanentlyLockedMessage()
+                    : abilityType.buildUnlockProgressMessage(required-projection.state().count()));
+            }
+            return locked;
         }
         LocalPlayer player = Minecraft.getInstance().player;
         if (player == null || player.isCreative() || player.isSpectator()) {

@@ -10,7 +10,7 @@
     "description": {
       "translate": "achievetodo.description"
     },
-    "background": "minecraft:textures/block/pale_moss_block.png",
+    "background": "minecraft:block/pale_moss_block",
     "frame": "task",
     "show_toast": false,
     "announce_to_chat": false,

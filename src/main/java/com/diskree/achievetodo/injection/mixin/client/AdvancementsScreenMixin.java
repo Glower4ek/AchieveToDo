@@ -37,6 +37,29 @@ import java.util.Optional;
 public abstract class AdvancementsScreenMixin extends Screen {
 
     @Unique
+    private Map<com.diskree.achievetodo.ability.AbilityType, Integer> bridgeLayoutConfiguration;
+
+    @Inject(method = "init", at = @At("TAIL"))
+    private void rememberBridgeLayoutConfiguration(CallbackInfo ci) {
+        bridgeLayoutConfiguration = com.diskree.achievetodo.client.bridge.BridgeClient.presentationReady()
+            ? com.diskree.achievetodo.client.bridge.BridgePresentation.thresholds() : null;
+    }
+
+    @Inject(method = "tick", at = @At("TAIL"))
+    private void refreshBridgeLayoutConfiguration(CallbackInfo ci) {
+        if (!com.diskree.achievetodo.client.bridge.BridgeClient.presentationReady()) return;
+        var current = com.diskree.achievetodo.client.bridge.BridgePresentation.thresholds();
+        if (current.equals(bridgeLayoutConfiguration)) return;
+        // A count-only delta updates frames/progress live. Changed thresholds also
+        // change row order and cached tooltip widths/descriptions, requiring new widgets.
+        AdvancementHolder selected = selectedTab == null ? null : selectedTab.getRootNode().holder();
+        rebuildWidgets();
+        if (selected != null && tabs.containsKey(selected) && minecraft.getConnection() != null) {
+            minecraft.getConnection().getAdvancements().setSelectedTab(selected, true);
+        }
+    }
+
+    @Unique
     private static final float MYSTIFIED_TAB_ALPHA = 0.3f;
 
     @Unique
@@ -123,10 +146,38 @@ public abstract class AdvancementsScreenMixin extends Screen {
 
     @Inject(
         method = "onAddAdvancementRoot",
-        at = @At(value = "HEAD")
+        at = @At(value = "HEAD"),
+        cancellable = true
     )
     public void removeLockedTab(@NotNull AdvancementNode root, CallbackInfo ci) {
         AdvancementsTabType tab = AdvancementsTabType.findByAdvancement(root);
+        if (tab == null) {
+            // Vanilla's ordinal counts the reserved ATD tabs and can alias their slots.
+            // Keep foreign ownership intact and allocate only a genuinely free native slot.
+            DisplayInfo display = root.advancement().display().orElse(null);
+            if (display != null) {
+                for (AdvancementTabType position : AdvancementTabType.values()) {
+                    for (int order = 0; order < position.getMax(); order++) {
+                        boolean occupied = false;
+                        for (AdvancementsTabType reserved : AdvancementsTabType.values()) {
+                            if (overlapsNativeTab(position, order, reserved.getPosition(), reserved.getOrder())) occupied = true;
+                        }
+                        for (AdvancementTab existing : tabs.values()) {
+                            if (overlapsNativeTab(position, order, existing.getType(), existing.getIndex())) occupied = true;
+                        }
+                        if (!occupied) {
+                            tabs.put(root.holder(), new AdvancementTab(minecraft, (AdvancementsScreen) (Object) this,
+                                position, order, root, display));
+                            ci.cancel();
+                            return;
+                        }
+                    }
+                }
+            }
+            // Native capacity is finite; never overlap a reserved or existing tab.
+            ci.cancel();
+            return;
+        }
         AdvancementHolder lockedRoot = null;
         for (AdvancementHolder advancementEntry : tabs.keySet()) {
             if (tab != null && tab.getMystifiedTabId().equals(advancementEntry.id())) {
@@ -137,6 +188,14 @@ public abstract class AdvancementsScreenMixin extends Screen {
         if (lockedRoot != null) {
             tabs.remove(lockedRoot);
         }
+    }
+
+    @Unique
+    private static boolean overlapsNativeTab(AdvancementTabType a, int ai, AdvancementTabType b, int bi) {
+        return a.getX(ai) < b.getX(bi) + b.getWidth()
+            && a.getX(ai) + a.getWidth() > b.getX(bi)
+            && a.getY(ai) < b.getY(bi) + b.getHeight()
+            && a.getY(ai) + a.getHeight() > b.getY(bi);
     }
 
     @WrapOperation(

@@ -23,6 +23,24 @@ public final class BridgeClient {
     private static Object configurationListener,playListener;
     private static BridgeWire.Frame hello;
     private static long generation;
+    private record DenialStamp(BridgeWire.Reference reference,long tick) {}
+    private static final java.util.Map<String,DenialStamp> denialStamps=new java.util.HashMap<>();
+    /** Called only for an actual local attempt; the server independently validates discovery. */
+    public static synchronized boolean reportDeniedAttempt(com.diskree.achievetodo.ability.AbilityType ability) {
+        var client=Minecraft.getInstance();
+        if(!presentationReady() || cache.resyncPending() || hello==null || client.player==null
+                || client.player.isCreative() || client.player.isSpectator())return false;
+        var current=cache.current();var state=current.state().abilities().get(ability.getName());
+        if(state==null || state.unlocked())return false;
+        var reference=BridgeWire.reference(current);long tick=client.player.tickCount;
+        var old=denialStamps.get(ability.getName());
+        if(old!=null && old.reference().equals(reference) && tick>=old.tick() && tick-old.tick()<5)return false;
+        // At most the finite canonical153catalog; cleared at every physical session replacement.
+        denialStamps.put(ability.getName(),new DenialStamp(reference,tick));
+        ClientPlayNetworking.send(new BridgePayload(BridgeWire.encode(hello.with(BridgeWire.DENIAL_INTENT,
+            BridgeWire.denialIntent(new BridgeWire.DenialIntent(reference,ability.getName()))))));
+        return true;
+    }
     private static boolean configuring,uiActive,resyncRequested,fabricObserved;
     private static void log(String message) { AchieveToDoMod.logger.info("ATD_BRIDGE {}",message); }
     private static Connection physical(Object listener) {
@@ -48,7 +66,7 @@ public final class BridgeClient {
     }
     private static void clear() {
         Minecraft.getInstance().execute(()->{BridgePresentation.clear();BridgeLandmarkPresentation.clear();});
-        generation++;cache.clear();landmarks.clear();hello=null;configurationListener=null;playListener=null;
+        generation++;denialStamps.clear();cache.clear();landmarks.clear();hello=null;configurationListener=null;playListener=null;
         uiActive=false;resyncRequested=false;fabricObserved=false;
     }
     public static void initialize() {

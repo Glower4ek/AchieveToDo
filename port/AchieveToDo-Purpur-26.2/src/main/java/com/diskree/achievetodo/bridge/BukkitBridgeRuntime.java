@@ -24,6 +24,9 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
     private final Map<PlayerConnection,Session> connections=new IdentityHashMap<>();
     private final Map<UUID,Session> players=new HashMap<>();
     private volatile boolean open;
+    private final java.util.function.BooleanSupplier admission;
+    private final java.util.function.BooleanSupplier productReadiness;
+    private final Runnable refreshAdmission;
     private BukkitTask ticker;
     private final java.util.function.Supplier<com.diskree.achievetodo.tracking.bukkit.BukkitProgressionRuntime> progression;
     private java.util.function.Function<UUID,BridgeLandmarks.Snapshot> landmarks=id->BridgeLandmarks.Snapshot.disabled();
@@ -38,7 +41,8 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
         UUID boundWorld;
         String boundKey;
         CompletableFuture<Boolean> helloGate,admitGate;
-        long deadline,lastResync;
+        long deadline,lastResync,denialWindow;
+        int denialMessages;
         boolean sent,admitted,active,reloadSuspended;
         final BridgeResyncGate resync=new BridgeResyncGate();
         BridgeWire.Patch lastPatch,previousPatch;
@@ -51,6 +55,11 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
     }
     private static UUID optionalId(String name) { String v=System.getProperty(name);return v==null?null:UUID.fromString(v); }
     public BukkitBridgeRuntime(JavaPlugin plugin,java.util.function.Supplier<com.diskree.achievetodo.tracking.bukkit.BukkitProgressionRuntime> progression) {
+        this(plugin, progression, null, () -> false, () -> {});
+    }
+    public BukkitBridgeRuntime(JavaPlugin plugin,java.util.function.Supplier<com.diskree.achievetodo.tracking.bukkit.BukkitProgressionRuntime> progression,
+            java.util.function.BooleanSupplier admission,java.util.function.BooleanSupplier productReadiness,Runnable refreshAdmission) {
+        this.admission=admission;this.productReadiness=Objects.requireNonNull(productReadiness);this.refreshAdmission=Objects.requireNonNull(refreshAdmission);
         this.plugin=plugin;this.progression=progression;
         serverId=optionalId("achievetodo.bridge.server");groupScope=Boolean.getBoolean("achievetodo.bridge.groupScope");
     }
@@ -60,7 +69,7 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
         messenger.registerOutgoingPluginChannel(plugin,BridgeWire.CHANNEL);
         messenger.registerIncomingPluginChannel(plugin,BridgeWire.CHANNEL,this);
         plugin.getServer().getPluginManager().registerEvents(this,plugin);
-        ticker=plugin.getServer().getScheduler().runTaskTimer(plugin,this::tick,1,1);
+        ticker=plugin.getServer().getScheduler().runTaskTimer(plugin,this::guardedTick,1,1);
         plugin.registerCommand("atdbridge","Console-only disposable protocol demonstration",new io.papermc.paper.command.brigadier.BasicCommand() {
             @Override public void execute(io.papermc.paper.command.brigadier.CommandSourceStack source,String[] args) {
                 CommandSender sender=source.getSender();
@@ -68,15 +77,47 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
                 switch (args[0]) {
                     case "resync" -> inject("gap");
                     case "stale", "gap" -> inject(args[0]);
-                    case "status" -> plugin.getLogger().info("ATD_BRIDGE STATUS sessions="+players.size()+" productGameplayReady=false");
+                    case "status" -> plugin.getLogger().info("ATD_BRIDGE STATUS sessions="+players.size()+" productGameplayReady="+productReady()+"");
                     default -> { return; }
                 }
             }
         });
-        plugin.getLogger().info("ATD_BRIDGE v1.3; testOnly="+enabled()+"; productGameplayReady=false; default admission CLOSED");
+        plugin.getLogger().info("ATD_BRIDGE v1.3; testOnly="+enabled()+"; productGameplayReady="+productReady()+"; default admission CLOSED");
     }
     private boolean enabled() {
-        return Boolean.getBoolean("achievetodo.bridge.spike") && Boolean.getBoolean("achievetodo.bridge.real") && progression.get()!=null && progression.get().isReady() && serverId!=null && !serverId.equals(new UUID(0,0));
+        try {
+            boolean mode = admission == null ? Boolean.getBoolean("achievetodo.bridge.spike") : admission.getAsBoolean();
+            return mode && Boolean.getBoolean("achievetodo.bridge.real") && progression.get()!=null && progression.get().isReady() && serverId!=null && !serverId.equals(new UUID(0,0));
+        } catch (RuntimeException | LinkageError unavailable) { return false; }
+    }
+    /** Transport health without invoking the admission supplier (avoids a readiness cycle). */
+    public boolean transportReady() {
+        try {
+            var messenger=plugin.getServer().getMessenger();
+            return open && ticker!=null && !ticker.isCancelled() && serverId!=null && !serverId.equals(new UUID(0,0))
+                && messenger.getIncomingChannels(plugin).contains(BridgeWire.CHANNEL)
+                && messenger.getOutgoingChannels(plugin).contains(BridgeWire.CHANNEL)
+                && HandlerList.getRegisteredListeners(plugin).stream().anyMatch(listener -> listener.getListener()==this);
+        } catch (RuntimeException | LinkageError unavailable) { return false; }
+    }
+    private void guardedTick() {
+        try { tick(); }
+        catch (RuntimeException | LinkageError failure) {
+            open=false;
+            plugin.getLogger().log(java.util.logging.Level.SEVERE,"ATD_BRIDGE_WATCHDOG_FAILED_CLOSED",failure);
+            for (Session session:List.copyOf(players.values())) {
+                try { close(session,"ATD_BRIDGE_WATCHDOG_FAILED_CLOSED"); }
+                catch (RuntimeException | LinkageError disconnectFailure) { plugin.getServer().shutdown(); }
+            }
+        }
+    }
+    private boolean admissionNow() {
+        try { refreshAdmission.run();return enabled(); }
+        catch (RuntimeException | LinkageError unavailable) { return false; }
+    }
+    private boolean productReady() {
+        try { return productReadiness.getAsBoolean(); }
+        catch (RuntimeException | LinkageError unavailable) { return false; }
     }
     private void dispatch(Runnable action) {
         if (Bukkit.isPrimaryThread()) action.run();
@@ -89,7 +130,7 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
         if (!open) { connection.disconnect(Component.text("ATD_SERVER_CLOSED"));return; }
         dispatch(() -> {
             if (!open || gate.isDone() || !connection.isConnected()) { gate.complete(false);return; }
-            if (!enabled() || players.size()>=16) { connection.disconnect(Component.text("ATD_SPIKE_SCOPE_CLOSED"));gate.complete(false);return; }
+            if (!admissionNow() || players.size()>=16) { connection.disconnect(Component.text("ATD_SPIKE_SCOPE_CLOSED"));gate.complete(false);return; }
             UUID id=connection.getProfile().getId();
             if (id==null || players.containsKey(id)) { connection.disconnect(Component.text("ATD_DUPLICATE_CONNECTION"));gate.complete(false);return; }
             Session s=new Session(id,connection);s.profileName=connection.getProfile().getName();players.put(id,s);connections.put(connection,s);
@@ -157,6 +198,7 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
     private void tick() {
         requireMain();
         for (Session s:List.copyOf(players.values())) {
+            if (admission != null && !enabled()) { close(s,"ATD_LIVE_GAMEPLAY_PRECONDITION_LOST");continue; }
             if (!s.connection.isConnected()) {
                 close(s,"ATD_DISCONNECTED");continue;
             }
@@ -232,10 +274,39 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
                             || !BridgeWire.reference(s.projection).equals(BridgeWire.reference(frame.body())))
                         throw new IllegalArgumentException("ATD_INVALID_READY");
                     if (refresh(s)) { snapshot(s);return; }
+                    if (!admissionNow()) throw new IllegalStateException("ATD_ADMISSION_PRECONDITION_LOST");
                     s.admitted=true;
                     send(s,s.handshake.hello().with(BridgeWire.ADMIT,BridgeWire.reference(BridgeWire.reference(s.projection))));
-                    log("PROTOCOL_SNAPSHOT_READY ADMITTED revision="+s.projection.revision()+" productGameplayReady=false",s);
+                    log("PROTOCOL_SNAPSHOT_READY ADMITTED revision="+s.projection.revision()+" productGameplayReady="+productReady()+"",s);
                     s.admitGate.complete(true);
+                } else if(frame.kind()==BridgeWire.DENIAL_INTENT && s.active && connection instanceof PlayerGameConnection game) {
+                    if(!s.admitted || s.projection==null)
+                        throw new IllegalArgumentException("ATD_DENIAL_INTENT_PHASE");
+                    if(!frame.build().equals(s.handshake.hello().build()))throw new IllegalArgumentException("ATD_DENIAL_INTENT_BUILD");
+                    long now=System.nanoTime();if(now-s.denialWindow>=TimeUnit.SECONDS.toNanos(1)){s.denialWindow=now;s.denialMessages=0;}
+                    if(++s.denialMessages>64)throw new IllegalArgumentException("ATD_DENIAL_INTENT_RATE");
+                    var intent=BridgeWire.denialIntent(frame.body());
+                    if(!s.projection.state().abilities().containsKey(intent.ability()))throw new IllegalArgumentException("ATD_DENIAL_INTENT_UNKNOWN_ABILITY");
+                    // Ordered network input may already be in flight when resource reload suspends play.
+                    if(s.reloadSuspended || s.resync.pending()){log("DENIAL_INTENT_IGNORED_SUSPENDED",s);return;}
+                    if(!admissionNow())throw new IllegalArgumentException("ATD_DENIAL_INTENT_UNAVAILABLE");
+                    Player actor=game.getPlayer();
+                    if(!actor.getUniqueId().equals(s.playerId) || !accepts(actor.getWorld())
+                            || !actor.getWorld().getUID().equals(s.boundWorld) || !actor.getWorld().getKey().toString().equals(s.boundKey))
+                        throw new IllegalArgumentException("ATD_DENIAL_INTENT_SCOPE");
+                    // A normal count update may overtake this intent; reject retired references without discovery.
+                    var freshState=capture(s);
+                    if(!s.projection.state().equals(freshState) || !BridgeWire.reference(s.projection).equals(intent.reference())) {log("DENIAL_INTENT_IGNORED_STALE",s);return;}
+                    var supplied=s.projection.state().abilities().get(intent.ability());
+                    if(supplied==null)throw new IllegalArgumentException("ATD_DENIAL_INTENT_UNKNOWN_ABILITY");
+                    var ability=com.diskree.achievetodo.ability.AbilityType.valueOf(intent.ability().toUpperCase(Locale.ROOT));
+                    var current=progression.get().getProgressionState(s.playerId);
+                    if(actor.getGameMode()==GameMode.CREATIVE || actor.getGameMode()==GameMode.SPECTATOR || current==null
+                            || !current.isReady() || !s.playerId.equals(current.getPlayerId()) || current.getAbilityState(ability).isUnlocked()) {
+                        log("DENIAL_INTENT_IGNORED_NOT_LOCKED",s);return;
+                    }
+                    // Same sink as canonical Fabric discovery: only synthetic demystified criterion, no reward or count input.
+                    progression.get().demystify(s.playerId,ability);log("DENIAL_INTENT_DISCOVERED ability="+intent.ability(),s);
                 } else if (frame.kind()==BridgeWire.RESYNC && s.active && connection instanceof PlayerGameConnection) {
                     var ticket=BridgeWire.ticket(frame.body());
                     if (!ticket.reference().epoch().equals(s.epoch))return; // retired world epoch
@@ -249,6 +320,7 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
                 } else if (frame.kind()==BridgeWire.READY && s.active && connection instanceof PlayerGameConnection) {
                     var ticket=BridgeWire.ticket(frame.body());if(s.reloadSuspended)return;s.resync.validate(ticket,System.nanoTime());
                     if (refresh(s)) { playSnapshot(s);return; }
+                    if (!admissionNow()) throw new IllegalStateException("ATD_ADMISSION_PRECONDITION_LOST");
                     send(s,s.handshake.hello().with(BridgeWire.ADMIT,BridgeWire.ticket(ticket)));
                     s.resync.clear();log("PLAY_RESYNC_COMPLETE revision="+s.projection.revision(),s);
                 } else throw new IllegalArgumentException("ATD_INVALID_MESSAGE_PHASE");

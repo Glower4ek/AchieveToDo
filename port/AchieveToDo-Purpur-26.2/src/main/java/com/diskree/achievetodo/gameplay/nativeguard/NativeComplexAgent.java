@@ -175,9 +175,13 @@ public final class NativeComplexAgent {
         } catch (ReflectiveOperationException | RuntimeException | LinkageError unavailable) { return false; }
     }
 
+    private static boolean vaultEligibilityDenied(Object actor) throws ReflectiveOperationException {
+        if(!isType(actor,"world.entity.player.Player"))return false;
+        var callback=guard;return callback==null || callback.test(actor,"SILENT:UNLOCK_VAULT");
+    }
     public static Stream<?> eligible(Stream<?> original, Object level) {
         return original.filter(uuid -> {
-            try { return !denied(call(level, "getPlayerByUUID", uuid), null, "UNLOCK_VAULT"); }
+            try { return !vaultEligibilityDenied(call(level, "getPlayerByUUID", uuid)); }
             catch (ReflectiveOperationException | RuntimeException | LinkageError unavailable) { return false; }
         });
     }
@@ -242,5 +246,7 @@ public final class NativeComplexAgent {
         }
         b.labelBinding(pass);
     }
+    /** Live health only; never installs or repairs a missing guard. */
+    public static synchronized boolean installed() { return started && owner != null && guard != null && failures.isEmpty() && transformed.equals(NativeComplexSpecs.INPUTS.keySet()); }
     private NativeComplexAgent() {}
 }

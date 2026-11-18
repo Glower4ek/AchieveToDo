@@ -74,7 +74,7 @@ public final class NativeActionAgent {
                 if (ability == null) return false;
             }
             var callback = guard;
-            return callback == null || callback.test(actor, ability);
+            return callback == null || callback.test(actor, mode.equals("attack")?"COMBAT:"+ability:ability);
         } catch (ReflectiveOperationException | RuntimeException | LinkageError unavailable) { return true; }
     }
 
@@ -158,5 +158,7 @@ public final class NativeActionAgent {
             })).areturn();
         b.labelBinding(pass);
     }
+    /** Live health only; never installs or repairs a missing guard. */
+    public static synchronized boolean installed() { return started && owner != null && guard != null && failures.isEmpty() && transformed.equals(NativeActionSpecs.INPUTS.keySet()); }
     private NativeActionAgent() {}
 }

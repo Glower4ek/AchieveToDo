@@ -23,7 +23,7 @@ public final class EmbeddedDatapack {
     public static final int MIN_FORMAT_MINOR = 1;
     public static final int MAX_FORMAT = 107;
     public static final String DATAPACK_DESCRIPTION = "AchieveToDo embedded synthetic ability datapack";
-    public static final String ROOT_BACKGROUND = "minecraft:textures/block/pale_moss_block.png";
+    public static final String ROOT_BACKGROUND = "minecraft:block/pale_moss_block";
     public static final String DEMYSTIFIED_CRITERION = "demystified";
     public static final String UNLOCKED_CRITERION = "unlocked";
 

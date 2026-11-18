@@ -18,20 +18,27 @@ final class NativeActionBindings implements AutoCloseable {
         AbilityType.CHARGE_RESPAWN_ANCHOR, AbilityType.USE_JUKEBOX, AbilityType.PLACE_END_CRYSTAL);
     private final Object token = new Object();
     private final Method retire;
+    private final GameplayDenialEffects denialEffects;
 
     NativeActionBindings(PlayerProgressionLookup progression) {
+        denialEffects=new GameplayDenialEffects(progression);
         try {
             Class<?> nativePlayer = Class.forName("net.minecraft.world.entity.player.Player");
             Method bukkit = nativePlayer.getMethod("getBukkitEntity");
+            Method combatRecord=Class.forName("com.diskree.achievetodo.gameplay.nativeguard.NativeToolCombatInvocation",false,null).getMethod("record",Object.class,Runnable.class,boolean.class);
             BiPredicate<Object, String> guard = (actor, id) -> {
                 try {
                     Player player = (Player) bukkit.invoke(actor);
                     if (player.getGameMode() == GameMode.CREATIVE || player.getGameMode() == GameMode.SPECTATOR) return false;
-                    AbilityType ability = AbilityType.valueOf(id);
+                    boolean combat=id.startsWith("COMBAT:");
+                    AbilityType ability = AbilityType.valueOf(combat?id.substring(7):id);
                     if (!ABILITIES.contains(ability) && ability != AbilityType.USE_SPYGLASS)
                         throw new IllegalArgumentException("Unknown native action " + id);
-                    return !GameplayGate.allows(progression.getProgressionState(player.getUniqueId()),
+                    boolean denied=!GameplayGate.allows(progression.getProgressionState(player.getUniqueId()),
                         player.getUniqueId(), false, ability);
+                    if(denied && combat)combatRecord.invoke(null,actor,(Runnable)()->denialEffects.report(player,ability),true);
+                    else if(denied)denialEffects.report(player,ability);
+                    return denied;
                 } catch (ReflectiveOperationException failure) { throw new IllegalStateException(failure); }
             };
             Class<?> agent = ClassLoader.getSystemClassLoader().loadClass(
@@ -45,6 +52,7 @@ final class NativeActionBindings implements AutoCloseable {
     }
 
     @Override public void close() {
+        denialEffects.clear();
         try { retire.invoke(null, token); }
         catch (ReflectiveOperationException failure) { throw new IllegalStateException("S4H retirement failed", failure); }
     }

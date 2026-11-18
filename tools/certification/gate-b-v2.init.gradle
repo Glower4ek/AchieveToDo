@@ -1,0 +1,34 @@
+// Explicit test tooling. Never selects or approves the Owner B authority.
+gradle.projectsEvaluated {
+    def p = gradle.rootProject
+    p.tasks.register('gateBV2WiringAudit') {
+        doLast {
+            def standard = p.tasks.named('test', Test).get()
+            def inputs = p.tasks.named('verifyCleanSourceInputs', Exec).get()
+            if (!standard.enabled || standard.ignoreFailures || !standard.filter.includePatterns.empty ||
+                !standard.filter.excludePatterns.empty || !standard.excludes.empty) throw new GradleException('Filtered/disabled standard suite')
+            if (!standard.taskDependencies.getDependencies(standard).contains(inputs)) throw new GradleException('Mandatory verifier dependency lost')
+            def selected = System.getenv('ACHIEVETODO_GATE_B_AUTHORITY') != null
+            def expected = selected ? 'verify_inputs_v2.py' : 'verify_inputs.py'
+            if (!inputs.commandLine.any { it.toString().endsWith(expected) }) throw new GradleException('Wrong verifier route')
+            println 'GATE_B_V2_WIRING_PASS unfiltered=true requiredVerifier=true default=ORIGINAL selected='+selected
+        }
+    }
+    p.tasks.register('gateBV2Contract', JavaExec) {
+        dependsOn p.tasks.named('testClasses')
+        classpath = p.sourceSets.test.runtimeClasspath
+        mainClass = 'com.diskree.achievetodo.certification.GateBInputAuthorityContractTest'
+        doFirst {
+            def output = System.getenv('ACHIEVETODO_GATE_B_REVIEW_OUTPUT')
+            if (!output || !new File(output).isAbsolute()) throw new GradleException('Explicit new review output required')
+            def dir = new File(output).canonicalFile
+            if (dir.toPath().startsWith(p.projectDir.canonicalFile.toPath())) throw new GradleException('Review output must be outside source export')
+            dir.mkdirs()
+            systemProperty 'atd.gateb.receipt', new File(dir, 'junit-summary.json').absolutePath
+        }
+    }
+    p.tasks.register('gateBV2PythonContract', Exec) {
+        commandLine System.getenv('ACHIEVETODO_PYTHON'), '-B', '-X', 'utf8', '-m', 'unittest',
+            'tools.build.tests.test_distribution_b_v2_contract', '-v'
+    }
+}

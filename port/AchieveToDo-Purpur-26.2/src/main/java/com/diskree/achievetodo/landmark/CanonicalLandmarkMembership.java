@@ -36,6 +36,37 @@ public final class CanonicalLandmarkMembership {
         sessions.put(actor, new Session(state, types));
     }
 
+    /** Reconciles numeric permissions after a committed configuration generation, even at an unchanged count. */
+    public void reconcileConfiguration(PlayerProgressionState state) {
+        if (state == null || !state.isReady()) return;
+        UUID actor = state.getPlayerId();
+        Session session = sessions.get(actor);
+        var types = session == null ? EnumSet.noneOf(LandmarkType.class) : session.types();
+        int count = state.getObtainedAdvancementCount();
+        for (AbilityType ability : AbilityType.values()) {
+            LandmarkType type = ability.getLandmarkType();
+            if (type == null) continue;
+            int required = state.getRequirements().getRequiredCount(ability);
+            if (required == 0) {
+                // Zero is the canonical initially-unlocked flag; discard any old numeric membership.
+                types.remove(type);
+                Set<UUID> players = playersByLockedLandmarkTypes.get(type);
+                if (players != null && players.remove(actor) && players.isEmpty()) playersByLockedLandmarkTypes.remove(type);
+                continue;
+            }
+            if (required == -1) continue; // Preserve the existing special permanently-locked membership policy.
+            if (count < required) {
+                types.add(type);
+                playersByLockedLandmarkTypes.computeIfAbsent(type, ignored -> new HashSet<>()).add(actor);
+            } else {
+                types.remove(type);
+                Set<UUID> players = playersByLockedLandmarkTypes.get(type);
+                if (players != null && players.remove(actor) && players.isEmpty()) playersByLockedLandmarkTypes.remove(type);
+            }
+        }
+        sessions.put(actor, new Session(state, types));
+    }
+
     public boolean contains(UUID actor, LandmarkType type) {
         Session session = sessions.get(actor);
         return session != null && session.types().contains(type);
@@ -64,20 +95,27 @@ public final class CanonicalLandmarkMembership {
         return ExactLandmarkGate.Result.OUTSIDE;
     }
 
-    /** First spatial result in the canonical shared HashMap, including an unlocked result. */
+    /** Carries the same first selected ability without repeating or reordering spatial selection. */
+    public record Outcome(ExactLandmarkGate.Result result,AbilityType selectedAbility) {}
     public ExactLandmarkGate.Result evaluate(PlayerProgressionState state, UUID actor, boolean bypass,
                                              Set<LandmarkRecord> matches) {
-        if (bypass) return ExactLandmarkGate.Result.BYPASS;
-        if (matches.isEmpty()) return ExactLandmarkGate.Result.OUTSIDE;
-        for (var entry : playersByLockedLandmarkTypes.entrySet()) {
-            if (!entry.getValue().contains(actor)) continue;
-            for (var record : matches) {
-                if (record.landmarkType() != entry.getKey()) continue;
-                if (state == null || !state.isReady() || !actor.equals(state.getPlayerId())) return ExactLandmarkGate.Result.UNAVAILABLE;
-                return numeric(state, entry.getKey());
+        return evaluateDetailed(state,actor,bypass,matches).result();
+    }
+    /** First spatial result in the canonical shared HashMap, including an unlocked result. */
+    public Outcome evaluateDetailed(PlayerProgressionState state,UUID actor,boolean bypass,Set<LandmarkRecord> matches) {
+        if(bypass)return new Outcome(ExactLandmarkGate.Result.BYPASS,null);
+        if(matches.isEmpty())return new Outcome(ExactLandmarkGate.Result.OUTSIDE,null);
+        for(var entry:playersByLockedLandmarkTypes.entrySet()) {
+            if(!entry.getValue().contains(actor))continue;
+            for(var record:matches) {
+                if(record.landmarkType()!=entry.getKey())continue;
+                if(state==null || !state.isReady() || !actor.equals(state.getPlayerId()))
+                    return new Outcome(ExactLandmarkGate.Result.UNAVAILABLE,null);
+                AbilityType selected=AbilityResolvers.findLandmarkAbility(entry.getKey()).orElseThrow();
+                return new Outcome(numeric(state,entry.getKey()),selected);
             }
         }
-        return ExactLandmarkGate.Result.OUTSIDE;
+        return new Outcome(ExactLandmarkGate.Result.OUTSIDE,null);
     }
 
     private static ExactLandmarkGate.Result numeric(PlayerProgressionState state, LandmarkType type) {

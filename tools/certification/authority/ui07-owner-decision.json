@@ -1,0 +1,13 @@
+{
+  "origin": "human-owner:current-task-instruction",
+  "approvedScopedSuccessor": true,
+  "allowReviewerRequestedUi07TechnicalRevisions": true,
+  "originalExactApprovedRepair": "6bbc75f8959c78487114d14bfcefe0bc01e9391c50b3ac0f3d1072d3c0b9da63",
+  "scope": "One production path UI07, independently reviewed technical revisions, necessary exact GateA/V2 successor integration, full tests packaging native runtime, local certification only",
+  "instructionQuotes": [
+    "Если reviewer находит обычный исправимый дефект — исправь его в рамках UI-07 scope, обнови candidate identity, повтори независимое ревью и продолжи.",
+    "OWNER APPROVAL FOR NECESSARY SCOPED SUCCESSOR AUTHORITY INTEGRATION IS GRANTED HERE."
+  ],
+  "externalSignatureClaimed": false,
+  "gameplayOrPublicationAuthorized": false
+}

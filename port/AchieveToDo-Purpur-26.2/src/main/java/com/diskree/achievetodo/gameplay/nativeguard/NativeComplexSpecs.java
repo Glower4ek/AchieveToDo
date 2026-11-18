@@ -15,7 +15,7 @@ final class NativeComplexSpecs {
         Map.entry("net/minecraft/world/entity/monster/Creeper",List.of("58e82361ba7478dcb6e78c6c8d6a9538da206e762a058f07d36d4c961cb0869c","de5ddedc8bc4e970f699a83c143a82a33725c60b9ff29412b1735dba04b28c66")),
         Map.entry("net/minecraft/world/entity/monster/cubemob/SulfurCube",List.of("31d92ca8333bbdfd8aa28020c6069b648a897177717eb757f14e94a9e095766d","83c2c70188a1b505e1bf50001b76d24bcf299755f2419a0fab90ae371cf839d8")),
         Map.entry("net/minecraft/world/entity/monster/skeleton/Bogged",List.of("0efb5786a9280ee048d23cb52d1cc146e402b04dd8a650fe352b8f75efd9c135","529016bd2ffb63c80ef88ed29c90233cea76d8679a233c7c48bbbc76e5ee4bcf")),
-        Map.entry("net/minecraft/world/entity/player/Player",List.of("ab83ee9e137ca7a49755fa9e97af6e14ebf631dcd1d679015879bd6b479325d4","f728950cc47b94cb5f70daf883445b595737460d995ef0693e3f23cdf369550e")),
+        Map.entry("net/minecraft/world/entity/player/Player",List.of("b72b4e41275e946225b84c2d64eb7823cd31292ad186e37031161a42549a370d","e8a957ab39b3b709fccd48b81765a6f63513df00275de6deffe885ac0996a33f")),
         Map.entry("net/minecraft/world/item/BrushItem",List.of("80b8cb52fa66cdd386960c0a9a6fc9356ef7d38cd455c3bfa10ba72c184dee70","69856d5544506802dcda705f8f61615d1b1b4e4781162bfe3162fd7f2927307f")),
         Map.entry("net/minecraft/world/item/BucketItem",List.of("8120a206e7ef56b826fd761a1f54c733b1c63a86a018085a001e16f1d95314bb","8120a206e7ef56b826fd761a1f54c733b1c63a86a018085a001e16f1d95314bb")),
         Map.entry("net/minecraft/world/item/FlintAndSteelItem",List.of("cc514367955faf39b7ac1b604cccabe99267290a20939eb575ce77c25905ad2d","8543737a18883c7c6585fe5882b962599d4708efcbd69f33fc7c4bf0335b4f80")),

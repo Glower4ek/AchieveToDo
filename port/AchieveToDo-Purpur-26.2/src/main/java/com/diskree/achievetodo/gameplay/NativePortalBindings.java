@@ -13,8 +13,10 @@ final class NativePortalBindings implements AutoCloseable {
     static final Set<AbilityType> ABILITIES = Set.of(AbilityType.ENTER_NETHER, AbilityType.ENTER_END, AbilityType.TELEPORT_OUTER_ISLANDS);
     private final Object token = new Object();
     private final Method retire;
+    private final GameplayDenialEffects denialEffects;
 
     NativePortalBindings(PlayerProgressionLookup progression) {
+        denialEffects=new GameplayDenialEffects(progression);
         try {
             Class<?> nativePlayer = Class.forName("net.minecraft.world.entity.player.Player");
             Method bukkit = nativePlayer.getMethod("getBukkitEntity");
@@ -24,8 +26,7 @@ final class NativePortalBindings implements AutoCloseable {
                     if (player.getGameMode() == GameMode.CREATIVE || player.getGameMode() == GameMode.SPECTATOR) return false;
                     AbilityType ability = AbilityType.valueOf(id);
                     if (!ABILITIES.contains(ability)) throw new IllegalArgumentException("Unknown native action " + id);
-                    return !GameplayGate.allows(progression.getProgressionState(player.getUniqueId()),
-                        player.getUniqueId(), false, ability);
+                    return !denialEffects.allows(player,ability);
                 } catch (ReflectiveOperationException failure) { throw new IllegalStateException(failure); }
             };
             Class<?> agent = ClassLoader.getSystemClassLoader().loadClass(
@@ -39,6 +40,7 @@ final class NativePortalBindings implements AutoCloseable {
     }
 
     @Override public void close() {
+        denialEffects.clear();
         try { retire.invoke(null, token); }
         catch (ReflectiveOperationException failure) { throw new IllegalStateException("S4K retirement failed", failure); }
     }

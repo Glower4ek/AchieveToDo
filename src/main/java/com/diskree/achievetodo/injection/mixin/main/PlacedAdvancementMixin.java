@@ -78,7 +78,8 @@ public abstract class PlacedAdvancementMixin {
         if (children.size() <= 1) {
             return;
         }
-        if (sortedChildren == null) {
+        if (sortedChildren == null || sortedChildren.size() != children.size()
+            || !children.containsAll(sortedChildren)) {
             sortedChildren = new ArrayList<>(children);
             Identifier advancementId = holder.id();
             if (customChildrenOrderMap.containsKey(advancementId.toString())) {

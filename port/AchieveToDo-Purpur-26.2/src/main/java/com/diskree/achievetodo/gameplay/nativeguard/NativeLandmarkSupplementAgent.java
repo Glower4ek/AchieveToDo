@@ -49,5 +49,7 @@ public final class NativeLandmarkSupplementAgent {
             throw new IllegalStateException("S4N landmark transforms unavailable: " + failures + "; transformed=" + transformed);
     }
 
+    /** Live health only; never installs or repairs a missing guard. */
+    public static synchronized boolean installed() { return started && failures.isEmpty() && transformed.equals(NativeLandmarkSupplementSpecs.INPUTS.keySet()); }
     private NativeLandmarkSupplementAgent() {}
 }

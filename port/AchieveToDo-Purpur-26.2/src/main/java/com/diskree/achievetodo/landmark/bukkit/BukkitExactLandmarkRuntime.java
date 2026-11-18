@@ -28,7 +28,10 @@ public final class BukkitExactLandmarkRuntime implements Listener, AutoCloseable
     private final Set<LandmarkChunkKey> invalid = new HashSet<>();
     private final Set<LandmarkChunkKey> pending = new HashSet<>();
     private final Object token = new Object();
+    private long observedConfigurationGeneration = Long.MIN_VALUE;
     private Method retire, drain;
+    private Method combatRecord;
+    private com.diskree.achievetodo.gameplay.GameplayDenialEffects denialEffects;
     private BukkitTask task;
 
     public BukkitExactLandmarkRuntime(JavaPlugin plugin, PlayerProgressionLookup progression) {
@@ -38,8 +41,12 @@ public final class BukkitExactLandmarkRuntime implements Listener, AutoCloseable
         try {
             if (!(progression instanceof BukkitProgressionRuntime authority))
                 throw new IllegalStateException("Exact membership requires S3C authority lifecycle");
-            authority.addListener(MEMBERSHIP_LISTENER, id -> membership.observe(progression.getProgressionState(id)));
-            for (Player player : Bukkit.getOnlinePlayers()) membership.observe(progression.getProgressionState(player.getUniqueId()));
+            denialEffects=new com.diskree.achievetodo.gameplay.GameplayDenialEffects(progression);
+            combatRecord=Class.forName("com.diskree.achievetodo.gameplay.nativeguard.NativeToolCombatInvocation",false,null)
+                .getMethod("record",Object.class,Runnable.class,boolean.class);
+            observedConfigurationGeneration = authority.getConfigurationGeneration();
+            authority.addListener(MEMBERSHIP_LISTENER, this::onProgressionChanged);
+            for (Player player : Bukkit.getOnlinePlayers()) onProgressionChanged(player.getUniqueId());
             Class<?> nativePlayer = Class.forName("net.minecraft.world.entity.player.Player");
             Class<?> agent = Class.forName("com.diskree.achievetodo.gameplay.nativeguard.NativeLandmarkAgent", false, null);
             retire = agent.getMethod("retire", Object.class); drain = agent.getMethod("drain");
@@ -51,6 +58,26 @@ public final class BukkitExactLandmarkRuntime implements Listener, AutoCloseable
             plugin.getLogger().warning("S4G exact provenance + conditional actions controlled opt-in active; PRODUCT_GAMEPLAY_READY=false");
         } catch (ReflectiveOperationException failure) { close(); throw new IllegalStateException("S4G native prototype unavailable", failure); }
     }
+    private void onProgressionChanged(UUID actor) {
+        requireMainThread();
+        reconcileConfigurationGeneration();
+        membership.observe(progression.getProgressionState(actor));
+        presentations.remove(actor);
+    }
+    private void reconcileConfigurationGeneration() {
+        requireMainThread();
+        var authority = (BukkitProgressionRuntime) progression;
+        long generation = authority.getConfigurationGeneration();
+        if (generation == observedConfigurationGeneration) return;
+        observedConfigurationGeneration = generation;
+        index.removeIf(record -> true);
+        loadedMembership.clear();
+        invalid.clear();
+        presentations.clear();
+        for (World world : Bukkit.getWorlds()) for (Chunk chunk : world.getLoadedChunks()) refresh(chunk);
+        for (Player player : Bukkit.getOnlinePlayers())
+            membership.reconcileConfiguration(progression.getProgressionState(player.getUniqueId()));
+    }
     private static Object nativeLevel(World world) { return NativeLandmarkCapture.call(world, "getHandle"); }
     private static Object nativeChunk(Chunk chunk) {
         // getChunkNow is a pinned cache lookup; CraftChunk.getHandle(FULL) could load a chunk.
@@ -61,6 +88,7 @@ public final class BukkitExactLandmarkRuntime implements Listener, AutoCloseable
     }
     private void drain() {
         requireMainThread();
+        reconcileConfigurationGeneration();
         for (var key : Set.copyOf(pending)) {
             pending.remove(key);
             World world = Bukkit.getWorld(UUID.fromString(key.world().worldId()));
@@ -146,15 +174,30 @@ public final class BukkitExactLandmarkRuntime implements Listener, AutoCloseable
             int z = (int) NativeLandmarkCapture.call(position, "getZ");
             targetBox = new BlockBox(x, y, z, x, y, z);
         }
+        onProgressionChanged(player.getUniqueId());
         var state = progression.getProgressionState(player.getUniqueId());
-        membership.observe(state);
-        var result = membership.evaluate(state, player.getUniqueId(), false, index.findIntersecting(world.get(), targetBox));
+        var outcome = membership.evaluateDetailed(state, player.getUniqueId(), false, index.findIntersecting(world.get(), targetBox));
+        var result=outcome.result();
         AbilityType additional = tuple.length > 2 && tuple[2] != null ? AbilityType.valueOf((String) tuple[2]) : null;
-        return ExactLandmarkGate.denied(result, state, player.getUniqueId(), additional);
+        boolean denied=ExactLandmarkGate.denied(result,state,player.getUniqueId(),additional);
+        String reporting=tuple.length>3?(String)tuple[3]:"ORDINARY";
+        if(denied && !"SILENT".equals(reporting) && state!=null && state.isReady() && player.getUniqueId().equals(state.getPlayerId())) {
+            AbilityType selected=result==ExactLandmarkGate.Result.LOCKED?outcome.selectedAbility()
+                : result==ExactLandmarkGate.Result.OUTSIDE || result==ExactLandmarkGate.Result.UNLOCKED?additional:null;
+            if(selected!=null) {
+                Runnable report=()->denialEffects.report(player,selected);
+                if("COMBAT".equals(reporting)) {
+                    try{combatRecord.invoke(null,actor,report,true);}
+                    catch(ReflectiveOperationException failure){throw new IllegalStateException("Canonical combat reporter unavailable",failure);}
+                } else if("ORDINARY".equals(reporting))report.run();
+                else throw new IllegalArgumentException("Unknown landmark reporter mode");
+            }
+        }
+        return denied;
     }
     public Set<LandmarkRecord> records() { requireMainThread(); drain(); return index.all(); }
     public com.diskree.achievetodo.bridge.BridgeLandmarks.Snapshot presentation(UUID actor) {
-        requireMainThread();drain();membership.observe(progression.getProgressionState(actor));
+        requireMainThread();drain();onProgressionChanged(actor);
         var types=membership.types(actor);var previous=presentations.get(actor);
         if(previous!=null && previous.types().equals(types))return previous.snapshot();
         var boxes=new HashSet<com.diskree.achievetodo.bridge.BridgeLandmarks.Box>();
@@ -172,7 +215,7 @@ public final class BukkitExactLandmarkRuntime implements Listener, AutoCloseable
         var snapshot=new com.diskree.achievetodo.bridge.BridgeLandmarks.Snapshot(true,sorted);
         presentations.put(actor,new Presentation(types,snapshot));return snapshot;
     }
-    @EventHandler public void quit(PlayerQuitEvent event) { membership.disconnect(event.getPlayer().getUniqueId());presentations.remove(event.getPlayer().getUniqueId()); }
+    @EventHandler public void quit(PlayerQuitEvent event) { if(denialEffects!=null)denialEffects.forget(event.getPlayer().getUniqueId()); membership.disconnect(event.getPlayer().getUniqueId());presentations.remove(event.getPlayer().getUniqueId()); }
     @EventHandler public void load(ChunkLoadEvent event) {
         BukkitLandmarkAdapters.toLandmarkWorld(event.getWorld()).ifPresent(world -> pending.add(new LandmarkChunkKey(world,
             new ChunkCoordinate(event.getChunk().getX(), event.getChunk().getZ()))));
@@ -193,10 +236,12 @@ public final class BukkitExactLandmarkRuntime implements Listener, AutoCloseable
         world.ifPresent(w -> { index.removeIf(r -> r.world().equals(w)); loadedMembership.unloadWorld(w); invalid.removeIf(k -> k.world().equals(w)); pending.removeIf(k -> k.world().equals(w)); });
     }
     @Override public void close() {
+        if(denialEffects!=null)denialEffects.clear();
         if (task != null) task.cancel();
         HandlerList.unregisterAll(this);
         index.removeIf(r -> true); invalid.clear(); pending.clear();
         membership.clear();
+        observedConfigurationGeneration = Long.MIN_VALUE;
         loadedMembership.clear();
         if (progression instanceof BukkitProgressionRuntime authority) authority.removeListener(MEMBERSHIP_LISTENER);
         if (retire != null) try { retire.invoke(null, token); }

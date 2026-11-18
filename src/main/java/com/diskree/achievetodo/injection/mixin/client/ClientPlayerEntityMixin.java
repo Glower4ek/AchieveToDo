@@ -30,8 +30,10 @@ public abstract class ClientPlayerEntityMixin {
         LocalPlayer player = (LocalPlayer) (Object) this;
         // Vehicle shift also carries native dismount input; keep that path untouched.
         boolean purpur = BridgeClient.isPurpurBackend() && !player.isPassenger();
+        if(purpur && original.shift() && player.onGround())
+            AchieveToDoMod.isAbilityLocked(player, AbilityType.SNEAK);
         return PurpurMovementInput.forServer(original, purpur, player.onGround(),
-            purpur && AchieveToDoMod.isAbilityLocked(player, AbilityType.SNEAK));
+            purpur && AchieveToDoMod.isAbilityLocked(player, AbilityType.SNEAK,true));
     }
 
     @ModifyReturnValue(

@@ -25,7 +25,9 @@ public final class NativeTransactionPremain {
                     || entry.getName().startsWith("com/diskree/achievetodo/gameplay/nativeguard/NativeComplex")
                     || entry.getName().startsWith("com/diskree/achievetodo/gameplay/nativeguard/NativePortal")
                     || entry.getName().startsWith("com/diskree/achievetodo/gameplay/nativeguard/NativeMovement")
-                    || entry.getName().startsWith("com/diskree/achievetodo/gameplay/nativeguard/NativeLandmark"))
+                    || entry.getName().startsWith("com/diskree/achievetodo/gameplay/nativeguard/NativeLandmark")
+                    || entry.getName().startsWith("com/diskree/achievetodo/gameplay/nativeguard/NativeSourceReload")
+                    || entry.getName().startsWith("com/diskree/achievetodo/ui/advancement/AdvancementVisibilityAgent"))
                     || !entry.getName().endsWith(".class")) continue;
                 output.putNextEntry(new JarEntry(entry.getName()));
                 try (var stream = input.getInputStream(entry)) { stream.transferTo(output); }
@@ -52,6 +54,10 @@ public final class NativeTransactionPremain {
         Class.forName("com.diskree.achievetodo.gameplay.nativeguard.NativeMovementAgent", true, null)
             .getMethod("initialize", Instrumentation.class).invoke(null, instrumentation);
         Class.forName("com.diskree.achievetodo.gameplay.nativeguard.NativeLandmarkSupplementAgent", true, null)
+            .getMethod("initialize", Instrumentation.class).invoke(null, instrumentation);
+        Class.forName("com.diskree.achievetodo.ui.advancement.AdvancementVisibilityAgent", true, null)
+            .getMethod("initialize", Instrumentation.class).invoke(null, instrumentation);
+        Class.forName("com.diskree.achievetodo.gameplay.nativeguard.NativeSourceReloadAgent", true, null)
             .getMethod("initialize", Instrumentation.class).invoke(null, instrumentation);
         System.out.println("ATD_NATIVE_BOOTSTRAP classes=" + count);
     }

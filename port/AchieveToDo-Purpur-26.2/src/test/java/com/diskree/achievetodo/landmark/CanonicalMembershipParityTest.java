@@ -108,6 +108,25 @@ public final class CanonicalMembershipParityTest {
         }
         check(!ExactLandmarkGate.denied(ExactLandmarkGate.Result.BYPASS,null,id,null));
         sharedMapLifecycleParity();
+        UUID reloadActor = new UUID(0, 999);
+        var sameCountUnlock = new CanonicalLandmarkMembership();
+        sameCountUnlock.observe(state(reloadActor, 0, 0));
+        sameCountUnlock.reconcileConfiguration(state(reloadActor, 0, 7));
+        check(sameCountUnlock.contains(reloadActor, LandmarkType.VILLAGE));
+        var sameCountLock = new CanonicalLandmarkMembership();
+        sameCountLock.observe(state(reloadActor, 0, 7));
+        sameCountLock.reconcileConfiguration(state(reloadActor, 0, 0));
+        check(!sameCountLock.contains(reloadActor, LandmarkType.VILLAGE));
+
+        var reloadWorld = new LandmarkWorld("reload-world", DimensionType.OVERWORLD);
+        var reloadChunk = new LandmarkChunkKey(reloadWorld, new ChunkCoordinate(2, 3));
+        var reloadMembership = new LoadedLandmarkMembership();
+        check(reloadMembership.publish(reloadChunk, List.of(new LoadedLandmarkMembership.Source("village", true, 0))).isEmpty());
+        reloadMembership.clear();
+        check(reloadMembership.publish(reloadChunk, List.of(new LoadedLandmarkMembership.Source("village", true, 7))).contains("village"));
+        reloadMembership.clear();
+        check(reloadMembership.publish(reloadChunk, List.of(new LoadedLandmarkMembership.Source("village", true, 0))).isEmpty());
+        System.out.println("S3B_CONFIG_RELOAD_LANDMARK_PASS equalCount=true loadedAdmissionCacheReset=true");
         System.out.println("S4N_CANONICAL_MEMBERSHIP_ORACLE_PASS checks="+checks+" firstMatch=SHARED_HASHMAP");
     }
 

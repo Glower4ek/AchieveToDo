@@ -80,11 +80,14 @@ public final class NativeLandmarkAgent {
         return targetAndAbilityDenied(actor, level, pos, null);
     }
     public static boolean targetAndAbilityDenied(Object actor, Object level, Object pos, String ability) {
-        if (actor == null) return false;
-        var callback = guard;
-        if (callback == null) return true;
-        try { return callback.test(actor, new Object[]{level, pos, ability}); }
-        catch (RuntimeException | LinkageError unavailable) { return true; }
+        return targetAndAbilityDenied(actor,level,pos,ability,"ORDINARY");
+    }
+    public static boolean targetAndAbilityDenied(Object actor,Object level,Object pos,String ability,String reporting) {
+        if(actor==null)return false;
+        if(!Set.of("ORDINARY","COMBAT","SILENT").contains(reporting))throw new IllegalArgumentException("Unknown denial reporter mode");
+        var callback=guard;if(callback==null)return true;
+        try{return callback.test(actor,new Object[]{level,pos,ability,reporting});}
+        catch(RuntimeException | LinkageError unavailable){return true;}
     }
     static synchronized void changed(Object level, int x, int z) {
         if (owner == null) return;
@@ -168,5 +171,7 @@ public final class NativeLandmarkAgent {
         if (sites[0] != expected) throw new IllegalStateException("S4G native sites " + name + "=" + sites[0] + " expected=" + expected);
         return result;
     }
+    /** Live health only; never installs or repairs a missing guard. */
+    public static synchronized boolean installed() { return enabled && !failed && owner != null && guard != null && failures.isEmpty() && transformed.equals(HASHES.keySet()); }
     private NativeLandmarkAgent() {}
 }

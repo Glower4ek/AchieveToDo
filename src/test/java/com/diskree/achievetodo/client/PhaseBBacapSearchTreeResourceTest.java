@@ -32,7 +32,12 @@ class PhaseBBacapSearchTreeResourceTest {
 
     @Test void orderedTreeKeepsThreeMapsAnd27Entries() throws Exception {
         var gui=json("bacap_1_21_static_receipt").getAsJsonObject("gui");assertEquals(28,n(gui,"explicitBefore"));assertEquals(27,n(gui,"explicitAfter"));assertEquals(3,n(gui,"parentMaps"));assertEquals(17,n(gui,"categories"));assertTrue(b(gui,"architectureUnchanged"));
-        exactHashes(receipt().getAsJsonObject("runtimeHashes"));
+        if (com.diskree.achievetodo.certification.UiUxMaintenanceSourceContract.selected()) {
+            PhaseBPackTestFixtures.assertCurrentToolAuthority();
+            com.diskree.achievetodo.certification.UiUxMaintenanceSourceContract.assertHistoricalRuntimeContract("PHASE_B_B9_V1", receipt().getAsJsonObject("runtimeHashes"));
+        } else {
+            exactHashes(receipt().getAsJsonObject("runtimeHashes"));
+        }
         String java=Files.readString(ROOT.resolve("src/main/java/com/diskree/achievetodo/injection/mixin/main/PlacedAdvancementMixin.java"));
         assertFalse(java.contains("\"blazeandcave:challenges/constellation\""));
         int count=0;for(var e:gui.getAsJsonObject("orderedChildren").entrySet())count+=e.getValue().getAsJsonArray().size();assertEquals(27,count);

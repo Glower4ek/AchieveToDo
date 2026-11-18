@@ -35,19 +35,39 @@ public final class BacapPacks {
         return Path.of(value).toAbsolutePath().normalize();
     }
 
+    /** Same accepted canonical set/relative order as loaded-registry admission. */
+    public static void validateEnabledPackSelection(java.util.Collection<String> selection) throws IOException {
+        var enabled=List.copyOf(selection);
+        var allowed=java.util.Set.of("vanilla","paper","AchieveToDo/embedded","file/bacap.zip","file/bacap_override.zip");
+        if(enabled.size()!=allowed.size() || !new java.util.HashSet<>(enabled).equals(allowed)
+            || enabled.indexOf("file/bacap.zip")>=enabled.indexOf("file/bacap_override.zip"))
+            throw new IOException("BACAP_PACK_SET_OR_ORDER: "+enabled);
+    }
     public static Map<String, Map<String, byte[]>> validate(Path directory) throws IOException {
+        Map<String, Map<String, byte[]>> packs=new LinkedHashMap<>();
+        for(String id:IDS)packs.put(id,readArchive(directory.resolve(id+".zip")));
+        return validateEntries(packs);
+    }
+    /** Reads the actual staged native handles. Ownership stays with the native resource manager. */
+    public static Map<String, Map<String, byte[]>> validateOpenedArchives(Map<String, java.util.zip.ZipFile> archives) throws IOException {
+        if(!archives.keySet().equals(new java.util.HashSet<>(IDS)))throw new IOException("Incomplete staged BACAP archives");
+        Map<String, Map<String, byte[]>> packs=new LinkedHashMap<>();
+        for(String id:IDS)packs.put(id,readArchive(archives.get(id)));
+        return validateEntries(packs);
+    }
+
+    private static Map<String, Map<String, byte[]>> validateEntries(Map<String, Map<String, byte[]>> packs) throws IOException {
         Properties pins = new Properties();
         try (var input = BacapPacks.class.getResourceAsStream("/bacap/s3a-profile.properties")) {
             if (input == null) throw new IOException("BACAP identity metadata missing");
             pins.load(input);
         }
-        Map<String, Map<String, byte[]>> packs = new LinkedHashMap<>();
+        if (!packs.keySet().equals(new java.util.HashSet<>(IDS))) throw new IOException("Unexpected BACAP source IDs");
         for (String id : IDS) {
-            Map<String, byte[]> entries = readArchive(directory.resolve(id + ".zip"));
+            Map<String, byte[]> entries = packs.get(id);
             if (!contentDigest(entries).equals(pins.getProperty(id + ".content-sha256"))) {
                 throw new IOException("BACAP_INCOMPATIBLE: " + id + " content differs from canonical 0.2.0 S3A profile");
             }
-            packs.put(id, entries);
         }
         byte[] marker = packs.get("bacap").get(MARKER);
         if (marker == null) throw new IOException("BACAP compatibility marker missing");
@@ -61,9 +81,11 @@ public final class BacapPacks {
     }
 
     public static Map<String, byte[]> readArchive(Path archive) throws IOException {
+        try (ZipFile zip = new ZipFile(archive.toFile())) { return readArchive(zip); }
+    }
+    private static Map<String, byte[]> readArchive(ZipFile zip) throws IOException {
         Map<String, byte[]> entries = new TreeMap<>();
         long total = 0;
-        try (ZipFile zip = new ZipFile(archive.toFile())) {
             var iterator = zip.entries();
             while (iterator.hasMoreElements()) {
                 var entry = iterator.nextElement();
@@ -78,7 +100,6 @@ public final class BacapPacks {
                     throw new IOException("Duplicate or oversized BACAP archive entry: " + name);
                 }
             }
-        }
         return entries;
     }
 

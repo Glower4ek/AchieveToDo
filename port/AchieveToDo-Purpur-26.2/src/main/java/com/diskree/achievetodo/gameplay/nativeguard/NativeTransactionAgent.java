@@ -13,6 +13,7 @@ public final class NativeTransactionAgent {
     private static final ClassDesc SELF = ClassDesc.of(NativeTransactionAgent.class.getName());
     private static final ClassDesc OBJECT = ConstantDescs.CD_Object;
     private static final MethodTypeDesc DENIED = MethodTypeDesc.of(ConstantDescs.CD_boolean, OBJECT, OBJECT);
+    private static final MethodTypeDesc ENDER_DENIED = MethodTypeDesc.of(ConstantDescs.CD_boolean, OBJECT, OBJECT, OBJECT);
     private static final Map<String, String> HASHES = Map.ofEntries(
         // Pinned Purpur 2620 input classes. Generated from the verified server artifact.
         Map.entry("net/minecraft/world/item/component/Consumable", "d4b40af8dff544f98faced1cc0156bc7d681eb6f599b3b5a55bb2cf3c7fc4a7c"),
@@ -73,7 +74,12 @@ public final class NativeTransactionAgent {
 
     public static boolean food(Object actor, Object stack) { return denied("food", actor, stack); }
     public static boolean equipment(Object actor, Object stack) { return denied("equipment", actor, stack); }
-    public static boolean ender(Object actor, Object unused) { return denied("ender", actor, unused); }
+    public static boolean ender(Object actor, Object level, Object pos) {
+        if (actor == null) return false;
+        if (Boolean.getBoolean("achievetodo.landmarks.exactPrototype"))
+            return NativeLandmarkAgent.targetAndAbilityDenied(actor, level, pos, "OPEN_ENDER_CHEST");
+        return denied("ender", actor, null);
+    }
 
     public static boolean armorPlace(Object slot, Object stack) {
         try {
@@ -172,8 +178,12 @@ public final class NativeTransactionAgent {
                             || ender && call.name().equalsString("setActiveChest")) {
                             sites[0]++;
                             b.aload(food ? 1 : equip ? 2 : 4);
-                            if (food) b.aload(2); else if (equip) b.aload(1); else b.aconst_null();
-                            b.invokestatic(SELF, food ? "food" : equip ? "equipment" : "ender", DENIED)
+                            if (food) b.aload(2);
+                            else if (equip) b.aload(1);
+                            else if (ender) b.aload(2).aload(3);
+                            else b.aconst_null();
+                            b.invokestatic(SELF, food ? "food" : equip ? "equipment" : "ender",
+                                ender ? ENDER_DENIED : DENIED)
                                 .ifThen(deny -> {
                                     if (ender) deny.pop2(); else deny.pop();
                                     deny.getstatic(ClassDesc.of("net.minecraft.world.InteractionResult"), "PASS",
@@ -206,5 +216,7 @@ public final class NativeTransactionAgent {
         return result;
     }
 
+    /** Live health only; never installs or repairs a missing guard. */
+    public static synchronized boolean installed() { return started && owner != null && callbacks.keySet().equals(Set.of("food", "equipment", "bundle", "ender", "shulker")) && failures.isEmpty() && transformed.equals(HASHES.keySet()); }
     private NativeTransactionAgent() {}
 }
