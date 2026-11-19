@@ -1,0 +1,76 @@
+{
+  "group": "action_attack_with_trident",
+  "reviewer": "R7",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "attack_with_trident: 3 direct sites + findItemAbility resolver. SHA-256 of NativeActionBindings, NativeActionAgent, NativeActionSpecs recomputed: all match E1. Opened: NativeActionAgent.java:73-79 maps the weapon item TRIDENT -> ATTACK_WITH_TRIDENT for Player.attack (COMBAT mode); NativeActionSpecs.java:28/31 inject at Player.attack HEAD (melee) and TridentItem.use before startUsingItem (throw); NativeActionBindings.java:14 registers the ability. Thresholds are listed for normal 244/easy 188/hard 300/chaos 623/custom_vision 244. Config files match."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "All 34 excerpts read: 32 PASS + 2 NA. Throw case, locked (c11-c15, c17 and the offhand row): 3 DENIAL_INTENT ability=attack_with_trident lines, the trident-entity probe fails before and after, count unchanged, and the client keeps the trident. Allowed: probe 'Test passed. Count: 1', trident left the inventory. Melee case, locked: 1 denial intent, pig health 10.0f -> 10.0f. Allowed: pig 10.0f -> 1.0f, and the leak is only the multiclassed trident_melee criterion with no count change. Creative throws and hits (bypass), op denied, spectator gets no effect (vanillaEffect=false). The 2 NA rows (offhand melee) have empty excerpts (lines 1-0). I reproduced every verdict.",
+      "rowsRead": [
+        "campaign11 offhand attack_with_trident/melee route offhand_locked (NA_OFFHAND_NOT_APPLICABLE)",
+        "campaign11 offhand attack_with_trident/melee route offhand_allowed (NA_OFFHAND_NOT_APPLICABLE)",
+        "campaign11 pass1 attack_with_trident locked (PASS)",
+        "campaign11 pass1 attack_with_trident allowed (PASS)",
+        "campaign11 pass1 attack_with_trident/melee route locked (PASS)",
+        "campaign11 pass1 attack_with_trident/melee route allowed (PASS)",
+        "campaign11 modes attack_with_trident creative (PASS)",
+        "campaign11 modes attack_with_trident op (PASS)",
+        "campaign11 modes attack_with_trident spectator (PASS)",
+        "campaign11 modes attack_with_trident/melee route creative (PASS)",
+        "campaign11 modes attack_with_trident/melee route op (PASS)",
+        "campaign11 modes attack_with_trident/melee route spectator (PASS)",
+        "campaign11 offhand attack_with_trident offhand_locked (PASS)",
+        "campaign11 offhand attack_with_trident offhand_allowed (PASS)",
+        "campaign12 thresholds-easy attack_with_trident locked (PASS)",
+        "campaign12 thresholds-easy attack_with_trident allowed (PASS)",
+        "campaign12 thresholds-easy attack_with_trident/melee route locked (PASS)",
+        "campaign12 thresholds-easy attack_with_trident/melee route allowed (PASS)",
+        "campaign13 thresholds-hard attack_with_trident locked (PASS)",
+        "campaign13 thresholds-hard attack_with_trident allowed (PASS)",
+        "campaign13 thresholds-hard attack_with_trident/melee route locked (PASS)",
+        "campaign13 thresholds-hard attack_with_trident/melee route allowed (PASS)",
+        "campaign14 thresholds-chaos attack_with_trident locked (PASS)",
+        "campaign14 thresholds-chaos attack_with_trident allowed (PASS)",
+        "campaign14 thresholds-chaos attack_with_trident/melee route locked (PASS)",
+        "campaign14 thresholds-chaos attack_with_trident/melee route allowed (PASS)",
+        "campaign15 thresholds-custom_vision attack_with_trident locked (PASS)",
+        "campaign15 thresholds-custom_vision attack_with_trident allowed (PASS)",
+        "campaign15 thresholds-custom_vision attack_with_trident/melee route locked (PASS)",
+        "campaign15 thresholds-custom_vision attack_with_trident/melee route allowed (PASS)",
+        "campaign17 reload attack_with_trident locked (PASS)",
+        "campaign17 reload attack_with_trident allowed (PASS)",
+        "campaign17 reload attack_with_trident/melee route locked (PASS)",
+        "campaign17 reload attack_with_trident/melee route allowed (PASS)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11..campaign17 all onlineMode=true with 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' lines. Independently: each runtime/server.properties has online-mode=true, and the exact UUID and join lines were found in the first 400 lines of each runtime's receipts/output.log."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "Modes rows creative/op/spectator present for every ability/case (campaign11 tag modes). Threshold rows present for normal (pass1, campaign11), easy (c12), hard (c13), chaos (c14), custom_vision (c15), and every row's threshold equals the ability's value in that runtime's config file. Offhand: the throw route has offhand_locked/offhand_allowed rows (c11; client shows main hand air and off hand trident, consumed only when allowed). The melee route has NA_OFFHAND_NOT_APPLICABLE for both phases. That NA is justified: Player.attack uses getWeaponItem() (the main-hand weapon), so there is no off-hand melee route. NativeActionAgent.java:75."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "4 rows tagged reload, all from campaign17. MANIFEST.e5Reload.evidence generationBefore=1, generationAfter=2 (also FINAL_STATUS_R5.json). All 8 ATD_STAGE2A_STATE lines of the campaign17 excerpts show generation 2 (non-campaign17 excerpts all generation 1). Each reload verdict (all PASS) equals the pass1 verdict for the same ability/case/phase (attack_with_trident throw + melee)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 34 rows, all REPRODUCED, recorded verdict equals rows.jsonl verdict for every line. MANIFEST runtimes 11-17 replay reproducedAll=true (1235/310/310/310/310/44/310). Plugin SHA-256 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b in MANIFEST.plugin.perRuntime for all 7 runtimes; recomputed runtime/plugins/achievetodo.jar of all 7 runtimes = same. Client mod recomputed from disk = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081. Recomputed SHA-256 of campaign-results.jsonl and REPLAY.json of all 7 runtimes: all equal to evidenceHashes. Every rows.jsonl row found verbatim (ability/tag/phase/verdict/logLines) in its runtime's campaign-results.jsonl. All excerpt lines of the group were matched against the raw output.log at the cited line ranges (compacted STATE lines matched on tick, count, mode, op, generation): 0 mismatches."
+    }
+  },
+  "superseded": "All superseded entries in this group are the r3 'reload' rows (was PASS -> now PASS, by campaign17). Justified: campaign11 output.log:88679-88680 shows 'Incorrect argument for command / reload confirm<--[HERE]', and campaign11 never logs generation=2, so the r3 reload pass never reloaded. campaign17 output.log:247-255 shows a real datapack reload ('Reloading!', preflight generation=2, PROGRESSION_CONFIG_READY generation=2 file=normal.toml) before the reload pass. No r4 (campaign16 chest-room fixture fix) row is superseded in this group, and no campaign16 row belongs to it.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review/action_attack_with_trident/E1.json thresholds.chaos_20261116 vs campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml (sha256 5fcf0a51...)",
+      "description": "E1 cites only the campaign16 chaos config (sha256 e55204bd...). The thresholds-chaos rows come from campaign14, whose chaos_20261116.toml has a different hash and different values (attack_with_trident 155 in campaign14 vs 623 in E1). The rows match campaign14's file, which I checked by hand, but E1 does not cite that file. This is covered by accepted behaviour (b), so it is only a gap in the E1 documentation."
+    }
+  ]
+}

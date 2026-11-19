@@ -1,0 +1,4659 @@
+{
+ "sources": {
+  "r3": {
+   "campaign11": "normal",
+   "campaign12": "easy",
+   "campaign13": "hard",
+   "campaign14": "chaos",
+   "campaign15": "custom_vision"
+  },
+  "supplements": [
+   [
+    "campaign16",
+    "chaos",
+    null
+   ],
+   [
+    "campaign17",
+    "normal",
+    "reload"
+   ],
+   [
+    "campaign18",
+    "normal",
+    "equip-routes"
+   ]
+  ]
+ },
+ "rows": 2579,
+ "verdictCounts": {
+  "PASS": 2528,
+  "NA_NO_LOCKED_STATE": 10,
+  "PASS_NO_OVERLAY": 14,
+  "PASS_PARITY_ENTER_BLOCK": 12,
+  "NA_OFFHAND_NOT_APPLICABLE": 2,
+  "PASS_MASKED_BY_DEPENDENCY": 13
+ },
+ "superseded": [
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_village",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS_MASKED_BY_DEPENDENCY",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_village",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_shipwreck",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_shipwreck",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_ruined_portal",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS_MASKED_BY_DEPENDENCY",
+   "now": "PASS_MASKED_BY_DEPENDENCY",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_ruined_portal",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_buried_treasure",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS_MASKED_BY_DEPENDENCY",
+   "now": "PASS_MASKED_BY_DEPENDENCY",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_buried_treasure",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_igloo",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_igloo",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_ocean_ruin",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS_MASKED_BY_DEPENDENCY",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_ocean_ruin",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_desert_pyramid",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS_MASKED_BY_DEPENDENCY",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_desert_pyramid",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_mineshaft",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS_MASKED_BY_DEPENDENCY",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_mineshaft",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_swamp_hut",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS_MASKED_BY_DEPENDENCY",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_swamp_hut",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_ancient_city",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "NA_NO_LOCKED_STATE",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_ancient_city",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_fortress",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS_MASKED_BY_DEPENDENCY",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_fortress",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_jungle_pyramid",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_jungle_pyramid",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_bastion_remnant",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS_MASKED_BY_DEPENDENCY",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_bastion_remnant",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_pillager_outpost",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "NA_NO_LOCKED_STATE",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_pillager_outpost",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_monument",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS_MASKED_BY_DEPENDENCY",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_monument",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_monster_room",
+    "feature found in fresh chunks",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_monster_room",
+    "feature found in fresh chunks",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_trail_ruins",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS_MASKED_BY_DEPENDENCY",
+   "now": "PASS_MASKED_BY_DEPENDENCY",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_trail_ruins",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_stronghold",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_stronghold",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_mansion",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS_MASKED_BY_DEPENDENCY",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_mansion",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_desert_well",
+    "feature found in fresh chunks",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_desert_well",
+    "feature found in fresh chunks",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_trial_chambers",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS_MASKED_BY_DEPENDENCY",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_trial_chambers",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "FAIL_NO_EFFECT",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_end_city",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS_MASKED_BY_DEPENDENCY",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "chaos",
+    "thresholds-chaos",
+    "interact_inside_end_city",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign16"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_chest",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_chest",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_crafting_table",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_crafting_table",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_barrel",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_barrel",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_stonecutter",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_stonecutter",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_grindstone",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_grindstone",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_anvil",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_anvil",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_beacon",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_beacon",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_cartography_table",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_cartography_table",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_ender_chest",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_ender_chest",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_brewing_stand",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_brewing_stand",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_smithing_table",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_smithing_table",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_loom",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_loom",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_shulker_box",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_shulker_box",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_enchanting_table",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_enchanting_table",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_furnace",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_furnace",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_smoker",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_smoker",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_blast_furnace",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_blast_furnace",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_chest",
+    "shelf transfer (non-menu)",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_chest",
+    "shelf transfer (non-menu)",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_door",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_door",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_trapdoor",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_trapdoor",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_fence_gate",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_fence_gate",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "jump",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "jump",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "sneak",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "sneak",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "sprint",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "sprint",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "swim",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "swim",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_inventory",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "open_inventory",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "vision",
+    "locked: GameRendererMixin black VisionOverlay on screen; it fades over ~50 ticks after unlock. NORMAL/EASY/HARD threshold 0 -> NA_NO_LOCKED_STATE; covered by a Custom config with vision > 0",
+    "locked"
+   ],
+   "was": "NA_NO_LOCKED_STATE",
+   "now": "NA_NO_LOCKED_STATE",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "vision",
+    "locked: GameRendererMixin black VisionOverlay on screen; it fades over ~50 ticks after unlock. NORMAL/EASY/HARD threshold 0 -> NA_NO_LOCKED_STATE; covered by a Custom config with vision > 0",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_shield",
+    "server truth: Item.use Success vs Pass",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_shield",
+    "server truth: Item.use Success vs Pass",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_spyglass",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_spyglass",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "shoot_bow",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "shoot_bow",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "shoot_crossbow",
+    "charging is not the guarded boundary; performShooting is",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "shoot_crossbow",
+    "charging is not the guarded boundary; performShooting is",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "attack_with_trident",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "attack_with_trident",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "attack_with_trident",
+    "melee route",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "attack_with_trident",
+    "melee route",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "attack_with_mace",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "attack_with_mace",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_ender_eye",
+    "needs a locatable stronghold",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_ender_eye",
+    "needs a locatable stronghold",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "glide_with_fireworks",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "glide_with_fireworks",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "place_end_crystal",
+    "aims at obsidian top face",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "place_end_crystal",
+    "aims at obsidian top face",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_ominous_bottle",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_ominous_bottle",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_jukebox",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_jukebox",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_composter",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_composter",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_campfire",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_campfire",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "charge_respawn_anchor",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "charge_respawn_anchor",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_water_bucket",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_water_bucket",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_shears",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_shears",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_flint_and_steel",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_flint_and_steel",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "ignite_tnt",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "ignite_tnt",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_cauldron",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_cauldron",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_brush",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_brush",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "unlock_vault",
+    "",
+    "locked"
+   ],
+   "was": "PASS_NO_OVERLAY",
+   "now": "PASS_NO_OVERLAY",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "unlock_vault",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "enter_nether",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "enter_nether",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "enter_end",
+    "walk into portal after observation",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS_PARITY_ENTER_BLOCK",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "enter_end",
+    "walk into portal after observation",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "teleport_outer_islands",
+    "central gateway (y=75, |x|,|z|<=96 per NativePortalAgent.central); vanilla finds the outer exit itself",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS_PARITY_ENTER_BLOCK",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "teleport_outer_islands",
+    "central gateway (y=75, |x|,|z|<=96 per NativePortalAgent.central); vanilla finds the outer exit itself",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "sleep",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "sleep",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "get_into_boat",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "get_into_boat",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "get_into_minecart",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "get_into_minecart",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "break_blocks",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "break_blocks",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "break_blocks_in_negative_y",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "break_blocks_in_negative_y",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_golden_tools",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_golden_tools",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_wooden_tools",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_wooden_tools",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_stone_tools",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_stone_tools",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_iron_tools",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_iron_tools",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_diamond_tools",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_diamond_tools",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_netherite_tools",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_netherite_tools",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_copper_tools",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_copper_tools",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_golden_armor",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_golden_armor",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_leather_armor",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_leather_armor",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_chainmail_armor",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_chainmail_armor",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_iron_armor",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_iron_armor",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_turtle_helmet",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_turtle_helmet",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_diamond_armor",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_diamond_armor",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_elytra",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_elytra",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_netherite_armor",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_netherite_armor",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_copper_armor",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "equip_copper_armor",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "put_in_bundle",
+    "bundle on cursor, left-click apple slot (hotbar 0=slot36, 1=slot37)",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "put_in_bundle",
+    "bundle on cursor, left-click apple slot (hotbar 0=slot36, 1=slot37)",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "throw_snowball",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "throw_snowball",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "throw_egg",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "throw_egg",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "throw_ender_pearl",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "throw_ender_pearl",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "throw_wind_charge",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "throw_wind_charge",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_fishing_rod",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "use_fishing_rod",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_mason",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_mason",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_cartographer",
+    "",
+    "locked"
+   ],
+   "was": "PASS_NO_OVERLAY",
+   "now": "PASS_NO_OVERLAY",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_cartographer",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_leatherworker",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_leatherworker",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_shepherd",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_shepherd",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_butcher",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_butcher",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_farmer",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_farmer",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_cleric",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_cleric",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_fisherman",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_fisherman",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_fletcher",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_fletcher",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_armorer",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_armorer",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_weaponsmith",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_weaponsmith",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_toolsmith",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_toolsmith",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_librarian",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_librarian",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_wandering_trader",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "trade_with_wandering_trader",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_salmon",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_salmon",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cod",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cod",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_tropical_fish",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_tropical_fish",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_rotten_flesh",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_rotten_flesh",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_spider_eye",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_spider_eye",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_sweet_berries",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_sweet_berries",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_glow_berries",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_glow_berries",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_poisonous_potato",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_poisonous_potato",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_suspicious_stew",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_suspicious_stew",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_chicken",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_chicken",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_carrot",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_carrot",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_beetroot",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_beetroot",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_dried_kelp",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_dried_kelp",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_potato",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_potato",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_apple",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_apple",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_melon_slice",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_melon_slice",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cookie",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cookie",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_mushroom_stew",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_mushroom_stew",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_beetroot_soup",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_beetroot_soup",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_rabbit_stew",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_rabbit_stew",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_honey",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_honey",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_mutton",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_mutton",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_pufferfish",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_pufferfish",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_pumpkin_pie",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_pumpkin_pie",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_golden_apple",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_golden_apple",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_enchanted_golden_apple",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_enchanted_golden_apple",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_rabbit",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_rabbit",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_beef",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_beef",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_porkchop",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_porkchop",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_baked_potato",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_baked_potato",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_salmon",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_salmon",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_cod",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_cod",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_rabbit",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_rabbit",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_chicken",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_chicken",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_chorus_fruit",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_chorus_fruit",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_mutton",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_mutton",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_porkchop",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_porkchop",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_bread",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_bread",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_beef",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_cooked_beef",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_golden_carrot",
+    "",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "eat_golden_carrot",
+    "",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_village",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_village",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_shipwreck",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_shipwreck",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_ruined_portal",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_ruined_portal",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_buried_treasure",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_buried_treasure",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_igloo",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_igloo",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_ocean_ruin",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_ocean_ruin",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_desert_pyramid",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_desert_pyramid",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_mineshaft",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_mineshaft",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_swamp_hut",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_swamp_hut",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_ancient_city",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_ancient_city",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_fortress",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_fortress",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_jungle_pyramid",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_jungle_pyramid",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_bastion_remnant",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_bastion_remnant",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_pillager_outpost",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_pillager_outpost",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_monument",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_monument",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_monster_room",
+    "feature found in fresh chunks",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_monster_room",
+    "feature found in fresh chunks",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_trail_ruins",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_trail_ruins",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_stronghold",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_stronghold",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_mansion",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_mansion",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_desert_well",
+    "feature found in fresh chunks",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_desert_well",
+    "feature found in fresh chunks",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_trial_chambers",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_trial_chambers",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_end_city",
+    "chest at structure start",
+    "locked"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  },
+  {
+   "key": [
+    "normal",
+    "reload",
+    "interact_inside_end_city",
+    "chest at structure start",
+    "allowed"
+   ],
+   "was": "PASS",
+   "now": "PASS",
+   "by": "campaign17"
+  }
+ ],
+ "strayCases": [],
+ "statusCounts": {
+  "RUNTIME_PASS": 57
+ },
+ "groups": {
+  "food_component_start_40": {
+   "status": "RUNTIME_PASS",
+   "abilities": 40,
+   "problems": [],
+   "notes": [
+    "eat_salmon: custom_vision:locked=PASS_MASKED_BY_DEPENDENCY"
+   ]
+  },
+  "equipment_identity9_routes_slots": {
+   "status": "RUNTIME_PASS",
+   "abilities": 9,
+   "problems": [],
+   "notes": []
+  },
+  "tool_material7_each_native_mode": {
+   "status": "RUNTIME_PASS",
+   "abilities": 7,
+   "problems": [],
+   "notes": [
+    "use_golden_tools: hard:locked=PASS_MASKED_BY_DEPENDENCY"
+   ]
+  },
+  "villager13_profession_resolver": {
+   "status": "RUNTIME_PASS",
+   "abilities": 13,
+   "problems": [],
+   "notes": [
+    "trade_with_cartographer: chaos:locked=PASS_NO_OVERLAY, custom_vision:locked=PASS_NO_OVERLAY, easy:locked=PASS_NO_OVERLAY, hard:locked=PASS_NO_OVERLAY, normal:locked=PASS_NO_OVERLAY, normal:op=PASS_NO_OVERLAY"
+   ]
+  },
+  "wandering_trader_separate": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "furnace3_shared_base_use": {
+   "status": "RUNTIME_PASS",
+   "abilities": 3,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_chest": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_crafting_table": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_barrel": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_stonecutter": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_grindstone": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_anvil": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_beacon": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_cartography_table": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_ender_chest": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_brewing_stand": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_smithing_table": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_loom": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_shulker_box": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_enchanting_table": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "shelf_open_chest_non_menu": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "landmark22_selectors_and_action_matrix": {
+   "status": "RUNTIME_PASS",
+   "abilities": 22,
+   "problems": [],
+   "notes": [
+    "interact_inside_ruined_portal/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_buried_treasure/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_desert_pyramid/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_mineshaft/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_swamp_hut/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_fortress/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_bastion_remnant/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_trail_ruins/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_mansion/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_end_city/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY"
+   ]
+  },
+  "mining_basic_two": {
+   "status": "RUNTIME_PASS",
+   "abilities": 2,
+   "problems": [],
+   "notes": []
+  },
+  "opening_three_native_owners": {
+   "status": "RUNTIME_PASS",
+   "abilities": 3,
+   "problems": [],
+   "notes": []
+  },
+  "bundle_two_native_routes": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "throwables_four_paper_candidates": {
+   "status": "RUNTIME_PASS",
+   "abilities": 4,
+   "problems": [],
+   "notes": []
+  },
+  "fishing_cast_only": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "sleep": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "vehicle_mount_two": {
+   "status": "RUNTIME_PASS",
+   "abilities": 2,
+   "problems": [],
+   "notes": []
+  },
+  "movement_jump": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": [
+    "jump: custom_vision:locked=PASS_MASKED_BY_DEPENDENCY"
+   ]
+  },
+  "movement_swim": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "movement_sneak": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "movement_sprint": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "client_local_vision": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "client_local_open_inventory": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_shield": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_shoot_crossbow": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_ominous_bottle": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_attack_with_trident": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_shoot_bow": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_jukebox": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_composter": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_charge_respawn_anchor": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_attack_with_mace": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_ender_eye": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_glide_with_fireworks": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_place_end_crystal": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_campfire": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_spyglass": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_use_water_bucket": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_use_shears": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_use_flint_and_steel": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_ignite_tnt": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_use_cauldron": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_use_brush": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_unlock_vault": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": [
+    "unlock_vault: custom_vision:locked=PASS_NO_OVERLAY, easy:locked=PASS_NO_OVERLAY, hard:locked=PASS_NO_OVERLAY, normal:locked=PASS_NO_OVERLAY, normal:offhand_locked=PASS_NO_OVERLAY, normal:op=PASS_NO_OVERLAY"
+   ]
+  },
+  "portal_three_conditioned": {
+   "status": "RUNTIME_PASS",
+   "abilities": 3,
+   "problems": [],
+   "notes": [
+    "enter_end/walk into portal after observation: chaos:locked=PASS_PARITY_ENTER_BLOCK, custom_vision:locked=PASS_PARITY_ENTER_BLOCK, easy:locked=PASS_PARITY_ENTER_BLOCK, hard:locked=PASS_PARITY_ENTER_BLOCK, normal:locked=PASS_PARITY_ENTER_BLOCK",
+    "teleport_outer_islands/central gateway (y=75, |x|,|z|<=96 per NativePortalAgent.central); vanilla finds the outer exit itself: chaos:locked=PASS_PARITY_ENTER_BLOCK, custom_vision:locked=PASS_PARITY_ENTER_BLOCK, easy:locked=PASS_PARITY_ENTER_BLOCK, hard:locked=PASS_PARITY_ENTER_BLOCK, normal:locked=PASS_PARITY_ENTER_BLOCK"
+   ]
+  }
+ }
+}

@@ -1,0 +1,158 @@
+{
+  "started": "2026-11-18T21:58:33+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\repo\\port\\AchieveToDo-Purpur-26.2\\build\\libs\\AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar",
+  "runtimes": {
+    "campaign06": {
+      "mode": "normal",
+      "started": "2026-11-18T21:58:33+00:00",
+      "passes": {
+        "modes-r2": {
+          "phases": "creative,op,spectator",
+          "counts": {
+            "PASS": 452,
+            "NA_NO_LOCKED_STATE": 1,
+            "INVALID_SCORE_DRIFT_DURING_ACTION": 1,
+            "PASS_NO_OVERLAY": 8,
+            "FAIL_NO_EFFECT": 1,
+            "FAIL_LEAK": 1,
+            "INVALID_FIXTURE_NOT_HUNGRY": 1
+          },
+          "finished": "2026-11-18T23:21:07+00:00"
+        },
+        "offhand-r2": {
+          "phases": "offhand_locked,offhand_allowed",
+          "counts": {
+            "PASS": 2,
+            "NA_OFFHAND_NOT_APPLICABLE": 2
+          },
+          "finished": "2026-11-18T23:21:24+00:00"
+        },
+        "portals-r2": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 3,
+            "PASS_NO_OVERLAY": 1
+          },
+          "finished": "2026-11-18T23:21:58+00:00"
+        },
+        "portals-reload-r2": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 3,
+            "PASS_NO_OVERLAY": 1
+          },
+          "finished": "2026-11-18T23:23:03+00:00"
+        }
+      },
+      "finished": "2026-11-18T23:23:08+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 477
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign07": {
+      "mode": "easy",
+      "started": "2026-11-18T23:23:08+00:00",
+      "passes": {
+        "portals-easy-r2": {
+          "phases": "locked,allowed",
+          "counts": {
+            "FAIL_LEAK": 1,
+            "PASS": 2,
+            "PASS_NO_OVERLAY": 1
+          },
+          "finished": "2026-11-18T23:24:21+00:00"
+        }
+      },
+      "finished": "2026-11-18T23:24:25+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 4
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign08": {
+      "mode": "hard",
+      "started": "2026-11-18T23:40:06+00:00",
+      "passes": {
+        "thresholds-hard": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 305,
+            "PASS_NO_OVERLAY": 3,
+            "FAIL_LEAK": 1,
+            "FAIL_NO_EFFECT": 1
+          },
+          "finished": "2026-11-19T00:35:58+00:00"
+        }
+      },
+      "finished": "2026-11-19T00:36:02+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 310
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign09": {
+      "mode": "chaos",
+      "started": "2026-11-19T00:36:02+00:00",
+      "passes": {
+        "thresholds-chaos": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 296,
+            "NA_NO_LOCKED_STATE": 3,
+            "PASS_NO_OVERLAY": 3,
+            "FAIL_LEAK": 1,
+            "ERROR": 1,
+            "FAIL_NO_EFFECT": 6
+          },
+          "finished": "2026-11-19T01:39:30+00:00"
+        }
+      },
+      "finished": "2026-11-19T01:39:34+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 309,
+          "ERROR_ROW": 1
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign10": {
+      "mode": "E:\\Vibecode\\AchieveToDo\\certification\\w5-campaign\\configs\\custom_vision.toml",
+      "started": "2026-11-19T01:39:34+00:00",
+      "passes": {
+        "thresholds-custom_vision": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 305,
+            "PASS_NO_OVERLAY": 3,
+            "FAIL_LEAK": 1,
+            "FAIL_NO_EFFECT": 1
+          },
+          "finished": "2026-11-19T02:34:49+00:00"
+        }
+      },
+      "finished": "2026-11-19T02:34:54+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 310
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "r2",
+  "finished": "2026-11-19T02:34:54+00:00"
+}

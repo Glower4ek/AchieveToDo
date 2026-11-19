@@ -1,0 +1,72 @@
+{
+  "group": "mining_basic_two",
+  "reviewer": "R7",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "break_blocks and break_blocks_in_negative_y: 4 direct sites each + findItemAbility resolver. SHA-256 of BlockBreakAdapter, GameplayDenialEffects, GameplayGate, NativeToolBindings recomputed: all match E1. Opened: BlockBreakAdapter.java:70-73 adds BREAK_BLOCKS_IN_NEGATIVE_Y when y<0 and BREAK_BLOCKS always; GameplayGate.java:42-44 allowsBreak checks both; NativeToolBindings.java:35-39 BASIC mode accepts only these two abilities and calls GameplayGate.allows. Thresholds are listed for both: normal 32/38, easy 6/32, hard 34/42, chaos 34/42, custom_vision 32/38. Config files match, and campaign14's chaos values are also 34/42."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "All 30 excerpts read, all PASS. The probe is the block-existence command ('Test passed' = block present). Locked break_blocks (dirt at y=100) and break_blocks_in_negative_y (dirt at y=-59) in c11-c15 and c17: the block is still present after LEFT_CLICK_BLOCK, count unchanged, and the client overlay 'You can't break blocks' is in rows. Allowed: 'Test failed' after (block gone), count unchanged. For the negative_y locked rows the score is at or above the break_blocks threshold, so the denial comes from the negative_y gate. Creative breaks (bypass), op denied, spectator gets no attack event (vanillaEffect=false). The STATE lines carry 'ability': null for these abilities because the probe state has no tool abilities. The lock state is shown by count<threshold and the config. I reproduced every verdict.",
+      "rowsRead": [
+        "campaign11 pass1 break_blocks locked (PASS)",
+        "campaign11 pass1 break_blocks allowed (PASS)",
+        "campaign11 pass1 break_blocks_in_negative_y locked (PASS)",
+        "campaign11 pass1 break_blocks_in_negative_y allowed (PASS)",
+        "campaign11 modes break_blocks creative (PASS)",
+        "campaign11 modes break_blocks op (PASS)",
+        "campaign11 modes break_blocks spectator (PASS)",
+        "campaign11 modes break_blocks_in_negative_y creative (PASS)",
+        "campaign11 modes break_blocks_in_negative_y op (PASS)",
+        "campaign11 modes break_blocks_in_negative_y spectator (PASS)",
+        "campaign12 thresholds-easy break_blocks locked (PASS)",
+        "campaign12 thresholds-easy break_blocks allowed (PASS)",
+        "campaign12 thresholds-easy break_blocks_in_negative_y locked (PASS)",
+        "campaign12 thresholds-easy break_blocks_in_negative_y allowed (PASS)",
+        "campaign13 thresholds-hard break_blocks locked (PASS)",
+        "campaign13 thresholds-hard break_blocks allowed (PASS)",
+        "campaign13 thresholds-hard break_blocks_in_negative_y locked (PASS)",
+        "campaign13 thresholds-hard break_blocks_in_negative_y allowed (PASS)",
+        "campaign14 thresholds-chaos break_blocks locked (PASS)",
+        "campaign14 thresholds-chaos break_blocks allowed (PASS)",
+        "campaign14 thresholds-chaos break_blocks_in_negative_y locked (PASS)",
+        "campaign14 thresholds-chaos break_blocks_in_negative_y allowed (PASS)",
+        "campaign15 thresholds-custom_vision break_blocks locked (PASS)",
+        "campaign15 thresholds-custom_vision break_blocks allowed (PASS)",
+        "campaign15 thresholds-custom_vision break_blocks_in_negative_y locked (PASS)",
+        "campaign15 thresholds-custom_vision break_blocks_in_negative_y allowed (PASS)",
+        "campaign17 reload break_blocks locked (PASS)",
+        "campaign17 reload break_blocks allowed (PASS)",
+        "campaign17 reload break_blocks_in_negative_y locked (PASS)",
+        "campaign17 reload break_blocks_in_negative_y allowed (PASS)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11..campaign17 all onlineMode=true with 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' lines. Independently: each runtime/server.properties has online-mode=true, and the exact UUID and join lines were found in the first 400 lines of each runtime's receipts/output.log."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "Modes rows creative/op/spectator present for every ability/case (campaign11 tag modes). Threshold rows present for normal (pass1, campaign11), easy (c12), hard (c13), chaos (c14), custom_vision (c15), and every row's threshold equals the ability's value in that runtime's config file. There are no offhand rows: block breaking only uses the main hand, so there is no off-hand route. There are no NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "4 rows tagged reload, all from campaign17. MANIFEST.e5Reload.evidence generationBefore=1, generationAfter=2 (also FINAL_STATUS_R5.json). All 8 ATD_STAGE2A_STATE lines of the campaign17 excerpts show generation 2 (non-campaign17 excerpts all generation 1). Each reload verdict (all PASS) equals the pass1 verdict for the same ability/case/phase (break_blocks, break_blocks_in_negative_y)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 30 rows, all REPRODUCED, recorded verdict equals rows.jsonl verdict for every line. MANIFEST runtimes 11-17 replay reproducedAll=true (1235/310/310/310/310/44/310). Plugin SHA-256 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b in MANIFEST.plugin.perRuntime for all 7 runtimes; recomputed runtime/plugins/achievetodo.jar of all 7 runtimes = same. Client mod recomputed from disk = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081. Recomputed SHA-256 of campaign-results.jsonl and REPLAY.json of all 7 runtimes: all equal to evidenceHashes. Every rows.jsonl row found verbatim (ability/tag/phase/verdict/logLines) in its runtime's campaign-results.jsonl. All excerpt lines of the group were matched against the raw output.log at the cited line ranges (compacted STATE lines matched on tick, count, mode, op, generation): 0 mismatches."
+    }
+  },
+  "superseded": "All superseded entries in this group are the r3 'reload' rows (was PASS -> now PASS, by campaign17). Justified: campaign11 output.log:88679-88680 shows 'Incorrect argument for command / reload confirm<--[HERE]', and campaign11 never logs generation=2, so the r3 reload pass never reloaded. campaign17 output.log:247-255 shows a real datapack reload ('Reloading!', preflight generation=2, PROGRESSION_CONFIG_READY generation=2 file=normal.toml) before the reload pass. No r4 (campaign16 chest-room fixture fix) row is superseded in this group, and no campaign16 row belongs to it.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/mining_basic_two/excerpts.txt, campaign11 pass1 break_blocks locked (output.log 8922-8931)",
+      "description": "The locked excerpts show ATD_EVENT LEFT_CLICK_BLOCK blockResult=ALLOW and no plugin denial line. The denial shows only as the block-test probe still passing and as the client overlay in rows.jsonl. Also, the compacted STATE lines carry ability:null, so the lock state is inferred from count<threshold. The verdict is reproducible, but there is no direct server-side denial line."
+    }
+  ]
+}

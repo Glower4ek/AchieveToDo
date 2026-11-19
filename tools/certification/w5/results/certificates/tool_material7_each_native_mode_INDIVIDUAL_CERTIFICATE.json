@@ -1,0 +1,145 @@
+{
+  "group": "tool_material7_each_native_mode",
+  "reviewer": "R3",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "7 abilities (use_wooden/stone/copper/iron/golden/diamond/netherite_tools), all mapping DIRECT with family resolver AbilityResolvers.findToolMaterialAbility. 2 cited source files rehashed: NativeToolAgent.java=9f9e4e6cb1bee66a... match; NativeToolBindings.java=e6b57972e5a38db4... match. Opened NativeToolAgent.java:19 (IDS array of the 7 ability ids), NativeToolBindings.java:13-16 (ABILITIES) and the guard lambda NativeToolBindings.java:28-40, which resolves the id to AbilityType and calls GameplayGate.allows(state, uuid, false, ability) for exactly that ability (creative/spectator bypass at :31). Thresholds present for normal/easy/hard/chaos_20261116/custom_vision for all 7 and equal to the cited config files (5 config files rehashed, 0 threshold mismatches). campaign14 chaos values (82/127/352/133/378/560/238) verified in campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml (accepted behaviour b)."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "105 rows: 104 PASS, 1 PASS_MASKED_BY_DEPENDENCY. Judged locked/allowed/op rows myself for all 7 materials in campaign11, 13, 14 and 17 and golden/netherite in all runtimes: locked = probe 'execute if block 8 -59 -3 stone' gives 'Test passed' pre and post (block not mined) + unchanged count + client overlay \"You can't use <material> tools\"; allowed = probe flips to 'Test failed' (stone mined). The only non-PASS row, campaign13 thresholds-hard use_golden_tools locked (score 37, requires break_blocks_in_negative_y=42), shows the client overlay \"You can't break blocks below zero\", so the masking verdict is correct; the golden lock is proven by PASS locked rows in campaign11, 12, 14, 15 and 17. The hard golden allowed row ran at score 42 (raised to the dependency threshold, by harness design). Op rows (op=true, survival) are denied with overlay; creative mines (bypass); spectator: no overlay, no leak.",
+      "rowsRead": [
+        "campaign11 pass1 use_golden_tools locked",
+        "campaign11 pass1 use_golden_tools allowed",
+        "campaign11 pass1 use_wooden_tools locked",
+        "campaign11 pass1 use_wooden_tools allowed",
+        "campaign11 pass1 use_stone_tools locked",
+        "campaign11 pass1 use_stone_tools allowed",
+        "campaign11 pass1 use_iron_tools locked",
+        "campaign11 pass1 use_iron_tools allowed",
+        "campaign11 pass1 use_diamond_tools locked",
+        "campaign11 pass1 use_diamond_tools allowed",
+        "campaign11 pass1 use_netherite_tools locked",
+        "campaign11 pass1 use_netherite_tools allowed",
+        "campaign11 pass1 use_copper_tools locked",
+        "campaign11 pass1 use_copper_tools allowed",
+        "campaign11 modes use_golden_tools creative",
+        "campaign11 modes use_golden_tools op",
+        "campaign11 modes use_golden_tools spectator",
+        "campaign11 modes use_wooden_tools creative",
+        "campaign11 modes use_wooden_tools op",
+        "campaign11 modes use_wooden_tools spectator",
+        "campaign11 modes use_stone_tools creative",
+        "campaign11 modes use_stone_tools op",
+        "campaign11 modes use_stone_tools spectator",
+        "campaign11 modes use_iron_tools creative",
+        "campaign11 modes use_iron_tools op",
+        "campaign11 modes use_iron_tools spectator",
+        "campaign11 modes use_diamond_tools creative",
+        "campaign11 modes use_diamond_tools op",
+        "campaign11 modes use_diamond_tools spectator",
+        "campaign11 modes use_netherite_tools creative",
+        "campaign11 modes use_netherite_tools op",
+        "campaign11 modes use_netherite_tools spectator",
+        "campaign11 modes use_copper_tools creative",
+        "campaign11 modes use_copper_tools op",
+        "campaign11 modes use_copper_tools spectator",
+        "campaign12 thresholds-easy use_golden_tools locked",
+        "campaign12 thresholds-easy use_golden_tools allowed",
+        "campaign12 thresholds-easy use_netherite_tools locked",
+        "campaign12 thresholds-easy use_netherite_tools allowed",
+        "campaign13 thresholds-hard use_golden_tools locked",
+        "campaign13 thresholds-hard use_golden_tools allowed",
+        "campaign13 thresholds-hard use_wooden_tools locked",
+        "campaign13 thresholds-hard use_wooden_tools allowed",
+        "campaign13 thresholds-hard use_stone_tools locked",
+        "campaign13 thresholds-hard use_stone_tools allowed",
+        "campaign13 thresholds-hard use_iron_tools locked",
+        "campaign13 thresholds-hard use_iron_tools allowed",
+        "campaign13 thresholds-hard use_diamond_tools locked",
+        "campaign13 thresholds-hard use_diamond_tools allowed",
+        "campaign13 thresholds-hard use_netherite_tools locked",
+        "campaign13 thresholds-hard use_netherite_tools allowed",
+        "campaign13 thresholds-hard use_copper_tools locked",
+        "campaign13 thresholds-hard use_copper_tools allowed",
+        "campaign14 thresholds-chaos use_golden_tools locked",
+        "campaign14 thresholds-chaos use_golden_tools allowed",
+        "campaign14 thresholds-chaos use_wooden_tools locked",
+        "campaign14 thresholds-chaos use_wooden_tools allowed",
+        "campaign14 thresholds-chaos use_stone_tools locked",
+        "campaign14 thresholds-chaos use_stone_tools allowed",
+        "campaign14 thresholds-chaos use_iron_tools locked",
+        "campaign14 thresholds-chaos use_iron_tools allowed",
+        "campaign14 thresholds-chaos use_diamond_tools locked",
+        "campaign14 thresholds-chaos use_diamond_tools allowed",
+        "campaign14 thresholds-chaos use_netherite_tools locked",
+        "campaign14 thresholds-chaos use_netherite_tools allowed",
+        "campaign14 thresholds-chaos use_copper_tools locked",
+        "campaign14 thresholds-chaos use_copper_tools allowed",
+        "campaign15 thresholds-custom_vision use_golden_tools locked",
+        "campaign15 thresholds-custom_vision use_golden_tools allowed",
+        "campaign15 thresholds-custom_vision use_netherite_tools locked",
+        "campaign15 thresholds-custom_vision use_netherite_tools allowed",
+        "campaign17 reload use_golden_tools locked",
+        "campaign17 reload use_golden_tools allowed",
+        "campaign17 reload use_wooden_tools locked",
+        "campaign17 reload use_wooden_tools allowed",
+        "campaign17 reload use_stone_tools locked",
+        "campaign17 reload use_stone_tools allowed",
+        "campaign17 reload use_iron_tools locked",
+        "campaign17 reload use_iron_tools allowed",
+        "campaign17 reload use_diamond_tools locked",
+        "campaign17 reload use_diamond_tools allowed",
+        "campaign17 reload use_netherite_tools locked",
+        "campaign17 reload use_netherite_tools allowed",
+        "campaign17 reload use_copper_tools locked",
+        "campaign17 reload use_copper_tools allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11 (normal), campaign12 (easy), campaign13 (hard), campaign14 (chaos), campaign15 (custom_vision), campaign16 (chaos, landmarks r4), campaign17 (normal reload): all onlineMode=true, each has 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game'. Independently confirmed online-mode=true in campaign11/runtime/server.properties:47 and campaign17/runtime/server.properties:47, and the UUID/join lines in campaign17/receipts/output.log:231,242. The group's rows come from campaign11-15 and 17, all covered."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator for all 7 abilities (21 rows, campaign11). Threshold rows for normal pass1 (c11), easy (c12), hard (c13), chaos (c14) and custom_vision (c15), 14 rows each. No NA_* rows. No offhand rows: the route is block mining with 'press key.attack' (main hand only), which the OFFHAND selector (campaign_final.py:23-27, click_use/key.use only) excludes; mining has no off-hand variant, so this is acceptable."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows (14) all have campaign=campaign17; MANIFEST.e5Reload = campaign17, generationBefore 1, generationAfter 2. Every ATD_STAGE2A_STATE line inside the reload excerpt blocks shows \"generation\": 2 (parsed all of them). Each reload verdict equals the pass1 verdict for the same ability/phase (all PASS). Raw campaign17/receipts/output.log:249-255 shows 'Reloading!' followed by '[AchieveToDo] PROGRESSION_CONFIG_READY generation=2 file=normal.toml', i.e. a real datapack reload."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 105 rows, all status REPRODUCED and recorded==replayed; each replay 'line' was cross-checked against the runtime's campaign-results.jsonl (ability/tag/phase/verdict match, 0 mismatches over the 201 rows of my 7 groups). MANIFEST.runtimes replay: reproducedAll=true for all 7 runtimes (campaign11 1235, campaign12-15 and 17 310 each, campaign16 44), problems []; the REPLAY.json files were re-read and agree. Plugin SHA-256 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b is identical in MANIFEST.plugin, perRuntime (7/7) and evidenceHashes.plugin, and I recomputed it from all 7 runtime/plugins/achievetodo.jar. Client mod: recomputed SHA-256 of the jar at MANIFEST.clientMod.path = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081 (matches). Recomputed SHA-256 of campaign-results.jsonl and REPLAY.json of all 7 runtimes: all equal evidenceHashes (e.g. campaign11 results e2fdcbee751d9b96..., campaign12 results 828efdb841a2751d...)."
+    }
+  },
+  "superseded": "MANIFEST.superseded lists only the two r3 reload rows of this group (normal/reload locked+allowed, PASS->PASS, by campaign17). Justified: the r3 reload in campaign11 was rejected by the server (campaign11/receipts/output.log:88679-88680 'Incorrect argument for command / reload confirm<--[HERE]'), so those rows were not run after a reload; campaign17 performed a real reload (generation 2, output.log:249-255). No r4 (landmark chest-room fixture) supersession concerns this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/tool_material7_each_native_mode/excerpts.txt (every ATD_STAGE2A_STATE line: \"ability\": {\"USE_<MATERIAL>_TOOLS\": null}); raw campaign11/receipts/output.log:3528 shows the probe abilities map lists only menu/food/movement abilities",
+      "description": "The server state probe never reports the lock state of USE_<MATERIAL>_TOOLS (null in all 210 state lines), contrary to the brief's row anatomy. The lock is still provable from count < threshold in the state line, the ability-specific client overlay text and the absence of effect, so verdicts are reproducible, but the server-side excerpt alone does not show the lock state."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/tool_material7_each_native_mode/excerpts.txt:1-23 (campaign11 pass1 use_golden_tools locked)",
+      "description": "No server-side decision line for the tool guard: the only plugin event is ATD_EVENT LEFT_CLICK_BLOCK cancelled=false blockResult=ALLOW; the denial is shown only by the block surviving the 60-tick attack, the unchanged count and the client overlay. Verdicts are reproducible, but a direct guard log line would make the evidence self-contained."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "campaign_cases.py:181-185; NativeToolBindings.java:32 (modes COMBAT/SILENT/BASIC/ORDINARY)",
+      "description": "Despite the group name 'each_native_mode', only one route is exercised per material: a pickaxe mining stone. Sword/axe combat (COMBAT mode), hoe/shovel/axe use and the other tool items of each material have no runtime row. Coverage meets the brief's checklist, but the group title overstates it."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "STAGE2B_CAMPAIGN_FINAL_REPORT.md:67",
+      "description": "The final report lists 'offhand:offhand_allowed, offhand:offhand_locked' as extra passes for this group, but no offhand row for any *_tools ability exists in rows.jsonl or in any campaign*/receipts/campaign-results.jsonl. The report text is inaccurate; the product evidence is unaffected."
+    }
+  ]
+}

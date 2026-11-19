@@ -1,0 +1,59 @@
+{
+  "group": "complex_use_flint_and_steel",
+  "reviewer": "R4",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "use_flint_and_steel: NativeComplexBindings.java:15 (USE_FLINT_AND_STEEL in ABILITIES), NativeComplexAgent.java:116 (mode flint + exact FLINT_AND_STEEL -> USE_FLINT_AND_STEEL). Hashes recomputed, match E1: NativeComplexBindings 0890c634cf8c042a2456d38b117046a94896b6956f89c31e526daee94fe643a6, NativeComplexAgent 09ae3f1793f2fad430af6a4e600d2d64cce9b2ace4fbbc1f8383061842f7ac15. Thresholds normal 174, easy 132, hard 216, chaos_20261116 84, custom_vision 174."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS. Read all 17 excerpts. Locked/op/offhand_locked: RIGHT_CLICK_BLOCK NETHERRACK (offhand row shows MAIN_HAND and OFF_HAND packets/events), probe 'execute if block 8 -59 -3 fire' = 'Test failed' before and after, overlay 'You can't use flint and steel...', count unchanged. Allowed: 'Test passed' + strike_a_light advancement (+1). offhand_allowed: 'Test passed', count unchanged. Creative: fire placed. Spectator: none, no overlay. Verdicts reproduced.",
+      "rowsRead": [
+        "campaign11 pass1 use_flint_and_steel locked",
+        "campaign11 pass1 use_flint_and_steel allowed",
+        "campaign11 modes use_flint_and_steel creative",
+        "campaign11 modes use_flint_and_steel op",
+        "campaign11 modes use_flint_and_steel spectator",
+        "campaign11 offhand use_flint_and_steel offhand_locked",
+        "campaign11 offhand use_flint_and_steel offhand_allowed",
+        "campaign12 thresholds-easy use_flint_and_steel locked",
+        "campaign12 thresholds-easy use_flint_and_steel allowed",
+        "campaign13 thresholds-hard use_flint_and_steel locked",
+        "campaign13 thresholds-hard use_flint_and_steel allowed",
+        "campaign14 thresholds-chaos use_flint_and_steel locked",
+        "campaign14 thresholds-chaos use_flint_and_steel allowed",
+        "campaign15 thresholds-custom_vision use_flint_and_steel locked",
+        "campaign15 thresholds-custom_vision use_flint_and_steel allowed",
+        "campaign17 reload use_flint_and_steel locked",
+        "campaign17 reload use_flint_and_steel allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11..campaign17 all onlineMode=true with authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and joinedLine 'Glower4ek joined the game'. Re-checked raw: each campaignNN/receipts/output.log has exactly 1 such UUID line and 1 join line; each campaignNN/runtime/server.properties has online-mode=true. Rows of this group come from campaign11/12/13/14/15/17, all covered."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows present; offhand_locked/offhand_allowed present with flint_and_steel in offhand. normal/easy/hard/chaos/custom_vision rows present. No NA rows. CHAOS rows come from campaign14, whose chaos_20261116.toml differs from the campaign16 file cited in E1.configs (accepted behaviour b); read campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml: values match the row thresholds and the STATE 'required' values (use_flint_and_steel=189)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows, all campaign17; MANIFEST.e5Reload.runtime=campaign17, generationBefore=1, generationAfter=2. Every ATD_STAGE2A_STATE line in the reload excerpts shows \"generation\": 2 (all non-reload excerpts show 1). Raw campaign17/receipts/output.log:249-255: 'Reloading!' then 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml'. Each reload verdict equals the pass1 verdict of the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 17/17 rows REPRODUCED, recorded==replayed for every row, and the (campaign,tag,ability,phase,verdict) multiset of rows.jsonl equals replay.jsonl. MANIFEST runtime replays reproducedAll=true for all 7 runtimes (1235/310/310/310/310/44/310, problems=[]); each REPLAY.json rehashed and matches evidenceHashes. Plugin perRuntime all ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b; recomputed campaignNN/runtime/plugins/achievetodo.jar for all 7 runtimes and repo build/libs/AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar: same value. Client mod recomputed at 'E:\\Кубы сборки\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar' = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081. campaign-results.jsonl recomputed for all 7 runtimes, all equal evidenceHashes (campaign11 e2fdcbee751d9b96b1b37ffdc31e851d82f018f6ee8a8bda545621e58df35b15, campaign17 14036deb3fbf00c3...). Also every rows.jsonl row equals the last same tag/ability/phase row of its runtime's campaign-results.jsonl (verdict, counts, logLines)."
+    }
+  },
+  "superseded": "2 superseded entries, all r5 reload rows (key normal/reload/..., by campaign17, was==now). Justified: the r3 reload in campaign11 was rejected (campaign11/receipts/output.log:88679-88680 'Incorrect argument for command' / 'reload confirm<--[HERE]'), while campaign17 did a real datapack reload (output.log:249-255, generation 2). No r4 (chest-room fixture) replacements in this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/complex_use_flint_and_steel/excerpts.txt, e.g. block 'campaign11 pass1 use_flint_and_steel locked' (output.log 6145-6157)",
+      "description": "ATD_STAGE2A_STATE logs \"USE_FLINT_AND_STEEL\": null: the probe does not report this ability's lock kind/required value, so the lock state is only implied by count < row threshold (cross-checked against the config files), not shown by the plugin. Denial itself is visible (overlay + no effect); observability gap, not a product defect."
+    }
+  ]
+}

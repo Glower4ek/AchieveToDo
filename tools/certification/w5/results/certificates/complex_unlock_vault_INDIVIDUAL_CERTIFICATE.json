@@ -1,0 +1,65 @@
+{
+  "group": "complex_unlock_vault",
+  "reviewer": "R8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "unlock_vault: 3 direct sites + family resolver. SHA-256 recomputed: VaultAdapter.java, NativeComplexBindings.java, NativeComplexSpecs.java all equal to E1; 5 configs equal. Opened NativeComplexSpecs.java:43 (vault-key spec on VaultBlockEntity$Server.tryInsertKey before resolveItemsToEject, ability UNLOCK_VAULT) and NativeComplexBindings.java:13-37 (UNLOCK_VAULT in ABILITIES, GameplayGate check, report unless SILENT): checks the ability. Also opened line 44 + NativeComplexAgent.java:178-184 (silent membership filter), the effective guard. Thresholds listed for all 5 configs (555/450/660/336/555). All 7 runtimes log 'ATD_GAMEPLAY_MODE=CERTIFICATION' (output.log line 219/220). In that mode AchieveToDoPlugin.java lines 52-61 start only progression + gameplay and return, so BukkitRestrictionRuntime (line 89: BlockInteractionAdapter, VaultAdapter, i.e. every caller of BukkitRestrictionResolver) is never registered; the line 'Restriction adapters are running' occurs 0 times in every output.log. VaultAdapter.java is dead in the certified runtime (minor finding). Every row threshold and every 'requires' threshold was re-read from that row's own runtime config TOML (campaignNN/runtime/plugins/AchieveToDo/progression/configs/*.toml): 0 mismatches. E1 chaos thresholds come from campaign16's chaos_20261116.toml and differ from campaign14's (accepted behaviour b); campaign14 rows carry campaign14's values. campaign14's chaos_20261116.toml line 107 has unlock_vault = 0."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows: 10 PASS, 6 PASS_NO_OVERLAY, 1 NA_NO_LOCKED_STATE; read all 17 blocks. Every non-PASS row read. PASS_NO_OVERLAY locked rows (c11 pass1, c11 op, c11 offhand_locked, c12, c13, c15, c17 reload): count unchanged, trial_key still in hand pre/tick1/post, vault server_data only 'state_updating_resumes_at' (no rewarded_players), Item.use -> Pass, interaction falls through to OFF_HAND, no overlay and no DENIAL_INTENT -> PASS_NO_OVERLAY reproduced; it counts as lock proof and matches the Fabric silent VaultSharedDataMixin. Allowed rows (c11, c12, c13, c14, c15, c17, offhand_allowed): key consumed, rewarded_players + items_to_eject appear, under_lock_and_key granted (count +1, e.g. 555->556). Creative: vault opens (probe changed, bypass); spectator: vanilla DENY, no overlay. NA row c14 chaos locked: threshold 0 in campaign14 config.",
+      "rowsRead": [
+        "campaign11 pass1 unlock_vault locked",
+        "campaign11 pass1 unlock_vault allowed",
+        "campaign12 thresholds-easy unlock_vault locked",
+        "campaign12 thresholds-easy unlock_vault allowed",
+        "campaign13 thresholds-hard unlock_vault locked",
+        "campaign13 thresholds-hard unlock_vault allowed",
+        "campaign14 thresholds-chaos unlock_vault locked",
+        "campaign14 thresholds-chaos unlock_vault allowed",
+        "campaign15 thresholds-custom_vision unlock_vault locked",
+        "campaign15 thresholds-custom_vision unlock_vault allowed",
+        "campaign17 reload unlock_vault locked",
+        "campaign17 reload unlock_vault allowed",
+        "campaign11 modes unlock_vault creative",
+        "campaign11 modes unlock_vault op",
+        "campaign11 modes unlock_vault spectator",
+        "campaign11 offhand unlock_vault offhand_locked",
+        "campaign11 offhand unlock_vault offhand_allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for every contributing runtime (campaign11 normal, 12 easy, 13 hard, 14 chaos, 15 custom_vision, 17 normal/reload) has onlineMode=true, 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game'. Independently grepped each receipts/output.log: UUID line at lines 231/232/231/232/231/231 and join line at 242/243/243/247/242/242; runtime/server.properties line 47 'online-mode=true' in campaign11-17. All row packets carry actor 89c23030-... (the authenticated UUID)."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator and offhand_locked/offhand_allowed (c11) present; thresholds normal/easy/hard/chaos/custom_vision present (chaos as allowed at score 0 plus NA locked). NA_NO_LOCKED_STATE (campaign14 thresholds-chaos locked) follows from a real threshold of 0: campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml line 107 'unlock_vault = 0'; the r4 chaos runtime campaign16 (threshold 336) did not re-run this ability, allowed by accepted behaviour (b)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows come only from campaign17 (campaign17 reload unlock_vault locked/allowed). MANIFEST.e5Reload = {runtime: campaign17, generationBefore 1, generationAfter 2}. Every ATD_STAGE2A_STATE line in the reload excerpts shows \"generation\": 2 (checked by regex, both pre and post lines of each reload row). Raw campaign17/receipts/output.log line 249 'Reloading!' (vanilla datapack reload) and line 306 'DELTA_SENT ... configGeneration=2'. Each reload verdict equals the pass1 verdict of the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 17/17 rows REPRODUCED with recorded==replayed. MANIFEST runtimes replay.reproducedAll=true for campaign11-17 and each receipts/REPLAY.json read directly says reproducedAll=true (1235/310/310/310/310/44/310 rows). Plugin SHA-256 recomputed on campaignNN/runtime/plugins/achievetodo.jar for campaign11-17: all ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b = brief value. Client mod SHA in every runtime's evidenceHashes = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081 = brief value (jar itself not re-hashed: path outside the certification tree). campaign-results.jsonl recomputed for all 7 runtimes and equal to evidenceHashes.results, e.g. campaign11 e2fdcbee751d9b96...; campaign12 828efdb841a2751d...; campaign13 f0fc08eac291ee65...; campaign14 f1557f033c1e78a4...; campaign15 0a6ec01b28e4a5a5...; campaign17 14036deb3fbf00c3.... Additionally every row of rows.jsonl was matched to exactly one row (same tag/ability/phase/verdict/counts) in its runtime's campaign-results.jsonl."
+    }
+  },
+  "superseded": "Only r5 supersessions apply to this group: the normal/reload rows were replaced by campaign17. Justified: raw campaign11/receipts/output.log lines 88679-88680 show 'Incorrect argument for command / reload confirm<--[HERE]' (the r3 reload was rejected, so the r3 'reload' rows ran at generation 1 and proved nothing), while campaign17 shows a real vanilla 'Reloading!' (line 249) and configGeneration=2 thereafter; verdicts unchanged (PASS_NO_OVERLAY / PASS->PASS_NO_OVERLAY / PASS). The r4 chest-room supplement (campaign16) contributed no rows to this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/complex_unlock_vault/excerpts.txt every ATD_STAGE2A_STATE line (ability UNLOCK_VAULT: null); raw campaign11/receipts/output.log line 4068 has no UNLOCK_VAULT key in 'abilities'",
+      "description": "The state probe does not cover UNLOCK_VAULT: every STATE line reports it as null, so the server's own lock state and 'required' threshold are never shown for this ability. The lock is inferred from count = threshold-1 against the config TOML (re-checked) and from behaviour; the plugin's loaded threshold is only bracketed indirectly (denied at t-1, allowed at t)."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review/complex_unlock_vault/E1.json directSites (VaultAdapter.java:38,58; NativeComplexSpecs.java:43); port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeComplexSpecs.java:44 and NativeComplexAgent.java:178-184; core/AchieveToDoPlugin.java:52-61,89",
+      "description": "E1 maps unlock_vault to VaultAdapter.java (a Bukkit listener never registered in CERTIFICATION mode) and to the vault-key spec NativeComplexSpecs.java:43 (tryInsertKey, would show an overlay). The guard that actually produced every locked denial is the silent eligibility filter 'vault-membership' (NativeComplexSpecs.java:44 -> NativeComplexAgent.eligible/vaultEligibilityDenied, 'SILENT:UNLOCK_VAULT'), which keeps the vault inactive for a locked player: excerpts show the main-hand interaction falling through to OFF_HAND with Item.use -> Pass and no overlay. That site is missing from E1. It matches the Fabric original (repo/src/main/java/com/diskree/achievetodo/injection/mixin/main/VaultSharedDataMixin.java), so PASS_NO_OVERLAY is parity, but the map is inaccurate and the overlay-producing key-insertion guard (spec:43) is not exercised by any row (it needs the vault activated by another, unlocked player)."
+    }
+  ]
+}

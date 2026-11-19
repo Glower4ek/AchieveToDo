@@ -1,0 +1,63 @@
+{
+  "group": "menu_open_crafting_table",
+  "reviewer": "R8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "open_crafting_table: 3 direct sites + family resolver + definition site. SHA-256 recomputed for all cited files and equal to E1: BukkitRestrictionResolver.java f5d7d99b..., GameplayMenuAbilities.java 813236fd..., NativeLandmarkActions.java eb87a78e...; the 5 config TOMLs (normal/easy/hard/chaos_20261116/custom_vision) re-hashed: all equal. Opened GameplayMenuAbilities.java:19 (WORKBENCH -> CRAFTING_TABLE -> OPEN_CRAFTING_TABLE, used by opening() lines 62-71 and BukkitExpandedGameplayListener.open lines 77-81 which cancels when locked) and NativeLandmarkActions.java:144 (CraftingTableBlock.useWithoutItem -> targetAndAbilityDenied 'OPEN_CRAFTING_TABLE'): both really check the ability. Thresholds listed for all 5 configs (50/46/54/54/50). All 7 runtimes log 'ATD_GAMEPLAY_MODE=CERTIFICATION' (output.log line 219/220). In that mode AchieveToDoPlugin.java lines 52-61 start only progression + gameplay and return, so BukkitRestrictionRuntime (line 89: BlockInteractionAdapter, VaultAdapter, i.e. every caller of BukkitRestrictionResolver) is never registered; the line 'Restriction adapters are running' occurs 0 times in every output.log. BukkitRestrictionResolver.java:77 is therefore dead in the certified runtime (minor finding). Every row threshold and every 'requires' threshold was re-read from that row's own runtime config TOML (campaignNN/runtime/plugins/AchieveToDo/progression/configs/*.toml): 0 mismatches. E1 chaos thresholds come from campaign16's chaos_20261116.toml and differ from campaign14's (accepted behaviour b); campaign14 rows carry campaign14's values."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS; read every excerpt block (15/15). Locked (pass1, easy, hard, chaos, custom, reload, op): STATE count pre=post=threshold-1, OPEN_CRAFTING_TABLE kind=LOCKED required=threshold, no INVENTORY_OPEN boundary and no ClientboundOpenScreenPacket, client overlay 'You can't use a crafting table...'. Allowed: kind=UNLOCKED, INVENTORY_OPEN_TYPE_WORKBENCH + ClientboundOpenScreenPacket, counts unchanged, no leak. Creative: opens (Fabric creative bypass, GameplayGate.allows nativeBypass). Spectator: vanilla opens the menu, no overlay. All verdicts reproduced from the log lines.",
+      "rowsRead": [
+        "campaign11 pass1 open_crafting_table locked",
+        "campaign11 pass1 open_crafting_table allowed",
+        "campaign12 thresholds-easy open_crafting_table locked",
+        "campaign12 thresholds-easy open_crafting_table allowed",
+        "campaign13 thresholds-hard open_crafting_table locked",
+        "campaign13 thresholds-hard open_crafting_table allowed",
+        "campaign14 thresholds-chaos open_crafting_table locked",
+        "campaign14 thresholds-chaos open_crafting_table allowed",
+        "campaign15 thresholds-custom_vision open_crafting_table locked",
+        "campaign15 thresholds-custom_vision open_crafting_table allowed",
+        "campaign17 reload open_crafting_table locked",
+        "campaign17 reload open_crafting_table allowed",
+        "campaign11 modes open_crafting_table creative",
+        "campaign11 modes open_crafting_table op",
+        "campaign11 modes open_crafting_table spectator"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for every contributing runtime (campaign11 normal, 12 easy, 13 hard, 14 chaos, 15 custom_vision, 17 normal/reload) has onlineMode=true, 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game'. Independently grepped each receipts/output.log: UUID line at lines 231/232/231/232/231/231 and join line at 242/243/243/247/242/242; runtime/server.properties line 47 'online-mode=true' in campaign11-17. All row packets carry actor 89c23030-... (the authenticated UUID)."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows: creative, op, spectator (campaign11). Threshold rows for normal (pass1 c11), easy (c12), hard (c13), chaos (c14), custom_vision (c15). No offhand rows: the case holds nothing (main='air') and campaign_final.py:23-27 restricts offhand passes to cases with a held item; opening a crafting table has no off-hand variant. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows come only from campaign17 (campaign17 reload open_crafting_table locked/allowed). MANIFEST.e5Reload = {runtime: campaign17, generationBefore 1, generationAfter 2}. Every ATD_STAGE2A_STATE line in the reload excerpts shows \"generation\": 2 (checked by regex, both pre and post lines of each reload row). Raw campaign17/receipts/output.log line 249 'Reloading!' (vanilla datapack reload) and line 306 'DELTA_SENT ... configGeneration=2'. Each reload verdict equals the pass1 verdict of the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15/15 rows REPRODUCED with recorded==replayed. MANIFEST runtimes replay.reproducedAll=true for campaign11-17 and each receipts/REPLAY.json read directly says reproducedAll=true (1235/310/310/310/310/44/310 rows). Plugin SHA-256 recomputed on campaignNN/runtime/plugins/achievetodo.jar for campaign11-17: all ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b = brief value. Client mod SHA in every runtime's evidenceHashes = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081 = brief value (jar itself not re-hashed: path outside the certification tree). campaign-results.jsonl recomputed for all 7 runtimes and equal to evidenceHashes.results, e.g. campaign11 e2fdcbee751d9b96...; campaign12 828efdb841a2751d...; campaign13 f0fc08eac291ee65...; campaign14 f1557f033c1e78a4...; campaign15 0a6ec01b28e4a5a5...; campaign17 14036deb3fbf00c3.... Additionally every row of rows.jsonl was matched to exactly one row (same tag/ability/phase/verdict/counts) in its runtime's campaign-results.jsonl."
+    }
+  },
+  "superseded": "Only r5 supersessions apply to this group: the normal/reload rows were replaced by campaign17. Justified: raw campaign11/receipts/output.log lines 88679-88680 show 'Incorrect argument for command / reload confirm<--[HERE]' (the r3 reload was rejected, so the r3 'reload' rows ran at generation 1 and proved nothing), while campaign17 shows a real vanilla 'Reloading!' (line 249) and configGeneration=2 thereafter; verdicts unchanged (PASS->PASS). The r4 chest-room supplement (campaign16) contributed no rows to this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review/menu_open_crafting_table/E1.json directSites[0] BukkitRestrictionResolver.java:77 and familyResolverSites; port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/core/AchieveToDoPlugin.java:52-61,89; campaign11-17 receipts/output.log (0 hits for 'Restriction adapters are running')",
+      "description": "E1 cites BukkitRestrictionResolver.java:77 (resolveInventoryOpenAbility WORKBENCH) and AbilityResolvers.findBlockAbility in BukkitRestrictionResolver as guard/family sites, but their only caller (BlockInteractionAdapter via BukkitRestrictionRuntime) is not registered in the CERTIFICATION mode every runtime ran in. The live guards are GameplayMenuAbilities.java:19 (via BukkitExpandedGameplayListener.open, InventoryOpenEvent) and NativeLandmarkActions.java:144 (CraftingTableBlock.useWithoutItem). Map accuracy issue only; live coverage exists."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/menu_open_crafting_table/excerpts.txt lines 1-12 (campaign11 pass1 locked) and every other locked/op block",
+      "description": "No server log line records the denial decision for locked crafting-table rows: ATD_W2_INPUT_EVENT/ATD_EVENT say useBlock=ALLOW, cancelled=false, and the native useWithoutItem guard logs nothing. The denial is inferred from the absence of INVENTORY_OPEN/ClientboundOpenScreenPacket (present in every allowed row) plus the client overlay in the driver journal. Sufficient, but indirect."
+    }
+  ]
+}

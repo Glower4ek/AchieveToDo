@@ -1,0 +1,55 @@
+{
+  "group": "bundle_two_native_routes",
+  "reviewer": "R1",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability put_in_bundle. Recomputed SHA-256 BundleAdapter.java (1e8a4aef...), NativeEquipmentAbilities.java (7baab126...), NativeTransactionBindings.java (c3d1f751...): equal E1. BundleAdapter.java:38 (InventoryClickEvent when cursor or clicked item is a bundle) and :60 (drag) deny PUT_IN_BUNDLE; NativeTransactionBindings.java:41 'bundle' guard -> PUT_IN_BUNDLE (NativeTransactionAgent transforms Mutable.tryTransfer and BundleItem.overrideOtherStackedOnMe). Thresholds normal 36, easy 28, hard 46, chaos 46, custom_vision 36. Row thresholds of all rows re-checked against each runtime's own config (campaignNN/runtime/plugins/AchieveToDo/progression/configs/*.toml): 0 mismatches; E1 normal/easy/hard/custom_vision thresholds equal the row thresholds; 5 E1 config hashes verified. E1's chaos column comes from campaign16's chaos toml while chaos rows come from campaign14 (different values, accepted behaviour (b)); campaign14 toml values match the rows."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS; read every excerpt. Locked/op rows: probe 'Inventory[{Slot:1b}]' still 'minecraft:apple' after the clicks, ClientboundContainerClosePacket (the denial closes the inventory), count unchanged, client overlay 'You can't put items in a bundle'. Allowed/creative: probe 'Found no elements matching Inventory[{Slot:1b}]' (apple moved into the bundle). Spectator: no change, no overlay.",
+      "rowsRead": [
+        "campaign11 pass1 put_in_bundle locked/allowed",
+        "campaign11 modes put_in_bundle creative/op/spectator",
+        "campaign12 thresholds-easy locked/allowed",
+        "campaign13 thresholds-hard locked/allowed",
+        "campaign14 thresholds-chaos locked/allowed",
+        "campaign15 thresholds-custom_vision locked/allowed",
+        "campaign17 reload locked/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11-17: all onlineMode=true, 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' lines present; independently re-grepped each campaignNN/receipts/output.log (UUID line at line 231/232, one join line) and runtime/server.properties online-mode=true for all 7 runtimes."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator present; inventory-click insertion has no off-hand variant: no offhand or NA rows; threshold rows for all configs."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows, all from campaign17; MANIFEST.e5Reload generationBefore=1, generationAfter=2; every ATD_STAGE2A_STATE line in the reload excerpts shows generation 2 (4 lines). Raw campaign17 output.log lines 247-256 show a real reload ('Reloading!', 'PROGRESSION_CONFIG_READY generation=2') and no generation-1 state lines in the log. Each reload verdict equals the pass1 verdict of the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all 15 rows REPRODUCED, recorded==replayed for every row; MANIFEST.runtimes replay.reproducedAll=true for campaign11..17 (counts 1235/310/310/310/310/44/310). Plugin SHA-256 ad0685ed...d80b in perRuntime for all 7 runtimes and recomputed on campaign11 and campaign17 runtime/plugins/achievetodo.jar; client mod recomputed = 46a0601e...0855081. Recomputed campaign-results.jsonl SHA-256 for all 7 runtimes; all equal evidenceHashes.results (campaign11 e2fdcbee...5b15, campaign17 14036deb...a44b). Excerpt fidelity spot-checked: non-compacted excerpt lines equal raw output.log lines for 5 rows in 5 groups."
+    }
+  },
+  "superseded": "Superseded rows are only the r3 reload rows of this group, replaced by campaign17 (r5). Justified: in campaign11 the r3 command 'reload confirm' (command-journal.jsonl line 31021, 05:27:45Z) was answered 'Incorrect argument for command' (output.log line 88679), so no reload happened; campaign17 performed a real datapack reload (generation 1->2). No r4 (chest fixture) rows apply to this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "campaign_cases.py:190-194 (single put_in_bundle case); rows.jsonl case 'bundle on cursor, left-click apple slot'",
+      "description": "The group is named for two native routes (Mutable.tryTransfer = bundle on cursor onto an item; BundleItem.overrideOtherStackedOnMe = item on cursor onto the bundle), but the campaign runs only the bundle-on-cursor case. The reverse direction has guard code (BundleAdapter.touchesBundle; NativeTransactionAgent lines 158/198) but no runtime row. The checklist passes for the one defined case; adding the reverse-cursor case is recommended."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/bundle_two_native_routes/excerpts.txt ATD_STAGE2A_STATE lines: \"ability\": {\"PUT_IN_BUNDLE\": null}",
+      "description": "The state probe does not report the lock state of the tested ability (null), so the excerpt does not show the plugin's lock decision directly; the lock is shown indirectly (count < threshold, client overlay text in rows.jsonl client states, absent effect). Verdicts are still reproducible."
+    }
+  ]
+}

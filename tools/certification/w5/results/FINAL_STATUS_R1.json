@@ -1,0 +1,94 @@
+{
+  "started": "2026-11-18T17:08:45+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\repo\\port\\AchieveToDo-Purpur-26.2\\build\\libs\\AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar",
+  "runtimes": {
+    "campaign04": {
+      "mode": "normal",
+      "started": "2026-11-18T17:08:45+00:00",
+      "passes": {
+        "pass1": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 305,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 3,
+            "INVALID_SCORE_DRIFT_DURING_ACTION": 1
+          },
+          "finished": "2026-11-18T18:04:08+00:00"
+        },
+        "modes": {
+          "phases": "creative,op,spectator",
+          "counts": {
+            "PASS": 404,
+            "NA_NO_LOCKED_STATE": 1,
+            "INVALID_SCORE_DRIFT_DURING_ACTION": 1,
+            "FAIL_NO_EFFECT": 54,
+            "PASS_NO_OVERLAY": 2,
+            "FAIL_LEAK": 2,
+            "INVALID_FIXTURE_NOT_HUNGRY": 1
+          },
+          "finished": "2026-11-18T19:27:12+00:00"
+        },
+        "offhand": {
+          "phases": "offhand_locked,offhand_allowed",
+          "counts": {
+            "PASS": 148,
+            "FAIL_EFFECT_WHILE_LOCKED": 1,
+            "PASS_NO_OVERLAY": 1
+          },
+          "finished": "2026-11-18T19:57:25+00:00"
+        },
+        "reload": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 306,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 3
+          },
+          "finished": "2026-11-18T20:56:24+00:00"
+        }
+      },
+      "finished": "2026-11-18T20:56:28+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 1234,
+          "MISMATCH": 1
+        },
+        "reproducedAll": false,
+        "exit": 1
+      }
+    },
+    "campaign05": {
+      "mode": "easy",
+      "started": "2026-11-18T20:56:28+00:00",
+      "passes": {
+        "thresholds-easy": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 304,
+            "NA_NO_LOCKED_STATE": 2,
+            "PASS_NO_OVERLAY": 2,
+            "INVALID_SCORE_DRIFT_DURING_ACTION": 2
+          },
+          "finished": "2026-11-18T21:51:51+00:00"
+        }
+      },
+      "finished": "2026-11-18T21:51:55+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 310
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign06": {
+      "mode": "hard",
+      "started": "2026-11-18T21:51:55+00:00",
+      "passes": {}
+    }
+  },
+  "state": "ABORTED",
+  "error": "LOGIN_FAILED campaign06: []",
+  "aborted": "2026-11-18T21:52:36+00:00"
+}

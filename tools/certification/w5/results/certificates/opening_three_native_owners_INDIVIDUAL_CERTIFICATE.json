@@ -1,0 +1,87 @@
+{
+  "group": "opening_three_native_owners",
+  "reviewer": "R8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "open_door, open_trapdoor, open_fence_gate: each 4 direct sites + family resolver. SHA-256 recomputed for BukkitRestrictionResolver.java, BukkitExpandedGameplayListener.java, GameplayGate.java, NativeLandmarkActions.java: all equal to E1; 5 config TOMLs equal. Opened BukkitExpandedGameplayListener.java:46-52 (openingAbility: closed Door->OPEN_DOOR, TrapDoor->OPEN_TRAPDOOR, Gate->OPEN_FENCE_GATE) and NativeLandmarkActions.java:137-139/294-299 (openingDenied reads the OPEN property and passes the ability only when currently closed): each checks the right ability. Thresholds for all 5 configs listed for each ability. All 7 runtimes log 'ATD_GAMEPLAY_MODE=CERTIFICATION' (output.log line 219/220). In that mode AchieveToDoPlugin.java lines 52-61 start only progression + gameplay and return, so BukkitRestrictionRuntime (line 89: BlockInteractionAdapter, VaultAdapter, i.e. every caller of BukkitRestrictionResolver) is never registered; the line 'Restriction adapters are running' occurs 0 times in every output.log. The BukkitRestrictionResolver sites are dead in the certified runtime (minor). Every row threshold and every 'requires' threshold was re-read from that row's own runtime config TOML (campaignNN/runtime/plugins/AchieveToDo/progression/configs/*.toml): 0 mismatches. E1 chaos thresholds come from campaign16's chaos_20261116.toml and differ from campaign14's (accepted behaviour b); campaign14 rows carry campaign14's values."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "45 rows, all PASS; read all 45 excerpt blocks. For each ability, locked rows in c11 pass1, c11 op, c12, c13, c14, c15, c17: STATE LOCKED required=threshold, count unchanged, probe 'execute if block ... [open=true]' prints 'Test failed' pre and post (block stayed closed), client overlay; server denial is native (event shows ALLOW, ContainerSet resync follows). Allowed rows: UNLOCKED, probe 'Test failed' pre -> 'Test passed' post, counts unchanged. Creative: opens ('Test passed'). Spectator: Paper cancels interaction (blockResult=DENY, vanilla spectator rule), no overlay. All verdicts reproduced.",
+      "rowsRead": [
+        "campaign11 pass1 open_door locked",
+        "campaign11 pass1 open_door allowed",
+        "campaign12 thresholds-easy open_door locked",
+        "campaign12 thresholds-easy open_door allowed",
+        "campaign13 thresholds-hard open_door locked",
+        "campaign13 thresholds-hard open_door allowed",
+        "campaign14 thresholds-chaos open_door locked",
+        "campaign14 thresholds-chaos open_door allowed",
+        "campaign15 thresholds-custom_vision open_door locked",
+        "campaign15 thresholds-custom_vision open_door allowed",
+        "campaign17 reload open_door locked",
+        "campaign17 reload open_door allowed",
+        "campaign11 modes open_door creative",
+        "campaign11 modes open_door op",
+        "campaign11 modes open_door spectator",
+        "campaign11 pass1 open_trapdoor locked",
+        "campaign11 pass1 open_trapdoor allowed",
+        "campaign12 thresholds-easy open_trapdoor locked",
+        "campaign12 thresholds-easy open_trapdoor allowed",
+        "campaign13 thresholds-hard open_trapdoor locked",
+        "campaign13 thresholds-hard open_trapdoor allowed",
+        "campaign14 thresholds-chaos open_trapdoor locked",
+        "campaign14 thresholds-chaos open_trapdoor allowed",
+        "campaign15 thresholds-custom_vision open_trapdoor locked",
+        "campaign15 thresholds-custom_vision open_trapdoor allowed",
+        "campaign17 reload open_trapdoor locked",
+        "campaign17 reload open_trapdoor allowed",
+        "campaign11 modes open_trapdoor creative",
+        "campaign11 modes open_trapdoor op",
+        "campaign11 modes open_trapdoor spectator",
+        "campaign11 pass1 open_fence_gate locked",
+        "campaign11 pass1 open_fence_gate allowed",
+        "campaign12 thresholds-easy open_fence_gate locked",
+        "campaign12 thresholds-easy open_fence_gate allowed",
+        "campaign13 thresholds-hard open_fence_gate locked",
+        "campaign13 thresholds-hard open_fence_gate allowed",
+        "campaign14 thresholds-chaos open_fence_gate locked",
+        "campaign14 thresholds-chaos open_fence_gate allowed",
+        "campaign15 thresholds-custom_vision open_fence_gate locked",
+        "campaign15 thresholds-custom_vision open_fence_gate allowed",
+        "campaign17 reload open_fence_gate locked",
+        "campaign17 reload open_fence_gate allowed",
+        "campaign11 modes open_fence_gate creative",
+        "campaign11 modes open_fence_gate op",
+        "campaign11 modes open_fence_gate spectator"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for every contributing runtime (campaign11 normal, 12 easy, 13 hard, 14 chaos, 15 custom_vision, 17 normal/reload) has onlineMode=true, 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game'. Independently grepped each receipts/output.log: UUID line at lines 231/232/231/232/231/231 and join line at 242/243/243/247/242/242; runtime/server.properties line 47 'online-mode=true' in campaign11-17. All row packets carry actor 89c23030-... (the authenticated UUID)."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "For each of the 3 abilities: modes creative/op/spectator (c11) and thresholds normal/easy/hard/chaos/custom_vision present. No offhand rows: empty-hand cases, no off-hand variant (campaign_final.py:23-27). No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows come only from campaign17 (campaign17 reload open_door/open_trapdoor/open_fence_gate locked/allowed). MANIFEST.e5Reload = {runtime: campaign17, generationBefore 1, generationAfter 2}. Every ATD_STAGE2A_STATE line in the reload excerpts shows \"generation\": 2 (checked by regex, both pre and post lines of each reload row). Raw campaign17/receipts/output.log line 249 'Reloading!' (vanilla datapack reload) and line 306 'DELTA_SENT ... configGeneration=2'. Each reload verdict equals the pass1 verdict of the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 45/45 rows REPRODUCED with recorded==replayed. MANIFEST runtimes replay.reproducedAll=true for campaign11-17 and each receipts/REPLAY.json read directly says reproducedAll=true (1235/310/310/310/310/44/310 rows). Plugin SHA-256 recomputed on campaignNN/runtime/plugins/achievetodo.jar for campaign11-17: all ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b = brief value. Client mod SHA in every runtime's evidenceHashes = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081 = brief value (jar itself not re-hashed: path outside the certification tree). campaign-results.jsonl recomputed for all 7 runtimes and equal to evidenceHashes.results, e.g. campaign11 e2fdcbee751d9b96...; campaign12 828efdb841a2751d...; campaign13 f0fc08eac291ee65...; campaign14 f1557f033c1e78a4...; campaign15 0a6ec01b28e4a5a5...; campaign17 14036deb3fbf00c3.... Additionally every row of rows.jsonl was matched to exactly one row (same tag/ability/phase/verdict/counts) in its runtime's campaign-results.jsonl."
+    }
+  },
+  "superseded": "Only r5 supersessions apply to this group: the normal/reload rows were replaced by campaign17. Justified: raw campaign11/receipts/output.log lines 88679-88680 show 'Incorrect argument for command / reload confirm<--[HERE]' (the r3 reload was rejected, so the r3 'reload' rows ran at generation 1 and proved nothing), while campaign17 shows a real vanilla 'Reloading!' (line 249) and configGeneration=2 thereafter; verdicts unchanged (PASS->PASS). The r4 chest-room supplement (campaign16) contributed no rows to this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review/opening_three_native_owners/E1.json directSites BukkitRestrictionResolver.java:46,49,52; port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/core/AchieveToDoPlugin.java:52-61,89",
+      "description": "For all three abilities E1 lists BukkitRestrictionResolver.java (resolveBlockInteractionAbility) plus the AbilityResolvers.findBlockAbility family resolver, which only BlockInteractionAdapter uses; that adapter is not registered in CERTIFICATION mode. Live guards remain (NativeLandmarkActions.java:137-139 openingDenied on DoorBlock/TrapDoorBlock/FenceGateBlock, BukkitExpandedGameplayListener.java:49-51, GameplayGate.java:16-17). Map accuracy only."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+mode chaos
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign16 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b
+[2026-11-19T11:38:40+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-19T11:38:51+00:00] campaign16 up: [16:38:51 INFO]: [AchieveToDo] Resolved progression config chaos_20261116.toml (chaos_20261116)
+[2026-11-19T11:38:58+00:00] prism account Glower4ek refreshed
+[2026-11-19T11:39:28+00:00] campaign16 pass landmarks-chaos-r4 phases=locked,allowed
+CONFIG chaos:chaos_20261116.toml abilities=153
+PASS                       landmark22_selectors_and_action_ma interact_inside_village        locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_village        allowed
+PASS                       landmark22_selectors_and_action_ma interact_inside_shipwreck      locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_shipwreck      allowed
+PASS_MASKED_BY_DEPENDENCY  landmark22_selectors_and_action_ma interact_inside_ruined_portal  locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_ruined_portal  allowed
+PASS_MASKED_BY_DEPENDENCY  landmark22_selectors_and_action_ma interact_inside_buried_treasur locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_buried_treasur allowed
+PASS                       landmark22_selectors_and_action_ma interact_inside_igloo          locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_igloo          allowed
+PASS                       landmark22_selectors_and_action_ma interact_inside_ocean_ruin     locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_ocean_ruin     allowed
+PASS_MASKED_BY_DEPENDENCY  landmark22_selectors_and_action_ma interact_inside_desert_pyramid locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_desert_pyramid allowed
+PASS_MASKED_BY_DEPENDENCY  landmark22_selectors_and_action_ma interact_inside_mineshaft      locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_mineshaft      allowed
+PASS_MASKED_BY_DEPENDENCY  landmark22_selectors_and_action_ma interact_inside_swamp_hut      locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_swamp_hut      allowed
+NA_NO_LOCKED_STATE         landmark22_selectors_and_action_ma interact_inside_ancient_city   locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_ancient_city   allowed
+PASS_MASKED_BY_DEPENDENCY  landmark22_selectors_and_action_ma interact_inside_fortress       locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_fortress       allowed
+PASS                       landmark22_selectors_and_action_ma interact_inside_jungle_pyramid locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_jungle_pyramid allowed
+PASS_MASKED_BY_DEPENDENCY  landmark22_selectors_and_action_ma interact_inside_bastion_remnan locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_bastion_remnan allowed
+NA_NO_LOCKED_STATE         landmark22_selectors_and_action_ma interact_inside_pillager_outpo locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_pillager_outpo allowed
+PASS                       landmark22_selectors_and_action_ma interact_inside_monument       locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_monument       allowed
+PASS                       landmark22_selectors_and_action_ma interact_inside_monster_room   locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_monster_room   allowed
+PASS_MASKED_BY_DEPENDENCY  landmark22_selectors_and_action_ma interact_inside_trail_ruins    locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_trail_ruins    allowed
+PASS                       landmark22_selectors_and_action_ma interact_inside_stronghold     locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_stronghold     allowed
+PASS_MASKED_BY_DEPENDENCY  landmark22_selectors_and_action_ma interact_inside_mansion        locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_mansion        allowed
+PASS                       landmark22_selectors_and_action_ma interact_inside_desert_well    locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_desert_well    allowed
+PASS                       landmark22_selectors_and_action_ma interact_inside_trial_chambers locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_trial_chambers allowed
+PASS_MASKED_BY_DEPENDENCY  landmark22_selectors_and_action_ma interact_inside_end_city       locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_end_city       allowed
+E6 replay campaign16: {'REPRODUCED': 44} reproducedAll=True
+[2026-11-19T11:51:23+00:00] FINAL_R4_DONE

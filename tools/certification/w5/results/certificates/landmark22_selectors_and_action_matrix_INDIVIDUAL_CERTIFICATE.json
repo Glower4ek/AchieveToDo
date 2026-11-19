@@ -1,0 +1,153 @@
+{
+  "group": "landmark22_selectors_and_action_matrix",
+  "reviewer": "R6",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "22 abilities, all mapping FAMILY (no direct sites) via AbilityResolvers.findLandmarkAbility, cited call sites in BukkitExactLandmarkRuntime, CanonicalLandmarkMembership, ExactLandmarkGate, LandmarkEngine, RestrictionEngine; definition Progressions.java. E1 gives no SHA-256 for any of these files, so I recomputed current SHA-256 (BukkitExactLandmarkRuntime 0b0d6cb6..., CanonicalLandmarkMembership 268b068a..., ExactLandmarkGate 3c2582f8..., LandmarkEngine a693db43..., RestrictionEngine bd26b686..., Progressions 00f2cf74...) and verified each git blob equals the blob at E1.repoHead 5da53e08 (also AbilityResolvers.java and NativeLandmarkActions.java). Opened: AbilityResolvers 92-97 resolves LandmarkType via LANDMARK_ABILITIES built from AbilityType bindings; AbilityType.java lines 32-142 bind all 22 INTERACT_INSIDE_* to their LandmarkType; CanonicalLandmarkMembership 105-125 selects the landmark ability and returns LOCKED unless state.getAbilityState(ability).isUnlocked(); LandmarkEngine 130 checks the locked predicate per intersecting record. Thresholds listed for all 5 configs for all 22 abilities and equal to the row thresholds of c11/c12/c13/c15/c16."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "330 rows: 318 PASS, 10 PASS_MASKED_BY_DEPENDENCY, 2 NA_NO_LOCKED_STATE. Each of the 22 abilities has 5-6 proving locked rows (pass1 c11, easy c12, hard c13, custom_vision c15, reload c17, plus chaos-r4 c16 for 12 abilities). Scripted scan of all 330 excerpts: 0 anomalies; every locked/op row has count unchanged and no ClientboundOpenScreenPacket/INVENTORY_OPEN_TYPE, every allowed/creative row opens the chest (INVENTORY_OPEN_TYPE_CHEST + OpenScreen). The client overlay of each locked row names the correct structure (22 distinct messages, e.g. 'You can't interact with objects within a Village.'). The 10 MASK rows (c16 ruined_portal, buried_treasure, desert_pyramid, mineshaft, swamp_hut, fortress, bastion_remnant, trail_ruins, mansion, end_city) reproduce: score < open_chest threshold 279 (requires {open_chest: 279}); their overlay names the landmark, but they are correctly not counted. Sound packets in some c16 locked rows are ambient (no OpenScreen, no INVENTORY_OPEN). All verdicts reproduced.",
+      "rowsRead": [
+        "campaign11 pass1 interact_inside_village locked",
+        "campaign13 thresholds-hard interact_inside_village locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_village locked",
+        "campaign11 pass1 interact_inside_village allowed",
+        "campaign11 pass1 interact_inside_shipwreck locked",
+        "campaign13 thresholds-hard interact_inside_shipwreck locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_shipwreck locked",
+        "campaign11 pass1 interact_inside_shipwreck allowed",
+        "campaign11 pass1 interact_inside_ruined_portal locked",
+        "campaign13 thresholds-hard interact_inside_ruined_portal locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_ruined_portal locked",
+        "campaign11 pass1 interact_inside_ruined_portal allowed",
+        "campaign11 pass1 interact_inside_buried_treasure locked",
+        "campaign13 thresholds-hard interact_inside_buried_treasure locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_buried_treasure locked",
+        "campaign11 pass1 interact_inside_buried_treasure allowed",
+        "campaign11 pass1 interact_inside_igloo locked",
+        "campaign13 thresholds-hard interact_inside_igloo locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_igloo locked",
+        "campaign11 pass1 interact_inside_igloo allowed",
+        "campaign11 pass1 interact_inside_ocean_ruin locked",
+        "campaign13 thresholds-hard interact_inside_ocean_ruin locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_ocean_ruin locked",
+        "campaign11 pass1 interact_inside_ocean_ruin allowed",
+        "campaign11 pass1 interact_inside_desert_pyramid locked",
+        "campaign13 thresholds-hard interact_inside_desert_pyramid locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_desert_pyramid locked",
+        "campaign11 pass1 interact_inside_desert_pyramid allowed",
+        "campaign11 pass1 interact_inside_mineshaft locked",
+        "campaign13 thresholds-hard interact_inside_mineshaft locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_mineshaft locked",
+        "campaign11 pass1 interact_inside_mineshaft allowed",
+        "campaign11 pass1 interact_inside_swamp_hut locked",
+        "campaign13 thresholds-hard interact_inside_swamp_hut locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_swamp_hut locked",
+        "campaign11 pass1 interact_inside_swamp_hut allowed",
+        "campaign11 pass1 interact_inside_ancient_city locked",
+        "campaign13 thresholds-hard interact_inside_ancient_city locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_ancient_city locked",
+        "campaign11 pass1 interact_inside_ancient_city allowed",
+        "campaign11 pass1 interact_inside_fortress locked",
+        "campaign13 thresholds-hard interact_inside_fortress locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_fortress locked",
+        "campaign11 pass1 interact_inside_fortress allowed",
+        "campaign11 pass1 interact_inside_jungle_pyramid locked",
+        "campaign13 thresholds-hard interact_inside_jungle_pyramid locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_jungle_pyramid locked",
+        "campaign11 pass1 interact_inside_jungle_pyramid allowed",
+        "campaign11 pass1 interact_inside_bastion_remnant locked",
+        "campaign13 thresholds-hard interact_inside_bastion_remnant locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_bastion_remnant locked",
+        "campaign11 pass1 interact_inside_bastion_remnant allowed",
+        "campaign11 pass1 interact_inside_pillager_outpost locked",
+        "campaign13 thresholds-hard interact_inside_pillager_outpost locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_pillager_outpost locked",
+        "campaign11 pass1 interact_inside_pillager_outpost allowed",
+        "campaign11 pass1 interact_inside_monument locked",
+        "campaign13 thresholds-hard interact_inside_monument locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_monument locked",
+        "campaign11 pass1 interact_inside_monument allowed",
+        "campaign11 pass1 interact_inside_monster_room locked",
+        "campaign13 thresholds-hard interact_inside_monster_room locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_monster_room locked",
+        "campaign11 pass1 interact_inside_monster_room allowed",
+        "campaign11 pass1 interact_inside_trail_ruins locked",
+        "campaign13 thresholds-hard interact_inside_trail_ruins locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_trail_ruins locked",
+        "campaign11 pass1 interact_inside_trail_ruins allowed",
+        "campaign11 pass1 interact_inside_stronghold locked",
+        "campaign13 thresholds-hard interact_inside_stronghold locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_stronghold locked",
+        "campaign11 pass1 interact_inside_stronghold allowed",
+        "campaign11 pass1 interact_inside_mansion locked",
+        "campaign13 thresholds-hard interact_inside_mansion locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_mansion locked",
+        "campaign11 pass1 interact_inside_mansion allowed",
+        "campaign11 pass1 interact_inside_desert_well locked",
+        "campaign13 thresholds-hard interact_inside_desert_well locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_desert_well locked",
+        "campaign11 pass1 interact_inside_desert_well allowed",
+        "campaign11 pass1 interact_inside_trial_chambers locked",
+        "campaign13 thresholds-hard interact_inside_trial_chambers locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_trial_chambers locked",
+        "campaign11 pass1 interact_inside_trial_chambers allowed",
+        "campaign11 pass1 interact_inside_end_city locked",
+        "campaign13 thresholds-hard interact_inside_end_city locked",
+        "campaign16 landmarks-chaos-r4 interact_inside_end_city locked",
+        "campaign11 pass1 interact_inside_end_city allowed",
+        "all 330 excerpt sections via scripted scan (count, OpenScreen packet, INVENTORY_OPEN_TYPE, cancelled/useBlock)",
+        "campaign16 landmarks-chaos-r4 interact_inside_desert_pyramid locked/allowed (full read)",
+        "campaign13 thresholds-hard interact_inside_village locked/allowed (full read)",
+        "campaign13 thresholds-hard interact_inside_shipwreck locked (full read)",
+        "all 10 PASS_MASKED_BY_DEPENDENCY and 2 NA rows of campaign16"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11-17 (7 runtimes: normal c11, easy c12, hard c13, chaos c14, custom_vision c15, chaos-r4 c16, normal-reload c17) all onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a', joinedLine 'Glower4ek joined the game', configResolved line matches the config. Every campaign that contributed rows to this group is among them. campaign14 contributes no final rows to this group (all its chaos landmark rows were superseded by campaign16)."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "tag modes rows: creative, op, spectator for all 22 abilities (66 rows). Thresholds: normal (c11 pass1, c17 reload), easy (c12), hard (c13), chaos (c16 landmarks-chaos-r4), custom_vision (c15): 22 locked + 22 allowed each. No offhand rows: the route is opening a chest with an empty main hand, no off-hand variant. NA rows: 2, campaign16 interact_inside_ancient_city and interact_inside_pillager_outpost locked NA_NO_LOCKED_STATE, both follow from 'interact_inside_ancient_city = 0' and 'interact_inside_pillager_outpost = 0' in campaign16 chaos_20261116.toml (sha e55204bd... = E1)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "44 reload rows, all from campaign17 (tag reload); MANIFEST.e5Reload runtime=campaign17, generationBefore=1, generationAfter=2. Every ATD_STAGE2A_STATE line in the reload sections of excerpts.txt has \"generation\": 2 (scripted check, 0 exceptions). Raw campaign17 output.log: line 249 'Reloading!', line 255 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml', command-journal line 1 command 'reload'. Each reload verdict equals the ability's pass1 verdict (all 44 PASS, every pass1 row also PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 330 rows, all REPRODUCED; every runtime replay reproducedAll=true with problems=[] (c11 1235, c12-c15 and c17 310, c16 44 REPRODUCED). plugin.perRuntime c11-c17 all ad0685eda3cb...c9d80b = brief value; recomputed sha256 of runtime/plugins/achievetodo.jar of all 7 runtimes matches. clientMod sha256 46a0601e...55081 = brief value. Recomputed SHA-256 of campaign-results.jsonl of all 7 runtimes and compared with evidenceHashes.results: all equal (e.g. c17 14036deb3fbf00c3..., c13 f0fc08eac291ee65...); REPLAY.json of all 7 also equal; c17 output.log (20 MB) equal. Every package row was also matched to the raw campaignNN/receipts/campaign-results.jsonl entry (same verdict, counts, logLines): 330/330 found, 0 differences."
+    }
+  },
+  "superseded": "Two kinds. (1) 44 reload rows: r3 campaign11 -> r5 campaign17. r3 rows (campaign11 tag reload) are superseded by r5 (campaign17). Justified: campaign11 output.log lines 88679-88680 show 'Incorrect argument for command / reload confirm<--[HERE]', and the r3 reload rows still ran at generation 1 (e.g. campaign11 output.log 91509-91516: \"generation\":1); campaign17 performed a real 'reload' (output.log 249/255, generation=2). Supersession did not change any verdict in this group (was PASS, now PASS). (2) 44 chaos rows: r3 campaign14 thresholds-chaos -> r4 campaign16 landmarks-chaos-r4. Justified as a fixture fix: in campaign14 the trial_chambers allowed row was FAIL_NO_EFFECT with client overlay 'You can't interact with objects within a Mineshaft. Advancements left to unlock: 175' (the chest room overlapped a locked mineshaft box), and campaign16's fixture records 'centre room overlaps ['interact_inside_mineshaft']; moved to [95833, -32, -39933]' and then PASS. Not cherry-picking: campaign16 also regenerated CHAOS thresholds (accepted behaviour b: e.g. village 2 -> 572, ancient_city 873 -> 0), which turned 7 r3 PASS locked rows into PASS_MASKED_BY_DEPENDENCY and 2 into NA; the lock for those abilities is proven by the other five runtimes.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt 'campaign13 thresholds-hard interact_inside_village/chest at structure start locked' (output.log 21446-21456): \"cancelled\":false,\"useBlock\":\"ALLOW\"",
+      "description": "In locked/op rows the plugin decision lines read cancelled=false / useBlock=ALLOW (the Bukkit event is not cancelled; the denial is done by the native guard and is not logged server-side). The denial is only inferable from the absent ClientboundOpenScreenPacket/INVENTORY_OPEN_TYPE line plus the client overlay recorded in the driver journal, not from an explicit DENY line. Verdicts are still reproducible."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "same section: \"ability\": {\"INTERACT_INSIDE_VILLAGE\": null}",
+      "description": "ATD_STAGE2A_STATE reports \"ability\": {\"INTERACT_INSIDE_*\": null}: the evidence probe does not track this ability (the raw state line tracks 25 abilities), so the excerpt cannot show the tested ability's lock state; locked/unlocked is established only by score vs config threshold and by the client overlay text."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review/landmark22_selectors_and_action_matrix/E1.json abilities[*].familyResolverSites",
+      "description": "E1 for all 22 abilities lists only family resolver call sites, with no SHA-256 and no line numbers, does not cite the resolver itself (ability/AbilityResolvers.java) or the native deny path (gameplay/nativeguard/NativeLandmarkActions.java / NativeLandmarkAgent.targetAndAbilityDenied), and cites ExactLandmarkGate.java whose evaluate() is @Deprecated ('historical S4G stateless regression fixture'). Hash comparison against E1 was impossible; I verified the files against the git blobs at repoHead instead."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "rows.jsonl campaign16 landmarks-chaos-r4 allowed rows of the 10 masked abilities (score 279 vs threshold e.g. 2/63/77)",
+      "description": "On the chaos-r4 runtime, 10 of 22 abilities have no boundary test: locked rows are masked by open_chest (279) and allowed rows run at 279, far above the landmark threshold. The lock boundary for those abilities rests on the normal/easy/hard/custom_vision/reload runtimes."
+    }
+  ]
+}

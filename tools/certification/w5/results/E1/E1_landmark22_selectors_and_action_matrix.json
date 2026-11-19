@@ -1,0 +1,1330 @@
+{
+  "group": "landmark22_selectors_and_action_matrix",
+  "repoHead": "5da53e08c76b79e3f6edf338b86d50e37550e585",
+  "abilities": [
+    {
+      "ability": "interact_inside_village",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 199,
+        "easy": 152,
+        "hard": 246,
+        "custom_vision": 199,
+        "chaos_20261116@campaign14": 2,
+        "chaos_20261116@campaign16": 572
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_shipwreck",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 86,
+        "easy": 70,
+        "hard": 102,
+        "custom_vision": 86,
+        "chaos_20261116@campaign14": 441,
+        "chaos_20261116@campaign16": 750
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_ruined_portal",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 95,
+        "easy": 76,
+        "hard": 114,
+        "custom_vision": 95,
+        "chaos_20261116@campaign14": 39,
+        "chaos_20261116@campaign16": 247
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_buried_treasure",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 110,
+        "easy": 86,
+        "hard": 134,
+        "custom_vision": 110,
+        "chaos_20261116@campaign14": 59,
+        "chaos_20261116@campaign16": 77
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_igloo",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 131,
+        "easy": 100,
+        "hard": 162,
+        "custom_vision": 131,
+        "chaos_20261116@campaign14": 735,
+        "chaos_20261116@campaign16": 596
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_ocean_ruin",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 146,
+        "easy": 110,
+        "hard": 182,
+        "custom_vision": 146,
+        "chaos_20261116@campaign14": 51,
+        "chaos_20261116@campaign16": 380
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_desert_pyramid",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 184,
+        "easy": 140,
+        "hard": 228,
+        "custom_vision": 184,
+        "chaos_20261116@campaign14": 753,
+        "chaos_20261116@campaign16": 2
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_mineshaft",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 249,
+        "easy": 192,
+        "hard": 306,
+        "custom_vision": 249,
+        "chaos_20261116@campaign14": 400,
+        "chaos_20261116@campaign16": 63
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_swamp_hut",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 279,
+        "easy": 216,
+        "hard": 342,
+        "custom_vision": 279,
+        "chaos_20261116@campaign14": 829,
+        "chaos_20261116@campaign16": 87
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_ancient_city",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 331,
+        "easy": 258,
+        "hard": 404,
+        "custom_vision": 331,
+        "chaos_20261116@campaign14": 873,
+        "chaos_20261116@campaign16": 0
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_fortress",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 309,
+        "easy": 240,
+        "hard": 378,
+        "custom_vision": 309,
+        "chaos_20261116@campaign14": 330,
+        "chaos_20261116@campaign16": 178
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_jungle_pyramid",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 380,
+        "easy": 300,
+        "hard": 460,
+        "custom_vision": 380,
+        "chaos_20261116@campaign14": 792,
+        "chaos_20261116@campaign16": 328
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_bastion_remnant",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 324,
+        "easy": 252,
+        "hard": 396,
+        "custom_vision": 324,
+        "chaos_20261116@campaign14": 286,
+        "chaos_20261116@campaign16": 269
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_pillager_outpost",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 464,
+        "easy": 372,
+        "hard": 556,
+        "custom_vision": 464,
+        "chaos_20261116@campaign14": 749,
+        "chaos_20261116@campaign16": 0
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_monument",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 485,
+        "easy": 390,
+        "hard": 580,
+        "custom_vision": 485,
+        "chaos_20261116@campaign14": 26,
+        "chaos_20261116@campaign16": 737
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_monster_room",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 520,
+        "easy": 420,
+        "hard": 620,
+        "custom_vision": 520,
+        "chaos_20261116@campaign14": 715,
+        "chaos_20261116@campaign16": 409
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_trail_ruins",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 541,
+        "easy": 438,
+        "hard": 644,
+        "custom_vision": 541,
+        "chaos_20261116@campaign14": 94,
+        "chaos_20261116@campaign16": 235
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_stronghold",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 506,
+        "easy": 408,
+        "hard": 604,
+        "custom_vision": 506,
+        "chaos_20261116@campaign14": 543,
+        "chaos_20261116@campaign16": 344
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_mansion",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 590,
+        "easy": 480,
+        "hard": 700,
+        "custom_vision": 590,
+        "chaos_20261116@campaign14": 638,
+        "chaos_20261116@campaign16": 191
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_desert_well",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 604,
+        "easy": 492,
+        "hard": 716,
+        "custom_vision": 604,
+        "chaos_20261116@campaign14": 841,
+        "chaos_20261116@campaign16": 803
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_trial_chambers",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 646,
+        "easy": 528,
+        "hard": 764,
+        "custom_vision": 646,
+        "chaos_20261116@campaign14": 2,
+        "chaos_20261116@campaign16": 486
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "interact_inside_end_city",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+          "lines": [
+            105,
+            124
+          ],
+          "sha256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c",
+          "role": "live landmark decision: matched landmark record -> INTERACT_INSIDE_* lock state",
+          "expect": "findLandmarkAbility",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "landmark",
+      "familyResolverSites": {
+        "AbilityResolvers.findLandmarkAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java",
+            "active": false,
+            "inactiveReason": "deprecated gate; the live path uses only its Result enum via CanonicalLandmarkMembership"
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java",
+            "active": true,
+            "inactiveReason": null
+          },
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit restriction runtime: not started in CERTIFICATION/PRODUCT mode (AchieveToDoPlugin.onEnable)"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 632,
+        "easy": 516,
+        "hard": 748,
+        "custom_vision": 632,
+        "chaos_20261116@campaign14": 502,
+        "chaos_20261116@campaign16": 157
+      },
+      "mapping": "CURATED"
+    }
+  ],
+  "configs": {
+    "normal": {
+      "file": "campaign11\\runtime\\plugins\\AchieveToDo\\progression\\configs\\normal.toml",
+      "sha256": "de6383599828005cb00afcacd868ca60850913c434219f8fed5f79456bb69624"
+    },
+    "easy": {
+      "file": "campaign12\\runtime\\plugins\\AchieveToDo\\progression\\configs\\easy.toml",
+      "sha256": "c145bfe25d9080414034e8d23ccd7d88b5eb3727b84f6e5a06219e4edbe7e9b3"
+    },
+    "hard": {
+      "file": "campaign13\\runtime\\plugins\\AchieveToDo\\progression\\configs\\hard.toml",
+      "sha256": "9d7b711b9fb7f2a9d0bfe2666f349e3859b77541bdf1bc2b656134b9f1329d6a"
+    },
+    "custom_vision": {
+      "file": "campaign15\\runtime\\plugins\\AchieveToDo\\progression\\configs\\custom_vision.toml",
+      "sha256": "db26c1f6b440cc79466a6ee37dee544fb149a23b8d5909f53ec37ebeefb536cd"
+    },
+    "chaos_20261116@campaign14": {
+      "file": "campaign14\\runtime\\plugins\\AchieveToDo\\progression\\configs\\chaos_20261116.toml",
+      "sha256": "5fcf0a5133a1ca89e47f8519153d880bd819a3273bcbdeef327e874f64f103fa"
+    },
+    "chaos_20261116@campaign16": {
+      "file": "campaign16\\runtime\\plugins\\AchieveToDo\\progression\\configs\\chaos_20261116.toml",
+      "sha256": "e55204bd5e6f42ad398ce98dba0e26b126de1583ee8949de5392dd8e5771c48f"
+    }
+  }
+}

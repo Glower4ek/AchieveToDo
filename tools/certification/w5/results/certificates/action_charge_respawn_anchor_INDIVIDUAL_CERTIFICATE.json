@@ -1,0 +1,59 @@
+{
+  "group": "action_charge_respawn_anchor",
+  "reviewer": "R3",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability charge_respawn_anchor, DIRECT, family AbilityResolvers.findItemAbility. 2 cited files rehashed: NativeActionBindings.java=93faec2eff7b27b4... match; NativeActionSpecs.java=dc0fab2b346d866d... match. Opened NativeActionSpecs.java:36 (Spec CHARGE_RESPAWN_ANCHOR on RespawnAnchorBlock.useItemOn) and NativeActionBindings.java:13-18 plus the guard lambda at :29-41 (GameplayGate.allows for the resolved ability; creative/spectator bypass). Thresholds normal 450, easy 360, hard 540, chaos_20261116 204, custom_vision 450 equal the config files; campaign14 chaos 259 verified."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS; read all 17 excerpts. Locked, op and offhand_locked: probe 'execute if block ... respawn_anchor[charges=0]' 'Test passed' pre and post, 'ATD_CRITERION_SUPPRESSED ITEM_USED_ON_BLOCK' (native guard fired), count th-1 unchanged, overlay \"You can't charge a respawn anchor\". Allowed, offhand_allowed and creative: post probe 'Test failed' (anchor charged). Spectator: interaction denied by vanilla spectator handling (ATD_EVENT cancelled=true), no overlay, no leak.",
+      "rowsRead": [
+        "campaign11 pass1 charge_respawn_anchor locked",
+        "campaign11 pass1 charge_respawn_anchor allowed",
+        "campaign11 modes charge_respawn_anchor creative",
+        "campaign11 modes charge_respawn_anchor op",
+        "campaign11 modes charge_respawn_anchor spectator",
+        "campaign11 offhand charge_respawn_anchor offhand_locked",
+        "campaign11 offhand charge_respawn_anchor offhand_allowed",
+        "campaign12 thresholds-easy charge_respawn_anchor locked",
+        "campaign12 thresholds-easy charge_respawn_anchor allowed",
+        "campaign13 thresholds-hard charge_respawn_anchor locked",
+        "campaign13 thresholds-hard charge_respawn_anchor allowed",
+        "campaign14 thresholds-chaos charge_respawn_anchor locked",
+        "campaign14 thresholds-chaos charge_respawn_anchor allowed",
+        "campaign15 thresholds-custom_vision charge_respawn_anchor locked",
+        "campaign15 thresholds-custom_vision charge_respawn_anchor allowed",
+        "campaign17 reload charge_respawn_anchor locked",
+        "campaign17 reload charge_respawn_anchor allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11 (normal), campaign12 (easy), campaign13 (hard), campaign14 (chaos), campaign15 (custom_vision), campaign16 (chaos, landmarks r4), campaign17 (normal reload): all onlineMode=true, each has 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game'. Independently confirmed online-mode=true in campaign11/runtime/server.properties:47 and campaign17/runtime/server.properties:47, and the UUID/join lines in campaign17/receipts/output.log:231,242. The group's rows come from campaign11-15 and 17, all covered."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator, offhand_locked/offhand_allowed present (c11); thresholds normal/easy/hard/chaos/custom_vision present. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows (2) all have campaign=campaign17; MANIFEST.e5Reload = campaign17, generationBefore 1, generationAfter 2. Every ATD_STAGE2A_STATE line inside the reload excerpt blocks shows \"generation\": 2 (parsed all of them). Each reload verdict equals the pass1 verdict for the same ability/phase (all PASS). Raw campaign17/receipts/output.log:249-255 shows 'Reloading!' followed by '[AchieveToDo] PROGRESSION_CONFIG_READY generation=2 file=normal.toml', i.e. a real datapack reload."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 17 rows, all status REPRODUCED and recorded==replayed; each replay 'line' was cross-checked against the runtime's campaign-results.jsonl (ability/tag/phase/verdict match, 0 mismatches over the 201 rows of my 7 groups). MANIFEST.runtimes replay: reproducedAll=true for all 7 runtimes (campaign11 1235, campaign12-15 and 17 310 each, campaign16 44), problems []; the REPLAY.json files were re-read and agree. Plugin SHA-256 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b is identical in MANIFEST.plugin, perRuntime (7/7) and evidenceHashes.plugin, and I recomputed it from all 7 runtime/plugins/achievetodo.jar. Client mod: recomputed SHA-256 of the jar at MANIFEST.clientMod.path = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081 (matches). Recomputed SHA-256 of campaign-results.jsonl and REPLAY.json of all 7 runtimes: all equal evidenceHashes (e.g. campaign11 results e2fdcbee751d9b96..., campaign12 results 828efdb841a2751d...)."
+    }
+  },
+  "superseded": "MANIFEST.superseded lists only the two r3 reload rows of this group (normal/reload locked+allowed, PASS->PASS, by campaign17). Justified: the r3 reload in campaign11 was rejected by the server (campaign11/receipts/output.log:88679-88680 'Incorrect argument for command / reload confirm<--[HERE]'), so those rows were not run after a reload; campaign17 performed a real reload (generation 2, output.log:249-255). No r4 (landmark chest-room fixture) supersession concerns this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/action_charge_respawn_anchor/excerpts.txt (every ATD_STAGE2A_STATE line: \"ability\": {\"CHARGE_RESPAWN_ANCHOR\": null}); raw campaign11/receipts/output.log:3528 shows the probe abilities map lists only menu/food/movement abilities",
+      "description": "The server state probe never reports the lock state of CHARGE_RESPAWN_ANCHOR (null in all 34 state lines), contrary to the brief's row anatomy. The lock is still provable from count < threshold in the state line, the ability-specific client overlay text and the absence of effect, so verdicts are reproducible, but the server-side excerpt alone does not show the lock state."
+    }
+  ]
+}

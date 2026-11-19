@@ -1,0 +1,69 @@
+{
+  "group": "equipment_identity9_routes_slots",
+  "reviewer": "R9",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "9 abilities. E1 is regenerated at repoHead 5da53e08, which matches the repo HEAD. Every ability has 2 active enforcementSites. (1) gameplay/NativeEquipmentAbilities.java:8-16 = 7baab126...625f (recomputed, match). It builds the identity map EQUIP_<material>_ARMOR to <material>_HELMET/CHESTPLATE/LEGGINGS/BOOTS for COPPER, GOLDEN, LEATHER, CHAINMAIL, IRON, DIAMOND and NETHERITE, plus TURTLE_HELMET and ELYTRA. Copper is included. (2) gameplay/nativeguard/NativeTransactionAgent.java:76-101 = debe8c9d...6a9a (match). equipment(), armorPlace() and armorPickup() route to denied(\"equipment\", ...). transformNative (146-216) injects these into Equippable.swapWithEquipmentSlot, ArmorSlot.mayPlace/mayPickup and LivingEntity.isEquippableInSlot/canEquipWithDispenser, and refuses startup on a site-count mismatch. The link between them is NativeTransactionBindings.java:23-43: it registers 'equipment' with guard.apply(equipment::apply), which returns !denialEffects.allows(player, ability) and bypasses creative and spectator. This file is not cited (minor). Direct sites NativeEquipmentAbilities.java:15 (turtle) and :16 (elytra) are correct. MovementAdapter.java:29 = b4966275 (match) is correctly marked inactive. The family resolver BukkitRestrictionResolver.java (no hash in E1; I computed f5d7d99b...c84e) is marked inactive. It still has no copper_ branch (only golden_/leather_ at :324/:340/:346), but it is unreachable in the certified composition. EquipmentAdapter and MovementAdapter are registered only in BukkitRestrictionRuntime.java:50/58. AchieveToDoPlugin.onEnable:33-61 never starts that runtime when gameplay mode is not DIAGNOSTIC, and every runtime c11-c18 logs 'ATD_GAMEPLAY_MODE=CERTIFICATION'. Fabric parity: AbilityType.findEquipmentEquipAbility and getArmorMaterial (repo/src/main/java/.../AbilityType.java:510-529, 733ff) use the same explicit 4-piece item lists. E1 thresholds for all 9 abilities in normal, easy, hard, custom_vision, chaos@c14 and chaos@c16 equal the raw toml values (c11/c17/c18 normal.toml de638359, c12 easy c145bfe2, c13 hard 9d7b711b, c14 chaos 5fcf0a51, c15 custom_vision db26c1f6, c16 chaos e55204bd)."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "257 rows, all PASS; 153 of them are unchanged from round 1. I checked every locked, offhand_locked and op row programmatically. None is at score >= threshold, none has an observed effect, and none shows count drift except the dispenser rows (see below). Every allowed, offhand_allowed and creative row has all oracles true. Read in full: the new campaign18 rows. Right-click locked rows show Item.use RETURN Pass[], and allowed rows show Success with the armor in the slot. Locked armor-slot place, shift-click and hotbar-swap rows: count unchanged, 'execute if items ... armor.head' Test failed pre and post, CraftInventoryCrafting closed by the guard (ATD_BOUNDARY INVENTORY_CLOSE + ClientboundContainerClosePacket, consistent with NativeTransactionAgent.close), client armor all air, item still in mainhand, overlay \"You can't equip copper armor...\". The allowed counterparts show 'Test passed. Count: 1' and the client armor slot filled (elytra in the chest slot, inventory slot 6). Feet route for 7 materials: locked Pass[] with boots in mainhand; allowed Success with boots in the feet slot. Dispenser: I judge locked_margin=2 legitimate. The aborted attempt (campaign18-aborted-dispenser-fixture/receipts/campaign-results.jsonl) used margin 1. There, pressing the button awarded blazeandcave:redstone/click (55 to 56 = threshold) before the dispenser fired, and the harness marked it INVALID_SCORE_DRIFT_DURING_ACTION instead of PASS. In the final run, golden locked starts at 54. excerpts.txt:2115-2116 shows redstone/click awarded and score 55, still below 56, with overlay 'left to unlock: 1'. The other 8 start at t-2, already have click, and keep their count unchanged. In every case armor.head stays empty and the dispensed item ends in the player's mainhand (dropped and picked up). The allowed rows with the same fixture equip the item, which proves the fixture fires. The fixture_criteria exclusion works per advancement id (campaign.py:211-212) and covers only redstone/click, bacap/redstone_milestone and bacap/advancement_legend. Equip-specific advancements (mining/living_like_kings, story/obtain_armor, story/shiny_gear) keep their own ids and would still show as leaks, so the exclusion hides no product leak.",
+      "rowsRead": [
+        "campaign18 equip-routes equip_copper_armor locked/allowed (right-click, armor slot place, shift-click, hotbar swap, dispenser, feet)",
+        "campaign18 equip-routes equip_golden_armor dispenser locked/allowed",
+        "campaign18 equip-routes equip_elytra armor slot place/dispenser locked/allowed (chest slot)",
+        "campaign18 equip-routes all 104 rows (summary of counts, oracles, overlay, client armor and mainhand)",
+        "campaign18-aborted-dispenser-fixture equip_golden_armor dispenser locked (INVALID_SCORE_DRIFT_DURING_ACTION)",
+        "campaign11 modes equip_copper_armor creative/op/spectator",
+        "campaign11 offhand equip_copper_armor offhand_locked",
+        "campaign17 reload equip_golden_armor locked/allowed",
+        "campaign11-campaign17 all 153 rows (programmatic invariant check)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Every runtime c11-c18 in MANIFEST.runtimes has onlineMode=true, the authenticated UUID line and the join line. For campaign18 I confirmed in output.log:232 'UUID of player Glower4ek is 89c23030-...' and :243 'Glower4ek joined the game'. server.properties has online-mode=true for all 8 runtimes. campaign18/runtime_args.json has -Dachievetodo.gameplay.mode=certification and -javaagent:plugins/achievetodo.jar."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows (creative, op, spectator), offhand_locked/offhand_allowed and threshold rows for normal, easy, hard, chaos and custom_vision exist for all 9 abilities. There are no NA rows. New in r6 (campaign18, NORMAL, tag equip-routes), 104 rows, locked and allowed for each route. All 9 abilities have right-click, armor-slot place, shift-click (QUICK_MOVE), hotbar swap (SWAP) into the armor slot, and dispenser equip onto the player. The 7 material abilities also have right-click boots into the feet slot. Slots covered: head (slot 5), chest (elytra, slot 6), feet (boots). This covers every hook the native guard installs: Equippable.swapWithEquipmentSlot, ArmorSlot.mayPlace, LivingEntity.isEquippableInSlot and canEquipWithDispenser. Residual minor gaps: chestplate and leggings items of the 7 materials, drag (QUICK_CRAFT), and inventory placement into the feet slot."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "All 18 reload rows come from campaign17. MANIFEST.e5Reload.evidence.generationAfter=2. excerpts.txt has 36 '\"generation\": 2' lines (pre and post STATE of each of the 18 reload rows), and all other rows show generation 1. campaign17/receipts/output.log:249 'Reloading!' and :255 'PROGRESSION_CONFIG_READY generation=2'. Each reload verdict (PASS) equals the pass1 verdict for the same ability and phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 257/257 REPRODUCED, recorded==replayed. Every runtime's replay has reproducedAll=true and problems=[] (c11 1235, c12-c15 310, c16 44, c17 310, c18 104). FINAL_STATUS_R6.json shows c18 104 PASS / 104 REPRODUCED. The package's campaign18 rows equal campaign18/receipts/campaign-results.jsonl exactly: 104 rows, all PASS, all in this group. I recomputed SHA-256 of output.log, both journals, campaign-results.jsonl, REPLAY.json, plugin, server, trace-agent and input-driver for all 8 runtimes, and all equal evidenceHashes (c18 output.log d6ef4d65...). The plugin jar in every runtime = ad0685ed...c9d80b. The client mod at the MANIFEST path = 46a0601e...55081. HARNESS_R6.sha256 matches the current campaign.py 5ddb0112, campaign_cases.py 6d18b050, campaign_replay.py d881b760, hidden_advancements.json 12da458b and campaign_e1.py f39f9544. The older runtimes' recorded harness hashes chain to campaign.py.pre-r4 (e82d1612) and campaign_cases.py.pre-r6 (d0638122). The aborted attempts are excluded correctly. campaign18-aborted-dispenser-fixture stopped gracefully on the fixture defect described in E2. campaign18-aborted-login429 has only prelaunch files (campaign-final-r6-aborted-login429.log: Mojang 429). Neither contributes rows."
+    }
+  },
+  "superseded": "The only superseded entries are the 18 campaign11 tag=reload rows, all replaced by campaign17 (r5) with PASS to PASS. Justified. The c11 reload was rejected ('reload confirm<--[HERE]', campaign11/receipts/output.log:88680), and c17 performs a real reload with generation 2 (output.log:249-255). r4 (campaign16) contributes no rows to this group. The r6 campaign18 rows are a supplement (new tag equip-routes), not replacements, so no earlier row is hidden.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "port/.../gameplay/NativeTransactionBindings.java:23-43 (not in E1)",
+      "description": "E1 cites the identity map and the agent trampolines, but not the binding that actually decides the lock (guard: creative and spectator bypass, then !denialEffects.allows(player, ability)). A reader must find this link alone."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review/equipment_identity9_routes_slots/E1.json familyResolverSites (BukkitRestrictionResolver.java)",
+      "description": "Inactive family-resolver entries still carry no sha256. I computed f5d7d99b...c84e. That file still lacks a copper_ branch, but it is unreachable in the certified CERTIFICATION composition."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "campaign_cases.py:195-227; rows.jsonl campaign18 notes",
+      "description": "The r6 routes use only helmets (head, slot 5), elytra (chest, slot 6) and boots via right-click. Chestplate and leggings items of the 7 materials, drag (QUICK_CRAFT) placement, and inventory placement into the feet or legs slot are never runtime-exercised. They are covered only statically by the slot-agnostic ArmorSlot.mayPlace hook and the 4-piece identity map."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/equipment_identity9_routes_slots/excerpts.txt, every ATD_STAGE2A_STATE line",
+      "description": "Carried over from round 1. The probe reports \"EQUIP_*\": null. Locked status follows from count < raw threshold, the client overlay, and the Item.use Pass[] or unchanged armor probe."
+    }
+  ]
+}

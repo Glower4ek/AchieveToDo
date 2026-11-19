@@ -1,0 +1,65 @@
+{
+  "group": "complex_use_shears",
+  "reviewer": "R3",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability use_shears, DIRECT, family AbilityResolvers.findItemAbility. 7 cited files rehashed: BlockBreakAdapter.java=b0be39c0eef1c697... match; EntityInteractionAdapter.java=83f13812b8510e12... match; ItemUseAdapter.java=f6b08cdd465c765c... match; NativeComplexBindings.java=0890c634cf8c042a... match; NativeComplexAgent.java=09ae3f1793f2fad4... match; NativeComplexSpecs.java=7423b3d7dd8be91f... match; NativeLandmarkOperations.java=778a618697067511... match. Opened EntityInteractionAdapter.java:59-70 (PlayerShearEntityEvent -> denyIfRestricted(..., abilityList(USE_SHEARS))), NativeComplexSpecs.java:45-56 (shear-Sheep/Bogged/MushroomCow/SnowGolem/CopperGolem/SulfurCube, hive, pumpkin, tripwire, leash, mining specs) and NativeComplexBindings.java:13-16. Thresholds normal 169, easy 128, hard 210, chaos_20261116 154, custom_vision 169 equal the config files; campaign14 chaos 508 verified."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS; read all 17 excerpts. Locked, op and offhand_locked: 'Sheep has the following entity data: 0b' pre and post (not sheared), count th-1 unchanged, overlay \"You can't use shears\". Allowed, offhand_allowed and creative: post Sheared 1b; allowed rows gain +1 count (have_a_shearful_day etc., a legitimate effect of the allowed action). Spectator: not sheared (vanilla), no overlay, no leak. Raw lines rechecked at campaign11/receipts/output.log:6025-6033.",
+      "rowsRead": [
+        "campaign11 pass1 use_shears locked",
+        "campaign11 pass1 use_shears allowed",
+        "campaign11 modes use_shears creative",
+        "campaign11 modes use_shears op",
+        "campaign11 modes use_shears spectator",
+        "campaign11 offhand use_shears offhand_locked",
+        "campaign11 offhand use_shears offhand_allowed",
+        "campaign12 thresholds-easy use_shears locked",
+        "campaign12 thresholds-easy use_shears allowed",
+        "campaign13 thresholds-hard use_shears locked",
+        "campaign13 thresholds-hard use_shears allowed",
+        "campaign14 thresholds-chaos use_shears locked",
+        "campaign14 thresholds-chaos use_shears allowed",
+        "campaign15 thresholds-custom_vision use_shears locked",
+        "campaign15 thresholds-custom_vision use_shears allowed",
+        "campaign17 reload use_shears locked",
+        "campaign17 reload use_shears allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11 (normal), campaign12 (easy), campaign13 (hard), campaign14 (chaos), campaign15 (custom_vision), campaign16 (chaos, landmarks r4), campaign17 (normal reload): all onlineMode=true, each has 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game'. Independently confirmed online-mode=true in campaign11/runtime/server.properties:47 and campaign17/runtime/server.properties:47, and the UUID/join lines in campaign17/receipts/output.log:231,242. The group's rows come from campaign11-15 and 17, all covered."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator, offhand_locked/offhand_allowed present (c11); thresholds normal/easy/hard/chaos/custom_vision present. No NA rows. Only the sheep route is exercised; the other native shears routes in NativeComplexSpecs (bogged, mooshroom, snow golem, hive, pumpkin, tripwire) have no runtime row (not required by the checklist)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows (2) all have campaign=campaign17; MANIFEST.e5Reload = campaign17, generationBefore 1, generationAfter 2. Every ATD_STAGE2A_STATE line inside the reload excerpt blocks shows \"generation\": 2 (parsed all of them). Each reload verdict equals the pass1 verdict for the same ability/phase (all PASS). Raw campaign17/receipts/output.log:249-255 shows 'Reloading!' followed by '[AchieveToDo] PROGRESSION_CONFIG_READY generation=2 file=normal.toml', i.e. a real datapack reload."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 17 rows, all status REPRODUCED and recorded==replayed; each replay 'line' was cross-checked against the runtime's campaign-results.jsonl (ability/tag/phase/verdict match, 0 mismatches over the 201 rows of my 7 groups). MANIFEST.runtimes replay: reproducedAll=true for all 7 runtimes (campaign11 1235, campaign12-15 and 17 310 each, campaign16 44), problems []; the REPLAY.json files were re-read and agree. Plugin SHA-256 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b is identical in MANIFEST.plugin, perRuntime (7/7) and evidenceHashes.plugin, and I recomputed it from all 7 runtime/plugins/achievetodo.jar. Client mod: recomputed SHA-256 of the jar at MANIFEST.clientMod.path = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081 (matches). Recomputed SHA-256 of campaign-results.jsonl and REPLAY.json of all 7 runtimes: all equal evidenceHashes (e.g. campaign11 results e2fdcbee751d9b96..., campaign12 results 828efdb841a2751d...)."
+    }
+  },
+  "superseded": "MANIFEST.superseded lists only the two r3 reload rows of this group (normal/reload locked+allowed, PASS->PASS, by campaign17). Justified: the r3 reload in campaign11 was rejected by the server (campaign11/receipts/output.log:88679-88680 'Incorrect argument for command / reload confirm<--[HERE]'), so those rows were not run after a reload; campaign17 performed a real reload (generation 2, output.log:249-255). No r4 (landmark chest-room fixture) supersession concerns this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/complex_use_shears/excerpts.txt (every ATD_STAGE2A_STATE line: \"ability\": {\"USE_SHEARS\": null}); raw campaign11/receipts/output.log:3528 shows the probe abilities map lists only menu/food/movement abilities",
+      "description": "The server state probe never reports the lock state of USE_SHEARS (null in all 34 state lines), contrary to the brief's row anatomy. The lock is still provable from count < threshold in the state line, the ability-specific client overlay text and the absence of effect, so verdicts are reproducible, but the server-side excerpt alone does not show the lock state."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "campaign11/receipts/output.log:6025-6033 (pass1 locked)",
+      "description": "The locked excerpts contain no plugin decision line (no interact packet/event or guard log): only the Sheared probe, the count and two container-resync packets. The denial is attested by Sheared staying 0b plus the client overlay in rows.jsonl."
+    }
+  ]
+}

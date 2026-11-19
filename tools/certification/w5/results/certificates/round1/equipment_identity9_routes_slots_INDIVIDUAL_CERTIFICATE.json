@@ -1,0 +1,75 @@
+{
+  "group": "equipment_identity9_routes_slots",
+  "reviewer": "R2",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "FAIL",
+      "checked": "9 abilities. I recomputed SHA-256: MovementAdapter.java b4966275... OK, NativeEquipmentAbilities.java 7baab126... OK. The family resolver file BukkitRestrictionResolver.java has no hash in this E1. I computed it as f5d7d99b..., which equals the value recorded in the other groups' E1. Turtle helmet and elytra have direct sites at NativeEquipmentAbilities.java:15/16, the identity map used by the native guard (NativeTransactionBindings.java:23-40, NativeTransactionAgent hooks Equippable.swapWithEquipmentSlot, ArmorSlot.mayPlace/mayPickup and LivingEntity.isEquippableInSlot/canEquipWithDispenser). Elytra also has MovementAdapter.java:29 (glide). The other 7 abilities are FAMILY only through findEquipmentAbility in BukkitRestrictionResolver.resolveEquipmentAbility (175-192). That path resolves golden, leather, chainmail, iron, diamond and netherite, but returns empty for copper (see major finding). Thresholds for all 9 abilities are present in the 5 configs and equal the raw files. I recomputed row thresholds from each runtime's raw config (campaign1N/runtime/plugins/AchieveToDo/progression/configs/*.toml) and all of them match. The E1 chaos value comes from campaign16's chaos_20261116.toml (e55204bd...). The chaos rows of this group come from campaign14, whose same-named file has a different hash (5fcf0a51...) and different values. Each row carries its own threshold, so this matches accepted behaviour (b)."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "I read all 153 rows' summaries and the full excerpts or client states of a sample. Every ability has locked PASS rows on c11, c12, c13, c14, c15 and c17. Locked rows show Item.use RETURN value=Pass[], count unchanged, the helmet (or elytra) still in mainhand, the armor slot still air, and the overlay \"You can't equip ...\". Allowed rows show Item.use Success, the item moved into the head slot (chest for elytra), and inventory_changed. Natural armor advancements raise the count (for example 62 to 63), which is allowed in the allowed phase. Offhand rows behave the same way. op is denied. Creative equips (bypass). Spectator does nothing and shows no overlay.",
+      "rowsRead": [
+        "campaign11 pass1 equip_copper_armor locked",
+        "campaign11 pass1 equip_copper_armor allowed",
+        "campaign11 modes equip_copper_armor creative/op/spectator",
+        "campaign11 offhand equip_copper_armor offhand_locked/offhand_allowed",
+        "campaign11 pass1 equip_iron_armor locked",
+        "campaign12 thresholds-easy equip_* locked (all 9)",
+        "campaign13 thresholds-hard equip_* allowed (all 9)",
+        "campaign14 thresholds-chaos equip_copper_armor locked/allowed",
+        "campaign15 thresholds-custom_vision equip_* locked (all 9)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Every runtime in MANIFEST.runtimes (campaign11-17) has onlineMode=true, an authenticated line 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and a 'Glower4ek joined the game' line. Cross-checked against raw files: online-mode=true in campaign1N/runtime/server.properties for all 7 runtimes, and the UUID and join lines are present in each campaign1N/receipts/output.log."
+    },
+    "E4": {
+      "result": "FAIL",
+      "checked": "The checklist items are present: modes creative, op and spectator, offhand_locked and offhand_allowed, and thresholds normal, easy, hard, chaos and custom_vision for all 9 abilities, with no NA rows. However, the group's declared scope ('routes_slots'; handoff mandatoryRuntimeTest 'Ordinary and alternate canonical input', bypassAnalysisRequired 'menu routes') is not covered. campaign_cases.py:185-190 defines a single case per ability: right-click use of a helmet or elytra. No row tests inventory click, shift-click or drag into an armor slot, a hotbar swap, a dispenser, or the chest, legs or feet slots for the armor materials."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "All reload rows (18) come from campaign17. MANIFEST.e5Reload.evidence.generationAfter=2 (generationBefore=1, at 2026-11-19T12:06:53Z, which matches the 17:06:48-50 local reload lines in campaign17 output.log). Every reload row's ATD_STAGE2A_STATE lines in excerpts.txt show \"generation\": 2, and every non-reload row shows generation 1. Each reload verdict equals the pass1 verdict for the same ability and phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 153/153 rows are REPRODUCED, recorded==replayed for each one, and the multiset (campaign,tag,ability,phase,verdict) matches rows.jsonl exactly. Each runtime's replay has reproducedAll=true with problems=[] (c11 1235, c12-c15 310, c16 44, c17 310). I re-read each runtime's REPLAY.json to confirm this. Plugin SHA-256 ad0685ed...c9d80b is the same in all 7 runtimes (MANIFEST.plugin.perRuntime). I recomputed it for each campaign1N/runtime/plugins/achievetodo.jar and for build/libs/AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar, and it matches. I recomputed the client mod (the real Cyrillic-path ...\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar) = 46a0601e...55081, which matches. I recomputed SHA-256 of campaign-results.jsonl and REPLAY.json for all 7 runtimes and every value equals evidenceHashes (for example c17 results 14036deb3fbf00c3..., c11 e2fdcbee751d9b96...). Package completeness: every package row exists with the same verdict in the raw campaign-results.jsonl. The only raw rows of this group missing from the package are the campaign11 'reload' rows, which are superseded."
+    }
+  },
+  "superseded": "Superseded entries are the campaign11 tag=reload rows of this group only, all 'by campaign17' (r5). This group has no r4 landmark rows. The r5 replacement is justified. In campaign11/receipts/output.log:88679-88680 the server rejected the reload ('Incorrect argument for command' / 'reload confirm<--[HERE]'), so those c11 'reload' rows never ran under a reloaded config. In campaign17/receipts/output.log:247-255 a real datapack reload happens ('Reloading!', 'Loaded 3048 advancements', 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml'), and the replacement rows' STATE lines show generation 2. The r4 chest-room fixture fix (campaign16) contributes no rows to this group.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "E1",
+      "evidence": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java:175-192 and :339-358; review/equipment_identity9_routes_slots/E1.json (equip_copper_armor)",
+      "description": "E1 maps equip_copper_armor only to the family resolver findEquipmentAbility in BukkitRestrictionResolver. resolveArmorMaterialFamily has no 'copper_' branch, so resolveEquipmentAbility(copper_*) returns empty and that path can never guard copper. Every EquipmentAdapter route (interact, slot change, inventory click and drag, swap hands, dispenser, armor stand) therefore skips copper armor. The copper denial seen at runtime comes from the uncited native identity map (NativeEquipmentAbilities.java:12-14). The map is wrong for copper, and the Bukkit-layer gap is a latent risk on any route the native agent does not cover."
+    },
+    {
+      "severity": "major",
+      "criterion": "E4",
+      "evidence": "campaign_cases.py:185-190; review/equipment_identity9_routes_slots/rows.jsonl (case '' only)",
+      "description": "The group claims route and slot coverage, but each ability is tested only through right-click equip into the head slot (chest for elytra). The alternate canonical routes that the source guards are never runtime-proven: armor-slot click, shift-click and drag, hotbar swap, dispenser equip, and the other armor slots."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review/equipment_identity9_routes_slots/E1.json familyResolverSites",
+      "description": "For the 6 working FAMILY abilities, E1 cites only the Bukkit EquipmentAdapter resolver. The tested denial (Item.use returns Pass) goes through the native Equippable.swapWithEquipmentSlot hook via NativeEquipmentAbilities, which E1 does not cite for them. BukkitRestrictionResolver.java also has no recorded hash in this E1; I verified it independently."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/equipment_identity9_routes_slots/excerpts.txt, every ATD_STAGE2A_STATE line",
+      "description": "The probe reports the tested ability as null (\"EQUIP_*\": null) in every state line, so the server log never shows the lock state of this ability. Locked status follows only from count < threshold, which I confirmed against the raw config, and from the client overlay in rows.jsonl."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "review/equipment_identity9_routes_slots/MANIFEST.json clientMod.path and runtimes.*.evidenceHashes.client-mod.path",
+      "description": "The client-mod path is stored with its Cyrillic folder name mojibake-encoded (UTF-8 bytes read as cp1251), so a third party cannot open it as written. I located the real file and its hash matches. This is a record defect only."
+    }
+  ]
+}

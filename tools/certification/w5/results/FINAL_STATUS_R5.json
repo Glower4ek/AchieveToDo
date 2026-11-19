@@ -1,0 +1,38 @@
+{
+  "started": "2026-11-19T12:06:04+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\repo\\port\\AchieveToDo-Purpur-26.2\\build\\libs\\AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar",
+  "runtimes": {
+    "campaign17": {
+      "mode": "normal",
+      "started": "2026-11-19T12:06:04+00:00",
+      "passes": {
+        "reload": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 305,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 2,
+            "PASS_PARITY_ENTER_BLOCK": 2
+          },
+          "finished": "2026-11-19T13:02:31+00:00"
+        }
+      },
+      "reload": {
+        "generationBefore": 1,
+        "generationAfter": 2,
+        "at": "2026-11-19T12:06:53+00:00"
+      },
+      "finished": "2026-11-19T13:02:36+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 310
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "r4 harness, r5 reload orchestration",
+  "finished": "2026-11-19T13:02:36+00:00"
+}
