@@ -17,6 +17,16 @@ public final class AchieveToDoBootstrap implements PluginBootstrap {
 
     @Override
     public void bootstrap(BootstrapContext context) {
+        // Log only. A launch without flags usually fails below with BACAP_MISSING before the plugin enables,
+        // so say how to start before that; the refusal itself happens in AchieveToDoPlugin.onEnable.
+        if (System.getProperty(com.diskree.achievetodo.core.StartupModePolicy.MODE) == null) {
+            try {
+                com.diskree.achievetodo.core.StartupModePolicy.decide(System::getProperty,
+                    com.diskree.achievetodo.core.StartupModePolicy.Hints.NONE);
+            } catch (com.diskree.achievetodo.core.StartupModePolicy.Refusal refusal) {
+                refusal.guidance().forEach(line -> context.getLogger().error(line));
+            }
+        }
         context.getLifecycleManager().registerEventHandler(LifecycleEvents.DATAPACK_DISCOVERY, event -> {
             DatapackRegistrar registrar = event.registrar();
             BacapPacks.beginDiscovery();

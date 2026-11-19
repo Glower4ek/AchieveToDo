@@ -398,6 +398,8 @@ tasks.check {
 
     dependsOn("pinnedStartupTest")
 
+    dependsOn("startupModePolicyTest")
+
     dependsOn("landmarkNativeTest")
 
     dependsOn("gameplayTest")
@@ -415,6 +417,16 @@ tasks.check {
 }
 
 
+
+tasks.register<JavaExec>("startupModePolicyTest") {
+    group = "verification"
+    description = "A start without an explicit gameplay mode must fail closed with operator guidance."
+    dependsOn("testClasses")
+    classpath = sourceSets.named("test").get().runtimeClasspath
+    mainClass.set("com.diskree.achievetodo.core.StartupModePolicyTest")
+    workingDir = projectDir
+    javaLauncher.set(javaToolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(25)) })
+}
 
 tasks.register<JavaExec>("pinnedStartupTest") {
 
