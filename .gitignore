@@ -50,3 +50,6 @@ __pycache__/
 
 # tools/build holds build/certification scripts, not build output
 !/tools/build/
+
+# Windows folder metadata
+desktop.ini
