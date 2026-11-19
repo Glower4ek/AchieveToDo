@@ -28,8 +28,17 @@ public final class AchieveToDoPlugin extends JavaPlugin {
             var build = io.papermc.paper.ServerBuildInfo.buildInfo();
             PinnedStartupContract.runtime(Runtime.version().feature(), build.minecraftVersionId(),
                 build.brandName(), build.buildNumber().orElse(-1));
+            // No agent (or a switch contradicting the certified value): refuse with the one-line start command
+            // before the agent identity check, which would otherwise fail with a bare ClassNotFoundException.
+            if (System.getProperty(StartupModePolicy.MODE) == null) StartupModePolicy.decide(System::getProperty, startupHints());
             PinnedStartupContract.installation(getFile().toPath());
             com.diskree.achievetodo.ui.advancement.AdvancementVisibilityAgent.verify(getServer().getClass().getClassLoader());
+            if (ReleaseLaunchDefaults.active(System::getProperty)) {
+                // Release launch: fill in only the per-installation values the operator did not give.
+                var profile = new ReleaseLaunchProfile(System::getProperty, System::setProperty);
+                profile.deriveInstallation(getDataFolder().toPath(), loadedWorlds());
+                getLogger().warning("ATD_LAUNCH_PROFILE=release; derived=" + profile.derived());
+            }
             // No silent default: a launch without an explicit mode is refused (see StartupModePolicy).
             var startup = StartupModePolicy.decide(System::getProperty, startupHints());
             startup.warnings().forEach(getLogger()::severe);
@@ -211,7 +220,7 @@ public final class AchieveToDoPlugin extends JavaPlugin {
                 if (uuid != null || world.getEnvironment() != org.bukkit.World.Environment.NORMAL) continue;
                 uuid = world.getUID().toString();
                 key = world.getKey().toString();
-                datapacks = world.getWorldFolder().toPath().resolve("datapacks").toAbsolutePath().normalize().toString();
+                datapacks = ReleaseLaunchProfile.levelRoot(world.getWorldFolder().toPath()).resolve("datapacks").toAbsolutePath().normalize().toString();
             }
         } catch (RuntimeException | LinkageError unavailable) { /* hints only */ }
         try {
@@ -220,7 +229,21 @@ public final class AchieveToDoPlugin extends JavaPlugin {
             groupUuid = group.worlds().get("overworld").uuid().toString();
             groupKey = group.worlds().get("overworld").key();
         } catch (RuntimeException | LinkageError unavailable) { /* missing or invalid: reported by the guidance */ }
-        return new StartupModePolicy.Hints(uuid, key, groupUuid, groupKey, datapacks, loaded);
+        String jar = null;
+        try { jar = "plugins/" + getFile().getName(); } catch (RuntimeException | LinkageError unavailable) { /* hints only */ }
+        return new StartupModePolicy.Hints(uuid, key, groupUuid, groupKey, datapacks, loaded, jar);
+    }
+
+    private java.util.List<ReleaseLaunchProfile.LoadedWorld> loadedWorlds() {
+        var worlds = new java.util.ArrayList<ReleaseLaunchProfile.LoadedWorld>();
+        for (var world : getServer().getWorlds()) {
+            String role = switch (world.getEnvironment()) {
+                case NORMAL -> "overworld"; case NETHER -> "nether"; case THE_END -> "end"; default -> "other";
+            };
+            worlds.add(new ReleaseLaunchProfile.LoadedWorld(role, world.getUID(), world.getKey().toString(),
+                world.getWorldFolder().toPath()));
+        }
+        return worlds;
     }
 
     private void startGameplay() throws Exception {

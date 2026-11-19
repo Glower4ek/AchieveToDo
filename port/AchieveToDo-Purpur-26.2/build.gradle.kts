@@ -108,7 +108,8 @@ tasks.jar {
 
     archiveBaseName.set("AchieveToDo-Purpur-26.2")
 
-    manifest.attributes["Premain-Class"] = "com.diskree.achievetodo.gameplay.nativeguard.NativeTransactionPremain"
+    // Release defaults first, then the unchanged certified native bootstrap (NativeTransactionPremain).
+    manifest.attributes["Premain-Class"] = "com.diskree.achievetodo.core.ReleaseLaunchPremain"
 
 }
 
@@ -400,6 +401,8 @@ tasks.check {
 
     dependsOn("startupModePolicyTest")
 
+    dependsOn("releaseLaunchTest")
+
     dependsOn("landmarkNativeTest")
 
     dependsOn("gameplayTest")
@@ -424,6 +427,16 @@ tasks.register<JavaExec>("startupModePolicyTest") {
     dependsOn("testClasses")
     classpath = sourceSets.named("test").get().runtimeClasspath
     mainClass.set("com.diskree.achievetodo.core.StartupModePolicyTest")
+    workingDir = projectDir
+    javaLauncher.set(javaToolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(25)) })
+}
+
+tasks.register<JavaExec>("releaseLaunchTest") {
+    group = "verification"
+    description = "A start with only -javaagent must yield exactly the certified property set."
+    dependsOn("testClasses")
+    classpath = sourceSets.named("test").get().runtimeClasspath
+    mainClass.set("com.diskree.achievetodo.core.ReleaseLaunchTest")
     workingDir = projectDir
     javaLauncher.set(javaToolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(25)) })
 }

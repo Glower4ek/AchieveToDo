@@ -10,14 +10,28 @@ public final class StartupModePolicyTest {
     private static int cases;
 
     public static void main(String[] args) throws Exception {
-        // 1. No mode at all: refused, with the full certified command in the guidance.
+        // 1. No mode at all (no agent): refused, with the one-line release command in the guidance.
         var refusal = refuse(Map.of(), StartupModePolicy.Hints.NONE, "ATD_GAMEPLAY_MODE_REQUIRED");
         String text = String.join("\n", refusal.guidance());
-        check(text.contains("-javaagent:plugins/achievetodo.jar"), "guidance names the agent");
-        check(text.contains("-Dachievetodo.gameplay.mode=certification"), "guidance names the mode");
+        check(text.contains("java -javaagent:plugins/achievetodo.jar -jar purpur-26.2-2620.jar --nogui"), "guidance names the one-line start");
+        check(text.contains("agent is not loaded"), "guidance says the agent is missing");
+        check(!text.contains("-Dachievetodo.bridge.spike"), "release guidance needs no -D switches");
+        check(text.contains("mode=diagnostic"), "guidance names the explicit legacy opt-in");
+        var named = new StartupModePolicy.Hints(null, null, null, null, null, null, "plugins/AchieveToDo-Purpur-26.2-0.2.1.jar");
+        check(String.join("\n", refuse(Map.of(), named, "ATD_GAMEPLAY_MODE_REQUIRED").guidance())
+            .contains("-javaagent:plugins/AchieveToDo-Purpur-26.2-0.2.1.jar -jar"), "guidance uses the real jar name");
+        // 1b. Agent loaded but a certified switch contradicted: the conflict is named.
+        text = String.join("\n", refuse(Map.of(ReleaseLaunchDefaults.PROFILE, "refused:achievetodo.bridge.spike=false"),
+            null, "ATD_GAMEPLAY_MODE_REQUIRED").guidance());
+        check(text.contains("-Dachievetodo.bridge.spike=false") && !text.contains("agent is not loaded"), "conflict named");
+        check(StartupModePolicy.CERTIFIED_SWITCHES.equals(ReleaseLaunchDefaults.SWITCHES), "one switch list");
+        // 1c. The explicit full command is still printed when an explicit certification launch lacks a value.
+        var partial = new HashMap<>(certified()); partial.remove(StartupModePolicy.BRIDGE_SERVER);
+        text = String.join("\n", refuse(partial, StartupModePolicy.Hints.NONE, "ATD_GAMEPLAY_MODE_PRECONDITIONS").guidance());
+        check(text.contains("-javaagent:plugins/achievetodo.jar"), "explicit guidance names the agent");
+        check(text.contains("-Dachievetodo.gameplay.mode=certification"), "explicit guidance names the mode");
         for (String flag : StartupModePolicy.CERTIFIED_SWITCHES) check(text.contains("-D" + flag + "=true"), "guidance names " + flag);
         for (String flag : StartupModePolicy.PER_WORLD) check(text.contains("-D" + flag + "="), "guidance names " + flag);
-        check(text.contains("mode=diagnostic"), "guidance names the explicit legacy opt-in");
         check(!text.contains("world-group.properties is missing"), "no world-group claim without hints");
 
         // 2. Every other certified flag present but the mode absent is still refused (old silent legacy start).
@@ -27,14 +41,16 @@ public final class StartupModePolicyTest {
         // 3. Hints from the running server are filled into the command; world-group binding wins.
         var hints = new StartupModePolicy.Hints(WORLD, "minecraft:overworld", null, null, "/srv/world/datapacks",
             List.of("overworld.uuid=" + WORLD + "  overworld.key=minecraft:overworld", "nether.uuid=x  nether.key=minecraft:the_nether"));
-        text = String.join("\n", refuse(Map.of(), hints, "ATD_GAMEPLAY_MODE_REQUIRED").guidance());
+        var unbound = new HashMap<>(certified());
+        unbound.remove(StartupModePolicy.PROGRESSION_WORLD); unbound.remove(StartupModePolicy.BACAP_DIRECTORY);
+        text = String.join("\n", refuse(unbound, hints, "ATD_GAMEPLAY_MODE_PRECONDITIONS").guidance());
         check(text.contains("-Dachievetodo.progression.world=" + WORLD), "observed overworld uuid suggested");
         check(text.contains("-Dachievetodo.bacap.directory=/srv/world/datapacks"), "observed datapacks dir suggested");
         check(text.contains("world-group.properties is missing"), "missing world group reported");
         check(text.contains("  nether.uuid=x  nether.key=minecraft:the_nether"), "all loaded worlds listed");
         String bound = "11111111-2222-4333-8444-555555555555";
-        text = String.join("\n", refuse(Map.of(), new StartupModePolicy.Hints(WORLD, "minecraft:overworld", bound,
-            "minecraft:overworld", null, null), "ATD_GAMEPLAY_MODE_REQUIRED").guidance());
+        text = String.join("\n", refuse(unbound, new StartupModePolicy.Hints(WORLD, "minecraft:overworld", bound,
+            "minecraft:overworld", null, null), "ATD_GAMEPLAY_MODE_PRECONDITIONS").guidance());
         check(text.contains("-Dachievetodo.progression.world=" + bound), "world-group overworld preferred over observed");
 
         // 4. Explicit diagnostic still runs the legacy path, but never silently.

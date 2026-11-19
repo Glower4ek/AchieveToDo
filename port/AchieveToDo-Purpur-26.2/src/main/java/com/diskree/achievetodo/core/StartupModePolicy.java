@@ -6,9 +6,12 @@ import java.util.function.Function;
 /**
  * Decides, before any service starts, whether this launch may proceed. Only the native guard path in
  * gameplay mode CERTIFICATION is certified. The agents read their JVM properties in premain, before this
- * plugin exists, so the plugin cannot switch itself to that path: a launch without an explicit gameplay
- * mode is refused (fail closed) with the exact certified start command instead of silently running the
- * uncertified legacy Bukkit restriction path. The legacy path stays reachable only by naming it explicitly.
+ * plugin exists, so the plugin cannot switch itself to that path. The agent can: with no explicit mode,
+ * {@link ReleaseLaunchDefaults} (premain) sets the certified switches, and {@link ReleaseLaunchProfile} (bootstrap
+ * and enable) fills in the per-installation values. A launch that still has no mode here therefore lacks the
+ * agent (or contradicts a certified switch) and is refused (fail closed) with the one-line start command instead
+ * of silently running the uncertified legacy Bukkit restriction path. The legacy path stays reachable only by
+ * naming it explicitly.
  *
  * <p>Pure and Bukkit-free so it can be tested without a server. It never changes what the certified
  * composition does once admitted; it only adds earlier, named refusals for launches that would otherwise
@@ -17,14 +20,10 @@ import java.util.function.Function;
 public final class StartupModePolicy {
     public static final String MODE = "achievetodo.gameplay.mode";
     /** Boolean switches of the certified composition, in the order they are documented. */
-    public static final List<String> CERTIFIED_SWITCHES = List.of(
-        "achievetodo.bridge.real",
-        "achievetodo.progression.foundation",
-        "achievetodo.bridge.groupScope",
-        "achievetodo.landmarks.exactPrototype",
-        "achievetodo.bridge.spike");
-    /** Per-installation bindings the certified composition needs. The plugin does not invent them: they are
-     * operator assertions checked against the world, so deriving them from the running server would defeat them. */
+    public static final List<String> CERTIFIED_SWITCHES = ReleaseLaunchDefaults.SWITCHES;
+    /** Per-installation bindings the certified composition needs. On an explicit launch the plugin does not invent
+     * them. On the release launch {@link ReleaseLaunchProfile} fills in only the absent ones, from files that are
+     * written once and then verified on every later start, so they still are not copied from whatever world loaded. */
     public static final String BACAP_DIRECTORY = "achievetodo.bacap.directory";
     public static final String PROGRESSION_WORLD = "achievetodo.progression.world";
     public static final String PROGRESSION_WORLD_KEY = "achievetodo.progression.worldKey";
@@ -33,9 +32,24 @@ public final class StartupModePolicy {
 
     /** What the running server can tell an operator. Every field may be null when unknown. */
     public record Hints(String overworldUuid, String overworldKey, String worldGroupOverworldUuid,
-                        String worldGroupOverworldKey, String datapacksDirectory, List<String> loadedWorlds) {
-        public static final Hints NONE = new Hints(null, null, null, null, null, List.of());
-        public Hints { loadedWorlds = loadedWorlds == null ? List.of() : List.copyOf(loadedWorlds); }
+                        String worldGroupOverworldKey, String datapacksDirectory, List<String> loadedWorlds,
+                        String pluginJar) {
+        public static final Hints NONE = new Hints(null, null, null, null, null, List.of(), null);
+        public Hints {
+            loadedWorlds = loadedWorlds == null ? List.of() : List.copyOf(loadedWorlds);
+            if (pluginJar == null || pluginJar.isBlank()) pluginJar = DEFAULT_PLUGIN_JAR;
+        }
+        public Hints(String overworldUuid, String overworldKey, String worldGroupOverworldUuid,
+                     String worldGroupOverworldKey, String datapacksDirectory, List<String> loadedWorlds) {
+            this(overworldUuid, overworldKey, worldGroupOverworldUuid, worldGroupOverworldKey, datapacksDirectory, loadedWorlds, null);
+        }
+    }
+    /** Shown when the real file name of the plugin jar is not known yet (bootstrap). */
+    public static final String DEFAULT_PLUGIN_JAR = "plugins/achievetodo.jar";
+
+    /** The release launch: the only flag an operator needs. */
+    public static String releaseCommand(Hints hints) {
+        return "java -javaagent:" + hints.pluginJar() + " -jar purpur-26.2-2620.jar --nogui";
     }
 
     public record Decision(ProductGameplayAdmission.Mode mode, List<String> warnings) {
@@ -57,11 +71,22 @@ public final class StartupModePolicy {
         Hints known = hints == null ? Hints.NONE : hints;
         String value = properties.apply(MODE);
         if (value == null) {
+            // With the agent loaded the release defaults set the mode in premain, so a missing mode means either
+            // no -javaagent at all, or an explicit switch that contradicts the certified value.
             var lines = new ArrayList<String>();
-            lines.add("ATD_GAMEPLAY_MODE_REQUIRED: no -D" + MODE + " was given. AchieveToDo refuses to start enforcement.");
-            lines.add("Only the native guard path in certification mode is certified. Without the mode the plugin used to fall");
-            lines.add("back to the uncertified legacy Bukkit restriction path, which has known gaps (for example copper armor).");
-            lines.addAll(guidance(properties, known));
+            String profile = properties.apply(ReleaseLaunchDefaults.PROFILE);
+            if (profile != null && profile.startsWith(ReleaseLaunchDefaults.REFUSED_PREFIX)) {
+                String conflict = profile.substring(ReleaseLaunchDefaults.REFUSED_PREFIX.length());
+                lines.add("ATD_GAMEPLAY_MODE_REQUIRED: the start command sets -D" + conflict + ", which the certified launch does not allow.");
+                lines.add("Remove that -D option. AchieveToDo refuses to start enforcement until then.");
+            } else {
+                lines.add("ATD_GAMEPLAY_MODE_REQUIRED: the AchieveToDo agent is not loaded. AchieveToDo refuses to start enforcement.");
+                lines.add("The plugin jar must also be given to Java as an agent, before -jar. Keep your other options (-Xmx and so on).");
+            }
+            lines.add("Start command:");
+            lines.add("  " + releaseCommand(known));
+            lines.add("The jar after -javaagent: must be the same file as the one in plugins/. Nothing else is needed;");
+            lines.add("see STARTING_THE_SERVER.md. The older explicit certified command (all -Dachievetodo.* options) also works.");
             lines.add("To run the uncertified legacy path on purpose (testing only), start with -D" + MODE + "=diagnostic.");
             throw new Refusal("ATD_GAMEPLAY_MODE_REQUIRED", lines);
         }
@@ -118,8 +143,8 @@ public final class StartupModePolicy {
     /** The certified start command, with every value the server could observe already filled in. */
     static List<String> guidance(Function<String, String> properties, Hints hints) {
         var lines = new ArrayList<String>();
-        lines.add("Certified start (all on one line, before -jar; see the operator note STARTING_THE_SERVER.md):");
-        lines.add("  java -javaagent:plugins/achievetodo.jar -D" + MODE + "=certification \\");
+        lines.add("Explicit certified start (all on one line, before -jar; see the operator note STARTING_THE_SERVER.md):");
+        lines.add("  java -javaagent:" + hints.pluginJar() + " -D" + MODE + "=certification \\");
         for (String name : CERTIFIED_SWITCHES) lines.add("    -D" + name + "=true \\");
         for (String name : PER_WORLD) {
             String given = properties.apply(name);
