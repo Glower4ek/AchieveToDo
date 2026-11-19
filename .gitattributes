@@ -206,3 +206,6 @@ port/AchieveToDo-Purpur-26.2/** -text
 
 # Standalone bridge fixture is LF in the source authority.
 src/bridgeTest/java/com/diskree/achievetodo/bridge/ClientCodecFixtureTest.java -text
+
+# W5 certification evidence: hashed bytes must survive checkout unchanged.
+tools/certification/w5/** -text
