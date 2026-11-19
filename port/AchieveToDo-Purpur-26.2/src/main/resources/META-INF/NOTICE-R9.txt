@@ -1,4 +1,4 @@
-AchieveToDo 0.2.1-rc.1 for Minecraft 26.2 — third-party and permission notice
+AchieveToDo 0.2.1 for Minecraft 26.2 — third-party and permission notice
 
 Original AchieveToDo project material: copyright diskree and project contributors;
 MIT applies only to original material covered by the included project MIT text.

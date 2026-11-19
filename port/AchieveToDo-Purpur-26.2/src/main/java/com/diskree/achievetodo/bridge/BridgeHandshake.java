@@ -15,7 +15,7 @@ public final class BridgeHandshake {
     public BridgeHandshake(UUID server,UUID session,long now,long budget) {
         hello = new BridgeWire.Frame(BridgeWire.HELLO, BridgeWire.MAJOR, BridgeWire.MINOR,
                 server, session, UUID.randomUUID(), BridgeWire.FEATURES,
-                BridgeWire.CATALOG, "purpur-0.2.1-rc.1");
+                BridgeWire.CATALOG, "purpur-0.2.1");
         deadline = Math.addExact(now, budget);
     }
     public BridgeWire.Frame hello() { return hello; }
