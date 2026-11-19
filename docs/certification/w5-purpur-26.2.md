@@ -142,10 +142,23 @@ cd port/AchieveToDo-Purpur-26.2 && ./gradlew --offline jar        # -> ad0685ed�
 ./gradlew --offline --dependency-verification strict build -x test -x check   # -> 46a0601e…
 ```
 
-Both hashes matched byte for byte on 2026-11-19. The client build needs one input that git cannot hold: the
-Loom-generated `minecraft-merged-3b5d97e58c-26.2.jar`. Loom does not build it deterministically, so a fresh merge
-fails dependency verification. `gradle/verification-metadata.xml` pins its reviewed baseline
-(`49353b01…b14a`), and the build uses that exact cached file, which Gradle verifies against the pin.
+Both hashes matched byte for byte on 2026-11-19. The check ran twice from clean clones: once from the certified
+commit `5da53e0`, and again from the commit that adds this report. The commits after `5da53e0` change only
+`.gitignore`, `.gitattributes`, `docs/` and `tools/`.
+
+The client build needs one input that git cannot hold: the Loom-generated
+`minecraft-merged-3b5d97e58c-26.2.jar`. Loom does not build it deterministically, so a fresh merge fails
+dependency verification. `gradle/verification-metadata.xml` pins its reviewed baseline (`49353b01…b14a`).
+Run the build once so Loom creates `.gradle/loom-cache/minecraftMaven/net/minecraft/minecraft-merged-3b5d97e58c/26.2/`.
+That first run fails verification. Then put the pinned file there and build again. Gradle checks the file against
+the pin.
+
+The evidence under `tools/certification/w5/` is stored with `-text` (`.gitattributes`). A checkout keeps the exact
+bytes that `HARNESS_R*.sha256`, the E1 maps and `EVIDENCE_INDEX.json` refer to. To check:
+
+```
+cd tools/certification/w5/harness && sha256sum -c HARNESS_R6.sha256
+```
 
 ## Limits
 
