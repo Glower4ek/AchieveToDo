@@ -1,0 +1,38 @@
+{
+  "parent": "achievetodo:abilities/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:copper_chestplate",
+      "count": 1
+    },
+    "title": {
+      "translate": "achievetodo.ability.equip_copper_armor.name"
+    },
+    "description": {
+      "translate": "achievetodo.ability.equip_copper_armor.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "rewards": {
+    "function": "achievetodo:abilities/equip_copper_armor"
+  },
+  "criteria": {
+    "demystified": {
+      "trigger": "minecraft:impossible"
+    },
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "demystified"
+    ],
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "decision": "PASS_EXACT_REVISED_REPAIR_TECHNICAL_REVIEW",
+  "reviewer": "independent reviewer agent /root/ui07_review",
+  "reviewerDidNotAuthorRepair": true,
+  "externalSignatureClaimed": false,
+  "beforeSHA256": "77af9c32177f9df4e9e64d159f91b24ff980e66be2f4c90a57aba28960fc9bec",
+  "afterSHA256": "6e4bb3de338094c0f83638899236c1c7c19a7ab3dfede3b4468f0440fddeb6e2",
+  "diffSHA256": "25009d92e0bc4b5d94ec92370a7bed78853a7e26ba6fbc6c1b03125f8476f0b8",
+  "productionClosureSHA256": "de830cb6aa5c6826d8be3a9eb0576d90aa7ae8a7d9ab48a4c186fde9d4985078",
+  "productionDeltaExactly": [
+    "src/main/java/com/diskree/achievetodo/injection/mixin/client/AdvancementsScreenMixin.java"
+  ],
+  "originalRejectedDecisionSHA256": "7699b7cdbe5d1b5cf89f893968e6b04b7d8c9eef84be9827796ad91bf9cc052f",
+  "primaryEvidenceSealRechecked": "dead1b66bcd97d5e2f5a4058aab073080485a0d2e1fe8221d3d1f93c9436f4ce",
+  "nativeGeometryPredicateCases": 676,
+  "allOccupancySubsetCases": 512,
+  "finiteAcceptedForeignSlots": [
+    "ABOVE:7",
+    "BELOW:7",
+    "LEFT:3",
+    "RIGHT:1",
+    "RIGHT:2",
+    "RIGHT:3"
+  ],
+  "scope": "Technical approval of exact GUI repair bytes only; not final runtime/JUnit/package certification or a fabricated external human signature",
+  "findingsResolved": [
+    "Foreign candidate identity cannot steal known reserved slots",
+    "Native corner-hitbox overlap rejected, including LEFT4/BELOW0, ABOVE7/RIGHT0 and BELOW7/RIGHT4",
+    "All26native positions tested against all26:676 actual revised-helper calls agree with independent geometric oracle",
+    "All512free-position occupancy subsets satisfy disjointness and absence iff exhaustion",
+    "Known17classification/placement branch and selected-tab callbacks unchanged",
+    "Namespace root holder remains original; no gameplay/ability/bridge/admission/source expansion"
+  ],
+  "orderAndReloadReview": "All17known slots are treated reserved regardless of presence or root event order. Foreign mapping is registration-order-dependent but occupied geometry remains disjoint in every ordering. Clearing/reopening rebuilds against the same reserved set; root selection remains native holder-based and no selectedTab assignment is added by the repair. Full headful selection/reload proof remains required by task.",
+  "capacityBehavior": "After6safe foreign insertions, all candidate geometries intersect reserved/occupied positions; cancellation creates no duplicate hitbox and overwrites no known root. Missing-display roots also cancel as vanilla would omit them.",
+  "requiredRemainingChecks": [
+    "Authenticated successor validation and negative controls",
+    "Unfiltered standard JUnit/new XML",
+    "Normal packaging and byte reproducibility",
+    "Actual patched Mixin native GUI clicks/multi-root reverseorder/overflow/reload selection/VIS06"
+  ]
+}

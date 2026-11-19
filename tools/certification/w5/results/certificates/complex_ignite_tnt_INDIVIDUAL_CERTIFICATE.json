@@ -1,0 +1,56 @@
+{
+ "group": "complex_ignite_tnt",
+ "reviewer": "R5",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "1 ability ignite_tnt, DIRECT. Cited files recomputed, all = E1: NativeComplexBindings.java 0890c634.., NativeComplexAgent.java 09ae3f17.., resolver BukkitRestrictionResolver.java f5d7d99b... Opened NativeComplexBindings.java:14 and NativeComplexAgent.java:105-113 ('ignite' -> denied if flint locked OR IGNITE_TNT locked; 'projectile' -> IGNITE_TNT). Hooks in NativeComplexSpecs.java:31-32. Thresholds for all 5 configs (179/136/222/316/179). use_flint_and_steel threshold is below ignite_tnt in every runtime (174/132/216/189/174), so the locked denial is attributable to IGNITE_TNT. Configs: normal/easy/hard/custom_vision thresholds in E1 equal the runtime config files (hashes de638359.., c145bfe2.., 9d7b711b.., db26c1f6.. match E1). E1's chaos_20261116 column is campaign16's file (e55204bd..); the chaos rows of this group come from campaign14 whose chaos_20261116.toml differs (5fcf0a51..) - accepted behaviour (b). I verified every row threshold and every 'requires' value against its own runtime's active config: no mismatch."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "17 rows, all PASS. Read all 17 excerpts. Locked (c11-c15, c17), op, offhand_locked: UseItemOn on TNT, Bukkit ALLOW, then ContainerSetContent + 'ATD_CRITERION_SUPPRESSED ITEM_USED_ON_BLOCK' + SetSlot, tnt probe Test failed pre and post, count unchanged (178->178, 412->412). Allowed/offhand_allowed: Test passed (primed TNT). Creative: primed (bypass). Spectator: CraftBukkit's own spectator DENY, no overlay, no effect - PASS correct.",
+   "rowsRead": [
+    "campaign11 pass1 ignite_tnt locked/allowed",
+    "campaign11 modes ignite_tnt creative/op/spectator",
+    "campaign11 offhand ignite_tnt offhand_locked/offhand_allowed",
+    "campaign12 thresholds-easy ignite_tnt locked/allowed",
+    "campaign13 thresholds-hard ignite_tnt locked/allowed",
+    "campaign14 thresholds-chaos ignite_tnt locked/allowed",
+    "campaign15 thresholds-custom_vision ignite_tnt locked/allowed",
+    "campaign17 reload ignite_tnt locked/allowed"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign11..campaign17 all onlineMode=true with 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' lines. Cross-checked raw: online-mode=true in each campaignNN/runtime/server.properties; exactly one authenticated-UUID line and a join line in each campaignNN/receipts/output.log. Rows of this group come from campaign11-15 and campaign17 (none from campaign16)."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes creative/op/spectator present; offhand_locked/offhand_allowed present (c11). Threshold rows exist for normal (c11 pass1, c17 reload), easy (c12), hard (c13), chaos (c14), custom_vision (c15). No NA_* rows in this group."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "Reload rows: 2 rows, all campaign17. MANIFEST.e5Reload generationBefore=1, generationAfter=2 (12:06:53Z). Every ATD_STAGE2A_STATE line of the reload excerpts shows \"generation\": 2. Raw campaign17 output.log lines 247-255: 'generation=2', 'Reloading!', 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml' at 17:06:48-50 local, before the first case. Reload verdicts equal pass1 verdicts: locked PASS=PASS, allowed PASS=PASS."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: 17 rows, all status=REPRODUCED, recorded==replayed, keys match rows.jsonl 1:1; every runtime replay reproducedAll=true (c11 1235, c12-c15 310 each, c16 44, c17 310), also confirmed in each receipts/REPLAY.json (problems=[]). Plugin sha256 ad0685ed...c9d80b identical in all 7 runtimes (recomputed runtime/plugins/achievetodo.jar of each, and repo build/libs/AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar). Client mod recomputed = 46a0601e...10855081. Recomputed campaign-results.jsonl sha256 of all 7 runtimes (e.g. c12 828efdb8...dbe90, c17 14036deb...76a44b): all equal evidenceHashes.results; REPLAY.json hashes equal too. Each row of rows.jsonl found exactly once in its runtime's campaign-results.jsonl (matched by logLines) with identical verdict and counts; the only other results rows for these abilities are the superseded campaign11 reload rows."
+  }
+ },
+ "superseded": "All superseded entries are campaign11 'reload' rows replaced by campaign17 (r5). Justified: campaign11 output.log lines 88679-88680 show 'Incorrect argument for command / reload confirm<--[HERE]', i.e. the r3 reload was rejected and campaign11 stayed at generation [1], while campaign17 shows a real datapack reload (generation 1->2). The replaced campaign11 rows were PASS as well, so nothing negative was hidden. No r4 (chest-room/landmark) replacement concerns this group.",
+ "findings": [
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "review/complex_ignite_tnt/excerpts.txt all STATE lines",
+   "description": "Every ATD_STAGE2A_STATE line of this group shows \"ability\": {\"IGNITE_TNT\": null}: the probe's abilities map does not contain this ability, so the server-side lock state is never logged directly. The lock is proven indirectly (count = threshold-1 from the runtime config, server action-bar overlay, absent effect, denial side effects). Verdicts remain reproducible, but the brief's statement that STATE shows the tested ability's lock state does not hold here."
+  },
+  {
+   "severity": "minor",
+   "criterion": "E1",
+   "evidence": "review/complex_ignite_tnt/E1.json (no NativeComplexSpecs.java entry)",
+   "description": "The hook specs attaching the guard to TntBlock.useItemOn/onProjectileHit (NativeComplexSpecs.java:31-32) are not cited or hashed in E1; only the ability list and decision function are pinned."
+  }
+ ]
+}

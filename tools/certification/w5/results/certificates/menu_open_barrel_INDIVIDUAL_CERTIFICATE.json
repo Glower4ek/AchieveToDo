@@ -1,0 +1,45 @@
+{
+  "group": "menu_open_barrel",
+  "reviewer": "R1",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability open_barrel. Recomputed SHA-256 of BukkitRestrictionResolver.java (f5d7d99b...), BukkitExpandedGameplayListener.java (f10bdc23...), GameplayGate.java (4ddeec26...): all equal E1. Opened sites: BukkitExpandedGameplayListener.java:71 maps Barrel holder to OPEN_BARREL and open(InventoryOpenEvent) cancels when locked (line 81); BukkitRestrictionResolver.java:68 InventoryType.BARREL->OPEN_BARREL; GameplayGate.java:17 IMPLEMENTED. Thresholds normal 59, easy 52, hard 66, chaos 766, custom_vision 59. Row thresholds of all rows re-checked against each runtime's own config (campaignNN/runtime/plugins/AchieveToDo/progression/configs/*.toml): 0 mismatches; E1 normal/easy/hard/custom_vision thresholds equal the row thresholds; 5 E1 config hashes verified. E1's chaos column comes from campaign16's chaos toml while chaos rows come from campaign14 (different values, accepted behaviour (b)); campaign14 toml values match the rows."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS; read every excerpt. Locked rows (c11 pass1, c12, c13, c14, c15, c17 reload) and op: ATD_BOUNDARY INVENTORY_OPEN_MONITOR_CANCELLED true, no ClientboundOpenScreenPacket, count unchanged, client overlay 'You can't open a barrel'. Allowed/creative/spectator: MONITOR_CANCELLED false + ClientboundOpenScreenPacket. All verdicts reproduced.",
+      "rowsRead": [
+        "campaign11 pass1 open_barrel locked",
+        "campaign11 pass1 open_barrel allowed",
+        "campaign11 modes open_barrel creative",
+        "campaign11 modes open_barrel op",
+        "campaign11 modes open_barrel spectator",
+        "campaign12 thresholds-easy open_barrel locked/allowed",
+        "campaign13 thresholds-hard open_barrel locked/allowed",
+        "campaign14 thresholds-chaos open_barrel locked/allowed",
+        "campaign15 thresholds-custom_vision open_barrel locked/allowed",
+        "campaign17 reload open_barrel locked/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11-17: all onlineMode=true, 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' lines present; independently re-grepped each campaignNN/receipts/output.log (UUID line at line 231/232, one join line) and runtime/server.properties online-mode=true for all 7 runtimes."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator rows present (creative and spectator bypass per GameplayGate, op denied). Opening a barrel has no off-hand variant: no offhand rows and no NA rows. Threshold rows for easy, hard, chaos, custom_vision plus normal pass1."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows, all from campaign17; MANIFEST.e5Reload generationBefore=1, generationAfter=2; every ATD_STAGE2A_STATE line in the reload excerpts shows generation 2 (4 lines). Raw campaign17 output.log lines 247-256 show a real reload ('Reloading!', 'PROGRESSION_CONFIG_READY generation=2') and no generation-1 state lines in the log. Each reload verdict equals the pass1 verdict of the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all 15 rows REPRODUCED, recorded==replayed for every row; MANIFEST.runtimes replay.reproducedAll=true for campaign11..17 (counts 1235/310/310/310/310/44/310). Plugin SHA-256 ad0685ed...d80b in perRuntime for all 7 runtimes and recomputed on campaign11 and campaign17 runtime/plugins/achievetodo.jar; client mod recomputed = 46a0601e...0855081. Recomputed campaign-results.jsonl SHA-256 for all 7 runtimes; all equal evidenceHashes.results (campaign11 e2fdcbee...5b15, campaign17 14036deb...a44b). Excerpt fidelity spot-checked: non-compacted excerpt lines equal raw output.log lines for 5 rows in 5 groups."
+    }
+  },
+  "superseded": "Superseded rows are only the r3 reload rows of this group, replaced by campaign17 (r5). Justified: in campaign11 the r3 command 'reload confirm' (command-journal.jsonl line 31021, 05:27:45Z) was answered 'Incorrect argument for command' (output.log line 88679), so no reload happened; campaign17 performed a real datapack reload (generation 1->2). No r4 (chest fixture) rows apply to this group.",
+  "findings": []
+}

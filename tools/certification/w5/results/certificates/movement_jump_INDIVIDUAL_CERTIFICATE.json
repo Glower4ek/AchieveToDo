@@ -1,0 +1,50 @@
+{
+  "group": "movement_jump",
+  "reviewer": "R6",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (jump), mapping DIRECT: NativeMovementAgent.java lines 73/148, NativeMovementBindings.java line 13, family resolver BukkitRestrictionResolver.java, definition Progressions.java. Current SHA-256: NativeMovementAgent a27a0e8b190ed2bf... = E1 (git blob 1c5c1ef = E1 gitBlob), NativeMovementBindings 32b1804f0afb0861... = E1; BukkitRestrictionResolver f5d7d99b... and Progressions 00f2cf74... have no E1 hash, their git blobs equal repoHead 5da53e08. Opened NativeMovementAgent 72-75: jump(actor) returns !isInWater && locked(actor,\"JUMP\") (cited line 73 is the player() check of that method, the JUMP check is line 74); 147-148 ascent() rejects and reports locked(actor,\"JUMP\"); bindings line 13 ABILITIES contains JUMP. Thresholds listed: normal 4, easy 0, hard 8, chaos 8, custom_vision 4; the five config files re-hashed and equal to E1.configs."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows; proving locked rows (PASS): c11 pass1, c13 hard, c14 chaos, c17 reload. Read every excerpt. Locked rows: STATE JUMP kind=LOCKED, count unchanged (3->3, 7->7), 'ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=jump'. Since excerpts compact the stats, I read the JUMP stat in raw output.log STATE lines: locked c11 3130-3135 0->0, c13 3132-3137 0->0; allowed c11 3171-3175 0->1, c12 3125-3129 0->1, c14 3166-3170 0->1, c17 3182-3186 0->1; creative c11 36331 1->2 without denial (bypass); op c11 36368 2->2 with DENIAL_INTENT jump; spectator c11 36406 no jump stat, no denial. Non-PASS rows: c15 custom_vision locked PASS_MASKED_BY_DEPENDENCY reproduced (vision threshold 5 > score 3, excerpt shows DENIAL_INTENT ability=vision x9 plus jump, overlay 'You can't see the world'); c12 easy locked NA (threshold 0). All verdicts reproduced.",
+      "rowsRead": [
+        "campaign11 pass1 jump locked",
+        "campaign11 pass1 jump allowed",
+        "campaign11 modes jump creative",
+        "campaign11 modes jump op",
+        "campaign11 modes jump spectator",
+        "campaign12 thresholds-easy jump locked",
+        "campaign12 thresholds-easy jump allowed",
+        "campaign13 thresholds-hard jump locked",
+        "campaign13 thresholds-hard jump allowed",
+        "campaign14 thresholds-chaos jump locked",
+        "campaign14 thresholds-chaos jump allowed",
+        "campaign15 thresholds-custom_vision jump locked",
+        "campaign15 thresholds-custom_vision jump allowed",
+        "campaign17 reload jump locked",
+        "campaign17 reload jump allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11-17 (7 runtimes: normal c11, easy c12, hard c13, chaos c14, custom_vision c15, chaos-r4 c16, normal-reload c17) all onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a', joinedLine 'Glower4ek joined the game', configResolved line matches the config. Every campaign that contributed rows to this group is among them."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "tag modes rows exist: creative, op, spectator for every ability (creative/spectator expect bypass: effect observed, no overlay; op expects denial). Threshold rows exist for normal (pass1 c11, reload c17), easy (c12), hard (c13), chaos (c14) and custom_vision (c15). No offhand rows: jump is a key press with no hand/item route. NA rows: 1 (c12 thresholds-easy locked NA_NO_LOCKED_STATE) follows from easy.toml 'jump = 0' (campaign12 config, sha c145bfe2... = E1)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows, all from campaign17 (tag reload); MANIFEST.e5Reload runtime=campaign17, generationBefore=1, generationAfter=2. Every ATD_STAGE2A_STATE line in the reload sections of excerpts.txt has \"generation\": 2 (scripted check, 0 exceptions). Raw campaign17 output.log: line 249 'Reloading!', line 255 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml', command-journal line 1 command 'reload'. Each reload verdict equals the ability's pass1 verdict (PASS/PASS locked and allowed)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15 rows, all REPRODUCED; every runtime replay reproducedAll=true with problems=[] (c11 1235, c12-c15 and c17 310, c16 44 REPRODUCED). plugin.perRuntime c11-c17 all ad0685eda3cb...c9d80b = brief value; recomputed sha256 of runtime/plugins/achievetodo.jar of all 7 runtimes matches. clientMod sha256 46a0601e...55081 = brief value. Recomputed SHA-256 of campaign-results.jsonl of all 7 runtimes and compared with evidenceHashes.results: all equal (e.g. c17 14036deb3fbf00c3..., c13 f0fc08eac291ee65...); REPLAY.json of all 7 also equal; c17 output.log (20 MB) equal. Every package row was also matched to the raw campaignNN/receipts/campaign-results.jsonl entry (same verdict, counts, logLines): 15/15 found, 0 differences."
+    }
+  },
+  "superseded": "Reload rows: r3 rows (campaign11 tag reload) are superseded by r5 (campaign17). Justified: campaign11 output.log lines 88679-88680 show 'Incorrect argument for command / reload confirm<--[HERE]', and the r3 reload rows still ran at generation 1 (e.g. campaign11 output.log 91509-91516: \"generation\":1); campaign17 performed a real 'reload' (output.log 249/255, generation=2). Supersession did not change any verdict in this group (was PASS, now PASS).",
+  "findings": []
+}

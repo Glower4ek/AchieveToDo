@@ -47,3 +47,9 @@ __pycache__/
 /src/data/resources/fabric.mod.json
 /evidence/worlds/new_world_biomes_root_regression_2026-08-19/
 /reference/phase_a_planning/pre26_2_smoke_bugfix_0_1_5_4/audit_stdout.json
+
+# tools/build holds build/certification scripts, not build output
+!/tools/build/
+
+# Windows folder metadata
+desktop.ini

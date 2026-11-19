@@ -1,0 +1,71 @@
+{
+  "group": "action_glide_with_fireworks",
+  "reviewer": "R6",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability DIRECT: NativeActionBindings.java:17 (ABILITIES contains GLIDE_WITH_FIREWORKS), NativeActionSpecs.java:32 (Spec GLIDE_WITH_FIREWORKS on FireworkRocketItem.use anchored at Player.getItemInHand, result PASS, i.e. inside vanilla's fall-flying branch; the agent's denied() passes the ability to the guard callback); family findItemAbility; definition Progressions.java. SHA-256: 93faec2e..., dc0fab2b... equal E1; BukkitRestrictionResolver f5d7d99b..., Progressions 00f2cf74... (no E1 hash; git blobs = repoHead). Thresholds normal 667, easy 546, hard 788, chaos 247 (c16), custom_vision 667."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows all PASS; 6 proving locked rows + offhand_locked. Read all 17 excerpts (scan + full read of c13 hard locked/allowed). Locked/op/offhand_locked: FireworkRocketItem.use RETURN Pass[] (the guard's PASS), count unchanged, overlay 'You can't use fireworks for flying.' (proves the guard ran inside the fall-flying branch, so Pass is a denial, not a fixture miss); post position shows an unboosted glide (c13 locked z -0.5 -> -32.2). Allowed: RETURN Success, rocket sound, longer glide (c13 allowed z -> -59.1). Creative Success without overlay; spectator no use. Only hidden inventory_changed and fixture scenic_route_fail criteria appear. All verdicts reproduced.",
+      "rowsRead": [
+        "campaign11 pass1 glide_with_fireworks locked",
+        "campaign11 pass1 glide_with_fireworks allowed",
+        "campaign11 modes glide_with_fireworks creative",
+        "campaign11 modes glide_with_fireworks op",
+        "campaign11 modes glide_with_fireworks spectator",
+        "campaign11 offhand glide_with_fireworks offhand_locked",
+        "campaign11 offhand glide_with_fireworks offhand_allowed",
+        "campaign12 thresholds-easy glide_with_fireworks locked",
+        "campaign12 thresholds-easy glide_with_fireworks allowed",
+        "campaign13 thresholds-hard glide_with_fireworks locked",
+        "campaign13 thresholds-hard glide_with_fireworks allowed",
+        "campaign14 thresholds-chaos glide_with_fireworks locked",
+        "campaign14 thresholds-chaos glide_with_fireworks allowed",
+        "campaign15 thresholds-custom_vision glide_with_fireworks locked",
+        "campaign15 thresholds-custom_vision glide_with_fireworks allowed",
+        "campaign17 reload glide_with_fireworks locked",
+        "campaign17 reload glide_with_fireworks allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11-17 (7 runtimes: normal c11, easy c12, hard c13, chaos c14, custom_vision c15, chaos-r4 c16, normal-reload c17) all onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a', joinedLine 'Glower4ek joined the game', configResolved line matches the config. Every campaign that contributed rows to this group is among them."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "tag modes rows exist: creative, op, spectator for every ability (creative/spectator expect bypass: effect observed, no overlay; op expects denial). Threshold rows exist for normal (pass1 c11, reload c17), easy (c12), hard (c13), chaos (c14) and custom_vision (c15). Off-hand route covered: campaign11 offhand_locked PASS and offhand_allowed PASS. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows, all from campaign17 (tag reload); MANIFEST.e5Reload runtime=campaign17, generationBefore=1, generationAfter=2. Every ATD_STAGE2A_STATE line in the reload sections of excerpts.txt has \"generation\": 2 (scripted check, 0 exceptions). Raw campaign17 output.log: line 249 'Reloading!', line 255 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml', command-journal line 1 command 'reload'. Each reload verdict equals the ability's pass1 verdict (PASS/PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 17 rows, all REPRODUCED; every runtime replay reproducedAll=true with problems=[] (c11 1235, c12-c15 and c17 310, c16 44 REPRODUCED). plugin.perRuntime c11-c17 all ad0685eda3cb...c9d80b = brief value; recomputed sha256 of runtime/plugins/achievetodo.jar of all 7 runtimes matches. clientMod sha256 46a0601e...55081 = brief value. Recomputed SHA-256 of campaign-results.jsonl of all 7 runtimes and compared with evidenceHashes.results: all equal (e.g. c17 14036deb3fbf00c3..., c13 f0fc08eac291ee65...); REPLAY.json of all 7 also equal; c17 output.log (20 MB) equal. Every package row was also matched to the raw campaignNN/receipts/campaign-results.jsonl entry (same verdict, counts, logLines): 17/17 found, 0 differences."
+    }
+  },
+  "superseded": "Reload rows: r3 rows (campaign11 tag reload) are superseded by r5 (campaign17). Justified: campaign11 output.log lines 88679-88680 show 'Incorrect argument for command / reload confirm<--[HERE]', and the r3 reload rows still ran at generation 1 (e.g. campaign11 output.log 91509-91516: \"generation\":1); campaign17 performed a real 'reload' (output.log 249/255, generation=2). Supersession did not change any verdict in this group (was PASS, now PASS).",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt 'campaign13 thresholds-hard glide_with_fireworks locked' (output.log 4994-5007)",
+      "description": "ATD_STAGE2A_STATE reports \"ability\": {\"GLIDE_WITH_FIREWORKS\": null}: the evidence probe does not track this ability (the raw state line tracks 25 abilities), so the excerpt cannot show the tested ability's lock state; locked/unlocked is established only by score vs config threshold and by the client overlay text."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt glide locked sections (e.g. campaign13 thresholds-hard, output.log 4994-5007)",
+      "description": "The server-side oracle for the locked state (FireworkRocketItem.use -> Pass[]) is identical to vanilla's result when the player is not fall-flying, and no DENIAL_INTENT line is logged for this ability. Only the client overlay (driver journal) and the position trace distinguish a product denial from a fixture miss; the verdicts are correct, but the excerpt alone does not prove the denial."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "E1.json thresholds.chaos_20261116 vs rows campaign14 thresholds-chaos; campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml (sha256 5fcf0a51...)",
+      "description": "E1 lists the CHAOS threshold of glide_with_fireworks from campaign16's chaos config (247), but this group's chaos rows ran on campaign14 whose config of the same name gives 820 (verified in the campaign14 toml). Accepted behaviour (b), but E1 does not document the thresholds actually tested and does not hash the campaign14 config."
+    }
+  ]
+}

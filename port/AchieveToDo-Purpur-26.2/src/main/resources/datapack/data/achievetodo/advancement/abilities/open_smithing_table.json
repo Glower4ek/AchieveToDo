@@ -1,0 +1,38 @@
+{
+  "parent": "achievetodo:abilities/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:smithing_table",
+      "count": 1
+    },
+    "title": {
+      "translate": "achievetodo.ability.open_smithing_table.name"
+    },
+    "description": {
+      "translate": "achievetodo.ability.open_smithing_table.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "rewards": {
+    "function": "achievetodo:abilities/open_smithing_table"
+  },
+  "criteria": {
+    "demystified": {
+      "trigger": "minecraft:impossible"
+    },
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "demystified"
+    ],
+    [
+      "unlocked"
+    ]
+  ]
+}

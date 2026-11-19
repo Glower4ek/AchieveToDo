@@ -24,19 +24,21 @@ to start another stage or perform external publication.
 - The compatibility work originated in singleplayer / integrated-server gameplay;
   another server platform requires an explicitly selected task scope.
 
-## 3. Current Certified Baseline (mutable)
+## 3. Historical Certified Baseline and Current RC Evidence (mutable)
 
-Keep mutable milestones, counts and identities here. These are accepted historical
-facts within their tested scope, not instructions to reset an advanced checkout.
-Verify actual state and bind relevant evidence before relying on certification.
+Keep milestone counts, commits and artifacts strictly scoped to the phase and
+checkout that established them. The table below describes the historical Phase C
+certified baseline, NOT the current active RC checkout. Do not reset or downgrade
+an advanced checkout to make this table appear current. Verify actual state,
+commit/tree and task-specific receipts before relying on certification.
 
 | Fact | Accepted baseline |
 | --- | --- |
 | Minecraft / loader | Minecraft Java Edition 26.2 / Fabric |
-| Mod version in source | 0.1.5.5; no new release implied |
-| Active branch | phase-c-core-integrity-26.2 |
+| Phase C source version (historical) | 0.1.5.5; not a claim about the current RC checkout |
+| Phase C branch (historical) | phase-c-core-integrity-26.2 |
 | C7 checkpoint | 651b460df1735316b8863633e7b4a73e4fe375cf |
-| C8 / current accepted HEAD | ce8a6e56b457a8ee9c6da59b1e93eaab481405c0 |
+| C8 historical accepted HEAD | ce8a6e56b457a8ee9c6da59b1e93eaab481405c0 |
 | Accepted tree | 33bd1966b4a0db391dd069d5e4f3ccc804f16b71 |
 | Phase A / B | COMPLETE / HISTORICAL; release 0.1.5.5 preserved |
 | Phase C | C0-C9 independently reviewed and accepted within documented scope |
@@ -50,7 +52,38 @@ Verify actual state and bind relevant evidence before relying on certification.
 | C9 client GUI | Not rerun; actual C5 client evidence is historical source continuity |
 | C9 final evidence | build/tmp/phase_c_c9_autonomous.zip |
 | C9 evidence SHA256 | 9a1282fb486057d79351637e9a5898df5fcc9eed29e5c4e4d356adc95aa63683 |
-| Phase D | Research/design only (Mode A); no gameplay implementation authorized |
+| Phase D new gameplay/content mappings | Mode A unless a separately approved Mode B/C scope exists; RC regression maintenance is separately governed by section 13 |
+
+### RC candidate and live test observations (not blanket certification)
+
+As of 2026-10-27, an owner-directed 0.2.1-rc.1 Fabric/Purpur regression
+remediation task exists. The Codex read-only preflight reported the local checkout
+`E:\Vibecode\AchieveToDo_Purpur_S2P_Client_Workspace`, branch
+`s5-r9-release-0.2.1-rc.1`, HEAD
+`d74a0e017c93f2fca73f84f4643024b5f7a6e5d5`, and a separate local
+`v0.2.1-rc.1` tag target
+`7d385ff020b5bf585f17ca8b878496af5cb17626`.
+These identities are a reported observation, NOT an instruction to switch refs,
+commit, reset, merge, equate the commits or treat the tag as source authority.
+Verify both commits' trees and release-artifact identities before claiming
+checkout/release equivalence. The same preflight reported a clean tracked index
+and worktree plus 269 untracked paths; preserve all such local data.
+
+An owner-operated diagnostic run on Minecraft 26.2 / Purpur build 2620 / Java 25
+loaded BACAP `compat_26_2_r19` and AchieveToDo `0.2.1-rc.1`; recorded
+`HELLO_ACK_VALID`, `VERIFIED_SPAWN`, `SNAPSHOT_SENT`, `DELTA_SENT`, reconnect,
+source reload/resync and restart snapshots. These are bounded server-side
+observations, NOT full client-state, gameplay or release certification.
+`PRODUCT_GAMEPLAY_READY=false` and `S2P TEST ONLY` remain explicit.
+The owner also supplied screenshots showing possible GUI texture, ability
+visibility, tooltip, tab/tree and locked-action feedback regressions; each needs
+source/runtime diagnosis before claiming root cause or repair.
+
+The historical Phase C counts and pinned inputs below remain valid only for their
+original evidence context. Re-discover current RC build tasks, tool versions,
+fixtures and target platforms; do not use Phase C wrapper instructions as
+unverified RC requirements. RC repairs follow the narrowly authorized
+maintenance lane in section 13.
 
 For baseline-dependent work, bind C7/C8 receipts and C9's sealed manifest,
 `final_certification_decision.json`, `current_runtime_certification_results.json`
@@ -79,7 +112,7 @@ object `3b3fc1e504d261c1cb2aab2de9e4d69e9bf5b663`, peeled release commit
 `d96f39e540692eaa3a7447ee2ce5f7a81a3658f8`. Separate later Phase C0 checkpoint:
 commit `a187a5b67bd41f625fa1adbc104194b5e3d7c59f`, tree
 `9793cf1fd378d042a2fe5d8f51c5f58152625731`; this is not the release commit.
-The current active Phase C branch is recorded in the table above. Published JAR
+The historical Phase C branch is recorded in the table above. Published JAR
 `achievetodo-mc26.2+0.1.5.5.jar`: 1648665 bytes, SHA256
 `c40545ba47e2cf0b8ad45ca76a6e5313b723c911dea8ea05adaf395d6a79c10f`, SHA1
 `c3f37a4067ff9334c3cf8043f66a6755f2a4a016`; 435-test historical release suite and
@@ -392,12 +425,70 @@ with protected dependencies and unrelated bytes verified afterward.
 
 ## 13. Phase D Workflow and Authorization
 
-Phase C0-C9 is accepted within section 3's boundaries. Phase D adapts gameplay
-capabilities, unlocks and UX to Minecraft 26.2. Current mode is A. No roadmap,
-draft, recommendation, passed test or general Phase D approval authorizes gameplay
-implementation. Autonomous investigation does not imply game-design authority.
+Phase C0-C9 is accepted within section 3's historical boundaries. Phase D
+adapts or extends gameplay capabilities, unlocks and UX to Minecraft 26.2.
+For NEW Phase D feature design/content mappings, Mode A is the default unless
+an exact approved specification and implementation authorization establish
+Mode B/C. No roadmap, draft, test or general Phase D approval grants new
+game-design authority.
 
-### Mode A — Research and design (current)
+**Separate RC maintenance lane (M):** A task specifically and explicitly
+approved by the owner to restore already-existing, independently evidenced
+behavior in a named RC may edit only the necessary production source, resources,
+UI and regression tests within its approved mutation envelope. This is
+regression remediation, NOT automatic Phase D Mode C feature implementation.
+Mode A's prohibition on editing production UI/gameplay for proposed NEW Phase D
+mappings does not by itself prohibit such task-authorized RC maintenance.
+The authorization must identify the candidate/version, concrete symptoms,
+allowed platforms/paths, parity reference and protected invariants. A report of
+an issue, a screenshot or this skill alone is not permission to edit.
+
+For the currently owner-requested `0.2.1-rc.1` UI/UX remediation task, the
+approved intent is to investigate and repair: missing-texture GUI background;
+ability reveal/hidden-state behavior; tooltip parity; incomplete/miscomposed
+tabs and advancement trees; and missing locked-action feedback, plus directly
+related regressions discovered by bounded audit. Verify original intended
+behavior from current and historical source, tests and real runtime evidence;
+use supplied screenshots as observations/references, not proof of mechanism.
+The approved scope includes necessary client-facing code/assets, directly
+related integration logic and tests, but **not** redesigning gameplay, changing
+thresholds, adding/removing abilities, inventing new rules, migrating saved data,
+loosening fail-closed admission or enabling uncertified full multiplayer gameplay.
+Any affected server/runtime code requires a demonstrated causal dependency and
+focused evidence; it is not blanket permission for subsystem refactors.
+
+Maintenance lane M execution rules:
+
+1. Read-only preflight: inspect actual checkout/ref/tree, index, worktree,
+   ignored/untracked files, active instructions and task-specific evidence.
+   Do not confuse the local RC HEAD with a differently targeted tag without
+   separately comparing the Git trees and artifacts.
+2. Establish an exact pre-mutation allowlist of files/operations and expected
+   diffs. Unknown paths, other users' work, prior receipts, saved worlds and
+   immutable evidence are protected. If new files are required, record and
+   justify their exact paths before writing. Stop on unexpected overlap.
+3. Reproduce or independently substantiate each defect before changing
+   production; differentiate UI regressions, legitimate hidden/reveal rules,
+   datapack presentation, client/server authority, and diagnostic bridge
+   limitations. Do not invent design to fit screenshots.
+4. Independently fix and retest technical defects inside the granted scope;
+   regression-test adjacent states/tabs and real client behavior when tools
+   permit. Do not turn warnings or compile success into claimed runtime PASS.
+   If interactive GUI testing is unavailable, provide a precise human test
+   protocol and label such cases UNVERIFIED, not FIXED/CERTIFIED.
+5. Preserve `PRODUCT_GAMEPLAY_READY=false`, diagnostic-only gating and
+   source/reload/reconnect semantics unless a separate owner-reviewed product
+   decision explicitly authorizes otherwise. An absent action-bar message
+   under `bridge.spike=true` must not be 'fixed' by enabling uncertified
+   gameplay enforcement; test and report client-side feedback separately.
+6. Record source changes, positive/negative tests, unresolved issues, hashes
+   and any runtime limitations. Do not silently change old certification
+   receipts or infer certification beyond observed execution.
+7. No release/tag/branch rewrite, commit, push, publication, broad staging,
+   cleanup or phase promotion without its own explicit authority. A normal
+   authorized RC maintenance task does not grant any of these privileges.
+
+### Mode A — Research and design of NEW Phase D mappings (default)
 
 Autonomously research versions and vanilla registries, inspect existing code,
 inventory capabilities/thresholds, analyze BACAP relationships, classify behavior,
@@ -406,12 +497,17 @@ task's research scope. Every proposal is `PENDING_OWNER_CONTROLLER_REVIEW`,
 including apparently obvious inheritance or shared unlocks. Autonomously recover
 research and diagnostic failures within the authorized research/evidence scope;
 this does not permit gameplay/source implementation.
-Do not approve design, change thresholds, assign unlock categories, merge a new
-item into a permission category, add/remove abilities, change rewards, modify
-gameplay source, production resources/UI or implement proposed mappings.
-Research scratch and drafts go only in the task's dedicated ignored evidence
-workspace; preserve originals. D0-Pre reviews this skill only: full D0-A/B/C content
-audits require the next separately authorized task and must not start here.
+In Mode A work, do not approve design, change thresholds, assign unlock
+categories, merge an item into a permission category, add/remove abilities,
+change rewards, modify gameplay source or production resources/UI **to implement
+proposed Phase D mappings**. This prohibition remains absolute for unsanctioned
+Phase D design implementation, but it does not override the separately
+owner-authorized, evidence-bound RC maintenance lane M above.
+Mode A research scratch and drafts go only in the task's dedicated ignored
+evidence workspace; preserve originals. The historical D0-Pre task was
+proposal-only; its STOP/writer limits apply to that historical task, not to all
+future, separately authorized maintenance tasks. Full D0-A/B/C content audits
+still need their own explicit authorization.
 
 ### Mode B — Approved design specification
 
@@ -445,9 +541,12 @@ decision to owner/controller before dependent implementation. Continue independe
 authorized engineering only where unaffected. Git/publication/cleanup authority
 remains task-specific; Mode C is not blanket release or GitHub cleanup permission.
 
-Completing a mode does not automatically advance to the next. Skill modernization
-and tracking-policy approval are separate from gameplay-design approval. D0-Pre
-ends with the proposal and preservation evidence, then stops for review.
+Completing a mode does not automatically advance to the next. Maintenance
+lane M is neither Phase D design approval nor promotion to Mode C. Skill
+modernization, its local installation and any Git tracking/ignore-policy change
+remain distinct from gameplay-design approval. The historical D0-Pre work ended
+with proposal/preservation evidence; do not reactivate its task-specific STOP
+rule for independently owner-approved RC maintenance.
 
 ## 14. Phase D Content-Mapping Principles
 

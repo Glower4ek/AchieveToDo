@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "atd_input_driver",
+  "version": "1.0.0",
+  "name": "ATD Evidence Input Driver",
+  "description": "Test-only: injects key-mapping clicks from atd-driver/inbox.txt for Stage 2B evidence runs.",
+  "environment": "client",
+  "entrypoints": { "client": ["atd.driver.InputDriver"] },
+  "depends": { "fabricloader": "*", "minecraft": "26.2", "fabric-lifecycle-events-v1": "*" }
+}

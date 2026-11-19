@@ -1,0 +1,50 @@
+{
+  "group": "menu_open_grindstone",
+  "reviewer": "R3",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability open_grindstone, DIRECT, family resolver AbilityResolvers.findBlockAbility. 3 cited files rehashed: BukkitRestrictionResolver.java=f5d7d99bf324fcac... match; GameplayMenuAbilities.java=813236fd692a65a6... match; NativeLandmarkActions.java=eb87a78e70ea370b... match. Opened BukkitRestrictionResolver.java:99-101 (InventoryType.GRINDSTONE -> OPEN_GRINDSTONE), GameplayMenuAbilities.java:21 (GRINDSTONE -> BlockMenu(GRINDSTONE, OPEN_GRINDSTONE)) and NativeLandmarkActions.java:143-145 (GrindstoneBlock.useWithoutItem -> OPEN_GRINDSTONE native guard). Thresholds normal 259, easy 200, hard 318, chaos_20261116 168, custom_vision 259 equal the config files (rehashed). campaign14 chaos value 376 verified in its own chaos_20261116.toml."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS; read all 15 excerpts. Locked rows (c11, c12, c13, c14, c15, c17) and op: state line kind=LOCKED required=<th>, count th-1 before and after, UseItemOn packet arrives, no ATD_BOUNDARY INVENTORY_OPEN line, client screen stays 'none', overlay \"You can't use a grindstone\". Allowed rows: kind=UNLOCKED, 'ATD_BOUNDARY INVENTORY_OPEN_TYPE_GRINDSTONE' and client GrindstoneScreen, count unchanged. Creative and spectator open the menu with kind=LOCKED (bypass), no overlay. ATD_W2/ATD_EVENT show useBlock=ALLOW even when locked; the denial is at the native useWithoutItem guard, visible as the missing INVENTORY_OPEN boundary.",
+      "rowsRead": [
+        "campaign11 pass1 open_grindstone locked",
+        "campaign11 pass1 open_grindstone allowed",
+        "campaign11 modes open_grindstone creative",
+        "campaign11 modes open_grindstone op",
+        "campaign11 modes open_grindstone spectator",
+        "campaign12 thresholds-easy open_grindstone locked",
+        "campaign12 thresholds-easy open_grindstone allowed",
+        "campaign13 thresholds-hard open_grindstone locked",
+        "campaign13 thresholds-hard open_grindstone allowed",
+        "campaign14 thresholds-chaos open_grindstone locked",
+        "campaign14 thresholds-chaos open_grindstone allowed",
+        "campaign15 thresholds-custom_vision open_grindstone locked",
+        "campaign15 thresholds-custom_vision open_grindstone allowed",
+        "campaign17 reload open_grindstone locked",
+        "campaign17 reload open_grindstone allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11 (normal), campaign12 (easy), campaign13 (hard), campaign14 (chaos), campaign15 (custom_vision), campaign16 (chaos, landmarks r4), campaign17 (normal reload): all onlineMode=true, each has 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game'. Independently confirmed online-mode=true in campaign11/runtime/server.properties:47 and campaign17/runtime/server.properties:47, and the UUID/join lines in campaign17/receipts/output.log:231,242. The group's rows come from campaign11-15 and 17, all covered."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator present (c11). Threshold rows for normal (pass1), easy, hard, chaos and custom_vision. No NA rows. No offhand rows: the case opens the block with an empty main hand (main=air) and the OFFHAND selector requires a held item; opening a block menu has no separate off-hand route, acceptable."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows (2) all have campaign=campaign17; MANIFEST.e5Reload = campaign17, generationBefore 1, generationAfter 2. Every ATD_STAGE2A_STATE line inside the reload excerpt blocks shows \"generation\": 2 (parsed all of them). Each reload verdict equals the pass1 verdict for the same ability/phase (all PASS). Raw campaign17/receipts/output.log:249-255 shows 'Reloading!' followed by '[AchieveToDo] PROGRESSION_CONFIG_READY generation=2 file=normal.toml', i.e. a real datapack reload."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15 rows, all status REPRODUCED and recorded==replayed; each replay 'line' was cross-checked against the runtime's campaign-results.jsonl (ability/tag/phase/verdict match, 0 mismatches over the 201 rows of my 7 groups). MANIFEST.runtimes replay: reproducedAll=true for all 7 runtimes (campaign11 1235, campaign12-15 and 17 310 each, campaign16 44), problems []; the REPLAY.json files were re-read and agree. Plugin SHA-256 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b is identical in MANIFEST.plugin, perRuntime (7/7) and evidenceHashes.plugin, and I recomputed it from all 7 runtime/plugins/achievetodo.jar. Client mod: recomputed SHA-256 of the jar at MANIFEST.clientMod.path = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081 (matches). Recomputed SHA-256 of campaign-results.jsonl and REPLAY.json of all 7 runtimes: all equal evidenceHashes (e.g. campaign11 results e2fdcbee751d9b96..., campaign12 results 828efdb841a2751d...)."
+    }
+  },
+  "superseded": "MANIFEST.superseded lists only the two r3 reload rows of this group (normal/reload locked+allowed, PASS->PASS, by campaign17). Justified: the r3 reload in campaign11 was rejected by the server (campaign11/receipts/output.log:88679-88680 'Incorrect argument for command / reload confirm<--[HERE]'), so those rows were not run after a reload; campaign17 performed a real reload (generation 2, output.log:249-255). No r4 (landmark chest-room fixture) supersession concerns this group.",
+  "findings": []
+}

@@ -1,0 +1,8 @@
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign18 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b
+[2026-11-19T16:25:19+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-19T16:25:30+00:00] campaign18 up: [21:25:30 INFO]: [AchieveToDo] Resolved progression config normal.toml (normal)
+[2026-11-19T16:25:58+00:00] LOGIN_FAILED campaign18: []; one retry in 15 min
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign18 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b
+[2026-11-19T16:40:59+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-19T16:41:10+00:00] campaign18 up: [21:41:09 INFO]: [AchieveToDo] Resolved progression config normal.toml (normal)
+[2026-11-19T16:41:38+00:00] ABORTED: LOGIN_FAILED campaign18: ['MinecraftClientHttpException[type=HTTP_ERROR, status=429, response=null]']

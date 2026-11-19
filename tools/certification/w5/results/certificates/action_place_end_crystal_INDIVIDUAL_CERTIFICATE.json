@@ -1,0 +1,65 @@
+{
+  "group": "action_place_end_crystal",
+  "reviewer": "R7",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "place_end_crystal: 3 direct sites + findItemAbility resolver. SHA-256 of NativeActionBindings, NativeActionAgent, NativeActionSpecs recomputed: all match E1. Opened: NativeActionAgent.java:93-96 crystal() returns !denied(player,'PLACE_END_CRYSTAL'); NativeActionSpecs.java:38 injects into EndCrystalItem.useOn at the List.isEmpty check; NativeActionBindings.java:18 registers PLACE_END_CRYSTAL. Thresholds are listed for normal 639/easy 522/hard 756/chaos 387/custom_vision 639. Config files match."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "All 17 excerpts read, all PASS. Locked (c11-c15, c17, offhand): RIGHT_CLICK_BLOCK OBSIDIAN, the end_crystal entity probe fails before and after, count unchanged, the client still holds 1 end_crystal and shows the overlay 'You can't place an End crystal'. Allowed: probe 'Test passed. Count: 1', crystal consumed, count unchanged (technical inventory_changed only). Creative places (bypass), op denied, spectator denied by vanilla (cancelled=true DENY). I reproduced every verdict.",
+      "rowsRead": [
+        "campaign11 pass1 place_end_crystal/aims at obsidian top face locked (PASS)",
+        "campaign11 pass1 place_end_crystal/aims at obsidian top face allowed (PASS)",
+        "campaign11 modes place_end_crystal/aims at obsidian top face creative (PASS)",
+        "campaign11 modes place_end_crystal/aims at obsidian top face op (PASS)",
+        "campaign11 modes place_end_crystal/aims at obsidian top face spectator (PASS)",
+        "campaign11 offhand place_end_crystal/aims at obsidian top face offhand_locked (PASS)",
+        "campaign11 offhand place_end_crystal/aims at obsidian top face offhand_allowed (PASS)",
+        "campaign12 thresholds-easy place_end_crystal/aims at obsidian top face locked (PASS)",
+        "campaign12 thresholds-easy place_end_crystal/aims at obsidian top face allowed (PASS)",
+        "campaign13 thresholds-hard place_end_crystal/aims at obsidian top face locked (PASS)",
+        "campaign13 thresholds-hard place_end_crystal/aims at obsidian top face allowed (PASS)",
+        "campaign14 thresholds-chaos place_end_crystal/aims at obsidian top face locked (PASS)",
+        "campaign14 thresholds-chaos place_end_crystal/aims at obsidian top face allowed (PASS)",
+        "campaign15 thresholds-custom_vision place_end_crystal/aims at obsidian top face locked (PASS)",
+        "campaign15 thresholds-custom_vision place_end_crystal/aims at obsidian top face allowed (PASS)",
+        "campaign17 reload place_end_crystal/aims at obsidian top face locked (PASS)",
+        "campaign17 reload place_end_crystal/aims at obsidian top face allowed (PASS)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11..campaign17 all onlineMode=true with 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' lines. Independently: each runtime/server.properties has online-mode=true, and the exact UUID and join lines were found in the first 400 lines of each runtime's receipts/output.log."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "Modes rows creative/op/spectator present for every ability/case (campaign11 tag modes). Threshold rows present for normal (pass1, campaign11), easy (c12), hard (c13), chaos (c14), custom_vision (c15), and every row's threshold equals the ability's value in that runtime's config file. Offhand: offhand_locked/offhand_allowed rows exist (c11; main hand empty, off hand end_crystal, both HAND and OFF_HAND input events logged). There are no NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 rows tagged reload, all from campaign17. MANIFEST.e5Reload.evidence generationBefore=1, generationAfter=2 (also FINAL_STATUS_R5.json). All 4 ATD_STAGE2A_STATE lines of the campaign17 excerpts show generation 2 (non-campaign17 excerpts all generation 1). Each reload verdict (all PASS) equals the pass1 verdict for the same ability/case/phase (place_end_crystal)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 17 rows, all REPRODUCED, recorded verdict equals rows.jsonl verdict for every line. MANIFEST runtimes 11-17 replay reproducedAll=true (1235/310/310/310/310/44/310). Plugin SHA-256 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b in MANIFEST.plugin.perRuntime for all 7 runtimes; recomputed runtime/plugins/achievetodo.jar of all 7 runtimes = same. Client mod recomputed from disk = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081. Recomputed SHA-256 of campaign-results.jsonl and REPLAY.json of all 7 runtimes: all equal to evidenceHashes. Every rows.jsonl row found verbatim (ability/tag/phase/verdict/logLines) in its runtime's campaign-results.jsonl. All excerpt lines of the group were matched against the raw output.log at the cited line ranges (compacted STATE lines matched on tick, count, mode, op, generation): 0 mismatches."
+    }
+  },
+  "superseded": "All superseded entries in this group are the r3 'reload' rows (was PASS -> now PASS, by campaign17). Justified: campaign11 output.log:88679-88680 shows 'Incorrect argument for command / reload confirm<--[HERE]', and campaign11 never logs generation=2, so the r3 reload pass never reloaded. campaign17 output.log:247-255 shows a real datapack reload ('Reloading!', preflight generation=2, PROGRESSION_CONFIG_READY generation=2 file=normal.toml) before the reload pass. No r4 (campaign16 chest-room fixture fix) row is superseded in this group, and no campaign16 row belongs to it.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review/action_place_end_crystal/E1.json thresholds.chaos_20261116 vs campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml (sha256 5fcf0a51...)",
+      "description": "E1 cites only the campaign16 chaos config (sha256 e55204bd...). The thresholds-chaos rows come from campaign14, whose chaos_20261116.toml has a different hash and different values (place_end_crystal 134 in campaign14 vs 387 in E1). The rows match campaign14's file, which I checked by hand, but E1 does not cite that file. This is covered by accepted behaviour (b), so it is only a gap in the E1 documentation."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/action_place_end_crystal/excerpts.txt, campaign11 pass1 locked (output.log 5048-5060) and every other locked row",
+      "description": "The locked excerpts have no server-side denial line (INPUT_EVENT useBlock=ALLOW, no denial intent logged). The denial shows only as the missing crystal entity and as the client overlay plus the unconsumed item in rows.jsonl. The verdict is reproducible, but the server log alone does not attribute the denial to the plugin."
+    }
+  ]
+}

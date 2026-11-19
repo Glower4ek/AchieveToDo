@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "authority": "ATD_GAMEPLAY_JUNIT_REPAIR_V1",
+  "state": "EXACT_TEST_SOURCE_SUCCESSOR_ONLY_NOT_OWNER_B_APPROVAL",
+  "parentV4": {
+    "path": "tools/certification/authority/gameplay-successor-v4.json",
+    "sha256": "e069f6109cbbf2dd679859b10e814d987e77ba8c9c9338899e13be9b4abcce53"
+  },
+  "ownerBCapsule": {
+    "path": "tools/certification/authority/distribution-b-v2-approval.json",
+    "sha256": "39116d736a8c352aca6a05453474f0fae965cc300a075fdabdbf266523a3f9f9"
+  },
+  "originalG": {
+    "path": "src/test/java/com/diskree/achievetodo/certification/GateBInputAuthorityContractTest.java",
+    "sha256": "dd0ea394fbe31839781bfd4a2b4c04b84f78c70ede6f858395c9f20e0e50cbcd"
+  },
+  "codeBindings": {
+    "src/test/java/com/diskree/achievetodo/certification/GateBInputAuthorityContractTest.java": "3099ed9ea1c81613367c69d4af9ba7ce6daeae14cc299cd6305800e275332315",
+    "tools/build/gameplay_junit_overlay_v1.py": "3bb547ce24c9b0bbf05e889d3c1eb6865477b93ce5601bc8334b474d68519b85",
+    "tools/build/tests/test_gameplay_junit_overlay_v1.py": "bbcc13b06c495e42038d2a48a46f6d7d13b7b0d14d59fa40b179fcbd1d9ecb7d",
+    "tools/certification/fixtures/gameplay-junit-overlay-predecessor-v1.zip": "e144a61205cae9697742afd0561426925ad44be3c86334591f1ec7a45c071b2e"
+  },
+  "scope": "Only GateBInputAuthorityContractTest stream separation; no production or historic authority edits"
+}

@@ -1,0 +1,32 @@
+{
+  "started": "2026-11-19T11:38:40+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\repo\\port\\AchieveToDo-Purpur-26.2\\build\\libs\\AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar",
+  "runtimes": {
+    "campaign16": {
+      "mode": "chaos",
+      "started": "2026-11-19T11:38:40+00:00",
+      "passes": {
+        "landmarks-chaos-r4": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 32,
+            "PASS_MASKED_BY_DEPENDENCY": 10,
+            "NA_NO_LOCKED_STATE": 2
+          },
+          "finished": "2026-11-19T11:51:19+00:00"
+        }
+      },
+      "finished": "2026-11-19T11:51:23+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 44
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "r4",
+  "finished": "2026-11-19T11:51:23+00:00"
+}

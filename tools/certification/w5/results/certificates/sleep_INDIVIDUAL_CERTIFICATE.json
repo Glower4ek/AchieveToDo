@@ -1,0 +1,57 @@
+{
+  "group": "sleep",
+  "reviewer": "R4",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "sleep: SleepAdapter.java:31 (PlayerBedEnterEvent -> denyIfRestricted(SLEEP) -> setUseBed DENY), BukkitGameplayRuntime.java:117 (!allows(SLEEP) -> DENY), GameplayGate.java:15 (SLEEP in IMPLEMENTED), NativeLandmarkOperations.java:90 (sleepDenied -> targetAndAbilityDenied SLEEP); all four opened. Hashes recomputed, match E1: SleepAdapter dcc7b01b58c9b0a81d6a362ee6521161ce90c7303d23dab11fcdf3d42a6360fe, BukkitGameplayRuntime 6ebc32c592b18882b861811b8e092f40616a967baa50cc9f4f059cfe182fe9e0, GameplayGate 4ddeec267ba8ff6d3c0b6372bf7e97ca0d88373a9de2025584e8e46290e64f95, NativeLandmarkOperations 778a618697067511891241c4505a2a03203e512e34afcb8088d206c4fbb9e02c. Thresholds normal 24, easy 22, hard 24, chaos_20261116 24, custom_vision 24."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS. Read all 15 excerpts plus rows.jsonl client states. Locked rows: RIGHT_CLICK_BLOCK RED_BED, client sleeping=false in every state, overlay 'You can't sleep. Advancements left to unlock: 1', no SLEEP_IN_BED stat, no criteria, count unchanged. Allowed rows: sleeping=true, player moved into bed, ATD_PROOF_NATIVE_ADVANCEMENT_DONE minecraft:adventure/sleep_in_bed, count +1 (vanilla effect; overlay there is vanilla 'Sleeping through this night'). Verdicts reproduced.",
+      "rowsRead": [
+        "campaign11 pass1 sleep locked",
+        "campaign11 pass1 sleep allowed",
+        "campaign11 modes sleep creative",
+        "campaign11 modes sleep op",
+        "campaign11 modes sleep spectator",
+        "campaign12 thresholds-easy sleep locked",
+        "campaign12 thresholds-easy sleep allowed",
+        "campaign13 thresholds-hard sleep locked",
+        "campaign13 thresholds-hard sleep allowed",
+        "campaign14 thresholds-chaos sleep locked",
+        "campaign14 thresholds-chaos sleep allowed",
+        "campaign15 thresholds-custom_vision sleep locked",
+        "campaign15 thresholds-custom_vision sleep allowed",
+        "campaign17 reload sleep locked",
+        "campaign17 reload sleep allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11..campaign17 all onlineMode=true with authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and joinedLine 'Glower4ek joined the game'. Re-checked raw: each campaignNN/receipts/output.log has exactly 1 such UUID line and 1 join line; each campaignNN/runtime/server.properties has online-mode=true. Rows of this group come from campaign11/12/13/14/15/17, all covered."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative (slept), op (denied, overlay), spectator (Paper cancels spectator interact, no product overlay) rows present; normal/easy/hard/chaos/custom_vision rows present. Empty-hand interaction (case main=air) is outside the harness OFFHAND set (campaign_final.py:23-27): no off-hand route, no offhand or NA rows. CHAOS rows come from campaign14, whose chaos_20261116.toml differs from the campaign16 file cited in E1.configs (accepted behaviour b); read campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml: values match the row thresholds and the STATE 'required' values (sleep=24)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows, all campaign17; MANIFEST.e5Reload.runtime=campaign17, generationBefore=1, generationAfter=2. Every ATD_STAGE2A_STATE line in the reload excerpts shows \"generation\": 2 (all non-reload excerpts show 1). Raw campaign17/receipts/output.log:249-255: 'Reloading!' then 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml'. Each reload verdict equals the pass1 verdict of the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15/15 rows REPRODUCED, recorded==replayed for every row, and the (campaign,tag,ability,phase,verdict) multiset of rows.jsonl equals replay.jsonl. MANIFEST runtime replays reproducedAll=true for all 7 runtimes (1235/310/310/310/310/44/310, problems=[]); each REPLAY.json rehashed and matches evidenceHashes. Plugin perRuntime all ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b; recomputed campaignNN/runtime/plugins/achievetodo.jar for all 7 runtimes and repo build/libs/AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar: same value. Client mod recomputed at 'E:\\Кубы сборки\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar' = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081. campaign-results.jsonl recomputed for all 7 runtimes, all equal evidenceHashes (campaign11 e2fdcbee751d9b96b1b37ffdc31e851d82f018f6ee8a8bda545621e58df35b15, campaign17 14036deb3fbf00c3...). Also every rows.jsonl row equals the last same tag/ability/phase row of its runtime's campaign-results.jsonl (verdict, counts, logLines)."
+    }
+  },
+  "superseded": "2 superseded entries, all r5 reload rows (key normal/reload/..., by campaign17, was==now). Justified: the r3 reload in campaign11 was rejected (campaign11/receipts/output.log:88679-88680 'Incorrect argument for command' / 'reload confirm<--[HERE]'), while campaign17 did a real datapack reload (output.log:249-255, generation 2). No r4 (chest-room fixture) replacements in this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/sleep/excerpts.txt, e.g. block 'campaign11 pass1 sleep locked' (output.log 8531-8541)",
+      "description": "ATD_STAGE2A_STATE logs \"SLEEP\": null: the probe does not report this ability's lock kind/required value, so the lock state is only implied by count < row threshold (cross-checked against the config files), not shown by the plugin. Denial itself is visible (overlay + no effect); observability gap, not a product defect."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "reviewer": "independent agent /root/gameplay_gap_audit",
+  "verdict": "ACCEPTED_FOR_SOURCE_AUTHORITY_CONSTRUCTION_ONLY",
+  "accepted": true,
+  "sourceOnly": true,
+  "sourceAuthorityAccepted": false,
+  "compiledAccepted": false,
+  "runtimeAccepted": false,
+  "productReady": false,
+  "sourceBindings": [
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java",
+      "beforeSHA256": "4c8796fcb83e500733fbe19e777d6900f22816cbe64853e9c28e56d6a51c319d",
+      "afterSHA256": "268b068a721130e9b2b62302e422a53fac8bdfb4d76bfb726573cf1b90d5ed3c"
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+      "beforeSHA256": "24e8e41c3074a7b2202dc4c121a1f7348b1e83ade0141c2e64ac67f1da3d8bd0",
+      "afterSHA256": "0b0d6cb64a7e31e5f8e9c9f9299f0246a8dc55dba2ce0a75e63e67abed8613db"
+    }
+  ],
+  "reviewedCodeBindings": [
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/GameplaySuccessorAuthorityTest.java",
+      "sha256": "e379b27f818f821d63226a569eb36981377e9447d0bc5370ed5ea0f4275325a4"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java",
+      "sha256": "50af0ee3e5552f71056d267af8eb3682fac88e32356d328fa0faab37692e8cf8"
+    },
+    {
+      "path": "tools/build/gameplay_successor_v5.py",
+      "sha256": "3d3592b7343c755dfe32a354035e70762cf79a0f7e5c8e8ea1e71e868b43d7e9"
+    },
+    {
+      "path": "tools/build/tests/test_gameplay_successor_v5.py",
+      "sha256": "79ada4306a29b19c763fe7d2ae3df3f7374f0290e46379fb5648edbc84dcf63d"
+    },
+    {
+      "path": "tools/certification/authority/gameplay-junit-fixture-successor-v2.json",
+      "sha256": "d5e4361d87b4023927ecf32c15ac1e2d6fe8ad0aa367001dfc0d13f501b6112f"
+    },
+    {
+      "path": "tools/certification/fixtures/gameplay-source-v5-predecessor.zip",
+      "sha256": "0840dc91bc7b74496a93c513d3d7741b033a7a1b7da98441c1dd751e2071d7ed"
+    }
+  ],
+  "findings": []
+}

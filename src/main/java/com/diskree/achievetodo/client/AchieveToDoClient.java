@@ -42,16 +42,38 @@ public class AchieveToDoClient implements ClientModInitializer {
 
     private static final List<List<AbilityType>> abilityRows = new ArrayList<>();
 
+    // Purpur backend: abilities whose server guard refuses before the native use starts
+    // (before startUsingItem / consumeTicks / canConsume, or before the shot), so the client
+    // must not predict the use locally either. Without this the client raises the shield,
+    // draws the bow or plays the eating animation while the server has refused (W5-RED-3).
+    // Every attempt still reaches the server as a packet; the server stays the authority.
+    private static final Set<AbilityType> PURPUR_PREDICTION_SUPPRESSED = EnumSet.of(
+        AbilityType.USE_BRUSH, AbilityType.JUMP, AbilityType.SNEAK, AbilityType.SPRINT,
+        AbilityType.SWIM, AbilityType.VISION, AbilityType.OPEN_INVENTORY, AbilityType.USE_SPYGLASS,
+        AbilityType.USE_SHIELD, AbilityType.SHOOT_BOW, AbilityType.SHOOT_CROSSBOW,
+        AbilityType.ATTACK_WITH_TRIDENT, AbilityType.USE_OMINOUS_BOTTLE, AbilityType.USE_ENDER_EYE
+    );
+
+    private static boolean isPurpurPredictionSuppressed(@NotNull AbilityType abilityType) {
+        return PURPUR_PREDICTION_SUPPRESSED.contains(abilityType)
+            || abilityType.name().startsWith("EAT_")
+            || abilityType.getLandmarkType() != null;
+    }
+
     public static int getRequiredAdvancementsCount(AbilityType ability) {
+        var projection=com.diskree.achievetodo.client.bridge.BridgeClient.presentation();
+        if(projection!=null)return projection.state().abilities().get(ability.getName()).threshold();
         return abilitiesConfiguration.get(ability);
     }
 
     public static boolean isNotReady() {
+        if(com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend())return !com.diskree.achievetodo.client.bridge.BridgeClient.presentationReady();
         return abilitiesConfiguration == null || obtainedAdvancementsCount == Integer.MIN_VALUE;
     }
 
     public static int getObtainedAdvancementsCount() {
-        return obtainedAdvancementsCount;
+        var projection=com.diskree.achievetodo.client.bridge.BridgeClient.presentation();
+        return projection==null?obtainedAdvancementsCount:projection.state().count();
     }
 
     public static int getTrackedScore(@NotNull TrackedScoreType progressType) {
@@ -63,6 +85,7 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static List<LockedLandmarkBox> getLockedLandmarkBoxes() {
+        if(com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend())return com.diskree.achievetodo.client.bridge.BridgeLandmarkPresentation.boxes();
         return lockedLandmarkBoxes;
     }
 
@@ -115,6 +138,7 @@ public class AchieveToDoClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        com.diskree.achievetodo.client.bridge.BridgeClient.initialize();
         registerPayloads();
         AdvancementLinkCommand.register();
 
@@ -129,13 +153,14 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     private void registerPayloads() {
-        ClientPlayNetworking.registerGlobalReceiver(SyncAbilitiesConfigurationPayload.ID, (payload, context) ->
+        ClientPlayNetworking.registerGlobalReceiver(SyncAbilitiesConfigurationPayload.ID, (payload, context) -> {
+            com.diskree.achievetodo.client.bridge.BridgeClient.observeFabric();
             context.client().execute(() -> {
                 abilitiesConfiguration = payload.abilitiesConfiguration();
                 abilityRows.clear();
                 calculateLockedLandmarkBoxes();
-            })
-        );
+            });
+        });
         ClientPlayNetworking.registerGlobalReceiver(SyncObtainedAdvancementsCountPayload.ID, (payload, context) ->
             context.client().execute(() -> obtainedAdvancementsCount = payload.obtainedAdvancementsCount())
         );
@@ -254,6 +279,24 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static boolean isAbilityLocked(@NotNull AbilityType abilityType, boolean checkOnly) {
+        if (!com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()) {
+            // Canonical mixins also own local rendering, inventory input and item prediction.
+            // Suppress prediction using the admitted S3C projection; every native transaction
+            // still independently queries server authority. Only actual attempts report discovery.
+            if (!isPurpurPredictionSuppressed(abilityType) ||
+                !com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) return false;
+            LocalPlayer predictedPlayer = Minecraft.getInstance().player;
+            boolean locked=predictedPlayer != null && !predictedPlayer.isCreative() && !predictedPlayer.isSpectator()
+                && com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType);
+            if(locked && !checkOnly && com.diskree.achievetodo.client.bridge.BridgeClient.reportDeniedAttempt(abilityType)) {
+                var projection=com.diskree.achievetodo.client.bridge.BridgeClient.presentation();
+                int required=projection.state().abilities().get(abilityType.getName()).threshold();
+                predictedPlayer.sendOverlayMessage(required==Constants.Progression.PERMANENTLY_LOCKED_FLAG
+                    ? abilityType.buildPermanentlyLockedMessage()
+                    : abilityType.buildUnlockProgressMessage(required-projection.state().count()));
+            }
+            return locked;
+        }
         LocalPlayer player = Minecraft.getInstance().player;
         if (player == null || player.isCreative() || player.isSpectator()) {
             return false;
@@ -285,7 +328,7 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static boolean isTargetInLockedLandmark(@NotNull DimensionType targetDimensionType, @NotNull AABB targetBox) {
-        for (LockedLandmarkBox lockedLandmarksBox : lockedLandmarkBoxes) {
+        for (LockedLandmarkBox lockedLandmarksBox : getLockedLandmarkBoxes()) {
             if (lockedLandmarksBox.dimensionType() == targetDimensionType &&
                 lockedLandmarksBox.box().intersects(targetBox)
             ) {
@@ -299,6 +342,9 @@ public class AchieveToDoClient implements ClientModInitializer {
     }
 
     public static @Nullable List<List<AbilityType>> getAbilityRows() {
+        boolean purpur=com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend();
+        Map<AbilityType,Integer> abilitiesConfiguration=purpur?com.diskree.achievetodo.client.bridge.BridgePresentation.thresholds():AchieveToDoClient.abilitiesConfiguration;
+        List<List<AbilityType>> abilityRows=purpur?com.diskree.achievetodo.client.bridge.BridgePresentation.rows():AchieveToDoClient.abilityRows;
         if (isNotReady()) {
             return null;
         }

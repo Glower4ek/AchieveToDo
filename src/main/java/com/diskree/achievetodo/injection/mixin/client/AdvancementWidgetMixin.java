@@ -60,6 +60,17 @@ public class AdvancementWidgetMixin {
 
     @Unique
     private boolean shouldRenderMystifiedMask() {
+        if (abilityType != null && com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) {
+            // Native advancement progress already persists discovery per player. The
+            // numeric bridge projection supplies unlock state, not discovery state.
+            if (!com.diskree.achievetodo.client.bridge.BridgeClient.presentationReady()) return true;
+            CriterionProgress discovered = progress == null ? null
+                : progress.getCriterion(AbilityAdvancementsGenerator.DEMYSTIFIED_CRITERION);
+            return com.diskree.achievetodo.client.gui.AbilityPresentationState.mystified(
+                AchieveToDoClient.getRequiredAdvancementsCount(abilityType),
+                !com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType),
+                discovered != null && discovered.isDone());
+        }
         if (progress == null || abilityType == null || !AchieveToDoClient.isAbilityLocked(abilityType, true)) {
             return false;
         }
@@ -82,6 +93,12 @@ public class AdvancementWidgetMixin {
     @Final
     private Minecraft minecraft;
 
+    @WrapOperation(method={"extractRenderState","extractHover"},at=@At(value="INVOKE",target="Lnet/minecraft/advancements/AdvancementProgress;isDone()Z"))
+    private boolean bridgeNumericFrame(AdvancementProgress value,Operation<Boolean> original) {
+        if(abilityType!=null && com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend())return !com.diskree.achievetodo.client.bridge.BridgePresentation.locked(abilityType);
+        return original.call(value);
+    }
+
     @Inject(
         method = "<init>",
         at = @At(
@@ -98,6 +115,10 @@ public class AdvancementWidgetMixin {
         CallbackInfo ci
     ) {
         Identifier advancementId = advancement.holder().id();
+        if (com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) {
+            abilityType=AbilityType.findByAdvancement(advancementId);return;
+        }
+        if (!com.diskree.achievetodo.client.bridge.BridgeClient.isFabricBackend()) return;
         trackedScoreType = TrackedScoreType.findByAdvancement(advancementId);
         if (trackedScoreType == null) {
             trackedNearbyEntitiesType = TrackedNearbyEntitiesType.findByAdvancement(advancementId);

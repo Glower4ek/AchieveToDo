@@ -55,6 +55,11 @@ public enum AdvancementsTabType {
     }
 
     public static @Nullable AdvancementsTabType findByAdvancement(@NotNull Identifier advancementId) {
+        if (!advancementId.getNamespace().equals("achievetodo")
+            && !advancementId.getNamespace().equals("blazeandcave")
+            && !advancementId.getNamespace().equals("minecraft")) {
+            return null;
+        }
         String[] pathSlices = advancementId.getPath().split("/");
         if (pathSlices.length == 2) {
             for (AdvancementsTabType tabType : values()) {

@@ -1,0 +1,2594 @@
+{
+  "fabricBuildHead": "28d7b0200f96607dcea89fa2b9c83502ba91b9d7",
+  "fabricBuildTree": "49e9f4aba7d7b651a414146a83ab6cec85bdf92a",
+  "purpurHead": "736a02b839651504f4f4b8525e441b1eb330cbaa",
+  "purpurTree": "528d17c2390ceec6f7b6111ae30aed14f5b0baf8",
+  "purpurPath": "port/AchieveToDo-Purpur-26.2",
+  "purpurMirrorFiles": {
+    ".gitignore": {
+      "bytes": 34,
+      "sha256": "dd77d64aed6e7da6f54c4763036efc711a29362a3a2cf69e350646429f68a2cd"
+    },
+    "DATAPACK_CONTENT_MAP.md": {
+      "bytes": 4061,
+      "sha256": "95661b297d46a29e6b4c8b5e7370dc489682b8eb7328d61b32d777173e7ea277"
+    },
+    "PORT_STATUS.md": {
+      "bytes": 91451,
+      "sha256": "0af55ac7e7f9f96231ffc085a412f188ac9ede19ce44d5e99c78a81ad0400a37"
+    },
+    "PURPUR_INTEGRATION_TEST_PLAN.md": {
+      "bytes": 6141,
+      "sha256": "3db55f7c1fa5c79efdbe3b52da9f3c740c365ca1b9f15f9d75643d8a118da037"
+    },
+    "RESTRICTION_BYPASS_MATRIX.md": {
+      "bytes": 3943,
+      "sha256": "984e55d90493b53c05f6f27983dcffb0c6049d1e085fa859a7f1785bdaabc7f3"
+    },
+    "RESTRICTION_ENGINE.md": {
+      "bytes": 4370,
+      "sha256": "5a4827b4b4a6f34010884ae2d87124cc7116c4fff40f3594b632a1dd14cee0dc"
+    },
+    "S3A_PROGRESSION.md": {
+      "bytes": 5899,
+      "sha256": "49062e1193b61681afac0dc92ce661471484bab5b8bd54b0485068c8fce55395"
+    },
+    "S3B_SEMANTICS.md": {
+      "bytes": 6420,
+      "sha256": "3eeea2b067f55212423dfa669860f005de4a898fefb675a9378d542b2a5bc05f"
+    },
+    "S4A_GAMEPLAY.md": {
+      "bytes": 4232,
+      "sha256": "5a2bbcf6b62bbb7ede7d3d24e092dd3e90ed6ad78991344e2a998880405b39dc"
+    },
+    "S4B_GAMEPLAY.md": {
+      "bytes": 3438,
+      "sha256": "41cb5cbdef3e2d9c75f6c028f5ec696589ff98e77ce57c1eb5dccdbf38819bf4"
+    },
+    "S4C_GAMEPLAY.md": {
+      "bytes": 5337,
+      "sha256": "6451f6baca17d812e72a97565103dd17d1b9cbee087d67e60e14706d268d076c"
+    },
+    "S4D_GAMEPLAY.md": {
+      "bytes": 2055,
+      "sha256": "98b6092b0d35253f8790345f7c9d80259a33983f97adbb6af0be51eb93bea7e5"
+    },
+    "S4E_GAMEPLAY.md": {
+      "bytes": 1886,
+      "sha256": "ef246ee91605f519795b90d4e293a0999cb8b6b6dbdac3599ed85176bcd1a913"
+    },
+    "S4F_GAMEPLAY.md": {
+      "bytes": 2824,
+      "sha256": "5232d43b13f8d8a2f1f6bd5132e0bc59206be841d92f93171c1e5351b6fa44a6"
+    },
+    "S4G_GAMEPLAY.md": {
+      "bytes": 3171,
+      "sha256": "2be03bcacd3761e664145d89e710bf1f9ed9e0a30cefb60246530882802e8114"
+    },
+    "S4H_GAMEPLAY.md": {
+      "bytes": 2415,
+      "sha256": "0be867517f655eb4a571df027676909b083e702723a1536f65d996ecde4e9edd"
+    },
+    "S4I_GAMEPLAY.md": {
+      "bytes": 2142,
+      "sha256": "dce8a07d17ffc8842275bb0bc0296a9a1474bfa6ff4e94b288606973188b369c"
+    },
+    "S4J_GAMEPLAY.md": {
+      "bytes": 2621,
+      "sha256": "25d5a8b9be00dd8994ea38f61e805ddda10de1a79439bc4a52be65b79a4eb69a"
+    },
+    "S4K_GAMEPLAY.md": {
+      "bytes": 2002,
+      "sha256": "064d2d1bafbd6c0420b87c92cf3343fe037965871773562e6f76c167f2e27fdc"
+    },
+    "S4L_GAMEPLAY.md": {
+      "bytes": 3286,
+      "sha256": "309c4f153d0cb92cc81d1a36c47b5eb729b3ae81f36bdc2b8581213210aa09eb"
+    },
+    "UI_AUDIT.md": {
+      "bytes": 27830,
+      "sha256": "8daa2ff390faa9c35586196263ad7b4a015227d64b9da854a14692c27fc28764"
+    },
+    "UI_RESOURCE_PACK_PLAN.md": {
+      "bytes": 5051,
+      "sha256": "36ab4cd60187d92e97dc51dcdd7af7b0df4097811efbdaa647bf5941927b6556"
+    },
+    "UI_STAGE_10B_PLAN.md": {
+      "bytes": 5001,
+      "sha256": "b6c43ec5990d7cb2499cb0cade10c829163f3a83c8134d8b397cbfdf5da31154"
+    },
+    "UI_VISUAL_CONTRACT.md": {
+      "bytes": 6169,
+      "sha256": "c22134e8a481f19e381821a3bc026558d068aa10d728dabf1a39cde53a9e3caa"
+    },
+    "build.gradle.kts": {
+      "bytes": 11438,
+      "sha256": "3c846c5fcafe6ca27ccf0db470be5b5e2d214fd54dbc90dd1cf159ab79df58e4"
+    },
+    "docs/BASELINE.md": {
+      "bytes": 1587,
+      "sha256": "a791e5d5dbb904ca06a2d469f0a9e263926100df760ca331794ed305f3dc87e3"
+    },
+    "docs/PLATFORM_LOCK.md": {
+      "bytes": 2015,
+      "sha256": "aff7e21c714beedb31ed46ad553986c2e93ea36a8402dde1b82fc3c10eabb65d"
+    },
+    "docs/VALIDATION.md": {
+      "bytes": 2561,
+      "sha256": "199975bfa7475d0d6fe21902d304f54bce9cecf55dbfa9b39989ab1913865404"
+    },
+    "gradle.lockfile": {
+      "bytes": 5473,
+      "sha256": "4c3ca0e603c12589109cee89d86a092296f1e80a839c648d02ddc20222acd567"
+    },
+    "gradle.properties": {
+      "bytes": 201,
+      "sha256": "896d7e9ba7f94488e3128ab126d730ce99c72c736565648f26525ec8cc88e76c"
+    },
+    "gradle/verification-metadata.xml": {
+      "bytes": 38383,
+      "sha256": "b2f24a21a6ea8d24816f603a1dd5fc083e3c1f42a2ce89ba1f7429c852bd8908"
+    },
+    "gradle/wrapper/gradle-wrapper.jar": {
+      "bytes": 48462,
+      "sha256": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7"
+    },
+    "gradle/wrapper/gradle-wrapper.properties": {
+      "bytes": 368,
+      "sha256": "c4b9669284de8eb1bbf2801c8e705b278651a0d48693a829fc39c1d2739249cb"
+    },
+    "gradlew": {
+      "bytes": 8654,
+      "sha256": "ab5c0cad16305af2e619c159c1f58dd68d07fab9c11e36701e109c0277407f7a"
+    },
+    "gradlew.bat": {
+      "bytes": 2846,
+      "sha256": "475c4f08cd57cf2faa819e7f36d72aa93f0ad646ea23a8f7fa3ef54dee1cbc52"
+    },
+    "settings.gradle.kts": {
+      "bytes": 46,
+      "sha256": "5df9651520a33efcd98ae1e37ae68ef68985c5019b72ede794fd662f2571cfbd"
+    },
+    "src/main/java/com/diskree/achievetodo/ability/AbilitiesHierarchyLayerType.java": {
+      "bytes": 384,
+      "sha256": "2cbf1d5c33fbb86bd56a8f78f4da3da7f223ea4054989a31f0e804d5fc61f87b"
+    },
+    "src/main/java/com/diskree/achievetodo/ability/AbilityBinding.java": {
+      "bytes": 2157,
+      "sha256": "c4b0337c270b60e3d44e878ada1851cdc248f92c341b3e2b041f29bbccf4225e"
+    },
+    "src/main/java/com/diskree/achievetodo/ability/AbilityBindingType.java": {
+      "bytes": 214,
+      "sha256": "2c017392f1a5069f63398fb91286da333146a768bcbe80d6b5b87845847ba940"
+    },
+    "src/main/java/com/diskree/achievetodo/ability/AbilityResolvers.java": {
+      "bytes": 5492,
+      "sha256": "073d9aabafd80928f13870ae693a907cf7db952f415bfb799ba8307f18fc36c6"
+    },
+    "src/main/java/com/diskree/achievetodo/ability/AbilityType.java": {
+      "bytes": 17607,
+      "sha256": "964a4a0695858d5802c5e7a400d2277fcad8886349aaca38a17d86caca00b079"
+    },
+    "src/main/java/com/diskree/achievetodo/ability/BlockBox.java": {
+      "bytes": 1187,
+      "sha256": "738b40c4bdf2816bdb0103b93f5d6077c1323f1975365eda7eb68e5762d4e144"
+    },
+    "src/main/java/com/diskree/achievetodo/ability/DimensionType.java": {
+      "bytes": 640,
+      "sha256": "40a668d7fe36b2a1b50f3a3532510547768819476a29a8294523cd04ef86d7d5"
+    },
+    "src/main/java/com/diskree/achievetodo/ability/DimensionalBlockBox.java": {
+      "bytes": 340,
+      "sha256": "724e99c5ed8dcc553ef84fa8218d45c14691589dcf5a3ea866b4e7210527a8e0"
+    },
+    "src/main/java/com/diskree/achievetodo/ability/EquipmentDescriptor.java": {
+      "bytes": 378,
+      "sha256": "4132ea70076b22145b5301f70937069b863c0c47c66c26ae05930bc611ad8b41"
+    },
+    "src/main/java/com/diskree/achievetodo/ability/LandmarkDiscoveryType.java": {
+      "bytes": 107,
+      "sha256": "29cb347638d6046b4fc308780d848ef10957eb6116dbfa765b74591395456c27"
+    },
+    "src/main/java/com/diskree/achievetodo/ability/LandmarkType.java": {
+      "bytes": 6167,
+      "sha256": "79050fbb8f4778905eef7d0cdf8f253a4ea6b9dee50aa3391008b276619996fd"
+    },
+    "src/main/java/com/diskree/achievetodo/ability/package-info.java": {
+      "bytes": 42,
+      "sha256": "95640a3754d4f6cbda6dfb6e85b2e996ebdd4c6110099069f0378db984df884b"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/AttachedEntityAdapter.java": {
+      "bytes": 4305,
+      "sha256": "12674ed762193972292ebcd4a601f1c072a8826e6ec6ebd3eaccce45d7740bef"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/BlockBreakAdapter.java": {
+      "bytes": 3068,
+      "sha256": "b0be39c0eef1c69774ac764b4a8ec32a45cecedf493217eb8027656022500777"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/BlockInteractionAdapter.java": {
+      "bytes": 3933,
+      "sha256": "0f79db6c37dad429f59c45956309201472b84d5b0b1a4acb9d75779d57275946"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java": {
+      "bytes": 13225,
+      "sha256": "f5d7d99bf324fcac91edd2b13cee03b4bf12b625d0591426ce739134d928c84e"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionService.java": {
+      "bytes": 7728,
+      "sha256": "1576602636fcfd91c6c96915f6e38ddc12ae36ba92d4bb01719d4431bafce3bc"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionTargets.java": {
+      "bytes": 3570,
+      "sha256": "f1ab0538b6cd395cc359ecb18c0c7a74095556ad5afb8096312636138fd2b064"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/BundleAdapter.java": {
+      "bytes": 3041,
+      "sha256": "1e8a4aefe7c017763f312d0840bb7ce33fd782884557194c6863fba443c9d8d7"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/EntityInteractionAdapter.java": {
+      "bytes": 6645,
+      "sha256": "83f13812b8510e120815e50794d40237ab51de4cce0235f9d57952f98737f84b"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/EquipmentAdapter.java": {
+      "bytes": 14697,
+      "sha256": "443fd1730edf372297cc6ee541e34e907e96cb0bf60a06cf65b7b34964d2a4cf"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/FluidAdapter.java": {
+      "bytes": 3319,
+      "sha256": "4a64de6bd5976c2ee9b529b9345926356ae751841fb4a47b5e542ad873dac404"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/ItemUseAdapter.java": {
+      "bytes": 4758,
+      "sha256": "f6b08cdd465c765c5fa3014f26d8348895d89c91fc782ed445d670faf7600cfd"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/MovementAdapter.java": {
+      "bytes": 1848,
+      "sha256": "b4966275d374e4b46396a488d9a018cb7a1b26b4818c7dd510305875f7cd8e71"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/PermissivePlayerProgressionLookup.java": {
+      "bytes": 1141,
+      "sha256": "d76ae4783d168c40de41f287ac1f048cac20f2c2fb1d3ce886b7fe39b3dffbcf"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/PortalAdapter.java": {
+      "bytes": 11194,
+      "sha256": "d2be5d74a634f14a45ddbbf00c81ed9c1d5b544c7f1e72300221e035b5bda1f6"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/ProjectileAdapter.java": {
+      "bytes": 5656,
+      "sha256": "e2a65365fa9f37ba62e285fa0d58e2cd6960b9628e040fc5324f5b9ab96eb83e"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/SleepAdapter.java": {
+      "bytes": 1561,
+      "sha256": "dcc7b01b58c9b0a81d6a362ee6521161ce90c7303d23dab11fcdf3d42a6360fe"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/TradeAdapter.java": {
+      "bytes": 4343,
+      "sha256": "548db9e336b366404e642aa02c48c242c4a19b0e019fb996f1b3d1db0a5b12ea"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/VaultAdapter.java": {
+      "bytes": 2791,
+      "sha256": "2254fa7f08bdca71a69bdf5d85ec279a29f000e4bba7d3ca6449879f1d666373"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/VehicleAdapter.java": {
+      "bytes": 2625,
+      "sha256": "6d3e68a0468f256616a680f3333eea30ecbc53604c9cf8295f7ea74eaec18de9"
+    },
+    "src/main/java/com/diskree/achievetodo/adapters/package-info.java": {
+      "bytes": 43,
+      "sha256": "8ee392aa87d78d449ccf275cde506bfac9fedec2bc6b4e9f88581e6f2bc28494"
+    },
+    "src/main/java/com/diskree/achievetodo/bootstrap/AchieveToDoBootstrap.java": {
+      "bytes": 2494,
+      "sha256": "b4068a829dca52103d1c4126f29859f69722f00698db61bd01242a626c692666"
+    },
+    "src/main/java/com/diskree/achievetodo/bridge/BridgeHandshake.java": {
+      "bytes": 1821,
+      "sha256": "9799526acd5a15930286b2a91022f4aad54ce464161e105f3d1a28ac2bb03c78"
+    },
+    "src/main/java/com/diskree/achievetodo/bridge/BridgeLandmarks.java": {
+      "bytes": 6731,
+      "sha256": "16095eab87b9bdff36c1bc3ac9e59d00fcf5cafe01547f77ec2284c1d26c658b"
+    },
+    "src/main/java/com/diskree/achievetodo/bridge/BridgeProgressionAdapter.java": {
+      "bytes": 1498,
+      "sha256": "a0eecab21b3b51d6d64044eab8332aebacf60735e4c68c00016c3e87d49ef566"
+    },
+    "src/main/java/com/diskree/achievetodo/bridge/BridgeProjectionCache.java": {
+      "bytes": 5072,
+      "sha256": "c4fb162f56b37f6be1110e4b424ac051d657f1108cc544174cb5409f60f17374"
+    },
+    "src/main/java/com/diskree/achievetodo/bridge/BridgeResyncGate.java": {
+      "bytes": 1278,
+      "sha256": "18a5af374235a809a8c099a435dbecfcd5e3045352bbe64734baae9d4330d66b"
+    },
+    "src/main/java/com/diskree/achievetodo/bridge/BridgeWire.java": {
+      "bytes": 14656,
+      "sha256": "d8a6e67e218589819cf875472f1ba539d7f225c5e9a348d51119dac068d5f071"
+    },
+    "src/main/java/com/diskree/achievetodo/bridge/BukkitBridgeRuntime.java": {
+      "bytes": 24536,
+      "sha256": "8a325a9f5670568ed402eb34924ec1299f6583e75a1b9169b7b91e33f02e31c8"
+    },
+    "src/main/java/com/diskree/achievetodo/core/AchieveToDoInspectCommand.java": {
+      "bytes": 7505,
+      "sha256": "15a4b271359d71de6b922d99da553ee3f5770c54de2e739fb0fcd59f5c380f19"
+    },
+    "src/main/java/com/diskree/achievetodo/core/AchieveToDoPlugin.java": {
+      "bytes": 7389,
+      "sha256": "b6807ed6e9bc1d466b2e96888065a943235c09e375576e4bb48371b34ecfaa77"
+    },
+    "src/main/java/com/diskree/achievetodo/core/AchieveToDoSetupCommand.java": {
+      "bytes": 2119,
+      "sha256": "c658731f561fe4e831d01da20c4e73920121f5f43b38035509b4cd26eeda275e"
+    },
+    "src/main/java/com/diskree/achievetodo/core/AchieveToDoUiCommand.java": {
+      "bytes": 2163,
+      "sha256": "7cab0d94cfd15f730c0b743566dbd369eb7c3820d4f9cfa311d533de1cd53b3f"
+    },
+    "src/main/java/com/diskree/achievetodo/core/PinnedStartupContract.java": {
+      "bytes": 2081,
+      "sha256": "8530865183e29303b64f4ba485b2f130fd7273f46716cd9929014ef20cdf24dc"
+    },
+    "src/main/java/com/diskree/achievetodo/core/ServerRuntimeReadiness.java": {
+      "bytes": 3247,
+      "sha256": "bbcea8e219cce5ff2bd74b58f5143224e66f6ac855c70985afdc5b374878e6ca"
+    },
+    "src/main/java/com/diskree/achievetodo/datapack/BacapPacks.java": {
+      "bytes": 5495,
+      "sha256": "e47e27d70e4a4d9548503f4f1b5fb0a4459758ac46c1e1dee9e730fede8221fd"
+    },
+    "src/main/java/com/diskree/achievetodo/datapack/EmbeddedDatapack.java": {
+      "bytes": 11866,
+      "sha256": "64dbdedbfd7d1a5b2a40c088f91fb5a5fca99f0b1d9c9159ee8c50d43d83d46c"
+    },
+    "src/main/java/com/diskree/achievetodo/datapack/EmbeddedDatapackMaterializerMain.java": {
+      "bytes": 493,
+      "sha256": "619770220b042ec3f67e30ac70fae12fb892de956dda84a4d6d5cc2b24d7e909"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java": {
+      "bytes": 5245,
+      "sha256": "d5f4ade91ad20ab05790204a7b4312ffe76fa34e4cbbee227fb0f5abc21532a5"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/BukkitFoodGameplayListener.java": {
+      "bytes": 2975,
+      "sha256": "9cd75dd9bcf4ce03d6ad9157508ec6b680302aa2219ae9ac3dbbbf582002683a"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/BukkitGameplayRuntime.java": {
+      "bytes": 6437,
+      "sha256": "f59a1ad7075328e9fd19bb6f8bbacb1f0c76c83dcd358ad64fcc7796715505ba"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/GameplayGate.java": {
+      "bytes": 2646,
+      "sha256": "4ddeec267ba8ff6d3c0b6372bf7e97ca0d88373a9de2025584e8e46290e64f95"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java": {
+      "bytes": 4575,
+      "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/NativeActionBindings.java": {
+      "bytes": 2953,
+      "sha256": "9b6ee44552d3882ad3e038a22136bab85977b9abb5ae4b5672c6ea388db12202"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/NativeComplexBindings.java": {
+      "bytes": 2685,
+      "sha256": "57d62ecdf9f74da732aea69401acc455f35b5782401c2f3406b549aad41eb666"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java": {
+      "bytes": 2208,
+      "sha256": "7baab126d39d7cbceba64ea7cf92fef3f155878b78a3f511c11fcc55487b625f"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java": {
+      "bytes": 5661,
+      "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/NativeMovementBindings.java": {
+      "bytes": 2549,
+      "sha256": "2b1c3586c541fb14d97124ae010c4df0c0a93d63f30e6e354274a66f4cc7ef20"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/NativePortalBindings.java": {
+      "bytes": 2553,
+      "sha256": "029c33cca0033d8f310727b3f3b75115ecb039ad29b512bb08e6a7bc0ab08bf0"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/NativeToolBindings.java": {
+      "bytes": 2635,
+      "sha256": "2d9a0cfda34272e5aceb0ed7e61aff81be11a4208a9beb7c5804541501353452"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/NativeTransactionBindings.java": {
+      "bytes": 2913,
+      "sha256": "8f0b042f55e1132c7bf42d7f4a93cf30def5dd12519f0938c5b6964a1670deec"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeActionAgent.java": {
+      "bytes": 9580,
+      "sha256": "06c930c91097e4025b293d61d38f7398cb491b2a039e2b8d031448d2df3600dc"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeActionSpecs.java": {
+      "bytes": 9297,
+      "sha256": "dc0fab2b346d866d678b4552a0c0b9d8b2666ffdf2cc313d0ebe3724184482e5"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeAgentIdentity.java": {
+      "bytes": 1019,
+      "sha256": "ea14fa7bc76be84ab042a324b833053ea980cfa1c5fe2c694603b6c08e2e98a8"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeComplexAgent.java": {
+      "bytes": 14330,
+      "sha256": "bee7ea8b515bca740d240c52e4bc42ee568a84999efb84ea51560fe0006c7be5"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeComplexSpecs.java": {
+      "bytes": 18487,
+      "sha256": "8af9adebc7beddb3c9f0c1941a3eef77726973b0edef4c9ea9f1cdd24948e82a"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkActionSpecs.java": {
+      "bytes": 41579,
+      "sha256": "1de644ea94db9045d3483db76d74f88b6af87946c4e2f17a1a7b89319d1061d2"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkActions.java": {
+      "bytes": 19931,
+      "sha256": "5470dcfc14d465410ade38cb601d68f2b35182a2ef99f4e002d37f4b40a7ff8e"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkAgent.java": {
+      "bytes": 11394,
+      "sha256": "70643eac088047ca5354a1d5aa8a2e22f6dead49f2334d31923ac0793b07a95e"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkCapture.java": {
+      "bytes": 13502,
+      "sha256": "a517af7ea61bba59b9c5bde52813a65f798f12cf87dc1c990924ed79cf79d065"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkMappings.java": {
+      "bytes": 2260,
+      "sha256": "7b55b01c208741fc1ae10f128c8e481bfe198cf91f04c6ebb634d4a3670f1e4a"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java": {
+      "bytes": 20838,
+      "sha256": "778a618697067511891241c4505a2a03203e512e34afcb8088d206c4fbb9e02c"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkSupplementAgent.java": {
+      "bytes": 3153,
+      "sha256": "bf8570ab4f0ef2d5a3d379d220dfbf0fe2536fd062ff445f36e1ade3e12fff04"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkSupplementSpecs.java": {
+      "bytes": 42285,
+      "sha256": "63648b4d4f5d085de4ddd77bb31cfa7377ea379521a3364f5cf958914d9fb549"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeMovementAgent.java": {
+      "bytes": 10611,
+      "sha256": "5df95f9564c141ab967f2aab0f0a1e4af3e6c1a371bb3d6848ae06497b8e6b5c"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeMovementAscent.java": {
+      "bytes": 5235,
+      "sha256": "71ac84714b26831245656a1c438efe14ffac9990c3455239ac6955b497d75545"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativePortalAgent.java": {
+      "bytes": 9731,
+      "sha256": "967683f9fe1c4007de5169d8b4230326c5c408fffabb158cfbb19243709df86d"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeToolAgent.java": {
+      "bytes": 13730,
+      "sha256": "322b3ea7232d77e6ea9c6e259638653fdd3728a08c50636cb0478bba8954aade"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeToolSpecs.java": {
+      "bytes": 7171,
+      "sha256": "8e6092f948f9428725c6394f25aba2100bf8b210b1a033ca768f9dea93fce41b"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java": {
+      "bytes": 12987,
+      "sha256": "48c17013e672f9cb134d9784d01597b2fcb4b82e347e5ac4ae406ab7bd6cc9f1"
+    },
+    "src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionPremain.java": {
+      "bytes": 4521,
+      "sha256": "0af68c31397586cb02642141cb55c30a61e6e267cb9368c7931b9b36ca23d45f"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/BlockCoordinate.java": {
+      "bytes": 98,
+      "sha256": "c814d3002aba9d6bd5e5af0430bf88813cbf2d44b036423a4bd1e8c4c297fd21"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java": {
+      "bytes": 4905,
+      "sha256": "e700963b8d2bf318f6c8794c2319d549e37fc19b008d4e0555ce0b83f8442a1c"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/ChunkCoordinate.java": {
+      "bytes": 514,
+      "sha256": "c8e1ba4d16a333b94f18841060c59521f5377f4a506eca7ccb0759663e2a4f93"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/ExactLandmarkGate.java": {
+      "bytes": 2255,
+      "sha256": "3c2582f80982f8dca12d1476c9c3ac06dcc624366171ed0a5be374197d8e1c2b"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/FeatureChunkView.java": {
+      "bytes": 265,
+      "sha256": "64af1e1ce8881842d5bca4d25399e38c053db83ee7dc184cd0f51ed9ad1806b7"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/FeatureLandmarkDetector.java": {
+      "bytes": 10161,
+      "sha256": "a05a34b4a53f71ec496d26877c95165962f9871d498da7c13b18850f7996dd91"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/FeatureLandmarkScanPolicy.java": {
+      "bytes": 692,
+      "sha256": "05c90ecd8295fc80d0c31df8ede2889a2e24b06e7921f2a9c03e8328a37b3f31"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/LandmarkChunkFileCodec.java": {
+      "bytes": 6693,
+      "sha256": "4cef8cf6b3ceae5e40accfc5a9b7912b5d04f803473e84208e2c7aeaead185d7"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/LandmarkChunkKey.java": {
+      "bytes": 298,
+      "sha256": "f13d166182f09248017d7d738056d3638c0f4fe2233514ff2493ff639714777d"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/LandmarkEngine.java": {
+      "bytes": 8656,
+      "sha256": "a693db433a26d70bad029cb3b37b279aea14e3e926f6559471c11c91e33ee7b7"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/LandmarkIndex.java": {
+      "bytes": 5664,
+      "sha256": "d43b99912427f8aab212d662a0360aa41bec385add4535b4b7448d06e539bebb"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/LandmarkPersistence.java": {
+      "bytes": 880,
+      "sha256": "bb0e528a16dab747f16891f19ec8772af2666219664adda08fd6cde20e55d9e6"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/LandmarkQueryResult.java": {
+      "bytes": 627,
+      "sha256": "ad771e4b952c3894be8abcac56cb1717aea7ca3badd4de249ed75dd881bbd333"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/LandmarkRecord.java": {
+      "bytes": 1486,
+      "sha256": "cbca4063f9637a35e3a6474af9302d315c7358a2c7e610a43dfbfa25f9af9ec6"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/LandmarkSource.java": {
+      "bytes": 790,
+      "sha256": "dd9b0bcd999aaa8a390bb037057040f03069c130e3af2fab61d081480ec84255"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/LandmarkSourceKind.java": {
+      "bytes": 105,
+      "sha256": "ffc7d62fa5258251f3e89386ab3585c4a83a188a6d96abe34531f4636a58b59d"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/LandmarkWorld.java": {
+      "bytes": 505,
+      "sha256": "950e1fcabfd27c9e528e5e2a2afa489836ccd16bb8418755fb53bbb1e3bebb55"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/LoadedLandmarkMembership.java": {
+      "bytes": 1717,
+      "sha256": "67cc089b279dcba83156eb715f3f8fb395d1d20bb87a04cca6fff44718e7f17e"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/StructureLandmarkDescriptor.java": {
+      "bytes": 1085,
+      "sha256": "2cc0deb147506432b4eb0475532db9ba5cfb37b334946edba68ed2dbc48a6729"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/StructureLandmarkDetector.java": {
+      "bytes": 1357,
+      "sha256": "07e9dbb86cda3324e8fa2fc1c2e3213b0d0d0bdcd968b2cd2e831c2997467e01"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/TargetBlockBox.java": {
+      "bytes": 948,
+      "sha256": "ec8ac9041c63add7c91b61d2739c844546fe2a3bcd1c70514293a74afaeaf7cd"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/WorldOwnedLandmarkPersistence.java": {
+      "bytes": 4892,
+      "sha256": "25c50b72d7c8a6b727e0d1f7b40c44003aa0d9d48b88c20e5ec8c44ee3ae393b"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java": {
+      "bytes": 13464,
+      "sha256": "706e61d7ce4f93c9b547fea0680ea8495d118572745dec0a2d1a6262568d9395"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitFeatureChunkView.java": {
+      "bytes": 1705,
+      "sha256": "92db47a1fcec8cc9bb8355ab1adde0ab9f74962ed0839642a39a625f7ba92b13"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitLandmarkAdapters.java": {
+      "bytes": 1532,
+      "sha256": "1b58f89fc8e7735ebb4075309e533b09d003633258ad77112de4d5a63f71884a"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitLandmarkRuntime.java": {
+      "bytes": 9926,
+      "sha256": "92a56b9c34b5d2676ead18953a05c4db3d8c9c1b72bd5175c95b594a6a916cb9"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitWorldFolderLandmarkPersistence.java": {
+      "bytes": 2593,
+      "sha256": "19fcd7c5e39ebec6f33d877de437c829a9c2e6524f838ba390d1dbb3b1560b8f"
+    },
+    "src/main/java/com/diskree/achievetodo/landmark/package-info.java": {
+      "bytes": 43,
+      "sha256": "2ce67a9da69b34ca513818e09253cf9cee8ff9d47da474e4afc55ad5afea4508"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/AbilityLockKind.java": {
+      "bytes": 127,
+      "sha256": "a89e9d4e0bb567812227c95c040c7f751451040f2548ca7e1acc8269f5abd650"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/AbilityRequirements.java": {
+      "bytes": 1878,
+      "sha256": "af57f512c6c27bc86cc4c315fdb9e2292803fa4893bd5e2aa6991f38cb12a81e"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/AbilityStateResolver.java": {
+      "bytes": 841,
+      "sha256": "43217be5398486c43a452c5a19b2a8d1276692ea7325e2743493249366b4350c"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/AbilityStateSnapshot.java": {
+      "bytes": 149,
+      "sha256": "4209302d86e0381057e574f5e7bf5f4e499f8f33d2308c93e3991149b58f55e2"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/ChaosProgressionGenerator.java": {
+      "bytes": 4652,
+      "sha256": "098a900f488ba27f533e2241f1304745dc35f9cb1fe6faa548543b7a12b70033"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/DemystificationSink.java": {
+      "bytes": 523,
+      "sha256": "fde5de0768eaefdfb8cbb1c6bd3c07ca1ad5dcdb06b6f2c149e3edea62df0a64"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/ParsedProgressionConfig.java": {
+      "bytes": 379,
+      "sha256": "f63b8b6c3add8a2a0252493ce93bf924ff5f90f82f31e39e56605b65c85fd1f5"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/PlayerProgressionState.java": {
+      "bytes": 4702,
+      "sha256": "1f9cd096c9b03dbd7ca9d481a16793a0cabfe6041cd8736cd35a24518cfec8d8"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/ProgressionConfigDefinition.java": {
+      "bytes": 515,
+      "sha256": "5ff55ab79f632249b62d23b068f97ee9ee7b52e2d58af94027c81aaa409f19ef"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/ProgressionConfigRepository.java": {
+      "bytes": 517,
+      "sha256": "cb65f6295a76d6bbdd2a6e1b7a80c696624088c3a1af7f0334284532751129d5"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/ProgressionConfigService.java": {
+      "bytes": 7565,
+      "sha256": "5cb4922785fbb5754ce8daf7106329b0c54b8294b840ca9445452a5f0842f266"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/ProgressionConfigTomlCodec.java": {
+      "bytes": 3594,
+      "sha256": "42a02789c8f86ae28c8c374a223261a4fe197e7874f563328c4fa94160550f8c"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/ProgressionConstants.java": {
+      "bytes": 489,
+      "sha256": "daf4b5c3c6408ab024bd756628b7af770210867113eee20b5d9d8b5f464480cd"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/ProgressionModeType.java": {
+      "bytes": 1031,
+      "sha256": "71f653bb53ae4363ebaba300035aac0903ccab82d00330ff71ca02a6a2bbaeaa"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/ProgressionWorldGroup.java": {
+      "bytes": 2658,
+      "sha256": "abc0868be8498c2ff58e303084122e6edb16b06e1620e138c3918f212a91f6d2"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/ProgressionWorldIdentity.java": {
+      "bytes": 1019,
+      "sha256": "bbeba2f07490d39c4d13554d9a174735a08aaad67b34c41e716bd860a75adc4c"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/Progressions.java": {
+      "bytes": 17669,
+      "sha256": "00f2cf74b10872ad1e479353a8ec7afe9b8447521de98a4eba3e92bd951d6b3d"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/ResolvedAbilityState.java": {
+      "bytes": 875,
+      "sha256": "ba5e03f2dc45025631e1b774b9e077a693a174e30ef9578bf4d1f8f62f6dfef4"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/ResolvedProgressionConfig.java": {
+      "bytes": 515,
+      "sha256": "8b98f377c25b516c822141074acf6d0541ee88373049072598abe23f1b8373f2"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/WorldProgressionConfig.java": {
+      "bytes": 603,
+      "sha256": "604c4158d6b4f5382d895f07afff70272662590cac822432a3a7518cbb27458b"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/WorldProgressionConfigStore.java": {
+      "bytes": 215,
+      "sha256": "5a848ebdd740692853933d80feefb6d84feeaa389a7c16c33e7d0efb2b1bf06e"
+    },
+    "src/main/java/com/diskree/achievetodo/progression/package-info.java": {
+      "bytes": 46,
+      "sha256": "2b61e9a5bf38a41e254cc88cce361ca21ed5a479e80f36ce1f85d0b96a008fe5"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/PlayerProgressionLookup.java": {
+      "bytes": 247,
+      "sha256": "4c9f03e26b5d3c7dc0b7c8a36d86abc9acf600671f2e99c18ede2c9e53faa2bc"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionActionKind.java": {
+      "bytes": 553,
+      "sha256": "af15220620a9b047d1a4941031894fabd5abc9b35fc0f75380bb7a5777b46a74"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionActorMode.java": {
+      "bytes": 259,
+      "sha256": "26a2e72356fbf0e374d82c6cc4efc742d9a392926016b3da9c46410c85a0ea1a"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionAutomationSource.java": {
+      "bytes": 183,
+      "sha256": "519c305319988082c661a0ad451659df372a7e63c84f3c69342436f8c043302d"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionContext.java": {
+      "bytes": 4393,
+      "sha256": "4ef3f879193db9cba2f972a1f65040247477f917a71262063da3c22f2d7335ce"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionDecision.java": {
+      "bytes": 3088,
+      "sha256": "4b0665f566149dc585a34230eb37c2434fdc1166f8bfca2663fae83ff205aef0"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionDecisionKind.java": {
+      "bytes": 148,
+      "sha256": "cf4eb11eabb04881b84bf66196815c719c91cacb9203384916f7d70a440626a0"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionEngine.java": {
+      "bytes": 4726,
+      "sha256": "bd26b6862eb56ea00db6bda8b8f5c3f9dc43d94a98dc369560f8e8adb311c072"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionFlag.java": {
+      "bytes": 319,
+      "sha256": "3a4745a624321e97fe295e9c20e1119f177d5cf97c2d87f63cbd3d5d619ecd24"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionHand.java": {
+      "bytes": 116,
+      "sha256": "bc065a2a88b448f2fa7305b92934488dd2643afae04610afaf06cb9fa6ac6607"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionProjectileContext.java": {
+      "bytes": 713,
+      "sha256": "02a1f22ff2dbb6cf4bf4e80d3f121ce6941eed6e331f0c16240b60eefe3870db"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionTarget.java": {
+      "bytes": 1957,
+      "sha256": "72c3a327eb4196b5506dbedc4361c0857ad715fda727c4a510cf6e1cf2908d34"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionTargetKind.java": {
+      "bytes": 166,
+      "sha256": "938aacbe729448fd46acc92ef5845bb822de91eca580e3dc9ec87ce366ed009b"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/RestrictionVehicleContext.java": {
+      "bytes": 826,
+      "sha256": "10050008edd8691464f3de4e27380e66f5f282d289329c4d2a26fab5161ece16"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/bukkit/BukkitRestrictionRuntime.java": {
+      "bytes": 3493,
+      "sha256": "87ecda81d5dbf9025698dabb1c944d2e959ca149610435b8bfab510c29e51024"
+    },
+    "src/main/java/com/diskree/achievetodo/restriction/package-info.java": {
+      "bytes": 46,
+      "sha256": "aa88068d8ad192df1f49e89e16e85ab34c9f040b0332020f2061bade8a8590fa"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/AdvancementsMode.java": {
+      "bytes": 1466,
+      "sha256": "912ef3efa624fe6348f9d2e75bdfeaf47162b1510c9e1c179361f761eefa243e"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/BacapObjectiveDetector.java": {
+      "bytes": 986,
+      "sha256": "112fc8e6974ed18614a1f33c97b68d67e803a326006bdb08aee200ef08916d1e"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/DetectedAdvancementsObjective.java": {
+      "bytes": 470,
+      "sha256": "350d9706f048794400212d519ccda1d336411508bbf6e120fb69753fe5f30f13"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/NearbyEntityProgressCalculator.java": {
+      "bytes": 2392,
+      "sha256": "e21e1a982c8721a525947579377c2321a2b3e74670898d648dcbea3eae0a4fb1"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/NearbyEntityProgressProvider.java": {
+      "bytes": 198,
+      "sha256": "225e13936b1d6096380c7d996832e0770f1afc505797ed0e9e5c024471a1e2b5"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/PlayerProgressionUpdate.java": {
+      "bytes": 738,
+      "sha256": "a95666638bdd8c9ef482faa70cf759495489f644d61d694fec5929d8b363b980"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/ProgressionCountResolver.java": {
+      "bytes": 2375,
+      "sha256": "14c777cfdb1d06cbd3de7ee8fecfbf4fe1923ab86e30883381ed08a21e41c3aa"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/ProgressionDisplaySlot.java": {
+      "bytes": 120,
+      "sha256": "48f5494c11ed02b85abb9ba31910b036642b107534e68cfcbb1fe1801e93f7ab"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/ProgressionSource.java": {
+      "bytes": 572,
+      "sha256": "6b427954e75f4a3603733f3ed008dedbffe36e5dd29335f57b7e2d2c53455b9a"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/ProgressionStateSynchronizer.java": {
+      "bytes": 1958,
+      "sha256": "a01adef769609c4776ea0419d66eefd9d5fb0a19689cf7662aa45a7e644a57f7"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/ScoreAccess.java": {
+      "bytes": 197,
+      "sha256": "0bd6d02e26dac9a3b80f0441d545a91c1dcb68b87c231aef293296ea94f468ca"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/TeamProgressionSnapshot.java": {
+      "bytes": 368,
+      "sha256": "8e6d9a43c05ed559918bd8926b4fd6fc2ab04cfeae880a48bb238183bb76f797"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/TrackedNearbyEntitiesType.java": {
+      "bytes": 2708,
+      "sha256": "f80c3ca50476c2529701c756e63d370b32b74b4fdfb87bc50bcb6beefd159c9e"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/TrackedScoreType.java": {
+      "bytes": 7587,
+      "sha256": "074cda934ded01c4a5edf184a1bdd5dcef77a391cf898df9c1066af78914a96c"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/TrackedStatisticCategory.java": {
+      "bytes": 146,
+      "sha256": "a85faaa24f29d600a718b4dbed6ef4510aafeda87a0357129a144e9e4e7d14ae"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/TrackedStatisticKey.java": {
+      "bytes": 1080,
+      "sha256": "cee69c0ee6187f57c37fb0a1f36456dc49c799025e4e058125fdf135258281de"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/TrackedStatisticsDataType.java": {
+      "bytes": 9487,
+      "sha256": "767cc48763bae2e1866a2560927e8a6224a079d64f068021a8ebdbe81d9e056f"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/bukkit/BukkitBacapProgressionSource.java": {
+      "bytes": 15085,
+      "sha256": "1f95c661a6eaa9502f9392d96725eb8bc74eea0b5dd26ea4e63a19e5f3082bb4"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/bukkit/BukkitBacapRegistry.java": {
+      "bytes": 3535,
+      "sha256": "bbb1fdac4a104641a26e7b42022761e22f36b6f9abf82b136c70afd7ee1135da"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/bukkit/BukkitNearbyEntityProgressService.java": {
+      "bytes": 4754,
+      "sha256": "aa60ae3808c154d8935b150388c5edc3808b74ec72b474a3295f587f747ebb76"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/bukkit/BukkitNearbyEntityScanner.java": {
+      "bytes": 2992,
+      "sha256": "58ca63763ea33b9cfacd7e3426b40ea07a0a44a98a06d1f2e5f715855e784f2b"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/bukkit/BukkitProgressionConfigRepository.java": {
+      "bytes": 3605,
+      "sha256": "0e2e2739a2414fc5cbf0d2ca9f6b075752b4a40feabe56ebd09e7f9b5e1570ef"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/bukkit/BukkitProgressionRuntime.java": {
+      "bytes": 21734,
+      "sha256": "1b36e046f32bda31a7892ff4f2d3f8412a1e9f762c2204861af7334e7e262223"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/bukkit/BukkitSyntheticAdvancementSynchronizer.java": {
+      "bytes": 6700,
+      "sha256": "db70cb7c4896ed9d1e7b56b6c78a12d45184b649ac34deb17c45c24d87757470"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/bukkit/BukkitWorldProgressionConfigStore.java": {
+      "bytes": 4379,
+      "sha256": "98e0d2615fa33a67b22ebe89ff17768416b550183c4da5b2959975376f756c4e"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/bukkit/PlayerProgressionListener.java": {
+      "bytes": 195,
+      "sha256": "b3dd16eb8000498f6b6c66c22dca4f442f4766335950a09c5fdc75a8dd11db93"
+    },
+    "src/main/java/com/diskree/achievetodo/tracking/package-info.java": {
+      "bytes": 43,
+      "sha256": "91f97a5ec521f2ddcba3791274536d4a7dc00d729d36ce49606e71661f6cb818"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiAbilityBrowserService.java": {
+      "bytes": 7700,
+      "sha256": "616e43a5686010f634fa0fab7f124794e304b7215e948d03ea6f1312fd6ec7e4"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiAbilityGroup.java": {
+      "bytes": 1983,
+      "sha256": "56cf080a4995d15dbe536ef0344bccc1a21e109c6b2329bf9ac7143fd8706867"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiAbilityLayout.java": {
+      "bytes": 475,
+      "sha256": "4d4b0d4e9d4bb17242c8697887a1fdc36feed4e56c9baf9e62e71fe96bc2cbcf"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiAbilityLayoutResolver.java": {
+      "bytes": 3732,
+      "sha256": "e1438fb9fc6700d9bd1604e0fc7b101d00b92e68ac53da2845ab9cfc30d2b7d0"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiAbilityState.java": {
+      "bytes": 173,
+      "sha256": "b20b65775f1e1fa71de5d0bb39e35de0e2ffdbc312a40bae820c3ca44465b655"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiAbilityStateResolver.java": {
+      "bytes": 1021,
+      "sha256": "28840a74af4a6c5f84554ee4f8619c9d8c629e528d454e0b9bfd1029ea4b6d52"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiAbilityViewModel.java": {
+      "bytes": 680,
+      "sha256": "44f370868a34bc6ae62680e095172dc74887f99c8bfa5ef608f3b33e7c4b45f9"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiIconKey.java": {
+      "bytes": 665,
+      "sha256": "f06ce95d7c4bb073f1af7860beb759134f6b7294c829776a6f2521adab958486"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiRoute.java": {
+      "bytes": 523,
+      "sha256": "7ad1bd2f310f9f3a3fe45e39ad6f1f9d56e7d723dbc91ce27fa84a8f7bbfa394"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiScreenViewModel.java": {
+      "bytes": 857,
+      "sha256": "dc9410dfd079f8eb850cc31edee0ba605a646faded35c267f26cc667cb87dacc"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiSlotAction.java": {
+      "bytes": 613,
+      "sha256": "7109290416f9d151f586cdf7884b61ad7edace08facf15b2060eedfd62d0fcb7"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiSlotActionKind.java": {
+      "bytes": 132,
+      "sha256": "a2cafe15c4ac50ae5a7e0a8045ff357e96e578d5fae193cf575ca5e8f3128c1a"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiTabViewModel.java": {
+      "bytes": 509,
+      "sha256": "2db8e9feecbdf3d9006735e02b6b0ec89801e62745d1585da34138faca965703"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/UiTextService.java": {
+      "bytes": 6516,
+      "sha256": "02a47017eeb4aaac4c21b698c745e8fd0a6c543bc9d6e07ab011d55e33f17f1e"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/bukkit/BukkitUiClickPolicy.java": {
+      "bytes": 496,
+      "sha256": "9d6126d31c75b14cc4b5bd0f47e1985c8b3069ceef86b439649a34a37e2867f4"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/bukkit/BukkitUiInventories.java": {
+      "bytes": 681,
+      "sha256": "47697293dea427132353cef3cf6371758dce149d26d8a48a95b823bcf6515811"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/bukkit/BukkitUiInventoryHolder.java": {
+      "bytes": 332,
+      "sha256": "23b7108ca0cd59e51cdef5b5dcd4e6a0756c3586be5252986bd6aee290847143"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/bukkit/BukkitUiItemFactory.java": {
+      "bytes": 10644,
+      "sha256": "81f42cc17d85533207d992399e0fb52bb196f575df58b3b05009ecd5c564f414"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/bukkit/BukkitUiPresentationPreferenceRepository.java": {
+      "bytes": 2889,
+      "sha256": "df66e0ce5eb77b756a6cbc6b692a631ded790bc37028783c84f365b5347d6568"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/bukkit/BukkitUiRuntime.java": {
+      "bytes": 3365,
+      "sha256": "92a32f6d45a743607d6daf4247587a33473c97a078483858699e7d50945cbb63"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/bukkit/BukkitUiSessionManager.java": {
+      "bytes": 11609,
+      "sha256": "3982366b127ecd95152a40b94d722edc2788b9de7cf0dd7bd5c0357537f93ae8"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/bukkit/BukkitUiTitleFactory.java": {
+      "bytes": 574,
+      "sha256": "2f69451e51c1ecc0adc5579c694a2e5c78b3a648ef12e5152ea66056c7c26c54"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/bukkit/PlayerUiSession.java": {
+      "bytes": 1927,
+      "sha256": "f17e7f33104a20f18f21e9c67b471ef1451c3945e5caed54ce80dbdeb55980d6"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/bukkit/UiPresentationMode.java": {
+      "bytes": 847,
+      "sha256": "98a2dfd54d116087d79f11dd40a0c7b1af3429772541e4a3e2b24e2fd791fa00"
+    },
+    "src/main/java/com/diskree/achievetodo/ui/package-info.java": {
+      "bytes": 37,
+      "sha256": "2fd57338520cf2bee013890fd1a70fb54e2731cc16149fb5dbb126115cfbe642"
+    },
+    "src/main/resource-pack/NOTICE.txt": {
+      "bytes": 369,
+      "sha256": "901c0cb619eef061605b4945732812e08c6a4506c7d89a134fc8c4c40c78eec9"
+    },
+    "src/main/resource-pack/assets/achievetodo/font/ui_title.json": {
+      "bytes": 190,
+      "sha256": "bccc0a81c78190f1d33d0adcc3e5533017b78a8f11c1d000c282c2f27f26f547"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/font/ui_panel.png": {
+      "bytes": 2477,
+      "sha256": "6e5da9e8f04c231d0a2c55f53af2bd3490a43f8d87bdfd345b17c55923674bb4"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/ability_unknown.png": {
+      "bytes": 310,
+      "sha256": "e151bd24e1bbc66da1c9e1971151fa41a78ab3bc923c4423847269569dfd20ef"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/filler.png": {
+      "bytes": 126,
+      "sha256": "5016a323018f09e292165ad5392d82dcbad5e79c2b6b93aff3322dffff80b309"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/info.png": {
+      "bytes": 185,
+      "sha256": "326c4b6081985eb30efdd07baa6b153fe6a463d9c4c1283fcfc5c7aec45c0c0b"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/navigation_close.png": {
+      "bytes": 293,
+      "sha256": "c03cd85b087467008d1f73b23be49b8d09e0701429565e16828a79dc3972f591"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/navigation_next.png": {
+      "bytes": 246,
+      "sha256": "77ac33e315e15ceddcde731bcbdb67ea0a1f0322d44a7d8d2808d8e5a827142c"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/navigation_next_disabled.png": {
+      "bytes": 266,
+      "sha256": "3a72ae0753f836e6dba6d022e157513e7b36ef10d625d165c30cceab732eeab4"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/navigation_previous.png": {
+      "bytes": 253,
+      "sha256": "32af187965de3d847caddf65bb4d7452f5f74f27342998e576a4d4df5280c6f6"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/navigation_previous_disabled.png": {
+      "bytes": 273,
+      "sha256": "7f31c7fd381fdf69c56bcdd7a34b4d862b7c17707bd073607298f0799490b4eb"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_actions.png": {
+      "bytes": 246,
+      "sha256": "5242b72065bb7154d306a5523ae9c5036d6ea721a99bf4879aa909a23284eabb"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_actions_selected.png": {
+      "bytes": 253,
+      "sha256": "1726cfcd68c0c12b5cd3090b9a6121c1d6bc557de9024683a260930de621db4c"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_blocks.png": {
+      "bytes": 236,
+      "sha256": "8944de7e7292402f59c06223ed118dc384d9fae6fb61d1a43612c0768ba8e786"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_blocks_selected.png": {
+      "bytes": 246,
+      "sha256": "4339f04a38187a5101b772ee1f8505d40657ae87fc63acbd2ed2f72236f154fc"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_food.png": {
+      "bytes": 204,
+      "sha256": "c24968733dec59597e9db9002304aac60bfdfce44bf2626264ed66ec83557d9f"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_food_selected.png": {
+      "bytes": 214,
+      "sha256": "7d067a6b848a91c2846c2d476f4b88f66f0a56fd180f2612cb2b99b6eaef6b36"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_landmark.png": {
+      "bytes": 190,
+      "sha256": "1e24d63a472c57d7a6d0945f691fbb3bf5a4020a70f997f1749a48727f18652e"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_landmark_selected.png": {
+      "bytes": 201,
+      "sha256": "b342ccac4b1c8a15d87347932fd5dcb750ad0b68b4faea3fee35891a82da203f"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_main.png": {
+      "bytes": 267,
+      "sha256": "ceff8b238065023f06cd6d45d521c618c6ff94b1dd3a8a15bd98868e3dcc1e35"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_main_selected.png": {
+      "bytes": 274,
+      "sha256": "3e5c4ca7e95b44ed0c9c781212c4cb6d39036df2f154cc9f5ff11575083adbf8"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_trading.png": {
+      "bytes": 202,
+      "sha256": "d3bec76afc8243079366be505cb13983e6e46bbd6a1847835b5fae24394aca14"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_trading_selected.png": {
+      "bytes": 208,
+      "sha256": "f21f9f793de8c49e201f931a9f8a91b2b6e14f6606aa177de2b0a06484519cd4"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_upgrade.png": {
+      "bytes": 236,
+      "sha256": "20617cad6e465969849608a3187330ad009e461bee2b00b550d4630db7e95f46"
+    },
+    "src/main/resource-pack/assets/achievetodo/textures/item/ui/tab_upgrade_selected.png": {
+      "bytes": 247,
+      "sha256": "3233183c34db489725f9277af5831492716bcd44a71addf514a35bdcf16a878d"
+    },
+    "src/main/resource-pack/licenses/UPSTREAM_MIT_LICENSE.txt": {
+      "bytes": 1064,
+      "sha256": "29134d1c81448c8f01f340400e1e73d5a66f4b68815a45f65c5915747f91e7ed"
+    },
+    "src/main/resource-pack/pack.mcmeta": {
+      "bytes": 103,
+      "sha256": "513d5b9cf0cd3d99def66d6339dc6df4fec2507679c1e0b9632119200a7293ec"
+    },
+    "src/main/resource-pack/pack.png": {
+      "bytes": 1447,
+      "sha256": "8f3258d9c326f98ca0eb4e0f5ac104ee2a9ad41a729a276faf3c421e2b7b71c2"
+    },
+    "src/main/resources/META-INF/NOTICE-R9.txt": {
+      "bytes": 1722,
+      "sha256": "75d797ecceeac09671166f84d65161e70ecc0de66da48fcdc3ff0ee2c3d35e73"
+    },
+    "src/main/resources/META-INF/licenses/PROJECT_MIT_LICENSE.txt": {
+      "bytes": 1097,
+      "sha256": "e417f66b7847636a587fc9c371d5504810c79625f495e16104fdbdc3bcb3cf88"
+    },
+    "src/main/resources/META-INF/licenses/UPSTREAM_UI_MIT_LICENSE.txt": {
+      "bytes": 1064,
+      "sha256": "29134d1c81448c8f01f340400e1e73d5a66f4b68815a45f65c5915747f91e7ed"
+    },
+    "src/main/resources/META-INF/licenses/bacap-better-ru.txt": {
+      "bytes": 822,
+      "sha256": "3f081c7c76e0dbca238a80b71a25065ed2178f6bef11b29cb606711cc33bc04f"
+    },
+    "src/main/resources/META-INF/licenses/bacap-rus-translate.txt": {
+      "bytes": 4046,
+      "sha256": "d0f06f79ec97de797d9311587945d1475260778d066f54f5e7686aa48a981e69"
+    },
+    "src/main/resources/META-INF/licenses/toml4j.txt": {
+      "bytes": 1106,
+      "sha256": "07f673bc7ad3dc1da3a3ab72918c7bc7932287699ce8fe687381dc5b8a9d46ed"
+    },
+    "src/main/resources/bacap/s3a-profile.properties": {
+      "bytes": 260,
+      "sha256": "e2d53e9860e36c55420aab2f39da31fb4bc58ad81971ec38f3bc6a4634ddc9b6"
+    },
+    "src/main/resources/config/config.yml": {
+      "bytes": 125,
+      "sha256": "19704bd337531edaaaf35bf215b458d68b70556d36951f3cb1efd6206b030113"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/attack_with_mace.json": {
+      "bytes": 729,
+      "sha256": "75d0971f7666fe0061b265b3083cec22b7a52aeff9130c302d9c258658006cb2"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/attack_with_trident.json": {
+      "bytes": 741,
+      "sha256": "1a4014bd1f403aa8f3997bfd08cb6c982f8e53f3effe1a3b055627b51970ad48"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/break_blocks.json": {
+      "bytes": 724,
+      "sha256": "0c4190ef01f0f7fd9440ceb0a1cc577ba590327d16f98fed7e8b7f0aa52c6a27"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/break_blocks_in_negative_y.json": {
+      "bytes": 772,
+      "sha256": "7921de7c6fb52afc0b59de3d4a4046f5da62defdbbd47f59dfadf8908749ca7c"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/charge_respawn_anchor.json": {
+      "bytes": 754,
+      "sha256": "1fa35d3ba2bbb1ab14c7a550dff6d10e1261c9a1e4725b4c397b4d1d4614dbea"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_apple.json": {
+      "bytes": 709,
+      "sha256": "ff36db312be5970390906e84b72b2e25d722362b9c2a1a6bc6bb3a6270662e6b"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_baked_potato.json": {
+      "bytes": 737,
+      "sha256": "d063a4f8ffa4053214513ca85a34254221c9ea6d1e6ed52df6f14b4a02d46817"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_beef.json": {
+      "bytes": 705,
+      "sha256": "4dc31f2022acdbd41f219d9a195beded024add61c2bae9d7c465838c18f3b853"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_beetroot.json": {
+      "bytes": 721,
+      "sha256": "328594477c1e66b7ade31af647015b30861d27f667abb222e8410a3da466f32f"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_beetroot_soup.json": {
+      "bytes": 741,
+      "sha256": "f21e31234063d137a15f7008719c5214bfbc767069da99f4bbdd98573c093b11"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_bread.json": {
+      "bytes": 709,
+      "sha256": "2edc4a737b5d83033fa17862ed6299756e12ad7c98daccd79365fa0fa4a0184e"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_carrot.json": {
+      "bytes": 713,
+      "sha256": "8955eb72c32c25f40b8b78f6a561d53aadf21b13c6f5297452098c376ee7b157"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_chicken.json": {
+      "bytes": 717,
+      "sha256": "a65656faf6b5d8e8a031c613ab821eb36a88c2e5ba7b4bd4b10e0b4a434c7fc8"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_chorus_fruit.json": {
+      "bytes": 737,
+      "sha256": "7e8ef83ed9ea54567f651eca2ee93e362bf833f7e420079ffcdf174509e58c3a"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_cod.json": {
+      "bytes": 701,
+      "sha256": "20449bad4b597ee978791ee864108b78030572ab1487ba2abc6b535cdcf63d96"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_cooked_beef.json": {
+      "bytes": 733,
+      "sha256": "ffd5a0cb808202b459a9ba5fcc3844356329f5bff31189e6622fd64f51f1bfd7"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_cooked_chicken.json": {
+      "bytes": 745,
+      "sha256": "d4317b906ac27562e674b9f32cc6a53f72aebeeae257dcdf10ec979bb2c3d431"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_cooked_cod.json": {
+      "bytes": 729,
+      "sha256": "9c30108794bdec9e8de304bdc3769513b4204b089236a762d07b00b021a4bd0d"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_cooked_mutton.json": {
+      "bytes": 741,
+      "sha256": "1fa5efaf08d03fea26ccccd089275328a0585704a05d824b47162cc1c17473cf"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_cooked_porkchop.json": {
+      "bytes": 749,
+      "sha256": "8a7c732366ae42372275b38a404c625ecf617e0fb56e25bc219275bcc01ec15d"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_cooked_rabbit.json": {
+      "bytes": 741,
+      "sha256": "80011d2699a2fca7e594af8c18d7bc898e0011ccb082966cb20d3ea71d1ffed1"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_cooked_salmon.json": {
+      "bytes": 741,
+      "sha256": "f11900d18d93aba68642019a278f167455b333a81b1b05cde247a493ac57ca31"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_cookie.json": {
+      "bytes": 713,
+      "sha256": "9f231e3b3076e343b006d58ef58a8f4db51165788bbeadd2016f4eca1d6684b5"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_dried_kelp.json": {
+      "bytes": 729,
+      "sha256": "6a9199a5f02ba504b6f60b97ee13f9febdb43a781b47c4db971d7f8988788f7e"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_enchanted_golden_apple.json": {
+      "bytes": 777,
+      "sha256": "532dda0d5ea7c7a23fa767ddd757d5b336c1794a3917ae9639d506b3891ee1dd"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_glow_berries.json": {
+      "bytes": 737,
+      "sha256": "42e26c8c19b94eb20ab78f58a46d29aea3f35fd57826019bfa1b072c4c9c9d52"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_golden_apple.json": {
+      "bytes": 737,
+      "sha256": "6ea0802bf319480cf24ae252075aa9f1d6a47f6ecfcbfd2b48e05e188f0bdfbe"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_golden_carrot.json": {
+      "bytes": 741,
+      "sha256": "dcc26a241a60a35e182d55a2e0abba6af3eae5ec07c2ac0b618577e120788104"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_honey.json": {
+      "bytes": 716,
+      "sha256": "eeccd069c55680819b854e1dbeab4a8da918d566652cdcadbe7fd3527edde167"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_melon_slice.json": {
+      "bytes": 733,
+      "sha256": "88ffa72a1d3dbd54241b50cc11fe5f62cf82739522f5e2fb1a2f47f4e0ccd9eb"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_mushroom_stew.json": {
+      "bytes": 741,
+      "sha256": "803abe9c163600364cfe63adf236b6eddb2db5218e014bd51a10d3564f69ea97"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_mutton.json": {
+      "bytes": 713,
+      "sha256": "84aa6afa71b4af8cb74d4b7631720542a16a7eaf4a9d525a3843ff077e5f6a65"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_poisonous_potato.json": {
+      "bytes": 753,
+      "sha256": "9bcafa244b34f1cfdbcb22d05be3de3f0be5f5eaca53886fbab0ae8601d21449"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_porkchop.json": {
+      "bytes": 721,
+      "sha256": "0fe8ce66861108f760a6bc630c80d81c2d50252b8cf5f25c262f1e3303230688"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_potato.json": {
+      "bytes": 713,
+      "sha256": "30107218b0209c22caeca6ff67d10862a1b9e5350924c7fa645567b622d80377"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_pufferfish.json": {
+      "bytes": 729,
+      "sha256": "c709652589858173afb4c7e5cf0e3cd46e4aa7cd55839b4dfddb62331423a6b0"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_pumpkin_pie.json": {
+      "bytes": 733,
+      "sha256": "62043b59f1f2dab0fc6fbaaf5a1663782394d71dfb49e05d3f050e72df0aa1f6"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_rabbit.json": {
+      "bytes": 713,
+      "sha256": "940d76c954a757beb3938fbe1cee6208cb4bafb5a6b1210774fd8d87babf0fbe"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_rabbit_stew.json": {
+      "bytes": 733,
+      "sha256": "b4f296e9d6819e200ed20133060290c67e6325dc0fd5dd8342c11ae757704716"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_rotten_flesh.json": {
+      "bytes": 737,
+      "sha256": "b3612f06d15cec56169aafd38f5d2c9d94414de04688faea452ae2c43dfb967a"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_salmon.json": {
+      "bytes": 713,
+      "sha256": "1d8679fd019c80ffbbc0596c29a747c430aea271fd5b62c25bd2a62cde843332"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_spider_eye.json": {
+      "bytes": 729,
+      "sha256": "fb2b712d6e0a00b65da9eb96bb062d5680a4bbd37d1a555a6003aedd84dfb76b"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_suspicious_stew.json": {
+      "bytes": 749,
+      "sha256": "0b8cfcfcc085adcfaa75e0a8fcb6665e6dc1ac84abb07abab46b8b7a3da87470"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_sweet_berries.json": {
+      "bytes": 741,
+      "sha256": "8561a9bc7c613781fb40783972a0d4cc1aa05553acb9caebd65afa56e0dfe7e4"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/eat_tropical_fish.json": {
+      "bytes": 741,
+      "sha256": "25d88fb09f7475cf402d4b97c521c274bf6d695a62e48d53dae17e9308620d6a"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/enter_end.json": {
+      "bytes": 720,
+      "sha256": "93ddce6f0c9e17c5db9853697f2f77f4c75922eff293b8744623287f6f30c138"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/enter_nether.json": {
+      "bytes": 721,
+      "sha256": "823c9275ecf7a46dff8546ace3cc566dba30da52bbed64fa153d4b0165dede42"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/equip_chainmail_armor.json": {
+      "bytes": 760,
+      "sha256": "06f6f7d5df92f1f6418895fc9f8805c91ddf3c660f3fcb0a8b11546766f663c2"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/equip_copper_armor.json": {
+      "bytes": 748,
+      "sha256": "e4ae97145709d4018cf53f9846cc3c084a55ea3360f296a5144db2fb1bdc3570"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/equip_diamond_armor.json": {
+      "bytes": 752,
+      "sha256": "dfddd614e1583064aa2d8296d275fc143113e8a17e2898b082548438514e47d1"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/equip_elytra.json": {
+      "bytes": 719,
+      "sha256": "07b39bd6f086ecca5da528a419e11710bf0385d7bce6ad65fa0f74dfbcb98347"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/equip_golden_armor.json": {
+      "bytes": 748,
+      "sha256": "569a692820c5a2f6496a309327f4b559534a7980c6ff314b59ae67d3819e0a1d"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/equip_iron_armor.json": {
+      "bytes": 740,
+      "sha256": "96d671f6db13f9cd03796086777c12e389b1f428310f5bdb8ca09d9f9bf329ad"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/equip_leather_armor.json": {
+      "bytes": 752,
+      "sha256": "5b547567467c03c1347bf3e26fe76e402670386e5c9c3a8da2be593074b6561e"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/equip_netherite_armor.json": {
+      "bytes": 760,
+      "sha256": "39a074655b1a6de07ce8f0a7bddb131169f77a7e78337208ae45d8da1477199e"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/equip_turtle_helmet.json": {
+      "bytes": 747,
+      "sha256": "f6d23bb1ff9a04ba5ad1dce2e9dd69fdf20932a35e0d9fae8437afd56aa74043"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/get_into_boat.json": {
+      "bytes": 729,
+      "sha256": "5dda28e99db0fb56790bba91e901e9b603912017fcff9ff48d671161ea4acce8"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/get_into_minecart.json": {
+      "bytes": 736,
+      "sha256": "a3b6ef257674157a78fcbb486258fac3e5fc7b50b95686ff09574f456ebca289"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/glide_with_fireworks.json": {
+      "bytes": 752,
+      "sha256": "8230dfb713dd03994eba238d2cde3b644054a4207d3b23e0b607e39a0608af7e"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/ignite_tnt.json": {
+      "bytes": 710,
+      "sha256": "5c852febcfe6563872c852054e58c8526d07991e0c096256caad3de720456f1a"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_ancient_city.json": {
+      "bytes": 781,
+      "sha256": "c202d5448ce406110aa011194f6309e953d2304400e3322bb673b550627d5004"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_bastion_remnant.json": {
+      "bytes": 787,
+      "sha256": "3b200d40beeaa3cf370a03e91b13be92b2967b70b249f6b67daae0163420daf4"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_buried_treasure.json": {
+      "bytes": 774,
+      "sha256": "5ecba998353e86ab3b8931f606164d822f7621a0e2806d63b61259896168161f"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_desert_pyramid.json": {
+      "bytes": 785,
+      "sha256": "879ec8dd504fcd17760d524e8177d19ce45bac8e5d4c02d1885f630665ad1a6c"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_desert_well.json": {
+      "bytes": 767,
+      "sha256": "e600da5d37dda67c66439d43ae8b6590f71d293442f1bc60d8190946900f7f2f"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_end_city.json": {
+      "bytes": 761,
+      "sha256": "cce0edc839a8ff5a3fd79ba164810d58c5fb9b78e7d6dca9fbcc8f7a236167c0"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_fortress.json": {
+      "bytes": 771,
+      "sha256": "ecdff3d2a770e242f612f26fb0a607f11306fe4c0d2a8dcff38c070dbcaba229"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_igloo.json": {
+      "bytes": 750,
+      "sha256": "3fe499dbefe4589092b200b29d5a24a312555d98e5561f01f8e92cb148d3c540"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_jungle_pyramid.json": {
+      "bytes": 784,
+      "sha256": "2d90974645779e8576ee4c647671df523b91ff4d2a8a9f6f53df3eaa12ac28f4"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_mansion.json": {
+      "bytes": 758,
+      "sha256": "14f599536a4b3ab6565ab00dd4f42216eb46d1ed820905355fb726294be1cc85"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_mineshaft.json": {
+      "bytes": 756,
+      "sha256": "9b946ee37b9e84eb78cf86b19d22474e801f79e491328e99130415649a97a116"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_monster_room.json": {
+      "bytes": 768,
+      "sha256": "ba695a268c6e1e7c2a07b557ef82e2961c8f098f48403680551fceba94556c56"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_monument.json": {
+      "bytes": 759,
+      "sha256": "8c4c7f6ec1f3428eddb352ae0d607226f0b883085e839b238d6f45460b877dc2"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_ocean_ruin.json": {
+      "bytes": 766,
+      "sha256": "231aa354686889ffd5ba816fd1496eacd5922f3d93f8aaf99277a7fcbe0690c0"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_pillager_outpost.json": {
+      "bytes": 788,
+      "sha256": "b04da2bc6ebbba533fe666a04999d28d489382f6d75ce7a5c0294477057abff7"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_ruined_portal.json": {
+      "bytes": 779,
+      "sha256": "7f069461ffe5691627b323092921b2d9bbcf9e2d8c42e64342deb70103a35f3d"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_shipwreck.json": {
+      "bytes": 762,
+      "sha256": "e4272b9331b9620cc3da5dadf18abcce242d009714939dbbdaeadb147d4dcfe0"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_stronghold.json": {
+      "bytes": 784,
+      "sha256": "e99951b39b74ab12d4983183dc6f9eaa25f8e9b308d297f68aa4b1872271e3b1"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_swamp_hut.json": {
+      "bytes": 760,
+      "sha256": "880db1f921c76923e0d66699f40ec2c3b1a62e8c4baabe276bae6bdee80e91f3"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_trail_ruins.json": {
+      "bytes": 775,
+      "sha256": "edd8368b9002c5a1aad9bdfefd2908cf60c589377d7b4f0a7fca054260f18b06"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_trial_chambers.json": {
+      "bytes": 780,
+      "sha256": "8529b3af66ceca3f91b6d112fc0783fb68778a45075d56378535a7d3d546b36a"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/interact_inside_village.json": {
+      "bytes": 750,
+      "sha256": "b3f5ef93c4c3443886674e32879e1536eca591ff9fa080ef8a5c0b99b630b7c1"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/jump.json": {
+      "bytes": 700,
+      "sha256": "ff1d60209accb166f240f5a795478f691cbb12e07ec5d7c49dbd671369c2c275"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_anvil.json": {
+      "bytes": 712,
+      "sha256": "ccb6519ad0af49523c3e7420023cf93ccb7c02c5de2cf524a4c60dd4f4050f89"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_barrel.json": {
+      "bytes": 716,
+      "sha256": "3917226e1fd0d934f458cffc692bd81acdfdf9e9392da621ecf0758c6c044a22"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_beacon.json": {
+      "bytes": 716,
+      "sha256": "9d86afd257b4ec4daa469759bddbc71a5cec55223e504a352b1558f2812bec52"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_blast_furnace.json": {
+      "bytes": 744,
+      "sha256": "813d8826e91210c8d8b5c439dfe69c620e15a374598e772c309d7031381bc0f0"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_brewing_stand.json": {
+      "bytes": 744,
+      "sha256": "c0c9a529d7685af6f0908220b4331cde776ba78bd20032ef181bcefe66c0904e"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_cartography_table.json": {
+      "bytes": 760,
+      "sha256": "925714abb3202f0b82671a7a2fdaf2f331d13636ff72867c29accb406360f4ee"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_chest.json": {
+      "bytes": 712,
+      "sha256": "9a41128d6323e3eb54103ebfdad7590c1749e612a43f45a47acd6b261ff8f8e7"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_crafting_table.json": {
+      "bytes": 748,
+      "sha256": "d3f521d950621ef3078b42c115a32b579f602b2182fb6e15b489197e19f8d52e"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_door.json": {
+      "bytes": 717,
+      "sha256": "ea42e1a6c9d062fdffaf9d2f08184293d55503a3025ee57bfc06f44d4a8349d2"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_enchanting_table.json": {
+      "bytes": 756,
+      "sha256": "78e2a4edd55d088a5bedeece66bf606084db116c703e20afc18a3eaad3f8fad8"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_ender_chest.json": {
+      "bytes": 736,
+      "sha256": "9b46beb029de1e112a547d04f6fe6708e3d142bffc5f681178ceba498340a641"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_fence_gate.json": {
+      "bytes": 741,
+      "sha256": "b11722eb358450d2ef56b69d34b60ca072436f5a73c156a35fceddba996a759d"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_furnace.json": {
+      "bytes": 720,
+      "sha256": "ef34d59ef3bef25bff6aadaf7ff3f78dbf7c6dd346cbd0851a3e7ca3aad4aabc"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_grindstone.json": {
+      "bytes": 732,
+      "sha256": "e99da0a6670b368e309ff2d418deff8291ae3dad91a0aad4f8b3c70e80a2113a"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_inventory.json": {
+      "bytes": 736,
+      "sha256": "6289ad2a354c6acb543d4a4cb449b5f8db080406a37517f9cc53cad25fc04005"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_loom.json": {
+      "bytes": 708,
+      "sha256": "5a5f5a9b59a9328e4d8364e3cd5f69c7d56f0902f03469d84936b77f31e4d721"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_shulker_box.json": {
+      "bytes": 747,
+      "sha256": "639aef693a24afb6cc473b60957f5be5dff2149addb103b668eef6b56b8775b5"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_smithing_table.json": {
+      "bytes": 748,
+      "sha256": "7c11f5e45763743ffe405ddfd68fe7cfd09b40a9430e23fd82f33b2a537ba875"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_smoker.json": {
+      "bytes": 716,
+      "sha256": "27bc458a2526b88b60f470a5a4807d671106b01a33f20a0f111342f899c09cc9"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_stonecutter.json": {
+      "bytes": 736,
+      "sha256": "d568ae96376bf1ccaa6b712bbc4c332101c19f693a15252bbcfeae933e14119c"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/open_trapdoor.json": {
+      "bytes": 733,
+      "sha256": "eec3480a5b202b4a652166f6c537d8f2ebc3bb942abbdc86bdc64d0177e0c4c1"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/place_end_crystal.json": {
+      "bytes": 739,
+      "sha256": "2fc387776ccaee44d090710511b391330bdba182649cb2ddbadfbb5ea752dd01"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/put_in_bundle.json": {
+      "bytes": 722,
+      "sha256": "3f9d6e70030ab46631f2f7c5487c594d2382714b2ae8f52025639af4ba444eaf"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/root.json": {
+      "bytes": 505,
+      "sha256": "72b8ea56a4447ec0737fe3e8e04838c80dd7c5bfe32b6cd109669a40bdbf942b"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/shoot_bow.json": {
+      "bytes": 707,
+      "sha256": "4b9a204de4e70904c14c5e87b2b6a22b9290b87d8beedb626fb2778f29b9d115"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/shoot_crossbow.json": {
+      "bytes": 727,
+      "sha256": "ac68bf5e312f833187d1c18d640ab68270f637def68a5e00420c079ce09ccecb"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/sleep.json": {
+      "bytes": 706,
+      "sha256": "3d3b597c2632b4b2e750a5fea16543e27229cea2dab335590ac803c95c6a0dfe"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/sneak.json": {
+      "bytes": 710,
+      "sha256": "91ffaebf0d3af95e8a1ad40eea573a406aee0b5dfbe2d9497e5a6ef347f400b7"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/sprint.json": {
+      "bytes": 710,
+      "sha256": "e0fcfffd831a25a4b9f0f2a8d3fcc029e08890b63d42fdc4e8eb51ef8ad2fb46"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/swim.json": {
+      "bytes": 705,
+      "sha256": "e10802d5c5f8aa1c472be31880ad79d5f265b08bed49dd6153fb12b2ddcc868e"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/teleport_outer_islands.json": {
+      "bytes": 756,
+      "sha256": "880b21ea4765d782a5a56498e0d511291a476566a33657d291d292bfbbd0be49"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/throw_egg.json": {
+      "bytes": 707,
+      "sha256": "0410e59d448980456964ebfd260707fc0627f745dfb769f0130246ba9909670f"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/throw_ender_pearl.json": {
+      "bytes": 739,
+      "sha256": "3576e1b998f0f06d2c5d70de97d6b433317a0dc8fe2d70585ec340d0fd25a807"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/throw_snowball.json": {
+      "bytes": 727,
+      "sha256": "de16ac9214e03498a286f7c078cee17fe59c363b587d8109fd72e710f374cfac"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/throw_wind_charge.json": {
+      "bytes": 739,
+      "sha256": "a50c55debb0a8a0afef0eb48e37c79c340e09c5928098cf0268a9e2c6f4ff9df"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_armorer.json": {
+      "bytes": 744,
+      "sha256": "3d52ecd32845df381823666e6a7768111f1f80121d4eb50a524a3a60bec3670d"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_butcher.json": {
+      "bytes": 737,
+      "sha256": "e0f327cd889ab06dfb0055a6b7ee48b09da1785a7c600323a77222c1186feea9"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_cartographer.json": {
+      "bytes": 763,
+      "sha256": "01b6cf4c3a7251f47764babf2e9356e5af173479821d967cb48b1f8f4a40d5d6"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_cleric.json": {
+      "bytes": 741,
+      "sha256": "09889b0f3425b4e075252e8c76db70f90b2ad71049d733a458fb2913d0797c79"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_farmer.json": {
+      "bytes": 737,
+      "sha256": "6eb65ecd377c91c2cc277e86edf61f76d35a83391fd8172d1df47409e4c78ba4"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_fisherman.json": {
+      "bytes": 743,
+      "sha256": "37c3827b79670181b7212abb728431e5fdc71f63aae101109616081d5c939fd2"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_fletcher.json": {
+      "bytes": 749,
+      "sha256": "bd0286e1dbaae1b1cab1a012953ee07c2e8475cbe770cbd3a8d45c6e9c556129"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_leatherworker.json": {
+      "bytes": 757,
+      "sha256": "c5c3d3dc7f45a63170f2cc82c515facc3e8a211a53991cd9a2346d3e10671a95"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_librarian.json": {
+      "bytes": 744,
+      "sha256": "e96a33e033e41bdb2b3dea2fe05c229f040cc6aee4bdbecf537ee08e039a03f8"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_mason.json": {
+      "bytes": 736,
+      "sha256": "b40e2afb15ca4049b1c35cfad54b9f6ee82056149b8554bc7d282de0aaa22c0e"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_shepherd.json": {
+      "bytes": 738,
+      "sha256": "4b606833e2c32d39468e712674a77e6ec135c1be2579b9c9647be8f41f3cb7a8"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_toolsmith.json": {
+      "bytes": 751,
+      "sha256": "5b9ae30c4cd396067836278857fc207cebd003c6498c5181922c071ee27b2572"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_wandering_trader.json": {
+      "bytes": 784,
+      "sha256": "842142b955ed8c418d680170270539fb3e95be2d945449f1038edffaa9df4019"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/trade_with_weaponsmith.json": {
+      "bytes": 753,
+      "sha256": "c29bfeea81a08b881f329f42b4fc3a549a1c5b1b7d9bc4ef208e6141d207dc04"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/unlock_vault.json": {
+      "bytes": 718,
+      "sha256": "ca75e09bdfd7a0d07ca574f14cadca3deb2dc7854333e7fa8b1216aa71ee9fa2"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_brush.json": {
+      "bytes": 709,
+      "sha256": "f07faae87195ef8b8ff76ac8687b3a5ae967f75e43e75b97c2b37f7860f944de"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_campfire.json": {
+      "bytes": 721,
+      "sha256": "39c5f7b5c35883a6c760890e863f9e48ff7b0dee74b1bfb998cb103cf800f6d3"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_cauldron.json": {
+      "bytes": 721,
+      "sha256": "ba811b898b2fa6b46f93396970c387e60d5fe8cb15768a129a898d7cb52239ac"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_composter.json": {
+      "bytes": 725,
+      "sha256": "568798b899352860d460ed4b0c3f5a8cc137d69d75f7b0dfe283360e4a634781"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_copper_tools.json": {
+      "bytes": 739,
+      "sha256": "3e71d6b1906007f89d7415110330f9e16ccde0c6c1d2ccf44a5566e097b79de6"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_diamond_tools.json": {
+      "bytes": 743,
+      "sha256": "2ffdffbfe4545317d34fff6a72af0ee2ac05bf40650c4988f49d601bb9718e3b"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_ender_eye.json": {
+      "bytes": 725,
+      "sha256": "45aeb64327d3f8a404b04a15c08e43c13154da35ad2710434fe0e7ddc4cb5593"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_fishing_rod.json": {
+      "bytes": 733,
+      "sha256": "1cbb3dd8675ea4ea3cc4edce13c686f9fe2651078f065c150d61ab82c2ff18d7"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_flint_and_steel.json": {
+      "bytes": 749,
+      "sha256": "59003d8275891ac5a092b77e535f8c12829d8153b081a85e9d7b24c09c157885"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_golden_tools.json": {
+      "bytes": 739,
+      "sha256": "9d415e24fb68a4ac9dfae159e3277cd1ffb8dedd94ce5c39c6ab2a04783e84de"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_iron_tools.json": {
+      "bytes": 731,
+      "sha256": "ca220df81e9e6c1f4528852829f2c7e74612a712bd8059e1cd50059b59252f70"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_jukebox.json": {
+      "bytes": 717,
+      "sha256": "a008ecbd52aa318d58ff3d93d6602bf67972b886e64162cd1f812e1865cd7ee9"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_netherite_tools.json": {
+      "bytes": 751,
+      "sha256": "f5ea992b61623efd418f98a3defe8b2eb486910bffb7c1fb901260ad3b617fe4"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_ominous_bottle.json": {
+      "bytes": 745,
+      "sha256": "0a21a23022bde7a28daea8c9064c1600689f6ddc34b76656f3a628a06463ed80"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_shears.json": {
+      "bytes": 713,
+      "sha256": "688e2b4e88f5564c017001838f5d70984c9f00b53ee7d810b21cbbf3bde6f154"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_shield.json": {
+      "bytes": 713,
+      "sha256": "cc16ce020fdc4312a19f4e214afbc3e2414ed0c7e624c0e26e3f991079672baf"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_spyglass.json": {
+      "bytes": 721,
+      "sha256": "fb32d44d5083f575bd6137c57cd10cf4129ad7ceabdadbc0181ead43d0927862"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_stone_tools.json": {
+      "bytes": 735,
+      "sha256": "958c38af72fb092904ab4a6cd1941c2335b4ebe7d51393d59a04c8d147c350cd"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_water_bucket.json": {
+      "bytes": 737,
+      "sha256": "9177bd4de5d59ce0c78949ea8e8b3d7c950ad374fbf16d9934b4eb43404db0bd"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/use_wooden_tools.json": {
+      "bytes": 739,
+      "sha256": "a42888c842194c2be27a621db40a9185e5bf05a4d5a9396ec41522f0144c7e05"
+    },
+    "src/main/resources/datapack/data/achievetodo/advancement/abilities/vision.json": {
+      "bytes": 704,
+      "sha256": "1a77091b14b5ab76f0622d29e19e705def6fd20c257f9e9b550bb6abfc9c464b"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/attack_with_mace.mcfunction": {
+      "bytes": 694,
+      "sha256": "da11b3231790ea1cfa18e8d72a1dbb8b9982a47f17b8ca28a1ce7a60c362172e"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/attack_with_trident.mcfunction": {
+      "bytes": 706,
+      "sha256": "d0138cb682629bef9c58f2ec5f80e1089664df5f95b3a4dcfc1cb7e8becb956c"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/break_blocks.mcfunction": {
+      "bytes": 678,
+      "sha256": "4cf90826765fa80132d6c46912176fc1b1edd38d27c3337deeae39a2b9d276af"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/break_blocks_in_negative_y.mcfunction": {
+      "bytes": 734,
+      "sha256": "fdb6922c5a0d9d1903acfd6090586acaed663cb501db594f8a743ca3bbb2ddc9"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/charge_respawn_anchor.mcfunction": {
+      "bytes": 714,
+      "sha256": "99929b23f8b10d741c1cb2ddfaf3ee937d7a821840331eb022f0104d5563d3df"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_apple.mcfunction": {
+      "bytes": 666,
+      "sha256": "f2bb04a979e283b69220612e3de8607fd3a5d26b8c8c4bdea4652cb8e9acc5fc"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_baked_potato.mcfunction": {
+      "bytes": 694,
+      "sha256": "0ed2ac2a3daebc55feee1a7c7ecdf7ceff56821bb5cb1da2c137c76eb456ff81"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_beef.mcfunction": {
+      "bytes": 662,
+      "sha256": "582c7bcf236c7333c618bda6200375daa8801821302c8c2d95c6dcdad442b070"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_beetroot.mcfunction": {
+      "bytes": 678,
+      "sha256": "27f1c1dc79d4d579c2dadda07818f9041be70d17fc3d64e87e53eb7ce7b91148"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_beetroot_soup.mcfunction": {
+      "bytes": 698,
+      "sha256": "cb93b46b9fc56e1f0c6b96c0d852dfa620e1823a8ece50286ead81cade4046e8"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_bread.mcfunction": {
+      "bytes": 666,
+      "sha256": "bb2d4311046813cb5b77fd1a5e6fa35e118b908ce2a63be2e215158478d8194b"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_carrot.mcfunction": {
+      "bytes": 670,
+      "sha256": "70081e384b4a7e6116423eea7506e315cf604c8eef127db0749e71373ac02381"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_chicken.mcfunction": {
+      "bytes": 674,
+      "sha256": "c20fa4ff53acfac8c30cba993c7bcefb258aadef0d0edd2ce92d09e84b4fe492"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_chorus_fruit.mcfunction": {
+      "bytes": 694,
+      "sha256": "615bfe118282326ebe42d191667d2a40c4817e0fff6755ef95495c1d6d37bf1f"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_cod.mcfunction": {
+      "bytes": 658,
+      "sha256": "901fa8427a4562c9eb281208331c9d227ddebb063a56c3d50de6517b69602c02"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_cooked_beef.mcfunction": {
+      "bytes": 690,
+      "sha256": "6e94ef05890daee3dad9620f8ee619ffb7006220d6d8d5b04969b4150b3cf784"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_cooked_chicken.mcfunction": {
+      "bytes": 702,
+      "sha256": "4d2c53732735c248e7a33e8d74f0501deab9c68ba1f1e51549a93ca8610fe93d"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_cooked_cod.mcfunction": {
+      "bytes": 686,
+      "sha256": "ab1db17ef2d1e4a71f311ce6e4d843290d9565f244c9f609eef75915808f7baf"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_cooked_mutton.mcfunction": {
+      "bytes": 698,
+      "sha256": "9ef2611fe13e3a25873a4c21a7366951f2678de2a9192fcb41a3cf4dcb7e5a46"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_cooked_porkchop.mcfunction": {
+      "bytes": 706,
+      "sha256": "37c77751c460cad84ffb9b1efbd66a2818d685dbb5853d0e8dc57f510397f33e"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_cooked_rabbit.mcfunction": {
+      "bytes": 698,
+      "sha256": "4e547dc46e37565907aa83a942fdb55f98fa4cad1a76493929f35f2e0825c7dd"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_cooked_salmon.mcfunction": {
+      "bytes": 698,
+      "sha256": "906033191539e13430a18e1cc3305c16e1cd6be8e3ced2c21961c055ac8a3b3f"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_cookie.mcfunction": {
+      "bytes": 670,
+      "sha256": "c6cfceeb77713338734400f2b01bf492203d6b4245c978cb62aac32a83d4aeb0"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_dried_kelp.mcfunction": {
+      "bytes": 686,
+      "sha256": "b5f0776a55479c24da5068a8fada31aa3549e70a1b73c05e232f1eaf74919813"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_enchanted_golden_apple.mcfunction": {
+      "bytes": 734,
+      "sha256": "0516f3026dd1769259636b5b80648b9fa0a61efddc9c450556df7f45785c4ef6"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_glow_berries.mcfunction": {
+      "bytes": 694,
+      "sha256": "adc2ba4afda4ffc0096c66781e1afbdccab64fdf80732e0f7624a09e5d3eb771"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_golden_apple.mcfunction": {
+      "bytes": 694,
+      "sha256": "4f1013ef7c6cc6438b18bcea02805e0cceee85e0a17c17f46217e0acd174c8ad"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_golden_carrot.mcfunction": {
+      "bytes": 698,
+      "sha256": "8f10cf45bf3d73dc9a5cdc220b3c4b1028686dc96721f14f837f7a6e3254700b"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_honey.mcfunction": {
+      "bytes": 666,
+      "sha256": "b20288d50a6e65a95a38f74b400bf34d2e7df4bb52a56e6e9db1da385c95059a"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_melon_slice.mcfunction": {
+      "bytes": 690,
+      "sha256": "d6aeeb0115463d15b5ee9dfe3d6d16818db92ed87469a4ba12c1fc1b46ba7ab5"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_mushroom_stew.mcfunction": {
+      "bytes": 698,
+      "sha256": "55d52fb1d78e46ab8a1533de5f29fd740d0639d74158156195f108091aa44580"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_mutton.mcfunction": {
+      "bytes": 670,
+      "sha256": "839ae468b94f5aa65a2052202c096816edfa2fc05d7c30b5aef85db2c9128cb1"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_poisonous_potato.mcfunction": {
+      "bytes": 710,
+      "sha256": "b06bdc172fb1ede3f0db0458efb6f1cb88b104c173390076ba638e7fe823ebd4"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_porkchop.mcfunction": {
+      "bytes": 678,
+      "sha256": "20aaf4cbc2b16591c6d84579f29bf62ae6494fba6dd2fa4ac54e1fe83f46d26e"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_potato.mcfunction": {
+      "bytes": 670,
+      "sha256": "802e8f57b314dc9ee3a1ea96cd185bedde09bbb90bbb39c012f17b4ff3f51dfc"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_pufferfish.mcfunction": {
+      "bytes": 686,
+      "sha256": "26a2f0e9de74576377afbc9b08be558bfa5a0984832e81a7c59648e633726410"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_pumpkin_pie.mcfunction": {
+      "bytes": 690,
+      "sha256": "b3c140522f621fee48e87762ee6cce1e881c6b330fd911c68a44815150246e0c"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_rabbit.mcfunction": {
+      "bytes": 670,
+      "sha256": "1e14c1c37eb134c75e8978c8d47423fc5100dfa75eca1e755f60bbc3beaedcb8"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_rabbit_stew.mcfunction": {
+      "bytes": 690,
+      "sha256": "1278be18c11fd69c1a5cf157dfb8d81aa75547dbbd2494f246c98f7628887ca9"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_rotten_flesh.mcfunction": {
+      "bytes": 694,
+      "sha256": "d98281de530171960ea1ab0bf2ff2b10a27cc0698dd5c84d6d86e40e8191a6cf"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_salmon.mcfunction": {
+      "bytes": 670,
+      "sha256": "b3187c92326429747a71e3c9654b4a3ceec4a6ee749a35596233e97145d75fb7"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_spider_eye.mcfunction": {
+      "bytes": 686,
+      "sha256": "7df9350e014e00daad91404780c4ece2b6357136fb22c1f4dee1eda202154a6c"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_suspicious_stew.mcfunction": {
+      "bytes": 706,
+      "sha256": "20ff1f9f7ed2684b0ee0f3e2d344705b26116892590963c5b482e289f97563cc"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_sweet_berries.mcfunction": {
+      "bytes": 698,
+      "sha256": "ba7a446463ef31d4298fa27533ca65276348e6c9c81a0b9bd68544c3ae0ba5b9"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/eat_tropical_fish.mcfunction": {
+      "bytes": 698,
+      "sha256": "0df3dc24be05a463bd6fb4daea182c383b209ce23a7998b2127eda83a53d009b"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/enter_end.mcfunction": {
+      "bytes": 666,
+      "sha256": "4238b09c22532213d266bdb2320f92f047d7acb1018827ad544ff5b1c2dcee91"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/enter_nether.mcfunction": {
+      "bytes": 678,
+      "sha256": "ae09ca71be730c5a4c298d86e5698b617b27a7ad411bd73697a7ea666e4ca4d7"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/equip_chainmail_armor.mcfunction": {
+      "bytes": 714,
+      "sha256": "a9a3893b82e4a73aea8dc6333d06ad5d59585318b5a79150ccfc63296dd640a1"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/equip_copper_armor.mcfunction": {
+      "bytes": 702,
+      "sha256": "f00746ee24934be3abacfc8d9af364e7dbc7e633090dd2656587dbbcd70df937"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/equip_diamond_armor.mcfunction": {
+      "bytes": 706,
+      "sha256": "ed1d9ea6466fa08c7c529f58320b7984b90d3cc1a54d0e9f362108ef5431b81f"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/equip_elytra.mcfunction": {
+      "bytes": 678,
+      "sha256": "e03c301436aae93cbab981b526645510f7b2d35749e8e9ceda6a4abacfe53fea"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/equip_golden_armor.mcfunction": {
+      "bytes": 702,
+      "sha256": "c415ee24fad8800ac324be472546b64202c493a64ef9e3cb3498824a7e5dfd83"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/equip_iron_armor.mcfunction": {
+      "bytes": 694,
+      "sha256": "a5f429c7a593df80e03582a2a2e03e9a19f7ed9002817e00b1763de81c7bb8bd"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/equip_leather_armor.mcfunction": {
+      "bytes": 706,
+      "sha256": "81c95bbcd8bbc2831dc410065ffaf1889c8efc291e9b039a3c77caedd29b6266"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/equip_netherite_armor.mcfunction": {
+      "bytes": 714,
+      "sha256": "5452436ab9c6d2d46574cb33eb7e681428ab47b88595034e790e3c53d4eb356b"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/equip_turtle_helmet.mcfunction": {
+      "bytes": 706,
+      "sha256": "e8afc48778a9cb2b1e78a87a6b4520c2bc6ea242cd2cb6e67df3e67d035c56e8"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/get_into_boat.mcfunction": {
+      "bytes": 682,
+      "sha256": "a5470d83740b6ca1e0d4fcac16024fa6cae61249ee1592770b3ffd9e36220b85"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/get_into_minecart.mcfunction": {
+      "bytes": 698,
+      "sha256": "0547c73317c7a836287033e0c4723115ad3397178fdc88049157f85d74f77311"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/glide_with_fireworks.mcfunction": {
+      "bytes": 710,
+      "sha256": "394507be9f0abb4bf6e7ec64763cbc834206482cfe2c07f37bb3fb3387e119e7"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/ignite_tnt.mcfunction": {
+      "bytes": 670,
+      "sha256": "4eb42dd133ec9cd75e725d052c8ee38b778e889525768bddfb5fb248b8172980"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_ancient_city.mcfunction": {
+      "bytes": 742,
+      "sha256": "e0b5d514945e05d4c927d9a892cd8c2f7920c4588300dfd5ee6b2d5800058831"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_bastion_remnant.mcfunction": {
+      "bytes": 754,
+      "sha256": "e71c2916e0f7d0b8b5a91a58e47a83fb425477b8d1395afe95692857d125f33d"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_buried_treasure.mcfunction": {
+      "bytes": 754,
+      "sha256": "5974dddb8ee98935b453b0b36c7f8447735e7fe11d462fbe017e7cd51dfa48bd"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_desert_pyramid.mcfunction": {
+      "bytes": 750,
+      "sha256": "f9192274b9c3a5a5186412eff55903d0a3fb5fd3a363cc629471e3b71cc90019"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_desert_well.mcfunction": {
+      "bytes": 738,
+      "sha256": "6549f5337c8cd40526e0ce24bef5db5ca3786c2537b669a5a05367ee9b67fbc7"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_end_city.mcfunction": {
+      "bytes": 726,
+      "sha256": "298d745df7e153c270a2f0df677ffd34bb2a9d8a733dc321f4b11e6b3bf41ee9"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_fortress.mcfunction": {
+      "bytes": 726,
+      "sha256": "cdd5e9f2d2fee566ef5b91530a7f69665bbcb03e474143b887817fd08a0e18d7"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_igloo.mcfunction": {
+      "bytes": 714,
+      "sha256": "f5349785a31b4674cab8bb1d5e00585c49fc4424a70f5c1f9d1c574ec7216af5"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_jungle_pyramid.mcfunction": {
+      "bytes": 750,
+      "sha256": "b2da678e296271cc2f475e70319fb64c9b46c27798f59ea7b9f0b549824eaa17"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_mansion.mcfunction": {
+      "bytes": 722,
+      "sha256": "3f3a715835f85f5d7fae15bd09822212540c4a89b9ac3a4b71e2362634f18472"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_mineshaft.mcfunction": {
+      "bytes": 730,
+      "sha256": "54836f18b4ed8093fe906f58c0ecdc26090fe514768f75a3ad91696c4b81bcbe"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_monster_room.mcfunction": {
+      "bytes": 742,
+      "sha256": "3868817f8f420783e3a1fa0f704bd36307fe7077f1987a6f4e799126f0891b75"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_monument.mcfunction": {
+      "bytes": 726,
+      "sha256": "95cb1777a976df3d297d17292e02d44067a07bd62a5c96e5b808555849538c0d"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_ocean_ruin.mcfunction": {
+      "bytes": 734,
+      "sha256": "cc9dc3b95ce5a8f0a4d3420fb64a7461ce499282f333e7c55c253d2e39518b8f"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_pillager_outpost.mcfunction": {
+      "bytes": 758,
+      "sha256": "de7ad7df8ead1dc0d2639d3746bc5dd1abf7303d867edefce52489802e055d65"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_ruined_portal.mcfunction": {
+      "bytes": 746,
+      "sha256": "78514ff2424707030e66f4a48a4527d5070126a6b394d1fc6e431e563f252476"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_shipwreck.mcfunction": {
+      "bytes": 730,
+      "sha256": "cff465dafed42a1c366cd3611b07470e16ba7cc41c5d2fba6357965a12ec90e3"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_stronghold.mcfunction": {
+      "bytes": 734,
+      "sha256": "a04d301592afee012ded0ac8192334d2db2f5c5a1f53f8ad29512bfbeb4522a8"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_swamp_hut.mcfunction": {
+      "bytes": 730,
+      "sha256": "960bef58dca6a2604db59fead08fc8bb9cb76204072e9d2c5a5c80f4aae21d49"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_trail_ruins.mcfunction": {
+      "bytes": 738,
+      "sha256": "1d7bb8403ca7222b866ef5c82c9da95986d17bbfe8a618e7b3115ca7212c92bf"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_trial_chambers.mcfunction": {
+      "bytes": 750,
+      "sha256": "3252017cda89d07bdaef28b79ccf6cc55c9632b6c7f1845e42eaaee8a26b2a60"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/interact_inside_village.mcfunction": {
+      "bytes": 722,
+      "sha256": "b7f426b866ae73fddedf543fdf91b73541f10373ba712b5d6cfec04039b8f7a1"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/jump.mcfunction": {
+      "bytes": 646,
+      "sha256": "d5bb5724c727460ed8aa0c3c634bf31c2616c228deb3269e9562128346481a8f"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_anvil.mcfunction": {
+      "bytes": 670,
+      "sha256": "6c61dea865af1b9fb407a6fc11432f2eb3f71a6ba294eb9922b5349f2952426d"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_barrel.mcfunction": {
+      "bytes": 674,
+      "sha256": "7cda91d29e218b9720bdc3e346ec5d563521570f59c5f59a6cdf5c4f7a98c14c"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_beacon.mcfunction": {
+      "bytes": 674,
+      "sha256": "22fc0a421bc7443c2df248dc9cd296125f5de62a348b9beac60f5a839f3efe6d"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_blast_furnace.mcfunction": {
+      "bytes": 702,
+      "sha256": "77cb91fd2623b47f128b72694a424be1b8386b582053d7e0c637cf85811a1f0b"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_brewing_stand.mcfunction": {
+      "bytes": 702,
+      "sha256": "36d03e3b3873935c083cc94124888e7a9736f73a6df295b840ce73d23013f32c"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_cartography_table.mcfunction": {
+      "bytes": 718,
+      "sha256": "45a1efabd11548c6eddf25dc74594bd35ee6859a23068cd79b7e7188c0e40275"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_chest.mcfunction": {
+      "bytes": 670,
+      "sha256": "4b85890e3862972e4db1ca4a1e7d594fb46f9177f25306066a39b64ddeed29da"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_crafting_table.mcfunction": {
+      "bytes": 706,
+      "sha256": "d47754e891e389c0ea3fc7dbcfde0dfac2662cc6ab79f69bdc698329ecaeec79"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_door.mcfunction": {
+      "bytes": 666,
+      "sha256": "19294233ae200f46e66c975d2299f3e8794bb8e79afaf798a6420ee8eb772303"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_enchanting_table.mcfunction": {
+      "bytes": 714,
+      "sha256": "7f07752c9be73dcc215aae910f34a46eb277c877dba429b27a1290825de8dec6"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_ender_chest.mcfunction": {
+      "bytes": 694,
+      "sha256": "6f5ba7bfc905c70f9c860f5b8b131619bc80fa5f1b6b28d279b9e5053f07b279"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_fence_gate.mcfunction": {
+      "bytes": 690,
+      "sha256": "fb2efc912d197848909b8d098a8f96e5d278eca3a8a572b3d2cbd33e2693ce6d"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_furnace.mcfunction": {
+      "bytes": 678,
+      "sha256": "0d918e7ec41065f2af9166d2f820fe637e97dabf358b57a19ec1cffb99bda19b"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_grindstone.mcfunction": {
+      "bytes": 690,
+      "sha256": "e3c24c0a8d8d62c5251c0c719790c07ae63883e54dc7b40d13447025950a5790"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_inventory.mcfunction": {
+      "bytes": 686,
+      "sha256": "36760bff4f6097080e05f0d31f964a5d47af7f03f9da913bc573ffb0f6926ecf"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_loom.mcfunction": {
+      "bytes": 666,
+      "sha256": "2a40465919f5aeb7f3067f68a036a4fb08465b277e6b56f84d24fe23bb87cc78"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_shulker_box.mcfunction": {
+      "bytes": 694,
+      "sha256": "378efee238a05046e8767953e41c5b1d89362b7efc76ec8e2017b17132ca1309"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_smithing_table.mcfunction": {
+      "bytes": 706,
+      "sha256": "e27b8ace2041212bf93896df536d54632377d8b8f2648ebad0b82fa48c311e60"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_smoker.mcfunction": {
+      "bytes": 674,
+      "sha256": "c37923fa69724add8d556033d19f0eaa08b63bed474d1105329a7e71720b122a"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_stonecutter.mcfunction": {
+      "bytes": 694,
+      "sha256": "3ccd3f8624a94250cff6aba5a9c3480c2507832104989081b4d7c4d2c737d307"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/open_trapdoor.mcfunction": {
+      "bytes": 682,
+      "sha256": "29a9bf8501b2c3e4ddcabc06136cf2991c1e688dc6822ab3cc2e27cd719b60e9"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/place_end_crystal.mcfunction": {
+      "bytes": 698,
+      "sha256": "382f99e16b00cbb3d1390f01abaeb3a720e35f23fc155ee64829d26edd237aed"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/put_in_bundle.mcfunction": {
+      "bytes": 682,
+      "sha256": "07f2488b60f6e3f5c315bbadd4428f44f084693a3944cc2e0d66991620fc516c"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/shoot_bow.mcfunction": {
+      "bytes": 666,
+      "sha256": "5d9c49ad361e6ad779266cf4fe8788f4614ce18f1e41a8f723f2a36e05dd41c7"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/shoot_crossbow.mcfunction": {
+      "bytes": 686,
+      "sha256": "fdfad389bfca3eb75714d7939d0cfe2c234721ef7bce40535e1adfd6aa9eea93"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/sleep.mcfunction": {
+      "bytes": 650,
+      "sha256": "6b619e6da63c2dd417aadc249fa0239562c23be5cb201931f7e81bd6924df283"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/sneak.mcfunction": {
+      "bytes": 650,
+      "sha256": "b6e0d72b2cb4a4c1bc9af76aa6e788b550cc2ef28a5e9edf663ecdb84f9022d2"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/sprint.mcfunction": {
+      "bytes": 654,
+      "sha256": "df0b1394101fc9ef655d4a72368f1c1af49d61b7d28efe58daa83c0bd5a6fb89"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/swim.mcfunction": {
+      "bytes": 646,
+      "sha256": "e3ae897b99bb35195944e814937f70226d3098d8da181e17dbd7c89154a7180c"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/teleport_outer_islands.mcfunction": {
+      "bytes": 718,
+      "sha256": "cc0b2524b467c4e866aa2932c83070ab499781782f28e5bf3825e8ec19d2abbd"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/throw_egg.mcfunction": {
+      "bytes": 666,
+      "sha256": "8eb3674032afa5c45fe053013d41d9344d402054a324ce24a04aef5bc9f198ea"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/throw_ender_pearl.mcfunction": {
+      "bytes": 698,
+      "sha256": "2a0b38f49790230561acd00db7f4929439958b9640ed3e96106a2180a260338d"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/throw_snowball.mcfunction": {
+      "bytes": 686,
+      "sha256": "038e1b4befd77c629f1331ae136c383613afebdf00278a298025db004f991d8e"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/throw_wind_charge.mcfunction": {
+      "bytes": 698,
+      "sha256": "3267ab1598350d28c004045d44353446535987f4e1a4e4b4806a175bdcfdd044"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_armorer.mcfunction": {
+      "bytes": 702,
+      "sha256": "3df28d32f35e60c39ed06adff96b669b341d0ef3c5b03e407ec3585e36f5dfbc"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_butcher.mcfunction": {
+      "bytes": 702,
+      "sha256": "5a268b948de618d73685a51473e0e5b2327bcbe78c27e4286ec16b1acba7c81b"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_cartographer.mcfunction": {
+      "bytes": 722,
+      "sha256": "7757e61ac5878b9fdbf21f865498c83eec50f2143a85eee7a6e94e976c3e312b"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_cleric.mcfunction": {
+      "bytes": 698,
+      "sha256": "b1798ff58eff9dbb9e8f67a1e3e8907b1ecc429f44aa9bd8d1dfd28c0623a357"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_farmer.mcfunction": {
+      "bytes": 698,
+      "sha256": "ed76657744b7eed90f30757abf6eefe8642739948e4def4ad00773425a965dae"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_fisherman.mcfunction": {
+      "bytes": 710,
+      "sha256": "fd10b47897183a14096bc372bc54e773743bf356a0479fa50cc2e7c7a06c754c"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_fletcher.mcfunction": {
+      "bytes": 706,
+      "sha256": "4a68f94c1b6438103aca3b759137e09ce9feeb32b2499527cb54d880534f677c"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_leatherworker.mcfunction": {
+      "bytes": 726,
+      "sha256": "1bed47951dd11f1db7a792a6835e9ceee19c0c94aad1ef7718fd285a0e9f0499"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_librarian.mcfunction": {
+      "bytes": 710,
+      "sha256": "b37df5652f51ba6049b23568add3e9b3d9047f37205c54bf46f8e056b32cbf46"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_mason.mcfunction": {
+      "bytes": 694,
+      "sha256": "ba3c99a335981eaf8b2c3aac3bd7d88ad0255981d3981c1eb8247600d09bf097"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_shepherd.mcfunction": {
+      "bytes": 706,
+      "sha256": "20720b855aa1d9604c8d672f39a19acd557446ff73e18ce753f9d51b1a2dfb28"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_toolsmith.mcfunction": {
+      "bytes": 710,
+      "sha256": "e189f61fa499dcec3534caa51d45be121743d3d65cebdea8fb301dff2e7d75cb"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_wandering_trader.mcfunction": {
+      "bytes": 738,
+      "sha256": "4aac4da9385a74546ea95b174e3612a843653f1144886be27e99df277a2568e6"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/trade_with_weaponsmith.mcfunction": {
+      "bytes": 718,
+      "sha256": "e04dc21adefa3d3900d97960b5ea41137ba4316954d546dc4cabb9331ab14635"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/unlock_vault.mcfunction": {
+      "bytes": 678,
+      "sha256": "c386a230fe02c831affd3de73f8987ca55de8acd09ebbce1adf9e67849815017"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_brush.mcfunction": {
+      "bytes": 666,
+      "sha256": "e742f4b2877b040b437350119fbbbfe702690d95b970719afd9e97aa88d216bd"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_campfire.mcfunction": {
+      "bytes": 678,
+      "sha256": "2761db3a0625a361ccd00d11982cbf84b62c827ac316101cb3e3101f78cd75e5"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_cauldron.mcfunction": {
+      "bytes": 678,
+      "sha256": "36a54de591b43bd3e0548b9ab3d828f3ed34dc740b96d7d3f2473b950216a217"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_composter.mcfunction": {
+      "bytes": 682,
+      "sha256": "bf0074adcbcbd606550efa6dc4569cc48ebaa2f382cadfd13ef3e727cc7fdfbb"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_copper_tools.mcfunction": {
+      "bytes": 694,
+      "sha256": "6531fa5e112367a9679c992dc9441b8deb88038d7a85bebc7daa41df864df67c"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_diamond_tools.mcfunction": {
+      "bytes": 698,
+      "sha256": "22819ecd5f4f7c4c9c5d22d11cabc3c3cc4648225b629f77619d109b1cfe85c3"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_ender_eye.mcfunction": {
+      "bytes": 682,
+      "sha256": "2bd4651378a59a8534ecd0f06e8f341ee2cfb11f681533227cbaaefb66e6df84"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_fishing_rod.mcfunction": {
+      "bytes": 690,
+      "sha256": "5809db0031a02a39a9d0b919a3dd36eb1e280ac51f981fc4cbb2db7ffb726995"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_flint_and_steel.mcfunction": {
+      "bytes": 706,
+      "sha256": "72ad139ea62e04b42cf4cb26e11da7a1af7daab2c5de6ebe949b59029f5844b0"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_golden_tools.mcfunction": {
+      "bytes": 694,
+      "sha256": "9ee3077bbeb87ce229491a6b5cf675994b2fc2a69b9e51bb0d5d38723d054790"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_iron_tools.mcfunction": {
+      "bytes": 686,
+      "sha256": "b8b635a0326630917bba638ddc6a2bbe42501bd54ccf10d14819fde395128cd1"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_jukebox.mcfunction": {
+      "bytes": 674,
+      "sha256": "e165d12b8db11ba8455073173508fbd6fea811f55d331d24292355441cc092f9"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_netherite_tools.mcfunction": {
+      "bytes": 706,
+      "sha256": "f81b691df093745207ba47c4e587d68164d52f92d9b22899bcaa075395cc3fd2"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_ominous_bottle.mcfunction": {
+      "bytes": 702,
+      "sha256": "42ed0cef430cf5fd9812c00bc5352a6fc115a1a4e155a8291975bb8d2a76ce3b"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_shears.mcfunction": {
+      "bytes": 670,
+      "sha256": "50ed922f6d95f432fc2351b2afb439f44d2e2d599f92cd048e2a50dd635925c6"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_shield.mcfunction": {
+      "bytes": 670,
+      "sha256": "2c5a855e6edd04d1c4db59bf091bbfd2712e055c497545428f20454902034243"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_spyglass.mcfunction": {
+      "bytes": 678,
+      "sha256": "14cd5d1cafbed35dc671cc6a46d2ca7b0061aa4568e97ef36c7b7d1cb6e0944f"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_stone_tools.mcfunction": {
+      "bytes": 690,
+      "sha256": "cbe80cbb2ce556c2dae9c21251d30e68621706cb2e2c6ea260bd77922ed93668"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_water_bucket.mcfunction": {
+      "bytes": 694,
+      "sha256": "69c0a9f03a3aa8a5576ec38ab4bf1115810501b441d9f6a27d091f43b05bbb97"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/use_wooden_tools.mcfunction": {
+      "bytes": 694,
+      "sha256": "ba87d829bbe4db2c95adcb03ac0dc100408f1445d1ba0a2ded05bd5933b4fb72"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/abilities/vision.mcfunction": {
+      "bytes": 654,
+      "sha256": "b392a4bfcd51ee19e1e1eaa0789c3d3e711ad5b0c61a6018a83342511a8d1bba"
+    },
+    "src/main/resources/datapack/data/achievetodo/function/load.mcfunction": {
+      "bytes": 135,
+      "sha256": "6978c09873a3d92b809d56d95cc8643189b0cbf8380225ebd9a53c1a0305c205"
+    },
+    "src/main/resources/datapack/data/minecraft/tags/function/load.json": {
+      "bytes": 45,
+      "sha256": "df55bb3e11775fd7d6ed1372cd19398a5515c0ecbd9a0b7a9f87a689a933cbf6"
+    },
+    "src/main/resources/datapack/pack.mcmeta": {
+      "bytes": 158,
+      "sha256": "4da8725400759ed3e87fd8a01537468bad35f417cb0da4a7fd449e6b70337278"
+    },
+    "src/main/resources/paper-plugin.yml": {
+      "bytes": 570,
+      "sha256": "5e0c01ae846b71a3c5554ba17eaca51b6e1907a5815f27ff70dceffa355e5a95"
+    },
+    "src/main/resources/ui/lang/en_us.json": {
+      "bytes": 1849,
+      "sha256": "63535c91e2bdb7732702fda081ecece33aef849da8447995e0ca5a4306f03e6d"
+    },
+    "src/main/resources/ui/lang/original/en_us.json": {
+      "bytes": 46157,
+      "sha256": "65d666968942f4da1f85a3b43899b929529ad63323fff1066f621ed8abcf2786"
+    },
+    "src/main/resources/ui/lang/original/ru_ru.json": {
+      "bytes": 64507,
+      "sha256": "820947100acf48fbdd4be46bf3305c4c5e95ac9c60c123f503f9c67e9fce86a8"
+    },
+    "src/main/resources/ui/lang/ru_ru.json": {
+      "bytes": 2462,
+      "sha256": "3606eba9cd52a9d2adf65ab9cb67f49026220a268ee2ab093e5a071c16502531"
+    },
+    "src/test/java/com/diskree/achievetodo/ability/AbilityModelTest.java": {
+      "bytes": 1825,
+      "sha256": "2bbabb5d7a239ce76e15c93d328948d74e5f27a458ec7d7e9ba07c93c491a3f9"
+    },
+    "src/test/java/com/diskree/achievetodo/ability/AbilityResolversTest.java": {
+      "bytes": 1454,
+      "sha256": "39aa4bde3a48ede3f4e3a514a9af7c92dfc461da5620b0b666a87c8b860516a7"
+    },
+    "src/test/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolverTest.java": {
+      "bytes": 2499,
+      "sha256": "139a32f1fa4c1e3a80dc3fc0f872bbf7f1d5513d85cf74aac87aebcb189dca6b"
+    },
+    "src/test/java/com/diskree/achievetodo/bootstrap/BootstrapValidationTest.java": {
+      "bytes": 1935,
+      "sha256": "79d3cb6087aac88edb489b5677643f030dc55181c0ac9622199ee74b848f437f"
+    },
+    "src/test/java/com/diskree/achievetodo/bridge/BridgeAuthoritativeProjectionTest.java": {
+      "bytes": 2819,
+      "sha256": "82f932b81a38fc7a4f8704835c7ba85137e61708259799f4fecfb3e84b8f6ced"
+    },
+    "src/test/java/com/diskree/achievetodo/bridge/BridgeContractTest.java": {
+      "bytes": 3513,
+      "sha256": "a88f52e407a7a6ac567035678b914c09e2b51aca4689892870be1455d68d203c"
+    },
+    "src/test/java/com/diskree/achievetodo/bridge/BridgeLandmarksTest.java": {
+      "bytes": 3709,
+      "sha256": "4adf9f289b14bfaa0112c4831236c2343fb3c74ba2b3fb5d93dd00d26a183833"
+    },
+    "src/test/java/com/diskree/achievetodo/bridge/BridgeProjectionTest.java": {
+      "bytes": 11938,
+      "sha256": "e93bdc8c6142e0dfa884cb3c3539d99f10607b69e6f4c34802a01122e5ebc167"
+    },
+    "src/test/java/com/diskree/achievetodo/core/FoundationContractTest.java": {
+      "bytes": 7815,
+      "sha256": "5b5fb4aecd7c8ce8767988dcd41d0444154002c5ff09a91076973fbb1a4812f9"
+    },
+    "src/test/java/com/diskree/achievetodo/core/PinnedStartupContractTest.java": {
+      "bytes": 2275,
+      "sha256": "24a2adf6d3daa5d6bf42c677f0a0e50dd4732b75b2c45db7605346baf53a0a45"
+    },
+    "src/test/java/com/diskree/achievetodo/datapack/EmbeddedDatapackResourcesTest.java": {
+      "bytes": 4931,
+      "sha256": "fb13eca91539ff45958250666c6b8e66a9d5ce5e089d06d7e160738be1b8b2ad"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/ClientDependentGameplayTest.java": {
+      "bytes": 4439,
+      "sha256": "e20d2fc2422d2da82d73dbe5ac926f129e2857efa557e9e553e878a17cb4b1ca"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/ExpandedGameplayTest.java": {
+      "bytes": 10300,
+      "sha256": "8d437403eb32264c707c2ce21a6d05bf6632267dd30bc8b4908a72f43bee603f"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/FoodGameplayTest.java": {
+      "bytes": 7643,
+      "sha256": "f5c57e82e687e07927aad2779a28f33918d0e0dc82496b04c59ab2130808e162"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/GameplayEnforcementTest.java": {
+      "bytes": 7051,
+      "sha256": "ceaaa5f64290c3eafd797fece8e1967aa30fe4711d3555234caeeef835e60f9d"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/MenuGameplayTest.java": {
+      "bytes": 7349,
+      "sha256": "55e03620e5bb13cb8c4d2700947d7601c7c3f2aeb6cf1015a9db5cebdc5bfa35"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/MenuTestRegistryAccess.java": {
+      "bytes": 2118,
+      "sha256": "30b88dbeb264533b9990bfad840b9e665bb06b4cf3154fa0be5e33692365e3cc"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/NativeActionGameplayTest.java": {
+      "bytes": 3637,
+      "sha256": "2a876a69ec2c9edf6258466af4498d0eba6c1b7953547516002d6102c27e8714"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/NativeComplexGameplayTest.java": {
+      "bytes": 3639,
+      "sha256": "15fa343cf8e1b1db9d88129c78d50f8d37ca5ab9f853ac37d2d5d9ede4df13dd"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/NativeMovementGameplayTest.java": {
+      "bytes": 4359,
+      "sha256": "f7583d4c94cc6a0b0e092465f215ce788c3d840fa71e469186f688c5045f59c2"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/NativePortalGameplayTest.java": {
+      "bytes": 3636,
+      "sha256": "f70c91f63679322c06ce06e86f99a23dc86b31dcc249a7269c28f28d6fb1bcdd"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/NativeToolGameplayTest.java": {
+      "bytes": 3630,
+      "sha256": "7c4bb6ca2240bfd517b704b2eca9ec84cc94302b78c34d1823a98624c358e8e1"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/NativeTransactionGameplayTest.java": {
+      "bytes": 3785,
+      "sha256": "7ebd72ea646e2f11ebb3b83242e24167e595170b520df5f07f033354f7513bed"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/nativeguard/NativeActionContractTest.java": {
+      "bytes": 5611,
+      "sha256": "a0ab8e6ab2ede430556509d638e7ccf18e339f8c56fcb196430c937a06e552c8"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/nativeguard/NativeComplexContractTest.java": {
+      "bytes": 4576,
+      "sha256": "9b26d1e63933f8653ecc170bfe918e72faf50872c645bc0516db204a6268f0ba"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkContractTest.java": {
+      "bytes": 9015,
+      "sha256": "0722cab3dbc1c2ca1dd144ac66ce02d4385055d38b2f877c14e0ff802803d4bc"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkSupplementContractTest.java": {
+      "bytes": 15998,
+      "sha256": "1240e2be11cfd39d0d00fe429ef4b5ee64425735f11690beffd329a948f359ba"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/nativeguard/NativeMovementContractTest.java": {
+      "bytes": 6509,
+      "sha256": "d9ae1173628b68dd6b5dd0b1994626d6e8a534ce86f1e02f27ba99e73ca0a88f"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/nativeguard/NativePortalContractTest.java": {
+      "bytes": 2833,
+      "sha256": "005c6faeb8232b6b3ec6cdfb706c450687450a85a83a483341a74a23cc84167d"
+    },
+    "src/test/java/com/diskree/achievetodo/gameplay/nativeguard/NativeToolContractTest.java": {
+      "bytes": 4281,
+      "sha256": "78874b7de2180d95d559e5d6d339af240bd9f6ecaa71eda987b26d6294428b48"
+    },
+    "src/test/java/com/diskree/achievetodo/landmark/CanonicalMembershipOracle.java": {
+      "bytes": 8332,
+      "sha256": "f0688d0e22b2acc45075b989704d9a3c82cb494026c4a6456774051d469dab9d"
+    },
+    "src/test/java/com/diskree/achievetodo/landmark/CanonicalMembershipParityTest.java": {
+      "bytes": 11928,
+      "sha256": "a30076a56dc35adaf732a23dbf622b259ea552954728aba8b63ed04b3a1fef3e"
+    },
+    "src/test/java/com/diskree/achievetodo/landmark/FeatureLandmarkDetectorTest.java": {
+      "bytes": 9724,
+      "sha256": "63cb63426dbfbb8f4b6de6a87707242f7ffa3f8faf18f4dab9bc81ba7b90c81d"
+    },
+    "src/test/java/com/diskree/achievetodo/landmark/FeatureLandmarkScanPolicyTest.java": {
+      "bytes": 1558,
+      "sha256": "438841e79fc42992100ccac1197792b82929b8b3fdf64293d7cc44ba3b72a426"
+    },
+    "src/test/java/com/diskree/achievetodo/landmark/LandmarkEngineTest.java": {
+      "bytes": 8174,
+      "sha256": "4c172864d4139f37145e46c463927721d9326bbc4dc0fe433ed705d393008fcb"
+    },
+    "src/test/java/com/diskree/achievetodo/landmark/LandmarkModelAndPersistenceTest.java": {
+      "bytes": 7835,
+      "sha256": "5e7fc29fe4487fe561341504462d2b6a0eaa5d09fa376a8ccb6c852fba3c3154"
+    },
+    "src/test/java/com/diskree/achievetodo/landmark/StructureLandmarkDetectorTest.java": {
+      "bytes": 3258,
+      "sha256": "2460c0b91dcbd793d32462e8e4076a96e78ee8fc5027776d93ff97edfcb3564f"
+    },
+    "src/test/java/com/diskree/achievetodo/progression/AbilityStateResolverTest.java": {
+      "bytes": 2077,
+      "sha256": "ba928c8809b6cdd88e6d13a80b830301d6e248acbf01a3ea76f8c5734910c1a2"
+    },
+    "src/test/java/com/diskree/achievetodo/progression/ChaosProgressionGeneratorTest.java": {
+      "bytes": 2000,
+      "sha256": "5fcd73ff0891d5373bb47edba9c656111b207491281a4f63ab865f49de354110"
+    },
+    "src/test/java/com/diskree/achievetodo/progression/ProgressionConfigServiceTest.java": {
+      "bytes": 3730,
+      "sha256": "f5d76f6b9acac7c88b01d7b2bb258a87a54b77e1f55b0509aa839b0a1fcdc17b"
+    },
+    "src/test/java/com/diskree/achievetodo/progression/ProgressionsTest.java": {
+      "bytes": 1367,
+      "sha256": "002d5ad82ef03384bc888253937e89a5ecdb7888af4f27913792cc3dd339601a"
+    },
+    "src/test/java/com/diskree/achievetodo/restriction/RestrictionEngineTest.java": {
+      "bytes": 16444,
+      "sha256": "48829b49873158459d76f90c46f413361e3bfc96cef7dca558f714e332151222"
+    },
+    "src/test/java/com/diskree/achievetodo/tests/Stage2CoreTestMain.java": {
+      "bytes": 2794,
+      "sha256": "6f6d9edd5154d7256abe331e7270db49cc2d10bd74a115dc9e0b73c9ef6236cf"
+    },
+    "src/test/java/com/diskree/achievetodo/tests/TestSupport.java": {
+      "bytes": 1441,
+      "sha256": "bd140448304871337337a3811402cab1bad4e3aaf8018982045d6d215f9acd5f"
+    },
+    "src/test/java/com/diskree/achievetodo/tracking/TrackingCoreTest.java": {
+      "bytes": 9070,
+      "sha256": "ebca5a33a56f9b68c014664db842153505d1e4c48bdaff1a7cf6114f84091930"
+    },
+    "src/test/java/com/diskree/achievetodo/tracking/bukkit/ProgressionFoundationTest.java": {
+      "bytes": 12403,
+      "sha256": "6270754cffb82cf451e9259a2742184ee18026ff882500eafb2bc6f624207015"
+    },
+    "src/test/java/com/diskree/achievetodo/tracking/bukkit/TeamConfigSemanticsTest.java": {
+      "bytes": 19970,
+      "sha256": "ba67dc7a5dcb580f317cc82d7de9bedbfcad31966295740cb307164599cc5db2"
+    },
+    "src/test/java/com/diskree/achievetodo/ui/UiAbilityBrowserServiceTest.java": {
+      "bytes": 4410,
+      "sha256": "93337296e8f62c627fc6962fc6dc5d3e1b15d62cfa12f0bf0d2b87005336ff35"
+    },
+    "src/test/java/com/diskree/achievetodo/ui/UiAbilityLayoutResolverTest.java": {
+      "bytes": 2423,
+      "sha256": "135aeba45f2a9821b9eddb74731abda8cda46c990862ddecd5ecfef260c92537"
+    },
+    "src/test/java/com/diskree/achievetodo/ui/UiAbilityStateResolverTest.java": {
+      "bytes": 1388,
+      "sha256": "78f03c231f0a92e5d89c7b99adb79be305609986833fc4fd6df0bc85a78d8428"
+    },
+    "src/test/java/com/diskree/achievetodo/ui/UiResourcePackMetadataTest.java": {
+      "bytes": 1288,
+      "sha256": "fcc516998e08deff13e9a7f8aac683abcfcd1d11f03a53543fa3885af1afe2de"
+    },
+    "src/test/java/com/diskree/achievetodo/ui/UiTextServiceTest.java": {
+      "bytes": 1175,
+      "sha256": "bbb0fc3e1deb5fe5be6f610826a8dd3855ead2ce4877107d9d7844d5d1d219b9"
+    },
+    "src/test/java/com/diskree/achievetodo/ui/bukkit/BukkitUiClickPolicyTest.java": {
+      "bytes": 872,
+      "sha256": "216e05c07b28a4a4f5aa905c13d31dbdc294ff157555a5ade9315ce0747e7f77"
+    },
+    "src/test/java/com/diskree/achievetodo/ui/bukkit/BukkitUiPresentationPreferenceRepositoryTest.java": {
+      "bytes": 1276,
+      "sha256": "a26b178f1819102a6ff67b87c032a9bf6b9e848dc60469c0ab6194701fb0a056"
+    },
+    "src/test/resources/META-INF/services/io.papermc.paper.registry.RegistryAccess": {
+      "bytes": 56,
+      "sha256": "d6b8ec0bc47431f0f6ba906e82fc77fe99bad1f646dc5e8475630c1b98db5f15"
+    },
+    ".gitattributes": {
+      "bytes": 79,
+      "sha256": "c2e9541ac420a0ac3fa0ef09648897f9721a162a3b8427c36c6713d8c4ed5986"
+    }
+  },
+  "artifactIdentities": {
+    "fabric": {
+      "bytes": 1751252,
+      "sha256": "defcabb90f10ed0a1cbb24df0f3f5a3bee218cb2bd00000786b93c09f65134ae"
+    },
+    "purpur": {
+      "bytes": 826459,
+      "sha256": "ca40abab43798255e47b0ec0428a99aaa3aab4ba43120db6693a7041e0e4d46a"
+    }
+  },
+  "ownerPermission": "GRANTED_BY_OWNER_STATEMENT",
+  "independentGrantDocuments": "NOT_VERIFIED",
+  "noPrivateCorrespondenceIncluded": true
+}

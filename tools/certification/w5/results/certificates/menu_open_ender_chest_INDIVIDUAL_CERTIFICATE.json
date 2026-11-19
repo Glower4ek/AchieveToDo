@@ -1,0 +1,63 @@
+{
+  "group": "menu_open_ender_chest",
+  "reviewer": "R7",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "open_ender_chest: 4 direct sites + findBlockAbility resolver. SHA-256 of BukkitRestrictionResolver, NativeEquipmentAbilities, NativeTransactionAgent, NativeTransactionBindings recomputed: all match E1. Opened: BukkitRestrictionResolver.java:74 ENDER_CHEST->OPEN_ENDER_CHEST; NativeTransactionAgent.java:80-85 ender() -> denied('ender'); NativeTransactionBindings.java:42 binds 'ender' -> AbilityType.OPEN_ENDER_CHEST. Thresholds are listed for normal 387/easy 306/hard 468/chaos 532/custom_vision 387. Config files re-hashed and match."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "All 15 excerpts read, all PASS. Locked (c11/c12/c13/c14/c15/c17): RIGHT_CLICK_BLOCK ENDER_CHEST, no INVENTORY_OPEN and no OpenScreenPacket, count unchanged (386, 305, 467, 278, 386, 386), OPEN_ENDER_CHEST LOCKED. The client overlay 'You can't use an ender chest' is in rows.jsonl. Allowed: INVENTORY_OPEN_TYPE_ENDER_CHEST and OpenScreenPacket, UNLOCKED. Creative opens (bypass), op denied, spectator denied by vanilla (cancelled=true DENY, vanillaEffect=false). I reproduced every verdict.",
+      "rowsRead": [
+        "campaign11 pass1 open_ender_chest locked (PASS)",
+        "campaign11 pass1 open_ender_chest allowed (PASS)",
+        "campaign11 modes open_ender_chest creative (PASS)",
+        "campaign11 modes open_ender_chest op (PASS)",
+        "campaign11 modes open_ender_chest spectator (PASS)",
+        "campaign12 thresholds-easy open_ender_chest locked (PASS)",
+        "campaign12 thresholds-easy open_ender_chest allowed (PASS)",
+        "campaign13 thresholds-hard open_ender_chest locked (PASS)",
+        "campaign13 thresholds-hard open_ender_chest allowed (PASS)",
+        "campaign14 thresholds-chaos open_ender_chest locked (PASS)",
+        "campaign14 thresholds-chaos open_ender_chest allowed (PASS)",
+        "campaign15 thresholds-custom_vision open_ender_chest locked (PASS)",
+        "campaign15 thresholds-custom_vision open_ender_chest allowed (PASS)",
+        "campaign17 reload open_ender_chest locked (PASS)",
+        "campaign17 reload open_ender_chest allowed (PASS)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11..campaign17 all onlineMode=true with 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' lines. Independently: each runtime/server.properties has online-mode=true, and the exact UUID and join lines were found in the first 400 lines of each runtime's receipts/output.log."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "Modes rows creative/op/spectator present for every ability/case (campaign11 tag modes). Threshold rows present for normal (pass1, campaign11), easy (c12), hard (c13), chaos (c14), custom_vision (c15), and every row's threshold equals the ability's value in that runtime's config file. There are no offhand rows: opening a container has no off-hand variant. There are no NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 rows tagged reload, all from campaign17. MANIFEST.e5Reload.evidence generationBefore=1, generationAfter=2 (also FINAL_STATUS_R5.json). All 4 ATD_STAGE2A_STATE lines of the campaign17 excerpts show generation 2 (non-campaign17 excerpts all generation 1). Each reload verdict (all PASS) equals the pass1 verdict for the same ability/case/phase (open_ender_chest)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15 rows, all REPRODUCED, recorded verdict equals rows.jsonl verdict for every line. MANIFEST runtimes 11-17 replay reproducedAll=true (1235/310/310/310/310/44/310). Plugin SHA-256 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b in MANIFEST.plugin.perRuntime for all 7 runtimes; recomputed runtime/plugins/achievetodo.jar of all 7 runtimes = same. Client mod recomputed from disk = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081. Recomputed SHA-256 of campaign-results.jsonl and REPLAY.json of all 7 runtimes: all equal to evidenceHashes. Every rows.jsonl row found verbatim (ability/tag/phase/verdict/logLines) in its runtime's campaign-results.jsonl. All excerpt lines of the group were matched against the raw output.log at the cited line ranges (compacted STATE lines matched on tick, count, mode, op, generation): 0 mismatches."
+    }
+  },
+  "superseded": "All superseded entries in this group are the r3 'reload' rows (was PASS -> now PASS, by campaign17). Justified: campaign11 output.log:88679-88680 shows 'Incorrect argument for command / reload confirm<--[HERE]', and campaign11 never logs generation=2, so the r3 reload pass never reloaded. campaign17 output.log:247-255 shows a real datapack reload ('Reloading!', preflight generation=2, PROGRESSION_CONFIG_READY generation=2 file=normal.toml) before the reload pass. No r4 (campaign16 chest-room fixture fix) row is superseded in this group, and no campaign16 row belongs to it.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review/menu_open_ender_chest/E1.json thresholds.chaos_20261116 vs campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml (sha256 5fcf0a51...)",
+      "description": "E1 cites only the campaign16 chaos config (sha256 e55204bd...). The thresholds-chaos rows come from campaign14, whose chaos_20261116.toml has a different hash and different values (open_ender_chest 279 in campaign14 vs 532 in E1). The rows match campaign14's file, which I checked by hand, but E1 does not cite that file. This is covered by accepted behaviour (b), so it is only a gap in the E1 documentation."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/menu_open_ender_chest/excerpts.txt, campaign11 pass1 locked (output.log 1351-1361) and every other locked row",
+      "description": "The locked excerpts have no server-side denial line (ATD_W2_INPUT_EVENT says useBlock=ALLOW, cancelled=false). The denial shows only as a missing INVENTORY_OPEN/OpenScreen and as the client overlay in rows.jsonl client[]. The verdict is reproducible, but the server log alone does not attribute the denial to the plugin."
+    }
+  ]
+}

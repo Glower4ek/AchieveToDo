@@ -48,7 +48,8 @@ public class BrushItemMixin {
             value = "INVOKE",
             target = "Lnet/minecraft/world/item/BrushItem;getUseDuration(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;)I",
             shift = At.Shift.BEFORE
-        )
+        ),
+        cancellable = true
     )
     public void lockBrush(
         Level world,
@@ -63,6 +64,11 @@ public class BrushItemMixin {
             AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_BRUSH)
         ) {
             user.releaseUsingItem();
+            // Keep released 0.2.0 Solo/Fabric behavior; Purpur must stop this predicted
+            // tick before its local sound/particle path when the S3C projection relocks.
+            if (world.isClientSide() && com.diskree.achievetodo.client.bridge.BridgeClient.isPurpurBackend()) {
+                ci.cancel();
+            }
         }
     }
 }

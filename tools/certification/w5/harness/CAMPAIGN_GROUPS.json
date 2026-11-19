@@ -1,0 +1,270 @@
+{
+ "food_component_start_40": {
+  "eat_salmon": 2,
+  "eat_cod": 6,
+  "eat_tropical_fish": 8,
+  "eat_rotten_flesh": 18,
+  "eat_spider_eye": 22,
+  "eat_sweet_berries": 14,
+  "eat_glow_berries": 26,
+  "eat_poisonous_potato": 28,
+  "eat_suspicious_stew": 34,
+  "eat_chicken": 47,
+  "eat_carrot": 53,
+  "eat_beetroot": 62,
+  "eat_dried_kelp": 74,
+  "eat_potato": 68,
+  "eat_apple": 89,
+  "eat_melon_slice": 98,
+  "eat_cookie": 107,
+  "eat_mushroom_stew": 113,
+  "eat_beetroot_soup": 119,
+  "eat_rabbit_stew": 80,
+  "eat_honey": 128,
+  "eat_mutton": 137,
+  "eat_pufferfish": 154,
+  "eat_pumpkin_pie": 189,
+  "eat_golden_apple": 164,
+  "eat_enchanted_golden_apple": 229,
+  "eat_rabbit": 274,
+  "eat_beef": 338,
+  "eat_porkchop": 408,
+  "eat_baked_potato": 478,
+  "eat_cooked_salmon": 457,
+  "eat_cooked_cod": 597,
+  "eat_cooked_rabbit": 373,
+  "eat_cooked_chicken": 548,
+  "eat_chorus_fruit": 681,
+  "eat_cooked_mutton": 576,
+  "eat_cooked_porkchop": 695,
+  "eat_bread": 436,
+  "eat_cooked_beef": 702,
+  "eat_golden_carrot": 716
+ },
+ "equipment_identity9_routes_slots": {
+  "equip_golden_armor": 56,
+  "equip_leather_armor": 65,
+  "equip_chainmail_armor": 101,
+  "equip_iron_armor": 219,
+  "equip_turtle_helmet": 534,
+  "equip_diamond_armor": 366,
+  "equip_elytra": 611,
+  "equip_netherite_armor": 569,
+  "equip_copper_armor": 83
+ },
+ "tool_material7_each_native_mode": {
+  "use_golden_tools": 40,
+  "use_wooden_tools": 71,
+  "use_stone_tools": 116,
+  "use_iron_tools": 140,
+  "use_diamond_tools": 401,
+  "use_netherite_tools": 422,
+  "use_copper_tools": 128
+ },
+ "villager13_profession_resolver": {
+  "trade_with_mason": 204,
+  "trade_with_cartographer": 289,
+  "trade_with_leatherworker": 352,
+  "trade_with_shepherd": 394,
+  "trade_with_butcher": 443,
+  "trade_with_farmer": 492,
+  "trade_with_cleric": 562,
+  "trade_with_fisherman": 583,
+  "trade_with_fletcher": 625,
+  "trade_with_armorer": 653,
+  "trade_with_weaponsmith": 688,
+  "trade_with_toolsmith": 709,
+  "trade_with_librarian": 723
+ },
+ "wandering_trader_separate": {
+  "trade_with_wandering_trader": 125
+ },
+ "furnace3_shared_base_use": {
+  "open_furnace": 104,
+  "open_smoker": 527,
+  "open_blast_furnace": 209
+ },
+ "menu_open_chest": {
+  "open_chest": 42
+ },
+ "menu_open_crafting_table": {
+  "open_crafting_table": 50
+ },
+ "menu_open_barrel": {
+  "open_barrel": 59
+ },
+ "menu_open_stonecutter": {
+  "open_stonecutter": 77
+ },
+ "menu_open_grindstone": {
+  "open_grindstone": 259
+ },
+ "menu_open_anvil": {
+  "open_anvil": 234
+ },
+ "menu_open_beacon": {
+  "open_beacon": 499
+ },
+ "menu_open_cartography_table": {
+  "open_cartography_table": 299
+ },
+ "menu_open_ender_chest": {
+  "open_ender_chest": 387
+ },
+ "menu_open_brewing_stand": {
+  "open_brewing_stand": 674
+ },
+ "menu_open_smithing_table": {
+  "open_smithing_table": 294
+ },
+ "menu_open_loom": {
+  "open_loom": 239
+ },
+ "menu_open_shulker_box": {
+  "open_shulker_box": 618
+ },
+ "menu_open_enchanting_table": {
+  "open_enchanting_table": 730
+ },
+ "shelf_open_chest_non_menu": {
+  "open_chest": 42
+ },
+ "landmark22_selectors_and_action_matrix": {
+  "interact_inside_village": 199,
+  "interact_inside_shipwreck": 86,
+  "interact_inside_ruined_portal": 95,
+  "interact_inside_buried_treasure": 110,
+  "interact_inside_igloo": 131,
+  "interact_inside_ocean_ruin": 146,
+  "interact_inside_desert_pyramid": 184,
+  "interact_inside_mineshaft": 249,
+  "interact_inside_swamp_hut": 279,
+  "interact_inside_ancient_city": 331,
+  "interact_inside_fortress": 309,
+  "interact_inside_jungle_pyramid": 380,
+  "interact_inside_bastion_remnant": 324,
+  "interact_inside_pillager_outpost": 464,
+  "interact_inside_monument": 485,
+  "interact_inside_monster_room": 520,
+  "interact_inside_trail_ruins": 541,
+  "interact_inside_stronghold": 506,
+  "interact_inside_mansion": 590,
+  "interact_inside_desert_well": 604,
+  "interact_inside_trial_chambers": 646,
+  "interact_inside_end_city": 632
+ },
+ "mining_basic_two": {
+  "break_blocks": 32,
+  "break_blocks_in_negative_y": 38
+ },
+ "opening_three_native_owners": {
+  "open_door": 20,
+  "open_trapdoor": 122,
+  "open_fence_gate": 159
+ },
+ "bundle_two_native_routes": {
+  "put_in_bundle": 36
+ },
+ "throwables_four_paper_candidates": {
+  "throw_snowball": 143,
+  "throw_egg": 254,
+  "throw_ender_pearl": 214,
+  "throw_wind_charge": 319
+ },
+ "fishing_cast_only": {
+  "use_fishing_rod": 194
+ },
+ "sleep": {
+  "sleep": 24
+ },
+ "vehicle_mount_two": {
+  "get_into_boat": 44,
+  "get_into_minecart": 149
+ },
+ "movement_jump": {
+  "jump": 4
+ },
+ "movement_swim": {
+  "swim": 10
+ },
+ "movement_sneak": {
+  "sneak": 12
+ },
+ "movement_sprint": {
+  "sprint": 16
+ },
+ "client_local_vision": {
+  "vision": 0
+ },
+ "client_local_open_inventory": {
+  "open_inventory": 30
+ },
+ "action_use_shield": {
+  "use_shield": 92
+ },
+ "action_shoot_crossbow": {
+  "shoot_crossbow": 269
+ },
+ "action_use_ominous_bottle": {
+  "use_ominous_bottle": 359
+ },
+ "action_attack_with_trident": {
+  "attack_with_trident": 244
+ },
+ "action_shoot_bow": {
+  "shoot_bow": 345
+ },
+ "action_use_jukebox": {
+  "use_jukebox": 284
+ },
+ "action_use_composter": {
+  "use_composter": 304
+ },
+ "action_charge_respawn_anchor": {
+  "charge_respawn_anchor": 450
+ },
+ "action_attack_with_mace": {
+  "attack_with_mace": 415
+ },
+ "action_use_ender_eye": {
+  "use_ender_eye": 429
+ },
+ "action_glide_with_fireworks": {
+  "glide_with_fireworks": 667
+ },
+ "action_place_end_crystal": {
+  "place_end_crystal": 639
+ },
+ "action_use_campfire": {
+  "use_campfire": 83
+ },
+ "action_use_spyglass": {
+  "use_spyglass": 314
+ },
+ "complex_use_water_bucket": {
+  "use_water_bucket": 134
+ },
+ "complex_use_shears": {
+  "use_shears": 169
+ },
+ "complex_use_flint_and_steel": {
+  "use_flint_and_steel": 174
+ },
+ "complex_ignite_tnt": {
+  "ignite_tnt": 179
+ },
+ "complex_use_cauldron": {
+  "use_cauldron": 513
+ },
+ "complex_use_brush": {
+  "use_brush": 264
+ },
+ "complex_unlock_vault": {
+  "unlock_vault": 555
+ },
+ "portal_three_conditioned": {
+  "enter_nether": 224,
+  "enter_end": 471,
+  "teleport_outer_islands": 660
+ }
+}

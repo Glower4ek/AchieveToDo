@@ -1,0 +1,38 @@
+{
+  "parent": "achievetodo:abilities/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:cooked_porkchop",
+      "count": 1
+    },
+    "title": {
+      "translate": "achievetodo.ability.eat_cooked_porkchop.name"
+    },
+    "description": {
+      "translate": "achievetodo.ability.eat_cooked_porkchop.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "rewards": {
+    "function": "achievetodo:abilities/eat_cooked_porkchop"
+  },
+  "criteria": {
+    "demystified": {
+      "trigger": "minecraft:impossible"
+    },
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "demystified"
+    ],
+    [
+      "unlocked"
+    ]
+  ]
+}

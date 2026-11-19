@@ -1,0 +1,50 @@
+{
+  "group": "menu_open_shulker_box",
+  "reviewer": "R3",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability open_shulker_box, DIRECT, family AbilityResolvers.findBlockAbility. 3 cited files rehashed: BukkitRestrictionResolver.java=f5d7d99bf324fcac... match; NativeEquipmentAbilities.java=7baab126d39d7cbc... match; NativeTransactionBindings.java=c3d1f7515a539cf5... match. Opened BukkitRestrictionResolver.java:69-71 (InventoryType.SHULKER_BOX -> OPEN_SHULKER_BOX), NativeEquipmentAbilities.java:39 (registers OPEN_SHULKER_BOX as implemented) and NativeTransactionBindings.java:43 (native 'shulker' transaction guard -> AbilityType.OPEN_SHULKER_BOX). Thresholds normal 618, easy 504, hard 732, chaos_20261116 171, custom_vision 618 equal the config files (rehashed). campaign14 chaos 501 verified in its own config."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS; read all 15 excerpts. Locked rows (c11, c12, c13, c14, c15, c17) and op: kind=LOCKED, count th-1 unchanged, UseItemOn packet, no INVENTORY_OPEN boundary, client overlay \"You can't open a shulker box\". Allowed rows: kind=UNLOCKED, 'ATD_BOUNDARY INVENTORY_OPEN_TYPE_SHULKER_BOX', screen opened. Creative and spectator open (bypass), no overlay.",
+      "rowsRead": [
+        "campaign11 pass1 open_shulker_box locked",
+        "campaign11 pass1 open_shulker_box allowed",
+        "campaign11 modes open_shulker_box creative",
+        "campaign11 modes open_shulker_box op",
+        "campaign11 modes open_shulker_box spectator",
+        "campaign12 thresholds-easy open_shulker_box locked",
+        "campaign12 thresholds-easy open_shulker_box allowed",
+        "campaign13 thresholds-hard open_shulker_box locked",
+        "campaign13 thresholds-hard open_shulker_box allowed",
+        "campaign14 thresholds-chaos open_shulker_box locked",
+        "campaign14 thresholds-chaos open_shulker_box allowed",
+        "campaign15 thresholds-custom_vision open_shulker_box locked",
+        "campaign15 thresholds-custom_vision open_shulker_box allowed",
+        "campaign17 reload open_shulker_box locked",
+        "campaign17 reload open_shulker_box allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11 (normal), campaign12 (easy), campaign13 (hard), campaign14 (chaos), campaign15 (custom_vision), campaign16 (chaos, landmarks r4), campaign17 (normal reload): all onlineMode=true, each has 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game'. Independently confirmed online-mode=true in campaign11/runtime/server.properties:47 and campaign17/runtime/server.properties:47, and the UUID/join lines in campaign17/receipts/output.log:231,242. The group's rows come from campaign11-15 and 17, all covered."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator present; thresholds for normal, easy, hard, chaos and custom_vision present. No NA rows. No offhand rows (empty-hand block open, excluded by the OFFHAND selector; no off-hand route), acceptable."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows (2) all have campaign=campaign17; MANIFEST.e5Reload = campaign17, generationBefore 1, generationAfter 2. Every ATD_STAGE2A_STATE line inside the reload excerpt blocks shows \"generation\": 2 (parsed all of them). Each reload verdict equals the pass1 verdict for the same ability/phase (all PASS). Raw campaign17/receipts/output.log:249-255 shows 'Reloading!' followed by '[AchieveToDo] PROGRESSION_CONFIG_READY generation=2 file=normal.toml', i.e. a real datapack reload."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15 rows, all status REPRODUCED and recorded==replayed; each replay 'line' was cross-checked against the runtime's campaign-results.jsonl (ability/tag/phase/verdict match, 0 mismatches over the 201 rows of my 7 groups). MANIFEST.runtimes replay: reproducedAll=true for all 7 runtimes (campaign11 1235, campaign12-15 and 17 310 each, campaign16 44), problems []; the REPLAY.json files were re-read and agree. Plugin SHA-256 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b is identical in MANIFEST.plugin, perRuntime (7/7) and evidenceHashes.plugin, and I recomputed it from all 7 runtime/plugins/achievetodo.jar. Client mod: recomputed SHA-256 of the jar at MANIFEST.clientMod.path = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081 (matches). Recomputed SHA-256 of campaign-results.jsonl and REPLAY.json of all 7 runtimes: all equal evidenceHashes (e.g. campaign11 results e2fdcbee751d9b96..., campaign12 results 828efdb841a2751d...)."
+    }
+  },
+  "superseded": "MANIFEST.superseded lists only the two r3 reload rows of this group (normal/reload locked+allowed, PASS->PASS, by campaign17). Justified: the r3 reload in campaign11 was rejected by the server (campaign11/receipts/output.log:88679-88680 'Incorrect argument for command / reload confirm<--[HERE]'), so those rows were not run after a reload; campaign17 performed a real reload (generation 2, output.log:249-255). No r4 (landmark chest-room fixture) supersession concerns this group.",
+  "findings": []
+}

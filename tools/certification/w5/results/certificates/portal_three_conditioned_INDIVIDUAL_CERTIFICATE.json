@@ -1,0 +1,55 @@
+{
+  "group": "portal_three_conditioned",
+  "reviewer": "R1",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "3 abilities. Recomputed SHA-256 BukkitRestrictionResolver.java (f5d7d99b...), PortalAdapter.java (d2be5d74...), NativePortalAgent.java (443910c9...), NativePortalBindings.java (bcd233e0...): equal E1. NativePortalAgent.java:108-110 map NetherPortalBlock/EndPortalBlock/EndGatewayBlock to ENTER_NETHER/ENTER_END/TELEPORT_OUTER_ISLANDS, 112/114/115 apply the dimension and central-gateway conditions; PortalAdapter.java:80 (PlayerTeleportEndGatewayEvent) and 189-195; BukkitRestrictionResolver.java:255-261 teleport causes. Thresholds listed for all 5 configs for all 3 abilities. Row thresholds of all rows re-checked against each runtime's own config (campaignNN/runtime/plugins/AchieveToDo/progression/configs/*.toml): 0 mismatches; E1 normal/easy/hard/custom_vision thresholds equal the row thresholds; 5 E1 config hashes verified. E1's chaos column comes from campaign16's chaos toml while chaos rows come from campaign14 (different values, accepted behaviour (b)); campaign14 toml values match the rows."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "45 rows: 33 PASS, 12 PASS_PARITY_ENTER_BLOCK; read every excerpt and the client states. enter_nether locked (all runtimes): player stands in the portal ~8 s, client dim stays overworld, overlay 'You can't enter The Nether', count unchanged -> PASS. enter_end and teleport_outer_islands locked: no world change (client stays in overworld / at z=50.7 in the End), overlay shown, the only change is enter_the_end / enter_end_gateway (+1; margin 2 keeps count < threshold) -> PASS_PARITY_ENTER_BLOCK, accepted behaviour (a). Allowed rows: ATD_PROOF_NATIVE_WORLD_CHANGE / WORLD_TRANSITION_SNAPSHOT and client dim the_nether / the_end or pos z~1021 (far:500). Op rows denied; spectator rows without product overlay.",
+      "rowsRead": [
+        "campaign11 pass1 enter_nether/enter_end/teleport_outer_islands locked+allowed",
+        "campaign11 modes all 3 abilities creative/op/spectator",
+        "campaign12 thresholds-easy all 3 locked+allowed",
+        "campaign13 thresholds-hard all 3 locked+allowed",
+        "campaign14 thresholds-chaos all 3 locked+allowed",
+        "campaign15 thresholds-custom_vision all 3 locked+allowed",
+        "campaign17 reload all 3 locked+allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11-17: all onlineMode=true, 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' lines present; independently re-grepped each campaignNN/receipts/output.log (UUID line at line 231/232, one join line) and runtime/server.properties online-mode=true for all 7 runtimes."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator for each ability; portals have no off-hand route (no offhand or NA rows); threshold rows for all configs, each with its own runtime thresholds (chaos campaign14: 575/481/641 = campaign14 toml)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "6 reload rows, all from campaign17; MANIFEST.e5Reload generationBefore=1, generationAfter=2; every ATD_STAGE2A_STATE line in the reload excerpts shows generation 2 (12 lines). Raw campaign17 output.log lines 247-256 show a real reload ('Reloading!', 'PROGRESSION_CONFIG_READY generation=2') and no generation-1 state lines in the log. Each reload verdict equals the pass1 verdict of the same ability/phase. enter_end/teleport reload locked = PASS_PARITY_ENTER_BLOCK, same as pass1."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all 45 rows REPRODUCED, recorded==replayed for every row; MANIFEST.runtimes replay.reproducedAll=true for campaign11..17 (counts 1235/310/310/310/310/44/310). Plugin SHA-256 ad0685ed...d80b in perRuntime for all 7 runtimes and recomputed on campaign11 and campaign17 runtime/plugins/achievetodo.jar; client mod recomputed = 46a0601e...0855081. Recomputed campaign-results.jsonl SHA-256 for all 7 runtimes; all equal evidenceHashes.results (campaign11 e2fdcbee...5b15, campaign17 14036deb...a44b). Excerpt fidelity spot-checked: non-compacted excerpt lines equal raw output.log lines for 5 rows in 5 groups."
+    }
+  },
+  "superseded": "Superseded rows are only the r3 reload rows of this group, replaced by campaign17 (r5). Justified: in campaign11 the r3 command 'reload confirm' (command-journal.jsonl line 31021, 05:27:45Z) was answered 'Incorrect argument for command' (output.log line 88679), so no reload happened; campaign17 performed a real datapack reload (generation 1->2). No r4 (chest fixture) rows apply to this group. Two replaced rows changed PASS -> PASS_PARITY_ENTER_BLOCK: in r3 the enter_end/gateway advancements were already earned earlier in campaign11; in the fresh campaign17 runtime the parity +1 appears. The new verdict matches pass1.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/portal_three_conditioned/rows.jsonl campaign11 modes enter_nether creative (client pre dim the_nether); campaign11/receipts/output.log ATD_PROOF_NATIVE_WORLD_CHANGE to the_nether at 08:52:17, pre mark at 08:52:20",
+      "description": "In creative the transition happens during setup, before the pre mark, so the judged window contains no transition; the oracle passes because a post state is the_nether, without comparing it to pre. The raw log confirms the creative bypass (count 223 < 224, creative mode), so the conclusion holds, but this judge rule would also pass a row where nothing happened during the action."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/portal_three_conditioned/excerpts.txt ATD_STAGE2A_STATE lines: \"ability\": {\"ENTER_NETHER/ENTER_END/TELEPORT_OUTER_ISLANDS\": null}",
+      "description": "The state probe does not report the lock state of the tested ability (null), so the excerpt does not show the plugin's lock decision directly; the lock is shown indirectly (count < threshold, client overlay text in rows.jsonl client states, absent effect). Verdicts are still reproducible."
+    }
+  ]
+}

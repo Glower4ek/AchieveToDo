@@ -1,0 +1,106 @@
+"""E6: after the server has stopped, recompute every verdict from raw logs and compare with the recorded one.
+
+Usage: campaign_replay.py <campaignNN> [results.jsonl]
+Inputs: <campaign>/receipts/output.log (server), the driver journal (copied once into
+receipts/driver-journal.jsonl so later client runs cannot change it) and campaign-results.jsonl.
+Each row carries logLines=[pre mark, end mark] and journalBytes=[start, end]. The verdict is recomputed
+with campaign.judge(), the same function the campaign used, against the current campaign_cases.
+Writes receipts/REPLAY.json and receipts/EVIDENCE_HASHES.json (SHA-256 of logs, results, artifacts, scripts).
+Exit code 1 if any verdict does not reproduce.
+"""
+import hashlib, json, shutil, sys
+from pathlib import Path
+
+import campaign
+import campaign_cases
+
+root = Path(__file__).parent
+
+
+def sha(path: Path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def expected_score(phase, th):
+    allowed = phase in ('allowed', 'offhand_allowed', 'creative', 'reload_allowed')
+    score = th if allowed else max(th - 1, 0)
+    return max(th - 1, 0) if phase == 'creative' else score
+
+
+def main(argv):
+    a = root / argv[0]
+    r = a / 'receipts'
+    if not (r / 'execution.json').is_file():
+        sys.exit('server still running or never stopped: receipts/execution.json missing (E6 is post-stop)')
+    results = Path(argv[1]) if len(argv) > 1 else r / 'campaign-results.jsonl'
+    journal_copy = r / 'driver-journal.jsonl'
+    if not journal_copy.exists():
+        shutil.copy2(campaign.JOURNAL, journal_copy)
+    journal = journal_copy.read_bytes()
+    lines = (r / 'output.log').read_text(encoding='utf8', errors='replace').splitlines()
+    cases = {(c['group'], c['ability']): c for c in campaign_cases.CASES}
+
+    out, counts = [], {}
+    for n, raw in enumerate(results.read_text(encoding='utf8').splitlines(), 1):
+        if not raw.strip():
+            continue
+        row = json.loads(raw)
+        rec = row['verdict']
+        status, got, detail = None, None, ''
+        if rec == 'ERROR':
+            status = 'ERROR_ROW'
+        elif rec.startswith('NA_'):
+            th, ph = row.get('threshold'), row['phase']
+            got = ('NA_NO_LOCKED_STATE' if th == 0 and ph in campaign.LOCKED_PHASES else
+                   'NA_PERMANENTLY_LOCKED' if th == -1 and ph in campaign.ALLOWED_PHASES else 'NOT_NA')
+            status = 'REPRODUCED' if got == rec else 'MISMATCH'
+        elif 'journalBytes' not in row:
+            status = 'NO_RAW_REFERENCE'
+        else:
+            c = cases.get((row['group'], row['ability']))
+            a_, e_ = row['logLines']
+            idx = campaign.marks(lines, a_, e_)
+            j0, j1 = row['journalBytes']
+            if c is None:
+                status, detail = 'CASE_MISSING', 'case no longer in campaign_cases'
+            elif set(idx) != {'pre', 'act', 'post', 'end'} or idx['pre'] != a_ or idx['end'] != e_:
+                status, detail = 'RAW_MARKS_MISSING', str(idx)
+            elif not (0 <= j0 < j1 <= len(journal)):
+                status, detail = 'RAW_JOURNAL_RANGE', f'{j0}-{j1} of {len(journal)}'
+            elif expected_score(row['phase'], row['threshold']) != row['score']:
+                status, detail = 'MISMATCH', 'score does not follow from threshold/phase'
+            else:
+                jrows = [json.loads(x) for x in journal[j0:j1].decode('utf8').splitlines() if x.strip()]
+                again = campaign.judge(c, row['phase'], row['threshold'], row['score'], lines, idx, jrows)
+                got = again['verdict']
+                same = got == rec and again['counts'] == row.get('counts') and again['diff'] == row.get('diff')
+                status = 'REPRODUCED' if same else 'MISMATCH'
+                if not same:
+                    detail = f"recorded={rec} counts={row.get('counts')} replay={got} counts={again['counts']}"
+        counts[status] = counts.get(status, 0) + 1
+        out.append(dict(line=n, tag=row.get('tag'), group=row.get('group'), ability=row.get('ability'), phase=row.get('phase'),
+                        recorded=rec, replayed=got, status=status, detail=detail))
+
+    bad = [x for x in out if x['status'] not in ('REPRODUCED', 'ERROR_ROW')]
+    report = dict(campaign=a.name, results=str(results), rows=len(out), counts=counts,
+                  reproducedAll=not bad and counts.get('REPRODUCED', 0) > 0, problems=bad, rowsDetail=out)
+    (r / 'REPLAY.json').write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding='utf8')
+
+    files = {'output.log': r / 'output.log', 'command-journal.jsonl': r / 'command-journal.jsonl',
+             'driver-journal.jsonl': journal_copy, 'results': results, 'REPLAY.json': r / 'REPLAY.json',
+             'plugin': a / 'runtime' / 'plugins' / 'achievetodo.jar', 'server': a / 'runtime' / 'purpur-26.2-2620.jar',
+             'trace-agent.jar': a / 'observer-work' / 'trace-agent.jar',
+             'client-mod': campaign.CLIENT / 'mods' / 'achievetodo.jar', 'input-driver': campaign.CLIENT / 'mods' / 'atd-input-driver.jar',
+             'campaign.py': root / 'campaign.py', 'campaign_cases.py': root / 'campaign_cases.py',
+             'campaign_replay.py': root / 'campaign_replay.py'}
+    (r / 'EVIDENCE_HASHES.json').write_text(json.dumps(
+        {k: {'path': str(p), 'sha256': sha(p), 'bytes': p.stat().st_size} for k, p in files.items() if p.is_file()},
+        indent=2), encoding='utf8')
+    print(f"E6 replay {a.name}: {counts} reproducedAll={report['reproducedAll']}")
+    for x in bad[:20]:
+        print('  ', x['status'], x['tag'], x['ability'], x['phase'], x['detail'])
+    return 0 if report['reproducedAll'] else 1
+
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))

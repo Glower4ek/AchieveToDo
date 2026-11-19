@@ -1,0 +1,172 @@
+{
+  "started": "2026-11-19T02:39:15+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\repo\\port\\AchieveToDo-Purpur-26.2\\build\\libs\\AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar",
+  "runtimes": {
+    "campaign11": {
+      "mode": "normal",
+      "started": "2026-11-19T02:39:15+00:00",
+      "passes": {
+        "pass1": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 305,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 2,
+            "PASS_PARITY_ENTER_BLOCK": 2
+          },
+          "finished": "2026-11-19T03:34:56+00:00"
+        },
+        "modes": {
+          "phases": "creative,op,spectator",
+          "counts": {
+            "PASS": 462,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 2
+          },
+          "finished": "2026-11-19T04:58:13+00:00"
+        },
+        "offhand": {
+          "phases": "offhand_locked,offhand_allowed",
+          "counts": {
+            "PASS": 147,
+            "NA_OFFHAND_NOT_APPLICABLE": 2,
+            "PASS_NO_OVERLAY": 1
+          },
+          "finished": "2026-11-19T05:27:45+00:00"
+        },
+        "reload": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 307,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 2
+          },
+          "finished": "2026-11-19T06:26:11+00:00"
+        }
+      },
+      "finished": "2026-11-19T06:26:16+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 1235
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign12": {
+      "mode": "easy",
+      "started": "2026-11-19T06:42:01+00:00",
+      "passes": {
+        "thresholds-easy": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 304,
+            "NA_NO_LOCKED_STATE": 2,
+            "PASS_NO_OVERLAY": 2,
+            "PASS_PARITY_ENTER_BLOCK": 2
+          },
+          "finished": "2026-11-19T07:37:46+00:00"
+        }
+      },
+      "finished": "2026-11-19T07:37:50+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 310
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign13": {
+      "mode": "hard",
+      "started": "2026-11-19T07:53:37+00:00",
+      "passes": {
+        "thresholds-hard": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 305,
+            "PASS_NO_OVERLAY": 2,
+            "PASS_PARITY_ENTER_BLOCK": 2,
+            "PASS_MASKED_BY_DEPENDENCY": 1
+          },
+          "finished": "2026-11-19T08:49:55+00:00"
+        }
+      },
+      "finished": "2026-11-19T08:50:00+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 310
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign14": {
+      "mode": "chaos",
+      "started": "2026-11-19T08:50:00+00:00",
+      "passes": {
+        "thresholds-chaos": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 296,
+            "NA_NO_LOCKED_STATE": 3,
+            "PASS_PARITY_ENTER_BLOCK": 2,
+            "PASS_NO_OVERLAY": 1,
+            "PASS_MASKED_BY_DEPENDENCY": 7,
+            "FAIL_NO_EFFECT": 1
+          },
+          "finished": "2026-11-19T09:45:39+00:00"
+        }
+      },
+      "finished": "2026-11-19T09:45:44+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 310
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign15": {
+      "mode": "E:\\Vibecode\\AchieveToDo\\certification\\w5-campaign\\configs\\custom_vision.toml",
+      "started": "2026-11-19T10:40:28+00:00",
+      "passes": {
+        "thresholds-custom_vision": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 304,
+            "PASS_MASKED_BY_DEPENDENCY": 2,
+            "PASS_NO_OVERLAY": 2,
+            "PASS_PARITY_ENTER_BLOCK": 2
+          },
+          "finished": "2026-11-19T11:36:48+00:00"
+        }
+      },
+      "finished": "2026-11-19T11:36:53+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 310
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "r3",
+  "error": null,
+  "aborted": "2026-11-19T10:02:37+00:00",
+  "abortedAttempts": {
+    "campaign15": {
+      "runtime": {
+        "mode": "E:\\Vibecode\\AchieveToDo\\certification\\w5-campaign\\configs\\custom_vision.toml",
+        "started": "2026-11-19T10:01:41+00:00",
+        "passes": {}
+      },
+      "error": "LOGIN_FAILED campaign15: []",
+      "at": "2026-11-19T10:02:37+00:00"
+    }
+  },
+  "resumed": "2026-11-19T10:04:28+00:00",
+  "finished": "2026-11-19T11:36:53+00:00"
+}

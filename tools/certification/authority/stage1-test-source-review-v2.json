@@ -1,0 +1,205 @@
+{
+  "schema": 1,
+  "reviewer": "/root/stage1_recovery_independent",
+  "verdict": "ACCEPTED_BOUNDED_STAGE1_TEST_SOURCE_FOR_EXECUTION_ONLY",
+  "accepted": true,
+  "runtimeAccepted": false,
+  "compiledAccepted": false,
+  "PRODUCT_GAMEPLAY_READY": false,
+  "reviewedCodeBindings": {
+    "src/test/java/com/diskree/achievetodo/certification/GameplaySuccessorAuthorityTest.java": "e2f9f1a33ea72a257e8bf02f92e590e97290394c07c52a71f7591a313a8664c9",
+    "src/test/java/com/diskree/achievetodo/certification/GateBInputAuthorityContractTest.java": "9243bae7b8fa1942ce33ed9f2029ec8d35af734c784e5bce882d137bd944ecae",
+    "src/test/java/com/diskree/achievetodo/certification/Stage1FocusedContractLauncher.java": "93e7cd6f7c898c714a81da4588a6763c0a0ab0256b70ab433d6c6bac9eb8aa2f",
+    "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java": "07468f872ef7ef08ec80edfca0eccee244f665fedbc8a0e87144f896c78384d7",
+    "src/test/java/com/diskree/achievetodo/client/PhaseBPackTestFixtures.java": "f8f51b43e45331926d768fc33d0904fdf6e999d2e0147df043f4569d5916a452",
+    "tools/build/stage1_test_source_v1.py": "fab9e8f68b2ed027a8215764e5b05e1caf4274639f8d4d95b5c7d4386f98c4c8",
+    "tools/build/stage1_test_source_v2.py": "740d726991a90cd43133f44b7bdaee6c6c97445bd36acc9387e2524a7e8c7e86",
+    "tools/build/tests/test_stage1_test_source_v1.py": "09e8bed0f9bc5fe6c742fc44392dba0161475b63d459bf1cef0688a87bab47eb",
+    "tools/build/tests/test_stage1_test_source_v2.py": "ab3acebfeafeb58b0e6296995ad2c39e97c84e80dc1b656623921f60f588d1ff",
+    "tools/certification/authority/stage1-test-source-review-v1.json": "709c42a95debceecb40bfb0cc9aadf3edcc86887973af6ceaa3465064f85be0b",
+    "tools/certification/authority/stage1-test-source-v1.json": "4c9e353a7a28c9d96df6de3009fd25ea5b4b082c8672c1aefde4f73d019d343d",
+    "tools/certification/fixtures/stage1-r5-predecessor-v1.zip": "09be0fba8b4963878f72a107a7ce3eb77a7cc5e57b38eec81ca16a7b77a53570"
+  },
+  "normalizedBuildSHA256": "00cf089bb0e800de6db6915f5c5bf35b4b69ce487a889cd2f74b0f862f75d144",
+  "findings": [],
+  "observedUtc": "2026-11-07T17:32:55.427799+00:00",
+  "scope": "Pre-mutation exact V2 code review only; separate final manifest/build-postimage review required before application. Source/test composition and diagnostics only; not fullJUnit/package/runtime acceptance.",
+  "request": {
+    "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Stage1_R5_Reconciliation\\run_20261106T071852Z\\fixture-successor-v2-code-review-request-r1.json",
+    "sha256": "8394df3078cb632339ed51342dcbd1091b0579326f07fccc5423a3c7da1d5603"
+  },
+  "codeChecks": [
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/GameplaySuccessorAuthorityTest.java",
+      "expected": "e2f9f1a33ea72a257e8bf02f92e590e97290394c07c52a71f7591a313a8664c9",
+      "actual": "e2f9f1a33ea72a257e8bf02f92e590e97290394c07c52a71f7591a313a8664c9"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/GateBInputAuthorityContractTest.java",
+      "expected": "9243bae7b8fa1942ce33ed9f2029ec8d35af734c784e5bce882d137bd944ecae",
+      "actual": "9243bae7b8fa1942ce33ed9f2029ec8d35af734c784e5bce882d137bd944ecae"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/Stage1FocusedContractLauncher.java",
+      "expected": "93e7cd6f7c898c714a81da4588a6763c0a0ab0256b70ab433d6c6bac9eb8aa2f",
+      "actual": "93e7cd6f7c898c714a81da4588a6763c0a0ab0256b70ab433d6c6bac9eb8aa2f"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java",
+      "expected": "07468f872ef7ef08ec80edfca0eccee244f665fedbc8a0e87144f896c78384d7",
+      "actual": "07468f872ef7ef08ec80edfca0eccee244f665fedbc8a0e87144f896c78384d7"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/client/PhaseBPackTestFixtures.java",
+      "expected": "f8f51b43e45331926d768fc33d0904fdf6e999d2e0147df043f4569d5916a452",
+      "actual": "f8f51b43e45331926d768fc33d0904fdf6e999d2e0147df043f4569d5916a452"
+    },
+    {
+      "path": "tools/build/stage1_test_source_v1.py",
+      "expected": "fab9e8f68b2ed027a8215764e5b05e1caf4274639f8d4d95b5c7d4386f98c4c8",
+      "actual": "fab9e8f68b2ed027a8215764e5b05e1caf4274639f8d4d95b5c7d4386f98c4c8"
+    },
+    {
+      "path": "tools/build/stage1_test_source_v2.py",
+      "expected": "740d726991a90cd43133f44b7bdaee6c6c97445bd36acc9387e2524a7e8c7e86",
+      "actual": "740d726991a90cd43133f44b7bdaee6c6c97445bd36acc9387e2524a7e8c7e86"
+    },
+    {
+      "path": "tools/build/tests/test_stage1_test_source_v1.py",
+      "expected": "09e8bed0f9bc5fe6c742fc44392dba0161475b63d459bf1cef0688a87bab47eb",
+      "actual": "09e8bed0f9bc5fe6c742fc44392dba0161475b63d459bf1cef0688a87bab47eb"
+    },
+    {
+      "path": "tools/build/tests/test_stage1_test_source_v2.py",
+      "expected": "ab3acebfeafeb58b0e6296995ad2c39e97c84e80dc1b656623921f60f588d1ff",
+      "actual": "ab3acebfeafeb58b0e6296995ad2c39e97c84e80dc1b656623921f60f588d1ff"
+    },
+    {
+      "path": "tools/certification/authority/stage1-test-source-review-v1.json",
+      "expected": "709c42a95debceecb40bfb0cc9aadf3edcc86887973af6ceaa3465064f85be0b",
+      "actual": "709c42a95debceecb40bfb0cc9aadf3edcc86887973af6ceaa3465064f85be0b"
+    },
+    {
+      "path": "tools/certification/authority/stage1-test-source-v1.json",
+      "expected": "4c9e353a7a28c9d96df6de3009fd25ea5b4b082c8672c1aefde4f73d019d343d",
+      "actual": "4c9e353a7a28c9d96df6de3009fd25ea5b4b082c8672c1aefde4f73d019d343d"
+    },
+    {
+      "path": "tools/certification/fixtures/stage1-r5-predecessor-v1.zip",
+      "expected": "09be0fba8b4963878f72a107a7ce3eb77a7cc5e57b38eec81ca16a7b77a53570",
+      "actual": "09be0fba8b4963878f72a107a7ce3eb77a7cc5e57b38eec81ca16a7b77a53570"
+    }
+  ],
+  "actualV1PhysicalPreimageChecks": [
+    {
+      "path": "build.gradle",
+      "expected": "51b167d8ed0b66bd4882c0f5b0e26a9568f77622f9377b415ab4f2936c941141",
+      "snapshot": "51b167d8ed0b66bd4882c0f5b0e26a9568f77622f9377b415ab4f2936c941141",
+      "candidate": "51b167d8ed0b66bd4882c0f5b0e26a9568f77622f9377b415ab4f2936c941141",
+      "execution": "51b167d8ed0b66bd4882c0f5b0e26a9568f77622f9377b415ab4f2936c941141"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java",
+      "expected": "de3cc0e5b7bb42ef6b55cd8e365caa68c8a75b189d337e87e992859f24494556",
+      "snapshot": "de3cc0e5b7bb42ef6b55cd8e365caa68c8a75b189d337e87e992859f24494556",
+      "candidate": "de3cc0e5b7bb42ef6b55cd8e365caa68c8a75b189d337e87e992859f24494556",
+      "execution": "de3cc0e5b7bb42ef6b55cd8e365caa68c8a75b189d337e87e992859f24494556"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/GateBInputAuthorityContractTest.java",
+      "expected": "814e422fa0ef5171f2a50fc1735734a9882f2e72a967a46826b02b7b298a9e1b",
+      "snapshot": "814e422fa0ef5171f2a50fc1735734a9882f2e72a967a46826b02b7b298a9e1b",
+      "candidate": "814e422fa0ef5171f2a50fc1735734a9882f2e72a967a46826b02b7b298a9e1b",
+      "execution": "814e422fa0ef5171f2a50fc1735734a9882f2e72a967a46826b02b7b298a9e1b"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/certification/GameplaySuccessorAuthorityTest.java",
+      "expected": "e4631952af89803f0a245f82ab7e828b815baec4a34e77f8d0df3ac99e1d1830",
+      "snapshot": "e4631952af89803f0a245f82ab7e828b815baec4a34e77f8d0df3ac99e1d1830",
+      "candidate": "e4631952af89803f0a245f82ab7e828b815baec4a34e77f8d0df3ac99e1d1830",
+      "execution": "e4631952af89803f0a245f82ab7e828b815baec4a34e77f8d0df3ac99e1d1830"
+    },
+    {
+      "path": "src/test/java/com/diskree/achievetodo/client/PhaseBPackTestFixtures.java",
+      "expected": "8fe2910394d89578c87521fb7e8fc4905111db7cefed5e5d9f67526846b723ab",
+      "snapshot": "8fe2910394d89578c87521fb7e8fc4905111db7cefed5e5d9f67526846b723ab",
+      "candidate": "8fe2910394d89578c87521fb7e8fc4905111db7cefed5e5d9f67526846b723ab",
+      "execution": "8fe2910394d89578c87521fb7e8fc4905111db7cefed5e5d9f67526846b723ab"
+    }
+  ],
+  "sourceBoundary": {
+    "logicalR5ParentCount": 3647,
+    "retainedV1Files": 5,
+    "newV2FilesIncludingPendingManifestReview": 5,
+    "expectedSealedActiveCount": 3657,
+    "draftBeforeThisReviewCount": 3655,
+    "modifiedExistingPaths": [
+      "build.gradle",
+      "src/test/java/com/diskree/achievetodo/certification/GameplaySuccessorAuthorityTest.java",
+      "src/test/java/com/diskree/achievetodo/certification/GateBInputAuthorityContractTest.java",
+      "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceSourceContract.java",
+      "src/test/java/com/diskree/achievetodo/client/PhaseBPackTestFixtures.java"
+    ],
+    "newDraftCodePaths": [
+      "src/test/java/com/diskree/achievetodo/certification/Stage1FocusedContractLauncher.java",
+      "tools/build/stage1_test_source_v2.py",
+      "tools/build/tests/test_stage1_test_source_v2.py"
+    ],
+    "productionClosureCount": 2504,
+    "productionChanges": []
+  },
+  "currentControls": {
+    "actualStaticTestMethodCount": 7,
+    "methods": [
+      "test_exact_current_identity_and_parent_production",
+      "test_disposable_root_marker_and_retained_v1",
+      "test_unknown_orphan_path_digest_and_parent_selectors",
+      "test_current_code_and_same_path_bytes_rejected",
+      "test_production_addition_omission_and_same_path",
+      "test_parent_review_and_archive_tampering",
+      "test_readiness_manifest_and_build_normalization_fail_closed"
+    ],
+    "allPriorSixMeaningfulControlsRetained": true,
+    "newMarkerAndRetainedV1ControlAdded": true,
+    "actualNewControlsExecution": "NOT_RUN"
+  },
+  "fixtureEvidence": {
+    "markerOnlyFrozenGateBControls": "E:\\Vibecode\\ATD_Purpur_Gameplay_Stage1_R5_Reconciliation\\run_20261106T071852Z\\full-r3-diagnostics\\frozen-gateb-controls-with-root-marker-r2",
+    "exitCode": 0,
+    "actualFrozenTestCount": 23,
+    "stdoutSHA256": "9ce5f37f7199f7e0eeba790c524e3ebe83677136115d51806fc7ec12af007d5a",
+    "stderrSHA256": "c94730309d5d0208d2b4d4c49e909dc6c4a2c01c821e56083672cd06ae2cd058",
+    "scope": "Diagnostic originalV1 context plus emptyrootmarker only, not activeV2 fullJUnit proof"
+  },
+  "architectureChecks": {
+    "retainedV1ExactFiveLiteralPins": true,
+    "R5PredecessorArchiveUnchanged": true,
+    "actualReviewerIdentityNewNotImpersonated": true,
+    "originalV5AndOwnerBAuthoritiesUnchanged": true,
+    "emptyCanonicalFreshDisposableRootMarkerOnly": true,
+    "GateBCapturedDiagnosticsWrittenBeforeAssertionAndContextExit": true,
+    "UiUxFailureDiagnosticsRetainedWithoutExitWaiver": true,
+    "realJUnitPlatformFiveMethodSelectorsAndLifecycle": true,
+    "focusedFindSucceededExactlyFiveZeroFailureSkipAbortContainers": true,
+    "standardUnfilteredTaskGuardsUnchanged": true,
+    "MemoryErrorNotSuppressedOrRetried": true
+  },
+  "externalFocusedInitReview": {
+    "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Stage1_R5_Reconciliation\\run_20261106T071852Z\\stage1-focused-v2.init.gradle",
+    "sha256": "3bba3cfb389ae36bdc2226d6b5db26c67e7973dc76a8ea55516c1d560b727877",
+    "acceptedForFocusedDiagnosticOnly": true,
+    "actualLoomIndexRUIdentityChecksRetained": true,
+    "sameTestRuntimeClasspathAndVerifiedProviderProperties": true,
+    "mandatoryControlVerifierStillApply": true,
+    "normalTestNotFilteredOrModified": true,
+    "condition": "Runner must require focused receipt fresh absolute taskowned outside source; current launcher verifies absolute/fresh itself."
+  },
+  "limitations": [
+    "Draft build currently contains normalized zero digest slot; final exact manifest digest insertion and independent review binding still require separate exact postimage review.",
+    "No compiler, Gradle, newV2 controls, focusedJUnit or fullsuite run by this reviewer; static acceptance does not claim compiled/test PASS.",
+    "Old full-r3 remains actual1076/1071PASS/5FAIL; old GateA targeted11/11 is historical sameV1source proof, not V2/full certification.",
+    "MemoryError exception observed; rootallocation pressure remains UNKNOWN despite currentcapacity diagnostics. Recordresources and prove focused/full without suppressingfailure.",
+    "Composed physical topology guard remains required because currenthelper inventory alone does not prove empty-extra-directory link absence.",
+    "Final Stage1 needs actualnewsource fullunfilteredXML, Fabric/Purpur packages, exactartifacts, Git/input/quarantine preservation and separate independent acceptance."
+  ]
+}

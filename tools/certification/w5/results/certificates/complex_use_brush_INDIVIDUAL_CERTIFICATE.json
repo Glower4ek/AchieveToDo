@@ -1,0 +1,65 @@
+{
+  "group": "complex_use_brush",
+  "reviewer": "R7",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "use_brush: 4 direct sites + findItemAbility resolver. SHA-256 of NativeComplexBindings, NativeComplexAgent, NativeComplexSpecs, NativeLandmarkOperations recomputed: all match E1. Opened: NativeComplexAgent.java:137 'brush-tick' -> USE_BRUSH and :173-177 armadillo() checks USE_BRUSH; NativeComplexSpecs.java:36 brush-start/brush-tick/brush-armadillo specs; NativeLandmarkOperations.java:85-90 releaseBrush and :205-210 brushArmadillo check USE_BRUSH. Thresholds are listed for normal 264/easy 204/hard 324/chaos 520/custom_vision 264. Config files match."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "All 17 excerpts read, all PASS. Locked (c11-c15, c17, offhand): 18 'DENIAL_INTENT_DISCOVERED ability=use_brush' lines and 36 ATD_CRITERION_SUPPRESSED ITEM_USED_ON_BLOCK per row, the suspicious_sand block test still passes after, count unchanged. Allowed: no denials, block test fails after (sand brushed out), count unchanged (only technical inventory_changed). Creative brushes (bypass), op denied (18 intents), spectator denied by vanilla (36x cancelled=true DENY, vanillaEffect=false). I reproduced every verdict.",
+      "rowsRead": [
+        "campaign11 pass1 use_brush locked (PASS)",
+        "campaign11 pass1 use_brush allowed (PASS)",
+        "campaign11 modes use_brush creative (PASS)",
+        "campaign11 modes use_brush op (PASS)",
+        "campaign11 modes use_brush spectator (PASS)",
+        "campaign11 offhand use_brush offhand_locked (PASS)",
+        "campaign11 offhand use_brush offhand_allowed (PASS)",
+        "campaign12 thresholds-easy use_brush locked (PASS)",
+        "campaign12 thresholds-easy use_brush allowed (PASS)",
+        "campaign13 thresholds-hard use_brush locked (PASS)",
+        "campaign13 thresholds-hard use_brush allowed (PASS)",
+        "campaign14 thresholds-chaos use_brush locked (PASS)",
+        "campaign14 thresholds-chaos use_brush allowed (PASS)",
+        "campaign15 thresholds-custom_vision use_brush locked (PASS)",
+        "campaign15 thresholds-custom_vision use_brush allowed (PASS)",
+        "campaign17 reload use_brush locked (PASS)",
+        "campaign17 reload use_brush allowed (PASS)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11..campaign17 all onlineMode=true with 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' lines. Independently: each runtime/server.properties has online-mode=true, and the exact UUID and join lines were found in the first 400 lines of each runtime's receipts/output.log."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "Modes rows creative/op/spectator present for every ability/case (campaign11 tag modes). Threshold rows present for normal (pass1, campaign11), easy (c12), hard (c13), chaos (c14), custom_vision (c15), and every row's threshold equals the ability's value in that runtime's config file. Offhand: offhand_locked/offhand_allowed rows exist (c11; main hand air, off hand brush, OFF_HAND input events). There are no NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 rows tagged reload, all from campaign17. MANIFEST.e5Reload.evidence generationBefore=1, generationAfter=2 (also FINAL_STATUS_R5.json). All 4 ATD_STAGE2A_STATE lines of the campaign17 excerpts show generation 2 (non-campaign17 excerpts all generation 1). Each reload verdict (all PASS) equals the pass1 verdict for the same ability/case/phase (use_brush)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 17 rows, all REPRODUCED, recorded verdict equals rows.jsonl verdict for every line. MANIFEST runtimes 11-17 replay reproducedAll=true (1235/310/310/310/310/44/310). Plugin SHA-256 ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b in MANIFEST.plugin.perRuntime for all 7 runtimes; recomputed runtime/plugins/achievetodo.jar of all 7 runtimes = same. Client mod recomputed from disk = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081. Recomputed SHA-256 of campaign-results.jsonl and REPLAY.json of all 7 runtimes: all equal to evidenceHashes. Every rows.jsonl row found verbatim (ability/tag/phase/verdict/logLines) in its runtime's campaign-results.jsonl. All excerpt lines of the group were matched against the raw output.log at the cited line ranges (compacted STATE lines matched on tick, count, mode, op, generation): 0 mismatches."
+    }
+  },
+  "superseded": "All superseded entries in this group are the r3 'reload' rows (was PASS -> now PASS, by campaign17). Justified: campaign11 output.log:88679-88680 shows 'Incorrect argument for command / reload confirm<--[HERE]', and campaign11 never logs generation=2, so the r3 reload pass never reloaded. campaign17 output.log:247-255 shows a real datapack reload ('Reloading!', preflight generation=2, PROGRESSION_CONFIG_READY generation=2 file=normal.toml) before the reload pass. No r4 (campaign16 chest-room fixture fix) row is superseded in this group, and no campaign16 row belongs to it.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review/complex_use_brush/E1.json thresholds.chaos_20261116 vs campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml (sha256 5fcf0a51...)",
+      "description": "E1 cites only the campaign16 chaos config (sha256 e55204bd...). The thresholds-chaos rows come from campaign14, whose chaos_20261116.toml has a different hash and different values (use_brush 54 in campaign14 vs 520 in E1). The rows match campaign14's file, which I checked by hand, but E1 does not cite that file. This is covered by accepted behaviour (b), so it is only a gap in the E1 documentation."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "campaign_cases.py:144 (only use_brush case: suspicious_sand); E1 sites NativeComplexAgent.java:173 and NativeLandmarkOperations.java:205 (armadillo)",
+      "description": "E1 lists an armadillo-brushing guard (Armadillo.mobInteract / brushOffScute), but the group only tests brushing suspicious sand. The armadillo route has no runtime locked/allowed evidence. The source check confirms the guard exists, but it is unverified at runtime."
+    }
+  ]
+}

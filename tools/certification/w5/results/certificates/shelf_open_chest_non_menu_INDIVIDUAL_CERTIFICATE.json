@@ -1,0 +1,51 @@
+{
+ "group": "shelf_open_chest_non_menu",
+ "reviewer": "R5",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "1 ability open_chest (package holds the chest-menu case and the shelf non-menu case). Cited files recomputed, all = E1: BukkitRestrictionResolver.java f5d7d99b.., BukkitExpandedGameplayListener.java f10bdc23.., GameplayGate.java 4ddeec26.., NativeLandmarkOperations.java 778a6186... Opened BukkitExpandedGameplayListener.java:70 (Chest/DoubleChest holder -> OPEN_CHEST, cancel at :81), BukkitRestrictionResolver.java:65, NativeLandmarkOperations.java:92-119 (shelfSingleDenied / shelfPoweredDenied -> targetAndAbilityDenied(..., \"OPEN_CHEST\")), GameplayGate.java:17. Thresholds for all 5 configs (42/40/40/279/42). Configs: normal/easy/hard/custom_vision thresholds in E1 equal the runtime config files (hashes de638359.., c145bfe2.., 9d7b711b.., db26c1f6.. match E1). E1's chaos_20261116 column is campaign16's file (e55204bd..); the chaos rows of this group come from campaign14 whose chaos_20261116.toml differs (5fcf0a51..) - accepted behaviour (b). I verified every row threshold and every 'requires' value against its own runtime's active config: no mismatch."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "30 rows, all PASS. Read all 30 excerpts. Chest-menu locked/op: MONITOR_CANCELLED true, no OpenScreen, count unchanged; allowed: OpenScreen. Shelf locked (c11 41->41, c12 39->39, c13, c14 224->224, c15, c17) and op: UseItemOn on OAK_SHELF, shelf data apple before and after (no transfer), ContainerSetContent+SetSlot (plugin updateInventory), overlay; shelf allowed: shelf data apple -> stick. Spectator shelf: Bukkit cancelled=true/DENY is CraftBukkit's own spectator handling of non-MenuProvider blocks, no overlay, no effect: PASS correct. Creative: transfer happens (bypass).",
+   "rowsRead": [
+    "campaign11 pass1 open_chest locked/allowed",
+    "campaign11 pass1 open_chest/shelf locked/allowed",
+    "campaign11 modes open_chest creative/op/spectator",
+    "campaign11 modes open_chest/shelf creative/op/spectator",
+    "campaign12 thresholds-easy open_chest locked/allowed (menu+shelf)",
+    "campaign13 thresholds-hard open_chest locked/allowed (menu+shelf)",
+    "campaign14 thresholds-chaos open_chest locked/allowed (menu+shelf)",
+    "campaign15 thresholds-custom_vision open_chest locked/allowed (menu+shelf)",
+    "campaign17 reload open_chest locked/allowed (menu+shelf)"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign11..campaign17 all onlineMode=true with 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' lines. Cross-checked raw: online-mode=true in each campaignNN/runtime/server.properties; exactly one authenticated-UUID line and a join line in each campaignNN/receipts/output.log. Rows of this group come from campaign11-15 and campaign17 (none from campaign16)."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes creative/op/spectator present for both cases (c11). No offhand rows for either case. Shelf: justified - vanilla ShelfBlock.useItemOn returns immediately for OFF_HAND (javap of net/minecraft/world/level/block/ShelfBlock.class from campaign11/runtime/versions/26.2/purpur-26.2.jar, bytecode 23-31). Chest menu: not item-driven. Threshold rows exist for normal (c11 pass1, c17 reload), easy (c12), hard (c13), chaos (c14), custom_vision (c15). No NA_* rows in this group."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "Reload rows: 4 rows, all campaign17. MANIFEST.e5Reload generationBefore=1, generationAfter=2 (12:06:53Z). Every ATD_STAGE2A_STATE line of the reload excerpts shows \"generation\": 2. Raw campaign17 output.log lines 247-255: 'generation=2', 'Reloading!', 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml' at 17:06:48-50 local, before the first case. Reload verdicts equal pass1 verdicts: menu locked/allowed PASS=PASS, shelf locked/allowed PASS=PASS."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: 30 rows, all status=REPRODUCED, recorded==replayed, keys match rows.jsonl 1:1; every runtime replay reproducedAll=true (c11 1235, c12-c15 310 each, c16 44, c17 310), also confirmed in each receipts/REPLAY.json (problems=[]). Plugin sha256 ad0685ed...c9d80b identical in all 7 runtimes (recomputed runtime/plugins/achievetodo.jar of each, and repo build/libs/AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar). Client mod recomputed = 46a0601e...10855081. Recomputed campaign-results.jsonl sha256 of all 7 runtimes (e.g. c12 828efdb8...dbe90, c17 14036deb...76a44b): all equal evidenceHashes.results; REPLAY.json hashes equal too. Each row of rows.jsonl found exactly once in its runtime's campaign-results.jsonl (matched by logLines) with identical verdict and counts; the only other results rows for these abilities are the superseded campaign11 reload rows."
+  }
+ },
+ "superseded": "All superseded entries are campaign11 'reload' rows replaced by campaign17 (r5). Justified: campaign11 output.log lines 88679-88680 show 'Incorrect argument for command / reload confirm<--[HERE]', i.e. the r3 reload was rejected and campaign11 stayed at generation [1], while campaign17 shows a real datapack reload (generation 1->2). The replaced campaign11 rows were PASS as well, so nothing negative was hidden. No r4 (chest-room/landmark) replacement concerns this group.",
+ "findings": [
+  {
+   "severity": "minor",
+   "criterion": "E4",
+   "evidence": "campaign_cases.py:70-73 (SHELF case keeps default offhand=True); rows.jsonl has no offhand rows; STAGE2B_CAMPAIGN_FINAL_REPORT.md:85 lists offhand passes for this group",
+   "description": "The package neither runs nor documents the shelf off-hand route (no NA_OFFHAND_NOT_APPLICABLE row), and the older final report claims offhand passes that are not in the W5 evidence. Absence is technically justified (vanilla ShelfBlock ignores OFF_HAND, verified), but the package should state it."
+  }
+ ]
+}

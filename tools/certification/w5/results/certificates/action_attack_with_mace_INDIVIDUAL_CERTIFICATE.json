@@ -1,0 +1,57 @@
+{
+  "group": "action_attack_with_mace",
+  "reviewer": "R4",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "attack_with_mace: NativeActionBindings.java:14 (ATTACK_WITH_MACE in ABILITIES; guard skips creative/spectator, denies via GameplayGate.allows, reports via combatRecord), NativeActionAgent.java:72 (mode attack, weapon MACE -> ATTACK_WITH_MACE); hook spec NativeActionSpecs.java:26 (Player.attack HEAD). Hashes recomputed, match E1: NativeActionBindings 93faec2eff7b27b41995a2d91dd169b95586b852594e503c95f31cad4b2c89c3, NativeActionAgent 7467db9a75387aef828c794a1679bffc57021473016cb6da5399819b4213c58a. Thresholds normal 415, easy 330, hard 500, chaos_20261116 203, custom_vision 415."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS. Read all 15 excerpts and raw campaign11 output.log 4600-4620. Locked/op: probe 'Pig has the following entity data: 10.0f' before and after, inventory resync right after act, no attack sound, overlay 'You can't attack with a mace...', count unchanged. Allowed: pig Health 10.0f -> 4.0f + ClientboundSoundPacket. Creative 10.0f -> 4.0f. Spectator: no hit, no overlay. Verdicts reproduced.",
+      "rowsRead": [
+        "campaign11 pass1 attack_with_mace locked",
+        "campaign11 pass1 attack_with_mace allowed",
+        "campaign11 modes attack_with_mace creative",
+        "campaign11 modes attack_with_mace op",
+        "campaign11 modes attack_with_mace spectator",
+        "campaign12 thresholds-easy attack_with_mace locked",
+        "campaign12 thresholds-easy attack_with_mace allowed",
+        "campaign13 thresholds-hard attack_with_mace locked",
+        "campaign13 thresholds-hard attack_with_mace allowed",
+        "campaign14 thresholds-chaos attack_with_mace locked",
+        "campaign14 thresholds-chaos attack_with_mace allowed",
+        "campaign15 thresholds-custom_vision attack_with_mace locked",
+        "campaign15 thresholds-custom_vision attack_with_mace allowed",
+        "campaign17 reload attack_with_mace locked",
+        "campaign17 reload attack_with_mace allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11..campaign17 all onlineMode=true with authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and joinedLine 'Glower4ek joined the game'. Re-checked raw: each campaignNN/receipts/output.log has exactly 1 such UUID line and 1 join line; each campaignNN/runtime/server.properties has online-mode=true. Rows of this group come from campaign11/12/13/14/15/17, all covered."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows present; normal/easy/hard/chaos/custom_vision rows present. Melee (click_attack) uses the main-hand weapon only, outside the OFFHAND set (campaign_final.py:23-27): no off-hand route, no offhand/NA rows. CHAOS rows come from campaign14, whose chaos_20261116.toml differs from the campaign16 file cited in E1.configs (accepted behaviour b); read campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml: values match the row thresholds and the STATE 'required' values (attack_with_mace=627)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows, all campaign17; MANIFEST.e5Reload.runtime=campaign17, generationBefore=1, generationAfter=2. Every ATD_STAGE2A_STATE line in the reload excerpts shows \"generation\": 2 (all non-reload excerpts show 1). Raw campaign17/receipts/output.log:249-255: 'Reloading!' then 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml'. Each reload verdict equals the pass1 verdict of the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15/15 rows REPRODUCED, recorded==replayed for every row, and the (campaign,tag,ability,phase,verdict) multiset of rows.jsonl equals replay.jsonl. MANIFEST runtime replays reproducedAll=true for all 7 runtimes (1235/310/310/310/310/44/310, problems=[]); each REPLAY.json rehashed and matches evidenceHashes. Plugin perRuntime all ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b; recomputed campaignNN/runtime/plugins/achievetodo.jar for all 7 runtimes and repo build/libs/AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar: same value. Client mod recomputed at 'E:\\Кубы сборки\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar' = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081. campaign-results.jsonl recomputed for all 7 runtimes, all equal evidenceHashes (campaign11 e2fdcbee751d9b96b1b37ffdc31e851d82f018f6ee8a8bda545621e58df35b15, campaign17 14036deb3fbf00c3...). Also every rows.jsonl row equals the last same tag/ability/phase row of its runtime's campaign-results.jsonl (verdict, counts, logLines)."
+    }
+  },
+  "superseded": "2 superseded entries, all r5 reload rows (key normal/reload/..., by campaign17, was==now). Justified: the r3 reload in campaign11 was rejected (campaign11/receipts/output.log:88679-88680 'Incorrect argument for command' / 'reload confirm<--[HERE]'), while campaign17 did a real datapack reload (output.log:249-255, generation 2). No r4 (chest-room fixture) replacements in this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/action_attack_with_mace/excerpts.txt, e.g. block 'campaign11 pass1 attack_with_mace locked' (output.log 4607-4615)",
+      "description": "ATD_STAGE2A_STATE logs \"ATTACK_WITH_MACE\": null (no lock kind/required), and the trace logs neither a serverbound attack packet nor a plugin decision line in any mace row; the server-side denial is only inferable from the ContainerSetContent/SetSlot resync after act (GameplayDenialEffects.report -> updateInventory), unchanged pig Health and the client overlay. Enough to reproduce the verdict, but the excerpt carries no explicit plugin decision."
+    }
+  ]
+}

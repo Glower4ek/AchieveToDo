@@ -1,0 +1,59 @@
+{
+  "group": "action_use_campfire",
+  "reviewer": "R8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "use_campfire: 2 direct sites (NativeActionBindings.java:17, NativeActionSpecs.java:35) + family resolver. SHA-256 recomputed: both equal to E1; 5 configs equal. Opened NativeActionSpecs.java:35 (Spec USE_CAMPFIRE on CampfireBlock.useItemOn) and NativeActionBindings.java (USE_CAMPFIRE in ABILITIES, GameplayGate check): checks the ability. Thresholds for all 5 configs (83/68/98/137/83). Every row threshold and every 'requires' threshold was re-read from that row's own runtime config TOML (campaignNN/runtime/plugins/AchieveToDo/progression/configs/*.toml): 0 mismatches. E1 chaos thresholds come from campaign16's chaos_20261116.toml and differ from campaign14's (accepted behaviour b); campaign14 rows carry campaign14's values. (campaign14 chaos threshold 274.)"
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS; read all 17 blocks. Locked (c11 pass1/op/offhand_locked, c12, c13, c14, c15, c17): count unchanged, 'data get block ... Items' empty pre and post, 'ATD_CRITERION_SUPPRESSED ITEM_USED_ON_BLOCK', beef kept, client overlay, no leak. Allowed/offhand_allowed: Items [] -> [{Slot:0b,id:minecraft:beef,count:1}], inventory_changed; the 'delicious_hot_schmoes beef' criterion in why.leak is the legitimate effect of an allowed placement (count unchanged), not a lock leak. Creative: beef placed (bypass). Spectator: vanilla DENY, no overlay. All verdicts reproduced.",
+      "rowsRead": [
+        "campaign11 pass1 use_campfire locked",
+        "campaign11 pass1 use_campfire allowed",
+        "campaign12 thresholds-easy use_campfire locked",
+        "campaign12 thresholds-easy use_campfire allowed",
+        "campaign13 thresholds-hard use_campfire locked",
+        "campaign13 thresholds-hard use_campfire allowed",
+        "campaign14 thresholds-chaos use_campfire locked",
+        "campaign14 thresholds-chaos use_campfire allowed",
+        "campaign15 thresholds-custom_vision use_campfire locked",
+        "campaign15 thresholds-custom_vision use_campfire allowed",
+        "campaign17 reload use_campfire locked",
+        "campaign17 reload use_campfire allowed",
+        "campaign11 modes use_campfire creative",
+        "campaign11 modes use_campfire op",
+        "campaign11 modes use_campfire spectator",
+        "campaign11 offhand use_campfire offhand_locked",
+        "campaign11 offhand use_campfire offhand_allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for every contributing runtime (campaign11 normal, 12 easy, 13 hard, 14 chaos, 15 custom_vision, 17 normal/reload) has onlineMode=true, 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game'. Independently grepped each receipts/output.log: UUID line at lines 231/232/231/232/231/231 and join line at 242/243/243/247/242/242; runtime/server.properties line 47 'online-mode=true' in campaign11-17. All row packets carry actor 89c23030-... (the authenticated UUID)."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator and offhand_locked/offhand_allowed (c11) present; thresholds normal/easy/hard/chaos/custom_vision present. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows come only from campaign17 (campaign17 reload use_campfire locked/allowed). MANIFEST.e5Reload = {runtime: campaign17, generationBefore 1, generationAfter 2}. Every ATD_STAGE2A_STATE line in the reload excerpts shows \"generation\": 2 (checked by regex, both pre and post lines of each reload row). Raw campaign17/receipts/output.log line 249 'Reloading!' (vanilla datapack reload) and line 306 'DELTA_SENT ... configGeneration=2'. Each reload verdict equals the pass1 verdict of the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 17/17 rows REPRODUCED with recorded==replayed. MANIFEST runtimes replay.reproducedAll=true for campaign11-17 and each receipts/REPLAY.json read directly says reproducedAll=true (1235/310/310/310/310/44/310 rows). Plugin SHA-256 recomputed on campaignNN/runtime/plugins/achievetodo.jar for campaign11-17: all ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b = brief value. Client mod SHA in every runtime's evidenceHashes = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081 = brief value (jar itself not re-hashed: path outside the certification tree). campaign-results.jsonl recomputed for all 7 runtimes and equal to evidenceHashes.results, e.g. campaign11 e2fdcbee751d9b96...; campaign12 828efdb841a2751d...; campaign13 f0fc08eac291ee65...; campaign14 f1557f033c1e78a4...; campaign15 0a6ec01b28e4a5a5...; campaign17 14036deb3fbf00c3.... Additionally every row of rows.jsonl was matched to exactly one row (same tag/ability/phase/verdict/counts) in its runtime's campaign-results.jsonl."
+    }
+  },
+  "superseded": "Only r5 supersessions apply to this group: the normal/reload rows were replaced by campaign17. Justified: raw campaign11/receipts/output.log lines 88679-88680 show 'Incorrect argument for command / reload confirm<--[HERE]' (the r3 reload was rejected, so the r3 'reload' rows ran at generation 1 and proved nothing), while campaign17 shows a real vanilla 'Reloading!' (line 249) and configGeneration=2 thereafter; verdicts unchanged (PASS->PASS). The r4 chest-room supplement (campaign16) contributed no rows to this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/action_use_campfire/excerpts.txt every ATD_STAGE2A_STATE line (ability USE_CAMPFIRE: null); raw campaign11/receipts/output.log line 4068 has no USE_CAMPFIRE key in 'abilities'",
+      "description": "The state probe does not cover USE_CAMPFIRE: every STATE line reports it as null, so the server's own lock state and 'required' threshold are never shown for this ability. The lock is inferred from count = threshold-1 against the config TOML (re-checked) and from behaviour; the plugin's loaded threshold is only bracketed indirectly (denied at t-1, allowed at t)."
+    }
+  ]
+}

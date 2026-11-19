@@ -1,0 +1,63 @@
+{
+  "group": "menu_open_cartography_table",
+  "reviewer": "R6",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability DIRECT: BukkitRestrictionResolver.java:107 (returns OPEN_CARTOGRAPHY_TABLE for InventoryType.CARTOGRAPHY), GameplayMenuAbilities.java:26 (CARTOGRAPHY -> OPEN_CARTOGRAPHY_TABLE), NativeLandmarkActions.java:146 (CartographyTableBlock.useWithoutItem -> OPEN_CARTOGRAPHY_TABLE); family findBlockAbility; definition Progressions.java. SHA-256 recomputed: f5d7d99b..., 813236fd..., eb87a78e... equal E1; Progressions 00f2cf74... (no E1 hash, git blob = repoHead). Thresholds normal 299, easy 232, hard 366, chaos 538 (c16 config), custom_vision 299."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows all PASS; 6 proving locked rows. Read all 15 excerpts (scripted scan + full read of c11 and c13): locked/op count unchanged, kind=LOCKED, no OpenScreen packet, overlay 'You can't use a cartography table.'; allowed rows kind=UNLOCKED with INVENTORY_OPEN_TYPE_CARTOGRAPHY + ClientboundOpenScreenPacket; creative/spectator open without overlay. All verdicts reproduced.",
+      "rowsRead": [
+        "campaign11 pass1 open_cartography_table locked",
+        "campaign11 pass1 open_cartography_table allowed",
+        "campaign11 modes open_cartography_table creative",
+        "campaign11 modes open_cartography_table op",
+        "campaign11 modes open_cartography_table spectator",
+        "campaign12 thresholds-easy open_cartography_table locked",
+        "campaign12 thresholds-easy open_cartography_table allowed",
+        "campaign13 thresholds-hard open_cartography_table locked",
+        "campaign13 thresholds-hard open_cartography_table allowed",
+        "campaign14 thresholds-chaos open_cartography_table locked",
+        "campaign14 thresholds-chaos open_cartography_table allowed",
+        "campaign15 thresholds-custom_vision open_cartography_table locked",
+        "campaign15 thresholds-custom_vision open_cartography_table allowed",
+        "campaign17 reload open_cartography_table locked",
+        "campaign17 reload open_cartography_table allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11-17 (7 runtimes: normal c11, easy c12, hard c13, chaos c14, custom_vision c15, chaos-r4 c16, normal-reload c17) all onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a', joinedLine 'Glower4ek joined the game', configResolved line matches the config. Every campaign that contributed rows to this group is among them."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "tag modes rows exist: creative, op, spectator for every ability (creative/spectator expect bypass: effect observed, no overlay; op expects denial). Threshold rows exist for normal (pass1 c11, reload c17), easy (c12), hard (c13), chaos (c14) and custom_vision (c15). No offhand rows: block menu opened with an empty hand, no off-hand route. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows, all from campaign17 (tag reload); MANIFEST.e5Reload runtime=campaign17, generationBefore=1, generationAfter=2. Every ATD_STAGE2A_STATE line in the reload sections of excerpts.txt has \"generation\": 2 (scripted check, 0 exceptions). Raw campaign17 output.log: line 249 'Reloading!', line 255 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml', command-journal line 1 command 'reload'. Each reload verdict equals the ability's pass1 verdict (PASS/PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15 rows, all REPRODUCED; every runtime replay reproducedAll=true with problems=[] (c11 1235, c12-c15 and c17 310, c16 44 REPRODUCED). plugin.perRuntime c11-c17 all ad0685eda3cb...c9d80b = brief value; recomputed sha256 of runtime/plugins/achievetodo.jar of all 7 runtimes matches. clientMod sha256 46a0601e...55081 = brief value. Recomputed SHA-256 of campaign-results.jsonl of all 7 runtimes and compared with evidenceHashes.results: all equal (e.g. c17 14036deb3fbf00c3..., c13 f0fc08eac291ee65...); REPLAY.json of all 7 also equal; c17 output.log (20 MB) equal. Every package row was also matched to the raw campaignNN/receipts/campaign-results.jsonl entry (same verdict, counts, logLines): 15/15 found, 0 differences."
+    }
+  },
+  "superseded": "Reload rows: r3 rows (campaign11 tag reload) are superseded by r5 (campaign17). Justified: campaign11 output.log lines 88679-88680 show 'Incorrect argument for command / reload confirm<--[HERE]', and the r3 reload rows still ran at generation 1 (e.g. campaign11 output.log 91509-91516: \"generation\":1); campaign17 performed a real 'reload' (output.log 249/255, generation=2). Supersession did not change any verdict in this group (was PASS, now PASS).",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt section 'campaign13 thresholds-hard open_cartography_table locked': ATD_EVENT ... cancelled=false blockResult=ALLOW",
+      "description": "In locked/op rows the plugin decision lines read cancelled=false / useBlock=ALLOW (the Bukkit event is not cancelled; the denial is done by the native guard and is not logged server-side). The denial is only inferable from the absent ClientboundOpenScreenPacket/INVENTORY_OPEN_TYPE line plus the client overlay recorded in the driver journal, not from an explicit DENY line. Verdicts are still reproducible."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "E1.json thresholds.chaos_20261116 vs rows campaign14 thresholds-chaos; campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml (sha256 5fcf0a51...)",
+      "description": "E1 lists the CHAOS threshold of open_cartography_table from campaign16's chaos config (538), but this group's chaos rows ran on campaign14 whose config of the same name gives 181 (verified in the campaign14 toml). Accepted behaviour (b), but E1 does not document the thresholds actually tested and does not hash the campaign14 config."
+    }
+  ]
+}

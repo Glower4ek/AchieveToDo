@@ -1,0 +1,192 @@
+{
+  "schema": 1,
+  "reviewer": "independent agent /root/independent_preflight",
+  "observedAtUtc": "2026-10-29T15:08:20.738356+00:00",
+  "scope": "Independent frozen v4 original-source code/security/parity review and independently executed enabled admission-contract test",
+  "verdict": "CODE_REVIEW_PASS_WITH_RUNTIME_CERTIFICATION_REQUIRED",
+  "sourceDelta": {
+    "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Completion\\run_20261029_194730_9a6c8cbb\\CANDIDATE_DELTA_v4.json",
+    "sha256": "804b8f95d07223f32d988c3129d37f2bab4e5b30858c7f7697852b0432cb3ca4",
+    "bytes": 12043
+  },
+  "sourceBindings": [
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/core/AchieveToDoPlugin.java",
+      "expectedSHA256": "527d093723f25705e62dbf5eb66c27287d3c8f1ff26b2aa49f431c6e1416b54c",
+      "observedSHA256": "527d093723f25705e62dbf5eb66c27287d3c8f1ff26b2aa49f431c6e1416b54c",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/bridge/BukkitBridgeRuntime.java",
+      "expectedSHA256": "a917d80e29645e06ee14e30a87dd30c33c8bf64e2a779ee13b2d98df43258319",
+      "observedSHA256": "a917d80e29645e06ee14e30a87dd30c33c8bf64e2a779ee13b2d98df43258319",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitGameplayRuntime.java",
+      "expectedSHA256": "267129d5cdfcb362c99be3aeb68cfc0507a903ea3a2e812ef4ed02b4a4a8e83b",
+      "observedSHA256": "267129d5cdfcb362c99be3aeb68cfc0507a903ea3a2e812ef4ed02b4a4a8e83b",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/core/ProductGameplayAdmission.java",
+      "expectedSHA256": "28e47c2158b246d2e201a096050e41ba9c959d898273fdff548210d0e8ceec98",
+      "observedSHA256": "28e47c2158b246d2e201a096050e41ba9c959d898273fdff548210d0e8ceec98",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/test/java/com/diskree/achievetodo/core/ProductGameplayAdmissionTest.java",
+      "expectedSHA256": "9e3803a1bff591dfb60baf06fcbc30d01f4c202c228f1fdc37d4a5d6c98e963a",
+      "observedSHA256": "9e3803a1bff591dfb60baf06fcbc30d01f4c202c228f1fdc37d4a5d6c98e963a",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/build.gradle.kts",
+      "expectedSHA256": "102dc22b0e01651fcaf918f18e489df0ceb1341042fa4475afd78664c3e6130e",
+      "observedSHA256": "102dc22b0e01651fcaf918f18e489df0ceb1341042fa4475afd78664c3e6130e",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java",
+      "expectedSHA256": "153e42de017f425a78e6ca33956c41fdc39941c3e5176c996c527206dab538f5",
+      "observedSHA256": "153e42de017f425a78e6ca33956c41fdc39941c3e5176c996c527206dab538f5",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeActionAgent.java",
+      "expectedSHA256": "0bbe9fd82df9930193dc7cf0bdf9902299e20c218ad02ea24e4ea8ccad5385c4",
+      "observedSHA256": "0bbe9fd82df9930193dc7cf0bdf9902299e20c218ad02ea24e4ea8ccad5385c4",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeToolAgent.java",
+      "expectedSHA256": "b77679e7b628aa473d6af74d156d73b35afffa9d202b21cc4dbd350e29297f40",
+      "observedSHA256": "b77679e7b628aa473d6af74d156d73b35afffa9d202b21cc4dbd350e29297f40",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeComplexAgent.java",
+      "expectedSHA256": "68025483c1bb0fd9b12fbdde07eccf7c6c08d17d0c59c0538c883a6686ddb4a4",
+      "observedSHA256": "68025483c1bb0fd9b12fbdde07eccf7c6c08d17d0c59c0538c883a6686ddb4a4",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativePortalAgent.java",
+      "expectedSHA256": "443910c90862206e37ffda108763fa4c20c0832436c16e4a4b5dc91e609d1181",
+      "observedSHA256": "443910c90862206e37ffda108763fa4c20c0832436c16e4a4b5dc91e609d1181",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeMovementAgent.java",
+      "expectedSHA256": "dbfaa0850133bc0e3e9f6f78b35e3ee8f4798e413917ed89bc3f5099e42ec07d",
+      "observedSHA256": "dbfaa0850133bc0e3e9f6f78b35e3ee8f4798e413917ed89bc3f5099e42ec07d",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkAgent.java",
+      "expectedSHA256": "68d506392ad28ffa87526e9e15cfa40cb4dd1d6f595855121f415f724f78630e",
+      "observedSHA256": "68d506392ad28ffa87526e9e15cfa40cb4dd1d6f595855121f415f724f78630e",
+      "matches": true
+    },
+    {
+      "path": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkSupplementAgent.java",
+      "expectedSHA256": "7ba8c7bd258e1b4911052fe22a5a4d03571c4c1e9d6322849b85ec52ad886e59",
+      "observedSHA256": "7ba8c7bd258e1b4911052fe22a5a4d03571c4c1e9d6322849b85ec52ad886e59",
+      "matches": true
+    }
+  ],
+  "compiledClasses": [
+    {
+      "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Completion\\run_20261029_194730_9a6c8cbb\\candidate\\port\\AchieveToDo-Purpur-26.2\\build\\classes\\java\\main\\com\\diskree\\achievetodo\\core\\ProductGameplayAdmission$1.class",
+      "sha256": "8854abaebe3d5e2460b5f7b4963375759393d8482d98c94fe294006534f2f1bd",
+      "bytes": 994
+    },
+    {
+      "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Completion\\run_20261029_194730_9a6c8cbb\\candidate\\port\\AchieveToDo-Purpur-26.2\\build\\classes\\java\\main\\com\\diskree\\achievetodo\\core\\ProductGameplayAdmission$Bound.class",
+      "sha256": "1a0092d5cd2a054bf4b7b961b67ea8fc905edd4fa4554272c7e13c8bfd7c5006",
+      "bytes": 1980
+    },
+    {
+      "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Completion\\run_20261029_194730_9a6c8cbb\\candidate\\port\\AchieveToDo-Purpur-26.2\\build\\classes\\java\\main\\com\\diskree\\achievetodo\\core\\ProductGameplayAdmission$Mode.class",
+      "sha256": "ff04e81fccff56923d0e2c26a1f88f378e76ec1c68483f75f3555336ad23a475",
+      "bytes": 1455
+    },
+    {
+      "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Completion\\run_20261029_194730_9a6c8cbb\\candidate\\port\\AchieveToDo-Purpur-26.2\\build\\classes\\java\\main\\com\\diskree\\achievetodo\\core\\ProductGameplayAdmission.class",
+      "sha256": "d652444144da8056d3325b73da138bb235ee9ef1e7a6dc49dcbf6b0e19776f21",
+      "bytes": 15352
+    },
+    {
+      "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Completion\\run_20261029_194730_9a6c8cbb\\candidate\\port\\AchieveToDo-Purpur-26.2\\build\\classes\\java\\test\\com\\diskree\\achievetodo\\core\\ProductGameplayAdmissionTest.class",
+      "sha256": "4f93fa461848147c2cf78454aa4e20faa451dded2d12c695c98064294eb8aaa5",
+      "bytes": 12144
+    }
+  ],
+  "packagedArtifactsObserved": [
+    {
+      "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Completion\\run_20261029_194730_9a6c8cbb\\candidate\\port\\AchieveToDo-Purpur-26.2\\build\\libs\\AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar",
+      "sha256": "50dd1e01deaee6c69f6782d1012b2590a9908ca66cd33907e9a3521eec83d723",
+      "bytes": 850445
+    }
+  ],
+  "resolvedFindings": {
+    "V1-R1": "Transport identity/listener/channel/ticker checks included in live plugin operational predicate without recursive supplier.",
+    "V1-R2": "All accepted artifact/capsule bindings rehashed under shared max250ms lease; force refresh at initial configure and configuration/play ADMIT; failures latch closed until restart. Hook/progression checks remain per-poll independent of lease.",
+    "V1-R3_AND_V2-R1": "Raw forward-slash spelling policy with root containment; nested Windows path accepted and traversal/backslash forms rejected by independent JDK25 check and positive nested fixture."
+  },
+  "independentTests": [
+    {
+      "command": "Pinned gradlew.bat --no-daemon --no-watch-fs --project-cache-dir <task purpur-cache> --dependency-verification strict --console=plain --max-workers=2 --init-script <task purpur-local-classpath.init.gradle> productAdmissionTest",
+      "java": "25.0.5.8 Eclipse Adoptium",
+      "exit": 0,
+      "result": "ATD_PRODUCT_ADMISSION_CONTRACT_PASS checks=10074; syntheticUnitFixtures=true; runtimeCertification=SEPARATE",
+      "evidence": {
+        "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Completion\\run_20261029_194730_9a6c8cbb\\INDEPENDENT_V4_ADMISSION_TEST.log",
+        "sha256": "4a78fab34a88e59e3a8497090d5e1d9f07a3f9c35f0c1da0187f5ae531df2dbe",
+        "bytes": 901
+      },
+      "scope": "Fresh execution of enabled JavaExec task against current compiled v4 classes; compilation UP-TO-DATE; this is no independent cold build."
+    },
+    {
+      "result": "Nested evidence/proof.json accepted; ../proof.json, evidence/../proof.json and backslash spelling rejected",
+      "evidence": {
+        "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Completion\\run_20261029_194730_9a6c8cbb\\INDEPENDENT_V4_WINDOWS_PATH_GREEN.log",
+        "sha256": "6841be015cf1ce233248950c586e3bd58d9e41c5f46e20cdbcd3a2289d02c731",
+        "bytes": 156
+      },
+      "scope": "Actual Windows JDK25 Path behavior; no Minecraft runtime claim"
+    }
+  ],
+  "authorBuildInspected": [
+    {
+      "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Completion\\run_20261029_194730_9a6c8cbb\\candidate-v4\\execution.json",
+      "sha256": "40364802d0ee10ea58e16d7c8e655286727094ca86f4bb90356669d7a5f5140f",
+      "bytes": 1717
+    },
+    {
+      "path": "E:\\Vibecode\\ATD_Purpur_Gameplay_Completion\\run_20261029_194730_9a6c8cbb\\candidate-v4\\output.log",
+      "sha256": "961e3f269ab09383f1013f8eb0a84113b1fa9b27f25b5e5a8e5cacc5cb9810a8",
+      "bytes": 14019
+    }
+  ],
+  "reviewedControls": [
+    "External trusted deployment pin is never auto-derived; exact artifact/source/evidence/acceptance bindings retained; no certificate issued by code.",
+    "Certificate/evidence/acceptance DAG excludes self-reference and duplicate/cyclic entries; exact required prerequisite sets and exact PASS string required.",
+    "Recursive duplicate-key rejection, strict UTF8/string types and numeric schema version.",
+    "Certification mode cannot report productReady=true; product mode refuses spike selector; default diagnostic path unchanged.",
+    "Exact authoritative composition skips legacy approximate landmark/adapters. Existing 153 IDs, thresholds and canonical gameplay implementation remain unchanged.",
+    "Native transforms and pins unchanged; added installed methods only inspect owners/callbacks/transformed set/failures.",
+    "Watchdog exception boundary fails transport health closed and attempts session disconnect/shutdown.",
+    "Shared integrity lease caps aggregate periodic validation frequency independent of player count; file32MiB/total32MiB/256-file caps present."
+  ],
+  "limitationsAndRequiredRuntimeProof": [
+    "No real two-client/native runtime, natural advancement, reload/restart or persistence accepted by this receipt.",
+    "No final source successor authority/certificate or primary integration accepted. Actual independent acceptance must inspect final source/artifacts and runtime evidence; distinct author/reviewer strings are not authenticated identities.",
+    "Integrity lease detects file changes on next check after at most250ms lease plus validation/scheduling latency. Representative max-capsule heartbeat latency and forced-admission cost remain runtime/performance acceptance requirements.",
+    "Resource caps are checked per file before read and total after binding inventory; trusted deployment capsule must remain bounded. Future hardening could reject entry-count/aggregate bytes earlier, but no remote-client certificate input or false-ready bypass identified in accepted code.",
+    "This review does not elevate historical S4M/S4N proof to current integrated product certification."
+  ],
+  "PRODUCT_GAMEPLAY_READY": false,
+  "primaryIntegrationAccepted": false,
+  "finalGameplayAcceptance": false
+}

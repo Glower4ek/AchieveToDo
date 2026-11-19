@@ -1,0 +1,81 @@
+{
+  "group": "client_local_vision",
+  "reviewer": "R9",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (vision). E1 is regenerated at repoHead 5da53e08 (git rev-parse HEAD in E:\\Vibecode\\AchieveToDo\\repo matches). I recomputed SHA-256 for every cited file and all match E1. GameRendererMixin.java (Fabric client source) = b808698d...7e6a. BridgeWire.java = 4242e4cd...f412. GameplayGate.java = 4ddeec26...4f95. BukkitRestrictionResolver.java has no hash in E1; I computed f5d7d99b...c84e (inactive site). I opened the enforcement sites. src/main/java/.../injection/mixin/client/GameRendererMixin.java:38 is `if (AchieveToDoClient.isAbilityLocked(AbilityType.VISION))`, which sets blackOverlayAlpha=1 and installs VisionOverlay (lines 47-51), so this is the real VISION check. I followed the chain on the Purpur backend. AchieveToDoClient.java:281-298 uses isPurpurPredictionSuppressed(VISION); VISION is in PURPUR_PREDICTION_SUPPRESSED (line 52). It then reads BridgePresentation.locked(abilityType) and exempts creative and spectator. BridgeWire.java:95-100 serialises threshold and unlocked per ability to the client. The unlocked value itself is computed at bridge/BridgeProgressionAdapter.java:14 (resolved.getAbilityState(ability).isUnlocked()), which is not cited (minor). The client jar in use, 46a0601e...55081 (hash recomputed), contains GameRendererMixin.class, GameRendererMixin$VisionOverlay.class and AchieveToDoClient.class. The certified composition is CERTIFICATION. AchieveToDoPlugin.onEnable:33-61 takes the productAdmission branch and starts only bridge, progression and gameplay-s4a, never BukkitRestrictionRuntime. All 8 runtime logs (c11-c18) show 'ATD_GAMEPLAY_MODE=CERTIFICATION' (output.log line 219/220), and campaign18/runtime_args.json has -Dachievetodo.gameplay.mode=certification. So the inactive marking of the legacy resolver is correct. Thresholds in E1 are normal 0, easy 0, hard 2, custom_vision 5, chaos@c14 0, chaos@c16 0. They equal the raw toml files: c11 normal.toml de638359, c12 easy c145bfe2, c13 hard 9d7b711b, c14 chaos 5fcf0a51, c15 custom_vision db26c1f6, c16 chaos e55204bd. The per-runtime chaos split now matches accepted behaviour (b)."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, unchanged since round 1. Verdicts: 10 PASS and 5 NA_NO_LOCKED_STATE. I read every excerpt block (excerpts.txt) and every client state in rows.jsonl. campaign13 hard locked (score 1, threshold 2): STATE count 1 to 1, 20 'ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=vision' lines, and every client state has guiOverlay GameRenderer$VisionOverlay with overlay \"You can't see the world. Advancements left to unlock: 1\". The oracle clear:guiOverlay=VisionOverlay is false, so the verdict PASS is reproducible. campaign13 allowed (score 2 = threshold): count 2 to 2, no denial intents, no VisionOverlay. campaign15 custom_vision locked (4 of 5) and allowed (5 of 5) show the same pattern (excerpts.txt:67ff). The other PASS rows run at threshold 0 and show no overlay. The 5 NA rows (c11 pass1 locked, c11 op, c12 easy locked, c14 chaos locked, c17 reload locked) all have a real threshold of 0 in that runtime's raw config.",
+      "rowsRead": [
+        "campaign13 thresholds-hard vision locked",
+        "campaign13 thresholds-hard vision allowed",
+        "campaign15 thresholds-custom_vision vision locked",
+        "campaign15 thresholds-custom_vision vision allowed",
+        "campaign11 pass1 vision allowed",
+        "campaign11 modes vision creative",
+        "campaign11 modes vision spectator",
+        "campaign12 thresholds-easy vision allowed",
+        "campaign14 thresholds-chaos vision allowed",
+        "campaign17 reload vision allowed",
+        "campaign11 pass1 vision locked (NA)",
+        "campaign11 modes vision op (NA)",
+        "campaign12 thresholds-easy vision locked (NA)",
+        "campaign14 thresholds-chaos vision locked (NA)",
+        "campaign17 reload vision locked (NA)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Every runtime in MANIFEST.runtimes (c11-c18) has onlineMode=true, 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game'. online-mode=true in each campaign1N/runtime/server.properties. The output.log of each runtime hashes to the recorded evidenceHash, which binds these lines."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows exist: creative PASS, spectator PASS, op NA (NORMAL threshold 0). Threshold rows exist for normal, easy, hard, chaos and custom_vision. vision has no off-hand route, so there are no offhand rows. Every NA comes from a real threshold of 0. Residual gap: the modes rows only run at threshold 0 (minor, carried over)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Both reload rows come from campaign17. MANIFEST.e5Reload.evidence.generationAfter=2. The reload allowed row's STATE lines show \"generation\": 2; there are 2 generation-2 lines in excerpts.txt, all inside the c17 reload block. campaign17/receipts/output.log:249 has 'Reloading!' and :255 has 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml'. Reload verdicts equal pass1: locked NA = NA, allowed PASS = PASS. Under NORMAL the reload only shows that rendering stays normal after the reload."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15/15 REPRODUCED, recorded==replayed. Every runtime's replay has reproducedAll=true and problems=[] (c11 1235, c12-c15 310, c16 44, c17 310, c18 104). I recomputed SHA-256 of output.log, command-journal, driver-journal, campaign-results.jsonl, REPLAY.json, plugin, server, trace-agent and input-driver for all 8 runtimes, and all equal evidenceHashes. Plugin ad0685ed...c9d80b is identical in every runtime; I recomputed each campaign1N/runtime/plugins/achievetodo.jar. The client mod at the MANIFEST path (now correct Cyrillic, opens as written) = 46a0601e...55081. The recorded campaign.py/campaign_cases.py hashes differ from the current files, but they chain exactly to the kept backups. c11-c15 recorded e82d1612 = campaign.py.pre-r4 = HARNESS_R3, and d0638122 = campaign_cases.py.pre-r6 = HARNESS_R3/R4. c16-c17 recorded 5ddb0112 = HARNESS_R4. c18 recorded 6d18b050 = current campaign_cases.py = HARNESS_R6."
+    }
+  },
+  "superseded": "The only superseded entries are the 2 campaign11 tag=reload rows, replaced by campaign17 (r5); was and now are the same (NA, PASS). Justified. campaign11/receipts/output.log:88680 shows 'reload confirm<--[HERE]', so the c11 reload was rejected and never ran under a reloaded config. campaign17 performs a real reload (output.log:249-255), and its rows carry generation 2. r4 (campaign16 chest-room fix) contributes no rows to this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review/client_local_vision/E1.json directSites[0]; port/.../gameplay/GameplayGate.java:10",
+      "description": "GameplayGate.java:10 is still listed as an active direct site (specs=[]), but it only adds VISION to the CLIENT_DEPENDENT set; it checks nothing. The real check is the cited GameRendererMixin.java:38."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "port/.../bridge/BridgeProgressionAdapter.java:14 versus E1 enforcementSites BridgeWire.java:95-100",
+      "description": "The cited bridge site only serialises the flags. The server-side decision 'unlocked' for VISION is computed at BridgeProgressionAdapter.java:14, which E1 does not cite. Also, nothing in E1 binds the Fabric source hash (GameRendererMixin b808698d) to the client jar 46a0601e. I confirmed only that the jar contains the class."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "review/client_local_vision/rows.jsonl campaign11 modes rows",
+      "description": "Carried over from round 1. creative, spectator and op run only in NORMAL at threshold 0, so a locked vision under these modes is never runtime-tested. AchieveToDoClient.java:289 exempts creative and spectator in source."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "rows.jsonl notes field; campaign_cases.py vision case",
+      "description": "Carried over from round 1. The case note still says 'NORMAL/EASY/HARD threshold 0', but HARD has vision=2 and is tested as locked."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/client_local_vision/excerpts.txt, every ATD_STAGE2A_STATE line",
+      "description": "Carried over from round 1. The probe reports \"VISION\": null. Locked status follows from count < raw threshold, the client VisionOverlay and the server DENIAL_INTENT_DISCOVERED lines."
+    }
+  ]
+}

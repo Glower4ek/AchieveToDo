@@ -1,0 +1,38 @@
+{
+  "parent": "achievetodo:abilities/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:cobbled_deepslate",
+      "count": 1
+    },
+    "title": {
+      "translate": "achievetodo.ability.break_blocks_in_negative_y.name"
+    },
+    "description": {
+      "translate": "achievetodo.ability.break_blocks_in_negative_y.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "rewards": {
+    "function": "achievetodo:abilities/break_blocks_in_negative_y"
+  },
+  "criteria": {
+    "demystified": {
+      "trigger": "minecraft:impossible"
+    },
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "demystified"
+    ],
+    [
+      "unlocked"
+    ]
+  ]
+}

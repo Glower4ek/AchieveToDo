@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "authority": "ATD_PURPUR_GAMEPLAY_SOURCE_V1",
+  "state": "AUTHORIZED_BOUNDED_SOURCE_FOR_CERTIFICATION_ONLY",
+  "oldGateA": "3f04f19ba716eaa9cb8515ef45564bf4b23417005262070b5517d42ebdc59072",
+  "oldOwnerB": "39116d736a8c352aca6a05453474f0fae965cc300a075fdabdbf266523a3f9f9",
+  "oldUI07": "57e44e6d13df96fb427c4509576fbcb87061eeef377d47d50d070016acdafe2e",
+  "changes": {
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/core/AchieveToDoPlugin.java": {
+      "beforeSHA256": "ba7d8e075f18234dd2a95b3bf272567cea3be8747298f7e5ee414d7660409f3c",
+      "afterSHA256": "527d093723f25705e62dbf5eb66c27287d3c8f1ff26b2aa49f431c6e1416b54c"
+    },
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/bridge/BukkitBridgeRuntime.java": {
+      "beforeSHA256": "8a325a9f5670568ed402eb34924ec1299f6583e75a1b9169b7b91e33f02e31c8",
+      "afterSHA256": "a917d80e29645e06ee14e30a87dd30c33c8bf64e2a779ee13b2d98df43258319"
+    },
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitGameplayRuntime.java": {
+      "beforeSHA256": "f59a1ad7075328e9fd19bb6f8bbacb1f0c76c83dcd358ad64fcc7796715505ba",
+      "afterSHA256": "267129d5cdfcb362c99be3aeb68cfc0507a903ea3a2e812ef4ed02b4a4a8e83b"
+    },
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/core/ProductGameplayAdmission.java": {
+      "beforeSHA256": null,
+      "afterSHA256": "28e47c2158b246d2e201a096050e41ba9c959d898273fdff548210d0e8ceec98"
+    },
+    "port/AchieveToDo-Purpur-26.2/src/test/java/com/diskree/achievetodo/core/ProductGameplayAdmissionTest.java": {
+      "beforeSHA256": null,
+      "afterSHA256": "9e3803a1bff591dfb60baf06fcbc30d01f4c202c228f1fdc37d4a5d6c98e963a"
+    },
+    "port/AchieveToDo-Purpur-26.2/build.gradle.kts": {
+      "beforeSHA256": "3c846c5fcafe6ca27ccf0db470be5b5e2d214fd54dbc90dd1cf159ab79df58e4",
+      "afterSHA256": "102dc22b0e01651fcaf918f18e489df0ceb1341042fa4475afd78664c3e6130e"
+    },
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java": {
+      "beforeSHA256": "48c17013e672f9cb134d9784d01597b2fcb4b82e347e5ac4ae406ab7bd6cc9f1",
+      "afterSHA256": "153e42de017f425a78e6ca33956c41fdc39941c3e5176c996c527206dab538f5"
+    },
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeActionAgent.java": {
+      "beforeSHA256": "06c930c91097e4025b293d61d38f7398cb491b2a039e2b8d031448d2df3600dc",
+      "afterSHA256": "0bbe9fd82df9930193dc7cf0bdf9902299e20c218ad02ea24e4ea8ccad5385c4"
+    },
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeToolAgent.java": {
+      "beforeSHA256": "322b3ea7232d77e6ea9c6e259638653fdd3728a08c50636cb0478bba8954aade",
+      "afterSHA256": "b77679e7b628aa473d6af74d156d73b35afffa9d202b21cc4dbd350e29297f40"
+    },
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeComplexAgent.java": {
+      "beforeSHA256": "bee7ea8b515bca740d240c52e4bc42ee568a84999efb84ea51560fe0006c7be5",
+      "afterSHA256": "68025483c1bb0fd9b12fbdde07eccf7c6c08d17d0c59c0538c883a6686ddb4a4"
+    },
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativePortalAgent.java": {
+      "beforeSHA256": "967683f9fe1c4007de5169d8b4230326c5c408fffabb158cfbb19243709df86d",
+      "afterSHA256": "443910c90862206e37ffda108763fa4c20c0832436c16e4a4b5dc91e609d1181"
+    },
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeMovementAgent.java": {
+      "beforeSHA256": "5df95f9564c141ab967f2aab0f0a1e4af3e6c1a371bb3d6848ae06497b8e6b5c",
+      "afterSHA256": "dbfaa0850133bc0e3e9f6f78b35e3ee8f4798e413917ed89bc3f5099e42ec07d"
+    },
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkAgent.java": {
+      "beforeSHA256": "70643eac088047ca5354a1d5aa8a2e22f6dead49f2334d31923ac0793b07a95e",
+      "afterSHA256": "68d506392ad28ffa87526e9e15cfa40cb4dd1d6f595855121f415f724f78630e"
+    },
+    "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkSupplementAgent.java": {
+      "beforeSHA256": "bf8570ab4f0ef2d5a3d379d220dfbf0fe2536fd062ff445f36e1ade3e12fff04",
+      "afterSHA256": "7ba8c7bd258e1b4911052fe22a5a4d03571c4c1e9d6322849b85ec52ad886e59"
+    }
+  },
+  "codeBindings": {
+    "tools/build/gameplay_successor.py": "445526a538fd9d620c884b7fd11b47d66946a2b703cff05462275435cf8f3a00",
+    "tools/build/tests/test_gameplay_successor.py": "38c14adfa9063ae4d24eb4d349d22d539e910ce8806e31da86277ccceca3734d",
+    "src/test/java/com/diskree/achievetodo/certification/GameplaySuccessorAuthorityTest.java": "130995088b0df88970515f65661401dc2b42e1512c058a3076155822e34c5fc5",
+    "tools/certification/authority/gameplay-owner-scope-v1.json": "f02d45c639ce1996aa992319b4d2b17295e89f1fdc5afc3cba75e41c2081edb2",
+    "tools/certification/authority/gameplay-independent-code-review-v4.json": "ec241166535d9dc0ae783757010834bebe9c04268efb3d1e6c531600ff04706a"
+  },
+  "ownerScope": {
+    "path": "tools/certification/authority/gameplay-owner-scope-v1.json",
+    "sha256": "f02d45c639ce1996aa992319b4d2b17295e89f1fdc5afc3cba75e41c2081edb2"
+  },
+  "independentReview": {
+    "path": "tools/certification/authority/gameplay-independent-code-review-v4.json",
+    "sha256": "ec241166535d9dc0ae783757010834bebe9c04268efb3d1e6c531600ff04706a"
+  }
+}

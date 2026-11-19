@@ -1,0 +1,59 @@
+{
+  "group": "menu_open_loom",
+  "reviewer": "R2",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (open_loom). I recomputed SHA-256: BukkitRestrictionResolver.java f5d7d99b... OK, GameplayMenuAbilities.java 813236fd... OK, NativeLandmarkActions.java eb87a78e70ea370b... OK. Guard sites: BukkitRestrictionResolver.java:104 maps LOOM to OPEN_LOOM. GameplayMenuAbilities.java:29 maps LOOM to OPEN_LOOM. NativeLandmarkActions.java:147 is the native useWithoutItem guard and maps LoomBlock to OPEN_LOOM; this is the site that actually fires. Thresholds: normal 239, easy 184, hard 294, chaos 719, custom_vision 239, all equal to the raw configs. I recomputed row thresholds from each runtime's raw config (campaign1N/runtime/plugins/AchieveToDo/progression/configs/*.toml) and all of them match. The E1 chaos value comes from campaign16's chaos_20261116.toml (e55204bd...). The chaos rows of this group come from campaign14, whose same-named file has a different hash (5fcf0a51...) and different values. Each row carries its own threshold, so this matches accepted behaviour (b)."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "I read all 15 excerpts (all PASS). Locked rows c11, c12, c13, c14, c15 and c17 show count unchanged (238/183/293/96/238/238) and state kind LOCKED. There is no INVENTORY_OPEN boundary and no ClientboundOpenScreenPacket, because the native guard stops the menu before it is created. The client overlay shows \"You can't use a loom\" and the screen stays 'none'. Allowed rows show kind UNLOCKED, INVENTORY_OPEN_MONITOR_CANCELLED false, OpenScreenPacket and screen open. I compared c11 locked (output.log 1731-1741) with the raw log and it is faithful. op is denied. Creative and spectator open the menu with no product overlay.",
+      "rowsRead": [
+        "campaign11 pass1 open_loom locked",
+        "campaign11 pass1 open_loom allowed",
+        "campaign11 modes open_loom creative",
+        "campaign11 modes open_loom op",
+        "campaign11 modes open_loom spectator",
+        "campaign12 thresholds-easy open_loom locked",
+        "campaign13 thresholds-hard open_loom locked",
+        "campaign14 thresholds-chaos open_loom locked",
+        "campaign15 thresholds-custom_vision open_loom locked",
+        "campaign17 reload open_loom locked",
+        "campaign17 reload open_loom allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Every runtime in MANIFEST.runtimes (campaign11-17) has onlineMode=true, an authenticated line 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and a 'Glower4ek joined the game' line. Cross-checked against raw files: online-mode=true in campaign1N/runtime/server.properties for all 7 runtimes, and the UUID and join lines are present in each campaign1N/receipts/output.log."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "Rows exist for modes creative, op and spectator, and for thresholds normal, easy, hard, chaos and custom_vision. There are no offhand rows because a menu open has no off-hand route. There are no NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "All reload rows (2) come from campaign17. MANIFEST.e5Reload.evidence.generationAfter=2 (generationBefore=1, at 2026-11-19T12:06:53Z, which matches the 17:06:48-50 local reload lines in campaign17 output.log). Every reload row's ATD_STAGE2A_STATE lines in excerpts.txt show \"generation\": 2, and every non-reload row shows generation 1. Each reload verdict equals the pass1 verdict for the same ability and phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15/15 rows are REPRODUCED, recorded==replayed for each one, and the multiset (campaign,tag,ability,phase,verdict) matches rows.jsonl exactly. Each runtime's replay has reproducedAll=true with problems=[] (c11 1235, c12-c15 310, c16 44, c17 310). I re-read each runtime's REPLAY.json to confirm this. Plugin SHA-256 ad0685ed...c9d80b is the same in all 7 runtimes (MANIFEST.plugin.perRuntime). I recomputed it for each campaign1N/runtime/plugins/achievetodo.jar and for build/libs/AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar, and it matches. I recomputed the client mod (the real Cyrillic-path ...\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar) = 46a0601e...55081, which matches. I recomputed SHA-256 of campaign-results.jsonl and REPLAY.json for all 7 runtimes and every value equals evidenceHashes (for example c17 results 14036deb3fbf00c3..., c11 e2fdcbee751d9b96...). Package completeness: every package row exists with the same verdict in the raw campaign-results.jsonl. The only raw rows of this group missing from the package are the campaign11 'reload' rows, which are superseded."
+    }
+  },
+  "superseded": "Superseded entries are the campaign11 tag=reload rows of this group only, all 'by campaign17' (r5). This group has no r4 landmark rows. The r5 replacement is justified. In campaign11/receipts/output.log:88679-88680 the server rejected the reload ('Incorrect argument for command' / 'reload confirm<--[HERE]'), so those c11 'reload' rows never ran under a reloaded config. In campaign17/receipts/output.log:247-255 a real datapack reload happens ('Reloading!', 'Loaded 3048 advancements', 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml'), and the replacement rows' STATE lines show generation 2. The r4 chest-room fixture fix (campaign16) contributes no rows to this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/menu_open_loom/excerpts.txt, campaign11 pass1 open_loom locked (output.log 1731-1741)",
+      "description": "The locked loom rows have no positive server-side decision line. The Bukkit event logs useBlock=ALLOW and cancelled=false, and NativeLandmarkActions logs nothing when it denies. The denial is shown only by the absence of an OpenScreen packet or INVENTORY_OPEN boundary plus the client overlay. The verdict is reproducible, but the evidence is indirect."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "review/menu_open_loom/MANIFEST.json clientMod.path and runtimes.*.evidenceHashes.client-mod.path",
+      "description": "The client-mod path is stored with its Cyrillic folder name mojibake-encoded (UTF-8 bytes read as cp1251), so a third party cannot open it as written. I located the real file and its hash matches. This is a record defect only."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "group": "food_component_start_40",
+  "reviewer": "R1",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "40 eat_* abilities, each DIRECT with a site in NativeFoodAbilities.java (lines 12-41; plantable 84-85) plus family resolvers (AbilityResolvers.findFoodAbility via BukkitRestrictionResolver.java:147; findEatFoodAbility identity map). Recomputed SHA-256 NativeFoodAbilities.java e8074812... = E1; all cited site lines contain the ability's enum. Every ability lists thresholds for all 5 configs. Row thresholds of all rows re-checked against each runtime's own config (campaignNN/runtime/plugins/AchieveToDo/progression/configs/*.toml): 0 mismatches; E1 normal/easy/hard/custom_vision thresholds equal the row thresholds; 5 E1 config hashes verified. E1's chaos column comes from campaign16's chaos toml while chaos rows come from campaign14 (different values, accepted behaviour (b)); campaign14 toml values match the rows."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "680 rows: 678 PASS, 1 NA_NO_LOCKED_STATE, 1 PASS_MASKED_BY_DEPENDENCY. Parsed every excerpt block with my own rule: all locked/offhand_locked/op rows (except the masked one) contain 'DENIAL_INTENT_DISCOVERED ability=<tested ability>', no Item.use Success, count and food unchanged; all allowed/offhand_allowed/creative rows show Item.use Success or consume_food and a food/count increase; spectator rows show no denial and no change. Read by hand: campaign11 pass1 eat_salmon locked/allowed; campaign15 eat_salmon locked (MASKED: only 'ability=vision' denials, vision threshold 5 > score 1; eat_salmon lock proven by pass1, easy, hard, chaos and reload rows); campaign14 eat_chorus_fruit allowed (threshold 0, eaten, food 0->4); campaign13 eat_honey locked.",
+      "rowsRead": [
+        "campaign11 pass1 eat_salmon locked",
+        "campaign11 pass1 eat_salmon allowed",
+        "campaign15 thresholds-custom_vision eat_salmon locked (PASS_MASKED_BY_DEPENDENCY)",
+        "campaign14 thresholds-chaos eat_chorus_fruit locked (NA_NO_LOCKED_STATE)",
+        "campaign14 thresholds-chaos eat_chorus_fruit allowed",
+        "campaign13 thresholds-hard eat_honey locked",
+        "all 680 blocks machine-checked (pass1, modes, offhand, thresholds-easy/hard/chaos/custom_vision, reload) across campaign11-15 and 17"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11-17: all onlineMode=true, 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' lines present; independently re-grepped each campaignNN/receipts/output.log (UUID line at line 231/232, one join line) and runtime/server.properties online-mode=true for all 7 runtimes."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "For all 40 abilities rows exist for pass1 locked/allowed, modes creative/op/spectator, offhand_locked/offhand_allowed, thresholds-easy/hard/chaos/custom_vision locked+allowed, reload locked+allowed (17 rows each). Only NA: campaign14 chaos eat_chorus_fruit locked, justified by 'eat_chorus_fruit = 0' in campaign14 chaos_20261116.toml line 140."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "80 reload rows, all from campaign17; MANIFEST.e5Reload generationBefore=1, generationAfter=2; every ATD_STAGE2A_STATE line in the reload excerpts shows generation 2 (160 lines). Raw campaign17 output.log lines 247-256 show a real reload ('Reloading!', 'PROGRESSION_CONFIG_READY generation=2') and no generation-1 state lines in the log. Each reload verdict equals the pass1 verdict of the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all 680 rows REPRODUCED, recorded==replayed for every row; MANIFEST.runtimes replay.reproducedAll=true for campaign11..17 (counts 1235/310/310/310/310/44/310). Plugin SHA-256 ad0685ed...d80b in perRuntime for all 7 runtimes and recomputed on campaign11 and campaign17 runtime/plugins/achievetodo.jar; client mod recomputed = 46a0601e...0855081. Recomputed campaign-results.jsonl SHA-256 for all 7 runtimes; all equal evidenceHashes.results (campaign11 e2fdcbee...5b15, campaign17 14036deb...a44b). Excerpt fidelity spot-checked: non-compacted excerpt lines equal raw output.log lines for 5 rows in 5 groups."
+    }
+  },
+  "superseded": "Superseded rows are only the r3 reload rows of this group, replaced by campaign17 (r5). Justified: in campaign11 the r3 command 'reload confirm' (command-journal.jsonl line 31021, 05:27:45Z) was answered 'Incorrect argument for command' (output.log line 88679), so no reload happened; campaign17 performed a real datapack reload (generation 1->2). No r4 (chest fixture) rows apply to this group. 80 superseded rows, all reload PASS->PASS.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review/food_component_start_40/E1.json directSites -> NativeFoodAbilities.java lines 12-41",
+      "description": "The direct sites cite the item->ability identity map, not the call that denies eating (NativeTransactionBindings.java:40 'food' guard / BukkitFoodGameplayListener). The mapping is correct, but the enforcement point is missing from the E1 map."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/food_component_start_40/excerpts.txt ATD_STAGE2A_STATE lines: \"ability\": {\"EAT_* (234 of 240 locked-row state lines)\": null}",
+      "description": "The state probe does not report the lock state of the tested ability (null), so the excerpt does not show the plugin's lock decision directly; the lock is shown indirectly (count < threshold, client overlay text in rows.jsonl client states, absent effect). Verdicts are still reproducible."
+    }
+  ]
+}

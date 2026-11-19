@@ -1,0 +1,53 @@
+// Owner-approved current-source authority. Does not replace historical tasks or inputs.
+gradle.projectsEvaluated {
+    def p = gradle.rootProject
+    if (System.getenv('ACHIEVETODO_INPUT_AUTHORITY') || System.getenv('ACHIEVETODO_ALTERNATIVE_MANIFEST') || System.getenv('ACHIEVETODO_SOURCE_ORACLE')) {
+        throw new GradleException('Successor standard path cannot mix historical/alternative input selectors')
+    }
+    def suppliedSelector = System.getenv('ACHIEVETODO_UI_UX_CERTIFICATION_AUTHORITY')
+    def suppliedFile = System.getenv('ACHIEVETODO_UI_UX_CERTIFICATION_FILE')
+    def expectedAuthorityFile = new File(p.projectDir, 'tools/certification/authority/ui-ux-maintenance-v1.json').absoluteFile
+    if (suppliedSelector && suppliedSelector != 'ATD_UI_UX_MAINTENANCE_V1') throw new GradleException('Unknown supplied successor selector')
+    if (suppliedFile && (!suppliedSelector || new File(suppliedFile).absoluteFile != expectedAuthorityFile)) throw new GradleException('Unknown/orphan supplied successor file')
+    def selectCurrent = { task ->
+        task.environment 'ACHIEVETODO_UI_UX_CERTIFICATION_AUTHORITY', 'ATD_UI_UX_MAINTENANCE_V1'
+        task.environment 'ACHIEVETODO_UI_UX_CERTIFICATION_FILE', new File(p.projectDir, 'tools/certification/authority/ui-ux-maintenance-v1.json').absolutePath
+    }
+    p.tasks.named('test', Test).configure { selectCurrent(delegate) }
+    ['uiUxGateAIndependent', 'uiUxGateALegacyRed', 'uiUxGateAFixtureCheck'].each { name ->
+        p.tasks.register(name, JavaExec) {
+            dependsOn p.tasks.named('testClasses')
+            classpath = p.sourceSets.test.runtimeClasspath
+            mainClass = 'com.diskree.achievetodo.certification.UiUxMaintenanceGateContractTest'
+            if (name == 'uiUxGateALegacyRed') {
+                environment 'ACHIEVETODO_UI_UX_CERTIFICATION_AUTHORITY', ''
+                environment 'ACHIEVETODO_UI_UX_CERTIFICATION_FILE', ''
+                environment 'ACHIEVETODO_SOURCE_ORACLE', 'S5_R9_FABRIC_SOURCE_ORACLE_V1'
+                environment 'ACHIEVETODO_SOURCE_ORACLE_FILE', new File(p.projectDir, 'tools/certification/authority/r9-source-oracle-v1.json').absolutePath
+                args '--legacy-red'
+            } else selectCurrent(delegate)
+            doFirst {
+                def output = System.getenv('ACHIEVETODO_GATE_A_OUTPUT')
+                if (!output) throw new GradleException('New explicit Gate A output directory required')
+                if (!new File(output).isAbsolute()) throw new GradleException('Explicit absolute Gate A output required')
+                def directory = new File(output).canonicalFile
+                if (directory.toPath().startsWith(p.projectDir.canonicalFile.toPath())) throw new GradleException('Independent evidence must be outside source export')
+                directory.mkdirs()
+                if (name == 'uiUxGateAFixtureCheck') {
+                    def fixture = System.getenv('ACHIEVETODO_GATE_A_FIXTURE')
+                    if (!fixture) throw new GradleException('Explicit disposable fixture root required')
+                    setArgs(['--verify-fixture', fixture])
+                } else systemProperty 'atd.gatea.receipt', new File(directory, name+'.json').absolutePath
+            }
+        }
+    }
+    p.tasks.register('uiUxGateAStandardWiringAudit') {
+        doLast {
+            def standard = p.tasks.named('test', Test).get()
+            if (!standard.enabled || standard.ignoreFailures || !standard.filter.includePatterns.empty || !standard.filter.excludePatterns.empty || !standard.excludes.empty) throw new GradleException('Standard test path filtered/disabled')
+            if (!standard.taskDependencies.getDependencies(standard).any { it.name == 'verifyCleanSourceInputs' }) throw new GradleException('Standard input dependency lost')
+            if (standard.environment['ACHIEVETODO_UI_UX_CERTIFICATION_AUTHORITY'] != 'ATD_UI_UX_MAINTENANCE_V1') throw new GradleException('Successor selection missing')
+            println 'GATE_A_STANDARD_WIRING_PASS unfiltered=true verifyCleanSourceInputs=REQUIRED ignoreFailures=false gateB=NOT_WAIVED'
+        }
+    }
+}

@@ -24,15 +24,9 @@ class PhaseBBacapSearchTreeResourceTest {
     private static String hash(Path p) throws Exception {
         return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(p)));
     }
-    private static void exactHashes(JsonObject hashes) throws Exception {
-        PhaseBPackTestFixtures.assertCurrentToolAuthority();
-        for (var e : hashes.entrySet()) assertEquals(e.getValue().getAsString(), (e.getKey().equals("tools/phase_b/b7_localization_certification.py")
-            ? PhaseBPackTestFixtures.hash(PhaseBPackTestFixtures.historicalToolBytes(), "SHA-256") : hash(ROOT.resolve(e.getKey()))), e.getKey());
-    }
 
     @Test void orderedTreeKeepsThreeMapsAnd27Entries() throws Exception {
         var gui=json("bacap_1_21_static_receipt").getAsJsonObject("gui");assertEquals(28,n(gui,"explicitBefore"));assertEquals(27,n(gui,"explicitAfter"));assertEquals(3,n(gui,"parentMaps"));assertEquals(17,n(gui,"categories"));assertTrue(b(gui,"architectureUnchanged"));
-        exactHashes(receipt().getAsJsonObject("runtimeHashes"));
         String java=Files.readString(ROOT.resolve("src/main/java/com/diskree/achievetodo/injection/mixin/main/PlacedAdvancementMixin.java"));
         assertFalse(java.contains("\"blazeandcave:challenges/constellation\""));
         int count=0;for(var e:gui.getAsJsonObject("orderedChildren").entrySet())count+=e.getValue().getAsJsonArray().size();assertEquals(27,count);

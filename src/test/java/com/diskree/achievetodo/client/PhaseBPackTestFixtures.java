@@ -190,8 +190,23 @@ public final class PhaseBPackTestFixtures {
             row=next(r for r in current['sourceFiles'] if r['path']==p.as_posix())
             assert len(p.read_bytes())==row['size'] and hashlib.sha256(p.read_bytes()).hexdigest()==row['SHA256']
             assert authority['tool']['afterSha256']=='032c866f0eca68dbf7508c86034f00d6a06bf52f98e43efdee2c52e7fbc5a732'
+            import os,contextlib
+            stage1_stack=contextlib.ExitStack()
+            if os.environ.get('ATD_STAGE1_AUTHORITY') is not None:
+                from tools.build import stage1_test_source_v2 as stage1
+                projected=stage1_stack.enter_context(stage1.legacy_v4_context(pathlib.Path.cwd().resolve()))
+                p=projected/'tools/phase_b/b7_localization_certification.py'
             spec=importlib.util.spec_from_file_location('b7',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
             supplied_root=pathlib.Path(sys.argv[5])
+            import os
+            if os.environ.get('ACHIEVETODO_GATE_B_AUTHORITY') is not None or os.environ.get('ACHIEVETODO_GATE_B_APPROVAL_FILE') is not None:
+                from tools.phase_b import v2_localization_authority as v2
+                m.ROOT=p.resolve().parents[2]
+                m.PHASE=m.ROOT/'reference/phase_b'
+                v2.bind(m,supplied_root)
+            elif os.environ.get('ACHIEVETODO_INPUT_AUTHORITY') is not None:
+                from tools.phase_b import r3_localization_authority as r3
+                r3.bind(m,supplied_root)
             paths=json.loads(pathlib.Path(sys.argv[1]).read_bytes())
             converted={k:m.pack_zip(pathlib.Path(v),k) for k,v in paths.items()}
             ru=m.strict_dictionary((m.ROOT/m.RU_PATH).read_bytes())
@@ -230,6 +245,7 @@ public final class PhaseBPackTestFixtures {
             handoff=m.load(m.PHASE/'b4_localization_handoff.json')
             selected={k:provider(k) for k in handoff['selectedCompanionKeys']}
             print(json.dumps({'totalRequirements':len(union),'providerCounts':counts,'effectiveCoverage':coverage,'placeholderChecked':checked,'placeholderMismatches':mismatches,'dictionaryCount':len(ru),'provenance':provenance,'requirements':rows,'selectedCompanionCoverage':selected,'advancementIds':sorted(ids)},ensure_ascii=False))
+            stage1_stack.close()
             """;
         Path log = dir.resolve("calculation.json"), err = dir.resolve("calculation.stderr");
         var process = new ProcessBuilder(System.getProperty("achievetodo.python"), "-B", "-X", "utf8", "-c", script, inputs.toString(),

@@ -101,6 +101,7 @@ public class AchieveToDoMod implements ModInitializer {
     }
 
     private static void registerPayloads() {
+        com.diskree.achievetodo.bridge.BridgePayload.register();
         PayloadTypeRegistry.serverboundPlay().register(
             DemystifyAbilityPayload.ID,
             DemystifyAbilityPayload.CODEC

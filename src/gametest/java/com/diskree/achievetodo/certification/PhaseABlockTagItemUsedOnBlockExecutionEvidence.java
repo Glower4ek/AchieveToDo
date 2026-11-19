@@ -267,7 +267,9 @@ public final class PhaseABlockTagItemUsedOnBlockExecutionEvidence {
                 require(heldBefore == 1 && heldAfter == 0, "Missing canary held-stack mutation");
                 require(receipt.get("interactionStackCountBefore").getAsInt() == 1 && receipt.get("interactionStackCountAfter").getAsInt() == 0
                     && receipt.get("interactionStackConsumed").getAsBoolean(), "Missing canary interaction-stack mutation");
-                require(!receipt.get("sameStackReference").getAsBoolean(), "Canary selected stack replacement expectation missing");
+                if ("S5_R3_WAX_SIGN_CONTRACT_V1".equals(System.getProperty("achievetodo.r3.waxContract"))) {
+                    R3WaxSignContract.validate(receipt);
+                } else { require(!receipt.get("sameStackReference").getAsBoolean(), "Canary selected stack replacement expectation missing"); }
                 require(receipt.has("selectedHandItemAfter") && receipt.get("selectedHandCountAfter").getAsInt() >= 0
                     && receipt.get("selectedHandSlot").getAsInt() >= 0 && receipt.get("selectedHandSlot").getAsInt() < 9, "Missing canary selected-hand observation");
             }

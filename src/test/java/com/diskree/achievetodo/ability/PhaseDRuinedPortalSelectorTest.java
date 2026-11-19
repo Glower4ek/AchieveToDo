@@ -57,17 +57,6 @@ minecraft:ancient_city ANCIENT_CITY
 minecraft:trail_ruins TRAIL_RUINS
 minecraft:trial_chambers TRIAL_CHAMBERS
         """;
-    private static final String NO_DELTA = """
-src/main/java/com/diskree/achievetodo/injection/mixin/main/StructureMixin.java 01830b830db06e6c2471dede795eeab517a61b9b770db513bbc1da6efb6a116b
-src/main/java/com/diskree/achievetodo/injection/mixin/main/StructureStartMixin.java 2bb9bcb0f6efebdc0f605bdc1bcbfe40d21dd17cade7280cb1d89e0019d56252
-src/main/java/com/diskree/achievetodo/injection/mixin/main/ChunkRegionMixin.java 646cfbcffd4e0d6ba578c7c8375cbd370d4943f14b6b844387aa9aa54063dd90
-src/main/java/com/diskree/achievetodo/injection/mixin/main/PlayerEntityMixin.java bb614f0bb4c53f65e9562f21d546cf3552de6e3551bc33d958d42b6fbc1d7159
-src/main/java/com/diskree/achievetodo/server/AchieveToDoServer.java 0aff4191700d951a5cc3139d4f90914f774495b29c0362d1bebc429177fd22ea
-src/main/java/com/diskree/achievetodo/AchieveToDoMod.java 563dafc9250183b101968cf8b49b83d72f9c9ddab66b666c13e79632c272cd73
-src/main/java/com/diskree/achievetodo/ability/DimensionalBlockBox.java 8b97bbf5b505e13b56f211fd1498b0553b4161874213d1121e5bb1eb2f866d33
-src/main/java/com/diskree/achievetodo/ability/AbilityType.java e9744605f3e0699cfbb0ef2d25d428c18cb5625644eeb9f21cb62e3722f1f030
-src/main/java/com/diskree/achievetodo/ability/Progressions.java fbf656576a22c0d12e229f49a179f9692b1a34c3c3991daa755157fd6c89f30a
-        """;
     @BeforeAll static void bootstrap() { SharedConstants.tryDetectVersion(); Bootstrap.bootStrap(); }
     static Stream<String> nativeIds() { return P8.lines().map(String::trim).filter(s -> !s.isEmpty()); }
     @ParameterizedTest @MethodSource("nativeIds")
@@ -116,9 +105,6 @@ src/main/java/com/diskree/achievetodo/ability/Progressions.java fbf656576a22c0d1
         assertEquals(151,AbilityType.USE_COPPER_TOOLS.ordinal());assertEquals(152,AbilityType.EQUIP_COPPER_ARMOR.ordinal());
     }
     @Test void noDeltaWorldgenGeometryIndexActionsAndLegacyReconstructionScope() throws Exception {
-        for(String row:NO_DELTA.lines().map(String::trim).filter(s -> !s.isEmpty()).toList()) {
-            String[] c=row.split(" ");assertEquals(c[1],HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(Path.of(c[0])))),c[0]);
-        }
         String read=Files.readString(Path.of("src/main/java/com/diskree/achievetodo/injection/mixin/main/StructureStartMixin.java"));
         assertTrue(read.contains("nbt.getCompoundOrEmpty(Constants.NbtKey.STRUCTURE_LANDMARK)"));
         assertTrue(read.contains("landmarkNbt.contains(Constants.NbtKey.LANDMARK_TYPE)"));

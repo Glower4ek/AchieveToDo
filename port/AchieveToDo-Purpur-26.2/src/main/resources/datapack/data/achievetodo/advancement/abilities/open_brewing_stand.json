@@ -1,0 +1,38 @@
+{
+  "parent": "achievetodo:abilities/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:brewing_stand",
+      "count": 1
+    },
+    "title": {
+      "translate": "achievetodo.ability.open_brewing_stand.name"
+    },
+    "description": {
+      "translate": "achievetodo.ability.open_brewing_stand.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "rewards": {
+    "function": "achievetodo:abilities/open_brewing_stand"
+  },
+  "criteria": {
+    "demystified": {
+      "trigger": "minecraft:impossible"
+    },
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "demystified"
+    ],
+    [
+      "unlocked"
+    ]
+  ]
+}

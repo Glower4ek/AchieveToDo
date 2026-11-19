@@ -1,0 +1,247 @@
+{
+  "schema": 1,
+  "authority": "ATD_DISTRIBUTION_B_V2_RAW_CAPTURE_V1",
+  "state": "APPROVED_OWNER_B",
+  "activationApproved": true,
+  "policySHA256": "218d064203060cb6d49b798c0dc3e12617313cad597b1c0848b4ef9b6bff13c3",
+  "ownerA": {
+    "date": "2026-10-28",
+    "scope": "Explicit exact13 implementation and10 captures; not Owner B or activation",
+    "decisionPackageSHA256": "0006cb016ab6ea156ee53349e7e27c4504922f8044b89410cd721d9d7b368d82"
+  },
+  "implementationAuthors": [
+    "/root",
+    "/root/v2_core",
+    "/root/v2_adapter"
+  ],
+  "ownerB": {
+    "approved": true,
+    "identity": "human-owner:current-task-instruction",
+    "decisionSHA256": "3d79788391d8c9d4299689bb60c75784f31d6a37d7bf684b202e5faa8258614f"
+  },
+  "independentReview": {
+    "identity": "/root/owner_b_activation_controller",
+    "approved": true,
+    "decisionSHA256": "329e2dac0ccd590d439cdb798ec18310aba019d424aa7c1d83dc8f2bc0cae670",
+    "meaning": "Actual independent controller activation approval for the exact local-certification cohort and deterministic finalization recipe."
+  },
+  "rawInputs": [
+    {
+      "name": "project-yiLJxtqH.v2.raw.json",
+      "size": 5479,
+      "SHA256": "9627f224e601502be36a818e3eeb783a7f27ceda9c82d849ebd34aa1532e06f6",
+      "kind": "UNTRUSTED_RAW_CAPTURE"
+    },
+    {
+      "name": "version-uzX2ogEd.v2.raw.json",
+      "size": 1197,
+      "SHA256": "763064859adf1a3a549afb71a04d4c27e3e7358605561403e23d6fefbfd7cbd4",
+      "kind": "UNTRUSTED_RAW_CAPTURE"
+    },
+    {
+      "name": "project-YX5bAAJN.v2.raw.json",
+      "size": 9279,
+      "SHA256": "37b0bc0ed42243e4df637520f670ee81314c51bff75204f695d348844b2b624c",
+      "kind": "UNTRUSTED_RAW_CAPTURE"
+    },
+    {
+      "name": "version-hsqY3G3V.v2.raw.json",
+      "size": 1837,
+      "SHA256": "97dc77e620b209d8ef6114bf4d79bd992fde402e0b4c4c157c474b58e58a61b9",
+      "kind": "UNTRUSTED_RAW_CAPTURE"
+    },
+    {
+      "name": "project-47BuT3SL.v2.raw.json",
+      "size": 3833,
+      "SHA256": "c840659b032bfcd1440d16e18387bc234bbbf034f77ff9e86a2146f590b80e4e",
+      "kind": "UNTRUSTED_RAW_CAPTURE"
+    },
+    {
+      "name": "version-ULq4UdnT.v2.raw.json",
+      "size": 787,
+      "SHA256": "138067a4a02f01ec5836a5e85cebcff6ca02a22e4217b7df76897e48c17035e6",
+      "kind": "UNTRUSTED_RAW_CAPTURE"
+    },
+    {
+      "name": "project-CGFOvwcX.v2.raw.json",
+      "size": 5076,
+      "SHA256": "c794a48cb557c300c0d0274a0cb6c3974050c31859e710136e03647fbde84f9c",
+      "kind": "UNTRUSTED_RAW_CAPTURE"
+    },
+    {
+      "name": "version-BItBGCl9.v2.raw.json",
+      "size": 1473,
+      "SHA256": "f85b56ef01415466658b7ec20f97ebfe83618c5457dd16608fe097916e8d1e99",
+      "kind": "UNTRUSTED_RAW_CAPTURE"
+    },
+    {
+      "name": "project-DlwNJUii.v2.raw.json",
+      "size": 6058,
+      "SHA256": "1852b3c38d08ec1121a6719e1d39bd85a7146d58c1c8ae3f78e9dc4951e8e303",
+      "kind": "UNTRUSTED_RAW_CAPTURE"
+    },
+    {
+      "name": "version-wNkafeLO.v2.raw.json",
+      "size": 840,
+      "SHA256": "81ff17bb485529716f44e1e7d6dd9fed46a941da1a44c52dde5a5a6676e42656",
+      "kind": "UNTRUSTED_RAW_CAPTURE"
+    }
+  ],
+  "transportReceipts": [
+    {
+      "name": "project-yiLJxtqH.v2.raw.json",
+      "path": "E:\\Vibecode\\ATD_V2_Capture_Receipts_20261028_ownerA\\project-yiLJxtqH.v2.raw.json.transport.json",
+      "SHA256": "453a3ddc2f917d0999a66b911af3de26bf0bfcaab4b4df3e7e195fba45a0de69"
+    },
+    {
+      "name": "version-uzX2ogEd.v2.raw.json",
+      "path": "E:\\Vibecode\\ATD_V2_Capture_Receipts_20261028_ownerA\\version-uzX2ogEd.v2.raw.json.transport.json",
+      "SHA256": "a6bbe6e2a2ad7a3bec2a05b240aa2a0a3ffc3403467044b30bb2b1ef9016ae9c"
+    },
+    {
+      "name": "project-YX5bAAJN.v2.raw.json",
+      "path": "E:\\Vibecode\\ATD_V2_Capture_Receipts_20261028_ownerA\\project-YX5bAAJN.v2.raw.json.transport.json",
+      "SHA256": "5d634b34c7277afc08df2afed70d35b34a3ef86a12c46c4a6b2bd23401b094ab"
+    },
+    {
+      "name": "version-hsqY3G3V.v2.raw.json",
+      "path": "E:\\Vibecode\\ATD_V2_Capture_Receipts_20261028_ownerA\\version-hsqY3G3V.v2.raw.json.transport.json",
+      "SHA256": "5e849536f78db75afe7317ff47d72bfb0bf38fab07d4a7869effb6749bd24256"
+    },
+    {
+      "name": "project-47BuT3SL.v2.raw.json",
+      "path": "E:\\Vibecode\\ATD_V2_Capture_Receipts_20261028_ownerA\\project-47BuT3SL.v2.raw.json.transport.json",
+      "SHA256": "aa91adbc7080adbe1348c3fdef374b7c5f6c7b67922bba4e867eb1b936ebc56c"
+    },
+    {
+      "name": "version-ULq4UdnT.v2.raw.json",
+      "path": "E:\\Vibecode\\ATD_V2_Capture_Receipts_20261028_ownerA\\version-ULq4UdnT.v2.raw.json.transport.json",
+      "SHA256": "66201b1d730a39e3b208b34bb1023aa54812e5ffa10ea1f8c737739aadd122dd"
+    },
+    {
+      "name": "project-CGFOvwcX.v2.raw.json",
+      "path": "E:\\Vibecode\\ATD_V2_Capture_Receipts_20261028_ownerA\\project-CGFOvwcX.v2.raw.json.transport.json",
+      "SHA256": "637e53b679f3e7dd0cf35138df207dd114130b7d6646bf788735d29043928ba0"
+    },
+    {
+      "name": "version-BItBGCl9.v2.raw.json",
+      "path": "E:\\Vibecode\\ATD_V2_Capture_Receipts_20261028_ownerA\\version-BItBGCl9.v2.raw.json.transport.json",
+      "SHA256": "5cc4cf2859e235a0e43a6138b6942701309e768bf4c9add6a62f6aeb63c2c4ea"
+    },
+    {
+      "name": "project-DlwNJUii.v2.raw.json",
+      "path": "E:\\Vibecode\\ATD_V2_Capture_Receipts_20261028_ownerA\\project-DlwNJUii.v2.raw.json.transport.json",
+      "SHA256": "95d78f765c4c0296e5ef2d6e1cd50c4673e506d357e3f6188fb2a5f634784fd7"
+    },
+    {
+      "name": "version-wNkafeLO.v2.raw.json",
+      "path": "E:\\Vibecode\\ATD_V2_Capture_Receipts_20261028_ownerA\\version-wNkafeLO.v2.raw.json.transport.json",
+      "SHA256": "cdbc237dbe3a4d1db0e7a63a35e838e3b45b54a2eadadd53f01a3ae4934d2de2"
+    }
+  ],
+  "ownerABaselines": {
+    "src/test/java/com/diskree/achievetodo/client/PhaseBPackTestFixtures.java": "6e9877b677eccfeb8837e5211d3f5ebd06b20c4b8a100b3e37c058dc7fa84caf"
+  },
+  "sourceAuxiliaryBindings": {
+    "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceGateContractTest.java": {
+      "historicalSHA256": "022ba0477781d0a42d32fbac6743a634ad9fadb2911d90c5ab5cc4d99eec306c",
+      "currentSHA256": "7c3bf139b781f2ac8f195e057eab0d44d88137eba4996fdea1e12f385fd3b915"
+    }
+  },
+  "codeBindings": {
+    "src/test/java/com/diskree/achievetodo/certification/GateBInputAuthorityContractTest.java": "dd0ea394fbe31839781bfd4a2b4c04b84f78c70ede6f858395c9f20e0e50cbcd",
+    "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceGateContractTest.java": "7c3bf139b781f2ac8f195e057eab0d44d88137eba4996fdea1e12f385fd3b915",
+    "src/test/java/com/diskree/achievetodo/client/PhaseBPackTestFixtures.java": "5678a68ce65563412f99bf9786ed7a90287f037669e9857b666d6fe6299fb394",
+    "tools/build/acquire_distribution_b_v2.py": "1622510bf477e3d93f3a0134ef452829ee22a64547f3c2c46d718756e6e2cb20",
+    "tools/build/tests/test_distribution_b_v2_contract.py": "2bd89d47fd17825c15acb5a10c7d5dfb13474503ee0b31aa8551e80730139d1f",
+    "tools/build/verify_inputs_v2.py": "f9413534bd211b384d2def0c8f8f3ad2beaac079369aed5145276cc9fff085b7",
+    "tools/certification/gate-b-v2.init.gradle": "254b9dfcf0726052888c0425c4f23de85cdb82bb2b2048f9f92855dc19733bc5",
+    "tools/phase_b/v2_localization_authority.py": "3cbfa0f1d8703342ca0e4be3eca165811b679ba04159d373c212dff98ec47a62"
+  },
+  "fixturePaths": [
+    "src/test/java/com/diskree/achievetodo/certification/GateBInputAuthorityContractTest.java",
+    "src/test/java/com/diskree/achievetodo/certification/UiUxMaintenanceGateContractTest.java",
+    "src/test/java/com/diskree/achievetodo/client/PhaseBPackTestFixtures.java",
+    "tools/build/acquire_distribution_b_v2.py",
+    "tools/build/distribution_b_v2_contract.py",
+    "tools/build/tests/test_distribution_b_v2_contract.py",
+    "tools/build/verify_inputs_v2.py",
+    "tools/certification/authority/distribution-b-v2-approval.json",
+    "tools/certification/authority/distribution-b-v2-policy.json",
+    "tools/certification/gate-b-v2.init.gradle",
+    "tools/phase_b/v2_localization_authority.py"
+  ],
+  "compatibilityDispositions": {
+    "bacap-better-ru": {
+      "approved": true,
+      "gameVersions": [
+        "1.21.5"
+      ],
+      "loaders": [
+        "minecraft"
+      ],
+      "disposition": "HISTORICAL_TRANSLATION_ONLY_REQUIRES_CONSUMER_RUNTIME_PROOF"
+    },
+    "bacap-language-pack": {
+      "approved": true,
+      "gameVersions": [
+        "26.2"
+      ],
+      "loaders": [
+        "minecraft"
+      ],
+      "disposition": "DECLARED_UPSTREAM_26_2"
+    },
+    "bacap-rus-translate": {
+      "approved": true,
+      "gameVersions": [
+        "26.2"
+      ],
+      "loaders": [
+        "minecraft"
+      ],
+      "disposition": "DECLARED_UPSTREAM_26_2"
+    },
+    "bacaped-language-pack": {
+      "approved": true,
+      "gameVersions": [
+        "26.2"
+      ],
+      "loaders": [
+        "minecraft"
+      ],
+      "disposition": "DECLARED_UPSTREAM_26_2"
+    },
+    "ru-blaze-and-caves-advancements-pack": {
+      "approved": true,
+      "gameVersions": [
+        "1.21",
+        "1.21.1",
+        "1.21.2",
+        "1.21.3",
+        "1.21.4",
+        "1.21.5"
+      ],
+      "loaders": [
+        "minecraft"
+      ],
+      "disposition": "HISTORICAL_TRANSLATION_ONLY_REQUIRES_CONSUMER_RUNTIME_PROOF"
+    }
+  },
+  "licenseReview": {
+    "approved": true,
+    "licenses": {
+      "bacap-better-ru": "CC0-1.0",
+      "bacap-language-pack": "LicenseRef-All-Rights-Reserved",
+      "bacap-rus-translate": "BSD-2-Clause",
+      "bacaped-language-pack": "CC-BY-4.0",
+      "ru-blaze-and-caves-advancements-pack": "BSD-2-Clause"
+    },
+    "scope": "LOCAL_CERTIFICATION_NO_DISTRIBUTION_RIGHTS_GRANTED",
+    "upstreamNoticeLimitation": "NOTICE_SOURCE_INCOMPLETE_UPSTREAM",
+    "permissionEvidenceSHA256": "1e50f4f16caa9ee70d3b6913c134352c4dd80be852e7bbef1bb281c66dab8a06"
+  },
+  "historicalGateStatus": "STANDARD_INPUT_BLOCKED",
+  "captureToolSourceAtRequestTimeSHA256": "NOT_RECORDED_DO_NOT_INFER_FINAL_CLI_IDENTITY",
+  "reviewNote": "Raw/capture/source observations are candidates only. Empty literal activation pins remain unchanged. DRAFT and false/null approvals always reject."
+}

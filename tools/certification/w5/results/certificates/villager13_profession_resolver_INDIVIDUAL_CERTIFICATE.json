@@ -1,0 +1,95 @@
+{
+  "group": "villager13_profession_resolver",
+  "reviewer": "R4",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "13 trade_with_<profession> abilities, each with a direct site GameplayMenuAbilities.java:34..46 (opened; 34 armorer, 35 butcher, 36 cartographer, 37 cleric, 38 farmer, 39 fisherman, 40 fletcher, 41 leatherworker, 42 librarian, 43 mason, 44 shepherd, 45 toolsmith, 46 weaponsmith, each mapped to the matching TRADE_WITH_*) and family resolver AbilityResolvers.findTradeAbility via BukkitRestrictionResolver.java:218. GameplayMenuAbilities sha256 recomputed 813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280 = E1 (BukkitRestrictionResolver f5d7d99bf324fcac91edd2b13cee03b4bf12b625d0591426ce739134d928c84e). All 13 list thresholds for normal, easy, hard, chaos_20261116, custom_vision; 5 config files rehashed and match."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "195 rows: 188 PASS, 7 PASS_NO_OVERLAY (trade_with_cartographer locked in pass1/easy/hard/chaos/custom_vision/reload + modes op). Every locked row: count=threshold-1 in both STATE lines, no merchant menu, overlay 'You can't trade with a <profession>...' (except cartographer). Read all 7 non-PASS excerpts and raw campaign11 output.log 12170-12200: the interaction reached Villager.mobInteract (raw STATE stats TALKED_TO_VILLAGER 2->3, parity with the Fabric wrap of offers.isEmpty), menu stays CRAFTING / containerId 0, ContainerSetContent/SetSlot resync at 07:59:02 = GameplayDenialEffects.report (action bar + updateInventory). Denial and unchanged count reproducible; missing overlay coincides with a ~4 s server stall (finding 1). Allowed rows: MerchantScreen + menu CRAFTING->MERCHANT. Each ability has 6 lock-proving locked rows, none masked (requires vision 0/0/2/0/5/0 <= score).",
+      "rowsRead": [
+        "campaign11 pass1 trade_with_mason locked",
+        "campaign11 pass1 trade_with_mason allowed",
+        "campaign11 pass1 trade_with_cartographer locked",
+        "campaign11 pass1 trade_with_cartographer allowed",
+        "campaign11 pass1 trade_with_leatherworker locked",
+        "campaign11 pass1 trade_with_leatherworker allowed",
+        "campaign11 pass1 trade_with_shepherd locked",
+        "campaign11 pass1 trade_with_shepherd allowed",
+        "campaign11 pass1 trade_with_butcher locked",
+        "campaign11 pass1 trade_with_butcher allowed",
+        "campaign11 pass1 trade_with_farmer locked",
+        "campaign11 pass1 trade_with_farmer allowed",
+        "campaign11 pass1 trade_with_cleric locked",
+        "campaign11 pass1 trade_with_cleric allowed",
+        "campaign11 pass1 trade_with_fisherman locked",
+        "campaign11 pass1 trade_with_fisherman allowed",
+        "campaign11 pass1 trade_with_fletcher locked",
+        "campaign11 pass1 trade_with_fletcher allowed",
+        "campaign11 pass1 trade_with_armorer locked",
+        "campaign11 pass1 trade_with_armorer allowed",
+        "campaign11 pass1 trade_with_weaponsmith locked",
+        "campaign11 pass1 trade_with_weaponsmith allowed",
+        "campaign11 pass1 trade_with_toolsmith locked",
+        "campaign11 pass1 trade_with_toolsmith allowed",
+        "campaign11 pass1 trade_with_librarian locked",
+        "campaign11 pass1 trade_with_librarian allowed",
+        "campaign11 modes trade_with_cartographer creative",
+        "campaign11 modes trade_with_cartographer op",
+        "campaign11 modes trade_with_cartographer spectator",
+        "campaign11 modes trade_with_mason creative",
+        "campaign11 modes trade_with_mason op",
+        "campaign11 modes trade_with_mason spectator",
+        "campaign12 thresholds-easy trade_with_cartographer locked",
+        "campaign13 thresholds-hard trade_with_cartographer locked",
+        "campaign14 thresholds-chaos trade_with_cartographer locked",
+        "campaign14 thresholds-chaos trade_with_cartographer allowed",
+        "campaign15 thresholds-custom_vision trade_with_cartographer locked",
+        "campaign17 reload trade_with_cartographer locked",
+        "campaign14 thresholds-chaos trade_with_mason locked",
+        "campaign14 thresholds-chaos trade_with_mason allowed",
+        "state/overlay summary of all 195 rows (count, threshold, overlay text, screen, menu)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11..campaign17 all onlineMode=true with authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and joinedLine 'Glower4ek joined the game'. Re-checked raw: each campaignNN/receipts/output.log has exactly 1 such UUID line and 1 join line; each campaignNN/runtime/server.properties has online-mode=true. Rows of this group come from campaign11/12/13/14/15/17, all covered."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows for all 13 abilities (39 rows); normal/easy/hard/chaos/custom_vision rows for all 13. Empty-hand interaction (case main=air) is outside the harness OFFHAND set (campaign_final.py:23-27): no off-hand route, no offhand or NA rows. Chaos thresholds of 2 (leatherworker, fletcher) still have a locked state at score 1. CHAOS rows come from campaign14, whose chaos_20261116.toml differs from the campaign16 file cited in E1.configs (accepted behaviour b); read campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml: values match the row thresholds and the STATE 'required' values (all 13 checked, e.g. mason 327, cartographer 531, leatherworker 2, fletcher 2, librarian 293)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "26 reload rows, all campaign17; MANIFEST.e5Reload.runtime=campaign17, generationBefore=1, generationAfter=2. Every ATD_STAGE2A_STATE line in the reload excerpts shows \"generation\": 2 (all non-reload excerpts show 1). Raw campaign17/receipts/output.log:249-255: 'Reloading!' then 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml'. Each reload verdict equals the pass1 verdict of the same ability/phase. Cartographer reload locked = PASS_NO_OVERLAY like pass1."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 195/195 rows REPRODUCED, recorded==replayed for every row, and the (campaign,tag,ability,phase,verdict) multiset of rows.jsonl equals replay.jsonl. MANIFEST runtime replays reproducedAll=true for all 7 runtimes (1235/310/310/310/310/44/310, problems=[]); each REPLAY.json rehashed and matches evidenceHashes. Plugin perRuntime all ad0685eda3cb6f56a408a6409d27809e5e0f961dcd631759adea0564cac9d80b; recomputed campaignNN/runtime/plugins/achievetodo.jar for all 7 runtimes and repo build/libs/AchieveToDo-Purpur-26.2-0.2.1-rc.1.jar: same value. Client mod recomputed at 'E:\\Кубы сборки\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar' = 46a0601e61e0b22752d4b814b622cc04874b5463843beddadccd9f7f10855081. campaign-results.jsonl recomputed for all 7 runtimes, all equal evidenceHashes (campaign11 e2fdcbee751d9b96b1b37ffdc31e851d82f018f6ee8a8bda545621e58df35b15, campaign17 14036deb3fbf00c3...). Also every rows.jsonl row equals the last same tag/ability/phase row of its runtime's campaign-results.jsonl (verdict, counts, logLines)."
+    }
+  },
+  "superseded": "26 superseded entries, all r5 reload rows (key normal/reload/..., by campaign17, was==now). Justified: the r3 reload in campaign11 was rejected (campaign11/receipts/output.log:88679-88680 'Incorrect argument for command' / 'reload confirm<--[HERE]'), while campaign17 did a real datapack reload (output.log:249-255, generation 2). No r4 (chest-room fixture) replacements in this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "trade_with_cartographer locked/op rows in campaign11,12,13,14,15,17; campaign11/receipts/output.log:12179-12182 (act 07:58:58 tick 23440 -> post 07:59:02 tick 23457)",
+      "description": "trade_with_cartographer is PASS_NO_OVERLAY in all 7 locked/op rows. The raw log shows a ~4 s server stall (17 ticks) during the interaction (cartographer offer generation), so the client post snapshot was taken around the denial; the denial itself is proven server-side (resync packets, TALKED_TO_VILLAGER +1, no MERCHANT menu). Overlay delivery for cartographer is unverified, not disproven."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java:209-224 (offersEmpty); NativeLandmarkSupplementSpecs.java:119 (VillagerEntityMixin:39 wrap)",
+      "description": "The guard that fires in the locked rows is the native Villager.mobInteract offers.isEmpty wrap (offersEmpty -> entityDenied TRADE_WITH_*); no InventoryOpenEvent appears in any locked villager excerpt. E1 cites only the InventoryOpenEvent mapping (GameplayMenuAbilities) and the family resolver, so the exercised site is missing from the static map."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review/villager13_profession_resolver/excerpts.txt, e.g. block 'campaign11 pass1 trade_with_mason locked' (output.log 12050-12056)",
+      "description": "ATD_STAGE2A_STATE logs \"TRADE_WITH_*\": null: the probe does not report this ability's lock kind/required value, so the lock state is only implied by count < row threshold (cross-checked against the config files), not shown by the plugin. Denial itself is visible (overlay + no effect); observability gap, not a product defect."
+    }
+  ]
+}

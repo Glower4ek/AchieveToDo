@@ -1,0 +1,486 @@
+{
+  "schema": 1,
+  "authority": "ATD_DISTRIBUTION_B_V2_RAW_CAPTURE_V1",
+  "policyState": "OWNER_A_CAPTURE_ONLY",
+  "historicalManifestSHA256": "1dbe9d7cd2fe653454f8692b7cdf5e54787c3df74eb12461c01164b99190ac77",
+  "historicalVerifierSHA256": "92617b59c39cf94f708f895d81a3b2c763b0d7434271716cadb6315b5bf392ce",
+  "gateAManifestSHA256": "3f04f19ba716eaa9cb8515ef45564bf4b23417005262070b5517d42ebdc59072",
+  "originals": [
+    {
+      "logicalName": "BSD-2-Clause.txt",
+      "type": "BSDTemplate",
+      "required": true,
+      "size": 1267,
+      "SHA256": "f32fb3b417a194167cfad068223fc975ba96c5960513a10f66a3c28720aec1df",
+      "sourceProject": "SPDX BSD-2-Clause template",
+      "sourceVersion": null,
+      "acquisitionIdentity": {
+        "sourceArchiveIdentity": {
+          "size": 1267,
+          "SHA256": "f32fb3b417a194167cfad068223fc975ba96c5960513a10f66a3c28720aec1df"
+        },
+        "missingFields": "Original full project license/acquisition payload not included in the 20-file authority; preserve available sealed source identity, do not invent it."
+      },
+      "provenanceRole": "Unmodified SPDX BSD license template; not invented copyright authority",
+      "licenseReference": {
+        "classification": "canonical BSD-2-Clause SPDX template",
+        "embeddedEntry": null
+      },
+      "consumingTestOrTool": "localization provenance assertions",
+      "externalPathRelativeToRoot": "BSD-2-Clause.txt"
+    },
+    {
+      "logicalName": "amplified_nether.zip",
+      "type": "originalZIP",
+      "required": true,
+      "size": 105555,
+      "SHA256": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa",
+      "sourceProject": "Stardust Labs",
+      "sourceVersion": "v1.2.15",
+      "acquisitionIdentity": {
+        "sourceArchiveIdentity": {
+          "size": 105555,
+          "SHA256": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa"
+        },
+        "missingFields": "Original full project license/acquisition payload not included in the 20-file authority; preserve available sealed source identity, do not invent it."
+      },
+      "provenanceRole": "AMPLIFIED_NETHER original upstream archive; conversion and effective localization input",
+      "licenseReference": {
+        "classification": "custom embedded Stardust Labs license; external private testing only",
+        "embeddedEntry": "license.txt"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures.currentLocalization",
+      "externalPathRelativeToRoot": "amplified_nether.zip"
+    },
+    {
+      "logicalName": "bacap-better-ru.zip",
+      "type": "originalZIP",
+      "required": true,
+      "size": 66071,
+      "SHA256": "b25db2b87c675041cd002fa0a631e724b99a66c23e388642aed122aec16b50b6",
+      "sourceProject": "yiLJxtqH",
+      "sourceVersion": "2.3",
+      "acquisitionIdentity": {
+        "projectId": "yiLJxtqH",
+        "versionId": "uzX2ogEd",
+        "url": "https://cdn.modrinth.com/data/yiLJxtqH/versions/uzX2ogEd/BACAP%20Better%20RU%202.3.zip"
+      },
+      "provenanceRole": "original upstream localization/provenance input",
+      "licenseReference": {
+        "classification": "CC0-1.0",
+        "acquisitionFile": "bacap-better-ru_acquisition.json"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures + b7 provenance_certification; BetterRuOverlayResourceTest",
+      "externalPathRelativeToRoot": "bacap-better-ru.zip"
+    },
+    {
+      "logicalName": "bacap-better-ru_acquisition.json",
+      "type": "acquisitionJSON",
+      "required": true,
+      "size": 845,
+      "SHA256": "b2361abdb3b2c49c499434cc030c7971dd6fa2c135b7f44871f03488a945dc66",
+      "sourceProject": "yiLJxtqH",
+      "sourceVersion": "2.3",
+      "acquisitionIdentity": {
+        "projectId": "yiLJxtqH",
+        "versionId": "uzX2ogEd",
+        "url": "https://cdn.modrinth.com/data/yiLJxtqH/versions/uzX2ogEd/BACAP%20Better%20RU%202.3.zip"
+      },
+      "provenanceRole": "original upstream localization/provenance input",
+      "licenseReference": {
+        "classification": "CC0-1.0",
+        "acquisitionFile": "bacap-better-ru_acquisition.json"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures + b7 provenance_certification; BetterRuOverlayResourceTest",
+      "externalPathRelativeToRoot": "bacap-better-ru_acquisition.json"
+    },
+    {
+      "logicalName": "bacap-language-pack.zip",
+      "type": "originalZIP",
+      "required": true,
+      "size": 3101626,
+      "SHA256": "63b82a4251cac526f9677480f3ba14a1f93fab89206c29004fe63adfb44ca864",
+      "sourceProject": "YX5bAAJN",
+      "sourceVersion": "1.21",
+      "acquisitionIdentity": {
+        "projectId": "YX5bAAJN",
+        "versionId": "hsqY3G3V",
+        "url": "https://cdn.modrinth.com/data/YX5bAAJN/versions/hsqY3G3V/BACAP%20Language%20Pack%201.21.zip"
+      },
+      "provenanceRole": "original upstream localization/provenance input",
+      "licenseReference": {
+        "classification": "LicenseRef-All-Rights-Reserved",
+        "acquisitionFile": "bacap-language-pack_acquisition.json"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures + b7 provenance_certification; BetterRuOverlayResourceTest",
+      "externalPathRelativeToRoot": "bacap-language-pack.zip"
+    },
+    {
+      "logicalName": "bacap-language-pack_acquisition.json",
+      "type": "acquisitionJSON",
+      "required": true,
+      "size": 847,
+      "SHA256": "06cb4802597237c18d3db37f0a2bdecca7687fc3e18474784c68897284ff8122",
+      "sourceProject": "YX5bAAJN",
+      "sourceVersion": "1.21",
+      "acquisitionIdentity": {
+        "projectId": "YX5bAAJN",
+        "versionId": "hsqY3G3V",
+        "url": "https://cdn.modrinth.com/data/YX5bAAJN/versions/hsqY3G3V/BACAP%20Language%20Pack%201.21.zip"
+      },
+      "provenanceRole": "original upstream localization/provenance input",
+      "licenseReference": {
+        "classification": "LicenseRef-All-Rights-Reserved",
+        "acquisitionFile": "bacap-language-pack_acquisition.json"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures + b7 provenance_certification; BetterRuOverlayResourceTest",
+      "externalPathRelativeToRoot": "bacap-language-pack_acquisition.json"
+    },
+    {
+      "logicalName": "bacap-rus-translate.zip",
+      "type": "originalZIP",
+      "required": true,
+      "size": 107221,
+      "SHA256": "d232eae263de9d643438caad44a3557f08735b8727770edd3c7fe904877adc89",
+      "sourceProject": "47BuT3SL",
+      "sourceVersion": "26.2",
+      "acquisitionIdentity": {
+        "projectId": "47BuT3SL",
+        "versionId": "ULq4UdnT",
+        "url": "https://cdn.modrinth.com/data/47BuT3SL/versions/ULq4UdnT/rus_BACAP_26.2.zip"
+      },
+      "provenanceRole": "original upstream localization/provenance input",
+      "licenseReference": {
+        "classification": "BSD-2-Clause",
+        "acquisitionFile": "bacap-rus-translate_acquisition.json"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures + b7 provenance_certification; BetterRuOverlayResourceTest",
+      "externalPathRelativeToRoot": "bacap-rus-translate.zip"
+    },
+    {
+      "logicalName": "bacap-rus-translate_acquisition.json",
+      "type": "acquisitionJSON",
+      "required": true,
+      "size": 837,
+      "SHA256": "9f4ce2991c1485cc98c44e228fec3e3bd934eaa0123fbc16809e8ac7aeb2d358",
+      "sourceProject": "47BuT3SL",
+      "sourceVersion": "26.2",
+      "acquisitionIdentity": {
+        "projectId": "47BuT3SL",
+        "versionId": "ULq4UdnT",
+        "url": "https://cdn.modrinth.com/data/47BuT3SL/versions/ULq4UdnT/rus_BACAP_26.2.zip"
+      },
+      "provenanceRole": "original upstream localization/provenance input",
+      "licenseReference": {
+        "classification": "BSD-2-Clause",
+        "acquisitionFile": "bacap-rus-translate_acquisition.json"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures + b7 provenance_certification; BetterRuOverlayResourceTest",
+      "externalPathRelativeToRoot": "bacap-rus-translate_acquisition.json"
+    },
+    {
+      "logicalName": "bacap_hardcore.zip",
+      "type": "originalZIP",
+      "required": true,
+      "size": 23279,
+      "SHA256": "1baf5f1bc7c48c819cb6b3081cb124793a316b3568352c853b94757bb4237446",
+      "sourceProject": "BlazeandCave Hardcore",
+      "sourceVersion": "1.21 / ZHHHw5wF",
+      "acquisitionIdentity": {
+        "sourceArchiveIdentity": {
+          "size": 23279,
+          "SHA256": "1baf5f1bc7c48c819cb6b3081cb124793a316b3568352c853b94757bb4237446"
+        },
+        "missingFields": "Original full project license/acquisition payload not included in the 20-file authority; preserve available sealed source identity, do not invent it."
+      },
+      "provenanceRole": "BACAP_HARDCORE original upstream archive; conversion and effective localization input",
+      "licenseReference": {
+        "classification": "redistribution not established; external private testing only",
+        "embeddedEntry": null
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures.currentLocalization",
+      "externalPathRelativeToRoot": "bacap_hardcore.zip"
+    },
+    {
+      "logicalName": "bacaped-language-pack.zip",
+      "type": "originalZIP",
+      "required": true,
+      "size": 390983,
+      "SHA256": "3ecb5be40e25453f4a65a346196ee0c62201861332b7d7eeb0be11e07d286222",
+      "sourceProject": "CGFOvwcX",
+      "sourceVersion": "2.9.2",
+      "acquisitionIdentity": {
+        "projectId": "CGFOvwcX",
+        "versionId": "BItBGCl9",
+        "url": "https://cdn.modrinth.com/data/CGFOvwcX/versions/BItBGCl9/Enhanced_Discoveries_Language_Pack.zip"
+      },
+      "provenanceRole": "original upstream localization/provenance input",
+      "licenseReference": {
+        "classification": "CC-BY-4.0",
+        "acquisitionFile": "bacaped-language-pack_acquisition.json"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures + b7 provenance_certification; BetterRuOverlayResourceTest",
+      "externalPathRelativeToRoot": "bacaped-language-pack.zip"
+    },
+    {
+      "logicalName": "bacaped-language-pack_acquisition.json",
+      "type": "acquisitionJSON",
+      "required": true,
+      "size": 961,
+      "SHA256": "4331d4e264183aa801dface3a55c32ee2c8002ebd1a545f68e24c05cf956f667",
+      "sourceProject": "CGFOvwcX",
+      "sourceVersion": "2.9.2",
+      "acquisitionIdentity": {
+        "projectId": "CGFOvwcX",
+        "versionId": "BItBGCl9",
+        "url": "https://cdn.modrinth.com/data/CGFOvwcX/versions/BItBGCl9/Enhanced_Discoveries_Language_Pack.zip"
+      },
+      "provenanceRole": "original upstream localization/provenance input",
+      "licenseReference": {
+        "classification": "CC-BY-4.0",
+        "acquisitionFile": "bacaped-language-pack_acquisition.json"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures + b7 provenance_certification; BetterRuOverlayResourceTest",
+      "externalPathRelativeToRoot": "bacaped-language-pack_acquisition.json"
+    },
+    {
+      "logicalName": "nullscape.zip",
+      "type": "originalZIP",
+      "required": true,
+      "size": 343740,
+      "SHA256": "ec7b0dfcd1add8c127c985dac1466a44168449b3b6641dd20e6b2e16153b66aa",
+      "sourceProject": "Stardust Labs",
+      "sourceVersion": "26.2 v1.2.20",
+      "acquisitionIdentity": {
+        "sourceArchiveIdentity": {
+          "size": 343740,
+          "SHA256": "ec7b0dfcd1add8c127c985dac1466a44168449b3b6641dd20e6b2e16153b66aa"
+        },
+        "missingFields": "Original full project license/acquisition payload not included in the 20-file authority; preserve available sealed source identity, do not invent it."
+      },
+      "provenanceRole": "NULLSCAPE original upstream archive; conversion and effective localization input",
+      "licenseReference": {
+        "classification": "custom embedded Stardust Labs license; external private testing only",
+        "embeddedEntry": "license.txt"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures.currentLocalization",
+      "externalPathRelativeToRoot": "nullscape.zip"
+    },
+    {
+      "logicalName": "ru-blaze-and-caves-advancements-pack.zip",
+      "type": "originalZIP",
+      "required": true,
+      "size": 85082,
+      "SHA256": "6d0c3801c5d61d4d9adeae71fb7770163d3c59edc5ea630ec9327075c5d9dc63",
+      "sourceProject": "DlwNJUii",
+      "sourceVersion": "3",
+      "acquisitionIdentity": {
+        "projectId": "DlwNJUii",
+        "versionId": "wNkafeLO",
+        "url": "https://cdn.modrinth.com/data/DlwNJUii/versions/wNkafeLO/ru_BACAP.zip"
+      },
+      "provenanceRole": "original upstream localization/provenance input",
+      "licenseReference": {
+        "classification": "BSD-2-Clause",
+        "acquisitionFile": "ru-blaze-and-caves-advancements-pack_acquisition.json"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures + b7 provenance_certification; BetterRuOverlayResourceTest",
+      "externalPathRelativeToRoot": "ru-blaze-and-caves-advancements-pack.zip"
+    },
+    {
+      "logicalName": "ru-blaze-and-caves-advancements-pack_acquisition.json",
+      "type": "acquisitionJSON",
+      "required": true,
+      "size": 913,
+      "SHA256": "4f9bc4edbd6c882e29122c9dfd05b7ddd8e8f0793c2d9e9de394951a6cb9d097",
+      "sourceProject": "DlwNJUii",
+      "sourceVersion": "3",
+      "acquisitionIdentity": {
+        "projectId": "DlwNJUii",
+        "versionId": "wNkafeLO",
+        "url": "https://cdn.modrinth.com/data/DlwNJUii/versions/wNkafeLO/ru_BACAP.zip"
+      },
+      "provenanceRole": "original upstream localization/provenance input",
+      "licenseReference": {
+        "classification": "BSD-2-Clause",
+        "acquisitionFile": "ru-blaze-and-caves-advancements-pack_acquisition.json"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures + b7 provenance_certification; BetterRuOverlayResourceTest",
+      "externalPathRelativeToRoot": "ru-blaze-and-caves-advancements-pack_acquisition.json"
+    },
+    {
+      "logicalName": "terralith.zip",
+      "type": "originalZIP",
+      "required": true,
+      "size": 3001471,
+      "SHA256": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e",
+      "sourceProject": "Stardust Labs",
+      "sourceVersion": "26.2 v2.6.4",
+      "acquisitionIdentity": {
+        "sourceArchiveIdentity": {
+          "size": 3001471,
+          "SHA256": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e"
+        },
+        "missingFields": "Original full project license/acquisition payload not included in the 20-file authority; preserve available sealed source identity, do not invent it."
+      },
+      "provenanceRole": "TERRALITH original upstream archive; conversion and effective localization input",
+      "licenseReference": {
+        "classification": "custom embedded Stardust Labs license; external private testing only",
+        "embeddedEntry": "license.txt"
+      },
+      "consumingTestOrTool": "PhaseBPackTestFixtures.currentLocalization",
+      "externalPathRelativeToRoot": "terralith.zip"
+    }
+  ],
+  "sources": [
+    {
+      "prefix": "bacap-better-ru",
+      "projectId": "yiLJxtqH",
+      "versionId": "uzX2ogEd",
+      "versionLabel": "2.3",
+      "projectEndpoint": "https://api.modrinth.com/v2/project/yiLJxtqH",
+      "versionEndpoint": "https://api.modrinth.com/v2/version/uzX2ogEd",
+      "projectRawName": "project-yiLJxtqH.v2.raw.json",
+      "versionRawName": "version-uzX2ogEd.v2.raw.json",
+      "expectedArchiveName": "bacap-better-ru.zip",
+      "originalArchiveFilename": "BACAP Better RU 2.3.zip",
+      "archiveURL": "https://cdn.modrinth.com/data/yiLJxtqH/versions/uzX2ogEd/BACAP%20Better%20RU%202.3.zip",
+      "archiveBytes": 66071,
+      "archiveHashes": {
+        "sha1": "5fc234b075ea8ed40328f3743df10ade4fffe623",
+        "sha256": "b25db2b87c675041cd002fa0a631e724b99a66c23e388642aed122aec16b50b6",
+        "sha512": "400a82c2a37c8a1653c01db6f8fcd8b297da946cd56f25245788cca304d87fc1ed658bb7eeb5a14e36f5dbd1b80e9694beba156b9439e07747e0830c9a906120"
+      },
+      "expectedLicenseId": "CC0-1.0",
+      "recordedGameVersions": [
+        "1.21.5"
+      ],
+      "licensePermissionEvidence": {
+        "classification": "Original acquisition and retained attribution; independently review current/selected-version rights before activation"
+      },
+      "publishedAt": "2025-03-28T00:48:31.940771Z"
+    },
+    {
+      "prefix": "bacap-language-pack",
+      "projectId": "YX5bAAJN",
+      "versionId": "hsqY3G3V",
+      "versionLabel": "1.21",
+      "projectEndpoint": "https://api.modrinth.com/v2/project/YX5bAAJN",
+      "versionEndpoint": "https://api.modrinth.com/v2/version/hsqY3G3V",
+      "projectRawName": "project-YX5bAAJN.v2.raw.json",
+      "versionRawName": "version-hsqY3G3V.v2.raw.json",
+      "expectedArchiveName": "bacap-language-pack.zip",
+      "originalArchiveFilename": "BACAP Language Pack 1.21.zip",
+      "archiveURL": "https://cdn.modrinth.com/data/YX5bAAJN/versions/hsqY3G3V/BACAP%20Language%20Pack%201.21.zip",
+      "archiveBytes": 3101626,
+      "archiveHashes": {
+        "sha1": "ee2d44834304d315c97c0cc080943c9c730a409e",
+        "sha256": "63b82a4251cac526f9677480f3ba14a1f93fab89206c29004fe63adfb44ca864",
+        "sha512": "28f25852e5987eaff0f541d8ce48ccbd7ad641e1d220021b9b3ffd569784cd9b403e690dc59b83029c1411d1f806a01f297afc15ed7eb444b215737ade4d8517"
+      },
+      "expectedLicenseId": "LicenseRef-All-Rights-Reserved",
+      "recordedGameVersions": [
+        "26.2"
+      ],
+      "licensePermissionEvidence": {
+        "path": "reference/localization/phase_a_ru_full_reaudit_summary.json",
+        "SHA256": "1e50f4f16caa9ee70d3b6913c134352c4dd80be852e7bbef1bb281c66dab8a06"
+      },
+      "publishedAt": "2026-06-20T23:51:29.012348Z"
+    },
+    {
+      "prefix": "bacap-rus-translate",
+      "projectId": "47BuT3SL",
+      "versionId": "ULq4UdnT",
+      "versionLabel": "26.2",
+      "projectEndpoint": "https://api.modrinth.com/v2/project/47BuT3SL",
+      "versionEndpoint": "https://api.modrinth.com/v2/version/ULq4UdnT",
+      "projectRawName": "project-47BuT3SL.v2.raw.json",
+      "versionRawName": "version-ULq4UdnT.v2.raw.json",
+      "expectedArchiveName": "bacap-rus-translate.zip",
+      "originalArchiveFilename": "rus_BACAP_26.2.zip",
+      "archiveURL": "https://cdn.modrinth.com/data/47BuT3SL/versions/ULq4UdnT/rus_BACAP_26.2.zip",
+      "archiveBytes": 107221,
+      "archiveHashes": {
+        "sha1": "d3ee5d032d379abdf367737a7f9e0ecef8fe27c8",
+        "sha256": "d232eae263de9d643438caad44a3557f08735b8727770edd3c7fe904877adc89",
+        "sha512": "8a93a65796ff68b8a7665771b1700f98c8ed14b8b40aef7c810a6a389ea7edbc13ddac8cf157efe2a103e3eeeb066de823f5dcccabbebe555191745f75b39c3e"
+      },
+      "expectedLicenseId": "BSD-2-Clause",
+      "recordedGameVersions": [
+        "26.2"
+      ],
+      "licensePermissionEvidence": {
+        "classification": "Original acquisition and retained attribution; independently review current/selected-version rights before activation"
+      },
+      "publishedAt": "2026-08-19T13:04:47.581350Z"
+    },
+    {
+      "prefix": "bacaped-language-pack",
+      "projectId": "CGFOvwcX",
+      "versionId": "BItBGCl9",
+      "versionLabel": "2.9.2",
+      "projectEndpoint": "https://api.modrinth.com/v2/project/CGFOvwcX",
+      "versionEndpoint": "https://api.modrinth.com/v2/version/BItBGCl9",
+      "projectRawName": "project-CGFOvwcX.v2.raw.json",
+      "versionRawName": "version-BItBGCl9.v2.raw.json",
+      "expectedArchiveName": "bacaped-language-pack.zip",
+      "originalArchiveFilename": "Enhanced_Discoveries_Language_Pack.zip",
+      "archiveURL": "https://cdn.modrinth.com/data/CGFOvwcX/versions/BItBGCl9/Enhanced_Discoveries_Language_Pack.zip",
+      "archiveBytes": 390983,
+      "archiveHashes": {
+        "sha1": "d9933b5da82cb999be800070b05e46f3bbc20d3b",
+        "sha256": "3ecb5be40e25453f4a65a346196ee0c62201861332b7d7eeb0be11e07d286222",
+        "sha512": "f111fa582791a777436902abfbe045db1ae05702c0386cdf182b3fb0b793b4392e4fdb36dbd10b422141a6e0a4a38d5a0644703dc4627f027a4dfb59879b702c"
+      },
+      "expectedLicenseId": "CC-BY-4.0",
+      "recordedGameVersions": [
+        "26.2"
+      ],
+      "licensePermissionEvidence": {
+        "classification": "Original acquisition and retained attribution; independently review current/selected-version rights before activation"
+      },
+      "publishedAt": "2026-08-19T18:25:13.730777Z"
+    },
+    {
+      "prefix": "ru-blaze-and-caves-advancements-pack",
+      "projectId": "DlwNJUii",
+      "versionId": "wNkafeLO",
+      "versionLabel": "3",
+      "projectEndpoint": "https://api.modrinth.com/v2/project/DlwNJUii",
+      "versionEndpoint": "https://api.modrinth.com/v2/version/wNkafeLO",
+      "projectRawName": "project-DlwNJUii.v2.raw.json",
+      "versionRawName": "version-wNkafeLO.v2.raw.json",
+      "expectedArchiveName": "ru-blaze-and-caves-advancements-pack.zip",
+      "originalArchiveFilename": "ru_BACAP.zip",
+      "archiveURL": "https://cdn.modrinth.com/data/DlwNJUii/versions/wNkafeLO/ru_BACAP.zip",
+      "archiveBytes": 85082,
+      "archiveHashes": {
+        "sha1": "e91f57b078801c26a4d51782d289b08b03ce3967",
+        "sha256": "6d0c3801c5d61d4d9adeae71fb7770163d3c59edc5ea630ec9327075c5d9dc63",
+        "sha512": "8fa0a80de8267febe6e8e4851e95cc73aa309353ae7b05840e26895abd4a92587a9f24bcbd531b5b5389d9ccd89defc291f5973ec712c00e29fde98d54fa4c0c"
+      },
+      "expectedLicenseId": "BSD-2-Clause",
+      "recordedGameVersions": [
+        "1.21",
+        "1.21.1",
+        "1.21.2",
+        "1.21.3",
+        "1.21.4",
+        "1.21.5"
+      ],
+      "licensePermissionEvidence": {
+        "classification": "Original acquisition and retained attribution; independently review current/selected-version rights before activation"
+      },
+      "publishedAt": "2025-06-11T09:24:15.976923Z"
+    }
+  ],
+  "automaticDownload": false,
+  "automaticFallback": false,
+  "payloadCardinality": 25,
+  "maxResponseBytes": 10485760,
+  "captureTimeoutSeconds": 30,
+  "captureMaxAttempts": 2,
+  "compatibilityPolicy": "EXACT_RECORDED_GAME_VERSIONS_NONEMPTY_RESOURCEPACK_LOADERS_AND_INDEPENDENT_OWNER_B_DISPOSITION",
+  "historicalGateStatus": "STANDARD_INPUT_BLOCKED"
+}

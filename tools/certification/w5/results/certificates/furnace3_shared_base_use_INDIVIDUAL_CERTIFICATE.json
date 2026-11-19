@@ -1,0 +1,93 @@
+{
+  "group": "furnace3_shared_base_use",
+  "reviewer": "R6",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "3 abilities, all DIRECT. open_furnace: BukkitRestrictionResolver.java:80, BukkitExpandedGameplayListener.java:72, GameplayGate.java:18, NativeLandmarkActions.java:215; open_smoker: BukkitRestrictionResolver:86, GameplayMenuAbilities:23, NativeLandmarkActions:216; open_blast_furnace: BukkitRestrictionResolver:83, GameplayMenuAbilities:24, NativeLandmarkActions:217; family findBlockAbility; definition Progressions.java. SHA-256 of all 6 files recomputed: BukkitRestrictionResolver f5d7d99b..., BukkitExpandedGameplayListener f10bdc23..., GameplayGate 4ddeec26..., NativeLandmarkActions eb87a78e..., GameplayMenuAbilities 813236fd... all equal E1; Progressions 00f2cf74... (no E1 hash, git blob = repoHead). Opened each site: resolver 80/83/86 return OPEN_FURNACE/OPEN_BLAST_FURNACE/OPEN_SMOKER per InventoryType; listener 72 maps a FURNACE holder to OPEN_FURNACE; GameplayGate 18 includes OPEN_FURNACE; GameplayMenuAbilities 23/24 map SMOKER/BLAST_FURNACE; NativeLandmarkActions 215-217 furnaceAbility() maps FurnaceBlock/SmokerBlock/BlastFurnaceBlock. Thresholds listed for all 5 configs for all 3 abilities."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "45 rows, all PASS; 6 proving locked rows per ability (pass1, easy, hard, chaos, custom_vision, reload). Scripted feature scan of all 45 excerpts plus full read of c11 pass1 (all 3 abilities): every locked/op row has count unchanged, STATE kind=LOCKED, no ClientboundOpenScreenPacket and no INVENTORY_OPEN_TYPE line, client overlay 'You can't open a furnace./a smoker./a blast furnace.'; every allowed row has kind=UNLOCKED and INVENTORY_OPEN_TYPE_<FURNACE|SMOKER|BLAST_FURNACE> + ClientboundOpenScreenPacket; creative and spectator open the screen without overlay. All verdicts reproduced; no non-PASS rows.",
+      "rowsRead": [
+        "campaign11 pass1 open_furnace locked",
+        "campaign11 pass1 open_furnace allowed",
+        "campaign11 modes open_furnace creative",
+        "campaign11 modes open_furnace op",
+        "campaign11 modes open_furnace spectator",
+        "campaign12 thresholds-easy open_furnace locked",
+        "campaign12 thresholds-easy open_furnace allowed",
+        "campaign13 thresholds-hard open_furnace locked",
+        "campaign13 thresholds-hard open_furnace allowed",
+        "campaign14 thresholds-chaos open_furnace locked",
+        "campaign14 thresholds-chaos open_furnace allowed",
+        "campaign15 thresholds-custom_vision open_furnace locked",
+        "campaign15 thresholds-custom_vision open_furnace allowed",
+        "campaign17 reload open_furnace locked",
+        "campaign17 reload open_furnace allowed",
+        "campaign11 pass1 open_smoker locked",
+        "campaign11 pass1 open_smoker allowed",
+        "campaign11 modes open_smoker creative",
+        "campaign11 modes open_smoker op",
+        "campaign11 modes open_smoker spectator",
+        "campaign12 thresholds-easy open_smoker locked",
+        "campaign12 thresholds-easy open_smoker allowed",
+        "campaign13 thresholds-hard open_smoker locked",
+        "campaign13 thresholds-hard open_smoker allowed",
+        "campaign14 thresholds-chaos open_smoker locked",
+        "campaign14 thresholds-chaos open_smoker allowed",
+        "campaign15 thresholds-custom_vision open_smoker locked",
+        "campaign15 thresholds-custom_vision open_smoker allowed",
+        "campaign17 reload open_smoker locked",
+        "campaign17 reload open_smoker allowed",
+        "campaign11 pass1 open_blast_furnace locked",
+        "campaign11 pass1 open_blast_furnace allowed",
+        "campaign11 modes open_blast_furnace creative",
+        "campaign11 modes open_blast_furnace op",
+        "campaign11 modes open_blast_furnace spectator",
+        "campaign12 thresholds-easy open_blast_furnace locked",
+        "campaign12 thresholds-easy open_blast_furnace allowed",
+        "campaign13 thresholds-hard open_blast_furnace locked",
+        "campaign13 thresholds-hard open_blast_furnace allowed",
+        "campaign14 thresholds-chaos open_blast_furnace locked",
+        "campaign14 thresholds-chaos open_blast_furnace allowed",
+        "campaign15 thresholds-custom_vision open_blast_furnace locked",
+        "campaign15 thresholds-custom_vision open_blast_furnace allowed",
+        "campaign17 reload open_blast_furnace locked",
+        "campaign17 reload open_blast_furnace allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign11-17 (7 runtimes: normal c11, easy c12, hard c13, chaos c14, custom_vision c15, chaos-r4 c16, normal-reload c17) all onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a', joinedLine 'Glower4ek joined the game', configResolved line matches the config. Every campaign that contributed rows to this group is among them."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "tag modes rows exist: creative, op, spectator for every ability (creative/spectator expect bypass: effect observed, no overlay; op expects denial). Threshold rows exist for normal (pass1 c11, reload c17), easy (c12), hard (c13), chaos (c14) and custom_vision (c15). No offhand rows: opening a furnace-type block with an empty hand has no off-hand route. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "6 reload rows, all from campaign17 (tag reload); MANIFEST.e5Reload runtime=campaign17, generationBefore=1, generationAfter=2. Every ATD_STAGE2A_STATE line in the reload sections of excerpts.txt has \"generation\": 2 (scripted check, 0 exceptions). Raw campaign17 output.log: line 249 'Reloading!', line 255 'PROGRESSION_CONFIG_READY generation=2 file=normal.toml', command-journal line 1 command 'reload'. Each reload verdict equals the ability's pass1 verdict (all 6 PASS, matching pass1 PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 45 rows, all REPRODUCED; every runtime replay reproducedAll=true with problems=[] (c11 1235, c12-c15 and c17 310, c16 44 REPRODUCED). plugin.perRuntime c11-c17 all ad0685eda3cb...c9d80b = brief value; recomputed sha256 of runtime/plugins/achievetodo.jar of all 7 runtimes matches. clientMod sha256 46a0601e...55081 = brief value. Recomputed SHA-256 of campaign-results.jsonl of all 7 runtimes and compared with evidenceHashes.results: all equal (e.g. c17 14036deb3fbf00c3..., c13 f0fc08eac291ee65...); REPLAY.json of all 7 also equal; c17 output.log (20 MB) equal. Every package row was also matched to the raw campaignNN/receipts/campaign-results.jsonl entry (same verdict, counts, logLines): 45/45 found, 0 differences."
+    }
+  },
+  "superseded": "Reload rows: r3 rows (campaign11 tag reload) are superseded by r5 (campaign17). Justified: campaign11 output.log lines 88679-88680 show 'Incorrect argument for command / reload confirm<--[HERE]', and the r3 reload rows still ran at generation 1 (e.g. campaign11 output.log 91509-91516: \"generation\":1); campaign17 performed a real 'reload' (output.log 249/255, generation=2). Supersession did not change any verdict in this group (was PASS, now PASS).",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt section 'campaign11 pass1 open_furnace locked' (output.log 2181-2191): ATD_W2_INPUT_EVENT ... \"cancelled\":false,\"useBlock\":\"ALLOW\"",
+      "description": "In locked/op rows the plugin decision lines read cancelled=false / useBlock=ALLOW (the Bukkit event is not cancelled; the denial is done by the native guard and is not logged server-side). The denial is only inferable from the absent ClientboundOpenScreenPacket/INVENTORY_OPEN_TYPE line plus the client overlay recorded in the driver journal, not from an explicit DENY line. Verdicts are still reproducible."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "E1.json thresholds.chaos_20261116 vs rows campaign14 thresholds-chaos; campaign14/runtime/plugins/AchieveToDo/progression/configs/chaos_20261116.toml (sha256 5fcf0a51...)",
+      "description": "E1 lists the CHAOS threshold of open_furnace/open_smoker/open_blast_furnace from campaign16's chaos config (580/418/208), but this group's chaos rows ran on campaign14 whose config of the same name gives 139/246/113 (verified in the campaign14 toml). Accepted behaviour (b), but E1 does not document the thresholds actually tested and does not hash the campaign14 config."
+    }
+  ]
+}
