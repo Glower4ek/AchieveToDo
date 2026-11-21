@@ -1,0 +1,61 @@
+{
+ "group": "equipment_identity9_routes_slots",
+ "reviewer": "Q2",
+ "decision": "NOT_CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "9 abilities; each has NativeEquipmentAbilities.java L8-16 (identity map EQUIP_<material>_ARMOR, TURTLE_HELMET, ELYTRA) + NativeTransactionAgent.java L76-101 (equipment()/armorPlace()/armorPickup() -> denied('equipment',...)); opened both. SHA-256 recomputed for every cited file (NativeEquipmentAbilities 7baab126..., NativeTransactionAgent debe8c9d..., MovementAdapter): all match E1. Thresholds listed for normal/easy/hard/chaos_20261116/custom_vision for all 9 (netherite chaos=0)."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "884 rows: every ability x case (base + 5 r6 routes) has a PASS locked row and a PASS allowed row. Non-PASS: 86 NA_OFFHAND_NOT_APPLICABLE, 6 NA_NO_LOCKED_STATE (netherite chaos threshold 0), 3 PASS_MASKED_BY_DEPENDENCY (golden chaos inventory routes, requires open_inventory=32). Read all masked excerpts (DENIAL_INTENT_DISCOVERED ability=open_inventory, count 27->27): verdict correct, and those cases are proven locked in other runtimes. Locked excerpts show unchanged count and 'Test failed' post; allowed excerpts show the armor equipped ('Test passed. Count: 1', Item.use Success).",
+   "rowsRead": [
+    "campaign21 pass1 equip_iron_armor locked/allowed (base, armor slot place, dispenser, right-click feet)",
+    "campaign21 offhand equip_diamond_armor offhand_locked/allowed",
+    "campaign24 thresholds-chaos equip_golden_armor armor-slot-place locked (MASKED) + allowed",
+    "campaign24 shift-click/hotbar MASKED rows",
+    "campaign24 netherite NA rows x6",
+    "campaign25 thresholds-custom_vision equip_elytra locked (rows.jsonl)",
+    "campaign22/23 equip_copper_armor locked"
+   ]
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes creative/op/spectator: 52 rows each. Offhand: PASS for the base right-click route of all 9 abilities; slot/shift/hotbar/dispenser/feet routes are NA_OFFHAND (inventory clicks and the dispenser have no off-hand variant; off-hand right-click is covered by the base case). Thresholds rows for all 5 configs (104 rows per runtime 22-25). NA_NO_LOCKED_STATE only for netherite in chaos (threshold 0)."
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign21..25: onlineMode=true, the authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-...' and the 'Glower4ek joined the game' line are present for all 5; configResolved normal/easy/hard/chaos_20261116/custom_vision matches each runtime."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "All reload rows come from campaign21, and their output.log line numbers (min 111041) come after every pass1/modes/offhand row of the group (max 93113). MANIFEST.e5Reload.evidence.generationAfter=2 (before=1). Every ATD_STAGE2A_STATE line in the reload excerpts shows \"generation\": 2 (208 lines). Every reload verdict equals the pass1 verdict for the same ability/case/phase (scripted compare, 0 mismatches)."
+  },
+  "E6": {
+   "result": "FAIL",
+   "checked": "replay.jsonl: 884/884 REPRODUCED; reproducedAll=true for campaign21-25. Plugin SHA-256 da9360aa...b544 appears in MANIFEST.perRuntime and was recomputed on campaign21..25 runtime/plugins/achievetodo.jar and on the rc2-artifacts jar. Client mod SHA-256 5c473903...5a99 was recomputed on rc2-artifacts/achievetodo-mc26.2+0.2.1.jar and matches MANIFEST clientMod. The recomputed campaign-results.jsonl SHA-256 of all 5 runtimes equals evidenceHashes.results. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION are logged at output.log lines ~206-222 in all 5 runtimes, before the first case. FAIL because launch.json of campaign22/23/24 carries -Dachievetodo.progression.freshConfig=true (see finding)."
+  }
+ },
+ "superseded": "MANIFEST.superseded is [] and all rows come from campaign21-25; there are no superseded rows to assess.",
+ "findings": [
+  {
+   "severity": "major",
+   "criterion": "E6",
+   "evidence": "campaign22\\receipts\\launch.json, campaign23\\receipts\\launch.json, campaign24\\receipts\\launch.json (also campaign2N\\runtime_args.json 'args')",
+   "description": "The release-launch check fails for 3 of 5 runtimes. The server commands of campaign22 (easy), campaign23 (hard) and campaign24 (chaos) carry '-Dachievetodo.progression.freshConfig=true' in addition to the two -javaagent args, and the brief requires no -Dachievetodo.* flags. Only campaign21 and campaign25 match the certified operator launch, so every thresholds-easy/hard/chaos row of this group comes from a launch composition that is not the certified one. The ReleaseLaunchProfile javadoc says freshConfig is derived only on the start that writes the world group; here it was passed by hand, and the logged derived=[...] list does not include it."
+  },
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "excerpts.txt line 161 (campaign21 pass1 equip_iron_armor locked)",
+   "description": "equipment_identity9_routes_slots: locked excerpts contain no plugin decision line (no ATD_EVENT DENY / cancelled=true) and the STAGE2A ability lock state is null or absent; denial is inferred only from the absent effect (unchanged count, 'Test failed', no item consumption, inventory resync) plus the client overlay flag in rows.jsonl."
+  },
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "excerpts.txt after line 8928 (campaign24 thresholds-chaos equip_golden_armor armor slot place allowed score=32 threshold=28)",
+   "description": "The chaos golden-armor inventory-route allowed rows run at score 32 (the open_inventory threshold), not at threshold 28, so the exact CHAOS boundary for those routes is not exercised (it is covered by the base, dispenser and right-click routes)."
+  }
+ ]
+}

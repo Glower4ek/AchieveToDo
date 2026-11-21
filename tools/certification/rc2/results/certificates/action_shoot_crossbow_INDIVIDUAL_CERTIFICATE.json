@@ -1,0 +1,59 @@
+{
+  "group": "action_shoot_crossbow",
+  "reviewer": "P5",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "Sites NativeActionBindings.java:15 (SHOOT_CROSSBOW in ABILITIES) and NativeActionSpecs.java:30 (Spec SHOOT_CROSSBOW on CrossbowItem.use at the call to performShooting, result FAIL). SHA-256 equal to E1: 93faec2e..., dc0fab2b..., Progressions 00f2cf74..., BukkitRestrictionResolver f5d7d99b.... The guard lambda (NativeActionBindings:29-35) bypasses creative/spectator and maps the id to the AbilityType. Thresholds 269/208/330/269/219/129 (normal/easy/hard/custom/chaos34/chaos36), matching my parse."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS. I read 7 excerpts in 4 runtimes. Locked rows: 'ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=shoot_crossbow', probe 'execute if entity @e[type=arrow]' Test failed pre and post, count unchanged (268, 329, 218), overlay shown. Charging still happens (inventory_changed technical award, score unchanged); this matches the case design use_while_locked, where the guarded boundary is performShooting. Allowed rows: ol_betsy/shoot_crossbow awarded, probe 'Test passed. Count: 1'. op and offhand_locked are denied the same way; offhand_allowed shoots (Test passed). I reproduced the verdicts.",
+      "rowsRead": [
+        "campaign31 pass1 shoot_crossbow locked",
+        "campaign31 pass1 shoot_crossbow allowed",
+        "campaign31 modes shoot_crossbow op",
+        "campaign31 offhand shoot_crossbow offhand_locked",
+        "campaign31 offhand shoot_crossbow offhand_allowed",
+        "campaign33 thresholds-hard shoot_crossbow locked",
+        "campaign34 thresholds-chaos shoot_crossbow locked"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes and raw output.log checked for every contributing runtime: server.properties online-mode=true in campaign31-36; 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' (v4 online UUID) at output.log line 233/233/234/234/233/233 and 'Glower4ek joined the game' at 244/244/246/250/244/246 for campaign31/32/33/34/35/36; launch.json onlineMode=true; no offline-mode warning in any log."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows; offhand_locked + offhand_allowed (c31); locked+allowed for normal, easy, hard, chaos (c34), custom_vision. No NA rows. This is an aim=None case (expect_hit off), so the 'miss' pre hits are expected and not a fixture fault."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows (2) are campaign31 tag 'reload'. Their logLines start (>101738) after the last pass1/modes/offhand row of campaign31 (line 101738) and after 'PROGRESSION_CONFIG_READY generation=2' (output.log line 101756; orchestrator log 'reload done: generation 2' 14:55:20Z). MANIFEST.e5Reload.evidence.generationAfter=2. Every ATD_STAGE2A_STATE line of these rows in excerpts.txt (pre and post) shows \"generation\": 2 (also confirmed in raw output.log). Each reload verdict equals the pass1 verdict of the same ability/case/phase: locked PASS=PASS, allowed PASS=PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "SHA-256 recomputed by me: plugin jar da9360aa...cb540 identical in rc2-artifacts and campaign31..36/runtime/plugins/achievetodo.jar (and launch.json pluginSHA256); client mod at 'E:\\Кубы сборки\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar' = 5c473903...5a99 = rc2-artifacts/achievetodo-mc26.2+0.2.1.jar. campaign-results.jsonl recomputed for ALL six runtimes and equal to evidenceHashes: c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771.... Raw receipts/REPLAY.json of every runtime: counts all REPRODUCED (1629/398/398/398/398/2), reproducedAll=true. Every package row matched its raw campaign-results.jsonl line (by logLines) field for field, except the normalised 'config' label and the added campaign/finalKey; replay.jsonl keys equal rows.jsonl keys. sha256sum -c HARNESS_RC2C.sha256: all OK except campaign_cases.py (now the RC2D file d933206f); reverting only the ignite_tnt requires hunk of the current file reproduces c8add78f... exactly, so RC2C and RC2D cases differ only in that hunk. HARNESS_RC2D.sha256: all OK. replay.jsonl: 17/17 REPRODUCED."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json and receipts/launch.json of campaign31-36: command = java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<easy|hard|chaos> only for c32/c33/c34/c36] -javaagent:plugins/achievetodo.jar -javaagent:<runtime>/observer-work/trace-agent.jar=<Item.use,FireworkRocketItem.use,Player.interactOn> -jar purpur-26.2-2620.jar --nogui; no other -Dachievetodo.* option. output.log: 'ATD_LAUNCH_PROFILE=release' at line 207/207/208/208/207/207 and 'ATD_GAMEPLAY_MODE=CERTIFICATION' at 221/221/222/222/221/221 (c31..c36), both before the first ATD_STAGE2A_STATE (337/335/338/354/379/564). freshConfig appears only in derived=[... world-group.properties ..., achievetodo.progression.freshConfig] of c32/c33/c34/c36, i.e. the plugin derived it and created world-group.properties itself (fresh install); c31 (normal) and c35 (custom_vision) have derived=[bacap.directory, bridge.server, progression.world, progression.worldKey] with no freshConfig and no -D option (existing install). The resolved progression config line matches the intended preset in each runtime. The plugins/ folder also holds the observer plugins (w4-gameplay-evidence-probe, packet-witness, w4-snap). These observe the run and are not launch options."
+    }
+  },
+  "superseded": "No superseded rows in this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...); campaign_cases.py mtime 2026-11-21 00:24:48 +0500; campaign35 output.log first ATD_STAGE2A_STATE 00:24:42 (line 379); campaign_final.py:14,192 (in-process import and replay); campaign35 ignite_tnt rows requires={'vision':5}",
+      "description": "The harness file campaign_cases.py was rewritten on disk (RC2C c8add78f -> RC2D d933206f) while campaign35 was running. campaign35's rows were produced and replayed by the orchestrator's already-imported RC2C module (its ignite_tnt rows carry requires={'vision':5} only), but its EVIDENCE_HASHES.json / MANIFEST evidenceHashes record the RC2D hash, and the RC2C campaign_cases.py is no longer on disk. I reconstructed it exactly (current file minus the ignite_tnt requires hunk = c8add78f), so no verdict changes. Still, the recorded provenance for campaign35 is wrong, and the frozen harness was edited mid-campaign."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/action_shoot_crossbow/excerpts.txt (all ATD_STAGE2A_STATE lines)",
+      "description": "The compacted ATD_STAGE2A_STATE lines in excerpts.txt show \"ability\": {\"SHOOT_CROSSBOW\": null} in every row, because the probe's 'abilities' map does not contain this ability. So the excerpt does not show the tested ability's lock state as the brief says. I verified the lock state from the raw output.log state lines instead: criteria achievetodo:abilities/shoot_crossbow = ['demystified'] at threshold-1 and ['demystified','unlocked'] at threshold, in every row of every runtime."
+    }
+  ]
+}

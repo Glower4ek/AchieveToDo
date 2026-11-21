@@ -1,0 +1,79 @@
+{
+  "group": "client_local_vision",
+  "reviewer": "P2",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json: ability vision (mapping CURATED, family item). Recomputed SHA-256 of all cited files: port/.../gameplay/GameplayGate.java 4ddeec26... (= E1), src/main/java/.../injection/mixin/client/GameRendererMixin.java b808698d... (= E1, Fabric client side), port/.../bridge/BridgeWire.java 4242e4cd... (= E1); legacy BukkitRestrictionResolver listed inactive. Opened: GameplayGate.java:10-11 CLIENT_DEPENDENT = {VISION, OPEN_INVENTORY, USE_SPYGLASS} added to IMPLEMENTED (server projection); BridgeWire.java:95-100 serialises per-ability threshold+unlocked to the client; GameRendererMixin.java:38 'if (AchieveToDoClient.isAbilityLocked(AbilityType.VISION)) blackOverlayAlpha = 1.0f' - really checks VISION. Thresholds: normal 0, easy 0, hard 2, custom_vision 5, chaos@34 0, chaos@36 0; confirmed against the runtime .toml files (normal.toml/easy.toml/chaos_20261116.toml 'vision = 0', hard.toml 'vision = 2', custom_vision.toml 'vision = 5'); config file hashes equal E1.configs."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows: 10 PASS, 5 NA_NO_LOCKED_STATE. Read all excerpts. Locked proofs: campaign33 thresholds-hard locked (count 1->1, threshold 2) and campaign35 thresholds-custom_vision locked (count 4->4, threshold 5): 20 'ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=vision' lines between act and post marks each; rows.jsonl client states pre/mid/tick1/post all guiOverlay=GameRenderer$VisionOverlay and overlay \"You can't see the world. Advancements left to unlock: 1\"; no leak. Allowed rows (31 pass1/reload, 32, 33, 34, 35) and creative/spectator: no DENIAL_INTENT lines, guiOverlay 'none' in every client state, count unchanged; in campaign33 (count 2) and campaign35 (count 5) this is a real transition from the locked state. NA rows contain no log range (lines 1-0) and come from threshold 0.",
+      "rowsRead": [
+        "campaign33 thresholds-hard vision locked",
+        "campaign33 thresholds-hard vision allowed",
+        "campaign35 thresholds-custom_vision vision locked",
+        "campaign35 thresholds-custom_vision vision allowed",
+        "campaign31 pass1 vision allowed",
+        "campaign31 pass1 vision locked (NA)",
+        "campaign31 modes vision creative",
+        "campaign31 modes vision op (NA)",
+        "campaign31 modes vision spectator",
+        "campaign31 reload vision locked (NA)",
+        "campaign31 reload vision allowed",
+        "campaign32 thresholds-easy vision locked (NA)",
+        "campaign32 thresholds-easy vision allowed",
+        "campaign34 thresholds-chaos vision locked (NA)",
+        "campaign34 thresholds-chaos vision allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for every contributing runtime campaign31 (normal), campaign32 (easy), campaign33 (hard), campaign34 (chaos), campaign35 (custom_vision): onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and joinedLine 'Glower4ek joined the game' present (31: 16:39:01/16:39:02, 32: 21:06:42/43, 33: 22:12:38/39, 34: 23:18:41/42, 35: 00:24:28/30); receipts/launch.json of each runtime also has onlineMode=true. campaign36 has the same lines but contributes no rows to this group."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes: creative PASS, spectator PASS, op NA_NO_LOCKED_STATE (NORMAL vision=0). Thresholds: normal/easy/chaos allowed PASS + locked NA (real threshold 0 in normal.toml, easy.toml, chaos_20261116.toml of campaign34), hard locked+allowed PASS (2), custom_vision locked+allowed PASS (5). No offhand rows: the case has no item and no use action (main='air'), so no off-hand variant exists. All 5 NA rows follow from a real threshold 0."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "campaign31 reload rows: locked NA_NO_LOCKED_STATE (threshold 0, same as pass1 locked NA), allowed PASS (= pass1 allowed PASS). Reload rows are after pass1/modes/offhand in campaign31 results (reload block starts at results line 1232). Reload allowed excerpt shows \"generation\": 2 in pre and post ATD_STAGE2A_STATE (tick 243172/243277); MANIFEST.e5Reload.generationAfter=2; output.log 19:55:17 PROGRESSION_CONFIG_READY generation=2."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15/15 rows status=REPRODUCED (recorded==replayed). MANIFEST runtimes replay reproducedAll=true, problems=[] for all (31: 1629, 32-35: 398 each, 36: 2 REPRODUCED). Plugin SHA-256 recomputed from campaign31..36/runtime/plugins/achievetodo.jar and certification/rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar: all da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540 (= brief, = MANIFEST.plugin.perRuntime). Client mod recomputed at 'E:/Кубы сборки/ATD Stage2B W4 Attempt01/minecraft/mods/achievetodo.jar' and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar: 5c473903ec956489185be7d2f5c7803bd82a217c9ec066c1d3ffb5a2f5925a99 (= brief). campaign-results.jsonl SHA-256 recomputed for ALL six runtimes and equal to evidenceHashes.results: 31 8eddce27..., 32 c4936a8d..., 33 23a53c62..., 34 a7e80ad6..., 35 400573a8..., 36 2c2ce771.... campaign.py (5bbf36da...) and campaign_replay.py (d881b760...) on disk equal HARNESS_RC2C.sha256."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json + runtime_args.json: every runtime runs java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<preset>] -javaagent:plugins/achievetodo.jar -javaagent:<campaignNN>/observer-work/trace-agent.jar=<Item.use,FireworkRocketItem.use,Player.interactOn> -jar purpur-26.2-2620.jar --nogui (trace-agent SHA 706b85d5... = PRELAUNCH). The only -Dachievetodo option is initialConfig=easy/hard/chaos in campaign32/33/34 (and chaos in 36); campaign31 and campaign35 have none. campaign_modes.py unlinks world-group.properties and world-selection.properties before a preset start (fresh install). output.log: ATD_LAUNCH_PROFILE=release at line 207/207/208/208/207 and ATD_GAMEPLAY_MODE=CERTIFICATION at 221/221/222/222/221 (campaign31..35), before the first ATD_STAGE2A_STATE (337/335/338/354/379). freshConfig appears only in the plugin's own derived=[..., world-group.properties, ..., achievetodo.progression.freshConfig] in campaign32/33/34 (and 36); campaign31/35 derived lists have no freshConfig and no world-group.properties, consistent with an existing install. STARTING_THE_SERVER.md lines 21-24 and 57 document exactly -javaagent:plugins/<jar> and initialConfig. campaign-results tag order in campaign31 is pass1 (results line 1) -> modes (399) -> offhand (996) -> reload (1232), all rows within one campaign."
+    }
+  },
+  "superseded": "No superseded rows for this group (MANIFEST.superseded = []); the campaign36 CHAOS supplement concerns ignite_tnt only.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/client_local_vision/excerpts.txt, every ATD_STAGE2A_STATE line ('ability': {'VISION': null}), e.g. campaign33 thresholds-hard locked output.log lines 3633-3657",
+      "description": "The server state probe does not report the VISION lock state (null in every row), so the server-side excerpt alone does not show LOCKED/UNLOCKED; the lock is proven only by the DENIAL_INTENT_DISCOVERED ability=vision lines and the client VisionOverlay states in rows.jsonl. Sufficient, but weaker than for other abilities."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "rows.jsonl campaign31 modes vision op and campaign31 reload vision locked (both NA_NO_LOCKED_STATE)",
+      "description": "Modes and reload only run in the NORMAL runtime, where vision = 0, so a locked VISION is never exercised for an operator or after a datapack reload. The NAs are legitimate (real threshold 0), but these combinations remain untested."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "rows.jsonl notes field / campaign_cases.py line 94-96 ('NORMAL/EASY/HARD threshold 0 -> NA_NO_LOCKED_STATE')",
+      "description": "The case note is stale: hard.toml has vision = 2 and HARD produced a real locked PASS row; the note should say NORMAL/EASY/CHAOS."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "certification/w5-campaign/HARNESS_RC2C.sha256 line 2 (campaign_cases.py c8add78f...) vs certification/w5-campaign/campaign_cases.py (current SHA-256 d933206f..., = HARNESS_RC2D)",
+      "description": "The campaign_cases.py that produced campaign31-35 (c8add78f..., recorded in MANIFEST evidenceHashes) is no longer on disk: the w5-campaign copy was overwritten by the RC2D version and no copy with that hash exists under certification/, repo/ or tooling/. campaign.py and campaign_replay.py still match, so verdicts can be re-derived, but a third person cannot re-run the exact RC2C case definitions; keep a history copy (history-campaign_cases.py.rc2c)."
+    }
+  ]
+}

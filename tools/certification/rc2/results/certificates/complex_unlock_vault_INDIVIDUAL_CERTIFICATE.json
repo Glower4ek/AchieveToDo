@@ -1,0 +1,63 @@
+{
+  "group": "complex_unlock_vault",
+  "reviewer": "P8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (unlock_vault), mapping CURATED. 4 direct sites (VaultAdapter.java inactive legacy; 3 active). Recomputed SHA-256 of all 3 cited files, equal to E1: VaultAdapter.java 2254fa7f..6373, NativeComplexBindings.java 0890c634..43a6, NativeComplexSpecs.java 7423b3d7..5715. Opened NativeComplexSpecs.java:43 (Spec vault-key: VaultBlockEntity$Server.tryInsertKey, before resolveItemsToEject, ability UNLOCK_VAULT) and :44 (Spec vault-membership: VaultSharedData.updateConnectedPlayersWithinRange stream filter -> NativeComplexAgent.java:180 SILENT:UNLOCK_VAULT), and NativeComplexBindings.java:14 (ABILITIES contains UNLOCK_VAULT; silent ids skip the denial report at :35). Both sites mirror the Fabric original (repo/src/.../VaultBlockEntityServerMixin.java, VaultSharedDataMixin.java, the latter silent). Thresholds: normal 555, easy 450, hard 660, custom_vision 555, chaos@34 298, chaos@36 363; equal to the runtime toml values; every row threshold equals its toml."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows: 7 locked-type rows PASS_NO_OVERLAY, 10 PASS. Read all 17 excerpts and client states. Every PASS_NO_OVERLAY row (31 pass1 locked, op, offhand_locked, reload locked; 32; 33; 34; 35 locked): UseItemOn packets for MAIN_HAND and OFF_HAND reached the server at the vault, server probe 'data get block 8 -59 -3 server_data' before/after differs only in state_updating_resumes_at (no rewarded_players, no items_to_eject), trial_key still held in every client state, no advancement lines, count unchanged (554, 554, 554, 554, 449, 659, 297, 554), no overlay. No overlay is expected: the locked player is silently excluded from the vault's connected players (same as the Fabric VaultSharedDataMixin), so the vault never activates; PASS_NO_OVERLAY is reproduced by the judge rule (none observed, no leak, overlay false). Allowed/offhand_allowed/reload allowed rows: trial_key consumed (slot 0 or 40), server_data gains rewarded_players + items_to_eject, under_lock_and_key granted on first unlock (count +1 is the allowed effect). Creative: vault rewards (probe), key kept. Spectator: vanilla DENY, no change, no overlay. Verdicts reproduced.",
+      "rowsRead": [
+        "campaign31 pass1 unlock_vault locked",
+        "campaign31 pass1 unlock_vault allowed",
+        "campaign31 modes unlock_vault creative",
+        "campaign31 modes unlock_vault op",
+        "campaign31 modes unlock_vault spectator",
+        "campaign31 offhand unlock_vault offhand_locked",
+        "campaign31 offhand unlock_vault offhand_allowed",
+        "campaign31 reload unlock_vault locked",
+        "campaign31 reload unlock_vault allowed",
+        "campaign32 thresholds-easy unlock_vault locked",
+        "campaign32 thresholds-easy unlock_vault allowed",
+        "campaign33 thresholds-hard unlock_vault locked",
+        "campaign33 thresholds-hard unlock_vault allowed",
+        "campaign34 thresholds-chaos unlock_vault locked",
+        "campaign34 thresholds-chaos unlock_vault allowed",
+        "campaign35 thresholds-custom_vision unlock_vault locked",
+        "campaign35 thresholds-custom_vision unlock_vault allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Contributing runtimes campaign31-35: onlineMode=true, authenticated UUID line and join line in MANIFEST.runtimes; launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows present (campaign31 modes). offhand_locked/offhand_allowed rows present (trial_key in the off hand per client state; OFF_HAND packet traced). Threshold rows for normal, easy, hard, chaos, custom_vision. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows from campaign31 (results reload range 1232-1629, after pass1 1-398, modes 399-995, offhand 996-1231). MANIFEST.e5Reload.evidence.generationAfter=2; output.log 101750-101757 reload + PROGRESSION_CONFIG_READY generation=2. All 4 ATD_STAGE2A_STATE lines of the reload excerpts show \"generation\": 2. Reload verdicts PASS_NO_OVERLAY/PASS equal pass1 PASS_NO_OVERLAY/PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 17/17 REPRODUCED, recorded==replayed (incl. the 7 PASS_NO_OVERLAY), keys equal rows.jsonl. reproducedAll=true for campaign31-36. Recomputed campaign-results.jsonl SHA-256 of all six runtimes = evidenceHashes. Plugin jar per runtime = da9360aa..b540; client mod = 5c473903..5a99."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json/runtime_args.json of campaign31-36: -javaagent:plugins/achievetodo.jar + trace-agent; only -D option is -Dachievetodo.progression.initialConfig=<preset> on fresh-install runtimes 32/33/34/36, none on 31/35. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION before the first case mark in every runtime; freshConfig only inside the plugin's derived=[...]."
+    }
+  },
+  "superseded": "None in this group (MANIFEST.superseded=[]). The campaign36 CHAOS ignite_tnt supplement does not concern unlock_vault; its fixture-dependency rationale is sound.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/complex_unlock_vault/excerpts.txt:3,16 (all ATD_STAGE2A_STATE lines)",
+      "description": "The state probe reports \"ability\": {\"UNLOCK_VAULT\": null}, and the denial is silent (membership filter), so no excerpt line names the plugin's decision or the ability's lock state; the lock is shown only indirectly (vault stays inactive, key kept, count below the toml threshold)."
+    }
+  ]
+}

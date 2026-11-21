@@ -1,0 +1,190 @@
+{
+  "started": "2026-11-19T23:53:26+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\certification\\rc2-artifacts\\AchieveToDo-Purpur-26.2-0.2.1.jar",
+  "runtimes": {
+    "campaign21": {
+      "mode": "normal",
+      "started": "2026-11-19T23:53:26+00:00",
+      "passes": {
+        "pass1": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 391,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 2,
+            "PASS_PARITY_ENTER_BLOCK": 2
+          },
+          "finished": "2026-11-20T00:58:58+00:00"
+        },
+        "modes": {
+          "phases": "creative,op,spectator",
+          "counts": {
+            "PASS": 591,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 2
+          },
+          "finished": "2026-11-20T02:38:58+00:00"
+        },
+        "offhand": {
+          "phases": "offhand_locked,offhand_allowed",
+          "counts": {
+            "PASS": 147,
+            "NA_OFFHAND_NOT_APPLICABLE": 88,
+            "PASS_NO_OVERLAY": 1
+          },
+          "finished": "2026-11-20T03:09:15+00:00"
+        },
+        "reload": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 393,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 2
+          },
+          "finished": "2026-11-20T04:19:49+00:00"
+        }
+      },
+      "reload": {
+        "generationBefore": 1,
+        "generationAfter": 2,
+        "at": "2026-11-20T03:09:21+00:00"
+      },
+      "finished": "2026-11-20T04:19:56+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 1622
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign22": {
+      "mode": "easy",
+      "started": "2026-11-20T04:19:56+00:00",
+      "passes": {
+        "thresholds-easy": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 390,
+            "NA_NO_LOCKED_STATE": 2,
+            "PASS_NO_OVERLAY": 2,
+            "PASS_PARITY_ENTER_BLOCK": 2
+          },
+          "finished": "2026-11-20T05:25:24+00:00"
+        }
+      },
+      "finished": "2026-11-20T05:25:29+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 396
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign23": {
+      "mode": "hard",
+      "started": "2026-11-20T05:41:09+00:00",
+      "passes": {
+        "thresholds-hard": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 391,
+            "PASS_NO_OVERLAY": 2,
+            "PASS_PARITY_ENTER_BLOCK": 2,
+            "PASS_MASKED_BY_DEPENDENCY": 1
+          },
+          "finished": "2026-11-20T06:46:55+00:00"
+        }
+      },
+      "finished": "2026-11-20T06:47:00+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 396
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign24": {
+      "mode": "chaos",
+      "started": "2026-11-20T07:06:38+00:00",
+      "passes": {
+        "thresholds-chaos": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 371,
+            "NA_NO_LOCKED_STATE": 9,
+            "PASS_NO_OVERLAY": 2,
+            "PASS_PARITY_ENTER_BLOCK": 2,
+            "PASS_MASKED_BY_DEPENDENCY": 12
+          },
+          "finished": "2026-11-20T08:11:16+00:00"
+        }
+      },
+      "finished": "2026-11-20T08:11:20+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 396
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign25": {
+      "mode": "E:\\Vibecode\\AchieveToDo\\certification\\w5-campaign\\configs\\custom_vision.toml",
+      "started": "2026-11-20T09:53:54+00:00",
+      "passes": {
+        "thresholds-custom_vision": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 389,
+            "PASS_MASKED_BY_DEPENDENCY": 2,
+            "PASS_NO_OVERLAY": 3,
+            "PASS_PARITY_ENTER_BLOCK": 2
+          },
+          "finished": "2026-11-20T10:59:50+00:00"
+        }
+      },
+      "finished": "2026-11-20T10:59:55+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 396
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "r6",
+  "launch": "release",
+  "error": null,
+  "aborted": "2026-11-20T07:06:06+00:00",
+  "abortedAttempts": {
+    "campaign24": {
+      "error": "LOGIN_FAILED campaign24: []",
+      "at": "2026-11-20T07:06:06+00:00"
+    }
+  },
+  "resumed": "2026-11-20T07:06:38+00:00",
+  "loginFailures": [
+    {
+      "runtime": "campaign25",
+      "at": "2026-11-20T08:16:49+00:00",
+      "error": "LOGIN_FAILED campaign25: []"
+    },
+    {
+      "runtime": "campaign25",
+      "at": "2026-11-20T08:37:17+00:00",
+      "error": "LOGIN_FAILED campaign25: []"
+    },
+    {
+      "runtime": "campaign25",
+      "at": "2026-11-20T09:12:46+00:00",
+      "error": "LOGIN_FAILED campaign25: []"
+    }
+  ],
+  "resumedCustom": "2026-11-20T09:53:54+00:00",
+  "finished": "2026-11-20T10:59:55+00:00"
+}

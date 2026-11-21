@@ -1,0 +1,97 @@
+{
+  "group": "portal_three_conditioned",
+  "reviewer": "P9",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json: 3 abilities (enter_nether, enter_end, teleport_outer_islands), all mapping DIRECT. All 4 cited files re-hashed with Get-FileHash and equal to E1: adapters/BukkitRestrictionResolver.java f5d7d99b...c84e, adapters/PortalAdapter.java d2be5d74...a1f6 (both marked inactive legacy), gameplay/nativeguard/NativePortalAgent.java 443910c9...1181, gameplay/NativePortalBindings.java bcd233e0...a5d7. Opened NativePortalAgent.java:98-132: lines 108-110 map NetherPortalBlock->ENTER_NETHER, EndPortalBlock->ENTER_END, EndGatewayBlock->TELEPORT_OUTER_ISLANDS; 112-115 skip the guard when already in the target dimension and for non-central gateways (central() line 133); 119 denies via locked(); transformNative hooks Entity.setAsInsidePortal (144-152). NativePortalBindings.java:13 ABILITIES = the 3 abilities; guard lambda returns false (no denial) for CREATIVE/SPECTATOR and otherwise !GameplayDenialEffects.allows (GameplayDenialEffects.java:30-52: report() -> afterDenial() updateInventory + action bar throttled to 250 ms). Thresholds listed for normal/easy/hard/custom_vision/chaos@34/chaos@36 for every ability (224/172/276/224/296/115; 471/378/564/471/662/654; 660/540/780/660/392/227) and they match the row thresholds. Config TOMLs re-hashed = E1 (normal de638359..., easy c145bfe2..., hard 9d7b711b..., custom_vision db26c1f6..., chaos@34 49c91766..., chaos@36 d821647b...); campaign37 normal.toml is the same de638359... as campaign31."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "45 rows: 34 PASS, 10 PASS_PARITY_ENTER_BLOCK, 1 PASS_NO_OVERLAY. Read the excerpts of all 45 rows (pre/act/post marks, STATE count/mode/op/generation/position, ADVANCEMENT_DONE and WORLD_CHANGE lines). Native locked/allowed for every ability and every config: enter_nether locked (31 pass1, 31 reload gen 2, 32, 33, 34, 35) count unchanged, position 8.5 -60 -0.5 unchanged for ~150 ticks inside the portal, no WORLD_CHANGE, client overlay 'You can't enter The Nether'; allowed rows show WORLD_CHANGE overworld->the_nether and position -13 45 -12.5. enter_end locked: no WORLD_CHANGE, player stays at 8.5 -61 -1.7; the only gain is minecraft:story/enter_the_end entered_end_portal (+1, still below threshold: 469->470<471, 376->377<378, 562->563<564, 660->661<662, 469->470<471) = accepted parity (a); allowed: WORLD_CHANGE -> the_end, pos 100.5 49 0.5. teleport_outer_islands locked: player stays near the central gateway (z 53.5 -> 50.7), only minecraft:end/enter_end_gateway (+1) = parity (a); allowed: pos z ~1021.5. All 10 PASS_PARITY_ENTER_BLOCK rows reproduced by hand; the locked state of each ability is proven by at least one PASS/PARITY row in every config. The non-PASS row PASS_NO_OVERLAY (campaign37 modes enter_nether op) and the campaign37 creative PASS are reproducible as verdicts but do not prove what they claim; see the E4 findings.",
+      "rowsRead": [
+        "campaign31 pass1 enter_nether locked", "campaign31 pass1 enter_nether allowed",
+        "campaign31 pass1 enter_end locked", "campaign31 pass1 enter_end allowed",
+        "campaign31 pass1 teleport_outer_islands locked", "campaign31 pass1 teleport_outer_islands allowed",
+        "campaign31 modes enter_end creative", "campaign31 modes enter_end op", "campaign31 modes enter_end spectator",
+        "campaign31 modes teleport_outer_islands creative", "campaign31 modes teleport_outer_islands op", "campaign31 modes teleport_outer_islands spectator",
+        "campaign31 reload enter_nether locked", "campaign31 reload enter_nether allowed",
+        "campaign31 reload enter_end locked", "campaign31 reload enter_end allowed",
+        "campaign31 reload teleport_outer_islands locked", "campaign31 reload teleport_outer_islands allowed",
+        "campaign32 thresholds-easy enter_nether locked", "campaign32 thresholds-easy enter_nether allowed",
+        "campaign32 thresholds-easy enter_end locked", "campaign32 thresholds-easy enter_end allowed",
+        "campaign32 thresholds-easy teleport_outer_islands locked", "campaign32 thresholds-easy teleport_outer_islands allowed",
+        "campaign33 thresholds-hard enter_nether locked", "campaign33 thresholds-hard enter_nether allowed",
+        "campaign33 thresholds-hard enter_end locked", "campaign33 thresholds-hard enter_end allowed",
+        "campaign33 thresholds-hard teleport_outer_islands locked", "campaign33 thresholds-hard teleport_outer_islands allowed",
+        "campaign34 thresholds-chaos enter_nether locked", "campaign34 thresholds-chaos enter_nether allowed",
+        "campaign34 thresholds-chaos enter_end locked", "campaign34 thresholds-chaos enter_end allowed",
+        "campaign34 thresholds-chaos teleport_outer_islands locked", "campaign34 thresholds-chaos teleport_outer_islands allowed",
+        "campaign35 thresholds-custom_vision enter_nether locked", "campaign35 thresholds-custom_vision enter_nether allowed",
+        "campaign35 thresholds-custom_vision enter_end locked", "campaign35 thresholds-custom_vision enter_end allowed",
+        "campaign35 thresholds-custom_vision teleport_outer_islands locked", "campaign35 thresholds-custom_vision teleport_outer_islands allowed",
+        "campaign37 modes enter_nether creative", "campaign37 modes enter_nether op", "campaign37 modes enter_nether spectator"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign31-37 all onlineMode=true with authenticated UUID line and join line. Re-checked campaign37 raw: output.log:234 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a', :245 'Glower4ek joined the game'; runtime/server.properties:47 online-mode=true; receipts/launch.json onlineMode=true. Rows carry pre/mid/tick1/post client states from the Fabric client."
+    },
+    "E4": {
+      "result": "FAIL",
+      "checked": "modes rows exist for all 3 abilities (creative/op/spectator); enter_end and teleport_outer_islands modes rows (campaign31) are sound: creative crosses at 469<471 / 658<660 with no unlock during the window, op denied (op=true, count unchanged, no world change), spectator no overlay/leak. Threshold rows for normal/easy/hard/chaos/custom_vision exist for all 3. No NA rows; no offhand rows (portals have no hand route). FAIL because the enter_nether modes rows that now stand for the group (campaign37, superseding campaign31) do not prove creative bypass nor op denial; see the two major findings."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "campaign31 campaign-results.jsonl tag spans recomputed: pass1 0-397, modes 398-994, offhand 995-1230, reload 1231-1628, so the 6 reload rows come after pass1/modes/offhand. MANIFEST.e5Reload.evidence.generationAfter=2. All 12 reload STATE lines in excerpts.txt show generation 2. Verdicts: enter_nether reload PASS/PASS = pass1 PASS/PASS; enter_end and teleport_outer_islands reload locked PASS vs pass1 PASS_PARITY_ENTER_BLOCK agree in substance (teleport denied in both; the +1 enter_block criterion was already earned in pass1, so no gain on reload); allowed PASS = PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 45/45 REPRODUCED, recorded==replayed for all, key multiset (campaign,tag,ability,phase) equal to rows.jsonl. MANIFEST replay reproducedAll=true for campaign31-37 (campaign37 REPLAY.json: 3 REPRODUCED). campaign-results.jsonl SHA-256 recomputed for ALL seven runtimes campaign31-37 and equal to evidenceHashes.results (campaign37 7477c8b8...3b25). campaign37 output.log recomputed = 20d5da13...635d. runtime/plugins/achievetodo.jar of campaign31-37 and rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar all = da9360aa...4cb540 (brief value). Client mod at MANIFEST.clientMod.path recomputed = 5c473903...925a99 (brief value). campaign37 trace-agent.jar = 706b85d5... (HARNESS_RC2E). Harness files recomputed: campaign.py f7ce2e92..., campaign_cases.py f3f8ef0f..., campaign_final_rc2e.py 1d33f8a4... = HARNESS_RC2E.sha256 and equal to history-campaign.py.rc2e / history-campaign_cases.py.rc2e; history-campaign_cases.py.rc2c = c8add78f... (HARNESS_RC2C). REJUDGE.json campaign31: 1628 REPRODUCED + 1 MISMATCH (line 546, modes enter_nether creative, PASS -> INVALID_FIXTURE_PRESET); campaign32-36 all REPRODUCED: only that one row changed, as claimed."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "campaign37 (the new runtime): launch.json command = java -Xms128M -Xmx2G -javaagent:plugins/achievetodo.jar -javaagent:<campaign37>/observer-work/trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn -jar purpur-26.2-2620.jar --nogui; runtime_args.json the same two agents; no -Dachievetodo.* (NORMAL existing install, like campaign31: world-selection.properties / world-group.properties are the pre-existing hand-made files dated 18.11.2026, no plugin timestamp header). output.log:208 'ATD_LAUNCH_PROFILE=release; derived=[achievetodo.bacap.directory, achievetodo.bridge.server, achievetodo.progression.world, achievetodo.progression.worldKey]' (no freshConfig), :222 'ATD_GAMEPLAY_MODE=CERTIFICATION', both before the first case (atd_marks objective created at :250). campaign31-36 re-checked from round-1 evidence and MANIFEST (prelaunch launch=release in all). Harness of campaign37 = HARNESS_RC2E: the diff rc2c->rc2e of campaign_cases.py touches only ignite_tnt requires (RC2D) and the enter_nether fixture; campaign.py adds the 'preset' collection in evaluate and the INVALID_FIXTURE_PRESET branch in judge (exempting spectator). The campaign36 CHAOS ignite_tnt supersession does not touch this group."
+    }
+  },
+  "superseded": "MANIFEST.superseded for this group: campaign31 'modes' enter_nether creative/op/spectator -> campaign37 (PASS/PASS_NO_OVERLAY/PASS). The rejudge part is legitimate: the INVALID_FIXTURE_PRESET rule exists in campaign.py, and REJUDGE.json shows that only the campaign31 creative row changes. campaign37 is a fresh NORMAL runtime with the same plugin, the same normal.toml, online mode and release launch. The replacement rows still do not prove what they stand for. (1) Creative: the walk-in fixture now starts outside the portal, but in this fresh world minecraft:story/enter_the_nether was not yet earned. Touching the portal awarded it (tick 769), which raised the count 223->224 = threshold, and achievetodo:abilities/enter_nether was 'unlocked' at tick 770. The WORLD_CHANGE came after that, also at tick 770. So the crossing happened with the ability already unlocked, and the row does not show a creative bypass of a locked portal. (2) Op: a survival op walking through the portal for about 8 key-press ticks never stays the vanilla 80 ticks, so 'no Nether' would also be the result without any guard. This row replaces a campaign31 op row that stood in the portal ~150 ticks with the overlay shown. Only the enter_nether creative row needed replacing; replacing the op row too weakened the evidence. Not justified as delivered.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "E4",
+      "evidence": "campaign37/receipts/output.log:447 (pre STATE count 223, CREATIVE, overworld, 8.5 -60 0.5, criteria without minecraft:story/enter_the_nether), :449 ADVANCEMENT_DONE minecraft:story/enter_the_nether ['entered_nether_portal'] tick 769, :450 POST_REWARD_SCORE 224, :452 ADVANCEMENT_DONE achievetodo:abilities/enter_nether ['demystified','unlocked'] tick 770, :460 ATD_PROOF_NATIVE_WORLD_CHANGE overworld->the_nether tick 770; rows.jsonl 'campaign37 modes enter_nether creative' counts [223,225]; campaign.py:417 + :452 (score-drift check only for LOCKED_PHASES, creative excluded)",
+      "description": "Round-1 major finding NOT resolved. The new creative row is no longer preset, but it is confounded. On contact, the vanilla enter_the_nether criterion (+1) pushed the count to the threshold (224), and the plugin unlocked enter_nether before the dimension change in the same tick. The crossing therefore happened with the ability unlocked, so the row cannot show that creative bypasses a locked Nether portal. The judge does not catch this because INVALID_SCORE_DRIFT_DURING_ACTION is only applied to LOCKED_PHASES. Margin 1 is not enough when story/enter_the_nether is unearned. A valid rerun needs that advancement pre-earned (as it was in campaign31) or a margin of at least 2, plus a check that the count stayed below the threshold until the WORLD_CHANGE."
+    },
+    {
+      "severity": "major",
+      "criterion": "E4",
+      "evidence": "rows.jsonl 'campaign37 modes enter_nether op' (verdict PASS_NO_OVERLAY, client pre pos 8.5 -60 0.5, post 8.5 -60 -1.439, hit=miss after the walk); excerpts.txt:5069-5110 (campaign37/receipts/output.log 515-555: no ADVANCEMENT/WORLD_CHANGE, only a burst of ContainerSetContent/SetSlot at 06:08:34); campaign_cases.py enter_nether case actions ['press key.forward 8','wait 120','state mid']; MANIFEST.superseded op was PASS now PASS_NO_OVERLAY",
+      "description": "The op row that now stands for enter_nether cannot tell the plugin's lock apart from vanilla. The survival op walks through the thin portal and ends at z=-1.439, outside block z=-1, after touching it for only a few ticks. Vanilla needs 80 ticks inside a Nether portal, so the player would not have left the overworld even without any guard. The only server-side hint of a denial is the burst of inventory resync packets (GameplayDenialEffects.afterDenial -> updateInventory). There is no overlay at the samples and no explicit decision line. This row supersedes the campaign31 op row, in which the op stood in the portal about 150 ticks and the overlay was shown. The new fixture should keep the player inside the portal for more than 80 ticks after stepping in, or the campaign31 op row should be kept."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "rows.jsonl 'campaign37 modes enter_nether spectator' (post pos 8.5 -60 -4.369); excerpts.txt:5111-5116",
+      "description": "The spectator row flies through the portal and is inside it for only a few ticks, while the superseded campaign31 row stood inside for ~150 ticks. The PASS (no fresh overlay, no leak) is still consistent with the source, since the guard returns false for SPECTATOR. But the row now shows much less exposure to the overlay path."
+    },
+    {
+      "severity": "minor",
+      "criterion": "ReleaseLaunch",
+      "evidence": "MANIFEST.runtimes.campaign35.evidenceHashes['campaign_cases.py'].sha256 = d933206f... (HARNESS_RC2D) while campaign31-34 record c8add78f... (HARNESS_RC2C); campaign_final_rc2d.py mtime 21.11.2026 0:25, during campaign35's run",
+      "description": "campaign35 was run by the RC2C orchestrator, but its evidence snapshot records the RC2D campaign_cases.py, which was edited while the run was in progress. The only RC2C->RC2D change is ignite_tnt requires, which does not touch this group. Still, the brief's claim that all rows come from one harness, HARNESS_RC2C, is not literally what the receipts record."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "w5-campaign folder: history-campaign.py.pre-rc2c (5ddb0112...) and history-campaign.py.rc2e (f7ce2e92...) exist; no copy of the RC2C/RC2D campaign.py (5bbf36da...)",
+      "description": "The RC2C campaign.py that judged campaign31-36 is not preserved, so the rc2e change to judge can only be diffed against pre-rc2c. That diff also contains the rc2c expect_hit and server_reach rules. Traceability gap; does not change any verdict."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt all ATD_STAGE2A_STATE lines ('\"ENTER_NETHER\": null', etc.)",
+      "description": "The compacted excerpts do not show the tested ability's lock state (null), so the lock state has to be read from the raw criteria (achievetodo:abilities/<ability> 'unlocked'). Carried over from round 1."
+    }
+  ]
+}

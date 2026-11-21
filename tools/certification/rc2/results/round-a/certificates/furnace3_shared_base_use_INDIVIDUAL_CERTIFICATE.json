@@ -1,0 +1,62 @@
+{
+  "group": "furnace3_shared_base_use",
+  "reviewer": "Q6",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "3 abilities (open_furnace, open_smoker, open_blast_furnace), all DIRECT with active sites plus family resolver AbilityResolvers.findBlockAbility. All 5 cited source files re-hashed with hashlib: 5/5 match E1. Opened BukkitExpandedGameplayListener.java:72 (containerAbility Furnace->OPEN_FURNACE, cancelled in InventoryOpenEvent when locked), GameplayMenuAbilities.java:23-24 (SMOKER->OPEN_SMOKER, BLAST_FURNACE->OPEN_BLAST_FURNACE), NativeLandmarkActions.java:215-217 (FurnaceBlock/SmokerBlock/BlastFurnaceBlock -> abilities). Thresholds listed for normal/easy/hard/chaos_20261116/custom_vision for each ability (e.g. open_furnace 104/82/126/473/104)."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "45 rows, all PASS (no non-PASS rows). Each ability has locked PASS rows in all 5 runtimes. Read locked excerpts in campaign21-25 for all 3 abilities plus allowed and modes rows: locked rows show STATE kind=LOCKED, count unchanged pre/post (e.g. 103->103, 526->526, 21->21), no ClientboundOpenScreenPacket and no INVENTORY_OPEN boundary line, client overlay 'You can't open a furnace'; allowed rows show UNLOCKED, INVENTORY_OPEN_TYPE_* and ClientboundOpenScreenPacket. Creative and spectator open the screen (bypass), op is treated as a locked phase by the harness (LOCKED_PHASES includes 'op') and shows no OpenScreen. Note: plugin decision lines (ATD_W2_INPUT_EVENT/ATD_EVENT) read useBlock=ALLOW/cancelled=false even in locked rows; the denial is visible only as absence of the screen open (native agent layer), which I accept as the oracle.",
+      "rowsRead": [
+        "campaign21 pass1 open_furnace locked",
+        "campaign21 pass1 open_smoker locked",
+        "campaign21 pass1 open_smoker allowed",
+        "campaign21 modes open_furnace creative/op/spectator",
+        "campaign21 modes open_smoker creative/op/spectator",
+        "campaign21 modes open_blast_furnace creative/op/spectator",
+        "campaign22 thresholds-easy open_furnace/open_smoker/open_blast_furnace locked",
+        "campaign23 thresholds-hard open_furnace/open_smoker/open_blast_furnace locked",
+        "campaign24 thresholds-chaos open_furnace/open_smoker/open_blast_furnace locked",
+        "campaign25 thresholds-custom_vision open_furnace/open_smoker/open_blast_furnace locked"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25: onlineMode=true, authenticatedUuidLine 'UUID of player ... is 89c23030-...' and joinedLine present for each; launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator exist for all 3 abilities (campaign21). No offhand rows: opening a block menu with an empty hand has no off-hand variant (useWithoutItem is main-hand only). Locked+allowed rows exist for normal, easy, hard, chaos, custom_vision. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "6 reload rows, all campaign21, log lines 103180-103606 after pass1 (max 2608) and modes (max 40842). e5Reload.generationAfter=2; all 6 reload excerpts show only \"generation\": 2. All reload verdicts equal pass1 (PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 45/45 REPRODUCED; runtimes campaign21-25 reproducedAll=true (1622/396/396/396/396). Plugin sha256 da9360aa... identical in perRuntime for all 5 and in launch.json pluginSHA256; clientMod sha256 5c473903... equals brief. Recomputed sha256 of campaign-results.jsonl for all 5 runtimes; all match evidenceHashes (e.g. campaign21 dfd9c210...)."
+    },
+    "RELEASE_LAUNCH": {
+      "result": "FAIL",
+      "checked": "All 5 runtimes log ATD_LAUNCH_PROFILE=release (output.log line 207/207/207/206/208) and ATD_GAMEPLAY_MODE=CERTIFICATION (221/221/221/220/222) before the first atd_marks case line (~249-284). launch.json command: campaign21 and campaign25 hold only -javaagent:plugins/achievetodo.jar + trace-agent; campaign22/23/24 additionally hold -Dachievetodo.progression.freshConfig=true (see finding)."
+    }
+  },
+  "superseded": "No superseded rows: MANIFEST.superseded=[] and supplements=[]; all rows from campaign21-25, harness hashes per HARNESS_RC2.sha256 are listed in MANIFEST.harness.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "RELEASE_LAUNCH",
+      "evidence": "campaign22/runtime_args.json args[0], campaign22/receipts/launch.json, campaign23/receipts/launch.json, campaign24/receipts/launch.json",
+      "description": "The server command of campaign22 (easy), campaign23 (hard) and campaign24 (chaos) contains -Dachievetodo.progression.freshConfig=true in addition to -javaagent:plugins/achievetodo.jar and the trace agent. The brief states the certified operator launch has no -Dachievetodo.* flags; only campaign21 and campaign25 match. The flag changes config resolution (BukkitProgressionRuntime.java:72, :401 'explicit freshConfig required'), and ReleaseLaunchProfile.java:85 only derives it itself when it writes a new world group, which the logged derived=[...] list for these runtimes does not include. So the thresholds-easy/hard/chaos rows of this group were produced outside the certified composition. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION are logged in all five runtimes (output.log lines ~206-222)."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/furnace3_shared_base_use/excerpts.txt 'campaign21 pass1 open_furnace locked' block",
+      "description": "The plugin-decision log lines in locked rows report ATD_W2_INPUT_EVENT useBlock=ALLOW cancelled=false and ATD_EVENT blockResult=ALLOW; the denial is only observable as the missing ClientboundOpenScreenPacket and the overlay. The brief describes these lines as showing the plugin decision; they do not show it for this group."
+    }
+  ]
+}

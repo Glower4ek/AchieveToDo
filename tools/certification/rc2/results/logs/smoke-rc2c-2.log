@@ -1,0 +1,44 @@
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\attempt23 da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540
+[2026-11-20T11:23:05+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-20T11:23:16+00:00] attempt23 up: [16:23:15 INFO]: [AchieveToDo] Resolved progression config normal.toml (normal)
+[2026-11-20T11:23:16+00:00] attempt23 launch profile: release, gameplay mode CERTIFICATION
+[2026-11-20T11:23:43+00:00] attempt23 pass smoke phases=locked,allowed,creative,op
+CONFIG normal:normal.toml abilities=153
+PASS                       action_place_end_crystal           place_end_crystal              locked
+PASS                       action_place_end_crystal           place_end_crystal              allowed
+PASS                       action_place_end_crystal           place_end_crystal              creative
+PASS                       action_place_end_crystal           place_end_crystal              op
+PASS                       vehicle_mount_two                  get_into_boat                  locked
+PASS                       vehicle_mount_two                  get_into_boat                  allowed
+PASS                       vehicle_mount_two                  get_into_boat                  creative
+PASS                       vehicle_mount_two                  get_into_boat                  op
+PASS                       vehicle_mount_two                  get_into_minecart              locked
+PASS                       vehicle_mount_two                  get_into_minecart              allowed
+PASS                       vehicle_mount_two                  get_into_minecart              creative
+PASS                       vehicle_mount_two                  get_into_minecart              op
+PASS                       bundle_two_native_routes           put_in_bundle                  locked
+PASS                       bundle_two_native_routes           put_in_bundle                  allowed
+PASS                       bundle_two_native_routes           put_in_bundle                  creative
+PASS                       bundle_two_native_routes           put_in_bundle                  op
+PASS                       bundle_two_native_routes           put_in_bundle                  locked
+PASS                       bundle_two_native_routes           put_in_bundle                  allowed
+PASS                       bundle_two_native_routes           put_in_bundle                  creative
+PASS                       bundle_two_native_routes           put_in_bundle                  op
+PASS                       throwables_four_paper_candidates   throw_snowball                 locked
+PASS                       throwables_four_paper_candidates   throw_snowball                 allowed
+PASS                       throwables_four_paper_candidates   throw_snowball                 creative
+PASS                       throwables_four_paper_candidates   throw_snowball                 op
+PASS                       villager13_profession_resolver     trade_with_mason               locked
+PASS                       villager13_profession_resolver     trade_with_mason               allowed
+PASS                       villager13_profession_resolver     trade_with_mason               creative
+PASS                       villager13_profession_resolver     trade_with_mason               op
+PASS_NO_OVERLAY            villager13_profession_resolver     trade_with_cartographer        locked
+PASS                       villager13_profession_resolver     trade_with_cartographer        allowed
+PASS                       villager13_profession_resolver     trade_with_cartographer        creative
+PASS_NO_OVERLAY            villager13_profession_resolver     trade_with_cartographer        op
+FAIL_EFFECT_WHILE_LOCKED   wandering_trader_separate          trade_with_wandering_trader    locked
+PASS                       wandering_trader_separate          trade_with_wandering_trader    allowed
+PASS                       wandering_trader_separate          trade_with_wandering_trader    creative
+FAIL_EFFECT_WHILE_LOCKED   wandering_trader_separate          trade_with_wandering_trader    op
+E6 replay attempt23: {'REPRODUCED': 36} reproducedAll=True
+SMOKE_DONE

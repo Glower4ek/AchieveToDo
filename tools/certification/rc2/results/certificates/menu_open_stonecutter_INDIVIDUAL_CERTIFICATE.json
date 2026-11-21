@@ -1,0 +1,61 @@
+{
+  "group": "menu_open_stonecutter",
+  "reviewer": "P2",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json lists ability open_stonecutter (mapping DIRECT, family block). Recomputed SHA-256 of every cited source file under repo/: BukkitRestrictionResolver.java f5d7d99b... (legacy, inactive), GameplayMenuAbilities.java 813236fd... - all equal E1. Opened guard site: GameplayMenuAbilities.java:20 maps InventoryType.STONECUTTER + Material.STONECUTTER -> AbilityType.OPEN_STONECUTTER; consumed by BukkitExpandedGameplayListener.open(InventoryOpenEvent) line 77-81, which cancels when locked(p, ability). Thresholds listed for every config: normal 77, easy 64, hard 90, custom_vision 77, chaos@34 236 (chaos@36 89). Config files recomputed: normal/easy/hard/custom_vision/chaos@34/chaos@36 .toml SHA-256 all equal E1.configs."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS (no non-PASS rows). Read every excerpt block of the group (all 15). Locked rows (pass1, reload, 4 threshold runtimes, op) each have ATD_STAGE2A_STATE pre/post with identical count = threshold-1, kind LOCKED. Locked rows show INVENTORY_OPEN_MONITOR_CANCELLED true, no ClientboundOpenScreenPacket, no INTERACT_WITH_STONECUTTER stat, client overlay \"You can't use a stonecutter. Advancements left to unlock: 1\"; allowed rows show MONITOR_CANCELLED false + ClientboundOpenScreenPacket + stat INTERACT_WITH_STONECUTTER. Op row (op=true, SURVIVAL) denied likewise. Creative (bypass, judged as allowed) opened the screen; spectator opened without a fresh overlay (vanilla behaviour, product bypass).",
+      "rowsRead": [
+        "campaign31 pass1 open_stonecutter locked",
+        "campaign31 pass1 open_stonecutter allowed",
+        "campaign31 modes open_stonecutter creative",
+        "campaign31 modes open_stonecutter op",
+        "campaign31 modes open_stonecutter spectator",
+        "campaign31 reload open_stonecutter locked",
+        "campaign31 reload open_stonecutter allowed",
+        "campaign32 thresholds-easy open_stonecutter locked",
+        "campaign32 thresholds-easy open_stonecutter allowed",
+        "campaign33 thresholds-hard open_stonecutter locked",
+        "campaign33 thresholds-hard open_stonecutter allowed",
+        "campaign34 thresholds-chaos open_stonecutter locked",
+        "campaign34 thresholds-chaos open_stonecutter allowed",
+        "campaign35 thresholds-custom_vision open_stonecutter locked",
+        "campaign35 thresholds-custom_vision open_stonecutter allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for every contributing runtime campaign31 (normal), campaign32 (easy), campaign33 (hard), campaign34 (chaos), campaign35 (custom_vision): onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and joinedLine 'Glower4ek joined the game' present (31: 16:39:01/16:39:02, 32: 21:06:42/43, 33: 22:12:38/39, 34: 23:18:41/42, 35: 00:24:28/30); receipts/launch.json of each runtime also has onlineMode=true. campaign36 has the same lines but contributes no rows to this group."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator present (campaign31). Threshold rows for normal (pass1), easy (32), hard (33), chaos (34), custom_vision (35), locked+allowed each. No offhand rows and no NA rows: the case holds air in both hands (main='air'), so campaign_final.OFFHAND excludes it; an empty-hand block-menu click has no off-hand variant. No NA_* rows to explain."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows (locked, allowed) from campaign31, results lines after pass1/modes/offhand (tag order pass1@1, modes@399, offhand@996, reload@1232). output.log 19:55:15 'Reloading!' then PROGRESSION_CONFIG_READY generation=2; MANIFEST.e5Reload.generationAfter=2. Both reload excerpts show \"generation\": 2 in pre and post ATD_STAGE2A_STATE. Reload verdicts PASS/PASS = pass1 PASS/PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15/15 rows status=REPRODUCED (recorded==replayed). MANIFEST runtimes replay reproducedAll=true, problems=[] for all (31: 1629, 32-35: 398 each, 36: 2 REPRODUCED). Plugin SHA-256 recomputed from campaign31..36/runtime/plugins/achievetodo.jar and certification/rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar: all da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540 (= brief, = MANIFEST.plugin.perRuntime). Client mod recomputed at 'E:/Кубы сборки/ATD Stage2B W4 Attempt01/minecraft/mods/achievetodo.jar' and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar: 5c473903ec956489185be7d2f5c7803bd82a217c9ec066c1d3ffb5a2f5925a99 (= brief). campaign-results.jsonl SHA-256 recomputed for ALL six runtimes and equal to evidenceHashes.results: 31 8eddce27..., 32 c4936a8d..., 33 23a53c62..., 34 a7e80ad6..., 35 400573a8..., 36 2c2ce771.... campaign.py (5bbf36da...) and campaign_replay.py (d881b760...) on disk equal HARNESS_RC2C.sha256."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json + runtime_args.json: every runtime runs java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<preset>] -javaagent:plugins/achievetodo.jar -javaagent:<campaignNN>/observer-work/trace-agent.jar=<Item.use,FireworkRocketItem.use,Player.interactOn> -jar purpur-26.2-2620.jar --nogui (trace-agent SHA 706b85d5... = PRELAUNCH). The only -Dachievetodo option is initialConfig=easy/hard/chaos in campaign32/33/34 (and chaos in 36); campaign31 and campaign35 have none. campaign_modes.py unlinks world-group.properties and world-selection.properties before a preset start (fresh install). output.log: ATD_LAUNCH_PROFILE=release at line 207/207/208/208/207 and ATD_GAMEPLAY_MODE=CERTIFICATION at 221/221/222/222/221 (campaign31..35), before the first ATD_STAGE2A_STATE (337/335/338/354/379). freshConfig appears only in the plugin's own derived=[..., world-group.properties, ..., achievetodo.progression.freshConfig] in campaign32/33/34 (and 36); campaign31/35 derived lists have no freshConfig and no world-group.properties, consistent with an existing install. STARTING_THE_SERVER.md lines 21-24 and 57 document exactly -javaagent:plugins/<jar> and initialConfig. campaign-results tag order in campaign31 is pass1 (results line 1) -> modes (399) -> offhand (996) -> reload (1232), all rows within one campaign."
+    }
+  },
+  "superseded": "MANIFEST.superseded is empty for this group; the campaign36 supplement only replaces CHAOS ignite_tnt rows and does not touch this group. Rows from campaign34 chaos stand as recorded.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "certification/w5-campaign/HARNESS_RC2C.sha256 line 2 (campaign_cases.py c8add78f...) vs certification/w5-campaign/campaign_cases.py (current SHA-256 d933206f..., = HARNESS_RC2D)",
+      "description": "The campaign_cases.py that produced campaign31-35 (c8add78f..., recorded in MANIFEST evidenceHashes) is no longer on disk: the w5-campaign copy was overwritten by the RC2D version and no copy with that hash exists under certification/, repo/ or tooling/. campaign.py and campaign_replay.py still match, so verdicts can be re-derived, but a third person cannot re-run the exact RC2C case definitions; keep a history copy (history-campaign_cases.py.rc2c)."
+    }
+  ]
+}

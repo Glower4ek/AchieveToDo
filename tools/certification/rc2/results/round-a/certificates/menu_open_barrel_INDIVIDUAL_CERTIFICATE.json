@@ -1,0 +1,63 @@
+{
+  "group": "menu_open_barrel",
+  "reviewer": "Q1",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "open_barrel has 2 active direct sites: BukkitExpandedGameplayListener.java:71 (containerAbility: Barrel -> OPEN_BARREL, consumed by open(InventoryOpenEvent) at 77-81 which cancels when locked(p, ability)) and GameplayGate.java:17 (IMPLEMENTED set). Recomputed SHA-256 of BukkitExpandedGameplayListener.java, GameplayGate.java and BukkitRestrictionResolver.java: all equal E1. Progressions.java (definition site) has no E1 hash (current 00f2cf74b10872ad...). Thresholds present: normal 59, easy 52, hard 66, chaos_20261116 82, custom_vision 59."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS, single case. Read all 15 excerpt blocks: every locked/op block (pass1, reload, easy, hard, chaos, custom, op) shows ATD_W2_INPUT_EVENT RIGHT_CLICK_BLOCK BARREL, ATD_BOUNDARY INVENTORY_OPEN_MONITOR_CANCELLED true, no ClientboundOpenScreenPacket, and equal STATE count before/after (58/58, 51/51, 65/65, 81/81, 58/58) with OPEN_BARREL kind LOCKED; every allowed/creative block shows MONITOR_CANCELLED false and ClientboundOpenScreenPacket with kind UNLOCKED (creative bypass). Note: the plugin decision line is the InventoryOpenEvent cancellation, not useBlock=DENY (useBlock stays ALLOW).",
+      "rowsRead": [
+        "campaign21 pass1 open_barrel locked",
+        "campaign21 pass1 open_barrel allowed",
+        "campaign21 modes open_barrel creative",
+        "campaign21 modes open_barrel op",
+        "campaign21 modes open_barrel spectator",
+        "campaign21 reload open_barrel locked",
+        "campaign21 reload open_barrel allowed",
+        "campaign22 thresholds-easy open_barrel locked",
+        "campaign22 thresholds-easy open_barrel allowed",
+        "campaign23 thresholds-hard open_barrel locked",
+        "campaign23 thresholds-hard open_barrel allowed",
+        "campaign24 thresholds-chaos open_barrel locked",
+        "campaign24 thresholds-chaos open_barrel allowed",
+        "campaign25 thresholds-custom_vision open_barrel locked",
+        "campaign25 thresholds-custom_vision open_barrel allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25 (normal, easy, hard, chaos, custom_vision): onlineMode=true, authenticated line 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' present for each; join lines confirmed in each runtime's receipts/output.log (lines 244/244/245/246/245)."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative, op, spectator rows present (tag modes); threshold rows for normal, easy, hard, chaos, custom_vision. No offhand rows: opening a barrel is a block interaction gated at InventoryOpenEvent independent of hand, so no separate off-hand route. No NA_* rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows from campaign21 (log lines 101540+, after pass1 542-606, modes 38030+); manifest generationAfter=2; both reload excerpt blocks show generation 2 only; reload verdicts PASS equal pass1 PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 15/15 REPRODUCED, recorded==replayed. REPLAY.json reproducedAll=true for campaign21 (1622/1622) and campaign22-25 (396/396 each). Plugin SHA-256 identical in all 5 runtimes = da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540 (also recomputed from campaign21/runtime/plugins/achievetodo.jar); client mod SHA-256 = 5c473903ec956489185be7d2f5c7803bd82a217c9ec066c1d3ffb5a2f5925a99 as required. Recomputed campaign-results.jsonl SHA-256 of all 5 runtimes; each equals MANIFEST evidenceHashes.results (campaign21 dfd9c2100a7d5761..., campaign22 0a44a65f5b4f4af2..., campaign23 cfbcdcaaf6f674ae..., campaign24 856f42971e90fd1c..., campaign25 45c3e020a6a1eb89...)."
+    }
+  },
+  "superseded": "MANIFEST.superseded and supplements are empty; all rows come from campaign21-25. Release launch: every runtime's output.log logs ATD_LAUNCH_PROFILE=release (lines 206-208) and ATD_GAMEPLAY_MODE=CERTIFICATION (lines 220-222) before the join and first case; campaign21 and campaign25 commands are agent-only, but campaign22/23/24 carry -Dachievetodo.progression.freshConfig=true (see major finding).",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "E3",
+      "evidence": "campaign22/runtime_args.json and campaign22/receipts/launch.json (same in campaign23 and campaign24): \"-Dachievetodo.progression.freshConfig=true\"",
+      "description": "The brief requires the operator launch with no -Dachievetodo.* flags; the easy, hard and chaos runtimes, which contribute all threshold rows for those configs, were started with an explicit -Dachievetodo.progression.freshConfig=true (injected by campaign_modes.py), so those rows do not come from the certified release composition."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "rows.jsonl (no offhand_* rows)",
+      "description": "No off-hand row; acceptable because the route is hand-independent, but the package does not state this explicitly."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign38 da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540
+[2026-11-21T01:19:17+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-21T01:19:27+00:00] campaign38 up: [06:19:27 INFO]: [AchieveToDo] Resolved progression config normal.toml (normal)
+[2026-11-21T01:19:27+00:00] campaign38 launch profile: release, gameplay mode CERTIFICATION
+[2026-11-21T01:19:53+00:00] campaign38 pass modes phases=creative,op,spectator
+CONFIG normal:normal.toml abilities=153
+PASS                       portal_three_conditioned           enter_nether                   creative
+PASS                       portal_three_conditioned           enter_nether                   op
+PASS                       portal_three_conditioned           enter_nether                   spectator
+E6 replay campaign38: {'REPRODUCED': 3} reproducedAll=True
+[2026-11-21T01:20:32+00:00] FINAL_RC2F_DONE

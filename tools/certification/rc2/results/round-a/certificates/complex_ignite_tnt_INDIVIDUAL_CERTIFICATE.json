@@ -1,0 +1,56 @@
+{
+  "group": "complex_ignite_tnt",
+  "reviewer": "Q5",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "I computed the SHA-256 of every cited source file under repo/ and each one matches E1 (NativeComplexBindings.java, NativeComplexAgent.java, NativeComplexSpecs.java). Guards opened: NativeComplexSpecs lines 31-32 instrument TntBlock.useItemOn/onProjectileHit before prime(). NativeComplexAgent lines 108/113 resolve these to IGNITE_TNT (and flint). NativeComplexBindings line 14 binds IGNITE_TNT. Thresholds: normal 179, easy 136, hard 222, chaos 301, custom_vision 179. The thresholds in E1 match the runtime toml files I grepped (campaign21 normal.toml, 22 easy, 23 hard, 24 chaos_20261116, 25 custom_vision). All 5 configs list a threshold. use_flint_and_steel is always below ignite_tnt (174/132/216/292/174), so the locked rows are not masked by the flint dependency."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS. I read every excerpt. Locked/op/offhand_locked rows show RIGHT_CLICK_BLOCK TNT and ATD_CRITERION_SUPPRESSED ITEM_USED_ON_BLOCK, the probe stays failed (no primed TNT), and the count is unchanged. Allowed rows show 'Test passed'. Creative ignites. Spectator is DENY with no effect.",
+      "rowsRead": [
+        "campaign21 pass1 locked/allowed",
+        "campaign21 modes creative/op/spectator",
+        "campaign21 offhand both",
+        "campaign21 reload both",
+        "campaign22 easy both",
+        "campaign23 hard both",
+        "campaign24 chaos both",
+        "campaign25 custom_vision both"
+      ]
+    },
+    "E3": {
+      "result": "FAIL",
+      "checked": "MANIFEST.runtimes campaign21-25: each has onlineMode=true, the authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and the 'Glower4ek joined the game' line. launch.json onlineMode=true in all five. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION appear in every runtime's output.log before the first atd_marks case: c21 lines 207/221 (first case line 249), c22 207/221 (249), c23 207/221 (251), c24 206/220 (254), c25 208/222 (284). BUT see the major finding: c22/c23/c24 launch commands carry -Dachievetodo.progression.freshConfig=true, so the release-launch composition check fails for 3 of 5 runtimes."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "Rows exist for modes, offhand, and all 5 configs. There are no NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "MANIFEST.e5Reload: runtime campaign21, generationBefore 1, generationAfter 2. In excerpts.txt every reload-tagged row's ATD_STAGE2A_STATE lines show generation 2 and come from c21 output.log lines above 100000, after the pass1/modes/offhand lines (pass1 <10k, modes ~38-63k, offhand ~90k). Every reload verdict (PASS) equals the matching pass1 verdict (PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED and recorded==replayed. MANIFEST.runtimes[*].replay.reproducedAll=true (c21 1622 rows, c22-c25 396 each), and REPLAY.json reproducedAll=true in every runtime. Plugin sha256 da9360aa...cb540 is the same in all 5 perRuntime entries and in prelaunch, and matches the brief. clientMod sha256 5c473903...5a99 matches the brief. I recomputed the campaign-results.jsonl SHA-256 of all 5 runtimes (sha256sum) and each equals evidenceHashes.results: c21 dfd9c210..., c22 0a44a65f..., c23 cfbcdcaa..., c24 856f4297..., c25 45c3e020..."
+    }
+  },
+  "superseded": "MANIFEST.superseded is []. All rows come from campaign21-25 under HARNESS_RC2 (MANIFEST.harness). No superseded rows to assess.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "E3",
+      "evidence": "campaign22/receipts/launch.json, campaign23/receipts/launch.json, campaign24/receipts/launch.json (command) and campaign22/runtime_args.json (args[0])",
+      "description": "Release-launch check fails: campaign22 (easy), campaign23 (hard) and campaign24 (chaos) were launched with -Dachievetodo.progression.freshConfig=true in addition to the two -javaagent flags. The brief requires no -Dachievetodo.* flags. The value is not in the plugin's derived list (output.log line 207: derived=[bacap.directory, bridge.server, progression.world, progression.worldKey]), so the operator supplied it by hand. All thresholds-easy/hard/chaos rows therefore come from a launch that is not the certified operator launch. campaign21 and campaign25 are clean."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/complex_ignite_tnt/excerpts.txt locked rows",
+      "description": "The event layer logs useBlock=ALLOW. The only positive denial trace is ATD_CRITERION_SUPPRESSED, and the STATE ability is null."
+    }
+  ]
+}

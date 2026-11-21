@@ -1,0 +1,17 @@
+{
+  "group": "movement_swim",
+  "reviewer": "Q7",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {"result": "PASS", "checked": "E1.json swim: active direct sites NativeMovementAgent.java:83 and NativeMovementBindings.java:13. Recomputed SHA-256 of both: match E1. Opened NativeMovementAgent.sprint (:81-84): when isUnderWater it checks locked(actor, \"SWIM\"); NativeMovementBindings.ABILITIES (:13) contains SWIM. Thresholds: normal 10, easy 4, hard 14, chaos_20261116 14, custom_vision 10."},
+    "E2": {"result": "PASS", "checked": "15 rows all PASS; read all 15 excerpts. Locked rows (c21 9, c22 3, c23 13, c24 13, c25 9, c21 reload 9): STATE count unchanged and kind LOCKED, 9x 'ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=swim' (server-side denial); rows.jsonl client swimming false on all ticks and overlay \"You can't swim...\". Allowed rows: STATE UNLOCKED, count unchanged, no denial intent, client swimming true on tick samples. The allowed effect is only client-observed (no server-side swim line), acceptable for a client-driven pose.", "rowsRead": ["campaign21 pass1 swim locked/allowed", "campaign21 modes swim creative/op/spectator", "campaign21 reload swim locked/allowed", "campaign22 thresholds-easy swim locked/allowed", "campaign23 thresholds-hard swim locked/allowed", "campaign24 thresholds-chaos swim locked/allowed", "campaign25 thresholds-custom_vision swim locked/allowed"]},
+    "E3": {"result": "PASS", "checked": "campaign21-25 onlineMode=true, UUID and join lines in MANIFEST.runtimes; UUID line present in each output.log; server.properties online-mode=true."},
+    "E4": {"result": "PASS", "checked": "modes rows: creative swims (bypass), op denied with denial intents and overlay, spectator no swim (vanillaEffect false, spectators do not swim in vanilla). Swimming has no hand, so no offhand rows. Threshold rows for all 5 configs. No NA rows."},
+    "E5": {"result": "PASS", "checked": "2 reload rows from campaign21 (results lines 1227-1622 after pass1/modes/offhand); generationAfter=2; both reload excerpts show generation 2; verdicts equal pass1 PASS."},
+    "E6": {"result": "PASS", "checked": "replay 15/15 REPRODUCED; reproducedAll=true in campaign21-25 REPLAY.json; plugin sha da9360aa... everywhere, client 5c473903...; campaign-results.jsonl SHA-256 recomputed for all 5 runtimes and equal to evidenceHashes."}
+  },
+  "superseded": "None; all rows from campaign21-25.",
+  "findings": [
+    {"severity": "major", "criterion": "Release launch", "evidence": "campaign22/runtime_args.json, campaign23/runtime_args.json, campaign24/runtime_args.json: \"-Dachievetodo.progression.freshConfig=true\"", "description": "The easy, hard and chaos runtimes that produced this group's thresholds rows were launched with an explicit -Dachievetodo.* flag, contrary to the certified operator launch; ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION are logged before the first case in all 5 runtimes."}
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "group": "action_use_campfire",
+  "reviewer": "P8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (use_campfire). 2 active direct sites; recomputed SHA-256 of both cited files, equal to E1: NativeActionBindings.java 93faec2e..89c3, NativeActionSpecs.java dc0fab2b..82e5. Opened NativeActionSpecs.java:35 (Spec USE_CAMPFIRE on CampfireBlock.useItemOn, injected before CampfireBlockEntity.placeFood, returns CONSUME when denied) and NativeActionBindings.java:17 (ABILITIES contains USE_CAMPFIRE; GameplayGate.allows with creative/spectator bypass). Thresholds: normal 83, easy 68, hard 98, custom_vision 83, chaos@34 141, chaos@36 289; equal to the runtime toml values; every row threshold equals its toml."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS; read all 17 excerpts and the client states. Locked/op/offhand_locked/reload-locked rows (31 pass1, op, offhand, reload; 32; 33; 34; 35): ServerboundUseItemOnPacket reached the server at 8,-59,-3 (off-hand row: both MAIN_HAND and OFF_HAND packets), server probe 'data get block 8 -59 -3 Items' stays '[]' before and after, server line ATD_CRITERION_SUPPRESSED ITEM_USED_ON_BLOCK (native guard consumed the use), beef still held, count unchanged (82, 82, 82, 82, 67, 97, 140, 82), overlay 'You can't use a campfire'. Allowed/offhand_allowed rows: campfire Items becomes [{Slot:0b, id:minecraft:beef, count:1}], held beef consumed (slot 0 or 40). Creative places the beef without consuming; spectator is cancelled by vanilla (useBlock=DENY), no overlay, no leak. Verdicts reproduced. The 'leak' blazeandcave:building/delicious_hot_schmoes/beef appears only in allowed rows, where it is a legitimate effect and does not change the count.",
+      "rowsRead": [
+        "campaign31 pass1 use_campfire locked",
+        "campaign31 pass1 use_campfire allowed",
+        "campaign31 modes use_campfire creative",
+        "campaign31 modes use_campfire op",
+        "campaign31 modes use_campfire spectator",
+        "campaign31 offhand use_campfire offhand_locked",
+        "campaign31 offhand use_campfire offhand_allowed",
+        "campaign31 reload use_campfire locked",
+        "campaign31 reload use_campfire allowed",
+        "campaign32 thresholds-easy use_campfire locked",
+        "campaign32 thresholds-easy use_campfire allowed",
+        "campaign33 thresholds-hard use_campfire locked",
+        "campaign33 thresholds-hard use_campfire allowed",
+        "campaign34 thresholds-chaos use_campfire locked",
+        "campaign34 thresholds-chaos use_campfire allowed",
+        "campaign35 thresholds-custom_vision use_campfire locked",
+        "campaign35 thresholds-custom_vision use_campfire allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Contributing runtimes campaign31-35: onlineMode=true, authenticated UUID line and join line in MANIFEST.runtimes; launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows present (campaign31 modes). offhand_locked/offhand_allowed rows present (beef in the off hand per client state; OFF_HAND packet traced). Threshold rows for normal, easy, hard, chaos, custom_vision. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows from campaign31 (results reload range 1232-1629, after pass1 1-398, modes 399-995, offhand 996-1231). MANIFEST.e5Reload.evidence.generationAfter=2; output.log 101750-101757 reload + PROGRESSION_CONFIG_READY generation=2. All 4 ATD_STAGE2A_STATE lines of the reload excerpts show \"generation\": 2. Reload PASS/PASS = pass1 PASS/PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 17/17 REPRODUCED, recorded==replayed, keys equal rows.jsonl. reproducedAll=true for campaign31-36. Recomputed campaign-results.jsonl SHA-256 of all six runtimes = evidenceHashes. Plugin jar per runtime = da9360aa..b540; client mod = 5c473903..5a99."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json/runtime_args.json of campaign31-36: -javaagent:plugins/achievetodo.jar + trace-agent; only -D option is -Dachievetodo.progression.initialConfig=<preset> on fresh-install runtimes 32/33/34/36, none on 31/35. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION before the first case mark in every runtime; freshConfig only inside the plugin's derived=[...]."
+    }
+  },
+  "superseded": "None in this group (MANIFEST.superseded=[]). The campaign36 CHAOS ignite_tnt supplement does not concern use_campfire; its fixture-dependency rationale is sound.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/action_use_campfire/excerpts.txt (every ATD_STAGE2A_STATE line, e.g. line 3)",
+      "description": "The state probe reports \"ability\": {\"USE_CAMPFIRE\": null}, so the excerpts never show the tested ability's lock state; locked/unlocked is inferred from count vs. the toml threshold only."
+    }
+  ]
+}

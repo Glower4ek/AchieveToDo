@@ -1,0 +1,46 @@
+{
+ "group": "menu_open_stonecutter",
+ "reviewer": "Q2",
+ "decision": "NOT_CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "GameplayMenuAbilities.java L20 maps InventoryType.STONECUTTER->OPEN_STONECUTTER, used by the BukkitExpandedGameplayListener open handler (locked -> setCancelled); BukkitRestrictionResolver L110 is inactive. Hashes recomputed: match E1. Thresholds 77/64/90/126/77."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "15 rows, all PASS. Read every excerpt: locked rows show INVENTORY_OPEN_MONITOR_CANCELLED true with an unchanged count (76/63/89/125/76); allowed rows show CANCELLED false and the CraftInventoryStonecutter opening at exactly the threshold; creative and spectator open, op is denied.",
+   "rowsRead": [
+    "campaign21 pass1 open_stonecutter locked/allowed",
+    "campaign21 modes creative/op/spectator",
+    "campaign21 reload locked/allowed",
+    "campaign22/23/24/25 thresholds locked/allowed"
+   ]
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes creative/op/spectator present; opening a menu has no off-hand variant (no offhand rows, none required); thresholds rows for all 5 configs; no NA rows."
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign21..25: onlineMode=true, the authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-...' and the 'Glower4ek joined the game' line are present for all 5; configResolved normal/easy/hard/chaos_20261116/custom_vision matches each runtime."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "All reload rows come from campaign21, and their output.log line numbers (min 101651) come after every pass1/modes/offhand row of the group (max 38286). MANIFEST.e5Reload.evidence.generationAfter=2 (before=1). Every ATD_STAGE2A_STATE line in the reload excerpts shows \"generation\": 2 (4 lines). Every reload verdict equals the pass1 verdict for the same ability/case/phase (scripted compare, 0 mismatches)."
+  },
+  "E6": {
+   "result": "FAIL",
+   "checked": "replay.jsonl: 15/15 REPRODUCED; reproducedAll=true for campaign21-25. Plugin SHA-256 da9360aa...b544 appears in MANIFEST.perRuntime and was recomputed on campaign21..25 runtime/plugins/achievetodo.jar and on the rc2-artifacts jar. Client mod SHA-256 5c473903...5a99 was recomputed on rc2-artifacts/achievetodo-mc26.2+0.2.1.jar and matches MANIFEST clientMod. The recomputed campaign-results.jsonl SHA-256 of all 5 runtimes equals evidenceHashes.results. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION are logged at output.log lines ~206-222 in all 5 runtimes, before the first case. FAIL because launch.json of campaign22/23/24 carries -Dachievetodo.progression.freshConfig=true (see finding)."
+  }
+ },
+ "superseded": "MANIFEST.superseded is [] and all rows come from campaign21-25; there are no superseded rows to assess.",
+ "findings": [
+  {
+   "severity": "major",
+   "criterion": "E6",
+   "evidence": "campaign22\\receipts\\launch.json, campaign23\\receipts\\launch.json, campaign24\\receipts\\launch.json (also campaign2N\\runtime_args.json 'args')",
+   "description": "The release-launch check fails for 3 of 5 runtimes. The server commands of campaign22 (easy), campaign23 (hard) and campaign24 (chaos) carry '-Dachievetodo.progression.freshConfig=true' in addition to the two -javaagent args, and the brief requires no -Dachievetodo.* flags. Only campaign21 and campaign25 match the certified operator launch, so every thresholds-easy/hard/chaos row of this group comes from a launch composition that is not the certified one. The ReleaseLaunchProfile javadoc says freshConfig is derived only on the start that writes the world group; here it was passed by hand, and the logged derived=[...] list does not include it."
+  }
+ ]
+}

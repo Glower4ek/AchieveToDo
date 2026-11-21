@@ -1,0 +1,243 @@
+{
+  "group": "throwables_four_paper_candidates",
+  "repoHead": "5c086aaa1a6024aad21ffd879a757a0f09d9c099",
+  "abilities": [
+    {
+      "ability": "throw_snowball",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            85
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "gitBlob": "838d477309174196d1cb911c1c1107887d989a2b",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayGate.java",
+          "lines": [
+            18
+          ],
+          "sha256": "4ddeec267ba8ff6d3c0b6372bf7e97ca0d88373a9de2025584e8e46290e64f95",
+          "gitBlob": "e49878b9ade7ba5f837e1f8e14bdf03866350a70",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "item",
+      "familyResolverSites": {
+        "AbilityResolvers.findItemAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 143,
+        "easy": 108,
+        "hard": 178,
+        "custom_vision": 143,
+        "chaos_20261116@campaign34": 633,
+        "chaos_20261116@campaign36": 148
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "throw_egg",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            86
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "gitBlob": "838d477309174196d1cb911c1c1107887d989a2b",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayGate.java",
+          "lines": [
+            18
+          ],
+          "sha256": "4ddeec267ba8ff6d3c0b6372bf7e97ca0d88373a9de2025584e8e46290e64f95",
+          "gitBlob": "e49878b9ade7ba5f837e1f8e14bdf03866350a70",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "item",
+      "familyResolverSites": {
+        "AbilityResolvers.findItemAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 254,
+        "easy": 196,
+        "hard": 312,
+        "custom_vision": 254,
+        "chaos_20261116@campaign34": 312,
+        "chaos_20261116@campaign36": 161
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "throw_ender_pearl",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+          "lines": [
+            264
+          ],
+          "sha256": "f5d7d99bf324fcac91edd2b13cee03b4bf12b625d0591426ce739134d928c84e",
+          "gitBlob": "8a6558aff02711fa501cb713b7b97c522f0b6c21",
+          "specs": [],
+          "active": false,
+          "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            87
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "gitBlob": "838d477309174196d1cb911c1c1107887d989a2b",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayGate.java",
+          "lines": [
+            19
+          ],
+          "sha256": "4ddeec267ba8ff6d3c0b6372bf7e97ca0d88373a9de2025584e8e46290e64f95",
+          "gitBlob": "e49878b9ade7ba5f837e1f8e14bdf03866350a70",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "item",
+      "familyResolverSites": {
+        "AbilityResolvers.findItemAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 214,
+        "easy": 164,
+        "hard": 264,
+        "custom_vision": 214,
+        "chaos_20261116@campaign34": 573,
+        "chaos_20261116@campaign36": 581
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "throw_wind_charge",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            88
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "gitBlob": "838d477309174196d1cb911c1c1107887d989a2b",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayGate.java",
+          "lines": [
+            19
+          ],
+          "sha256": "4ddeec267ba8ff6d3c0b6372bf7e97ca0d88373a9de2025584e8e46290e64f95",
+          "gitBlob": "e49878b9ade7ba5f837e1f8e14bdf03866350a70",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "item",
+      "familyResolverSites": {
+        "AbilityResolvers.findItemAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 319,
+        "easy": 248,
+        "hard": 390,
+        "custom_vision": 319,
+        "chaos_20261116@campaign34": 161,
+        "chaos_20261116@campaign36": 126
+      },
+      "mapping": "DIRECT"
+    }
+  ],
+  "configs": {
+    "normal": {
+      "file": "campaign31\\runtime\\plugins\\AchieveToDo\\progression\\configs\\normal.toml",
+      "sha256": "de6383599828005cb00afcacd868ca60850913c434219f8fed5f79456bb69624"
+    },
+    "easy": {
+      "file": "campaign32\\runtime\\plugins\\AchieveToDo\\progression\\configs\\easy.toml",
+      "sha256": "c145bfe25d9080414034e8d23ccd7d88b5eb3727b84f6e5a06219e4edbe7e9b3"
+    },
+    "hard": {
+      "file": "campaign33\\runtime\\plugins\\AchieveToDo\\progression\\configs\\hard.toml",
+      "sha256": "9d7b711b9fb7f2a9d0bfe2666f349e3859b77541bdf1bc2b656134b9f1329d6a"
+    },
+    "custom_vision": {
+      "file": "campaign35\\runtime\\plugins\\AchieveToDo\\progression\\configs\\custom_vision.toml",
+      "sha256": "db26c1f6b440cc79466a6ee37dee544fb149a23b8d5909f53ec37ebeefb536cd"
+    },
+    "chaos_20261116@campaign34": {
+      "file": "campaign34\\runtime\\plugins\\AchieveToDo\\progression\\configs\\chaos_20261116.toml",
+      "sha256": "49c9176676ebd1abb860ea40c3f31dbaa1699c8e4b4f6d5036fc3a79f7242698"
+    },
+    "chaos_20261116@campaign36": {
+      "file": "campaign36\\runtime\\plugins\\AchieveToDo\\progression\\configs\\chaos_20261116.toml",
+      "sha256": "d821647b41e9c42f025d52ae021833b3dd0ae9a998929a4775fba2676545ccd7"
+    }
+  }
+}

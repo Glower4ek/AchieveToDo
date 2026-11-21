@@ -1,0 +1,69 @@
+{
+  "group": "action_use_composter",
+  "reviewer": "P2",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json: use_composter (DIRECT, family item). Recomputed SHA-256: NativeActionBindings.java 93faec2e..., NativeActionAgent.java 7467db9a..., NativeActionSpecs.java dc0fab2b... - all equal E1 (legacy BukkitRestrictionResolver listed inactive). Opened NativeActionSpecs.java:34 Spec USE_COMPOSTER on ComposterBlock.useItemOn around ComposterBlock.process, hook 'composter'; NativeActionAgent.java:86-89 composter(actor, level) = level < 7 && denied(actor, null, \"USE_COMPOSTER\"); NativeActionBindings.java:13-17 ABILITIES includes USE_COMPOSTER. Thresholds: normal 304, easy 236, hard 372, custom_vision 304, chaos@34 368 (chaos@36 178); config hashes equal E1.configs."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS. Read all 17 excerpts. Locked rows (pass1, reload, offhand_locked, op, easy, hard, chaos, custom): pre/post ATD_STAGE2A_STATE count = threshold-1 unchanged, probe 'execute if block ... composter[level=0]' 'Test passed' before and after (composter still empty), 'ATD_CRITERION_SUPPRESSED ITEM_USED_ON_BLOCK' from NativeCriterionAgent after the RIGHT_CLICK_BLOCK event, client overlay true, inv unchanged, no leak. Allowed rows (pass1, reload, offhand_allowed, easy, hard, chaos, custom): probe 'Test passed' -> 'Test failed' (level raised), ATD_PROOF_NATIVE_ADVANCEMENT_DONE inventory_changed (cake consumed), count stays = threshold. Offhand rows show both MAIN_HAND and OFF_HAND ServerboundUseItemOnPacket with main hand empty. Creative bypass: probe changed. Spectator: no fresh overlay, no leak (vanilla: no effect).",
+      "rowsRead": [
+        "campaign31 pass1 use_composter locked",
+        "campaign31 pass1 use_composter allowed",
+        "campaign31 modes use_composter creative",
+        "campaign31 modes use_composter op",
+        "campaign31 modes use_composter spectator",
+        "campaign31 offhand use_composter offhand_locked",
+        "campaign31 offhand use_composter offhand_allowed",
+        "campaign31 reload use_composter locked",
+        "campaign31 reload use_composter allowed",
+        "campaign32 thresholds-easy use_composter locked",
+        "campaign32 thresholds-easy use_composter allowed",
+        "campaign33 thresholds-hard use_composter locked",
+        "campaign33 thresholds-hard use_composter allowed",
+        "campaign34 thresholds-chaos use_composter locked",
+        "campaign34 thresholds-chaos use_composter allowed",
+        "campaign35 thresholds-custom_vision use_composter locked",
+        "campaign35 thresholds-custom_vision use_composter allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for every contributing runtime campaign31 (normal), campaign32 (easy), campaign33 (hard), campaign34 (chaos), campaign35 (custom_vision): onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and joinedLine 'Glower4ek joined the game' present (31: 16:39:01/16:39:02, 32: 21:06:42/43, 33: 22:12:38/39, 34: 23:18:41/42, 35: 00:24:28/30); receipts/launch.json of each runtime also has onlineMode=true. campaign36 has the same lines but contributes no rows to this group."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator rows present; offhand_locked + offhand_allowed rows present (cake in off hand); thresholds normal/easy/hard/chaos/custom_vision each locked+allowed. No NA rows (no threshold 0 for this ability in any config)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "campaign31 reload locked/allowed rows (output.log 106770-106836, after reload at 19:55:15), both STATE lines show \"generation\": 2 (ticks 247183/247231/247328/247377); MANIFEST.e5Reload.generationAfter=2; reload PASS/PASS = pass1 PASS/PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 17/17 rows status=REPRODUCED (recorded==replayed). MANIFEST runtimes replay reproducedAll=true, problems=[] for all (31: 1629, 32-35: 398 each, 36: 2 REPRODUCED). Plugin SHA-256 recomputed from campaign31..36/runtime/plugins/achievetodo.jar and certification/rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar: all da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540 (= brief, = MANIFEST.plugin.perRuntime). Client mod recomputed at 'E:/Кубы сборки/ATD Stage2B W4 Attempt01/minecraft/mods/achievetodo.jar' and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar: 5c473903ec956489185be7d2f5c7803bd82a217c9ec066c1d3ffb5a2f5925a99 (= brief). campaign-results.jsonl SHA-256 recomputed for ALL six runtimes and equal to evidenceHashes.results: 31 8eddce27..., 32 c4936a8d..., 33 23a53c62..., 34 a7e80ad6..., 35 400573a8..., 36 2c2ce771.... campaign.py (5bbf36da...) and campaign_replay.py (d881b760...) on disk equal HARNESS_RC2C.sha256."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json + runtime_args.json: every runtime runs java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<preset>] -javaagent:plugins/achievetodo.jar -javaagent:<campaignNN>/observer-work/trace-agent.jar=<Item.use,FireworkRocketItem.use,Player.interactOn> -jar purpur-26.2-2620.jar --nogui (trace-agent SHA 706b85d5... = PRELAUNCH). The only -Dachievetodo option is initialConfig=easy/hard/chaos in campaign32/33/34 (and chaos in 36); campaign31 and campaign35 have none. campaign_modes.py unlinks world-group.properties and world-selection.properties before a preset start (fresh install). output.log: ATD_LAUNCH_PROFILE=release at line 207/207/208/208/207 and ATD_GAMEPLAY_MODE=CERTIFICATION at 221/221/222/222/221 (campaign31..35), before the first ATD_STAGE2A_STATE (337/335/338/354/379). freshConfig appears only in the plugin's own derived=[..., world-group.properties, ..., achievetodo.progression.freshConfig] in campaign32/33/34 (and 36); campaign31/35 derived lists have no freshConfig and no world-group.properties, consistent with an existing install. STARTING_THE_SERVER.md lines 21-24 and 57 document exactly -javaagent:plugins/<jar> and initialConfig. campaign-results tag order in campaign31 is pass1 (results line 1) -> modes (399) -> offhand (996) -> reload (1232), all rows within one campaign."
+    }
+  },
+  "superseded": "No superseded rows for this group (MANIFEST.superseded = []); the campaign36 CHAOS supplement concerns ignite_tnt only.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/action_use_composter/excerpts.txt, every ATD_STAGE2A_STATE line ('ability': {'USE_COMPOSTER': null})",
+      "description": "The state probe reports USE_COMPOSTER: null instead of LOCKED/UNLOCKED, so the excerpts do not show the plugin's own lock state for use_composter; the lock is inferred from count < threshold, the client overlay and the unchanged probe. The evidence is enough for the verdict, but the probe should report this ability's state as it does for the menu abilities."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "certification/w5-campaign/HARNESS_RC2C.sha256 line 2 (campaign_cases.py c8add78f...) vs certification/w5-campaign/campaign_cases.py (current SHA-256 d933206f..., = HARNESS_RC2D)",
+      "description": "The campaign_cases.py that produced campaign31-35 (c8add78f..., recorded in MANIFEST evidenceHashes) is no longer on disk: the w5-campaign copy was overwritten by the RC2D version and no copy with that hash exists under certification/, repo/ or tooling/. campaign.py and campaign_replay.py still match, so verdicts can be re-derived, but a third person cannot re-run the exact RC2C case definitions; keep a history copy (history-campaign_cases.py.rc2c)."
+    }
+  ]
+}

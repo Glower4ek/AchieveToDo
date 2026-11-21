@@ -1,0 +1,54 @@
+{
+  "group": "tool_material7_each_native_mode",
+  "reviewer": "Q3",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "7 abilities (wooden/stone/copper/iron/golden/diamond/netherite tools). Each has 2 active direct sites: NativeToolAgent.java:19 (IDS table that maps materials to USE_*_TOOLS) and NativeToolBindings.java:14-16 (ABILITIES set). Opened both. The family resolver BukkitRestrictionResolver is inactive. Recomputed sha256 of every cited file and all match. Each ability lists thresholds for all 5 configs."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "Every ability has PASS locked rows in pass1, reload and easy, and in hard/chaos/custom except the noted cases. Locked excerpts show LEFT_CLICK_BLOCK on STONE, the probe 'Test passed' before and after (block intact), an unchanged count and the client overlay. Allowed excerpts show the block broken (probe flips to 'Test failed'). Non-PASS rows: campaign23 hard golden locked is PASS_MASKED_BY_DEPENDENCY (score 37 < break_blocks_in_negative_y 42); the lock is proven elsewhere and its allowed row runs at 42. campaign24 chaos stone locked is NA_NO_LOCKED_STATE with a real threshold of 0 in the chaos toml. rows.jsonl has 105 rows; I recomputed counts/why for every row.",
+      "rowsRead": [
+        "campaign21 pass1 use_golden_tools locked/allowed",
+        "campaign21 pass1 use_diamond_tools locked/allowed",
+        "campaign21 modes use_golden_tools spectator",
+        "campaign22 thresholds-easy use_netherite_tools locked/allowed",
+        "campaign23 thresholds-hard use_golden_tools locked(MASKED)/allowed",
+        "campaign24 thresholds-chaos use_stone_tools locked(NA)/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25: onlineMode=true, an authenticated UUID line (Glower4ek 89c23030-...) and a join line for each. Release launch: every runtime logs ATD_LAUNCH_PROFILE=release (output.log line ~207) and ATD_GAMEPLAY_MODE=CERTIFICATION (line ~221) before its first ATD_STAGE2A_STATE. But see the major ReleaseLaunch finding: campaign22-24 commands carry -Dachievetodo.progression.freshConfig=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "Modes creative/op/spectator rows exist for all 7 abilities. There are no offhand rows because mining uses only the main hand (no off-hand route). All 5 configs (normal/easy/hard/chaos_20261116/custom_vision) have rows. Thresholds in E1 match the config .toml files (each file's sha256 equals E1.configs). The only NA is chaos use_stone_tools, whose threshold really is 0."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows come from campaign21 only, and their output.log lines begin after the last pass1/modes/offhand row of the group (reload at line ~101287: PROGRESSION_CONFIG_READY generation=2). MANIFEST.e5Reload.generationAfter=2. Every reload excerpt ATD_STAGE2A_STATE shows generation 2. Every reload verdict equals the pass1 verdict for the same phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED. reproducedAll=true for campaign21 (1622) and campaign22-25 (396 each). Plugin sha256 da9360aa... in perRuntime and evidenceHashes.plugin for all 5 runtimes. Client mod 5c473903... matches. Recomputed campaign-results.jsonl sha256 for all 5 runtimes, and each matches evidenceHashes (e.g. campaign21 dfd9c210...ea57, campaign24 856f4297...73b1). superseded=[]."
+    }
+  },
+  "superseded": "MANIFEST.superseded is empty. All rows come from campaign21-25 under HARNESS_RC2; no superseded rows to assess.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "ReleaseLaunch",
+      "evidence": "campaign22/runtime_args.json, campaign23/runtime_args.json, campaign24/runtime_args.json args[0]; same in each receipts/launch.json command",
+      "description": "Runtimes campaign22 (easy), campaign23 (hard) and campaign24 (chaos) were launched with -Dachievetodo.progression.freshConfig=true. That flag is read directly by BukkitProgressionRuntime.java:72 and is not in the logged derived list (ATD_LAUNCH_PROFILE=release; derived=[bacap.directory, bridge.server, progression.world, progression.worldKey]). This contradicts the brief, which says the command holds no -Dachievetodo.* flags, so the thresholds-easy/hard/chaos rows were not produced under the certified operator launch. campaign21 and campaign25 are clean."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/tool_material7_each_native_mode/excerpts.txt, campaign21 pass1 use_golden_tools locked",
+      "description": "The excerpt header gives lines 9114-9135, but the row's logLines start at 9113. This is a 1-line offset only."
+    }
+  ]
+}

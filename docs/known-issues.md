@@ -1,21 +1,23 @@
 # Known issues
 
-Minor issues found during the W5 certification of the Purpur 26.2 port, 0.2.1-rc.1. Details are in
-[certification/w5-purpur-26.2.md](certification/w5-purpur-26.2.md). On 2026-11-20 the owner decided to defer all
-three; none of them blocks 0.2.1-rc.1.
+Minor issues found during the certification of the Purpur 26.2 port (0.2.1-rc.1 and 0.2.1). Details are in
+[certification/w5-purpur-26.2.md](certification/w5-purpur-26.2.md) and
+[certification/0.2.1-purpur-26.2.md](certification/0.2.1-purpur-26.2.md). On 2026-11-20 the owner deferred issues 2 and
+3 (Fabric parity); issue 1 is fixed in 0.2.1. None of them blocks 0.2.1.
 
 | # | Issue | Severity | Status |
 |---|---|---|---|
-| 1 | A server started without the gameplay-mode JVM flags runs the legacy Bukkit path, which is not certified (copper armor is not blocked there) | minor (operator setup) | Fix ready, not merged: commit `4ee83cf` on `fix/default-start-fail-closed` refuses to start without an explicit mode. It changes the plugin jar, so it needs a new certification run; planned for the next release candidate |
+| 1 | A server started without the gameplay-mode JVM flags ran the legacy Bukkit path, which is not certified (copper armor is not blocked there) | minor (operator setup) | **Fixed in 0.2.1**: one-option operator launch (`-javaagent` only), and a start without it fails closed. Certified in [0.2.1-purpur-26.2.md](certification/0.2.1-purpur-26.2.md) |
 | 2 | CHAOS thresholds are not reproducible from the world seed across JVM starts | minor (Fabric parity) | Deferred |
 | 3 | Touching a locked End portal or end gateway grants the vanilla `enter_block` advancement (+1) | minor (Fabric parity) | Deferred |
 
-## 1. Default start runs the legacy path
+## 1. Default start ran the legacy path (fixed in 0.2.1)
 
-`AchieveToDoPlugin.onEnable` uses `achievetodo.gameplay.mode=diagnostic` when no flag is given. That starts the
-legacy restriction runtime (`restriction/`, `adapters/`) instead of the certified native path. Only the
-composition listed in the certification report is certified. Until the fix lands, release notes must give
-operators the full launch command.
+Up to 0.2.1-rc.1, `AchieveToDoPlugin.onEnable` used `achievetodo.gameplay.mode=diagnostic` when no flag was given,
+which started the legacy restriction runtime (`restriction/`, `adapters/`) instead of the certified native path.
+0.2.1 loads the plugin as a Java agent (`-javaagent:plugins/<plugin jar>`), derives the certified composition itself
+and stops the server with the correct start command when the agent is missing (`ATD_STARTUP_FAIL_CLOSED`). The legacy
+path is opt-in only (`-Dachievetodo.gameplay.mode=diagnostic`) and logs `ATD_UNCERTIFIED_LEGACY_PATH`.
 
 ## 2. CHAOS is not seed-deterministic
 

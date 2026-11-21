@@ -1,0 +1,60 @@
+{
+  "group": "action_glide_with_fireworks",
+  "reviewer": "Q6",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability glide_with_fireworks, DIRECT, active sites NativeActionBindings.java:17 and NativeActionSpecs.java:32 (Spec GLIDE_WITH_FIREWORKS on FireworkRocketItem.use, result PASS when locked). 2/2 cited files re-hashed and match. Thresholds normal 667, easy 546, hard 788, chaos 183, custom_vision 667."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS. Read every excerpt: all locked, offhand_locked, op and reload-locked rows show the trace line FireworkRocketItem.use value=Pass[] (denied) with count unchanged (666/545/787/182/666); every allowed, offhand_allowed, reload-allowed and creative row shows value=Success[...] and the rocket slot consumed (rows.diff inventorySlots includes 0 or 40). Elytra slot 38 durability and AVIATE_ONE_CM change in locked rows too: that is the fixture's elytra glide, not the rocket boost, and is not a gameplay leak of the locked action.",
+      "rowsRead": [
+        "campaign21 pass1 glide_with_fireworks locked/allowed",
+        "campaign21 modes glide_with_fireworks creative/op/spectator",
+        "campaign21 offhand glide_with_fireworks offhand_locked/offhand_allowed",
+        "campaign21 reload glide_with_fireworks locked/allowed",
+        "campaign22 thresholds-easy locked/allowed",
+        "campaign23 thresholds-hard locked/allowed",
+        "campaign24 thresholds-chaos locked/allowed",
+        "campaign25 thresholds-custom_vision locked/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25: onlineMode=true, authenticatedUuidLine 'UUID of player ... is 89c23030-...' and joinedLine present in each; launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows exist (campaign21 modes); offhand_locked and offhand_allowed rows exist (campaign21 offhand: Pass[] locked, Success allowed with slot 40); locked+allowed rows for normal, easy, hard, chaos, custom_vision; no NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows, both campaign21, log lines 105805-105890, after pass1 (max 4995), modes (max 43951) and offhand (max 89714); e5Reload.generationAfter=2; both reload excerpts show generation 2 only; reload verdicts PASS equal pass1 PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 17/17 REPRODUCED; all 5 runtimes reproducedAll=true (1622/396/396/396/396). Plugin sha256 da9360aa... identical for campaign21-25 and equal to the brief; client mod sha256 5c473903... equals the brief. Recomputed sha256 of campaign-results.jsonl of all 5 runtimes; each matches evidenceHashes.results."
+    },
+    "RELEASE_LAUNCH": {
+      "result": "FAIL",
+      "checked": "All 5 runtimes log ATD_LAUNCH_PROFILE=release (output.log line 207/207/207/206/208) and ATD_GAMEPLAY_MODE=CERTIFICATION (221/221/221/220/222) before the first atd_marks case line (~249-284). launch.json command: campaign21 and campaign25 hold only -javaagent:plugins/achievetodo.jar + trace-agent; campaign22/23/24 additionally hold -Dachievetodo.progression.freshConfig=true (see finding)."
+    }
+  },
+  "superseded": "No superseded rows: MANIFEST.superseded=[] and supplements=[]; all rows from campaign21-25, harness hashes per HARNESS_RC2.sha256 are listed in MANIFEST.harness.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "RELEASE_LAUNCH",
+      "evidence": "campaign22/runtime_args.json args[0], campaign22/receipts/launch.json, campaign23/receipts/launch.json, campaign24/receipts/launch.json",
+      "description": "The server command of campaign22 (easy), campaign23 (hard) and campaign24 (chaos) contains -Dachievetodo.progression.freshConfig=true in addition to -javaagent:plugins/achievetodo.jar and the trace agent. The brief states the certified operator launch has no -Dachievetodo.* flags; only campaign21 and campaign25 match. The flag changes config resolution (BukkitProgressionRuntime.java:72, :401 'explicit freshConfig required'), and ReleaseLaunchProfile.java:85 only derives it itself when it writes a new world group, which the logged derived=[...] list for these runtimes does not include. So the thresholds-easy/hard/chaos rows of this group were produced outside the certified composition. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION are logged in all five runtimes (output.log lines ~206-222)."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/action_glide_with_fireworks/excerpts.txt, every ATD_STAGE2A_STATE line",
+      "description": "The STAGE2A state lines report \"ability\": {\"GLIDE_WITH_FIREWORKS\": null}, so the tested ability's lock state (LOCKED/UNLOCKED, required) is never logged; the locked state is inferred only from count < threshold."
+    }
+  ]
+}

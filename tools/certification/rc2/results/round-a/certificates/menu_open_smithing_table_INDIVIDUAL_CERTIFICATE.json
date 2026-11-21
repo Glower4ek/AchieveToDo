@@ -1,0 +1,59 @@
+{
+  "group": "menu_open_smithing_table",
+  "reviewer": "Q1",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "open_smithing_table has 1 active direct site GameplayMenuAbilities.java:28 (InventoryType.SMITHING -> SMITHING_TABLE/OPEN_SMITHING_TABLE), resolved via GameplayMenuAbilities.opening (line 64) and enforced in BukkitExpandedGameplayListener.open(InventoryOpenEvent) lines 77-81 (setCancelled when locked). Recomputed SHA-256 of GameplayMenuAbilities.java and BukkitRestrictionResolver.java: equal to E1. Progressions.java (definition) has no E1 hash. Thresholds: normal 294, easy 228, hard 360, chaos_20261116 619, custom_vision 294."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS. Read all 15 blocks: locked/op blocks show INVENTORY_OPEN_MONITOR_CANCELLED true for INVENTORY_OPEN_TYPE_SMITHING, no OpenScreenPacket, equal counts (293/293, 227/227, 359/359, 618/618, 293/293); allowed and creative blocks show MONITOR_CANCELLED false and ClientboundOpenScreenPacket.",
+      "rowsRead": [
+        "campaign21 pass1 open_smithing_table locked",
+        "campaign21 pass1 open_smithing_table allowed",
+        "campaign21 modes open_smithing_table creative",
+        "campaign21 modes open_smithing_table op",
+        "campaign21 modes open_smithing_table spectator",
+        "campaign21 reload open_smithing_table locked",
+        "campaign21 reload open_smithing_table allowed",
+        "campaign22 thresholds-easy locked/allowed",
+        "campaign23 thresholds-hard locked/allowed",
+        "campaign24 thresholds-chaos locked/allowed",
+        "campaign25 thresholds-custom_vision locked/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25 (normal, easy, hard, chaos, custom_vision): onlineMode=true, authenticated line 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' present for each; join lines confirmed in each runtime's receipts/output.log (lines 244/244/245/246/245)."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows present; threshold rows for all 5 configs; no off-hand route (hand-independent InventoryOpenEvent gate); no NA_* rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows from campaign21 (lines 102631+, after pass1 1633+ and modes 39559+); generationAfter=2; reload blocks show generation 2; verdicts equal pass1 (PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 15/15 REPRODUCED. REPLAY.json reproducedAll=true for campaign21 (1622/1622) and campaign22-25 (396/396 each). Plugin SHA-256 identical in all 5 runtimes = da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540 (also recomputed from campaign21/runtime/plugins/achievetodo.jar); client mod SHA-256 = 5c473903ec956489185be7d2f5c7803bd82a217c9ec066c1d3ffb5a2f5925a99 as required. Recomputed campaign-results.jsonl SHA-256 of all 5 runtimes; each equals MANIFEST evidenceHashes.results (campaign21 dfd9c2100a7d5761..., campaign22 0a44a65f5b4f4af2..., campaign23 cfbcdcaaf6f674ae..., campaign24 856f42971e90fd1c..., campaign25 45c3e020a6a1eb89...)."
+    }
+  },
+  "superseded": "MANIFEST.superseded and supplements are empty; all rows come from campaign21-25. Release launch: every runtime's output.log logs ATD_LAUNCH_PROFILE=release (lines 206-208) and ATD_GAMEPLAY_MODE=CERTIFICATION (lines 220-222) before the join and first case; campaign21 and campaign25 commands are agent-only, but campaign22/23/24 carry -Dachievetodo.progression.freshConfig=true (see major finding).",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "E3",
+      "evidence": "campaign22/runtime_args.json and campaign22/receipts/launch.json (same in campaign23 and campaign24): \"-Dachievetodo.progression.freshConfig=true\"",
+      "description": "The brief requires the operator launch with no -Dachievetodo.* flags; the easy, hard and chaos runtimes, which contribute all threshold rows for those configs, were started with an explicit -Dachievetodo.progression.freshConfig=true (injected by campaign_modes.py), so those rows do not come from the certified release composition."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "E1.json open_smithing_table directSites GameplayMenuAbilities.java [28]",
+      "description": "The only cited site is a mapping entry; the enforcing handler BukkitExpandedGameplayListener.open is not cited for this ability."
+    }
+  ]
+}

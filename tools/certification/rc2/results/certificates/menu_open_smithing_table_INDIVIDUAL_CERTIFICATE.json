@@ -1,0 +1,54 @@
+{
+  "group": "menu_open_smithing_table",
+  "reviewer": "P1",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1 open_smithing_table: mapping DIRECT, family block, sites BukkitRestrictionResolver.java:113 (inactive legacy, correctly marked) and gameplay/GameplayMenuAbilities.java:28. SHA-256 recomputed and equal to E1: BukkitRestrictionResolver.java f5d7d99b..., GameplayMenuAbilities.java 813236fd.... Opened GameplayMenuAbilities.java:28 'Map.entry(InventoryType.SMITHING, new BlockMenu(Material.SMITHING_TABLE, AbilityType.OPEN_SMITHING_TABLE))'; this map feeds GameplayMenuAbilities.opening(), which BukkitExpandedGameplayListener.open(InventoryOpenEvent) uses to cancel the open when locked. Thresholds: normal 294, easy 228, hard 360, custom_vision 294, chaos@34 494, chaos@36 167; config TOML hashes recomputed equal, re-parsed values equal E1, every row threshold matches."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "All 15 rows PASS; I read all 15 excerpts. Locked rows (31 pass1 293/294, 31 reload 293/294 gen 2, 32 227/228, 33 359/360, 34 493/494, 35 293/294): OPEN_SMITHING_TABLE kind=LOCKED pre/post, count unchanged, UseItemOn MAIN_HAND at the table reaches the server, 'INVENTORY_OPEN_MONITOR_CANCELLED true' for INVENTORY_OPEN_TYPE_SMITHING, no ClientboundOpenScreenPacket, client overlay lock message. Allowed rows: kind=UNLOCKED, MONITOR_CANCELLED false, ClientboundOpenScreenPacket + ContainerSetData, client smithing screen open, count unchanged. Verdicts reproduced.",
+      "rowsRead": [
+        "campaign31 pass1 open_smithing_table locked",
+        "campaign31 pass1 open_smithing_table allowed",
+        "campaign31 modes open_smithing_table creative",
+        "campaign31 modes open_smithing_table op",
+        "campaign31 modes open_smithing_table spectator",
+        "campaign31 reload open_smithing_table locked",
+        "campaign31 reload open_smithing_table allowed",
+        "campaign32 thresholds-easy open_smithing_table locked",
+        "campaign32 thresholds-easy open_smithing_table allowed",
+        "campaign33 thresholds-hard open_smithing_table locked",
+        "campaign33 thresholds-hard open_smithing_table allowed",
+        "campaign34 thresholds-chaos open_smithing_table locked",
+        "campaign34 thresholds-chaos open_smithing_table allowed",
+        "campaign35 thresholds-custom_vision open_smithing_table locked",
+        "campaign35 thresholds-custom_vision open_smithing_table allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign31-36: onlineMode=true in all six; authenticated UUID lines (31 '[16:39:01] UUID of player Glower4ek is 89c23030-...', 32 21:06:42, 33 22:12:38, 34 23:18:41, 35 00:24:28, 36 01:30:37) and join lines (16:39:02, 21:06:43, 22:12:39, 23:18:42, 00:24:30, 01:30:38) present; receipts/launch.json onlineMode=true for all six. Every row of the group carries pre/tick1/post client state from the real Fabric client and ATD_PACKET_IN lines from the server."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows (campaign31): creative PASS (screen opens, bypass), op PASS (op=true still denied, MONITOR_CANCELLED true), spectator PASS (no overlay, no leak). Threshold rows for normal, easy, hard, chaos, custom_vision exist (locked+allowed). No NA rows. No offhand rows: empty-hand block-menu case, excluded by the OFFHAND selector (needs a main-hand item and use action); opening a smithing table has no separate off-hand route."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows come from campaign31 after pass1 (0-397), modes (398-994), offhand (995-1230) in campaign-results.jsonl (reload 1231-1628); generationAfter=2 in MANIFEST and 'PROGRESSION_CONFIG_READY generation=2' at output.log:101756; both reload excerpts show \"generation\": 2; reload locked/allowed PASS = pass1 locked/allowed PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15/15 REPRODUCED, recorded==replayed, key multiset equals rows.jsonl. Runtime replays in MANIFEST: campaign31 REPRODUCED 1629, 32/33/34/35 REPRODUCED 398 each, 36 REPRODUCED 2, reproducedAll=true, problems=[] everywhere. Plugin SHA-256 recomputed with sha256sum: campaign31..36/runtime/plugins/achievetodo.jar and rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar all = da9360aa...4cb540 (brief value); launch.json pluginSHA256 identical. Client mod 'E:\\Кубы сборки\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar' recomputed (Get-FileHash) = 5c473903...925a99 (brief value), also equal to rc2-artifacts/achievetodo-mc26.2+0.2.1.jar. campaign-results.jsonl recomputed for ALL six runtimes and equal to evidenceHashes.results: 31 8eddce27..., 32 c4936a8d..., 33 23a53c62..., 34 a7e80ad6..., 35 400573a8..., 36 2c2ce771.... trace-agent.jar in every observer-work = 706b85d5... (matches HARNESS_RC2C/RC2D)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json + receipts/launch.json of campaign31-36: command = java -Xms128M -Xmx2G [-D] -javaagent:plugins/achievetodo.jar -javaagent:<observer-work>/trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn -jar purpur-26.2-2620.jar --nogui. No -Dachievetodo.* in 31 (NORMAL) and 35 (Custom); only -Dachievetodo.progression.initialConfig=easy|hard|chaos|chaos in 32/33/34/36. output.log: 'ATD_LAUNCH_PROFILE=release' at line 207 (31,32,35,36) / 208 (33,34) and 'ATD_GAMEPLAY_MODE=CERTIFICATION' at 221/222, both before the first case (atd_marks objective created at lines 249-284). derived=[...] of 32/33/34/36 contains world-group.properties and achievetodo.progression.freshConfig (plugin-derived, not passed by hand); 31/35 derived lists have neither (existing install). Fresh install corroborated: world-selection.properties and world-group.properties of 32/33/34/36 carry plugin-written timestamps equal to the launch second (21:06:21, 22:12:10, 23:18:22, 01:30:14); 31/35 files are the pre-existing hand-made install (no timestamp header). Group rows all come from campaign31-35 (HARNESS_RC2C, launch.json identical harness run_server_v3.py eb2508c3...). Observation (not a finding): plugins/ of every runtime also holds observer plugins packet-witness.jar, w4-gameplay-evidence-probe.jar, w4-snap.jar (launch.json observerSHA256 077a0d56... is the probe jar); they are instrumentation, not -D options, and identical across runtimes."
+    }
+  },
+  "superseded": "MANIFEST.superseded=[] for this group; no row of the group comes from campaign36. The only supersession in the campaign (CHAOS ignite_tnt campaign34 -> campaign36, requires=['use_flint_and_steel'] because the fixture lights TNT with flint and steel) does not touch this group; it is justified in principle since a locked use_flint_and_steel would mask the ignite_tnt guard, and campaign36 is a fresh CHAOS install under HARNESS_RC2D whose only harness change is campaign_cases.py.",
+  "findings": []
+}

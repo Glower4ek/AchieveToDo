@@ -1,0 +1,52 @@
+{
+ "group": "menu_open_brewing_stand",
+ "reviewer": "Q8",
+ "decision": "NOT_CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "1 ability open_brewing_stand: active direct site GameplayMenuAbilities.java:27 (BREWING->OPEN_BREWING_STAND), inactive BukkitRestrictionResolver.java:95. SHA-256 recomputed for both files, equal to E1. Opened line 27. Thresholds: normal 674, easy 552, hard 796, chaos 742, custom_vision 674."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "15 rows, all PASS. Locked rows in c21-c25 show ATD_BOUNDARY INVENTORY_OPEN_MONITOR_CANCELLED true, no screen, count unchanged, overlay shown; allowed rows show MONITOR_CANCELLED false and the screen opened. Creative/spectator allowed, op denied. All verdicts reproduced.",
+   "rowsRead": [
+    "campaign21 pass1 open_brewing_stand locked",
+    "campaign21 pass1 open_brewing_stand allowed",
+    "campaign22 thresholds-easy open_brewing_stand locked",
+    "campaign23 thresholds-hard open_brewing_stand locked",
+    "campaign24 thresholds-chaos open_brewing_stand allowed",
+    "campaign25 thresholds-custom_vision open_brewing_stand locked"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign21-25: onlineMode=true, authenticated line 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' for each; confirmed in each receipts/output.log (UUID line at ~line 232-234) and receipts/launch.json onlineMode=true."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes creative/op/spectator present; all 5 configs present; no NA rows; no offhand rows (hand-agnostic menu open), acceptable."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "2 reload rows, all from campaign21 with logLines after its pass1, modes and offhand rows (reload ~101k-108k vs offhand ~89k-92k, modes ~37k-47k); MANIFEST.e5Reload generationBefore=1, generationAfter=2; every ATD_STAGE2A_STATE in the reload excerpts shows generation 2; each reload verdict equals the pass1 verdict for the same ability and phase."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: all rows REPRODUCED with recorded==replayed; MANIFEST runtime replay reproducedAll=true for campaign21 (1622) and campaign22-25 (396 each). Plugin SHA-256 recomputed on campaign21-25/runtime/plugins/achievetodo.jar and the rc2-artifacts jar = da9360aa...cb540 everywhere; client mod recomputed at the MANIFEST.clientMod path = 5c473903...5a99. campaign-results.jsonl recomputed for all 5 runtimes and equal to evidenceHashes.results (c21 dfd9c210..., c22 0a44a65f..., c23 cfbcdcaa..., c24 856f4297..., c25 45c3e020...). campaign.py/campaign_cases.py/campaign_replay.py hashes match HARNESS_RC2.sha256."
+  },
+  "ReleaseLaunch": {
+   "result": "FAIL",
+   "checked": "FAIL: ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION present in all 5 output.log before the first ATD_STAGE2A_STATE (c21 l207/221, c22 l207/221, c23 l207/221, c24 l206/220, c25 l208/222); but runtime_args.json and launch.json of campaign22/23/24 contain -Dachievetodo.progression.freshConfig=true (campaign21 and 25 are clean)."
+  }
+ },
+ "superseded": "MANIFEST.superseded and supplements are empty; all rows come from campaign21-25 under HARNESS_RC2 (harness file hashes re-verified). No superseded rows to assess.",
+ "findings": [
+  {
+   "severity": "major",
+   "criterion": "ReleaseLaunch",
+   "evidence": "campaign22/runtime_args.json, campaign23/runtime_args.json, campaign24/runtime_args.json and their receipts/launch.json 'command'",
+   "description": "The thresholds runtimes campaign22 (easy), campaign23 (hard) and campaign24 (chaos) were started with '-Dachievetodo.progression.freshConfig=true' in addition to the two -javaagent args. The brief requires the certified operator launch to carry no -Dachievetodo.* flags; only campaign21 and campaign25 match. The flag is read by BukkitProgressionRuntime.java:72 and changes config initialisation (line 401), so 3 of the 5 runtimes contributing rows to this group did not run the certified composition. All 5 runtimes do log ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION (output.log lines 206-222) before the first case."
+  }
+ ]
+}

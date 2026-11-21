@@ -1,0 +1,67 @@
+{
+  "group": "sleep",
+  "reviewer": "P4",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1 lists sleep with three active sites: BukkitGameplayRuntime.java l.117 (PlayerBedEnterEvent: allows(SLEEP), otherwise setUseBed(DENY)), GameplayGate.java l.15 (SLEEP in IMPLEMENTED) and NativeLandmarkOperations.java l.90 (sleepDenied, landmark SLEEP). It also lists the inactive site SleepAdapter l.31. SHA-256 recomputed: BukkitGameplayRuntime 6ebc32c5..., GameplayGate 4ddeec26..., NativeLandmarkOperations 778a6186... and SleepAdapter dcc7b01b... all = E1. I opened l.115-119: it checks AbilityType.SLEEP. Every config that ran (normal, easy, hard, custom_vision, chaos_20261116@campaign34, plus chaos@campaign36) lists a threshold. I re-parsed the [abilities] table of each config TOML named in E1.configs (hashes recomputed, all 6 match), and every E1 threshold equals the TOML value. Every row's threshold equals E1 for its runtime; locked/op/creative/spectator score = threshold-1 and allowed score = threshold. Thresholds: normal 24, easy 22, hard 24, custom_vision 24, chaos@34 24, chaos@36 24."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "I read and re-judged all 15 excerpts and also checked the raw STATE lines in output.log. In the locked/op rows UseItemOn on RED_BED reaches the server (useBlock=ALLOW), no sleep_in_bed advancement appears, and the count is unchanged (23, 21, 23, 23, 23). The raw STATE stat SLEEP_IN_BED does not change (campaign31 reload locked l.110034/110044: 2->2). The server's denial fingerprint, ClientboundContainerSetContent+SetSlot from GameplayDenialEffects.afterDenial -> updateInventory, appears in every locked/op row and in no allowed row. On the client, sleeping=false and the overlay reads 'You can't sleep. Advancements left to unlock: 1'. In the allowed rows the client shows sleeping=true and the vanilla message 'Sleeping through this night'. The pass1, easy, hard, chaos and custom_vision allowed rows show ATD_PROOF_NATIVE_ADVANCEMENT_DONE minecraft:adventure/sleep_in_bed (count +1, which is fine in an allowed phase). For reload allowed and creative, the raw STATE SLEEP_IN_BED goes 2->3 and 1->2. In spectator, Paper cancels the interaction (cancelled=true, vanilla behaviour) and there is no overlay, so PASS. All PASS verdicts reproduce.",
+      "rowsRead": [
+        "campaign31 pass1 sleep locked",
+        "campaign31 pass1 sleep allowed",
+        "campaign31 modes sleep creative",
+        "campaign31 modes sleep op",
+        "campaign31 modes sleep spectator",
+        "campaign31 reload sleep locked",
+        "campaign31 reload sleep allowed",
+        "campaign32 thresholds-easy sleep locked",
+        "campaign32 thresholds-easy sleep allowed",
+        "campaign33 thresholds-hard sleep locked",
+        "campaign33 thresholds-hard sleep allowed",
+        "campaign34 thresholds-chaos sleep locked",
+        "campaign34 thresholds-chaos sleep allowed",
+        "campaign35 thresholds-custom_vision sleep locked",
+        "campaign35 thresholds-custom_vision sleep allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign31-36: onlineMode=true for all; authenticatedUuidLine and joinedLine re-found in each raw output.log (campaign31 l.233/244, campaign32 l.233/244, campaign33 l.234/246, campaign34 l.234/250, campaign35 l.233/244, campaign36 l.233/246); UUID 89c23030-ce61-44ab-800a-f2aee455e14a is version-4 (Mojang online), runtime/server.properties online-mode=true in every runtime; launch.json onlineMode=true. This group's rows come only from campaign31-35."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "Tag 'modes' (campaign31): creative (bypass, effect required), op (locked semantics, denial required) and spectator (no fresh overlay, no leak) rows are present. thresholds-easy (campaign32), thresholds-hard (campaign33), thresholds-chaos (campaign34) and thresholds-custom_vision (campaign35) locked+allowed rows are present; normal is covered by pass1. There are no NA_* rows in this group (no threshold is 0 in any config). campaign-results.jsonl of campaign31-35 holds no other row for this ability (no INVALID_* row and no rerun), so the expect_hit and server_reach rules found nothing to rerun. No offhand rows: bed use does not depend on the held item and has no off-hand route."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "campaign31 campaign-results.jsonl line ranges: pass1 rows 1-398 (log 335-37925), modes 399-995 (log 37974-89134), offhand 996-1231 (log 89184-101738), reload 1232-1629 (log 101794-138994); the reload ('Reloading!' l.101750, PROGRESSION_CONFIG_READY generation=2 l.~101755, DELTA_SENT configGeneration=2 l.101792) comes after pass1/modes/offhand. MANIFEST.e5Reload.evidence generationBefore=1 generationAfter=2. Reload rows (logLines 110033-110044, 110087-110096) show STATE generation=2. Reload PASS/PASS = pass1 PASS/PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "Recomputed SHA-256 of every evidenceHashes entry of all six runtimes (output.log, command-journal, driver-journal, campaign-results.jsonl, REPLAY.json, plugin, server, trace-agent, client-mod, input-driver, campaign.py, campaign_replay.py): all match, e.g. campaign31 campaign-results.jsonl 8eddce27...d0d5de, campaign32 c4936a8d...1813c, campaign35 400573a8...2616. Plugin jar in campaign31..36/runtime/plugins/achievetodo.jar = da9360aa...cb540 in all six and in rc2-artifacts; client mod in the Prism mods folder and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar = 5c473903...25a99. REPLAY.json reproducedAll=true, problems=[] in campaign31 (1629), 32-35 (398 each), 36 (2). Every rows.jsonl line matched to its campaign-results.jsonl row (verdict, counts, logLines, threshold) with 0 mismatches. Every non-compacted excerpt line was found verbatim at the stated output.log lines (campaign31 1485 lines, campaign32-35 424 each across my 7 groups, 0 missing); compacted state lines matched by tick/count/generation. Exception noted as finding: campaign_cases.py evidence hash of campaign35 (see findings). "
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json and receipts/launch.json of campaign31-36: command = java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<preset>] -javaagent:plugins/achievetodo.jar -javaagent:<observer-work>/trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn -jar purpur-26.2-2620.jar --nogui. No other -Dachievetodo.* option. initialConfig only in campaign32 (easy), 33 (hard), 34 (chaos), 36 (chaos); none in 31 (normal) and 35 (custom_vision). In each output.log ATD_LAUNCH_PROFILE=release (l.207/208) and ATD_GAMEPLAY_MODE=CERTIFICATION (l.221/222) precede the player join (l.233+) and the first ATD_STAGE2A_STATE case line (l.335-564). derived=[...] contains world-group.properties and achievetodo.progression.freshConfig only for campaign32/33/34/36, i.e. the plugin built a fresh install itself (campaign_modes.py set_mode deletes world-group.properties and world-selection.properties before a release preset start); campaign31/35 derived list has neither. Configs resolved: normal.toml, easy.toml, hard.toml, chaos_20261116.toml, custom_vision.toml. campaign-final-rc2c.log shows one orchestrator process (campaign_final_rc2c.py imports campaign_final -> campaign -> campaign_cases once) driving campaign31-35. sha256sum -c HARNESS_RC2C.sha256 today: all OK except campaign_cases.py (current file = d933206f..., the HARNESS_RC2D value). STARTING_THE_SERVER.md l.21-27, 57-58 match the composition."
+    }
+  },
+  "superseded": "This group has no superseded rows (MANIFEST.superseded=[]); its rows are all from campaign31-35. The only replacement in the release (campaign34 CHAOS ignite_tnt by campaign36) is justified: campaign34 ignite_tnt allowed was FAIL_NO_EFFECT at score 260 while use_flint_and_steel (CHAOS@campaign34 threshold 523, proven locked at 522 by this release's flint rows) was still locked, and NativeComplexAgent 'ignite' mode denies when either flint or IGNITE_TNT is denied; campaign36 (fresh CHAOS install, flint threshold 144) reran with requires={'use_flint_and_steel':144} and got PASS/PASS [606->606, 607->608].",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "ReleaseLaunch",
+      "evidence": "review-rc2c/sleep/MANIFEST.json runtimes.campaign35.evidenceHashes['campaign_cases.py'].sha256=d933206f160d857d... (= HARNESS_RC2D.sha256) vs campaign31-34 c8add78f3d4ea3d3... (= HARNESS_RC2C.sha256); w5-campaign/campaign_cases.py mtime 2026-11-21 00:24:48 +0500, campaign35/receipts/launch.json 00:24:00; campaign35 campaign-results.jsonl ignite_tnt rows requires={'vision': 5}",
+      "description": "campaign_cases.py was edited about 48 s after campaign35 started, and campaign35's evidence hash was taken at the end of the run (EVIDENCE_HASHES.json 01:29:53), so it records the RC2D file instead of the RC2C code that produced the rows. The RC2C version (c8add78f..., 27009 bytes) is not kept anywhere under certification/, so `sha256sum -c HARNESS_RC2C.sha256` now fails for campaign_cases.py and nobody can re-hash or diff it. The rows themselves show RC2C behaviour: campaign35 ignite_tnt has no use_flint_and_steel requirement, and one orchestrator process imported the cases at 11:38Z. So this group's verdicts are not affected, but the provenance record is inaccurate."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/sleep/excerpts.txt: every ATD_STAGE2A_STATE line shows \"ability\": {\"SLEEP\": null}; campaign31 output.log l.8521 'abilities' map lists only 25 abilities (OPEN_*, EAT_SALMON, JUMP, SNEAK, SPRINT, SWIM)",
+      "description": "The probe's state line does not report the lock state of SLEEP, so the excerpts cannot show directly that it was LOCKED or UNLOCKED. The lock state was established from the logged count against the E1/config threshold (count = threshold-1 or threshold, cross-checked against the config TOML files) and from the server's denial fingerprints. The brief's statement that the state line 'shows the tested ability's lock state' does not hold for this ability."
+    }
+  ]
+}

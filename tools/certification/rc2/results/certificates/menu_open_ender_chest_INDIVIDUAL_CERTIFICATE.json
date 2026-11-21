@@ -1,0 +1,54 @@
+{
+  "group": "menu_open_ender_chest",
+  "reviewer": "P7",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "Ability open_ender_chest (family block, DIRECT). Recomputed SHA-256 of all 4 cited files: BukkitRestrictionResolver.java f5d7d99b..., NativeEquipmentAbilities.java 7baab126..., NativeTransactionAgent.java debe8c9d..., NativeTransactionBindings.java c3d1f751... - 4/4 equal E1. Opened: NativeTransactionBindings.java:42 binds callback \"ender\" -> guard(OPEN_ENDER_CHEST) (returns !denialEffects.allows(player, ability)); NativeTransactionAgent.java:77-81 ender(actor, level, pos) -> denied(\"ender\", ...); NativeEquipmentAbilities.java:39 adds OPEN_ENDER_CHEST to the implemented set. Legacy resolver correctly marked inactive. Thresholds: normal 387, easy 306, hard 468, custom_vision 387, chaos@c34 60, chaos@c36 229; 6 config hashes recomputed = E1."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS; I read all 15 excerpts. Locked rows (c31 pass1, c31 reload, c32, c33, c34, c35): STATE kind=LOCKED, RIGHT_CLICK_BLOCK ENDER_CHEST reaches the server, no INVENTORY_OPEN boundary and no ClientboundOpenScreenPacket (native ender guard stops the open before the Bukkit event), count unchanged (386, 305, 467, 59, 386), overlay seen. Allowed rows: kind=UNLOCKED, INVENTORY_OPEN_TYPE_ENDER_CHEST, MONITOR_CANCELLED false, ClientboundOpenScreenPacket, count unchanged. op: denied like locked. creative: opens (bypass). spectator: CraftBukkit cancels the click (useBlock=DENY) because an ender chest has no spectator menu provider; no overlay, no leak - vanilla behaviour, PASS per the spectator rule. Every package row equals its unique source line in campaign-results.jsonl.",
+      "rowsRead": [
+        "campaign31 pass1 open_ender_chest locked",
+        "campaign31 pass1 open_ender_chest allowed",
+        "campaign31 modes open_ender_chest creative",
+        "campaign31 modes open_ender_chest op",
+        "campaign31 modes open_ender_chest spectator",
+        "campaign31 reload open_ender_chest locked",
+        "campaign31 reload open_ender_chest allowed",
+        "campaign32 thresholds-easy open_ender_chest locked",
+        "campaign32 thresholds-easy open_ender_chest allowed",
+        "campaign33 thresholds-hard open_ender_chest locked",
+        "campaign33 thresholds-hard open_ender_chest allowed",
+        "campaign34 thresholds-chaos open_ender_chest locked",
+        "campaign34 thresholds-chaos open_ender_chest allowed",
+        "campaign35 thresholds-custom_vision open_ender_chest locked",
+        "campaign35 thresholds-custom_vision open_ender_chest allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Contributing runtimes campaign31-35: MANIFEST onlineMode=true, UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present in each; I grepped each output.log and found both lines (c31 l.233/244, c32 l.233/244, c33 l.234/246, c34 l.234/250, c35 l.233/244); server.properties online-mode=true and launch.json onlineMode=true in each."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator present. No offhand rows: case holds main=air, so campaign_final.py OFFHAND excludes it (empty-hand block open has no off-hand route). Threshold rows for normal (c31), easy (c32), hard (c33), chaos (c34), custom_vision (c35). No NA_* rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows from campaign31, after pass1 [0-397], modes [398-994], offhand [995-1230] in campaign-results.jsonl (reload 1231-1628); 'Reloading!' at output.log l.101750, reload rows at l.102812+. MANIFEST.e5Reload.generationAfter=2; both reload rows' STATE lines show generation 2. Reload locked/allowed PASS = pass1 locked/allowed PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 15/15 REPRODUCED; recorded verdicts equal rows. MANIFEST replay reproducedAll=true for campaign31-36; REPLAY.json of each runtime re-read: reproducedAll=true, problems=[]. Plugin SHA-256 recomputed in all 6 runtimes/plugins/achievetodo.jar = da9360aa...cb540 = brief; rc2-artifacts jar also equal. Client mod recomputed 5c473903...5a99 = brief. Recomputed campaign-results.jsonl SHA-256 of all six runtimes (c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771...) = evidenceHashes; REPLAY.json hashes also equal."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json/runtime_args.json: every runtime command holds -javaagent:plugins/achievetodo.jar plus the trace-agent javaagent. c31 and c35: no -Dachievetodo.* option. c32/c33/c34/c36: only -Dachievetodo.progression.initialConfig=easy/hard/chaos/chaos; campaign_modes.py deletes world-group.properties and world-selection.properties before that start (unlink would fail if absent), and the plugin logs world-group.properties in derived=[...] only in those runtimes. output.log: ATD_LAUNCH_PROFILE=release (l.207/207/208/208/207/207) and ATD_GAMEPLAY_MODE=CERTIFICATION (l.221/221/222/222/221/221) precede the first ATD_STAGE2A_STATE (l.337/335/338/354/379/564); achievetodo.progression.freshConfig appears only inside the plugin-logged derived list. HARNESS_RC2C files rehashed: all match except campaign_cases.py, which now matches HARNESS_RC2D (the documented ignite_tnt change); evidenceHashes of c31-35 record campaign_cases.py c8add78f... = RC2C value."
+    }
+  },
+  "superseded": "No superseded rows in this group (MANIFEST.superseded=[]). The campaign36 CHAOS ignite_tnt supersession does not touch open_ender_chest; it is justified in principle (fixture needs use_flint_and_steel, now declared in requires) and campaign36 is a fresh CHAOS install under HARNESS_RC2D with release launch.",
+  "findings": []
+}

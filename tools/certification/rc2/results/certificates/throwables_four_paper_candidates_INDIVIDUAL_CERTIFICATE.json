@@ -1,0 +1,126 @@
+{
+  "group": "throwables_four_paper_candidates",
+  "reviewer": "P2",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json: throw_snowball, throw_egg, throw_ender_pearl, throw_wind_charge (all DIRECT, family item). Recomputed SHA-256: BukkitExpandedGameplayListener.java f10bdc23... , GameplayGate.java 4ddeec26..., BukkitRestrictionResolver.java f5d7d99b... (legacy, inactive) - all equal E1. Opened BukkitExpandedGameplayListener.java:84-89 projectileAbility maps Snowball->THROW_SNOWBALL (85), Egg->THROW_EGG (86), EnderPearl->THROW_ENDER_PEARL (87), WindCharge->THROW_WIND_CHARGE (88); throwItem(PlayerLaunchProjectileEvent) line 93-97 and launch(ProjectileLaunchEvent) line 99-105 cancel when locked(player, ability). GameplayGate.java:18-19 adds all four to IMPLEMENTED. Thresholds per ability for normal/easy/hard/custom_vision/chaos@34 (/chaos@36): snowball 143/108/178/143/633 (148), egg 254/196/312/254/312 (161), ender_pearl 214/164/264/214/573 (581), wind_charge 319/248/390/319/161 (126); config hashes equal E1.configs."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "68 rows, all PASS; read all 68 excerpt blocks (programmatically split at act/post marks and individually inspected for 14). Every locked row (pass1, reload, offhand_locked, op, easy, hard, chaos, custom for all four abilities): count threshold-1 identical in pre/post STATE, projectile probe 'execute if entity @e[type=<projectile>,distance=..60]' 'Test failed' before and after (no projectile spawned), no inventory_changed advancement, server answers the click only with ClientboundContainerSetContentPacket + 2 ContainerSetSlot (inventory resync after the cancelled launch event), no ClientboundSoundPacket; client overlay true. Every allowed row: ClientboundSoundPacket (throw sound) + SetSlot, ATD_PROOF_NATIVE_ADVANCEMENT_DONE inventory_changed (item consumed), probe 'Test passed. Count: 1', count unchanged. Creative: SoundPacket + probe passed (bypass). Spectator: no server packets, no overlay, no leak.",
+      "rowsRead": [
+        "campaign31 pass1 throw_snowball locked",
+        "campaign31 pass1 throw_snowball allowed",
+        "campaign31 modes throw_snowball creative",
+        "campaign31 modes throw_snowball op",
+        "campaign31 modes throw_snowball spectator",
+        "campaign31 offhand throw_snowball offhand_locked",
+        "campaign31 offhand throw_snowball offhand_allowed",
+        "campaign31 reload throw_snowball locked",
+        "campaign31 reload throw_snowball allowed",
+        "campaign32 thresholds-easy throw_snowball locked",
+        "campaign32 thresholds-easy throw_snowball allowed",
+        "campaign33 thresholds-hard throw_snowball locked",
+        "campaign33 thresholds-hard throw_snowball allowed",
+        "campaign34 thresholds-chaos throw_snowball locked",
+        "campaign34 thresholds-chaos throw_snowball allowed",
+        "campaign35 thresholds-custom_vision throw_snowball locked",
+        "campaign35 thresholds-custom_vision throw_snowball allowed",
+        "campaign31 pass1 throw_egg locked",
+        "campaign31 pass1 throw_egg allowed",
+        "campaign31 modes throw_egg creative",
+        "campaign31 modes throw_egg op",
+        "campaign31 modes throw_egg spectator",
+        "campaign31 offhand throw_egg offhand_locked",
+        "campaign31 offhand throw_egg offhand_allowed",
+        "campaign31 reload throw_egg locked",
+        "campaign31 reload throw_egg allowed",
+        "campaign32 thresholds-easy throw_egg locked",
+        "campaign32 thresholds-easy throw_egg allowed",
+        "campaign33 thresholds-hard throw_egg locked",
+        "campaign33 thresholds-hard throw_egg allowed",
+        "campaign34 thresholds-chaos throw_egg locked",
+        "campaign34 thresholds-chaos throw_egg allowed",
+        "campaign35 thresholds-custom_vision throw_egg locked",
+        "campaign35 thresholds-custom_vision throw_egg allowed",
+        "campaign31 pass1 throw_ender_pearl locked",
+        "campaign31 pass1 throw_ender_pearl allowed",
+        "campaign31 modes throw_ender_pearl creative",
+        "campaign31 modes throw_ender_pearl op",
+        "campaign31 modes throw_ender_pearl spectator",
+        "campaign31 offhand throw_ender_pearl offhand_locked",
+        "campaign31 offhand throw_ender_pearl offhand_allowed",
+        "campaign31 reload throw_ender_pearl locked",
+        "campaign31 reload throw_ender_pearl allowed",
+        "campaign32 thresholds-easy throw_ender_pearl locked",
+        "campaign32 thresholds-easy throw_ender_pearl allowed",
+        "campaign33 thresholds-hard throw_ender_pearl locked",
+        "campaign33 thresholds-hard throw_ender_pearl allowed",
+        "campaign34 thresholds-chaos throw_ender_pearl locked",
+        "campaign34 thresholds-chaos throw_ender_pearl allowed",
+        "campaign35 thresholds-custom_vision throw_ender_pearl locked",
+        "campaign35 thresholds-custom_vision throw_ender_pearl allowed",
+        "campaign31 pass1 throw_wind_charge locked",
+        "campaign31 pass1 throw_wind_charge allowed",
+        "campaign31 modes throw_wind_charge creative",
+        "campaign31 modes throw_wind_charge op",
+        "campaign31 modes throw_wind_charge spectator",
+        "campaign31 offhand throw_wind_charge offhand_locked",
+        "campaign31 offhand throw_wind_charge offhand_allowed",
+        "campaign31 reload throw_wind_charge locked",
+        "campaign31 reload throw_wind_charge allowed",
+        "campaign32 thresholds-easy throw_wind_charge locked",
+        "campaign32 thresholds-easy throw_wind_charge allowed",
+        "campaign33 thresholds-hard throw_wind_charge locked",
+        "campaign33 thresholds-hard throw_wind_charge allowed",
+        "campaign34 thresholds-chaos throw_wind_charge locked",
+        "campaign34 thresholds-chaos throw_wind_charge allowed",
+        "campaign35 thresholds-custom_vision throw_wind_charge locked",
+        "campaign35 thresholds-custom_vision throw_wind_charge allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for every contributing runtime campaign31 (normal), campaign32 (easy), campaign33 (hard), campaign34 (chaos), campaign35 (custom_vision): onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and joinedLine 'Glower4ek joined the game' present (31: 16:39:01/16:39:02, 32: 21:06:42/43, 33: 22:12:38/39, 34: 23:18:41/42, 35: 00:24:28/30); receipts/launch.json of each runtime also has onlineMode=true. campaign36 has the same lines but contributes no rows to this group."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "For each of the 4 abilities: modes creative/op/spectator rows (12), offhand_locked/offhand_allowed rows (8), threshold rows locked+allowed in normal, easy, hard, chaos, custom_vision (40) + reload (8) = 68. No NA rows; no zero thresholds."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "8 campaign31 reload rows (output.log 118267-118710, after the 19:55:15 reload and after offhand rows ending ~94118); STATE lines show \"generation\": 2; MANIFEST.e5Reload.generationAfter=2; all 8 reload verdicts PASS = the 8 pass1 verdicts PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 68/68 rows status=REPRODUCED (recorded==replayed). MANIFEST runtimes replay reproducedAll=true, problems=[] for all (31: 1629, 32-35: 398 each, 36: 2 REPRODUCED). Plugin SHA-256 recomputed from campaign31..36/runtime/plugins/achievetodo.jar and certification/rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar: all da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540 (= brief, = MANIFEST.plugin.perRuntime). Client mod recomputed at 'E:/Кубы сборки/ATD Stage2B W4 Attempt01/minecraft/mods/achievetodo.jar' and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar: 5c473903ec956489185be7d2f5c7803bd82a217c9ec066c1d3ffb5a2f5925a99 (= brief). campaign-results.jsonl SHA-256 recomputed for ALL six runtimes and equal to evidenceHashes.results: 31 8eddce27..., 32 c4936a8d..., 33 23a53c62..., 34 a7e80ad6..., 35 400573a8..., 36 2c2ce771.... campaign.py (5bbf36da...) and campaign_replay.py (d881b760...) on disk equal HARNESS_RC2C.sha256."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json + runtime_args.json: every runtime runs java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<preset>] -javaagent:plugins/achievetodo.jar -javaagent:<campaignNN>/observer-work/trace-agent.jar=<Item.use,FireworkRocketItem.use,Player.interactOn> -jar purpur-26.2-2620.jar --nogui (trace-agent SHA 706b85d5... = PRELAUNCH). The only -Dachievetodo option is initialConfig=easy/hard/chaos in campaign32/33/34 (and chaos in 36); campaign31 and campaign35 have none. campaign_modes.py unlinks world-group.properties and world-selection.properties before a preset start (fresh install). output.log: ATD_LAUNCH_PROFILE=release at line 207/207/208/208/207 and ATD_GAMEPLAY_MODE=CERTIFICATION at 221/221/222/222/221 (campaign31..35), before the first ATD_STAGE2A_STATE (337/335/338/354/379). freshConfig appears only in the plugin's own derived=[..., world-group.properties, ..., achievetodo.progression.freshConfig] in campaign32/33/34 (and 36); campaign31/35 derived lists have no freshConfig and no world-group.properties, consistent with an existing install. STARTING_THE_SERVER.md lines 21-24 and 57 document exactly -javaagent:plugins/<jar> and initialConfig. campaign-results tag order in campaign31 is pass1 (results line 1) -> modes (399) -> offhand (996) -> reload (1232), all rows within one campaign."
+    }
+  },
+  "superseded": "No superseded rows for this group (MANIFEST.superseded = []); the campaign36 CHAOS supplement concerns ignite_tnt only.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "campaign31/receipts/output.log: 0 occurrences of 'type=ServerboundUseItemPacket'; e.g. excerpt campaign31 pass1 throw_snowball locked (output.log 16820-16829) has no ATD_PACKET_IN line",
+      "description": "For throwables no inbound use packet and no guard/trace line is logged (PacketWitness records only ServerboundUseItemOnPacket, and the Item.use trace does not fire for the overriding SnowballItem/EggItem/EnderpearlItem/WindChargeItem.use). That the request reached the server guard is shown only indirectly, by the server's inventory resync packets after act in every locked row. Consistent and sufficient, but a server_reach-style oracle (as for vehicles/villagers) would make it direct."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/throwables_four_paper_candidates/excerpts.txt ATD_STAGE2A_STATE lines ('THROW_SNOWBALL': null etc.)",
+      "description": "The state probe reports the tested ability as null, so the plugin's own lock state is not visible in the excerpts; the lock is inferred from count < threshold, the overlay and the absent effect."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "certification/w5-campaign/HARNESS_RC2C.sha256 line 2 (campaign_cases.py c8add78f...) vs certification/w5-campaign/campaign_cases.py (current SHA-256 d933206f..., = HARNESS_RC2D)",
+      "description": "The campaign_cases.py that produced campaign31-35 (c8add78f..., recorded in MANIFEST evidenceHashes) is no longer on disk: the w5-campaign copy was overwritten by the RC2D version and no copy with that hash exists under certification/, repo/ or tooling/. campaign.py and campaign_replay.py still match, so verdicts can be re-derived, but a third person cannot re-run the exact RC2C case definitions; keep a history copy (history-campaign_cases.py.rc2c)."
+    }
+  ]
+}

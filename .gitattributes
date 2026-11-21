@@ -210,3 +210,4 @@ src/bridgeTest/java/com/diskree/achievetodo/bridge/ClientCodecFixtureTest.java -
 
 # W5 certification evidence: hashed bytes must survive checkout unchanged.
 tools/certification/w5/** -text
+tools/certification/rc2/** -text

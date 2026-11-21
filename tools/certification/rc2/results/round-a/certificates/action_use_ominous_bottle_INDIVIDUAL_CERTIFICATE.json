@@ -1,0 +1,60 @@
+{
+  "group": "action_use_ominous_bottle",
+  "reviewer": "Q6",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability use_ominous_bottle, DIRECT, active sites NativeActionBindings.java:16 (USE_OMINOUS_BOTTLE in agent ability set), NativeActionAgent.java:69, NativeActionSpecs.java:33 (Spec USE_OMINOUS_BOTTLE on Consumable.canConsume HEAD, returns false when locked). 3/3 cited files re-hashed and match E1. Thresholds normal 359, easy 282, hard 436, chaos 605, custom_vision 359."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS. Read every excerpt: locked/offhand_locked/op/reload-locked rows in all 5 runtimes show ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=use_ominous_bottle (x3), count unchanged (358/281/435/604/358) and the post entity-data line lists only minecraft:resistance (no bad_omen). Allowed rows (all 5 runtimes, offhand, reload) show minecraft:bad_omen in entity data; count +1 in first-time allowed rows from the vanilla consumed_item/bad_omen criteria. Creative shows bad_omen (bypass), spectator no effect.",
+      "rowsRead": [
+        "campaign21 pass1 use_ominous_bottle locked/allowed",
+        "campaign21 modes use_ominous_bottle creative/op/spectator",
+        "campaign21 offhand use_ominous_bottle offhand_locked/offhand_allowed",
+        "campaign21 reload use_ominous_bottle locked/allowed",
+        "campaign22 thresholds-easy use_ominous_bottle locked/allowed",
+        "campaign23 thresholds-hard use_ominous_bottle locked/allowed",
+        "campaign24 thresholds-chaos use_ominous_bottle locked/allowed",
+        "campaign25 thresholds-custom_vision use_ominous_bottle locked/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25: onlineMode=true, authenticatedUuidLine 'UUID of player ... is 89c23030-...' and joinedLine present in each; launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows exist (campaign21 modes); offhand_locked and offhand_allowed rows exist (campaign21 offhand: inv slot 40 consumed when allowed, denied when locked); locked+allowed rows for normal, easy, hard, chaos, custom_vision; no NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows, both campaign21, log lines 106043-106156, after pass1 (max 5268), modes (max 44299) and offhand (max 89988); e5Reload.generationAfter=2; both reload excerpts show generation 2 only; reload verdicts PASS equal pass1 PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 17/17 REPRODUCED; all 5 runtimes reproducedAll=true (1622/396/396/396/396). Plugin sha256 da9360aa... identical for campaign21-25 and equal to the brief; client mod sha256 5c473903... equals the brief. Recomputed sha256 of campaign-results.jsonl of all 5 runtimes; each matches evidenceHashes.results."
+    },
+    "RELEASE_LAUNCH": {
+      "result": "FAIL",
+      "checked": "All 5 runtimes log ATD_LAUNCH_PROFILE=release (output.log line 207/207/207/206/208) and ATD_GAMEPLAY_MODE=CERTIFICATION (221/221/221/220/222) before the first atd_marks case line (~249-284). launch.json command: campaign21 and campaign25 hold only -javaagent:plugins/achievetodo.jar + trace-agent; campaign22/23/24 additionally hold -Dachievetodo.progression.freshConfig=true (see finding)."
+    }
+  },
+  "superseded": "No superseded rows: MANIFEST.superseded=[] and supplements=[]; all rows from campaign21-25, harness hashes per HARNESS_RC2.sha256 are listed in MANIFEST.harness.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "RELEASE_LAUNCH",
+      "evidence": "campaign22/runtime_args.json args[0], campaign22/receipts/launch.json, campaign23/receipts/launch.json, campaign24/receipts/launch.json",
+      "description": "The server command of campaign22 (easy), campaign23 (hard) and campaign24 (chaos) contains -Dachievetodo.progression.freshConfig=true in addition to -javaagent:plugins/achievetodo.jar and the trace agent. The brief states the certified operator launch has no -Dachievetodo.* flags; only campaign21 and campaign25 match. The flag changes config resolution (BukkitProgressionRuntime.java:72, :401 'explicit freshConfig required'), and ReleaseLaunchProfile.java:85 only derives it itself when it writes a new world group, which the logged derived=[...] list for these runtimes does not include. So the thresholds-easy/hard/chaos rows of this group were produced outside the certified composition. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION are logged in all five runtimes (output.log lines ~206-222)."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/action_use_ominous_bottle/excerpts.txt, every ATD_STAGE2A_STATE line",
+      "description": "The STAGE2A state lines report \"ability\": {\"USE_OMINOUS_BOTTLE\": null}, so the tested ability's lock state (LOCKED/UNLOCKED, required) is never logged; the locked state is inferred only from count < threshold."
+    }
+  ]
+}

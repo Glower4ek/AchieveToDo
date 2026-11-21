@@ -1,0 +1,60 @@
+{
+  "group": "action_use_spyglass",
+  "reviewer": "Q1",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "use_spyglass: active direct sites GameplayGate.java:11, NativeActionBindings.java:35 (guard accepts USE_SPYGLASS, denies via !GameplayGate.allows, reports denial) and NativeActionSpecs.java:25 (Spec USE_SPYGLASS at HEAD of SpyglassItem.use returning CONSUME). Recomputed SHA-256 of GameplayGate.java, NativeActionBindings.java, NativeActionSpecs.java: equal E1; BukkitRestrictionResolver.java and Progressions.java have no E1 hash. Thresholds: normal 314, easy 244, hard 384, chaos 600, custom_vision 314."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS. Read all 17 blocks: every locked/op/offhand_locked block has 4x ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=use_spyglass and equal counts (313/313, 243/243, 383/383, 599/599, 313/313); client usingItem false on all frames. Allowed/offhand_allowed/creative blocks have no denial line, client usingItem true, and first-time allowed rows show galileo_figaro (spyglass) advancement. Spectator: no overlay, no denial.",
+      "rowsRead": [
+        "campaign21 pass1 use_spyglass locked",
+        "campaign21 pass1 use_spyglass allowed",
+        "campaign21 modes use_spyglass creative",
+        "campaign21 modes use_spyglass op",
+        "campaign21 modes use_spyglass spectator",
+        "campaign21 offhand use_spyglass offhand_locked",
+        "campaign21 offhand use_spyglass offhand_allowed",
+        "campaign21 reload locked/allowed",
+        "campaign22 thresholds-easy locked/allowed",
+        "campaign23 thresholds-hard locked/allowed",
+        "campaign24 thresholds-chaos locked/allowed",
+        "campaign25 thresholds-custom_vision locked/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25 (normal, easy, hard, chaos, custom_vision): onlineMode=true, authenticated line 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' present for each; join lines confirmed in each runtime's receipts/output.log (lines 244/244/245/246/245)."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows; offhand_locked/offhand_allowed rows; threshold rows for normal, easy, hard, chaos, custom_vision; no NA_* rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows from campaign21 (08:16, after pass1 05:00, modes 06:08, offhand 07:39); generationAfter=2; reload blocks show generation 2; verdicts PASS equal pass1."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 17/17 REPRODUCED. REPLAY.json reproducedAll=true for campaign21 (1622/1622) and campaign22-25 (396/396 each). Plugin SHA-256 identical in all 5 runtimes = da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540 (also recomputed from campaign21/runtime/plugins/achievetodo.jar); client mod SHA-256 = 5c473903ec956489185be7d2f5c7803bd82a217c9ec066c1d3ffb5a2f5925a99 as required. Recomputed campaign-results.jsonl SHA-256 of all 5 runtimes; each equals MANIFEST evidenceHashes.results (campaign21 dfd9c2100a7d5761..., campaign22 0a44a65f5b4f4af2..., campaign23 cfbcdcaaf6f674ae..., campaign24 856f42971e90fd1c..., campaign25 45c3e020a6a1eb89...)."
+    }
+  },
+  "superseded": "MANIFEST.superseded and supplements are empty; all rows come from campaign21-25. Release launch: every runtime's output.log logs ATD_LAUNCH_PROFILE=release (lines 206-208) and ATD_GAMEPLAY_MODE=CERTIFICATION (lines 220-222) before the join and first case; campaign21 and campaign25 commands are agent-only, but campaign22/23/24 carry -Dachievetodo.progression.freshConfig=true (see major finding).",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "E3",
+      "evidence": "campaign22/runtime_args.json and campaign22/receipts/launch.json (same in campaign23 and campaign24): \"-Dachievetodo.progression.freshConfig=true\"",
+      "description": "The brief requires the operator launch with no -Dachievetodo.* flags; the easy, hard and chaos runtimes, which contribute all threshold rows for those configs, were started with an explicit -Dachievetodo.progression.freshConfig=true (injected by campaign_modes.py), so those rows do not come from the certified release composition."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt campaign21 reload use_spyglass allowed",
+      "description": "For allowed rows after the first, the excerpt shows no server-side effect line; the effect (client usingItem=true) is only in rows.jsonl client frames."
+    }
+  ]
+}

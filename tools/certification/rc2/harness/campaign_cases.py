@@ -1,0 +1,308 @@
+"""Declarative Stage 2B campaign cases for all 57 groups (153 abilities).
+
+Each case: ability, setup (server commands), hold (mainhand/offhand/armor items), aim (x,y,z) or None,
+actions (driver commands), probes (server commands whose output lines are compared pre/post),
+effect (tokens the allowed run must show and the locked run must not), post (cleanup commands).
+
+Arena: player at 8.5 -60 -0.5 facing north (feet on ground y=-61 surface), target cell T=8 -59 -3
+sitting on a stone pedestal at 8 -60 -3. High arena H: player at 8.5 100 -0.5, T=8 100 -3.
+"""
+import json
+from pathlib import Path
+
+T = '8 -59 -3'
+FACE = (8.5, -58.5, -2.0)          # front (south) face centre of T
+ENT = '8.5 -60 -2.5'               # entity spawn point two blocks in front
+ENT_AIM = (8.5, -59.2, -2.5)
+GROUPS = json.loads((Path(__file__).parent / 'CAMPAIGN_GROUPS.json').read_text())
+
+
+def case(ability, *, setup=(), main='air', off='air', extra_items=(), aim=FACE, actions=('click_use',),
+         probes=(), effect=('probe',), post=(), wait=20, arena='low', notes='', hungry=False,
+         use_while_locked=False, fixture_criteria=(), creative_effect=None, offhand=True, locked_margin=1,
+         requires=(), parity_criteria=None, expect_hit=None, server_reach=()):
+    # expect_hit (rc.2 review): the client must be aiming at something before the action; a miss means the input
+    #   never reached the fixture, so the row is INVALID_FIXTURE_AIM, not a lock proof. Default: on when aim is set.
+    # server_reach (rc.2 review): traced server methods (TRACE_TARGETS) that must return during the action, proving
+    #   the request reached the server guard instead of being stopped by the client mod.
+    # creative_effect: oracle tokens for the creative phase when the default ones cannot see the effect there.
+    # offhand=False: the route has no off-hand meaning (melee uses the main hand), so offhand phases are NA.
+    # locked_margin: locked score = threshold - margin. 2 when the action itself earns one counted advancement
+    #   before the guard is consulted again (vanilla enter_block on end_portal/end_gateway), so the fixture
+    #   stays locked during the action instead of drifting onto the threshold.
+    # requires: abilities the fixture itself needs (landmark chest -> open_chest); the allowed score is raised
+    #   to their thresholds too, so 'allowed' means the whole action is allowed, not only the tested guard.
+    # parity_criteria: {advancement: [criteria]} that the Fabric source also grants while the ability is locked
+    #   (vanilla enter_block fires on contact; the source guards only setAsInsidePortal). Verdict
+    #   PASS_PARITY_ENTER_BLOCK keeps them visible instead of hiding them.
+    return dict(ability=ability, setup=list(setup), main=main, off=off, extra_items=list(extra_items), aim=aim,
+                actions=list(actions), probes=list(probes), effect=list(effect), post=list(post), wait=wait,
+                arena=arena, notes=notes, hungry=hungry, use_while_locked=use_while_locked,
+                fixture_criteria=list(fixture_criteria), creative_effect=creative_effect, offhand=offhand,
+                locked_margin=locked_margin, requires=list(requires), parity_criteria=parity_criteria,
+                expect_hit=(aim is not None) if expect_hit is None else expect_hit, server_reach=list(server_reach))
+
+
+def block_menu(ability, block, aim=FACE):
+    return case(ability, setup=[f'setblock {T} minecraft:{block}'], aim=aim, effect=['screen'], post=['@close'])
+
+
+def opened(ability, block, extra=(), aim=FACE):
+    name = block.split('[')[0]
+    return case(ability, setup=[f'setblock {T} minecraft:{block}', *extra], aim=aim,
+                probes=[f'execute if block {T} minecraft:{name}[open=true]'], effect=['probe'])
+
+
+def entity_probe(selector, path=''):
+    return f'data get entity @e[{selector},limit=1,sort=nearest] {path}'.strip()
+
+
+CASES = []
+add = CASES.append
+
+# ---- menus and furnaces -------------------------------------------------------------------------
+for ability, block in [('open_chest', 'chest[facing=south]'), ('open_crafting_table', 'crafting_table'),
+                       ('open_barrel', 'barrel[facing=south]'), ('open_stonecutter', 'stonecutter[facing=south]'),
+                       ('open_grindstone', 'grindstone[face=floor,facing=south]'), ('open_anvil', 'anvil[facing=east]'),
+                       ('open_beacon', 'beacon'), ('open_cartography_table', 'cartography_table'),
+                       ('open_ender_chest', 'ender_chest[facing=south]'), ('open_brewing_stand', 'brewing_stand'),
+                       ('open_smithing_table', 'smithing_table'), ('open_loom', 'loom[facing=south]'),
+                       ('open_shulker_box', 'shulker_box[facing=up]'), ('open_enchanting_table', 'enchanting_table'),
+                       ('open_furnace', 'furnace[facing=south]'), ('open_smoker', 'smoker[facing=south]'),
+                       ('open_blast_furnace', 'blast_furnace[facing=south]')]:
+    aim = (8.5, -58.7, -2.0) if 'enchanting' in block or 'stonecutter' in block else FACE
+    add(block_menu(ability, block, aim))
+SHELF = case('open_chest', setup=[f'setblock {T} minecraft:oak_shelf[facing=south]{{Items:[{{Slot:1b,id:"minecraft:apple",count:1}}]}}'],
+             main='stick', probes=[f'data get block {T} Items'], effect=['probe', 'inv'], notes='shelf transfer (non-menu)')
+SHELF['group'] = 'shelf_open_chest_non_menu'
+add(SHELF)
+
+# ---- opening owners -----------------------------------------------------------------------------
+add(opened('open_door', 'oak_door[half=lower,facing=south]', [f'setblock 8 -58 -3 minecraft:oak_door[half=upper,facing=south]']))
+add(opened('open_trapdoor', 'oak_trapdoor[half=bottom,facing=south]', aim=(8.5, -58.9, -2.0)))
+add(opened('open_fence_gate', 'oak_fence_gate[facing=south]'))
+
+# ---- movement / client local ----------------------------------------------------------------------
+add(case('jump', aim=None, actions=['press key.jump 3', 'wait 6', 'state mid'], effect=['stat:JUMP']))
+add(case('sneak', aim=None, actions=['press key.sneak 25', 'wait 10', 'state mid'], effect=['client:crouching']))
+add(case('sprint', aim=None, actions=['press key.forward 30', 'press key.sprint 30', 'wait 15', 'state mid'],
+         effect=['stat:SPRINT_ONE_CM']))
+add(case('swim', setup=['fill 5 -61 -7 12 -57 2 minecraft:water'], aim=None,
+         actions=['press key.forward 40', 'press key.sprint 40', 'wait 25', 'state mid'], effect=['client:swimming'],
+         post=['fill 5 -61 -7 12 -57 2 minecraft:air', 'fill 5 -61 -7 12 -61 2 minecraft:grass_block']))
+add(case('open_inventory', aim=None, actions=['press key.inventory', 'wait 5', 'state mid'], effect=['screen'], post=['@close']))
+add(case('vision', aim=None, actions=['wait 60', 'state mid'], effect=['clear:guiOverlay=VisionOverlay'],
+         notes='locked: GameRendererMixin black VisionOverlay on screen; it fades over ~50 ticks after unlock. '
+               'NORMAL/EASY/HARD threshold 0 -> NA_NO_LOCKED_STATE; covered by a Custom config with vision > 0'))
+
+# ---- single native actions -------------------------------------------------------------------------
+add(case('use_shield', main='shield', aim=None, actions=['press key.use 25', 'wait 12', 'state mid'], effect=['trace:Item.use=Success'], notes='server truth: Item.use Success vs Pass'))
+add(case('use_spyglass', main='spyglass', aim=None, actions=['press key.use 25', 'wait 12', 'state mid'], effect=['client:usingItem']))
+add(case('shoot_bow', main='bow', extra_items=['hotbar.1 arrow'], aim=None, actions=['press key.use 25', 'wait 20'],
+         probes=['execute if entity @e[type=arrow]'], effect=['probe', 'inv'], post=['kill @e[type=arrow]']))
+add(case('shoot_crossbow', main='crossbow', extra_items=['hotbar.1 arrow'], aim=None,
+         actions=['press key.use 32', 'wait 12', 'state mid', 'wait 33', 'click_use', 'wait 10'],
+         probes=['execute if entity @e[type=arrow]'], effect=['probe'], post=['kill @e[type=arrow]'],
+         notes='charging is not the guarded boundary; performShooting is', use_while_locked=True))
+add(case('attack_with_trident', main='trident', aim=None, actions=['press key.use 20', 'wait 12', 'state mid', 'wait 13'],
+         probes=['execute if entity @e[type=trident,distance=..60]'], effect=['probe', 'inv'], post=['kill @e[type=trident]']))
+TRIDENT_MELEE = case('attack_with_trident', main='trident', setup=[f'summon pig {ENT} {{NoAI:1b,PersistenceRequired:1b,Silent:1b,Health:10f}}'],
+                     aim=(8.5, -59.5, -2.5), actions=['click_attack'], probes=[entity_probe('type=pig', 'Health')], effect=['probe'],
+                     post=['kill @e[type=pig]'], notes='melee route', offhand=False)
+add(TRIDENT_MELEE)
+add(case('attack_with_mace', main='mace', setup=[f'summon pig {ENT} {{NoAI:1b,PersistenceRequired:1b,Silent:1b,Health:10f}}'],
+         aim=(8.5, -59.5, -2.5), actions=['click_attack'], probes=[entity_probe('type=pig', 'Health')], effect=['probe'], post=['kill @e[type=pig]']))
+add(case('use_ender_eye', main='ender_eye', aim=None, probes=['execute if entity @e[type=eye_of_ender,distance=..40]'],
+         effect=['probe', 'inv'], post=['kill @e[type=eye_of_ender]'], notes='needs a locatable stronghold'))
+add(case('glide_with_fireworks', main='firework_rocket', extra_items=['armor.chest elytra'], aim=None,
+         actions=['server:tp Glower4ek 8.5 200 -0.5 180 0', 'wait 8', 'press key.jump 2', 'wait 5', 'state mid', 'click_use', 'wait 8'],
+         probes=['execute if entity @e[type=firework_rocket,distance=..60]'], effect=['trace:FireworkRocketItem.use=Success'],
+         post=['kill @e[type=firework_rocket]', 'effect give Glower4ek slow_falling 10 1 true'],
+         fixture_criteria=['blazeandcave:technical/scenic_route_fail']))
+add(case('place_end_crystal', main='end_crystal', setup=[f'setblock {T} minecraft:obsidian'], aim=(8.5, -58.0001, -2.6),
+         probes=['execute if entity @e[type=end_crystal,distance=..10]'], effect=['probe'], post=['kill @e[type=end_crystal]'],
+         notes='aims at obsidian top face'))
+add(case('use_ominous_bottle', main='ominous_bottle', aim=None, actions=['press key.use 45', 'wait 12', 'state mid', 'wait 33'],
+         probes=['data get entity Glower4ek active_effects'], effect=['inv'], post=['effect clear Glower4ek'],
+         creative_effect=['probe']))
+add(case('use_jukebox', main='music_disc_cat', setup=[f'setblock {T} minecraft:jukebox'],
+         probes=[f'execute if block {T} minecraft:jukebox[has_record=true]'], effect=['probe', 'inv'], post=[f'setblock {T} minecraft:air']))
+add(case('use_composter', main='cake', setup=[f'setblock {T} minecraft:composter[level=0]'],
+         probes=[f'execute if block {T} minecraft:composter[level=0]'], effect=['probe', 'inv']))
+add(case('use_campfire', main='beef', setup=[f'setblock {T} minecraft:campfire[lit=true,facing=north]'], aim=(8.5, -58.78, -2.0),
+         probes=[f'data get block {T} Items'], effect=['probe', 'inv']))
+add(case('charge_respawn_anchor', main='glowstone', setup=[f'setblock {T} minecraft:respawn_anchor[charges=0]'],
+         probes=[f'execute if block {T} minecraft:respawn_anchor[charges=0]'], effect=['probe', 'inv']))
+
+# ---- complex ----------------------------------------------------------------------------------
+add(case('use_water_bucket', main='water_bucket', setup=[f'setblock {T} minecraft:stone'],
+         probes=['execute if block 8 -59 -2 minecraft:water'], effect=['probe', 'inv'], post=['setblock 8 -59 -2 minecraft:air']))
+add(case('use_shears', main='shears', setup=[f'summon sheep {ENT} {{NoAI:1b,PersistenceRequired:1b,Silent:1b,Color:0b}}'],
+         aim=ENT_AIM, probes=[entity_probe('type=sheep', 'Sheared')], effect=['probe'], post=['kill @e[type=sheep]', 'kill @e[type=item]']))
+add(case('use_flint_and_steel', main='flint_and_steel', setup=['setblock 8 -60 -3 minecraft:netherrack', f'setblock {T} minecraft:air'],
+         aim=(8.5, -59.0, -2.9), probes=[f'execute if block {T} minecraft:fire'], effect=['probe'],
+         post=[f'setblock {T} minecraft:air', 'setblock 8 -60 -3 minecraft:stone']))
+add(case('ignite_tnt', main='flint_and_steel', setup=[f'setblock {T} minecraft:tnt'],
+         probes=['execute if entity @e[type=tnt,distance=..10]'], effect=['probe'], post=['kill @e[type=tnt]', f'setblock {T} minecraft:air'],
+         # rc.2c CHAOS: the fixture lights the TNT with flint and steel, its own guarded ability; when that unlocks
+         # later than ignite_tnt the allowed phase was denied by the flint guard, not by the guard under test.
+         requires=['use_flint_and_steel']))
+add(case('use_cauldron', main='water_bucket', setup=[f'setblock {T} minecraft:cauldron'],
+         probes=[f'execute if block {T} minecraft:cauldron'], effect=['probe', 'inv']))
+add(case('use_brush', main='brush', setup=[f'setblock {T} minecraft:suspicious_sand'], aim=FACE,
+         actions=['press key.use 140', 'wait 150'], probes=[f'execute if block {T} minecraft:suspicious_sand'], effect=['probe'], wait=10))
+add(case('unlock_vault', main='trial_key', setup=[f'setblock {T} minecraft:vault[facing=south]'],
+         probes=[f'data get block {T} server_data'], effect=['inv'], post=[f'setblock {T} minecraft:air', 'kill @e[type=item]'],
+         creative_effect=['probe']))
+# rc.2c review: the player starts next to the portal (not inside it) and takes a short step into it during the
+# measured window, then stays inside (a survival player needs 80 ticks in the portal; a long walk passes through).
+# A creative player crosses instantly, so standing in the portal made the crossing happen during the setup.
+# locked_margin=2: touching the portal earns vanilla story/enter_the_nether (enter_block) for a player the guard does
+# not cover (creative), +1 before the crossing; margin 2 keeps the ability locked when the creative player crosses.
+add(case('enter_nether', setup=['setblock 8 -60 -1 minecraft:nether_portal[axis=x]', 'setblock 8 -59 -1 minecraft:nether_portal[axis=x]', '@tp 8.5 -60 0.5'],
+         aim=None, actions=['press key.forward 3', 'wait 120', 'state mid'], effect=['client:dim=the_nether'], locked_margin=2,
+         post=['@home', 'setblock 8 -60 -1 minecraft:air', 'setblock 8 -59 -1 minecraft:air'], wait=10))
+add(case('enter_end', setup=['setblock 8 -61 -2 minecraft:end_portal', 'setblock 8 -61 -3 minecraft:end_portal'], aim=None,
+         actions=['press key.forward 12', 'wait 40', 'state mid'], effect=['client:dim=the_end'],
+         post=['@home', 'setblock 8 -61 -2 minecraft:grass_block', 'setblock 8 -61 -3 minecraft:grass_block'], wait=10,
+         notes='walk into portal after observation', locked_margin=2,
+         parity_criteria={'minecraft:story/enter_the_end': ['entered_end_portal'], 'blazeandcave:bacap/advancement_legend': ['the_end'],
+                          'blazeandcave:bacap/nether_milestone': ['the_end']}))
+END = 'execute in minecraft:the_end run '
+add(case('teleport_outer_islands',
+         setup=[END + 'forceload add -16 32 16 64', END + 'tp Glower4ek 0.5 90 53.5 180 0', '@wait 3',
+                END + 'fill -3 74 47 3 74 55 minecraft:obsidian', END + 'fill -3 75 47 3 80 55 minecraft:air',
+                END + 'setblock 0 75 50 minecraft:end_gateway', END + 'tp Glower4ek 0.5 75 53.5 180 0'],
+         aim=None, actions=['press key.forward 12', 'wait 60', 'state mid'], effect=['far:500'],
+         post=['@home', END + 'setblock 0 75 50 minecraft:air'], wait=10,
+         notes='central gateway (y=75, |x|,|z|<=96 per NativePortalAgent.central); vanilla finds the outer exit itself',
+         locked_margin=2,
+         parity_criteria={'minecraft:end/enter_end_gateway': ['end_gateway'], 'blazeandcave:bacap/advancement_legend': ['remote_getaway'],
+                          'blazeandcave:bacap/end_milestone': ['remote_getaway']}))
+add(case('sleep', setup=['time set 13000', f'setblock {T} minecraft:red_bed[part=foot,facing=north]', 'setblock 8 -59 -4 minecraft:red_bed[part=head,facing=north]',
+                          'setblock 8 -60 -4 minecraft:stone'],
+         aim=(8.5, -58.45, -2.0), actions=['click_use', 'wait 10', 'state mid'], effect=['client:sleeping'],
+         post=['time set 1000', f'setblock {T} minecraft:air', 'setblock 8 -59 -4 minecraft:air']))
+INTERACT = 'net/minecraft/world/entity/player/Player.interactOn'
+add(case('get_into_boat', setup=[f'summon oak_boat {ENT}'], aim=(8.5, -59.7, -2.5), actions=['click_use', 'wait 8', 'state mid'],
+         probes=['execute as Glower4ek on vehicle if entity @s[type=minecraft:oak_boat]'],
+         effect=['client:vehicle', 'probe'], post=['ride Glower4ek dismount', 'kill @e[type=oak_boat]'],
+         server_reach=[INTERACT]))
+add(case('get_into_minecart', setup=[f'summon minecart {ENT}'], aim=(8.5, -59.6, -2.5), actions=['click_use', 'wait 8', 'state mid'],
+         probes=['execute as Glower4ek on vehicle if entity @s[type=minecraft:minecart]'],
+         effect=['client:vehicle', 'probe'], post=['ride Glower4ek dismount', 'kill @e[type=minecart]'],
+         server_reach=[INTERACT]))
+add(case('break_blocks', setup=['setblock 8 100 -3 minecraft:dirt'], arena='high', aim=(8.5, 100.5, -2.0),
+         actions=['press key.attack 40', 'wait 45'], probes=['execute if block 8 100 -3 minecraft:dirt'], effect=['probe']))
+add(case('break_blocks_in_negative_y', setup=[f'setblock {T} minecraft:dirt'], actions=['press key.attack 40', 'wait 45'],
+         probes=[f'execute if block {T} minecraft:dirt'], effect=['probe']))
+for mat, block in [('golden', 'stone'), ('wooden', 'stone'), ('stone', 'stone'), ('iron', 'stone'), ('diamond', 'stone'),
+                   ('netherite', 'stone'), ('copper', 'stone')]:
+    add(case(f'use_{mat}_tools', main=f'{mat}_pickaxe', setup=[f'setblock {T} minecraft:{block}'], actions=['press key.attack 60', 'wait 65'],
+             probes=[f'execute if block {T} minecraft:{block}'], effect=['probe'], post=['kill @e[type=item]'], requires=['break_blocks_in_negative_y']))
+for ability, item in [('equip_golden_armor', 'golden_helmet'), ('equip_leather_armor', 'leather_helmet'),
+                      ('equip_chainmail_armor', 'chainmail_helmet'), ('equip_iron_armor', 'iron_helmet'),
+                      ('equip_turtle_helmet', 'turtle_helmet'), ('equip_diamond_armor', 'diamond_helmet'),
+                      ('equip_elytra', 'elytra'), ('equip_netherite_armor', 'netherite_helmet'), ('equip_copper_armor', 'copper_helmet')]:
+    add(case(ability, main=item, aim=None, actions=['click_use', 'wait 6', 'state mid'], effect=['inv', 'client:armor']))
+# r6 (stage 4 review finding, E4): every equip route the native guard covers (NativeTransactionAgent: ArmorSlot,
+# Equippable, LivingEntity.isEquippableInSlot / canEquipWithDispenser), not only right-click into the head slot.
+# Inventory menu slots: 5 head, 6 chest, 7 legs, 8 feet; hotbar 0 = slot 36. The oracle is server side:
+# 'execute if items entity <player> armor.<slot> <item>'.
+ARMOR_CLEAR = [f'item replace entity Glower4ek armor.{s} with minecraft:air' for s in ('head', 'chest', 'legs', 'feet')]
+for ability, item, slot, boots in [('equip_golden_armor', 'golden_helmet', 5, 'golden_boots'),
+                                   ('equip_leather_armor', 'leather_helmet', 5, 'leather_boots'),
+                                   ('equip_chainmail_armor', 'chainmail_helmet', 5, 'chainmail_boots'),
+                                   ('equip_iron_armor', 'iron_helmet', 5, 'iron_boots'),
+                                   ('equip_turtle_helmet', 'turtle_helmet', 5, None),
+                                   ('equip_diamond_armor', 'diamond_helmet', 5, 'diamond_boots'),
+                                   ('equip_elytra', 'elytra', 6, None),
+                                   ('equip_netherite_armor', 'netherite_helmet', 5, 'netherite_boots'),
+                                   ('equip_copper_armor', 'copper_helmet', 5, 'copper_boots')]:
+    part = {5: 'head', 6: 'chest'}[slot]
+    probe = [f'execute if items entity Glower4ek armor.{part} minecraft:{item}']
+    inv = ['press key.inventory', 'wait 6']
+    for route, clicks in [('armor slot place', [f'slotclick 36 0 PICKUP', 'wait 3', f'slotclick {slot} 0 PICKUP']),
+                          ('shift-click', ['slotclick 36 0 QUICK_MOVE']),
+                          ('hotbar swap into armor slot', [f'slotclick {slot} 0 SWAP'])]:
+        add(case(ability, main=item, aim=None, actions=inv + clicks + ['wait 3', 'state mid'], probes=probe, effect=['probe'],
+                 post=['@close'] + ARMOR_CLEAR, offhand=False, requires=['open_inventory'],
+                 notes=f'r6 route: {route} (inventory slot {slot})'))
+    # Dispenser in front of the player (its front cell is the player's feet cell 8 -60 -1), powered by a floor
+    # button on top that the player presses; locked -> canEquipWithDispenser is false and the item is dropped.
+    add(case(ability, setup=['setblock 8 -60 -2 minecraft:dispenser[facing=south]{Items:[{Slot:0b,id:"minecraft:%s",count:1}]}' % item,
+                             'setblock 8 -59 -2 minecraft:stone_button[face=floor,facing=south]'],
+             aim=(8.5, -58.97, -1.5), actions=['click_use', 'wait 8', 'state mid'], probes=probe, effect=['probe'],
+             post=['setblock 8 -59 -2 minecraft:air', 'setblock 8 -60 -2 minecraft:air', 'kill @e[type=item]'] + ARMOR_CLEAR,
+             offhand=False, notes='r6 route: dispenser equip onto the player',
+             # Pressing the button earns BACAP 'click' (+1) before the dispenser fires (one redstone tick later), so
+             # the locked score must stay 2 below the threshold, and these criteria are the fixture's, not a leak.
+             locked_margin=2, fixture_criteria=['blazeandcave:redstone/click', 'blazeandcave:bacap/redstone_milestone',
+                                                'blazeandcave:bacap/advancement_legend']))
+    if boots:
+        add(case(ability, main=boots, aim=None, actions=['click_use', 'wait 6', 'state mid'],
+                 probes=[f'execute if items entity Glower4ek armor.feet minecraft:{boots}'], effect=['probe'],
+                 post=ARMOR_CLEAR, offhand=False, notes='r6 route: right-click equip into the feet slot'))
+add(case('put_in_bundle', main='bundle', extra_items=['hotbar.1 apple'], aim=None,
+         actions=['press key.inventory', 'wait 6', 'slotclick 36 0 PICKUP', 'wait 3', 'slotclick 37 0 PICKUP', 'wait 3',
+                  'slotclick 36 0 PICKUP', 'wait 3', 'state mid'],
+         probes=['data get entity Glower4ek Inventory[{Slot:1b}].id'], effect=['probe'], post=['@close'],
+         notes='bundle on cursor, left-click apple slot (hotbar 0=slot36, 1=slot37)'))
+# rc.2 review (E4): the reverse native route, item on the cursor clicked onto the bundle. Oracle: the bundle's own
+# contents on the server (the cursor apple goes back to the inventory on close either way).
+add(case('put_in_bundle', main='bundle', extra_items=['hotbar.1 apple'], aim=None,
+         actions=['press key.inventory', 'wait 6', 'slotclick 37 0 PICKUP', 'wait 3', 'slotclick 36 0 PICKUP', 'wait 3',
+                  'state mid'],
+         probes=['data get entity Glower4ek Inventory[{Slot:0b}].components."minecraft:bundle_contents"'], effect=['probe'],
+         post=['@close'], notes='apple on cursor, left-click bundle slot (reverse route)'))
+for ability, item, ent in [('throw_snowball', 'snowball', 'snowball'), ('throw_egg', 'egg', 'egg'),
+                           ('throw_ender_pearl', 'ender_pearl', 'ender_pearl'), ('throw_wind_charge', 'wind_charge', 'wind_charge')]:
+    add(case(ability, main=item, aim=(8.5, -50, -20), probes=[f'execute if entity @e[type={ent},distance=..60]'],
+             actions=['click_use', 'wait 2'], effect=['inv'], post=[f'kill @e[type={ent}]', '@home'],
+             expect_hit=False))  # thrown into the open air on purpose
+add(case('use_fishing_rod', main='fishing_rod', aim=None, actions=['click_use', 'wait 10', 'state mid'],
+         probes=['execute if entity @e[type=fishing_bobber,distance=..30]'], effect=['probe'], post=['kill @e[type=fishing_bobber]']))
+# Server-side trade decision (rc.2 review): Player.interactOn returns Success[swingSource=CLIENT] when the trade
+# opens and Success[swingSource=NONE] when the guard consumes the click without trading (live smoke attempt23).
+TRADE_OPENED = 'trace:Player.interactOn=swingSource=CLIENT'
+PROF = ['mason', 'cartographer', 'leatherworker', 'shepherd', 'butcher', 'farmer', 'cleric', 'fisherman', 'fletcher',
+        'armorer', 'weaponsmith', 'toolsmith', 'librarian']
+for prof in PROF:
+    add(case(f'trade_with_{prof}', setup=[f'summon villager {ENT} {{NoAI:1b,PersistenceRequired:1b,Silent:1b,VillagerData:{{profession:"minecraft:{prof}",level:2,type:"minecraft:plains"}},Xp:10}}'],
+             aim=ENT_AIM, effect=['screen', TRADE_OPENED], post=['@close', 'kill @e[type=villager]'], server_reach=[INTERACT]))
+add(case('trade_with_wandering_trader', setup=[f'summon wandering_trader {ENT} {{NoAI:1b,PersistenceRequired:1b,Silent:1b,DespawnDelay:0}}'],
+         # The trader is denied later, when the merchant menu opens (InventoryOpenEvent cancelled), so interactOn
+         # reports the same Success[swingSource=CLIENT] in both phases; the screen oracle decides, server_reach stays.
+         aim=ENT_AIM, effect=['screen'], post=['@close', 'kill @e[type=wandering_trader]'], server_reach=[INTERACT]))
+FOODS = {'eat_tropical_fish': 'tropical_fish', 'eat_suspicious_stew': 'suspicious_stew', 'eat_honey': 'honey_bottle'}
+for ability in GROUPS['food_component_start_40']:
+    item = FOODS.get(ability, ability[4:])
+    add(case(ability, main=item, aim=None, hungry=True, actions=['press key.use 45', 'wait 12', 'state mid', 'wait 33'], effect=['inv'],
+             post=['effect clear Glower4ek']))
+STRUCTURES = {'village': 'village_plains', 'shipwreck': 'shipwreck', 'ruined_portal': 'ruined_portal', 'buried_treasure': 'buried_treasure',
+              'igloo': 'igloo', 'ocean_ruin': 'ocean_ruin_cold', 'desert_pyramid': 'desert_pyramid', 'mineshaft': 'mineshaft',
+              'swamp_hut': 'swamp_hut', 'ancient_city': 'ancient_city', 'fortress': 'fortress', 'jungle_pyramid': 'jungle_pyramid',
+              'bastion_remnant': 'bastion_remnant', 'pillager_outpost': 'pillager_outpost', 'monument': 'monument',
+              'monster_room': None, 'trail_ruins': 'trail_ruins', 'stronghold': 'stronghold', 'mansion': 'mansion',
+              'desert_well': None, 'trial_chambers': 'trial_chambers', 'end_city': 'end_city'}
+for i, (name, structure) in enumerate(STRUCTURES.items()):
+    if structure is None:
+        # Features have no /locate: search fresh chunks (desert wells only generate in deserts).
+        add(case(f'interact_inside_{name}', arena='feature:' + ('desert' if name == 'desert_well' else 'any'),
+                 setup=[], aim=None, actions=['@landmark'], effect=['screen'], post=['@close'], notes='feature found in fresh chunks',
+                 requires=['open_chest']))
+        continue
+    x = 2000 + i * 400
+    add(case(f'interact_inside_{name}', arena=f'landmark:{x}:{structure}',
+             setup=[], aim=None, actions=['@landmark'], effect=['screen'], post=['@close'], notes='chest at structure start',
+             requires=['open_chest']))
+
+# group assignment
+ABILITY_GROUP = {a: g for g, ab in GROUPS.items() for a in ab}
+for c in CASES:
+    if c['ability'] == 'open_chest' and 'group' not in c:
+        c['group'] = 'menu_open_chest'
+    c.setdefault('group', ABILITY_GROUP[c['ability']])
+covered = {c['ability'] for c in CASES}
+missing = sorted(set(ABILITY_GROUP) - covered)
+assert not missing, missing

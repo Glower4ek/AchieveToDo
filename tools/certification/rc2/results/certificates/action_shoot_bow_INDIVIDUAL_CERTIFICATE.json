@@ -1,0 +1,69 @@
+{
+  "group": "action_shoot_bow",
+  "reviewer": "P8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (shoot_bow). 2 active direct sites; recomputed SHA-256 of both cited files, equal to E1: NativeActionBindings.java 93faec2e..89c3, NativeActionSpecs.java dc0fab2b..82e5. Opened NativeActionSpecs.java:27 (Spec SHOOT_BOW on BowItem.use, injected before Player.startUsingItem, returns FAIL when denied) and NativeActionBindings.java:15 (ABILITIES contains SHOOT_BOW; guard callback = GameplayGate.allows with creative/spectator bypass, reports denial effects). Thresholds: normal 345, easy 270, hard 420, custom_vision 345, chaos@34 147, chaos@36 97; equal to the runtime toml values; every row threshold equals its toml."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS; read all 17 excerpts and the client states in rows.jsonl. Locked/op/offhand_locked/reload-locked rows (31 pass1, op, offhand, reload; 32; 33; 34; 35): server probe 'execute if entity @e[type=arrow]' prints 'Test failed' before and after, count unchanged (344, 344, 344, 344, 269, 419, 146, 344), no inventory slot change, client usingItem=false in every state (no PASS_SERVER_CLIENT_DESYNC), overlay 'You can't use a bow', 4 x 'DENIAL_INTENT_DISCOVERED ability=shoot_bow' per row followed by inventory resync packets. Allowed/offhand_allowed rows: probe 'Test passed. Count: 1', inventory slots changed (arrow consumed: [0,1] main hand, [1,40] off hand), usingItem=true at tick1. Creative fires the arrow (itemUsed 0->1); spectator nothing, no overlay, no leak. Verdicts reproduced.",
+      "rowsRead": [
+        "campaign31 pass1 shoot_bow locked",
+        "campaign31 pass1 shoot_bow allowed",
+        "campaign31 modes shoot_bow creative",
+        "campaign31 modes shoot_bow op",
+        "campaign31 modes shoot_bow spectator",
+        "campaign31 offhand shoot_bow offhand_locked",
+        "campaign31 offhand shoot_bow offhand_allowed",
+        "campaign31 reload shoot_bow locked",
+        "campaign31 reload shoot_bow allowed",
+        "campaign32 thresholds-easy shoot_bow locked",
+        "campaign32 thresholds-easy shoot_bow allowed",
+        "campaign33 thresholds-hard shoot_bow locked",
+        "campaign33 thresholds-hard shoot_bow allowed",
+        "campaign34 thresholds-chaos shoot_bow locked",
+        "campaign34 thresholds-chaos shoot_bow allowed",
+        "campaign35 thresholds-custom_vision shoot_bow locked",
+        "campaign35 thresholds-custom_vision shoot_bow allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Contributing runtimes campaign31-35: onlineMode=true, authenticated UUID line and join line in MANIFEST.runtimes; launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows present (campaign31 modes). offhand_locked and offhand_allowed rows present (campaign31 offhand; bow held in the off hand, client state confirms). Threshold rows for normal, easy, hard, chaos, custom_vision. No NA rows (no threshold 0)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows from campaign31 (results reload range 1232-1629, after pass1 1-398, modes 399-995, offhand 996-1231). MANIFEST.e5Reload.evidence.generationAfter=2; output.log 101750-101757 reload + PROGRESSION_CONFIG_READY generation=2. All 4 ATD_STAGE2A_STATE lines of the reload excerpts show \"generation\": 2. Reload PASS/PASS = pass1 PASS/PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 17/17 REPRODUCED, recorded==replayed, keys equal rows.jsonl. reproducedAll=true for campaign31-36. Recomputed campaign-results.jsonl SHA-256 of all six runtimes = evidenceHashes (campaign31 8eddce27..d5de, campaign36 2c2ce771..9c6e). Plugin jar per runtime = da9360aa..b540; client mod = 5c473903..5a99."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json/runtime_args.json of campaign31-36: -javaagent:plugins/achievetodo.jar + trace-agent; only -D option is -Dachievetodo.progression.initialConfig=<preset> on fresh-install runtimes 32/33/34/36, none on 31/35. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION before the first case mark in every runtime; freshConfig only inside the plugin's derived=[...]."
+    }
+  },
+  "superseded": "None in this group (MANIFEST.superseded=[]). The campaign36 CHAOS ignite_tnt supplement does not concern shoot_bow; its fixture-dependency rationale is sound.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/action_shoot_bow/excerpts.txt:3 (and every ATD_STAGE2A_STATE line of the group)",
+      "description": "The state probe reports \"ability\": {\"SHOOT_BOW\": null}, so no excerpt shows the tested ability's lock state; the locked/allowed state can only be inferred from count vs. the toml threshold. The same null appears for many item/action abilities across packages."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/action_shoot_bow/excerpts.txt:6-21; campaign31/receipts/output.log (0 occurrences of ServerboundUseItemPacket)",
+      "description": "The only server-side denial lines are client-originated bridge DENIAL_INTENT_DISCOVERED messages; the trace does not record ServerboundUseItemPacket at all, so no row shows that the server-side BowItem.use guard itself fired. The end-to-end lock with the real client is proven (no arrow, no consumption), the server guard is not separately evidenced."
+    }
+  ]
+}

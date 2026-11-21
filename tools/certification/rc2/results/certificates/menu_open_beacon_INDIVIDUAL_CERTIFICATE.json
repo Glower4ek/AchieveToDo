@@ -1,0 +1,52 @@
+{
+  "group": "menu_open_beacon",
+  "reviewer": "P5",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "Sites: BukkitExpandedGameplayListener.java:76-82 (enforcement, InventoryOpenEvent cancel), GameplayMenuAbilities.java:25 (InventoryType.BEACON -> OPEN_BEACON, material check in opening()), BukkitRestrictionResolver.java:92 (inactive legacy). SHA-256 recomputed and equal to E1: f10bdc23..., 813236fd..., f5d7d99b..., Progressions 00f2cf74.... Opened :25 and :76-82; opening() requires the inventory location block to be Material.BEACON. Thresholds normal 499, easy 402, hard 596, custom_vision 499, chaos@34 101, chaos@36 211, equal to my own parse of each runtime's active config (config toml hashes equal E1.configs)."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS. I read 6 excerpts across 3 runtimes. Locked rows show ServerboundUseItemOnPacket at 8,-59,-3, ATD_W2_INPUT_EVENT useBlock=ALLOW (the block click itself is not the boundary), then 'INVENTORY_OPEN_MONITOR_CANCELLED true' + INVENTORY_OPEN_TYPE_BEACON, state OPEN_BEACON kind LOCKED required=th, count unchanged (498, 100, 498), client screen none plus overlay. Allowed rows show CANCELLED false, kind UNLOCKED and BeaconScreen on the client. The op row (op=true) has CANCELLED true and no screen -> PASS. Spectator: BeaconScreen opens with no lock overlay (bypass) -> PASS. I reproduced the verdicts.",
+      "rowsRead": [
+        "campaign31 pass1 open_beacon locked",
+        "campaign31 pass1 open_beacon allowed",
+        "campaign31 modes open_beacon op",
+        "campaign34 thresholds-chaos open_beacon locked",
+        "campaign35 thresholds-custom_vision open_beacon locked",
+        "campaign31 reload open_beacon locked"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes and raw output.log checked for every contributing runtime: server.properties online-mode=true in campaign31-36; 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' (v4 online UUID) at output.log line 233/233/234/234/233/233 and 'Glower4ek joined the game' at 244/244/246/250/244/246 for campaign31/32/33/34/35/36; launch.json onlineMode=true; no offline-mode warning in any log."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows present; locked+allowed for normal, easy, hard, chaos (c34), custom_vision. No NA rows. No offhand rows: the menu opens with an empty hand (main='air'), so there is no off-hand variant, and the harness excludes main=='air' from the offhand pass. No aim misses (pre hit = block 8,-59,-3 beacon in every row)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows (2) are campaign31 tag 'reload'. Their logLines start (>101738) after the last pass1/modes/offhand row of campaign31 (line 101738) and after 'PROGRESSION_CONFIG_READY generation=2' (output.log line 101756; orchestrator log 'reload done: generation 2' 14:55:20Z). MANIFEST.e5Reload.evidence.generationAfter=2. Every ATD_STAGE2A_STATE line of these rows in excerpts.txt (pre and post) shows \"generation\": 2 (also confirmed in raw output.log). Each reload verdict equals the pass1 verdict of the same ability/case/phase: locked PASS=PASS, allowed PASS=PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "SHA-256 recomputed by me: plugin jar da9360aa...cb540 identical in rc2-artifacts and campaign31..36/runtime/plugins/achievetodo.jar (and launch.json pluginSHA256); client mod at 'E:\\Кубы сборки\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar' = 5c473903...5a99 = rc2-artifacts/achievetodo-mc26.2+0.2.1.jar. campaign-results.jsonl recomputed for ALL six runtimes and equal to evidenceHashes: c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771.... Raw receipts/REPLAY.json of every runtime: counts all REPRODUCED (1629/398/398/398/398/2), reproducedAll=true. Every package row matched its raw campaign-results.jsonl line (by logLines) field for field, except the normalised 'config' label and the added campaign/finalKey; replay.jsonl keys equal rows.jsonl keys. sha256sum -c HARNESS_RC2C.sha256: all OK except campaign_cases.py (now the RC2D file d933206f); reverting only the ignite_tnt requires hunk of the current file reproduces c8add78f... exactly, so RC2C and RC2D cases differ only in that hunk. HARNESS_RC2D.sha256: all OK. replay.jsonl: 15/15 REPRODUCED."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json and receipts/launch.json of campaign31-36: command = java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<easy|hard|chaos> only for c32/c33/c34/c36] -javaagent:plugins/achievetodo.jar -javaagent:<runtime>/observer-work/trace-agent.jar=<Item.use,FireworkRocketItem.use,Player.interactOn> -jar purpur-26.2-2620.jar --nogui; no other -Dachievetodo.* option. output.log: 'ATD_LAUNCH_PROFILE=release' at line 207/207/208/208/207/207 and 'ATD_GAMEPLAY_MODE=CERTIFICATION' at 221/221/222/222/221/221 (c31..c36), both before the first ATD_STAGE2A_STATE (337/335/338/354/379/564). freshConfig appears only in derived=[... world-group.properties ..., achievetodo.progression.freshConfig] of c32/c33/c34/c36, i.e. the plugin derived it and created world-group.properties itself (fresh install); c31 (normal) and c35 (custom_vision) have derived=[bacap.directory, bridge.server, progression.world, progression.worldKey] with no freshConfig and no -D option (existing install). The resolved progression config line matches the intended preset in each runtime. The plugins/ folder also holds the observer plugins (w4-gameplay-evidence-probe, packet-witness, w4-snap). These observe the run and are not launch options."
+    }
+  },
+  "superseded": "No superseded rows in this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...); campaign_cases.py mtime 2026-11-21 00:24:48 +0500; campaign35 output.log first ATD_STAGE2A_STATE 00:24:42 (line 379); campaign_final.py:14,192 (in-process import and replay); campaign35 ignite_tnt rows requires={'vision':5}",
+      "description": "The harness file campaign_cases.py was rewritten on disk (RC2C c8add78f -> RC2D d933206f) while campaign35 was running. campaign35's rows were produced and replayed by the orchestrator's already-imported RC2C module (its ignite_tnt rows carry requires={'vision':5} only), but its EVIDENCE_HASHES.json / MANIFEST evidenceHashes record the RC2D hash, and the RC2C campaign_cases.py is no longer on disk. I reconstructed it exactly (current file minus the ignite_tnt requires hunk = c8add78f), so no verdict changes. Still, the recorded provenance for campaign35 is wrong, and the frozen harness was edited mid-campaign."
+    }
+  ]
+}

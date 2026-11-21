@@ -1,0 +1,66 @@
+{
+  "group": "movement_jump",
+  "reviewer": "Q6",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability jump, DIRECT, active sites NativeMovementAgent.java:73-76 (jump(): returns locked(actor,\"JUMP\") unless in water) and :148-151 (ascent packet rejection with JUMP), NativeMovementBindings.java:13. Both cited files re-hashed: 2/2 match. Thresholds normal 4, easy 0, hard 8, chaos 8, custom_vision 4."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows: 13 PASS, 1 NA_NO_LOCKED_STATE (campaign22 easy, threshold 0), 1 PASS_MASKED_BY_DEPENDENCY (campaign25, requires vision 5 > score 3; excerpt shows DENIAL_INTENT ability=vision repeatedly plus one ability=jump, so masking is correctly declared). Lock is proven by PASS locked rows in campaign21, 23, 24 (and reload): STATE LOCKED, ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=jump, count 3->3 / 7->7, stat JUMP unchanged, overlay shown. Allowed rows: STATE UNLOCKED, rows.diff.stats JUMP +1 in all 5 runtimes. Creative jumps (JUMP +1), op locked with denial line, spectator no jump.",
+      "rowsRead": [
+        "campaign21 pass1 jump locked",
+        "campaign21 pass1 jump allowed",
+        "campaign21 modes jump creative/op/spectator",
+        "campaign21 reload jump locked/allowed",
+        "campaign22 thresholds-easy jump locked (NA)/allowed",
+        "campaign23 thresholds-hard jump locked/allowed",
+        "campaign24 thresholds-chaos jump locked/allowed",
+        "campaign25 thresholds-custom_vision jump locked (MASKED)/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25: onlineMode=true, authenticatedUuidLine 'UUID of player ... is 89c23030-...' and joinedLine present in each; launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows present. Jump has no off-hand route, so no offhand rows. Thresholds rows for all 5 configs. NA row campaign22 easy locked: E1 and row both give easy threshold 0 -> no locked state, justified. The custom_vision locked row is masked, but custom_vision uses the same jump threshold 4 as normal, which is proven in campaign21."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows from campaign21 at lines 104127-104173, after pass1 (max 3175) and modes (max 41628); generationAfter=2; excerpts show generation 2; reload locked/allowed PASS = pass1."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 15/15 REPRODUCED; all 5 runtimes reproducedAll=true (1622/396/396/396/396). Plugin sha256 da9360aa... identical for campaign21-25 and equal to the brief; client mod sha256 5c473903... equals the brief. Recomputed sha256 of campaign-results.jsonl of all 5 runtimes; each matches evidenceHashes.results (campaign21 dfd9c210..., campaign22 0a44a65f..., campaign23 cfbcdcaa..., campaign24 856f4297..., campaign25 45c3e020...)."
+    },
+    "RELEASE_LAUNCH": {
+      "result": "FAIL",
+      "checked": "All 5 runtimes log ATD_LAUNCH_PROFILE=release (output.log line 207/207/207/206/208) and ATD_GAMEPLAY_MODE=CERTIFICATION (221/221/221/220/222) before the first atd_marks case line (~249-284). launch.json command: campaign21 and campaign25 hold only -javaagent:plugins/achievetodo.jar + trace-agent; campaign22/23/24 additionally hold -Dachievetodo.progression.freshConfig=true (see finding)."
+    }
+  },
+  "superseded": "No superseded rows: MANIFEST.superseded=[] and supplements=[]; all rows from campaign21-25, harness hashes per HARNESS_RC2.sha256 are listed in MANIFEST.harness.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "RELEASE_LAUNCH",
+      "evidence": "campaign22/runtime_args.json args[0], campaign22/receipts/launch.json, campaign23/receipts/launch.json, campaign24/receipts/launch.json",
+      "description": "The server command of campaign22 (easy), campaign23 (hard) and campaign24 (chaos) contains -Dachievetodo.progression.freshConfig=true in addition to -javaagent:plugins/achievetodo.jar and the trace agent. The brief states the certified operator launch has no -Dachievetodo.* flags; only campaign21 and campaign25 match. The flag changes config resolution (BukkitProgressionRuntime.java:72, :401 'explicit freshConfig required'), and ReleaseLaunchProfile.java:85 only derives it itself when it writes a new world group, which the logged derived=[...] list for these runtimes does not include. So the thresholds-easy/hard/chaos rows of this group were produced outside the certified composition. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION are logged in all five runtimes (output.log lines ~206-222)."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/movement_jump/excerpts.txt 'campaign21 pass1 jump allowed' (lines 3171-3175)",
+      "description": "The allowed-row excerpts contain only two STATE lines; the jump effect (stat JUMP +1) is visible only in rows.jsonl diff.stats, not in any raw log line of the excerpt, so the allowed verdict cannot be reproduced from the excerpt alone."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/movement_jump/rows.jsonl campaign25 thresholds-custom_vision jump locked",
+      "description": "No unmasked locked proof exists for the custom_vision runtime (masked by vision 5); acceptable because the threshold equals normal's, but the custom config's jump lock is not independently shown."
+    }
+  ]
+}

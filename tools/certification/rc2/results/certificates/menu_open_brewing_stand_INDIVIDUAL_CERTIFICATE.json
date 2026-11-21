@@ -1,0 +1,61 @@
+{
+  "group": "menu_open_brewing_stand",
+  "reviewer": "P8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (open_brewing_stand). E1 lists 2 direct sites; recomputed SHA-256 of both cited files, equal to E1: BukkitRestrictionResolver.java f5d7d99b..c84e (inactive legacy), GameplayMenuAbilities.java 813236fd..9280 (active). Opened GameplayMenuAbilities.java:27 (InventoryType.BREWING -> BREWING_STAND -> OPEN_BREWING_STAND) and followed it to its only caller BukkitExpandedGameplayListener.java:76-81 (InventoryOpenEvent, HIGHEST: GameplayMenuAbilities.opening(...) then locked(p, ability) -> setCancelled(true)); the guard checks this ability. Thresholds: normal 674, easy 552, hard 796, custom_vision 674, chaos@34 126, chaos@36 231; all equal the runtime config toml values (6 toml hashes equal E1) and every row threshold equals its toml."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS; read all 15 excerpts. Locked/op/reload-locked rows (campaign31 pass1, op, reload; 32, 33, 34, 35): ATD_BOUNDARY INVENTORY_OPEN_MONITOR_CANCELLED true, no ClientboundOpenScreenPacket, count unchanged (673, 673, 673, 551, 795, 125, 673), ability LOCKED with the run threshold, client overlay present. Allowed rows: MONITOR_CANCELLED false + ClientboundOpenScreenPacket + ContainerSetData, ability UNLOCKED. Creative and spectator (ability LOCKED) open the stand, as the harness defines (creative = bypass/effect expected, spectator = no fresh overlay, no leak). Verdicts reproduced.",
+      "rowsRead": [
+        "campaign31 pass1 open_brewing_stand locked",
+        "campaign31 pass1 open_brewing_stand allowed",
+        "campaign31 modes open_brewing_stand creative",
+        "campaign31 modes open_brewing_stand op",
+        "campaign31 modes open_brewing_stand spectator",
+        "campaign31 reload open_brewing_stand locked",
+        "campaign31 reload open_brewing_stand allowed",
+        "campaign32 thresholds-easy open_brewing_stand locked",
+        "campaign32 thresholds-easy open_brewing_stand allowed",
+        "campaign33 thresholds-hard open_brewing_stand locked",
+        "campaign33 thresholds-hard open_brewing_stand allowed",
+        "campaign34 thresholds-chaos open_brewing_stand locked",
+        "campaign34 thresholds-chaos open_brewing_stand allowed",
+        "campaign35 thresholds-custom_vision open_brewing_stand locked",
+        "campaign35 thresholds-custom_vision open_brewing_stand allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Contributing runtimes campaign31-35: MANIFEST.runtimes onlineMode=true, authenticated UUID line (89c23030-ce61-44ab-800a-f2aee455e14a) and join line for each; receipts/launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows present (campaign31 modes). Threshold rows for normal, easy, hard, chaos (campaign34), custom_vision present. No offhand rows: empty-hand block_menu case (main='air') is outside campaign_final.OFFHAND; no off-hand variant of opening a block menu with an empty hand. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows come from campaign31 (results lines in the reload range 1232-1629, after pass1 1-398, modes 399-995, offhand 996-1231). MANIFEST.e5Reload.evidence.generationAfter=2; output.log 101750/101757 'Reloading!' + PROGRESSION_CONFIG_READY generation=2. All four ATD_STAGE2A_STATE lines of the two reload excerpts show \"generation\": 2. Reload PASS/PASS = pass1 PASS/PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 15/15 REPRODUCED, recorded==replayed, key set equals rows.jsonl. reproducedAll=true for campaign31-36 (MANIFEST and receipts/REPLAY.json). Recomputed campaign-results.jsonl SHA-256 of all six runtimes = evidenceHashes (campaign34 a7e80ad6..ced). Plugin jar in every runtime = da9360aa..b540; client mod = 5c473903..5a99 (recomputed)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json/runtime_args.json of campaign31-36: -javaagent:plugins/achievetodo.jar + trace-agent; the only -D option is -Dachievetodo.progression.initialConfig=<preset> on 32/33/34/36 (fresh install: campaign_modes.py removes world-group/world-selection.properties first), none on 31/35. output.log ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION logged (lines 207-222) before the first case mark in every runtime; freshConfig appears only inside the plugin's logged derived=[...] (32/33/34/36). Harness: HARNESS_RC2D files all re-verified; RC2C differs only by campaign_cases.py (ignite_tnt requires)."
+    }
+  },
+  "superseded": "None in this group (MANIFEST.superseded=[]). The campaign36 supplement concerns only CHAOS ignite_tnt; its justification (the fixture's own flint_and_steel guard could mask/deny) is sound and irrelevant to this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review-rc2c/menu_open_brewing_stand/E1.json directSites; repo .../gameplay/BukkitExpandedGameplayListener.java:76-81",
+      "description": "The only active E1 site (GameplayMenuAbilities.java:27) is a lookup-table entry, not the enforcing code; the actual guard, the InventoryOpenEvent handler in BukkitExpandedGameplayListener.java, is not cited or hashed in E1."
+    }
+  ]
+}
