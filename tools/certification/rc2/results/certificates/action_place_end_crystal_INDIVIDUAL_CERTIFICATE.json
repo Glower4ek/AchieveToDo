@@ -1,0 +1,57 @@
+{
+  "group": "action_place_end_crystal",
+  "reviewer": "P7",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "Ability place_end_crystal (DIRECT). Recomputed SHA-256 of all 3 cited files: NativeActionBindings.java 93faec2e..., NativeActionAgent.java 7467db9a..., NativeActionSpecs.java dc0fab2b... - 3/3 equal E1. Opened: NativeActionBindings.java:18 PLACE_END_CRYSTAL in ABILITIES; NativeActionSpecs.java:38 Spec PLACE_END_CRYSTAL on EndCrystalItem.useOn at the List.isEmpty() check (mode 'crystal', FAIL); NativeActionAgent.java:90-94 crystal(original, context) returns !denied(context.getPlayer(), \"PLACE_END_CRYSTAL\"), i.e. the free-space check is forced false while locked. Family resolver inactive. Thresholds: normal 639, easy 522, hard 756, custom_vision 639, chaos c34 542, c36 373; 6 config hashes = E1."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS; read 11 excerpts and the client states of all rows. Every row's pre state hits 'block 8, -59, -3 ... obsidian' (expect_hit satisfied); the packet shows face=SOUTH at hitY -58.109 rather than the top face the case note claims, which is irrelevant for EndCrystalItem.useOn (it uses clickedPos.above()) and the allowed rows place the crystal. Locked rows (c31 pass1/reload/offhand, c32, c33, c34, c35): probe 'execute if entity @e[type=end_crystal]' = 'Test failed' before and after, end_crystal stack still 1 in the hand, count unchanged (638, 521, 755, 541, 638), overlay 'You can't place an End crystal. Advancements left to unlock: 1'. Allowed rows: 'Test passed. Count: 1', item consumed, count unchanged. op denied with the same overlay; creative places (bypass); spectator: Bukkit cancels the click (useBlock=DENY), no overlay, no crystal. Offhand: OFF_HAND packet reaches the server; offhand_locked denied, offhand_allowed places. Every package row equals its unique source line in campaign-results.jsonl.",
+      "rowsRead": [
+        "campaign31 pass1 place_end_crystal locked",
+        "campaign31 pass1 place_end_crystal allowed",
+        "campaign31 modes place_end_crystal creative",
+        "campaign31 modes place_end_crystal op",
+        "campaign31 modes place_end_crystal spectator",
+        "campaign31 offhand place_end_crystal offhand_locked",
+        "campaign31 offhand place_end_crystal offhand_allowed",
+        "campaign32 thresholds-easy place_end_crystal locked",
+        "campaign33 thresholds-hard place_end_crystal locked",
+        "campaign34 thresholds-chaos place_end_crystal locked",
+        "campaign35 thresholds-custom_vision place_end_crystal locked"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Contributing runtimes campaign31-35: MANIFEST onlineMode=true, UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present in each; I grepped each output.log and found both lines (c31 l.233/244, c32 l.233/244, c33 l.234/246, c34 l.234/250, c35 l.233/244); server.properties online-mode=true and launch.json onlineMode=true in each."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator present; offhand_locked and offhand_allowed present (both PASS). Threshold rows for normal, easy, hard, chaos, custom_vision. No NA_* rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows from campaign31 (reload block after pass1/modes/offhand). MANIFEST.e5Reload.generationAfter=2; all 4 STATE lines of the reload excerpts show generation 2. Reload locked/allowed PASS = pass1 PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 17/17 REPRODUCED; recorded verdicts equal rows. MANIFEST replay reproducedAll=true for campaign31-36; REPLAY.json of each runtime re-read: reproducedAll=true, problems=[]. Plugin SHA-256 recomputed in all 6 runtimes/plugins/achievetodo.jar = da9360aa...cb540 = brief; rc2-artifacts jar also equal. Client mod recomputed 5c473903...5a99 = brief. Recomputed campaign-results.jsonl SHA-256 of all six runtimes (c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771...) = evidenceHashes; REPLAY.json hashes also equal."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json/runtime_args.json: every runtime command holds -javaagent:plugins/achievetodo.jar plus the trace-agent javaagent. c31 and c35: no -Dachievetodo.* option. c32/c33/c34/c36: only -Dachievetodo.progression.initialConfig=easy/hard/chaos/chaos; campaign_modes.py deletes world-group.properties and world-selection.properties before that start (unlink would fail if absent), and the plugin logs world-group.properties in derived=[...] only in those runtimes. output.log: ATD_LAUNCH_PROFILE=release (l.207/207/208/208/207/207) and ATD_GAMEPLAY_MODE=CERTIFICATION (l.221/221/222/222/221/221) precede the first ATD_STAGE2A_STATE (l.337/335/338/354/379/564); achievetodo.progression.freshConfig appears only inside the plugin-logged derived list. HARNESS_RC2C files rehashed: all match except campaign_cases.py, which now matches HARNESS_RC2D (the documented ignite_tnt change); evidenceHashes of c31-35 record campaign_cases.py c8add78f... = RC2C value."
+    }
+  },
+  "superseded": "No superseded rows in this group (MANIFEST.superseded=[]). The campaign36 CHAOS ignite_tnt supersession does not touch place_end_crystal; it is justified in principle (fixture needs use_flint_and_steel, now declared in requires) and campaign36 is a fresh CHAOS install under HARNESS_RC2D with release launch.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/action_place_end_crystal/excerpts.txt, every ATD_STAGE2A_STATE line ('\"ability\": {\"PLACE_END_CRYSTAL\": null}') and the locked blocks, e.g. campaign31 pass1 locked output.log lines 5047-5059",
+      "description": "The state dump does not include PLACE_END_CRYSTAL and no server-side denial line is logged for this native guard (ATD_EVENT shows blockResult=ALLOW), so the server log shows the absent effect but not the decision itself. The verdicts are still reproducible from the unchanged probe, unconsumed item, unchanged count and the ability-specific client overlay in rows.jsonl."
+    }
+  ]
+}

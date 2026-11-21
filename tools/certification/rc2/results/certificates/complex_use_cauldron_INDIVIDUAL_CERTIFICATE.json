@@ -1,0 +1,69 @@
+{
+ "group": "complex_use_cauldron",
+ "reviewer": "P6",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "1 ability, DIRECT, 3 active direct sites. Recomputed SHA-256 = E1: NativeComplexBindings.java 0890c634cf8c042a..., NativeComplexAgent.java 09ae3f1793f2fad4..., NativeLandmarkOperations.java 778a618697067511.... Opened NativeComplexBindings.java:13-15 (USE_CAULDRON), NativeComplexAgent.java:126-128 (case cauldron: non-DEFAULT CauldronInteraction -> USE_CAULDRON), NativeLandmarkOperations.java:144-148 and 226-232 (AbstractCauldronBlock behavior != DEFAULT && targetAndAbilityDenied(...,\"USE_CAULDRON\") returns SUCCESS without interacting). Thresholds normal 513, easy 414, hard 612, custom_vision 513, chaos@c34 41, chaos@c36 569; re-parsed and equal; row thresholds match."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "Read all 17 excerpts and re-derived from raw output.log. Locked/op rows: ServerboundUseItemOnPacket MAIN_HAND arrives (output.log c31 6481-6482), no PlayerInteract event follows, server resends container content/slot, probe 'execute if block ... minecraft:cauldron' 'Test passed' before and after (still empty cauldron), CAULDRON_FILLED stat 0, bucket unchanged, count unchanged (512, 413, 611, 40, 512). offhand_locked: MAIN_HAND event ALLOW, OFF_HAND packet arrives but no off-hand event, cauldron stays empty. Allowed rows: probe flips to 'Test failed' (water cauldron), CAULDRON_FILLED +1, bucket slot changes; count +1 via vanilla bubble_bubble_toil_and_trouble (allowed effect). Creative fills while LOCKED; spectator Paper-cancelled (useBlock=DENY is vanilla spectator behaviour for non-menu blocks) with no overlay - PASS. All verdicts reproducible. Denial in locked rows is implicit (no explicit DENY/DENIAL line) - minor finding.",
+   "rowsRead": [
+    "campaign31 pass1 use_cauldron locked",
+    "campaign31 pass1 use_cauldron allowed",
+    "campaign31 modes use_cauldron creative",
+    "campaign31 modes use_cauldron op",
+    "campaign31 modes use_cauldron spectator",
+    "campaign31 offhand use_cauldron offhand_locked",
+    "campaign31 offhand use_cauldron offhand_allowed",
+    "campaign31 reload use_cauldron locked",
+    "campaign31 reload use_cauldron allowed",
+    "campaign32 thresholds-easy use_cauldron locked",
+    "campaign32 thresholds-easy use_cauldron allowed",
+    "campaign33 thresholds-hard use_cauldron locked",
+    "campaign33 thresholds-hard use_cauldron allowed",
+    "campaign34 thresholds-chaos use_cauldron locked",
+    "campaign34 thresholds-chaos use_cauldron allowed",
+    "campaign35 thresholds-custom_vision use_cauldron locked",
+    "campaign35 thresholds-custom_vision use_cauldron allowed"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign31-36 all onlineMode=true with authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and a 'Glower4ek joined the game' line. Re-grepped each raw receipts/output.log: UUID/join at lines c31 233/244, c32 233/244, c33 234/246, c34 234/250, c35 233/244, c36 233/246; runtime/server.properties online-mode=true in all six; launch.json onlineMode=true. Rows of this group come from campaign31-35 only."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes creative/op/spectator PASS; offhand_locked/offhand_allowed PASS (bucket in off hand is a real route; offhand_allowed shows OFF_HAND event + CAULDRON_FILLED). Threshold rows for all five configs. No NA rows."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "e5Reload campaign31, generationAfter 2; reload rows l107790-107800 / l107840-107854 show \"generation\": 2; verdicts PASS/PASS = pass1."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: 17 rows, all status=REPRODUCED, and recorded verdict/ability/phase equal rows.jsonl line by line (0 mismatches). MANIFEST replay reproducedAll=true for every runtime (c31 1629, c32-c35 398 each, c36 2; problems=[]); REPLAY.json SHA-256 recomputed = evidenceHashes for all six. Plugin: recomputed SHA-256 of campaignNN/runtime/plugins/achievetodo.jar for c31-c36 and of rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar = da9360aa...4cb540 everywhere. Client mod: recomputed 'E:/Кубы сборки/ATD Stage2B W4 Attempt01/minecraft/mods/achievetodo.jar' and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar = 5c473903...925a99. campaign-results.jsonl recomputed for ALL six runtimes and equal to evidenceHashes.results: c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771...."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "receipts/launch.json + runtime_args.json of c31-c36: command = java -Xms128M -Xmx2G [-D] -javaagent:plugins/achievetodo.jar -javaagent:<runtime>/observer-work/trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn -jar purpur-26.2-2620.jar --nogui. Only -D option anywhere is -Dachievetodo.progression.initialConfig=easy/hard/chaos/chaos for c32/c33/c34/c36; none for c31 (NORMAL) and c35 (Custom). output.log: 'ATD_LAUNCH_PROFILE=release' at c31 l207, c32 l207, c33 l208, c34 l208, c35 l207, c36 l207 and 'ATD_GAMEPLAY_MODE=CERTIFICATION; PRODUCT_GAMEPLAY_READY=false' at l221/221/222/222/221/221, both before the first case marker (objective atd_marks created at l249/249/252/260/284/253). Logged derived=[...] for c32/c33/c34/c36 contains world-group.properties and achievetodo.progression.freshConfig (written by the plugin => fresh install); c31/c35 derived lists contain neither (existing install). Harness hashes: campaign.py 5bbf36da and campaign_replay.py d881b760 match HARNESS_RC2C in every runtime; campaign_cases.py evidence hash is c8add78f (RC2C) for c31-c34 but d933206f (RC2D) for c35 - see minor finding."
+  }
+ },
+ "superseded": "MANIFEST.superseded is [] for this group; the only supersession (CHAOS ignite_tnt c34 -> c36) touches no ability of this group. c36 (fresh CHAOS, initialConfig=chaos, HARNESS_RC2D) contributes no rows here; its plugin/client hashes and launch profile were nevertheless checked. The replacement as described (fixture lights TNT with flint and steel, so requires=['use_flint_and_steel'] is needed for the masking rule) is reasonable; campaign_cases.py:145-149 now declares it.",
+ "findings": [
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "campaign31/receipts/output.log 6477-6487 (pass1 locked) and 91683-91697 (offhand_locked)",
+   "description": "Locked rows carry no explicit server-side denial line (no DENIAL_INTENT, no DENY); the lock is inferred from the packet arriving with no interact event, the unchanged cauldron probe and the client overlay. Sufficient but indirect."
+  },
+  {
+   "severity": "minor",
+   "criterion": "ReleaseLaunch",
+   "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...) vs HARNESS_RC2C.sha256 (c8add78f...); campaign_cases.py mtime 2026-11-21 00:24:48 +05:00; campaign-final-rc2c.log:2866 (campaign35 up 19:24:12Z)",
+   "description": "campaign_cases.py was edited ~37 s after the campaign35 server started, so the harness hash recorded for campaign35 is the RC2D file, not RC2C. The orchestrator imports campaign_cases in-process at start (campaign_final.py:14, campaign.main called in-process), so the cases that ran were most likely the RC2C version, but this cannot be proven from the recorded hashes. The documented RC2D change concerns ignite_tnt only and does not touch this group's cases."
+  }
+ ]
+}

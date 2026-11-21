@@ -1,0 +1,13 @@
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\attempt23 da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540
+[2026-11-21T01:16:53+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-21T01:17:04+00:00] attempt23 up: [06:17:02 INFO]: [AchieveToDo] Resolved progression config normal.toml (normal)
+[2026-11-21T01:17:04+00:00] attempt23 launch profile: release, gameplay mode CERTIFICATION
+[2026-11-21T01:17:37+00:00] prism account Glower4ek refreshed
+[2026-11-21T01:18:03+00:00] attempt23 pass smoke phases=creative,op,spectator,locked
+CONFIG normal:normal.toml abilities=153
+PASS                       portal_three_conditioned           enter_nether                   creative
+PASS                       portal_three_conditioned           enter_nether                   op
+PASS                       portal_three_conditioned           enter_nether                   spectator
+PASS                       portal_three_conditioned           enter_nether                   locked
+E6 replay attempt23: {'REPRODUCED': 4} reproducedAll=True
+SMOKE_DONE

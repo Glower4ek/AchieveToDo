@@ -1,0 +1,14 @@
+{
+  "started": "2026-11-20T11:12:11+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\certification\\rc2-artifacts\\AchieveToDo-Purpur-26.2-0.2.1.jar",
+  "runtimes": {
+    "campaign26": {
+      "mode": "easy",
+      "started": "2026-11-20T11:12:11+00:00",
+      "passes": {}
+    }
+  },
+  "state": "running campaign26",
+  "rules": "rc2b",
+  "launch": "release"
+}

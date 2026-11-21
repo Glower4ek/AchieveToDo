@@ -1,0 +1,67 @@
+{
+  "group": "villager13_profession_resolver",
+  "reviewer": "Q4",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "13 abilities, each with 1 direct site (GameplayMenuAbilities.java:43 profession->TRADE_WITH_* map) and 2 enforcement sites (NativeLandmarkOperations.java:209-224 offersEmpty -> entityDenied(TRADE_WITH_<profession>); BukkitExpandedGameplayListener.java:76-82 InventoryOpenEvent cancel). Recomputed SHA-256 of all 3 cited files, all equal E1 (813236fd..., 778a6186..., f10bdc23...). Opened offersEmpty and the listener: they map the villager profession to the matching TRADE_WITH_* ability and deny. Thresholds present for normal/easy/hard/chaos_20261116/custom_vision for all 13; every row's threshold equals E1 for its config."
+    },
+    "E2": {
+      "result": "FAIL",
+      "checked": "195 rows, all PASS except 7 PASS_NO_OVERLAY, all of them trade_with_cartographer (locked in every runtime and the op mode row). Locked counts unchanged in all locked rows. 12 professions: locked excerpts show no OpenScreen packet and the client overlay 'You can't trade with a <profession>'; allowed excerpts show INVENTORY_OPEN_TYPE_MERCHANT + ClientboundOpenScreenPacket and client MerchantScreen. No locked excerpt contains a plugin decision line (no ATD_EVENT/W2_INPUT_EVENT/PACKET_IN at all in this group's excerpts). For cartographer, the locked rows have neither an overlay nor any server-side denial line; the only evidence is that no screen opened.",
+      "rowsRead": [
+        "campaign21 pass1 trade_with_mason locked",
+        "campaign21 pass1 trade_with_mason allowed",
+        "campaign21 pass1 trade_with_cartographer locked",
+        "campaign21 pass1 trade_with_cartographer allowed",
+        "campaign21 modes trade_with_cartographer op",
+        "campaign21 reload trade_with_cartographer locked",
+        "campaign22 thresholds-easy trade_with_cartographer locked",
+        "campaign23 thresholds-hard trade_with_cartographer locked",
+        "campaign24 thresholds-chaos trade_with_cartographer locked",
+        "campaign25 thresholds-custom_vision trade_with_cartographer locked",
+        "campaign21 pass1 trade_with_leatherworker locked",
+        "campaign22 thresholds-easy trade_with_librarian locked/allowed",
+        "campaign24 thresholds-chaos trade_with_butcher locked/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for campaign21-25: onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' line present in every runtime; configResolved lines normal/easy/hard/chaos/custom_vision. Release launch (reported here, see finding): ATD_LAUNCH_PROFILE=release (output.log line ~207) and ATD_GAMEPLAY_MODE=CERTIFICATION (~line 221) precede the first atd_marks case line (334-395) in all five output.log files; launch.json of campaign22/23/24 additionally carries -Dachievetodo.progression.freshConfig=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows: 13 creative, 13 op, 13 spectator (campaign21). Threshold rows for normal (c21), easy (c22), hard (c23), chaos (c24), custom_vision (c25): 13 locked + 13 allowed each. No offhand rows: villager trading has no off-hand variant. No NA_* rows (no threshold 0 in E1)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "26 reload rows all from campaign21; their first log line (118205) is after the last pass1/modes/offhand row line (62429); MANIFEST.e5Reload.evidence.generationAfter=2; every ATD_STAGE2A_STATE in reload excerpts shows generation 2 (all non-reload excerpts show 1); every reload verdict equals its pass1 verdict for the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 195/195 REPRODUCED, recorded==replayed for every line, replay keys match rows.jsonl one-to-one; MANIFEST runtimes campaign21-25 reproducedAll=true (1622/396/396/396/396). Plugin SHA-256 da9360aa...cb540 identical in all perRuntime entries, prelaunch entries and launch.json; recomputed rc2-artifacts jar = da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540; client mod 5c473903...5a99 matches and recomputed rc2-artifacts/achievetodo-mc26.2+0.2.1.jar matches. Recomputed campaign-results.jsonl SHA-256 for all five runtimes, all equal evidenceHashes.results (c21 dfd9c210..., c22 0a44a65f..., c23 cfbcdcaa..., c24 856f4297..., c25 45c3e020...)."
+    }
+  },
+  "superseded": "MANIFEST.superseded is empty; all rows come from campaign21-25; no superseded rows to assess.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "ReleaseLaunch",
+      "evidence": "E:\\Vibecode\\AchieveToDo\\certification\\w5-campaign\\campaign22\\receipts\\launch.json command[3]; same in campaign23\\receipts\\launch.json and campaign24\\receipts\\launch.json; campaign22\\runtime_args.json args[0]",
+      "description": "The EASY, HARD and CHAOS runtimes (campaign22/23/24) were launched with '-Dachievetodo.progression.freshConfig=true' in addition to the two -javaagent entries, contradicting the brief's certified operator launch (no -Dachievetodo.* flags). The plugin itself (ReleaseLaunchProfile.java:26,85) would derive freshConfig only on the start that writes the world group, so these three runtimes did not exercise the pure release derivation; their threshold rows were not produced under the certified composition. campaign21 and campaign25 are clean."
+    },
+    {
+      "severity": "major",
+      "criterion": "E2",
+      "evidence": "E:\\Vibecode\\AchieveToDo\\certification\\w5-campaign\\review-rc2\\villager13_profession_resolver\\excerpts.txt block 'campaign21 pass1 trade_with_cartographer locked' (output.log 17454-17460) and the 5 other cartographer locked blocks (c21 reload, c22-c25)",
+      "description": "The lock of trade_with_cartographer cannot be shown from the raw lines: in all 6 locked rows (and the op row) there is no overlay, no ATD_EVENT/decision line and no ATD_PACKET_IN for the interaction, only the absence of ClientboundOpenScreenPacket. The other 12 professions on the same code path all show the overlay, so the systematic missing overlay is unexplained. A denial cannot be told apart from an interaction that never reached the villager."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "E:\\Vibecode\\AchieveToDo\\certification\\w5-campaign\\review-rc2\\villager13_profession_resolver\\excerpts.txt, e.g. 'campaign21 pass1 trade_with_mason locked' (output.log 17328: abilities map has no TRADE_WITH_MASON)",
+      "description": "ATD_STAGE2A_STATE lines carry no lock state for TRADE_WITH_* (compacted as null; the full line's abilities map in output.log omits it), so the tested ability's locked/unlocked state is not visible in the server log; lock state must be inferred from count vs threshold and the client overlay."
+    }
+  ]
+}

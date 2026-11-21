@@ -8,6 +8,7 @@ licenses/toml4j/LICENSE text eol=crlf
 reference/localization/phase_a_manual_ru_manifest.json text eol=crlf
 reference/localization/phase_a_manual_ru_ui_official_audit.tsv text eol=crlf
 reference/localization/phase_a_manual_ru_ui_official_audit_summary.json text eol=crlf
+tools/certification/authority/ui-ux-maintenance-v1.json text eol=crlf
 reference/localization/phase_a_ru_final_manual_audit_v2_summary.json text eol=crlf
 reference/localization/phase_a_ru_full_reaudit_summary.json text eol=crlf
 reference/phase_a_preservation/artifact-report.json text eol=crlf
@@ -209,3 +210,4 @@ src/bridgeTest/java/com/diskree/achievetodo/bridge/ClientCodecFixtureTest.java -
 
 # W5 certification evidence: hashed bytes must survive checkout unchanged.
 tools/certification/w5/** -text
+tools/certification/rc2/** -text

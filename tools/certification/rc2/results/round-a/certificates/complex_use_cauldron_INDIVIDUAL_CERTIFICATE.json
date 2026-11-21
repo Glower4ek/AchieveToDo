@@ -1,0 +1,65 @@
+{
+  "group": "complex_use_cauldron",
+  "reviewer": "Q6",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability use_cauldron, DIRECT, active sites NativeComplexBindings.java:15 (USE_CAULDRON in complex agent set), NativeComplexAgent.java:128-130 (cauldron interaction other than DEFAULT -> ability USE_CAULDRON), NativeLandmarkOperations.java:148,230. 3/3 cited files re-hashed and match. Thresholds normal 513, easy 414, hard 612, chaos 465, custom_vision 513."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS. Read locked excerpts in all 5 runtimes plus op/offhand/reload/creative: locked rows show the ServerboundUseItemOnPacket arriving but no ATD_W2_INPUT_EVENT/ATD_EVENT, no advancement line, count unchanged (512/413/611/464/512), probe and inv false. Allowed rows show RIGHT_CLICK_BLOCK CAULDRON, ATD_PROOF_NATIVE_ADVANCEMENT_DONE blazeandcave:building/bubble_bubble_toil_and_trouble and count +1 (first time), CAULDRON_FILLED +1. Offhand allowed shows OFF_HAND event and slot 40 used.",
+      "rowsRead": [
+        "campaign21 pass1 use_cauldron locked/allowed",
+        "campaign21 modes use_cauldron creative/op",
+        "campaign21 offhand use_cauldron offhand_locked/offhand_allowed",
+        "campaign22 thresholds-easy use_cauldron locked",
+        "campaign23 thresholds-hard use_cauldron locked",
+        "campaign24 thresholds-chaos use_cauldron locked/allowed",
+        "campaign25 thresholds-custom_vision use_cauldron locked/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25: onlineMode=true, authenticatedUuidLine 'UUID of player ... is 89c23030-...' and joinedLine present in each; launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows exist (campaign21 modes); offhand_locked and offhand_allowed rows exist (campaign21 offhand); locked+allowed rows for normal, easy, hard, chaos, custom_vision; no NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows, both campaign21, log lines 107321-107386, after pass1 (max 6545), modes (max 45975) and offhand (max 91282); e5Reload.generationAfter=2; both reload excerpts show generation 2 only; reload verdicts PASS equal pass1 PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 17/17 REPRODUCED; all 5 runtimes reproducedAll=true (1622/396/396/396/396). Plugin sha256 da9360aa... identical for campaign21-25 and equal to the brief; client mod sha256 5c473903... equals the brief. Recomputed sha256 of campaign-results.jsonl of all 5 runtimes; each matches evidenceHashes.results."
+    },
+    "RELEASE_LAUNCH": {
+      "result": "FAIL",
+      "checked": "All 5 runtimes log ATD_LAUNCH_PROFILE=release (output.log line 207/207/207/206/208) and ATD_GAMEPLAY_MODE=CERTIFICATION (221/221/221/220/222) before the first atd_marks case line (~249-284). launch.json command: campaign21 and campaign25 hold only -javaagent:plugins/achievetodo.jar + trace-agent; campaign22/23/24 additionally hold -Dachievetodo.progression.freshConfig=true (see finding)."
+    }
+  },
+  "superseded": "No superseded rows: MANIFEST.superseded=[] and supplements=[]; all rows from campaign21-25, harness hashes per HARNESS_RC2.sha256 are listed in MANIFEST.harness.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "RELEASE_LAUNCH",
+      "evidence": "campaign22/runtime_args.json args[0], campaign22/receipts/launch.json, campaign23/receipts/launch.json, campaign24/receipts/launch.json",
+      "description": "The server command of campaign22 (easy), campaign23 (hard) and campaign24 (chaos) contains -Dachievetodo.progression.freshConfig=true in addition to -javaagent:plugins/achievetodo.jar and the trace agent. The brief states the certified operator launch has no -Dachievetodo.* flags; only campaign21 and campaign25 match. The flag changes config resolution (BukkitProgressionRuntime.java:72, :401 'explicit freshConfig required'), and ReleaseLaunchProfile.java:85 only derives it itself when it writes a new world group, which the logged derived=[...] list for these runtimes does not include. So the thresholds-easy/hard/chaos rows of this group were produced outside the certified composition. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION are logged in all five runtimes (output.log lines ~206-222)."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/complex_use_cauldron/excerpts.txt, every ATD_STAGE2A_STATE line",
+      "description": "The STAGE2A state lines report \"ability\": {\"USE_CAULDRON\": null}, so the tested ability's lock state (LOCKED/UNLOCKED, required) is never logged; the locked state is inferred only from count < threshold."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/complex_use_cauldron/excerpts.txt 'campaign21 pass1 use_cauldron locked' (output.log 6476-6486)",
+      "description": "Locked excerpts contain no positive denial line (no DENIAL_INTENT, no cancelled event); the lock is evidenced only by the absence of the interaction event, the advancement and the fill, plus an unchanged count."
+    }
+  ]
+}

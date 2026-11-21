@@ -1,0 +1,25 @@
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\attempt23 da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540
+[2026-11-20T11:19:09+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-20T11:19:26+00:00] attempt23 up: [16:19:18 INFO]: [AchieveToDo] Resolved progression config normal.toml (normal)
+[2026-11-20T11:19:26+00:00] attempt23 launch profile: release, gameplay mode CERTIFICATION
+[2026-11-20T11:19:50+00:00] prism account Glower4ek refreshed
+[2026-11-20T11:20:15+00:00] attempt23 pass smoke phases=locked,allowed
+CONFIG normal:normal.toml abilities=153
+PASS                       action_place_end_crystal           place_end_crystal              locked
+PASS                       action_place_end_crystal           place_end_crystal              allowed
+PASS                       vehicle_mount_two                  get_into_boat                  locked
+PASS                       vehicle_mount_two                  get_into_boat                  allowed
+PASS                       vehicle_mount_two                  get_into_minecart              locked
+FAIL_NO_EFFECT             vehicle_mount_two                  get_into_minecart              allowed
+PASS                       bundle_two_native_routes           put_in_bundle                  locked
+PASS                       bundle_two_native_routes           put_in_bundle                  allowed
+PASS                       bundle_two_native_routes           put_in_bundle                  locked
+PASS                       bundle_two_native_routes           put_in_bundle                  allowed
+PASS                       throwables_four_paper_candidates   throw_snowball                 locked
+PASS                       throwables_four_paper_candidates   throw_snowball                 allowed
+PASS                       villager13_profession_resolver     trade_with_mason               locked
+PASS                       villager13_profession_resolver     trade_with_mason               allowed
+PASS_NO_OVERLAY            villager13_profession_resolver     trade_with_cartographer        locked
+PASS                       villager13_profession_resolver     trade_with_cartographer        allowed
+E6 replay attempt23: {'REPRODUCED': 16} reproducedAll=True
+SMOKE_DONE

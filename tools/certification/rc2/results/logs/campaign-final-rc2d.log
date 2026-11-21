@@ -1,0 +1,12 @@
+mode chaos
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign36 da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540
+[2026-11-20T20:30:05+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-20T20:30:16+00:00] campaign36 up: [01:30:15 INFO]: [AchieveToDo] Resolved progression config chaos_20261116.toml (chaos_20261116)
+[2026-11-20T20:30:16+00:00] campaign36 launch profile: release, gameplay mode CERTIFICATION
+[2026-11-20T20:30:21+00:00] prism account Glower4ek refreshed
+[2026-11-20T20:30:47+00:00] campaign36 pass thresholds-chaos phases=locked,allowed
+CONFIG chaos:chaos_20261116.toml abilities=153
+PASS                       complex_ignite_tnt                 ignite_tnt                     locked
+PASS                       complex_ignite_tnt                 ignite_tnt                     allowed
+E6 replay campaign36: {'REPRODUCED': 2} reproducedAll=True
+[2026-11-20T20:31:03+00:00] FINAL_RC2D_DONE

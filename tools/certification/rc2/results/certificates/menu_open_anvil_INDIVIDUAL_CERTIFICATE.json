@@ -1,0 +1,67 @@
+{
+  "group": "menu_open_anvil",
+  "reviewer": "P4",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1 lists open_anvil with two active direct sites: GameplayMenuAbilities.java l.22 (InventoryType.ANVIL -> OPEN_ANVIL) and l.69-70 (opening(): an anvil, chipped anvil or damaged anvil location -> OPEN_ANVIL). It also lists the inactive legacy site BukkitRestrictionResolver l.89. SHA-256 recomputed: GameplayMenuAbilities.java 813236fd... = E1, BukkitRestrictionResolver.java f5d7d99b... = E1. I opened the sites: opening() is called by BukkitExpandedGameplayListener.open(InventoryOpenEvent) l.76-82, which cancels the event when locked() (GameplayDenialEffects.allows -> GameplayGate.allows, with creative/spectator bypass). Every config that ran (normal, easy, hard, custom_vision, chaos_20261116@campaign34, plus chaos@campaign36) lists a threshold. I re-parsed the [abilities] table of each config TOML named in E1.configs (hashes recomputed, all 6 match), and every E1 threshold equals the TOML value. Every row's threshold equals E1 for its runtime; locked/op/creative/spectator score = threshold-1 and allowed score = threshold. Thresholds: normal 234, easy 180, hard 288, custom_vision 234, chaos@34 172, chaos@36 119."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "I read and re-judged all 15 excerpts. Every locked/op row (pass1, reload, easy, hard, chaos, custom_vision, op) shows the same sequence: RIGHT_CLICK_BLOCK ANVIL reaches the server (PacketWitness UseItemOn, useBlock=ALLOW), then 'ATD_BOUNDARY INVENTORY_OPEN_MONITOR_CANCELLED true' with no ClientboundOpenScreenPacket. The count is unchanged (233/233, 179/179, 287/287, 171/171, 233/233), STATE shows kind=LOCKED, and the client overlay reads 'You can't use an anvil. Advancements left to unlock: 1'. Allowed rows show MONITOR_CANCELLED false, ClientboundOpenScreenPacket and INVENTORY_OPEN_TYPE_ANVIL, with STATE kind=UNLOCKED, menu diff CRAFTING->ANVIL and stat INTERACT_WITH_ANVIL+1. Creative and spectator open the menu (bypass); op is denied. All PASS verdicts reproduce.",
+      "rowsRead": [
+        "campaign31 pass1 open_anvil locked",
+        "campaign31 pass1 open_anvil allowed",
+        "campaign31 modes open_anvil creative",
+        "campaign31 modes open_anvil op",
+        "campaign31 modes open_anvil spectator",
+        "campaign31 reload open_anvil locked",
+        "campaign31 reload open_anvil allowed",
+        "campaign32 thresholds-easy open_anvil locked",
+        "campaign32 thresholds-easy open_anvil allowed",
+        "campaign33 thresholds-hard open_anvil locked",
+        "campaign33 thresholds-hard open_anvil allowed",
+        "campaign34 thresholds-chaos open_anvil locked",
+        "campaign34 thresholds-chaos open_anvil allowed",
+        "campaign35 thresholds-custom_vision open_anvil locked",
+        "campaign35 thresholds-custom_vision open_anvil allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign31-36: onlineMode=true for all; authenticatedUuidLine and joinedLine re-found in each raw output.log (campaign31 l.233/244, campaign32 l.233/244, campaign33 l.234/246, campaign34 l.234/250, campaign35 l.233/244, campaign36 l.233/246); UUID 89c23030-ce61-44ab-800a-f2aee455e14a is version-4 (Mojang online), runtime/server.properties online-mode=true in every runtime; launch.json onlineMode=true. This group's rows come only from campaign31-35."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "Tag 'modes' (campaign31): creative (bypass, effect required), op (locked semantics, denial required) and spectator (no fresh overlay, no leak) rows are present. thresholds-easy (campaign32), thresholds-hard (campaign33), thresholds-chaos (campaign34) and thresholds-custom_vision (campaign35) locked+allowed rows are present; normal is covered by pass1. There are no NA_* rows in this group (no threshold is 0 in any config). campaign-results.jsonl of campaign31-35 holds no other row for this ability (no INVALID_* row and no rerun), so the expect_hit and server_reach rules found nothing to rerun. No offhand rows: opening a block menu is an empty-hand block use with no separate off-hand route (the packets show hand=MAIN_HAND only)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "campaign31 campaign-results.jsonl line ranges: pass1 rows 1-398 (log 335-37925), modes 399-995 (log 37974-89134), offhand 996-1231 (log 89184-101738), reload 1232-1629 (log 101794-138994); the reload ('Reloading!' l.101750, PROGRESSION_CONFIG_READY generation=2 l.~101755, DELTA_SENT configGeneration=2 l.101792) comes after pass1/modes/offhand. MANIFEST.e5Reload.evidence generationBefore=1 generationAfter=2. Reload rows (logLines 102402-102415, 102452-102467) show STATE generation=2 on both sides. Reload locked PASS / allowed PASS = pass1 PASS / PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "Recomputed SHA-256 of every evidenceHashes entry of all six runtimes (output.log, command-journal, driver-journal, campaign-results.jsonl, REPLAY.json, plugin, server, trace-agent, client-mod, input-driver, campaign.py, campaign_replay.py): all match, e.g. campaign31 campaign-results.jsonl 8eddce27...d0d5de, campaign32 c4936a8d...1813c, campaign35 400573a8...2616. Plugin jar in campaign31..36/runtime/plugins/achievetodo.jar = da9360aa...cb540 in all six and in rc2-artifacts; client mod in the Prism mods folder and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar = 5c473903...25a99. REPLAY.json reproducedAll=true, problems=[] in campaign31 (1629), 32-35 (398 each), 36 (2). Every rows.jsonl line matched to its campaign-results.jsonl row (verdict, counts, logLines, threshold) with 0 mismatches. Every non-compacted excerpt line was found verbatim at the stated output.log lines (campaign31 1485 lines, campaign32-35 424 each across my 7 groups, 0 missing); compacted state lines matched by tick/count/generation. Exception noted as finding: campaign_cases.py evidence hash of campaign35 (see findings). "
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json and receipts/launch.json of campaign31-36: command = java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<preset>] -javaagent:plugins/achievetodo.jar -javaagent:<observer-work>/trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn -jar purpur-26.2-2620.jar --nogui. No other -Dachievetodo.* option. initialConfig only in campaign32 (easy), 33 (hard), 34 (chaos), 36 (chaos); none in 31 (normal) and 35 (custom_vision). In each output.log ATD_LAUNCH_PROFILE=release (l.207/208) and ATD_GAMEPLAY_MODE=CERTIFICATION (l.221/222) precede the player join (l.233+) and the first ATD_STAGE2A_STATE case line (l.335-564). derived=[...] contains world-group.properties and achievetodo.progression.freshConfig only for campaign32/33/34/36, i.e. the plugin built a fresh install itself (campaign_modes.py set_mode deletes world-group.properties and world-selection.properties before a release preset start); campaign31/35 derived list has neither. Configs resolved: normal.toml, easy.toml, hard.toml, chaos_20261116.toml, custom_vision.toml. campaign-final-rc2c.log shows one orchestrator process (campaign_final_rc2c.py imports campaign_final -> campaign -> campaign_cases once) driving campaign31-35. sha256sum -c HARNESS_RC2C.sha256 today: all OK except campaign_cases.py (current file = d933206f..., the HARNESS_RC2D value). STARTING_THE_SERVER.md l.21-27, 57-58 match the composition."
+    }
+  },
+  "superseded": "This group has no superseded rows (MANIFEST.superseded=[]); its rows are all from campaign31-35. The only replacement in the release (campaign34 CHAOS ignite_tnt by campaign36) is justified: campaign34 ignite_tnt allowed was FAIL_NO_EFFECT at score 260 while use_flint_and_steel (CHAOS@campaign34 threshold 523, proven locked at 522 by this release's flint rows) was still locked, and NativeComplexAgent 'ignite' mode denies when either flint or IGNITE_TNT is denied; campaign36 (fresh CHAOS install, flint threshold 144) reran with requires={'use_flint_and_steel':144} and got PASS/PASS [606->606, 607->608].",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "ReleaseLaunch",
+      "evidence": "review-rc2c/menu_open_anvil/MANIFEST.json runtimes.campaign35.evidenceHashes['campaign_cases.py'].sha256=d933206f160d857d... (= HARNESS_RC2D.sha256) vs campaign31-34 c8add78f3d4ea3d3... (= HARNESS_RC2C.sha256); w5-campaign/campaign_cases.py mtime 2026-11-21 00:24:48 +0500, campaign35/receipts/launch.json 00:24:00; campaign35 campaign-results.jsonl ignite_tnt rows requires={'vision': 5}",
+      "description": "campaign_cases.py was edited about 48 s after campaign35 started, and campaign35's evidence hash was taken at the end of the run (EVIDENCE_HASHES.json 01:29:53), so it records the RC2D file instead of the RC2C code that produced the rows. The RC2C version (c8add78f..., 27009 bytes) is not kept anywhere under certification/, so `sha256sum -c HARNESS_RC2C.sha256` now fails for campaign_cases.py and nobody can re-hash or diff it. The rows themselves show RC2C behaviour: campaign35 ignite_tnt has no use_flint_and_steel requirement, and one orchestrator process imported the cases at 11:38Z. So this group's verdicts are not affected, but the provenance record is inaccurate."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review-rc2c/menu_open_anvil/E1.json directSites (GameplayMenuAbilities.java 22, 69); repo BukkitExpandedGameplayListener.java l.76-82",
+      "description": "E1 cites only the mapping table GameplayMenuAbilities as the active site. It does not cite the place that actually cancels the anvil menu, BukkitExpandedGameplayListener.open(InventoryOpenEvent) l.81, which is what produces INVENTORY_OPEN_MONITOR_CANCELLED true in the locked excerpts. The villager13 E1 does cite this listener. The map is incomplete, but I opened the listener and it checks OPEN_ANVIL correctly."
+    }
+  ]
+}

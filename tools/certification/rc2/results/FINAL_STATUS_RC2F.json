@@ -1,0 +1,32 @@
+{
+  "started": "2026-11-21T01:19:17+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\certification\\rc2-artifacts\\AchieveToDo-Purpur-26.2-0.2.1.jar",
+  "runtimes": {
+    "campaign38": {
+      "mode": "normal",
+      "started": "2026-11-21T01:19:17+00:00",
+      "passes": {
+        "modes": {
+          "phases": "creative,op,spectator",
+          "counts": {
+            "PASS": 3
+          },
+          "finished": "2026-11-21T01:20:28+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-21T01:20:32+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 3
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "rc2f",
+  "launch": "release",
+  "finished": "2026-11-21T01:20:32+00:00"
+}

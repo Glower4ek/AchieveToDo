@@ -1,0 +1,1876 @@
+{
+  "group": "food_component_start_40",
+  "repoHead": "5c086aaa1a6024aad21ffd879a757a0f09d9c099",
+  "abilities": [
+    {
+      "ability": "eat_salmon",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            12
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 2,
+        "easy": 2,
+        "hard": 4,
+        "custom_vision": 2,
+        "chaos_20261116@campaign34": 507,
+        "chaos_20261116@campaign36": 92
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cod",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            12
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 6,
+        "easy": 8,
+        "hard": 6,
+        "custom_vision": 6,
+        "chaos_20261116@campaign34": 48,
+        "chaos_20261116@campaign36": 513
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_tropical_fish",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            13
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 8,
+        "easy": 12,
+        "hard": 10,
+        "custom_vision": 8,
+        "chaos_20261116@campaign34": 422,
+        "chaos_20261116@campaign36": 61
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_rotten_flesh",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            13
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 18,
+        "easy": 20,
+        "hard": 16,
+        "custom_vision": 18,
+        "chaos_20261116@campaign34": 336,
+        "chaos_20261116@campaign36": 555
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_spider_eye",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            14
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 22,
+        "easy": 24,
+        "hard": 18,
+        "custom_vision": 22,
+        "chaos_20261116@campaign34": 294,
+        "chaos_20261116@campaign36": 23
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_sweet_berries",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            38,
+            84
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 14,
+        "easy": 16,
+        "hard": 12,
+        "custom_vision": 14,
+        "chaos_20261116@campaign34": 514,
+        "chaos_20261116@campaign36": 159
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_glow_berries",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            39,
+            84
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 26,
+        "easy": 30,
+        "hard": 22,
+        "custom_vision": 26,
+        "chaos_20261116@campaign34": 183,
+        "chaos_20261116@campaign36": 438
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_poisonous_potato",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            14
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 28,
+        "easy": 34,
+        "hard": 26,
+        "custom_vision": 28,
+        "chaos_20261116@campaign34": 22,
+        "chaos_20261116@campaign36": 379
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_suspicious_stew",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            15
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 34,
+        "easy": 36,
+        "hard": 36,
+        "custom_vision": 34,
+        "chaos_20261116@campaign34": 406,
+        "chaos_20261116@campaign36": 723
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_chicken",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            15
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 47,
+        "easy": 44,
+        "hard": 50,
+        "custom_vision": 47,
+        "chaos_20261116@campaign34": 143,
+        "chaos_20261116@campaign36": 425
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_carrot",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            40,
+            85
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 53,
+        "easy": 48,
+        "hard": 58,
+        "custom_vision": 53,
+        "chaos_20261116@campaign34": 816,
+        "chaos_20261116@campaign36": 559
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_beetroot",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            16
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 62,
+        "easy": 54,
+        "hard": 70,
+        "custom_vision": 62,
+        "chaos_20261116@campaign34": 181,
+        "chaos_20261116@campaign36": 76
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_dried_kelp",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            16
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 74,
+        "easy": 62,
+        "hard": 86,
+        "custom_vision": 74,
+        "chaos_20261116@campaign34": 649,
+        "chaos_20261116@campaign36": 105
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_potato",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            41,
+            85
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 68,
+        "easy": 58,
+        "hard": 78,
+        "custom_vision": 68,
+        "chaos_20261116@campaign34": 176,
+        "chaos_20261116@campaign36": 865
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_apple",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            17
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 89,
+        "easy": 72,
+        "hard": 106,
+        "custom_vision": 89,
+        "chaos_20261116@campaign34": 779,
+        "chaos_20261116@campaign36": 190
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_melon_slice",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            22
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 98,
+        "easy": 78,
+        "hard": 118,
+        "custom_vision": 98,
+        "chaos_20261116@campaign34": 488,
+        "chaos_20261116@campaign36": 793
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cookie",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            23
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 107,
+        "easy": 84,
+        "hard": 130,
+        "custom_vision": 107,
+        "chaos_20261116@campaign34": 842,
+        "chaos_20261116@campaign36": 35
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_mushroom_stew",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            17
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 113,
+        "easy": 88,
+        "hard": 138,
+        "custom_vision": 113,
+        "chaos_20261116@campaign34": 2,
+        "chaos_20261116@campaign36": 254
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_beetroot_soup",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            24
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 119,
+        "easy": 92,
+        "hard": 146,
+        "custom_vision": 119,
+        "chaos_20261116@campaign34": 86,
+        "chaos_20261116@campaign36": 8
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_rabbit_stew",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            21
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 80,
+        "easy": 66,
+        "hard": 94,
+        "custom_vision": 80,
+        "chaos_20261116@campaign34": 425,
+        "chaos_20261116@campaign36": 461
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_honey",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            18
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 128,
+        "easy": 98,
+        "hard": 158,
+        "custom_vision": 128,
+        "chaos_20261116@campaign34": 738,
+        "chaos_20261116@campaign36": 264
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_mutton",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            25
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 137,
+        "easy": 104,
+        "hard": 170,
+        "custom_vision": 137,
+        "chaos_20261116@campaign34": 316,
+        "chaos_20261116@campaign36": 296
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_pufferfish",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            26
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 154,
+        "easy": 116,
+        "hard": 192,
+        "custom_vision": 154,
+        "chaos_20261116@campaign34": 289,
+        "chaos_20261116@campaign36": 134
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_pumpkin_pie",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            27
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 189,
+        "easy": 144,
+        "hard": 234,
+        "custom_vision": 189,
+        "chaos_20261116@campaign34": 175,
+        "chaos_20261116@campaign36": 365
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_golden_apple",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            18
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 164,
+        "easy": 124,
+        "hard": 204,
+        "custom_vision": 164,
+        "chaos_20261116@campaign34": 647,
+        "chaos_20261116@campaign36": 43
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_enchanted_golden_apple",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            19
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 229,
+        "easy": 176,
+        "hard": 282,
+        "custom_vision": 229,
+        "chaos_20261116@campaign34": 447,
+        "chaos_20261116@campaign36": 382
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_rabbit",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            28
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 274,
+        "easy": 212,
+        "hard": 336,
+        "custom_vision": 274,
+        "chaos_20261116@campaign34": 587,
+        "chaos_20261116@campaign36": 363
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_beef",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            29
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 338,
+        "easy": 264,
+        "hard": 412,
+        "custom_vision": 338,
+        "chaos_20261116@campaign34": 238,
+        "chaos_20261116@campaign36": 189
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_porkchop",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            30
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 408,
+        "easy": 324,
+        "hard": 492,
+        "custom_vision": 408,
+        "chaos_20261116@campaign34": 2,
+        "chaos_20261116@campaign36": 335
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_baked_potato",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            31
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 478,
+        "easy": 384,
+        "hard": 572,
+        "custom_vision": 478,
+        "chaos_20261116@campaign34": 150,
+        "chaos_20261116@campaign36": 481
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_salmon",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            32
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 457,
+        "easy": 366,
+        "hard": 548,
+        "custom_vision": 457,
+        "chaos_20261116@campaign34": 759,
+        "chaos_20261116@campaign36": 129
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_cod",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            21
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 597,
+        "easy": 486,
+        "hard": 708,
+        "custom_vision": 597,
+        "chaos_20261116@campaign34": 207,
+        "chaos_20261116@campaign36": 724
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_rabbit",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            33
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 373,
+        "easy": 294,
+        "hard": 452,
+        "custom_vision": 373,
+        "chaos_20261116@campaign34": 37,
+        "chaos_20261116@campaign36": 129
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_chicken",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            34
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 548,
+        "easy": 444,
+        "hard": 652,
+        "custom_vision": 548,
+        "chaos_20261116@campaign34": 295,
+        "chaos_20261116@campaign36": 846
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_chorus_fruit",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            19
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 681,
+        "easy": 558,
+        "hard": 804,
+        "custom_vision": 681,
+        "chaos_20261116@campaign34": 479,
+        "chaos_20261116@campaign36": 441
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_mutton",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            35
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 576,
+        "easy": 468,
+        "hard": 684,
+        "custom_vision": 576,
+        "chaos_20261116@campaign34": 2,
+        "chaos_20261116@campaign36": 302
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_porkchop",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            36
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 695,
+        "easy": 570,
+        "hard": 820,
+        "custom_vision": 695,
+        "chaos_20261116@campaign34": 154,
+        "chaos_20261116@campaign36": 557
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_bread",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            20
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 436,
+        "easy": 348,
+        "hard": 524,
+        "custom_vision": 436,
+        "chaos_20261116@campaign34": 307,
+        "chaos_20261116@campaign36": 542
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_beef",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            20
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 702,
+        "easy": 576,
+        "hard": 828,
+        "custom_vision": 702,
+        "chaos_20261116@campaign34": 248,
+        "chaos_20261116@campaign36": 733
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_golden_carrot",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            37
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/adapters/BukkitRestrictionResolver.java",
+            "active": false,
+            "inactiveReason": "legacy Bukkit adapters/resolver: used only by the restriction runtime and the inspect command, both started only outside CERTIFICATION/PRODUCT mode"
+          }
+        ],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 716,
+        "easy": 588,
+        "hard": 844,
+        "custom_vision": 716,
+        "chaos_20261116@campaign34": 103,
+        "chaos_20261116@campaign36": 404
+      },
+      "mapping": "DIRECT"
+    }
+  ],
+  "configs": {
+    "normal": {
+      "file": "campaign31\\runtime\\plugins\\AchieveToDo\\progression\\configs\\normal.toml",
+      "sha256": "de6383599828005cb00afcacd868ca60850913c434219f8fed5f79456bb69624"
+    },
+    "easy": {
+      "file": "campaign32\\runtime\\plugins\\AchieveToDo\\progression\\configs\\easy.toml",
+      "sha256": "c145bfe25d9080414034e8d23ccd7d88b5eb3727b84f6e5a06219e4edbe7e9b3"
+    },
+    "hard": {
+      "file": "campaign33\\runtime\\plugins\\AchieveToDo\\progression\\configs\\hard.toml",
+      "sha256": "9d7b711b9fb7f2a9d0bfe2666f349e3859b77541bdf1bc2b656134b9f1329d6a"
+    },
+    "custom_vision": {
+      "file": "campaign35\\runtime\\plugins\\AchieveToDo\\progression\\configs\\custom_vision.toml",
+      "sha256": "db26c1f6b440cc79466a6ee37dee544fb149a23b8d5909f53ec37ebeefb536cd"
+    },
+    "chaos_20261116@campaign34": {
+      "file": "campaign34\\runtime\\plugins\\AchieveToDo\\progression\\configs\\chaos_20261116.toml",
+      "sha256": "49c9176676ebd1abb860ea40c3f31dbaa1699c8e4b4f6d5036fc3a79f7242698"
+    },
+    "chaos_20261116@campaign36": {
+      "file": "campaign36\\runtime\\plugins\\AchieveToDo\\progression\\configs\\chaos_20261116.toml",
+      "sha256": "d821647b41e9c42f025d52ae021833b3dd0ae9a998929a4775fba2676545ccd7"
+    }
+  }
+}

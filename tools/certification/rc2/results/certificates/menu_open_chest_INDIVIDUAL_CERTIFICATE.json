@@ -1,0 +1,61 @@
+{
+  "group": "menu_open_chest",
+  "reviewer": "P7",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "Ability open_chest (family block, mapping DIRECT). Recomputed SHA-256 of all 4 cited source files under repo/: BukkitRestrictionResolver.java f5d7d99b..., BukkitExpandedGameplayListener.java f10bdc23..., GameplayGate.java 4ddeec26..., NativeLandmarkOperations.java 778a6186... - 4/4 equal E1. Opened guard sites: BukkitExpandedGameplayListener.java:70 containerAbility returns OPEN_CHEST for Chest/DoubleChest holders and open(InventoryOpenEvent) cancels when locked; NativeLandmarkOperations.java:95 shelfSingleDenied -> targetAndAbilityDenied(...,\"OPEN_CHEST\") (shelf route); GameplayGate.java:17 OPEN_CHEST in IMPLEMENTED and allows() checks state.getAbilityState(ability).isUnlocked(). BukkitRestrictionResolver is marked inactive (legacy), correctly. Thresholds listed for normal 42, easy 40, hard 40, custom_vision 42, chaos@campaign34 56, chaos@campaign36 296; all 6 config file hashes recomputed and equal E1.configs."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "30 rows, all PASS (no non-PASS rows). Two cases: chest menu and shelf transfer (non-menu). Read excerpts of 22 rows. Chest locked rows (c31 pass1/reload, c32, c33, c34, c35): STATE kind=LOCKED, ATD_BOUNDARY INVENTORY_OPEN_MONITOR_CANCELLED true, no ClientboundOpenScreenPacket, count unchanged (41->41, 39->39, 55->55), client overlay 'You can't open a chest. Advancements left to unlock: 1'. Chest allowed rows: kind=UNLOCKED, MONITOR_CANCELLED false and ClientboundOpenScreenPacket. Shelf locked rows: probe 'data get block 8 -59 -3 Items' still shows apple after the click, count unchanged, overlay shown (no explicit plugin decision line is logged for this native route; the proof is absence of effect plus overlay). Shelf allowed rows: Items becomes stick, inventory_changed (hidden technical) awarded, count stays at threshold. Modes: op locked denied (MONITOR_CANCELLED true), creative opens (bypass), spectator opens chest / shelf cancelled by vanilla spectator handling without overlay - consistent with judge(). All verdicts reproduced by me from the log lines. Every package row matched byte-for-byte (except config normalisation) its source line in campaign-results.jsonl and is the only row for its key.",
+      "rowsRead": [
+        "campaign31 pass1 open_chest locked",
+        "campaign31 pass1 open_chest allowed",
+        "campaign31 pass1 open_chest/shelf locked",
+        "campaign31 pass1 open_chest/shelf allowed",
+        "campaign31 modes open_chest creative",
+        "campaign31 modes open_chest op",
+        "campaign31 modes open_chest spectator",
+        "campaign31 modes open_chest/shelf creative",
+        "campaign31 modes open_chest/shelf op",
+        "campaign31 modes open_chest/shelf spectator",
+        "campaign31 reload open_chest locked",
+        "campaign31 reload open_chest allowed",
+        "campaign31 reload open_chest/shelf locked",
+        "campaign31 reload open_chest/shelf allowed",
+        "campaign32 thresholds-easy open_chest locked",
+        "campaign33 thresholds-hard open_chest locked",
+        "campaign33 thresholds-hard open_chest/shelf locked",
+        "campaign34 thresholds-chaos open_chest locked",
+        "campaign34 thresholds-chaos open_chest/shelf locked",
+        "campaign35 thresholds-custom_vision open_chest locked",
+        "campaign35 thresholds-custom_vision open_chest/shelf locked",
+        "campaign35 thresholds-custom_vision open_chest/shelf allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Contributing runtimes campaign31-35: MANIFEST onlineMode=true, UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present in each; I grepped each output.log and found both lines (c31 l.233/244, c32 l.233/244, c33 l.234/246, c34 l.234/250, c35 l.233/244); server.properties online-mode=true and launch.json onlineMode=true in each."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator exist for both cases. No offhand rows: campaign_final.py OFFHAND explicitly excludes open_chest (empty-hand menu open has no off-hand route; the guard is on InventoryOpenEvent, hand-independent). Threshold rows for easy (c32), hard (c33), chaos (c34), custom_vision (c35), normal (c31 pass1). No NA_* rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "4 reload rows from campaign31; campaign-results.jsonl order is pass1 [0-397], modes [398-994], offhand [995-1230], reload [1231-1628]; 'Reloading!' at output.log l.101750 (19:55:15), reload rows start l.101795. MANIFEST.e5Reload.generationAfter=2; all reload STATE lines show generation 2. Reload verdicts PASS = pass1 verdicts PASS for all 4 (case x phase)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 30/30 REPRODUCED; recorded verdicts equal rows. MANIFEST replay reproducedAll=true for campaign31-36; REPLAY.json of each runtime re-read: reproducedAll=true, problems=[]. Plugin SHA-256 recomputed in all 6 runtimes/plugins/achievetodo.jar = da9360aa...cb540 = brief; rc2-artifacts jar also equal. Client mod recomputed 5c473903...5a99 = brief. Recomputed campaign-results.jsonl SHA-256 of all six runtimes (c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771...) = evidenceHashes; REPLAY.json hashes also equal."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json/runtime_args.json: every runtime command holds -javaagent:plugins/achievetodo.jar plus the trace-agent javaagent. c31 and c35: no -Dachievetodo.* option. c32/c33/c34/c36: only -Dachievetodo.progression.initialConfig=easy/hard/chaos/chaos; campaign_modes.py deletes world-group.properties and world-selection.properties before that start (unlink would fail if absent), and the plugin logs world-group.properties in derived=[...] only in those runtimes. output.log: ATD_LAUNCH_PROFILE=release (l.207/207/208/208/207/207) and ATD_GAMEPLAY_MODE=CERTIFICATION (l.221/221/222/222/221/221) precede the first ATD_STAGE2A_STATE (l.337/335/338/354/379/564); achievetodo.progression.freshConfig appears only inside the plugin-logged derived list. HARNESS_RC2C files rehashed: all match except campaign_cases.py, which now matches HARNESS_RC2D (the documented ignite_tnt change); evidenceHashes of c31-35 record campaign_cases.py c8add78f... = RC2C value."
+    }
+  },
+  "superseded": "No superseded rows in this group (MANIFEST.superseded=[]). The campaign36 CHAOS ignite_tnt supersession does not touch open_chest; it is justified in principle (fixture needs use_flint_and_steel, now declared in requires) and campaign36 is a fresh CHAOS install under HARNESS_RC2D with release launch.",
+  "findings": []
+}

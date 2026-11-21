@@ -1,0 +1,62 @@
+{
+  "group": "vehicle_mount_two",
+  "reviewer": "Q5",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "I computed the SHA-256 of every cited source file under repo/ and each one matches E1 (BukkitRestrictionResolver.java, BukkitGameplayRuntime.java, GameplayGate.java, NativeLandmarkActions.java). Guards opened: BukkitGameplayRuntime.mount() cancels EntityMountEvent through mountAbility (Boat -> GET_INTO_BOAT, RideableMinecart -> GET_INTO_MINECART, lines 140-141). NativeLandmarkActions line 271 checks passengerBoat/passengerMinecart against GET_INTO_BOAT/GET_INTO_MINECART. Thresholds: boat 44/42/44/44/44, minecart 149/112/186/623/149. The thresholds in E1 match the runtime toml files I grepped (campaign21 normal.toml, 22 easy, 23 hard, 24 chaos_20261116, 25 custom_vision). All 5 configs list a threshold."
+    },
+    "E2": {
+      "result": "FAIL",
+      "checked": "30 rows, all PASS. I read every excerpt and the raw campaign21 output.log 8640-8706. Allowed rows show the effect: boaty_mcboatface / all_aboard ADVANCEMENT_DONE, count +1, and the client vehicle set. Locked rows contain only two ATD_STAGE2A_STATE lines with the same count. There is no plugin denial line, no EntityMount cancel trace and no client interact packet, and the STATE ability field is null. The excerpt therefore cannot show the denial, and the locked verdict rests only on client-side observation (vehicle empty + overlay). The Fabric client mod can produce that by itself.",
+      "rowsRead": [
+        "campaign21 pass1 get_into_boat locked/allowed",
+        "campaign21 pass1 get_into_minecart locked/allowed",
+        "campaign21 modes boat+minecart creative/op/spectator",
+        "campaign21 reload boat+minecart",
+        "campaign22 thresholds-easy boat+minecart",
+        "campaign23 thresholds-hard boat+minecart",
+        "campaign24 thresholds-chaos boat+minecart",
+        "campaign25 thresholds-custom_vision boat+minecart"
+      ]
+    },
+    "E3": {
+      "result": "FAIL",
+      "checked": "MANIFEST.runtimes campaign21-25: each has onlineMode=true, the authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and the 'Glower4ek joined the game' line. launch.json onlineMode=true in all five. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION appear in every runtime's output.log before the first atd_marks case: c21 lines 207/221 (first case line 249), c22 207/221 (249), c23 207/221 (251), c24 206/220 (254), c25 208/222 (284). BUT see the major finding: c22/c23/c24 launch commands carry -Dachievetodo.progression.freshConfig=true, so the release-launch composition check fails for 3 of 5 runtimes."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "The modes rows exist for both abilities. Mounting has no off-hand variant, so no offhand rows are needed. Rows exist for all 5 configs for both abilities. There are no NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "MANIFEST.e5Reload: runtime campaign21, generationBefore 1, generationAfter 2. In excerpts.txt every reload-tagged row's ATD_STAGE2A_STATE lines show generation 2 and come from c21 output.log lines above 100000, after the pass1/modes/offhand lines (pass1 <10k, modes ~38-63k, offhand ~90k). Every reload verdict (PASS) equals the matching pass1 verdict (PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED and recorded==replayed. MANIFEST.runtimes[*].replay.reproducedAll=true (c21 1622 rows, c22-c25 396 each), and REPLAY.json reproducedAll=true in every runtime. Plugin sha256 da9360aa...cb540 is the same in all 5 perRuntime entries and in prelaunch, and matches the brief. clientMod sha256 5c473903...5a99 matches the brief. I recomputed the campaign-results.jsonl SHA-256 of all 5 runtimes (sha256sum) and each equals evidenceHashes.results: c21 dfd9c210..., c22 0a44a65f..., c23 cfbcdcaa..., c24 856f4297..., c25 45c3e020..."
+    }
+  },
+  "superseded": "MANIFEST.superseded is []. All rows come from campaign21-25 under HARNESS_RC2 (MANIFEST.harness). No superseded rows to assess.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "E3",
+      "evidence": "campaign22/receipts/launch.json, campaign23/receipts/launch.json, campaign24/receipts/launch.json (command) and campaign22/runtime_args.json (args[0])",
+      "description": "Release-launch check fails: campaign22 (easy), campaign23 (hard) and campaign24 (chaos) were launched with -Dachievetodo.progression.freshConfig=true in addition to the two -javaagent flags. The brief requires no -Dachievetodo.* flags. The value is not in the plugin's derived list (output.log line 207: derived=[bacap.directory, bridge.server, progression.world, progression.worldKey]), so the operator supplied it by hand. All thresholds-easy/hard/chaos rows therefore come from a launch that is not the certified operator launch. campaign21 and campaign25 are clean."
+    },
+    {
+      "severity": "major",
+      "criterion": "E2",
+      "evidence": "review-rc2/vehicle_mount_two/excerpts.txt all locked rows; campaign21/receipts/output.log lines 8647-8653 (boat locked) and 8814-8820 (minecart locked)",
+      "description": "No locked row's excerpt shows a server-side denial: no cancel/DENY line, no mount/interact packet, ability state null. The brief requires the excerpt to show the denial. The verdict can only be reproduced from client fields (client:vehicle=false, overlay), and the Fabric client mod could produce those without the plugin's EntityMountEvent/native guard ever running."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/vehicle_mount_two/rows.jsonl allowed rows",
+      "description": "Allowed rows report why.overlay=true (lock message seen on the client) even though the ability was unlocked and the mount succeeded. This is probably a stale overlay from the preceding locked case, but the oracle is ambiguous."
+    }
+  ]
+}

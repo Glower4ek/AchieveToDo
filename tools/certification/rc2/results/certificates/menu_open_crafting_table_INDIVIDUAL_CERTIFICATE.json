@@ -1,0 +1,61 @@
+{
+  "group": "menu_open_crafting_table",
+  "reviewer": "P8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (open_crafting_table). E1 lists 3 direct sites; recomputed SHA-256 of all 3 cited files, all equal E1: BukkitRestrictionResolver.java f5d7d99b..c84e (inactive legacy), GameplayMenuAbilities.java 813236fd..9280, NativeLandmarkActions.java eb87a78e..5599. Opened GameplayMenuAbilities.java:19 (InventoryType.WORKBENCH -> CRAFTING_TABLE -> OPEN_CRAFTING_TABLE) and NativeLandmarkActions.java:144 (CraftingTableBlock.useWithoutItem -> targetAndAbilityDenied(\"OPEN_CRAFTING_TABLE\")); both check this ability. Thresholds listed for normal 50, easy 46, hard 54, custom_vision 50, chaos@34 54, chaos@36 54; each re-read from the runtime config toml (all 6 toml hashes equal E1) and each row threshold equals its toml."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS. Read the excerpt of every row (all 15). Every locked/op/reload-locked row: ServerboundUseItemOnPacket at 8,-59,-3 reached the server, no INVENTORY_OPEN boundary and no ClientboundOpenScreenPacket, count unchanged (49->49, 45->45, 53->53, 53->53, 49->49), ability state LOCKED with the run's threshold, client overlay 'You can't use a crafting table'. Every allowed row: INVENTORY_OPEN_TYPE_WORKBENCH + ClientboundOpenScreenPacket, ability UNLOCKED. Verdicts reproduced from the lines.",
+      "rowsRead": [
+        "campaign31 pass1 open_crafting_table locked",
+        "campaign31 pass1 open_crafting_table allowed",
+        "campaign31 modes open_crafting_table creative",
+        "campaign31 modes open_crafting_table op",
+        "campaign31 modes open_crafting_table spectator",
+        "campaign31 reload open_crafting_table locked",
+        "campaign31 reload open_crafting_table allowed",
+        "campaign32 thresholds-easy open_crafting_table locked",
+        "campaign32 thresholds-easy open_crafting_table allowed",
+        "campaign33 thresholds-hard open_crafting_table locked",
+        "campaign33 thresholds-hard open_crafting_table allowed",
+        "campaign34 thresholds-chaos open_crafting_table locked",
+        "campaign34 thresholds-chaos open_crafting_table allowed",
+        "campaign35 thresholds-custom_vision open_crafting_table locked",
+        "campaign35 thresholds-custom_vision open_crafting_table allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Contributing runtimes campaign31-35: MANIFEST.runtimes onlineMode=true, 'UUID of player Glower4ek is 89c23030-...' line and 'Glower4ek joined the game' line for each; receipts/launch.json onlineMode=true for each."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator present (campaign31). Thresholds rows for normal (pass1), easy, hard, chaos, custom_vision present. No offhand rows: the case is an empty-hand block_menu (main='air'), excluded by campaign_final.OFFHAND (requires a held item); opening a crafting table has no separate off-hand route. No NA rows (no threshold 0)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows are campaign31 results lines 1234-1235, after pass1 (1-398), modes (399-995) and offhand (996-1231). MANIFEST.e5Reload.evidence.generationAfter=2; output.log 101750-101757 shows 'Reloading!' and PROGRESSION_CONFIG_READY generation=2. Both reload excerpts show \"generation\": 2 in all ATD_STAGE2A_STATE lines. Reload verdicts PASS/PASS = pass1 PASS/PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 15/15 REPRODUCED (recorded==replayed), keys match rows.jsonl. reproducedAll=true for campaign31-36 in MANIFEST and in each receipts/REPLAY.json. Recomputed SHA-256 of campaign-results.jsonl of all six runtimes; all equal evidenceHashes (e.g. campaign31 8eddce271ce3..d5de). Recomputed runtime/plugins/achievetodo.jar of all six runtimes = da9360aa..b540; client mod jar recomputed = 5c473903..5a99. REPLAY.json hashes also match."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "receipts/launch.json and runtime_args.json of campaign31-36: -javaagent:plugins/achievetodo.jar + trace-agent javaagent; only -D option is -Dachievetodo.progression.initialConfig=easy|hard|chaos|chaos on campaign32/33/34/36, none on 31 and 35. output.log: ATD_LAUNCH_PROFILE=release (line 207/208) and ATD_GAMEPLAY_MODE=CERTIFICATION (221/222) before the first case mark (334-563) in every runtime; achievetodo.progression.freshConfig and world-group.properties appear only in the plugin's logged derived=[...] list of the fresh-install runtimes 32/33/34/36. campaign_modes.py deletes world-group/world-selection.properties before those starts. HARNESS_RC2D.sha256 re-verified (all files OK); HARNESS_RC2C differs only in campaign_cases.py, which now equals the RC2D value (ignite_tnt requires change)."
+    }
+  },
+  "superseded": "No superseded rows in this group (MANIFEST.superseded=[]); all rows from campaign31-35 under HARNESS_RC2C. The campaign36 CHAOS supplement concerns only ignite_tnt; its rationale (fixture uses flint_and_steel, now declared in requires) is sound and does not touch this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/menu_open_crafting_table/excerpts.txt:6-7 (campaign31 pass1 locked)",
+      "description": "The plugin's native denial of the crafting table is not logged as an explicit decision: the Bukkit-level ATD_W2_INPUT_EVENT/ATD_EVENT lines say useBlock=ALLOW, cancelled=false even in locked rows. The denial is inferred from the absence of INVENTORY_OPEN/ClientboundOpenScreenPacket plus the client overlay; sufficient, but a reader could misread the ALLOW line as an allowed action."
+    }
+  ]
+}

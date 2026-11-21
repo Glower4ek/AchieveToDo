@@ -1,0 +1,63 @@
+{
+ "group": "action_use_ominous_bottle",
+ "reviewer": "P6",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "1 ability, DIRECT, 3 active direct sites. Recomputed SHA-256 = E1: NativeActionBindings.java 93faec2eff7b27b4..., NativeActionAgent.java 7467db9a75387aef..., NativeActionSpecs.java dc0fab2b346d866d.... Opened NativeActionBindings.java:16 (ABILITIES contains USE_OMINOUS_BOTTLE), NativeActionSpecs.java:33 (Spec USE_OMINOUS_BOTTLE on Consumable.canConsume HEAD, mode 'bottle', return false), NativeActionAgent.java:67-69 (mode bottle: exactItem OMINOUS_BOTTLE -> ability USE_OMINOUS_BOTTLE). Thresholds normal 359, easy 282, hard 436, custom_vision 359, chaos@c34 434, chaos@c36 458; re-parsed from the hashed configs and equal; row thresholds match."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "Read all 17 excerpts and re-derived from raw output.log. Locked/op/offhand_locked rows: repeated ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=use_ominous_bottle with traced Item.use -> Fail[], 'entity data' probe before and after shows only resistance (no bad_omen), inventory unchanged, count unchanged (358->358, 281, 435, 433, 358). Allowed rows: Item.use -> Success, bad_omen effect appears in the post probe, bottle slot -> EMPTY; count rises by 1 via vanilla advancements (e.g. c31 359->360: husbandry/root, consume_food) which is allowed-phase effect, not a leak. Creative: Success + bad_omen while LOCKED. Spectator: no use, no denial. offhand_allowed: bad_omen applied. All PASS verdicts reproducible.",
+   "rowsRead": [
+    "campaign31 pass1 use_ominous_bottle locked",
+    "campaign31 pass1 use_ominous_bottle allowed",
+    "campaign31 modes use_ominous_bottle creative",
+    "campaign31 modes use_ominous_bottle op",
+    "campaign31 modes use_ominous_bottle spectator",
+    "campaign31 offhand use_ominous_bottle offhand_locked",
+    "campaign31 offhand use_ominous_bottle offhand_allowed",
+    "campaign31 reload use_ominous_bottle locked",
+    "campaign31 reload use_ominous_bottle allowed",
+    "campaign32 thresholds-easy use_ominous_bottle locked",
+    "campaign32 thresholds-easy use_ominous_bottle allowed",
+    "campaign33 thresholds-hard use_ominous_bottle locked",
+    "campaign33 thresholds-hard use_ominous_bottle allowed",
+    "campaign34 thresholds-chaos use_ominous_bottle locked",
+    "campaign34 thresholds-chaos use_ominous_bottle allowed",
+    "campaign35 thresholds-custom_vision use_ominous_bottle locked",
+    "campaign35 thresholds-custom_vision use_ominous_bottle allowed"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign31-36 all onlineMode=true with authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and a 'Glower4ek joined the game' line. Re-grepped each raw receipts/output.log: UUID/join at lines c31 233/244, c32 233/244, c33 234/246, c34 234/250, c35 233/244, c36 233/246; runtime/server.properties online-mode=true in all six; launch.json onlineMode=true. Rows of this group come from campaign31-35 only."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes creative/op/spectator PASS; offhand_locked and offhand_allowed (c31) PASS - drinking has an off-hand route and it is covered. Threshold rows for normal, easy, hard, chaos, custom_vision present. No NA rows (no threshold is 0)."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "e5Reload campaign31, generationAfter 2; reload rows at output.log l106506-106554 / l106594-106618 (after reload l101754) show \"generation\": 2; verdicts PASS/PASS = pass1."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: 17 rows, all status=REPRODUCED, and recorded verdict/ability/phase equal rows.jsonl line by line (0 mismatches). MANIFEST replay reproducedAll=true for every runtime (c31 1629, c32-c35 398 each, c36 2; problems=[]); REPLAY.json SHA-256 recomputed = evidenceHashes for all six. Plugin: recomputed SHA-256 of campaignNN/runtime/plugins/achievetodo.jar for c31-c36 and of rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar = da9360aa...4cb540 everywhere. Client mod: recomputed 'E:/Кубы сборки/ATD Stage2B W4 Attempt01/minecraft/mods/achievetodo.jar' and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar = 5c473903...925a99. campaign-results.jsonl recomputed for ALL six runtimes and equal to evidenceHashes.results: c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771...."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "receipts/launch.json + runtime_args.json of c31-c36: command = java -Xms128M -Xmx2G [-D] -javaagent:plugins/achievetodo.jar -javaagent:<runtime>/observer-work/trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn -jar purpur-26.2-2620.jar --nogui. Only -D option anywhere is -Dachievetodo.progression.initialConfig=easy/hard/chaos/chaos for c32/c33/c34/c36; none for c31 (NORMAL) and c35 (Custom). output.log: 'ATD_LAUNCH_PROFILE=release' at c31 l207, c32 l207, c33 l208, c34 l208, c35 l207, c36 l207 and 'ATD_GAMEPLAY_MODE=CERTIFICATION; PRODUCT_GAMEPLAY_READY=false' at l221/221/222/222/221/221, both before the first case marker (objective atd_marks created at l249/249/252/260/284/253). Logged derived=[...] for c32/c33/c34/c36 contains world-group.properties and achievetodo.progression.freshConfig (written by the plugin => fresh install); c31/c35 derived lists contain neither (existing install). Harness hashes: campaign.py 5bbf36da and campaign_replay.py d881b760 match HARNESS_RC2C in every runtime; campaign_cases.py evidence hash is c8add78f (RC2C) for c31-c34 but d933206f (RC2D) for c35 - see minor finding."
+  }
+ },
+ "superseded": "MANIFEST.superseded is [] for this group; the only supersession (CHAOS ignite_tnt c34 -> c36) touches no ability of this group. c36 (fresh CHAOS, initialConfig=chaos, HARNESS_RC2D) contributes no rows here; its plugin/client hashes and launch profile were nevertheless checked. The replacement as described (fixture lights TNT with flint and steel, so requires=['use_flint_and_steel'] is needed for the masking rule) is reasonable; campaign_cases.py:145-149 now declares it.",
+ "findings": [
+  {
+   "severity": "minor",
+   "criterion": "ReleaseLaunch",
+   "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...) vs HARNESS_RC2C.sha256 (c8add78f...); campaign_cases.py mtime 2026-11-21 00:24:48 +05:00; campaign-final-rc2c.log:2866 (campaign35 up 19:24:12Z)",
+   "description": "campaign_cases.py was edited ~37 s after the campaign35 server started, so the harness hash recorded for campaign35 is the RC2D file, not RC2C. The orchestrator imports campaign_cases in-process at start (campaign_final.py:14, campaign.main called in-process), so the cases that ran were most likely the RC2C version, but this cannot be proven from the recorded hashes. The documented RC2D change concerns ignite_tnt only and does not touch this group's cases."
+  }
+ ]
+}

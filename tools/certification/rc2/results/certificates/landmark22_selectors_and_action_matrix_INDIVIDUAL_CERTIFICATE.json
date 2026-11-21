@@ -1,0 +1,68 @@
+{
+ "group": "landmark22_selectors_and_action_matrix",
+ "reviewer": "P6",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "22 abilities interact_inside_{village, shipwreck, ruined_portal, buried_treasure, igloo, ocean_ruin, desert_pyramid, mineshaft, swamp_hut, ancient_city, fortress, jungle_pyramid, bastion_remnant, pillager_outpost, monument, monster_room, trail_ruins, stronghold, mansion, desert_well, trial_chambers, end_city}, all mapping CURATED with the same enforcement site CanonicalLandmarkMembership.java:105-124 (the only file with an E1 hash: recomputed 268b068a721130e9... = E1) plus family resolver AbilityResolvers.findLandmarkAbility (active: BukkitExactLandmarkRuntime, CanonicalLandmarkMembership, LandmarkEngine; inactive: ExactLandmarkGate, RestrictionEngine). The resolver files carry no SHA-256 in E1; I pinned them instead: repo HEAD = E1.repoHead 5c086aaa, git status clean for src/main/java, and git hash-object = HEAD blob for all of them (minor finding). Opened CanonicalLandmarkMembership.java:105-124 (evaluateDetailed: matched landmark record -> findLandmarkAbility(type) -> LOCKED/UNLOCKED from the player's ability state, BYPASS short-circuit) and AbilityResolvers.java:29-54/92-97 + AbilityType.java:32-142 (each INTERACT_INSIDE_* bound 1:1 to its LandmarkType), so the shared guard checks the specific ability per landmark. Every ability lists thresholds for normal, easy, hard, custom_vision, chaos@c34, chaos@c36; all re-parsed from the six hashed config files and equal; every row threshold equals its runtime config."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "One case per ability ('chest at structure start', or 'feature found in fresh chunks' for monster_room and desert_well): a stone room with a chest built inside the landmark box the product admitted; I checked in all 330 rows that fixture.chest lies inside fixture.box (no synthetic boxes). I raw-verified ALL 330 rows from output.log (not only samples): every locked/op row (154) has the use packet reaching the server, no INVENTORY_OPEN boundary, no CHEST_OPENED stat, count unchanged, and a landmark-specific client overlay (\"You can't interact with objects within a <landmark>\", 7 rows per ability; never the open_chest message); every allowed row (110) shows INVENTORY_OPEN_TYPE_CHEST, menu -> CHEST, CHEST_OPENED +1 and a container screen; creative opens while locked; spectator rows have no fresh overlay and no count change. requires open_chest (c31 42, c32 40, c33 40, c35 42) and vision are below the locked score in all non-masked rows, so the denial is attributable to the landmark lock. The 4 non-PASS rows (c34 CHAOS locked: shipwreck score 44, desert_pyramid 19, trail_ruins 35, mansion 1; open_chest threshold 56) are correctly PASS_MASKED_BY_DEPENDENCY; each of these abilities has 6 other locked/op PASS rows (c31 pass1/op/reload, c32, c33, c35). campaign-results.jsonl of c31-c35 contain exactly these 330 group rows (no hidden INVALID/rerun rows). Locked rows log only the Bukkit ALLOW decision; the native denial is implicit (minor finding, shared with other block-use groups).",
+   "rowsRead": [
+    "all 330 rows raw-verified by script against output.log; manually read:",
+    "campaign31 pass1 interact_inside_village locked",
+    "campaign31 pass1 interact_inside_village allowed",
+    "campaign34 thresholds-chaos interact_inside_shipwreck locked (MASKED)",
+    "campaign34 thresholds-chaos interact_inside_desert_pyramid locked (MASKED)",
+    "campaign34 thresholds-chaos interact_inside_trail_ruins locked (MASKED)",
+    "campaign34 thresholds-chaos interact_inside_mansion locked (MASKED)",
+    "campaign32/33/34/35 thresholds-* locked+allowed for all 22 abilities",
+    "campaign31 modes creative/op/spectator for all 22 abilities",
+    "campaign31 reload locked+allowed for all 22 abilities"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign31-36 all onlineMode=true with authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and a 'Glower4ek joined the game' line. Re-grepped each raw receipts/output.log: UUID/join at lines c31 233/244, c32 233/244, c33 234/246, c34 234/250, c35 233/244, c36 233/246; runtime/server.properties online-mode=true in all six; launch.json onlineMode=true. Rows of this group come from campaign31-35 only."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "Per ability 15 rows: pass1 locked/allowed, modes creative/op/spectator, reload locked/allowed, thresholds-easy/hard/chaos/custom_vision locked/allowed (22 x 15 = 330). No offhand rows: the action is opening a chest with an empty hand (block use), which has no off-hand variant. No NA rows (no threshold is 0 in any config)."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "e5Reload campaign31, generationAfter 2; all 44 reload rows lie after the reload (first at output.log l128001 > reload l101754; reload pass started 14:55:40Z after pass1/modes/offhand), every reload excerpt shows \"generation\": 2 (also confirmed in the raw state lines), and every reload verdict equals the pass1 verdict (PASS)."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: 330 rows, all status=REPRODUCED, and recorded verdict/ability/phase equal rows.jsonl line by line (0 mismatches). MANIFEST replay reproducedAll=true for every runtime (c31 1629, c32-c35 398 each, c36 2; problems=[]); REPLAY.json SHA-256 recomputed = evidenceHashes for all six. Plugin: recomputed SHA-256 of campaignNN/runtime/plugins/achievetodo.jar for c31-c36 and of rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar = da9360aa...4cb540 everywhere. Client mod: recomputed 'E:/Кубы сборки/ATD Stage2B W4 Attempt01/minecraft/mods/achievetodo.jar' and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar = 5c473903...925a99. campaign-results.jsonl recomputed for ALL six runtimes and equal to evidenceHashes.results: c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771...."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "receipts/launch.json + runtime_args.json of c31-c36: command = java -Xms128M -Xmx2G [-D] -javaagent:plugins/achievetodo.jar -javaagent:<runtime>/observer-work/trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn -jar purpur-26.2-2620.jar --nogui. Only -D option anywhere is -Dachievetodo.progression.initialConfig=easy/hard/chaos/chaos for c32/c33/c34/c36; none for c31 (NORMAL) and c35 (Custom). output.log: 'ATD_LAUNCH_PROFILE=release' at c31 l207, c32 l207, c33 l208, c34 l208, c35 l207, c36 l207 and 'ATD_GAMEPLAY_MODE=CERTIFICATION; PRODUCT_GAMEPLAY_READY=false' at l221/221/222/222/221/221, both before the first case marker (objective atd_marks created at l249/249/252/260/284/253). Logged derived=[...] for c32/c33/c34/c36 contains world-group.properties and achievetodo.progression.freshConfig (written by the plugin => fresh install); c31/c35 derived lists contain neither (existing install). Harness hashes: campaign.py 5bbf36da and campaign_replay.py d881b760 match HARNESS_RC2C in every runtime; campaign_cases.py evidence hash is c8add78f (RC2C) for c31-c34 but d933206f (RC2D) for c35 - see minor finding."
+  }
+ },
+ "superseded": "MANIFEST.superseded is [] for this group; the only supersession (CHAOS ignite_tnt c34 -> c36) touches no ability of this group. c36 (fresh CHAOS, initialConfig=chaos, HARNESS_RC2D) contributes no rows here; its plugin/client hashes and launch profile were nevertheless checked. The replacement as described (fixture lights TNT with flint and steel, so requires=['use_flint_and_steel'] is needed for the masking rule) is reasonable; campaign_cases.py:145-149 now declares it.",
+ "findings": [
+  {
+   "severity": "minor",
+   "criterion": "E1",
+   "evidence": "review-rc2c/landmark22_selectors_and_action_matrix/E1.json familyResolverSites (no sha256 for BukkitExactLandmarkRuntime.java, LandmarkEngine.java, ExactLandmarkGate.java, RestrictionEngine.java)",
+   "description": "The active family resolver files that carry the landmark decision are cited without a SHA-256, so E1 alone does not pin them. I verified them via git (HEAD = repoHead 5c086aaa, clean worktree, hash-object = HEAD blob)."
+  },
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "campaign31/receipts/output.log 26701-26711 (pass1 village locked: ATD_W2_INPUT_EVENT useBlock=ALLOW)",
+   "description": "Locked rows contain no explicit server-side landmark denial line; the lock is shown by the absent chest open, unchanged stat/count and the landmark-specific client overlay. Sufficient but indirect."
+  },
+  {
+   "severity": "minor",
+   "criterion": "ReleaseLaunch",
+   "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...) vs HARNESS_RC2C.sha256 (c8add78f...); campaign_cases.py mtime 2026-11-21 00:24:48 +05:00; campaign-final-rc2c.log:2866 (campaign35 up 19:24:12Z)",
+   "description": "campaign_cases.py was edited ~37 s after the campaign35 server started, so the harness hash recorded for campaign35 is the RC2D file, not RC2C. The orchestrator imports campaign_cases in-process at start (campaign_final.py:14, campaign.main called in-process), so the cases that ran were most likely the RC2C version, but this cannot be proven from the recorded hashes. The documented RC2D change concerns ignite_tnt only and does not touch this group's cases."
+  }
+ ]
+}

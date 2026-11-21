@@ -1,0 +1,54 @@
+{
+  "group": "menu_open_barrel",
+  "reviewer": "P1",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1 open_barrel: mapping DIRECT, family block, 3 direct sites. SHA-256 recomputed (python hashlib) for every cited file and equal to E1: BukkitRestrictionResolver.java f5d7d99b... (inactive legacy, correctly marked), gameplay/BukkitExpandedGameplayListener.java f10bdc23..., gameplay/GameplayGate.java 4ddeec26.... Opened guard sites: BukkitExpandedGameplayListener.java:71 'if (holder instanceof Barrel) return AbilityType.OPEN_BARREL;' inside containerAbility(), used by open(InventoryOpenEvent) at :77-81 which cancels the event when locked(p, ability); GameplayGate.java:17 lists OPEN_BARREL in IMPLEMENTED and allows() checks state.getAbilityState(ability).isUnlocked() with the creative/spectator bypass. Thresholds present for normal 59, easy 52, hard 66, custom_vision 59, chaos@34 577, chaos@36 143; all six config TOML hashes in E1.configs recomputed and equal, and the values re-parsed from the TOML [abilities] tables equal E1. Every row threshold equals the E1 value of its runtime's config."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "All 15 rows are PASS; I read all 15 excerpts. Locked rows (31 pass1 58/59, 31 reload 58/59 gen 2, 32 51/52, 33 65/66, 34 576/577, 35 58/59) each show ATD_STAGE2A_STATE OPEN_BARREL kind=LOCKED pre and post, unchanged count, RIGHT_CLICK_BLOCK on BARREL reaching the server (PacketWitness UseItemOn MAIN_HAND at 8,-59,-3), 'ATD_BOUNDARY INVENTORY_OPEN_MONITOR_CANCELLED true', no ClientboundOpenScreenPacket and no OPEN_BARREL stat; client overlay 'You can't open a barrel. Advancements left to unlock: 1'. Allowed rows show kind=UNLOCKED, MONITOR_CANCELLED false, ClientboundOpenScreenPacket + barrel sound, stat OPEN_BARREL +1, client screen opened. The denial is at InventoryOpenEvent (useBlock=ALLOW in the input event is expected for this guard and consistent with the source). Verdicts reproduced by me from the lines.",
+      "rowsRead": [
+        "campaign31 pass1 open_barrel locked",
+        "campaign31 pass1 open_barrel allowed",
+        "campaign31 modes open_barrel creative",
+        "campaign31 modes open_barrel op",
+        "campaign31 modes open_barrel spectator",
+        "campaign31 reload open_barrel locked",
+        "campaign31 reload open_barrel allowed",
+        "campaign32 thresholds-easy open_barrel locked",
+        "campaign32 thresholds-easy open_barrel allowed",
+        "campaign33 thresholds-hard open_barrel locked",
+        "campaign33 thresholds-hard open_barrel allowed",
+        "campaign34 thresholds-chaos open_barrel locked",
+        "campaign34 thresholds-chaos open_barrel allowed",
+        "campaign35 thresholds-custom_vision open_barrel locked",
+        "campaign35 thresholds-custom_vision open_barrel allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign31-36: onlineMode=true in all six; authenticated UUID lines (31 '[16:39:01] UUID of player Glower4ek is 89c23030-...', 32 21:06:42, 33 22:12:38, 34 23:18:41, 35 00:24:28, 36 01:30:37) and join lines (16:39:02, 21:06:43, 22:12:39, 23:18:42, 00:24:30, 01:30:38) present; receipts/launch.json onlineMode=true for all six. Every row of the group carries pre/tick1/post client state from the real Fabric client and ATD_PACKET_IN lines from the server."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows exist (campaign31): creative PASS (screen opened, bypass, count 58), op PASS (op=true SURVIVAL, still denied: MONITOR_CANCELLED true, overlay), spectator PASS (vanilla spectator view, no overlay, no leak). Threshold rows for normal, easy, hard, chaos (campaign34) and custom_vision exist with locked+allowed. No NA rows. No offhand rows: the case uses an empty main hand (campaign_final.OFFHAND only selects cases with a main-hand item and click_use/key.use); opening a barrel has no distinct off-hand route because the main-hand empty-hand interaction already consumes the click, so absence is acceptable."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "campaign31/receipts/campaign-results.jsonl order: pass1 rows 0-397, modes 398-994, offhand 995-1230, reload 1231-1628, so reload follows pass1/modes/offhand. MANIFEST.e5Reload generationBefore 1, generationAfter 2 (2026-11-20T14:55:20Z); output.log:101750-101756 shows 'Reloading!' then 'PROGRESSION_CONFIG_READY generation=2'. Both reload excerpts show \"generation\": 2 in pre and post ATD_STAGE2A_STATE. reload locked PASS = pass1 locked PASS; reload allowed PASS = pass1 allowed PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 15/15 REPRODUCED, recorded==replayed for every row, and the (campaign,tag,ability,phase,verdict) multiset equals rows.jsonl exactly. Runtime replays in MANIFEST: campaign31 REPRODUCED 1629, 32/33/34/35 REPRODUCED 398 each, 36 REPRODUCED 2, reproducedAll=true, problems=[] everywhere. Plugin SHA-256 recomputed with sha256sum: campaign31..36/runtime/plugins/achievetodo.jar and rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar all = da9360aa...4cb540 (brief value); launch.json pluginSHA256 identical. Client mod 'E:\\Кубы сборки\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar' recomputed (Get-FileHash) = 5c473903...925a99 (brief value), also equal to rc2-artifacts/achievetodo-mc26.2+0.2.1.jar. campaign-results.jsonl recomputed for ALL six runtimes and equal to evidenceHashes.results: 31 8eddce27..., 32 c4936a8d..., 33 23a53c62..., 34 a7e80ad6..., 35 400573a8..., 36 2c2ce771.... trace-agent.jar in every observer-work = 706b85d5... (matches HARNESS_RC2C/RC2D)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json + receipts/launch.json of campaign31-36: command = java -Xms128M -Xmx2G [-D] -javaagent:plugins/achievetodo.jar -javaagent:<observer-work>/trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn -jar purpur-26.2-2620.jar --nogui. No -Dachievetodo.* in 31 (NORMAL) and 35 (Custom); only -Dachievetodo.progression.initialConfig=easy|hard|chaos|chaos in 32/33/34/36. output.log: 'ATD_LAUNCH_PROFILE=release' at line 207 (31,32,35,36) / 208 (33,34) and 'ATD_GAMEPLAY_MODE=CERTIFICATION' at 221/222, both before the first case (atd_marks objective created at lines 249-284). derived=[...] of 32/33/34/36 contains world-group.properties and achievetodo.progression.freshConfig (plugin-derived, not passed by hand); 31/35 derived lists have neither (existing install). Fresh install corroborated: world-selection.properties and world-group.properties of 32/33/34/36 carry plugin-written timestamps equal to the launch second (21:06:21, 22:12:10, 23:18:22, 01:30:14); 31/35 files are the pre-existing hand-made install (no timestamp header). Group rows all come from campaign31-35 (HARNESS_RC2C, launch.json identical harness run_server_v3.py eb2508c3...). Observation (not a finding): plugins/ of every runtime also holds observer plugins packet-witness.jar, w4-gameplay-evidence-probe.jar, w4-snap.jar (launch.json observerSHA256 077a0d56... is the probe jar); they are instrumentation, not -D options, and identical across runtimes."
+    }
+  },
+  "superseded": "MANIFEST.superseded=[] for this group; no row of the group comes from campaign36. The only supersession in the campaign (CHAOS ignite_tnt campaign34 -> campaign36, requires=['use_flint_and_steel'] because the fixture lights TNT with flint and steel) does not touch this group; it is justified in principle since a locked use_flint_and_steel would mask the ignite_tnt guard, and campaign36 is a fresh CHAOS install under HARNESS_RC2D whose only harness change is campaign_cases.py.",
+  "findings": []
+}

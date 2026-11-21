@@ -1,0 +1,18 @@
+{
+  "group": "menu_open_ender_chest",
+  "reviewer": "Q7",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {"result": "PASS", "checked": "E1.json open_ender_chest: direct active sites NativeEquipmentAbilities.java:39, NativeTransactionAgent.java:80, NativeTransactionBindings.java:42 (+ inactive BukkitRestrictionResolver). Recomputed SHA-256 of all 4 hashed files: 4/4 match E1. Opened NativeTransactionAgent.java:76-81: ender(...) under exactPrototype (a release default in ReleaseLaunchDefaults.SWITCHES) calls targetAndAbilityDenied(..., \"OPEN_ENDER_CHEST\"). Thresholds: normal 387, easy 306, hard 468, chaos_20261116 236, custom_vision 387."},
+    "E2": {"result": "PASS", "checked": "15 rows all PASS; read all 15 excerpts. Locked rows c21/c22/c23/c24/c25 (386/305/467/235/386): count unchanged in both STATE lines, no ATD_BOUNDARY INVENTORY_OPEN and no ClientboundOpenScreenPacket; rows.jsonl client shows screen none and overlay \"You can't use an ender chest. Advancements left to unlock: 1\". Allowed rows: INVENTORY_OPEN_TYPE_ENDER_CHEST, MONITOR_CANCELLED false, OpenScreenPacket, client ContainerScreen.", "rowsRead": ["campaign21 pass1 open_ender_chest locked/allowed", "campaign21 reload open_ender_chest locked/allowed", "campaign21 modes creative/op/spectator", "campaign22 thresholds-easy locked/allowed", "campaign23 thresholds-hard locked/allowed", "campaign24 thresholds-chaos locked/allowed", "campaign25 thresholds-custom_vision locked/allowed"]},
+    "E3": {"result": "PASS", "checked": "campaign21-25 onlineMode=true, UUID line for Glower4ek 89c23030-..., join line; UUID line present in each output.log; server.properties online-mode=true."},
+    "E4": {"result": "PASS", "checked": "modes rows: creative opens (bypass), op denied with overlay, spectator denied (useBlock=DENY). No offhand rows: block interaction route, no off-hand variant. Thresholds rows for easy/hard/chaos/custom_vision plus normal. No NA rows."},
+    "E5": {"result": "PASS", "checked": "2 reload rows from campaign21 (reload block is results lines 1227-1622, after pass1/modes/offhand); generationAfter=2; both excerpts show generation 2; verdicts PASS = pass1 PASS."},
+    "E6": {"result": "PASS", "checked": "replay 15/15 REPRODUCED; REPLAY.json reproducedAll=true in campaign21-25; plugin sha da9360aa... in all runtimes; client 5c473903...; recomputed campaign-results.jsonl SHA-256 of all 5 runtimes equal to evidenceHashes."}
+  },
+  "superseded": "None; all rows from campaign21-25.",
+  "findings": [
+    {"severity": "major", "criterion": "Release launch", "evidence": "campaign22/runtime_args.json, campaign23/runtime_args.json, campaign24/runtime_args.json: \"-Dachievetodo.progression.freshConfig=true\"", "description": "The easy, hard and chaos runtimes that produced this group's thresholds rows were launched with an explicit -Dachievetodo.* flag, contrary to the certified operator launch (only -javaagent flags). ATD_LAUNCH_PROFILE=release / ATD_GAMEPLAY_MODE=CERTIFICATION are logged before the first case in all 5 runtimes."},
+    {"severity": "minor", "criterion": "E2", "evidence": "review-rc2/menu_open_ender_chest/excerpts.txt 'campaign21 pass1 open_ender_chest locked' (output.log 1353-1363)", "description": "Locked excerpts carry no positive server-side denial line (ATD_EVENT cancelled=false blockResult=ALLOW); denial is inferred from the missing InventoryOpen/OpenScreen and the client overlay in rows.jsonl."}
+  ]
+}

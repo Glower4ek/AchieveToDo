@@ -1,0 +1,61 @@
+{
+  "group": "complex_use_brush",
+  "reviewer": "P7",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "Ability use_brush (DIRECT). Recomputed SHA-256 of all 4 cited files: NativeComplexBindings.java 0890c634..., NativeComplexAgent.java 09ae3f17..., NativeComplexSpecs.java 7423b3d7..., NativeLandmarkOperations.java 778a6186... - 4/4 equal E1. Opened: NativeComplexBindings.java:14 USE_BRUSH in ABILITIES; NativeComplexSpecs.java:36-38 Specs brush-start (BrushItem.useOn before startUsingItem), brush-tick (BrushItem.onUseTick) and brush-armadillo; NativeComplexAgent.java:137/142 brush-tick -> USE_BRUSH, releaseUsingItem when denied; :173 armadillo route checks !denied(user, USE_BRUSH); NativeLandmarkOperations.java:85 releaseBrush and :205 brushArmadillo both check \"USE_BRUSH\". Thresholds: normal 264, easy 204, hard 324, custom_vision 264, chaos c34 34, c36 0 (c36 ran only ignite_tnt); 6 config hashes = E1."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS; read 9 excerpts (searched the 500 KB excerpts.txt per block with duplicate-line folding) and the client states of all rows. Every pre state hits 'block 8, -59, -3 ... suspicious_sand'. Locked rows (c31 pass1/reload/offhand, c32, c33, c34, c35): repeated server-thread 'ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=use_brush' while the client keeps sending use packets, 'ATD_CRITERION_SUPPRESSED ITEM_USED_ON_BLOCK' (no criterion leak), probe 'execute if block ... suspicious_sand' = 'Test passed' before and after, count unchanged (263, 203, 323, 33, 263), overlay 'You can't use a brush. Advancements left to unlock: 1', client never left in usingItem. Allowed rows: probe flips to 'Test failed' (sand brushed away), count unchanged. op denied with the same lines; creative brushes (bypass); spectator: Bukkit cancels (useBlock=DENY), no overlay, no effect. Offhand: OFF_HAND packets reach the server, offhand_locked denied, offhand_allowed brushes. Every package row equals its unique source line in campaign-results.jsonl.",
+      "rowsRead": [
+        "campaign31 pass1 use_brush locked",
+        "campaign31 pass1 use_brush allowed",
+        "campaign31 modes use_brush op",
+        "campaign31 modes use_brush spectator",
+        "campaign31 offhand use_brush offhand_locked",
+        "campaign31 reload use_brush locked",
+        "campaign32 thresholds-easy use_brush locked",
+        "campaign34 thresholds-chaos use_brush locked",
+        "campaign35 thresholds-custom_vision use_brush locked"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Contributing runtimes campaign31-35: MANIFEST onlineMode=true, UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present in each; I grepped each output.log and found both lines (c31 l.233/244, c32 l.233/244, c33 l.234/246, c34 l.234/250, c35 l.233/244); server.properties online-mode=true and launch.json onlineMode=true in each."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator present; offhand_locked and offhand_allowed present (PASS). Threshold rows for normal, easy, hard, chaos (c34, threshold 34), custom_vision. No NA_* rows (the c36 threshold 0 is not used by any row of this group)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows from campaign31 (reload block after pass1/modes/offhand). MANIFEST.e5Reload.generationAfter=2; all 4 STATE lines of the reload excerpts show generation 2. Reload locked/allowed PASS = pass1 PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 17/17 REPRODUCED; recorded verdicts equal rows. MANIFEST replay reproducedAll=true for campaign31-36; REPLAY.json of each runtime re-read: reproducedAll=true, problems=[]. Plugin SHA-256 recomputed in all 6 runtimes/plugins/achievetodo.jar = da9360aa...cb540 = brief; rc2-artifacts jar also equal. Client mod recomputed 5c473903...5a99 = brief. Recomputed campaign-results.jsonl SHA-256 of all six runtimes (c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771...) = evidenceHashes; REPLAY.json hashes also equal."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json/runtime_args.json: every runtime command holds -javaagent:plugins/achievetodo.jar plus the trace-agent javaagent. c31 and c35: no -Dachievetodo.* option. c32/c33/c34/c36: only -Dachievetodo.progression.initialConfig=easy/hard/chaos/chaos; campaign_modes.py deletes world-group.properties and world-selection.properties before that start (unlink would fail if absent), and the plugin logs world-group.properties in derived=[...] only in those runtimes. output.log: ATD_LAUNCH_PROFILE=release (l.207/207/208/208/207/207) and ATD_GAMEPLAY_MODE=CERTIFICATION (l.221/221/222/222/221/221) precede the first ATD_STAGE2A_STATE (l.337/335/338/354/379/564); achievetodo.progression.freshConfig appears only inside the plugin-logged derived list. HARNESS_RC2C files rehashed: all match except campaign_cases.py, which now matches HARNESS_RC2D (the documented ignite_tnt change); evidenceHashes of c31-35 record campaign_cases.py c8add78f... = RC2C value."
+    }
+  },
+  "superseded": "No superseded rows in this group (MANIFEST.superseded=[]). The campaign36 CHAOS ignite_tnt supersession does not touch use_brush; it is justified in principle (fixture needs use_flint_and_steel, now declared in requires) and campaign36 is a fresh CHAOS install under HARNESS_RC2D with release launch.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "E1.json directSites NativeComplexAgent.java:173 and NativeLandmarkOperations.java:205 (armadillo brushOffScute); campaign_cases.py:152 defines only the suspicious_sand case",
+      "description": "The brush has a second guarded route (brushing scute off an armadillo) that is mapped in E1 but has no runtime case or row; only the suspicious-sand route is proven at runtime."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/complex_use_brush/excerpts.txt, every ATD_STAGE2A_STATE line ('\"ability\": {\"USE_BRUSH\": null}')",
+      "description": "The state dump does not carry USE_BRUSH, so the lock state shows as null in the excerpts; the lock is still evidenced by the use_brush denial-intent lines, the unchanged probe and count."
+    }
+  ]
+}

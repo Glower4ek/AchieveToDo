@@ -1,0 +1,67 @@
+{
+ "group": "movement_jump",
+ "reviewer": "P6",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "1 ability (jump), mapping DIRECT, 2 active direct sites. Recomputed SHA-256 of both cited files = E1: NativeMovementAgent.java a27a0e8b190ed2bf..., NativeMovementBindings.java 32b1804f0afb0861.... Opened NativeMovementAgent.java:71-75 (jump(): !isInWater && locked(actor,\"JUMP\")) and :146-150 (ascent(): rejects the ascent packet with SILENT:JUMP then reports JUMP), and NativeMovementBindings.java:13 (ABILITIES contains JUMP; guard lambda exempts CREATIVE/SPECTATOR and checks GameplayGate). The listed family resolver (BukkitRestrictionResolver) is marked inactive, consistent with CERTIFICATION mode. Thresholds normal 4, easy 0, hard 8, custom_vision 4, chaos@c34 8, chaos@c36 8; I re-parsed the [abilities] tables of the six config files named in E1.configs (their SHA-256 match E1) and every value matches; every row's threshold matches its runtime's config."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "Read all 14 non-NA excerpts and re-derived each from the raw output.log segment (p6_raw: first/last ATD_STAGE2A_STATE incl. stats). Locked rows (c31 pass1, c31 reload, c33 hard, c34 chaos, c31 op): ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=jump inside the act window, count unchanged (3->3, 7->7), raw stat JUMP delta 0, client y stays -60.000, overlay \"You can't jump\". Allowed rows (c31 pass1/reload, c32 easy, c33, c34, c35): raw JUMP stat +1, client y rises to -58.823, no overlay, count unchanged. Creative: JUMP +1 while LOCKED (bypass, PASS). Spectator: no overlay, no denial line (PASS). The only non-PASS verdict, c35 custom_vision locked PASS_MASKED_BY_DEPENDENCY, is correct: requires vision=5 > score 3, excerpt shows repeated DENIAL_INTENT ability=vision plus one ability=jump; the lock is proven by 4 other locked PASS rows in c31/c33/c34. Note: excerpts.txt compacts the state lines and drops stats, so the allowed-row effect (JUMP +1) is only visible in the raw log (minor finding).",
+   "rowsRead": [
+    "campaign31 pass1 jump locked",
+    "campaign31 pass1 jump allowed",
+    "campaign31 modes jump creative",
+    "campaign31 modes jump op",
+    "campaign31 modes jump spectator",
+    "campaign31 reload jump locked",
+    "campaign31 reload jump allowed",
+    "campaign32 thresholds-easy jump locked (NA)",
+    "campaign32 thresholds-easy jump allowed",
+    "campaign33 thresholds-hard jump locked",
+    "campaign33 thresholds-hard jump allowed",
+    "campaign34 thresholds-chaos jump locked",
+    "campaign34 thresholds-chaos jump allowed",
+    "campaign35 thresholds-custom_vision jump locked",
+    "campaign35 thresholds-custom_vision jump allowed"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign31-36 all onlineMode=true with authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and a 'Glower4ek joined the game' line. Re-grepped each raw receipts/output.log: UUID/join at lines c31 233/244, c32 233/244, c33 234/246, c34 234/250, c35 233/244, c36 233/246; runtime/server.properties online-mode=true in all six; launch.json onlineMode=true. Rows of this group come from campaign31-35 only."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes rows: creative PASS, op PASS (denied), spectator PASS. No offhand rows: jump is a movement input with no hand/off-hand route, so none are expected. Threshold rows present for normal (c31 pass1), easy (c32), hard (c33), chaos (c34), custom_vision (c35). The single NA row (c32 easy locked, NA_NO_LOCKED_STATE) follows from easy.toml jump = 0 (re-parsed). "
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "MANIFEST.e5Reload: runtime campaign31, generationBefore 1, generationAfter 2. campaign-final-rc2c.log: pass1 11:39Z, modes 12:44Z, offhand 14:24Z, 'reload done: generation 2' 14:55:20Z, reload pass 14:55:40Z; output.log l101754 SOURCE_RELOAD_SUSPENDED, configGeneration=2 from l101792. Reload rows at l104587-104592 (locked) and l104628-104632 (allowed), both with ATD_STAGE2A_STATE \"generation\": 2 in excerpts.txt and raw log; verdicts PASS/PASS = pass1 PASS/PASS."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: 15 rows, all status=REPRODUCED, and recorded verdict/ability/phase equal rows.jsonl line by line (0 mismatches). MANIFEST replay reproducedAll=true for every runtime (c31 1629, c32-c35 398 each, c36 2; problems=[]); REPLAY.json SHA-256 recomputed = evidenceHashes for all six. Plugin: recomputed SHA-256 of campaignNN/runtime/plugins/achievetodo.jar for c31-c36 and of rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar = da9360aa...4cb540 everywhere. Client mod: recomputed 'E:/Кубы сборки/ATD Stage2B W4 Attempt01/minecraft/mods/achievetodo.jar' and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar = 5c473903...925a99. campaign-results.jsonl recomputed for ALL six runtimes and equal to evidenceHashes.results: c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771...."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "receipts/launch.json + runtime_args.json of c31-c36: command = java -Xms128M -Xmx2G [-D] -javaagent:plugins/achievetodo.jar -javaagent:<runtime>/observer-work/trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn -jar purpur-26.2-2620.jar --nogui. Only -D option anywhere is -Dachievetodo.progression.initialConfig=easy/hard/chaos/chaos for c32/c33/c34/c36; none for c31 (NORMAL) and c35 (Custom). output.log: 'ATD_LAUNCH_PROFILE=release' at c31 l207, c32 l207, c33 l208, c34 l208, c35 l207, c36 l207 and 'ATD_GAMEPLAY_MODE=CERTIFICATION; PRODUCT_GAMEPLAY_READY=false' at l221/221/222/222/221/221, both before the first case marker (objective atd_marks created at l249/249/252/260/284/253). Logged derived=[...] for c32/c33/c34/c36 contains world-group.properties and achievetodo.progression.freshConfig (written by the plugin => fresh install); c31/c35 derived lists contain neither (existing install). Harness hashes: campaign.py 5bbf36da and campaign_replay.py d881b760 match HARNESS_RC2C in every runtime; campaign_cases.py evidence hash is c8add78f (RC2C) for c31-c34 but d933206f (RC2D) for c35 - see minor finding."
+  }
+ },
+ "superseded": "MANIFEST.superseded is [] for this group; the only supersession (CHAOS ignite_tnt c34 -> c36) touches no ability of this group. c36 (fresh CHAOS, initialConfig=chaos, HARNESS_RC2D) contributes no rows here; its plugin/client hashes and launch profile were nevertheless checked. The replacement as described (fixture lights TNT with flint and steel, so requires=['use_flint_and_steel'] is needed for the masking rule) is reasonable; campaign_cases.py:145-149 now declares it.",
+ "findings": [
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "review-rc2c/movement_jump/excerpts.txt (state lines '[compacted]', no stats); raw campaign31/receipts/output.log:3170 vs :3173 (JUMP 0 -> 1)",
+   "description": "The allowed-row effect oracle (stat JUMP) is not visible in excerpts.txt because the compacted ATD_STAGE2A_STATE lines omit stats; a reader of the package alone cannot confirm the allowed effect. Confirmed from the raw log for all 7 allowed/creative rows."
+  },
+  {
+   "severity": "minor",
+   "criterion": "ReleaseLaunch",
+   "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...) vs HARNESS_RC2C.sha256 (c8add78f...); campaign_cases.py mtime 2026-11-21 00:24:48 +05:00; campaign-final-rc2c.log:2866 (campaign35 up 19:24:12Z)",
+   "description": "campaign_cases.py was edited ~37 s after the campaign35 server started, so the harness hash recorded for campaign35 is the RC2D file, not RC2C. The orchestrator imports campaign_cases in-process at start (campaign_final.py:14, campaign.main called in-process), so the cases that ran were most likely the RC2C version, but this cannot be proven from the recorded hashes. The documented RC2D change concerns ignite_tnt only and does not touch this group's cases."
+  }
+ ]
+}

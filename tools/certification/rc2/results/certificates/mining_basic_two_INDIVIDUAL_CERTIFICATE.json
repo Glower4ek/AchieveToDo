@@ -1,0 +1,63 @@
+{
+  "group": "mining_basic_two",
+  "reviewer": "P7",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "Abilities break_blocks and break_blocks_in_negative_y (DIRECT). Recomputed SHA-256 of all 4 cited files: BlockBreakAdapter.java b0be39c0..., GameplayDenialEffects.java 29c95d95..., GameplayGate.java 4ddeec26..., NativeToolBindings.java e6b57972... - 4/4 equal E1. Opened: GameplayGate.java:14-15 both in IMPLEMENTED, :42-43 allowsBreak checks BREAK_BLOCKS and, for y<0, BREAK_BLOCKS_IN_NEGATIVE_Y; GameplayDenialEffects.java:39 same pair with overlay report; NativeToolBindings.java:35 'BASIC' callback accepts exactly these two abilities and returns !GameplayGate.allows(...). I also opened the uncited call site NativeToolAgent.java:113-115 (targetY<0 -> BASIC:BREAK_BLOCKS_IN_NEGATIVE_Y, then BASIC:BREAK_BLOCKS), which confirms the chain. BlockBreakAdapter marked inactive (legacy). Thresholds per config: break_blocks normal 32/easy 6/hard 34/custom_vision 32/chaos c34 34/c36 34; negative_y 38/32/42/38/42/42. 6 config hashes recomputed = E1."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "30 rows, all PASS; read 17 excerpts plus the client states of every locked/op row in rows.jsonl. break_blocks fixture is dirt at 8 100 -3 (positive y, so the negative-y guard cannot mask it); negative_y fixture is dirt at 8 -59 -3, and break_blocks is already unlocked at every negative_y locked score (normal 37>=32, easy 31>=6, hard 41>=34, chaos 41>=34, custom 37>=32), so the negative_y denial is its own. Locked rows (c31 pass1/reload, c32, c33, c34, c35): LEFT_CLICK_BLOCK DIRT reaches the server, probe 'execute if block ... dirt' = 'Test passed' before and after, count unchanged, client overlay 'You can't break blocks. Advancements left to unlock: 1' / 'You can't break blocks below zero. Advancements left to unlock: 1'. Allowed rows: probe flips to 'Test failed' (dirt broken), count unchanged. op denied like locked; creative breaks (bypass); spectator no break, no overlay. Every package row equals its unique source line in campaign-results.jsonl.",
+      "rowsRead": [
+        "campaign31 pass1 break_blocks locked",
+        "campaign31 pass1 break_blocks allowed",
+        "campaign31 pass1 break_blocks_in_negative_y locked",
+        "campaign31 pass1 break_blocks_in_negative_y allowed",
+        "campaign31 modes break_blocks creative",
+        "campaign31 modes break_blocks op",
+        "campaign31 modes break_blocks spectator",
+        "campaign31 modes break_blocks_in_negative_y op",
+        "campaign31 modes break_blocks_in_negative_y spectator",
+        "campaign31 reload break_blocks_in_negative_y locked",
+        "campaign32 thresholds-easy break_blocks locked",
+        "campaign32 thresholds-easy break_blocks_in_negative_y locked",
+        "campaign33 thresholds-hard break_blocks locked",
+        "campaign33 thresholds-hard break_blocks_in_negative_y locked",
+        "campaign34 thresholds-chaos break_blocks_in_negative_y locked",
+        "campaign35 thresholds-custom_vision break_blocks locked",
+        "campaign35 thresholds-custom_vision break_blocks_in_negative_y locked"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "Contributing runtimes campaign31-35: MANIFEST onlineMode=true, UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present in each; I grepped each output.log and found both lines (c31 l.233/244, c32 l.233/244, c33 l.234/246, c34 l.234/250, c35 l.233/244); server.properties online-mode=true and launch.json onlineMode=true in each."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator for both abilities. No offhand rows: both cases are empty-hand attack (main=air, key.attack), excluded from campaign_final.py OFFHAND; mining has no off-hand route. Threshold rows for normal, easy, hard, chaos, custom_vision for both abilities. No NA_* rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "4 reload rows from campaign31 (reload block 1231-1628 after pass1/modes/offhand in campaign-results.jsonl; 'Reloading!' at output.log l.101750). MANIFEST.e5Reload.generationAfter=2; all 8 STATE lines of the 4 reload excerpts show generation 2. All 4 reload verdicts (PASS) agree with pass1 (PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 30/30 REPRODUCED; recorded verdicts equal rows. MANIFEST replay reproducedAll=true for campaign31-36; REPLAY.json of each runtime re-read: reproducedAll=true, problems=[]. Plugin SHA-256 recomputed in all 6 runtimes/plugins/achievetodo.jar = da9360aa...cb540 = brief; rc2-artifacts jar also equal. Client mod recomputed 5c473903...5a99 = brief. Recomputed campaign-results.jsonl SHA-256 of all six runtimes (c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771...) = evidenceHashes; REPLAY.json hashes also equal."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json/runtime_args.json: every runtime command holds -javaagent:plugins/achievetodo.jar plus the trace-agent javaagent. c31 and c35: no -Dachievetodo.* option. c32/c33/c34/c36: only -Dachievetodo.progression.initialConfig=easy/hard/chaos/chaos; campaign_modes.py deletes world-group.properties and world-selection.properties before that start (unlink would fail if absent), and the plugin logs world-group.properties in derived=[...] only in those runtimes. output.log: ATD_LAUNCH_PROFILE=release (l.207/207/208/208/207/207) and ATD_GAMEPLAY_MODE=CERTIFICATION (l.221/221/222/222/221/221) precede the first ATD_STAGE2A_STATE (l.337/335/338/354/379/564); achievetodo.progression.freshConfig appears only inside the plugin-logged derived list. HARNESS_RC2C files rehashed: all match except campaign_cases.py, which now matches HARNESS_RC2D (the documented ignite_tnt change); evidenceHashes of c31-35 record campaign_cases.py c8add78f... = RC2C value."
+    }
+  },
+  "superseded": "No superseded rows in this group (MANIFEST.superseded=[]). The campaign36 CHAOS ignite_tnt supersession does not touch break_blocks / break_blocks_in_negative_y; it is justified in principle (fixture needs use_flint_and_steel, now declared in requires) and campaign36 is a fresh CHAOS install under HARNESS_RC2D with release launch.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/mining_basic_two/excerpts.txt line 3 ('\"ability\": {\"BREAK_BLOCKS\": null}'); campaign31/receipts/output.log contains 0 occurrences of 'BREAK_BLOCKS'",
+      "description": "The ATD_STAGE2A_STATE ability map does not include BREAK_BLOCKS or BREAK_BLOCKS_IN_NEGATIVE_Y, so the excerpts show the tested ability's lock state as null, and the server-side ATD_EVENT shows blockResult=ALLOW because the denial runs in the native tool agent and logs no decision line. The lock is still proven by the unchanged probe, the unchanged count and the ability-specific client overlay in rows.jsonl, but the server log alone does not show the denial for this group."
+    }
+  ]
+}

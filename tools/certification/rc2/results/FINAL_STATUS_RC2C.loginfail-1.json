@@ -1,0 +1,21 @@
+{
+  "started": "2026-11-20T11:30:36+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\certification\\rc2-artifacts\\AchieveToDo-Purpur-26.2-0.2.1.jar",
+  "runtimes": {
+    "campaign31": {
+      "mode": "normal",
+      "started": "2026-11-20T11:30:36+00:00",
+      "passes": {}
+    }
+  },
+  "state": "running campaign31",
+  "rules": "rc2c",
+  "launch": "release",
+  "loginFailures": [
+    {
+      "runtime": "campaign31",
+      "at": "2026-11-20T11:31:50+00:00",
+      "error": "LOGIN_FAILED campaign31: []"
+    }
+  ]
+}

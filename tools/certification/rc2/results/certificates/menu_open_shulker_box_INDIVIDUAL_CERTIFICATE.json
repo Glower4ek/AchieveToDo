@@ -1,0 +1,61 @@
+{
+  "group": "menu_open_shulker_box",
+  "reviewer": "P3",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (open_shulker_box), mapping DIRECT, 3 direct sites. SHA-256 recomputed for all 3 cited files, all equal E1: BukkitRestrictionResolver.java f5d7d99b... (inactive legacy), NativeEquipmentAbilities.java 7baab126..., NativeTransactionBindings.java c3d1f751.... Opened sites: NativeTransactionBindings.java:43 binds the native 'shulker' guard to AbilityType.OPEN_SHULKER_BOX; the hook it feeds is NativeTransactionAgent.java:160 (ShulkerBoxBlock.useWithoutItem). NativeEquipmentAbilities.java:39 only adds OPEN_SHULKER_BOX to the implemented-ability set. Thresholds: normal 618, easy 504, hard 732, custom_vision 618, chaos@34 165, chaos@36 581; equal to the toml files (hashes equal E1)."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "Independent re-judgement: a script (p3_judge.py) recomputed every non-NA verdict of this group from the excerpt lines alone (pre/post ATD_STAGE2A_STATE count, pre/post probe output, OpenScreen packet, DENIAL_INTENT line) and agreed with every recorded verdict (0 disagreements). Thresholds of every row equal the value in that runtime's config file; every PASS locked/op row has counts[0]==counts[1]<threshold; every allowed row starts at >=threshold. All aimed rows have a client 'pre' hit on the fixture (expect_hit holds); server_reach is not applicable to this group. Locked rows (pass1, reload, easy, hard, chaos, custom_vision, op) all PASS: STATE kind=LOCKED, count unchanged (e.g. campaign33 731->731), no ClientboundOpenScreenPacket/INVENTORY_OPEN boundary, no open sound, overlay shown on client. Allowed rows: STATE UNLOCKED, INVENTORY_OPEN_TYPE_SHULKER_BOX + OpenScreen. Creative: menu opens despite LOCKED state (bypass). Spectator: menu opens (vanilla spectator container view), no overlay, no leak. Locked-row decision lines: the Bukkit-level ATD_W2_INPUT_EVENT/ATD_EVENT lines in locked rows show useBlock/blockResult=ALLOW, cancelled=false; the denial is made by the native (javaagent bytecode) guard, which writes no positive deny line. No non-PASS rows.",
+      "rowsRead": [
+        "campaign31 pass1 open_shulker_box locked",
+        "campaign31 pass1 open_shulker_box allowed",
+        "campaign31 modes open_shulker_box creative",
+        "campaign31 modes open_shulker_box op",
+        "campaign31 modes open_shulker_box spectator",
+        "campaign33 thresholds-hard open_shulker_box locked",
+        "campaign34 thresholds-chaos open_shulker_box locked",
+        "campaign35 thresholds-custom_vision open_shulker_box locked",
+        "(all 15 excerpts re-judged by script)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "PASS for all 6 runtimes in MANIFEST.runtimes (campaign31 normal, 32 easy, 33 hard, 34 chaos, 35 custom_vision, 36 chaos-supplement): onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' present in MANIFEST and re-found by grep in each campaignNN/receipts/output.log (e.g. campaign31 lines 233/244, campaign34 lines 234/250); runtime/server.properties online-mode=true in all 6; receipts/launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "15 rows: pass1, modes creative/op/spectator, reload, thresholds-easy/-hard/-chaos/-custom_vision (locked+allowed each). No offhand rows: case main='air' (empty-hand menu open), excluded from campaign_final.OFFHAND; no off-hand-specific route. No NA rows (no threshold 0)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "PASS. 2 reload rows, all campaign31; campaign-results.jsonl ordering pass1 1-398, modes 399-995, offhand 996-1231, reload 1232-1629 so reload follows pass1/modes/offhand; output.log 19:55:15 'Reloading!' then 'PROGRESSION_CONFIG_READY generation=2' (=14:55 UTC, MANIFEST e5Reload.at 14:55:20Z, generationBefore 1, generationAfter 2). Every ATD_STAGE2A_STATE line of the reload excerpts shows generation 2 and every non-reload campaign31 excerpt generation 1. Each reload verdict equals the pass1 verdict for the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "15/15 rows of menu_open_shulker_box REPRODUCED. Every replay row status REPRODUCED with recorded==replayed; replay keys (campaign,tag,ability,phase) match rows.jsonl 1:1 and every replay 'line' pointer resolves to the identical row in campaignNN/receipts/campaign-results.jsonl. MANIFEST replay reproducedAll=true for campaign31 (1629), 32-35 (398 each), 36 (2), problems=[]. Plugin SHA-256 recomputed: campaign31-36 runtime/plugins/achievetodo.jar and rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar all = da9360aa...cb540. Client mod recomputed: installed minecraft/mods/achievetodo.jar and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar = 5c473903...5a99. campaign-results.jsonl SHA-256 recomputed for ALL six runtimes and equal to evidenceHashes.results (31 8eddce27..., 32 c4936a8d..., 33 23a53c62..., 34 a7e80ad6..., 35 400573a8..., 36 2c2ce771...). trace-agent.jar in each observer-work = 706b85d5... as in HARNESS_RC2C/RC2D; campaign.py, campaign_replay.py match HARNESS_RC2C; current campaign_cases.py = d933206f (RC2D value, as expected after campaign36)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "PASS. receipts/launch.json command for every runtime: java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<easy|hard|chaos> only for 32/33/34/36] -javaagent:plugins/achievetodo.jar -javaagent:<observer-work>/trace-agent.jar=<targets> -jar purpur-26.2-2620.jar --nogui; no other -Dachievetodo.* option; campaign31 and 35 have none (matches runtime_args.json). output.log of each runtime logs 'ATD_LAUNCH_PROFILE=release; derived=[...]' (line ~207) and 'ATD_GAMEPLAY_MODE=CERTIFICATION; PRODUCT_GAMEPLAY_READY=false' (line ~221) before the first ATD_STAGE2A_STATE/case mark (line >=335). For 32/33/34/36 derived=[..., world-group.properties, ..., achievetodo.progression.freshConfig] i.e. freshConfig and world-group.properties were produced by the plugin (fresh install); for 31/35 derived has neither (existing install). Resolved config lines: normal.toml / easy.toml / hard.toml / chaos_20261116.toml / custom_vision.toml. Matches STARTING_THE_SERVER.md (lines 21-27, 57). All group rows come from campaign31-35 (HARNESS_RC2C); none from campaign36. Note: the runtimes also carry instrumentation plugins (w4-gameplay-evidence-probe.jar = launch.json observerSHA256 077a0d56..., packet-witness.jar bc5a5e98..., w4-snap.jar); they are observers, not part of the command line."
+    }
+  },
+  "superseded": "No row of this group is superseded (MANIFEST.superseded=[]; group has no campaign36 row). For the CHAOS ignite_tnt replacement: campaign34 ignite_tnt allowed was FAIL_NO_EFFECT at score 260 while use_flint_and_steel needed 523 (fixture used a locked tool), and its locked row was therefore also dependency-masked in substance; campaign36 (fresh CHAOS install, HARNESS_RC2D, campaign_cases.py d933206f) declares requires use_flint_and_steel=144 and raises the allowed score to 607: locked PASS [606,606], allowed PASS [607,608]. Replacement is justified.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/menu_open_shulker_box/excerpts.txt lines 1-12 (campaign31 pass1 locked)",
+      "description": "Locked excerpts show ATD_EVENT blockResult=ALLOW, cancelled=false; the native ShulkerBoxBlock.useWithoutItem guard writes no deny line, so the lock is shown only by the absence of OpenScreen and the client overlay."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "E:/Vibecode/AchieveToDo/repo/port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java:39; E:/Vibecode/AchieveToDo/repo/port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java:160",
+      "description": "E1 cites NativeEquipmentAbilities.java:39, which only adds OPEN_SHULKER_BOX to a set of ability names and checks nothing. The real bytecode hook (NativeTransactionAgent.java:160, ShulkerBoxBlock.useWithoutItem) is not cited. The guard does exist, through NativeTransactionBindings.java:43."
+    }
+  ]
+}

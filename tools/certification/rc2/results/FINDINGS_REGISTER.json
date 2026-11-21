@@ -1,0 +1,762 @@
+[
+ {
+  "group": "action_attack_with_mace",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "review-rc2c/action_attack_with_mace/MANIFEST.json runtimes.campaign35.evidenceHashes['campaign_cases.py'].sha256=d933206f160d857d... (= HARNESS_RC2D.sha256) vs campaign31-34 c8add78f3d4ea3d3... (= HARNESS_RC2C.sha256); w5-campaign/campaign_cases.py mtime 2026-11-21 00:24:48 +0500, campaign35/receipts/launch.json 00:24:00; campaign35 campaign-results.jsonl ignite_tnt rows requires={'vision': 5}",
+  "description": "campaign_cases.py was edited about 48 s after campaign35 started, and campaign35's evidence hash was taken at the end of the run (EVIDENCE_HASHES.json 01:29:53), so it records the RC2D file instead of the RC2C code that produced the rows. The RC2C version (c8add78f..., 27009 bytes) is not kept anywhere under certification/, so `sha256sum -c HARNESS_RC2C.sha256` now fails for campaign_cases.py and nobody can re-hash or diff it. The rows themselves show RC2C behaviour: campaign35 ignite_tnt has no use_flint_and_steel requirement, and one orchestrator process imported the cases at 11:38Z. So this group's verdicts are not affected, but the provenance record is inaccurate."
+ },
+ {
+  "group": "action_attack_with_mace",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/action_attack_with_mace/excerpts.txt: every ATD_STAGE2A_STATE line shows \"ability\": {\"ATTACK_WITH_MACE\": null}; campaign31 output.log l.8521 'abilities' map lists only 25 abilities (OPEN_*, EAT_SALMON, JUMP, SNEAK, SPRINT, SWIM)",
+  "description": "The probe's state line does not report the lock state of ATTACK_WITH_MACE, so the excerpts cannot show directly that it was LOCKED or UNLOCKED. The lock state was established from the logged count against the E1/config threshold (count = threshold-1 or threshold, cross-checked against the config TOML files) and from the server's denial fingerprints. The brief's statement that the state line 'shows the tested ability's lock state' does not hold for this ability."
+ },
+ {
+  "group": "action_attack_with_trident",
+  "reviewer": "P7",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/action_attack_with_trident/excerpts.txt, every ATD_STAGE2A_STATE line ('\"ability\": {\"ATTACK_WITH_TRIDENT\": null}')",
+  "description": "The state dump does not carry the tested ability, so the excerpts show its lock state as null. The lock is still evidenced on the server by 'ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=attack_with_trident' plus unchanged probes and count, so the verdicts are reproducible; this is an evidence-presentation gap only."
+ },
+ {
+  "group": "action_charge_respawn_anchor",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/action_charge_respawn_anchor/excerpts.txt (every STATE line)",
+  "description": "ATD_STAGE2A_STATE reports \"CHARGE_RESPAWN_ANCHOR\": null, and ATD_EVENT shows blockResult=ALLOW in locked rows. The server-side evidence of the native denial is indirect: ATD_CRITERION_SUPPRESSED, the inventory resync and the unchanged anchor probe. This is sufficient, but it is not the explicit lock state or deny decision that the brief's row anatomy describes."
+ },
+ {
+  "group": "action_glide_with_fireworks",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...) vs HARNESS_RC2C.sha256 (c8add78f...); campaign_cases.py mtime 2026-11-21 00:24:48 +05:00; campaign-final-rc2c.log:2866 (campaign35 up 19:24:12Z)",
+  "description": "campaign_cases.py was edited ~37 s after the campaign35 server started, so the harness hash recorded for campaign35 is the RC2D file, not RC2C. The orchestrator imports campaign_cases in-process at start (campaign_final.py:14, campaign.main called in-process), so the cases that ran were most likely the RC2C version, but this cannot be proven from the recorded hashes. The documented RC2D change concerns ignite_tnt only and does not touch this group's cases."
+ },
+ {
+  "group": "action_place_end_crystal",
+  "reviewer": "P7",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/action_place_end_crystal/excerpts.txt, every ATD_STAGE2A_STATE line ('\"ability\": {\"PLACE_END_CRYSTAL\": null}') and the locked blocks, e.g. campaign31 pass1 locked output.log lines 5047-5059",
+  "description": "The state dump does not include PLACE_END_CRYSTAL and no server-side denial line is logged for this native guard (ATD_EVENT shows blockResult=ALLOW), so the server log shows the absent effect but not the decision itself. The verdicts are still reproducible from the unchanged probe, unconsumed item, unchanged count and the ability-specific client overlay in rows.jsonl."
+ },
+ {
+  "group": "action_shoot_bow",
+  "reviewer": "P8",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/action_shoot_bow/excerpts.txt:3 (and every ATD_STAGE2A_STATE line of the group)",
+  "description": "The state probe reports \"ability\": {\"SHOOT_BOW\": null}, so no excerpt shows the tested ability's lock state; the locked/allowed state can only be inferred from count vs. the toml threshold. The same null appears for many item/action abilities across packages."
+ },
+ {
+  "group": "action_shoot_bow",
+  "reviewer": "P8",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/action_shoot_bow/excerpts.txt:6-21; campaign31/receipts/output.log (0 occurrences of ServerboundUseItemPacket)",
+  "description": "The only server-side denial lines are client-originated bridge DENIAL_INTENT_DISCOVERED messages; the trace does not record ServerboundUseItemPacket at all, so no row shows that the server-side BowItem.use guard itself fired. The end-to-end lock with the real client is proven (no arrow, no consumption), the server guard is not separately evidenced."
+ },
+ {
+  "group": "action_shoot_crossbow",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...); campaign_cases.py mtime 2026-11-21 00:24:48 +0500; campaign35 output.log first ATD_STAGE2A_STATE 00:24:42 (line 379); campaign_final.py:14,192 (in-process import and replay); campaign35 ignite_tnt rows requires={'vision':5}",
+  "description": "The harness file campaign_cases.py was rewritten on disk (RC2C c8add78f -> RC2D d933206f) while campaign35 was running. campaign35's rows were produced and replayed by the orchestrator's already-imported RC2C module (its ignite_tnt rows carry requires={'vision':5} only), but its EVIDENCE_HASHES.json / MANIFEST evidenceHashes record the RC2D hash, and the RC2C campaign_cases.py is no longer on disk. I reconstructed it exactly (current file minus the ignite_tnt requires hunk = c8add78f), so no verdict changes. Still, the recorded provenance for campaign35 is wrong, and the frozen harness was edited mid-campaign."
+ },
+ {
+  "group": "action_shoot_crossbow",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/action_shoot_crossbow/excerpts.txt (all ATD_STAGE2A_STATE lines)",
+  "description": "The compacted ATD_STAGE2A_STATE lines in excerpts.txt show \"ability\": {\"SHOOT_CROSSBOW\": null} in every row, because the probe's 'abilities' map does not contain this ability. So the excerpt does not show the tested ability's lock state as the brief says. I verified the lock state from the raw output.log state lines instead: criteria achievetodo:abilities/shoot_crossbow = ['demystified'] at threshold-1 and ['demystified','unlocked'] at threshold, in every row of every runtime."
+ },
+ {
+  "group": "action_use_campfire",
+  "reviewer": "P8",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/action_use_campfire/excerpts.txt (every ATD_STAGE2A_STATE line, e.g. line 3)",
+  "description": "The state probe reports \"ability\": {\"USE_CAMPFIRE\": null}, so the excerpts never show the tested ability's lock state; locked/unlocked is inferred from count vs. the toml threshold only."
+ },
+ {
+  "group": "action_use_composter",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/action_use_composter/excerpts.txt, every ATD_STAGE2A_STATE line ('ability': {'USE_COMPOSTER': null})",
+  "description": "The state probe reports USE_COMPOSTER: null instead of LOCKED/UNLOCKED, so the excerpts do not show the plugin's own lock state for use_composter; the lock is inferred from count < threshold, the client overlay and the unchanged probe. The evidence is enough for the verdict, but the probe should report this ability's state as it does for the menu abilities."
+ },
+ {
+  "group": "action_use_composter",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "certification/w5-campaign/HARNESS_RC2C.sha256 line 2 (campaign_cases.py c8add78f...) vs certification/w5-campaign/campaign_cases.py (current SHA-256 d933206f..., = HARNESS_RC2D)",
+  "description": "The campaign_cases.py that produced campaign31-35 (c8add78f..., recorded in MANIFEST evidenceHashes) is no longer on disk: the w5-campaign copy was overwritten by the RC2D version and no copy with that hash exists under certification/, repo/ or tooling/. campaign.py and campaign_replay.py still match, so verdicts can be re-derived, but a third person cannot re-run the exact RC2C case definitions; keep a history copy (history-campaign_cases.py.rc2c)."
+ },
+ {
+  "group": "action_use_ender_eye",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...); campaign_cases.py mtime 2026-11-21 00:24:48 +0500; campaign35 output.log first ATD_STAGE2A_STATE 00:24:42 (line 379); campaign_final.py:14,192 (in-process import and replay); campaign35 ignite_tnt rows requires={'vision':5}",
+  "description": "The harness file campaign_cases.py was rewritten on disk (RC2C c8add78f -> RC2D d933206f) while campaign35 was running. campaign35's rows were produced and replayed by the orchestrator's already-imported RC2C module (its ignite_tnt rows carry requires={'vision':5} only), but its EVIDENCE_HASHES.json / MANIFEST evidenceHashes record the RC2D hash, and the RC2C campaign_cases.py is no longer on disk. I reconstructed it exactly (current file minus the ignite_tnt requires hunk = c8add78f), so no verdict changes. Still, the recorded provenance for campaign35 is wrong, and the frozen harness was edited mid-campaign."
+ },
+ {
+  "group": "action_use_ender_eye",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/action_use_ender_eye/excerpts.txt (all ATD_STAGE2A_STATE lines)",
+  "description": "The compacted ATD_STAGE2A_STATE lines in excerpts.txt show \"ability\": {\"USE_ENDER_EYE\": null} in every row, because the probe's 'abilities' map does not contain this ability. So the excerpt does not show the tested ability's lock state as the brief says. I verified the lock state from the raw output.log state lines instead: criteria achievetodo:abilities/use_ender_eye = ['demystified'] at threshold-1 and ['demystified','unlocked'] at threshold, in every row of every runtime."
+ },
+ {
+  "group": "action_use_jukebox",
+  "reviewer": "P1",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/action_use_jukebox/excerpts.txt every ATD_STAGE2A_STATE line ('\"ability\": {\"USE_JUKEBOX\": null}'); raw campaign31/receipts/output.log:5307 vs :5360 criteria 'achievetodo:abilities/use_jukebox'",
+  "description": "The probe's 'abilities' map only covers 25 abilities, so the compacted excerpt reports USE_JUKEBOX as null and does not show the server-side lock state the brief says it shows. The lock state is recoverable from the raw state line's criteria (['demystified'] at 283 vs ['demystified','unlocked'] at 284), which I checked for all 17 rows; packaging gap, no verdict change."
+ },
+ {
+  "group": "action_use_ominous_bottle",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...) vs HARNESS_RC2C.sha256 (c8add78f...); campaign_cases.py mtime 2026-11-21 00:24:48 +05:00; campaign-final-rc2c.log:2866 (campaign35 up 19:24:12Z)",
+  "description": "campaign_cases.py was edited ~37 s after the campaign35 server started, so the harness hash recorded for campaign35 is the RC2D file, not RC2C. The orchestrator imports campaign_cases in-process at start (campaign_final.py:14, campaign.main called in-process), so the cases that ran were most likely the RC2C version, but this cannot be proven from the recorded hashes. The documented RC2D change concerns ignite_tnt only and does not touch this group's cases."
+ },
+ {
+  "group": "action_use_shield",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "review-rc2c/action_use_shield/MANIFEST.json runtimes.campaign35.evidenceHashes['campaign_cases.py'].sha256=d933206f160d857d... (= HARNESS_RC2D.sha256) vs campaign31-34 c8add78f3d4ea3d3... (= HARNESS_RC2C.sha256); w5-campaign/campaign_cases.py mtime 2026-11-21 00:24:48 +0500, campaign35/receipts/launch.json 00:24:00; campaign35 campaign-results.jsonl ignite_tnt rows requires={'vision': 5}",
+  "description": "campaign_cases.py was edited about 48 s after campaign35 started, and campaign35's evidence hash was taken at the end of the run (EVIDENCE_HASHES.json 01:29:53), so it records the RC2D file instead of the RC2C code that produced the rows. The RC2C version (c8add78f..., 27009 bytes) is not kept anywhere under certification/, so `sha256sum -c HARNESS_RC2C.sha256` now fails for campaign_cases.py and nobody can re-hash or diff it. The rows themselves show RC2C behaviour: campaign35 ignite_tnt has no use_flint_and_steel requirement, and one orchestrator process imported the cases at 11:38Z. So this group's verdicts are not affected, but the provenance record is inaccurate."
+ },
+ {
+  "group": "action_use_shield",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/action_use_shield/excerpts.txt: every ATD_STAGE2A_STATE line shows \"ability\": {\"USE_SHIELD\": null}; campaign31 output.log l.8521 'abilities' map lists only 25 abilities (OPEN_*, EAT_SALMON, JUMP, SNEAK, SPRINT, SWIM)",
+  "description": "The probe's state line does not report the lock state of USE_SHIELD, so the excerpts cannot show directly that it was LOCKED or UNLOCKED. The lock state was established from the logged count against the E1/config threshold (count = threshold-1 or threshold, cross-checked against the config TOML files) and from the server's denial fingerprints. The brief's statement that the state line 'shows the tested ability's lock state' does not hold for this ability."
+ },
+ {
+  "group": "action_use_spyglass",
+  "reviewer": "P1",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/action_use_spyglass/excerpts.txt every ATD_STAGE2A_STATE line ('\"USE_SPYGLASS\": null'); raw campaign31/receipts/output.log:3946 vs :4007 criteria achievetodo:abilities/use_spyglass",
+  "description": "Compacted excerpts do not show the tested ability's lock state (probe ability map lacks USE_SPYGLASS); I verified it from the raw criteria of every row. Packaging gap, no verdict change."
+ },
+ {
+  "group": "action_use_spyglass",
+  "reviewer": "P1",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "rows campaign31 offhand use_spyglass offhand_allowed (output.log 89461-89465) and campaign31 reload use_spyglass allowed (105427-105431)",
+  "description": "For repeat allowed rows the only effect oracle is the client's usingItem flag; the server log in those windows holds nothing but two state lines (no packet, stat or trace). Server-side effect is proven only where galileo_figaro is first earned (pass1 and threshold allowed rows). Acceptable for a CLIENT_DEPENDENT ability, but the oracle is weaker than the server oracles used elsewhere."
+ },
+ {
+  "group": "bundle_two_native_routes",
+  "reviewer": "P1",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/bundle_two_native_routes/excerpts.txt all ATD_STAGE2A_STATE lines ('\"PUT_IN_BUNDLE\": null'); raw campaign31/receipts/output.log:16512 vs :16574 criteria achievetodo:abilities/put_in_bundle",
+  "description": "Compacted excerpts do not show the tested ability's lock state; verified from raw criteria for all 30 rows. Packaging gap, no verdict change."
+ },
+ {
+  "group": "bundle_two_native_routes",
+  "reviewer": "P1",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "rows '... put_in_bundle apple on cursor, left-click bundle slot (reverse route) locked' (e.g. campaign31 output.log 16628-16645)",
+  "description": "The reverse-route oracle only reads Inventory[{Slot:0b}].components.bundle_contents; an apple has no components either, so 'Found no elements' would also result if the apple had swapped into slot 0. The close packet and the client state show the bundle stayed in place, so the verdict holds, but the probe alone cannot tell 'bundle unchanged' from 'bundle displaced'."
+ },
+ {
+  "group": "client_local_open_inventory",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/client_local_open_inventory/excerpts.txt lines 8-12 (campaign31 pass1 allowed)",
+  "description": "Vanilla opens the player inventory on the client only, so the allowed-row excerpts contain no effect line at all (only two unchanged STATE lines). The effect (InventoryScreen) is recorded only in the client driver journal. I verified it there, but excerpts.txt alone cannot show it."
+ },
+ {
+  "group": "client_local_open_inventory",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/client_local_open_inventory/excerpts.txt (every STATE line)",
+  "description": "ATD_STAGE2A_STATE reports \"OPEN_INVENTORY\": null. The server's view of the lock shows only indirectly through the DENIAL_INTENT_DISCOVERED line."
+ },
+ {
+  "group": "client_local_open_inventory",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E1",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/client_local_open_inventory/E1.json",
+  "description": "E1 gives open_inventory family 'block' with resolver AbilityResolvers.findBlockAbility (inactive). This is a misleading label for a client-key ability; the actual enforcement is listed correctly under enforcementSites."
+ },
+ {
+  "group": "client_local_vision",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/client_local_vision/excerpts.txt, every ATD_STAGE2A_STATE line ('ability': {'VISION': null}), e.g. campaign33 thresholds-hard locked output.log lines 3633-3657",
+  "description": "The server state probe does not report the VISION lock state (null in every row), so the server-side excerpt alone does not show LOCKED/UNLOCKED; the lock is proven only by the DENIAL_INTENT_DISCOVERED ability=vision lines and the client VisionOverlay states in rows.jsonl. Sufficient, but weaker than for other abilities."
+ },
+ {
+  "group": "client_local_vision",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "rows.jsonl campaign31 modes vision op and campaign31 reload vision locked (both NA_NO_LOCKED_STATE)",
+  "description": "Modes and reload only run in the NORMAL runtime, where vision = 0, so a locked VISION is never exercised for an operator or after a datapack reload. The NAs are legitimate (real threshold 0), but these combinations remain untested."
+ },
+ {
+  "group": "client_local_vision",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "rows.jsonl notes field / campaign_cases.py line 94-96 ('NORMAL/EASY/HARD threshold 0 -> NA_NO_LOCKED_STATE')",
+  "description": "The case note is stale: hard.toml has vision = 2 and HARD produced a real locked PASS row; the note should say NORMAL/EASY/CHAOS."
+ },
+ {
+  "group": "client_local_vision",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "certification/w5-campaign/HARNESS_RC2C.sha256 line 2 (campaign_cases.py c8add78f...) vs certification/w5-campaign/campaign_cases.py (current SHA-256 d933206f..., = HARNESS_RC2D)",
+  "description": "The campaign_cases.py that produced campaign31-35 (c8add78f..., recorded in MANIFEST evidenceHashes) is no longer on disk: the w5-campaign copy was overwritten by the RC2D version and no copy with that hash exists under certification/, repo/ or tooling/. campaign.py and campaign_replay.py still match, so verdicts can be re-derived, but a third person cannot re-run the exact RC2C case definitions; keep a history copy (history-campaign_cases.py.rc2c)."
+ },
+ {
+  "group": "complex_ignite_tnt",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...); campaign_cases.py mtime 2026-11-21 00:24:48 +0500; campaign35 output.log first ATD_STAGE2A_STATE 00:24:42 (line 379); campaign_final.py:14,192 (in-process import and replay); campaign35 ignite_tnt rows requires={'vision':5}",
+  "description": "The harness file campaign_cases.py was rewritten on disk (RC2C c8add78f -> RC2D d933206f) while campaign35 was running. campaign35's rows were produced and replayed by the orchestrator's already-imported RC2C module (its ignite_tnt rows carry requires={'vision':5} only), but its EVIDENCE_HASHES.json / MANIFEST evidenceHashes record the RC2D hash, and the RC2C campaign_cases.py is no longer on disk. I reconstructed it exactly (current file minus the ignite_tnt requires hunk = c8add78f), so no verdict changes. Still, the recorded provenance for campaign35 is wrong, and the frozen harness was edited mid-campaign."
+ },
+ {
+  "group": "complex_ignite_tnt",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/complex_ignite_tnt/excerpts.txt (all ATD_STAGE2A_STATE lines)",
+  "description": "The compacted ATD_STAGE2A_STATE lines in excerpts.txt show \"ability\": {\"IGNITE_TNT\": null} in every row, because the probe's 'abilities' map does not contain this ability. So the excerpt does not show the tested ability's lock state as the brief says. I verified the lock state from the raw output.log state lines instead: criteria achievetodo:abilities/ignite_tnt = ['demystified'] at threshold-1 and ['demystified','unlocked'] at threshold, in every row of every runtime."
+ },
+ {
+  "group": "complex_unlock_vault",
+  "reviewer": "P8",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/complex_unlock_vault/excerpts.txt:3,16 (all ATD_STAGE2A_STATE lines)",
+  "description": "The state probe reports \"ability\": {\"UNLOCK_VAULT\": null}, and the denial is silent (membership filter), so no excerpt line names the plugin's decision or the ability's lock state; the lock is shown only indirectly (vault stays inactive, key kept, count below the toml threshold)."
+ },
+ {
+  "group": "complex_use_brush",
+  "reviewer": "P7",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "E1.json directSites NativeComplexAgent.java:173 and NativeLandmarkOperations.java:205 (armadillo brushOffScute); campaign_cases.py:152 defines only the suspicious_sand case",
+  "description": "The brush has a second guarded route (brushing scute off an armadillo) that is mapped in E1 but has no runtime case or row; only the suspicious-sand route is proven at runtime."
+ },
+ {
+  "group": "complex_use_brush",
+  "reviewer": "P7",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/complex_use_brush/excerpts.txt, every ATD_STAGE2A_STATE line ('\"ability\": {\"USE_BRUSH\": null}')",
+  "description": "The state dump does not carry USE_BRUSH, so the lock state shows as null in the excerpts; the lock is still evidenced by the use_brush denial-intent lines, the unchanged probe and count."
+ },
+ {
+  "group": "complex_use_cauldron",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "campaign31/receipts/output.log 6477-6487 (pass1 locked) and 91683-91697 (offhand_locked)",
+  "description": "Locked rows carry no explicit server-side denial line (no DENIAL_INTENT, no DENY); the lock is inferred from the packet arriving with no interact event, the unchanged cauldron probe and the client overlay. Sufficient but indirect."
+ },
+ {
+  "group": "complex_use_cauldron",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...) vs HARNESS_RC2C.sha256 (c8add78f...); campaign_cases.py mtime 2026-11-21 00:24:48 +05:00; campaign-final-rc2c.log:2866 (campaign35 up 19:24:12Z)",
+  "description": "campaign_cases.py was edited ~37 s after the campaign35 server started, so the harness hash recorded for campaign35 is the RC2D file, not RC2C. The orchestrator imports campaign_cases in-process at start (campaign_final.py:14, campaign.main called in-process), so the cases that ran were most likely the RC2C version, but this cannot be proven from the recorded hashes. The documented RC2D change concerns ignite_tnt only and does not touch this group's cases."
+ },
+ {
+  "group": "complex_use_flint_and_steel",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "review-rc2c/complex_use_flint_and_steel/MANIFEST.json runtimes.campaign35.evidenceHashes['campaign_cases.py'].sha256=d933206f160d857d... (= HARNESS_RC2D.sha256) vs campaign31-34 c8add78f3d4ea3d3... (= HARNESS_RC2C.sha256); w5-campaign/campaign_cases.py mtime 2026-11-21 00:24:48 +0500, campaign35/receipts/launch.json 00:24:00; campaign35 campaign-results.jsonl ignite_tnt rows requires={'vision': 5}",
+  "description": "campaign_cases.py was edited about 48 s after campaign35 started, and campaign35's evidence hash was taken at the end of the run (EVIDENCE_HASHES.json 01:29:53), so it records the RC2D file instead of the RC2C code that produced the rows. The RC2C version (c8add78f..., 27009 bytes) is not kept anywhere under certification/, so `sha256sum -c HARNESS_RC2C.sha256` now fails for campaign_cases.py and nobody can re-hash or diff it. The rows themselves show RC2C behaviour: campaign35 ignite_tnt has no use_flint_and_steel requirement, and one orchestrator process imported the cases at 11:38Z. So this group's verdicts are not affected, but the provenance record is inaccurate."
+ },
+ {
+  "group": "complex_use_flint_and_steel",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/complex_use_flint_and_steel/excerpts.txt: every ATD_STAGE2A_STATE line shows \"ability\": {\"USE_FLINT_AND_STEEL\": null}; campaign31 output.log l.8521 'abilities' map lists only 25 abilities (OPEN_*, EAT_SALMON, JUMP, SNEAK, SPRINT, SWIM)",
+  "description": "The probe's state line does not report the lock state of USE_FLINT_AND_STEEL, so the excerpts cannot show directly that it was LOCKED or UNLOCKED. The lock state was established from the logged count against the E1/config threshold (count = threshold-1 or threshold, cross-checked against the config TOML files) and from the server's denial fingerprints. The brief's statement that the state line 'shows the tested ability's lock state' does not hold for this ability."
+ },
+ {
+  "group": "complex_use_shears",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/campaign_cases.py (use_shears case: sheep only); E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/complex_use_shears/E1.json NativeComplexSpecs 47-55",
+  "description": "E1 maps at least 9 native shears routes (bogged, mooshroom, snow golem, copper golem, sulfur cube, beehive, pumpkin, tripwire, leash, equipment, wolf), but the runtime evidence exercises only Sheep.mobInteract. The other routes have source mapping and no runtime proof."
+ },
+ {
+  "group": "complex_use_shears",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/complex_use_shears/excerpts.txt (every STATE line)",
+  "description": "ATD_STAGE2A_STATE reports \"USE_SHEARS\": null, so the lock state is not shown in the server state lines. The denial itself is shown clearly by interactOn -> Pass[]."
+ },
+ {
+  "group": "complex_use_water_bucket",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/complex_use_water_bucket/excerpts.txt, every ATD_STAGE2A_STATE line ('ability': {'USE_WATER_BUCKET': null})",
+  "description": "The state probe reports USE_WATER_BUCKET: null instead of LOCKED/UNLOCKED, so the excerpts do not show the plugin's own lock state for use_water_bucket; the lock is inferred from count < threshold, the client overlay and the unchanged probe. The evidence is enough for the verdict, but the probe should report this ability's state as it does for the menu abilities."
+ },
+ {
+  "group": "complex_use_water_bucket",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/complex_use_water_bucket/excerpts.txt, e.g. campaign31 pass1 locked (output.log 5901-5913)",
+  "description": "Locked water-bucket excerpts contain no positive server-side denial marker (no cancelled=true, no ATD_CRITERION_SUPPRESSED, no DENIAL_INTENT line); the denial is shown only by the absence of the effect (water probe stays 'Test failed') plus the client overlay. The verdict can be reproduced from this, but a guard log line would make the proof direct."
+ },
+ {
+  "group": "complex_use_water_bucket",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "certification/w5-campaign/HARNESS_RC2C.sha256 line 2 (campaign_cases.py c8add78f...) vs certification/w5-campaign/campaign_cases.py (current SHA-256 d933206f..., = HARNESS_RC2D)",
+  "description": "The campaign_cases.py that produced campaign31-35 (c8add78f..., recorded in MANIFEST evidenceHashes) is no longer on disk: the w5-campaign copy was overwritten by the RC2D version and no copy with that hash exists under certification/, repo/ or tooling/. campaign.py and campaign_replay.py still match, so verdicts can be re-derived, but a third person cannot re-run the exact RC2C case definitions; keep a history copy (history-campaign_cases.py.rc2c)."
+ },
+ {
+  "group": "equipment_identity9_routes_slots",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "campaign_cases.py line 238-240 (boots case offhand=False); rows campaign31 offhand equip_*/r6 route: right-click equip into the feet slot (14 NA_OFFHAND_NOT_APPLICABLE)",
+  "description": "Right-click equipping boots does have an off-hand variant in vanilla (Equippable swap works from either hand), so NA_OFFHAND_NOT_APPLICABLE is not strictly 'a route with no off-hand variant'. The off-hand right-click equip path is covered by the 9 helmet/elytra offhand PASS rows and the guard is item-identity based, so the risk is low; label it as covered elsewhere instead."
+ },
+ {
+  "group": "equipment_identity9_routes_slots",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "campaign_cases.py lines 198-240",
+  "description": "No case puts chestplates or leggings into the chest/legs slots (slot 7, chest only via elytra); the head, feet and chest(elytra) slots are tested. The guard keys on exact item identity (NativeEquipmentAbilities.java:12-14 lists CHESTPLATE and LEGGINGS), so this is a coverage note, not a defect."
+ },
+ {
+  "group": "equipment_identity9_routes_slots",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "excerpts.txt ATD_STAGE2A_STATE lines ('EQUIP_*': null)",
+  "description": "The state probe reports the tested equip ability as null; lock state is inferred from count < threshold, overlay and the server armor probe."
+ },
+ {
+  "group": "equipment_identity9_routes_slots",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "certification/w5-campaign/HARNESS_RC2C.sha256 line 2 (campaign_cases.py c8add78f...) vs certification/w5-campaign/campaign_cases.py (current SHA-256 d933206f..., = HARNESS_RC2D)",
+  "description": "The campaign_cases.py that produced campaign31-35 (c8add78f..., recorded in MANIFEST evidenceHashes) is no longer on disk: the w5-campaign copy was overwritten by the RC2D version and no copy with that hash exists under certification/, repo/ or tooling/. campaign.py and campaign_replay.py still match, so verdicts can be re-derived, but a third person cannot re-run the exact RC2C case definitions; keep a history copy (history-campaign_cases.py.rc2c)."
+ },
+ {
+  "group": "fishing_cast_only",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/fishing_cast_only/excerpts.txt lines 1-10; E:/Vibecode/AchieveToDo/certification/w5-campaign/campaign31/receipts/output.log lines 17310-17318",
+  "description": "Fishing excerpts contain no inbound packet line and no plugin decision line: the packet witness logs only ServerboundUseItemOnPacket (0 ServerboundUseItemPacket in campaign31 output.log), FishingRodItem.use is not a trace target, and PlayerFishEvent cancellation is not logged. That the request reached the server and was refused there rests only on the inventory resync (ContainerSetContent/SetSlot) and the unchanged server bobber probe."
+ },
+ {
+  "group": "fishing_cast_only",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/fishing_cast_only/excerpts.txt (every STATE line)",
+  "description": "ATD_STAGE2A_STATE reports \"USE_FISHING_ROD\": null in every row, so the server state lines do not show the tested ability's lock state, contrary to the brief's row anatomy. The lock state follows only from count vs threshold."
+ },
+ {
+  "group": "food_component_start_40",
+  "reviewer": "P1",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/food_component_start_40/excerpts.txt: ATD_STAGE2A_STATE lines show '\"EAT_<X>\": null' for 39 of 40 abilities (only EAT_SALMON is in the probe's ability map)",
+  "description": "Compacted excerpts do not show the tested ability's lock state for 39 foods; the denial is still evidenced by DENIAL_INTENT_DISCOVERED lines naming the food, and I spot-checked raw criteria. Packaging gap, no verdict change."
+ },
+ {
+  "group": "food_component_start_40",
+  "reviewer": "P1",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "rows.jsonl campaign35 thresholds-custom_vision eat_salmon locked (output.log 19121-19144)",
+  "description": "In the custom_vision config eat_salmon (threshold 2) cannot be tested locked without VISION (threshold 5) also locked, so this runtime has no unmasked locked proof for eat_salmon; the row is correctly PASS_MASKED_BY_DEPENDENCY and the lock is proven in campaign31-34. Structural limitation, noted for completeness."
+ },
+ {
+  "group": "furnace3_shared_base_use",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "campaign31/receipts/output.log 2183-2193 (pass1 open_furnace locked: ATD_W2_INPUT_EVENT useBlock=ALLOW)",
+  "description": "Locked excerpts show only the Bukkit ALLOW decision and no explicit native denial line; the lock is inferred from the absent INVENTORY_OPEN boundary, unchanged menu/stat and client overlay. Sufficient but indirect."
+ },
+ {
+  "group": "furnace3_shared_base_use",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...) vs HARNESS_RC2C.sha256 (c8add78f...); campaign_cases.py mtime 2026-11-21 00:24:48 +05:00; campaign-final-rc2c.log:2866 (campaign35 up 19:24:12Z)",
+  "description": "campaign_cases.py was edited ~37 s after the campaign35 server started, so the harness hash recorded for campaign35 is the RC2D file, not RC2C. The orchestrator imports campaign_cases in-process at start (campaign_final.py:14, campaign.main called in-process), so the cases that ran were most likely the RC2C version, but this cannot be proven from the recorded hashes. The documented RC2D change concerns ignite_tnt only and does not touch this group's cases."
+ },
+ {
+  "group": "landmark22_selectors_and_action_matrix",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "E1",
+  "evidence": "review-rc2c/landmark22_selectors_and_action_matrix/E1.json familyResolverSites (no sha256 for BukkitExactLandmarkRuntime.java, LandmarkEngine.java, ExactLandmarkGate.java, RestrictionEngine.java)",
+  "description": "The active family resolver files that carry the landmark decision are cited without a SHA-256, so E1 alone does not pin them. I verified them via git (HEAD = repoHead 5c086aaa, clean worktree, hash-object = HEAD blob)."
+ },
+ {
+  "group": "landmark22_selectors_and_action_matrix",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "campaign31/receipts/output.log 26701-26711 (pass1 village locked: ATD_W2_INPUT_EVENT useBlock=ALLOW)",
+  "description": "Locked rows contain no explicit server-side landmark denial line; the lock is shown by the absent chest open, unchanged stat/count and the landmark-specific client overlay. Sufficient but indirect."
+ },
+ {
+  "group": "landmark22_selectors_and_action_matrix",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...) vs HARNESS_RC2C.sha256 (c8add78f...); campaign_cases.py mtime 2026-11-21 00:24:48 +05:00; campaign-final-rc2c.log:2866 (campaign35 up 19:24:12Z)",
+  "description": "campaign_cases.py was edited ~37 s after the campaign35 server started, so the harness hash recorded for campaign35 is the RC2D file, not RC2C. The orchestrator imports campaign_cases in-process at start (campaign_final.py:14, campaign.main called in-process), so the cases that ran were most likely the RC2C version, but this cannot be proven from the recorded hashes. The documented RC2D change concerns ignite_tnt only and does not touch this group's cases."
+ },
+ {
+  "group": "menu_open_anvil",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "review-rc2c/menu_open_anvil/MANIFEST.json runtimes.campaign35.evidenceHashes['campaign_cases.py'].sha256=d933206f160d857d... (= HARNESS_RC2D.sha256) vs campaign31-34 c8add78f3d4ea3d3... (= HARNESS_RC2C.sha256); w5-campaign/campaign_cases.py mtime 2026-11-21 00:24:48 +0500, campaign35/receipts/launch.json 00:24:00; campaign35 campaign-results.jsonl ignite_tnt rows requires={'vision': 5}",
+  "description": "campaign_cases.py was edited about 48 s after campaign35 started, and campaign35's evidence hash was taken at the end of the run (EVIDENCE_HASHES.json 01:29:53), so it records the RC2D file instead of the RC2C code that produced the rows. The RC2C version (c8add78f..., 27009 bytes) is not kept anywhere under certification/, so `sha256sum -c HARNESS_RC2C.sha256` now fails for campaign_cases.py and nobody can re-hash or diff it. The rows themselves show RC2C behaviour: campaign35 ignite_tnt has no use_flint_and_steel requirement, and one orchestrator process imported the cases at 11:38Z. So this group's verdicts are not affected, but the provenance record is inaccurate."
+ },
+ {
+  "group": "menu_open_anvil",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "E1",
+  "evidence": "review-rc2c/menu_open_anvil/E1.json directSites (GameplayMenuAbilities.java 22, 69); repo BukkitExpandedGameplayListener.java l.76-82",
+  "description": "E1 cites only the mapping table GameplayMenuAbilities as the active site. It does not cite the place that actually cancels the anvil menu, BukkitExpandedGameplayListener.open(InventoryOpenEvent) l.81, which is what produces INVENTORY_OPEN_MONITOR_CANCELLED true in the locked excerpts. The villager13 E1 does cite this listener. The map is incomplete, but I opened the listener and it checks OPEN_ANVIL correctly."
+ },
+ {
+  "group": "menu_open_beacon",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...); campaign_cases.py mtime 2026-11-21 00:24:48 +0500; campaign35 output.log first ATD_STAGE2A_STATE 00:24:42 (line 379); campaign_final.py:14,192 (in-process import and replay); campaign35 ignite_tnt rows requires={'vision':5}",
+  "description": "The harness file campaign_cases.py was rewritten on disk (RC2C c8add78f -> RC2D d933206f) while campaign35 was running. campaign35's rows were produced and replayed by the orchestrator's already-imported RC2C module (its ignite_tnt rows carry requires={'vision':5} only), but its EVIDENCE_HASHES.json / MANIFEST evidenceHashes record the RC2D hash, and the RC2C campaign_cases.py is no longer on disk. I reconstructed it exactly (current file minus the ignite_tnt requires hunk = c8add78f), so no verdict changes. Still, the recorded provenance for campaign35 is wrong, and the frozen harness was edited mid-campaign."
+ },
+ {
+  "group": "menu_open_brewing_stand",
+  "reviewer": "P8",
+  "severity": "minor",
+  "criterion": "E1",
+  "evidence": "review-rc2c/menu_open_brewing_stand/E1.json directSites; repo .../gameplay/BukkitExpandedGameplayListener.java:76-81",
+  "description": "The only active E1 site (GameplayMenuAbilities.java:27) is a lookup-table entry, not the enforcing code; the actual guard, the InventoryOpenEvent handler in BukkitExpandedGameplayListener.java, is not cited or hashed in E1."
+ },
+ {
+  "group": "menu_open_cartography_table",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/menu_open_cartography_table/excerpts.txt, campaign31 pass1 locked (output.log 1230-1240: ATD_W2_INPUT_EVENT useBlock=ALLOW, cancelled=false)",
+  "description": "Locked excerpts contain no explicit server-side denial line; the only logged server decision is the Bukkit ALLOW, and the native denial is inferred from the missing INVENTORY_OPEN boundary, unchanged menu/stat and the client overlay. Sufficient but indirect; a native DENY trace would make the lock self-evident."
+ },
+ {
+  "group": "menu_open_cartography_table",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...) vs HARNESS_RC2C.sha256 (c8add78f...); campaign_cases.py mtime 2026-11-21 00:24:48 +05:00; campaign-final-rc2c.log:2866 (campaign35 up 19:24:12Z)",
+  "description": "campaign_cases.py was edited ~37 s after the campaign35 server started, so the harness hash recorded for campaign35 is the RC2D file, not RC2C. The orchestrator imports campaign_cases in-process at start (campaign_final.py:14, campaign.main called in-process), so the cases that ran were most likely the RC2C version, but this cannot be proven from the recorded hashes. The documented RC2D change concerns ignite_tnt only and does not touch this group's cases."
+ },
+ {
+  "group": "menu_open_crafting_table",
+  "reviewer": "P8",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/menu_open_crafting_table/excerpts.txt:6-7 (campaign31 pass1 locked)",
+  "description": "The plugin's native denial of the crafting table is not logged as an explicit decision: the Bukkit-level ATD_W2_INPUT_EVENT/ATD_EVENT lines say useBlock=ALLOW, cancelled=false even in locked rows. The denial is inferred from the absence of INVENTORY_OPEN/ClientboundOpenScreenPacket plus the client overlay; sufficient, but a reader could misread the ALLOW line as an allowed action."
+ },
+ {
+  "group": "menu_open_enchanting_table",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "review-rc2c/menu_open_enchanting_table/MANIFEST.json runtimes.campaign35.evidenceHashes['campaign_cases.py'].sha256=d933206f160d857d... (= HARNESS_RC2D.sha256) vs campaign31-34 c8add78f3d4ea3d3... (= HARNESS_RC2C.sha256); w5-campaign/campaign_cases.py mtime 2026-11-21 00:24:48 +0500, campaign35/receipts/launch.json 00:24:00; campaign35 campaign-results.jsonl ignite_tnt rows requires={'vision': 5}",
+  "description": "campaign_cases.py was edited about 48 s after campaign35 started, and campaign35's evidence hash was taken at the end of the run (EVIDENCE_HASHES.json 01:29:53), so it records the RC2D file instead of the RC2C code that produced the rows. The RC2C version (c8add78f..., 27009 bytes) is not kept anywhere under certification/, so `sha256sum -c HARNESS_RC2C.sha256` now fails for campaign_cases.py and nobody can re-hash or diff it. The rows themselves show RC2C behaviour: campaign35 ignite_tnt has no use_flint_and_steel requirement, and one orchestrator process imported the cases at 11:38Z. So this group's verdicts are not affected, but the provenance record is inaccurate."
+ },
+ {
+  "group": "menu_open_grindstone",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/menu_open_grindstone/excerpts.txt lines 1-12 (campaign31 pass1 locked)",
+  "description": "The plugin decision lines in the locked excerpts read useBlock=ALLOW / cancelled=false; the denial comes from the native GrindstoneBlock.useWithoutItem guard, which logs nothing. The lock is proven only indirectly (no OpenScreen packet, client overlay), not by a positive server deny line as the brief's row anatomy suggests."
+ },
+ {
+  "group": "menu_open_loom",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "certification/w5-campaign/HARNESS_RC2C.sha256 line 2 (campaign_cases.py c8add78f...) vs certification/w5-campaign/campaign_cases.py (current SHA-256 d933206f..., = HARNESS_RC2D)",
+  "description": "The campaign_cases.py that produced campaign31-35 (c8add78f..., recorded in MANIFEST evidenceHashes) is no longer on disk: the w5-campaign copy was overwritten by the RC2D version and no copy with that hash exists under certification/, repo/ or tooling/. campaign.py and campaign_replay.py still match, so verdicts can be re-derived, but a third person cannot re-run the exact RC2C case definitions; keep a history copy (history-campaign_cases.py.rc2c)."
+ },
+ {
+  "group": "menu_open_shulker_box",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/menu_open_shulker_box/excerpts.txt lines 1-12 (campaign31 pass1 locked)",
+  "description": "Locked excerpts show ATD_EVENT blockResult=ALLOW, cancelled=false; the native ShulkerBoxBlock.useWithoutItem guard writes no deny line, so the lock is shown only by the absence of OpenScreen and the client overlay."
+ },
+ {
+  "group": "menu_open_shulker_box",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E1",
+  "evidence": "E:/Vibecode/AchieveToDo/repo/port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java:39; E:/Vibecode/AchieveToDo/repo/port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java:160",
+  "description": "E1 cites NativeEquipmentAbilities.java:39, which only adds OPEN_SHULKER_BOX to a set of ability names and checks nothing. The real bytecode hook (NativeTransactionAgent.java:160, ShulkerBoxBlock.useWithoutItem) is not cited. The guard does exist, through NativeTransactionBindings.java:43."
+ },
+ {
+  "group": "menu_open_stonecutter",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "certification/w5-campaign/HARNESS_RC2C.sha256 line 2 (campaign_cases.py c8add78f...) vs certification/w5-campaign/campaign_cases.py (current SHA-256 d933206f..., = HARNESS_RC2D)",
+  "description": "The campaign_cases.py that produced campaign31-35 (c8add78f..., recorded in MANIFEST evidenceHashes) is no longer on disk: the w5-campaign copy was overwritten by the RC2D version and no copy with that hash exists under certification/, repo/ or tooling/. campaign.py and campaign_replay.py still match, so verdicts can be re-derived, but a third person cannot re-run the exact RC2C case definitions; keep a history copy (history-campaign_cases.py.rc2c)."
+ },
+ {
+  "group": "mining_basic_two",
+  "reviewer": "P7",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/mining_basic_two/excerpts.txt line 3 ('\"ability\": {\"BREAK_BLOCKS\": null}'); campaign31/receipts/output.log contains 0 occurrences of 'BREAK_BLOCKS'",
+  "description": "The ATD_STAGE2A_STATE ability map does not include BREAK_BLOCKS or BREAK_BLOCKS_IN_NEGATIVE_Y, so the excerpts show the tested ability's lock state as null, and the server-side ATD_EVENT shows blockResult=ALLOW because the denial runs in the native tool agent and logs no decision line. The lock is still proven by the unchanged probe, the unchanged count and the ability-specific client overlay in rows.jsonl, but the server log alone does not show the denial for this group."
+ },
+ {
+  "group": "movement_jump",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/movement_jump/excerpts.txt (state lines '[compacted]', no stats); raw campaign31/receipts/output.log:3170 vs :3173 (JUMP 0 -> 1)",
+  "description": "The allowed-row effect oracle (stat JUMP) is not visible in excerpts.txt because the compacted ATD_STAGE2A_STATE lines omit stats; a reader of the package alone cannot confirm the allowed effect. Confirmed from the raw log for all 7 allowed/creative rows."
+ },
+ {
+  "group": "movement_jump",
+  "reviewer": "P6",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...) vs HARNESS_RC2C.sha256 (c8add78f...); campaign_cases.py mtime 2026-11-21 00:24:48 +05:00; campaign-final-rc2c.log:2866 (campaign35 up 19:24:12Z)",
+  "description": "campaign_cases.py was edited ~37 s after the campaign35 server started, so the harness hash recorded for campaign35 is the RC2D file, not RC2C. The orchestrator imports campaign_cases in-process at start (campaign_final.py:14, campaign.main called in-process), so the cases that ran were most likely the RC2C version, but this cannot be proven from the recorded hashes. The documented RC2D change concerns ignite_tnt only and does not touch this group's cases."
+ },
+ {
+  "group": "movement_sneak",
+  "reviewer": "P8",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/movement_sneak/excerpts.txt:5-10; repo .../bridge/BukkitBridgeRuntime.java:296-309",
+  "description": "The only server-side lines in locked sneak rows, 'ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=sneak', are produced when the client mod reports a denial intent over the bridge, not by the server guard NativeMovementAgent.sneak (setShiftKeyDown). The effect oracle is the client 'crouching' flag. The rows therefore prove the end-to-end lock with the real client, but no row shows the server-side setShiftKeyDown guard firing or a server-side pose probe."
+ },
+ {
+  "group": "movement_sprint",
+  "reviewer": "P1",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/movement_sprint/excerpts.txt (e.g. block 'campaign31 pass1 sprint allowed ... lines 3346-3350') vs campaign31/receipts/output.log:3347,3350",
+  "description": "The excerpt compaction drops the stats block of ATD_STAGE2A_STATE, so the effect oracle SPRINT_ONE_CM (allowed) and WALK_ONE_CM-only (locked) cannot be judged from excerpts.txt alone; allowed excerpts contain only two state lines. I verified every row from the raw log lines instead; packaging gap, no verdict change."
+ },
+ {
+  "group": "portal_three_conditioned",
+  "reviewer": "P10",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/portal_three_conditioned/excerpts.txt:815 (ability {\"ENTER_END\": null})",
+  "description": "Carried over. The compacted excerpts show the tested ability's lock state as null, so the lock state has to be read from raw advancement lines (e.g. campaign38 output.log:460)."
+ },
+ {
+  "group": "portal_three_conditioned",
+  "reviewer": "P10",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "MANIFEST.runtimes.campaign35.evidenceHashes['campaign_cases.py'] = d933206f... (RC2D), not c8add78f... (RC2C)",
+  "description": "Carried over. campaign35 records the RC2D campaign_cases.py. The only RC2C->RC2D difference is the ignite_tnt requires, which does not affect this group."
+ },
+ {
+  "group": "portal_three_conditioned",
+  "reviewer": "P10",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "campaign38/receipts/driver-journal.jsonl:171838-171841; output.log:1138 (z=-1.6448)",
+  "description": "The spectator walks through the thin portal and ends at z=-1.645, outside the block, so it is inside only briefly. The PASS still matches the source, because SPECTATOR is exempt from the guard and vanilla spectators do not use portals. But the row shows little exposure to the overlay path."
+ },
+ {
+  "group": "shelf_open_chest_non_menu",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...); campaign_cases.py mtime 2026-11-21 00:24:48 +0500; campaign35 output.log first ATD_STAGE2A_STATE 00:24:42 (line 379); campaign_final.py:14,192 (in-process import and replay); campaign35 ignite_tnt rows requires={'vision':5}",
+  "description": "The harness file campaign_cases.py was rewritten on disk (RC2C c8add78f -> RC2D d933206f) while campaign35 was running. campaign35's rows were produced and replayed by the orchestrator's already-imported RC2C module (its ignite_tnt rows carry requires={'vision':5} only), but its EVIDENCE_HASHES.json / MANIFEST evidenceHashes record the RC2D hash, and the RC2C campaign_cases.py is no longer on disk. I reconstructed it exactly (current file minus the ignite_tnt requires hunk = c8add78f), so no verdict changes. Still, the recorded provenance for campaign35 is wrong, and the frozen harness was edited mid-campaign."
+ },
+ {
+  "group": "shelf_open_chest_non_menu",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "campaign_final.py:23-27 (OFFHAND requires c['ability'] != 'open_chest'); campaign_cases.py:75-76 (SHELF main='stick')",
+  "description": "The shelf transfer is an item-in-hand action (main='stick'), but it has neither offhand_* rows nor NA_OFFHAND_NOT_APPLICABLE rows. It drops out of the offhand pass only because the harness excludes the whole ability open_chest by name, and no rationale is recorded. The vanilla ShelfBlock bytecode suggests the shelf ignores the off hand, so I do not treat this as a coverage gap, but the package should state it."
+ },
+ {
+  "group": "sleep",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "review-rc2c/sleep/MANIFEST.json runtimes.campaign35.evidenceHashes['campaign_cases.py'].sha256=d933206f160d857d... (= HARNESS_RC2D.sha256) vs campaign31-34 c8add78f3d4ea3d3... (= HARNESS_RC2C.sha256); w5-campaign/campaign_cases.py mtime 2026-11-21 00:24:48 +0500, campaign35/receipts/launch.json 00:24:00; campaign35 campaign-results.jsonl ignite_tnt rows requires={'vision': 5}",
+  "description": "campaign_cases.py was edited about 48 s after campaign35 started, and campaign35's evidence hash was taken at the end of the run (EVIDENCE_HASHES.json 01:29:53), so it records the RC2D file instead of the RC2C code that produced the rows. The RC2C version (c8add78f..., 27009 bytes) is not kept anywhere under certification/, so `sha256sum -c HARNESS_RC2C.sha256` now fails for campaign_cases.py and nobody can re-hash or diff it. The rows themselves show RC2C behaviour: campaign35 ignite_tnt has no use_flint_and_steel requirement, and one orchestrator process imported the cases at 11:38Z. So this group's verdicts are not affected, but the provenance record is inaccurate."
+ },
+ {
+  "group": "sleep",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/sleep/excerpts.txt: every ATD_STAGE2A_STATE line shows \"ability\": {\"SLEEP\": null}; campaign31 output.log l.8521 'abilities' map lists only 25 abilities (OPEN_*, EAT_SALMON, JUMP, SNEAK, SPRINT, SWIM)",
+  "description": "The probe's state line does not report the lock state of SLEEP, so the excerpts cannot show directly that it was LOCKED or UNLOCKED. The lock state was established from the logged count against the E1/config threshold (count = threshold-1 or threshold, cross-checked against the config TOML files) and from the server's denial fingerprints. The brief's statement that the state line 'shows the tested ability's lock state' does not hold for this ability."
+ },
+ {
+  "group": "throwables_four_paper_candidates",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "campaign31/receipts/output.log: 0 occurrences of 'type=ServerboundUseItemPacket'; e.g. excerpt campaign31 pass1 throw_snowball locked (output.log 16820-16829) has no ATD_PACKET_IN line",
+  "description": "For throwables no inbound use packet and no guard/trace line is logged (PacketWitness records only ServerboundUseItemOnPacket, and the Item.use trace does not fire for the overriding SnowballItem/EggItem/EnderpearlItem/WindChargeItem.use). That the request reached the server guard is shown only indirectly, by the server's inventory resync packets after act in every locked row. Consistent and sufficient, but a server_reach-style oracle (as for vehicles/villagers) would make it direct."
+ },
+ {
+  "group": "throwables_four_paper_candidates",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/throwables_four_paper_candidates/excerpts.txt ATD_STAGE2A_STATE lines ('THROW_SNOWBALL': null etc.)",
+  "description": "The state probe reports the tested ability as null, so the plugin's own lock state is not visible in the excerpts; the lock is inferred from count < threshold, the overlay and the absent effect."
+ },
+ {
+  "group": "throwables_four_paper_candidates",
+  "reviewer": "P2",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "certification/w5-campaign/HARNESS_RC2C.sha256 line 2 (campaign_cases.py c8add78f...) vs certification/w5-campaign/campaign_cases.py (current SHA-256 d933206f..., = HARNESS_RC2D)",
+  "description": "The campaign_cases.py that produced campaign31-35 (c8add78f..., recorded in MANIFEST evidenceHashes) is no longer on disk: the w5-campaign copy was overwritten by the RC2D version and no copy with that hash exists under certification/, repo/ or tooling/. campaign.py and campaign_replay.py still match, so verdicts can be re-derived, but a third person cannot re-run the exact RC2C case definitions; keep a history copy (history-campaign_cases.py.rc2c)."
+ },
+ {
+  "group": "tool_material7_each_native_mode",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/tool_material7_each_native_mode/excerpts.txt line 1013 (campaign33 thresholds-hard use_golden_tools locked)",
+  "description": "The tool fixture mines at y=-59, which needs break_blocks_in_negative_y. In HARD that threshold (42) is above use_golden_tools (38), so the HARD golden lock is masked and unproven for that config. A fixture at positive Y (break_blocks 34) would also be masked, but less often. This is not fatal, because the golden lock is proven in the other configs."
+ },
+ {
+  "group": "tool_material7_each_native_mode",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/campaign_cases.py (use_<mat>_tools cases: <mat>_pickaxe on stone only)",
+  "description": "Only pickaxe mining is exercised per material. The guard also covers swords, axes, shovels, hoes and spears (AxeItem/HoeItem/ShovelItem/KineticWeapon/PiercingWeapon transforms), and none of these routes has runtime evidence."
+ },
+ {
+  "group": "tool_material7_each_native_mode",
+  "reviewer": "P3",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/tool_material7_each_native_mode/excerpts.txt lines 1-23 (campaign31 pass1 use_golden_tools locked)",
+  "description": "Locked excerpts show ATD_EVENT LEFT_CLICK_BLOCK blockResult=ALLOW, and STATE reports the tool ability as null. The denial shows only as an unbroken block plus inventory resync, with no explicit server deny line or lock state."
+ },
+ {
+  "group": "vehicle_mount_two",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...); campaign_cases.py mtime 2026-11-21 00:24:48 +0500; campaign35 output.log first ATD_STAGE2A_STATE 00:24:42 (line 379); campaign_final.py:14,192 (in-process import and replay); campaign35 ignite_tnt rows requires={'vision':5}",
+  "description": "The harness file campaign_cases.py was rewritten on disk (RC2C c8add78f -> RC2D d933206f) while campaign35 was running. campaign35's rows were produced and replayed by the orchestrator's already-imported RC2C module (its ignite_tnt rows carry requires={'vision':5} only), but its EVIDENCE_HASHES.json / MANIFEST evidenceHashes record the RC2D hash, and the RC2C campaign_cases.py is no longer on disk. I reconstructed it exactly (current file minus the ignite_tnt requires hunk = c8add78f), so no verdict changes. Still, the recorded provenance for campaign35 is wrong, and the frozen harness was edited mid-campaign."
+ },
+ {
+  "group": "vehicle_mount_two",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/vehicle_mount_two/excerpts.txt (all ATD_STAGE2A_STATE lines; GET_INTO_BOAT and GET_INTO_MINECART both null)",
+  "description": "The compacted ATD_STAGE2A_STATE lines in excerpts.txt show \"ability\": {\"GET_INTO_BOAT\": null} in every row, because the probe's 'abilities' map does not contain this ability. So the excerpt does not show the tested ability's lock state as the brief says. I verified the lock state from the raw output.log state lines instead: criteria achievetodo:abilities/get_into_boat = ['demystified'] at threshold-1 and ['demystified','unlocked'] at threshold, in every row of every runtime."
+ },
+ {
+  "group": "villager13_profession_resolver",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "ReleaseLaunch",
+  "evidence": "review-rc2c/villager13_profession_resolver/MANIFEST.json runtimes.campaign35.evidenceHashes['campaign_cases.py'].sha256=d933206f160d857d... (= HARNESS_RC2D.sha256) vs campaign31-34 c8add78f3d4ea3d3... (= HARNESS_RC2C.sha256); w5-campaign/campaign_cases.py mtime 2026-11-21 00:24:48 +0500, campaign35/receipts/launch.json 00:24:00; campaign35 campaign-results.jsonl ignite_tnt rows requires={'vision': 5}",
+  "description": "campaign_cases.py was edited about 48 s after campaign35 started, and campaign35's evidence hash was taken at the end of the run (EVIDENCE_HASHES.json 01:29:53), so it records the RC2D file instead of the RC2C code that produced the rows. The RC2C version (c8add78f..., 27009 bytes) is not kept anywhere under certification/, so `sha256sum -c HARNESS_RC2C.sha256` now fails for campaign_cases.py and nobody can re-hash or diff it. The rows themselves show RC2C behaviour: campaign35 ignite_tnt has no use_flint_and_steel requirement, and one orchestrator process imported the cases at 11:38Z. So this group's verdicts are not affected, but the provenance record is inaccurate."
+ },
+ {
+  "group": "villager13_profession_resolver",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/villager13_profession_resolver/excerpts.txt: every ATD_STAGE2A_STATE line shows \"ability\": {\"TRADE_WITH_<PROFESSION> (all 13)\": null}; campaign31 output.log l.8521 'abilities' map lists only 25 abilities (OPEN_*, EAT_SALMON, JUMP, SNEAK, SPRINT, SWIM)",
+  "description": "The probe's state line does not report the lock state of TRADE_WITH_<PROFESSION> (all 13), so the excerpts cannot show directly that it was LOCKED or UNLOCKED. The lock state was established from the logged count against the E1/config threshold (count = threshold-1 or threshold, cross-checked against the config TOML files) and from the server's denial fingerprints. The brief's statement that the state line 'shows the tested ability's lock state' does not hold for this ability."
+ },
+ {
+  "group": "villager13_profession_resolver",
+  "reviewer": "P4",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "rows trade_with_cartographer locked/op (7 rows, PASS_NO_OVERLAY); campaign31 output.log l.17533-17540 (act 17:08:26, interactOn 17:08:30); campaign31 driver-journal.jsonl bytes 81477810-81483133 (client post snapshot 2026-11-20T12:08:28.748Z)",
+  "description": "For cartographer the client's tick1/post snapshots are taken while the server is still stalled generating cartographer offers, before the server answers. The client oracles (screen, overlay) for these rows therefore describe the moment before the interaction was processed, and the missing overlay comes from harness timing, not from the product. The verdict rests only on the server trace swingSource=NONE, which is sufficient. A longer post-action wait would let the overlay be checked for this profession."
+ },
+ {
+  "group": "wandering_trader_separate",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...); campaign_cases.py mtime 2026-11-21 00:24:48 +0500; campaign35 output.log first ATD_STAGE2A_STATE 00:24:42 (line 379); campaign_final.py:14,192 (in-process import and replay); campaign35 ignite_tnt rows requires={'vision':5}",
+  "description": "The harness file campaign_cases.py was rewritten on disk (RC2C c8add78f -> RC2D d933206f) while campaign35 was running. campaign35's rows were produced and replayed by the orchestrator's already-imported RC2C module (its ignite_tnt rows carry requires={'vision':5} only), but its EVIDENCE_HASHES.json / MANIFEST evidenceHashes record the RC2D hash, and the RC2C campaign_cases.py is no longer on disk. I reconstructed it exactly (current file minus the ignite_tnt requires hunk = c8add78f), so no verdict changes. Still, the recorded provenance for campaign35 is wrong, and the frozen harness was edited mid-campaign."
+ },
+ {
+  "group": "wandering_trader_separate",
+  "reviewer": "P5",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc2c/wandering_trader_separate/excerpts.txt (all ATD_STAGE2A_STATE lines); raw campaign31/receipts/output.log line 18804",
+  "description": "The compacted ATD_STAGE2A_STATE lines in excerpts.txt show \"ability\": {\"TRADE_WITH_WANDERING_TRADER\": null} in every row, because the probe's 'abilities' map does not contain this ability. So the excerpt does not show the tested ability's lock state as the brief says. I verified the lock state from the raw output.log state lines instead: criteria achievetodo:abilities/trade_with_wandering_trader = ['demystified'] at threshold-1 and ['demystified','unlocked'] at threshold, in every row of every runtime."
+ }
+]

@@ -1,0 +1,67 @@
+{
+  "group": "tool_material7_each_native_mode",
+  "reviewer": "P3",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "7 abilities (use_golden/wooden/stone/iron/diamond/netherite/copper_tools), each mapping DIRECT with sites NativeToolAgent.java:19 and NativeToolBindings.java:14-16 (+ inactive resolver findToolMaterialAbility). SHA-256 recomputed for both cited files, equal E1: NativeToolAgent.java 9f9e4e6c..., NativeToolBindings.java e6b57972.... Opened: NativeToolAgent.java:19 IDS array maps materials WOOD/STONE/COPPER/IRON/GOLD/DIAMOND/NETHERITE to USE_*_TOOLS, and ITEMS (lines 21-29) lists each material's sword/pickaxe/axe/shovel/hoe/spear; NativeToolBindings.java:14-16 binds all 7 abilities. Every output.log (campaign31-35) logs ATD_TOOL_TRANSFORM for Player, Item, AxeItem, HoeItem, ShovelItem, LivingEntity, KineticWeapon, PiercingWeapon, CopperGolem, WeatheringCopperGolemStatueBlock. Thresholds for all 7 abilities in normal/easy/hard/custom_vision/chaos@34/chaos@36, all equal to toml files (e.g. golden 40/38/38/40/0/218)."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "Independent re-judgement: a script (p3_judge.py) recomputed every non-NA verdict of this group from the excerpt lines alone (pre/post ATD_STAGE2A_STATE count, pre/post probe output, OpenScreen packet, DENIAL_INTENT line) and agreed with every recorded verdict (0 disagreements). Thresholds of every row equal the value in that runtime's config file; every PASS locked/op row has counts[0]==counts[1]<threshold; every allowed row starts at >=threshold. All aimed rows have a client 'pre' hit on the fixture (expect_hit holds); server_reach is not applicable to this group. Probe 'execute if block 8 -59 -3 stone' after 60 ticks of key.attack: every locked row 'Test passed' pre and post (block not broken), count unchanged, repeated inventory resync packets, overlay on client. Allowed rows 'Test passed' -> 'Test failed' (broken). Creative breaks (bypass); spectator does not break (vanilla), no overlay. The only non-PASS row is campaign33 thresholds-hard use_golden_tools locked = PASS_MASKED_BY_DEPENDENCY. This is correct: score 37 < break_blocks_in_negative_y 42 (hard.toml line 62), so it does not count. Golden's lock is proven by PASS locked rows in campaign31 (pass1, reload), 32 and 35. Fixture dependency was otherwise unlocked: break_blocks <= break_blocks_in_negative_y in every config and every other locked score >= that threshold. Every ability has PASS locked rows in >=4 runtimes. Locked-row decision lines: the Bukkit-level ATD_W2_INPUT_EVENT/ATD_EVENT lines in locked rows show useBlock/blockResult=ALLOW, cancelled=false; the denial is made by the native (javaagent bytecode) guard, which writes no positive deny line. ",
+      "rowsRead": [
+        "campaign31 pass1 use_golden_tools locked",
+        "campaign31 pass1 use_golden_tools allowed",
+        "campaign32 thresholds-easy use_diamond_tools locked",
+        "campaign32 thresholds-easy use_diamond_tools allowed",
+        "campaign33 thresholds-hard use_golden_tools locked (PASS_MASKED_BY_DEPENDENCY)",
+        "campaign33 thresholds-hard use_golden_tools allowed",
+        "campaign34 thresholds-chaos use_golden_tools locked (NA_NO_LOCKED_STATE)",
+        "campaign34 thresholds-chaos use_golden_tools allowed",
+        "(all 104 non-NA excerpts re-judged by script, covering pass1/modes/reload/easy/hard/chaos/custom_vision for each of the 7 abilities, i.e. >=3 runtimes per ability)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "PASS for all 6 runtimes in MANIFEST.runtimes (campaign31 normal, 32 easy, 33 hard, 34 chaos, 35 custom_vision, 36 chaos-supplement): onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' present in MANIFEST and re-found by grep in each campaignNN/receipts/output.log (e.g. campaign31 lines 233/244, campaign34 lines 234/250); runtime/server.properties online-mode=true in all 6; receipts/launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "105 rows = 7 abilities x (pass1 2 + modes 3 + reload 2 + 4 threshold runtimes x 2). creative/op/spectator rows exist for all 7. No offhand rows: the route is key.attack (mining), not click_use, so it is excluded from campaign_final.OFFHAND; mining has no off-hand route. One NA row: campaign34 chaos use_golden_tools locked NA_NO_LOCKED_STATE. I verified it against campaign34 chaos_20261116.toml line 23 'use_golden_tools = 0'. Its allowed row ran at score 42 (raised to break_blocks_in_negative_y)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "PASS. 14 reload rows, all campaign31; campaign-results.jsonl ordering pass1 1-398, modes 399-995, offhand 996-1231, reload 1232-1629 so reload follows pass1/modes/offhand; output.log 19:55:15 'Reloading!' then 'PROGRESSION_CONFIG_READY generation=2' (=14:55 UTC, MANIFEST e5Reload.at 14:55:20Z, generationBefore 1, generationAfter 2). Every ATD_STAGE2A_STATE line of the reload excerpts shows generation 2 and every non-reload campaign31 excerpt generation 1. Each reload verdict equals the pass1 verdict for the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "105/105 rows of tool_material7_each_native_mode REPRODUCED. Every replay row status REPRODUCED with recorded==replayed; replay keys (campaign,tag,ability,phase) match rows.jsonl 1:1 and every replay 'line' pointer resolves to the identical row in campaignNN/receipts/campaign-results.jsonl. MANIFEST replay reproducedAll=true for campaign31 (1629), 32-35 (398 each), 36 (2), problems=[]. Plugin SHA-256 recomputed: campaign31-36 runtime/plugins/achievetodo.jar and rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar all = da9360aa...cb540. Client mod recomputed: installed minecraft/mods/achievetodo.jar and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar = 5c473903...5a99. campaign-results.jsonl SHA-256 recomputed for ALL six runtimes and equal to evidenceHashes.results (31 8eddce27..., 32 c4936a8d..., 33 23a53c62..., 34 a7e80ad6..., 35 400573a8..., 36 2c2ce771...). trace-agent.jar in each observer-work = 706b85d5... as in HARNESS_RC2C/RC2D; campaign.py, campaign_replay.py match HARNESS_RC2C; current campaign_cases.py = d933206f (RC2D value, as expected after campaign36)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "PASS. receipts/launch.json command for every runtime: java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<easy|hard|chaos> only for 32/33/34/36] -javaagent:plugins/achievetodo.jar -javaagent:<observer-work>/trace-agent.jar=<targets> -jar purpur-26.2-2620.jar --nogui; no other -Dachievetodo.* option; campaign31 and 35 have none (matches runtime_args.json). output.log of each runtime logs 'ATD_LAUNCH_PROFILE=release; derived=[...]' (line ~207) and 'ATD_GAMEPLAY_MODE=CERTIFICATION; PRODUCT_GAMEPLAY_READY=false' (line ~221) before the first ATD_STAGE2A_STATE/case mark (line >=335). For 32/33/34/36 derived=[..., world-group.properties, ..., achievetodo.progression.freshConfig] i.e. freshConfig and world-group.properties were produced by the plugin (fresh install); for 31/35 derived has neither (existing install). Resolved config lines: normal.toml / easy.toml / hard.toml / chaos_20261116.toml / custom_vision.toml. Matches STARTING_THE_SERVER.md (lines 21-27, 57). All group rows come from campaign31-35 (HARNESS_RC2C); none from campaign36. Note: the runtimes also carry instrumentation plugins (w4-gameplay-evidence-probe.jar = launch.json observerSHA256 077a0d56..., packet-witness.jar bc5a5e98..., w4-snap.jar); they are observers, not part of the command line."
+    }
+  },
+  "superseded": "No row of this group is superseded (MANIFEST.superseded=[]; group has no campaign36 row). For the CHAOS ignite_tnt replacement: campaign34 ignite_tnt allowed was FAIL_NO_EFFECT at score 260 while use_flint_and_steel needed 523 (fixture used a locked tool), and its locked row was therefore also dependency-masked in substance; campaign36 (fresh CHAOS install, HARNESS_RC2D, campaign_cases.py d933206f) declares requires use_flint_and_steel=144 and raises the allowed score to 607: locked PASS [606,606], allowed PASS [607,608]. Replacement is justified.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/tool_material7_each_native_mode/excerpts.txt line 1013 (campaign33 thresholds-hard use_golden_tools locked)",
+      "description": "The tool fixture mines at y=-59, which needs break_blocks_in_negative_y. In HARD that threshold (42) is above use_golden_tools (38), so the HARD golden lock is masked and unproven for that config. A fixture at positive Y (break_blocks 34) would also be masked, but less often. This is not fatal, because the golden lock is proven in the other configs."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/campaign_cases.py (use_<mat>_tools cases: <mat>_pickaxe on stone only)",
+      "description": "Only pickaxe mining is exercised per material. The guard also covers swords, axes, shovels, hoes and spears (AxeItem/HoeItem/ShovelItem/KineticWeapon/PiercingWeapon transforms), and none of these routes has runtime evidence."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/tool_material7_each_native_mode/excerpts.txt lines 1-23 (campaign31 pass1 use_golden_tools locked)",
+      "description": "Locked excerpts show ATD_EVENT LEFT_CLICK_BLOCK blockResult=ALLOW, and STATE reports the tool ability as null. The denial shows only as an unbroken block plus inventory resync, with no explicit server deny line or lock state."
+    }
+  ]
+}

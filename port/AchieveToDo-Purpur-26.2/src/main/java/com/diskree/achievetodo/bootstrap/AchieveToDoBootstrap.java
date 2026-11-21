@@ -17,6 +17,28 @@ public final class AchieveToDoBootstrap implements PluginBootstrap {
 
     @Override
     public void bootstrap(BootstrapContext context) {
+        // Log only. A launch without flags usually fails below with BACAP_MISSING before the plugin enables,
+        // so say how to start before that; the refusal itself happens in AchieveToDoPlugin.onEnable.
+        if (System.getProperty(com.diskree.achievetodo.core.StartupModePolicy.MODE) == null) {
+            try {
+                com.diskree.achievetodo.core.StartupModePolicy.decide(System::getProperty,
+                    new com.diskree.achievetodo.core.StartupModePolicy.Hints(null, null, null, null, null, null,
+                        "plugins/" + context.getPluginSource().getFileName()));
+            } catch (com.diskree.achievetodo.core.StartupModePolicy.Refusal refusal) {
+                refusal.guidance().forEach(line -> context.getLogger().error(line));
+            }
+        }
+        // Release launch only: take the BACAP directory from server.properties unless it was given explicitly.
+        // The plugin checks it again against the loaded overworld folder (ATD_LAUNCH_BACAP_DIRECTORY).
+        if (com.diskree.achievetodo.core.ReleaseLaunchDefaults.active(System::getProperty)) {
+            try {
+                new com.diskree.achievetodo.core.ReleaseLaunchProfile(System::getProperty, System::setProperty)
+                    .deriveBacapDirectory(java.nio.file.Path.of("").toAbsolutePath());
+            } catch (com.diskree.achievetodo.core.StartupModePolicy.Refusal refusal) {
+                refusal.guidance().forEach(line -> context.getLogger().error(line));
+                throw refusal;
+            }
+        }
         context.getLifecycleManager().registerEventHandler(LifecycleEvents.DATAPACK_DISCOVERY, event -> {
             DatapackRegistrar registrar = event.registrar();
             BacapPacks.beginDiscovery();

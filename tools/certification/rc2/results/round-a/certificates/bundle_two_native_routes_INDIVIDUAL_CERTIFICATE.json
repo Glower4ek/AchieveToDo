@@ -1,0 +1,70 @@
+{
+  "group": "bundle_two_native_routes",
+  "reviewer": "Q1",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "put_in_bundle: active direct sites NativeEquipmentAbilities.java:39 (PUT_IN_BUNDLE in abilities()) and NativeTransactionBindings.java:41 (guard 'bundle' -> PUT_IN_BUNDLE, which returns !denialEffects.allows, skipping CREATIVE/SPECTATOR); the guard is applied by nativeguard/NativeTransactionAgent (BundleContents$Mutable.tryTransfer -> bundle(), BundleItem.overrideOtherStackedOnMe allowModification -> bundleModification()). BundleAdapter.java:38,60 cited but inactive (legacy). Recomputed SHA-256 of BundleAdapter.java, NativeEquipmentAbilities.java, NativeTransactionBindings.java: all equal E1; BukkitRestrictionResolver.java and Progressions.java have no E1 hash. NativeTransactionAgent.java, the file that actually installs both bundle hooks, is not cited. Thresholds: normal 36, easy 28, hard 46, chaos 46, custom_vision 36."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS, one case ('bundle on cursor, left-click apple slot'). Read all 15 blocks: locked/op blocks show the probe 'Glower4ek has the following entity data: \"minecraft:apple\"' before and after (apple stays in slot 1) and equal counts (35/35, 27/27, 45/45, 45/45, 35/35); allowed and creative blocks end with 'Found no elements matching Inventory[{Slot:1b}]' (apple moved into the bundle). rows.jsonl why.overlay=true on locked rows. The excerpts contain no plugin decision line for this route (no DENY/cancelled/ATD_BRIDGE line); the denial is inferred only from the missing effect and the client overlay.",
+      "rowsRead": [
+        "campaign21 pass1 put_in_bundle locked",
+        "campaign21 pass1 put_in_bundle allowed",
+        "campaign21 modes put_in_bundle creative",
+        "campaign21 modes put_in_bundle op",
+        "campaign21 modes put_in_bundle spectator",
+        "campaign21 reload put_in_bundle locked/allowed",
+        "campaign22 thresholds-easy locked/allowed",
+        "campaign23 thresholds-hard locked/allowed",
+        "campaign24 thresholds-chaos locked/allowed",
+        "campaign25 thresholds-custom_vision locked/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25 (normal, easy, hard, chaos, custom_vision): onlineMode=true, authenticated line 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' present for each; join lines confirmed in each runtime's receipts/output.log (lines 244/244/245/246/245)."
+    },
+    "E4": {
+      "result": "FAIL",
+      "checked": "creative/op/spectator rows present; threshold rows for normal, easy, hard, chaos, custom_vision present; no offhand rows (inventory-click route has no off-hand variant); no NA_* rows. However the group is 'bundle_two_native_routes' and the plugin installs two bundle hooks, but campaign_cases.py:228-232 defines a single case (bundle on cursor clicked onto the apple); the reverse route (item on cursor clicked onto the bundle, BundleItem.overrideOtherStackedOnMe) has no row."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows from campaign21 after pass1/modes; generationAfter=2; both reload blocks show generation 2; verdicts PASS equal pass1."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 15/15 REPRODUCED. REPLAY.json reproducedAll=true for campaign21 (1622/1622) and campaign22-25 (396/396 each). Plugin SHA-256 identical in all 5 runtimes = da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540 (also recomputed from campaign21/runtime/plugins/achievetodo.jar); client mod SHA-256 = 5c473903ec956489185be7d2f5c7803bd82a217c9ec066c1d3ffb5a2f5925a99 as required. Recomputed campaign-results.jsonl SHA-256 of all 5 runtimes; each equals MANIFEST evidenceHashes.results (campaign21 dfd9c2100a7d5761..., campaign22 0a44a65f5b4f4af2..., campaign23 cfbcdcaaf6f674ae..., campaign24 856f42971e90fd1c..., campaign25 45c3e020a6a1eb89...)."
+    }
+  },
+  "superseded": "MANIFEST.superseded and supplements are empty; all rows come from campaign21-25. Release launch: every runtime's output.log logs ATD_LAUNCH_PROFILE=release (lines 206-208) and ATD_GAMEPLAY_MODE=CERTIFICATION (lines 220-222) before the join and first case; campaign21 and campaign25 commands are agent-only, but campaign22/23/24 carry -Dachievetodo.progression.freshConfig=true (see major finding).",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "E3",
+      "evidence": "campaign22/runtime_args.json and campaign22/receipts/launch.json (same in campaign23 and campaign24): \"-Dachievetodo.progression.freshConfig=true\"",
+      "description": "The brief requires the operator launch with no -Dachievetodo.* flags; the easy, hard and chaos runtimes, which contribute all threshold rows for those configs, were started with an explicit -Dachievetodo.progression.freshConfig=true (injected by campaign_modes.py), so those rows do not come from the certified release composition."
+    },
+    {
+      "severity": "major",
+      "criterion": "E4",
+      "evidence": "campaign_cases.py:228-232; rows.jsonl (single finalKey case); nativeguard/NativeTransactionAgent.java:157-200",
+      "description": "Only one of the two native bundle routes is exercised; the item-on-cursor onto bundle route (BundleItem.overrideOtherStackedOnMe -> bundleModification) has no locked or allowed row, so the group's second route is uncertified."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt campaign21 pass1 put_in_bundle locked (output.log 16550-16567)",
+      "description": "No plugin decision line appears in any locked excerpt; the lock is shown only by the unchanged inventory probe and the client overlay."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "E1.json put_in_bundle directSites",
+      "description": "NativeTransactionAgent.java, where both bundle hooks are installed, is not cited or hashed."
+    }
+  ]
+}

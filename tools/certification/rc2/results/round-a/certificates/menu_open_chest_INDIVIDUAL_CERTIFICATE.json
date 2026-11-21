@@ -1,0 +1,56 @@
+{
+  "group": "menu_open_chest",
+  "reviewer": "Q7",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json open_chest: 4 direct sites (3 active) + family resolver findBlockAbility. Recomputed SHA-256 of all 4 cited files (BukkitRestrictionResolver, BukkitExpandedGameplayListener, GameplayGate, NativeLandmarkOperations): 4/4 match. Opened BukkitExpandedGameplayListener.java:70 (containerAbility maps Chest/DoubleChest holder -> OPEN_CHEST, used by open(InventoryOpenEvent) at :81 which cancels when locked) and NativeLandmarkOperations.java:95/119 (shelf transfer -> targetAndAbilityDenied(..., \"OPEN_CHEST\")). Thresholds present for normal 42, easy 40, hard 40, chaos_20261116 125, custom_vision 42."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "30 rows, all PASS, no non-PASS rows. Judged every excerpt (all 30) with a digest of STATE/INPUT/BOUNDARY/PACKET_OUT lines. Chest locked rows (c21..c25): count unchanged (41/41, 39/39, 39/39, 124/124, 41/41), ATD_BOUNDARY INVENTORY_OPEN_MONITOR_CANCELLED true, no ClientboundOpenScreenPacket; allowed rows: MONITOR_CANCELLED false + OpenScreenPacket. Shelf locked rows: shelf block data stays apple before/after, no inventory_changed; allowed rows: shelf becomes stick, inventory_changed awarded. Note: the PlayerInteract decision lines show useBlock=ALLOW for the chest; the denial is at InventoryOpenEvent, consistent with source.",
+      "rowsRead": [
+        "campaign21 pass1 open_chest locked/allowed",
+        "campaign21 pass1 open_chest/shelf locked/allowed",
+        "campaign22 thresholds-easy open_chest locked/allowed (+shelf)",
+        "campaign23 thresholds-hard open_chest locked/allowed (+shelf)",
+        "campaign24 thresholds-chaos open_chest locked/allowed (+shelf)",
+        "campaign25 thresholds-custom_vision open_chest locked/allowed (+shelf)",
+        "campaign21 modes creative/op/spectator (both cases)",
+        "campaign21 reload x4"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25 all onlineMode=true, UUID line 'UUID of player Glower4ek is 89c23030-...' and 'joined the game' line; UUID line found once in each runtime's receipts/output.log; server.properties online-mode=true in each."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator for both cases (creative and spectator open the chest at 41, op is denied). No offhand rows: chest opening / shelf transfer are main-hand block interactions, no off-hand route. Threshold rows for easy/hard/chaos/custom_vision plus normal pass1. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "4 reload rows from campaign21; in campaign-results.jsonl reload rows are lines 1227-1622 after pass1 (1-396), modes (397-990), offhand (991-1226). e5Reload.generationAfter=2. All 4 reload excerpts show \"generation\": 2 only. Reload verdicts PASS = pass1 verdicts PASS for each case/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 30/30 REPRODUCED, recorded==replayed. REPLAY.json reproducedAll=true for campaign21-25. Plugin sha da9360aa... identical in all 5 runtimes; client mod 5c473903... matches. Recomputed campaign-results.jsonl SHA-256 for all 5 runtimes, all equal to evidenceHashes (c21 dfd9c210..., c22 0a44a65f..., c23 cfbcdcaa..., c24 856f4297..., c25 45c3e020...)."
+    }
+  },
+  "superseded": "MANIFEST.superseded is empty; all rows from campaign21-25. Acceptable.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "Release launch",
+      "evidence": "campaign22/runtime_args.json, campaign23/runtime_args.json, campaign24/runtime_args.json (and receipts/launch.json): args contain \"-Dachievetodo.progression.freshConfig=true\"",
+      "description": "The brief states the certified operator launch has no -Dachievetodo.* flags, but the easy, hard and chaos runtimes (which produced this group's thresholds-easy/hard/chaos rows) were launched with an explicit -Dachievetodo.progression.freshConfig=true; their ATD_LAUNCH_PROFILE=release line (output.log line 207/207/206) lists derived values without freshConfig, so it was operator-supplied, not derived. Only campaign21 and campaign25 match the certified composition. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION are logged before the first case in all 5 runtimes."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/menu_open_chest/excerpts.txt block 'campaign21 pass1 open_chest/shelf transfer (non-menu) locked' (output.log 2647-2659) and the 4 other shelf locked blocks",
+      "description": "For the shelf-transfer case the server excerpt contains no positive plugin denial line (ATD_EVENT shows cancelled=false/blockResult=ALLOW); the denial is only inferable from the unchanged shelf block data (apple stays), no inventory_changed advancement, and the client overlay recorded in rows.jsonl. Verdict reproducible, but the native guard leaves no server-side decision trace."
+    }
+  ]
+}

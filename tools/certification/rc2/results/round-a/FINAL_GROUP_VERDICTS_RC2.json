@@ -1,0 +1,399 @@
+{
+ "sources": {
+  "r3": {
+   "campaign21": "normal",
+   "campaign22": "easy",
+   "campaign23": "hard",
+   "campaign24": "chaos",
+   "campaign25": "custom_vision"
+  },
+  "supplements": []
+ },
+ "rows": 3206,
+ "verdictCounts": {
+  "PASS": 3063,
+  "NA_NO_LOCKED_STATE": 14,
+  "PASS_NO_OVERLAY": 16,
+  "PASS_PARITY_ENTER_BLOCK": 10,
+  "NA_OFFHAND_NOT_APPLICABLE": 88,
+  "PASS_MASKED_BY_DEPENDENCY": 15
+ },
+ "superseded": [],
+ "strayCases": [],
+ "statusCounts": {
+  "RUNTIME_PASS": 57
+ },
+ "groups": {
+  "food_component_start_40": {
+   "status": "RUNTIME_PASS",
+   "abilities": 40,
+   "problems": [],
+   "notes": [
+    "eat_salmon: custom_vision:locked=PASS_MASKED_BY_DEPENDENCY"
+   ]
+  },
+  "equipment_identity9_routes_slots": {
+   "status": "RUNTIME_PASS",
+   "abilities": 9,
+   "problems": [],
+   "notes": [
+    "equip_golden_armor/r6 route: armor slot place (inventory slot 5): chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "equip_golden_armor/r6 route: hotbar swap into armor slot (inventory slot 5): chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "equip_golden_armor/r6 route: shift-click (inventory slot 5): chaos:locked=PASS_MASKED_BY_DEPENDENCY"
+   ]
+  },
+  "tool_material7_each_native_mode": {
+   "status": "RUNTIME_PASS",
+   "abilities": 7,
+   "problems": [],
+   "notes": [
+    "use_golden_tools: hard:locked=PASS_MASKED_BY_DEPENDENCY"
+   ]
+  },
+  "villager13_profession_resolver": {
+   "status": "RUNTIME_PASS",
+   "abilities": 13,
+   "problems": [],
+   "notes": [
+    "trade_with_cartographer: chaos:locked=PASS_NO_OVERLAY, custom_vision:locked=PASS_NO_OVERLAY, easy:locked=PASS_NO_OVERLAY, hard:locked=PASS_NO_OVERLAY, normal:locked=PASS_NO_OVERLAY, normal:op=PASS_NO_OVERLAY"
+   ]
+  },
+  "wandering_trader_separate": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "furnace3_shared_base_use": {
+   "status": "RUNTIME_PASS",
+   "abilities": 3,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_chest": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_crafting_table": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_barrel": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_stonecutter": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_grindstone": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_anvil": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_beacon": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_cartography_table": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_ender_chest": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_brewing_stand": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_smithing_table": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_loom": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_shulker_box": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "menu_open_enchanting_table": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "shelf_open_chest_non_menu": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "landmark22_selectors_and_action_matrix": {
+   "status": "RUNTIME_PASS",
+   "abilities": 22,
+   "problems": [],
+   "notes": [
+    "interact_inside_buried_treasure/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_igloo/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_ocean_ruin/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_swamp_hut/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_monster_room/feature found in fresh chunks: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_mansion/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_desert_well/feature found in fresh chunks: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_trial_chambers/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY",
+    "interact_inside_end_city/chest at structure start: chaos:locked=PASS_MASKED_BY_DEPENDENCY"
+   ]
+  },
+  "mining_basic_two": {
+   "status": "RUNTIME_PASS",
+   "abilities": 2,
+   "problems": [],
+   "notes": []
+  },
+  "opening_three_native_owners": {
+   "status": "RUNTIME_PASS",
+   "abilities": 3,
+   "problems": [],
+   "notes": []
+  },
+  "bundle_two_native_routes": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "throwables_four_paper_candidates": {
+   "status": "RUNTIME_PASS",
+   "abilities": 4,
+   "problems": [],
+   "notes": []
+  },
+  "fishing_cast_only": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "sleep": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "vehicle_mount_two": {
+   "status": "RUNTIME_PASS",
+   "abilities": 2,
+   "problems": [],
+   "notes": []
+  },
+  "movement_jump": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": [
+    "jump: custom_vision:locked=PASS_MASKED_BY_DEPENDENCY"
+   ]
+  },
+  "movement_swim": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "movement_sneak": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "movement_sprint": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "client_local_vision": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "client_local_open_inventory": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_shield": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_shoot_crossbow": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_ominous_bottle": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_attack_with_trident": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_shoot_bow": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_jukebox": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_composter": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_charge_respawn_anchor": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_attack_with_mace": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_ender_eye": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_glide_with_fireworks": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_place_end_crystal": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": [
+    "place_end_crystal/aims at obsidian top face: custom_vision:locked=PASS_NO_OVERLAY"
+   ]
+  },
+  "action_use_campfire": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "action_use_spyglass": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_use_water_bucket": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_use_shears": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_use_flint_and_steel": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_ignite_tnt": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_use_cauldron": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_use_brush": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": []
+  },
+  "complex_unlock_vault": {
+   "status": "RUNTIME_PASS",
+   "abilities": 1,
+   "problems": [],
+   "notes": [
+    "unlock_vault: chaos:locked=PASS_NO_OVERLAY, custom_vision:locked=PASS_NO_OVERLAY, easy:locked=PASS_NO_OVERLAY, hard:locked=PASS_NO_OVERLAY, normal:locked=PASS_NO_OVERLAY, normal:offhand_locked=PASS_NO_OVERLAY, normal:op=PASS_NO_OVERLAY"
+   ]
+  },
+  "portal_three_conditioned": {
+   "status": "RUNTIME_PASS",
+   "abilities": 3,
+   "problems": [],
+   "notes": [
+    "enter_end/walk into portal after observation: chaos:locked=PASS_PARITY_ENTER_BLOCK, custom_vision:locked=PASS_PARITY_ENTER_BLOCK, easy:locked=PASS_PARITY_ENTER_BLOCK, hard:locked=PASS_PARITY_ENTER_BLOCK, normal:locked=PASS_PARITY_ENTER_BLOCK",
+    "teleport_outer_islands/central gateway (y=75, |x|,|z|<=96 per NativePortalAgent.central); vanilla finds the outer exit itself: chaos:locked=PASS_PARITY_ENTER_BLOCK, custom_vision:locked=PASS_PARITY_ENTER_BLOCK, easy:locked=PASS_PARITY_ENTER_BLOCK, hard:locked=PASS_PARITY_ENTER_BLOCK, normal:locked=PASS_PARITY_ENTER_BLOCK"
+   ]
+  }
+ }
+}

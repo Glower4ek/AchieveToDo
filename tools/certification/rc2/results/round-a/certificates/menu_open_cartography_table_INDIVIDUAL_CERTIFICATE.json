@@ -1,0 +1,60 @@
+{
+  "group": "menu_open_cartography_table",
+  "reviewer": "Q6",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability open_cartography_table, DIRECT, active sites GameplayMenuAbilities.java:26 (InventoryType.CARTOGRAPHY -> OPEN_CARTOGRAPHY_TABLE, used by InventoryOpenEvent cancel in BukkitExpandedGameplayListener) and NativeLandmarkActions.java:146 (CartographyTableBlock.useWithoutItem -> OPEN_CARTOGRAPHY_TABLE), plus family resolver findBlockAbility. All 3 cited files re-hashed: 3/3 match. Thresholds normal 299, easy 232, hard 366, chaos 141, custom_vision 299."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS. Read all locked and allowed excerpts in campaign21-25 plus op and reload: locked rows show kind=LOCKED, unchanged count (298/231/365/140/298 pre=post), no OpenScreen packet and no INVENTORY_OPEN boundary; allowed rows show UNLOCKED, INVENTORY_OPEN_TYPE_CARTOGRAPHY and ClientboundOpenScreenPacket. op row: LOCKED, no screen, overlay. Plugin decision lines read blockResult=ALLOW in locked rows (denial only visible as missing screen).",
+      "rowsRead": [
+        "campaign21 pass1 open_cartography_table locked",
+        "campaign21 pass1 open_cartography_table allowed",
+        "campaign21 modes open_cartography_table op",
+        "campaign21 reload open_cartography_table locked/allowed",
+        "campaign22 thresholds-easy open_cartography_table locked/allowed",
+        "campaign23 thresholds-hard open_cartography_table locked/allowed",
+        "campaign24 thresholds-chaos open_cartography_table locked/allowed",
+        "campaign25 thresholds-custom_vision open_cartography_table locked/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25: onlineMode=true, authenticatedUuidLine 'UUID of player ... is 89c23030-...' and joinedLine present in each; launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows present (campaign21 modes). No offhand rows: empty-hand block menu opening has no off-hand route. Locked+allowed rows for normal, easy, hard, chaos, custom_vision. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows from campaign21 at lines 102227-102289, after pass1 (max 1291) and modes (max 39070); e5Reload.generationAfter=2; both excerpts show generation 2 only; verdicts PASS = pass1 PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 15/15 REPRODUCED; all 5 runtimes reproducedAll=true (1622/396/396/396/396). Plugin sha256 da9360aa... identical for campaign21-25 and equal to the brief; client mod sha256 5c473903... equals the brief. Recomputed sha256 of campaign-results.jsonl of all 5 runtimes; each matches evidenceHashes.results (campaign21 dfd9c210..., campaign22 0a44a65f..., campaign23 cfbcdcaa..., campaign24 856f4297..., campaign25 45c3e020...)."
+    },
+    "RELEASE_LAUNCH": {
+      "result": "FAIL",
+      "checked": "All 5 runtimes log ATD_LAUNCH_PROFILE=release (output.log line 207/207/207/206/208) and ATD_GAMEPLAY_MODE=CERTIFICATION (221/221/221/220/222) before the first atd_marks case line (~249-284). launch.json command: campaign21 and campaign25 hold only -javaagent:plugins/achievetodo.jar + trace-agent; campaign22/23/24 additionally hold -Dachievetodo.progression.freshConfig=true (see finding)."
+    }
+  },
+  "superseded": "No superseded rows: MANIFEST.superseded=[] and supplements=[]; all rows from campaign21-25, harness hashes per HARNESS_RC2.sha256 are listed in MANIFEST.harness.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "RELEASE_LAUNCH",
+      "evidence": "campaign22/runtime_args.json args[0], campaign22/receipts/launch.json, campaign23/receipts/launch.json, campaign24/receipts/launch.json",
+      "description": "The server command of campaign22 (easy), campaign23 (hard) and campaign24 (chaos) contains -Dachievetodo.progression.freshConfig=true in addition to -javaagent:plugins/achievetodo.jar and the trace agent. The brief states the certified operator launch has no -Dachievetodo.* flags; only campaign21 and campaign25 match. The flag changes config resolution (BukkitProgressionRuntime.java:72, :401 'explicit freshConfig required'), and ReleaseLaunchProfile.java:85 only derives it itself when it writes a new world group, which the logged derived=[...] list for these runtimes does not include. So the thresholds-easy/hard/chaos rows of this group were produced outside the certified composition. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION are logged in all five runtimes (output.log lines ~206-222)."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/menu_open_cartography_table/excerpts.txt 'campaign21 pass1 open_cartography_table locked'",
+      "description": "ATD_W2_INPUT_EVENT/ATD_EVENT lines in locked rows report blockResult=ALLOW, cancelled=false; the denial is shown only by the absent OpenScreen packet and the client overlay, not by an explicit plugin decision line."
+    }
+  ]
+}

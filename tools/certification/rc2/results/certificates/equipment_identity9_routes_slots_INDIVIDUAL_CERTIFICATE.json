@@ -1,0 +1,76 @@
+{
+  "group": "equipment_identity9_routes_slots",
+  "reviewer": "P2",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json: 9 abilities equip_golden/leather/chainmail/iron/turtle_helmet/diamond/elytra/netherite/copper (CURATED, family equipment), each with enforcement sites NativeEquipmentAbilities.java [8,16] and NativeTransactionAgent.java [76,101] (+ direct sites for turtle_helmet line 15, elytra line 16, legacy MovementAdapter inactive). Recomputed SHA-256: NativeEquipmentAbilities.java 7baab126..., NativeTransactionAgent.java debe8c9d..., MovementAdapter.java b4966275... - all equal E1. Opened NativeEquipmentAbilities.java:12-16 (EQUIP_<COPPER|GOLDEN|LEATHER|CHAINMAIL|IRON|DIAMOND|NETHERITE>_ARMOR -> exact HELMET/CHESTPLATE/LEGGINGS/BOOTS item identities, TURTLE_HELMET, ELYTRA, duplicate-identity check) and NativeTransactionAgent.java:77 equipment(actor, stack) -> denied(\"equipment\"), 86-98 armorPlace on ArmorSlot (owner actor, close on deny), 100-104 armorPickup. Thresholds listed for all 9 in normal/easy/hard/custom_vision/chaos@34/chaos@36 (e.g. golden 56/50/62/56/506/311, elytra 611/498/724/611/174/208, netherite 569/462/676/569/87/228); config hashes equal E1.configs."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "884 rows: 798 PASS, 86 NA_OFFHAND_NOT_APPLICABLE; no other verdicts. I re-derived every one of the 798 non-NA excerpt blocks with a script over the raw lines (pre/post ATD_STAGE2A_STATE count, mode, op, generation; server probe 'execute if items entity Glower4ek armor.<slot> <item>' results after the pre and post marks): all 798 agree with their verdicts (locked/op: probe unchanged 'Test failed', post count < threshold; allowed/creative: 'Test failed' -> 'Test passed. Count: 1'). For the 117 right-click-helmet rows without a probe I checked rows.jsonl client states: locked/op/offhand_locked armor never changes and overlay shown; allowed/offhand_allowed/creative armor changes. Read in full e.g.: pass1 iron slot-place locked (inventory_changed only from the cursor pickup, ContainerClosePacket from the guard's close, probe unchanged), chaos netherite shift-click locked/allowed, custom elytra hotbar-swap slot 6 locked, hard copper feet right-click locked/allowed (Item.use RETURN value=Pass vs Success+SoundPacket), op turtle_helmet (Item.use Pass), offhand_locked elytra, reload diamond locked/allowed (generation 2), easy golden dispenser locked. Dispenser locked rows: 49/54 keep the count; 5 (golden armor in each runtime: 54->55, 48->49, 60->61, 504->505, 54->55) gain +1 only from the documented fixture criterion blazeandcave:redstone/click (oak_button) when the button is pressed (locked_margin=2, fixture_criteria), post count still threshold-1, helmet not equipped - verdict correct.",
+      "rowsRead": [
+        "campaign31 pass1 equip_iron_armor/armor slot place locked",
+        "campaign34 thresholds-chaos equip_netherite_armor/shift-click locked",
+        "campaign34 thresholds-chaos equip_netherite_armor/shift-click allowed",
+        "campaign35 thresholds-custom_vision equip_elytra/hotbar swap slot 6 locked",
+        "campaign33 thresholds-hard equip_copper_armor/feet right-click locked",
+        "campaign33 thresholds-hard equip_copper_armor/feet right-click allowed",
+        "campaign31 modes equip_turtle_helmet op",
+        "campaign31 offhand equip_elytra offhand_locked",
+        "campaign31 reload equip_diamond_armor locked",
+        "campaign31 reload equip_diamond_armor allowed",
+        "campaign32 thresholds-easy equip_golden_armor/dispenser locked",
+        "all 798 non-NA blocks re-derived by script p2_eqcheck.py"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for every contributing runtime campaign31 (normal), campaign32 (easy), campaign33 (hard), campaign34 (chaos), campaign35 (custom_vision): onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and joinedLine 'Glower4ek joined the game' present (31: 16:39:01/16:39:02, 32: 21:06:42/43, 33: 22:12:38/39, 34: 23:18:41/42, 35: 00:24:28/30); receipts/launch.json of each runtime also has onlineMode=true. campaign36 has the same lines but contributes no rows to this group."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "52 cases (9 right-click helmet/elytra, 27 inventory routes slot-place/shift-click/hotbar-swap into slot 5 or 6, 9 dispenser, 7 right-click boots) x phases: modes 156 rows (52 x creative/op/spectator), pass1 104, reload 104, easy/hard/chaos/custom 104 each. Offhand: 18 PASS rows (right-click helmet/elytra, item in off hand, main hand air) + 86 NA_OFFHAND_NOT_APPLICABLE = 43 cases x 2 phases: inventory slot clicks and the dispenser have no hand at all (offhand=False in campaign_cases.py lines 224, 232); the 7 boot right-click cases are also declared offhand=False (line 240), see finding."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "104 reload rows from campaign31, all after offhand (offhand row excerpts start at output.log 92513-93585, reload rows at 111561-117900, after the 101792 reload), all 104 excerpts show \"generation\": 2 in every ATD_STAGE2A_STATE (script check); MANIFEST.e5Reload.generationAfter=2; all 104 reload verdicts PASS = the matching 104 pass1 verdicts PASS (same ability, route, phase)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: 884/884 rows status=REPRODUCED (recorded==replayed). MANIFEST runtimes replay reproducedAll=true, problems=[] for all (31: 1629, 32-35: 398 each, 36: 2 REPRODUCED). Plugin SHA-256 recomputed from campaign31..36/runtime/plugins/achievetodo.jar and certification/rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar: all da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540 (= brief, = MANIFEST.plugin.perRuntime). Client mod recomputed at 'E:/Кубы сборки/ATD Stage2B W4 Attempt01/minecraft/mods/achievetodo.jar' and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar: 5c473903ec956489185be7d2f5c7803bd82a217c9ec066c1d3ffb5a2f5925a99 (= brief). campaign-results.jsonl SHA-256 recomputed for ALL six runtimes and equal to evidenceHashes.results: 31 8eddce27..., 32 c4936a8d..., 33 23a53c62..., 34 a7e80ad6..., 35 400573a8..., 36 2c2ce771.... campaign.py (5bbf36da...) and campaign_replay.py (d881b760...) on disk equal HARNESS_RC2C.sha256."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json + runtime_args.json: every runtime runs java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<preset>] -javaagent:plugins/achievetodo.jar -javaagent:<campaignNN>/observer-work/trace-agent.jar=<Item.use,FireworkRocketItem.use,Player.interactOn> -jar purpur-26.2-2620.jar --nogui (trace-agent SHA 706b85d5... = PRELAUNCH). The only -Dachievetodo option is initialConfig=easy/hard/chaos in campaign32/33/34 (and chaos in 36); campaign31 and campaign35 have none. campaign_modes.py unlinks world-group.properties and world-selection.properties before a preset start (fresh install). output.log: ATD_LAUNCH_PROFILE=release at line 207/207/208/208/207 and ATD_GAMEPLAY_MODE=CERTIFICATION at 221/221/222/222/221 (campaign31..35), before the first ATD_STAGE2A_STATE (337/335/338/354/379). freshConfig appears only in the plugin's own derived=[..., world-group.properties, ..., achievetodo.progression.freshConfig] in campaign32/33/34 (and 36); campaign31/35 derived lists have no freshConfig and no world-group.properties, consistent with an existing install. STARTING_THE_SERVER.md lines 21-24 and 57 document exactly -javaagent:plugins/<jar> and initialConfig. campaign-results tag order in campaign31 is pass1 (results line 1) -> modes (399) -> offhand (996) -> reload (1232), all rows within one campaign."
+    }
+  },
+  "superseded": "No superseded rows for this group (MANIFEST.superseded = []); the campaign36 CHAOS supplement concerns ignite_tnt only.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "campaign_cases.py line 238-240 (boots case offhand=False); rows campaign31 offhand equip_*/r6 route: right-click equip into the feet slot (14 NA_OFFHAND_NOT_APPLICABLE)",
+      "description": "Right-click equipping boots does have an off-hand variant in vanilla (Equippable swap works from either hand), so NA_OFFHAND_NOT_APPLICABLE is not strictly 'a route with no off-hand variant'. The off-hand right-click equip path is covered by the 9 helmet/elytra offhand PASS rows and the guard is item-identity based, so the risk is low; label it as covered elsewhere instead."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "campaign_cases.py lines 198-240",
+      "description": "No case puts chestplates or leggings into the chest/legs slots (slot 7, chest only via elytra); the head, feet and chest(elytra) slots are tested. The guard keys on exact item identity (NativeEquipmentAbilities.java:12-14 lists CHESTPLATE and LEGGINGS), so this is a coverage note, not a defect."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt ATD_STAGE2A_STATE lines ('EQUIP_*': null)",
+      "description": "The state probe reports the tested equip ability as null; lock state is inferred from count < threshold, overlay and the server armor probe."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "certification/w5-campaign/HARNESS_RC2C.sha256 line 2 (campaign_cases.py c8add78f...) vs certification/w5-campaign/campaign_cases.py (current SHA-256 d933206f..., = HARNESS_RC2D)",
+      "description": "The campaign_cases.py that produced campaign31-35 (c8add78f..., recorded in MANIFEST evidenceHashes) is no longer on disk: the w5-campaign copy was overwritten by the RC2D version and no copy with that hash exists under certification/, repo/ or tooling/. campaign.py and campaign_replay.py still match, so verdicts can be re-derived, but a third person cannot re-run the exact RC2C case definitions; keep a history copy (history-campaign_cases.py.rc2c)."
+    }
+  ]
+}

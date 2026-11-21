@@ -1,0 +1,62 @@
+{
+  "group": "complex_ignite_tnt",
+  "reviewer": "P5",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "Sites NativeComplexSpecs.java:31-32 (tnt-manual: TntBlock.useItemOn at TntBlock.prime, mode 'ignite'; tnt-projectile: onProjectileHit), NativeComplexBindings.java:14 (IGNITE_TNT), NativeComplexAgent.java:108,113 (projectile -> IGNITE_TNT; 'ignite' -> denied(flint) || denied(IGNITE_TNT)). SHA-256 equal to E1: 7423b3d7..., 0890c634..., 09ae3f17..., 00f2cf74..., f5d7d99b.... Thresholds normal 179, easy 136, hard 222, custom_vision 179, chaos@34 260, chaos@36 607, matching my parse (use_flint_and_steel: 174/132/216/174/523/144)."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 package rows, all PASS. I read 9 excerpts in 5 runtimes, plus the 2 superseded campaign34 rows from raw output.log 6857-6926. Locked rows: UseItemOn at the TNT, W2 event useBlock=ALLOW (the native hook decides), ATD_CRITERION_SUPPRESSED ITEM_USED_ON_BLOCK, probe 'execute if entity @e[type=tnt]' Test failed pre/post, count unchanged (178, 221, 606), client overlay 'You can't ignite a TNT. Advancements left to unlock: 1'. That overlay comes from the TNT guard itself, not the flint guard (flint threshold <= locked score in c31/32/33/35/36). Allowed rows: Test passed (primed TNT), no lock overlay. offhand_locked (OFF_HAND packet) is denied with the TNT overlay; creative primes the TNT; op is denied. In the campaign36 allowed row the count goes 607->608 because strike_a_light is earned; a leak does not matter for an allowed row.",
+      "rowsRead": [
+        "campaign31 pass1 ignite_tnt locked",
+        "campaign31 pass1 ignite_tnt allowed",
+        "campaign31 modes ignite_tnt creative",
+        "campaign31 modes ignite_tnt op",
+        "campaign31 offhand ignite_tnt offhand_locked",
+        "campaign33 thresholds-hard ignite_tnt locked",
+        "campaign36 thresholds-chaos ignite_tnt locked",
+        "campaign36 thresholds-chaos ignite_tnt allowed",
+        "campaign34 thresholds-chaos ignite_tnt locked (superseded, raw)",
+        "campaign34 thresholds-chaos ignite_tnt allowed (superseded, raw)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes and raw output.log checked for every contributing runtime: server.properties online-mode=true in campaign31-36; 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' (v4 online UUID) at output.log line 233/233/234/234/233/233 and 'Glower4ek joined the game' at 244/244/246/250/244/246 for campaign31/32/33/34/35/36; launch.json onlineMode=true; no offline-mode warning in any log. campaign36 is included (it contributes the CHAOS rows)."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator; offhand_locked/allowed; locked+allowed for normal, easy, hard, custom_vision and chaos (campaign36, replacing campaign34). No NA rows. expect_hit: the pre hit is the TNT block in every row."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows (2) are campaign31 tag 'reload'. Their logLines start (107570) after the last pass1/modes/offhand row of campaign31 (line 101738) and after 'PROGRESSION_CONFIG_READY generation=2' (output.log line 101756; orchestrator log 'reload done: generation 2' 14:55:20Z). MANIFEST.e5Reload.evidence.generationAfter=2. Every ATD_STAGE2A_STATE line of these rows in excerpts.txt (pre and post) shows \"generation\": 2 (also confirmed in raw output.log). Each reload verdict equals the pass1 verdict of the same ability/case/phase: locked PASS=PASS, allowed PASS=PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "SHA-256 recomputed by me: plugin jar da9360aa...cb540 identical in rc2-artifacts and campaign31..36/runtime/plugins/achievetodo.jar (and launch.json pluginSHA256); client mod at 'E:\\Кубы сборки\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar' = 5c473903...5a99 = rc2-artifacts/achievetodo-mc26.2+0.2.1.jar. campaign-results.jsonl recomputed for ALL six runtimes and equal to evidenceHashes: c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771.... Raw receipts/REPLAY.json of every runtime: counts all REPRODUCED (1629/398/398/398/398/2), reproducedAll=true. Every package row matched its raw campaign-results.jsonl line (by logLines) field for field, except the normalised 'config' label and the added campaign/finalKey; replay.jsonl keys equal rows.jsonl keys. sha256sum -c HARNESS_RC2C.sha256: all OK except campaign_cases.py (now the RC2D file d933206f); reverting only the ignite_tnt requires hunk of the current file reproduces c8add78f... exactly, so RC2C and RC2D cases differ only in that hunk. HARNESS_RC2D.sha256: all OK. replay.jsonl: 17/17 REPRODUCED; campaign36 REPLAY 2/2 REPRODUCED; campaign36 results sha 2c2ce771... recomputed."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json and receipts/launch.json of campaign31-36: command = java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<easy|hard|chaos> only for c32/c33/c34/c36] -javaagent:plugins/achievetodo.jar -javaagent:<runtime>/observer-work/trace-agent.jar=<Item.use,FireworkRocketItem.use,Player.interactOn> -jar purpur-26.2-2620.jar --nogui; no other -Dachievetodo.* option. output.log: 'ATD_LAUNCH_PROFILE=release' at line 207/207/208/208/207/207 and 'ATD_GAMEPLAY_MODE=CERTIFICATION' at 221/221/222/222/221/221 (c31..c36), both before the first ATD_STAGE2A_STATE (337/335/338/354/379/564). freshConfig appears only in derived=[... world-group.properties ..., achievetodo.progression.freshConfig] of c32/c33/c34/c36, i.e. the plugin derived it and created world-group.properties itself (fresh install); c31 (normal) and c35 (custom_vision) have derived=[bacap.directory, bridge.server, progression.world, progression.worldKey] with no freshConfig and no -D option (existing install). The resolved progression config line matches the intended preset in each runtime. The plugins/ folder also holds the observer plugins (w4-gameplay-evidence-probe, packet-witness, w4-snap). These observe the run and are not launch options. campaign36 is a fresh CHAOS install: derived includes world-group.properties and freshConfig, and the only option is -Dachievetodo.progression.initialConfig=chaos. HARNESS_RC2D.sha256 is all OK, and RC2D differs from RC2C only in the ignite_tnt requires hunk (proved by exact reconstruction of c8add78f)."
+    }
+  },
+  "superseded": "Justified. In campaign34's CHAOS config use_flint_and_steel=523 is higher than ignite_tnt=260. The TNT fixture lights with flint and steel, and the tnt-manual hook denies when flint OR ignite_tnt is locked (NativeComplexAgent.java:113). In raw campaign34 rows 91/92 (locked PASS, allowed FAIL_NO_EFFECT) the client overlay reads 'You can't use flint and steel. Advancements left to unlock: 264/263', so the flint guard decided both. The locked PASS was masked, and the allowed failure comes from the fixture, not from a product defect. campaign36 is a fresh CHAOS install (flint 144 < ignite 607) and the case now declares requires=['use_flint_and_steel']. There the locked row is PASS with the TNT overlay and the allowed row is PASS (primed TNT). The requires hunk is the only harness change.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...); campaign_cases.py mtime 2026-11-21 00:24:48 +0500; campaign35 output.log first ATD_STAGE2A_STATE 00:24:42 (line 379); campaign_final.py:14,192 (in-process import and replay); campaign35 ignite_tnt rows requires={'vision':5}",
+      "description": "The harness file campaign_cases.py was rewritten on disk (RC2C c8add78f -> RC2D d933206f) while campaign35 was running. campaign35's rows were produced and replayed by the orchestrator's already-imported RC2C module (its ignite_tnt rows carry requires={'vision':5} only), but its EVIDENCE_HASHES.json / MANIFEST evidenceHashes record the RC2D hash, and the RC2C campaign_cases.py is no longer on disk. I reconstructed it exactly (current file minus the ignite_tnt requires hunk = c8add78f), so no verdict changes. Still, the recorded provenance for campaign35 is wrong, and the frozen harness was edited mid-campaign."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/complex_ignite_tnt/excerpts.txt (all ATD_STAGE2A_STATE lines)",
+      "description": "The compacted ATD_STAGE2A_STATE lines in excerpts.txt show \"ability\": {\"IGNITE_TNT\": null} in every row, because the probe's 'abilities' map does not contain this ability. So the excerpt does not show the tested ability's lock state as the brief says. I verified the lock state from the raw output.log state lines instead: criteria achievetodo:abilities/ignite_tnt = ['demystified'] at threshold-1 and ['demystified','unlocked'] at threshold, in every row of every runtime."
+    }
+  ]
+}

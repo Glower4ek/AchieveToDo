@@ -1,0 +1,66 @@
+{
+ "group": "furnace3_shared_base_use",
+ "reviewer": "P6",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "3 abilities (open_furnace, open_smoker, open_blast_furnace), all DIRECT. Recomputed SHA-256 = E1 for all 5 cited files: BukkitRestrictionResolver.java f5d7d99bf324fcac... (inactive legacy), BukkitExpandedGameplayListener.java f10bdc23e48ff8f3..., GameplayGate.java 4ddeec267ba8ff6d..., GameplayMenuAbilities.java 813236fd692a65a6..., NativeLandmarkActions.java eb87a78e70ea370b.... Opened NativeLandmarkActions.java:207-222 (furnaceDenied -> furnaceAbility: FurnaceBlock->OPEN_FURNACE l215, SmokerBlock->OPEN_SMOKER l216, BlastFurnaceBlock->OPEN_BLAST_FURNACE l217, then targetAndAbilityDenied), applied at the AbstractFurnaceBlockMixin:40 site (l153-155); GameplayMenuAbilities.java:23/24 (SMOKER, BLAST_FURNACE menus); BukkitExpandedGameplayListener.java:72 (Furnace holder -> OPEN_FURNACE); GameplayGate.java:18 (OPEN_FURNACE implemented). Thresholds per ability for normal/easy/hard/custom_vision/chaos@c34/chaos@c36: furnace 104/82/126/104/494/206, smoker 527/426/628/527/561/134, blast 209/160/258/209/242/434; re-parsed from the hashed configs and equal; row thresholds match."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "Read all 45 excerpts (15 per ability) and re-derived each from raw output.log. Locked/op rows for all three abilities in c31-c35: use packet arrives, Bukkit RIGHT_CLICK_BLOCK useBlock=ALLOW, but no INVENTORY_OPEN boundary, menu stays CRAFTING, no FURNACE_INTERACTION / INTERACT_WITH_SMOKER / INTERACT_WITH_BLAST_FURNACE stat, count unchanged (e.g. furnace 103, 81, 125, 493, 103), client overlay. Allowed rows: ATD_BOUNDARY INVENTORY_OPEN_TYPE_FURNACE/SMOKER/BLAST_FURNACE, menu changes, stat +1, client screen open. Creative opens while LOCKED; spectator opens without overlay. All 45 PASS verdicts reproducible; denial is implicit (minor finding, as for other block menus).",
+   "rowsRead": [
+    "campaign31 pass1 open_furnace locked",
+    "campaign31 pass1 open_furnace allowed",
+    "campaign31 pass1 open_smoker locked",
+    "campaign31 pass1 open_smoker allowed",
+    "campaign31 pass1 open_blast_furnace locked",
+    "campaign31 pass1 open_blast_furnace allowed",
+    "campaign31 modes open_furnace creative/op/spectator",
+    "campaign31 modes open_smoker creative/op/spectator",
+    "campaign31 modes open_blast_furnace creative/op/spectator",
+    "campaign31 reload open_furnace/open_smoker/open_blast_furnace locked+allowed",
+    "campaign32 thresholds-easy all 3 abilities locked+allowed",
+    "campaign33 thresholds-hard all 3 abilities locked+allowed",
+    "campaign34 thresholds-chaos all 3 abilities locked+allowed",
+    "campaign35 thresholds-custom_vision all 3 abilities locked+allowed"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign31-36 all onlineMode=true with authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and a 'Glower4ek joined the game' line. Re-grepped each raw receipts/output.log: UUID/join at lines c31 233/244, c32 233/244, c33 234/246, c34 234/250, c35 233/244, c36 233/246; runtime/server.properties online-mode=true in all six; launch.json onlineMode=true. Rows of this group come from campaign31-35 only."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "For each of the 3 abilities: modes creative/op/spectator PASS; thresholds rows for normal, easy, hard, chaos, custom_vision present. No offhand rows: opening a furnace-family block is the empty-hand block-use route with no off-hand variant. No NA rows."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "e5Reload campaign31, generationAfter 2; 6 reload rows at l103642-104067 (after reload l101754) all show \"generation\": 2; each verdict PASS = pass1 PASS."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: 45 rows, all status=REPRODUCED, and recorded verdict/ability/phase equal rows.jsonl line by line (0 mismatches). MANIFEST replay reproducedAll=true for every runtime (c31 1629, c32-c35 398 each, c36 2; problems=[]); REPLAY.json SHA-256 recomputed = evidenceHashes for all six. Plugin: recomputed SHA-256 of campaignNN/runtime/plugins/achievetodo.jar for c31-c36 and of rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar = da9360aa...4cb540 everywhere. Client mod: recomputed 'E:/Кубы сборки/ATD Stage2B W4 Attempt01/minecraft/mods/achievetodo.jar' and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar = 5c473903...925a99. campaign-results.jsonl recomputed for ALL six runtimes and equal to evidenceHashes.results: c31 8eddce27..., c32 c4936a8d..., c33 23a53c62..., c34 a7e80ad6..., c35 400573a8..., c36 2c2ce771...."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "receipts/launch.json + runtime_args.json of c31-c36: command = java -Xms128M -Xmx2G [-D] -javaagent:plugins/achievetodo.jar -javaagent:<runtime>/observer-work/trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn -jar purpur-26.2-2620.jar --nogui. Only -D option anywhere is -Dachievetodo.progression.initialConfig=easy/hard/chaos/chaos for c32/c33/c34/c36; none for c31 (NORMAL) and c35 (Custom). output.log: 'ATD_LAUNCH_PROFILE=release' at c31 l207, c32 l207, c33 l208, c34 l208, c35 l207, c36 l207 and 'ATD_GAMEPLAY_MODE=CERTIFICATION; PRODUCT_GAMEPLAY_READY=false' at l221/221/222/222/221/221, both before the first case marker (objective atd_marks created at l249/249/252/260/284/253). Logged derived=[...] for c32/c33/c34/c36 contains world-group.properties and achievetodo.progression.freshConfig (written by the plugin => fresh install); c31/c35 derived lists contain neither (existing install). Harness hashes: campaign.py 5bbf36da and campaign_replay.py d881b760 match HARNESS_RC2C in every runtime; campaign_cases.py evidence hash is c8add78f (RC2C) for c31-c34 but d933206f (RC2D) for c35 - see minor finding."
+  }
+ },
+ "superseded": "MANIFEST.superseded is [] for this group; the only supersession (CHAOS ignite_tnt c34 -> c36) touches no ability of this group. c36 (fresh CHAOS, initialConfig=chaos, HARNESS_RC2D) contributes no rows here; its plugin/client hashes and launch profile were nevertheless checked. The replacement as described (fixture lights TNT with flint and steel, so requires=['use_flint_and_steel'] is needed for the masking rule) is reasonable; campaign_cases.py:145-149 now declares it.",
+ "findings": [
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "campaign31/receipts/output.log 2183-2193 (pass1 open_furnace locked: ATD_W2_INPUT_EVENT useBlock=ALLOW)",
+   "description": "Locked excerpts show only the Bukkit ALLOW decision and no explicit native denial line; the lock is inferred from the absent INVENTORY_OPEN boundary, unchanged menu/stat and client overlay. Sufficient but indirect."
+  },
+  {
+   "severity": "minor",
+   "criterion": "ReleaseLaunch",
+   "evidence": "campaign35/receipts/EVIDENCE_HASHES.json (campaign_cases.py sha256 d933206f...) vs HARNESS_RC2C.sha256 (c8add78f...); campaign_cases.py mtime 2026-11-21 00:24:48 +05:00; campaign-final-rc2c.log:2866 (campaign35 up 19:24:12Z)",
+   "description": "campaign_cases.py was edited ~37 s after the campaign35 server started, so the harness hash recorded for campaign35 is the RC2D file, not RC2C. The orchestrator imports campaign_cases in-process at start (campaign_final.py:14, campaign.main called in-process), so the cases that ran were most likely the RC2C version, but this cannot be proven from the recorded hashes. The documented RC2D change concerns ignite_tnt only and does not touch this group's cases."
+  }
+ ]
+}

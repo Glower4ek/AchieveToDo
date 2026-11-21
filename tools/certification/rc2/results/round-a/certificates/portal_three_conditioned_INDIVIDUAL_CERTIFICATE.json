@@ -1,0 +1,79 @@
+{
+  "group": "portal_three_conditioned",
+  "reviewer": "Q1",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "enter_nether, enter_end, teleport_outer_islands each have active direct sites in nativeguard/NativePortalAgent.java (108/112, 109/114, 110/115: portal block class -> ability, with the conditions: Nether portal inside the Nether, End portal inside the End and non-central gateways are not gated; otherwise locked(actor, ability) denies) and NativePortalBindings.java:13. Recomputed SHA-256 of NativePortalAgent.java, NativePortalBindings.java, PortalAdapter.java (inactive), BukkitRestrictionResolver.java: all equal E1; Progressions.java has no E1 hash. Thresholds for all 5 configs: enter_nether 224/172/276/729/224, enter_end 471/378/564/413/471, teleport_outer_islands 660/540/780/474/660."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "45 rows. enter_nether locked rows are PASS in every runtime: excerpt has no world change, equal counts (223/223, 171/171, 275/275, 728/728, 223/223), client dim not the_nether; allowed shows ATD_PROOF_NATIVE_WORLD_CHANGE to the_nether. enter_end and teleport_outer_islands locked rows are PASS_PARITY_ENTER_BLOCK in pass1 and all threshold runtimes (10 rows): read each, the only count change is +1 from minecraft:story/enter_the_end (entered_end_portal) or minecraft:end/enter_end_gateway (plus BACAP legend/milestone criteria counting it), no world change / position stays near the central gateway (far:500 false), locked score = threshold-2 so the +1 cannot unlock: matches accepted parity (a). Reload and op locked rows for both are plain PASS with unchanged counts and no world change. Allowed rows show WORLD_CHANGE to the_end / far:500 true. No plugin decision line appears in locked portal excerpts (enter_nether locked block is ~600 lines of container packets only); denial is evidenced by absent teleport plus client overlay.",
+      "rowsRead": [
+        "campaign21 pass1 enter_nether locked",
+        "campaign21 pass1 enter_nether allowed",
+        "campaign21 pass1 enter_end locked",
+        "campaign21 pass1 enter_end allowed",
+        "campaign21 pass1 teleport_outer_islands locked",
+        "campaign21 modes enter_end creative",
+        "campaign21 modes enter_end op",
+        "campaign21 reload enter_end locked",
+        "campaign21 reload teleport_outer_islands locked",
+        "campaign22 thresholds-easy enter_end locked",
+        "campaign22 thresholds-easy teleport_outer_islands locked",
+        "campaign23 thresholds-hard enter_end locked",
+        "campaign23 thresholds-hard teleport_outer_islands locked",
+        "campaign24 thresholds-chaos enter_end locked",
+        "campaign24 thresholds-chaos teleport_outer_islands locked",
+        "campaign24 thresholds-chaos enter_nether locked",
+        "campaign25 thresholds-custom_vision enter_end locked",
+        "campaign25 thresholds-custom_vision teleport_outer_islands locked",
+        "all 45 blocks scanned by script"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign21-25 (normal, easy, hard, chaos, custom_vision): onlineMode=true, authenticated line 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' present for each; join lines confirmed in each runtime's receipts/output.log (lines 244/244/245/246/245)."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows for all 3 abilities; threshold rows for normal, easy, hard, chaos, custom_vision for all 3; portals have no off-hand route; no NA_* rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "6 reload rows from campaign21 (lines 108229-109431, after pass1 7241+, modes 46864+); generationAfter=2; all 6 reload blocks show generation 2. enter_nether reload PASS = pass1 PASS; enter_end and teleport_outer_islands reload are PASS while pass1 is PASS_PARITY_ENTER_BLOCK: both are lock-proving verdicts, and the difference is explained by the one-shot enter_block advancement already granted in pass1 (reload counts 469/469, 658/658)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 45/45 REPRODUCED. REPLAY.json reproducedAll=true for campaign21 (1622/1622) and campaign22-25 (396/396 each). Plugin SHA-256 identical in all 5 runtimes = da9360aa48e7c92bf1b093b57bc46d36b9e23339920de02b2edb88e9e44cb540 (also recomputed from campaign21/runtime/plugins/achievetodo.jar); client mod SHA-256 = 5c473903ec956489185be7d2f5c7803bd82a217c9ec066c1d3ffb5a2f5925a99 as required. Recomputed campaign-results.jsonl SHA-256 of all 5 runtimes; each equals MANIFEST evidenceHashes.results (campaign21 dfd9c2100a7d5761..., campaign22 0a44a65f5b4f4af2..., campaign23 cfbcdcaaf6f674ae..., campaign24 856f42971e90fd1c..., campaign25 45c3e020a6a1eb89...)."
+    }
+  },
+  "superseded": "MANIFEST.superseded and supplements are empty; all rows come from campaign21-25. Release launch: every runtime's output.log logs ATD_LAUNCH_PROFILE=release (lines 206-208) and ATD_GAMEPLAY_MODE=CERTIFICATION (lines 220-222) before the join and first case; campaign21 and campaign25 commands are agent-only, but campaign22/23/24 carry -Dachievetodo.progression.freshConfig=true (see major finding).",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "E3",
+      "evidence": "campaign22/runtime_args.json and campaign22/receipts/launch.json (same in campaign23 and campaign24): \"-Dachievetodo.progression.freshConfig=true\"",
+      "description": "The brief requires the operator launch with no -Dachievetodo.* flags; the easy, hard and chaos runtimes, which contribute all threshold rows for those configs, were started with an explicit -Dachievetodo.progression.freshConfig=true (injected by campaign_modes.py), so those rows do not come from the certified release composition."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E5",
+      "evidence": "rows.jsonl campaign21 reload enter_end locked (PASS) vs campaign21 pass1 enter_end locked (PASS_PARITY_ENTER_BLOCK); same for teleport_outer_islands",
+      "description": "Reload verdict labels differ from pass1 for two abilities; accepted as agreeing because both prove the lock and the enter_block advancement can only be granted once."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt lines 1-602 (campaign21 pass1 enter_nether locked)",
+      "description": "Locked portal excerpts contain no plugin decision line; the denial is shown only by the missing world change and the client overlay."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "NativePortalAgent.java:112-115",
+      "description": "The three conditional exemptions (Nether portal used inside the Nether, End exit portal, non-central End gateway) have no rows, so the 'conditioned' behaviour is covered only by source reading."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+ "group": "action_use_composter",
+ "reviewer": "Q2",
+ "decision": "NOT_CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "NativeActionSpecs.java L34 hooks ComposterBlock.useItemOn/process; NativeActionAgent.java L88 'level < 7 && denied(actor,null,\"USE_COMPOSTER\")'; NativeActionBindings L17 binds USE_COMPOSTER. Hashes recomputed: match. Thresholds 304/236/372/611/304."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "17 rows, all PASS. Read all excerpts. Locked: ATD_CRITERION_SUPPRESSED ITEM_USED_ON_BLOCK, unchanged count, composter state unchanged ('Test passed' pre and post). Allowed: inventory_changed and post 'Test failed' (level changed) at the threshold. Creative has the effect, op is denied, spectator has no effect.",
+   "rowsRead": [
+    "campaign21 pass1/offhand/reload locked+allowed",
+    "campaign21 modes creative/op/spectator",
+    "campaign22/23/24/25 thresholds locked+allowed"
+   ]
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes, offhand_locked/allowed PASS, all 5 configs; no NA."
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign21..25: onlineMode=true, the authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-...' and the 'Glower4ek joined the game' line are present for all 5; configResolved normal/easy/hard/chaos_20261116/custom_vision matches each runtime."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "All reload rows come from campaign21, and their output.log line numbers (min 106308) come after every pass1/modes/offhand row of the group (max 90205). MANIFEST.e5Reload.evidence.generationAfter=2 (before=1). Every ATD_STAGE2A_STATE line in the reload excerpts shows \"generation\": 2 (4 lines). Every reload verdict equals the pass1 verdict for the same ability/case/phase (scripted compare, 0 mismatches)."
+  },
+  "E6": {
+   "result": "FAIL",
+   "checked": "replay.jsonl: 17/17 REPRODUCED; reproducedAll=true for campaign21-25. Plugin SHA-256 da9360aa...b544 appears in MANIFEST.perRuntime and was recomputed on campaign21..25 runtime/plugins/achievetodo.jar and on the rc2-artifacts jar. Client mod SHA-256 5c473903...5a99 was recomputed on rc2-artifacts/achievetodo-mc26.2+0.2.1.jar and matches MANIFEST clientMod. The recomputed campaign-results.jsonl SHA-256 of all 5 runtimes equals evidenceHashes.results. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION are logged at output.log lines ~206-222 in all 5 runtimes, before the first case. FAIL because launch.json of campaign22/23/24 carries -Dachievetodo.progression.freshConfig=true (see finding)."
+  }
+ },
+ "superseded": "MANIFEST.superseded is [] and all rows come from campaign21-25; there are no superseded rows to assess.",
+ "findings": [
+  {
+   "severity": "major",
+   "criterion": "E6",
+   "evidence": "campaign22\\receipts\\launch.json, campaign23\\receipts\\launch.json, campaign24\\receipts\\launch.json (also campaign2N\\runtime_args.json 'args')",
+   "description": "The release-launch check fails for 3 of 5 runtimes. The server commands of campaign22 (easy), campaign23 (hard) and campaign24 (chaos) carry '-Dachievetodo.progression.freshConfig=true' in addition to the two -javaagent args, and the brief requires no -Dachievetodo.* flags. Only campaign21 and campaign25 match the certified operator launch, so every thresholds-easy/hard/chaos row of this group comes from a launch composition that is not the certified one. The ReleaseLaunchProfile javadoc says freshConfig is derived only on the start that writes the world group; here it was passed by hand, and the logged derived=[...] list does not include it."
+  }
+ ]
+}

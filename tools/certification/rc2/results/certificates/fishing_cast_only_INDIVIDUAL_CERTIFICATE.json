@@ -1,0 +1,64 @@
+{
+  "group": "fishing_cast_only",
+  "reviewer": "P3",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (use_fishing_rod), mapping DIRECT, 2 direct sites. SHA-256 recomputed for both cited files, equal E1: BukkitExpandedGameplayListener.java f10bdc23..., GameplayGate.java 4ddeec26.... Opened sites: BukkitExpandedGameplayListener.java:110 'if (e.getState() == PlayerFishEvent.State.FISHING && locked(e.getPlayer(), AbilityType.USE_FISHING_ROD)) e.setCancelled(true)' (listener registered in BukkitGameplayRuntime.java:62); GameplayGate.java:19 lists USE_FISHING_ROD as implemented. Thresholds: normal 194, easy 148, hard 240, custom_vision 194, chaos@34 252, chaos@36 73; equal to toml files."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "Independent re-judgement: a script (p3_judge.py) recomputed every non-NA verdict of this group from the excerpt lines alone (pre/post ATD_STAGE2A_STATE count, pre/post probe output, OpenScreen packet, DENIAL_INTENT line) and agreed with every recorded verdict (0 disagreements). Thresholds of every row equal the value in that runtime's config file; every PASS locked/op row has counts[0]==counts[1]<threshold; every allowed row starts at >=threshold. All aimed rows have a client 'pre' hit on the fixture (expect_hit holds); server_reach is not applicable to this group. Server probe 'execute if entity @e[type=fishing_bobber,distance=..30]': locked rows (pass1, offhand_locked, reload, easy, hard, chaos, custom_vision, op) show 'Test failed' pre and post (no bobber), count unchanged, inventory resync packets after the action, client overlay. Allowed rows show 'Test failed' -> 'Test passed. Count: 1' (bobber spawned) with ClientboundSoundPacket. Creative: bobber spawned (bypass). Spectator: no bobber (vanilla spectators cannot use items), no overlay, no leak -> PASS correct. No non-PASS rows.",
+      "rowsRead": [
+        "campaign31 pass1 use_fishing_rod locked",
+        "campaign31 pass1 use_fishing_rod allowed",
+        "campaign31 modes use_fishing_rod creative",
+        "campaign31 modes use_fishing_rod op",
+        "campaign31 modes use_fishing_rod spectator",
+        "campaign31 offhand use_fishing_rod offhand_locked",
+        "campaign31 offhand use_fishing_rod offhand_allowed",
+        "campaign34 thresholds-chaos use_fishing_rod locked",
+        "campaign34 thresholds-chaos use_fishing_rod allowed",
+        "campaign35 thresholds-custom_vision use_fishing_rod locked",
+        "campaign35 thresholds-custom_vision use_fishing_rod allowed",
+        "(all 17 excerpts re-judged by script; raw campaign31 output.log 17300-17366 read)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "PASS for all 6 runtimes in MANIFEST.runtimes (campaign31 normal, 32 easy, 33 hard, 34 chaos, 35 custom_vision, 36 chaos-supplement): onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' present in MANIFEST and re-found by grep in each campaignNN/receipts/output.log (e.g. campaign31 lines 233/244, campaign34 lines 234/250); runtime/server.properties online-mode=true in all 6; receipts/launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "17 rows: pass1, modes creative/op/spectator, offhand offhand_locked/offhand_allowed (rod in off hand, main air; route exists), reload, thresholds-easy/-hard/-chaos/-custom_vision. No NA rows (no threshold 0)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "PASS. 2 reload rows, all campaign31; campaign-results.jsonl ordering pass1 1-398, modes 399-995, offhand 996-1231, reload 1232-1629 so reload follows pass1/modes/offhand; output.log 19:55:15 'Reloading!' then 'PROGRESSION_CONFIG_READY generation=2' (=14:55 UTC, MANIFEST e5Reload.at 14:55:20Z, generationBefore 1, generationAfter 2). Every ATD_STAGE2A_STATE line of the reload excerpts shows generation 2 and every non-reload campaign31 excerpt generation 1. Each reload verdict equals the pass1 verdict for the same ability/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "17/17 rows of fishing_cast_only REPRODUCED. Every replay row status REPRODUCED with recorded==replayed; replay keys (campaign,tag,ability,phase) match rows.jsonl 1:1 and every replay 'line' pointer resolves to the identical row in campaignNN/receipts/campaign-results.jsonl. MANIFEST replay reproducedAll=true for campaign31 (1629), 32-35 (398 each), 36 (2), problems=[]. Plugin SHA-256 recomputed: campaign31-36 runtime/plugins/achievetodo.jar and rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar all = da9360aa...cb540. Client mod recomputed: installed minecraft/mods/achievetodo.jar and rc2-artifacts/achievetodo-mc26.2+0.2.1.jar = 5c473903...5a99. campaign-results.jsonl SHA-256 recomputed for ALL six runtimes and equal to evidenceHashes.results (31 8eddce27..., 32 c4936a8d..., 33 23a53c62..., 34 a7e80ad6..., 35 400573a8..., 36 2c2ce771...). trace-agent.jar in each observer-work = 706b85d5... as in HARNESS_RC2C/RC2D; campaign.py, campaign_replay.py match HARNESS_RC2C; current campaign_cases.py = d933206f (RC2D value, as expected after campaign36)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "PASS. receipts/launch.json command for every runtime: java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<easy|hard|chaos> only for 32/33/34/36] -javaagent:plugins/achievetodo.jar -javaagent:<observer-work>/trace-agent.jar=<targets> -jar purpur-26.2-2620.jar --nogui; no other -Dachievetodo.* option; campaign31 and 35 have none (matches runtime_args.json). output.log of each runtime logs 'ATD_LAUNCH_PROFILE=release; derived=[...]' (line ~207) and 'ATD_GAMEPLAY_MODE=CERTIFICATION; PRODUCT_GAMEPLAY_READY=false' (line ~221) before the first ATD_STAGE2A_STATE/case mark (line >=335). For 32/33/34/36 derived=[..., world-group.properties, ..., achievetodo.progression.freshConfig] i.e. freshConfig and world-group.properties were produced by the plugin (fresh install); for 31/35 derived has neither (existing install). Resolved config lines: normal.toml / easy.toml / hard.toml / chaos_20261116.toml / custom_vision.toml. Matches STARTING_THE_SERVER.md (lines 21-27, 57). All group rows come from campaign31-35 (HARNESS_RC2C); none from campaign36. Note: the runtimes also carry instrumentation plugins (w4-gameplay-evidence-probe.jar = launch.json observerSHA256 077a0d56..., packet-witness.jar bc5a5e98..., w4-snap.jar); they are observers, not part of the command line."
+    }
+  },
+  "superseded": "No row of this group is superseded (MANIFEST.superseded=[]; group has no campaign36 row). For the CHAOS ignite_tnt replacement: campaign34 ignite_tnt allowed was FAIL_NO_EFFECT at score 260 while use_flint_and_steel needed 523 (fixture used a locked tool), and its locked row was therefore also dependency-masked in substance; campaign36 (fresh CHAOS install, HARNESS_RC2D, campaign_cases.py d933206f) declares requires use_flint_and_steel=144 and raises the allowed score to 607: locked PASS [606,606], allowed PASS [607,608]. Replacement is justified.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/fishing_cast_only/excerpts.txt lines 1-10; E:/Vibecode/AchieveToDo/certification/w5-campaign/campaign31/receipts/output.log lines 17310-17318",
+      "description": "Fishing excerpts contain no inbound packet line and no plugin decision line: the packet witness logs only ServerboundUseItemOnPacket (0 ServerboundUseItemPacket in campaign31 output.log), FishingRodItem.use is not a trace target, and PlayerFishEvent cancellation is not logged. That the request reached the server and was refused there rests only on the inventory resync (ContainerSetContent/SetSlot) and the unchanged server bobber probe."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "E:/Vibecode/AchieveToDo/certification/w5-campaign/review-rc2c/fishing_cast_only/excerpts.txt (every STATE line)",
+      "description": "ATD_STAGE2A_STATE reports \"USE_FISHING_ROD\": null in every row, so the server state lines do not show the tested ability's lock state, contrary to the brief's row anatomy. The lock state follows only from count vs threshold."
+    }
+  ]
+}

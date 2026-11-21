@@ -1,0 +1,61 @@
+{
+ "group": "complex_unlock_vault",
+ "reviewer": "Q8",
+ "decision": "NOT_CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "1 ability unlock_vault: NativeComplexBindings.java:14 (ABILITIES includes UNLOCK_VAULT; the guard denies via GameplayGate.allows), NativeComplexSpecs.java:43-44 (vault-key Spec on VaultBlockEntity$Server.tryInsertKey -> UNLOCK_VAULT, vault-membership), inactive VaultAdapter.java:38,58. SHA-256 of all 3 files recomputed, equal. Thresholds: normal 555, easy 450, hard 660, chaos 783, custom_vision 555."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "17 rows. Every survival locked row (pass1, op, offhand_locked, reload, c22-c25) is PASS_NO_OVERLAY: useBlock=ALLOW at the Bukkit layer (the denial is native), the client keeps '1 minecraft:trial_key' at pre/tick1/post, the vault block data has no rewarded_players afterwards, count unchanged. Allowed rows: key consumed, rewarded_players + items_to_eject, under_lock_and_key granted (count +1 in pass1 and c22-25, the expected effect). I agree with every verdict; PASS_NO_OVERLAY counts as lock proof per the brief.",
+   "rowsRead": [
+    "campaign21 pass1 unlock_vault locked",
+    "campaign21 pass1 unlock_vault allowed",
+    "campaign21 modes unlock_vault op",
+    "campaign21 offhand unlock_vault offhand_locked",
+    "campaign21 reload unlock_vault locked",
+    "campaign22 thresholds-easy unlock_vault locked",
+    "campaign23 thresholds-hard unlock_vault allowed",
+    "campaign24 thresholds-chaos unlock_vault locked",
+    "campaign25 thresholds-custom_vision unlock_vault locked"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign21-25: onlineMode=true, authenticated line 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'Glower4ek joined the game' for each; confirmed in each receipts/output.log (UUID line at ~line 232-234) and receipts/launch.json onlineMode=true."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes, offhand_locked/allowed and all 5 configs present; no NA rows."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "2 reload rows, all from campaign21 with logLines after its pass1, modes and offhand rows (reload ~101k-108k vs offhand ~89k-92k, modes ~37k-47k); MANIFEST.e5Reload generationBefore=1, generationAfter=2; every ATD_STAGE2A_STATE in the reload excerpts shows generation 2; each reload verdict equals the pass1 verdict for the same ability and phase."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: all rows REPRODUCED with recorded==replayed; MANIFEST runtime replay reproducedAll=true for campaign21 (1622) and campaign22-25 (396 each). Plugin SHA-256 recomputed on campaign21-25/runtime/plugins/achievetodo.jar and the rc2-artifacts jar = da9360aa...cb540 everywhere; client mod recomputed at the MANIFEST.clientMod path = 5c473903...5a99. campaign-results.jsonl recomputed for all 5 runtimes and equal to evidenceHashes.results (c21 dfd9c210..., c22 0a44a65f..., c23 cfbcdcaa..., c24 856f4297..., c25 45c3e020...). campaign.py/campaign_cases.py/campaign_replay.py hashes match HARNESS_RC2.sha256."
+  },
+  "ReleaseLaunch": {
+   "result": "FAIL",
+   "checked": "FAIL: ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION present in all 5 output.log before the first ATD_STAGE2A_STATE (c21 l207/221, c22 l207/221, c23 l207/221, c24 l206/220, c25 l208/222); but runtime_args.json and launch.json of campaign22/23/24 contain -Dachievetodo.progression.freshConfig=true (campaign21 and 25 are clean)."
+  }
+ },
+ "superseded": "MANIFEST.superseded and supplements are empty; all rows come from campaign21-25 under HARNESS_RC2 (harness file hashes re-verified). No superseded rows to assess.",
+ "findings": [
+  {
+   "severity": "major",
+   "criterion": "ReleaseLaunch",
+   "evidence": "campaign22/runtime_args.json, campaign23/runtime_args.json, campaign24/runtime_args.json and their receipts/launch.json 'command'",
+   "description": "The thresholds runtimes campaign22 (easy), campaign23 (hard) and campaign24 (chaos) were started with '-Dachievetodo.progression.freshConfig=true' in addition to the two -javaagent args. The brief requires the certified operator launch to carry no -Dachievetodo.* flags; only campaign21 and campaign25 match. The flag is read by BukkitProgressionRuntime.java:72 and changes config initialisation (line 401), so 3 of the 5 runtimes contributing rows to this group did not run the certified composition. All 5 runtimes do log ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION (output.log lines 206-222) before the first case."
+  },
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "review-rc2/complex_unlock_vault/excerpts.txt lines 1-17, 90-106, 130-146; rows.jsonl client overlay ''",
+   "description": "No locked vault row in any runtime shows the client lock overlay, and the server log has no explicit denial line (useBlock=ALLOW; ATD_STAGE2A_STATE shows UNLOCK_VAULT: null). The lock is proven only by the absence of an effect (key kept, no rewarded_players). NativeComplexBindings calls denialEffects.report for non-SILENT ids, so the missing message to the player may be a UX gap worth checking; it is not a gameplay leak."
+  }
+ ]
+}

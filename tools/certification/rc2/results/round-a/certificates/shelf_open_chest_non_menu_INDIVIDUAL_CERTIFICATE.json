@@ -1,0 +1,56 @@
+{
+  "group": "shelf_open_chest_non_menu",
+  "reviewer": "Q5",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "I computed the SHA-256 of every cited source file under repo/ and each one matches E1 (BukkitRestrictionResolver.java, BukkitExpandedGameplayListener.java, GameplayGate.java, NativeLandmarkOperations.java). Guards opened: BukkitExpandedGameplayListener.containerAbility (line 70) maps Chest/DoubleChest to OPEN_CHEST, and open() cancels the event. GameplayGate line 17 lists OPEN_CHEST as implemented. NativeLandmarkOperations lines 95 and 119 call targetAndAbilityDenied(...,OPEN_CHEST) for shelf transfer. Thresholds: normal 42, easy 40, hard 40, chaos 125, custom_vision 42. The thresholds in E1 match the runtime toml files I grepped (campaign21 normal.toml, 22 easy, 23 hard, 24 chaos_20261116, 25 custom_vision). All 5 configs list a threshold."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "30 rows, all PASS. I read every excerpt. Chest, locked: RIGHT_CLICK_BLOCK CHEST, no OpenScreen, STATE OPEN_CHEST LOCKED required=thr, and an unchanged count. Chest, allowed: OpenScreenPacket. Shelf, locked: the shelf block data stays [apple] before and after, and the count is unchanged. Shelf, allowed: the data changes from apple to stick (pass1, reload, easy, hard, chaos, custom_vision). In creative the transfer happens. For op it is denied. Spectator is DENY with no transfer.",
+      "rowsRead": [
+        "campaign21 pass1 open_chest locked/allowed",
+        "campaign21 pass1 shelf transfer locked/allowed",
+        "campaign21 modes chest+shelf creative/op/spectator",
+        "campaign21 reload chest+shelf locked/allowed",
+        "campaign22 thresholds-easy chest+shelf",
+        "campaign23 thresholds-hard chest+shelf",
+        "campaign24 thresholds-chaos chest+shelf",
+        "campaign25 thresholds-custom_vision chest+shelf"
+      ]
+    },
+    "E3": {
+      "result": "FAIL",
+      "checked": "MANIFEST.runtimes campaign21-25: each has onlineMode=true, the authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and the 'Glower4ek joined the game' line. launch.json onlineMode=true in all five. ATD_LAUNCH_PROFILE=release and ATD_GAMEPLAY_MODE=CERTIFICATION appear in every runtime's output.log before the first atd_marks case: c21 lines 207/221 (first case line 249), c22 207/221 (249), c23 207/221 (251), c24 206/220 (254), c25 208/222 (284). BUT see the major finding: c22/c23/c24 launch commands carry -Dachievetodo.progression.freshConfig=true, so the release-launch composition check fails for 3 of 5 runtimes."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "The modes rows exist for both cases. There are no offhand rows: a chest has no off-hand route, and shelf transfer uses the main-hand item by design, so this is acceptable. Rows exist for all 5 configs. There are no NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "MANIFEST.e5Reload: runtime campaign21, generationBefore 1, generationAfter 2. In excerpts.txt every reload-tagged row's ATD_STAGE2A_STATE lines show generation 2 and come from c21 output.log lines above 100000, after the pass1/modes/offhand lines (pass1 <10k, modes ~38-63k, offhand ~90k). Every reload verdict (PASS) equals the matching pass1 verdict (PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED and recorded==replayed. MANIFEST.runtimes[*].replay.reproducedAll=true (c21 1622 rows, c22-c25 396 each), and REPLAY.json reproducedAll=true in every runtime. Plugin sha256 da9360aa...cb540 is the same in all 5 perRuntime entries and in prelaunch, and matches the brief. clientMod sha256 5c473903...5a99 matches the brief. I recomputed the campaign-results.jsonl SHA-256 of all 5 runtimes (sha256sum) and each equals evidenceHashes.results: c21 dfd9c210..., c22 0a44a65f..., c23 cfbcdcaa..., c24 856f4297..., c25 45c3e020..."
+    }
+  },
+  "superseded": "MANIFEST.superseded is []. All rows come from campaign21-25 under HARNESS_RC2 (MANIFEST.harness). No superseded rows to assess.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "E3",
+      "evidence": "campaign22/receipts/launch.json, campaign23/receipts/launch.json, campaign24/receipts/launch.json (command) and campaign22/runtime_args.json (args[0])",
+      "description": "Release-launch check fails: campaign22 (easy), campaign23 (hard) and campaign24 (chaos) were launched with -Dachievetodo.progression.freshConfig=true in addition to the two -javaagent flags. The brief requires no -Dachievetodo.* flags. The value is not in the plugin's derived list (output.log line 207: derived=[bacap.directory, bridge.server, progression.world, progression.worldKey]), so the operator supplied it by hand. All thresholds-easy/hard/chaos rows therefore come from a launch that is not the certified operator launch. campaign21 and campaign25 are clean."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2/shelf_open_chest_non_menu/excerpts.txt, e.g. campaign21 pass1 open_chest locked (output.log 336-348)",
+      "description": "Locked chest and shelf excerpts log useBlock=ALLOW / cancelled=false at the event layer. The native guard leaves no positive denial line, so the denial can only be inferred from what is missing (no OpenScreen, unchanged shelf data) and from the client overlay."
+    }
+  ]
+}

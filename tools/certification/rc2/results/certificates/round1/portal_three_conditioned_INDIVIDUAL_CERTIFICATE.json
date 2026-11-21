@@ -1,0 +1,97 @@
+{
+  "group": "portal_three_conditioned",
+  "reviewer": "P1",
+  "decision": "NOT_CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1: 3 abilities, all DIRECT. Files cited and SHA-256 recomputed = E1: adapters/BukkitRestrictionResolver.java f5d7d99b... (lines 255/258/261, inactive legacy), adapters/PortalAdapter.java d2be5d74... (inactive legacy), gameplay/nativeguard/NativePortalAgent.java 443910c9..., gameplay/NativePortalBindings.java bcd233e0.... Opened NativePortalAgent.java:108-110 (NetherPortalBlock -> ENTER_NETHER, EndPortalBlock -> ENTER_END, EndGatewayBlock -> TELEPORT_OUTER_ISLANDS) and :112-115 (no guard when already in the target dimension; gateway guarded only for the central gateways via central()); NativePortalBindings.java:13 ABILITIES = {ENTER_NETHER, ENTER_END, TELEPORT_OUTER_ISLANDS}. Thresholds: enter_nether 224/172/276/224/296@34/115@36, enter_end 471/378/564/471/662@34/654@36, teleport_outer_islands 660/540/780/660/392@34/227@36 (normal/easy/hard/custom_vision/chaos); config TOML hashes and re-parsed values equal E1; row thresholds match."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "45 rows: 35 PASS, 10 PASS_PARITY_ENTER_BLOCK. All 45 excerpts read; lock state re-read from raw state criteria (excerpts show ability null): every locked/op/creative/spectator row has achievetodo:abilities/<ability> ['demystified'] only, every allowed row ['demystified','unlocked']. enter_nether locked (31 pass1 7242-7842, reload 108697-109317 gen 2, 32 7187-7779, 33 7317-7925, 34 7790-8382, 35 7376-7976): player stands in the portal 120+ ticks, no ATD_PROOF_NATIVE_WORLD_CHANGE, count unchanged, position unchanged, overlay \"You can't enter The Nether\"; allowed: WORLD_CHANGE overworld->the_nether, nether/root, pos -13 45 -12.5. enter_end locked: no world change; in pass1/thresholds the only gain is minecraft:story/enter_the_end entered_end_portal (+1, margin 2 keeps it locked: 469->470 < 471, 376->377, 562->563, 660->661) = PASS_PARITY_ENTER_BLOCK, accepted parity (a); reload locked PASS with no gain (already earned). enter_end allowed: WORLD_CHANGE -> the_end, pos 100.5 49 0.5. teleport_outer_islands locked: player stays at the central gateway (z 53.5 -> 50.7), only minecraft:end/enter_end_gateway (+1) = PARITY, allowed: pos z ~1021 (far:500), kilometre_walk. All parity gains are exactly the enter_block criteria listed in parity_criteria. Verdicts reproduced (except the creative row, see finding).",
+      "rowsRead": [
+        "campaign31 pass1 enter_nether locked",
+        "campaign31 pass1 enter_nether allowed",
+        "campaign31 modes enter_nether creative",
+        "campaign31 modes enter_nether op",
+        "campaign31 modes enter_nether spectator",
+        "campaign31 reload enter_nether locked",
+        "campaign31 reload enter_nether allowed",
+        "campaign32 thresholds-easy enter_nether locked",
+        "campaign32 thresholds-easy enter_nether allowed",
+        "campaign33 thresholds-hard enter_nether locked",
+        "campaign33 thresholds-hard enter_nether allowed",
+        "campaign34 thresholds-chaos enter_nether locked",
+        "campaign34 thresholds-chaos enter_nether allowed",
+        "campaign35 thresholds-custom_vision enter_nether locked",
+        "campaign35 thresholds-custom_vision enter_nether allowed",
+        "campaign31 pass1 enter_end locked",
+        "campaign31 pass1 enter_end allowed",
+        "campaign31 modes enter_end creative",
+        "campaign31 modes enter_end op",
+        "campaign31 modes enter_end spectator",
+        "campaign31 reload enter_end locked",
+        "campaign31 reload enter_end allowed",
+        "campaign32 thresholds-easy enter_end locked",
+        "campaign32 thresholds-easy enter_end allowed",
+        "campaign33 thresholds-hard enter_end locked",
+        "campaign33 thresholds-hard enter_end allowed",
+        "campaign34 thresholds-chaos enter_end locked",
+        "campaign34 thresholds-chaos enter_end allowed",
+        "campaign35 thresholds-custom_vision enter_end locked",
+        "campaign35 thresholds-custom_vision enter_end allowed",
+        "campaign31 pass1 teleport_outer_islands locked",
+        "campaign31 pass1 teleport_outer_islands allowed",
+        "campaign31 modes teleport_outer_islands creative",
+        "campaign31 modes teleport_outer_islands op",
+        "campaign31 modes teleport_outer_islands spectator",
+        "campaign31 reload teleport_outer_islands locked",
+        "campaign31 reload teleport_outer_islands allowed",
+        "campaign32 thresholds-easy teleport_outer_islands locked",
+        "campaign32 thresholds-easy teleport_outer_islands allowed",
+        "campaign33 thresholds-hard teleport_outer_islands locked",
+        "campaign33 thresholds-hard teleport_outer_islands allowed",
+        "campaign34 thresholds-chaos teleport_outer_islands locked",
+        "campaign34 thresholds-chaos teleport_outer_islands allowed",
+        "campaign35 thresholds-custom_vision teleport_outer_islands locked",
+        "campaign35 thresholds-custom_vision teleport_outer_islands allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign31-36: onlineMode=true in all six; authenticated UUID lines (31 '[16:39:01] UUID of player Glower4ek is 89c23030-...', 32 21:06:42, 33 22:12:38, 34 23:18:41, 35 00:24:28, 36 01:30:37) and join lines (16:39:02, 21:06:43, 22:12:39, 23:18:42, 00:24:30, 01:30:38) present; receipts/launch.json onlineMode=true for all six. Every row of the group carries pre/tick1/post client state from the real Fabric client and ATD_PACKET_IN lines from the server."
+    },
+    "E4": {
+      "result": "FAIL",
+      "checked": "modes rows exist for all three abilities; op rows PASS (op=true denied, overlay, no world change); spectator rows PASS (no overlay, no leak); enter_end creative PASS (WORLD_CHANGE -> the_end inside window 48232-48253, count 469 < 471) and teleport_outer_islands creative PASS (z 53.5 -> 1021.5, count 658 < 660). The enter_nether creative row (campaign31 output.log 47124-47128) is NOT a valid proof: the client is already in the_nether in the 'pre' state and the server STATE pre line is at -13 45 -12.5 in the_nether; the transition happened during fixture setup before the pre mark (output.log:47115 ATD_PROOF_NATIVE_WORLD_CHANGE at 18:01:46, pre mark at 18:01:49), so the window contains no action and the oracle 'client:dim=the_nether' (which does not compare with pre) passes vacuously. The adjacent raw lines do show a creative entry at count 223 (game mode set to Creative and count 223 at 18:01:46, then the world change), but that is not what the row records. Threshold rows for normal/easy/hard/chaos/custom_vision exist for all three. No NA rows; no offhand rows (portals are not hand actions)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "6 reload rows from campaign31 after pass1/modes/offhand (results.jsonl 0-397/398-994/995-1230, reload 1231-1628); generationAfter=2 (MANIFEST; output.log:101756); all reload excerpts show \"generation\": 2. reload enter_nether PASS/PASS = pass1; reload enter_end locked PASS vs pass1 PASS_PARITY_ENTER_BLOCK and teleport_outer_islands likewise: agreement in substance (both deny teleport; the parity +1 is absent on reload only because enter_the_end / enter_end_gateway were already earned in pass1). Allowed PASS = pass1."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 45/45 REPRODUCED, recorded==replayed, key multiset equals rows.jsonl. Runtime replays in MANIFEST: campaign31 REPRODUCED 1629, 32/33/34/35 REPRODUCED 398 each, 36 REPRODUCED 2, reproducedAll=true, problems=[] everywhere. Plugin SHA-256 recomputed with sha256sum: campaign31..36/runtime/plugins/achievetodo.jar and rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar all = da9360aa...4cb540 (brief value); launch.json pluginSHA256 identical. Client mod 'E:\\Кубы сборки\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar' recomputed (Get-FileHash) = 5c473903...925a99 (brief value), also equal to rc2-artifacts/achievetodo-mc26.2+0.2.1.jar. campaign-results.jsonl recomputed for ALL six runtimes and equal to evidenceHashes.results: 31 8eddce27..., 32 c4936a8d..., 33 23a53c62..., 34 a7e80ad6..., 35 400573a8..., 36 2c2ce771.... trace-agent.jar in every observer-work = 706b85d5... (matches HARNESS_RC2C/RC2D)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json + receipts/launch.json of campaign31-36: command = java -Xms128M -Xmx2G [-D] -javaagent:plugins/achievetodo.jar -javaagent:<observer-work>/trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn -jar purpur-26.2-2620.jar --nogui. No -Dachievetodo.* in 31 (NORMAL) and 35 (Custom); only -Dachievetodo.progression.initialConfig=easy|hard|chaos|chaos in 32/33/34/36. output.log: 'ATD_LAUNCH_PROFILE=release' at line 207 (31,32,35,36) / 208 (33,34) and 'ATD_GAMEPLAY_MODE=CERTIFICATION' at 221/222, both before the first case (atd_marks objective created at lines 249-284). derived=[...] of 32/33/34/36 contains world-group.properties and achievetodo.progression.freshConfig (plugin-derived, not passed by hand); 31/35 derived lists have neither (existing install). Fresh install corroborated: world-selection.properties and world-group.properties of 32/33/34/36 carry plugin-written timestamps equal to the launch second (21:06:21, 22:12:10, 23:18:22, 01:30:14); 31/35 files are the pre-existing hand-made install (no timestamp header). Group rows all come from campaign31-35 (HARNESS_RC2C, launch.json identical harness run_server_v3.py eb2508c3...). Observation (not a finding): plugins/ of every runtime also holds observer plugins packet-witness.jar, w4-gameplay-evidence-probe.jar, w4-snap.jar (launch.json observerSHA256 077a0d56... is the probe jar); they are instrumentation, not -D options, and identical across runtimes."
+    }
+  },
+  "superseded": "MANIFEST.superseded=[] for this group; no row of the group comes from campaign36. The only supersession in the campaign (CHAOS ignite_tnt campaign34 -> campaign36, requires=['use_flint_and_steel'] because the fixture lights TNT with flint and steel) does not touch this group; it is justified in principle since a locked use_flint_and_steel would mask the ignite_tnt guard, and campaign36 is a fresh CHAOS install under HARNESS_RC2D whose only harness change is campaign_cases.py.",
+  "findings": [
+    {
+      "severity": "major",
+      "criterion": "E4",
+      "evidence": "rows.jsonl 'campaign31 modes enter_nether creative' (client pre dim=the_nether, pos -13 45 -12.5); campaign31/receipts/output.log:47115-47128 (WORLD_CHANGE at 18:01:46 before 'M179709147pre' at 18:01:49)",
+      "description": "The creative-mode row for enter_nether records PASS although the player was already in the Nether before the action window: in creative the portal delay is ~1 tick, so the fixture '@tp 8.5 -60 -0.5' into the portal transferred the player during setup. The oracle client:dim=the_nether does not compare with the pre state and passes vacuously, and E6 replay reproduces the same vacuous verdict. The creative bypass itself is visible in the raw lines just before the window, but the certified row does not prove it; the row needs a fixture that starts outside the portal (or a pre-vs-post oracle) and a rerun."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/portal_three_conditioned/excerpts.txt all ATD_STAGE2A_STATE lines ('\"ENTER_NETHER\": null' etc.)",
+      "description": "Compacted excerpts do not show the tested ability's lock state; verified from raw criteria for all 45 rows."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "group": "action_use_jukebox",
+  "reviewer": "P1",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1 use_jukebox: DIRECT, sites gameplay/NativeActionBindings.java:18 and gameplay/nativeguard/NativeActionSpecs.java:37; resolver BukkitRestrictionResolver.java (inactive legacy, no hash in this E1; computed f5d7d99b..., same as recorded elsewhere). SHA-256 recomputed and equal: NativeActionBindings.java 93faec2e..., NativeActionSpecs.java dc0fab2b.... Opened NativeActionSpecs.java:37: Spec(\"USE_JUKEBOX\", JukeboxPlayable.tryInsertIntoJukebox, injected before ItemStack.consumeAndReturn, result TRY_WITH_EMPTY_HAND), so the disc is neither consumed nor inserted; NativeActionBindings.java:18 lists USE_JUKEBOX in ABILITIES and the guard (:29-40) returns GameplayGate.allows(...) for the player with the creative/spectator bypass and reports the denial. Thresholds normal 284, easy 220, hard 348, custom_vision 284, chaos@34 264, chaos@36 710; config TOML hashes and re-parsed values equal E1; row thresholds match."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "All 17 rows PASS; I read all 17 excerpts and, because ATD_STAGE2A_STATE in excerpts shows \"USE_JUKEBOX\": null, re-read the raw first/last state line of each excerpt range (p1_rawstate.py) for the lock state (criteria achievetodo:abilities/use_jukebox). Locked rows (31 pass1 5307-5317, 31 reload 106658-106668 gen 2, 32 5266-5276, 33 5396-5406, 34 5878-5888, 35 5450-5460, offhand_locked 90494-90508): criteria ['demystified'] only (locked), count unchanged, UseItemOn reaches the server (MAIN_HAND, plus OFF_HAND for offhand), probe 'execute if block ... jukebox[has_record=true]' = 'Test failed' pre and post, no RECORD_PLAYED stat, inventory unchanged, client overlay \"You can't use a jukebox\". Allowed rows: criteria [demystified, unlocked], probe 'Test failed' -> 'Test passed', RECORD_PLAYED +1, disc slot emptied (slot 0, or 40 for off hand); first-time allowed rows earn disc_jockey/music_to_my_ears (+1 count) which is the vanilla effect, not a leak. Verdicts reproduced.",
+      "rowsRead": [
+        "campaign31 pass1 use_jukebox locked",
+        "campaign31 pass1 use_jukebox allowed",
+        "campaign31 modes use_jukebox creative",
+        "campaign31 modes use_jukebox op",
+        "campaign31 modes use_jukebox spectator",
+        "campaign31 offhand use_jukebox offhand_locked",
+        "campaign31 offhand use_jukebox offhand_allowed",
+        "campaign31 reload use_jukebox locked",
+        "campaign31 reload use_jukebox allowed",
+        "campaign32 thresholds-easy use_jukebox locked",
+        "campaign32 thresholds-easy use_jukebox allowed",
+        "campaign33 thresholds-hard use_jukebox locked",
+        "campaign33 thresholds-hard use_jukebox allowed",
+        "campaign34 thresholds-chaos use_jukebox locked",
+        "campaign34 thresholds-chaos use_jukebox allowed",
+        "campaign35 thresholds-custom_vision use_jukebox locked",
+        "campaign35 thresholds-custom_vision use_jukebox allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign31-36: onlineMode=true in all six; authenticated UUID lines (31 '[16:39:01] UUID of player Glower4ek is 89c23030-...', 32 21:06:42, 33 22:12:38, 34 23:18:41, 35 00:24:28, 36 01:30:37) and join lines (16:39:02, 21:06:43, 22:12:39, 23:18:42, 00:24:30, 01:30:38) present; receipts/launch.json onlineMode=true for all six. Every row of the group carries pre/tick1/post client state from the real Fabric client and ATD_PACKET_IN lines from the server."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes (campaign31): creative PASS (has_record true, RECORD_PLAYED +1, disc kept in creative), op PASS (op=true still denied, Test failed, overlay), spectator PASS (vanilla spectator interact cancelled useBlock=DENY by the server, no overlay, no leak). offhand_locked/offhand_allowed rows exist and PASS (OFF_HAND UseItemOn packet, slot 40). Threshold rows for normal/easy/hard/chaos/custom_vision (locked+allowed) present. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows from campaign31 after pass1/modes/offhand (results.jsonl 0-397/398-994/995-1230, reload 1231-1628); generationAfter=2 in MANIFEST, output.log:101756 'PROGRESSION_CONFIG_READY generation=2'; both reload excerpts show \"generation\": 2; reload locked/allowed PASS = pass1 PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 17/17 REPRODUCED, recorded==replayed, key multiset equals rows.jsonl. Runtime replays in MANIFEST: campaign31 REPRODUCED 1629, 32/33/34/35 REPRODUCED 398 each, 36 REPRODUCED 2, reproducedAll=true, problems=[] everywhere. Plugin SHA-256 recomputed with sha256sum: campaign31..36/runtime/plugins/achievetodo.jar and rc2-artifacts/AchieveToDo-Purpur-26.2-0.2.1.jar all = da9360aa...4cb540 (brief value); launch.json pluginSHA256 identical. Client mod 'E:\\Кубы сборки\\ATD Stage2B W4 Attempt01\\minecraft\\mods\\achievetodo.jar' recomputed (Get-FileHash) = 5c473903...925a99 (brief value), also equal to rc2-artifacts/achievetodo-mc26.2+0.2.1.jar. campaign-results.jsonl recomputed for ALL six runtimes and equal to evidenceHashes.results: 31 8eddce27..., 32 c4936a8d..., 33 23a53c62..., 34 a7e80ad6..., 35 400573a8..., 36 2c2ce771.... trace-agent.jar in every observer-work = 706b85d5... (matches HARNESS_RC2C/RC2D)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json + receipts/launch.json of campaign31-36: command = java -Xms128M -Xmx2G [-D] -javaagent:plugins/achievetodo.jar -javaagent:<observer-work>/trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn -jar purpur-26.2-2620.jar --nogui. No -Dachievetodo.* in 31 (NORMAL) and 35 (Custom); only -Dachievetodo.progression.initialConfig=easy|hard|chaos|chaos in 32/33/34/36. output.log: 'ATD_LAUNCH_PROFILE=release' at line 207 (31,32,35,36) / 208 (33,34) and 'ATD_GAMEPLAY_MODE=CERTIFICATION' at 221/222, both before the first case (atd_marks objective created at lines 249-284). derived=[...] of 32/33/34/36 contains world-group.properties and achievetodo.progression.freshConfig (plugin-derived, not passed by hand); 31/35 derived lists have neither (existing install). Fresh install corroborated: world-selection.properties and world-group.properties of 32/33/34/36 carry plugin-written timestamps equal to the launch second (21:06:21, 22:12:10, 23:18:22, 01:30:14); 31/35 files are the pre-existing hand-made install (no timestamp header). Group rows all come from campaign31-35 (HARNESS_RC2C, launch.json identical harness run_server_v3.py eb2508c3...). Observation (not a finding): plugins/ of every runtime also holds observer plugins packet-witness.jar, w4-gameplay-evidence-probe.jar, w4-snap.jar (launch.json observerSHA256 077a0d56... is the probe jar); they are instrumentation, not -D options, and identical across runtimes."
+    }
+  },
+  "superseded": "MANIFEST.superseded=[] for this group; no row of the group comes from campaign36. The only supersession in the campaign (CHAOS ignite_tnt campaign34 -> campaign36, requires=['use_flint_and_steel'] because the fixture lights TNT with flint and steel) does not touch this group; it is justified in principle since a locked use_flint_and_steel would mask the ignite_tnt guard, and campaign36 is a fresh CHAOS install under HARNESS_RC2D whose only harness change is campaign_cases.py.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc2c/action_use_jukebox/excerpts.txt every ATD_STAGE2A_STATE line ('\"ability\": {\"USE_JUKEBOX\": null}'); raw campaign31/receipts/output.log:5307 vs :5360 criteria 'achievetodo:abilities/use_jukebox'",
+      "description": "The probe's 'abilities' map only covers 25 abilities, so the compacted excerpt reports USE_JUKEBOX as null and does not show the server-side lock state the brief says it shows. The lock state is recoverable from the raw state line's criteria (['demystified'] at 283 vs ['demystified','unlocked'] at 284), which I checked for all 17 rows; packaging gap, no verdict change."
+    }
+  ]
+}
