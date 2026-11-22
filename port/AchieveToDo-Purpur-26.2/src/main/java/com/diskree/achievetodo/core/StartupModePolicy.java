@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 /**
  * Decides, before any service starts, whether this launch may proceed. Only the native guard path in
- * gameplay mode CERTIFICATION is certified. The agents read their JVM properties in premain, before this
+ * gameplay mode RELEASE is certified. The agents read their JVM properties in premain, before this
  * plugin exists, so the plugin cannot switch itself to that path. The agent can: with no explicit mode,
  * {@link ReleaseLaunchDefaults} (premain) sets the certified switches, and {@link ReleaseLaunchProfile} (bootstrap
  * and enable) fills in the per-installation values. A launch that still has no mode here therefore lacks the
@@ -52,7 +52,7 @@ public final class StartupModePolicy {
         return "java -javaagent:" + hints.pluginJar() + " -jar purpur-26.2-2620.jar --nogui";
     }
 
-    public record Decision(ProductGameplayAdmission.Mode mode, List<String> warnings) {
+    public record Decision(GameplayAdmission.Mode mode, List<String> warnings) {
         public Decision { warnings = List.copyOf(warnings); }
     }
 
@@ -87,16 +87,11 @@ public final class StartupModePolicy {
             lines.add("  " + releaseCommand(known));
             lines.add("The jar after -javaagent: must be the same file as the one in plugins/. Nothing else is needed;");
             lines.add("see STARTING_THE_SERVER.md. The older explicit certified command (all -Dachievetodo.* options) also works.");
-            lines.add("To run the uncertified legacy path on purpose (testing only), start with -D" + MODE + "=diagnostic.");
             throw new Refusal("ATD_GAMEPLAY_MODE_REQUIRED", lines);
         }
-        var mode = ProductGameplayAdmission.mode(value);
+        var mode = GameplayAdmission.mode(value);
         return switch (mode) {
-            case DIAGNOSTIC -> new Decision(mode, List.of(
-                "ATD_UNCERTIFIED_LEGACY_PATH: -D" + MODE + "=diagnostic was given explicitly.",
-                "This start runs the legacy Bukkit restriction path, which is NOT certified and has known gaps.",
-                "Do not use it for real players. The certified start uses -D" + MODE + "=certification."));
-            case CERTIFICATION -> {
+            case RELEASE -> {
                 var missing = new ArrayList<String>();
                 for (String name : CERTIFIED_SWITCHES)
                     if (!"true".equalsIgnoreCase(properties.apply(name))) missing.add("-D" + name + "=true");
@@ -104,15 +99,13 @@ public final class StartupModePolicy {
                     if (!validPerWorld(name, properties.apply(name))) missing.add("-D" + name + "=" + placeholder(name, known));
                 if (!missing.isEmpty()) {
                     var lines = new ArrayList<String>();
-                    lines.add("ATD_GAMEPLAY_MODE_PRECONDITIONS: certification mode is missing or has invalid values for:");
+                    lines.add("ATD_GAMEPLAY_MODE_PRECONDITIONS: release mode is missing or has invalid values for:");
                     for (String flag : missing) lines.add("  " + flag);
                     lines.addAll(guidance(properties, known));
                     throw new Refusal("ATD_GAMEPLAY_MODE_PRECONDITIONS", lines);
                 }
                 yield new Decision(mode, List.of());
             }
-            // PRODUCT keeps its own, unchanged admission checks in AchieveToDoPlugin/ProductGameplayAdmission.
-            case PRODUCT -> new Decision(mode, List.of());
         };
     }
 
@@ -144,7 +137,7 @@ public final class StartupModePolicy {
     static List<String> guidance(Function<String, String> properties, Hints hints) {
         var lines = new ArrayList<String>();
         lines.add("Explicit certified start (all on one line, before -jar; see the operator note STARTING_THE_SERVER.md):");
-        lines.add("  java -javaagent:" + hints.pluginJar() + " -D" + MODE + "=certification \\");
+        lines.add("  java -javaagent:" + hints.pluginJar() + " -D" + MODE + "=release \\");
         for (String name : CERTIFIED_SWITCHES) lines.add("    -D" + name + "=true \\");
         for (String name : PER_WORLD) {
             String given = properties.apply(name);

@@ -28,7 +28,8 @@ public final class NativeMovementContractTest {
                 NativeMovementAgent.verifyPin(name, b, mode); checks++;
                 byte[] out = NativeMovementAgent.transformNative(name, b, loader);
                 if (!cf.verify(out).isEmpty()) throw new AssertionError(cf.verify(out)); checks++;
-                int expected = name.equals(NativeMovementAgent.PLAYER) ? 1 : 2, found = 0;
+                // ServerPlayer: jumpFromGround and onInsideBlock (portal contact, 0.3.0); the others: two sites each.
+                int expected = 2, found = 0;
                 for (var m : cf.parse(out).methods()) if (m.code().isPresent()) for (var e : m.code().get())
                     if (e instanceof InvokeInstruction call && call.owner().asInternalName().endsWith("/NativeMovementAgent")) found++;
                 if (found != expected) throw new AssertionError("Exact inserted calls " + name + ":" + found); checks++;

@@ -15,11 +15,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 import org.bukkit.scheduler.BukkitTask;
 
-/** Explicit disposable progression preview; never claims production gameplay readiness. */
+/** Server side of the AchieveToDo bridge: admits players with the matching client mod and keeps their progression in sync. */
 public final class BukkitBridgeRuntime implements Listener,PluginMessageListener,AutoCloseable {
     private static final long HELLO_BUDGET=TimeUnit.SECONDS.toNanos(5),TOTAL_BUDGET=TimeUnit.SECONDS.toNanos(20);
     private final JavaPlugin plugin;
     private final UUID serverId;
+    private final String version;
     private final boolean groupScope;
     private final Map<PlayerConnection,Session> connections=new IdentityHashMap<>();
     private final Map<UUID,Session> players=new HashMap<>();
@@ -61,6 +62,7 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
             java.util.function.BooleanSupplier admission,java.util.function.BooleanSupplier productReadiness,Runnable refreshAdmission) {
         this.admission=admission;this.productReadiness=Objects.requireNonNull(productReadiness);this.refreshAdmission=Objects.requireNonNull(refreshAdmission);
         this.plugin=plugin;this.progression=progression;
+        version=plugin.getPluginMeta().getVersion();
         serverId=optionalId("achievetodo.bridge.server");groupScope=Boolean.getBoolean("achievetodo.bridge.groupScope");
     }
     public void start() {
@@ -70,19 +72,7 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
         messenger.registerIncomingPluginChannel(plugin,BridgeWire.CHANNEL,this);
         plugin.getServer().getPluginManager().registerEvents(this,plugin);
         ticker=plugin.getServer().getScheduler().runTaskTimer(plugin,this::guardedTick,1,1);
-        plugin.registerCommand("atdbridge","Console-only disposable protocol demonstration",new io.papermc.paper.command.brigadier.BasicCommand() {
-            @Override public void execute(io.papermc.paper.command.brigadier.CommandSourceStack source,String[] args) {
-                CommandSender sender=source.getSender();
-                if (!(sender instanceof ConsoleCommandSender) || !enabled() || args.length!=1) return;
-                switch (args[0]) {
-                    case "resync" -> inject("gap");
-                    case "stale", "gap" -> inject(args[0]);
-                    case "status" -> plugin.getLogger().info("ATD_BRIDGE STATUS sessions="+players.size()+" productGameplayReady="+productReady()+"");
-                    default -> { return; }
-                }
-            }
-        });
-        plugin.getLogger().info("ATD_BRIDGE v1.3; testOnly="+enabled()+"; productGameplayReady="+productReady()+"; default admission CLOSED");
+        plugin.getLogger().info("ATD_BRIDGE protocol "+BridgeWire.MAJOR+"."+BridgeWire.MINOR+"; requires the AchieveToDo "+version+" client mod; admission opens when progression is ready");
     }
     private boolean enabled() {
         try {
@@ -127,43 +117,45 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
     public void configure(AsyncPlayerConnectionConfigureEvent event) {
         if (!event.isAsynchronous()) throw new IllegalStateException("no main-thread wait");
         var connection=event.getConnection();var gate=new CompletableFuture<Boolean>();
-        if (!open) { connection.disconnect(Component.text("ATD_SERVER_CLOSED"));return; }
+        if (!open) { connection.disconnect(BridgeMessages.serverStarting());return; }
         dispatch(() -> {
             if (!open || gate.isDone() || !connection.isConnected()) { gate.complete(false);return; }
-            if (!admissionNow() || players.size()>=16) { connection.disconnect(Component.text("ATD_SPIKE_SCOPE_CLOSED"));gate.complete(false);return; }
+            if (!admissionNow()) { connection.disconnect(BridgeMessages.serverStarting());gate.complete(false);return; }
             UUID id=connection.getProfile().getId();
-            if (id==null || players.containsKey(id)) { connection.disconnect(Component.text("ATD_DUPLICATE_CONNECTION"));gate.complete(false);return; }
+            if (id==null || players.containsKey(id)) { connection.disconnect(BridgeMessages.syncError("ATD_DUPLICATE_CONNECTION"));gate.complete(false);return; }
             Session s=new Session(id,connection);s.profileName=connection.getProfile().getName();players.put(id,s);connections.put(connection,s);
             bootstrap(s,connection,gate,null);log("HOLD_CONFIGURATION",s);
         });
-        await(connection,gate,7);
+        await(connection,gate,7,true);
     }
     private void bootstrap(Session s,PlayerConfigurationConnection c,CompletableFuture<Boolean> gate,UUID existingSession) {
         s.connection=c;s.helloGate=gate;s.admitGate=null;s.admitted=false;s.active=false;s.sent=false;
         s.deadline=System.nanoTime()+TOTAL_BUDGET;
         s.epoch=UUID.randomUUID();
-        s.handshake=existingSession==null?new BridgeHandshake(serverId,System.nanoTime(),HELLO_BUDGET)
-                :new BridgeHandshake(serverId,existingSession,System.nanoTime(),HELLO_BUDGET);
+        s.handshake=new BridgeHandshake(serverId,existingSession==null?UUID.randomUUID():existingSession,System.nanoTime(),HELLO_BUDGET,version);
     }
-    private void await(PlayerConfigurationConnection connection,CompletableFuture<Boolean> gate,int seconds) {
+    /** @param handshake true while waiting for the client mod's answer: a timeout then means the mod is missing */
+    private void await(PlayerConfigurationConnection connection,CompletableFuture<Boolean> gate,int seconds,boolean handshake) {
         boolean success=false;
         try { success=gate.get(seconds,TimeUnit.SECONDS); }
         catch (InterruptedException e) { Thread.currentThread().interrupt(); }
         catch (ExecutionException | TimeoutException ignored) { }
         if (!success) {
             gate.complete(false);
-            connection.disconnect(Component.text("ATD_SYNC_TIMEOUT: universal AchieveToDo1.3 required"));
+            connection.disconnect(handshake?BridgeMessages.clientRequired(version):BridgeMessages.syncError("ATD_SYNC_TIMEOUT"));
             if (open) dispatch(() -> { Session s=connections.get(connection);if (s!=null) close(s,"ATD_WAIT_CLOSED"); });
         }
     }
     @EventHandler(priority=EventPriority.MONITOR)
     public void spawn(AsyncPlayerSpawnLocationEvent event) {
         var connection=event.getConnection();var location=event.getSpawnLocation();var gate=new CompletableFuture<Boolean>();
-        if (!open) { connection.disconnect(Component.text("ATD_SERVER_CLOSED"));return; }
+        if (!open) { connection.disconnect(BridgeMessages.serverStarting());return; }
         dispatch(() -> {
             Session s=connections.get(connection);
             if (gate.isDone() || s==null || s.handshake.state()!=BridgeHandshake.State.ACKNOWLEDGED || s.admitGate!=null) {
-                connection.disconnect(Component.text("ATD_SPAWN_WITHOUT_HANDSHAKE"));gate.complete(false);return;
+                connection.disconnect(s==null || s.handshake.state()==BridgeHandshake.State.NEGOTIATING
+                    ?BridgeMessages.clientRequired(version):BridgeMessages.syncError("ATD_SPAWN_WITHOUT_HANDSHAKE"));
+                gate.complete(false);return;
             }
             s.admitGate=gate;
             World world=location.getWorld();
@@ -175,7 +167,7 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
             s.boundWorld=world.getUID();s.boundKey=world.getKey().toString();
             try { snapshot(s); } catch(RuntimeException failure) {close(s,"ATD_PROGRESSION_UNAVAILABLE");}
         });
-        await(connection,gate,12);
+        await(connection,gate,12,false);
     }
     private BridgeWire.State capture(Session s) {
         var runtime=progression.get();if(runtime==null)throw new IllegalStateException("ATD_PROGRESSION_UNAVAILABLE");
@@ -203,8 +195,8 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
                 close(s,"ATD_DISCONNECTED");continue;
             }
             if (s.resync.expired(System.nanoTime())) { close(s,"ATD_RESYNC_TIMEOUT");continue; }
+            if (s.handshake.state()==BridgeHandshake.State.NEGOTIATING && s.handshake.expired(System.nanoTime())) { close(s,"ATD_CLIENT_REQUIRED");continue; }
             if (!s.active && System.nanoTime()-s.deadline>=0) { close(s,"ATD_SYNC_TIMEOUT");continue; }
-            if (s.handshake.state()==BridgeHandshake.State.NEGOTIATING && s.handshake.expired(System.nanoTime())) { close(s,"ATD_CLIENT_REQUIRED: universal AchieveToDo1.3 handshake timeout");continue; }
             if (s.active) {
                 try {
                     World actual=((PlayerGameConnection)s.connection).getPlayer().getWorld();
@@ -249,7 +241,7 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
                 } catch(RuntimeException failure) {close(s,"ATD_PROGRESSION_UNAVAILABLE");continue;}
             }
             if (s.connection instanceof PlayerConfigurationConnection c && !s.sent) {
-                if (s.handshake.expired(System.nanoTime())) { close(s,"ATD_CLIENT_REQUIRED: universal AchieveToDo bridge1.3 handshake timeout");continue; }
+                if (s.handshake.expired(System.nanoTime())) { close(s,"ATD_CLIENT_REQUIRED");continue; }
                 if (c.getListeningPluginChannels().contains(BridgeWire.CHANNEL)) {
                     s.sent=true;send(s,s.handshake.hello());log("HELLO_SENT",s);
                 }
@@ -264,7 +256,11 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
             BridgeWire.Frame frame=BridgeWire.decode(bytes);
             if (frame.kind()==BridgeWire.ACK && connection instanceof PlayerConfigurationConnection c) {
                 if (!s.sent) throw new IllegalArgumentException("ATD_UNSOLICITED_ACK");
-                s.handshake.accept(frame,System.nanoTime());log("HELLO_ACK_VALID",s);
+                try { s.handshake.accept(frame,System.nanoTime()); }
+                catch (BridgeHandshake.ClientVersionMismatch mismatch) {
+                    close(s,"ATD_CLIENT_OUTDATED client="+mismatch.clientVersion(),BridgeMessages.clientOutdated(version,mismatch.clientVersion()));return;
+                }
+                log("HELLO_ACK_VALID",s);
                 s.helloGate.complete(true);
 
             } else {
@@ -342,7 +338,7 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
     public void join(PlayerJoinEvent event) {
         Player player=event.getPlayer();Session s=players.get(player.getUniqueId());
         if (s==null || !s.admitted || !accepts(player.getWorld()) || !s.projection.world().equals(player.getWorld().getUID()) || !s.projection.worldKey().equals(player.getWorld().getKey().toString())) {
-            player.kick(Component.text("ATD_UNEXPECTED_PLAY_SCOPE"));return;
+            player.kick(BridgeMessages.syncError("ATD_UNEXPECTED_PLAY_SCOPE"));return;
         }
         connections.remove(s.connection);s.connection=player.getConnection();connections.put(s.connection,s);
         s.active=true;log("PLAY_ENTER revision="+s.projection.revision()+" world="+player.getWorld().getUID(),s);
@@ -397,17 +393,19 @@ public final class BukkitBridgeRuntime implements Listener,PluginMessageListener
             log("WORLD_TRANSITION_SNAPSHOT epoch="+s.epoch+" world="+s.boundWorld+" key="+s.boundKey,s);
         } catch(RuntimeException failure){close(s,"ATD_WORLD_TRANSITION_FAILED");}
     }
-    private void inject(String kind) {
-        for (Session s:List.copyOf(players.values())) if (s.active && !s.resync.pending()) {
-            BridgeWire.Patch patch="stale".equals(kind)?s.previousPatch:new BridgeWire.Patch(s.projection.epoch(),s.projection.revision()+1,s.projection.revision()+2,s.projection.state(),"0".repeat(64));
-            if (patch!=null) { send(s,s.handshake.hello().with(BridgeWire.DELTA,BridgeWire.patch(patch)));log("TEST_INJECT_"+kind,s); }
-        }
-    }
     private void send(Session s,BridgeWire.Frame frame) { s.connection.sendPluginMessage(plugin,BridgeWire.CHANNEL,BridgeWire.encode(frame)); }
     private void close(Session s,String reason) {
+        close(s,reason,switch (reason) {
+            case "ATD_CLIENT_REQUIRED" -> BridgeMessages.clientRequired(version);
+            case "ATD_SERVER_CLOSED" -> BridgeMessages.serverStarting();
+            default -> BridgeMessages.syncError(reason);
+        });
+    }
+    /** @param reason the internal code, logged; {@code message} is what the player sees */
+    private void close(Session s,String reason,Component message) {
         if (players.get(s.playerId)!=s) return;
         players.remove(s.playerId);connections.remove(s.connection);s.active=false;s.admitted=false;s.handshake.close();s.resync.clear();
-        s.connection.disconnect(Component.text(reason));s.helloGate.complete(false);
+        s.connection.disconnect(message);s.helloGate.complete(false);
         if (s.admitGate!=null) s.admitGate.complete(false);log(reason,s);s.projection=null;
     }
     private void log(String action,Session s) { plugin.getLogger().info("ATD_BRIDGE "+action+" session="+s.handshake.hello().session()+" thread="+Thread.currentThread().getName()); }

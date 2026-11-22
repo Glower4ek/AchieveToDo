@@ -92,7 +92,7 @@ public final class NativeLandmarkOperations {
     public static boolean shelfSingleDenied(Object actor,Object level,Object position,Object stack,Object shelf,Object slot) {
         if ((boolean)NativeLandmarkCapture.call(stack,"isEmpty")
             && (boolean)NativeLandmarkCapture.call(NativeLandmarkCapture.call(shelf,"getItem",((OptionalInt)slot).getAsInt()),"isEmpty")) return false;
-        return NativeLandmarkAgent.targetAndAbilityDenied(actor,level,position,"OPEN_CHEST");
+        return NativeLandmarkAgent.targetAndAbilityDenied(actor,level,position,"OPEN_CHEST","SHELF");
     }
     public static boolean shelfPoweredDenied(Object actor,Object block,Object level,Object position) {
         try {
@@ -116,7 +116,7 @@ public final class NativeLandmarkOperations {
             if (!transfers) return false;
             boolean first=true;
             for (Object target:affected) {
-                if (NativeLandmarkAgent.targetAndAbilityDenied(actor,level,target,first?"OPEN_CHEST":null)) return true;
+                if (NativeLandmarkAgent.targetAndAbilityDenied(actor,level,target,first?"OPEN_CHEST":null,"SHELF")) return true;
                 first=false;
             }
             return false;

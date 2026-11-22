@@ -474,6 +474,7 @@
   "achievetodo.ability.open_chest.name": "Сундук",
   "achievetodo.ability.open_chest.description": "Возможность открывать сундук",
   "achievetodo.ability.open_chest.locked_message": "Вы не можете открыть сундук",
+  "achievetodo.ability.open_chest.shelf.locked_message": "Вы не можете пользоваться полкой",
 
   "achievetodo.ability.open_stonecutter.name": "Камнерез",
   "achievetodo.ability.open_stonecutter.description": "Возможность пользоваться интерфейсом камнереза",
@@ -703,5 +704,9 @@
   "achievetodo.ability_unlocked_toast.landmark": "Доступна структура",
 
   "achievetodo.tab_unlocked_chat_message": "Разблокирована вкладка %s%s%s",
-  "achievetodo.ability_unlocked_chat_message": "%s разблокировал %s%s%s"
+  "achievetodo.ability_unlocked_chat_message": "%s разблокировал %s%s%s",
+
+  "achievetodo.bridge.syncing": "Синхронизация прогресса с сервером...",
+  "achievetodo.disconnect.sync_error": "AchieveToDo потерял синхронизацию с сервером. Переподключитесь.",
+  "achievetodo.disconnect.server_version": "На сервере AchieveToDo %s, у вас %s. Установите ту же версию, что и на сервере."
 }

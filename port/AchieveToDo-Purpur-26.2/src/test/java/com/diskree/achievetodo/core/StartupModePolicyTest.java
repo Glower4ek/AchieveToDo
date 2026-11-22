@@ -3,7 +3,7 @@ package com.diskree.achievetodo.core;
 import java.nio.file.*;
 import java.util.*;
 
-/** A default start must never silently run the uncertified legacy path. */
+/** A start without the agent is refused with the one-line command; only the release mode exists. */
 public final class StartupModePolicyTest {
     private static final String WORLD = "3f2b8a4e-1c2d-4e5f-8a9b-0c1d2e3f4a5b";
     private static final String SERVER = "9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d";
@@ -16,7 +16,7 @@ public final class StartupModePolicyTest {
         check(text.contains("java -javaagent:plugins/achievetodo.jar -jar purpur-26.2-2620.jar --nogui"), "guidance names the one-line start");
         check(text.contains("agent is not loaded"), "guidance says the agent is missing");
         check(!text.contains("-Dachievetodo.bridge.spike"), "release guidance needs no -D switches");
-        check(text.contains("mode=diagnostic"), "guidance names the explicit legacy opt-in");
+        check(!text.contains("diagnostic"), "the removed legacy path is not offered");
         var named = new StartupModePolicy.Hints(null, null, null, null, null, null, "plugins/AchieveToDo-Purpur-26.2-0.2.1.jar");
         check(String.join("\n", refuse(Map.of(), named, "ATD_GAMEPLAY_MODE_REQUIRED").guidance())
             .contains("-javaagent:plugins/AchieveToDo-Purpur-26.2-0.2.1.jar -jar"), "guidance uses the real jar name");
@@ -29,7 +29,7 @@ public final class StartupModePolicyTest {
         var partial = new HashMap<>(certified()); partial.remove(StartupModePolicy.BRIDGE_SERVER);
         text = String.join("\n", refuse(partial, StartupModePolicy.Hints.NONE, "ATD_GAMEPLAY_MODE_PRECONDITIONS").guidance());
         check(text.contains("-javaagent:plugins/achievetodo.jar"), "explicit guidance names the agent");
-        check(text.contains("-Dachievetodo.gameplay.mode=certification"), "explicit guidance names the mode");
+        check(text.contains("-Dachievetodo.gameplay.mode=release"), "explicit guidance names the mode");
         for (String flag : StartupModePolicy.CERTIFIED_SWITCHES) check(text.contains("-D" + flag + "=true"), "guidance names " + flag);
         for (String flag : StartupModePolicy.PER_WORLD) check(text.contains("-D" + flag + "="), "guidance names " + flag);
         check(!text.contains("world-group.properties is missing"), "no world-group claim without hints");
@@ -53,16 +53,17 @@ public final class StartupModePolicyTest {
             "minecraft:overworld", null, null), "ATD_GAMEPLAY_MODE_PRECONDITIONS").guidance());
         check(text.contains("-Dachievetodo.progression.world=" + bound), "world-group overworld preferred over observed");
 
-        // 4. Explicit diagnostic still runs the legacy path, but never silently.
-        var diagnostic = StartupModePolicy.decide(props(Map.of(StartupModePolicy.MODE, "diagnostic")), null);
-        check(diagnostic.mode() == ProductGameplayAdmission.Mode.DIAGNOSTIC, "explicit diagnostic admitted");
-        check(String.join("\n", diagnostic.warnings()).contains("ATD_UNCERTIFIED_LEGACY_PATH"), "diagnostic warns");
+        // 4. The legacy diagnostic path was removed in 0.3.0: naming it is an unknown mode.
+        try { StartupModePolicy.decide(props(Map.of(StartupModePolicy.MODE, "diagnostic")), null); throw new AssertionError("diagnostic accepted"); }
+        catch (IllegalArgumentException expected) { check(expected.getMessage().equals("ATD_UNKNOWN_GAMEPLAY_MODE"), "diagnostic removed"); }
 
         // 5. The full certified composition is admitted without warnings.
         var ok = StartupModePolicy.decide(props(certified()), StartupModePolicy.Hints.NONE);
-        check(ok.mode() == ProductGameplayAdmission.Mode.CERTIFICATION && ok.warnings().isEmpty(), "certified admitted");
+        check(ok.mode() == GameplayAdmission.Mode.RELEASE && ok.warnings().isEmpty(), "certified admitted");
+        var oldName = new HashMap<>(certified()); oldName.put(StartupModePolicy.MODE, "certification");
+        check(StartupModePolicy.decide(props(oldName), null).mode() == GameplayAdmission.Mode.RELEASE, "pre-0.3.0 mode name accepted");
         var upper = new HashMap<>(certified()); upper.put("achievetodo.bridge.spike", "TRUE");
-        check(StartupModePolicy.decide(props(upper), null).mode() == ProductGameplayAdmission.Mode.CERTIFICATION,
+        check(StartupModePolicy.decide(props(upper), null).mode() == GameplayAdmission.Mode.RELEASE,
             "Boolean.getBoolean parity for TRUE");
 
         // 6. Each missing or false switch, and each missing per-world value, is named.
@@ -87,11 +88,11 @@ public final class StartupModePolicyTest {
             }
         }
 
-        // 7. Unknown modes keep the existing error; PRODUCT keeps its own unchanged checks.
+        // 7. Unknown modes keep the existing error; the removed PRODUCT mode is unknown now.
         try { StartupModePolicy.decide(props(Map.of(StartupModePolicy.MODE, "Certification")), null); throw new AssertionError("case-changed mode accepted"); }
         catch (IllegalArgumentException expected) { check(expected.getMessage().equals("ATD_UNKNOWN_GAMEPLAY_MODE"), "unknown mode"); }
-        check(StartupModePolicy.decide(props(Map.of(StartupModePolicy.MODE, "product")), null).mode()
-            == ProductGameplayAdmission.Mode.PRODUCT, "product passes through");
+        try { StartupModePolicy.decide(props(Map.of(StartupModePolicy.MODE, "product")), null); throw new AssertionError("product accepted"); }
+        catch (IllegalArgumentException expected) { check(expected.getMessage().equals("ATD_UNKNOWN_GAMEPLAY_MODE"), "product removed"); }
 
         // 8. Source wiring: the plugin no longer defaults to diagnostic, and its own unchanged precondition
         //    check covers the same switches the policy documents.
@@ -111,7 +112,7 @@ public final class StartupModePolicyTest {
 
     private static Map<String, String> certified() {
         var map = new HashMap<String, String>();
-        map.put(StartupModePolicy.MODE, "certification");
+        map.put(StartupModePolicy.MODE, "release");
         for (String flag : StartupModePolicy.CERTIFIED_SWITCHES) map.put(flag, "true");
         map.put(StartupModePolicy.BACAP_DIRECTORY, "/srv/world/datapacks");
         map.put(StartupModePolicy.PROGRESSION_WORLD, WORLD);

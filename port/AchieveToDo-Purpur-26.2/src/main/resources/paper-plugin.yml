@@ -6,10 +6,3 @@ api-version: "26.2"
 description: Challenging plugin with BlazeandCave's progression gates for Purpur 26.2.
 authors: [diskree, Glower4ek]
 website: https://github.com/Glower4ek/AchieveToDo
-permissions:
-  achievetodo.inspect:
-    description: Allows read-only AchieveToDo runtime inspection.
-    default: op
-  achievetodo.setup:
-    description: Allows controlled live-validation setup helpers.
-    default: op

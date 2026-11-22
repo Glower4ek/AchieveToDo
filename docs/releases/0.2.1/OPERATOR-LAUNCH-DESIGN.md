@@ -1,7 +1,8 @@
 # 0.2.1 operator launch: design note
 
-Status: proposal on branch `feat/simple-operator-launch` (based on `fix/default-start-fail-closed`, `4ee83cf`).
-Not merged and not certified. Any jar built from it needs the rc.2 re-certification.
+Status: shipped in 0.2.1 and certified (rc.2, [0.2.1-purpur-26.2.md](../../certification/0.2.1-purpur-26.2.md)).
+This note is the original proposal, kept as written. In 0.3.0 the derived mode is called `release` instead of
+`certification`.
 
 ## Result
 

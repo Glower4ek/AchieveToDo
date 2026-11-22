@@ -94,17 +94,26 @@ public final class NativeMovementAgent {
             boolean velocity = name.equals(ENTITY) && method.equals("setDeltaMovement") && desc.equals("(Lnet/minecraft/world/phys/Vec3;)V");
             boolean sprint = name.equals(LIVING) && method.equals("setSprinting") && desc.equals("(Z)V");
             boolean jump = name.equals(PLAYER) && method.equals("jumpFromGround") && desc.equals("()V");
+            boolean contact = name.equals(PLAYER) && method.equals("onInsideBlock")
+                && desc.equals("(Lnet/minecraft/world/level/block/state/BlockState;)V");
             boolean livingJump = name.equals(LIVING) && method.equals("jumpFromGround") && desc.equals("()V");
             boolean packet = name.equals(LISTENER) && method.equals("handleMovePlayer") && desc.equals("(Lnet/minecraft/network/protocol/game/ServerboundMovePlayerPacket;)V");
             boolean teleport = name.equals(LISTENER) && method.equals("internalTeleport")
                 && desc.equals("(Lnet/minecraft/world/entity/PositionMoveRotation;Ljava/util/Set;)V");
-            if (!(sneak || velocity || sprint || jump || livingJump || packet || teleport)) { cb.with(e); return; }
+            if (!(sneak || velocity || sprint || jump || livingJump || packet || teleport || contact)) { cb.with(e); return; }
             cb.transformMethod(m, MethodTransform.transformingCode(new CodeTransform() {
                 @Override public void atStart(CodeBuilder b) {
                     if (teleport) {
                         sites[0]++;
                         b.aload(0).getfield(ClassDesc.ofInternalName(LISTENER), "player", ClassDesc.ofInternalName(PLAYER))
                             .invokestatic(SELF, "resetAscent", MethodTypeDesc.of(ConstantDescs.CD_void, ConstantDescs.CD_Object));
+                        return;
+                    }
+                    if (contact) {
+                        sites[0]++;
+                        var pass = b.newLabel();
+                        b.aload(0).aload(1).invokestatic(SELF, "portalContact", MethodTypeDesc.of(ConstantDescs.CD_boolean,
+                            ConstantDescs.CD_Object, ConstantDescs.CD_Object)).ifeq(pass).return_().labelBinding(pass);
                         return;
                     }
                     if (velocity) {
@@ -139,7 +148,7 @@ public final class NativeMovementAgent {
                 }
             }));
         });
-        int expected = name.equals(PLAYER) ? 1 : 2;
+        int expected = 2;
         if (sites[0] != expected) throw new IllegalStateException("S4L exact sites " + name + "=" + sites[0] + " expected=" + expected);
         return result;
     }
@@ -147,6 +156,31 @@ public final class NativeMovementAgent {
         boolean rejected=NativeMovementAscent.reject(actor,packet,locked(actor,"SILENT:JUMP"));
         if(rejected)locked(actor,"JUMP");
         return rejected;
+    }
+    /**
+     * Mirrors Fabric ServerPlayerEntityMixin.lockPortalContactAdvancement: touching a locked End portal or central end
+     * gateway grants no enter_block advancement, because the teleport itself is denied (NativePortalAgent). The exit
+     * portal in the End and outer-island gateways are exempt there too. Known issue 3, fixed in 0.3.0.
+     */
+    public static boolean portalContact(Object actor, Object state) {
+        try {
+            Object block = state.getClass().getMethod("getBlock").invoke(state);
+            String type = block.getClass().getName();
+            boolean portal = type.equals("net.minecraft.world.level.block.EndPortalBlock");
+            boolean gateway = type.equals("net.minecraft.world.level.block.EndGatewayBlock");
+            if (!portal && !gateway) return false;
+            Object level = actor.getClass().getMethod("level").invoke(actor);
+            Object dimension = level.getClass().getMethod("dimension").invoke(level);
+            Class<?> levelType = Class.forName("net.minecraft.world.level.Level", true, actor.getClass().getClassLoader());
+            boolean end = dimension == levelType.getField("END").get(null);
+            Object pos = actor.getClass().getMethod("blockPosition").invoke(actor);
+            int x = (int) pos.getClass().getMethod("getX").invoke(pos), y = (int) pos.getClass().getMethod("getY").invoke(pos),
+                z = (int) pos.getClass().getMethod("getZ").invoke(pos);
+            if (portal && end) return false;
+            if (gateway && end && !(y >= 74 && y <= 76 && x >= -96 && x <= 96 && z >= -96 && z <= 96)) return false;
+            if (Boolean.getBoolean("achievetodo.landmarks.exactPrototype") && NativeLandmarkAgent.targetDenied(actor, level, pos)) return true;
+            return locked(actor, portal ? "SILENT:ENTER_END" : "SILENT:TELEPORT_OUTER_ISLANDS");
+        } catch (ReflectiveOperationException | RuntimeException | LinkageError failure) { return true; }
     }
     public static void velocity(Object actor, Object vector) {
         if (player(actor)) NativeMovementAscent.velocity(actor, vector);

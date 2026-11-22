@@ -3,13 +3,14 @@
 Minor issues found during the certification of the Purpur 26.2 port (0.2.1-rc.1 and 0.2.1). Details are in
 [certification/w5-purpur-26.2.md](certification/w5-purpur-26.2.md) and
 [certification/0.2.1-purpur-26.2.md](certification/0.2.1-purpur-26.2.md). On 2026-11-20 the owner deferred issues 2 and
-3 (Fabric parity); issue 1 is fixed in 0.2.1. None of them blocks 0.2.1.
+3 (Fabric parity); issue 1 is fixed in 0.2.1. On 2026-11-22 the owner decided to fix issues 2 and 3 in both mods for
+0.3.0; the fixes are in the source and await the 0.3.0 certification.
 
 | # | Issue | Severity | Status |
 |---|---|---|---|
 | 1 | A server started without the gameplay-mode JVM flags ran the legacy Bukkit path, which is not certified (copper armor is not blocked there) | minor (operator setup) | **Fixed in 0.2.1**: one-option operator launch (`-javaagent` only), and a start without it fails closed. Certified in [0.2.1-purpur-26.2.md](certification/0.2.1-purpur-26.2.md) |
-| 2 | CHAOS thresholds are not reproducible from the world seed across JVM starts | minor (Fabric parity) | Deferred |
-| 3 | Touching a locked End portal or end gateway grants the vanilla `enter_block` advancement (+1) | minor (Fabric parity) | Deferred |
+| 2 | CHAOS thresholds are not reproducible from the world seed across JVM starts | minor (Fabric parity) | **Fixed in 0.3.0** in both mods (pending certification) |
+| 3 | Touching a locked End portal or end gateway grants the vanilla `enter_block` advancement (+1) | minor (Fabric parity) | **Fixed in 0.3.0** in both mods (pending certification) |
 
 ## 1. Default start ran the legacy path (fixed in 0.2.1)
 
@@ -19,7 +20,11 @@ which started the legacy restriction runtime (`restriction/`, `adapters/`) inste
 and stops the server with the correct start command when the agent is missing (`ATD_STARTUP_FAIL_CLOSED`). The legacy
 path is opt-in only (`-Dachievetodo.gameplay.mode=diagnostic`) and logs `ATD_UNCERTIFIED_LEGACY_PATH`.
 
-## 2. CHAOS is not seed-deterministic
+## 2. CHAOS is not seed-deterministic (fixed in 0.3.0)
+
+0.3.0 iterates in `AbilityType` declaration order in both mods. A test in each mod pins the same digest of the seed-42
+thresholds, so they agree with each other and across JVM starts. Thresholds for a given seed differ from 0.2.x; an
+existing world keeps its saved `chaos_<seed>.toml`.
 
 `ChaosProgressionGenerator` (Purpur and Fabric alike) starts from `Map.copyOf(baseProgression)`. The iteration
 order of that map depends on a per-JVM random salt, so a new world with the same seed gets different thresholds
@@ -28,7 +33,10 @@ world nothing changes, because the generated `chaos_<seed>.toml` is saved and re
 in a fixed order, for example `AbilityType` declaration order. That changes the result for every seed compared
 with the Fabric original, so it should be done in both mods at once.
 
-## 3. Locked End portal and gateway grant their advancement
+## 3. Locked End portal and gateway grant their advancement (fixed in 0.3.0)
+
+0.3.0 skips the `enter_block` trigger (`ServerPlayer.onInsideBlock`) for a locked End portal or central end gateway,
+with the same exemptions as the teleport guard: Fabric `ServerPlayerEntityMixin`, Purpur `NativeMovementAgent`.
 
 The guard denies the teleport (`setAsInsidePortal`), but the vanilla `enter_block` criterion fires on contact,
 so "The End?" (`story/enter_the_end`) or "Remote Getaway" is granted while the ability is locked. The Fabric

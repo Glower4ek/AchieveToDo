@@ -19,7 +19,9 @@ public final class ChaosProgressionGenerator {
 
     private ChaosProgressionGenerator(long seed, Map<AbilityType, Integer> baseProgression) {
         this.random = new Random(seed);
-        this.progression = Map.copyOf(baseProgression);
+        // Declaration order, not Map.copyOf: its iteration order changes with every JVM start, and the
+        // shuffle below must see the same order for the same seed (known issue 2, fixed in 0.3.0).
+        this.progression = new LinkedHashMap<>(new java.util.EnumMap<>(baseProgression));
     }
 
     public static Map<AbilityType, Integer> generateChaosProgression(long seed) {

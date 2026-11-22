@@ -55,8 +55,8 @@ public final class BukkitExactLandmarkRuntime implements Listener, AutoCloseable
             for (World world : Bukkit.getWorlds()) for (Chunk chunk : world.getLoadedChunks()) refresh(chunk);
             plugin.getServer().getPluginManager().registerEvents(this, plugin);
             task = Bukkit.getScheduler().runTaskTimer(plugin, this::drain, 1L, 1L);
-            plugin.getLogger().warning("S4G exact provenance + conditional actions controlled opt-in active; PRODUCT_GAMEPLAY_READY=false");
-        } catch (ReflectiveOperationException failure) { close(); throw new IllegalStateException("S4G native prototype unavailable", failure); }
+            plugin.getLogger().info("Landmark guards active");
+        } catch (ReflectiveOperationException failure) { close(); throw new IllegalStateException("ATD_LANDMARK_GUARDS_UNAVAILABLE", failure); }
     }
     private void onProgressionChanged(UUID actor) {
         requireMainThread();
@@ -185,11 +185,13 @@ public final class BukkitExactLandmarkRuntime implements Listener, AutoCloseable
             AbilityType selected=result==ExactLandmarkGate.Result.LOCKED?outcome.selectedAbility()
                 : result==ExactLandmarkGate.Result.OUTSIDE || result==ExactLandmarkGate.Result.UNLOCKED?additional:null;
             if(selected!=null) {
-                Runnable report=()->denialEffects.report(player,selected);
+                // A shelf unlocks with the chest; only the message names the shelf (0.3.0).
+                String variant="SHELF".equals(reporting) && selected==AbilityType.OPEN_CHEST?"shelf":null;
+                Runnable report=()->denialEffects.report(player,selected,variant);
                 if("COMBAT".equals(reporting)) {
                     try{combatRecord.invoke(null,actor,report,true);}
                     catch(ReflectiveOperationException failure){throw new IllegalStateException("Canonical combat reporter unavailable",failure);}
-                } else if("ORDINARY".equals(reporting))report.run();
+                } else if("ORDINARY".equals(reporting) || "SHELF".equals(reporting))report.run();
                 else throw new IllegalArgumentException("Unknown landmark reporter mode");
             }
         }

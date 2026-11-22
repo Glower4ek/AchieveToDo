@@ -21,6 +21,37 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ServerPlayer.class)
 public class ServerPlayerEntityMixin {
 
+    /**
+     * A locked End portal or end gateway denies the teleport (EntityMixin.lockPortal), so touching it must not grant
+     * the vanilla enter_block advancement either ("The End?", "Remote Getaway"). Same exemptions as the teleport
+     * guard: the exit portal in the End and the outer-island gateways are never locked. Known issue 3, fixed in 0.3.0.
+     */
+    @Inject(
+        method = "onInsideBlock",
+        at = @At("HEAD"),
+        cancellable = true
+    )
+    public void lockPortalContactAdvancement(BlockState state, CallbackInfo ci) {
+        ServerPlayer player = (ServerPlayer) (Object) this;
+        AbilityType abilityType;
+        if (state.is(net.minecraft.world.level.block.Blocks.END_PORTAL)) {
+            if (player.level().dimension() == net.minecraft.world.level.Level.END) return;
+            abilityType = AbilityType.ENTER_END;
+        } else if (state.is(net.minecraft.world.level.block.Blocks.END_GATEWAY)) {
+            BlockPos pos = player.blockPosition();
+            boolean centralIsland = pos.getX() >= -96 && pos.getX() <= 96 && pos.getZ() >= -96 && pos.getZ() <= 96
+                && pos.getY() >= 74 && pos.getY() <= 76;
+            if (player.level().dimension() == net.minecraft.world.level.Level.END && !centralIsland) return;
+            abilityType = AbilityType.TELEPORT_OUTER_ISLANDS;
+        } else {
+            return;
+        }
+        if (AchieveToDoMod.isAbilityLocked(player, abilityType, true)
+            || AchieveToDoMod.isTargetInLockedLandmark(player, player.level(), player.blockPosition())) {
+            ci.cancel();
+        }
+    }
+
     @Inject(
         method = "jumpFromGround",
         at = @At("HEAD"),

@@ -8,7 +8,7 @@ import java.util.function.Function;
  * Release launch, agent half. Runs first thing in premain, before any native agent reads a property.
  *
  * <p>When the operator gave no {@code achievetodo.gameplay.mode}, this fills in the fixed switches of the
- * certified composition (mode {@code certification} plus the five {@code true} switches) as ordinary system
+ * certified composition (mode {@code release} plus the five {@code true} switches) as ordinary system
  * properties. Every agent and the plugin then read exactly the values the certified 14-flag command passed, so
  * the enforcement code itself is untouched. A launch that names the mode explicitly is left completely alone.
  *
@@ -43,13 +43,18 @@ public final class ReleaseLaunchDefaults {
             }
         }
         for (String name : SWITCHES) if (get.apply(name) == null) set.accept(name, "true");
-        set.accept(MODE, "certification");
+        set.accept(MODE, RELEASE);
         set.accept(PROFILE, RELEASE);
         return RELEASE;
     }
 
     public static boolean active(Function<String, String> get) {
-        return RELEASE.equals(get.apply(PROFILE)) && "certification".equals(get.apply(MODE));
+        return RELEASE.equals(get.apply(PROFILE)) && RELEASE.equals(get.apply(MODE));
+    }
+
+    /** True for the native enforcement path: {@code release}, or its pre-0.3.0 name {@code certification}. */
+    public static boolean nativeMode(String mode) {
+        return RELEASE.equals(mode) || "certification".equals(mode);
     }
 
     private ReleaseLaunchDefaults() {}

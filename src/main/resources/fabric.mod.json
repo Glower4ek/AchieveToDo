@@ -8,9 +8,11 @@
 		"${author}"
 	],
 	"contact": {
-		"sources": "${repoUrl}"
+		"homepage": "${repoUrl}",
+		"sources": "${repoUrl}",
+		"issues": "${repoUrl}/issues"
 	},
-	"license": "LicenseRef-AchieveToDo-Scoped-Components",
+	"license": "MIT",
 	"icon": "assets/achievetodo/icon.png",
 	"environment": "*",
 	"entrypoints": {

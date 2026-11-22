@@ -84,7 +84,7 @@ public final class NativeLandmarkAgent {
     }
     public static boolean targetAndAbilityDenied(Object actor,Object level,Object pos,String ability,String reporting) {
         if(actor==null)return false;
-        if(!Set.of("ORDINARY","COMBAT","SILENT").contains(reporting))throw new IllegalArgumentException("Unknown denial reporter mode");
+        if(!Set.of("ORDINARY","COMBAT","SILENT","SHELF").contains(reporting))throw new IllegalArgumentException("Unknown denial reporter mode");
         var callback=guard;if(callback==null)return true;
         try{return callback.test(actor,new Object[]{level,pos,ability,reporting});}
         catch(RuntimeException | LinkageError unavailable){return true;}

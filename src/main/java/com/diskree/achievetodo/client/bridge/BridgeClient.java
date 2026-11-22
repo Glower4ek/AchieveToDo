@@ -14,8 +14,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 
-/** Session cache is staged without a Minecraft world; only JOIN publishes diagnostic readiness. */
+/** Session cache is staged without a Minecraft world; only JOIN publishes the presentation. */
 public final class BridgeClient {
+    /** What the player sees when the bridge ends a session; the internal code stays visible for bug reports. */
+    private static Component syncError(String code) {
+        return Component.translatable("achievetodo.disconnect.sync_error").append(Component.literal("\n\n"+code).withStyle(net.minecraft.ChatFormatting.GRAY));
+    }
     private static final BridgeProjectionCache cache=new BridgeProjectionCache();
     private static final BridgeLandmarks.Cache landmarks=new BridgeLandmarks.Cache();
     public static synchronized BridgeLandmarks.Snapshot landmarks() { return presentationReady()?landmarks.current(cache.current()):null; }
@@ -50,7 +54,7 @@ public final class BridgeClient {
         return Minecraft.getInstance().getSingleplayerServer()!=null || (hello==null && (fabricObserved || ClientPlayNetworking.canSend(DemystifyAbilityPayload.ID)));
     }
     public static synchronized void observeFabric() {
-        if (hello!=null) { connection.disconnect(Component.literal("ATD_BACKEND_CONFLICT"));return; }
+        if (hello!=null) { connection.disconnect(syncError("ATD_BACKEND_CONFLICT"));return; }
         fabricObserved=true;
     }
     public static synchronized boolean isPurpurBackend() { return hello!=null; }
@@ -59,10 +63,6 @@ public final class BridgeClient {
         var client=Minecraft.getInstance();
         return uiActive && connection!=null && connection.isConnected() && cache.admitted() && cache.current()!=null && client.level!=null &&
             client.level.dimension().identifier().toString().equals(cache.current().worldKey());
-    }
-    public static synchronized String presentationStatus() {
-        var p=presentation();
-        return p==null?"Progression unavailable":(presentationReady()?"Progression preview":"Progression syncing")+" | "+p.state().difficulty()+" | "+p.state().count()+" | gameplay enforcement incomplete";
     }
     private static void clear() {
         Minecraft.getInstance().execute(()->{BridgePresentation.clear();BridgeLandmarkPresentation.clear();});
@@ -74,7 +74,7 @@ public final class BridgeClient {
             synchronized (BridgeClient.class) {
                 if (cache.expired(System.nanoTime()) && connection!=null) {
                     log("ATD_RESYNC_TIMEOUT");cache.clear();uiActive=false;
-                    connection.disconnect(Component.literal("ATD_RESYNC_TIMEOUT"));
+                    connection.disconnect(syncError("ATD_RESYNC_TIMEOUT"));
                 }
             }
         });
@@ -94,7 +94,7 @@ public final class BridgeClient {
         ClientConfigurationConnectionEvents.COMPLETE.register((listener,client) -> {
             synchronized (BridgeClient.class) {
                 if (configurationListener==listener && hello!=null) {
-                    if(!cache.admitted())connection.disconnect(Component.literal("ATD_FINISH_BEFORE_ADMIT"));
+                    if(!cache.admitted())connection.disconnect(syncError("ATD_FINISH_BEFORE_ADMIT"));
                     else log("CONFIGURATION_FINISH_VERIFIED session="+hello.session());
                 }
             }
@@ -118,12 +118,11 @@ public final class BridgeClient {
                 }
                 if (!cache.admitted() || client.level==null
                         || !client.level.dimension().identifier().toString().equals(cache.current().worldKey())) {
-                    connection.disconnect(Component.literal("ATD_PLAY_SCOPE_MISMATCH"));return;
+                    connection.disconnect(syncError("ATD_PLAY_SCOPE_MISMATCH"));return;
                 }
                 uiActive=true;
-                log("PLAY_DIAGNOSTIC_ACTIVE session="+hello.session()+" epoch="+cache.current().epoch()
-                        +" revision="+cache.current().revision()+" world="+cache.current().world()
-                        +" productGameplayReady=false");
+                log("PLAY_ACTIVE session="+hello.session()+" epoch="+cache.current().epoch()
+                        +" revision="+cache.current().revision()+" world="+cache.current().world());
             }
         });
         ClientPlayConnectionEvents.DISCONNECT.register((listener,client) -> {
@@ -145,6 +144,11 @@ public final class BridgeClient {
                         if (hello!=null || fabricObserved || frame.body().length!=0 || frame.major()!=BridgeWire.MAJOR
                                 || frame.minor()!=BridgeWire.MINOR || frame.features()!=BridgeWire.FEATURES || !frame.catalog().equals(BridgeWire.CATALOG))
                             throw new IllegalArgumentException("ATD_PROTOCOL_INCOMPATIBLE");
+                        String mine=com.diskree.achievetodo.BuildConfig.MOD_VERSION;
+                        if (!frame.build().equals("purpur-"+mine)) {
+                            String theirs=frame.build().startsWith("purpur-")?frame.build().substring(7):frame.build();
+                            context.responseSender().disconnect(Component.translatable("achievetodo.disconnect.server_version",theirs,mine));return;
+                        }
                         hello=frame;
                         var ack=new BridgeWire.Frame(BridgeWire.ACK,BridgeWire.MAJOR,BridgeWire.MINOR,frame.server(),frame.session(),frame.challenge(),BridgeWire.FEATURES,BridgeWire.CATALOG,"universal-"+com.diskree.achievetodo.BuildConfig.MOD_VERSION);
                         context.responseSender().sendPacket(new BridgePayload(BridgeWire.encode(ack)));
@@ -160,7 +164,7 @@ public final class BridgeClient {
                             cache.admit(BridgeWire.reference(frame.body()));log("ADMIT_RECEIVED configuration session="+hello.session());
                         } else throw new IllegalArgumentException("ATD_INVALID_CONFIGURATION_MESSAGE");
                     }
-                } catch (IllegalArgumentException failure) { context.responseSender().disconnect(Component.literal(failure.getMessage())); }
+                } catch (IllegalArgumentException failure) { context.responseSender().disconnect(syncError(failure.getMessage())); }
             }
         });
         ClientPlayNetworking.registerGlobalReceiver(BridgePayload.ID,(payload,context) -> {
@@ -208,7 +212,7 @@ public final class BridgeClient {
                         var result=cache.commitResync(BridgeWire.ticket(frame.body()),System.nanoTime());
                         if (result==BridgeProjectionCache.Result.APPLIED) {
                             uiActive=true;resyncRequested=false;
-                            log("PLAY_RESYNC_COMPLETE session="+hello.session()+" epoch="+cache.current().epoch()+" revision="+cache.current().revision()+" productGameplayReady=false");
+                            log("PLAY_RESYNC_COMPLETE session="+hello.session()+" epoch="+cache.current().epoch()+" revision="+cache.current().revision());
                         } else log("PLAY_RESYNC_ADMIT_"+result);
                         return;
                     }
@@ -223,7 +227,7 @@ public final class BridgeClient {
                         context.responseSender().sendPacket(new BridgePayload(BridgeWire.encode(hello.with(BridgeWire.RESYNC,BridgeWire.ticket(new BridgeWire.Ticket(request,BridgeWire.reference(cache.current())))))));
                         log("RESYNC_REQUESTED");
                     }
-                } catch (IllegalArgumentException invalid) { context.responseSender().disconnect(Component.literal(invalid.getMessage())); }
+                } catch (IllegalArgumentException invalid) { context.responseSender().disconnect(syncError(invalid.getMessage())); }
             }
             });
         });
