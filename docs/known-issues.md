@@ -11,6 +11,7 @@ Minor issues found during the certification of the Purpur 26.2 port (0.2.1-rc.1 
 | 1 | A server started without the gameplay-mode JVM flags ran the legacy Bukkit path, which is not certified (copper armor is not blocked there) | minor (operator setup) | **Fixed in 0.2.1**: one-option operator launch (`-javaagent` only), and a start without it fails closed. Certified in [0.2.1-purpur-26.2.md](certification/0.2.1-purpur-26.2.md) |
 | 2 | CHAOS thresholds are not reproducible from the world seed across JVM starts | minor (Fabric parity) | **Fixed in 0.3.0** in both mods (pending certification) |
 | 3 | Touching a locked End portal or end gateway grants the vanilla `enter_block` advancement (+1) | minor (Fabric parity) | **Fixed in 0.3.0** in both mods (pending certification) |
+| 4 | Using locked shears on a snow golem or a wolf still grants "Unmasked" (BACAP) or "Shear Brilliance" | minor (Fabric parity) | **Fixed in 0.3.0** in both mods (pending certification) |
 
 ## 1. Default start ran the legacy path (fixed in 0.2.1)
 
@@ -42,3 +43,11 @@ The guard denies the teleport (`setAsInsidePortal`), but the vanilla `enter_bloc
 so "The End?" (`story/enter_the_end`) or "Remote Getaway" is granted while the ability is locked. The Fabric
 original behaves the same way. The certification tracks it as the visible verdict `PASS_PARITY_ENTER_BLOCK`.
 Changing it means guarding the `enter_block` trigger for these blocks too, in both mods.
+
+## 4. Locked shears on a snow golem or wolf grant an advancement (fixed in 0.3.0)
+
+Found by the new 0.3.0 campaign cases. The guard answered a denied interaction with `InteractionResult.SUCCESS`, and
+a consumed interaction fires `player_interacted_with_entity`, so BACAP "Unmasked" (snow golem) and vanilla
+"Shear Brilliance" (wolf armor) were granted while shears were locked. Both mods now answer `FAIL` there
+(Fabric `SnowGolemEntityMixin`, `WolfEntityMixin`; Purpur `NativeComplexSpecs`). Other guards that answer `SUCCESS`
+to a landmark denial were not checked for the same effect.

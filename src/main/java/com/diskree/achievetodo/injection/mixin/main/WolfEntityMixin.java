@@ -79,7 +79,9 @@ public class WolfEntityMixin {
             (AchieveToDoMod.isTargetInLockedLandmark(player, wolfEntity) ||
             AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_SHEARS)
         )) {
-            cir.setReturnValue(InteractionResult.SUCCESS);
+            // FAIL, not SUCCESS: a consumed interaction fires player_interacted_with_entity, which grants the
+            // vanilla "Shear Brilliance" advancement while shears are locked (0.3.0 campaign finding).
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 
