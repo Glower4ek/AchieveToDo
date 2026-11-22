@@ -10,7 +10,7 @@ Minor issues found during the certification of the Purpur 26.2 port (0.2.1-rc.1 
 |---|---|---|---|
 | 1 | A server started without the gameplay-mode JVM flags ran the legacy Bukkit path, which is not certified (copper armor is not blocked there) | minor (operator setup) | **Fixed in 0.2.1**: one-option operator launch (`-javaagent` only), and a start without it fails closed. Certified in [0.2.1-purpur-26.2.md](certification/0.2.1-purpur-26.2.md) |
 | 2 | CHAOS thresholds are not reproducible from the world seed across JVM starts | minor (Fabric parity) | **Fixed in 0.3.0** in both mods (pending certification) |
-| 3 | Touching a locked End portal or end gateway grants the vanilla `enter_block` advancement (+1) | minor (Fabric parity) | **Fixed in 0.3.0** in both mods (pending certification) |
+| 3 | Touching a locked nether portal, End portal or end gateway grants the vanilla `enter_block` advancement (+1) | minor (Fabric parity) | **Fixed in 0.3.0** in both mods (pending certification) |
 | 4 | Using locked shears on a snow golem or a wolf still grants "Unmasked" (BACAP) or "Shear Brilliance" | minor (Fabric parity) | **Fixed in 0.3.0** in both mods (pending certification) |
 
 ## 1. Default start ran the legacy path (fixed in 0.2.1)
@@ -36,8 +36,10 @@ with the Fabric original, so it should be done in both mods at once.
 
 ## 3. Locked End portal and gateway grant their advancement (fixed in 0.3.0)
 
-0.3.0 skips the `enter_block` trigger (`ServerPlayer.onInsideBlock`) for a locked End portal or central end gateway,
-with the same exemptions as the teleport guard: Fabric `ServerPlayerEntityMixin`, Purpur `NativeMovementAgent`.
+0.3.0 skips the `enter_block` trigger (`ServerPlayer.onInsideBlock`) for a locked nether portal, End portal or central
+end gateway, with the same exemptions as the teleport guard: Fabric `ServerPlayerEntityMixin`, Purpur
+`NativeMovementAgent`. The nether portal was found by the 0.3.0 campaign: the 0.2.1 fixture never stepped into it in
+survival, so "We Need to Go Deeper" was granted unnoticed.
 
 The guard denies the teleport (`setAsInsidePortal`), but the vanilla `enter_block` criterion fires on contact,
 so "The End?" (`story/enter_the_end`) or "Remote Getaway" is granted while the ability is locked. The Fabric

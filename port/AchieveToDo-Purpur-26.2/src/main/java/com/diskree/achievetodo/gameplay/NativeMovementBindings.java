@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 final class NativeMovementBindings implements AutoCloseable {
     static final Set<AbilityType> ABILITIES = Set.of(AbilityType.JUMP, AbilityType.SNEAK, AbilityType.SPRINT, AbilityType.SWIM);
     /** Portal contact (ServerPlayer.onInsideBlock): checked silently, the teleport guard reports the denial. */
-    static final Set<AbilityType> PORTAL_CONTACT = Set.of(AbilityType.ENTER_END, AbilityType.TELEPORT_OUTER_ISLANDS);
+    static final Set<AbilityType> PORTAL_CONTACT = Set.of(AbilityType.ENTER_NETHER, AbilityType.ENTER_END, AbilityType.TELEPORT_OUTER_ISLANDS);
     private final Object token = new Object();
     private final Method retire;
     private final GameplayDenialEffects denialEffects;

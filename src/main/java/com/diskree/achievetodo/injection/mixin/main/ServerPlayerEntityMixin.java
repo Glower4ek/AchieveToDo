@@ -22,9 +22,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ServerPlayerEntityMixin {
 
     /**
-     * A locked End portal or end gateway denies the teleport (EntityMixin.lockPortal), so touching it must not grant
-     * the vanilla enter_block advancement either ("The End?", "Remote Getaway"). Same exemptions as the teleport
-     * guard: the exit portal in the End and the outer-island gateways are never locked. Known issue 3, fixed in 0.3.0.
+     * A locked portal denies the teleport (EntityMixin.lockPortal), so touching it must not grant the vanilla
+     * enter_block advancement either ("We Need to Go Deeper", "The End?", "Remote Getaway"). Same exemptions as the
+     * teleport guard: a nether portal in the Nether, the exit portal in the End and the outer-island gateways are never
+     * locked. Known issue 3, fixed in 0.3.0.
      */
     @Inject(
         method = "onInsideBlock",
@@ -34,7 +35,10 @@ public class ServerPlayerEntityMixin {
     public void lockPortalContactAdvancement(BlockState state, CallbackInfo ci) {
         ServerPlayer player = (ServerPlayer) (Object) this;
         AbilityType abilityType;
-        if (state.is(net.minecraft.world.level.block.Blocks.END_PORTAL)) {
+        if (state.is(net.minecraft.world.level.block.Blocks.NETHER_PORTAL)) {
+            if (player.level().dimension() == net.minecraft.world.level.Level.NETHER) return;
+            abilityType = AbilityType.ENTER_NETHER;
+        } else if (state.is(net.minecraft.world.level.block.Blocks.END_PORTAL)) {
             if (player.level().dimension() == net.minecraft.world.level.Level.END) return;
             abilityType = AbilityType.ENTER_END;
         } else if (state.is(net.minecraft.world.level.block.Blocks.END_GATEWAY)) {

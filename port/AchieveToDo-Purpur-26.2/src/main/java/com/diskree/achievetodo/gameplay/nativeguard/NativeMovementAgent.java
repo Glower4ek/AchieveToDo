@@ -158,28 +158,31 @@ public final class NativeMovementAgent {
         return rejected;
     }
     /**
-     * Mirrors Fabric ServerPlayerEntityMixin.lockPortalContactAdvancement: touching a locked End portal or central end
-     * gateway grants no enter_block advancement, because the teleport itself is denied (NativePortalAgent). The exit
-     * portal in the End and outer-island gateways are exempt there too. Known issue 3, fixed in 0.3.0.
+     * Mirrors Fabric ServerPlayerEntityMixin.lockPortalContactAdvancement: touching a locked nether portal, End portal
+     * or central end gateway grants no enter_block advancement, because the teleport itself is denied
+     * (NativePortalAgent). A nether portal in the Nether, the exit portal in the End and outer-island gateways are
+     * exempt there too. Known issue 3, fixed in 0.3.0.
      */
     public static boolean portalContact(Object actor, Object state) {
         try {
             Object block = state.getClass().getMethod("getBlock").invoke(state);
             String type = block.getClass().getName();
+            boolean nether = type.equals("net.minecraft.world.level.block.NetherPortalBlock");
             boolean portal = type.equals("net.minecraft.world.level.block.EndPortalBlock");
             boolean gateway = type.equals("net.minecraft.world.level.block.EndGatewayBlock");
-            if (!portal && !gateway) return false;
+            if (!nether && !portal && !gateway) return false;
             Object level = actor.getClass().getMethod("level").invoke(actor);
             Object dimension = level.getClass().getMethod("dimension").invoke(level);
             Class<?> levelType = Class.forName("net.minecraft.world.level.Level", true, actor.getClass().getClassLoader());
             boolean end = dimension == levelType.getField("END").get(null);
+            if (nether && dimension == levelType.getField("NETHER").get(null)) return false;
             Object pos = actor.getClass().getMethod("blockPosition").invoke(actor);
             int x = (int) pos.getClass().getMethod("getX").invoke(pos), y = (int) pos.getClass().getMethod("getY").invoke(pos),
                 z = (int) pos.getClass().getMethod("getZ").invoke(pos);
             if (portal && end) return false;
             if (gateway && end && !(y >= 74 && y <= 76 && x >= -96 && x <= 96 && z >= -96 && z <= 96)) return false;
             if (Boolean.getBoolean("achievetodo.landmarks.exactPrototype") && NativeLandmarkAgent.targetDenied(actor, level, pos)) return true;
-            return locked(actor, portal ? "SILENT:ENTER_END" : "SILENT:TELEPORT_OUTER_ISLANDS");
+            return locked(actor, nether ? "SILENT:ENTER_NETHER" : portal ? "SILENT:ENTER_END" : "SILENT:TELEPORT_OUTER_ISLANDS");
         } catch (ReflectiveOperationException | RuntimeException | LinkageError failure) { return true; }
     }
     public static void velocity(Object actor, Object vector) {
