@@ -38,7 +38,7 @@ public final class BootstrapValidationTest {
             () -> "paper-plugin.yml is missing the expected bootstrapper class"
         );
         assertTrue(
-            descriptor.contains("api-version: \"26.2\""),
+            descriptor.contains("api-version: \"26.3\""),
             () -> "paper-plugin.yml is missing the expected api-version"
         );
     }

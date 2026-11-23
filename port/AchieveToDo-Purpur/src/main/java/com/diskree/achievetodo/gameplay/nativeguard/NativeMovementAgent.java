@@ -15,10 +15,10 @@ public final class NativeMovementAgent {
     static final String PLAYER = "net/minecraft/server/level/ServerPlayer";
     static final String LISTENER = "net/minecraft/server/network/ServerGamePacketListenerImpl";
     static final Map<String, List<String>> INPUTS = Map.of(
-        ENTITY, List.of("e32f3460fbb1e7da30235a87de3a903a063e86e230374508ee071431c1be4b54", "babce1c86ae15cdfc0a0fbcc0cb692dc943a6d3ff932b7852b160a61adacde1f"),
-        LIVING, List.of("b66a592f38cce1bfc228dca8f62ad9d6900a5775d7141f3ef1e9640f4c889ab1", "b66a592f38cce1bfc228dca8f62ad9d6900a5775d7141f3ef1e9640f4c889ab1"),
-        PLAYER, List.of("91d67a5d076c0a7fb2ff319c3b71ab1cad578844586a0b2aec6f4824d5c91e77", "91d67a5d076c0a7fb2ff319c3b71ab1cad578844586a0b2aec6f4824d5c91e77"),
-        LISTENER, List.of("e2aec4eed79bafc90c539dc4d35217f0e674dd690f0d61a290f7bca66e90e383", "e2aec4eed79bafc90c539dc4d35217f0e674dd690f0d61a290f7bca66e90e383"));
+        ENTITY, List.of("e100c2ee28df114ff5915b870738ceb7f087a44fe6209933b6ff9f21fc80e007", "d101f3132d47afe1238afb5e236f0856f3228e5982af4301572f2d4fb6818264"),
+        LIVING, List.of("7553157aa0728ed11cc5664c328c166e99be66fb1abdab233d16c1fe7882d787", "7553157aa0728ed11cc5664c328c166e99be66fb1abdab233d16c1fe7882d787"),
+        PLAYER, List.of("e36d533bf02e053b2ef922fde14a2509451a68ae78985aee8a0d617bea563ac4", "e36d533bf02e053b2ef922fde14a2509451a68ae78985aee8a0d617bea563ac4"),
+        LISTENER, List.of("e90eb74b7b361934049b6f8c6035143b520e792d1c183fd20fe75dab222e6752", "e90eb74b7b361934049b6f8c6035143b520e792d1c183fd20fe75dab222e6752"));
     private static final ClassDesc SELF = ClassDesc.of(NativeMovementAgent.class.getName());
     private static final MethodTypeDesc CHECK = MethodTypeDesc.of(ConstantDescs.CD_boolean, ConstantDescs.CD_Object);
     private static final Set<String> transformed = new HashSet<>();
@@ -97,7 +97,9 @@ public final class NativeMovementAgent {
             boolean contact = name.equals(PLAYER) && method.equals("onInsideBlock")
                 && desc.equals("(Lnet/minecraft/world/level/block/state/BlockState;)V");
             boolean livingJump = name.equals(LIVING) && method.equals("jumpFromGround") && desc.equals("()V");
-            boolean packet = name.equals(LISTENER) && method.equals("handleMovePlayer") && desc.equals("(Lnet/minecraft/network/protocol/game/ServerboundMovePlayerPacket;)V");
+            // 26.3 moved the positioned branch of handleMovePlayer into handlePlayerPositionChange(x, y, z, yRot, xRot,
+            // onGround, horizontalCollision); the requested coordinates are the packet's position values.
+            boolean packet = name.equals(LISTENER) && method.equals("handlePlayerPositionChange") && desc.equals("(DDDFFZZ)V");
             boolean teleport = name.equals(LISTENER) && method.equals("internalTeleport")
                 && desc.equals("(Lnet/minecraft/world/entity/PositionMoveRotation;Ljava/util/Set;)V");
             if (!(sneak || velocity || sprint || jump || livingJump || packet || teleport || contact)) { cb.with(e); return; }
@@ -129,13 +131,15 @@ public final class NativeMovementAgent {
                     b.aload(0).invokestatic(SELF, jump ? "jump" : sneak ? "sneak" : "sprint", CHECK).ifeq(pass).return_().labelBinding(pass);
                 }
                 @Override public void accept(CodeBuilder b, CodeElement e) {
-                    if (packet && e instanceof InvokeInstruction call && call.owner().asInternalName().equals(PLAYER)
+                    if (packet && e instanceof InvokeInstruction call
+                        && (call.owner().asInternalName().equals(PLAYER) || call.owner().asInternalName().equals("net/minecraft/server/level/ServerPlayer"))
                         && call.name().equalsString("onGround") && call.type().equalsString("()Z")) {
                         sites[0]++;
                         var pass = b.newLabel();
                         // Before the packet-controlled ground branch and before either position write.
-                        b.dup().aload(1).invokestatic(SELF, "ascent", MethodTypeDesc.of(ConstantDescs.CD_boolean,
-                            ConstantDescs.CD_Object, ConstantDescs.CD_Object)).ifeq(pass).pop().return_().labelBinding(pass);
+                        b.dup().dload(1).dload(3).dload(5).invokestatic(SELF, "ascentTo", MethodTypeDesc.of(ConstantDescs.CD_boolean,
+                            ConstantDescs.CD_Object, ConstantDescs.CD_double, ConstantDescs.CD_double, ConstantDescs.CD_double))
+                            .ifeq(pass).pop().return_().labelBinding(pass);
                     }
                     if (e instanceof InvokeInstruction call && livingJump && call.owner().asInternalName().equals(LIVING)
                         && call.name().equalsString("getDeltaMovement") && call.type().equalsString("()Lnet/minecraft/world/phys/Vec3;")) {
@@ -154,6 +158,12 @@ public final class NativeMovementAgent {
     }
     public static boolean ascent(Object actor, Object packet) {
         boolean rejected=NativeMovementAscent.reject(actor,packet,locked(actor,"SILENT:JUMP"));
+        if(rejected)locked(actor,"JUMP");
+        return rejected;
+    }
+    /** 26.3 handlePlayerPositionChange boundary: same rule as {@link #ascent}, given the requested position. */
+    public static boolean ascentTo(Object actor, double x, double y, double z) {
+        boolean rejected=NativeMovementAscent.rejectTarget(actor,x,y,z,locked(actor,"SILENT:JUMP"));
         if(rejected)locked(actor,"JUMP");
         return rejected;
     }

@@ -63,7 +63,19 @@ final class NativeMovementAscent {
             if (!(boolean) packet.getClass().getMethod("hasPosition").invoke(packet)) return false;
             double x = number(actor, "getX"), y = number(actor, "getY"), z = number(actor, "getZ");
             Class<?> packetType = Class.forName("net.minecraft.network.protocol.game.ServerboundMovePlayerPacket", false, actor.getClass().getClassLoader());
-            double dy = (double) packetType.getMethod("getY", double.class).invoke(packet, y) - y;
+            return rejectTarget(actor, (double) packetType.getMethod("getX", double.class).invoke(packet, x),
+                (double) packetType.getMethod("getY", double.class).invoke(packet, y),
+                (double) packetType.getMethod("getZ", double.class).invoke(packet, z), true);
+        } catch (ReflectiveOperationException | RuntimeException | LinkageError failure) {
+            throw new IllegalStateException("Pinned native ascent validation failed", failure);
+        }
+    }
+    /** Core rule for a requested position (the packet's getX/getY/getZ values). */
+    static boolean rejectTarget(Object actor, double targetX, double targetY, double targetZ, boolean locked) {
+        if (!locked) return false;
+        try {
+            double x = number(actor, "getX"), y = number(actor, "getY"), z = number(actor, "getZ");
+            double dy = targetY - y;
             if (dy <= 1.0E-7) return false;
             if (flag(actor, "isInWater") || flag(actor, "isInLava") || flag(actor, "onClimbable")
                 || flag(actor, "isPassenger") || flag(actor, "isFallFlying")) return false;
@@ -71,8 +83,8 @@ final class NativeMovementAscent {
                 Flight f = flights.get(actor);
                 if (f != null && f.level.get() == invoke(actor, "level") && y + dy <= f.ceiling + 1.0E-7) return false;
             }
-            double dx = (double) packetType.getMethod("getX", double.class).invoke(packet, x) - x;
-            double dz = (double) packetType.getMethod("getZ", double.class).invoke(packet, z) - z;
+            double dx = targetX - x;
+            double dz = targetZ - z;
             // A legal step is produced by native horizontal collision/step resolution without a jump.
             Object step = collide(actor, dx, -1.0E-5, dz);
             return dy > Math.max(0, y(step)) + 1.0E-7;

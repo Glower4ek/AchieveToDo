@@ -17,7 +17,7 @@ public final class NativeCriterionAgent {
     static final String TRIGGER = "net/minecraft/advancements/triggers/ItemUsedOnLocationTrigger";
     static final String METHOD = "trigger";
     static final String DESCRIPTOR = "(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemInstance;)V";
-    static final String PIN = "c99dd9fef94728d634ab46e994df1e73c3f5b9b068097afff4741b45f75ae5a2";
+    static final String PIN = "97d84fcb4d954cc18381ade94ee719421e5f1d65c4975abe0c2fc226ee8f633d";
     /** Guard -> trigger is a direct call chain on the server thread; the window only bounds stale marks. */
     static final long WINDOW_NANOS = 50_000_000L;
     private static final ConcurrentHashMap<UUID, Long> denied = new ConcurrentHashMap<>();

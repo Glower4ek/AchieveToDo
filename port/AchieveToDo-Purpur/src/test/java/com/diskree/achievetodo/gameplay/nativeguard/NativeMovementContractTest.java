@@ -34,12 +34,13 @@ public final class NativeMovementContractTest {
                     if (e instanceof InvokeInstruction call && call.owner().asInternalName().endsWith("/NativeMovementAgent")) found++;
                 if (found != expected) throw new AssertionError("Exact inserted calls " + name + ":" + found); checks++;
                 if (name.equals(NativeMovementAgent.LISTENER)) {
-                    var movement = cf.parse(out).methods().stream().filter(m -> m.methodName().equalsString("handleMovePlayer")).findFirst().orElseThrow();
+                    var movement = cf.parse(out).methods().stream().filter(m -> m.methodName().equalsString("handlePlayerPositionChange")).findFirst().orElseThrow();
                     var calls = new ArrayList<String>();
                     for (var e : movement.code().orElseThrow()) if (e instanceof InvokeInstruction call
                         && (call.owner().asInternalName().equals(NativeMovementAgent.PLAYER)
+                            || call.owner().asInternalName().equals("net/minecraft/server/level/ServerPlayer")
                             || call.owner().asInternalName().endsWith("/NativeMovementAgent"))) calls.add(call.name().stringValue());
-                    int preflight = calls.indexOf("ascent");
+                    int preflight = calls.indexOf("ascentTo");
                     if (preflight < 0 || preflight >= calls.indexOf("onGround") || preflight >= calls.indexOf("move")
                         // Earlier absSnapTo is the separate passenger rotation branch, not on-foot position acceptance.
                         || preflight >= calls.lastIndexOf("absSnapTo")) throw new AssertionError("Ascent must precede the untrusted ground branch and both on-foot position writes");
@@ -60,7 +61,7 @@ public final class NativeMovementContractTest {
                     if (e instanceof MethodModel m && (name.equals(NativeMovementAgent.ENTITY) && m.methodName().equalsString("setShiftKeyDown")
                         || name.equals(NativeMovementAgent.LIVING) && m.methodName().equalsString("setSprinting")
                         || name.equals(NativeMovementAgent.PLAYER) && m.methodName().equalsString("jumpFromGround")
-                        || name.equals(NativeMovementAgent.LISTENER) && m.methodName().equalsString("handleMovePlayer"))) return;
+                        || name.equals(NativeMovementAgent.LISTENER) && m.methodName().equalsString("handlePlayerPositionChange"))) return;
                     cb.with(e);
                 });
                 try { NativeMovementAgent.transformNative(name, missing, loader); throw new AssertionError("missing native method"); }

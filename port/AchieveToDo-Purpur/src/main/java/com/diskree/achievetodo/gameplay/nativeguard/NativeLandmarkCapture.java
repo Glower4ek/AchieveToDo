@@ -20,13 +20,8 @@ public final class NativeLandmarkCapture {
             catch (ReflectiveOperationException e) { throw new IllegalStateException(e); }
         }
     };
-    private static final ClassValue<Map<Object, String>> FEATURE_TYPES = new ClassValue<>() {
-        @Override protected Map<Object, String> computeValue(Class<?> type) {
-            try { return Map.of(type.getField("MONSTER_ROOM").get(null), "minecraft:monster_room",
-                type.getField("DESERT_WELL").get(null), "minecraft:desert_well"); }
-            catch (ReflectiveOperationException e) { throw new IllegalStateException(e); }
-        }
-    };
+    /** Landmark features by configured-feature key (26.3: Feature is an interface, instances are registry entries). */
+    private static final Set<String> FEATURE_KEYS = Set.of("minecraft:monster_room", "minecraft:desert_well");
 
     public static Object call(Object target, String name, Object... args) {
         String key = name + Arrays.toString(Arrays.stream(args).map(a -> a == null ? null : a.getClass()).toArray());
@@ -134,24 +129,27 @@ public final class NativeLandmarkCapture {
 
     public static void abandon(Object world) { if (region(world)) frame(world, null); }
 
-    /** Wraps the exact Feature.place(FeaturePlaceContext) call with exception-safe retirement. */
-    public static boolean feature(Object feature, Object context) {
-        if (!NativeLandmarkAgent.captureAvailable()) return (boolean) call(feature, "place", context);
-        String id = FEATURE_TYPES.get(feature.getClass()).get(feature);
-        if (id == null) return (boolean) call(feature, "place", context);
-        Object world = call(context, "level");
-        if (!region(world) || !dimension(world)) return (boolean) call(feature, "place", context);
+    /**
+     * Wraps each Feature.place(level, generator, random, origin) call in FeaturePlacer.place with exception-safe
+     * retirement. The landmark is recognised by the placed feature's configured-feature key.
+     */
+    public static boolean placed(Object feature, Object world, Object generator, Object random, Object origin, Object placedFeature) {
+        if (!NativeLandmarkAgent.captureAvailable()) return (boolean) call(feature, "place", world, generator, random, origin);
+        Object key = ((java.util.Optional<?>) call(call(placedFeature, "feature"), "unwrapKey")).orElse(null);
+        String id = key == null ? null : call(key, "identifier").toString();
+        if (id == null || !FEATURE_KEYS.contains(id)) return (boolean) call(feature, "place", world, generator, random, origin);
+        if (!region(world) || !dimension(world)) return (boolean) call(feature, "place", world, generator, random, origin);
         Frame capture = new Frame(id, true, null);
         frame(world, capture);
         boolean completed = false;
-        try { boolean result = (boolean) call(feature, "place", context); completed = true; return result; }
+        try { boolean result = (boolean) call(feature, "place", world, generator, random, origin); completed = true; return result; }
         finally {
             // Canonical has one tracker, not a stack. A nested tracked feature consumes/resets the outer tracker.
             boolean stillOwned = frame(world) == capture;
             frame(world, null);
             if (completed && stillOwned && capture.hull != null) {
                 // Origin chunk only, as canonical FeatureMixin. No ServerLevel chunk requests.
-                Object chunk = call(world, "getChunk", call(context, "origin"));
+                Object chunk = call(world, "getChunk", origin);
                 synchronized (pdc(chunk)) {
                     Object existing = tag(chunk, FEATURES);
                     Object list = existing == null ? newList(chunk) : existing;

@@ -141,7 +141,7 @@ public final class NativeActionAgent {
         b.aload(s.actor());
         if (s.mode().equals("composter"))
             // Initial process uses local 8; Purpur's bulk loop passes its current level from local 13.
-            b.iload(ordinal == 0 ? 8 : 13).invokestatic(SELF, "composter", MethodTypeDesc.of(ConstantDescs.CD_boolean, OBJECT, ConstantDescs.CD_int));
+            b.iload(ordinal == 0 ? 8 : 14) /* fillLevel, oldLevel in Purpur 26.3 2660 */.invokestatic(SELF, "composter", MethodTypeDesc.of(ConstantDescs.CD_boolean, OBJECT, ConstantDescs.CD_int));
         else {
             if (s.subject() >= 0) b.aload(s.subject()); else b.aconst_null();
             b.ldc(s.mode()).invokestatic(SELF, "denied", DENIED);

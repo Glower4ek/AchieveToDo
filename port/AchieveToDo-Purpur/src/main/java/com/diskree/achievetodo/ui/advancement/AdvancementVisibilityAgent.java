@@ -11,10 +11,10 @@ import java.util.function.Predicate;
 /** Presentation parity with Fabric AdvancementDisplaysMixin; never awards progress. */
 public final class AdvancementVisibilityAgent {
     private static final String TARGET = "net/minecraft/server/advancements/AdvancementVisibilityEvaluator";
-    private static final String PIN = "daf0d7d36d7db775356ae41dca90f77b5fb09c31c754e4638edf313ded6259dc";
+    private static final String PIN = "be9a7d5ff24394fc7000e11ebfff2b59510d190e33b67ad524cd99e877d32424";
     private static final ClassDesc SELF = ClassDesc.of(AdvancementVisibilityAgent.class.getName());
     private static final String NODE = "net/minecraft/advancements/AdvancementNode";
-    private static final String NODE_PIN = "e41beef5bcdc6aab32d602a9faa8ff4425c9fe7ab59d3a6de8a4d742b93deddd";
+    private static final String NODE_PIN = "310ec20563ee91666a0f71e907a71d092ae6f22896f568cd3ae965161560832e";
     private static volatile boolean transformed;
     private static volatile boolean childrenTransformed;
     private static volatile String failure;

@@ -14,12 +14,13 @@ public final class NativeLandmarkAgent {
     private static final ClassDesc CAPTURE = ClassDesc.of(NativeLandmarkCapture.class.getName());
     private static final ClassDesc OBJECT = ConstantDescs.CD_Object;
     private static final Map<String, String> BASE_HASHES = Map.ofEntries(
-        Map.entry("net/minecraft/world/level/levelgen/structure/Structure", "c4ea9bbb11c9ca72fe3de924f0e4c9f226a887373fbe8d93d7356251143ca2e4"),
+        Map.entry("net/minecraft/world/level/levelgen/structure/Structure", "36ec2555b84189d2a577e0ad94804f34677830e84f84e369b32d965504bd66d6"),
         Map.entry("net/minecraft/world/level/levelgen/structure/StructureStart", "4787740161609dcc3c746bc14d175685d0fb7df1ddb07bed7de05e5ac45923f1"),
-        Map.entry("net/minecraft/server/level/WorldGenRegion", "0d4dbbc135e79f295e4d94aa6dff687fbe0bb9797d1d9626258e3b8f2a0bdaeb"),
-        Map.entry("net/minecraft/world/level/Level", "d571f8101512c6ca6a2aa05160a592d19630d126204c24e68c8502d3a69ffbc3"),
-        Map.entry("net/minecraft/world/level/levelgen/feature/Feature", "918a7c20cd2acc836ade09dd31a98d1b591a70b4345706e047056026eddfbe44"),
-        Map.entry("net/minecraft/world/entity/player/Player", "b0d7e891842135a1bc5dc5e245496dbd98e4578bfd66662737f3fa2b61229128")
+        Map.entry("net/minecraft/server/level/WorldGenRegion", "3c02f5f98302777bb5df7deb3f76e4ecf38c19dd67ccc91250d0b62fd11359c1"),
+        Map.entry("net/minecraft/world/level/Level", "61ee3deb88a01e2430b8d1a0fc669d184752c549d63c0ef69c0bab4ba326a9a3"),
+        // 26.3: features are configured instances keyed by ResourceKey and placed by FeaturePlacer.
+        Map.entry("net/minecraft/world/level/levelgen/placement/FeaturePlacer", "90fc159ad751e4c6d9d82dbe61fb602c515a12a11089fb7c8b59a583fd7bc0a7"),
+        Map.entry("net/minecraft/world/entity/player/Player", "3296e4d38bda6d7eb5ced65fb5a967b06a5ede8588f45ecaf5900d63d89cd118")
     );
     private static final Map<String, String> HASHES;
     static {
@@ -116,7 +117,8 @@ public final class NativeLandmarkAgent {
                 boolean block = name.endsWith("/WorldGenRegion") && method.equals("setBlock");
                 boolean levelBlock = name.equals("net/minecraft/world/level/Level") && method.equals("setBlock")
                     && m.methodType().stringValue().equals("(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;II)Z");
-                boolean feature = name.endsWith("/Feature") && method.equals("place") && m.methodTypeSymbol().parameterCount() == 5;
+                boolean feature = name.endsWith("/FeaturePlacer") && method.equals("place") && m.methodType().stringValue()
+                    .equals("(Lnet/minecraft/world/level/levelgen/placement/PlacedFeature;Lnet/minecraft/util/RandomSource;Lnet/minecraft/core/BlockPos;Z)Z");
                 boolean player = name.endsWith("/Player") && method.equals("blockActionRestricted");
                 if (!(generate || place || block || levelBlock || feature || player)) { cb.with(element); return; }
                 long returns = m.code().orElseThrow().elementStream().filter(e -> e instanceof ReturnInstruction).count();
@@ -143,8 +145,11 @@ public final class NativeLandmarkAgent {
                             ordinal++;
                         }
                         if (feature && e instanceof InvokeInstruction i && i.name().equalsString("place")
-                            && i.typeSymbol().parameterCount() == 1) {
-                            sites[0]++; b.invokestatic(CAPTURE, "feature", MethodTypeDesc.of(ConstantDescs.CD_boolean, OBJECT, OBJECT)); return;
+                            && i.owner().asInternalName().equals("net/minecraft/world/level/levelgen/feature/Feature")
+                            && i.typeSymbol().parameterCount() == 4) {
+                            // Stack: feature, level, generator, random, origin; the placed feature (slot 1) carries the key.
+                            sites[0]++; b.aload(1).invokestatic(CAPTURE, "placed",
+                                MethodTypeDesc.of(ConstantDescs.CD_boolean, OBJECT, OBJECT, OBJECT, OBJECT, OBJECT, OBJECT)); return;
                         }
                         b.with(e);
                         if (place && e instanceof InvokeInstruction i) {
@@ -167,7 +172,8 @@ public final class NativeLandmarkAgent {
             }
         };
         byte[] result = cf.transformClass(cf.parse(bytes), transform);
-        int expected = name.endsWith("/StructureStart") ? 2 : name.endsWith("/Player") ? 4 : name.equals("net/minecraft/world/level/Level") ? 6 : 1;
+        int expected = name.endsWith("/StructureStart") ? 2 : name.endsWith("/FeaturePlacer") ? 2 : name.endsWith("/Player") ? 4
+            : name.equals("net/minecraft/world/level/Level") ? 6 : 1;
         if (sites[0] != expected) throw new IllegalStateException("S4G native sites " + name + "=" + sites[0] + " expected=" + expected);
         return result;
     }

@@ -14,9 +14,9 @@ public final class NativeSourceReloadAgent {
     static final String SERVER = "net/minecraft/server/MinecraftServer";
     static final String RELOAD = "(Ljava/util/Collection;Lio/papermc/paper/event/server/ServerResourcesReloadedEvent$Cause;)Ljava/util/concurrent/CompletableFuture;";
     static final String COMMIT = "(Ljava/util/Collection;Lio/papermc/paper/event/server/ServerResourcesReloadedEvent$Cause;Lnet/minecraft/server/MinecraftServer$ReloadableResources;)V";
-    static final Map<String,String> INPUTS = Map.ofEntries(Map.entry("net/minecraft/server/MinecraftServer","f0d8df9f66b6d63cb18ff894e4b702f7640186001b992dab5d781a26fb5e8ba5"),
-        Map.entry("net/minecraft/server/packs/FilePackResources","199dad7815afc1969e1db78984c016053cc8efed25309ce5aa9f5731349f83f9"),
-        Map.entry("net/minecraft/server/packs/FilePackResources$SharedZipFileAccess","6db65be7cb5a2c462cb249cf0c96e516cc6b4f0ee3eed109e7c8f3aab69d9436"));
+    static final Map<String,String> INPUTS = Map.ofEntries(Map.entry("net/minecraft/server/MinecraftServer","adff2dffd5afef45fefb503a51ad9e31743aeeddb5953ea2f91bee0bc96520e3"),
+        Map.entry("net/minecraft/server/packs/FilePackResources","8f03cff52d437b6431ff8e66c509cb4f3fca38893a54f5a2b5a25995d203cf77"),
+        Map.entry("net/minecraft/server/packs/FilePackResources$SharedZipFileAccess","9de542a69f26b916b17d25afc658399b32a42abb87f6113c4d2202752c8f8ca5"));
     private static final Set<String> verified = new HashSet<>();
     private static final Map<String,String> failures = new HashMap<>();
     private static final ClassDesc SELF=ClassDesc.of(NativeSourceReloadAgent.class.getName());

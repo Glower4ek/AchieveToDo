@@ -17,13 +17,13 @@ public final class NativeTransactionAgent {
     private static final Map<String, String> HASHES = Map.ofEntries(
         // Pinned Purpur 2620 input classes. Generated from the verified server artifact.
         Map.entry("net/minecraft/world/item/component/Consumable", "d4b40af8dff544f98faced1cc0156bc7d681eb6f599b3b5a55bb2cf3c7fc4a7c"),
-        Map.entry("net/minecraft/world/entity/LivingEntity", "afd815a9794907172e9d06ba98db1783695efd162e1d7508107926846b6693ef"),
+        Map.entry("net/minecraft/world/entity/LivingEntity", "cb99739aa5b5e23559df93354d10faffb6c938bb656ff38470bbbcf001c6c20a"),
         Map.entry("net/minecraft/world/inventory/ArmorSlot", "3cf48a436eac83317b3099ba7c3ae050572ebc85f8b06856471ea2897f261157"),
-        Map.entry("net/minecraft/world/item/equipment/Equippable", "3f73539343adb1e75964102a10c8ef7241eacc0b84f162dc842509b3c5bcf7d4"),
-        Map.entry("net/minecraft/world/item/BundleItem", "39b8608e22a75ca19b4aca59ecf89344f8027f9bd2908585845a8053c3e17ecb"),
-        Map.entry("net/minecraft/world/item/component/BundleContents$Mutable", "97ee5be78181a40cbe7244884a261afc700d9b8a6aba55d73855ea1cad88cedc"),
-        Map.entry("net/minecraft/world/level/block/EnderChestBlock", "53acd06f52069205c6b975c27ceb8029b8107f5c9dac380fcf4c2bedd57872b2"),
-        Map.entry("net/minecraft/world/level/block/ShulkerBoxBlock", "268f73d0170f1cd2c0fb00197be9999eac5ea8df6cab6760b8b67449afaa1f7d")
+        Map.entry("net/minecraft/world/item/equipment/Equippable", "b5e2f9ba68319ed3d8e1a73f3c2f220091f8e71778d10c7f4e5feffbd7f1251c"),
+        Map.entry("net/minecraft/world/item/BundleItem", "a3fd8086fadf6b10e7300479e78102bfe7e5008317af4cbee79b3e6c757f22d3"),
+        Map.entry("net/minecraft/world/item/component/BundleContents$Mutable", "929eaec408bf875263d1741919bec6f9d3c2d6bed80310daa6dcb06374603f80"),
+        Map.entry("net/minecraft/world/level/block/EnderChestBlock", "4834ad3b3230938f24456ba6939a96b4a73793a7aec6b77b12f0c11f85f65624"),
+        Map.entry("net/minecraft/world/level/block/ShulkerBoxBlock", "91ff0b8b90a87f6bf59f13eec058dfc4ff06e94927b8de7fab9e3a6a59195940")
     );
     private static final Set<String> transformed = new HashSet<>();
     private static final Map<String, String> failures = new HashMap<>();

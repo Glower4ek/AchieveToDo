@@ -10,17 +10,6 @@ public final class NativeLandmarkActions {
     private static final ClassDesc SELF = ClassDesc.of(NativeLandmarkActions.class.getName());
     private static final ClassDesc OBJECT = ConstantDescs.CD_Object;
     private static final ClassDesc OPERATIONS = ClassDesc.of(NativeLandmarkOperations.class.getName());
-    private static final ClassValue<Map<Object,String>> HOE_ABILITIES = new ClassValue<>() {
-        @Override protected Map<Object,String> computeValue(Class<?> type) {
-            try {
-                Class<?> items = Class.forName("net.minecraft.world.item.Items",true,type.getClassLoader());
-                Map<Object,String> abilities = new IdentityHashMap<>();
-                for (String material : List.of("WOODEN","STONE","COPPER","IRON","GOLDEN","DIAMOND","NETHERITE"))
-                    abilities.put(items.getField(material+"_HOE").get(null),"USE_"+material+"_TOOLS");
-                return Collections.unmodifiableMap(abilities);
-            } catch (ReflectiveOperationException unavailable) { throw new IllegalStateException(unavailable); }
-        }
-    };
     static byte[] transform(String name, byte[] bytes, ClassLoader loader) {
         return transform(name, bytes, loader, NativeLandmarkActionSpecs.SPECS);
     }
@@ -120,10 +109,8 @@ public final class NativeLandmarkActions {
         b.aload(s.actor());
         switch (s.mode()) {
             case "context" -> b.invokestatic(SELF,"contextDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT));
-            case "hoe" -> b.invokestatic(SELF,"hoeDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT));
+            case "blockTransform" -> b.invokestatic(OPERATIONS,"blockTransformDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT));
             case "wax" -> b.invokestatic(OPERATIONS,"waxDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT));
-            case "axeCandidate" -> b.aload(0).aload(s.level()).aload(s.pos()).aload(4)
-                .invokestatic(OPERATIONS,"axeDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT,OBJECT,OBJECT));
             case "cauldronFallback" -> b.aload(s.level()).aload(3).aload(5)
                 .invokestatic(OPERATIONS,"cauldronFallbackDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT,OBJECT,OBJECT));
             case "sleep" -> b.aload(s.pos()).invokestatic(OPERATIONS,"sleepDenied",MethodTypeDesc.of(ConstantDescs.CD_boolean,OBJECT,OBJECT));
@@ -270,26 +257,6 @@ public final class NativeLandmarkActions {
                 false,entity.getClass().getClassLoader()).isInstance(entity)) return true;
             return !entityDenied(argument,entity,mode.equals("passengerBoat") ? "GET_INTO_BOAT" : "GET_INTO_MINECART");
         } catch (ReflectiveOperationException | RuntimeException | LinkageError unavailable) { return false; }
-    }
-    public static boolean hoeDenied(Object context) {
-        try {
-            // Purpur's consumer bypasses the original sound call for vanilla tillables.
-            // Preserve the original candidate branch rather than denying all useOn attempts.
-            var type = Class.forName("net.minecraft.world.item.HoeItem",false,context.getClass().getClassLoader());
-            var field = type.getDeclaredField("TILLABLES"); field.setAccessible(true);
-            Object level = NativeLandmarkCapture.call(context,"getLevel");
-            Object block = NativeLandmarkCapture.call(NativeLandmarkCapture.call(level,"getBlockState",
-                NativeLandmarkCapture.call(context,"getClickedPos")),"getBlock");
-            Object pair = ((Map<?,?>)field.get(null)).get(block);
-            if (pair == null) return false;
-            @SuppressWarnings("unchecked") var predicate = (java.util.function.Predicate<Object>) NativeLandmarkCapture.call(pair,"getFirst");
-            if (!predicate.test(context)) return false;
-            Object item = NativeLandmarkCapture.call(NativeLandmarkCapture.call(context,"getItemInHand"),"getItem");
-            // Canonical AbilityType's registered-item identity classifier; no names/lore/client requirements.
-            String ability = HOE_ABILITIES.get(item.getClass()).get(item);
-            return NativeLandmarkAgent.targetAndAbilityDenied(NativeLandmarkCapture.call(context,"getPlayer"),level,
-                NativeLandmarkCapture.call(context,"getClickedPos"),ability);
-        } catch (ReflectiveOperationException | RuntimeException | LinkageError unavailable) { return true; }
     }
     public static boolean openingDenied(Object actor,Object level,Object position,Object state,String owner,String ability) {
         try {

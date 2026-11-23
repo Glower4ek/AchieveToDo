@@ -13,7 +13,7 @@ import java.util.function.BiPredicate;
 public final class NativePortalAgent {
     static final String ENTITY = "net/minecraft/world/entity/Entity";
     static final String DESCRIPTOR = "(Lnet/minecraft/world/level/block/Portal;Lnet/minecraft/core/BlockPos;)V";
-    static final Map<String, List<String>> INPUTS = Map.of(ENTITY, List.of("baae8bcbb94c57025be9e90ea53c25d734fdcc8a524ccc6bc9707eaba9690ed2", "5949c2d33ff1ada771fec80484cc9a90bc92d9b6aaff776adcca38101a9660bf"));
+    static final Map<String, List<String>> INPUTS = Map.of(ENTITY, List.of("956d33536fedddc4d6cd567ec47e3391859e8d01506673034a0a1cebc8c6cbcb", "7d42404538004f84654cb36ef4df3ed493994a002cd35f1ddee582ff93427838"));
     private static final ClassDesc SELF = ClassDesc.of(NativePortalAgent.class.getName());
     private static final ClassDesc OBJECT = ConstantDescs.CD_Object;
     private static final Set<String> transformed = new HashSet<>();

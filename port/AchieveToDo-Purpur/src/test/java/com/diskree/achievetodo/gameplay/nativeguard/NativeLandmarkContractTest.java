@@ -94,7 +94,7 @@ public final class NativeLandmarkContractTest {
             var verifier = ClassFile.of(ClassFile.ClassHierarchyResolverOption.of(ClassHierarchyResolver.ofResourceParsing(loader)));
             var names = new TreeSet<>(NativeLandmarkActionSpecs.HASHES.keySet());
             names.addAll(List.of("net/minecraft/world/level/levelgen/structure/Structure", "net/minecraft/world/level/levelgen/structure/StructureStart",
-                    "net/minecraft/server/level/WorldGenRegion", "net/minecraft/world/level/Level", "net/minecraft/world/level/levelgen/feature/Feature", "net/minecraft/world/entity/player/Player"));
+                    "net/minecraft/server/level/WorldGenRegion", "net/minecraft/world/level/Level", "net/minecraft/world/level/levelgen/placement/FeaturePlacer", "net/minecraft/world/entity/player/Player"));
             for (String name : names) {
                 byte[] bytes; try (var in = jar.getInputStream(jar.getJarEntry(name + ".class"))) { bytes = in.readAllBytes(); }
                 var output = NativeLandmarkAgent.transformNative(name, bytes, loader);

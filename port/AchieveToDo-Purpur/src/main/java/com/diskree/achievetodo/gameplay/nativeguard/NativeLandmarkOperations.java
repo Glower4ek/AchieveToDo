@@ -175,15 +175,16 @@ public final class NativeLandmarkOperations {
             return NativeLandmarkActions.blockDenied(actor,level,position)||linkedDenied(actor,level,position,state);
         } catch (ReflectiveOperationException|RuntimeException|LinkageError unavailable) { return true; }
     }
-    public static boolean axeDenied(Object actor,Object item,Object level,Object position,Object state) {
-        if (actor==null) return false;
+    /** 26.3 BlockTransformer boundary: a transform already matched, so only target, tool and linked halves remain. */
+    public static boolean blockTransformDenied(Object context) {
         try {
-            Object block=NativeLandmarkCapture.call(state,"getBlock");
-            boolean candidate=((Map<?,?>)staticField(item,"world.item.AxeItem","STRIPPABLES")).containsKey(block);
-            candidate|=((Optional<?>)staticCall(type(item,"world.level.block.WeatheringCopper"),"getPrevious",state)).isPresent();
-            candidate|=((Map<?,?>)((java.util.function.Supplier<?>)staticField(item,"world.item.HoneycombItem","WAX_OFF_BY_BLOCK")).get()).containsKey(block);
-            return candidate&&(NativeLandmarkAgent.targetAndAbilityDenied(actor,level,position,NativeToolAgent.identity(item,false))
-                || linkedDenied(actor,level,position,state));
+            Object actor=NativeLandmarkCapture.call(context,"getPlayer");
+            if (actor==null) return false;
+            Object level=NativeLandmarkCapture.call(context,"getLevel"),position=NativeLandmarkCapture.call(context,"getClickedPos");
+            Object state=NativeLandmarkCapture.call(level,"getBlockState",position);
+            Object item=NativeLandmarkCapture.call(NativeLandmarkCapture.call(context,"getItemInHand"),"getItem");
+            return NativeLandmarkAgent.targetAndAbilityDenied(actor,level,position,NativeToolAgent.identity(item,false))
+                || linkedDenied(actor,level,position,state);
         } catch (ReflectiveOperationException|RuntimeException|LinkageError unavailable) { return true; }
     }
     public static boolean boxEmpty(Object list,Object context,Object box) {
