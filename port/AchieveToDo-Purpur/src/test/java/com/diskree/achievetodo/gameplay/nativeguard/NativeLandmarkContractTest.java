@@ -71,14 +71,18 @@ public final class NativeLandmarkContractTest {
             check(index.findContaining(new LandmarkWorld("world-a", DimensionType.NETHER), 0, 0, 0).isEmpty());
             index.remove(record); check(index.all().isEmpty());
         }
-        check(NativeLandmarkMappings.STRUCTURES.size() == 33);
+        check(NativeLandmarkMappings.STRUCTURES.size() == 51);
         var a = new LandmarkRecord(LandmarkType.VILLAGE, world, new BlockBox(0, 0, 0, 1, 1, 1), new LandmarkSource(LandmarkSourceKind.STRUCTURE, "village_plains", new ChunkCoordinate(0, 0)));
         var b = new LandmarkRecord(LandmarkType.MINESHAFT, world, a.blockBox(), new LandmarkSource(LandmarkSourceKind.STRUCTURE, "mineshaft", new ChunkCoordinate(0, 0)));
         check(ExactLandmarkGate.evaluate(PlayerProgressionState.create(actor, 1000, AbilityRequirements.normalize(Map.of())), actor, false, Set.of(a, b))
             == ExactLandmarkGate.Result.UNSUPPORTED_MEMBERSHIP);
-        check(NativeLandmarkMappings.STRUCTURES.values().stream().distinct().count() == 20);
+        check(NativeLandmarkMappings.STRUCTURES.values().stream().distinct().count() == 21);
         for (var entry : NativeLandmarkMappings.STRUCTURES.entrySet())
             check(LandmarkType.findByStructureKey(entry.getKey()).orElseThrow().getName().equals(entry.getValue()));
+        // 0.4.0 smoke finding: the camp was added to LandmarkType but not here, so capture never admitted its boxes.
+        for (LandmarkType type : LandmarkType.values())
+            for (String key : type.getStructureKeys())
+                check(type.getName().equals(NativeLandmarkMappings.STRUCTURES.get(key)));
         check(!NativeLandmarkCapture.valid(new int[]{1, 0, 0, 0, 0, 0}));
         check(!NativeLandmarkCapture.valid(new int[]{0, 0, 0}));
         check(Arrays.equals(NativeLandmarkCapture.union(new int[]{-3, -4, -5, 0, 1, 2}, new int[]{-2, -8, -1, 3, 4, 5}), new int[]{-3, -8, -5, 3, 4, 5}));

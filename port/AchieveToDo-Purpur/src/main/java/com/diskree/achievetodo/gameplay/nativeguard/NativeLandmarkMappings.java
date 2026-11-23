@@ -25,7 +25,26 @@ public final class NativeLandmarkMappings {
         Map.entry("minecraft:trail_ruins", "trail_ruins"), Map.entry("minecraft:ancient_city", "ancient_city"),
         Map.entry("minecraft:trial_chambers", "trial_chambers"), Map.entry("minecraft:stronghold", "stronghold"),
         Map.entry("minecraft:fortress", "fortress"), Map.entry("minecraft:bastion_remnant", "bastion_remnant"),
-        Map.entry("minecraft:end_city", "end_city")
+        Map.entry("minecraft:end_city", "end_city"),
+        // 0.4.0: the 26.3 abandoned camp, one structure per biome.
+        Map.entry("minecraft:abandoned_camp_bamboo_jungle", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_birch_forest", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_cherry_grove", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_dappled_forest", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_flower_forest", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_forest", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_meadow", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_old_growth_birch_forest", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_old_growth_pine_taiga", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_old_growth_spruce_taiga", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_pale_garden", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_savanna", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_snowy_taiga", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_sparse_jungle", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_swamp", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_taiga", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_windswept_forest", "abandoned_camp"),
+        Map.entry("minecraft:abandoned_camp_wooded_badlands", "abandoned_camp")
     );
     private NativeLandmarkMappings() {}
 }
