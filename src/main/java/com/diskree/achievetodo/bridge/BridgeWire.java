@@ -9,7 +9,7 @@ import java.util.*;
 /** Bounded1.3 authoritative numeric presentation. Product gameplay readiness remains false. */
 public final class BridgeWire {
     public static final String CHANNEL="achievetodo:bridge";
-    public static final String CATALOG="762de1ac54aa980415c9813d946a8c4836993072531c483b4cf310c01015c5d2";
+    public static final String CATALOG="df6b7a6a4c73c75812da50907808fb80d24fbf603343f671cd7eb15afb4f8b06";
     public static final int MAX_FRAME=24*1024, MAX_BODY=20*1024, MAJOR=1, MINOR=5;
     public static final long FEATURES=123;
     public static final long TRANSITION_BUDGET_NANOS=20_000_000_000L;
@@ -40,7 +40,7 @@ public final class BridgeWire {
                 new HashSet<>(worlds.values().stream().map(Binding::uuid).toList()).size()!=worlds.size() ||
                 new HashSet<>(worlds.values().stream().map(Binding::key).toList()).size()!=worlds.size() ||
                 !worlds.containsValue(new Binding(world,worldKey))) throw new IllegalArgumentException("world binding");
-            if (abilities.size()!=153 || abilities.values().stream().anyMatch(Objects::isNull) ||
+            if (abilities.size()!=154 || abilities.values().stream().anyMatch(Objects::isNull) ||
                 !sha(String.join("\n",abilities.keySet()).concat("\n").getBytes(StandardCharsets.UTF_8)).equals(CATALOG) ||
                 abilities.values().stream().anyMatch(v->v.threshold()>1152)) throw new IllegalArgumentException("ability catalog/threshold");
         }
@@ -103,7 +103,7 @@ public final class BridgeWire {
         String difficulty=string(in),selection=string(in),objective=string(in);int count=in.readInt();
         int size=in.readUnsignedByte();if(size<1 || size>3)throw new IllegalArgumentException("world count");
         Map<String,Binding> worlds=new TreeMap<>();for(int i=0;i<size;i++)if(worlds.putIfAbsent(string(in),new Binding(uuid(in),string(in)))!=null)throw new IllegalArgumentException("duplicate world role");
-        size=in.readUnsignedShort();if(size!=153)throw new IllegalArgumentException("ability count");
+        size=in.readUnsignedShort();if(size!=154)throw new IllegalArgumentException("ability count");
         Map<String,Ability> abilities=new TreeMap<>();for(int i=0;i<size;i++)if(abilities.putIfAbsent(string(in),new Ability(in.readInt(),bool(in)))!=null)throw new IllegalArgumentException("duplicate ability");
         return new State(world,key,config,group,generation,difficulty,selection,objective,count,worlds,abilities);
     }

@@ -5855,8 +5855,8 @@
     },
     {
       "path": "gradle/verification-metadata.xml",
-      "size": 106318,
-      "SHA256": "0f12cdeb9244fda74468497027f1a8b8f2ab00c84e97347e520c0145907e621c"
+      "size": 64015,
+      "SHA256": "9bc6286e5c806e14e1c687cf54279b268981c7f49b1ed9ccfdac679456d0ba5d"
     }
   ],
   "verificationCandidateReviewed": false,

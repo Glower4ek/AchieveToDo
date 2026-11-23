@@ -23,7 +23,7 @@ public final class BridgeAuthoritativeProjectionTest {
             for(int count:new int[]{Integer.MIN_VALUE,-3,-2,-1,0,3,4,1152}) {
                 var capture=new BukkitProgressionRuntime.Presentation(player,identity,group,12,resolved,"bac_advancements",count);
                 var state=BridgeProgressionAdapter.project(capture);var authority=PlayerProgressionState.create(player,count,resolved.definition().requirements());
-                check(state.count()==count && state.config().equals(config) && state.generation()==12 && state.abilities().size()==153);
+                check(state.count()==count && state.config().equals(config) && state.generation()==12 && state.abilities().size()==154);
                 for(var ability:AbilityType.values()) {
                     var row=state.abilities().get(ability.getName());check(row.threshold()==resolved.definition().requirements().getRequiredCount(ability));check(row.unlocked()==authority.getAbilityState(ability).isUnlocked());
                 }

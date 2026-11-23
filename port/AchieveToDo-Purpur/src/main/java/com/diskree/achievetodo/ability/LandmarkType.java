@@ -46,7 +46,28 @@ public enum LandmarkType {
     STRONGHOLD(structure("minecraft:stronghold")),
     FORTRESS(structure("minecraft:fortress")),
     BASTION_REMNANT(structure("minecraft:bastion_remnant")),
-    END_CITY(structure("minecraft:end_city"));
+    END_CITY(structure("minecraft:end_city")),
+    /** Minecraft 26.3. */
+    ABANDONED_CAMP(structure(
+        "minecraft:abandoned_camp_bamboo_jungle",
+        "minecraft:abandoned_camp_birch_forest",
+        "minecraft:abandoned_camp_cherry_grove",
+        "minecraft:abandoned_camp_dappled_forest",
+        "minecraft:abandoned_camp_flower_forest",
+        "minecraft:abandoned_camp_forest",
+        "minecraft:abandoned_camp_meadow",
+        "minecraft:abandoned_camp_old_growth_birch_forest",
+        "minecraft:abandoned_camp_old_growth_pine_taiga",
+        "minecraft:abandoned_camp_old_growth_spruce_taiga",
+        "minecraft:abandoned_camp_pale_garden",
+        "minecraft:abandoned_camp_savanna",
+        "minecraft:abandoned_camp_snowy_taiga",
+        "minecraft:abandoned_camp_sparse_jungle",
+        "minecraft:abandoned_camp_swamp",
+        "minecraft:abandoned_camp_taiga",
+        "minecraft:abandoned_camp_windswept_forest",
+        "minecraft:abandoned_camp_wooded_badlands"
+    ));
 
     private static final Map<String, LandmarkType> BY_NAME;
     private static final Map<String, LandmarkType> BY_STRUCTURE_KEY;

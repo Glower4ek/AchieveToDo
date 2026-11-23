@@ -62,8 +62,14 @@ class BetterRuOverlayResourceTest {
         "achievetodo.disconnect.server_version",
         "achievetodo.ability.open_chest.shelf.locked_message"
     );
+    /** Keys added in 0.4.0: the abandoned camp landmark (Minecraft 26.3). */
+    private static final Set<String> RELEASE_0_4_0_KEYS = Set.of(
+        "achievetodo.ability.interact_inside_abandoned_camp.name",
+        "achievetodo.ability.interact_inside_abandoned_camp.description",
+        "achievetodo.ability.interact_inside_abandoned_camp.locked_message"
+    );
     /** Every key allowed on top of the frozen historical set, each in both locales. */
-    private static final Set<String> ADDED_KEYS = union(COPPER_KEYS, RELEASE_0_3_0_KEYS);
+    private static final Set<String> ADDED_KEYS = union(union(COPPER_KEYS, RELEASE_0_3_0_KEYS), RELEASE_0_4_0_KEYS);
     /** BACAP 1.21.1 (Minecraft 26.3) reward functions name poplar items; the game's own Russian names cover them. */
     private static final Set<String> BACAP_1_21_1_VANILLA_KEYS = Set.of(
         "block.minecraft.poplar_log",
@@ -198,7 +204,7 @@ class BetterRuOverlayResourceTest {
         assertTrue(java.util.Collections.disjoint(historicalKeys, ADDED_KEYS));
         Set<String> expectedKeys = new HashSet<>(historicalKeys);
         expectedKeys.addAll(ADDED_KEYS);
-        assertEquals(expectedKeys, english.keySet(), "Only the approved copper and 0.3.0 keys may extend the historical set");
+        assertEquals(expectedKeys, english.keySet(), "Only the approved copper, 0.3.0 and 0.4.0 keys may extend the historical set");
         assertEquals(
             english.keySet(),
             russian.keySet(),

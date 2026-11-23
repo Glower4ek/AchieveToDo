@@ -38,7 +38,7 @@ public final class PhaseDLevelSettingsOriginTest {
             for(String name:List.of("easy","normal","hard","chaos","custom")) {
                 Path directory=root.resolve(origin+"_"+name); Files.createDirectory(directory);
                 if(origin==ConfigurationOrigin.FRESH&&!name.equals("custom")) {
-                    var map=ConfigurationIO.load(directory,name,Long.MIN_VALUE,origin);assertEquals(153,map.size());
+                    var map=ConfigurationIO.load(directory,name,Long.MIN_VALUE,origin);assertEquals(AbilityType.values().length,map.size());
                     Path target=directory.resolve(name+(name.equals("chaos")?"_"+Long.MIN_VALUE:"")+".toml");
                     assertTrue(Files.isRegularFile(target));byte[] published=Files.readAllBytes(target);
                     assertEquals(map,ConfigurationIO.load(directory,name,Long.MIN_VALUE,ConfigurationOrigin.SAVED));
@@ -56,7 +56,7 @@ public final class PhaseDLevelSettingsOriginTest {
     @Test void existingFileAuthoritativeForEveryOriginIncludingMalformed() throws Exception {
         Path target=root.resolve("chaos_5.toml");
         for(ConfigurationOrigin origin:ConfigurationOrigin.values()) {
-            String text="version = 1\n[abilities]\nuse_copper_tools = 0\nequip_copper_armor = -1\njump = 117\n";
+            String text="version = 1\n[abilities]\nuse_copper_tools = 0\nequip_copper_armor = -1\ninteract_inside_abandoned_camp = 3\njump = 117\n";
             Files.writeString(target,text); var map=ConfigurationIO.load(root,"chaos",5,origin);
             assertEquals(117,map.get(AbilityType.JUMP));assertEquals(0,map.get(AbilityType.USE_COPPER_TOOLS));assertEquals(-1,map.get(AbilityType.EQUIP_COPPER_ARMOR));assertEquals(text,Files.readString(target));
             Files.writeString(target,"malformed = [");assertThrows(RuntimeException.class,()->ConfigurationIO.load(root,"chaos",5,origin));assertEquals("malformed = [",Files.readString(target));

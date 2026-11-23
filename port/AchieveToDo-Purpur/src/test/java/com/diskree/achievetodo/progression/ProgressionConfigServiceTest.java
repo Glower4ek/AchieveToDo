@@ -20,6 +20,39 @@ public final class ProgressionConfigServiceTest {
         test.chaosModeUsesSeedSpecificConfigName();
         test.customConfigNormalizesMissingAbilitiesAndClampsUpperBound();
         test.builtInModeReusesUpToDateExistingFile();
+        test.abandonedCampIsBackfilledLikeTheFabricMod();
+    }
+
+    /**
+     * 0.4.0: a 0.3.0 configuration has no abandoned camp key. Same values as the Fabric mod's
+     * AbandonedCampBackfillTest: presets 93/121/148, CHAOS seed 0 -> 407 and seed 42 -> 2, custom -1 (file untouched).
+     */
+    private void abandonedCampIsBackfilledLikeTheFabricMod() {
+        String camp = AbilityType.INTERACT_INSIDE_ABANDONED_CAMP.getName();
+        StringBuilder old = new StringBuilder("version = 1\n\n[abilities]\n");
+        for (AbilityType ability : AbilityType.values()) {
+            if (ability != AbilityType.INTERACT_INSIDE_ABANDONED_CAMP) old.append(ability.getName()).append(" = 7\n");
+        }
+        Map<String, Integer> presets = Map.of("easy", 93, "normal", 121, "hard", 148);
+        for (var entry : presets.entrySet()) {
+            InMemoryRepository repository = new InMemoryRepository();
+            repository.write(entry.getKey() + ".toml", old.toString());
+            var resolved = service.resolve(new WorldProgressionConfig(entry.getKey()), 0L, repository, false);
+            assertEquals(entry.getValue(), resolved.definition().requirements().getRequiredCount(AbilityType.INTERACT_INSIDE_ABANDONED_CAMP));
+            assertEquals(7, resolved.definition().requirements().getRequiredCount(AbilityType.USE_COPPER_TOOLS));
+            assertEquals(old + camp + " = " + entry.getValue() + "\n", repository.files.get(entry.getKey() + ".toml"));
+        }
+        for (long seed : new long[]{0L, 42L}) {
+            InMemoryRepository repository = new InMemoryRepository();
+            repository.write("chaos_" + seed + ".toml", old.toString());
+            var resolved = service.resolve(new WorldProgressionConfig("chaos"), seed, repository, false);
+            assertEquals(seed == 0L ? 407 : 2, resolved.definition().requirements().getRequiredCount(AbilityType.INTERACT_INSIDE_ABANDONED_CAMP));
+        }
+        InMemoryRepository repository = new InMemoryRepository();
+        repository.write("custom.toml", "[abilities]\njump = 17\n");
+        var custom = service.resolve(new WorldProgressionConfig("custom"), 0L, repository, false);
+        assertEquals(-1, custom.definition().requirements().getRequiredCount(AbilityType.INTERACT_INSIDE_ABANDONED_CAMP));
+        assertEquals("[abilities]\njump = 17\n", repository.files.get("custom.toml"));
     }
 
     private void builtInModeGeneratesPersistedConfigWhenMissing() {

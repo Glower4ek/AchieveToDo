@@ -663,6 +663,9 @@
   "achievetodo.ability.interact_inside_trail_ruins.name": "Руины былых времён",
   "achievetodo.ability.interact_inside_trail_ruins.description": "Возможность взаимодействия с объектами в пределах руин былых времён",
   "achievetodo.ability.interact_inside_trail_ruins.locked_message": "Вы не можете взаимодействовать с объектами в пределах руин былых времён",
+  "achievetodo.ability.interact_inside_abandoned_camp.name": "Заброшенный лагерь",
+  "achievetodo.ability.interact_inside_abandoned_camp.description": "Возможность взаимодействия с объектами в пределах заброшенного лагеря",
+  "achievetodo.ability.interact_inside_abandoned_camp.locked_message": "Вы не можете взаимодействовать с объектами в пределах заброшенного лагеря",
 
   "achievetodo.ability.interact_inside_ancient_city.name": "Древний город",
   "achievetodo.ability.interact_inside_ancient_city.description": "Возможность взаимодействия с объектами в пределах древнего города",

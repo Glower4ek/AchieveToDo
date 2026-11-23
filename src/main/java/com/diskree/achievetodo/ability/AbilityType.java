@@ -192,7 +192,8 @@ public enum AbilityType {
     TRADE_WITH_LIBRARIAN(AbilityUnlockedToastType.TRADING, AbilitiesHierarchyLayerType.TRADING, VillagerProfession.LIBRARIAN),
     OPEN_ENCHANTING_TABLE(AbilityUnlockedToastType.BLOCK, AbilitiesHierarchyLayerType.BLOCKS, Blocks.ENCHANTING_TABLE),
     USE_COPPER_TOOLS(AbilityUnlockedToastType.TOOL, AbilitiesHierarchyLayerType.UPGRADE, ToolMaterial.COPPER),
-    EQUIP_COPPER_ARMOR(AbilityUnlockedToastType.EQUIPMENT, AbilitiesHierarchyLayerType.UPGRADE, ArmorMaterials.COPPER);
+    EQUIP_COPPER_ARMOR(AbilityUnlockedToastType.EQUIPMENT, AbilitiesHierarchyLayerType.UPGRADE, ArmorMaterials.COPPER),
+    INTERACT_INSIDE_ABANDONED_CAMP(AbilityUnlockedToastType.LANDMARK, AbilitiesHierarchyLayerType.LANDMARK, LandmarkType.ABANDONED_CAMP);
 
     private final AbilitiesHierarchyLayerType hierarchyLayerType;
     private final AbilityUnlockedToastType unlockToastType;
@@ -386,6 +387,7 @@ public enum AbilityType {
                 case FORTRESS -> Items.CHISELED_NETHER_BRICKS;
                 case BASTION_REMNANT -> Items.GILDED_BLACKSTONE;
                 case END_CITY -> Items.PURPUR_BLOCK;
+                case ABANDONED_CAMP -> Items.STRAW_BED;
             };
         }
         throw new IllegalStateException("Ability " + this + " haven't icon!");

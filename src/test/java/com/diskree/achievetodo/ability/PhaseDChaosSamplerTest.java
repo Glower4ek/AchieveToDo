@@ -238,7 +238,7 @@ open_enchanting_table 30
             HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(compact.getBytes(StandardCharsets.UTF_8))));
         assertEquals(2, Arrays.stream(pool).filter(x -> x == 158).count());
         assertEquals(2, Arrays.stream(pool).filter(x -> x == 98).count());
-        assertEquals(153, AbilityType.values().length);
+        assertEquals(154, AbilityType.values().length); // 0.4.0 appends INTERACT_INSIDE_ABANDONED_CAMP
         assertEquals(151, AbilityType.USE_COPPER_TOOLS.ordinal());
         assertEquals(152, AbilityType.EQUIP_COPPER_ARMOR.ordinal());
         assertEquals(70, AbilityType.USE_COPPER_TOOLS.getChaosPriority());
@@ -259,7 +259,7 @@ open_enchanting_table 30
         }
         List<Map<AbilityType, Integer>> presets = List.of(Progressions.getEasyProgression(), Progressions.getNormalProgression(), Progressions.getHardProgression());
         for (int i = 0; i < 3; i++) {
-            assertEquals(153, presets.get(i).size());
+            assertEquals(154, presets.get(i).size()); // 0.4.0: + INTERACT_INSIDE_ABANDONED_CAMP
             assertEquals(new int[]{98,128,158}[i], presets.get(i).get(AbilityType.USE_COPPER_TOOLS));
             assertEquals(new int[]{68,83,98}[i], presets.get(i).get(AbilityType.EQUIP_COPPER_ARMOR));
         }

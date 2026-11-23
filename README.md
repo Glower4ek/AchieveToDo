@@ -6,11 +6,11 @@ Minecraft, but the world has stolen your abilities. Reclaim them one by one by c
 
 Current project owner and maintainer: **Glower4ek**. Maintained source: [Glower4ek/AchieveToDo](https://github.com/Glower4ek/AchieveToDo).
 
-Current release: **AchieveToDo 0.3.0** for **Minecraft 26.2**, requiring **Java 25**. It comes in two parts:
+Current release: **AchieveToDo 0.4.0** for **Minecraft 26.3**, requiring **Java 25**. It comes in two parts:
 
-- **The Fabric mod** (`achievetodo-mc26.2+0.3.0.jar`) for single player, and for every player who joins an
+- **The Fabric mod** (`achievetodo-mc26.3+0.4.0.jar`) for single player, and for every player who joins an
   AchieveToDo server.
-- **The Purpur server plugin** (`AchieveToDo-Purpur-26.2-0.3.0.jar`) for multiplayer on Purpur 26.2.
+- **The Purpur server plugin** (`AchieveToDo-Purpur-mc26.3+0.4.0.jar`) for multiplayer on Purpur 26.3.
 
 Downloads are on the [releases page](https://github.com/Glower4ek/AchieveToDo/releases).
 
@@ -84,11 +84,11 @@ This makes it easy to create all kinds of custom challenges or special gameplay 
 <details>
 <summary>Playing on a server</summary>
 
-**Purpur server (recommended).** Install the AchieveToDo Purpur plugin on a Purpur 26.2 server (build 2620, Java 25)
+**Purpur server (recommended).** Install the AchieveToDo Purpur plugin on a Purpur 26.3 server (build 2660, Java 25)
 and add one Java option, `-javaagent:plugins/<plugin jar>`, to the start command. The plugin keeps every ability
 locked on the server side and syncs progression to the players' mods. Every player needs the AchieveToDo Fabric mod
 of the same version; players without it are told which version to install. The full guide, including where to get
-the BACAP datapacks, is [STARTING_THE_SERVER.md](port/AchieveToDo-Purpur-26.2/STARTING_THE_SERVER.md).
+the BACAP datapacks, is [STARTING_THE_SERVER.md](port/AchieveToDo-Purpur/STARTING_THE_SERVER.md).
 
 **Fabric server.** The mod also runs on a Fabric dedicated server:
 
@@ -116,19 +116,20 @@ the BACAP datapacks, is [STARTING_THE_SERVER.md](port/AchieveToDo-Purpur-26.2/ST
 
 Both parts build with Java 25 (Temurin 25.0.5) and the Gradle wrappers in the repository.
 
-- **Fabric mod**, from the repository root: `gradlew jar`. Output: `build/libs/achievetodo-mc26.2+<version>.jar`.
-- **Purpur plugin**, from `port/AchieveToDo-Purpur-26.2`: `gradlew jar`. Output:
-  `build/libs/AchieveToDo-Purpur-26.2-<version>.jar`.
+- **Fabric mod**, from the repository root: `gradlew jar`. Output: `build/libs/achievetodo-mc26.3+<version>.jar`.
+- **Purpur plugin**, from `port/AchieveToDo-Purpur`: `gradlew jar`. Output:
+  `build/libs/AchieveToDo-Purpur-mc26.3+<version>.jar`.
 
 The Fabric tests (`gradlew test`) need external inputs (the original BACAP, Terralith and translation archives) in a
-folder named by `ACHIEVETODO_TEST_INPUTS_DIR`. The plugin checks (`gradlew check`) need the Purpur 26.2 build 2620
+folder named by `ACHIEVETODO_TEST_INPUTS_DIR`. The plugin checks (`gradlew check`) need the Purpur 26.3 build 2660
 server jar (`ACHIEVETODO_TEST_PURPUR_NATIVE`), the prepared BACAP datapacks (`ACHIEVETODO_TEST_BACAP`) and the Fabric
 mod's presets (`ACHIEVETODO_CANONICAL_PRESETS`).
 
 Each release is certified on a real Purpur server with real clients before it is published. The reports are in
 [docs/certification](docs/certification/), known issues in [docs/known-issues.md](docs/known-issues.md).
 
-Contributor references: [Minecraft 26.2 mixin rationale](docs/compatibility/mixin-26.2-map.md) and
+Contributor references: [Minecraft 26.3 mixin changes](docs/compatibility/mixin-26.3-map.md), the
+[Minecraft 26.2 mixin rationale](docs/compatibility/mixin-26.2-map.md) and
 [historical 0.1.5.4 reproduction](docs/history/reproduction-0.1.5.4.md).
 
 ## Acknowledgments

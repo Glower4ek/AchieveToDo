@@ -14,7 +14,7 @@ to start another stage or perform external publication.
 
 ## 2. Repository Identity
 
-- Repository: AchieveToDo 26.2; discover its root from the actual checkout.
+- Repository: AchieveToDo 26.3 (0.4.0; 26.2 up to 0.3.0); discover its root from the actual checkout.
 - origin: `https://github.com/Glower4ek/AchieveToDo.git`.
 - upstream: `https://github.com/AchieveToDo/mod.git`.
 - Java namespace remains `com.diskree.achievetodo.*`; fork ownership does not
@@ -34,7 +34,7 @@ commit/tree and task-specific receipts before relying on certification.
 
 | Fact | Accepted baseline |
 | --- | --- |
-| Minecraft / loader | Minecraft Java Edition 26.2 / Fabric |
+| Minecraft / loader | Minecraft Java Edition 26.3 / Fabric (26.2 up to 0.3.0) |
 | Phase C source version (historical) | 0.1.5.5; not a claim about the current RC checkout |
 | Phase C branch (historical) | phase-c-core-integrity-26.2 |
 | C7 checkpoint | 651b460df1735316b8863633e7b4a73e4fe375cf |
@@ -54,7 +54,14 @@ commit/tree and task-specific receipts before relying on certification.
 | C9 evidence SHA256 | 9a1282fb486057d79351637e9a5898df5fcc9eed29e5c4e4d356adc95aa63683 |
 | Phase D new gameplay/content mappings | Mode A unless a separately approved Mode B/C scope exists; RC regression maintenance is separately governed by section 13 |
 
-### Current status (0.3.0, 2026-11-22)
+### Current status (0.4.0, 2026-11-23)
+
+0.3.0 was certified and released on Minecraft 26.2. 0.4.0 is the port to Minecraft 26.3 (Purpur build 2660,
+BACAP 1.21.1), developed on branch `release-0.4.0` from `26.3-port`. The 26.2 Phase A/B evidence tests are kept
+as history and excluded from the test run (`historical262Tests` in `build.gradle`); 0.4.0 needs its own full
+runtime certification before release. Mixin changes: `docs/compatibility/mixin-26.3-map.md`.
+
+### Status of 0.3.0 (2026-11-22)
 
 0.2.1 was certified 57/57 groups and released on 2026-11-21. On 2026-11-22 the owner decided to finish both
 products as 0.3.0: the release launch is the product mode (`ATD_GAMEPLAY_MODE=RELEASE`,
@@ -267,8 +274,8 @@ not downstream packaging or gameplay success.
 
 When build work is authorized, use Java 25 and the pinned Gradle wrapper. Resolve
 actual versions from `gradle.properties`, `gradle/wrapper/gradle-wrapper.properties`
-and `build.gradle`; the accepted baseline uses Gradle 9.8.0, Fabric Loader 0.19.5,
-Fabric API 0.161.0+26.2, Loom 1.18.2 and JUnit 6.1.3. Resolve valid Java and Python
+and `build.gradle`; the accepted baseline uses Gradle 9.8.0, Fabric Loader 0.20.1,
+Fabric API 0.166.2+26.3, Loom 1.18.2 and JUnit 6.1.3. Resolve valid Java and Python
 executables; set `JAVA_HOME`, `ACHIEVETODO_PYTHON`, `ACHIEVETODO_TEST_INPUTS_DIR`,
 `GRADLE_USER_HOME`, `TEMP` and `TMP` in the same PowerShell process as the wrapper.
 Windows local-pipe startup may require a short writable task-local TEMP/TMP path;

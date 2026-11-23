@@ -32,7 +32,7 @@ public final class TeamConfigSemanticsTest {
         for (String mode : List.of("easy","medium","hard","chaos")) {
             var selection=new WorldProgressionConfig(mode);
             var first=service.resolve(selection,42,repo,true);
-            check(first.definition().requirements().asMap().size()==153);
+            check(first.definition().requirements().asMap().size()==154);
             byte[] bytes=Files.readAllBytes(root.resolve(first.fileName()));
             var reloaded=service.resolve(selection,42,repo,false);
             check(first.definition().requirements().asMap().equals(reloaded.definition().requirements().asMap()));
@@ -85,7 +85,7 @@ public final class TeamConfigSemanticsTest {
             var table=service.resolve(chaos,seed,repo,false).definition().requirements();
             check(table.getRequiredCount(AbilityType.JUMP)==987);
             var patched=repo.read(file).orElseThrow();
-            check(patched.replaceAll("(?m)^(use_copper_tools|equip_copper_armor) = [-0-9]+\\n", "").equals(original));
+            check(patched.replaceAll("(?m)^(use_copper_tools|equip_copper_armor|interact_inside_abandoned_camp) = [-0-9]+\\n", "").equals(original));
             check(table.getRequiredCount(seed==17||seed==82 ? AbilityType.USE_COPPER_TOOLS : AbilityType.EQUIP_COPPER_ARMOR)==(seed==17||seed==90?0:-1));
             service.resolve(chaos,seed,repo,false); check(repo.read(file).orElseThrow().equals(patched));
         }
@@ -94,7 +94,7 @@ public final class TeamConfigSemanticsTest {
         fails(()->service.resolve(chaos,999,repo,false));check(repo.read("chaos_999.toml").orElseThrow().equals(ambiguous));
         for (int seed=0;seed<32;seed++) {
             var generated=ChaosProgressionGenerator.generateChaosProgression(seed);
-            check(generated.size()==153 && generated.get(AbilityType.VISION)==0);
+            check(generated.size()==154 && generated.get(AbilityType.VISION)==0);
             check(generated.get(AbilityType.OPEN_CRAFTING_TABLE).equals(Progressions.getHardProgression().get(AbilityType.OPEN_CRAFTING_TABLE)) || generated.get(AbilityType.OPEN_CRAFTING_TABLE)==0);
             check(generated.values().stream().allMatch(v->v>=-1 && v<=1000));
         }
@@ -122,7 +122,7 @@ public final class TeamConfigSemanticsTest {
             var expected=(Map<?,?>)canonical.getMethod(method).invoke(null);
             var actual=service.resolve(new WorldProgressionConfig(mode.getName()),0,repo,false).definition().requirements();
             for (var ability : AbilityType.values()) check(Objects.equals(actual.getRequiredCount(ability),expected.get(ability)));
-            check(expected.size()==153);
+            check(expected.size()==154);
         }
         }
     }

@@ -170,7 +170,8 @@ public enum AbilityType {
     TRADE_WITH_LIBRARIAN(AbilitiesHierarchyLayerType.TRADING, tradeTarget("librarian")),
     OPEN_ENCHANTING_TABLE(AbilitiesHierarchyLayerType.BLOCKS, block("enchanting_table")),
     USE_COPPER_TOOLS(AbilitiesHierarchyLayerType.UPGRADE, toolMaterial("copper")),
-    EQUIP_COPPER_ARMOR(AbilitiesHierarchyLayerType.UPGRADE, equipmentMaterial("copper"));
+    EQUIP_COPPER_ARMOR(AbilitiesHierarchyLayerType.UPGRADE, equipmentMaterial("copper")),
+    INTERACT_INSIDE_ABANDONED_CAMP(AbilitiesHierarchyLayerType.LANDMARK, landmark(LandmarkType.ABANDONED_CAMP));
 
     public static final String MOD_ID = "achievetodo";
     public static final String ADVANCEMENT_PATH_PREFIX = "abilities/";

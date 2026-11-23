@@ -1,7 +1,7 @@
-# S2B platform and dependency lock
+# Platform and dependency lock
 
-Development plugin: `0.2.0-dev.1`; Minecraft/API descriptor: `26.2`.
-Build JDK: Eclipse Adoptium Temurin **25.0.4+7**, Windows amd64.
+Plugin: `0.4.0`; Minecraft/API descriptor: `26.3`. (First written for S2B on 26.2; updated for 0.4.0.)
+Build JDK: Eclipse Adoptium Temurin **25.0.5+8**, Windows amd64.
 Java toolchain/release: **25**; automatic toolchain downloads are disabled.
 Both executable test runners explicitly use the Java 25 launcher.
 
@@ -10,22 +10,22 @@ Gradle wrapper: **9.5.0**. Official distribution SHA256:
 Source: https://services.gradle.org/distributions/gradle-9.5.0-bin.zip.sha256
 
 Compile-only and test API:
-`io.papermc.paper:paper-api:26.2.build.112-stable`.
-JAR SHA256: `71c508348ca95f0e33a159d5da5ad351caea5fc866067c06aca0d679bc506763`.
+`io.papermc.paper:paper-api:26.3.build.258-stable`.
+JAR SHA256: `e9f3f025fde21188ad78d95101af64870263ac100c182f4438ee02f6c2c44ca8`.
 The server API and its dependencies are not shaded into the plugin.
 `gradle.lockfile` records resolved configurations and transitive versions;
 `gradle/verification-metadata.xml` records strict SHA256 verification for
 artifacts and metadata. No trusted-artifact wildcard is used. These are reviewed
 resolution receipts, not a claim of independent signature certification.
 
-Runtime smoke: **Purpur 26.2 build2620**, commit `8762b2f`, API
-`26.2.build.2620-stable`.
+Runtime: **Purpur 26.3 build 2660** (upstream Paper sync `a040e50c`), API
+`26.3.build.2660-stable`. The plugin refuses any other build (`PinnedStartupContract`).
 
 | Artifact | SHA256 |
 |---|---|
-| Paperclip wrapper | `21003a8bf180855bf8b3cdd7212d6b6ff76f06de5dcba84740c3ed433ba6c34d` |
-| Patched server | `340cc119f08eec7397494aa8be83a66b28bbb77d38c39c09721ae79995b03b6d` |
-| Runtime Purpur API | `17303f1e64eb2448dffd4645e7c6821c164f68236e2bd855f732bfba371e589f` |
+| Paperclip wrapper | `e831a5dc0e22311b899dcf37d5a138b1ca7104d831bf65f0a5fbb966fef8daae` |
+| Patched server | `f363f6047580739c1f31d7b948c95d108731bfe60924fb7b8a026e3f90d9fbd0` |
+| Runtime Purpur API | `530ef84c348433d9a58d359f1e1fdc18c5cdeebab2a107acaca68a1787d4ce01` |
 
 This exact pair passed compilation, executable core/foundation tests and an
 actual no-player server bootstrap/enable/disable smoke. This proves the exercised

@@ -70,13 +70,13 @@ minecraft:trial_chambers TRIAL_CHAMBERS
         }).count(),"Actual native constant identity");
     }
     @Test void exactSevenKeysAndOriginalFamilyOrdinal() {
-        assertEquals(22,LandmarkType.values().length);assertEquals(8,LandmarkType.RUINED_PORTAL.ordinal());
+        assertEquals(23,LandmarkType.values().length);assertEquals(8,LandmarkType.RUINED_PORTAL.ordinal()); // 0.4.0: ABANDONED_CAMP
         assertTrue(LandmarkType.RUINED_PORTAL.isStructure());assertFalse(LandmarkType.RUINED_PORTAL.isFeature());
         assertEquals(Set.of(BuiltinStructures.RUINED_PORTAL_STANDARD,BuiltinStructures.RUINED_PORTAL_DESERT,
             BuiltinStructures.RUINED_PORTAL_JUNGLE,BuiltinStructures.RUINED_PORTAL_SWAMP,
             BuiltinStructures.RUINED_PORTAL_MOUNTAIN,BuiltinStructures.RUINED_PORTAL_OCEAN,
             BuiltinStructures.RUINED_PORTAL_NETHER),LandmarkType.RUINED_PORTAL.getStructureRegistryKeys());
-        assertEquals(33,Arrays.stream(LandmarkType.values()).filter(LandmarkType::isStructure).mapToInt(t -> t.getStructureRegistryKeys().size()).sum());
+        assertEquals(33+18,Arrays.stream(LandmarkType.values()).filter(LandmarkType::isStructure).mapToInt(t -> t.getStructureRegistryKeys().size()).sum());
         assertEquals(34,nativeIds().count());assertNull(LandmarkType.findByStructureRegistryKey(BuiltinStructures.NETHER_FOSSIL));
     }
     @Test void originalSixSourceArgumentsRemainOrderedAndNetherIsAppendOnly() throws Exception {
@@ -98,7 +98,7 @@ minecraft:trial_chambers TRIAL_CHAMBERS
         assertSame(LandmarkType.RUINED_PORTAL,LandmarkType.findByName("RuInEd_PoRtAl"));
     }
     @Test void originalAbilityCategoryAndThresholdSourcesStayFrozen() {
-        assertEquals(153,AbilityType.values().length);assertEquals(35,AbilityType.INTERACT_INSIDE_RUINED_PORTAL.ordinal());
+        assertEquals(154,AbilityType.values().length);assertEquals(35,AbilityType.INTERACT_INSIDE_RUINED_PORTAL.ordinal());
         assertSame(AbilityType.INTERACT_INSIDE_RUINED_PORTAL,AbilityType.findByLandmarkType(LandmarkType.RUINED_PORTAL));
         assertEquals("interact_inside_ruined_portal",AbilityType.INTERACT_INSIDE_RUINED_PORTAL.getName());
         assertSame(AbilitiesHierarchyLayerType.LANDMARK,AbilityType.INTERACT_INSIDE_RUINED_PORTAL.getHierarchyLayerType());

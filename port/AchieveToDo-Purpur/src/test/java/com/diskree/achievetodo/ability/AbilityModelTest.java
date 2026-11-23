@@ -11,8 +11,8 @@ public final class AbilityModelTest {
     }
 
     public static void run() {
-        assertEquals(153, AbilityType.values().length);
-        assertEquals(22, LandmarkType.values().length);
+        assertEquals(154, AbilityType.values().length); // 0.4.0: + INTERACT_INSIDE_ABANDONED_CAMP
+        assertEquals(23, LandmarkType.values().length); // 0.4.0: + ABANDONED_CAMP
         assertSame(AbilityType.VISION, AbilityType.findByName("vision").orElseThrow());
         assertSame(AbilityType.OPEN_ENCHANTING_TABLE, AbilityType.findByName("open_enchanting_table").orElseThrow());
         assertSame(AbilityType.INTERACT_INSIDE_DESERT_WELL, AbilityType.findByName("interact_inside_desert_well").orElseThrow());

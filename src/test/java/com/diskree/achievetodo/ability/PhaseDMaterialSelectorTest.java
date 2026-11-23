@@ -264,7 +264,7 @@ public final class PhaseDMaterialSelectorTest {
     void acceptedIdentityAndProgressionContractsRemainIntact() {
         PhaseDAbilityMappingTest.verifyOldIdentities();
         PhaseDProgressionCompatibilityTest.verifyOldPresets();
-        assertEquals(153, AbilityType.values().length);
+        assertEquals(154, AbilityType.values().length); // 0.4.0 appends INTERACT_INSIDE_ABANDONED_CAMP
         assertEquals(151, AbilityType.USE_COPPER_TOOLS.ordinal());
         assertEquals(152, AbilityType.EQUIP_COPPER_ARMOR.ordinal());
         List<Map<AbilityType, Integer>> presets = List.of(Progressions.getEasyProgression(),

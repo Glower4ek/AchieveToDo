@@ -39,7 +39,7 @@ public final class BridgeClient {
         var reference=BridgeWire.reference(current);long tick=client.player.tickCount;
         var old=denialStamps.get(ability.getName());
         if(old!=null && old.reference().equals(reference) && tick>=old.tick() && tick-old.tick()<5)return false;
-        // At most the finite canonical153catalog; cleared at every physical session replacement.
+        // At most the finite canonical154catalog; cleared at every physical session replacement.
         denialStamps.put(ability.getName(),new DenialStamp(reference,tick));
         ClientPlayNetworking.send(new BridgePayload(BridgeWire.encode(hello.with(BridgeWire.DENIAL_INTENT,
             BridgeWire.denialIntent(new BridgeWire.DenialIntent(reference,ability.getName()))))));

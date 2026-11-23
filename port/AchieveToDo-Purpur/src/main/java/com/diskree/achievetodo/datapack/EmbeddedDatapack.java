@@ -19,9 +19,9 @@ public final class EmbeddedDatapack {
     public static final String TEXT_COLOR_NAME = "yellow";
     public static final String ABILITY_ADVANCEMENT_PREFIX = "abilities/";
     public static final String ROOT_ADVANCEMENT_ID = MOD_ID + ":" + ABILITY_ADVANCEMENT_PREFIX + "root";
-    public static final int MIN_FORMAT_MAJOR = 107;
-    public static final int MIN_FORMAT_MINOR = 1;
-    public static final int MAX_FORMAT = 107;
+    public static final int MIN_FORMAT_MAJOR = 121;
+    public static final int MIN_FORMAT_MINOR = 0;
+    public static final int MAX_FORMAT = 121;
     public static final String DATAPACK_DESCRIPTION = "AchieveToDo embedded synthetic ability datapack";
     public static final String ROOT_BACKGROUND = "minecraft:block/pale_moss_block";
     public static final String DEMYSTIFIED_CRITERION = "demystified";
@@ -291,6 +291,7 @@ public final class EmbeddedDatapack {
             case FORTRESS -> "chiseled_nether_bricks";
             case BASTION_REMNANT -> "gilded_blackstone";
             case END_CITY -> "purpur_block";
+            case ABANDONED_CAMP -> "straw_bed";
         };
     }
 

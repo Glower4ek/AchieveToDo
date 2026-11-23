@@ -15,7 +15,7 @@ public final class BridgeProjectionTest {
     public static void main(String[] args){
         var state=fixture();var p=new BridgeWire.Projection(UUID.randomUUID(),0,UUID.randomUUID(),state);
         check(BridgeWire.snapshot(BridgeWire.snapshot(p)).equals(p));
-        check(p.state().abilities().size()==153 && p.state().abilities().get("open_chest").threshold()==Integer.MIN_VALUE);
+        check(p.state().abilities().size()==154 && p.state().abilities().get("open_chest").threshold()==Integer.MIN_VALUE);
         byte[] bytes=BridgeWire.snapshot(p);check(bytes.length<BridgeWire.MAX_BODY);
         for(int i=0;i<bytes.length;i++){byte[] cut=Arrays.copyOf(bytes,i);rejects(()->BridgeWire.snapshot(cut));}
         byte[] corrupt=bytes.clone();corrupt[corrupt.length-1]^=1;rejects(()->BridgeWire.snapshot(corrupt));
@@ -70,7 +70,7 @@ public final class BridgeProjectionTest {
         check(BridgeWire.encode(frame).length<BridgeWire.MAX_FRAME);
         for(int i=0;i<160;i++){byte[] cut=Arrays.copyOf(BridgeWire.encode(frame),i);rejects(()->BridgeWire.decode(cut));}
         byte[] utf=BridgeWire.encode(frame);utf[67]=(byte)255;rejects(()->BridgeWire.decode(utf));
-        System.out.println("BRIDGE13_PROJECTION_PASS checks="+checks+" snapshotBytes="+bytes.length+" ids=153 productGameplayReady=false");
+        System.out.println("BRIDGE13_PROJECTION_PASS checks="+checks+" snapshotBytes="+bytes.length+" ids=154 productGameplayReady=false");
     }
     private static final String IDS="""
         attack_with_mace
@@ -133,6 +133,7 @@ public final class BridgeProjectionTest {
         get_into_minecart
         glide_with_fireworks
         ignite_tnt
+        interact_inside_abandoned_camp
         interact_inside_ancient_city
         interact_inside_bastion_remnant
         interact_inside_buried_treasure

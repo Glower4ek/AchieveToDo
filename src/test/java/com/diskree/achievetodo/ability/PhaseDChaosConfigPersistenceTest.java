@@ -53,17 +53,18 @@ public final class PhaseDChaosConfigPersistenceTest {
             if((mask&2)!=0) original.append("equip_copper_armor = -1\n");
             original.append("unknown = 'literal # retained'\n[metadata.foo]\nvalue = \"escaped \\\"# string\"\nflag = true\n");
             write(original.toString()); byte[] before=Files.readAllBytes(chaos()); Toml old=new Toml().read(chaos().toFile());
-            var map=load(); assertEquals(153,map.size()); expected.forEach((a,v)->assertEquals(v,map.get(a)));
+            var map=load(); assertEquals(AbilityType.values().length,map.size()); expected.forEach((a,v)->assertEquals(v,map.get(a)));
+            assertEquals(407,map.get(AbilityType.INTERACT_INSIDE_ABANDONED_CAMP));
             assertEquals((mask&1)!=0?0:595,map.get(AbilityType.USE_COPPER_TOOLS));
             assertEquals((mask&2)!=0?-1:105,map.get(AbilityType.EQUIP_COPPER_ARMOR));
             var after=new Toml().read(chaos().toFile()).toMap(); var afterAbilities=new HashMap<>(new Toml().read(chaos().toFile()).getTable("abilities").toMap());
             if((mask&1)==0) afterAbilities.remove("use_copper_tools");
             if((mask&2)==0) afterAbilities.remove("equip_copper_armor");
+            afterAbilities.remove("interact_inside_abandoned_camp");
             after.put("abilities",afterAbilities); assertEquals(old.toMap(),after);
             byte[] published=Files.readAllBytes(chaos()); assertEquals(map,load()); assertArrayEquals(published,Files.readAllBytes(chaos()));
-            if(mask==3) assertArrayEquals(before,published);
-            else {
-                String added=((mask&1)==0?"use_copper_tools = 595\n":"")+((mask&2)==0?"equip_copper_armor = 105\n":"");
+            {
+                String added=((mask&1)==0?"use_copper_tools = 595\n":"")+((mask&2)==0?"equip_copper_armor = 105\n":"")+"interact_inside_abandoned_camp = 407\n";
                 assertArrayEquals(before,new String(published,java.nio.charset.StandardCharsets.UTF_8).replace(added,"").getBytes(java.nio.charset.StandardCharsets.UTF_8));
             }
             noTemps(); System.out.println("D-S01 TOML old151_raw_effective mask="+mask+" repeated=PASS");
@@ -75,7 +76,8 @@ public final class PhaseDChaosConfigPersistenceTest {
             String text="version = 1"+newline+"[abilities]"+newline+"jump = -1 # retained"+(finalNewline?newline:"");
             write(text); var map=load(); assertEquals(-1,map.get(AbilityType.JUMP)); assertEquals(0,map.get(AbilityType.VISION));
             String actual=Files.readString(chaos()); assertTrue(actual.startsWith(text));
-            assertEquals(text+(finalNewline?"":newline)+"use_copper_tools = 595"+newline+"equip_copper_armor = 105"+newline,actual);
+            assertEquals(text+(finalNewline?"":newline)+"use_copper_tools = 595"+newline+"equip_copper_armor = 105"+newline
+                +"interact_inside_abandoned_camp = 407"+newline,actual);
         }
         write("version = 1\n[abilities]\n"); assertEquals(595,load().get(AbilityType.USE_COPPER_TOOLS));
     }
@@ -118,7 +120,7 @@ public final class PhaseDChaosConfigPersistenceTest {
     }
 
     @Test void noInsertionRetainsParserSupportedComplexSyntaxAndNoSidecar() throws Exception {
-        write("version = 9\n[abilities]\nuse_copper_tools = 0\nequip_copper_armor = -1\nunknown = [1,2]\n");
+        write("version = 9\n[abilities]\nuse_copper_tools = 0\nequip_copper_armor = -1\ninteract_inside_abandoned_camp = 5\nunknown = [1,2]\n");
         byte[] bytes=Files.readAllBytes(chaos()); load(); assertArrayEquals(bytes,Files.readAllBytes(chaos()));
         assertFalse(Files.exists(root.resolve(".achievetodo-configuration.lock")));
     }

@@ -71,8 +71,8 @@ com.diskree.achievetodo.certification.PhaseDContextRoutesGameTest
 
     @Test
     void originalLandmarkSelectorsStayAtGenerationOnlyBaseline() {
-        assertEquals(22, LandmarkType.values().length);
-        assertEquals(33, java.util.Arrays.stream(LandmarkType.values()).filter(LandmarkType::isStructure)
+        assertEquals(23, LandmarkType.values().length); // 0.4.0 appends ABANDONED_CAMP (18 structures)
+        assertEquals(33 + 18, java.util.Arrays.stream(LandmarkType.values()).filter(LandmarkType::isStructure)
             .mapToInt(t -> t.getStructureRegistryKeys().size()).sum());
         assertEquals(2, LandmarkType.FEATURES.size());
         assertEquals(7, LandmarkType.RUINED_PORTAL.getStructureRegistryKeys().size());

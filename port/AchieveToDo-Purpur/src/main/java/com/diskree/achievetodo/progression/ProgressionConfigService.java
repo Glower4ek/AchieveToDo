@@ -19,6 +19,9 @@ public final class ProgressionConfigService {
         740,748,756,764,772,780,788,796,804,812,820,828,836,844,852,860
     };
     private static final List<AbilityType> COPPER = List.of(AbilityType.USE_COPPER_TOOLS, AbilityType.EQUIP_COPPER_ARMOR);
+    /** Abilities added after a world's configuration was written; a missing key is backfilled, never left at 0. */
+    private static final List<AbilityType> BACKFILL = List.of(AbilityType.USE_COPPER_TOOLS, AbilityType.EQUIP_COPPER_ARMOR,
+        AbilityType.INTERACT_INSIDE_ABANDONED_CAMP);
 
     /** Explicit new selection. Existing selected configurations use fresh=false. */
     public ResolvedProgressionConfig resolve(WorldProgressionConfig selection, long seed, ProgressionConfigRepository repository) {
@@ -44,14 +47,20 @@ public final class ProgressionConfigService {
         ParsedProgressionConfig parsed = validate(content, mode);
         if (mode != null) {
             Map<AbilityType,Integer> additions = new LinkedHashMap<>();
-            for (AbilityType copper : COPPER) if (parsed.rawAbilities().keySet().stream().noneMatch(k -> AbilityType.findByName(k).orElse(null) == copper)) {
-                int value = mode == ProgressionModeType.CHAOS ? sampleCopper(seed, copper) : switch (mode) {
-                    case EASY -> copper == AbilityType.USE_COPPER_TOOLS ? 98 : 68;
-                    case NORMAL -> copper == AbilityType.USE_COPPER_TOOLS ? 128 : 83;
-                    case HARD -> copper == AbilityType.USE_COPPER_TOOLS ? 158 : 98;
+            for (AbilityType added : BACKFILL) if (parsed.rawAbilities().keySet().stream().noneMatch(k -> AbilityType.findByName(k).orElse(null) == added)) {
+                int value = mode == ProgressionModeType.CHAOS ? sampleBackfill(seed, added)
+                    : added == AbilityType.INTERACT_INSIDE_ABANDONED_CAMP ? switch (mode) {
+                        case EASY -> Progressions.ABANDONED_CAMP_EASY;
+                        case NORMAL -> Progressions.ABANDONED_CAMP_NORMAL;
+                        case HARD -> Progressions.ABANDONED_CAMP_HARD;
+                        default -> throw new AssertionError();
+                    } : switch (mode) {
+                    case EASY -> added == AbilityType.USE_COPPER_TOOLS ? 98 : 68;
+                    case NORMAL -> added == AbilityType.USE_COPPER_TOOLS ? 128 : 83;
+                    case HARD -> added == AbilityType.USE_COPPER_TOOLS ? 158 : 98;
                     default -> throw new AssertionError();
                 };
-                additions.put(copper, value);
+                additions.put(added, value);
             }
             if (!additions.isEmpty()) content = insertCopper(content, additions);
             parsed = validate(content, mode);
@@ -70,7 +79,7 @@ public final class ProgressionConfigService {
     private AbilityRequirements effective(ParsedProgressionConfig parsed, boolean custom) {
         Map<AbilityType,Integer> values = new EnumMap<>(AbilityType.class);
         parsed.rawAbilities().forEach((key,value) -> AbilityType.findByName(key).ifPresent(a -> values.put(a, Math.min(value, 1152))));
-        for (AbilityType a : AbilityType.values()) values.putIfAbsent(a, custom && COPPER.contains(a) ? -1 : 0);
+        for (AbilityType a : AbilityType.values()) values.putIfAbsent(a, custom && BACKFILL.contains(a) ? -1 : 0);
         return AbilityRequirements.from(values);
     }
     private String insertCopper(String original, Map<AbilityType,Integer> additions) {
@@ -86,7 +95,7 @@ public final class ProgressionConfigService {
                 if (inside && insertion == original.length()) insertion = offset;
                 inside = statement.equals("[abilities]");
             } else if (!statement.isEmpty() && !statement.substring(0, statement.indexOf('=')).trim().matches("[A-Za-z0-9_-]+")) {
-                throw new IllegalArgumentException("Ambiguous copper insertion key");
+                throw new IllegalArgumentException("Ambiguous backfill insertion key");
             }
             offset += line.length();
         }
@@ -94,16 +103,18 @@ public final class ProgressionConfigService {
         additions.forEach((a,v) -> block.append(a.getName()).append(" = ").append(v).append(newline));
         return original.substring(0,insertion) + block + original.substring(insertion);
     }
-    private int sampleCopper(long seed, AbilityType ability) {
+    private int sampleBackfill(long seed, AbilityType ability) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            digest.update("ATD\0phase-d/copper-backfill/v1\0".getBytes(StandardCharsets.UTF_8));
+            // Copper keeps its frozen v1 domain; the abandoned camp (0.4.0) samples in its own domain.
+            digest.update((COPPER.contains(ability) ? "ATD\0phase-d/copper-backfill/v1\0"
+                : "ATD\0release-0.4.0/abandoned-camp-backfill/v1\0").getBytes(StandardCharsets.UTF_8));
             digest.update(ByteBuffer.allocate(8).putLong(seed).array());
             digest.update((byte) 0);
             Random random = new Random(ByteBuffer.wrap(digest.digest(ability.getName().getBytes(StandardCharsets.UTF_8))).getLong());
             int candidate = COPPER_POOL[random.nextInt(153)];
-            int priority = ability == AbilityType.USE_COPPER_TOOLS ? 70 : 60;
-            int anchor = ability == AbilityType.USE_COPPER_TOOLS ? 158 : 98;
+            int priority = ability.getChaosPriority();
+            int anchor = Progressions.getHardProgression().get(ability);
             int magnitude = random.nextInt(Math.round((100-priority)*0.5f));
             int shifted = Math.clamp(candidate + (random.nextBoolean() ? magnitude : -magnitude),2,1000);
             int value = (int) Math.round(shifted + priority/100.0*random.nextDouble()*(anchor-shifted));

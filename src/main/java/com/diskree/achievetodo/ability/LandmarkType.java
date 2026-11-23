@@ -95,6 +95,27 @@ public enum LandmarkType {
     ),
     END_CITY(
         BuiltinStructures.END_CITY
+    ),
+    /** Minecraft 26.3. */
+    ABANDONED_CAMP(
+        BuiltinStructures.ABANDONED_CAMP_BAMBOO_JUNGLE,
+        BuiltinStructures.ABANDONED_CAMP_BIRCH_FOREST,
+        BuiltinStructures.ABANDONED_CAMP_CHERRY_GROVE,
+        BuiltinStructures.ABANDONED_CAMP_DAPPLED_FOREST,
+        BuiltinStructures.ABANDONED_CAMP_FLOWER_FOREST,
+        BuiltinStructures.ABANDONED_CAMP_FOREST,
+        BuiltinStructures.ABANDONED_CAMP_MEADOW,
+        BuiltinStructures.ABANDONED_CAMP_OLD_GROWTH_BIRCH_FOREST,
+        BuiltinStructures.ABANDONED_CAMP_OLD_GROWTH_PINE_TAIGA,
+        BuiltinStructures.ABANDONED_CAMP_OLD_GROWTH_SPRUCE_TAIGA,
+        BuiltinStructures.ABANDONED_CAMP_PALE_GARDEN,
+        BuiltinStructures.ABANDONED_CAMP_SAVANNA,
+        BuiltinStructures.ABANDONED_CAMP_SNOWY_TAIGA,
+        BuiltinStructures.ABANDONED_CAMP_SPARSE_JUNGLE,
+        BuiltinStructures.ABANDONED_CAMP_SWAMP,
+        BuiltinStructures.ABANDONED_CAMP_TAIGA,
+        BuiltinStructures.ABANDONED_CAMP_WINDSWEPT_FOREST,
+        BuiltinStructures.ABANDONED_CAMP_WOODED_BADLANDS
     );
 
     public static final HashMap<ResourceKey<Feature>, LandmarkType> FEATURES = new HashMap<>();

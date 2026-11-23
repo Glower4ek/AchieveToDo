@@ -1,12 +1,12 @@
 # Starting the server
 
-AchieveToDo for Purpur 26.2 needs one extra Java option: the plugin jar is also loaded as a Java agent.
+AchieveToDo for Purpur 26.3 needs one extra Java option: the plugin jar is also loaded as a Java agent.
 Nothing else is needed. The plugin works out the rest itself and keeps it in two small files.
 
 ## Requirements
 
 - Java 25.
-- Purpur 26.2 build 2620 (`purpur-26.2-2620.jar`). Other builds are refused with `ATD_UNPINNED_RUNTIME`.
+- Purpur 26.3 build 2660 (`purpur-26.3-2660.jar`). Other builds are refused with `ATD_UNPINNED_RUNTIME`.
   Paper and other forks are not supported.
 - Exactly one AchieveToDo jar in `plugins/`.
 - The BACAP datapacks `bacap.zip` and `bacap_override.zip` prepared by the AchieveToDo mod (see below).
@@ -20,11 +20,15 @@ Nothing else is needed. The plugin works out the rest itself and keeps it in two
 The plugin does not ship BACAP. The AchieveToDo Fabric mod downloads it and prepares the exact files the plugin
 expects:
 
-1. Start Minecraft 26.2 with the AchieveToDo mod and create any single-player world once.
+1. Start Minecraft 26.3 with the AchieveToDo mod and create any single-player world once.
 2. Copy `bacap.zip` and `bacap_override.zip` from the `datapacks` folder of your Minecraft directory
    (`.minecraft/datapacks`, or the instance folder of your launcher).
 
 Do not edit or rename them. Other BACAP files, including the raw download from Modrinth, are refused at startup.
+
+AchieveToDo 0.4.0 uses BACAP 1.21.1 (for Minecraft 26.3). When you update from 0.3.0, prepare the two files again
+with the 0.4.0 mod and replace the old ones in `<world>/datapacks`; the 0.3.0 files are refused with
+`BACAP_INCOMPATIBLE`.
 
 ## Install
 
@@ -35,7 +39,7 @@ Do not edit or rename them. Other BACAP files, including the raw download from M
 4. Add `-javaagent:plugins/<plugin jar name>` to the start command, before `-jar`:
 
 ```text
-java -Xms1G -Xmx4G -javaagent:plugins/AchieveToDo-Purpur-26.2-0.3.0.jar -jar purpur-26.2-2620.jar --nogui
+java -Xms1G -Xmx4G -javaagent:plugins/AchieveToDo-Purpur-mc26.3+0.4.0.jar -jar purpur-26.3-2660.jar --nogui
 ```
 
 Keep your own memory settings. The file after `-javaagent:` must be the same file as the one in `plugins/`;
@@ -47,7 +51,7 @@ replacing that one file.
 ```text
 ATD_LAUNCH_PROFILE=release; derived=[...]
 ATD_GAMEPLAY_MODE=RELEASE
-ATD_PRODUCT_GAMEPLAY_READY=true; players with the AchieveToDo 0.3.0 client mod can join
+ATD_PRODUCT_GAMEPLAY_READY=true; players with the AchieveToDo 0.4.0 client mod can join
 ```
 
 Players can join once the last line appears, usually right after `Done`. Until then they are told the server is
@@ -86,6 +90,7 @@ the whole server (`ATD_STARTUP_FAIL_CLOSED`).
 | `ATD_GAMEPLAY_MODE_REQUIRED ... sets -Dachievetodo...` | an old `-Dachievetodo.*=false` option contradicts the release setup | remove that option |
 | `ATD_UNKNOWN_GAMEPLAY_MODE` | an old `-Dachievetodo.gameplay.mode=diagnostic` or `=product` option; both were removed in 0.3.0 | remove that option |
 | `BACAP_MISSING` or a missing `bacap.zip` | the datapacks are not in `<world>/datapacks` | copy them there |
+| `BACAP_INCOMPATIBLE` | the datapacks were prepared by another AchieveToDo version (for example 0.3.0) | prepare them again with the mod of the plugin's version |
 | `ATD_LAUNCH_BACAP_DIRECTORY` | the world is not where `server.properties` says (custom world folder) | add `-Dachievetodo.bacap.directory=<absolute path>/datapacks` |
 | `ATD_LAUNCH_WORLD_GROUP_MISSING` | `world-group.properties` was deleted | restore it from a backup |
 | `ATD_LAUNCH_SERVER_IDENTITY` | `server-identity.properties` is damaged | restore it from a backup |

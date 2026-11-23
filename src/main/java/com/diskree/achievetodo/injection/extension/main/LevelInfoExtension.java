@@ -58,6 +58,9 @@ public interface LevelInfoExtension {
             740,748,756,764,772,780,788,796,804,812,820,828,836,844,852,860
         };
         private static final List<AbilityType> COPPER = List.of(AbilityType.USE_COPPER_TOOLS, AbilityType.EQUIP_COPPER_ARMOR);
+        /** Abilities added after a world's configuration was written; a missing key is backfilled, never left at 0. */
+        private static final List<AbilityType> BACKFILL = List.of(AbilityType.USE_COPPER_TOOLS, AbilityType.EQUIP_COPPER_ARMOR,
+            AbilityType.INTERACT_INSIDE_ABANDONED_CAMP);
         // Directory-wide coordination also serializes differently named aliases inside the supported config root.
         // Sidecars and mutexes remain stable; deleting either while waiters exist breaks coordination.
         private static final Map<Path, ReentrantLock> LOCKS = new ConcurrentHashMap<>();
@@ -98,12 +101,12 @@ public interface LevelInfoExtension {
                 Toml parsed = parse(original, mode);
                 Map<AbilityType, Integer> effective = effective(parsed, mode == null);
                 if (mode == null) {
-                    for (AbilityType ability : absentCopper(parsed)) {
+                    for (AbilityType ability : absentBackfill(parsed)) {
                         AchieveToDoMod.logger.warn("Missing custom ability '{}' in '{}'; effective value is -1", ability.getName(), target);
                     }
                     return effective;
                 }
-                if (absentCopper(parsed).isEmpty()) return effective; // No lock/temp/writer on read-only loads.
+                if (absentBackfill(parsed).isEmpty()) return effective; // No lock/temp/writer on read-only loads.
             } else if (mode == null || origin != ConfigurationOrigin.FRESH) {
                 throw new IOException("Missing authoritative configuration for " + origin + ": " + target);
             }
@@ -139,12 +142,18 @@ public interface LevelInfoExtension {
                     byte[] original = readSafe(target);
                     Toml before = parse(original, mode);
                     Map<AbilityType, Integer> oldEffective = effective(before, false);
-                    List<AbilityType> absent = absentCopper(before);
+                    List<AbilityType> absent = absentBackfill(before);
                     if (absent.isEmpty()) return oldEffective;
                     rejectAliases(before);
                     Map<String, Long> additions = new LinkedHashMap<>();
                     for (AbilityType ability : absent) {
-                        int value = mode == ProgressionModeType.CHAOS ? sample(seed, ability) : switch (mode) {
+                        int value = mode == ProgressionModeType.CHAOS ? sample(seed, ability)
+                            : ability == AbilityType.INTERACT_INSIDE_ABANDONED_CAMP ? switch (mode) {
+                                case EASY -> Progressions.ABANDONED_CAMP_EASY;
+                                case NORMAL -> Progressions.ABANDONED_CAMP_NORMAL;
+                                case HARD -> Progressions.ABANDONED_CAMP_HARD;
+                                case CHAOS -> throw new AssertionError();
+                            } : switch (mode) {
                             case EASY -> ability == AbilityType.USE_COPPER_TOOLS ? 98 : 68;
                             case NORMAL -> ability == AbilityType.USE_COPPER_TOOLS ? 128 : 83;
                             case HARD -> ability == AbilityType.USE_COPPER_TOOLS ? 158 : 98;
@@ -251,17 +260,17 @@ public interface LevelInfoExtension {
                     result.put(ability, Math.min(count, Constants.TOTAL_ADVANCEMENTS_COUNT));
                 }
             }
-            for (AbilityType ability : AbilityType.values()) result.putIfAbsent(ability, custom && COPPER.contains(ability) ? -1 : 0);
+            for (AbilityType ability : AbilityType.values()) result.putIfAbsent(ability, custom && BACKFILL.contains(ability) ? -1 : 0);
             return result;
         }
 
-        private static List<AbilityType> absentCopper(Toml toml) {
+        private static List<AbilityType> absentBackfill(Toml toml) {
             Set<AbilityType> present = EnumSet.noneOf(AbilityType.class);
             for (String key : toml.getTable(Constants.ConfigKey.ABILITIES_TABLE).toMap().keySet()) {
                 AbilityType ability = AbilityType.findByName(key);
                 if (ability != null) present.add(ability);
             }
-            return COPPER.stream().filter(a -> !present.contains(a)).toList();
+            return BACKFILL.stream().filter(a -> !present.contains(a)).toList();
         }
 
         private static void rejectAliases(Toml toml) throws IOException {
@@ -273,10 +282,12 @@ public interface LevelInfoExtension {
         }
 
         private static byte[] digest(long seed, AbilityType ability) {
-            if (!COPPER.contains(ability)) throw new IllegalArgumentException("Not a copper sampler key");
+            if (!BACKFILL.contains(ability)) throw new IllegalArgumentException("Not a backfill sampler key");
             try {
                 MessageDigest digest = MessageDigest.getInstance("SHA-256");
-                digest.update("ATD\0phase-d/copper-backfill/v1\0".getBytes(StandardCharsets.UTF_8));
+                // Copper keeps its frozen v1 domain; the abandoned camp (0.4.0) samples in its own domain.
+                digest.update((COPPER.contains(ability) ? "ATD\0phase-d/copper-backfill/v1\0"
+                    : "ATD\0release-0.4.0/abandoned-camp-backfill/v1\0").getBytes(StandardCharsets.UTF_8));
                 digest.update(ByteBuffer.allocate(8).putLong(seed).array());
                 digest.update((byte) 0);
                 return digest.digest(ability.getName().getBytes(StandardCharsets.UTF_8));
@@ -286,8 +297,8 @@ public interface LevelInfoExtension {
         private static int sample(long seed, AbilityType ability) {
             Random random = new Random(ByteBuffer.wrap(digest(seed, ability)).getLong());
             int candidate = COPPER_POOL[random.nextInt(153)];
-            int priority = ability == AbilityType.USE_COPPER_TOOLS ? 70 : 60;
-            int anchor = ability == AbilityType.USE_COPPER_TOOLS ? 158 : 98;
+            int priority = ability.getChaosPriority();
+            int anchor = Progressions.getHardProgression().get(ability);
             int magnitude = random.nextInt(Math.round((100 - priority) * 0.5f));
             int shifted = Math.clamp(candidate + (random.nextBoolean() ? magnitude : -magnitude), 2, 1000);
             double ratio = (priority / 100.0) * random.nextDouble();
@@ -382,7 +393,7 @@ public interface LevelInfoExtension {
                 if (table.putIfAbsent(addition.getKey(), addition.getValue()) != null) throw new IOException("Insertion replaced explicit value");
             }
             expected.put(Constants.ConfigKey.ABILITIES_TABLE, table);
-            if (!expected.equals(after.toMap())) throw new IOException("Parsed paths/types/values changed outside copper additions");
+            if (!expected.equals(after.toMap())) throw new IOException("Parsed paths/types/values changed outside backfill additions");
             Map<AbilityType, Integer> newEffective = effective(after, false);
             for (AbilityType ability : AbilityType.values()) {
                 if (!additions.containsKey(ability.getName()) && !oldEffective.get(ability).equals(newEffective.get(ability))) {
