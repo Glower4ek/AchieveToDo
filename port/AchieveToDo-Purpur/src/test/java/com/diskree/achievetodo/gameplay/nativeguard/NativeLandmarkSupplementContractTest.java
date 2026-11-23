@@ -14,6 +14,7 @@ public final class NativeLandmarkSupplementContractTest {
         public boolean is(Object item) { throw new AssertionError("Tag used as an item identity"); }
         public boolean is(Tag tag) { return true; }
     }
+    public static final class OffersVillager { public final Object offers=new Object(); public Object getOffers(){return offers;} }
     public static final class Baby {
         public boolean isBaby() { return true; }
         public boolean brushOffScute(Object user,Object stack) { throw new AssertionError("Baby brushed"); }
@@ -126,7 +127,7 @@ public final class NativeLandmarkSupplementContractTest {
             if (NativeTransactionAgent.armorPlace(new MountArmorSlot(),new Object())) throw new AssertionError("Nonplayer mount armor restricted");checks++;
             if (NativeLandmarkOperations.contextEmpty(List.of(new Object()),null)) throw new AssertionError("Occupied crystal branch changed");checks++;
             if (NativeLandmarkOperations.boxEmpty(List.of(new Object()),null,null)) throw new AssertionError("Occupied placement branch changed");checks++;
-            if (!NativeLandmarkOperations.offersEmpty(List.of(),null,null)) throw new AssertionError("Empty offers changed");checks++;
+            { var villager=new OffersVillager(); if (NativeLandmarkOperations.offersGated(villager,null)!=villager.offers) throw new AssertionError("Unqueried offers changed");checks++; }
             if (NativeLandmarkOperations.shulkerAllowed(false,null,null,null,null)) throw new AssertionError("Blocked shulker changed");checks++;
             if (NativeLandmarkOperations.boatCollision(new BlockedCollision(),null,null,null)) throw new AssertionError("Blocked boat changed");checks++;
             if (NativeLandmarkOperations.brushArmadillo(new Baby(),null,null,null)) throw new AssertionError("Baby brush changed");checks++;

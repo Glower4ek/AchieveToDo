@@ -83,7 +83,7 @@ public final class NativeLandmarkActions {
             case "brushArmadillo", "boatCollision" -> { b.aload(s.actor());parameters=4; }
             case "contextEmpty" -> { b.aload(s.actor());parameters=2; }
             case "boxEmpty" -> { b.aload(s.actor()).aload(s.pos());parameters=3; }
-            case "offersEmpty" -> { b.aload(s.actor()).aload(0);parameters=3; }
+            case "offersGated" -> { b.aload(s.actor());parameters=2;objectResult=true; }
             case "filterLeashes" -> {
                 b.with(original).aload(s.actor()).aload(s.level()).aload(s.pos())
                     .invokestatic(OPERATIONS,operation,MethodTypeDesc.of(OBJECT,OBJECT,OBJECT,OBJECT,OBJECT))

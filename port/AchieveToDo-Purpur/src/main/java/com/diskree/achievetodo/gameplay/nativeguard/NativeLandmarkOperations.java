@@ -207,22 +207,35 @@ public final class NativeLandmarkOperations {
                 && (boolean)NativeLandmarkCapture.call(entity,"brushOffScute",user,stack);
         } catch (RuntimeException|LinkageError unavailable) { return false; }
     }
-    public static boolean offersEmpty(Object offers,Object actor,Object entity) {
-        if (((List<?>)offers).isEmpty()) return true;
+    /**
+     * Villager.mobInteract: a denied trade gets an empty offer list, so vanilla refuses it. The lock is checked before
+     * getOffers(): generating a cartographer's offers searches for structures (explorer maps) and stalled the server
+     * for seconds, which delayed the lock message (0.3.0 note, fixed in 0.4.0).
+     */
+    public static Object offersGated(Object entity,Object actor) {
+        if (actor==null) return NativeLandmarkCapture.call(entity,"getOffers");
+        boolean denied;
+        try { denied=NativeLandmarkActions.entityDenied(actor,entity,tradeAbility(entity)); }
+        catch (RuntimeException|LinkageError unavailable) { denied=true; }
+        if (!denied) return NativeLandmarkCapture.call(entity,"getOffers");
         try {
-            Object profession=NativeLandmarkCapture.call(NativeLandmarkCapture.call(entity,"getVillagerData"),"profession");
-            var key=(Optional<?>)NativeLandmarkCapture.call(profession,"unwrapKey");String ability=null;
-            if (key.isPresent()) {
-                String id=NativeLandmarkCapture.call(key.get(),"identifier").toString();
-                if (id.startsWith("minecraft:")) {
-                    String name=id.substring(10);
-                    if (Set.of("armorer","butcher","cartographer","cleric","farmer","fisherman","fletcher","leatherworker",
-                        "librarian","mason","shepherd","toolsmith","weaponsmith").contains(name))
-                        ability="TRADE_WITH_"+name.toUpperCase(Locale.ROOT);
-                }
+            return Class.forName("net.minecraft.world.item.trading.MerchantOffers",true,entity.getClass().getClassLoader())
+                .getConstructor().newInstance();
+        } catch (ReflectiveOperationException failure) { throw new IllegalStateException(failure); }
+    }
+    private static String tradeAbility(Object entity) {
+        Object profession=NativeLandmarkCapture.call(NativeLandmarkCapture.call(entity,"getVillagerData"),"profession");
+        var key=(Optional<?>)NativeLandmarkCapture.call(profession,"unwrapKey");String ability=null;
+        if (key.isPresent()) {
+            String id=NativeLandmarkCapture.call(key.get(),"identifier").toString();
+            if (id.startsWith("minecraft:")) {
+                String name=id.substring(10);
+                if (Set.of("armorer","butcher","cartographer","cleric","farmer","fisherman","fletcher","leatherworker",
+                    "librarian","mason","shepherd","toolsmith","weaponsmith").contains(name))
+                    ability="TRADE_WITH_"+name.toUpperCase(Locale.ROOT);
             }
-            return NativeLandmarkActions.entityDenied(actor,entity,ability);
-        } catch (RuntimeException|LinkageError unavailable) { return true; }
+        }
+        return ability;
     }
     public static Object cauldron(Object behavior,Object state,Object level,Object position,Object actor,Object hand,Object stack,Object face) {
         try {

@@ -71,6 +71,13 @@ every mixin to every target class: both pass on 26.3.
 | `ClientPlayerEntityMixin` | `keyPresses` read in `LocalPlayer.tick` | read in `LocalPlayer.sendChanges` |
 | `AdvancementToastMixin`, `AdvancementWidgetMixin` | `blitSprite(com/mojang/blaze3d/pipeline/RenderPipeline, ...)` | `blitSprite(com/mojang/renderpearl/api/pipeline/RenderPipeline, ...)` |
 
+## Changed or added in 0.4.0 for behaviour (not for 26.3 API changes)
+
+| Mixin | Change |
+| --- | --- |
+| `VillagerEntityMixin` | wraps `Villager.getOffers()` in `mobInteract` instead of `MerchantOffers.isEmpty()`: a denied trade sees an empty list and no offers are generated (known issue 5) |
+| `ItemUsedOnLocationTriggerMixin`, `DefaultBlockInteractionTriggerMixin`, `AnyBlockInteractionTriggerMixin`, `PlayerInteractTriggerMixin` | new: `trigger` HEAD cancel for one trigger of each kind after an effectful denial (`DeniedCriteria`, known issue 6) |
+
 ## Client code outside mixins
 
 - `ExternalPackDownloader`: 26.3 replaced GLFW with SDL3 and dropped LWJGL tinyfd. The zip picker uses the SDL3 native

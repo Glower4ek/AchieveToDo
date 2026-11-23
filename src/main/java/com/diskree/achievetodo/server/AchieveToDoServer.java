@@ -262,6 +262,7 @@ public class AchieveToDoServer implements ServerModInitializer {
             }
             player.sendOverlayMessage(lockedMessageText);
             demystifyAbility(player, abilityType);
+            DeniedCriteria.markDenied(player.getUUID());
         }
         return true;
     }
@@ -297,6 +298,7 @@ public class AchieveToDoServer implements ServerModInitializer {
                                     boolean isAbilityLocked = isAbilityLocked(actor, abilityType, true);
                                     if (isAbilityLocked && !checkOnly) {
                                         notifyLockedLandmark(actor, targetDimensionType, targetBox);
+                                        DeniedCriteria.markDenied(actor.getUUID());
                                     }
                                     return isAbilityLocked;
                                 }
