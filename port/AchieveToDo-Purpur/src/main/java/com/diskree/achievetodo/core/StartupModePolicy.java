@@ -49,7 +49,7 @@ public final class StartupModePolicy {
 
     /** The release launch: the only flag an operator needs. */
     public static String releaseCommand(Hints hints) {
-        return "java -javaagent:" + hints.pluginJar() + " -jar purpur-26.2-2620.jar --nogui";
+        return "java -javaagent:" + hints.pluginJar() + " -jar purpur-26.3-2660.jar --nogui";
     }
 
     public record Decision(GameplayAdmission.Mode mode, List<String> warnings) {
@@ -144,7 +144,7 @@ public final class StartupModePolicy {
             String shown = validPerWorld(name, given) ? given : placeholder(name, hints);
             lines.add("    -D" + name + "=" + shown + " \\");
         }
-        lines.add("    -jar purpur-26.2-2620.jar --nogui");
+        lines.add("    -jar purpur-26.3-2660.jar --nogui");
         if (!hints.loadedWorlds().isEmpty()) {
             lines.add("Worlds loaded now (bind them in plugins/AchieveToDo/progression/world-group.properties):");
             for (String world : hints.loadedWorlds()) lines.add("  " + world);

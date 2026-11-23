@@ -63,7 +63,7 @@ public final class AdvancementLinkCommand {
                 Minecraft client = source.getClient();
                 if (client.player == null || AchieveToDoClient.isNotReady()) return false;
                 var advancements = client.player.connection.getAdvancements();
-                var node = advancements.getTree().get(id);
+                var node = advancements.tree().get(id);
                 if (node == null) return false;
                 var screen = new AdvancementsScreen(advancements);
                 client.gui.setScreen(screen);

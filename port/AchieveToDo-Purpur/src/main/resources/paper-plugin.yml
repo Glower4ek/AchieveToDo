@@ -2,7 +2,7 @@ name: AchieveToDo
 version: '${version}'
 main: com.diskree.achievetodo.core.AchieveToDoPlugin
 bootstrapper: com.diskree.achievetodo.bootstrap.AchieveToDoBootstrap
-api-version: "26.2"
-description: Challenging plugin with BlazeandCave's progression gates for Purpur 26.2.
+api-version: "26.3"
+description: Challenging plugin with BlazeandCave's progression gates for Purpur 26.3.
 authors: [diskree, Glower4ek]
 website: https://github.com/Glower4ek/AchieveToDo

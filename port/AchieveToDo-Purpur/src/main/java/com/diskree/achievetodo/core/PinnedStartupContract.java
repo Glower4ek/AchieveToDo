@@ -9,8 +9,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 /** The certified deployment is one exact runtime and one agent/plugin artifact. */
 public final class PinnedStartupContract {
     public static void runtime(int javaFeature, String minecraft, String brand, int build) {
-        if (javaFeature != 25 || !"26.2".equals(minecraft) || !"Purpur".equals(brand) || build != 2620)
-            throw new IllegalStateException("ATD_UNPINNED_RUNTIME: Java25/MC26.2/Purpur2620 required");
+        if (javaFeature != 25 || !"26.3".equals(minecraft) || !"Purpur".equals(brand) || build != 2660)
+            throw new IllegalStateException("ATD_UNPINNED_RUNTIME: Java25/MC26.3/Purpur2660 required");
     }
 
     public static void installation(Path pluginJar) throws Exception {

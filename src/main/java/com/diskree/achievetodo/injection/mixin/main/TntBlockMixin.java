@@ -27,7 +27,7 @@ public class TntBlockMixin {
         method = "useItemOn",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/level/block/TntBlock;prime(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/LivingEntity;)Z",
+            target = "Lnet/minecraft/world/level/block/TntBlock;prime(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;)Z",
             shift = At.Shift.BEFORE
         ),
         cancellable = true
@@ -60,7 +60,7 @@ public class TntBlockMixin {
         method = "onProjectileHit",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/level/block/TntBlock;prime(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/LivingEntity;)Z",
+            target = "Lnet/minecraft/world/level/block/TntBlock;prime(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;)Z",
             shift = At.Shift.BEFORE
         ),
         cancellable = true

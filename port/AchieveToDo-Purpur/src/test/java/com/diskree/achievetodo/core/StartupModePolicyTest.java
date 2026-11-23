@@ -13,13 +13,13 @@ public final class StartupModePolicyTest {
         // 1. No mode at all (no agent): refused, with the one-line release command in the guidance.
         var refusal = refuse(Map.of(), StartupModePolicy.Hints.NONE, "ATD_GAMEPLAY_MODE_REQUIRED");
         String text = String.join("\n", refusal.guidance());
-        check(text.contains("java -javaagent:plugins/achievetodo.jar -jar purpur-26.2-2620.jar --nogui"), "guidance names the one-line start");
+        check(text.contains("java -javaagent:plugins/achievetodo.jar -jar purpur-26.3-2660.jar --nogui"), "guidance names the one-line start");
         check(text.contains("agent is not loaded"), "guidance says the agent is missing");
         check(!text.contains("-Dachievetodo.bridge.spike"), "release guidance needs no -D switches");
         check(!text.contains("diagnostic"), "the removed legacy path is not offered");
-        var named = new StartupModePolicy.Hints(null, null, null, null, null, null, "plugins/AchieveToDo-Purpur-26.2-0.2.1.jar");
+        var named = new StartupModePolicy.Hints(null, null, null, null, null, null, "plugins/AchieveToDo-Purpur-mc26.3+0.4.0.jar");
         check(String.join("\n", refuse(Map.of(), named, "ATD_GAMEPLAY_MODE_REQUIRED").guidance())
-            .contains("-javaagent:plugins/AchieveToDo-Purpur-26.2-0.2.1.jar -jar"), "guidance uses the real jar name");
+            .contains("-javaagent:plugins/AchieveToDo-Purpur-mc26.3+0.4.0.jar -jar"), "guidance uses the real jar name");
         // 1b. Agent loaded but a certified switch contradicted: the conflict is named.
         text = String.join("\n", refuse(Map.of(ReleaseLaunchDefaults.PROFILE, "refused:achievetodo.bridge.spike=false"),
             null, "ATD_GAMEPLAY_MODE_REQUIRED").guidance());

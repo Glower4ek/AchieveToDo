@@ -19,7 +19,6 @@ import net.minecraft.advancements.CriterionProgress;
 import net.minecraft.advancements.DisplayInfo;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.client.gui.screens.advancements.AdvancementTab;
 import net.minecraft.client.gui.screens.advancements.AdvancementWidget;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.CommonComponents;
@@ -108,7 +107,6 @@ public class AdvancementWidgetMixin {
         )
     )
     private void findAbility(
-        AdvancementTab tab,
         Minecraft client,
         @NotNull AdvancementNode advancement,
         DisplayInfo display,
@@ -135,7 +133,7 @@ public class AdvancementWidgetMixin {
         method = "<init>",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/advancements/DisplayInfo;getDescription()Lnet/minecraft/network/chat/Component;"
+            target = "Lnet/minecraft/advancements/DisplayInfo;description()Lnet/minecraft/network/chat/Component;"
         )
     )
     private Component appendSpecialFlagInfoToDescription(
@@ -210,7 +208,7 @@ public class AdvancementWidgetMixin {
         method = "extractRenderState",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIII)V"
+            target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIII)V"
         ),
         index = 1
     )

@@ -13,7 +13,6 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.HashMap;
@@ -34,11 +33,11 @@ public abstract class AdvancementTabMixin {
     private final Map<AbilityType, AdvancementWidget> pendingAbilityWidgets = new HashMap<>();
 
     @Shadow
-    protected abstract void addWidget(AdvancementWidget widget, AdvancementHolder advancement);
+    protected abstract void addWidget(AdvancementWidget widget);
 
     @Shadow
     @Final
-    private AdvancementNode rootNode;
+    private AdvancementWidget root;
 
     @Shadow
     @Final
@@ -70,36 +69,42 @@ public abstract class AdvancementTabMixin {
             for (AbilitiesHierarchyLayerType layerType : AbilitiesHierarchyLayerType.values()) {
                 childrenCount += layerType.getRowsCount();
             }
-            advancementDisplay.setLocation(advancementDisplay.getX(), (float) (childrenCount / 2));
+            // 26.3: positions live on the AdvancementNode; the widget reads them when it is created.
+            root.setLocation(root.x(), (float) (childrenCount / 2));
+        }
+        AdvancementWidget rootWidget = AdvancementWidget.createWidget(client, root);
+        if (rootWidget == null) {
+            cir.setReturnValue(null);
+            return;
         }
         cir.setReturnValue(new AdvancementTab(
             client,
             screen,
             tab.getPosition(),
             tab.getOrder(),
-            root,
-            advancementDisplay
+            rootWidget,
+            advancementDisplay.icon(),
+            advancementDisplay.title(),
+            AdvancementsTabType.backgroundOf(advancementDisplay)
         ));
     }
 
     @WrapOperation(
         method = "addAdvancement",
         at = @At(
-            value = "NEW",
-            target = "(Lnet/minecraft/client/gui/screens/advancements/AdvancementTab;Lnet/minecraft/client/Minecraft;Lnet/minecraft/advancements/AdvancementNode;Lnet/minecraft/advancements/DisplayInfo;)Lnet/minecraft/client/gui/screens/advancements/AdvancementWidget;"
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/gui/screens/advancements/AdvancementWidget;createWidget(Lnet/minecraft/client/Minecraft;Lnet/minecraft/advancements/AdvancementNode;)Lnet/minecraft/client/gui/screens/advancements/AdvancementWidget;"
         )
     )
     public AdvancementWidget restructureAbilitiesAdvancements(
-        AdvancementTab tab,
         Minecraft client,
         @NotNull AdvancementNode advancement,
-        DisplayInfo display,
         @NotNull Operation<AdvancementWidget> original
     ) {
         AbilityType abilityTypeToAdd = null;
         boolean isFirstInRow = false;
         boolean shouldSkipVanillaBehavior = false;
-        if (AdvancementsTabType.findByAdvancement(rootNode) == AdvancementsTabType.ABILITIES) {
+        if (AdvancementsTabType.findByAdvancement(root.advancementNode) == AdvancementsTabType.ABILITIES) {
             abilityTypeToAdd = AbilityType.findByAdvancement(advancement);
             if (abilityTypeToAdd != null) {
                 List<List<AbilityType>> rows = AchieveToDoClient.getAbilityRows();
@@ -108,7 +113,7 @@ public abstract class AdvancementTabMixin {
                         List<AbilityType> row = rows.get(rowIndex);
                         if (abilityTypeToAdd == row.getFirst()) {
                             isFirstInRow = true;
-                            display.setLocation(display.getX(), rowIndex);
+                            advancement.setLocation(advancement.x(), rowIndex);
                             break;
                         }
                     }
@@ -117,7 +122,7 @@ public abstract class AdvancementTabMixin {
                             List<AbilityType> row = rows.get(rowIndex);
                             int columnIndex = row.indexOf(abilityTypeToAdd);
                             if (columnIndex != -1) {
-                                display.setLocation(columnIndex + 1, rowIndex);
+                                advancement.setLocation(columnIndex + 1, rowIndex);
                                 break;
                             }
                         }
@@ -126,7 +131,7 @@ public abstract class AdvancementTabMixin {
                 }
             }
         }
-        AdvancementWidget advancementWidget = original.call(tab, client, advancement, display);
+        AdvancementWidget advancementWidget = original.call(client, advancement);
         if (abilityTypeToAdd != null) {
             if (isFirstInRow || shouldSkipVanillaBehavior) {
                 pendingAbilityWidgets.put(abilityTypeToAdd, advancementWidget);
@@ -162,22 +167,12 @@ public abstract class AdvancementTabMixin {
                         }
                         currentWidget.parent = parentWidget;
                         parentWidget.addChild(currentWidget);
-                        addWidget(currentWidget, currentWidget.advancementNode.holder());
+                        addWidget(currentWidget);
                     }
                 }
             }
         }
+        // Since 26.3 AdvancementTab.addAdvancement skips a null widget itself.
         return shouldSkipVanillaBehavior ? null : advancementWidget;
-    }
-
-    @Inject(
-        method = "addWidget",
-        at = @At(value = "HEAD"),
-        cancellable = true
-    )
-    public void skipNullWidget(AdvancementWidget widget, @NotNull AdvancementHolder advancement, CallbackInfo ci) {
-        if (widget == null) {
-            ci.cancel();
-        }
     }
 }

@@ -38,9 +38,9 @@ repositories {
 
 dependencies {
 
-    compileOnly("io.papermc.paper:paper-api:26.2.build.112-stable")
+    compileOnly("io.papermc.paper:paper-api:26.3.build.258-stable")
 
-    testImplementation("io.papermc.paper:paper-api:26.2.build.112-stable")
+    testImplementation("io.papermc.paper:paper-api:26.3.build.258-stable")
 
 }
 
@@ -106,7 +106,8 @@ tasks.processResources {
 
 tasks.jar {
 
-    archiveBaseName.set("AchieveToDo-Purpur-26.2")
+    archiveBaseName.set("AchieveToDo-Purpur")
+    archiveVersion.set("mc26.3+" + project.version)
 
     // Release defaults first, then the unchanged certified native bootstrap (NativeTransactionPremain).
     manifest.attributes["Premain-Class"] = "com.diskree.achievetodo.core.ReleaseLaunchPremain"

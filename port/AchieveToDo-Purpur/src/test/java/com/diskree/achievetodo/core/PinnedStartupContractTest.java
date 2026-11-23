@@ -8,12 +8,12 @@ import java.util.jar.*;
 
 public final class PinnedStartupContractTest {
     public static void main(String[] args) throws Exception {
-        PinnedStartupContract.runtime(25, "26.2", "Purpur", 2620);
-        reject(() -> PinnedStartupContract.runtime(21, "26.2", "Purpur", 2620));
-        reject(() -> PinnedStartupContract.runtime(26, "26.2", "Purpur", 2620));
-        reject(() -> PinnedStartupContract.runtime(25, "26.1", "Purpur", 2620));
-        reject(() -> PinnedStartupContract.runtime(25, "26.2", "Paper", 2620));
-        reject(() -> PinnedStartupContract.runtime(25, "26.2", "Purpur", 2621));
+        PinnedStartupContract.runtime(25, "26.3", "Purpur", 2660);
+        reject(() -> PinnedStartupContract.runtime(21, "26.3", "Purpur", 2660));
+        reject(() -> PinnedStartupContract.runtime(26, "26.3", "Purpur", 2660));
+        reject(() -> PinnedStartupContract.runtime(25, "26.2", "Purpur", 2660));
+        reject(() -> PinnedStartupContract.runtime(25, "26.3", "Paper", 2660));
+        reject(() -> PinnedStartupContract.runtime(25, "26.3", "Purpur", 2661));
         Path folder = Files.createTempDirectory("s5-startup-identity");
         Path jar = folder.resolve("product.jar");
         try (var out = new JarOutputStream(Files.newOutputStream(jar))) {

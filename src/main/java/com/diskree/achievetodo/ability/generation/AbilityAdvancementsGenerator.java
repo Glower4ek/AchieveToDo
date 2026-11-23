@@ -10,6 +10,10 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.AdvancementType;
+import net.minecraft.advancements.DisplayInfo;
+import net.minecraft.core.ClientAsset;
+import net.minecraft.world.item.ItemStackTemplate;
+import java.util.Optional;
 import net.minecraft.advancements.triggers.CriteriaTriggers;
 import net.minecraft.advancements.triggers.ImpossibleTrigger;
 import net.minecraft.advancements.triggers.PlayerTrigger;
@@ -56,16 +60,18 @@ public class AbilityAdvancementsGenerator extends FabricAdvancementProvider {
     ) {
         AdvancementHolder rootAdvancement = Advancement.Builder
             .recipeAdvancement()
-            .display(
-                Items.BARRIER,
+            .display(new DisplayInfo(
+                new ItemStackTemplate(Items.BARRIER),
                 Component.literal(BuildConfig.MOD_NAME),
                 AchieveToDoClient.translate("description"),
-                Identifier.withDefaultNamespace("block/" + BuiltInRegistries.BLOCK.getKey(TAB_BACKGROUND).getPath()),
+                Optional.of(new ClientAsset.ResourceTexture(
+                    Identifier.withDefaultNamespace("block/" + BuiltInRegistries.BLOCK.getKey(TAB_BACKGROUND).getPath())
+                )),
                 AdvancementType.TASK,
                 false,
                 false,
                 false
-            )
+            ))
             .addCriterion("tick", PlayerTrigger.TriggerInstance.tick())
             .build(buildAdvancementId("root"));
         consumer.accept(rootAdvancement);
@@ -75,16 +81,16 @@ public class AbilityAdvancementsGenerator extends FabricAdvancementProvider {
             consumer.accept(Advancement.Builder
                 .recipeAdvancement()
                 .parent(rootAdvancement)
-                .display(
-                    abilityType.getIcon(),
+                .display(new DisplayInfo(
+                    new ItemStackTemplate(abilityType.getIcon()),
                     abilityType.getTitle(),
                     abilityType.getDescription(),
-                    null,
+                    Optional.empty(),
                     AdvancementType.TASK,
                     true,
                     false,
                     false
-                )
+                ))
                 .rewards(AdvancementRewards.Builder.function(advancementId))
                 .addCriterion(
                     DEMYSTIFIED_CRITERION,
