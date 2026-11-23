@@ -1,0 +1,440 @@
+{
+  "group": "equipment_identity9_routes_slots",
+  "repoHead": "5f2695ca42f92f3acf216432b1ed251b9a137522",
+  "abilities": [
+    {
+      "ability": "equip_golden_armor",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java",
+          "lines": [
+            13,
+            13
+          ],
+          "sha256": "7baab126d39d7cbceba64ea7cf92fef3f155878b78a3f511c11fcc55487b625f",
+          "role": "native identity map item -> EQUIP_* ability (copper included) used by NativeTransactionAgent",
+          "expect": "EQUIP_\" + material + \"_ARMOR",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java",
+          "lines": [
+            76,
+            76
+          ],
+          "sha256": "debe8c9d14b18d9c61de559f31139ab7f44eb91ba81175e788fa6224fabf6a9a",
+          "role": "native equipment guard: Equippable / ArmorSlot / dispenser routes",
+          "expect": "denied(\"equipment\", actor, stack)",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findEquipmentAbility": []
+      },
+      "thresholds": {
+        "normal": 56,
+        "easy": 50,
+        "hard": 62,
+        "chaos_20261116": 473,
+        "custom_vision": 56
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "equip_leather_armor",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java",
+          "lines": [
+            13,
+            13
+          ],
+          "sha256": "7baab126d39d7cbceba64ea7cf92fef3f155878b78a3f511c11fcc55487b625f",
+          "role": "native identity map item -> EQUIP_* ability (copper included) used by NativeTransactionAgent",
+          "expect": "EQUIP_\" + material + \"_ARMOR",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java",
+          "lines": [
+            76,
+            76
+          ],
+          "sha256": "debe8c9d14b18d9c61de559f31139ab7f44eb91ba81175e788fa6224fabf6a9a",
+          "role": "native equipment guard: Equippable / ArmorSlot / dispenser routes",
+          "expect": "denied(\"equipment\", actor, stack)",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findEquipmentAbility": []
+      },
+      "thresholds": {
+        "normal": 65,
+        "easy": 56,
+        "hard": 74,
+        "chaos_20261116": 449,
+        "custom_vision": 65
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "equip_chainmail_armor",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java",
+          "lines": [
+            13,
+            13
+          ],
+          "sha256": "7baab126d39d7cbceba64ea7cf92fef3f155878b78a3f511c11fcc55487b625f",
+          "role": "native identity map item -> EQUIP_* ability (copper included) used by NativeTransactionAgent",
+          "expect": "EQUIP_\" + material + \"_ARMOR",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java",
+          "lines": [
+            76,
+            76
+          ],
+          "sha256": "debe8c9d14b18d9c61de559f31139ab7f44eb91ba81175e788fa6224fabf6a9a",
+          "role": "native equipment guard: Equippable / ArmorSlot / dispenser routes",
+          "expect": "denied(\"equipment\", actor, stack)",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findEquipmentAbility": []
+      },
+      "thresholds": {
+        "normal": 101,
+        "easy": 80,
+        "hard": 122,
+        "chaos_20261116": 222,
+        "custom_vision": 101
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "equip_iron_armor",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java",
+          "lines": [
+            13,
+            13
+          ],
+          "sha256": "7baab126d39d7cbceba64ea7cf92fef3f155878b78a3f511c11fcc55487b625f",
+          "role": "native identity map item -> EQUIP_* ability (copper included) used by NativeTransactionAgent",
+          "expect": "EQUIP_\" + material + \"_ARMOR",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java",
+          "lines": [
+            76,
+            76
+          ],
+          "sha256": "debe8c9d14b18d9c61de559f31139ab7f44eb91ba81175e788fa6224fabf6a9a",
+          "role": "native equipment guard: Equippable / ArmorSlot / dispenser routes",
+          "expect": "denied(\"equipment\", actor, stack)",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findEquipmentAbility": []
+      },
+      "thresholds": {
+        "normal": 219,
+        "easy": 168,
+        "hard": 270,
+        "chaos_20261116": 73,
+        "custom_vision": 219
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "equip_turtle_helmet",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java",
+          "lines": [
+            13,
+            13
+          ],
+          "sha256": "7baab126d39d7cbceba64ea7cf92fef3f155878b78a3f511c11fcc55487b625f",
+          "role": "native identity map item -> EQUIP_* ability (copper included) used by NativeTransactionAgent",
+          "expect": "EQUIP_\" + material + \"_ARMOR",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java",
+          "lines": [
+            76,
+            76
+          ],
+          "sha256": "debe8c9d14b18d9c61de559f31139ab7f44eb91ba81175e788fa6224fabf6a9a",
+          "role": "native equipment guard: Equippable / ArmorSlot / dispenser routes",
+          "expect": "denied(\"equipment\", actor, stack)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java",
+          "lines": [
+            15
+          ],
+          "sha256": "7baab126d39d7cbceba64ea7cf92fef3f155878b78a3f511c11fcc55487b625f",
+          "gitBlob": "ead7d220425a8957a04078797b198f884b77a702",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findEquipmentAbility": []
+      },
+      "thresholds": {
+        "normal": 534,
+        "easy": 432,
+        "hard": 636,
+        "chaos_20261116": 180,
+        "custom_vision": 534
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "equip_diamond_armor",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java",
+          "lines": [
+            13,
+            13
+          ],
+          "sha256": "7baab126d39d7cbceba64ea7cf92fef3f155878b78a3f511c11fcc55487b625f",
+          "role": "native identity map item -> EQUIP_* ability (copper included) used by NativeTransactionAgent",
+          "expect": "EQUIP_\" + material + \"_ARMOR",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java",
+          "lines": [
+            76,
+            76
+          ],
+          "sha256": "debe8c9d14b18d9c61de559f31139ab7f44eb91ba81175e788fa6224fabf6a9a",
+          "role": "native equipment guard: Equippable / ArmorSlot / dispenser routes",
+          "expect": "denied(\"equipment\", actor, stack)",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findEquipmentAbility": []
+      },
+      "thresholds": {
+        "normal": 366,
+        "easy": 288,
+        "hard": 444,
+        "chaos_20261116": 794,
+        "custom_vision": 366
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "equip_elytra",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java",
+          "lines": [
+            13,
+            13
+          ],
+          "sha256": "7baab126d39d7cbceba64ea7cf92fef3f155878b78a3f511c11fcc55487b625f",
+          "role": "native identity map item -> EQUIP_* ability (copper included) used by NativeTransactionAgent",
+          "expect": "EQUIP_\" + material + \"_ARMOR",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java",
+          "lines": [
+            76,
+            76
+          ],
+          "sha256": "debe8c9d14b18d9c61de559f31139ab7f44eb91ba81175e788fa6224fabf6a9a",
+          "role": "native equipment guard: Equippable / ArmorSlot / dispenser routes",
+          "expect": "denied(\"equipment\", actor, stack)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java",
+          "lines": [
+            16
+          ],
+          "sha256": "7baab126d39d7cbceba64ea7cf92fef3f155878b78a3f511c11fcc55487b625f",
+          "gitBlob": "ead7d220425a8957a04078797b198f884b77a702",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findEquipmentAbility": []
+      },
+      "thresholds": {
+        "normal": 611,
+        "easy": 498,
+        "hard": 724,
+        "chaos_20261116": 383,
+        "custom_vision": 611
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "equip_netherite_armor",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java",
+          "lines": [
+            13,
+            13
+          ],
+          "sha256": "7baab126d39d7cbceba64ea7cf92fef3f155878b78a3f511c11fcc55487b625f",
+          "role": "native identity map item -> EQUIP_* ability (copper included) used by NativeTransactionAgent",
+          "expect": "EQUIP_\" + material + \"_ARMOR",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java",
+          "lines": [
+            76,
+            76
+          ],
+          "sha256": "debe8c9d14b18d9c61de559f31139ab7f44eb91ba81175e788fa6224fabf6a9a",
+          "role": "native equipment guard: Equippable / ArmorSlot / dispenser routes",
+          "expect": "denied(\"equipment\", actor, stack)",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findEquipmentAbility": []
+      },
+      "thresholds": {
+        "normal": 569,
+        "easy": 462,
+        "hard": 676,
+        "chaos_20261116": 84,
+        "custom_vision": 569
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "equip_copper_armor",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeEquipmentAbilities.java",
+          "lines": [
+            13,
+            13
+          ],
+          "sha256": "7baab126d39d7cbceba64ea7cf92fef3f155878b78a3f511c11fcc55487b625f",
+          "role": "native identity map item -> EQUIP_* ability (copper included) used by NativeTransactionAgent",
+          "expect": "EQUIP_\" + material + \"_ARMOR",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeTransactionAgent.java",
+          "lines": [
+            76,
+            76
+          ],
+          "sha256": "debe8c9d14b18d9c61de559f31139ab7f44eb91ba81175e788fa6224fabf6a9a",
+          "role": "native equipment guard: Equippable / ArmorSlot / dispenser routes",
+          "expect": "denied(\"equipment\", actor, stack)",
+          "active": true
+        }
+      ],
+      "directSites": [],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/ProgressionConfigService.java",
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findEquipmentAbility": []
+      },
+      "thresholds": {
+        "normal": 83,
+        "easy": 68,
+        "hard": 98,
+        "chaos_20261116": 57,
+        "custom_vision": 83
+      },
+      "mapping": "CURATED"
+    }
+  ],
+  "configs": {
+    "normal": {
+      "file": "campaign41\\runtime\\plugins\\AchieveToDo\\progression\\configs\\normal.toml",
+      "sha256": "de6383599828005cb00afcacd868ca60850913c434219f8fed5f79456bb69624"
+    },
+    "easy": {
+      "file": "campaign42\\runtime\\plugins\\AchieveToDo\\progression\\configs\\easy.toml",
+      "sha256": "c145bfe25d9080414034e8d23ccd7d88b5eb3727b84f6e5a06219e4edbe7e9b3"
+    },
+    "hard": {
+      "file": "campaign43\\runtime\\plugins\\AchieveToDo\\progression\\configs\\hard.toml",
+      "sha256": "9d7b711b9fb7f2a9d0bfe2666f349e3859b77541bdf1bc2b656134b9f1329d6a"
+    },
+    "chaos_20261116": {
+      "file": "campaign44\\runtime\\plugins\\AchieveToDo\\progression\\configs\\chaos_20261116.toml",
+      "sha256": "2f178cf168fb7adfe9ca87461490eb07e10617e35446ae7ca0daa3d91e26cab5"
+    },
+    "custom_vision": {
+      "file": "campaign45\\runtime\\plugins\\AchieveToDo\\progression\\configs\\custom_vision.toml",
+      "sha256": "db26c1f6b440cc79466a6ee37dee544fb149a23b8d5909f53ec37ebeefb536cd"
+    }
+  }
+}

@@ -1,0 +1,1592 @@
+{
+  "group": "food_component_start_40",
+  "repoHead": "5f2695ca42f92f3acf216432b1ed251b9a137522",
+  "abilities": [
+    {
+      "ability": "eat_salmon",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            12
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 2,
+        "easy": 2,
+        "hard": 4,
+        "chaos_20261116": 263,
+        "custom_vision": 2
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cod",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            12
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 6,
+        "easy": 8,
+        "hard": 6,
+        "chaos_20261116": 653,
+        "custom_vision": 6
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_tropical_fish",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            13
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 8,
+        "easy": 12,
+        "hard": 10,
+        "chaos_20261116": 761,
+        "custom_vision": 8
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_rotten_flesh",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            13
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 18,
+        "easy": 20,
+        "hard": 16,
+        "chaos_20261116": 728,
+        "custom_vision": 18
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_spider_eye",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            14
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 22,
+        "easy": 24,
+        "hard": 18,
+        "chaos_20261116": 7,
+        "custom_vision": 22
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_sweet_berries",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            38,
+            84
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 14,
+        "easy": 16,
+        "hard": 12,
+        "chaos_20261116": 296,
+        "custom_vision": 14
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_glow_berries",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            39,
+            84
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 26,
+        "easy": 30,
+        "hard": 22,
+        "chaos_20261116": 133,
+        "custom_vision": 26
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_poisonous_potato",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            14
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 28,
+        "easy": 34,
+        "hard": 26,
+        "chaos_20261116": 20,
+        "custom_vision": 28
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_suspicious_stew",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            15
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 34,
+        "easy": 36,
+        "hard": 36,
+        "chaos_20261116": 177,
+        "custom_vision": 34
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_chicken",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            15
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 47,
+        "easy": 44,
+        "hard": 50,
+        "chaos_20261116": 90,
+        "custom_vision": 47
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_carrot",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            40,
+            85
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 53,
+        "easy": 48,
+        "hard": 58,
+        "chaos_20261116": 124,
+        "custom_vision": 53
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_beetroot",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            16
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 62,
+        "easy": 54,
+        "hard": 70,
+        "chaos_20261116": 2,
+        "custom_vision": 62
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_dried_kelp",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            16
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 74,
+        "easy": 62,
+        "hard": 86,
+        "chaos_20261116": 811,
+        "custom_vision": 74
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_potato",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            41,
+            85
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 68,
+        "easy": 58,
+        "hard": 78,
+        "chaos_20261116": 596,
+        "custom_vision": 68
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_apple",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            17
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 89,
+        "easy": 72,
+        "hard": 106,
+        "chaos_20261116": 48,
+        "custom_vision": 89
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_melon_slice",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            22
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 98,
+        "easy": 78,
+        "hard": 118,
+        "chaos_20261116": 175,
+        "custom_vision": 98
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cookie",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            23
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 107,
+        "easy": 84,
+        "hard": 130,
+        "chaos_20261116": 63,
+        "custom_vision": 107
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_mushroom_stew",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            17
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 113,
+        "easy": 88,
+        "hard": 138,
+        "chaos_20261116": 179,
+        "custom_vision": 113
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_beetroot_soup",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            24
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 119,
+        "easy": 92,
+        "hard": 146,
+        "chaos_20261116": 724,
+        "custom_vision": 119
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_rabbit_stew",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            21
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 80,
+        "easy": 66,
+        "hard": 94,
+        "chaos_20261116": 253,
+        "custom_vision": 80
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_honey",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            18
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 128,
+        "easy": 98,
+        "hard": 158,
+        "chaos_20261116": 423,
+        "custom_vision": 128
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_mutton",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            25
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 137,
+        "easy": 104,
+        "hard": 170,
+        "chaos_20261116": 349,
+        "custom_vision": 137
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_pufferfish",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            26
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 154,
+        "easy": 116,
+        "hard": 192,
+        "chaos_20261116": 392,
+        "custom_vision": 154
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_pumpkin_pie",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            27
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 189,
+        "easy": 144,
+        "hard": 234,
+        "chaos_20261116": 531,
+        "custom_vision": 189
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_golden_apple",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            18
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 164,
+        "easy": 124,
+        "hard": 204,
+        "chaos_20261116": 45,
+        "custom_vision": 164
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_enchanted_golden_apple",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            19
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 229,
+        "easy": 176,
+        "hard": 282,
+        "chaos_20261116": 243,
+        "custom_vision": 229
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_rabbit",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            28
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 274,
+        "easy": 212,
+        "hard": 336,
+        "chaos_20261116": 710,
+        "custom_vision": 274
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_beef",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            29
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 338,
+        "easy": 264,
+        "hard": 412,
+        "chaos_20261116": 279,
+        "custom_vision": 338
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_porkchop",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            30
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 408,
+        "easy": 324,
+        "hard": 492,
+        "chaos_20261116": 330,
+        "custom_vision": 408
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_baked_potato",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            31
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 478,
+        "easy": 384,
+        "hard": 572,
+        "chaos_20261116": 111,
+        "custom_vision": 478
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_salmon",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            32
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 457,
+        "easy": 366,
+        "hard": 548,
+        "chaos_20261116": 81,
+        "custom_vision": 457
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_cod",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            21
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 597,
+        "easy": 486,
+        "hard": 708,
+        "chaos_20261116": 699,
+        "custom_vision": 597
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_rabbit",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            33
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 373,
+        "easy": 294,
+        "hard": 452,
+        "chaos_20261116": 654,
+        "custom_vision": 373
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_chicken",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            34
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 548,
+        "easy": 444,
+        "hard": 652,
+        "chaos_20261116": 621,
+        "custom_vision": 548
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_chorus_fruit",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            19
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 681,
+        "easy": 558,
+        "hard": 804,
+        "chaos_20261116": 22,
+        "custom_vision": 681
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_mutton",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            35
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 576,
+        "easy": 468,
+        "hard": 684,
+        "chaos_20261116": 692,
+        "custom_vision": 576
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_porkchop",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            36
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 695,
+        "easy": 570,
+        "hard": 820,
+        "chaos_20261116": 194,
+        "custom_vision": 695
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_bread",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            20
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 436,
+        "easy": 348,
+        "hard": 524,
+        "chaos_20261116": 359,
+        "custom_vision": 436
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_cooked_beef",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            20
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 702,
+        "easy": 576,
+        "hard": 828,
+        "chaos_20261116": 420,
+        "custom_vision": 702
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "eat_golden_carrot",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+          "lines": [
+            37
+          ],
+          "sha256": "e8074812c756238c94938529236e1017bee439b7d3378f8993c8665f84e5391c",
+          "gitBlob": "caa3c8f46a1494a9c658aec004cf1a06c39742a9",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": "food",
+      "familyResolverSites": {
+        "AbilityResolvers.findFoodAbility": [],
+        "AbilityType.findEatFoodAbility": [
+          {
+            "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeFoodAbilities.java",
+            "active": true,
+            "inactiveReason": null
+          }
+        ]
+      },
+      "thresholds": {
+        "normal": 716,
+        "easy": 588,
+        "hard": 844,
+        "chaos_20261116": 16,
+        "custom_vision": 716
+      },
+      "mapping": "DIRECT"
+    }
+  ],
+  "configs": {
+    "normal": {
+      "file": "campaign41\\runtime\\plugins\\AchieveToDo\\progression\\configs\\normal.toml",
+      "sha256": "de6383599828005cb00afcacd868ca60850913c434219f8fed5f79456bb69624"
+    },
+    "easy": {
+      "file": "campaign42\\runtime\\plugins\\AchieveToDo\\progression\\configs\\easy.toml",
+      "sha256": "c145bfe25d9080414034e8d23ccd7d88b5eb3727b84f6e5a06219e4edbe7e9b3"
+    },
+    "hard": {
+      "file": "campaign43\\runtime\\plugins\\AchieveToDo\\progression\\configs\\hard.toml",
+      "sha256": "9d7b711b9fb7f2a9d0bfe2666f349e3859b77541bdf1bc2b656134b9f1329d6a"
+    },
+    "chaos_20261116": {
+      "file": "campaign44\\runtime\\plugins\\AchieveToDo\\progression\\configs\\chaos_20261116.toml",
+      "sha256": "2f178cf168fb7adfe9ca87461490eb07e10617e35446ae7ca0daa3d91e26cab5"
+    },
+    "custom_vision": {
+      "file": "campaign45\\runtime\\plugins\\AchieveToDo\\progression\\configs\\custom_vision.toml",
+      "sha256": "db26c1f6b440cc79466a6ee37dee544fb149a23b8d5909f53ec37ebeefb536cd"
+    }
+  }
+}

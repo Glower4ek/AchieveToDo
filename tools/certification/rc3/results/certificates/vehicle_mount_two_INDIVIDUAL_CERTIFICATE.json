@@ -1,0 +1,53 @@
+{
+  "group": "vehicle_mount_two",
+  "reviewer": "rc3-reviewer-8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "get_into_boat/get_into_minecart DIRECT: BukkitGameplayRuntime.java:139-140 (mountAbility used by VehicleEnterEvent/EntityMountEvent cancel), GameplayGate.java:15-16, NativeLandmarkActions.java:271 (passengerBoat/passengerMinecart -> GET_INTO_BOAT/GET_INTO_MINECART). 3 files, SHA-256 all equal E1. Thresholds for 5 configs."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "22 rows, all PASS. Locked: Player.interactOn RETURN traced (server_reach satisfied), client:vehicle=false, probe=false, count unchanged. Allowed: probe true, boaty_mcboatface / all_aboard awarded (the +1 count is the allowed effect).",
+      "rowsRead": [
+        "campaign41 pass1 get_into_boat locked",
+        "campaign41 pass1 get_into_minecart allowed",
+        "campaign41 modes get_into_boat op",
+        "campaign41 reload get_into_minecart locked",
+        "campaign42 thresholds-easy get_into_boat locked",
+        "campaign44 thresholds-chaos get_into_boat allowed",
+        "campaign45 thresholds-custom_vision get_into_boat locked"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present for each; confirmed directly in campaign41-45 receipts/output.log lines 235-253; campaign41/runtime/server.properties:47 online-mode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows for both; mounting has no off-hand variant (no offhand rows required); thresholds rows for all 5 configs (get_into_boat sampled). No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "All reload rows are campaign41 tag reload at output.log lines >112000, after pass1 (lines ~3000-19500), modes (~44000-53500) and offhand; MANIFEST.e5Reload generationBefore=1, generationAfter=2; every reload ATD_STAGE2A_STATE in excerpts.txt shows generation 2; each reload verdict equals the pass1 verdict of the same ability (PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "All replay.jsonl rows REPRODUCED with recorded==replayed; MANIFEST runtimes replay.reproducedAll=true for campaign41-46; plugin.perRuntime all d3019bd333591c8f57645e093aea78befb6700d795ccbae25edf7a4338ffc43a; clientMod sha256 2c03d9fa9e26c1c53691d720671107e8569af63092a5c2a2e9e9b1c32644c649; recomputed SHA-256 of campaign41 and campaign45 receipts/campaign-results.jsonl, both equal evidenceHashes.results (campaign41 ff3f86cf9e87...6d00)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "receipts/launch.json and runtime_args.json campaign41-45: -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar; the only -Dachievetodo.* option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44, none in campaign41/45. output.log lines 208-235 of campaign41-46 log ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before the player join and first case; campaign42-44 derived=[..., world-group.properties, ..., achievetodo.progression.freshConfig] (fresh install, freshConfig derived by the plugin); campaign41/45/46 derived lists no freshConfig."
+    }
+  },
+  "superseded": "MANIFEST.superseded is empty for this group; no campaign46 row replaces any row here.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc3-pkg/vehicle_mount_two/excerpts.txt block 'campaign41 pass1 get_into_boat locked' (campaign41 output.log 9508-9515)",
+      "description": "Locked excerpts show the interactOn return but no explicit plugin cancel line; the lock is inferred from probe/client vehicle=false and unchanged count."
+    }
+  ]
+}

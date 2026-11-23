@@ -1,0 +1,583 @@
+[
+ {
+  "group": "action_attack_with_mace",
+  "reviewer": "rc3-reviewer-1",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/action_attack_with_mace/excerpts.txt (campaign41 pass1 attack_with_mace locked)",
+    "description": "The excerpt has no server-side decision line for the native guard (the event listener logs ALLOW or nothing); the denial is established from the unchanged server effect probe plus the ability-specific denial overlay on the client. Verdict reproducible, but a server-side DENY trace at native guard sites would make the excerpt self-contained."
+   }
+  ]
+ },
+ {
+  "group": "action_attack_with_trident",
+  "reviewer": "rc3-reviewer-1",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "action_charge_respawn_anchor",
+  "reviewer": "rc3-reviewer-1",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/action_charge_respawn_anchor/excerpts.txt (campaign41 pass1 charge_respawn_anchor locked)",
+    "description": "The excerpt has no server-side decision line for the native guard (the event listener logs ALLOW or nothing); the denial is established from the unchanged server effect probe plus the ability-specific denial overlay on the client. Verdict reproducible, but a server-side DENY trace at native guard sites would make the excerpt self-contained."
+   }
+  ]
+ },
+ {
+  "group": "action_glide_with_fireworks",
+  "reviewer": "rc3-reviewer-1",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "action_place_end_crystal",
+  "reviewer": "rc3-reviewer-1",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/action_place_end_crystal/excerpts.txt (campaign41 pass1 place_end_crystal locked)",
+    "description": "The excerpt has no server-side decision line for the native guard (the event listener logs ALLOW or nothing); the denial is established from the unchanged server effect probe plus the ability-specific denial overlay on the client. Verdict reproducible, but a server-side DENY trace at native guard sites would make the excerpt self-contained."
+   }
+  ]
+ },
+ {
+  "group": "action_shoot_bow",
+  "reviewer": "rc3-reviewer-1",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "action_shoot_crossbow",
+  "reviewer": "rc3-reviewer-2",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "action_use_campfire",
+  "reviewer": "rc3-reviewer-2",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "action_use_composter",
+  "reviewer": "rc3-reviewer-2",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "action_use_ender_eye",
+  "reviewer": "rc3-reviewer-2",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "action_use_jukebox",
+  "reviewer": "rc3-reviewer-2",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/action_use_jukebox/excerpts.txt lines 1-14 (campaign41 output.log 5537-5549); grep DENIAL_INTENT/SUPPRESSED in that file = 0",
+    "description": "Jukebox locked excerpts contain no plugin-side denial marker: the Bukkit-level ATD_W2_INPUT_EVENT/ATD_EVENT say useBlock=ALLOW/cancelled=false. The native guard denial is inferred from absence of effect (no music_disc advancement, count unchanged, inventory resync packets) plus the client overlay. Verdicts reproduce, but the server log alone does not name the deny."
+   }
+  ]
+ },
+ {
+  "group": "action_use_ominous_bottle",
+  "reviewer": "rc3-reviewer-2",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "action_use_shield",
+  "reviewer": "rc3-reviewer-3",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "action_use_spyglass",
+  "reviewer": "rc3-reviewer-3",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "bundle_two_native_routes",
+  "reviewer": "rc3-reviewer-3",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "client_local_open_inventory",
+  "reviewer": "rc3-reviewer-3",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "client_local_vision",
+  "reviewer": "rc3-reviewer-3",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E4",
+    "evidence": "review-rc3-pkg/client_local_vision/excerpts.txt line 35 (case label) vs E1.json thresholds.hard=2",
+    "description": "Case label says 'NORMAL/EASY/HARD threshold 0', but E1 gives hard=2 and campaign43 actually tested a HARD locked row; the label is stale (should read NORMAL/EASY/CHAOS). Verdicts unaffected."
+   }
+  ]
+ },
+ {
+  "group": "complex_ignite_tnt",
+  "reviewer": "rc3-reviewer-4",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "complex_unlock_vault",
+  "reviewer": "rc3-reviewer-4",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/complex_unlock_vault/excerpts.txt campaign41 pass1 unlock_vault locked (output.log 8026-8041)",
+    "description": "No locked vault row shows the denial message or a plugin denial log line (ATD_EVENT says ALLOW); the lock is only proven by the absence of effect (no reward, no rewarded_players). Sufficient by the glossary, but the evidence is indirect."
+   }
+  ]
+ },
+ {
+  "group": "complex_use_brush",
+  "reviewer": "rc3-reviewer-4",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "complex_use_cauldron",
+  "reviewer": "rc3-reviewer-4",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "complex_use_flint_and_steel",
+  "reviewer": "rc3-reviewer-4",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "complex_use_shears",
+  "reviewer": "rc3-reviewer-4",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E4",
+    "evidence": "review-rc3-pkg/complex_use_shears/MANIFEST.json superseded (12 keys)",
+    "description": "campaign46 replaced all 12 offhand rows of this group, not only the wolf/cobweb cases the brief describes; the 8 extra replacements keep PASS, so there is no impact, but the supersede scope is wider than documented."
+   }
+  ]
+ },
+ {
+  "group": "complex_use_water_bucket",
+  "reviewer": "rc3-reviewer-5",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E6",
+    "evidence": "MANIFEST.json runtimes.campaign41..45.evidenceHashes['campaign.py'].sha256=91249553...; HARNESS_RC3.sha256 lists 1162ba11... (= harness-history-rc3/campaign.py)",
+    "description": "Per-runtime evidenceHashes for campaign41-45 record the current (RC3B) campaign.py hash, not the RC3 harness those runtimes actually ran under. The RC3 harness is preserved with a matching hash in harness-history-rc3, so this is provenance bookkeeping only."
+   },
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "excerpts.txt ATD_STAGE2A_STATE lines, e.g. '\"ability\": {\"USE_WATER_BUCKET\": null}'",
+    "description": "The state line logs null for the tested ability's lock state, so the lock is established from count vs threshold and the observed outcome only, not from a logged lock snapshot (menu/furnace groups do log LOCKED/UNLOCKED)."
+   },
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "campaign41/receipts/campaign-results.jsonl reload use_water_bucket locked: client tick1 mainhand='1 minecraft:bucket'; output.log 115236-115243",
+    "description": "After a reload the client can briefly predict a bucket emptying before the server resyncs it. Server state is unaffected (no water, no count change). This is cosmetic, but it is a real client-visible flicker rather than a pure harness artifact."
+   }
+  ]
+ },
+ {
+  "group": "equipment_identity9_routes_slots",
+  "reviewer": "rc3-reviewer-5",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E6",
+    "evidence": "MANIFEST.json runtimes.campaign41..45.evidenceHashes['campaign.py'].sha256=91249553...; HARNESS_RC3.sha256 lists 1162ba11... (= harness-history-rc3/campaign.py)",
+    "description": "Per-runtime evidenceHashes for campaign41-45 record the current (RC3B) campaign.py hash, not the RC3 harness those runtimes actually ran under. The RC3 harness is preserved with a matching hash in harness-history-rc3, so this is provenance bookkeeping only."
+   },
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "excerpts.txt ATD_STAGE2A_STATE lines, e.g. '\"ability\": {\"USE_WATER_BUCKET\": null}'",
+    "description": "The state line logs null for the tested ability's lock state, so the lock is established from count vs threshold and the observed outcome only, not from a logged lock snapshot (menu/furnace groups do log LOCKED/UNLOCKED)."
+   },
+   {
+    "severity": "minor",
+    "criterion": "E4",
+    "evidence": "rows.jsonl campaign41 offhand equip_* 'r6 route: right-click equip into the feet slot' offhand_locked/allowed = NA_OFFHAND_NOT_APPLICABLE",
+    "description": "Vanilla lets you right-click-equip boots from the off hand, so 'no off-hand variant' is not literally true for this route. The off-hand right-click equip path is still covered by the 9 '' offhand rows (PASS) and the iron '0.3.0 route: right-click equip of boots held in the off hand' pass1/reload rows, so there is no coverage gap."
+   }
+  ]
+ },
+ {
+  "group": "fishing_cast_only",
+  "reviewer": "rc3-reviewer-5",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E6",
+    "evidence": "MANIFEST.json runtimes.campaign41..45.evidenceHashes['campaign.py'].sha256=91249553...; HARNESS_RC3.sha256 lists 1162ba11... (= harness-history-rc3/campaign.py)",
+    "description": "Per-runtime evidenceHashes for campaign41-45 record the current (RC3B) campaign.py hash, not the RC3 harness those runtimes actually ran under. The RC3 harness is preserved with a matching hash in harness-history-rc3, so this is provenance bookkeeping only."
+   },
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "excerpts.txt ATD_STAGE2A_STATE lines, e.g. '\"ability\": {\"USE_WATER_BUCKET\": null}'",
+    "description": "The state line logs null for the tested ability's lock state, so the lock is established from count vs threshold and the observed outcome only, not from a logged lock snapshot (menu/furnace groups do log LOCKED/UNLOCKED)."
+   }
+  ]
+ },
+ {
+  "group": "food_component_start_40",
+  "reviewer": "rc3-reviewer-2",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E4",
+    "evidence": "review-rc3-pkg/food_component_start_40/excerpts.txt '===== campaign45 thresholds-custom_vision eat_salmon locked' (output.log 8806-8829)",
+    "description": "The only custom_vision locked row is PASS_MASKED_BY_DEPENDENCY: all DENIAL_INTENT_DISCOVERED lines name ability=vision (requires vision=5), so the custom_vision preset never proves the eat_salmon lock itself. The state line does show EAT_SALMON LOCKED required=2 and count 1->1, and the lock is proven in campaign41-44 rows, so not blocking."
+   }
+  ]
+ },
+ {
+  "group": "furnace3_shared_base_use",
+  "reviewer": "rc3-reviewer-5",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E6",
+    "evidence": "MANIFEST.json runtimes.campaign41..45.evidenceHashes['campaign.py'].sha256=91249553...; HARNESS_RC3.sha256 lists 1162ba11... (= harness-history-rc3/campaign.py)",
+    "description": "Per-runtime evidenceHashes for campaign41-45 record the current (RC3B) campaign.py hash, not the RC3 harness those runtimes actually ran under. The RC3 harness is preserved with a matching hash in harness-history-rc3, so this is provenance bookkeeping only."
+   }
+  ]
+ },
+ {
+  "group": "landmark22_selectors_and_action_matrix",
+  "reviewer": "rc3-reviewer-1",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E4",
+    "evidence": "review-rc3-pkg/landmark22_selectors_and_action_matrix/excerpts.txt:2303 (campaign44 thresholds-chaos interact_inside_village locked)",
+    "description": "The only CHAOS locked row is PASS_MASKED_BY_DEPENDENCY (the fixture needs open_chest=297 under chaos, score 118). The client overlay names the village lock, so the denial is in fact the village guard, but the harness classes it as masked: CHAOS has no counted lock proof for this group. The lock logic does not depend on the config and is proven on 4 other configs, so this is not blocking."
+   }
+  ]
+ },
+ {
+  "group": "menu_open_anvil",
+  "reviewer": "rc3-reviewer-5",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E6",
+    "evidence": "MANIFEST.json runtimes.campaign41..45.evidenceHashes['campaign.py'].sha256=91249553...; HARNESS_RC3.sha256 lists 1162ba11... (= harness-history-rc3/campaign.py)",
+    "description": "Per-runtime evidenceHashes for campaign41-45 record the current (RC3B) campaign.py hash, not the RC3 harness those runtimes actually ran under. The RC3 harness is preserved with a matching hash in harness-history-rc3, so this is provenance bookkeeping only."
+   }
+  ]
+ },
+ {
+  "group": "menu_open_barrel",
+  "reviewer": "rc3-reviewer-5",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E6",
+    "evidence": "MANIFEST.json runtimes.campaign41..45.evidenceHashes['campaign.py'].sha256=91249553...; HARNESS_RC3.sha256 lists 1162ba11... (= harness-history-rc3/campaign.py)",
+    "description": "Per-runtime evidenceHashes for campaign41-45 record the current (RC3B) campaign.py hash, not the RC3 harness those runtimes actually ran under. The RC3 harness is preserved with a matching hash in harness-history-rc3, so this is provenance bookkeeping only."
+   }
+  ]
+ },
+ {
+  "group": "menu_open_beacon",
+  "reviewer": "rc3-reviewer-5",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E6",
+    "evidence": "MANIFEST.json runtimes.campaign41..45.evidenceHashes['campaign.py'].sha256=91249553...; HARNESS_RC3.sha256 lists 1162ba11... (= harness-history-rc3/campaign.py)",
+    "description": "Per-runtime evidenceHashes for campaign41-45 record the current (RC3B) campaign.py hash, not the RC3 harness those runtimes actually ran under. The RC3 harness is preserved with a matching hash in harness-history-rc3, so this is provenance bookkeeping only."
+   }
+  ]
+ },
+ {
+  "group": "menu_open_brewing_stand",
+  "reviewer": "rc3-reviewer-6",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "menu_open_cartography_table",
+  "reviewer": "rc3-reviewer-6",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/menu_open_cartography_table/excerpts.txt, e.g. campaign41 pass1 open_cartography_table locked",
+    "description": "The native guard logs no explicit decision line: ATD_W2_INPUT_EVENT shows useBlock=ALLOW/cancelled=false and the denial is inferred from the missing ClientboundOpenScreenPacket, the inventory resync and the client overlay. The verdict is reproducible, but the excerpt carries no positive plugin-denial line."
+   }
+  ]
+ },
+ {
+  "group": "menu_open_chest",
+  "reviewer": "rc3-reviewer-6",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "menu_open_crafting_table",
+  "reviewer": "rc3-reviewer-6",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/menu_open_crafting_table/excerpts.txt, e.g. campaign41 pass1 open_crafting_table locked",
+    "description": "The native guard logs no explicit decision line: ATD_W2_INPUT_EVENT shows useBlock=ALLOW/cancelled=false and the denial is inferred from the missing ClientboundOpenScreenPacket, the inventory resync and the client overlay. The verdict is reproducible, but the excerpt carries no positive plugin-denial line."
+   }
+  ]
+ },
+ {
+  "group": "menu_open_enchanting_table",
+  "reviewer": "rc3-reviewer-6",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/menu_open_enchanting_table/excerpts.txt, e.g. campaign41 pass1 open_enchanting_table locked",
+    "description": "The native guard logs no explicit decision line: ATD_W2_INPUT_EVENT shows useBlock=ALLOW/cancelled=false and the denial is inferred from the missing ClientboundOpenScreenPacket, the inventory resync and the client overlay. The verdict is reproducible, but the excerpt carries no positive plugin-denial line."
+   }
+  ]
+ },
+ {
+  "group": "menu_open_ender_chest",
+  "reviewer": "rc3-reviewer-6",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/menu_open_ender_chest/excerpts.txt, e.g. campaign41 pass1 open_ender_chest locked",
+    "description": "The native guard logs no explicit decision line: ATD_W2_INPUT_EVENT shows useBlock=ALLOW/cancelled=false and the denial is inferred from the missing ClientboundOpenScreenPacket, the inventory resync and the client overlay. The verdict is reproducible, but the excerpt carries no positive plugin-denial line."
+   }
+  ]
+ },
+ {
+  "group": "menu_open_grindstone",
+  "reviewer": "rc3-reviewer-7",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "menu_open_loom",
+  "reviewer": "rc3-reviewer-7",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "menu_open_shulker_box",
+  "reviewer": "rc3-reviewer-7",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "menu_open_smithing_table",
+  "reviewer": "rc3-reviewer-7",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "menu_open_stonecutter",
+  "reviewer": "rc3-reviewer-7",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "mining_basic_two",
+  "reviewer": "rc3-reviewer-8",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/mining_basic_two/excerpts.txt block 'campaign41 pass1 break_blocks locked' (campaign41 output.log 9792-9801)",
+    "description": "ATD_EVENT LEFT_CLICK_BLOCK logs blockResult=ALLOW on locked rows; the denial happens at break time and is evidenced only by the block probe and overlay, not by a plugin decision line."
+   }
+  ]
+ },
+ {
+  "group": "movement_jump",
+  "reviewer": "rc3-reviewer-8",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/movement_jump/rows.jsonl row 'campaign45 thresholds-custom_vision jump locked' (campaign45 output.log 2634-2647)",
+    "description": "Custom_vision locked row is PASS_MASKED_BY_DEPENDENCY (requires vision 5 at score 3); the jump lock is proven by the normal/hard/chaos/reload rows, not independently in the Custom runtime. The Custom allowed row ran at score 5 (threshold 4) for the same reason."
+   }
+  ]
+ },
+ {
+  "group": "movement_sneak",
+  "reviewer": "rc3-reviewer-8",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "movement_sprint",
+  "reviewer": "rc3-reviewer-8",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "movement_swim",
+  "reviewer": "rc3-reviewer-8",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "opening_three_native_owners",
+  "reviewer": "rc3-reviewer-7",
+  "decision": "CERTIFIED",
+  "findings": []
+ },
+ {
+  "group": "portal_three_conditioned",
+  "reviewer": "rc3-reviewer-6",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/portal_three_conditioned/excerpts.txt (all ATD_STAGE2A_STATE lines show \"ability\": {\"ENTER_NETHER\"|\"ENTER_END\"|\"TELEPORT_OUTER_ISLANDS\": null})",
+    "description": "The state probe does not resolve the lock state of the portal abilities and no plugin decision line is logged for portal denials; the lock is inferred from count < threshold, the absence of world change/advancement and the client overlay. Sufficient, but weaker than the direct decision evidence of other groups."
+   }
+  ]
+ },
+ {
+  "group": "shelf_open_chest_non_menu",
+  "reviewer": "rc3-reviewer-7",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E4",
+    "evidence": "review-rc3-pkg/shelf_open_chest_non_menu/rows.jsonl (15 rows with group=menu_open_chest)",
+    "description": "Package mixes the plain chest-menu case (group label menu_open_chest) with the shelf case; harmless (both are open_chest and all PASS) but the package group label is not uniform."
+   }
+  ]
+ },
+ {
+  "group": "sleep",
+  "reviewer": "rc3-reviewer-8",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/sleep/excerpts.txt block 'campaign41 pass1 sleep locked' (campaign41 output.log 9377-9387)",
+    "description": "Locked excerpt logs useBlock=ALLOW / blockResult=ALLOW at the bed click; the PlayerBedEnterEvent denial is not logged, so the lock is evidenced only by client:sleeping=false, overlay and unchanged count."
+   }
+  ]
+ },
+ {
+  "group": "throwables_four_paper_candidates",
+  "reviewer": "rc3-reviewer-8",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/throwables_four_paper_candidates/excerpts.txt block 'campaign41 pass1 throw_snowball locked' (campaign41 output.log 19074-19083)",
+    "description": "Locked throw excerpts contain no plugin decision line (no cancelled/DENY); the denial is inferred from unchanged count, absent projectile/inventory effect and client overlay. Verdict is reproducible but the server decision is not directly logged."
+   }
+  ]
+ },
+ {
+  "group": "tool_material7_each_native_mode",
+  "reviewer": "rc3-reviewer-4",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E4",
+    "evidence": "rows.jsonl campaign43 thresholds-hard use_golden_tools locked (output.log 7801-7811)",
+    "description": "The HARD preset locked row is PASS_MASKED_BY_DEPENDENCY (break_blocks_in_negative_y 42 > score 37), so the HARD runtime gives no proving locked row for this group; the lock is proven on NORMAL, EASY, CHAOS and Custom."
+   },
+   {
+    "severity": "minor",
+    "criterion": "E4",
+    "evidence": "review-rc3-pkg/tool_material7_each_native_mode/MANIFEST.json superseded",
+    "description": "campaign46 replaced the whole use_iron_tools modes set, wider than the single creative cobweb case the brief describes; the base op row lost its overlay (PASS -> PASS_NO_OVERLAY). No verdict impact."
+   }
+  ]
+ },
+ {
+  "group": "vehicle_mount_two",
+  "reviewer": "rc3-reviewer-8",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/vehicle_mount_two/excerpts.txt block 'campaign41 pass1 get_into_boat locked' (campaign41 output.log 9508-9515)",
+    "description": "Locked excerpts show the interactOn return but no explicit plugin cancel line; the lock is inferred from probe/client vehicle=false and unchanged count."
+   }
+  ]
+ },
+ {
+  "group": "villager13_profession_resolver",
+  "reviewer": "rc3-reviewer-3",
+  "decision": "CERTIFIED",
+  "findings": [
+   {
+    "severity": "minor",
+    "criterion": "E2",
+    "evidence": "review-rc3-pkg/villager13_profession_resolver/excerpts.txt 'campaign41 pass1 trade_with_cartographer locked' (output.log 19822-19829) and reload (128727-128734); rows.jsonl verdict PASS_NO_OVERLAY",
+    "description": "Cartographer denial never shows the client lock message (3/3 rows: pass1, modes op, reload), while the other 12 professions do. Denial itself is proven (swingSource=NONE, no MerchantScreen, count unchanged), so a UX gap only."
+   }
+  ]
+ },
+ {
+  "group": "wandering_trader_separate",
+  "reviewer": "rc3-reviewer-3",
+  "decision": "CERTIFIED",
+  "findings": []
+ }
+]

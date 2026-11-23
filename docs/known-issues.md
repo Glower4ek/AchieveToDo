@@ -4,14 +4,14 @@ Minor issues found during the certification of the Purpur 26.2 port (0.2.1-rc.1 
 [certification/w5-purpur-26.2.md](certification/w5-purpur-26.2.md) and
 [certification/0.2.1-purpur-26.2.md](certification/0.2.1-purpur-26.2.md). On 2026-11-20 the owner deferred issues 2 and
 3 (Fabric parity); issue 1 is fixed in 0.2.1. On 2026-11-22 the owner decided to fix issues 2 and 3 in both mods for
-0.3.0; the fixes are in the source and await the 0.3.0 certification.
+0.3.0; the fixes are certified in [certification/0.3.0-purpur-26.2.md](certification/0.3.0-purpur-26.2.md).
 
 | # | Issue | Severity | Status |
 |---|---|---|---|
 | 1 | A server started without the gameplay-mode JVM flags ran the legacy Bukkit path, which is not certified (copper armor is not blocked there) | minor (operator setup) | **Fixed in 0.2.1**: one-option operator launch (`-javaagent` only), and a start without it fails closed. Certified in [0.2.1-purpur-26.2.md](certification/0.2.1-purpur-26.2.md) |
-| 2 | CHAOS thresholds are not reproducible from the world seed across JVM starts | minor (Fabric parity) | **Fixed in 0.3.0** in both mods (pending certification) |
-| 3 | Touching a locked nether portal, End portal or end gateway grants the vanilla `enter_block` advancement (+1) | minor (Fabric parity) | **Fixed in 0.3.0** in both mods (pending certification) |
-| 4 | Using locked shears on a snow golem or a wolf still grants "Unmasked" (BACAP) or "Shear Brilliance" | minor (Fabric parity) | **Fixed in 0.3.0** in both mods (pending certification) |
+| 2 | CHAOS thresholds are not reproducible from the world seed across JVM starts | minor (Fabric parity) | **Fixed in 0.3.0** in both mods. Certified in [0.3.0-purpur-26.2.md](certification/0.3.0-purpur-26.2.md) |
+| 3 | Touching a locked nether portal, End portal or end gateway grants the vanilla `enter_block` advancement (+1) | minor (Fabric parity) | **Fixed in 0.3.0** in both mods. Certified in [0.3.0-purpur-26.2.md](certification/0.3.0-purpur-26.2.md) |
+| 4 | Using locked shears on a snow golem or a wolf still grants "Unmasked" (BACAP) or "Shear Brilliance" | minor (Fabric parity) | **Fixed in 0.3.0** in both mods. Certified in [0.3.0-purpur-26.2.md](certification/0.3.0-purpur-26.2.md) |
 
 ## 1. Default start ran the legacy path (fixed in 0.2.1)
 

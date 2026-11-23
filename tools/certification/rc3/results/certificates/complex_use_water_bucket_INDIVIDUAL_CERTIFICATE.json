@@ -1,0 +1,70 @@
+{
+  "group": "complex_use_water_bucket",
+  "reviewer": "rc3-reviewer-5",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json: use_water_bucket has 3 direct sites (NativeComplexBindings.java:16, NativeComplexAgent.java:125 'ability = \"USE_WATER_BUCKET\"', NativeComplexSpecs.java:41 BucketItem.emptyContents spec); all 3 file SHA-256 recomputed and match E1. Thresholds: normal 134, easy 102, hard 166, chaos_20261116 354, custom_vision 134."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "All 17 rows PASS (no non-PASS rows). Read all 17 excerpts. Locked rows (c41 pass1, c42-45, c46 reload, offhand_locked): count unchanged (e.g. 133->133), water probe 'Test failed' pre and post, server resync ClientboundContainerSetContent/SetSlot, client overlay shows lock message. Allowed rows: probe 'Test passed', inventory_changed advancement, water placed. Note: the RIGHT_CLICK_BLOCK event logs useBlock=ALLOW; the denial is in the native BucketItem.emptyContents guard, which emits no decision line, so denial is judged from the probe + resync.",
+      "rowsRead": [
+        "campaign41 pass1 use_water_bucket locked",
+        "campaign41 pass1 use_water_bucket allowed",
+        "campaign41 modes use_water_bucket creative",
+        "campaign41 modes use_water_bucket op",
+        "campaign41 modes use_water_bucket spectator",
+        "campaign42 thresholds-easy use_water_bucket locked/allowed",
+        "campaign43 thresholds-hard use_water_bucket locked/allowed",
+        "campaign44 thresholds-chaos use_water_bucket locked/allowed",
+        "campaign45 thresholds-custom_vision use_water_bucket locked/allowed",
+        "campaign41 offhand use_water_bucket offhand_locked/offhand_allowed",
+        "campaign46 reload use_water_bucket locked/allowed",
+        "campaign41 reload use_water_bucket locked (superseded, output.log 115230-115243)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for campaign41-46: onlineMode=true, 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' line and 'Glower4ek joined the game' line present for each contributing runtime; packets in excerpts carry the same actor UUID."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative (PASS: water placed, creative bypass), op and spectator (no water, count 133) present; offhand_locked/offhand_allowed PASS; threshold rows for normal, easy, hard, chaos, custom_vision locked+allowed. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "MANIFEST.e5Reload.evidence.generationAfter=2. Reload rows come from campaign46 (superseding campaign41); both campaign46 excerpts show generation 2 in every ATD_STAGE2A_STATE line; campaign46 'Reloading!' at output.log 1644 and PROGRESSION_CONFIG_READY generation=2 at 1650 precede the rows (1696+). campaign41's reload (Reloading! at line 109492) came after its offhand pass (last offhand logLine 109480). Reload PASS/PASS agrees with pass1 PASS/PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED; MANIFEST.runtimes[*].replay.reproducedAll=true for campaign41-46. Plugin SHA-256 d3019bd3...c43a in MANIFEST for all 6 runtimes and recomputed on campaign41..46/runtime/plugins/achievetodo.jar (all match). Client mod 2c03d9fa...c649 matches. Recomputed campaign-results.jsonl SHA-256 for all six runtimes (ff3f86cf.. c41, 14194351.. c42, 9926ef41.. c43, 9de127af.. c44, 3227522b.. c45, 3052477e.. c46) = evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json + receipts/output.log for campaign41-46: args are -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar; only -Dachievetodo.* option is -Dachievetodo.progression.initialConfig=easy/hard/chaos on campaign42/43/44; campaign41/45/46 have none. Each log has ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true at startup before any case; on c42-44 derived=[... world-group.properties ... achievetodo.progression.freshConfig] (plugin-derived fresh install); on c41/45/46 derived has no freshConfig."
+    }
+  },
+  "superseded": "Justified. The campaign41 reload locked row (output.log 115230-115243) was FAIL_EFFECT_WHILE_LOCKED only because the client-side inventory oracle saw '1 minecraft:bucket' at tick1. Its server lines match the PASS rows: useBlock event, ContainerSetContent+SetSlot resync, water probe 'Test failed' before and after, count 133->133, post mainhand back to water_bucket, lock overlay shown. So the server denied, and the only effect was a transient client prediction. The campaign46 rerun (output.log 1696-1708) shows DELTA_SENT count=133 before the action, tick1 mainhand stays water_bucket, probe failed, count unchanged: PASS. The superseded allowed row (PASS->PASS) is also consistent (c46 1752-1792: water placed, count 134->135 via enter_water advancements).",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "MANIFEST.json runtimes.campaign41..45.evidenceHashes['campaign.py'].sha256=91249553...; HARNESS_RC3.sha256 lists 1162ba11... (= harness-history-rc3/campaign.py)",
+      "description": "Per-runtime evidenceHashes for campaign41-45 record the current (RC3B) campaign.py hash, not the RC3 harness those runtimes actually ran under. The RC3 harness is preserved with a matching hash in harness-history-rc3, so this is provenance bookkeeping only."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt ATD_STAGE2A_STATE lines, e.g. '\"ability\": {\"USE_WATER_BUCKET\": null}'",
+      "description": "The state line logs null for the tested ability's lock state, so the lock is established from count vs threshold and the observed outcome only, not from a logged lock snapshot (menu/furnace groups do log LOCKED/UNLOCKED)."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "campaign41/receipts/campaign-results.jsonl reload use_water_bucket locked: client tick1 mainhand='1 minecraft:bucket'; output.log 115236-115243",
+      "description": "After a reload the client can briefly predict a bucket emptying before the server resyncs it. Server state is unaffected (no water, no count change). This is cosmetic, but it is a real client-visible flicker rather than a pure harness artifact."
+    }
+  ]
+}

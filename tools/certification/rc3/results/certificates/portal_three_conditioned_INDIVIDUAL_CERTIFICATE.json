@@ -1,0 +1,58 @@
+{
+  "group": "portal_three_conditioned",
+  "reviewer": "rc3-reviewer-6",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "3 abilities DIRECT; 3 source files (NativePortalAgent.java 443910c9..1181, NativeMovementBindings.java dc02c163..69b0, NativePortalBindings.java bcd233e0..d5e7) rehashed with hashlib: all match E1. Opened NativePortalAgent.java 108-125: NetherPortalBlock->ENTER_NETHER, EndPortalBlock->ENTER_END, EndGatewayBlock->TELEPORT_OUTER_ISLANDS (nether skipped inside the Nether, gateway only for central gateways), then locked(actor, ability) returns denied; NativePortalBindings.java:13 binds the 3 abilities. Thresholds present for normal, easy, hard, chaos_20261116 (single chaos config), custom_vision."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "29 rows, all PASS. Read all 29 excerpts. Every locked/op row (pass1, reload, 4 presets): count unchanged, no ATD_PROOF_NATIVE_WORLD_CHANGE, no ATD_PROOF_NATIVE_ADVANCEMENT_DONE (in particular no entered_nether_portal / entered_end_portal / end_gateway / enter_end_gateway criterion), player stays in place; client overlay=true. 0.3.0 requirement (a) holds: no locked row has +1 and no enter_block leak. Allowed rows: WORLD_CHANGE to the_nether / the_end or teleport to z~1022 with the enter_block criteria (pass1 and presets +2; reload allowed +0 because the criteria were already earned in pass1, travel still logged). Creative: bypass, travel happens; spectator: no travel, only a use_elytra criterion (not a portal criterion), count unchanged.",
+      "rowsRead": [
+        "campaign41 pass1 enter_nether locked",
+        "campaign41 pass1 enter_nether allowed",
+        "campaign41 pass1 enter_end locked",
+        "campaign41 pass1 enter_end allowed",
+        "campaign41 pass1 teleport_outer_islands locked",
+        "campaign41 pass1 teleport_outer_islands allowed",
+        "campaign41 modes enter_nether/enter_end/teleport_outer_islands creative/op/spectator (9 rows)",
+        "campaign41 reload all 6 rows",
+        "campaign42 thresholds-easy enter_nether locked+allowed",
+        "campaign43 thresholds-hard enter_nether locked+allowed",
+        "campaign44 thresholds-chaos enter_nether locked+allowed",
+        "campaign45 thresholds-custom_vision enter_nether locked+allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, authenticated UUID line (Glower4ek 89c23030-ce61-44ab-800a-f2aee455e14a) and join line present for all 6; launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator exist for all 3 abilities; portals have no off-hand route (no offhand rows needed); no NA rows. Preset rows (one-per-group sample = enter_nether) exist for easy, hard, chaos, custom_vision, plus normal pass1 for all 3."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "6 reload rows from campaign41 at output.log lines 117197+ (after modes at ~51k); all 12 of their STAGE2A lines show generation 2; MANIFEST e5Reload generationAfter=2; reload verdicts PASS equal pass1 PASS for all 3 abilities."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: every row REPRODUCED; receipts/REPLAY.json reproducedAll=true for campaign41 (1738 rows), 42-45 (114 each), 46 (29). Plugin SHA-256 d3019bd3...c43a identical in all 6 runtimes (MANIFEST.plugin.perRuntime and launch.json pluginSHA256); client mod SHA-256 2c03d9fa...c649 matches. Recomputed SHA-256 of campaign-results.jsonl for all 6 runtimes: all equal evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json/runtime_args.json campaign41-46: -javaagent:plugins/achievetodo.jar plus observer trace-agent; the only -D option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44; none in 41/45/46. output.log lines ~208-235 of each runtime: ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true, before the first case (atd_marks objective at ~251-286). freshConfig and world-group.properties appear only in the plugin-logged derived=[...] of campaign42-44 (fresh install), absent in 41/45/46."
+    }
+  },
+  "superseded": "No superseded rows for this group (MANIFEST.superseded=[]); campaign46 supplement is 'same' and contributes no rows here.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc3-pkg/portal_three_conditioned/excerpts.txt (all ATD_STAGE2A_STATE lines show \"ability\": {\"ENTER_NETHER\"|\"ENTER_END\"|\"TELEPORT_OUTER_ISLANDS\": null})",
+      "description": "The state probe does not resolve the lock state of the portal abilities and no plugin decision line is logged for portal denials; the lock is inferred from count < threshold, the absence of world change/advancement and the client overlay. Sufficient, but weaker than the direct decision evidence of other groups."
+    }
+  ]
+}

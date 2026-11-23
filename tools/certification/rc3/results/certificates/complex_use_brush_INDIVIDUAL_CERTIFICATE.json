@@ -1,0 +1,46 @@
+{
+  "group": "complex_use_brush",
+  "reviewer": "rc3-reviewer-4",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "use_brush: NativeComplexBindings.java:14, nativeguard/NativeComplexAgent.java:137,173, nativeguard/NativeComplexSpecs.java:36, NativeLandmarkOperations.java:85,205; SHA-256 recomputed, all match E1. Specs brush-start (BrushItem.useOn, USE_BRUSH), brush-tick (case 'brush-tick' -> USE_BRUSH), brush-armadillo (Armadillo.brushOffScute). Thresholds listed for normal, easy, hard, chaos_20261116 (single chaos config) and custom_vision. (264/204/324/458/264)"
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "26 rows, all PASS, 2 cases (suspicious block, armadillo). Locked: count unchanged; brushable block test stays 'passed' with repeated ATD_CRITERION_SUPPRESSED; armadillo locked shows DENY/cancelled=true and no scute. Allowed: block test turns 'failed' (brushed), armadillo DELTA_SENT/test passed (scute). No advancement leak on the armadillo denial (known issue 4): counts unchanged.",
+      "rowsRead": [
+        "campaign41 pass1 use_brush locked/allowed",
+        "campaign41 pass1 use_brush armadillo locked/allowed",
+        "campaign41 modes use_brush op/spectator",
+        "campaign42 thresholds-easy use_brush locked",
+        "campaign43 thresholds-hard use_brush locked/allowed",
+        "campaign44 thresholds-chaos use_brush locked",
+        "campaign45 thresholds-custom_vision use_brush locked"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes: campaign41-46 all onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present for each contributing runtime."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator present (campaign41); offhand_locked/offhand_allowed present (campaign41); thresholds rows for easy/hard/chaos/custom_vision (campaign42-45, locked+allowed) plus normal. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "MANIFEST.e5Reload: runtime campaign41, generationBefore=1, generationAfter=2. 4 reload excerpt blocks; all their ATD_STAGE2A_STATE lines show \"generation\": 2 (none 1). Reload rows are at output.log lines >117000, after pass1 (<10000), modes (~50000) and offhand (~98000-99600). Each reload verdict equals the pass1 verdict for the same ability/case/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED; MANIFEST.runtimes[*].replay.reproducedAll=true for campaign41 (1738), 42-45 (114 each), 46 (29). plugin.perRuntime identical d3019bd3...c43a for all 6 runtimes = brief value; clientMod sha256 2c03d9fa...c649 = brief value. Recomputed SHA-256 of campaign-results.jsonl for all six runtimes (campaign4N/receipts) - each matches evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "output.log of campaign41-46: ATD_LAUNCH_PROFILE=release (lines 208-210), ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true, all before the first case marker (first M...pre at lines 338-462). launch.json: -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar in every runtime; the only -Dachievetodo option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44; campaign41/45/46 have none. In 42-44 the logged derived=[...] contains world-group.properties and achievetodo.progression.freshConfig (plugin-derived, fresh install); 41/45/46 derived lists no freshConfig."
+    }
+  },
+  "superseded": "No superseded rows in this group.",
+  "findings": []
+}

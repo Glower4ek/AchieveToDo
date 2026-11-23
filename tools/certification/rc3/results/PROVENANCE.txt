@@ -1,0 +1,9 @@
+built from release-0.3.0 @ 5f2695ca42f92f3acf216432b1ed251b9a137522; rebuilt from a clean clone on 2026-11-23, both jars byte-identical:
+d3019bd333591c8f57645e093aea78befb6700d795ccbae25edf7a4338ffc43a  AchieveToDo-Purpur-26.2-0.3.0.jar  (gradlew jar, --offline)
+2c03d9fa9e26c1c53691d720671107e8569af63092a5c2a2e9e9b1c32644c649  achievetodo-mc26.2+0.3.0.jar       (gradlew build -x test, --offline)
+
+Note on the Fabric clone build: Loom regenerates minecraft-merged-3b5d97e58c-26.2.jar in a fresh clone. The regenerated
+jar (65afd8f0...) has the same 31707 entries with identical contents as the pinned one (49353b01...); only 1256 entry
+timestamps differ, so strict dependency verification rejects it. The pinned jar was put in the clone's loom cache and the
+build then passed verification. runGameTest (Fabric game tests, run after the jar is built) failed in the clone: it needs
+the external test inputs that only the tooling environment provides; it does not affect the jar.

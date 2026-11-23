@@ -1,0 +1,43 @@
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign46 d3019bd333591c8f57645e093aea78befb6700d795ccbae25edf7a4338ffc43a
+[2026-11-22T23:41:18+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-22T23:41:29+00:00] campaign46 up: [04:41:29 INFO]: [AchieveToDo] Resolved progression config normal.toml (normal)
+[2026-11-22T23:41:29+00:00] campaign46 launch profile: release, gameplay mode RELEASE, product gameplay ready
+[2026-11-22T23:42:05+00:00] campaign46 pass modes phases=creative,op,spectator
+CONFIG normal:normal.toml abilities=153
+PASS                       tool_material7_each_native_mode    use_iron_tools                 creative
+PASS_NO_OVERLAY            tool_material7_each_native_mode    use_iron_tools                 op
+PASS                       tool_material7_each_native_mode    use_iron_tools                 spectator
+NA_VANILLA_NO_CREATIVE_ROUTE tool_material7_each_native_mode    use_iron_tools                 creative
+PASS_NO_OVERLAY            tool_material7_each_native_mode    use_iron_tools                 op
+PASS                       tool_material7_each_native_mode    use_iron_tools                 spectator
+PASS                       tool_material7_each_native_mode    use_iron_tools                 creative
+PASS_NO_OVERLAY            tool_material7_each_native_mode    use_iron_tools                 op
+PASS                       tool_material7_each_native_mode    use_iron_tools                 spectator
+PASS                       tool_material7_each_native_mode    use_iron_tools                 creative
+PASS_NO_OVERLAY            tool_material7_each_native_mode    use_iron_tools                 op
+PASS                       tool_material7_each_native_mode    use_iron_tools                 spectator
+PASS                       tool_material7_each_native_mode    use_iron_tools                 creative
+PASS_NO_OVERLAY            tool_material7_each_native_mode    use_iron_tools                 op
+PASS                       tool_material7_each_native_mode    use_iron_tools                 spectator
+[2026-11-22T23:43:49+00:00] campaign46 pass offhand phases=offhand_locked,offhand_allowed
+CONFIG normal:normal.toml abilities=153
+PASS                       complex_use_shears                 use_shears                     offhand_locked
+PASS                       complex_use_shears                 use_shears                     offhand_allowed
+PASS                       complex_use_shears                 use_shears                     offhand_locked
+PASS                       complex_use_shears                 use_shears                     offhand_allowed
+PASS                       complex_use_shears                 use_shears                     offhand_locked
+PASS                       complex_use_shears                 use_shears                     offhand_allowed
+PASS                       complex_use_shears                 use_shears                     offhand_locked
+PASS                       complex_use_shears                 use_shears                     offhand_allowed
+NA_OFFHAND_NOT_APPLICABLE  complex_use_shears                 use_shears                     offhand_locked
+NA_OFFHAND_NOT_APPLICABLE  complex_use_shears                 use_shears                     offhand_allowed
+NA_OFFHAND_NOT_APPLICABLE  complex_use_shears                 use_shears                     offhand_locked
+NA_OFFHAND_NOT_APPLICABLE  complex_use_shears                 use_shears                     offhand_allowed
+[2026-11-22T23:44:28+00:00] reload done: generation 2
+[2026-11-22T23:44:48+00:00] campaign46 pass reload phases=locked,allowed
+CONFIG normal:normal.toml abilities=153
+PASS                       complex_use_water_bucket           use_water_bucket               locked
+PASS                       complex_use_water_bucket           use_water_bucket               allowed
+E6 replay campaign46: {'REPRODUCED': 28, 'MISMATCH': 1} reproducedAll=False
+   MISMATCH modes use_iron_tools creative 
+[2026-11-22T23:44:59+00:00] FINAL_RC3B_DONE

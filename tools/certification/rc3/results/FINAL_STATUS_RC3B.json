@@ -1,0 +1,57 @@
+{
+  "started": "2026-11-22T23:41:17+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\certification\\rc3-artifacts\\AchieveToDo-Purpur-26.2-0.3.0.jar",
+  "runtimes": {
+    "campaign46": {
+      "mode": "normal",
+      "started": "2026-11-22T23:41:17+00:00",
+      "passes": {
+        "modes": {
+          "phases": "creative,op,spectator",
+          "counts": {
+            "PASS": 9,
+            "PASS_NO_OVERLAY": 5,
+            "NA_VANILLA_NO_CREATIVE_ROUTE": 1
+          },
+          "finished": "2026-11-22T23:43:49+00:00",
+          "aimRetry": []
+        },
+        "offhand": {
+          "phases": "offhand_locked,offhand_allowed",
+          "counts": {
+            "PASS": 8,
+            "NA_OFFHAND_NOT_APPLICABLE": 4
+          },
+          "finished": "2026-11-22T23:44:22+00:00",
+          "aimRetry": []
+        },
+        "reload": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 2
+          },
+          "finished": "2026-11-22T23:44:56+00:00",
+          "aimRetry": []
+        }
+      },
+      "reload": {
+        "generationBefore": 1,
+        "generationAfter": 2,
+        "at": "2026-11-22T23:44:28+00:00"
+      },
+      "finished": "2026-11-22T23:44:59+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 28,
+          "MISMATCH": 1
+        },
+        "reproducedAll": false,
+        "exit": 1
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "rc3b",
+  "launch": "release",
+  "finished": "2026-11-22T23:44:59+00:00"
+}

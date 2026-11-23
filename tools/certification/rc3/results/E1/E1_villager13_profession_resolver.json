@@ -1,0 +1,743 @@
+{
+  "group": "villager13_profession_resolver",
+  "repoHead": "5f2695ca42f92f3acf216432b1ed251b9a137522",
+  "abilities": [
+    {
+      "ability": "trade_with_mason",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            43
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 204,
+        "easy": 156,
+        "hard": 252,
+        "chaos_20261116": 112,
+        "custom_vision": 204
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "trade_with_cartographer",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            36
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 289,
+        "easy": 224,
+        "hard": 354,
+        "chaos_20261116": 308,
+        "custom_vision": 289
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "trade_with_leatherworker",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            41
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 352,
+        "easy": 276,
+        "hard": 428,
+        "chaos_20261116": 519,
+        "custom_vision": 352
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "trade_with_shepherd",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            44
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 394,
+        "easy": 312,
+        "hard": 476,
+        "chaos_20261116": 599,
+        "custom_vision": 394
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "trade_with_butcher",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            35
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 443,
+        "easy": 354,
+        "hard": 532,
+        "chaos_20261116": 476,
+        "custom_vision": 443
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "trade_with_farmer",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            38
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 492,
+        "easy": 396,
+        "hard": 588,
+        "chaos_20261116": 2,
+        "custom_vision": 492
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "trade_with_cleric",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            37
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 562,
+        "easy": 456,
+        "hard": 668,
+        "chaos_20261116": 751,
+        "custom_vision": 562
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "trade_with_fisherman",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            39
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 583,
+        "easy": 474,
+        "hard": 692,
+        "chaos_20261116": 388,
+        "custom_vision": 583
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "trade_with_fletcher",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            40
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 625,
+        "easy": 510,
+        "hard": 740,
+        "chaos_20261116": 83,
+        "custom_vision": 625
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "trade_with_armorer",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            34
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 653,
+        "easy": 534,
+        "hard": 772,
+        "chaos_20261116": 88,
+        "custom_vision": 653
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "trade_with_weaponsmith",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            46
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 688,
+        "easy": 564,
+        "hard": 812,
+        "chaos_20261116": 261,
+        "custom_vision": 688
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "trade_with_toolsmith",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            45
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 709,
+        "easy": 582,
+        "hard": 836,
+        "chaos_20261116": 86,
+        "custom_vision": 709
+      },
+      "mapping": "CURATED"
+    },
+    {
+      "ability": "trade_with_librarian",
+      "enforcementSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            220,
+            220
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "role": "native villager trade guard: profession -> TRADE_WITH_* (offersEmpty)",
+          "expect": "ability=\"TRADE_WITH_\"+name.toUpperCase",
+          "active": true
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            81,
+            111
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "role": "expanded listener: InventoryOpenEvent cancelled for a locked container/menu ability",
+          "expect": "e.setCancelled(true)",
+          "active": true
+        }
+      ],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayMenuAbilities.java",
+          "lines": [
+            42
+          ],
+          "sha256": "813236fd692a65a68f266ec9c72d7825c566ba152e7c4dab364a3ac6b2c59280",
+          "gitBlob": "1e725ea244d52a0fe04e1a0dc3d207c15c2165ec",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findTradeAbility": []
+      },
+      "thresholds": {
+        "normal": 723,
+        "easy": 594,
+        "hard": 852,
+        "chaos_20261116": 583,
+        "custom_vision": 723
+      },
+      "mapping": "CURATED"
+    }
+  ],
+  "configs": {
+    "normal": {
+      "file": "campaign41\\runtime\\plugins\\AchieveToDo\\progression\\configs\\normal.toml",
+      "sha256": "de6383599828005cb00afcacd868ca60850913c434219f8fed5f79456bb69624"
+    },
+    "easy": {
+      "file": "campaign42\\runtime\\plugins\\AchieveToDo\\progression\\configs\\easy.toml",
+      "sha256": "c145bfe25d9080414034e8d23ccd7d88b5eb3727b84f6e5a06219e4edbe7e9b3"
+    },
+    "hard": {
+      "file": "campaign43\\runtime\\plugins\\AchieveToDo\\progression\\configs\\hard.toml",
+      "sha256": "9d7b711b9fb7f2a9d0bfe2666f349e3859b77541bdf1bc2b656134b9f1329d6a"
+    },
+    "chaos_20261116": {
+      "file": "campaign44\\runtime\\plugins\\AchieveToDo\\progression\\configs\\chaos_20261116.toml",
+      "sha256": "2f178cf168fb7adfe9ca87461490eb07e10617e35446ae7ca0daa3d91e26cab5"
+    },
+    "custom_vision": {
+      "file": "campaign45\\runtime\\plugins\\AchieveToDo\\progression\\configs\\custom_vision.toml",
+      "sha256": "db26c1f6b440cc79466a6ee37dee544fb149a23b8d5909f53ec37ebeefb536cd"
+    }
+  }
+}

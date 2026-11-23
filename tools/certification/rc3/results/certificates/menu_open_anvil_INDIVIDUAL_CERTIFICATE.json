@@ -1,0 +1,57 @@
+{
+  "group": "menu_open_anvil",
+  "reviewer": "rc3-reviewer-5",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json: open_anvil sites GameplayMenuAbilities.java:22 (InventoryType.ANVIL -> OPEN_ANVIL) and :69 (anvil variants matched to OPEN_ANVIL); file hash recomputed and matches. Thresholds 234/180/288/287/234."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows, all PASS; read all 15 excerpts. Locked (pass1, reload, 4 presets): STATE kind=LOCKED, no OpenScreenPacket, count unchanged. Allowed: kind=UNLOCKED, OpenScreenPacket sent. op row: locked, no screen. creative and spectator: screen opens (bypass / vanilla spectator view).",
+      "rowsRead": [
+        "campaign41 pass1 open_anvil locked",
+        "campaign41 pass1 open_anvil allowed",
+        "campaign41 modes open_anvil creative",
+        "campaign41 modes open_anvil op",
+        "campaign41 modes open_anvil spectator",
+        "campaign41 reload open_anvil locked",
+        "campaign41 reload open_anvil allowed",
+        "campaign42 thresholds-easy open_anvil locked/allowed",
+        "campaign43 thresholds-hard open_anvil locked/allowed",
+        "campaign44 thresholds-chaos open_anvil locked/allowed",
+        "campaign45 thresholds-custom_vision open_anvil locked/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for campaign41-46: onlineMode=true, 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' line and 'Glower4ek joined the game' line present for each contributing runtime; packets in excerpts carry the same actor UUID."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator present; thresholds for normal, easy, hard, chaos, custom_vision (locked+allowed). Opening a block menu has no off-hand route, so there are no offhand or NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "generationAfter=2; reload rows from campaign41 come after the reload (Reloading! output.log 109492; last offhand row 109480), STATE generation is 2 in both, and they agree with pass1."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED; MANIFEST.runtimes[*].replay.reproducedAll=true for campaign41-46. Plugin SHA-256 d3019bd3...c43a in MANIFEST for all 6 runtimes and recomputed on campaign41..46/runtime/plugins/achievetodo.jar (all match). Client mod 2c03d9fa...c649 matches. Recomputed campaign-results.jsonl SHA-256 for all six runtimes (ff3f86cf.. c41, 14194351.. c42, 9926ef41.. c43, 9de127af.. c44, 3227522b.. c45, 3052477e.. c46) = evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json + receipts/output.log for campaign41-46: args are -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar; only -Dachievetodo.* option is -Dachievetodo.progression.initialConfig=easy/hard/chaos on campaign42/43/44; campaign41/45/46 have none. Each log has ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true at startup before any case; on c42-44 derived=[... world-group.properties ... achievetodo.progression.freshConfig] (plugin-derived fresh install); on c41/45/46 derived has no freshConfig."
+    }
+  },
+  "superseded": "None for this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "MANIFEST.json runtimes.campaign41..45.evidenceHashes['campaign.py'].sha256=91249553...; HARNESS_RC3.sha256 lists 1162ba11... (= harness-history-rc3/campaign.py)",
+      "description": "Per-runtime evidenceHashes for campaign41-45 record the current (RC3B) campaign.py hash, not the RC3 harness those runtimes actually ran under. The RC3 harness is preserved with a matching hash in harness-history-rc3, so this is provenance bookkeeping only."
+    }
+  ]
+}

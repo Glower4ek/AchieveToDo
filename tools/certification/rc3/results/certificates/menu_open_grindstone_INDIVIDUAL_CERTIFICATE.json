@@ -1,0 +1,54 @@
+{
+ "group": "menu_open_grindstone",
+ "reviewer": "rc3-reviewer-7",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "Abilities ['open_grindstone'] all DIRECT with active direct sites; recomputed SHA-256 of every cited source file under repo/ — all match E1. Opened guard sites: GameplayMenuAbilities.java L21 (GRINDSTONE -> OPEN_GRINDSTONE), NativeLandmarkActions.java L145 (GrindstoneBlock useWithoutItem); each references the tested AbilityType. Thresholds present for normal/easy/hard/chaos_20261116/custom_vision for every ability (single chaos config)."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "15 rows, all verdict PASS (no non-PASS rows). Every locked/op row: count before==after==threshold-1, ATD_STAGE2A_STATE kind LOCKED pre/post, client overlay shows lock message, no leak. Effect oracle: INVENTORY_OPEN_TYPE_GRINDSTONE + ClientboundOpenScreenPacket only on allowed/creative/spectator rows. Read excerpts of all rows across campaign41-45 (>=3 PASS per ability across runtimes).",
+   "rowsRead": [
+    "campaign41 pass1 open_grindstone locked",
+    "campaign41 pass1 open_grindstone allowed",
+    "campaign41 modes open_grindstone creative",
+    "campaign41 modes open_grindstone op",
+    "campaign41 modes open_grindstone spectator",
+    "campaign41 reload open_grindstone locked",
+    "campaign41 reload open_grindstone allowed",
+    "campaign42 thresholds-easy open_grindstone locked",
+    "campaign42 thresholds-easy open_grindstone allowed",
+    "campaign43 thresholds-hard open_grindstone locked",
+    "campaign43 thresholds-hard open_grindstone allowed",
+    "campaign44 thresholds-chaos open_grindstone locked",
+    "campaign44 thresholds-chaos open_grindstone allowed",
+    "campaign45 thresholds-custom_vision open_grindstone locked",
+    "campaign45 thresholds-custom_vision open_grindstone allowed"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' lines present for each."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes rows creative/op/spectator present for every ability/case; thresholds rows for easy(c42), hard(c43), chaos(c44), custom_vision(c45) plus normal (c41) per sample-one-per-group. No NA rows. No offhand rows: right-click open of these blocks is resolved on the empty main hand (useWithoutItem), so no off-hand route."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "reload rows all from campaign41; MANIFEST.e5Reload generationAfter=2; every ATD_STAGE2A_STATE line inside reload excerpts shows generation 2 (none show 1); reload verdicts PASS == pass1 verdicts PASS."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl 15/15 REPRODUCED; reproducedAll=true for campaign41 (1738), 42-45 (114 each), 46 (29). Plugin jar in each runtime recomputed = d3019bd3...c43a; client mod recomputed = 2c03d9fa...c649. Recomputed campaign-results.jsonl SHA-256 for all six runtimes, all equal evidenceHashes (e.g. campaign41 ff3f86cf9e8723d3...)."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "runtime_args.json c41-45: -javaagent:plugins/achievetodo.jar + trace-agent; only -D option is -Dachievetodo.progression.initialConfig=easy/hard/chaos on c42/43/44; none on c41/c45. output.log of c41-46: ATD_LAUNCH_PROFILE=release (L208-210), ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before cases; freshConfig and world-group.properties appear in logged derived=[...] only on c42-44 (plugin-derived fresh install)."
+  }
+ },
+ "superseded": "MANIFEST.superseded is empty for this group; no campaign46 rows contribute here, so no replacement to judge.",
+ "findings": []
+}

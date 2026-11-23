@@ -1,0 +1,54 @@
+{
+  "group": "throwables_four_paper_candidates",
+  "reviewer": "rc3-reviewer-8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "4 abilities DIRECT: BukkitExpandedGameplayListener.java:85-88 (projectileAbility, used by the PlayerLaunchProjectileEvent and ProjectileLaunchEvent handlers at lines 93-104 that cancel when locked) and GameplayGate.java:18-19 (IMPLEMENTED set). Both files' SHA-256 recomputed and equal to E1. Thresholds listed for normal/easy/hard/chaos_20261116/custom_vision for all 4."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "44 rows, all PASS. Locked rows: count unchanged (e.g. 142->142), observed inv=false, overlay=true; allowed rows: inv=true, excerpt shows ClientboundSoundPacket, inventory_changed and probe 'Test passed. Count: 1'. Op rows denied (op is not a bypass), creative used, spectator no effect.",
+      "rowsRead": [
+        "campaign41 pass1 throw_snowball locked",
+        "campaign41 pass1 throw_snowball allowed",
+        "campaign41 reload throw_egg locked",
+        "campaign41 offhand throw_ender_pearl offhand_locked",
+        "campaign42 thresholds-easy throw_snowball locked",
+        "campaign43 thresholds-hard throw_snowball locked",
+        "campaign44 thresholds-chaos throw_snowball allowed",
+        "campaign45 thresholds-custom_vision throw_snowball locked"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present for each; confirmed directly in campaign41-45 receipts/output.log lines 235-253; campaign41/runtime/server.properties:47 online-mode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator rows for all 4; offhand_locked/offhand_allowed rows for all 4; thresholds rows easy/hard/chaos/custom_vision (first case throw_snowball, by design) plus normal pass1 for all 4. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "All reload rows are campaign41 tag reload at output.log lines >112000, after pass1 (lines ~3000-19500), modes (~44000-53500) and offhand; MANIFEST.e5Reload generationBefore=1, generationAfter=2; every reload ATD_STAGE2A_STATE in excerpts.txt shows generation 2; each reload verdict equals the pass1 verdict of the same ability (PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "All replay.jsonl rows REPRODUCED with recorded==replayed; MANIFEST runtimes replay.reproducedAll=true for campaign41-46; plugin.perRuntime all d3019bd333591c8f57645e093aea78befb6700d795ccbae25edf7a4338ffc43a; clientMod sha256 2c03d9fa9e26c1c53691d720671107e8569af63092a5c2a2e9e9b1c32644c649; recomputed SHA-256 of campaign41 and campaign45 receipts/campaign-results.jsonl, both equal evidenceHashes.results (campaign41 ff3f86cf9e87...6d00)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "receipts/launch.json and runtime_args.json campaign41-45: -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar; the only -Dachievetodo.* option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44, none in campaign41/45. output.log lines 208-235 of campaign41-46 log ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before the player join and first case; campaign42-44 derived=[..., world-group.properties, ..., achievetodo.progression.freshConfig] (fresh install, freshConfig derived by the plugin); campaign41/45/46 derived lists no freshConfig."
+    }
+  },
+  "superseded": "MANIFEST.superseded is empty for this group; no campaign46 row replaces any row here.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc3-pkg/throwables_four_paper_candidates/excerpts.txt block 'campaign41 pass1 throw_snowball locked' (campaign41 output.log 19074-19083)",
+      "description": "Locked throw excerpts contain no plugin decision line (no cancelled/DENY); the denial is inferred from unchanged count, absent projectile/inventory effect and client overlay. Verdict is reproducible but the server decision is not directly logged."
+    }
+  ]
+}

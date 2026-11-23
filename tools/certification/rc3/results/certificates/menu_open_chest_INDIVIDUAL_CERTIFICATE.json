@@ -1,0 +1,69 @@
+{
+  "group": "menu_open_chest",
+  "reviewer": "rc3-reviewer-6",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (open_chest) DIRECT; 4 source file(s) cited (BukkitExactLandmarkRuntime.java 51178dbc, BukkitExpandedGameplayListener.java f10bdc23, GameplayGate.java 4ddeec26, NativeLandmarkOperations.java c29399c4), all rehashed with hashlib and equal to E1. Opened BukkitExpandedGameplayListener.java:70 (Chest/DoubleChest -> OPEN_CHEST); GameplayGate.java:17, NativeLandmarkOperations.java:95/119, BukkitExactLandmarkRuntime.java:189 also cited: it checks OPEN_CHEST. Thresholds present for normal, easy, hard, chaos_20261116 (single chaos config), custom_vision."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "30 rows, all PASS (no non-PASS rows). Read all 30 excerpts. Locked/op rows in all 5 configs: STAGE2A kind=LOCKED, count = threshold-1 before and after; denial evidence: chest: INVENTORY_OPEN_MONITOR_CANCELLED true, no OpenScreen; shelf (non-menu) case: 'data get block' probe shows the apple still in slot 1 after the action, and the client overlay names the shelf (Russian 'polkoy'), satisfying overlay_text. Allowed rows: kind=UNLOCKED, ClientboundOpenScreenPacket present (shelf: item moved to inventory, probe+inv true). Creative opens (bypass); spectator opens except where vanilla gives no route (ender chest / shelf: useBlock=DENY).",
+      "rowsRead": [
+        "campaign41 pass1 open_chest locked",
+        "campaign41 pass1 open_chest allowed",
+        "campaign41 pass1 open_chest/shelf locked",
+        "campaign41 pass1 open_chest/shelf allowed",
+        "campaign41 modes open_chest creative",
+        "campaign41 modes open_chest op",
+        "campaign41 modes open_chest spectator",
+        "campaign41 modes open_chest/shelf creative",
+        "campaign41 modes open_chest/shelf op",
+        "campaign41 modes open_chest/shelf spectator",
+        "campaign41 reload open_chest locked",
+        "campaign41 reload open_chest allowed",
+        "campaign41 reload open_chest/shelf locked",
+        "campaign41 reload open_chest/shelf allowed",
+        "campaign42 thresholds-easy open_chest locked",
+        "campaign42 thresholds-easy open_chest allowed",
+        "campaign42 thresholds-easy open_chest/shelf locked",
+        "campaign42 thresholds-easy open_chest/shelf allowed",
+        "campaign43 thresholds-hard open_chest locked",
+        "campaign43 thresholds-hard open_chest allowed",
+        "campaign43 thresholds-hard open_chest/shelf locked",
+        "campaign43 thresholds-hard open_chest/shelf allowed",
+        "campaign44 thresholds-chaos open_chest locked",
+        "campaign44 thresholds-chaos open_chest allowed",
+        "campaign44 thresholds-chaos open_chest/shelf locked",
+        "campaign44 thresholds-chaos open_chest/shelf allowed",
+        "campaign45 thresholds-custom_vision open_chest locked",
+        "campaign45 thresholds-custom_vision open_chest allowed",
+        "campaign45 thresholds-custom_vision open_chest/shelf locked",
+        "campaign45 thresholds-custom_vision open_chest/shelf allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, authenticated UUID line (Glower4ek 89c23030-ce61-44ab-800a-f2aee455e14a) and join line present for all 6; launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator present; opening a container block has no off-hand variant (no offhand rows, no NA rows). Preset rows for easy, hard, chaos, custom_vision plus normal."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows from campaign41 at output.log lines ~109-111k (after modes at ~40-43k); their STAGE2A lines show generation 2; MANIFEST e5Reload generationAfter=2; reload verdicts PASS equal pass1 PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: every row REPRODUCED; receipts/REPLAY.json reproducedAll=true for campaign41 (1738 rows), 42-45 (114 each), 46 (29). Plugin SHA-256 d3019bd3...c43a identical in all 6 runtimes (MANIFEST.plugin.perRuntime and launch.json pluginSHA256); client mod SHA-256 2c03d9fa...c649 matches. Recomputed SHA-256 of campaign-results.jsonl for all 6 runtimes: all equal evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json/runtime_args.json campaign41-46: -javaagent:plugins/achievetodo.jar plus observer trace-agent; the only -D option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44; none in 41/45/46. output.log lines ~208-235 of each runtime: ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true, before the first case (atd_marks objective at ~251-286). freshConfig and world-group.properties appear only in the plugin-logged derived=[...] of campaign42-44 (fresh install), absent in 41/45/46."
+    }
+  },
+  "superseded": "No superseded rows for this group (MANIFEST.superseded=[]); campaign46 supplement is 'same' and contributes no rows here.",
+  "findings": []
+}

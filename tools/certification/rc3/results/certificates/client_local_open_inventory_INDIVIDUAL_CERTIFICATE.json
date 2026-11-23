@@ -1,0 +1,43 @@
+{
+  "group": "client_local_open_inventory",
+  "reviewer": "rc3-reviewer-3",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1 hashes recomputed with hashlib over repo files, all match: BridgeWire.java 4242e4cd..., MinecraftClientMixin.java b033ff4e..., BukkitBridgeRuntime.java cdb9b585..., GameplayGate.java 4ddeec26.... MinecraftClientMixin.java:38-39 inventory key ignored while isAbilityLocked(OPEN_INVENTORY); BukkitBridgeRuntime.java:301 honours denial intents only when the server holds the ability locked. Thresholds for all 5 configs."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows all PASS. Locked: client screen stays none, overlay shown, counts unchanged; allowed: InventoryScreen. Read c41 pass1, c43 hard, c45 custom rows.",
+      "rowsRead": [
+        "campaign41 pass1 open_inventory locked",
+        "campaign41 pass1 open_inventory allowed",
+        "campaign43 thresholds-hard open_inventory locked",
+        "campaign45 thresholds-custom_vision open_inventory locked"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present for every runtime; configResolved matches normal/easy/hard/chaos_20261116/custom_vision."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator; no off-hand route (key press); thresholds for all presets. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows all campaign41; campaign41 logLines ranges across all groups: pass1 339-40631, modes 40689-95549, offhand 95602-109480, reload 109538-149287 (reload after all three). e5Reload.generationAfter=2. Every ATD_STAGE2A_STATE line inside this group's reload excerpts shows \"generation\": 2 (none show 1). Each reload verdict equals the pass1 verdict for the same ability/case/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "All replay.jsonl rows REPRODUCED; MANIFEST runtimes replay.reproducedAll=true for campaign41 (1738), 42-45 (114 each), 46 (29). plugin.perRuntime identical for 41-46 and = d3019bd333591c8f57645e093aea78befb6700d795ccbae25edf7a4338ffc43a; clientMod sha256 = 2c03d9fa...c649. Recomputed sha256 of campaign41/receipts/campaign-results.jsonl = ff3f86cf...6d00 and campaign45 = 3227522b...27e7, both equal evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json of campaign41-46: -javaagent:plugins/achievetodo.jar + trace-agent; only -D option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44; none in 41/45/46. output.log of each: ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true logged at startup before player join. freshConfig and world-group.properties appear in derived=[...] only for 42-44 (plugin-derived fresh install); 41/45/46 derived list has no freshConfig."
+    }
+  },
+  "superseded": "MANIFEST.superseded is empty for this group; no campaign46 row replaces any of its rows.",
+  "findings": []
+}
