@@ -1,0 +1,73 @@
+{
+  "group": "action_use_ender_eye",
+  "repoHead": "5f2695ca42f92f3acf216432b1ed251b9a137522",
+  "abilities": [
+    {
+      "ability": "use_ender_eye",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/NativeActionBindings.java",
+          "lines": [
+            16
+          ],
+          "sha256": "93faec2eff7b27b41995a2d91dd169b95586b852594e503c95f31cad4b2c89c3",
+          "gitBlob": "55a0866989d8cf0aa5caa94674003c2686cef940",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeActionSpecs.java",
+          "lines": [
+            29
+          ],
+          "sha256": "dc0fab2b346d866d678b4552a0c0b9d8b2666ffdf2cc313d0ebe3724184482e5",
+          "gitBlob": "044f6680720bad4228e847df636d44799462511a",
+          "specs": [
+            "new Spec(\"USE_ENDER_EYE\", \"net/minecraft/world/item/EnderEyeItem\", \"use\", \"(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/Interactio"
+          ],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findItemAbility": []
+      },
+      "thresholds": {
+        "normal": 429,
+        "easy": 342,
+        "hard": 516,
+        "chaos_20261116": 713,
+        "custom_vision": 429
+      },
+      "mapping": "DIRECT"
+    }
+  ],
+  "configs": {
+    "normal": {
+      "file": "campaign41\\runtime\\plugins\\AchieveToDo\\progression\\configs\\normal.toml",
+      "sha256": "de6383599828005cb00afcacd868ca60850913c434219f8fed5f79456bb69624"
+    },
+    "easy": {
+      "file": "campaign42\\runtime\\plugins\\AchieveToDo\\progression\\configs\\easy.toml",
+      "sha256": "c145bfe25d9080414034e8d23ccd7d88b5eb3727b84f6e5a06219e4edbe7e9b3"
+    },
+    "hard": {
+      "file": "campaign43\\runtime\\plugins\\AchieveToDo\\progression\\configs\\hard.toml",
+      "sha256": "9d7b711b9fb7f2a9d0bfe2666f349e3859b77541bdf1bc2b656134b9f1329d6a"
+    },
+    "chaos_20261116": {
+      "file": "campaign44\\runtime\\plugins\\AchieveToDo\\progression\\configs\\chaos_20261116.toml",
+      "sha256": "2f178cf168fb7adfe9ca87461490eb07e10617e35446ae7ca0daa3d91e26cab5"
+    },
+    "custom_vision": {
+      "file": "campaign45\\runtime\\plugins\\AchieveToDo\\progression\\configs\\custom_vision.toml",
+      "sha256": "db26c1f6b440cc79466a6ee37dee544fb149a23b8d5909f53ec37ebeefb536cd"
+    }
+  }
+}

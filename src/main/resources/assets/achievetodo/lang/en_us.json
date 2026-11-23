@@ -474,6 +474,7 @@
   "achievetodo.ability.open_chest.name": "Chest",
   "achievetodo.ability.open_chest.description": "Ability to open a chest",
   "achievetodo.ability.open_chest.locked_message": "You can't open a chest",
+  "achievetodo.ability.open_chest.shelf.locked_message": "You can't use the shelf",
 
   "achievetodo.ability.open_stonecutter.name": "Stonecutter",
   "achievetodo.ability.open_stonecutter.description": "Ability to use a stonecutter",
@@ -703,5 +704,9 @@
   "achievetodo.ability_unlocked_toast.landmark": "Structure available",
 
   "achievetodo.tab_unlocked_chat_message": "Tab %s%s%s is unlocked",
-  "achievetodo.ability_unlocked_chat_message": "%s has unlocked %s%s%s"
+  "achievetodo.ability_unlocked_chat_message": "%s has unlocked %s%s%s",
+
+  "achievetodo.bridge.syncing": "Syncing progression with the server...",
+  "achievetodo.disconnect.sync_error": "AchieveToDo lost sync with the server. Please reconnect.",
+  "achievetodo.disconnect.server_version": "This server runs AchieveToDo %s, you have %s. Use the same version as the server."
 }

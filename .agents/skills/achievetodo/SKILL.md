@@ -54,6 +54,15 @@ commit/tree and task-specific receipts before relying on certification.
 | C9 evidence SHA256 | 9a1282fb486057d79351637e9a5898df5fcc9eed29e5c4e4d356adc95aa63683 |
 | Phase D new gameplay/content mappings | Mode A unless a separately approved Mode B/C scope exists; RC regression maintenance is separately governed by section 13 |
 
+### Current status (0.3.0, 2026-11-22)
+
+0.2.1 was certified 57/57 groups and released on 2026-11-21. On 2026-11-22 the owner decided to finish both
+products as 0.3.0: the release launch is the product mode (`ATD_GAMEPLAY_MODE=RELEASE`,
+`PRODUCT_GAMEPLAY_READY=true` once enforcement is up), the client no longer shows "Preview only", the legacy
+diagnostic path and the inventory UI were removed, CHAOS is seed-deterministic and locked End portals no longer
+grant their `enter_block` advancement. The owner decision explicitly authorizes these changes; the sections below
+describe the 0.2.1-rc.1 era and are kept for history. 0.3.0 needs its own full runtime certification before release.
+
 ### RC candidate and live test observations (not blanket certification)
 
 As of 2026-10-27, an owner-directed 0.2.1-rc.1 Fabric/Purpur regression
@@ -476,7 +485,7 @@ Maintenance lane M execution rules:
    permit. Do not turn warnings or compile success into claimed runtime PASS.
    If interactive GUI testing is unavailable, provide a precise human test
    protocol and label such cases UNVERIFIED, not FIXED/CERTIFIED.
-5. Preserve `PRODUCT_GAMEPLAY_READY=false`, diagnostic-only gating and
+5. (0.2.1-rc.1 era; superseded by the 0.3.0 owner decision above.) Preserve `PRODUCT_GAMEPLAY_READY=false`, diagnostic-only gating and
    source/reload/reconnect semantics unless a separate owner-reviewed product
    decision explicitly authorizes otherwise. An absent action-bar message
    under `bridge.spike=true` must not be 'fixed' by enabling uncertified

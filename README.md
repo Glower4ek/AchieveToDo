@@ -6,7 +6,13 @@ Minecraft, but the world has stolen your abilities. Reclaim them one by one by c
 
 Current project owner and maintainer: **Glower4ek**. Maintained source: [Glower4ek/AchieveToDo](https://github.com/Glower4ek/AchieveToDo).
 
-Current release: **AchieveToDo 0.1.5.5** for **Minecraft 26.2**, requiring **Java 25**.
+Current release: **AchieveToDo 0.3.0** for **Minecraft 26.2**, requiring **Java 25**. It comes in two parts:
+
+- **The Fabric mod** (`achievetodo-mc26.2+0.3.0.jar`) for single player, and for every player who joins an
+  AchieveToDo server.
+- **The Purpur server plugin** (`AchieveToDo-Purpur-26.2-0.3.0.jar`) for multiplayer on Purpur 26.2.
+
+Downloads are on the [releases page](https://github.com/Glower4ek/AchieveToDo/releases).
 
 This project keeps the vanilla feel—no overpowered features—but flips progression on its head. Instead of starting with every ability, you must earn them through advancements. Explore alternate paths, delve into dungeons, and celebrate every basic resource you manage to unlock.
 
@@ -20,25 +26,25 @@ You can also play this mod in [ATD modpack](https://modrinth.com/modpack/achieve
 
 Early on, you’ll notice a scoreboard on your screen showing your completed advancements:
 
-![Replace this with a description](https://cdn.modrinth.com/data/cached_images/378d8348c437f328781564a630fbef5e83b5f0cf.png)
+![Scoreboard showing the number of completed advancements](https://cdn.modrinth.com/data/cached_images/378d8348c437f328781564a630fbef5e83b5f0cf.png)
 
 By default, you start the game with 1 advancement already unlocked (this acts as a little boost). As you earn more advancements, this counter goes up—so you’ll always know how close you are to unlocking the next ability!
 
-In this world, **every ability gradually unlocks** as you complete advancements. You’ll find all abiliies on the AchieveToDo tab in your advancements screen:
+In this world, **every ability gradually unlocks** as you complete advancements. You’ll find all abilities on the AchieveToDo tab in your advancements screen:
 
-![Replace this with a description](https://cdn.modrinth.com/data/cached_images/1722b7f33c6fbb216c62102f2ab845340acba5dc.png)
+![AchieveToDo tab in the advancements screen with mystery icons](https://cdn.modrinth.com/data/cached_images/1722b7f33c6fbb216c62102f2ab845340acba5dc.png)
 
 At first, you’ll see mostly *mystery icons*. The core idea is that **you won’t know** which abilities are locked until you try them. For instance, if you **attempt to jump** right after spawning, you’ll discover that jumping is restricted:
 
-![Replace this with a description](https://cdn.modrinth.com/data/DTTu3Q4G/images/6f6f5ada98dc2204ad7768321ad0965e94f4fe09.png)
+![Message saying that jumping is locked](https://cdn.modrinth.com/data/DTTu3Q4G/images/6f6f5ada98dc2204ad7768321ad0965e94f4fe09.png)
 
 From that moment on, the “Jumping” ability is revealed in AchieveToDo tab, so you can track how many advancements you need to earn in order to unlock it:
 
-![Replace this with a description](https://cdn.modrinth.com/data/DTTu3Q4G/images/835bd6f2cfe1c65029d02a9737174b71b6f58dcd.png)
+![AchieveToDo tab showing the revealed Jumping ability and its requirement](https://cdn.modrinth.com/data/DTTu3Q4G/images/835bd6f2cfe1c65029d02a9737174b71b6f58dcd.png)
 
 Once you’ve completed the required advancements (7 in the illustrated configuration), a notification will pop up, proudly announcing **your new power to jump**:
 
-![Replace this with a description](https://cdn.modrinth.com/data/DTTu3Q4G/images/3fd02a0562dfcf894a15f4a5286c44e8b7608c56.png)
+![Toast announcing that jumping is unlocked](https://cdn.modrinth.com/data/DTTu3Q4G/images/3fd02a0562dfcf894a15f4a5286c44e8b7608c56.png)
 
 This same system applies to a wide range of gameplay elements—from basic actions like opening your inventory or breaking blocks, to using specific items, trading with villagers, traveling to different dimensions, or even interaction with objects within structures. Each newly unlocked feature feels like its own mini-achievement in your overall journey!
 
@@ -46,7 +52,7 @@ This same system applies to a wide range of gameplay elements—from basic actio
 
 Don't forget to check the mod settings tab before creating a world:
 
-![Replace this with a description](https://cdn.modrinth.com/data/DTTu3Q4G/images/0fc6facdb1bf32bbba1d94b3671464ac1a7a135a.png)
+![AchieveToDo settings tab on the world creation screen](https://cdn.modrinth.com/data/DTTu3Q4G/images/0fc6facdb1bf32bbba1d94b3671464ac1a7a135a.png)
 
 ### Difficulty Modes
 
@@ -56,7 +62,7 @@ Don't forget to check the mod settings tab before creating a world:
 
 **Hard** — A more RPG-like journey, centering advancements over core AchieveToDo mechanics. Unlocks follow **all** BlazeandCaves advancements, and the first advancement **must be obtained blindly**.
 
-**Chaos** — Abilities get **randomly shuffled** based on the world seed, ensuring every run becomes an unpredictable.
+**Chaos** — Abilities get **randomly shuffled** based on the world seed, so every run is unpredictable.
 
 ---
 
@@ -76,17 +82,22 @@ This makes it easy to create all kinds of custom challenges or special gameplay 
 </details>
 
 <details>
-<summary>Server-side setup</summary>
+<summary>Playing on a server</summary>
 
-1. **Create a Single-Player World**. In the world creation menu, enable all the settings you plan to use on your server (e.g., hardcore mode, Terralith, co-op, rewards, etc.). Review each difficulty’s description (easy, normal, hard, chaos) to understand how it affects gameplay.
+**Purpur server (recommended).** Install the AchieveToDo Purpur plugin on a Purpur 26.2 server (build 2620, Java 25)
+and add one Java option, `-javaagent:plugins/<plugin jar>`, to the start command. The plugin keeps every ability
+locked on the server side and syncs progression to the players' mods. Every player needs the AchieveToDo Fabric mod
+of the same version; players without it are told which version to install. The full guide, including where to get
+the BACAP datapacks, is [STARTING_THE_SERVER.md](port/AchieveToDo-Purpur-26.2/STARTING_THE_SERVER.md).
 
-2. **Check Data Packs**. Once the single-player world has been generated, open it and run the `/datapack list` command. Take note of which data packs are active, including any external packs (like `bacap.zip`) and AchieveToDo’s built-in overrides (e.g., `achievetodo:bacap_override`).
+**Fabric server.** The mod also runs on a Fabric dedicated server:
 
-3. **Replicate the Setup**. Upload the same external `.zip` data packs from your single-player world to your server’s datapacks folder, enable them in the same order shown by the `/datapack list` command and make sure to also enable the corresponding AchieveToDo override packs (e.g., `achievetodo:bacap_override`) in the **same order**.
-
-4. **Configure the Server**. In your server’s `server.properties` file, create the `achievetodo-configName` parameter. Set this parameter to the difficulty name you selected when creating the single-player world (easy, normal, hard, or chaos).
-
-5. **Custom Configuration (Optional)**. Instead of using one of the built-in difficulty modes, you can specify the name of a custom configuration file as the value for the `achievetodo-configName` parameter.
+1. Create a single-player world with all the settings you plan to use on the server (hardcore, Terralith, co-op,
+   rewards and so on) and run `/datapack list` in it.
+2. Upload the same external datapacks (like `bacap.zip`) to the server's world `datapacks` folder and enable them,
+   together with AchieveToDo's built-in overrides (like `achievetodo:bacap_override`), in the same order.
+3. In `server.properties`, add `achievetodo-configName` set to the difficulty (easy, normal, hard, chaos) or to the
+   name of a custom configuration file.
 
 </details>
 
@@ -101,33 +112,24 @@ This makes it easy to create all kinds of custom challenges or special gameplay 
 
 </details>
 
-## Building and verification
+## Building and testing
 
-Use the installed Temurin Java 25.0.4+7 and the checked-in Gradle 9.8.0 wrapper from the repository root. Use an explicit Python executable (the reviewed local environment uses Python 3.14); do not rely on a PATH alias. The commands below use STRICT verification and online metadata resolution. Seed a disposable Gradle User Home with the 372 exact approved inputs before running them; a new empty cache is not an approved binary trust root. On Windows PowerShell:
+Both parts build with Java 25 (Temurin 25.0.5) and the Gradle wrappers in the repository.
 
-```powershell
-$env:JAVA_HOME = 'C:\Program Files\Eclipse Adoptium\jdk-25.0.4.7-hotspot'
-$env:ACHIEVETODO_PYTHON = 'C:\path\to\python.exe'
-$env:ACHIEVETODO_TEST_INPUTS_DIR = 'C:\private\AchieveToDoInputs'
-$env:GRADLE_USER_HOME = Join-Path (Get-Location) 'build/tmp/c7-local-verify/gradle-user-home'
-$projectCache = Join-Path (Get-Location) 'build/tmp/c7-local-verify/project-cache'
-$env:TEMP = Join-Path (Get-Location) 'build/tmp/codex_java_uds_probe'
-$env:TMP = $env:TEMP
-New-Item -ItemType Directory -Force -Path $env:TEMP | Out-Null
-.\gradlew.bat --no-daemon --no-watch-fs --project-cache-dir $projectCache --dependency-verification strict verifyCleanSourceInputs
-.\gradlew.bat --no-daemon --no-watch-fs --project-cache-dir $projectCache --dependency-verification strict compileJava compileTestJava compileGametestJava
-.\gradlew.bat --no-daemon --no-watch-fs --project-cache-dir $projectCache --dependency-verification strict test --rerun-tasks
-```
+- **Fabric mod**, from the repository root: `gradlew jar`. Output: `build/libs/achievetodo-mc26.2+<version>.jar`.
+- **Purpur plugin**, from `port/AchieveToDo-Purpur-26.2`: `gradlew jar`. Output:
+  `build/libs/AchieveToDo-Purpur-26.2-<version>.jar`.
 
-The default `test` task is the current standard verification entrypoint; the released 0.1.5.5 baseline is 435 tests with zero failures, errors or skips. The accepted Phase C runtime checkpoint requires 443 standard test cases; C7 autonomous verification executed all 443 cases with zero failures, errors or skips. Compilation of the 42 GameTest registration classes does not certify a new Minecraft runtime run. DISTRIBUTION-B requires the exact 20 original inputs listed in `src/test/resources/build_inputs/manifest.json` under the explicit `ACHIEVETODO_TEST_INPUTS_DIR` directory outside the checkout. This private local bundle contains nine original ZIPs, five acquisition JSONs, five metadata JSONs and the BSD template. Missing, extra or changed bytes and symlink/junction inputs fail closed; tests cannot use historical `build/tmp` fallback or automatically download originals. The selected dependency cache and resolved Minecraft assets are separate prerequisites; a fresh checkout alone does not supply them.
+The Fabric tests (`gradlew test`) need external inputs (the original BACAP, Terralith and translation archives) in a
+folder named by `ACHIEVETODO_TEST_INPUTS_DIR`. The plugin checks (`gradlew check`) need the Purpur 26.2 build 2620
+server jar (`ACHIEVETODO_TEST_PURPUR_NATIVE`), the prepared BACAP datapacks (`ACHIEVETODO_TEST_BACAP`) and the Fabric
+mod's presets (`ACHIEVETODO_CANONICAL_PRESETS`).
 
-For a verification packaging probe, use the existing `jar` task with an isolated output configuration that validates every archive destination before task execution. The pinned Minecraft 26.2 setup has no `remapJar` task. Preserve the same-version guard and the historical published JAR; never use its destination for a changed probe artifact.
+Each release is certified on a real Purpur server with real clients before it is published. The reports are in
+[docs/certification](docs/certification/), known issues in [docs/known-issues.md](docs/known-issues.md).
 
-CACHE-BASELINE-LIMITED permits reviewed exact selected cache bytes as a limited reproducibility trust root; it does not certify publisher origin or trust all cache files. The native XML pins 178 selected binaries; STRICT rejected an isolated Gson checksum mismatch. The supplementary verifier enforces the 372 listed inputs, including their listed descriptors. `verify-metadata=false` leaves newly resolved POM/module metadata outside native checksum enforcement; newly acquired metadata also remains outside the 372-input manifest. Documented provenance does not grant publisher authentication or permanent trust. An isolated corrupt Gson witness proved supplementary rejection before Loom application, not universal pre-consumption ordering for Gradle metadata or all bootstrap inputs.
-
-C7 tooling has actual compilation, full-suite, integrity-control and isolated packaging evidence. Metadata coverage remains limited as described above; no independent clean-source reproducibility claim follows. Future C8 clean-source and independent two-build certification has not started. The ignored `tools/build/verify_inputs.py` must be explicitly included with its exact reviewed bytes in a separately authorized checkpoint; source closure is not certified before that checkpoint exists.
-
-Contributor references: [Minecraft 26.2 mixin rationale](docs/compatibility/mixin-26.2-map.md) and [historical 0.1.5.4 reproduction](docs/history/reproduction-0.1.5.4.md). Retained Phase A/B stage CLIs and the archived publication route describe historical checkpoints; they are not the current supported verification flow.
+Contributor references: [Minecraft 26.2 mixin rationale](docs/compatibility/mixin-26.2-map.md) and
+[historical 0.1.5.4 reproduction](docs/history/reproduction-0.1.5.4.md).
 
 ## Acknowledgments
 

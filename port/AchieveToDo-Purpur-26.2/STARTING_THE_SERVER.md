@@ -7,10 +7,24 @@ Nothing else is needed. The plugin works out the rest itself and keeps it in two
 
 - Java 25.
 - Purpur 26.2 build 2620 (`purpur-26.2-2620.jar`). Other builds are refused with `ATD_UNPINNED_RUNTIME`.
+  Paper and other forks are not supported.
 - Exactly one AchieveToDo jar in `plugins/`.
-- The BACAP datapacks `bacap.zip` and `bacap_override.zip` (see `S3A_PROGRESSION.md`).
+- The BACAP datapacks `bacap.zip` and `bacap_override.zip` prepared by the AchieveToDo mod (see below).
 - A host where you can edit the Java start command. Hosting panels usually call this "JVM arguments",
   "additional flags" or "startup command". If your host does not allow it, AchieveToDo cannot run there.
+- **Every player needs the AchieveToDo Fabric mod of the same version as the plugin.** A player without it, or with
+  another version, is disconnected at login with a message that says which version to install.
+
+## Getting the BACAP datapacks
+
+The plugin does not ship BACAP. The AchieveToDo Fabric mod downloads it and prepares the exact files the plugin
+expects:
+
+1. Start Minecraft 26.2 with the AchieveToDo mod and create any single-player world once.
+2. Copy `bacap.zip` and `bacap_override.zip` from the `datapacks` folder of your Minecraft directory
+   (`.minecraft/datapacks`, or the instance folder of your launcher).
+
+Do not edit or rename them. Other BACAP files, including the raw download from Modrinth, are refused at startup.
 
 ## Install
 
@@ -21,7 +35,7 @@ Nothing else is needed. The plugin works out the rest itself and keeps it in two
 4. Add `-javaagent:plugins/<plugin jar name>` to the start command, before `-jar`:
 
 ```text
-java -Xms1G -Xmx4G -javaagent:plugins/AchieveToDo-Purpur-26.2.jar -jar purpur-26.2-2620.jar --nogui
+java -Xms1G -Xmx4G -javaagent:plugins/AchieveToDo-Purpur-26.2-0.3.0.jar -jar purpur-26.2-2620.jar --nogui
 ```
 
 Keep your own memory settings. The file after `-javaagent:` must be the same file as the one in `plugins/`;
@@ -32,8 +46,12 @@ replacing that one file.
 
 ```text
 ATD_LAUNCH_PROFILE=release; derived=[...]
-ATD_GAMEPLAY_MODE=CERTIFICATION; ...
+ATD_GAMEPLAY_MODE=RELEASE
+ATD_PRODUCT_GAMEPLAY_READY=true; players with the AchieveToDo 0.3.0 client mod can join
 ```
+
+Players can join once the last line appears, usually right after `Done`. Until then they are told the server is
+still starting.
 
 ## What the plugin sets up on the first start
 
@@ -54,8 +72,8 @@ worlds against `world-group.properties`. If you swap or restore a different worl
 - If `world-group.properties` is lost while saved progression exists, the server refuses to start
   (`ATD_LAUNCH_WORLD_GROUP_MISSING`) rather than guess. Restore it from the backup.
 
-To start with a different preset on a new world, add `-Dachievetodo.progression.initialConfig=<preset>` to the
-very first start only.
+To start with a different preset on a new world, add `-Dachievetodo.progression.initialConfig=<easy|hard|chaos>` to
+the very first start only.
 
 ## If the server stops at startup
 
@@ -66,6 +84,7 @@ the whole server (`ATD_STARTUP_FAIL_CLOSED`).
 | --- | --- | --- |
 | `ATD_GAMEPLAY_MODE_REQUIRED ... agent is not loaded` | `-javaagent:` is missing | add it as shown above |
 | `ATD_GAMEPLAY_MODE_REQUIRED ... sets -Dachievetodo...` | an old `-Dachievetodo.*=false` option contradicts the release setup | remove that option |
+| `ATD_UNKNOWN_GAMEPLAY_MODE` | an old `-Dachievetodo.gameplay.mode=diagnostic` or `=product` option; both were removed in 0.3.0 | remove that option |
 | `BACAP_MISSING` or a missing `bacap.zip` | the datapacks are not in `<world>/datapacks` | copy them there |
 | `ATD_LAUNCH_BACAP_DIRECTORY` | the world is not where `server.properties` says (custom world folder) | add `-Dachievetodo.bacap.directory=<absolute path>/datapacks` |
 | `ATD_LAUNCH_WORLD_GROUP_MISSING` | `world-group.properties` was deleted | restore it from a backup |
@@ -77,16 +96,16 @@ the whole server (`ATD_STARTUP_FAIL_CLOSED`).
 ## Explicit start (advanced)
 
 The 0.2.1-rc.1 certification used a start command that sets every value by hand
-(`docs/certification/w5-purpur-26.2.md`). It still works unchanged: as soon as
-`-Dachievetodo.gameplay.mode` is given, the plugin derives nothing and writes no files. Any single value can also
-be given by hand on a normal start (for example `-Dachievetodo.bacap.directory=...` or
+(`docs/certification/w5-purpur-26.2.md`). It still works: as soon as `-Dachievetodo.gameplay.mode` is given
+(`release`, or its old name `certification`), the plugin derives nothing and writes no files. Any single value can
+also be given by hand on a normal start (for example `-Dachievetodo.bacap.directory=...` or
 `-Dachievetodo.bridge.server=<uuid>`); a value you give always wins over the derived one.
 
 `-Dachievetodo.bridge.world`, `bridge.worldKey`, `bridge.config` and `bridge.group` from the old command are not
-read by this build. Do not use `-Dachievetodo.gameplay.mode=product`; it needs a deployment certificate and is not
-part of this release.
+read by this build.
 
-## Legacy path (testing only)
+## History
 
-`-Dachievetodo.gameplay.mode=diagnostic` starts the old, uncertified legacy path and logs
-`ATD_UNCERTIFIED_LEGACY_PATH` on every start. Never use it with real players.
+Up to 0.2.1 the plugin also contained an older, uncertified "legacy" restriction path and an inventory-based
+ability browser (`/atd`). Both were removed in 0.3.0. The design notes of the port's development are kept in
+[docs/history](docs/history/).

@@ -11,6 +11,8 @@ import org.bukkit.entity.Player;
 /** S4L transactions query the existing S3C source synchronously; no permission snapshot is retained. */
 final class NativeMovementBindings implements AutoCloseable {
     static final Set<AbilityType> ABILITIES = Set.of(AbilityType.JUMP, AbilityType.SNEAK, AbilityType.SPRINT, AbilityType.SWIM);
+    /** Portal contact (ServerPlayer.onInsideBlock): checked silently, the teleport guard reports the denial. */
+    static final Set<AbilityType> PORTAL_CONTACT = Set.of(AbilityType.ENTER_NETHER, AbilityType.ENTER_END, AbilityType.TELEPORT_OUTER_ISLANDS);
     private final Object token = new Object();
     private final Method retire;
     private final GameplayDenialEffects denialEffects;
@@ -26,7 +28,8 @@ final class NativeMovementBindings implements AutoCloseable {
                     if (player.getGameMode() == GameMode.CREATIVE || player.getGameMode() == GameMode.SPECTATOR) return false;
                     boolean silent=id.startsWith("SILENT:");
                     AbilityType ability = AbilityType.valueOf(silent?id.substring(7):id);
-                    if (!ABILITIES.contains(ability)) throw new IllegalArgumentException("Unknown native action " + id);
+                    if (!ABILITIES.contains(ability) && !(silent && PORTAL_CONTACT.contains(ability)))
+                        throw new IllegalArgumentException("Unknown native action " + id);
                     boolean denied=!GameplayGate.allows(progression.getProgressionState(player.getUniqueId()),
                         player.getUniqueId(), false, ability);
                     if(denied && !silent)denialEffects.report(player,ability);

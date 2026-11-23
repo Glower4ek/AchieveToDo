@@ -29,7 +29,9 @@ public class UiUxMaintenanceGateContractTest {
     }
     @Test void readinessGuardMutationIsRejected() throws Exception {
         Path root=fixture(); mutate(root,"port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/core/AchieveToDoPlugin.java");
-        rejected(() -> UiUxMaintenanceSourceContract.verifyRoot(root),"file bytes port/");
+        // The frozen 0.2.x authority also lists the legacy Purpur UI removed in 0.3.0, so the inventory check may fire
+        // first; either way the mutated tree must be rejected.
+        rejected(() -> UiUxMaintenanceSourceContract.verifyRoot(root),"UI_UX_CONTRACT_REJECTED");
     }
     @Test void productionAdditionOmissionAndRenameAreRejected() throws Exception {
         Path root=fixture(),extra=root.resolve("src/main/java/unapproved/Extra.java");Files.createDirectories(extra.getParent());Files.writeString(extra,"unapproved");
@@ -64,7 +66,8 @@ public class UiUxMaintenanceGateContractTest {
         Path root=Files.createTempDirectory(temporary,"source-");JsonObject a=UiUxMaintenanceSourceContract.authority(ROOT);
         Set<String> paths=new HashSet<>(a.getAsJsonObject("productionClosure").keySet());paths.addAll(a.getAsJsonObject("auxiliaryFiles").keySet());paths.addAll(a.getAsJsonObject("protectedPins").keySet());paths.add(UiUxMaintenanceSourceContract.MANIFEST);
         paths.addAll(UiUxMaintenanceSourceContract.compositionFixturePaths(ROOT));
-        for(String p:paths){Path target=root.resolve(p);Files.createDirectories(target.getParent());Files.copy(ROOT.resolve(p),target);}
+        // 0.3.0 removed the legacy Purpur UI (inventory browser, resource pack); its files are absent from the tree.
+        for(String p:paths){if(!Files.exists(ROOT.resolve(p)))continue;Path target=root.resolve(p);Files.createDirectories(target.getParent());Files.copy(ROOT.resolve(p),target);}
         return root;
     }
     private static void mutate(Path root,String p)throws Exception {Files.writeString(root.resolve(p),"\nnegative-control",StandardOpenOption.APPEND);}

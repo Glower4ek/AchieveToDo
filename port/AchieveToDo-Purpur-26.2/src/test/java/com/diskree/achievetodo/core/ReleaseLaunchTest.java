@@ -11,10 +11,12 @@ public final class ReleaseLaunchTest {
     private static int cases;
 
     public static void main(String[] args) throws Exception {
-        // 1. Agent defaults: no mode -> the five switches and certification; nothing else is touched.
+        // 1. Agent defaults: no mode -> the five switches and release; nothing else is touched.
         var props = new HashMap<String, String>();
         check("release".equals(ReleaseLaunchDefaults.apply(props::get, props::put)), "release applied");
-        check("certification".equals(props.get(ReleaseLaunchDefaults.MODE)), "mode set");
+        check("release".equals(props.get(ReleaseLaunchDefaults.MODE)), "mode set");
+        check(ReleaseLaunchDefaults.nativeMode("release") && ReleaseLaunchDefaults.nativeMode("certification")
+            && !ReleaseLaunchDefaults.nativeMode("diagnostic") && !ReleaseLaunchDefaults.nativeMode(null), "native modes");
         for (String s : ReleaseLaunchDefaults.SWITCHES) check("true".equals(props.get(s)), s + " set");
         check(props.size() == ReleaseLaunchDefaults.SWITCHES.size() + 2, "only mode, switches and profile set: " + props);
         check(ReleaseLaunchDefaults.active(props::get), "active");
@@ -61,7 +63,7 @@ public final class ReleaseLaunchTest {
             var profile = new ReleaseLaunchProfile(p::get, p::put);
             profile.deriveInstallation(data, worlds);
             var all = new HashMap<String, String>(p);
-            check(StartupModePolicy.decide(all::get, null).mode() == ProductGameplayAdmission.Mode.CERTIFICATION, "certified admission after derivation");
+            check(StartupModePolicy.decide(all::get, null).mode() == GameplayAdmission.Mode.RELEASE, "release admission after derivation");
             check(p.get(ReleaseLaunchProfile.PROGRESSION_WORLD).equals(OVER.toString()), "progression world");
             check(p.get(ReleaseLaunchProfile.PROGRESSION_WORLD_KEY).equals("minecraft:overworld"), "progression key");
             check("true".equals(p.get(ReleaseLaunchProfile.FRESH_CONFIG)), "fresh config on first start");

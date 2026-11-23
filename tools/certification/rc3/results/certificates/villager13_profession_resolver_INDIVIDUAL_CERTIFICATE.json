@@ -1,0 +1,54 @@
+{
+  "group": "villager13_profession_resolver",
+  "reviewer": "rc3-reviewer-3",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1 hashes recomputed with hashlib over repo files, all match: NativeLandmarkOperations.java c29399c4..., BukkitExpandedGameplayListener.java f10bdc23..., GameplayMenuAbilities.java 813236fd.... 13 abilities each with 3 sites. Opened NativeLandmarkOperations.java:209-224 offersEmpty(): maps villager profession id (13 names) to TRADE_WITH_<NAME> and calls entityDenied; GameplayMenuAbilities.java:36 maps CARTOGRAPHER->TRADE_WITH_CARTOGRAPHER. Thresholds for normal/easy/hard/chaos_20261116/custom_vision present for all 13."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "99 rows. Every ability has locked PASS (12) or PASS_NO_OVERLAY (cartographer) rows with counts unchanged; allowed rows show MerchantScreen and Player.interactOn Success[swingSource=CLIENT]; locked rows show swingSource=NONE and no screen. All 99 rows have a traced Player.interactOn return (server_reach). Read all 3 non-PASS rows (cartographer pass1 locked, modes op, reload locked: swingSource=NONE, counts 288->288, no screen, no overlay) and PASS rows mason pass1 (c41) plus preset rows c42-45.",
+      "rowsRead": [
+        "campaign41 pass1 trade_with_mason locked",
+        "campaign41 pass1 trade_with_mason allowed",
+        "campaign41 pass1 trade_with_cartographer locked",
+        "campaign41 modes trade_with_cartographer op",
+        "campaign41 reload trade_with_cartographer locked",
+        "campaign42 thresholds-easy trade_with_mason locked",
+        "campaign44 thresholds-chaos trade_with_mason locked",
+        "campaign45 thresholds-custom_vision trade_with_mason allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present for every runtime; configResolved matches normal/easy/hard/chaos_20261116/custom_vision."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator rows for all 13; no off-hand route (villager click); thresholds rows for easy/hard/chaos/custom_vision (first case, locked+allowed) plus normal pass1. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows all campaign41; campaign41 logLines ranges across all groups: pass1 339-40631, modes 40689-95549, offhand 95602-109480, reload 109538-149287 (reload after all three). e5Reload.generationAfter=2. Every ATD_STAGE2A_STATE line inside this group's reload excerpts shows \"generation\": 2 (none show 1). Each reload verdict equals the pass1 verdict for the same ability/case/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "All replay.jsonl rows REPRODUCED; MANIFEST runtimes replay.reproducedAll=true for campaign41 (1738), 42-45 (114 each), 46 (29). plugin.perRuntime identical for 41-46 and = d3019bd333591c8f57645e093aea78befb6700d795ccbae25edf7a4338ffc43a; clientMod sha256 = 2c03d9fa...c649. Recomputed sha256 of campaign41/receipts/campaign-results.jsonl = ff3f86cf...6d00 and campaign45 = 3227522b...27e7, both equal evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json of campaign41-46: -javaagent:plugins/achievetodo.jar + trace-agent; only -D option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44; none in 41/45/46. output.log of each: ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true logged at startup before player join. freshConfig and world-group.properties appear in derived=[...] only for 42-44 (plugin-derived fresh install); 41/45/46 derived list has no freshConfig."
+    }
+  },
+  "superseded": "MANIFEST.superseded is empty for this group; no campaign46 row replaces any of its rows.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc3-pkg/villager13_profession_resolver/excerpts.txt 'campaign41 pass1 trade_with_cartographer locked' (output.log 19822-19829) and reload (128727-128734); rows.jsonl verdict PASS_NO_OVERLAY",
+      "description": "Cartographer denial never shows the client lock message (3/3 rows: pass1, modes op, reload), while the other 12 professions do. Denial itself is proven (swingSource=NONE, no MerchantScreen, count unchanged), so a UX gap only."
+    }
+  ]
+}

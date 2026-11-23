@@ -1,0 +1,55 @@
+{
+  "group": "action_place_end_crystal",
+  "reviewer": "rc3-reviewer-1",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json for place_end_crystal: every cited source file (8 files) re-hashed with hashlib, all equal E1 sha256. Opened NativeActionSpecs.java:38 (EndCrystalItem.useOn, 'crystal' hook) and NativeActionAgent.java:93-96: crystal() returns !denied(player, PLACE_END_CRYSTAL). All 5 configs (normal, easy, hard, chaos_20261116, custom_vision) list a threshold; chaos is a single chaos_20261116 config."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "All 17 rows PASS (case 'aims at obsidian top face'). Locked rows: crystal probe 'Test failed' before and after, count unchanged, crystal kept, overlay 'cannot place crystal'; the event listener logs ALLOW for the obsidian click (the guard is inside useOn). Allowed rows: probe 'Test passed. Count: 1', crystal consumed. Creative placed, op denied, spectator denied by vanilla (useBlock DENY). No INVALID_FIXTURE_AIM rows.",
+      "rowsRead": [
+        "campaign41 pass1 place_end_crystal/aims at obsidian top face locked",
+        "campaign41 pass1 place_end_crystal/aims at obsidian top face allowed",
+        "campaign41 modes place_end_crystal/aims at obsidian top face creative/op/spectator",
+        "campaign41 reload place_end_crystal/aims at obsidian top face locked/allowed",
+        "campaign42 thresholds-easy place_end_crystal/aims at obsidian top face locked/allowed",
+        "campaign43 thresholds-hard place_end_crystal/aims at obsidian top face locked/allowed",
+        "campaign44 thresholds-chaos place_end_crystal/aims at obsidian top face locked/allowed",
+        "campaign45 thresholds-custom_vision place_end_crystal/aims at obsidian top face locked/allowed",
+        "campaign41 offhand place_end_crystal offhand_locked/offhand_allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' lines present for every runtime; contributing runtimes are campaign41-45."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "Rows for modes creative/op/spectator; offhand_locked/offhand_allowed rows exist (PASS); no NA rows; threshold rows for easy, hard, chaos, custom_vision plus normal (pass1). One-per-group sample on reduced presets, as designed."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows are campaign41 only (log lines ~113k-115k, after pass1, modes ~46k and offhand ~96k). MANIFEST.e5Reload.evidence generationBefore=1, generationAfter=2. Every reload excerpt's ATD_STAGE2A_STATE shows generation 2 and no non-reload row shows generation 2. Every reload verdict equals the pass1 verdict for the same ability/case/phase (scripted comparison, 0 mismatches)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED; MANIFEST.runtimes[*].replay.reproducedAll=true for campaign41-46. plugin.perRuntime identical d3019bd3...c43a in all 6 runtimes and equal to the brief; recomputed sha256 of rc3-artifacts/AchieveToDo-Purpur-26.2-0.3.0.jar = d3019bd3...; clientMod sha 2c03d9fa...644c649 equals the brief and evidenceHashes.client-mod of every runtime. Recomputed sha256 of receipts/campaign-results.jsonl for campaign41,42,43,44,45,46: each equals evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json and receipts/launch.json of campaign41-46: -javaagent:plugins/achievetodo.jar + observer trace-agent.jar; the only -D option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44 (none in 41, 45, 46). output.log: ATD_LAUNCH_PROFILE=release (line ~208), ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true all logged before 'Created new objective [atd_marks]' (first case). freshConfig and world-group.properties appear only in the plugin-logged derived=[...] of campaign42-44 (fresh installs); 41/45/46 derived lists have no freshConfig."
+    }
+  },
+  "superseded": "No superseded rows in this group (MANIFEST.superseded=[]); campaign46 contributes no rows here, so no replacement to judge.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc3-pkg/action_place_end_crystal/excerpts.txt (campaign41 pass1 place_end_crystal locked)",
+      "description": "The excerpt has no server-side decision line for the native guard (the event listener logs ALLOW or nothing); the denial is established from the unchanged server effect probe plus the ability-specific denial overlay on the client. Verdict reproducible, but a server-side DENY trace at native guard sites would make the excerpt self-contained."
+    }
+  ]
+}

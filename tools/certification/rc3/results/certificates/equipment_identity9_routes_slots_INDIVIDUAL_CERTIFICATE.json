@@ -1,0 +1,68 @@
+{
+  "group": "equipment_identity9_routes_slots",
+  "reviewer": "rc3-reviewer-5",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json: 9 abilities (golden, leather, chainmail, iron, turtle_helmet, diamond, elytra, netherite, copper). Each has 2 enforcement sites (NativeEquipmentAbilities.java:13, identity map 'EQUIP_'+material+'_ARMOR' over COPPER/GOLDEN/LEATHER/CHAINMAIL/IRON/DIAMOND/NETHERITE; NativeTransactionAgent.java:76, equipment(actor,stack)->denied(\"equipment\")) plus family resolver AbilityResolvers.findEquipmentAbility; turtle helmet and elytra also have direct sites NativeEquipmentAbilities.java:15/16. Both files hashed and match E1. All 5 configs list thresholds for all 9 abilities."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "503 rows: 411 PASS, 92 NA_OFFHAND_NOT_APPLICABLE. I scanned all 503 excerpts mechanically (count first/last per block) and read about 30 in full, across pass1, reload, modes and presets (c42-45 golden ''). Every locked/offhand_locked/op/spectator PASS row has an unchanged count, except campaign41 pass1 equip_golden_armor 'dispenser equip onto the player' locked (excerpts.txt line 408, output.log 13128-13149). There the count goes 54->55 from the fixture's button press (blazeandcave:redstone/click); score margin 2 keeps it below 56, the armor probe fails ('Test failed') and there is a resync, so the PASS holds. Allowed rows show the armor probe 'Test passed. Count: 1' / client armor slot filled.",
+      "rowsRead": [
+        "campaign41 pass1 equip_golden_armor dispenser locked/allowed",
+        "campaign41 reload equip_golden_armor dispenser locked/allowed",
+        "campaign41 modes equip_golden_armor dispenser creative/op/spectator",
+        "campaign42 thresholds-easy equip_golden_armor locked/allowed",
+        "campaign43 thresholds-hard equip_golden_armor locked/allowed",
+        "campaign44 thresholds-chaos equip_golden_armor locked/allowed",
+        "campaign45 thresholds-custom_vision equip_golden_armor locked/allowed",
+        "campaign41 pass1 each of 9 abilities '' case locked/allowed (count + probe)",
+        "campaign41 offhand each of 9 abilities '' case offhand_locked/offhand_allowed",
+        "NA rows campaign41 offhand * (92)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for campaign41-46: onlineMode=true, 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' line and 'Glower4ek joined the game' line present for each contributing runtime; packets in excerpts carry the same actor UUID."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "55 cases: 9 abilities x routes (right-click, armor-slot place, hotbar swap, shift-click, dispenser, feet right-click) plus 3 new iron 0.3.0 routes. Each has pass1/reload locked+allowed and modes creative/op/spectator. Offhand: the 9 '' right-click cases PASS; the other 46 cases are NA_OFFHAND_NOT_APPLICABLE (inventory clicks, hotbar swap, shift-click and dispenser have no hand; the iron off-hand-boots case is itself the off-hand route). Presets: one-per-group (equip_golden_armor '') in all 4 reduced configs."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "generationAfter=2; 110 reload blocks, all from campaign41 at output.log >=120515 (after the reload at 109492); every STATE line shows generation 2, and every reload verdict PASS = pass1 PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED; MANIFEST.runtimes[*].replay.reproducedAll=true for campaign41-46. Plugin SHA-256 d3019bd3...c43a in MANIFEST for all 6 runtimes and recomputed on campaign41..46/runtime/plugins/achievetodo.jar (all match). Client mod 2c03d9fa...c649 matches. Recomputed campaign-results.jsonl SHA-256 for all six runtimes (ff3f86cf.. c41, 14194351.. c42, 9926ef41.. c43, 9de127af.. c44, 3227522b.. c45, 3052477e.. c46) = evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json + receipts/output.log for campaign41-46: args are -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar; only -Dachievetodo.* option is -Dachievetodo.progression.initialConfig=easy/hard/chaos on campaign42/43/44; campaign41/45/46 have none. Each log has ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true at startup before any case; on c42-44 derived=[... world-group.properties ... achievetodo.progression.freshConfig] (plugin-derived fresh install); on c41/45/46 derived has no freshConfig."
+    }
+  },
+  "superseded": "None for this group.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "MANIFEST.json runtimes.campaign41..45.evidenceHashes['campaign.py'].sha256=91249553...; HARNESS_RC3.sha256 lists 1162ba11... (= harness-history-rc3/campaign.py)",
+      "description": "Per-runtime evidenceHashes for campaign41-45 record the current (RC3B) campaign.py hash, not the RC3 harness those runtimes actually ran under. The RC3 harness is preserved with a matching hash in harness-history-rc3, so this is provenance bookkeeping only."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt ATD_STAGE2A_STATE lines, e.g. '\"ability\": {\"USE_WATER_BUCKET\": null}'",
+      "description": "The state line logs null for the tested ability's lock state, so the lock is established from count vs threshold and the observed outcome only, not from a logged lock snapshot (menu/furnace groups do log LOCKED/UNLOCKED)."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "rows.jsonl campaign41 offhand equip_* 'r6 route: right-click equip into the feet slot' offhand_locked/allowed = NA_OFFHAND_NOT_APPLICABLE",
+      "description": "Vanilla lets you right-click-equip boots from the off hand, so 'no off-hand variant' is not literally true for this route. The off-hand right-click equip path is still covered by the 9 '' offhand rows (PASS) and the iron '0.3.0 route: right-click equip of boots held in the off hand' pass1/reload rows, so there is no coverage gap."
+    }
+  ]
+}

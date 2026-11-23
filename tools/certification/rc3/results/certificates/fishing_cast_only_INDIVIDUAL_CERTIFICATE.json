@@ -1,0 +1,64 @@
+{
+  "group": "fishing_cast_only",
+  "reviewer": "rc3-reviewer-5",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json: use_fishing_rod has 2 direct sites (BukkitExpandedGameplayListener.java:110 'PlayerFishEvent.State.FISHING && locked(..., USE_FISHING_ROD)' -> setCancelled; GameplayGate.java:19); both file hashes recomputed and match. Thresholds: normal 194, easy 148, hard 240, chaos 446, custom_vision 194."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS. Read all 17 excerpts. Locked: count unchanged, bobber probe 'Test failed' post, inventory resync packets. Allowed: 'Test passed. Count: 1' (bobber exists), cast sound packet.",
+      "rowsRead": [
+        "campaign41 pass1 use_fishing_rod locked",
+        "campaign41 pass1 use_fishing_rod allowed",
+        "campaign41 modes use_fishing_rod creative",
+        "campaign41 modes use_fishing_rod op",
+        "campaign41 modes use_fishing_rod spectator",
+        "campaign41 reload use_fishing_rod locked",
+        "campaign41 reload use_fishing_rod allowed",
+        "campaign42 thresholds-easy use_fishing_rod locked/allowed",
+        "campaign43 thresholds-hard use_fishing_rod locked/allowed",
+        "campaign44 thresholds-chaos use_fishing_rod locked/allowed",
+        "campaign45 thresholds-custom_vision use_fishing_rod locked/allowed",
+        "campaign41 offhand use_fishing_rod offhand_locked/offhand_allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for campaign41-46: onlineMode=true, 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' line and 'Glower4ek joined the game' line present for each contributing runtime; packets in excerpts carry the same actor UUID."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative (cast works), op and spectator (no bobber) present; offhand_locked/allowed present (PASS); thresholds for all 5 configs. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "generationAfter=2; reload rows from campaign41 (output.log 128492+, after Reloading! at 109492 and after the last offhand row at 109480); all their ATD_STAGE2A_STATE lines show generation 2; reload PASS/PASS = pass1 PASS/PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED; MANIFEST.runtimes[*].replay.reproducedAll=true for campaign41-46. Plugin SHA-256 d3019bd3...c43a in MANIFEST for all 6 runtimes and recomputed on campaign41..46/runtime/plugins/achievetodo.jar (all match). Client mod 2c03d9fa...c649 matches. Recomputed campaign-results.jsonl SHA-256 for all six runtimes (ff3f86cf.. c41, 14194351.. c42, 9926ef41.. c43, 9de127af.. c44, 3227522b.. c45, 3052477e.. c46) = evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json + receipts/output.log for campaign41-46: args are -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar; only -Dachievetodo.* option is -Dachievetodo.progression.initialConfig=easy/hard/chaos on campaign42/43/44; campaign41/45/46 have none. Each log has ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true at startup before any case; on c42-44 derived=[... world-group.properties ... achievetodo.progression.freshConfig] (plugin-derived fresh install); on c41/45/46 derived has no freshConfig."
+    }
+  },
+  "superseded": "None for this group (MANIFEST.superseded empty).",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "MANIFEST.json runtimes.campaign41..45.evidenceHashes['campaign.py'].sha256=91249553...; HARNESS_RC3.sha256 lists 1162ba11... (= harness-history-rc3/campaign.py)",
+      "description": "Per-runtime evidenceHashes for campaign41-45 record the current (RC3B) campaign.py hash, not the RC3 harness those runtimes actually ran under. The RC3 harness is preserved with a matching hash in harness-history-rc3, so this is provenance bookkeeping only."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt ATD_STAGE2A_STATE lines, e.g. '\"ability\": {\"USE_WATER_BUCKET\": null}'",
+      "description": "The state line logs null for the tested ability's lock state, so the lock is established from count vs threshold and the observed outcome only, not from a logged lock snapshot (menu/furnace groups do log LOCKED/UNLOCKED)."
+    }
+  ]
+}

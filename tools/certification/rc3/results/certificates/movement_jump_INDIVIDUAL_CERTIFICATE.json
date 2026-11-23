@@ -1,0 +1,55 @@
+{
+  "group": "movement_jump",
+  "reviewer": "rc3-reviewer-8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "jump: NativeMovementAgent.java:73 (jump -> locked(actor,'JUMP')), :157 (ascent SILENT:JUMP), NativeMovementBindings.java:13 (ABILITIES). SHA-256 equal E1. Thresholds normal 4, easy 0, hard 8, chaos 8, custom_vision 4."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows: 13 PASS, 1 NA_NO_LOCKED_STATE, 1 PASS_MASKED_BY_DEPENDENCY. Locked rows normal pass1/reload, hard, chaos show ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=jump, JUMP kind=LOCKED, count unchanged, stat:JUMP=false; allowed rows UNLOCKED and stat:JUMP=true. Custom locked row is masked by vision (requires 5, score 3): its DENIAL_INTENT lines are mostly ability=vision plus one ability=jump.",
+      "rowsRead": [
+        "campaign41 pass1 jump locked",
+        "campaign41 pass1 jump allowed",
+        "campaign41 modes jump op",
+        "campaign41 reload jump locked",
+        "campaign42 thresholds-easy jump locked",
+        "campaign43 thresholds-hard jump locked",
+        "campaign44 thresholds-chaos jump locked",
+        "campaign45 thresholds-custom_vision jump locked",
+        "campaign45 thresholds-custom_vision jump allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present for each; confirmed directly in campaign41-45 receipts/output.log lines 235-253; campaign41/runtime/server.properties:47 online-mode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows present; movement has no off-hand route; threshold rows for all 5 configs. NA_NO_LOCKED_STATE (campaign42 easy locked) follows from E1 easy threshold 0; the easy allowed row at count 0 is PASS."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "All reload rows are campaign41 tag reload at output.log lines >112000, after pass1 (lines ~3000-19500), modes (~44000-53500) and offhand; MANIFEST.e5Reload generationBefore=1, generationAfter=2; every reload ATD_STAGE2A_STATE in excerpts.txt shows generation 2; each reload verdict equals the pass1 verdict of the same ability (PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "All replay.jsonl rows REPRODUCED with recorded==replayed; MANIFEST runtimes replay.reproducedAll=true for campaign41-46; plugin.perRuntime all d3019bd333591c8f57645e093aea78befb6700d795ccbae25edf7a4338ffc43a; clientMod sha256 2c03d9fa9e26c1c53691d720671107e8569af63092a5c2a2e9e9b1c32644c649; recomputed SHA-256 of campaign41 and campaign45 receipts/campaign-results.jsonl, both equal evidenceHashes.results (campaign41 ff3f86cf9e87...6d00)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "receipts/launch.json and runtime_args.json campaign41-45: -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar; the only -Dachievetodo.* option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44, none in campaign41/45. output.log lines 208-235 of campaign41-46 log ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before the player join and first case; campaign42-44 derived=[..., world-group.properties, ..., achievetodo.progression.freshConfig] (fresh install, freshConfig derived by the plugin); campaign41/45/46 derived lists no freshConfig."
+    }
+  },
+  "superseded": "MANIFEST.superseded is empty for this group; no campaign46 row replaces any row here.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc3-pkg/movement_jump/rows.jsonl row 'campaign45 thresholds-custom_vision jump locked' (campaign45 output.log 2634-2647)",
+      "description": "Custom_vision locked row is PASS_MASKED_BY_DEPENDENCY (requires vision 5 at score 3); the jump lock is proven by the normal/hard/chaos/reload rows, not independently in the Custom runtime. The Custom allowed row ran at score 5 (threshold 4) for the same reason."
+    }
+  ]
+}

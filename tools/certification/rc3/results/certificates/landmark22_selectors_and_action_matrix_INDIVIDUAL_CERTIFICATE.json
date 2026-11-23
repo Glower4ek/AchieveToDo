@@ -1,0 +1,55 @@
+{
+  "group": "landmark22_selectors_and_action_matrix",
+  "reviewer": "rc3-reviewer-1",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1.json: 22 landmark abilities, each with enforcementSite CanonicalLandmarkMembership.java:114-122 and family resolver AbilityResolvers.findLandmarkAbility; all 6 cited files re-hashed, all match. Opened CanonicalLandmarkMembership.java:105-125: evaluateDetailed matches the record's landmarkType, resolves the ability via findLandmarkAbility and returns LOCKED unless state.getAbilityState(ability).isUnlocked(). All 5 configs (normal, easy, hard, chaos_20261116, custom_vision) list a threshold; chaos is a single chaos_20261116 config."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "162 rows: 161 PASS, 1 PASS_MASKED_BY_DEPENDENCY. Each of the 22 abilities has pass1 and reload locked rows PASS: count unchanged (threshold-1), chest screen not opened (observed.screen=false), client overlay names the specific landmark (village, End city, ...); allowed rows: screen opened, count unchanged. Read in full: ancient_city pass1 locked/allowed (excerpts.txt:256-280), end_city, and village across campaign41-45. Modes: creative/spectator open the chest, op denied. why.leak empty in all 162 rows; no player_interacted_with_entity leak (the landmark fixture uses a chest, so known issue 4 is not exercised here). The masked row campaign44 thresholds-chaos interact_inside_village locked (count 118/118, chest not opened) is masked because chaos open_chest=297 (chaos_20261116.toml:24) > 118, but its overlay is the village message, so the denial comes from the village guard.",
+      "rowsRead": [
+        "campaign41 pass1 interact_inside_<all 22> locked/allowed (scripted check of counts, screen, overlay)",
+        "campaign41 pass1 interact_inside_ancient_city locked/allowed",
+        "campaign41 pass1 interact_inside_end_city locked",
+        "campaign41 reload interact_inside_village locked/allowed",
+        "campaign42 thresholds-easy interact_inside_village locked/allowed",
+        "campaign43 thresholds-hard interact_inside_village locked/allowed",
+        "campaign44 thresholds-chaos interact_inside_village locked (MASKED)/allowed",
+        "campaign45 thresholds-custom_vision interact_inside_village locked/allowed",
+        "campaign41 modes * creative/op/spectator (66 rows, scripted)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' lines present for every runtime; contributing runtimes are campaign41-45."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows: 22 each for creative, op, spectator. No offhand rows: opening a chest is a block use with no item-specific off-hand variant. Threshold rows for easy, hard, chaos, custom_vision (village, first case) plus normal pass1 for all 22. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows are campaign41 only (log lines ~113k-115k, after pass1, modes ~46k and offhand ~96k). MANIFEST.e5Reload.evidence generationBefore=1, generationAfter=2. Every reload excerpt's ATD_STAGE2A_STATE shows generation 2 and no non-reload row shows generation 2. Every reload verdict equals the pass1 verdict for the same ability/case/phase (scripted comparison, 0 mismatches)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED; MANIFEST.runtimes[*].replay.reproducedAll=true for campaign41-46. plugin.perRuntime identical d3019bd3...c43a in all 6 runtimes and equal to the brief; recomputed sha256 of rc3-artifacts/AchieveToDo-Purpur-26.2-0.3.0.jar = d3019bd3...; clientMod sha 2c03d9fa...644c649 equals the brief and evidenceHashes.client-mod of every runtime. Recomputed sha256 of receipts/campaign-results.jsonl for campaign41,42,43,44,45,46: each equals evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json and receipts/launch.json of campaign41-46: -javaagent:plugins/achievetodo.jar + observer trace-agent.jar; the only -D option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44 (none in 41, 45, 46). output.log: ATD_LAUNCH_PROFILE=release (line ~208), ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true all logged before 'Created new objective [atd_marks]' (first case). freshConfig and world-group.properties appear only in the plugin-logged derived=[...] of campaign42-44 (fresh installs); 41/45/46 derived lists have no freshConfig."
+    }
+  },
+  "superseded": "No superseded rows in this group (MANIFEST.superseded=[]); campaign46 contributes no rows here, so no replacement to judge.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "review-rc3-pkg/landmark22_selectors_and_action_matrix/excerpts.txt:2303 (campaign44 thresholds-chaos interact_inside_village locked)",
+      "description": "The only CHAOS locked row is PASS_MASKED_BY_DEPENDENCY (the fixture needs open_chest=297 under chaos, score 118). The client overlay names the village lock, so the denial is in fact the village guard, but the harness classes it as masked: CHAOS has no counted lock proof for this group. The lock logic does not depend on the config and is proven on 4 other configs, so this is not blocking."
+    }
+  ]
+}

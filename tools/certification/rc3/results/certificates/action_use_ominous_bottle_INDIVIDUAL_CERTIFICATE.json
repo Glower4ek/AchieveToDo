@@ -1,0 +1,43 @@
+{
+ "group": "action_use_ominous_bottle",
+ "reviewer": "rc3-reviewer-2",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "1 abilities, each has DIRECT site(s) in E1.json. Recomputed SHA-256 of every cited file: NativeActionBindings.java, NativeActionAgent.java, NativeActionSpecs.java (match). Opened guard: NativeActionSpecs.java:33 Spec USE_OMINOUS_BOTTLE on Consumable.canConsume HEAD mode bottle; NativeActionAgent.java:67-69 exactItem OMINOUS_BOTTLE -> USE_OMINOUS_BOTTLE. Every ability lists thresholds for normal, easy, hard, chaos_20261116 (single chaos config) and custom_vision."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "17 rows; every ability has locked PASS rows in pass1/reload/thresholds runtimes with counts before==after; all allowed rows PASS with effect oracle true (probe/inv) and count/criteria change where first-time. Read every non-PASS row and >=3 PASS locked/allowed excerpts across runtimes; state lines show count unchanged and denial (DENIAL_INTENT_DISCOVERED / Item.use Fail / CRITERION_SUPPRESSED / overlay) where logged. All verdicts reproduced by me.",
+   "rowsRead": [
+    "campaign41 pass1 use_ominous_bottle locked",
+    "campaign44 thresholds-chaos use_ominous_bottle locked (DENIAL_INTENT_DISCOVERED, Item.use Fail[], count 570->570)",
+    "campaign43 thresholds-hard use_ominous_bottle locked",
+    "campaign41 reload use_ominous_bottle locked"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' lines for each."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes rows creative/op/spectator and offhand_locked/offhand_allowed exist for every ability (campaign41); thresholds-easy/hard/chaos/custom_vision rows from campaign42-45 plus normal pass1. NA rows: none."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "reload rows all campaign41, output.log lines after offhand pass; MANIFEST e5Reload generationAfter=2; reload ATD_STAGE2A_STATE lines show generation 2; each reload verdict equals pass1 verdict."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl all REPRODUCED; REPLAY.json reproducedAll=true for campaign41-46; plugin sha256 d3019bd3...c43a in every runtime, client mod 2c03d9fa...c649; recomputed campaign-results.jsonl SHA-256 of all six runtimes = evidenceHashes (e.g. campaign41 ff3f86cf...6d00)."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "launch.json of campaign41-46: -javaagent:plugins/achievetodo.jar + observer trace-agent; only -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42-44, none in 41/45/46. output.log lines ~208-234: ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before first atd_marks (line >=251); freshConfig and world-group.properties appear in derived=[...] only in campaign42-44."
+  }
+ },
+ "superseded": "MANIFEST.superseded is empty for this group; campaign46 contributed no rows here.",
+ "findings": []
+}

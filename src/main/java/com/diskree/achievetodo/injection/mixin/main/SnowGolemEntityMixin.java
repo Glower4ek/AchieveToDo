@@ -28,7 +28,9 @@ public class SnowGolemEntityMixin {
         if (AchieveToDoMod.isTargetInLockedLandmark(player, snowGolemEntity) ||
             AchieveToDoMod.isAbilityLocked(player, AbilityType.USE_SHEARS)
         ) {
-            cir.setReturnValue(InteractionResult.SUCCESS);
+            // FAIL, not SUCCESS: a consumed interaction fires player_interacted_with_entity, which granted the
+            // BACAP "Unmasked" advancement while shears were locked (0.3.0 campaign finding).
+            cir.setReturnValue(InteractionResult.FAIL);
         }
     }
 }

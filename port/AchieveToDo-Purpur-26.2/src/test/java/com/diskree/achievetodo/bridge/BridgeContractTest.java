@@ -34,6 +34,18 @@ public final class BridgeContractTest {
         BridgeHandshake timeout=new BridgeHandshake(server,100,100);
         check(!timeout.expired(199));check(timeout.expired(200));rejects(() -> timeout.accept(ack(timeout),200));
         check(other.state()==BridgeHandshake.State.CLOSED);
+        // A versioned server admits only the same client mod version and names the one it saw.
+        BridgeHandshake versioned=new BridgeHandshake(server,UUID.randomUUID(),100,100,"0.3.0");
+        check(versioned.hello().build().equals("purpur-0.3.0"));
+        var vh=versioned.hello();
+        java.util.function.Function<String,BridgeWire.Frame> ackAs=build->new BridgeWire.Frame(BridgeWire.ACK,vh.major(),vh.minor(),vh.server(),vh.session(),vh.challenge(),vh.features(),vh.catalog(),build);
+        for (String build:List.of("universal-0.2.1","test","universal-0.3.0-rc1")) {
+            try { versioned.accept(ackAs.apply(build),110); throw new AssertionError("old client admitted: "+build); }
+            catch (BridgeHandshake.ClientVersionMismatch expected) {
+                check(Objects.equals(expected.clientVersion(),build.startsWith("universal-")?build.substring(10):null));
+            }
+        }
+        versioned.accept(ackAs.apply("universal-0.3.0"),110);check(versioned.state()==BridgeHandshake.State.ACKNOWLEDGED);
         var gate=new BridgeResyncGate();var independent=new BridgeResyncGate();
         var projection=new BridgeWire.Projection(UUID.randomUUID(),0,UUID.randomUUID(),BridgeProjectionTest.fixture());
         UUID token=UUID.randomUUID();gate.begin(token,100,100);gate.snapshot(BridgeWire.reference(projection));

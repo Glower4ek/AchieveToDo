@@ -1,0 +1,175 @@
+{
+  "started": "2026-11-22T19:08:23+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\certification\\rc3-artifacts\\AchieveToDo-Purpur-26.2-0.3.0.jar",
+  "runtimes": {
+    "campaign41": {
+      "mode": "normal",
+      "started": "2026-11-22T19:08:23+00:00",
+      "passes": {
+        "pass1": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 421,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 2
+          },
+          "finished": "2026-11-22T20:03:41+00:00",
+          "aimRetry": []
+        },
+        "presentation": {
+          "counts": {
+            "PASS": 3
+          },
+          "finished": "2026-11-22T20:03:44+00:00"
+        },
+        "modes": {
+          "phases": "creative,op,spectator",
+          "counts": {
+            "PASS": 632,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 2,
+            "FAIL_NO_EFFECT": 1
+          },
+          "finished": "2026-11-22T21:29:28+00:00",
+          "aimRetry": []
+        },
+        "offhand": {
+          "phases": "offhand_locked,offhand_allowed",
+          "counts": {
+            "PASS": 155,
+            "NA_OFFHAND_NOT_APPLICABLE": 94,
+            "PASS_NO_OVERLAY": 3,
+            "FAIL_NO_EFFECT": 2
+          },
+          "finished": "2026-11-22T21:57:50+00:00",
+          "aimRetry": []
+        },
+        "reload": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 420,
+            "NA_NO_LOCKED_STATE": 1,
+            "FAIL_EFFECT_WHILE_LOCKED": 1,
+            "PASS_NO_OVERLAY": 2
+          },
+          "finished": "2026-11-22T22:59:30+00:00",
+          "aimRetry": []
+        }
+      },
+      "reload": {
+        "generationBefore": 1,
+        "generationAfter": 2,
+        "at": "2026-11-22T21:57:55+00:00"
+      },
+      "finished": "2026-11-22T22:59:37+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 1738
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign42": {
+      "mode": "easy",
+      "started": "2026-11-22T22:59:37+00:00",
+      "passes": {
+        "thresholds-easy": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 110,
+            "NA_NO_LOCKED_STATE": 2,
+            "PASS_NO_OVERLAY": 2
+          },
+          "finished": "2026-11-22T23:09:40+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-22T23:09:43+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 114
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign43": {
+      "mode": "hard",
+      "started": "2026-11-22T23:09:43+00:00",
+      "passes": {
+        "thresholds-hard": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 112,
+            "PASS_NO_OVERLAY": 1,
+            "PASS_MASKED_BY_DEPENDENCY": 1
+          },
+          "finished": "2026-11-22T23:19:57+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-22T23:20:00+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 114
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign44": {
+      "mode": "chaos",
+      "started": "2026-11-22T23:20:00+00:00",
+      "passes": {
+        "thresholds-chaos": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 108,
+            "NA_NO_LOCKED_STATE": 3,
+            "PASS_NO_OVERLAY": 2,
+            "PASS_MASKED_BY_DEPENDENCY": 1
+          },
+          "finished": "2026-11-22T23:29:54+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-22T23:29:58+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 114
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign45": {
+      "mode": "E:\\Vibecode\\AchieveToDo\\certification\\w5-campaign\\configs\\custom_vision.toml",
+      "started": "2026-11-22T23:29:58+00:00",
+      "passes": {
+        "thresholds-custom_vision": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 110,
+            "PASS_MASKED_BY_DEPENDENCY": 2,
+            "PASS_NO_OVERLAY": 2
+          },
+          "finished": "2026-11-22T23:40:12+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-22T23:40:15+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 114
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "rc3",
+  "launch": "release",
+  "finished": "2026-11-22T23:40:15+00:00"
+}

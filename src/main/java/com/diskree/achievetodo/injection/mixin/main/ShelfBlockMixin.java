@@ -34,8 +34,15 @@ public class ShelfBlockMixin {
         if (stack.isEmpty() && shelf.getItem(slot.getAsInt()).isEmpty()) {
             return;
         }
-        if (AchieveToDoMod.isAbilityLocked(player, AbilityType.OPEN_CHEST) ||
-            AchieveToDoMod.isTargetInLockedLandmark(player, level, pos)) {
+        // A shelf unlocks with the chest; only the denial message names the shelf.
+        String previous = AbilityType.useLockedMessageVariant("shelf");
+        boolean locked;
+        try {
+            locked = AchieveToDoMod.isAbilityLocked(player, AbilityType.OPEN_CHEST);
+        } finally {
+            AbilityType.restoreLockedMessageVariant(previous);
+        }
+        if (locked || AchieveToDoMod.isTargetInLockedLandmark(player, level, pos)) {
             cir.setReturnValue(InteractionResult.FAIL);
         }
     }
@@ -72,7 +79,14 @@ public class ShelfBlockMixin {
         if (!transfersItems) {
             return; // Native no-transfer CONSUME: no new permission notification.
         }
-        if (AchieveToDoMod.isAbilityLocked(player, AbilityType.OPEN_CHEST)) {
+        String previous = AbilityType.useLockedMessageVariant("shelf");
+        boolean locked;
+        try {
+            locked = AchieveToDoMod.isAbilityLocked(player, AbilityType.OPEN_CHEST);
+        } finally {
+            AbilityType.restoreLockedMessageVariant(previous);
+        }
+        if (locked) {
             cir.setReturnValue(InteractionResult.FAIL);
             return;
         }

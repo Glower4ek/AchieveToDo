@@ -125,61 +125,10 @@ tasks.test {
 
 val sourceSets = the<SourceSetContainer>()
 
-val uiResourcePackSourceDir = layout.projectDirectory.dir("src/main/resource-pack")
 
-val generatedUiResourcePackDir = layout.buildDirectory.dir("generated/ui-resource-pack")
 
-val preparedUiResourcePackDir = layout.buildDirectory.dir("prepared/ui-resource-pack")
 
-val uiResourcePackOutputDir = layout.buildDirectory.dir("resource-pack")
 
-val uiResourcePackModelKeys = listOf(
-
-    "ability_unknown",
-
-    "filler",
-
-    "info",
-
-    "navigation_close",
-
-    "navigation_next",
-
-    "navigation_next_disabled",
-
-    "navigation_previous",
-
-    "navigation_previous_disabled",
-
-    "tab_actions",
-
-    "tab_actions_selected",
-
-    "tab_blocks",
-
-    "tab_blocks_selected",
-
-    "tab_food",
-
-    "tab_food_selected",
-
-    "tab_landmark",
-
-    "tab_landmark_selected",
-
-    "tab_main",
-
-    "tab_main_selected",
-
-    "tab_trading",
-
-    "tab_trading_selected",
-
-    "tab_upgrade",
-
-    "tab_upgrade_selected"
-
-)
 
 
 
@@ -243,155 +192,15 @@ tasks.register<JavaExec>("foundationTest") {
 
 
 
-tasks.register("generateUiResourcePackModels") {
 
-    group = "build setup"
 
-    description = "Generates deterministic item-model wrapper JSONs for the AchieveToDo UI resource pack."
 
-    outputs.dir(generatedUiResourcePackDir)
 
-    doLast {
 
-        val outputDir = generatedUiResourcePackDir.get().asFile.toPath()
 
-        val itemsDir = outputDir.resolve("assets/achievetodo/items/ui")
 
-        val modelsDir = outputDir.resolve("assets/achievetodo/models/item/ui")
 
-        val texturesDir = outputDir.resolve("assets/achievetodo/textures/item/ui")
 
-        Files.createDirectories(itemsDir)
-
-        Files.createDirectories(modelsDir)
-
-        Files.createDirectories(texturesDir)
-
-        for (key in uiResourcePackModelKeys) {
-
-            val itemDefinition = """
-
-                {
-
-                  "model": {
-
-                    "type": "minecraft:model",
-
-                    "model": "achievetodo:item/ui/$key"
-
-                  }
-
-                }
-
-            """.trimIndent() + "\n"
-
-            val modelDefinition = """
-
-                {
-
-                  "parent": "minecraft:item/generated",
-
-                  "textures": {
-
-                    "layer0": "achievetodo:item/ui/$key"
-
-                  }
-
-                }
-
-            """.trimIndent() + "\n"
-
-            Files.writeString(itemsDir.resolve("$key.json"), itemDefinition, StandardCharsets.UTF_8)
-
-            Files.writeString(modelsDir.resolve("$key.json"), modelDefinition, StandardCharsets.UTF_8)
-
-        }
-
-    }
-
-}
-
-
-
-tasks.register<Sync>("prepareUiResourcePack") {
-
-    group = "build"
-
-    description = "Prepares the AchieveToDo UI resource pack source tree for archiving."
-
-    dependsOn("generateUiResourcePackModels")
-
-    from(uiResourcePackSourceDir)
-
-    from(generatedUiResourcePackDir)
-
-    into(preparedUiResourcePackDir)
-
-}
-
-
-
-val buildUiResourcePack = tasks.register<Zip>("buildUiResourcePack") {
-
-    group = "build"
-
-    description = "Builds the standalone AchieveToDo client resource pack ZIP."
-
-    dependsOn("prepareUiResourcePack")
-
-    from(preparedUiResourcePackDir)
-
-    destinationDirectory.set(uiResourcePackOutputDir)
-
-    archiveBaseName.set("AchieveToDo-ResourcePack-26.2")
-
-    archiveVersion.set(project.version.toString())
-
-    archiveClassifier.set("")
-
-    isPreserveFileTimestamps = false
-
-    isReproducibleFileOrder = true
-
-}
-
-
-
-val writeUiResourcePackSha256 = tasks.register("writeUiResourcePackSha256") {
-
-    group = "build"
-
-    description = "Writes the SHA-256 checksum for the standalone AchieveToDo resource pack ZIP."
-
-    dependsOn(buildUiResourcePack)
-
-    outputs.file(uiResourcePackOutputDir.map { it.file("AchieveToDo-ResourcePack-26.2-${project.version}.zip.sha256") })
-
-    doLast {
-
-        val zipFile = buildUiResourcePack.get().archiveFile.get().asFile.toPath()
-
-        val digest = MessageDigest.getInstance("SHA-256")
-
-        digest.update(Files.readAllBytes(zipFile))
-
-        val hex = digest.digest().joinToString("") { "%02x".format(it) }
-
-        val checksumFile = zipFile.resolveSibling(zipFile.fileName.toString() + ".sha256")
-
-        Files.writeString(
-
-            checksumFile,
-
-            hex + "  " + zipFile.fileName + "\n",
-
-            StandardCharsets.UTF_8
-
-        )
-
-    }
-
-}
 
 
 
@@ -567,11 +376,6 @@ tasks.register<JavaExec>("s3bTest") {
 
 
 
-tasks.build {
-
-    dependsOn(writeUiResourcePackSha256)
-
-}
 
 
 
@@ -607,15 +411,15 @@ tasks.register<JavaExec>("movementNativeTest") {
 
 
 // Explicit executable contract suite; the ordinary test task remains disabled by platform design.
-tasks.register<JavaExec>("productAdmissionTest") {
+tasks.register<JavaExec>("gameplayAdmissionTest") {
     group = "verification"
     dependsOn("testClasses")
     classpath = sourceSets.named("test").get().runtimeClasspath
-    mainClass.set("com.diskree.achievetodo.core.ProductGameplayAdmissionTest")
+    mainClass.set("com.diskree.achievetodo.core.GameplayAdmissionTest")
     javaLauncher.set(javaToolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(25)) })
     workingDir = projectDir
 }
-tasks.check { dependsOn("productAdmissionTest") }
+tasks.check { dependsOn("gameplayAdmissionTest") }
 
 tasks.register<JavaExec>("sourceReloadTest") {
     group = "verification"
@@ -681,3 +485,16 @@ tasks.register<JavaExec>("criterionNativeTest") {
     javaLauncher.set(javaToolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(25)) })
 }
 tasks.check { dependsOn("criterionNativeTest") }
+
+// Native contract suites that were not part of check before 0.3.0.
+tasks.check { dependsOn("movementNativeTest", "portalNativeTest", "landmarkSupplementTest") }
+
+tasks.register<JavaExec>("chatNativeTest") {
+    group = "verification"
+    dependsOn("testClasses")
+    classpath = sourceSets.named("test").get().runtimeClasspath
+    mainClass.set("com.diskree.achievetodo.gameplay.nativeguard.NativeChatContractTest")
+    javaLauncher.set(javaToolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(25)) })
+    workingDir = projectDir
+}
+tasks.check { dependsOn("chatNativeTest") }

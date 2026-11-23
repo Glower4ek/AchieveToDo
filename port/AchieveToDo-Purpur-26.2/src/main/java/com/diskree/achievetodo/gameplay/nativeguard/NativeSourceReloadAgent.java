@@ -29,8 +29,10 @@ public final class NativeSourceReloadAgent {
     private static int entryRefusals,commitRefusals;
 
     public static synchronized void initialize(Instrumentation instrumentation) {
-        String mode=System.getProperty("achievetodo.gameplay.mode","diagnostic");
-        if (!mode.equals("certification") && !mode.equals("product")) return;
+        // Bootstrap class loader: only java.* and the nativeguard support classes are visible here, so the mode check
+        // mirrors ReleaseLaunchDefaults.nativeMode instead of calling it.
+        String mode=System.getProperty("achievetodo.gameplay.mode");
+        if (!"release".equals(mode) && !"certification".equals(mode)) return;
         if(started)throw new IllegalStateException("ATD_DUPLICATE_SOURCE_RELOAD_AGENT");
         started=true;
         instrumentation.addTransformer(new ClassFileTransformer(){

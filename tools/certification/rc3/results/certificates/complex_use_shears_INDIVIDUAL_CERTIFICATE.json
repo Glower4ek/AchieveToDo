@@ -1,0 +1,56 @@
+{
+  "group": "complex_use_shears",
+  "reviewer": "rc3-reviewer-4",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "use_shears: 4 site files (NativeComplexBindings.java:16, nativeguard/NativeComplexAgent.java:119-136, nativeguard/NativeComplexSpecs.java:47-55, NativeLandmarkOperations.java:253,280); SHA-256 recomputed with hashlib, all 4 match E1. Opened NativeComplexAgent.denied(): modes 'wolf','mine','leash','equipment' resolve ability=USE_SHEARS ('mine' checks the main-hand ShearsItem); NativeComplexSpecs SPECS shear-Sheep/Bogged/MushroomCow/SnowGolem, shears-pumpkin, shears-wolf-fallback map to USE_SHEARS. Thresholds listed for normal, easy, hard, chaos_20261116 (single chaos config) and custom_vision. (169/128/210/444/169)"
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "62 rows. All locked/offhand_locked/op/spectator rows keep the count (168->168 etc.). Each case (sheep, mooshroom, snow_golem, bogged, wolf armor, cobweb) has a PASS locked row in campaign41 pass1 and reload. Excerpts: locked rows show the probe unchanged (entity data / block test identical pre and post) with the overlay; allowed rows show the effect (sheep data change, DELTA_SENT count+1, or block test turning 'failed'). The only non-PASS rows are the 4 campaign46 NA rows (see superseded).",
+      "rowsRead": [
+        "campaign41 pass1 use_shears locked/allowed (sheep)",
+        "campaign41 pass1 use_shears wolf-armor locked/allowed",
+        "campaign41 pass1 use_shears cobweb locked/allowed",
+        "campaign42 thresholds-easy use_shears locked/allowed",
+        "campaign44 thresholds-chaos use_shears locked/allowed",
+        "campaign45 thresholds-custom_vision use_shears locked",
+        "campaign41 reload use_shears locked (all cases)",
+        "campaign46 offhand use_shears offhand_locked/allowed (sheep, mooshroom, snow_golem, bogged)",
+        "campaign41 output.log 98255-98270 (rc.3 wolf offhand_allowed)",
+        "campaign41 output.log 98356-98371 (rc.3 cobweb offhand_allowed)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes: campaign41-46 all onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present for each contributing runtime."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes: creative/op/spectator rows for all 6 cases (18 rows, campaign41). offhand: 4 cases PASS locked+allowed (campaign46); wolf-armor and cobweb are NA_OFFHAND_NOT_APPLICABLE. Threshold rows for easy/hard/chaos/custom_vision (first case, locked+allowed, all PASS) plus normal. No threshold-0 NA; the route NAs are justified below."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "MANIFEST.e5Reload: runtime campaign41, generationBefore=1, generationAfter=2. 12 reload excerpt blocks; all their ATD_STAGE2A_STATE lines show \"generation\": 2 (none 1). Reload rows are at output.log lines >117000, after pass1 (<10000), modes (~50000) and offhand (~98000-99600). Each reload verdict equals the pass1 verdict for the same ability/case/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED; MANIFEST.runtimes[*].replay.reproducedAll=true for campaign41 (1738), 42-45 (114 each), 46 (29). plugin.perRuntime identical d3019bd3...c43a for all 6 runtimes = brief value; clientMod sha256 2c03d9fa...c649 = brief value. Recomputed SHA-256 of campaign-results.jsonl for all six runtimes (campaign4N/receipts) - each matches evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "output.log of campaign41-46: ATD_LAUNCH_PROFILE=release (lines 208-210), ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true, all before the first case marker (first M...pre at lines 338-462). launch.json: -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar in every runtime; the only -Dachievetodo option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44; campaign41/45/46 have none. In 42-44 the logged derived=[...] contains world-group.properties and achievetodo.progression.freshConfig (plugin-derived, fresh install); 41/45/46 derived lists no freshConfig."
+    }
+  },
+  "superseded": "12 campaign41 offhand rows superseded by campaign46 (the whole offhand set was rerun: 8 stay PASS, 4 become NA). Justified from the logs: campaign41 output.log 98261-98269 (wolf offhand_allowed) shows Player.interactOn -> Success[swingSource=CLIENT, wasItemInteraction=false] with an empty main hand, so vanilla consumed the click with the main hand (sit toggle) and the off-hand shears were never used. Cobweb offhand_allowed 98362-98370 shows LEFT_CLICK_BLOCK ALLOW with no break, and the plugin's own 'mine' guard checks only getMainHandItem, which matches mining using the main hand only. The rc.3 PASS_NO_OVERLAY offhand_locked rows proved nothing, so NA is correct.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "review-rc3-pkg/complex_use_shears/MANIFEST.json superseded (12 keys)",
+      "description": "campaign46 replaced all 12 offhand rows of this group, not only the wolf/cobweb cases the brief describes; the 8 extra replacements keep PASS, so there is no impact, but the supersede scope is wider than documented."
+    }
+  ]
+}

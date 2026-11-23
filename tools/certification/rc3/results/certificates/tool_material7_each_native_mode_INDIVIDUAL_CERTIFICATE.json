@@ -1,0 +1,61 @@
+{
+  "group": "tool_material7_each_native_mode",
+  "reviewer": "rc3-reviewer-4",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "7 abilities, each with nativeguard/NativeToolAgent.java:19 and NativeToolBindings.java:14-16; SHA-256 of both files recomputed, match E1. NativeToolAgent maps MATERIALS WOOD..NETHERITE to IDS USE_WOODEN_TOOLS..USE_NETHERITE_TOOLS with explicit item lists (incl. GOLD->USE_GOLDEN_TOOLS); NativeToolBindings.ABILITIES lists all 7. Thresholds listed for normal, easy, hard, chaos_20261116 (single chaos config) and custom_vision."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "85 rows. Each ability has campaign41 pass1 and reload PASS locked rows with the count unchanged; iron has 4 extra cases (cobweb/sword, oak_log/axe, dirt/shovel, hay/hoe), all PASS locked/allowed. Excerpts: locked block test 'passed' pre and post (block intact), allowed post 'failed' (block broken). Non-PASS rows read: thresholds-easy/chaos/custom golden PASS_NO_OVERLAY (count 37/50/39 unchanged, block intact, no overlay) - reproduced; thresholds-hard golden PASS_MASKED_BY_DEPENDENCY (score 37 < break_blocks_in_negative_y 42) - correctly not counted as proof; campaign46 iron op PASS_NO_OVERLAY (block intact, count 139 unchanged) - reproduced.",
+      "rowsRead": [
+        "campaign41 pass1 use_golden_tools locked/allowed",
+        "campaign41 pass1 use_iron_tools (all 5 cases)",
+        "campaign41 reload use_netherite_tools locked",
+        "campaign42 thresholds-easy use_golden_tools locked",
+        "campaign43 thresholds-hard use_golden_tools locked/allowed",
+        "campaign44 thresholds-chaos use_golden_tools locked",
+        "campaign45 thresholds-custom_vision use_golden_tools locked",
+        "campaign46 modes use_iron_tools creative/op/spectator (all cases)",
+        "campaign41 output.log 54828-54848 (rc.3 creative cobweb/sword)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes: campaign41-46 all onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present for each contributing runtime."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows for all 7 abilities (iron from campaign46, all 5 cases). No offhand rows: tools act through the main hand. Threshold rows for easy/hard/chaos/custom_vision (golden, first case) and normal. One NA_VANILLA_NO_CREATIVE_ROUTE (iron creative cobweb with a sword): justified - campaign41 output.log 54828-54848 shows 11 LEFT_CLICK_BLOCK on COBWEB mode=CREATIVE with blockResult=ALLOW and no break, so vanilla stops creative sword mining, not the plugin."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "MANIFEST.e5Reload: runtime campaign41, generationBefore=1, generationAfter=2. 22 reload excerpt blocks; all their ATD_STAGE2A_STATE lines show \"generation\": 2 (none 1). Reload rows are at output.log lines >117000, after pass1 (<10000), modes (~50000) and offhand (~98000-99600). Each reload verdict equals the pass1 verdict for the same ability/case/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED; MANIFEST.runtimes[*].replay.reproducedAll=true for campaign41 (1738), 42-45 (114 each), 46 (29). plugin.perRuntime identical d3019bd3...c43a for all 6 runtimes = brief value; clientMod sha256 2c03d9fa...c649 = brief value. Recomputed SHA-256 of campaign-results.jsonl for all six runtimes (campaign4N/receipts) - each matches evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "output.log of campaign41-46: ATD_LAUNCH_PROFILE=release (lines 208-210), ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true, all before the first case marker (first M...pre at lines 338-462). launch.json: -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar in every runtime; the only -Dachievetodo option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44; campaign41/45/46 have none. In 42-44 the logged derived=[...] contains world-group.properties and achievetodo.progression.freshConfig (plugin-derived, fresh install); 41/45/46 derived lists no freshConfig."
+    }
+  },
+  "superseded": "6 campaign41 iron modes rows superseded by campaign46 (the whole iron modes set was rerun): cobweb/sword creative FAIL_NO_EFFECT -> NA_VANILLA_NO_CREATIVE_ROUTE, justified by the campaign41 log (plugin ALLOW, no break in creative). Base-case op PASS -> PASS_NO_OVERLAY (still a valid lock proof). Others unchanged.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "rows.jsonl campaign43 thresholds-hard use_golden_tools locked (output.log 7801-7811)",
+      "description": "The HARD preset locked row is PASS_MASKED_BY_DEPENDENCY (break_blocks_in_negative_y 42 > score 37), so the HARD runtime gives no proving locked row for this group; the lock is proven on NORMAL, EASY, CHAOS and Custom."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "review-rc3-pkg/tool_material7_each_native_mode/MANIFEST.json superseded",
+      "description": "campaign46 replaced the whole use_iron_tools modes set, wider than the single creative cobweb case the brief describes; the base op row lost its overlay (PASS -> PASS_NO_OVERLAY). No verdict impact."
+    }
+  ]
+}

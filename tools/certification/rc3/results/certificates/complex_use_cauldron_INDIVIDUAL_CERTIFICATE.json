@@ -1,0 +1,45 @@
+{
+  "group": "complex_use_cauldron",
+  "reviewer": "rc3-reviewer-4",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "use_cauldron: NativeComplexBindings.java:15, nativeguard/NativeComplexAgent.java:128, NativeLandmarkOperations.java:148,230; SHA-256 recomputed, all match E1. NativeComplexAgent case 'cauldron' -> USE_CAULDRON unless CauldronInteraction.DEFAULT; specs cauldron-dispatch and cauldron-fallback. Thresholds listed for normal, easy, hard, chaos_20261116 (single chaos config) and custom_vision. (513/414/612/699/513)"
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows, all PASS. Locked: count unchanged, cauldron state test 'passed' pre and post (unchanged); allowed: post test 'failed' (state changed), DELTA_SENT count+1 in pass1/presets. Spectator DENY/cancelled=true.",
+      "rowsRead": [
+        "campaign41 pass1 use_cauldron locked/allowed",
+        "campaign41 modes use_cauldron op",
+        "campaign42 thresholds-easy use_cauldron locked/allowed",
+        "campaign43 thresholds-hard use_cauldron locked",
+        "campaign44 thresholds-chaos use_cauldron locked",
+        "campaign45 thresholds-custom_vision use_cauldron locked/allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes: campaign41-46 all onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present for each contributing runtime."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows creative/op/spectator present (campaign41); offhand_locked/offhand_allowed present (campaign41); thresholds rows for easy/hard/chaos/custom_vision (campaign42-45, locked+allowed) plus normal. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "MANIFEST.e5Reload: runtime campaign41, generationBefore=1, generationAfter=2. 2 reload excerpt blocks; all their ATD_STAGE2A_STATE lines show \"generation\": 2 (none 1). Reload rows are at output.log lines >117000, after pass1 (<10000), modes (~50000) and offhand (~98000-99600). Each reload verdict equals the pass1 verdict for the same ability/case/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED; MANIFEST.runtimes[*].replay.reproducedAll=true for campaign41 (1738), 42-45 (114 each), 46 (29). plugin.perRuntime identical d3019bd3...c43a for all 6 runtimes = brief value; clientMod sha256 2c03d9fa...c649 = brief value. Recomputed SHA-256 of campaign-results.jsonl for all six runtimes (campaign4N/receipts) - each matches evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "output.log of campaign41-46: ATD_LAUNCH_PROFILE=release (lines 208-210), ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true, all before the first case marker (first M...pre at lines 338-462). launch.json: -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar in every runtime; the only -Dachievetodo option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44; campaign41/45/46 have none. In 42-44 the logged derived=[...] contains world-group.properties and achievetodo.progression.freshConfig (plugin-derived, fresh install); 41/45/46 derived lists no freshConfig."
+    }
+  },
+  "superseded": "No superseded rows in this group.",
+  "findings": []
+}

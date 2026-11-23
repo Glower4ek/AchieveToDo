@@ -290,8 +290,27 @@ public enum AbilityType {
     }
 
     private MutableComponent buildLockedMessagePrefix() {
-        return AchieveToDoClient.translate("ability." + getName() + ".locked_message")
+        String variant = LOCKED_MESSAGE_VARIANT.get();
+        return AchieveToDoClient.translate("ability." + getName() + (variant == null ? "" : "." + variant) + ".locked_message")
             .append(".\n");
+    }
+
+    /** Set while a guard checks an ability for a block it shares with another one (a shelf unlocks with the chest). */
+    private static final ThreadLocal<String> LOCKED_MESSAGE_VARIANT = new ThreadLocal<>();
+
+    /**
+     * Until {@link #restoreLockedMessageVariant}, this thread shows {@code ability.<name>.<variant>.locked_message} as the
+     * denial message. The ability, its unlock and its name stay the same; only the text says what the player touched.
+     * @return the previous variant, to pass to {@link #restoreLockedMessageVariant} in a finally block
+     */
+    public static String useLockedMessageVariant(@NotNull String variant) {
+        String previous = LOCKED_MESSAGE_VARIANT.get();
+        LOCKED_MESSAGE_VARIANT.set(variant);
+        return previous;
+    }
+
+    public static void restoreLockedMessageVariant(String previous) {
+        LOCKED_MESSAGE_VARIANT.set(previous);
     }
 
     public @NotNull String getName() {

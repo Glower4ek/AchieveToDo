@@ -22,8 +22,10 @@ public final class GameplayDenialEffects {
         if(!(progression instanceof DemystificationSink sink))throw new IllegalArgumentException("Canonical discovery sink required");
         discovery=sink;
     }
-    public static Component message(AbilityType ability,int required,int count) {
-        var prefix=Component.translatable("achievetodo.ability."+ability.getName()+".locked_message").append(Component.text(".\n"));
+    public static Component message(AbilityType ability,int required,int count) { return message(ability,required,count,null); }
+    /** @param variant null, or the block the player touched when it shares the ability (a shelf unlocks with the chest) */
+    public static Component message(AbilityType ability,int required,int count,String variant) {
+        var prefix=Component.translatable("achievetodo.ability."+ability.getName()+(variant==null?"":"."+variant)+".locked_message").append(Component.text(".\n"));
         return required==-1 ? prefix.append(Component.translatable("achievetodo.ability.permanently_locked")).color(NamedTextColor.RED)
             : prefix.append(Component.translatable("achievetodo.ability.left_to_unlock",Component.text(required-count))).color(NamedTextColor.YELLOW);
     }
@@ -39,7 +41,8 @@ public final class GameplayDenialEffects {
         return (y>=0 || allows(player,AbilityType.BREAK_BLOCKS_IN_NEGATIVE_Y)) && allows(player,AbilityType.BREAK_BLOCKS);
     }
     /** Call only where the matching Fabric call is effectful, never for a silent query. */
-    public void report(Player player,AbilityType ability) {
+    public void report(Player player,AbilityType ability) { report(player,ability,null); }
+    public void report(Player player,AbilityType ability,String variant) {
         if(player.getGameMode()==GameMode.CREATIVE || player.getGameMode()==GameMode.SPECTATOR)return;
         afterDenial(player);
         var state=progression.getProgressionState(player.getUniqueId());
@@ -48,7 +51,7 @@ public final class GameplayDenialEffects {
         long now=System.nanoTime();var times=reported.computeIfAbsent(player.getUniqueId(),ignored->new EnumMap<>(AbilityType.class));
         Long previous=times.get(ability);if(previous!=null && now-previous<250_000_000L)return;
         times.put(ability,now);
-        player.sendActionBar(message(ability,state.getRequirements().getRequiredCount(ability),state.getObtainedAdvancementCount()));
+        player.sendActionBar(message(ability,state.getRequirements().getRequiredCount(ability),state.getObtainedAdvancementCount(),variant));
     }
     /** W5-RED-1/2: suppress the post-result use criterion and undo client-side item prediction. */
     private static void afterDenial(Player player) {

@@ -51,8 +51,7 @@ public final class BukkitGameplayRuntime implements Listener, AutoCloseable {
         nativeComplex = new NativeComplexBindings(progression);
         nativePortals = new NativePortalBindings(progression);
         nativeMovement = new NativeMovementBindings(progression);
-        String mode=System.getProperty("achievetodo.gameplay.mode","diagnostic");
-        if(mode.equals("certification") || mode.equals("product")) nativeSourceReload=new NativeSourceReloadBindings(plugin);
+        if(com.diskree.achievetodo.core.ReleaseLaunchDefaults.nativeMode(System.getProperty("achievetodo.gameplay.mode"))) nativeSourceReload=new NativeSourceReloadBindings(plugin);
         if (Boolean.getBoolean("achievetodo.landmarks.exactPrototype")) {
             exactLandmarks = new com.diskree.achievetodo.landmark.bukkit.BukkitExactLandmarkRuntime(plugin, progression);
             exactLandmarks.start();
@@ -61,7 +60,7 @@ public final class BukkitGameplayRuntime implements Listener, AutoCloseable {
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
         plugin.getServer().getPluginManager().registerEvents(expanded, plugin);
         plugin.getServer().getPluginManager().registerEvents(food, plugin);
-        plugin.getLogger().info("S4L gameplay implementation gates active: " + GameplayGate.IMPLEMENTED.size() + " exact IDs; native certification separate; PRODUCT_GAMEPLAY_READY=false");
+        plugin.getLogger().info("Gameplay guards active: " + GameplayGate.IMPLEMENTED.size() + " abilities plus landmarks");
     }
 
     /** Rechecks bootstrap guard ownership and registered Bukkit listeners on the server thread. */

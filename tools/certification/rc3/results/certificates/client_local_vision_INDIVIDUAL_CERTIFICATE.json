@@ -1,0 +1,52 @@
+{
+  "group": "client_local_vision",
+  "reviewer": "rc3-reviewer-3",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "E1 hashes recomputed with hashlib over repo files, all match: GameRendererMixin.java b808698d..., BridgeWire.java 4242e4cd..., GameplayGate.java 4ddeec26.... GameRendererMixin.java:37-39 sets blackOverlayAlpha=1 while isAbilityLocked(VISION). Thresholds: normal 0, easy 0, hard 2, chaos 0, custom_vision 5."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "15 rows. Locked state proven on campaign43 HARD (count 1, threshold 2) and campaign45 Custom (count 4, threshold 5): excerpts show repeated ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=vision and unchanged counts; allowed rows at threshold show no denial intents. Read all 5 NA_NO_LOCKED_STATE rows (score None, threshold 0).",
+      "rowsRead": [
+        "campaign43 thresholds-hard vision locked",
+        "campaign43 thresholds-hard vision allowed",
+        "campaign45 thresholds-custom_vision vision locked",
+        "campaign45 thresholds-custom_vision vision allowed",
+        "campaign41 pass1 vision locked (NA)",
+        "campaign41 pass1 vision allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present for every runtime; configResolved matches normal/easy/hard/chaos_20261116/custom_vision."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/spectator PASS and op NA; thresholds for all presets. All 5 NA rows (c41 pass1/modes-op/reload locked, c42 easy locked, c44 chaos locked) follow from a real threshold 0 in E1 (normal, easy, chaos_20261116)."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows all campaign41; campaign41 logLines ranges across all groups: pass1 339-40631, modes 40689-95549, offhand 95602-109480, reload 109538-149287 (reload after all three). e5Reload.generationAfter=2. Every ATD_STAGE2A_STATE line inside this group's reload excerpts shows \"generation\": 2 (none show 1). Each reload verdict equals the pass1 verdict for the same ability/case/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "All replay.jsonl rows REPRODUCED; MANIFEST runtimes replay.reproducedAll=true for campaign41 (1738), 42-45 (114 each), 46 (29). plugin.perRuntime identical for 41-46 and = d3019bd333591c8f57645e093aea78befb6700d795ccbae25edf7a4338ffc43a; clientMod sha256 = 2c03d9fa...c649. Recomputed sha256 of campaign41/receipts/campaign-results.jsonl = ff3f86cf...6d00 and campaign45 = 3227522b...27e7, both equal evidenceHashes.results."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json of campaign41-46: -javaagent:plugins/achievetodo.jar + trace-agent; only -D option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44; none in 41/45/46. output.log of each: ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true logged at startup before player join. freshConfig and world-group.properties appear in derived=[...] only for 42-44 (plugin-derived fresh install); 41/45/46 derived list has no freshConfig."
+    }
+  },
+  "superseded": "MANIFEST.superseded is empty for this group; no campaign46 row replaces any of its rows.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "review-rc3-pkg/client_local_vision/excerpts.txt line 35 (case label) vs E1.json thresholds.hard=2",
+      "description": "Case label says 'NORMAL/EASY/HARD threshold 0', but E1 gives hard=2 and campaign43 actually tested a HARD locked row; the label is stale (should read NORMAL/EASY/CHAOS). Verdicts unaffected."
+    }
+  ]
+}

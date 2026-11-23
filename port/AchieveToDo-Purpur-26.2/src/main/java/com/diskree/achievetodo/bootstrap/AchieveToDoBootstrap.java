@@ -15,6 +15,21 @@ public final class AchieveToDoBootstrap implements PluginBootstrap {
     private static final String EMBEDDED_DATAPACK_PATH = "/datapack";
     private static final String EMBEDDED_DATAPACK_ID = "embedded";
 
+    /**
+     * Hand the chat text rewrite to the agent before any function is parsed (see NativeChatAgent). Presentation only:
+     * without the agent (no -javaagent) the server refuses to start anyway, so a failure here is just logged.
+     */
+    private static void installChatMigration(BootstrapContext context) {
+        try {
+            Class.forName("com.diskree.achievetodo.gameplay.nativeguard.NativeChatAgent", true, null)
+                .getMethod("install", java.util.function.Function.class)
+                .invoke(null, (java.util.function.Function<String, String>) com.diskree.achievetodo.datapack.LegacyChatText::migrateCommand);
+        } catch (ReflectiveOperationException | RuntimeException | LinkageError unavailable) {
+            context.getLogger().warn("ATD_CHAT_MIGRATION_UNAVAILABLE: advancement messages in chat will have no hover text ({})",
+                unavailable.toString());
+        }
+    }
+
     @Override
     public void bootstrap(BootstrapContext context) {
         // Log only. A launch without flags usually fails below with BACAP_MISSING before the plugin enables,
@@ -39,6 +54,7 @@ public final class AchieveToDoBootstrap implements PluginBootstrap {
                 throw refusal;
             }
         }
+        installChatMigration(context);
         context.getLifecycleManager().registerEventHandler(LifecycleEvents.DATAPACK_DISCOVERY, event -> {
             DatapackRegistrar registrar = event.registrar();
             BacapPacks.beginDiscovery();

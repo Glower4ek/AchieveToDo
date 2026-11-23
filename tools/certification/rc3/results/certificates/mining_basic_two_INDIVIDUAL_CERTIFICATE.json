@@ -1,0 +1,53 @@
+{
+  "group": "mining_basic_two",
+  "reviewer": "rc3-reviewer-8",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "break_blocks/break_blocks_in_negative_y: GameplayGate.java:14-15,42-43 (allowsBreak checks BREAK_BLOCKS and, for y<0, BREAK_BLOCKS_IN_NEGATIVE_Y), GameplayDenialEffects.java:41, NativeToolBindings.java:35 (BASIC tool-action gate). SHA-256 all equal E1. Thresholds for 5 configs."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "22 rows, all PASS. Locked: block probe still present ('Test passed' at post), count unchanged, overlay; allowed: block gone ('Test failed' at post), inventory_changed. y=100 for break_blocks, y=-59 for negative_y.",
+      "rowsRead": [
+        "campaign41 pass1 break_blocks locked",
+        "campaign41 pass1 break_blocks allowed",
+        "campaign41 pass1 break_blocks_in_negative_y locked",
+        "campaign41 modes break_blocks creative",
+        "campaign41 reload break_blocks_in_negative_y locked",
+        "campaign45 thresholds-custom_vision break_blocks locked",
+        "campaign45 thresholds-custom_vision break_blocks allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes campaign41-46: onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and 'Glower4ek joined the game' present for each; confirmed directly in campaign41-45 receipts/output.log lines 235-253; campaign41/runtime/server.properties:47 online-mode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes rows for both; mining uses the main hand only (no off-hand route); thresholds rows for 5 configs (break_blocks sampled). No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "All reload rows are campaign41 tag reload at output.log lines >112000, after pass1 (lines ~3000-19500), modes (~44000-53500) and offhand; MANIFEST.e5Reload generationBefore=1, generationAfter=2; every reload ATD_STAGE2A_STATE in excerpts.txt shows generation 2; each reload verdict equals the pass1 verdict of the same ability (PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "All replay.jsonl rows REPRODUCED with recorded==replayed; MANIFEST runtimes replay.reproducedAll=true for campaign41-46; plugin.perRuntime all d3019bd333591c8f57645e093aea78befb6700d795ccbae25edf7a4338ffc43a; clientMod sha256 2c03d9fa9e26c1c53691d720671107e8569af63092a5c2a2e9e9b1c32644c649; recomputed SHA-256 of campaign41 and campaign45 receipts/campaign-results.jsonl, both equal evidenceHashes.results (campaign41 ff3f86cf9e87...6d00)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "receipts/launch.json and runtime_args.json campaign41-45: -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar; the only -Dachievetodo.* option is -Dachievetodo.progression.initialConfig=easy/hard/chaos in campaign42/43/44, none in campaign41/45. output.log lines 208-235 of campaign41-46 log ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before the player join and first case; campaign42-44 derived=[..., world-group.properties, ..., achievetodo.progression.freshConfig] (fresh install, freshConfig derived by the plugin); campaign41/45/46 derived lists no freshConfig."
+    }
+  },
+  "superseded": "MANIFEST.superseded is empty for this group; no campaign46 row replaces any row here.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc3-pkg/mining_basic_two/excerpts.txt block 'campaign41 pass1 break_blocks locked' (campaign41 output.log 9792-9801)",
+      "description": "ATD_EVENT LEFT_CLICK_BLOCK logs blockResult=ALLOW on locked rows; the denial happens at break time and is evidenced only by the block probe and overlay, not by a plugin decision line."
+    }
+  ]
+}

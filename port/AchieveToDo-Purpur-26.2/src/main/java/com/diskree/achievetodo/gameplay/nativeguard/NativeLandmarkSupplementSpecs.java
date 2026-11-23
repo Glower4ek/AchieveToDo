@@ -25,7 +25,7 @@ final class NativeLandmarkSupplementSpecs {
         Map.entry("net/minecraft/world/entity/animal/happyghast/HappyGhast","a3c9adbad620c34b28908f735ff5f1de295eab2dad61b53789b673e9a757f2d0"),
         Map.entry("net/minecraft/world/entity/animal/nautilus/AbstractNautilus","1592dec46e336f4ee90f0b43227860591644fa9dd9799f07d6670fb9a0e73c83"),
         Map.entry("net/minecraft/world/entity/animal/sheep/Sheep","e67a8fb08d0b3557e581187e04dcf7187154306ef4f72593982a1d123f6061f5"),
-        Map.entry("net/minecraft/world/entity/animal/wolf/Wolf","32d43b1873bdd447c782eea7e3af5d16ecb0873e7628cd6524dde8cb5e4ebd34"),
+        Map.entry("net/minecraft/world/entity/animal/wolf/Wolf","7ed508c506c079be7b90757fd441d908970e3d509f8e2426054520413debfeb0"),
         Map.entry("net/minecraft/world/entity/decoration/BlockAttachedEntity","52f3a0c10f05e8511af5caa2770ae27d48e489aede83601ccc4424bd78d14620"),
         Map.entry("net/minecraft/world/entity/decoration/ItemFrame","1857810974180cf898e13944bc43cefdcf7a9b0e6665ae9821c9df12d93f1d37"),
         Map.entry("net/minecraft/world/entity/monster/cubemob/SulfurCube","990b7b7b1e4762a89d7a87586a3b36ba2ace6b4026c64c297fa41f004748527e"),

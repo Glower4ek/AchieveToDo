@@ -1,0 +1,94 @@
+{
+  "group": "shelf_open_chest_non_menu",
+  "repoHead": "5f2695ca42f92f3acf216432b1ed251b9a137522",
+  "abilities": [
+    {
+      "ability": "open_chest",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/BukkitExpandedGameplayListener.java",
+          "lines": [
+            70
+          ],
+          "sha256": "f10bdc23e48ff8f305d0ce86beb30643f2e6c2c4c8ed89d879c7f32fe8f74290",
+          "gitBlob": "838d477309174196d1cb911c1c1107887d989a2b",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/GameplayGate.java",
+          "lines": [
+            17
+          ],
+          "sha256": "4ddeec267ba8ff6d3c0b6372bf7e97ca0d88373a9de2025584e8e46290e64f95",
+          "gitBlob": "e49878b9ade7ba5f837e1f8e14bdf03866350a70",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkOperations.java",
+          "lines": [
+            95,
+            119
+          ],
+          "sha256": "c29399c46d0134eb9a3cbbba39450ae120ab8288e0c5714ee471dc0f6fa5f430",
+          "gitBlob": "30141339a368510df59e0993fccc25686bbc29a6",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java",
+          "lines": [
+            189
+          ],
+          "sha256": "51178dbc25c9248f74c439f447f447b1cddb90dda0671793b797b4a65a069e3d",
+          "gitBlob": "c1c2aa2954d1270e82ccfdffb0c801d1d4a318c7",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findBlockAbility": []
+      },
+      "thresholds": {
+        "normal": 42,
+        "easy": 40,
+        "hard": 40,
+        "chaos_20261116": 297,
+        "custom_vision": 42
+      },
+      "mapping": "DIRECT"
+    }
+  ],
+  "configs": {
+    "normal": {
+      "file": "campaign41\\runtime\\plugins\\AchieveToDo\\progression\\configs\\normal.toml",
+      "sha256": "de6383599828005cb00afcacd868ca60850913c434219f8fed5f79456bb69624"
+    },
+    "easy": {
+      "file": "campaign42\\runtime\\plugins\\AchieveToDo\\progression\\configs\\easy.toml",
+      "sha256": "c145bfe25d9080414034e8d23ccd7d88b5eb3727b84f6e5a06219e4edbe7e9b3"
+    },
+    "hard": {
+      "file": "campaign43\\runtime\\plugins\\AchieveToDo\\progression\\configs\\hard.toml",
+      "sha256": "9d7b711b9fb7f2a9d0bfe2666f349e3859b77541bdf1bc2b656134b9f1329d6a"
+    },
+    "chaos_20261116": {
+      "file": "campaign44\\runtime\\plugins\\AchieveToDo\\progression\\configs\\chaos_20261116.toml",
+      "sha256": "2f178cf168fb7adfe9ca87461490eb07e10617e35446ae7ca0daa3d91e26cab5"
+    },
+    "custom_vision": {
+      "file": "campaign45\\runtime\\plugins\\AchieveToDo\\progression\\configs\\custom_vision.toml",
+      "sha256": "db26c1f6b440cc79466a6ee37dee544fb149a23b8d5909f53ec37ebeefb536cd"
+    }
+  }
+}

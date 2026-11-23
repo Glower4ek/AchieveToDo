@@ -54,6 +54,21 @@ class BetterRuOverlayResourceTest {
         "achievetodo.ability.equip_copper_armor.description",
         "achievetodo.ability.equip_copper_armor.locked_message"
     );
+    /** Keys added in 0.3.0: bridge sync notice, disconnect messages and the shelf denial message. */
+    private static final Set<String> RELEASE_0_3_0_KEYS = Set.of(
+        "achievetodo.bridge.syncing",
+        "achievetodo.disconnect.sync_error",
+        "achievetodo.disconnect.server_version",
+        "achievetodo.ability.open_chest.shelf.locked_message"
+    );
+    /** Every key allowed on top of the frozen historical set, each in both locales. */
+    private static final Set<String> ADDED_KEYS = union(COPPER_KEYS, RELEASE_0_3_0_KEYS);
+
+    private static Set<String> union(Set<String> first, Set<String> second) {
+        Set<String> all = new HashSet<>(first);
+        all.addAll(second);
+        return Set.copyOf(all);
+    }
     private static final Path PHASE_B_ORACLE = Path.of("reference/phase_b/b7_localization_certification.json");
     private static final Path PHASE_B_SUCCESSOR = Path.of("reference/phase_b/b7_m2_current_consumer_set_refresh.json");
     private static final String PHASE_B_ORACLE_SHA256 = "e0866de8bf91d079de75935e6b21b2396b0cc84c8605096eb81e28d68e54ca7c";
@@ -168,20 +183,20 @@ class BetterRuOverlayResourceTest {
             if (row.getValue().get("provider").getAsString().equals("ATD_RU_DICTIONARY")) historicalKeys.add(row.getKey());
         }
         assertEquals(533, historicalKeys.size(), "Independent frozen Phase B ATD keyset");
-        assertTrue(java.util.Collections.disjoint(historicalKeys, COPPER_KEYS));
+        assertTrue(java.util.Collections.disjoint(historicalKeys, ADDED_KEYS));
         Set<String> expectedKeys = new HashSet<>(historicalKeys);
-        expectedKeys.addAll(COPPER_KEYS);
-        assertEquals(expectedKeys, english.keySet(), "Only the six approved copper keys may extend the historical set");
+        expectedKeys.addAll(ADDED_KEYS);
+        assertEquals(expectedKeys, english.keySet(), "Only the approved copper and 0.3.0 keys may extend the historical set");
         assertEquals(
             english.keySet(),
             russian.keySet(),
             "Existing AchieveToDo-owned Russian keys should remain intact while Better RU is integrated separately"
         );
-        assertEquals(539, english.size());
-        assertEquals(539, russian.size());
+        assertEquals(533 + ADDED_KEYS.size(), english.size());
+        assertEquals(533 + ADDED_KEYS.size(), russian.size());
         assertEquals(HISTORICAL_EN_VALUES, localeFingerprint(english, historicalKeys), "All 533 historical EN values must remain exact");
         assertEquals(HISTORICAL_RU_VALUES, localeFingerprint(russian, historicalKeys), "All 533 historical RU values must remain exact");
-        for (String key : COPPER_KEYS) {
+        for (String key : ADDED_KEYS) {
             assertFalse(english.get(key).getAsString().isBlank(), key + " EN");
             assertFalse(russian.get(key).getAsString().isBlank(), key + " RU");
         }
@@ -217,7 +232,7 @@ class BetterRuOverlayResourceTest {
         Map<String, JsonObject> current = indexRequirements(actual.getAsJsonArray("requirements"));
         Map<String, JsonObject> historical = historicalRequirements();
         Set<String> extendedKeys = new HashSet<>(historical.keySet());
-        extendedKeys.addAll(COPPER_KEYS);
+        extendedKeys.addAll(ADDED_KEYS);
         assertEquals(extendedKeys, current.keySet(), "No historical requirement may disappear or unrelated requirement appear");
 
         Map<String, JsonObject> projection = new LinkedHashMap<>(current);
@@ -225,11 +240,11 @@ class BetterRuOverlayResourceTest {
         declaration.addProperty("owner", "ATD_DICTIONARY_DECLARATION");
         declaration.addProperty("path", ACHIEVETODO_EN.toString().replace('\\', '/'));
         JsonArray copperConsumers = new JsonArray(); copperConsumers.add(declaration);
-        for (String key : COPPER_KEYS) {
+        for (String key : ADDED_KEYS) {
             JsonObject row = projection.remove(key);
             assertNotNull(row, key);
             assertEquals("ATD_RU_DICTIONARY", row.get("provider").getAsString(), key);
-            assertEquals(copperConsumers, row.getAsJsonArray("consumers"), "Only the approved copper dictionary declaration is new: " + key);
+            assertEquals(copperConsumers, row.getAsJsonArray("consumers"), "Only the approved dictionary declaration is new: " + key);
         }
         for (var row : historical.entrySet()) {
             JsonObject projected = projection.get(row.getKey());
@@ -245,13 +260,13 @@ class BetterRuOverlayResourceTest {
         assertEquals(4290, placeholderRequirements(projection));
         assertEquals(expected.get("placeholderContracts").getAsInt(), placeholderRequirements(projection));
 
-        assertEquals(4307, current.size());
+        assertEquals(4301 + ADDED_KEYS.size(), current.size());
         assertEquals(current.size(), actual.get("totalRequirements").getAsInt());
         JsonObject extendedProviders = expected.getAsJsonObject("providerPartition").deepCopy();
-        extendedProviders.addProperty("ATD_RU_DICTIONARY", extendedProviders.get("ATD_RU_DICTIONARY").getAsInt() + COPPER_KEYS.size());
+        extendedProviders.addProperty("ATD_RU_DICTIONARY", extendedProviders.get("ATD_RU_DICTIONARY").getAsInt() + ADDED_KEYS.size());
         assertEquals(extendedProviders, providerPartition(current));
         assertEquals(extendedProviders, actual.get("providerCounts"));
-        assertEquals(4296, placeholderRequirements(current));
+        assertEquals(4290 + ADDED_KEYS.size(), placeholderRequirements(current));
         assertEquals(placeholderRequirements(current), actual.get("placeholderChecked").getAsInt());
         assertTrue(actual.getAsJsonArray("placeholderMismatches").isEmpty());
         assertEquals(3482, actual.get("dictionaryCount").getAsInt());
