@@ -9,6 +9,7 @@ final class NativeLandmarkSupplementSpecs {
         Map.entry("EquippableComponentMixin:37","EquippableComponentMixin:34"));
     static final Map<String,String> INPUTS=Map.ofEntries(
         Map.entry("net/minecraft/server/level/ServerPlayerGameMode","f9963485e60ae309c76ced9bbb03c6a1790f8b50fc87278c19b6c57e611e13ec"),
+        Map.entry("net/minecraft/world/entity/AgeableMob","b6994a563fe3e6264a719085e30510714e09a53c49f8e1f8dab5765822fa6d72"),
         Map.entry("net/minecraft/world/entity/Bucketable","61155fdc37d5a3ed2390a24355888889beded16ed6f36a922e024b7ebfe4dc71"),
         Map.entry("net/minecraft/world/entity/Entity","0711e99af380b198e279322e75ba3d7ced8f8ec928b8313a94d37897c9d5f25b"),
         Map.entry("net/minecraft/world/entity/animal/allay/Allay","357dd9abaaf6c0cc1e3c9d3385ba9de060227eabe7e4ce07cd5305eb4a179506"),
@@ -17,6 +18,7 @@ final class NativeLandmarkSupplementSpecs {
         Map.entry("net/minecraft/world/entity/animal/cow/MushroomCow","5830929cdc118bf93421f7bee62ff9e15a3bc56d0cce9e05c2c1a3ce622d804c"),
         Map.entry("net/minecraft/world/entity/animal/equine/AbstractHorse","d1a08c7c47f8c5afd41d36571bf4b50210a3cd6b945d0c71cdcbf0ecbdca352c"),
         Map.entry("net/minecraft/world/entity/animal/equine/Llama","3a73afa6e0082fb827a3a98c350e3ceb6bbc5b4672d568776a9303466b991f91"),
+        Map.entry("net/minecraft/world/entity/animal/frog/Tadpole","80bddd19e53950d87de5215aac656e00c01b487c071f7c175ed31e5ad6ee4433"),
         Map.entry("net/minecraft/world/entity/animal/golem/CopperGolem","d80205f00c39fceb21309a26fa27e0741fc3884e8fc2307e8c44c44fd369e7c5"),
         Map.entry("net/minecraft/world/entity/animal/golem/IronGolem","e107c9fef92762091de1fc8a8cebe666aacfadcd3e9970d2c7f75b1526ecf2ce"),
         Map.entry("net/minecraft/world/entity/animal/happyghast/HappyGhast","a579c70c3af68c333066ea5d03927f665a2309a99406233eadc20ee1428b340f"),
@@ -64,6 +66,9 @@ final class NativeLandmarkSupplementSpecs {
         Map.entry("net/minecraft/world/level/block/WeatheringCopperGolemStatueBlock","63b96af8206bed8dc95eecc40d40f643e0f613b819043c615af2f7056eb76a04"),
         Map.entry("net/minecraft/world/level/block/entity/vault/VaultBlockEntity$Server","f4680c9aaa80e95622d74a7f676b2884011f961e062217bd5541d2f990e14408"));
     static final List<NativeLandmarkActionSpecs.Spec> SPECS=List.of(
+        // 0.4.0: the 26.3 golden dandelion age lock (rc.4 smoke audit). Denied before the Bukkit toggle event fires.
+        new NativeLandmarkActionSpecs.Spec("AgeableMobMixin:28","net/minecraft/world/entity/AgeableMob","mobInteract","(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;","Lorg/bukkit/craftbukkit/event/CraftEventFactory;callPlayerToggleEntityAgeLockEvent(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;ZLnet/minecraft/network/syncher/EntityDataAccessor;)Z",-1,"entity",1,-1,-1,"SUCCESS",1),
+        new NativeLandmarkActionSpecs.Spec("TadpoleEntityMixin:44","net/minecraft/world/entity/animal/frog/Tadpole","mobInteract","(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;","Lorg/bukkit/craftbukkit/event/CraftEventFactory;callPlayerToggleEntityAgeLockEvent(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;ZLnet/minecraft/network/syncher/EntityDataAccessor;)Z",-1,"entity",1,-1,-1,"SUCCESS",1),
         new NativeLandmarkActionSpecs.Spec("AbstractCandleBlockMixin:34","net/minecraft/world/level/block/AbstractCandleBlock","extinguish","(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;)V","HEAD",-1,"playerBlock",0,2,3,"void",1),
         new NativeLandmarkActionSpecs.Spec("AbstractCandleBlockMixin:56","net/minecraft/world/level/block/AbstractCandleBlock","onProjectileHit","(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/phys/BlockHitResult;Lnet/minecraft/world/entity/projectile/Projectile;)V","Lnet/minecraft/world/level/block/AbstractCandleBlock;setLit(Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Z)V",-1,"projectile",4,1,3,"void",1),
         new NativeLandmarkActionSpecs.Spec("AmethystBlockMixin:36","net/minecraft/world/level/block/AmethystBlock","onProjectileHit","(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/phys/BlockHitResult;Lnet/minecraft/world/entity/projectile/Projectile;)V","Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/BlockPos;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V",-1,"projectile",4,1,3,"void",1),

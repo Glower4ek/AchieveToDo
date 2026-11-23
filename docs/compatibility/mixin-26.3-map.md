@@ -77,6 +77,8 @@ every mixin to every target class: both pass on 26.3.
 | --- | --- |
 | `VillagerEntityMixin` | wraps `Villager.getOffers()` in `mobInteract` instead of `MerchantOffers.isEmpty()`: a denied trade sees an empty list and no offers are generated (known issue 5) |
 | `ItemUsedOnLocationTriggerMixin`, `DefaultBlockInteractionTriggerMixin`, `AnyBlockInteractionTriggerMixin`, `PlayerInteractTriggerMixin` | new: `trigger` HEAD cancel for one trigger of each kind after an effectful denial (`DeniedCriteria`, known issue 6) |
+| `AgeableMobMixin` | new: denies the 26.3 golden dandelion age lock (`AgeableMob.setAgeLocked` in `mobInteract`) inside a locked landmark (known issue 8) |
+| `TadpoleEntityMixin` | second injection: the same denial for `Tadpole.mobInteract`, which overrides the age lock branch (known issue 8) |
 
 ## Client code outside mixins
 

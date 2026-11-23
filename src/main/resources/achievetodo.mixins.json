@@ -14,6 +14,7 @@
     "main.AbstractFurnaceBlockMixin",
     "main.AbstractHorseEntityMixin",
     "main.AdvancementDisplaysMixin",
+    "main.AgeableMobMixin",
     "main.AllayEntityMixin",
     "main.AmethystBlockMixin",
     "main.AnimalEntityMixin",
