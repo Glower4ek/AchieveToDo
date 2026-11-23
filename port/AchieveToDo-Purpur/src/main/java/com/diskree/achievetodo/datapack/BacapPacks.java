@@ -18,7 +18,7 @@ import java.util.zip.ZipFile;
 /** Operator-provided content, never an embedded BACAP distribution or a counter engine. */
 public final class BacapPacks {
     public static final List<String> IDS = List.of("bacap", "bacap_override");
-    public static final String MARKER = "achievetodo_compatibility/compat_26_2.properties";
+    public static final String MARKER = "achievetodo_compatibility/compat_26_3.properties";
     private static volatile boolean discoveryReady;
     private static volatile long generation;
 
@@ -73,8 +73,8 @@ public final class BacapPacks {
         if (marker == null) throw new IOException("BACAP compatibility marker missing");
         Properties identity = new Properties();
         identity.load(new java.io.ByteArrayInputStream(marker));
-        if (!"compat_26_2_r19".equals(identity.getProperty("version"))
-            || !"14da3f07b5467e8b59ffc0253fd8212c938cd739".equals(identity.getProperty("sourceSha1"))) {
+        if (!"compat_26_3_r1".equals(identity.getProperty("version"))
+            || !"18bb8fc57e606a1ad41b3f326c6f211e83d4fd2b".equals(identity.getProperty("sourceSha1"))) {
             throw new IOException("BACAP compatibility/source identity mismatch");
         }
         return packs;

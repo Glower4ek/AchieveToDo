@@ -656,7 +656,7 @@ public final class PhaseAPlayerHurtEntityDamageSourceGameTest implements CustomT
             mob.setPersistenceRequired();
         }
         target.setSilent(true);
-        target.setInvulnerable(false);
+        target.setPermanentlyInvulnerable(false);
         target.setHealth(20.0F);
         target.setDeltaMovement(Vec3.ZERO);
         require(level.addFreshEntity(target), "Could not add zombie damage target to the live level");

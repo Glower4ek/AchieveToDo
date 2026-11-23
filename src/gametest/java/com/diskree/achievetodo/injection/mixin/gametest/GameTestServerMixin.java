@@ -40,8 +40,8 @@ import java.util.zip.ZipFile;
 @Mixin(GameTestServer.class)
 public abstract class GameTestServerMixin {
     private static final String BACAP_ZIP = "bacap.zip";
-    private static final String BACAP_SOURCE_SHA1 = "14da3f07b5467e8b59ffc0253fd8212c938cd739";
-    private static final String BACAP_SOURCE_SHA256 = "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2";
+    private static final String BACAP_SOURCE_SHA1 = "18bb8fc57e606a1ad41b3f326c6f211e83d4fd2b";
+    private static final String BACAP_SOURCE_SHA256 = "ce391fe46846d7fb357b7fbdd42387d260ae1a9516c601d1ba9ab09c584971d7";
 
     private static boolean normalCombatFixture() {
         return Boolean.getBoolean("achievetodo.s03.normalFixture");
@@ -118,7 +118,7 @@ public abstract class GameTestServerMixin {
         Path targetPack = datapacksDirectory.resolve(BACAP_ZIP);
         try {
             byte[] sourceBytes = Files.readAllBytes(sourcePack);
-            if (sourceBytes.length != 3135424
+            if (sourceBytes.length != 3154615
                 || !BACAP_SOURCE_SHA1.equals(hash(sourceBytes, "SHA-1"))
                 || !BACAP_SOURCE_SHA256.equals(hash(sourceBytes, "SHA-256"))
                 || !BACAP_SOURCE_SHA1.equals(ExternalPack.BACAP.getSha1())) {
@@ -126,7 +126,7 @@ public abstract class GameTestServerMixin {
             }
             verifySourceZip(sourcePack);
             System.out.println("D_S03_BACAP_SOURCE sha1=" + BACAP_SOURCE_SHA1
-                + " sha256=" + BACAP_SOURCE_SHA256 + " bytes=" + sourceBytes.length + " entries=7091 CRC=PASS");
+                + " sha256=" + BACAP_SOURCE_SHA256 + " bytes=" + sourceBytes.length + " entries=7095 CRC=PASS");
             ExternalPackCompatibility.copyForWorld(sourcePack, targetPack, ExternalPack.BACAP);
             if (!Files.isRegularFile(targetPack) || !ExternalPackCompatibility.isCurrentWorldPack(targetPack, ExternalPack.BACAP)) {
                 throw new IllegalStateException("Invalid production-compatible GameTest BACAP copy");
@@ -146,7 +146,7 @@ public abstract class GameTestServerMixin {
             throw new IllegalStateException("Missing trusted GameTest projectRoot");
         }
         Path configuredRoot = Path.of(root).toAbsolutePath().normalize();
-        Path source = configuredRoot.resolve("src/test/resources/phase_b_certification/bacap_1_21_pinned.zip");
+        Path source = configuredRoot.resolve("src/test/resources/phase_b_certification/bacap_1_21_1_pinned.zip");
         if (Files.isRegularFile(source) && Files.isReadable(source)) {
             return source;
         }
@@ -175,7 +175,7 @@ public abstract class GameTestServerMixin {
                 }
             }
         }
-        if (names.size() != 7091) throw new IOException("Incorrect BACAP ZIP entry count");
+        if (names.size() != 7095) throw new IOException("Incorrect BACAP ZIP entry count");
     }
 
     private static String hash(byte[] bytes, String algorithm) {

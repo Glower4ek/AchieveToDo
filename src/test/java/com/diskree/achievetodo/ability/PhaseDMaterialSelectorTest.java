@@ -44,7 +44,7 @@ public final class PhaseDMaterialSelectorTest {
         // 26.2 registers initializers during item construction; bootstrap alone does not bind their maps.
         // Build genuine vanilla data with the full native lookup, binding only the item registry for this fixture.
         try {
-            BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.build(VanillaRegistries.createLookup()).stream()
+            BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.build(VanillaRegistries.createWorldLookup()).stream()
                 .filter(pending -> pending.key().equals(Registries.ITEM))
                 .forEach(pending -> pending.forEach((holder, components) -> {
                     PREVIOUS_COMPONENTS.put(holder, holder.areComponentsBound() ? holder.components() : null);

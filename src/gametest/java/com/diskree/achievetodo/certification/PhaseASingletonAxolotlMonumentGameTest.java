@@ -241,7 +241,7 @@ public final class PhaseASingletonAxolotlMonumentGameTest implements CustomTestM
             ReferenceCountUtil.release(outgoing);
         }
         require(teleportId != null, "server did not send a teleport for client acknowledgement");
-        new ServerboundAcceptTeleportationPacket(teleportId).handle(joined.player().connection);
+        TeleportAck.accept(teleportId, joined.player());
     }
 
     private static Joined join(GameTestHelper h) {

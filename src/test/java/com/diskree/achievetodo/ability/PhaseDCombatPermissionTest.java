@@ -46,7 +46,7 @@ public class PhaseDCombatPermissionTest {
     @BeforeAll static void bootstrap() {
         SharedConstants.tryDetectVersion(); Bootstrap.bootStrap();
         try {
-            BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.build(VanillaRegistries.createLookup()).stream()
+            BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.build(VanillaRegistries.createWorldLookup()).stream()
                 .filter(p -> p.key().equals(Registries.ITEM)).forEach(p -> p.forEach((holder, components) -> {
                     COMPONENTS.put(holder, holder.areComponentsBound() ? holder.components() : null);
                     holder.bindComponents(components);

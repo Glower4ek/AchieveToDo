@@ -106,7 +106,7 @@ public final class Pre26SmokeGameTest implements CustomTestMethodInvoker {
                 var matches=c.messages.stream().filter(m->references(m,id)).toList();
                 require(matches.size()==1,"earned message count="+matches.size()+" for "+id);
                 require(hasHover(matches.getFirst()),"earned tooltip missing "+id);
-                var receipt=new JsonObject();receipt.addProperty("id",id);receipt.addProperty("frame",advancement.value().display().orElseThrow().getType().toString());
+                var receipt=new JsonObject();receipt.addProperty("id",id);receipt.addProperty("frame",advancement.value().display().orElseThrow().type().toString());
                 receipt.addProperty("nativePickup",true);receipt.addProperty("criterionBefore",false);receipt.addProperty("advancementAfter",done(c,id));receipt.add("message",ComponentSerialization.CODEC.encodeStart(JsonOps.INSTANCE,matches.getFirst()).getOrThrow());receipts.add(receipt);
             }
             var flower=c.player.getInventory().getNonEquipmentItems().stream().filter(s->s.get(DataComponents.CUSTOM_NAME)!=null && s.get(DataComponents.CUSTOM_NAME).getContents() instanceof TranslatableContents t && t.getKey().equals("A blessing in love")).findFirst().orElseThrow(()->new IllegalStateException("legitimate user-reported flower trophy missing"));
@@ -144,7 +144,7 @@ public final class Pre26SmokeGameTest implements CustomTestMethodInvoker {
         c.channel.runPendingTasks();c.channel.runScheduledPendingTasks();c.channel.flushOutbound();Object outgoing;
         while((outgoing=c.channel.readOutbound())!=null) {
             if(outgoing instanceof ClientboundSystemChatPacket message)c.messages.add(message.content());
-            if(acknowledge&&outgoing instanceof ClientboundPlayerPositionPacket position)new ServerboundAcceptTeleportationPacket(position.id()).handle(c.player.connection);
+            if(acknowledge&&outgoing instanceof ClientboundPlayerPositionPacket position)TeleportAck.accept(position.id(), c.player);
             ReferenceCountUtil.release(outgoing);
         }
     }

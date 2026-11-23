@@ -87,7 +87,7 @@ minecraft:trial_chambers TRIAL_CHAMBERS
             java.util.regex.Pattern.compile("BuiltinStructures\\.([A-Z_]+)").matcher(family).results().map(m -> m.group(1)).toList());
     }
     @Test void featureAndNonstructureMappingsRemainExact() {
-        assertEquals(Map.of(Feature.DESERT_WELL,LandmarkType.DESERT_WELL,Feature.MONSTER_ROOM,LandmarkType.MONSTER_ROOM),LandmarkType.FEATURES);
+        assertEquals(Map.of(net.minecraft.data.worldgen.features.MiscOverworldFeatures.DESERT_WELL,LandmarkType.DESERT_WELL,net.minecraft.data.worldgen.features.CaveFeatures.MONSTER_ROOM,LandmarkType.MONSTER_ROOM),LandmarkType.FEATURES);
         assertEquals(2,Arrays.stream(LandmarkType.values()).filter(LandmarkType::isFeature).count());
         assertNull(LandmarkType.DESERT_WELL.getStructureRegistryKeys());assertNull(LandmarkType.MONSTER_ROOM.getStructureRegistryKeys());
         assertFalse(LandmarkType.DESERT_WELL.isStructure());assertFalse(LandmarkType.MONSTER_ROOM.isStructure());

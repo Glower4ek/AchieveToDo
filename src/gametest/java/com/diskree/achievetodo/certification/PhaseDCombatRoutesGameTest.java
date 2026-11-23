@@ -93,7 +93,7 @@ public final class PhaseDCombatRoutesGameTest {
         List<Object> packets=new ArrayList<>();Object packet;
         while((packet=fixture.channel().readOutbound())!=null) {
             if(packet instanceof ClientboundPlayerPositionPacket position)
-                new ServerboundAcceptTeleportationPacket(position.id()).handle(fixture.player().connection);
+                TeleportAck.accept(position.id(), fixture.player());
             packets.add(packet);ReferenceCountUtil.release(packet);
             if(packets.size()>20000)throw new IllegalStateException("Unbounded fixture packet drain");
         }
@@ -168,7 +168,7 @@ public final class PhaseDCombatRoutesGameTest {
                     require("denied selected-slot stab no effects",!hit && cow.getHealth()==health && cow.getDeltaMovement().equals(velocity)
                         && stack.getDamageValue()==wear,item+" "+slot);
                     require("one direct stab denial overlay",overlays(drain(fixture))==1,item+" "+slot);
-                    score(fixture,threshold);cow.invulnerableTime=0;
+                    score(fixture,threshold);cow.setInvulnerableTime(0);
                     require("native valid selected-slot positive control",player.stabAttack(slot,cow,4,true,false,false)
                         && cow.getHealth()<health,item+" "+slot);
                     cow.discard();

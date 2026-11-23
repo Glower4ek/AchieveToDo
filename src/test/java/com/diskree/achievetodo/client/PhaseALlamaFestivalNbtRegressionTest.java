@@ -17,7 +17,7 @@ class PhaseALlamaFestivalNbtRegressionTest {
                 frozen=new String(input.readAllBytes(),StandardCharsets.UTF_8);
             }
         }
-        Method convert=ExternalPackCompatibility.class.getDeclaredMethod("convertJson",String.class);convert.setAccessible(true);
+        Method convert=ExternalPackCompatibility.class.getDeclaredMethod("convertLegacyJson",String.class);convert.setAccessible(true);
         Object result=convert.invoke(null,frozen);Method text=result.getClass().getDeclaredMethod("text");text.setAccessible(true);
         var converted=JsonParser.parseString((String)text.invoke(result)).getAsJsonObject();
         var criteria=converted.getAsJsonObject("criteria");assertEquals(16,criteria.size());

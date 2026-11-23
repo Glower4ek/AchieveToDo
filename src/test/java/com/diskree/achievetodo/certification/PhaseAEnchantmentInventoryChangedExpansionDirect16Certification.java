@@ -84,7 +84,7 @@ public final class PhaseAEnchantmentInventoryChangedExpansionDirect16Certificati
     static {
         SharedConstants.tryDetectVersion();
         Bootstrap.bootStrap();
-        REGISTRY_LOOKUP = VanillaRegistries.createLookup();
+        REGISTRY_LOOKUP = VanillaRegistries.createWorldLookup();
         // Minecraft 26.2 separates vanilla registry creation from default component binding.
         net.minecraft.core.registries.BuiltInRegistries.DATA_COMPONENT_INITIALIZERS
             .build(REGISTRY_LOOKUP).forEach(net.minecraft.core.component.DataComponentInitializers.PendingComponents::apply);

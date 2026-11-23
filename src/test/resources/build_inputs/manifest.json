@@ -32,16 +32,15 @@
       "logicalName": "amplified_nether.zip",
       "type": "originalZIP",
       "required": true,
-      "size": 105555,
-      "SHA256": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa",
+      "size": 88707,
+      "SHA256": "cb2699a5f399c5f3ff92a0107325e1d82730650b36231b4d084d85af2aa86fd1",
       "sourceProject": "Stardust Labs",
-      "sourceVersion": "v1.2.15",
+      "sourceVersion": "v1.3.0+26.3",
       "acquisitionIdentity": {
-        "sourceArchiveIdentity": {
-          "size": 105555,
-          "SHA256": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa"
-        },
-        "missingFields": "Original full project license/acquisition payload not included in the 20-file authority; preserve available sealed source identity, do not invent it."
+        "projectId": "wXiGiyGX",
+        "versionId": "sKKMLxcI",
+        "sha1": "c1252e0b65462f80f33baa8d2bc4e11eade19699",
+        "url": "https://cdn.modrinth.com/data/wXiGiyGX/versions/sKKMLxcI/Amplified_Nether_v1.3.0%2B26.3.zip"
       },
       "provenanceRole": "AMPLIFIED_NETHER original upstream archive; conversion and effective localization input",
       "licenseReference": {
@@ -330,16 +329,15 @@
       "logicalName": "nullscape.zip",
       "type": "originalZIP",
       "required": true,
-      "size": 343740,
-      "SHA256": "ec7b0dfcd1add8c127c985dac1466a44168449b3b6641dd20e6b2e16153b66aa",
+      "size": 256106,
+      "SHA256": "69dc8ebbd2509d3f3d2b42b18036a38828855939768cccedebcb168c641f4224",
       "sourceProject": "Stardust Labs",
-      "sourceVersion": "26.2 v1.2.20",
+      "sourceVersion": "v2.0.1+26.3",
       "acquisitionIdentity": {
-        "sourceArchiveIdentity": {
-          "size": 343740,
-          "SHA256": "ec7b0dfcd1add8c127c985dac1466a44168449b3b6641dd20e6b2e16153b66aa"
-        },
-        "missingFields": "Original full project license/acquisition payload not included in the 20-file authority; preserve available sealed source identity, do not invent it."
+        "projectId": "LPjGiSO4",
+        "versionId": "BJjbILcf",
+        "sha1": "d759ee004b6d6e633bc849eee0ea2a929de8eabc",
+        "url": "https://cdn.modrinth.com/data/LPjGiSO4/versions/BJjbILcf/Nullscape_v2.0.1%2B26.3.zip"
       },
       "provenanceRole": "NULLSCAPE original upstream archive; conversion and effective localization input",
       "licenseReference": {
@@ -416,16 +414,15 @@
       "logicalName": "terralith.zip",
       "type": "originalZIP",
       "required": true,
-      "size": 3001471,
-      "SHA256": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e",
+      "size": 2985816,
+      "SHA256": "9764f1d11a0bfe99c2cd96cd54f346fe756165d14a6f855b394954c171d603d5",
       "sourceProject": "Stardust Labs",
-      "sourceVersion": "26.2 v2.6.4",
+      "sourceVersion": "v2.6.5+26.3",
       "acquisitionIdentity": {
-        "sourceArchiveIdentity": {
-          "size": 3001471,
-          "SHA256": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e"
-        },
-        "missingFields": "Original full project license/acquisition payload not included in the 20-file authority; preserve available sealed source identity, do not invent it."
+        "projectId": "8oi3bsk5",
+        "versionId": "fqnsIp6d",
+        "sha1": "f177f61facf8c43705debe1e1508792dcf4d5323",
+        "url": "https://cdn.modrinth.com/data/8oi3bsk5/versions/fqnsIp6d/Terralith_v2.6.5%2B26.3.zip"
       },
       "provenanceRole": "TERRALITH original upstream archive; conversion and effective localization input",
       "licenseReference": {
@@ -5735,10 +5732,10 @@
     {
       "enum": "BACAP",
       "authority": "source",
-      "path": "src/test/resources/phase_b_certification/bacap_1_21_pinned.zip",
-      "size": 3135424,
-      "SHA256": "c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2",
-      "SHA1": "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+      "path": "src/test/resources/phase_b_certification/bacap_1_21_1_pinned.zip",
+      "size": 3154615,
+      "SHA256": "ce391fe46846d7fb357b7fbdd42387d260ae1a9516c601d1ba9ab09c584971d7",
+      "SHA1": "18bb8fc57e606a1ad41b3f326c6f211e83d4fd2b",
       "historicalAcquisitionKey": null
     },
     {
@@ -5781,28 +5778,28 @@
       "enum": "TERRALITH",
       "authority": "external",
       "path": "terralith.zip",
-      "size": 3001471,
-      "SHA256": "5ac86ed13cc9fc617cbb57e14ce02b1ecac2f2776c36f0536a519378e546e23e",
-      "SHA1": "96ccd25be9ba5240ebe8150cc29240aca781f0e1",
-      "historicalAcquisitionKey": "build/tmp/phase_b_b4/Terralith_26.2_v2.6.4.zip"
+      "size": 2985816,
+      "SHA256": "9764f1d11a0bfe99c2cd96cd54f346fe756165d14a6f855b394954c171d603d5",
+      "SHA1": "f177f61facf8c43705debe1e1508792dcf4d5323",
+      "historicalAcquisitionKey": null
     },
     {
       "enum": "AMPLIFIED_NETHER",
       "authority": "external",
       "path": "amplified_nether.zip",
-      "size": 105555,
-      "SHA256": "b7013fdf880afe85fb63e06d3edb47795272701463bd850a4500ac02d0b453aa",
-      "SHA1": "94d9604cebbfca667aeb59e4b1ac03e9c6e5cb5d",
-      "historicalAcquisitionKey": "build/tmp/phase_b_b4/Amplified_Nether_v1.2.15.zip"
+      "size": 88707,
+      "SHA256": "cb2699a5f399c5f3ff92a0107325e1d82730650b36231b4d084d85af2aa86fd1",
+      "SHA1": "c1252e0b65462f80f33baa8d2bc4e11eade19699",
+      "historicalAcquisitionKey": null
     },
     {
       "enum": "NULLSCAPE",
       "authority": "external",
       "path": "nullscape.zip",
-      "size": 343740,
-      "SHA256": "ec7b0dfcd1add8c127c985dac1466a44168449b3b6641dd20e6b2e16153b66aa",
-      "SHA1": "bee4a2182593fdfc5da4b253a342feddf02b88b9",
-      "historicalAcquisitionKey": "build/tmp/phase_b_b4/Nullscape_26.2_v1.2.20.zip"
+      "size": 256106,
+      "SHA256": "69dc8ebbd2509d3f3d2b42b18036a38828855939768cccedebcb168c641f4224",
+      "SHA1": "d759ee004b6d6e633bc849eee0ea2a929de8eabc",
+      "historicalAcquisitionKey": null
     }
   ],
   "sourceFiles": [
@@ -5858,8 +5855,8 @@
     },
     {
       "path": "gradle/verification-metadata.xml",
-      "size": 62899,
-      "SHA256": "5528c6eb7f9e37f715fe8a076d01d9d4f8852a64847db2b3fd36f5caae7bc895"
+      "size": 106318,
+      "SHA256": "0f12cdeb9244fda74468497027f1a8b8f2ab00c84e97347e520c0145907e621c"
     }
   ],
   "verificationCandidateReviewed": false,

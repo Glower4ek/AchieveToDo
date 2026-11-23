@@ -106,7 +106,7 @@ public final class PhaseDEquipmentGameTest {
         fixture.channel().runPendingTasks();fixture.channel().runScheduledPendingTasks();fixture.channel().flushOutbound();
         List<Object> packets=new ArrayList<>();Object packet;
         while((packet=fixture.channel().readOutbound())!=null) {
-            if(packet instanceof ClientboundPlayerPositionPacket p)new ServerboundAcceptTeleportationPacket(p.id()).handle(fixture.player().connection);
+            if(packet instanceof ClientboundPlayerPositionPacket p)TeleportAck.accept(p.id(), fixture.player());
             packets.add(packet);ReferenceCountUtil.release(packet);
             if(packets.size()>20000)throw new IllegalStateException("Unbounded fixture packet drain");
         }

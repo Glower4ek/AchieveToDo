@@ -29,6 +29,7 @@ import java.util.zip.ZipFile;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -63,6 +64,17 @@ class BetterRuOverlayResourceTest {
     );
     /** Every key allowed on top of the frozen historical set, each in both locales. */
     private static final Set<String> ADDED_KEYS = union(COPPER_KEYS, RELEASE_0_3_0_KEYS);
+    /** BACAP 1.21.1 (Minecraft 26.3) reward functions name poplar items; the game's own Russian names cover them. */
+    private static final Set<String> BACAP_1_21_1_VANILLA_KEYS = Set.of(
+        "block.minecraft.poplar_log",
+        "block.minecraft.poplar_sapling"
+    );
+    /** BACAP 1.21.1 no longer names explorer maps through filled_map keys (Minecraft 26.3 has separate map items). */
+    private static final Set<String> BACAP_1_21_1_RETIRED_KEYS = Set.of(
+        "filled_map.explorer_jungle", "filled_map.explorer_swamp", "filled_map.mansion", "filled_map.monument",
+        "filled_map.trial_chambers", "filled_map.village_desert", "filled_map.village_plains",
+        "filled_map.village_savanna", "filled_map.village_snowy", "filled_map.village_taiga"
+    );
 
     private static Set<String> union(Set<String> first, Set<String> second) {
         Set<String> all = new HashSet<>(first);
@@ -231,8 +243,12 @@ class BetterRuOverlayResourceTest {
         var expected = receipt.getAsJsonObject("currentConsumerOracle");
         Map<String, JsonObject> current = indexRequirements(actual.getAsJsonArray("requirements"));
         Map<String, JsonObject> historical = historicalRequirements();
+        // The frozen receipt was taken on Minecraft 26.2 with BACAP 1.21; apply the documented BACAP 1.21.1 delta.
+        Map<String, JsonObject> retired = new LinkedHashMap<>();
+        for (String key : BACAP_1_21_1_RETIRED_KEYS) retired.put(key, assertInstanceOf(JsonObject.class, historical.remove(key), key));
         Set<String> extendedKeys = new HashSet<>(historical.keySet());
         extendedKeys.addAll(ADDED_KEYS);
+        extendedKeys.addAll(BACAP_1_21_1_VANILLA_KEYS);
         assertEquals(extendedKeys, current.keySet(), "No historical requirement may disappear or unrelated requirement appear");
 
         Map<String, JsonObject> projection = new LinkedHashMap<>(current);
@@ -246,27 +262,47 @@ class BetterRuOverlayResourceTest {
             assertEquals("ATD_RU_DICTIONARY", row.get("provider").getAsString(), key);
             assertEquals(copperConsumers, row.getAsJsonArray("consumers"), "Only the approved dictionary declaration is new: " + key);
         }
+        for (String key : BACAP_1_21_1_VANILLA_KEYS) {
+            JsonObject row = projection.remove(key);
+            assertNotNull(row, key);
+            assertEquals("VANILLA_26_2_RU", row.get("provider").getAsString(), key);
+            for (var consumer : row.getAsJsonArray("consumers"))
+                assertEquals("BACAP", consumer.getAsJsonObject().get("owner").getAsString(), "Only BACAP 1.21.1 uses " + key);
+        }
         for (var row : historical.entrySet()) {
             JsonObject projected = projection.get(row.getKey());
             assertNotNull(projected, row.getKey());
             assertEquals(row.getValue().get("provider"), projected.get("provider"), row.getKey());
             assertEquals(consumerMultiset(row.getValue()), consumerMultiset(projected), "Historical consumers: " + row.getKey());
         }
-        assertEquals(4301, projection.size());
-        assertEquals(expected.get("requirements").getAsInt(), projection.size());
-        assertEquals(expected.get("providerPartition"), providerPartition(projection));
-        assertEquals(receipt.get("effectiveCoverage"), effectiveCoverage(projection, receipt.getAsJsonObject("effectiveCoverage").keySet()));
-        assertEquals(receipt.get("effectiveCoverage"), actual.get("effectiveCoverage"));
-        assertEquals(4290, placeholderRequirements(projection));
-        assertEquals(expected.get("placeholderContracts").getAsInt(), placeholderRequirements(projection));
+        assertEquals(4301 - retired.size(), projection.size());
+        assertEquals(expected.get("requirements").getAsInt() - retired.size(), projection.size());
+        JsonObject providers = expected.getAsJsonObject("providerPartition").deepCopy();
+        for (var row : retired.values()) {
+            String provider = row.get("provider").getAsString();
+            providers.addProperty(provider, providers.get(provider).getAsInt() - 1);
+        }
+        assertEquals(providers, providerPartition(projection));
+        Set<String> views = receipt.getAsJsonObject("effectiveCoverage").keySet();
+        assertEquals(effectiveCoverage(historical, views), effectiveCoverage(projection, views));
+        assertEquals(effectiveCoverage(current, views), actual.get("effectiveCoverage"));
+        for (var view : actual.getAsJsonObject("effectiveCoverage").entrySet()) {
+            JsonObject coverage = view.getValue().getAsJsonObject();
+            assertEquals(coverage.get("required"), coverage.get("resolved"), view.getKey());
+            assertTrue(coverage.getAsJsonArray("missing").isEmpty(), view.getKey());
+        }
+        assertEquals(4290 - placeholderRequirements(retired), placeholderRequirements(projection));
+        assertEquals(expected.get("placeholderContracts").getAsInt() - placeholderRequirements(retired), placeholderRequirements(projection));
 
-        assertEquals(4301 + ADDED_KEYS.size(), current.size());
+        int delta = ADDED_KEYS.size() + BACAP_1_21_1_VANILLA_KEYS.size() - retired.size();
+        assertEquals(4301 + delta, current.size());
         assertEquals(current.size(), actual.get("totalRequirements").getAsInt());
-        JsonObject extendedProviders = expected.getAsJsonObject("providerPartition").deepCopy();
+        JsonObject extendedProviders = providers.deepCopy();
         extendedProviders.addProperty("ATD_RU_DICTIONARY", extendedProviders.get("ATD_RU_DICTIONARY").getAsInt() + ADDED_KEYS.size());
+        extendedProviders.addProperty("VANILLA_26_2_RU", extendedProviders.get("VANILLA_26_2_RU").getAsInt() + BACAP_1_21_1_VANILLA_KEYS.size());
         assertEquals(extendedProviders, providerPartition(current));
         assertEquals(extendedProviders, actual.get("providerCounts"));
-        assertEquals(4290 + ADDED_KEYS.size(), placeholderRequirements(current));
+        assertEquals(4290 + delta, placeholderRequirements(current));
         assertEquals(placeholderRequirements(current), actual.get("placeholderChecked").getAsInt());
         assertTrue(actual.getAsJsonArray("placeholderMismatches").isEmpty());
         assertEquals(3482, actual.get("dictionaryCount").getAsInt());

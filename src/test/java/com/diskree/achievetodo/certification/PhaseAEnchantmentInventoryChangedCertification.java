@@ -63,7 +63,7 @@ public final class PhaseAEnchantmentInventoryChangedCertification {
     static {
         SharedConstants.tryDetectVersion();
         Bootstrap.bootStrap();
-        REGISTRY_LOOKUP = VanillaRegistries.createLookup();
+        REGISTRY_LOOKUP = VanillaRegistries.createWorldLookup();
     }
 
     private PhaseAEnchantmentInventoryChangedCertification() {

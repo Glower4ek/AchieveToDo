@@ -66,7 +66,7 @@ public final class AchieveToDoBootstrap implements PluginBootstrap {
                     // Operator installs these files in the level's standard datapacks directory.
                     // Native discovery owns loading/order; no second registration of BACAP.
                     BacapPacks.completeDiscovery();
-                    context.getLogger().info("BACAP canonical 1.21/MC26.2 compat_26_2_r19 preflight verified for native world discovery; generation=" + BacapPacks.generation());
+                    context.getLogger().info("BACAP canonical 1.21.1/MC26.3 compat_26_3_r1 preflight verified for native world discovery; generation=" + BacapPacks.generation());
                 }
                 URI uri = Objects.requireNonNull(
                     AchieveToDoBootstrap.class.getResource(EMBEDDED_DATAPACK_PATH),

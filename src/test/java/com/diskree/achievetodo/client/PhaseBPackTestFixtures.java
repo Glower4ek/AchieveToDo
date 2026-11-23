@@ -10,14 +10,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /** Authenticated test inputs and setup; conversion/admission always use production. */
 public final class PhaseBPackTestFixtures {
-    public static final Path CURRENT = Path.of("src/test/resources/phase_b_certification/bacap_1_21_pinned.zip");
+    public static final Path CURRENT = Path.of("src/test/resources/phase_b_certification/bacap_1_21_1_pinned.zip");
     public static final Path HISTORICAL = Path.of("reference/phase_a_preservation/files/final/bacap.zip");
     public static final Path FROZEN_RU = Path.of("src/test/resources/phase_a_certification/frozen_runtime_ru_overlay.json");
     public static final Path FROZEN_INTERNAL = Path.of("src/test/resources/phase_a_certification/frozen_internal_resourcepacks.zip");
-    public static final String CURRENT_SHA1 = "14da3f07b5467e8b59ffc0253fd8212c938cd739";
+    public static final String CURRENT_SHA1 = "18bb8fc57e606a1ad41b3f326c6f211e83d4fd2b";
     public static final String HISTORICAL_SHA1 = "45b8bb0076bbf5b92fde7dc9590c6686937abbc0";
     public static final String ROOT_SHA1 = "cbc432be35d5525001872c430877541cfa1fcad6";
-    public static final String MARKER = "achievetodo_compatibility/compat_26_2.properties";
+    public static final String MARKER = "achievetodo_compatibility/compat_26_3.properties";
     private static JsonObject localization;
 
     private PhaseBPackTestFixtures() {}
@@ -42,7 +42,7 @@ public final class PhaseBPackTestFixtures {
 
     public static JsonObject inputManifest() throws Exception {
         byte[] bytes = Files.readAllBytes(Path.of("src/test/resources/build_inputs/manifest.json"));
-        assertEquals("1dbe9d7cd2fe653454f8692b7cdf5e54787c3df74eb12461c01164b99190ac77", hash(bytes, "SHA-256"));
+        assertEquals("6273ffd8b9749db8ccebde5b157525087294c4d0ae33b949300bcbdba6b286f1", hash(bytes, "SHA-256"));
         return JsonParser.parseString(new String(bytes, StandardCharsets.UTF_8)).getAsJsonObject();
     }
 
@@ -71,9 +71,9 @@ public final class PhaseBPackTestFixtures {
 
     public static Path current() throws Exception {
         byte[] bytes = Files.readAllBytes(CURRENT);
-        assertEquals(3135424, bytes.length);
+        assertEquals(3154615, bytes.length);
         assertEquals(CURRENT_SHA1, hash(bytes, "SHA-1"));
-        assertEquals("c71d1aa1a84dbe00a3f85a42144b46214c4669a3cccf07ff66631d28f16a99b2", hash(bytes, "SHA-256"));
+        assertEquals("ce391fe46846d7fb357b7fbdd42387d260ae1a9516c601d1ba9ab09c584971d7", hash(bytes, "SHA-256"));
         assertEquals(CURRENT_SHA1, ExternalPack.BACAP.getSha1());
         assertTrue(ExternalPackCompatibility.isCurrentWorldPack(CURRENT, ExternalPack.BACAP));
         return CURRENT;
@@ -110,7 +110,7 @@ public final class PhaseBPackTestFixtures {
 
     public static void assertCurrentMarker(Path path) throws Exception {
         Properties p = marker(path);
-        assertEquals("compat_26_2_r19", p.getProperty("version"));
+        assertEquals("compat_26_3_r1", p.getProperty("version"));
         assertEquals("bacap.zip", p.getProperty("fileName"));
         assertEquals(CURRENT_SHA1, p.getProperty("sourceSha1"));
         assertEquals(ROOT_SHA1, p.getProperty("rootOverrideSha1"));
@@ -172,7 +172,8 @@ public final class PhaseBPackTestFixtures {
             assertEquals(row.get("size").getAsInt(), bytes.length);
             assertEquals(row.get("SHA256").getAsString(), hash(bytes, "SHA-256"));
             assertEquals(pack.getSha1(), hash(bytes, "SHA-1"));
-            if (!name.equals("BACAP")) {
+            // 26.3 terrain packs have no historical Phase B acquisition key; the pinned manifest is their authority.
+            if (!name.equals("BACAP") && !row.get("historicalAcquisitionKey").isJsonNull()) {
                 String relative = row.get("historicalAcquisitionKey").getAsString();
                 assertEquals(row.get("SHA256").getAsString(), acquisition.getAsJsonObject(relative).get("sha256").getAsString());
             }

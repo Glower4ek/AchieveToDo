@@ -273,7 +273,7 @@ public final class PhaseAShotCrossbowGameTest implements CustomTestMethodInvoker
             ChargedProjectiles loaded = state.crossbow().get(DataComponents.CHARGED_PROJECTILES);
             require(CrossbowItem.isCharged(state.crossbow()) && loaded != null && !loaded.isEmpty(),
                 "Normal server ticks did not load the crossbow");
-            List<ItemStack> loadedItems = loaded.itemCopies();
+            List<ItemStack> loadedItems = loaded.itemCopies().toList();
             require(loadedItems.size() == definition.expectedLoadedProjectiles(),
                 "Unexpected native loaded-projectile count for " + definition.key());
             require(loadedItems.stream().allMatch(item -> item.is(Items.ARROW)),

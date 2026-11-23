@@ -23,8 +23,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class ExternalPackDownloaderTest {
-    private static final Path NATIVE = Path.of("src/test/resources/phase_b_certification/bacap_1_21_pinned.zip");
-    private static final String NATIVE_SHA1 = "14da3f07b5467e8b59ffc0253fd8212c938cd739";
+    private static final Path NATIVE = Path.of("src/test/resources/phase_b_certification/bacap_1_21_1_pinned.zip");
+    private static final String NATIVE_SHA1 = "18bb8fc57e606a1ad41b3f326c6f211e83d4fd2b";
 
     @TempDir
     Path temporary;

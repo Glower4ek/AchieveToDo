@@ -21,7 +21,7 @@ public final class UiUxMaintenanceSourceContract {
     static final String MANIFEST_SHA256 = "3f04f19ba716eaa9cb8515ef45564bf4b23417005262070b5517d42ebdc59072";
     static final String R9 = "tools/certification/authority/r9-source-oracle-v1.json";
     static final String R9_SHA256 = "7d57ee1bbd9ecb1b903741dd4335b8055f426278aa5910e89908a8207f986072";
-    static final String PORT = "port/AchieveToDo-Purpur-26.2/src/main/";
+    static final String PORT = "port/AchieveToDo-Purpur/src/main/";
     static final String PROGRESS = "src/main/java/com/diskree/achievetodo/injection/mixin/client/AdvancementProgressMixin.java";
     static final String SCREEN = "src/main/java/com/diskree/achievetodo/injection/mixin/client/AdvancementsScreenMixin.java";
     private static final Set<String> UI_EXCEPTIONS = Set.of(
@@ -161,7 +161,7 @@ public final class UiUxMaintenanceSourceContract {
             JsonObject ref=m.getAsJsonObject("oldV4");
             require(ref.get("path").getAsString().equals(GAMEPLAY_V4_MANIFEST) && ref.get("sha256").getAsString().equals("e069f6109cbbf2dd679859b10e814d987e77ba8c9c9338899e13be9b4abcce53"),"V5 immutable V4 parent");
             JsonObject delta=m.getAsJsonObject("productionDelta"),current=parent.getAsJsonObject("currentProductionClosure").deepCopy(),flat=parent.getAsJsonObject("allGameplayChanges").deepCopy();
-            Set<String> paths=Set.of("port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java","port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java");
+            Set<String> paths=Set.of("port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/landmark/CanonicalLandmarkMembership.java","port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/landmark/bukkit/BukkitExactLandmarkRuntime.java");
             require(delta.keySet().equals(paths),"V5 exact two-file production delta");
             for(String path:paths) {
                 JsonObject d=delta.getAsJsonObject(path);
@@ -179,7 +179,7 @@ public final class UiUxMaintenanceSourceContract {
             JsonObject parent=pinnedJson(root,GAMEPLAY_V3_MANIFEST,"179a8fb1fce386cfd4f78aa4d96e5f6dfab94701fac35a2f27ccbb17b78ed44c");
             JsonObject ref=m.getAsJsonObject("oldV3");
             require(ref.get("path").getAsString().equals(GAMEPLAY_V3_MANIFEST) && ref.get("sha256").getAsString().equals("179a8fb1fce386cfd4f78aa4d96e5f6dfab94701fac35a2f27ccbb17b78ed44c"),"V4 parent pin");
-            String target="port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkActions.java";
+            String target="port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkActions.java";
             JsonObject delta=m.getAsJsonObject("productionDelta"),flat=parent.getAsJsonObject("allGameplayChanges").deepCopy();
             require(delta.size()==1 && delta.has(target) && flat.getAsJsonObject(target).get("afterSHA256").equals(delta.getAsJsonObject(target).get("beforeSHA256")),"V4 incremental source identity");
             flat.getAsJsonObject(target).addProperty("afterSHA256",delta.getAsJsonObject(target).get("afterSHA256").getAsString());
@@ -190,7 +190,7 @@ public final class UiUxMaintenanceSourceContract {
             JsonObject parent=pinnedJson(root,GAMEPLAY_V2_MANIFEST,"522fecccba5e2c3f657afe2db0bc2b2db54c93d674c95206a2061bf695c48bab");
             JsonObject parentRef=m.getAsJsonObject("oldV2");
             require(parentRef.get("path").getAsString().equals(GAMEPLAY_V2_MANIFEST) && parentRef.get("sha256").getAsString().equals("522fecccba5e2c3f657afe2db0bc2b2db54c93d674c95206a2061bf695c48bab"),"V3 immutable parent pin");
-            String target="port/AchieveToDo-Purpur-26.2/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkActions.java";
+            String target="port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeLandmarkActions.java";
             JsonObject delta=m.getAsJsonObject("productionDelta");require(delta.size()==1 && delta.has(target),"V3 bounded production delta");
             JsonObject flattened=parent.getAsJsonObject("allGameplayChanges").deepCopy();
             require(flattened.getAsJsonObject(target).get("afterSHA256").equals(delta.getAsJsonObject(target).get("beforeSHA256")),"V3 predecessor production identity");

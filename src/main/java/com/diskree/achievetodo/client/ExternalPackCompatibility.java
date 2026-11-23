@@ -33,9 +33,9 @@ import java.util.zip.ZipOutputStream;
 
 public final class ExternalPackCompatibility {
 
-    private static final String MARKER_ENTRY = "achievetodo_compatibility/compat_26_2.properties";
-    private static final String MARKER_VERSION = "compat_26_2_r19";
-    private static final String NATIVE_BACAP_121_SHA1 = "14da3f07b5467e8b59ffc0253fd8212c938cd739";
+    private static final String MARKER_ENTRY = "achievetodo_compatibility/compat_26_3.properties";
+    private static final String MARKER_VERSION = "compat_26_3_r1";
+    private static final String NATIVE_BACAP_121_SHA1 = "18bb8fc57e606a1ad41b3f326c6f211e83d4fd2b" /* BACAP 1.21.1 (Minecraft 26.3) */;
     private static final String NATIVE_BACAP_HARDCORE_121_SHA1 = "9c20e14bbef224d2cc4ce63c8d24de1abc7a2475";
     private static final String ROOT_OVERRIDE_SHA1_PROPERTY = "rootOverrideSha1";
     private static final String LLAMA_CARPET_NBT_PROPERTY = "llamaCarpetNbtMapping";
@@ -337,7 +337,24 @@ public final class ExternalPackCompatibility {
         return line;
     }
 
+    /** Legacy (pre-26) pack JSON to the current format: the 26.2 legacy conversion, then the 26.3 upgrade. */
     private static @NotNull ConversionResult convertJson(@NotNull String json) {
+        ConversionResult legacy = convertLegacyJson(json);
+        JsonElement root;
+        try {
+            root = JsonParser.parseString(legacy.text());
+        } catch (JsonParseException ignored) {
+            return legacy;
+        }
+        JsonElement upgraded = Bacap263Upgrade.upgrade(root);
+        if (upgraded.equals(root)) {
+            return legacy;
+        }
+        return new ConversionResult(upgraded.toString(), true);
+    }
+
+    /** The legacy conversion to the Minecraft 26.2 format (unchanged since 0.3.0; tests pin its exact shape). */
+    private static @NotNull ConversionResult convertLegacyJson(@NotNull String json) {
         JsonElement root;
         try {
             root = JsonParser.parseString(json);
