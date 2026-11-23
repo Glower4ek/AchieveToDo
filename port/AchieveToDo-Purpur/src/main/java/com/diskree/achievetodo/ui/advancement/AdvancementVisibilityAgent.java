@@ -215,7 +215,7 @@ public final class AdvancementVisibilityAgent {
             String id = holder.getClass().getMethod("id").invoke(holder).toString();
             Object advancement = type.getMethod("advancement").invoke(node);
             Optional<?> display = (Optional<?>) advancement.getClass().getMethod("display").invoke(advancement);
-            boolean hidden = display.isPresent() && (boolean) display.get().getClass().getMethod("isHidden").invoke(display.get());
+            boolean hidden = display.isPresent() && (boolean) display.get().getClass().getMethod("hidden").invoke(display.get());
             if (showUnfinished(id, node == root, display.isPresent(), hidden)) return true;
             return completed.test(node);
         } catch (ReflectiveOperationException invalid) {

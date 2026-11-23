@@ -48,6 +48,17 @@ public final class AdvancementVisibilityContractTest {
             node[node.length - 1] ^= 1;
             try { AdvancementVisibilityAgent.transformChildrenPinned(node, loader); throw new AssertionError("tampered node accepted"); }
             catch (IllegalArgumentException expected) { checks++; }
+            // 0.4.0 smoke finding: visibleOrCompleted reflects public no-argument accessors by name. 26.3 made
+            // DisplayInfo a record (isHidden() -> hidden()); a missing accessor broke every player's tick.
+            String[][] accessors = {
+                {"net/minecraft/advancements/AdvancementNode", "root"}, {"net/minecraft/advancements/AdvancementNode", "holder"},
+                {"net/minecraft/advancements/AdvancementNode", "advancement"}, {"net/minecraft/advancements/AdvancementHolder", "id"},
+                {"net/minecraft/advancements/Advancement", "display"}, {"net/minecraft/advancements/DisplayInfo", "hidden"}};
+            for (String[] accessor : accessors) {
+                var model = ClassFile.of().parse(jar.getInputStream(jar.getJarEntry(accessor[0] + ".class")).readAllBytes());
+                require(model.methods().stream().anyMatch(m -> m.methodName().equalsString(accessor[1])
+                    && m.methodType().stringValue().startsWith("()") && (m.flags().flagsMask() & ClassFile.ACC_PUBLIC) != 0)); checks++;
+            }
             byte[] corrupt = original.clone(); corrupt[corrupt.length - 1] ^= 1;
             try { AdvancementVisibilityAgent.transformPinned(corrupt, loader); throw new AssertionError("tampered native accepted"); }
             catch (IllegalArgumentException expected) { checks++; }

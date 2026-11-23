@@ -490,6 +490,18 @@ tasks.check { dependsOn("criterionNativeTest") }
 // Native contract suites that were not part of check before 0.3.0.
 tasks.check { dependsOn("movementNativeTest", "portalNativeTest", "landmarkSupplementTest") }
 
+// 0.4.0: the advancement visibility contract existed but no task ran it; the 26.3 smoke run then found the
+// DisplayInfo.isHidden() -> hidden() accessor change at runtime.
+tasks.register<JavaExec>("advancementVisibilityTest") {
+    group = "verification"
+    description = "Pinned advancement visibility transforms and the reflected 26.3 node/display accessors."
+    dependsOn("testClasses")
+    classpath = sourceSets.named("test").get().runtimeClasspath
+    mainClass.set("com.diskree.achievetodo.ui.advancement.AdvancementVisibilityContractTest")
+    javaLauncher.set(javaToolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(25)) })
+}
+tasks.check { dependsOn("advancementVisibilityTest") }
+
 tasks.register<JavaExec>("chatNativeTest") {
     group = "verification"
     dependsOn("testClasses")
