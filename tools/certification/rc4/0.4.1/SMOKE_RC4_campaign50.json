@@ -1,0 +1,35 @@
+{
+  "started": "2026-11-24T06:39:35+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\certification\\rc4-artifacts\\AchieveToDo-Purpur-mc26.3+0.4.1.jar",
+  "runtimes": {
+    "campaign50": {
+      "mode": "normal",
+      "started": "2026-11-24T06:39:35+00:00",
+      "passes": {
+        "smoke": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 16
+          },
+          "finished": "2026-11-24T06:42:13+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-24T06:42:19+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 16
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "rc4-smoke",
+  "finished": "2026-11-24T06:42:19+00:00",
+  "timing": {
+    "cases": 116.0,
+    "presentation": 2.7
+  }
+}

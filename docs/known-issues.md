@@ -19,6 +19,7 @@ Issues 5-7 come from the notes of the 0.3.0 certification and from the audit ask
 | 6 | Inside a locked landmark some denied interactions still counted for use criteria (a map put into an item frame, a golden dandelion given to a tadpole, wolf armor, a renamed name tag) | minor (progression) | **Fixed in 0.4.0** in both mods. Certified in [0.4.0-purpur-26.3.md](certification/0.4.0-purpur-26.3.md) |
 | 7 | Right after joining a Purpur server, a locked water bucket can look empty for a moment | cosmetic | Known, by design (see below) |
 | 8 | Inside a locked landmark the 26.3 golden dandelion still locked a baby's age and counted "Fountain of Youth" | minor (landmark lock) | **Fixed in 0.4.0** in both mods. Certified in [0.4.0-purpur-26.3.md](certification/0.4.0-purpur-26.3.md) |
+| 9 | 0.4.0 only: opening the advancements screen crashed the game | major (client crash) | **Fixed in 0.4.1** |
 
 ## 1. Default start ran the legacy path (fixed in 0.2.1)
 
@@ -100,3 +101,12 @@ and BACAP "Fountain of Youth" counted. 0.4.0 denies it like the other entity int
 and a second `TadpoleEntityMixin` injection; Purpur `NativeLandmarkSupplementSpecs`, checked before the Bukkit
 `PlayerToggleEntityAgeLockEvent` so other plugins do not see a toggle that does not happen); the denial is marked, so
 issue 6 keeps the criterion from counting.
+
+## 9. Advancements screen crashed in 0.4.0 (fixed in 0.4.1)
+
+Reported by the owner after the 0.4.0 release. The abilities tab splits each category into rows; the code required
+the rows to be exactly equal and threw otherwise. The abandoned camp made the landmark category 23 abilities over 2
+rows, so opening the advancements screen crashed the client (`Abilities in category LANDMARK cannot be evenly
+distributed across 2 rows`). The certification campaign does not open that screen, so it did not see it. 0.4.1 splits
+a category into rows that differ by at most one, the longer first (landmarks: 12 and 11);
+`AbilityRowsLayoutTest` checks every category.

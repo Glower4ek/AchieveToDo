@@ -1,0 +1,86 @@
+{
+  "started": "2026-11-24T06:42:19+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\certification\\rc4-artifacts\\AchieveToDo-Purpur-mc26.3+0.4.1.jar",
+  "runtimes": {
+    "campaign56": {
+      "mode": "easy",
+      "started": "2026-11-24T06:42:19+00:00",
+      "passes": {
+        "smoke-easy": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 5,
+            "NA_NO_LOCKED_STATE": 1
+          },
+          "finished": "2026-11-24T06:43:34+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-24T06:43:37+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 6
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign57": {
+      "mode": "hard",
+      "started": "2026-11-24T06:43:37+00:00",
+      "passes": {
+        "smoke-hard": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 6
+          },
+          "finished": "2026-11-24T06:44:55+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-24T06:44:58+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 6
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign58": {
+      "mode": "chaos",
+      "started": "2026-11-24T06:44:58+00:00",
+      "passes": {
+        "smoke-chaos": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 6
+          },
+          "finished": "2026-11-24T06:46:16+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-24T06:46:19+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 6
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign59": {
+      "mode": "E:\\Vibecode\\AchieveToDo\\certification\\w5-campaign\\configs\\custom_vision.toml",
+      "started": "2026-11-24T06:46:19+00:00",
+      "passes": {}
+    }
+  },
+  "state": "ABORTED",
+  "rules": "rc4-smoke-presets",
+  "timing": {
+    "easy": 78.2,
+    "hard": 81.2,
+    "chaos": 80.6
+  },
+  "error": "LOGIN_FAILED campaign59: []"
+}

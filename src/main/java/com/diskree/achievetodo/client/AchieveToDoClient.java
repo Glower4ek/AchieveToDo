@@ -370,21 +370,7 @@ public class AchieveToDoClient implements ClientModInitializer {
                 if (categoryRowsCount == 1) {
                     abilityRows.add(categoryAbilities);
                 } else {
-                    if (categoryAbilities.size() % categoryRowsCount != 0) {
-                        throw new IllegalStateException(
-                            "Abilities in category " + category +
-                                " cannot be evenly distributed across " + categoryRowsCount + " rows."
-                        );
-                    }
-                    int rowLength = categoryAbilities.size() / categoryRowsCount;
-                    List<List<AbilityType>> categoryRows = new ArrayList<>(categoryRowsCount);
-                    for (int i = 0; i < categoryRowsCount; i++) {
-                        categoryRows.add(new ArrayList<>(rowLength));
-                    }
-                    for (int i = 0; i < categoryAbilities.size(); i++) {
-                        int rowIndex = i / rowLength;
-                        categoryRows.get(rowIndex).add(categoryAbilities.get(i));
-                    }
+                    List<List<AbilityType>> categoryRows = category.splitIntoRows(categoryAbilities);
                     int half = categoryRowsCount / 2;
                     abilityRows.addAll(0, categoryRows.subList(0, half));
                     abilityRows.addAll(categoryRows.subList(half, categoryRowsCount));

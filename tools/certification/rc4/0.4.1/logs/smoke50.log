@@ -1,0 +1,29 @@
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign50 64a18f432b95d3b0dec96bb7dc92c96228be3432eaf7199f04a1fc6fa5405898
+[2026-11-24T06:39:36+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-24T06:39:47+00:00] campaign50 up: [11:39:46 INFO]: [AchieveToDo] Resolved progression config normal.toml (normal)
+[2026-11-24T06:39:47+00:00] campaign50 launch profile: release, gameplay mode RELEASE, product gameplay ready
+[2026-11-24T06:40:17+00:00] campaign50 pass smoke phases=locked,allowed
+CONFIG normal:normal.toml abilities=154
+PASS                       opening_three_native_owners        open_door                      locked
+PASS                       opening_three_native_owners        open_door                      allowed
+PASS                       movement_jump                      jump                           locked
+PASS                       movement_jump                      jump                           allowed
+PASS                       complex_use_water_bucket           use_water_bucket               locked
+PASS                       complex_use_water_bucket           use_water_bucket               allowed
+PASS                       villager13_profession_resolver     trade_with_cartographer        locked
+PASS                       villager13_profession_resolver     trade_with_cartographer        allowed
+PASS                       landmark22_selectors_and_action_ma interact_inside_igloo          locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_igloo          allowed
+PASS                       landmark_abandoned_camp_26_3       interact_inside_abandoned_camp locked
+PASS                       landmark_abandoned_camp_26_3       interact_inside_abandoned_camp allowed
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          locked
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          allowed
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          locked
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          allowed
+[2026-11-24T06:42:13+00:00] campaign50 cases took 116.0 s
+PASS                       chat_hover_bacap_override
+PASS                       chat_hover_bacap
+PASS                       chat_hover_ability
+[2026-11-24T06:42:16+00:00] campaign50 presentation took 2.7 s
+E6 replay campaign50: {'REPRODUCED': 16} reproducedAll=True
+[2026-11-24T06:42:19+00:00] SMOKE_RC4_DONE
