@@ -8,7 +8,6 @@ import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.ChatFormatting;
-import net.minecraft.util.Util;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.layouts.LinearLayout;
@@ -17,9 +16,13 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
-import org.lwjgl.PointerBuffer;
-import org.lwjgl.system.MemoryStack;
-import org.lwjgl.util.tinyfd.TinyFileDialogs;
+import com.mojang.blaze3d.Blaze3D;
+import org.lwjgl.sdl.SDLDialog;
+import org.lwjgl.sdl.SDL_DialogFileCallback;
+import org.lwjgl.sdl.SDL_DialogFileFilter;
+import org.lwjgl.system.MemoryUtil;
+
+import java.nio.ByteBuffer;
 
 import java.io.File;
 import java.io.IOException;
@@ -115,7 +118,7 @@ public class ExternalPackDownloader extends ConfirmScreen {
                         if (inGameDownloadSupported) {
                             startDownload();
                         } else {
-                            Util.getPlatform().openUri(externalPack.getDownloadUrl());
+                            Blaze3D.openUri(URI.create(externalPack.getDownloadUrl()));
                         }
                     }
                 )
@@ -130,24 +133,7 @@ public class ExternalPackDownloader extends ConfirmScreen {
             buttons.addChild(
                 Button.builder(
                         AchieveToDoClient.translate("downloader.select_file"),
-                        button -> {
-                            try (MemoryStack stack = MemoryStack.stackPush()) {
-                                PointerBuffer filters = stack.mallocPointer(1);
-                                filters.put(0, stack.UTF8("*.zip"));
-
-                                @SuppressWarnings("DataFlowIssue")
-                                String selectedFilePath = TinyFileDialogs.tinyfd_openFileDialog(
-                                    AchieveToDoClient.translate("downloader.select_file").getString(),
-                                    System.getProperty("user.home"),
-                                    filters,
-                                    null,
-                                    false
-                                );
-                                if (selectedFilePath != null) {
-                                    handleDatapackFile(Paths.get(selectedFilePath));
-                                }
-                            }
-                        }
+                        button -> showZipFileDialog()
                     )
                     .size(BUTTON_WIDTH, BUTTON_HEIGHT)
                     .build()
@@ -173,12 +159,44 @@ public class ExternalPackDownloader extends ConfirmScreen {
         buttons.addChild(
             Button.builder(
                     AchieveToDoClient.translate("downloader.learn_more"),
-                    button -> Util.getPlatform().openUri(externalPack.getPageUrl())
+                    button -> Blaze3D.openUri(URI.create(externalPack.getPageUrl()))
                 )
                 .tooltip(Tooltip.create(AchieveToDoClient.translate("downloader.learn_more.tooltip")))
                 .size(BUTTON_WIDTH, BUTTON_HEIGHT)
                 .build()
         );
+    }
+
+    /**
+     * 26.3 replaced GLFW with SDL3 and no longer ships LWJGL tinyfd, so the native SDL open-file dialog is used.
+     * It is asynchronous: SDL calls back (possibly on another thread) with a NULL-terminated list of paths; the
+     * filter and the callback stay allocated until then, and the result is handed to the client thread.
+     */
+    private void showZipFileDialog() {
+        SDL_DialogFileFilter.Buffer filters = SDL_DialogFileFilter.calloc(1);
+        ByteBuffer filterName = MemoryUtil.memUTF8("ZIP");
+        ByteBuffer filterPattern = MemoryUtil.memUTF8("zip");
+        filters.get(0).name(filterName).pattern(filterPattern);
+        SDL_DialogFileCallback[] holder = new SDL_DialogFileCallback[1];
+        holder[0] = SDL_DialogFileCallback.create((userdata, fileList, filter) -> {
+            String selected = null;
+            if (fileList != MemoryUtil.NULL) {
+                long first = MemoryUtil.memGetAddress(fileList);
+                if (first != MemoryUtil.NULL) {
+                    selected = MemoryUtil.memUTF8(first);
+                }
+            }
+            holder[0].free();
+            filters.free();
+            MemoryUtil.memFree(filterName);
+            MemoryUtil.memFree(filterPattern);
+            if (selected != null) {
+                Path path = Paths.get(selected);
+                minecraft.execute(() -> handleDatapackFile(path));
+            }
+        });
+        SDLDialog.SDL_ShowOpenFileDialog(holder[0], MemoryUtil.NULL, minecraft.getWindow().handle(), filters,
+            (CharSequence) null, false);
     }
 
     @Override

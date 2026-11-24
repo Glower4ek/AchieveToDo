@@ -17,7 +17,7 @@ class PhaseALlamaFestivalNbtScopeTest {
     private static final Path BASELINE=Path.of("build/tmp/phase_a_resume_20260930/llama_pre_fix_converted_advancements.json");
     private static final Path SCOPE_FIXTURE=Path.of("src/test/resources/phase_a_certification/llama_authorized_fix_converted_advancement_sha256.json");
     private static final String FROZEN_SHA="8c72314535c5df7b4416bf0f38310371ec8aec537fde1445bdc820a3c9aada70";
-    private static final String MARKER="achievetodo_compatibility/compat_26_2.properties";
+    private static final String MARKER="achievetodo_compatibility/compat_26_3.properties";
     private static final Gson GSON=new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
     public static void main(String[] args)throws Exception {
         if(args.length==1&&args[0].equals("fingerprints")){writeFingerprintFixture();return;}
@@ -28,7 +28,7 @@ class PhaseALlamaFestivalNbtScopeTest {
     }
     private static String sha(Path path)throws Exception{return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(path)));}
     private static JsonObject convert(String raw)throws Exception {
-        Method convert=ExternalPackCompatibility.class.getDeclaredMethod("convertJson",String.class);convert.setAccessible(true);Object result=convert.invoke(null,raw);Method text=result.getClass().getDeclaredMethod("text");text.setAccessible(true);return JsonParser.parseString((String)text.invoke(result)).getAsJsonObject();
+        Method convert=ExternalPackCompatibility.class.getDeclaredMethod("convertLegacyJson",String.class);convert.setAccessible(true);Object result=convert.invoke(null,raw);Method text=result.getClass().getDeclaredMethod("text");text.setAccessible(true);return JsonParser.parseString((String)text.invoke(result)).getAsJsonObject();
     }
     private static JsonObject convertedAdvancements()throws Exception {
         assertEquals(FROZEN_SHA,sha(ARCHIVE));JsonObject output=new JsonObject();
@@ -89,7 +89,7 @@ class PhaseALlamaFestivalNbtScopeTest {
         Path fresh = dir.resolve("historical.zip");
         ExternalPackCompatibility.copyForWorld(PhaseBPackTestFixtures.historical(), fresh, ExternalPack.BACAP);
         var properties = PhaseBPackTestFixtures.marker(fresh);
-        assertEquals("compat_26_2_r19", properties.getProperty("version"));
+        assertEquals("compat_26_3_r1", properties.getProperty("version"));
         assertEquals(PhaseBPackTestFixtures.HISTORICAL_SHA1, properties.getProperty("sourceSha1"));
         assertEquals("equipment.body", properties.getProperty("llamaCarpetNbtMapping"));
         assertEquals("snake_case", properties.getProperty("raiderPredicateKeys"));
@@ -109,7 +109,7 @@ class PhaseALlamaFestivalNbtScopeTest {
         ExternalPackCompatibility.copyForWorld(source, target, ExternalPack.BACAP_TERRALITH);
         assertTrue(ExternalPackCompatibility.isCompatibleWorldCopy(target, ExternalPack.BACAP_TERRALITH));
         var properties = PhaseBPackTestFixtures.marker(target);
-        assertEquals("compat_26_2_r19", properties.getProperty("version"));
+        assertEquals("compat_26_3_r1", properties.getProperty("version"));
         assertEquals(ExternalPack.BACAP_TERRALITH.getSha1(), properties.getProperty("sourceSha1"));
         assertEquals(ExternalPack.BACAP_TERRALITH.getFileName(), properties.getProperty("fileName"));
         assertFalse(properties.containsKey("llamaCarpetNbtMapping")); assertFalse(properties.containsKey("raiderPredicateKeys"));
@@ -151,7 +151,7 @@ class PhaseALlamaFestivalNbtScopeTest {
     }
 
     private static String conversionText(String raw) throws Exception {
-        Method convert = ExternalPackCompatibility.class.getDeclaredMethod("convertJson", String.class); convert.setAccessible(true);
+        Method convert = ExternalPackCompatibility.class.getDeclaredMethod("convertLegacyJson", String.class); convert.setAccessible(true);
         Object result = convert.invoke(null, raw); Method text = result.getClass().getDeclaredMethod("text"); text.setAccessible(true);
         return (String) text.invoke(result);
     }

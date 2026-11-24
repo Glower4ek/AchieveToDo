@@ -1,0 +1,61 @@
+mode easy
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign56 16d0b2fa632887355eb3a56846d52177aa1b62556fad925205349e9ba220befa
+[2026-11-23T17:52:25+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-23T17:52:36+00:00] campaign56 up: [22:52:35 INFO]: [AchieveToDo] Resolved progression config easy.toml (easy)
+[2026-11-23T17:52:36+00:00] campaign56 launch profile: release, gameplay mode RELEASE, product gameplay ready
+[2026-11-23T17:53:03+00:00] campaign56 pass smoke-easy phases=locked,allowed
+CONFIG easy:easy.toml abilities=154
+PASS                       opening_three_native_owners        open_door                      locked
+PASS                       opening_three_native_owners        open_door                      allowed
+NA_NO_LOCKED_STATE         movement_jump                      jump                           locked
+PASS                       movement_jump                      jump                           allowed
+PASS                       landmark_abandoned_camp_26_3       interact_inside_abandoned_camp locked
+PASS                       landmark_abandoned_camp_26_3       interact_inside_abandoned_camp allowed
+E6 replay campaign56: {'REPRODUCED': 6} reproducedAll=True
+[2026-11-23T17:53:42+00:00] campaign56 easy took 78.0 s
+mode hard
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign57 16d0b2fa632887355eb3a56846d52177aa1b62556fad925205349e9ba220befa
+[2026-11-23T17:53:43+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-23T17:53:56+00:00] campaign57 up: [22:53:54 INFO]: [AchieveToDo] Resolved progression config hard.toml (hard)
+[2026-11-23T17:53:56+00:00] campaign57 launch profile: release, gameplay mode RELEASE, product gameplay ready
+[2026-11-23T17:54:24+00:00] campaign57 pass smoke-hard phases=locked,allowed
+CONFIG hard:hard.toml abilities=154
+PASS                       opening_three_native_owners        open_door                      locked
+PASS                       opening_three_native_owners        open_door                      allowed
+PASS                       movement_jump                      jump                           locked
+PASS                       movement_jump                      jump                           allowed
+PASS                       landmark_abandoned_camp_26_3       interact_inside_abandoned_camp locked
+PASS                       landmark_abandoned_camp_26_3       interact_inside_abandoned_camp allowed
+E6 replay campaign57: {'REPRODUCED': 6} reproducedAll=True
+[2026-11-23T17:55:07+00:00] campaign57 hard took 84.9 s
+mode chaos
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign58 16d0b2fa632887355eb3a56846d52177aa1b62556fad925205349e9ba220befa
+[2026-11-23T17:55:08+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-23T17:55:19+00:00] campaign58 up: [22:55:18 INFO]: [AchieveToDo] Resolved progression config chaos_20261116.toml (chaos_20261116)
+[2026-11-23T17:55:19+00:00] campaign58 launch profile: release, gameplay mode RELEASE, product gameplay ready
+[2026-11-23T17:55:46+00:00] campaign58 pass smoke-chaos phases=locked,allowed
+CONFIG chaos:chaos_20261116.toml abilities=154
+PASS                       opening_three_native_owners        open_door                      locked
+PASS                       opening_three_native_owners        open_door                      allowed
+PASS                       movement_jump                      jump                           locked
+PASS                       movement_jump                      jump                           allowed
+PASS                       landmark_abandoned_camp_26_3       interact_inside_abandoned_camp locked
+PASS                       landmark_abandoned_camp_26_3       interact_inside_abandoned_camp allowed
+E6 replay campaign58: {'REPRODUCED': 6} reproducedAll=True
+[2026-11-23T17:56:29+00:00] campaign58 chaos took 81.6 s
+mode custom_vision
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign59 16d0b2fa632887355eb3a56846d52177aa1b62556fad925205349e9ba220befa
+[2026-11-23T17:56:29+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-23T17:56:40+00:00] campaign59 up: [22:56:40 INFO]: [AchieveToDo] Resolved progression config custom_vision.toml (custom_vision)
+[2026-11-23T17:56:40+00:00] campaign59 launch profile: release, gameplay mode RELEASE, product gameplay ready
+[2026-11-23T17:57:08+00:00] campaign59 pass smoke-custom_vision phases=locked,allowed
+CONFIG custom_vision:custom_vision.toml abilities=154
+PASS                       opening_three_native_owners        open_door                      locked
+PASS                       opening_three_native_owners        open_door                      allowed
+PASS_MASKED_BY_DEPENDENCY  movement_jump                      jump                           locked
+PASS                       movement_jump                      jump                           allowed
+PASS                       landmark_abandoned_camp_26_3       interact_inside_abandoned_camp locked
+PASS                       landmark_abandoned_camp_26_3       interact_inside_abandoned_camp allowed
+E6 replay campaign59: {'REPRODUCED': 6} reproducedAll=True
+[2026-11-23T17:57:52+00:00] campaign59 custom_vision took 83.0 s
+[2026-11-23T17:57:52+00:00] SMOKE_RC4_PRESETS_DONE

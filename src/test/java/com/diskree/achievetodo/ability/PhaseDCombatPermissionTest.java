@@ -46,7 +46,7 @@ public class PhaseDCombatPermissionTest {
     @BeforeAll static void bootstrap() {
         SharedConstants.tryDetectVersion(); Bootstrap.bootStrap();
         try {
-            BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.build(VanillaRegistries.createLookup()).stream()
+            BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.build(VanillaRegistries.createWorldLookup()).stream()
                 .filter(p -> p.key().equals(Registries.ITEM)).forEach(p -> p.forEach((holder, components) -> {
                     COMPONENTS.put(holder, holder.areComponentsBound() ? holder.components() : null);
                     holder.bindComponents(components);
@@ -292,7 +292,8 @@ public class PhaseDCombatPermissionTest {
         String prefix = source.substring(0,source.indexOf("    public boolean isTargetInLockedLandmark("));
         String suffix = source.substring(source.indexOf("    public void onLandmarksLoadedStatusChanged("));
         var digest = java.security.MessageDigest.getInstance("SHA-256");
-        assertEquals("00d97d967ec43c0432e7c2c058607b0aeaaf038f155d7c0a3469cbe04b0858ea",HexFormat.of().formatHex(digest.digest(prefix.getBytes(java.nio.charset.StandardCharsets.UTF_8))));
+        // 0.4.0: isAbilityLocked also marks the denial for DeniedCriteria (known issue 4 audit).
+        assertEquals("3331346551012918b4daede2b2f7398a7cbe972d7c89fcb84194ef805563ca29",HexFormat.of().formatHex(digest.digest(prefix.getBytes(java.nio.charset.StandardCharsets.UTF_8))));
         assertEquals("2d94473916fa280865738db727408dfc50f36a69a540e7e7b99639c42b0371f6",HexFormat.of().formatHex(digest.digest(suffix.getBytes(java.nio.charset.StandardCharsets.UTF_8))));
     }
 

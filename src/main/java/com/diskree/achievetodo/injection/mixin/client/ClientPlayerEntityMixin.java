@@ -23,7 +23,7 @@ public abstract class ClientPlayerEntityMixin {
 
     // Use the same effective input for comparison, packet construction and lastSentInput.
     // Filtering only the packet argument loses held-key relock transitions.
-    @ModifyExpressionValue(method = "tick", at = @At(value = "FIELD",
+    @ModifyExpressionValue(method = "sendChanges", at = @At(value = "FIELD",
         target = "Lnet/minecraft/client/player/ClientInput;keyPresses:Lnet/minecraft/world/entity/player/Input;"),
         require = 3, allow = 3)
     private Input achievetodo$purpurMovementInput(Input original) {

@@ -13,6 +13,8 @@ import net.minecraft.advancements.DisplayInfo;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.advancements.AdvancementTab;
 import net.minecraft.client.gui.screens.advancements.AdvancementTabType;
+import net.minecraft.client.gui.screens.advancements.AdvancementWidget;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.advancements.AdvancementsScreen;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
@@ -52,7 +54,7 @@ public abstract class AdvancementsScreenMixin extends Screen {
         if (current.equals(bridgeLayoutConfiguration)) return;
         // A count-only delta updates frames/progress live. Changed thresholds also
         // change row order and cached tooltip widths/descriptions, requiring new widgets.
-        AdvancementHolder selected = selectedTab == null ? null : selectedTab.getRootNode().holder();
+        AdvancementHolder selected = selectedTab == null ? null : selectedTab.getRootAdvancement();
         rebuildWidgets();
         if (selected != null && tabs.containsKey(selected) && minecraft.getConnection() != null) {
             minecraft.getConnection().getAdvancements().setSelectedTab(selected, true);
@@ -68,7 +70,7 @@ public abstract class AdvancementsScreenMixin extends Screen {
 
     @Unique
     private boolean isMystifiedTab(@NotNull AdvancementTab tab) {
-        Identifier advancementId = tab.getRootNode().holder().id();
+        Identifier advancementId = tab.getRootAdvancement().id();
         for (AdvancementsTabType advancementsTabType : AdvancementsTabType.values()) {
             if (advancementsTabType != null && advancementsTabType.getMystifiedTabId().equals(advancementId)) {
                 return true;
@@ -97,12 +99,15 @@ public abstract class AdvancementsScreenMixin extends Screen {
     @Shadow
     private AdvancementTab selectedTab;
 
+    /**
+     * Since 26.3 the screen rebuilds every tab in {@code onAdvancementsUpdated} instead of adding roots one by one.
+     * After the real roots are in place, each ATD tab whose root is not present yet gets its mystified placeholder.
+     */
     @Inject(
-        method = "init",
+        method = "onAdvancementsUpdated",
         at = @At(
             value = "INVOKE",
-            target = "Ljava/util/Map;clear()V",
-            shift = At.Shift.AFTER
+            target = "Lnet/minecraft/advancements/AdvancementTree;tasks()Ljava/lang/Iterable;"
         )
     )
     public void addLockedTabs(CallbackInfo ci) {
@@ -111,6 +116,16 @@ public abstract class AdvancementsScreenMixin extends Screen {
         }
         AdvancementsScreen advancementsScreen = (AdvancementsScreen) (Object) this;
         for (AdvancementsTabType advancementsTabType : AdvancementsTabType.values()) {
+            boolean present = false;
+            for (AdvancementHolder root : tabs.keySet()) {
+                if (AdvancementsTabType.findByAdvancement(root.id()) == advancementsTabType) {
+                    present = true;
+                    break;
+                }
+            }
+            if (present) {
+                continue;
+            }
             DisplayInfo advancementDisplay = new DisplayInfo(
                 ItemStackTemplate.fromNonEmptyStack(new ItemStack(Items.BARRIER)),
                 advancementsTabType.getMystifiedTabTooltipText(),
@@ -128,6 +143,10 @@ public abstract class AdvancementsScreenMixin extends Screen {
                     .build(advancementsTabType.getMystifiedTabId()),
                 null
             );
+            AdvancementWidget rootWidget = AdvancementWidget.createWidget(minecraft, placedAdvancement);
+            if (rootWidget == null) {
+                continue;
+            }
             tabs.put(
                 placedAdvancement.holder(),
                 new AdvancementTab(
@@ -135,21 +154,35 @@ public abstract class AdvancementsScreenMixin extends Screen {
                     advancementsScreen,
                     advancementsTabType.getPosition(),
                     advancementsTabType.getOrder(),
-                    placedAdvancement,
-                    advancementDisplay
+                    rootWidget,
+                    advancementDisplay.icon(),
+                    advancementDisplay.title(),
+                    AdvancementsTabType.backgroundOf(advancementDisplay)
                 )
             );
         }
     }
 
-    @Inject(
-        method = "onAddAdvancementRoot",
-        at = @At(value = "HEAD"),
-        cancellable = true
+    @WrapOperation(
+        method = "onAdvancementsUpdated",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/gui/screens/advancements/AdvancementTab;create(Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/gui/screens/advancements/AdvancementsScreen;ILnet/minecraft/advancements/AdvancementNode;)Lnet/minecraft/client/gui/screens/advancements/AdvancementTab;"
+        )
     )
-    public void removeLockedTab(@NotNull AdvancementNode root, CallbackInfo ci) {
+    public AdvancementTab placeForeignTab(
+        Minecraft client,
+        AdvancementsScreen screen,
+        int index,
+        @NotNull AdvancementNode root,
+        @NotNull Operation<AdvancementTab> original
+    ) {
         AdvancementsTabType tab = AdvancementsTabType.findByAdvancement(root);
-        if (tab == null) {
+        if (tab != null) {
+            // ATD tabs get their fixed slot from AdvancementTabMixin.
+            return original.call(client, screen, index, root);
+        }
+        {
             // Vanilla's ordinal counts the reserved ATD tabs and can alias their slots.
             // Keep foreign ownership intact and allocate only a genuinely free native slot.
             DisplayInfo display = root.advancement().display().orElse(null);
@@ -164,27 +197,16 @@ public abstract class AdvancementsScreenMixin extends Screen {
                             if (overlapsNativeTab(position, order, existing.getType(), existing.getIndex())) occupied = true;
                         }
                         if (!occupied) {
-                            tabs.put(root.holder(), new AdvancementTab(minecraft, (AdvancementsScreen) (Object) this,
-                                position, order, root, display));
-                            ci.cancel();
-                            return;
+                            AdvancementWidget rootWidget = AdvancementWidget.createWidget(client, root);
+                            return rootWidget == null ? null : new AdvancementTab(client, screen,
+                                position, order, rootWidget, display.icon(), display.title(),
+                                AdvancementsTabType.backgroundOf(display));
                         }
                     }
                 }
             }
             // Native capacity is finite; never overlap a reserved or existing tab.
-            ci.cancel();
-            return;
-        }
-        AdvancementHolder lockedRoot = null;
-        for (AdvancementHolder advancementEntry : tabs.keySet()) {
-            if (tab != null && tab.getMystifiedTabId().equals(advancementEntry.id())) {
-                lockedRoot = advancementEntry;
-                break;
-            }
-        }
-        if (lockedRoot != null) {
-            tabs.remove(lockedRoot);
+            return null;
         }
     }
 
@@ -197,7 +219,7 @@ public abstract class AdvancementsScreenMixin extends Screen {
     }
 
     @WrapOperation(
-        method = "init",
+        method = {"init", "onAdvancementsUpdated"},
         at = @At(
             value = "INVOKE",
             target = "Ljava/util/Map;values()Ljava/util/Collection;"
@@ -209,7 +231,7 @@ public abstract class AdvancementsScreenMixin extends Screen {
     ) {
         Collection<AdvancementTab> allTabs = original.call(tabs);
         Collection<AdvancementTab> abilityTabs = allTabs.stream().filter(tab ->
-            AdvancementsTabType.findByAdvancement(tab.getRootNode()) == AdvancementsTabType.ABILITIES
+            AdvancementsTabType.findByAdvancement(tab.getRootAdvancement().id()) == AdvancementsTabType.ABILITIES
         ).toList();
         return abilityTabs.isEmpty() ? allTabs : abilityTabs;
     }

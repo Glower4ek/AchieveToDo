@@ -13,7 +13,7 @@ import subprocess
 import sys
 import zipfile
 
-MANIFEST_SHA256 = '1dbe9d7cd2fe653454f8692b7cdf5e54787c3df74eb12461c01164b99190ac77'
+MANIFEST_SHA256 = 'ced487778222d80c5ccbab75540e230441d95b87d6399cfee34eec221a6e62c2'
 EXPECTED_EXTERNAL_NAMES = {
     'bacap_hardcore.zip', 'terralith.zip', 'amplified_nether.zip', 'nullscape.zip',
     'bacap-language-pack.zip', 'bacap-rus-translate.zip', 'bacap-better-ru.zip',

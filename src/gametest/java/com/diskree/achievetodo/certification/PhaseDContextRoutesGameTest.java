@@ -176,7 +176,7 @@ public final class PhaseDContextRoutesGameTest {
         // Explicit biome-accepting native generation control. This proves successful
         // RETURN tagging, not natural placement, terrain or generated-position extent.
         return holder.value().generate(holder,level.dimension(),level.registryAccess(),generator,generator.getBiomeSource(),
-            source.randomState(),level.getStructureManager(),level.getSeed(),new ChunkPos(0,0),0,level,b -> acceptedBiome);
+            source.randomState().createClimateSampler(net.minecraft.world.level.levelgen.densityfunction.SamplerContext.builder().build()),source.randomState(),level.getStructureTemplateManager(),level.getSeed(),new ChunkPos(0,0),0,level,b -> acceptedBiome);
     }
     private com.diskree.achievetodo.injection.extension.main.StructureStartExtension s07Extension(net.minecraft.world.level.levelgen.structure.StructureStart start) {
         return (com.diskree.achievetodo.injection.extension.main.StructureStartExtension)(Object)start;
@@ -629,7 +629,7 @@ public final class PhaseDContextRoutesGameTest {
         fixture.channel().runPendingTasks();fixture.channel().runScheduledPendingTasks();fixture.channel().flushOutbound();
         List<Object> packets=new ArrayList<>();Object packet;
         while((packet=fixture.channel().readOutbound())!=null) {
-            if(packet instanceof ClientboundPlayerPositionPacket p)new ServerboundAcceptTeleportationPacket(p.id()).handle(fixture.player().connection);
+            if(packet instanceof ClientboundPlayerPositionPacket p)TeleportAck.accept(p.id(), fixture.player());
             packets.add(packet);ReferenceCountUtil.release(packet);
             if(packets.size()>20000)throw new IllegalStateException("Unbounded fixture packet drain");
         }

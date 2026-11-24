@@ -1,0 +1,61 @@
+{
+ "group": "menu_open_cartography_table",
+ "reviewer": "rc4-reviewer-08",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "E1.json abilities ['open_cartography_table']; every cited file re-hashed with hashlib, all SHA-256 equal E1 (GameplayMenuAbilities.java line 26 (CARTOGRAPHY -> OPEN_CARTOGRAPHY_TABLE), NativeLandmarkActions.java line 133 (CartographyTableBlock.useWithoutItem)); opened the guard sites and confirmed they check the ability; thresholds listed for normal, easy, hard, chaos_20261116, custom_vision for every ability."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "All 15 rows are PASS (no non-PASS rows). Read every excerpt block of the group. Locked rows: STATE kind=LOCKED with the preset required value, ServerboundUseItemOnPacket received, no OpenScreen packet, count unchanged; allowed rows: kind=UNLOCKED and an OpenScreen packet. Every locked/op row has count before == after and overlay true; every allowed row shows the effect. Creative rows show the effect (bypass); spectator rows are vanilla-consistent.",
+   "rowsRead": [
+    "campaign51 pass1 open_cartography_table locked",
+    "campaign51 pass1 open_cartography_table allowed",
+    "campaign51 modes open_cartography_table creative",
+    "campaign51 modes open_cartography_table op",
+    "campaign51 modes open_cartography_table spectator",
+    "campaign51 reload open_cartography_table locked",
+    "campaign51 reload open_cartography_table allowed",
+    "campaign52 thresholds-easy open_cartography_table locked",
+    "campaign52 thresholds-easy open_cartography_table allowed",
+    "campaign53 thresholds-hard open_cartography_table locked",
+    "campaign53 thresholds-hard open_cartography_table allowed",
+    "campaign54 thresholds-chaos open_cartography_table locked",
+    "campaign54 thresholds-chaos open_cartography_table allowed",
+    "campaign55 thresholds-custom_vision open_cartography_table locked",
+    "campaign55 thresholds-custom_vision open_cartography_table allowed"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign51-55 (60/61 also listed): onlineMode=true, 'UUID of player Glower4ek is 89c23030-...' and 'joined the game' lines present for each."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes rows creative/op/spectator present for every ability; offhand rows absent: block/menu/mining route has no off-hand variant; preset tags present: ['thresholds-chaos', 'thresholds-custom_vision', 'thresholds-easy', 'thresholds-hard'] plus NORMAL pass1; no NA_* rows (all thresholds > 0)."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "reload rows all from campaign51, output.log lines > 112404, after pass1, modes (~47k) and offhand (~99k) rows; output.log 112404/112411 show generation=2 and PROGRESSION_CONFIG_READY generation=2; MANIFEST e5Reload generationBefore=1 generationAfter=2; every reload excerpt STATE line shows generation 2; each reload verdict PASS equals pass1 PASS."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl 15/15 REPRODUCED; reproducedAll=true for all 7 runtimes; plugin SHA-256 16d0b2fa... identical in all runtimes; client mod e8577e1d... matches; recomputed campaign-results.jsonl SHA-256 campaign51 da1d9203...e828 and campaign52 3b6431e9...f2b3, both equal evidenceHashes."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "runtime_args.json of campaign51-55, 60, 61: -javaagent:plugins/achievetodo.jar plus trace agent; -Dachievetodo.progression.initialConfig only in 52 (easy), 53 (hard), 54 (chaos), 61 (hard); output.log lines ~203-226 show ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before the first case; freshConfig and world-group.properties appear only in the plugin's derived=[...] of 52/53/54/61, absent in 51/55/60."
+  }
+ },
+ "superseded": "No superseded rows in this group (MANIFEST.superseded empty); the group has no rows from campaign60/61.",
+ "findings": [
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "review-rc4-pkg/menu_open_cartography_table/excerpts.txt, first locked block (ATD_EVENT cancelled=false, blockResult=ALLOW or no event)",
+   "description": "Locked rows contain no positive plugin denial line; the Bukkit-level event logs cancelled=false/ALLOW because the native guard acts later, so the denial is shown only by the missing effect, unchanged count and the client overlay."
+  }
+ ]
+}

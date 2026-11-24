@@ -10,6 +10,15 @@ import static com.diskree.achievetodo.ability.AbilityType.*;
 
 public class Progressions {
 
+    /**
+     * The abandoned camp (Minecraft 26.3, AchieveToDo 0.4.0) opens midway between the buried treasure and the igloo
+     * (easy 86..100, normal 110..131 rounded up, hard 134..162). Fixed values like the copper abilities, so no
+     * existing threshold moves.
+     */
+    public static final int ABANDONED_CAMP_EASY = 93;
+    public static final int ABANDONED_CAMP_NORMAL = 121;
+    public static final int ABANDONED_CAMP_HARD = 148;
+
     public static @NotNull Map<AbilityType, Integer> getEasyProgression() {
         Map<AbilityType, Integer> progression = new HashMap<>();
         progression.put(VISION, 0);
@@ -23,6 +32,7 @@ public class Progressions {
         addFixedProgressionCycles(progression, 0);
         progression.put(USE_COPPER_TOOLS, 98);
         progression.put(EQUIP_COPPER_ARMOR, 68);
+        progression.put(INTERACT_INSIDE_ABANDONED_CAMP, ABANDONED_CAMP_EASY);
         return progression;
     }
 
@@ -37,6 +47,7 @@ public class Progressions {
         addFixedProgressionCycles(progression, 1);
         progression.put(USE_COPPER_TOOLS, 128);
         progression.put(EQUIP_COPPER_ARMOR, 83);
+        progression.put(INTERACT_INSIDE_ABANDONED_CAMP, ABANDONED_CAMP_NORMAL);
         return progression;
     }
 
@@ -51,6 +62,7 @@ public class Progressions {
         addFixedProgressionCycles(progression, 2);
         progression.put(USE_COPPER_TOOLS, 158);
         progression.put(EQUIP_COPPER_ARMOR, 98);
+        progression.put(INTERACT_INSIDE_ABANDONED_CAMP, ABANDONED_CAMP_HARD);
         return progression;
     }
 

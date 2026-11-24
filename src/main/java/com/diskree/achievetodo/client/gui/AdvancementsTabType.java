@@ -6,6 +6,8 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.AdvancementNode;
+import net.minecraft.advancements.DisplayInfo;
+import net.minecraft.core.ClientAsset;
 import net.minecraft.client.gui.screens.advancements.AdvancementTabType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -48,6 +50,16 @@ public enum AdvancementsTabType {
 
     public @NotNull String getName() {
         return name().toLowerCase(Locale.ROOT);
+    }
+
+    /**
+     * Background texture of a tab. 26.2 drew a tab whose display has no background with the intentional missing
+     * texture ({@code minecraft:}); 26.3's AdvancementTab takes the texture path directly, so the fallback lives here.
+     */
+    public static @NotNull Identifier backgroundOf(@NotNull DisplayInfo display) {
+        return display.background()
+            .map(ClientAsset.ResourceTexture::texturePath)
+            .orElse(Identifier.withDefaultNamespace(""));
     }
 
     public static @Nullable AdvancementsTabType findByAdvancement(@NotNull AdvancementNode advancement) {

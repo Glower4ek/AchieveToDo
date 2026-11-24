@@ -1,0 +1,53 @@
+{
+ "group": "menu_open_stonecutter",
+ "reviewer": "rc4-reviewer-07",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "open_stonecutter DIRECT: GameplayMenuAbilities.java:20 (STONECUTTER -> OPEN_STONECUTTER); sha256 = E1. thresholds for normal/easy/hard/chaos_20261116/custom_vision all present (77/64/90/107/77)."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "15 rows all PASS. Locked excerpts (campaign51 pass1/op/reload, 52/53/54/55): ATD_STAGE2A_STATE shows the ability LOCKED, count unchanged, the screen did not open (why.observed screen false) and the client overlay shows the lock message; stonecutter rows also log ATD_CRITERION_SUPPRESSED DEFAULT_BLOCK_USE/ANY_BLOCK_USE. Allowed rows: screen opened, no leak. Creative bypasses; spectator opens the screen.",
+   "rowsRead": [
+    "campaign51 pass1 open_stonecutter locked/allowed",
+    "campaign51 modes open_stonecutter op/spectator",
+    "campaign51 reload open_stonecutter locked",
+    "campaign52 thresholds-easy open_stonecutter locked",
+    "campaign53 thresholds-hard open_stonecutter locked",
+    "campaign54 thresholds-chaos open_stonecutter locked",
+    "campaign55 thresholds-custom_vision open_stonecutter locked"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign51-55,60,61: onlineMode=true, authenticated UUID line 'UUID of player Glower4ek is 89c23030-...' and a 'joined the game' line present for each; this group's rows come only from campaign51-55."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes creative/op/spectator present; no offhand rows, correct since opening a block menu has no off-hand route; threshold rows for all 5 configs; no NA rows."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "MANIFEST.e5Reload: campaign51 generationBefore 1, generationAfter 2 (2026-11-23T20:48:49Z); campaign51 generations [1,2]. Reload rows are all campaign51, output.log lines 112k-131k, after pass1 (<20k), modes (42k-68k) and offhand (99k-105k). Excerpts' ATD_STAGE2A_STATE show generation 2 for every reload row; each reload verdict equals the pass1 verdict for the same ability/case/phase. "
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: 15/15 REPRODUCED; every runtime's replay reproducedAll=true (51:1759, 52-55:118 each, 60:15, 61:2). Plugin SHA-256 16d0b2fa...befa identical in all 7 runtimes; client-mod e8577e1d...c61c in all. Recomputed sha256 of campaign51 and campaign54 receipts/campaign-results.jsonl: da1d9203... and 94f9d8a6..., equal to evidenceHashes.results."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "Checked campaignNN/runtime_args.json and receipts/output.log for 51-55,60,61: each command has -javaagent:plugins/achievetodo.jar plus the observer trace-agent.jar; the only -Dachievetodo option is progression.initialConfig=easy/hard/chaos/hard in 52/53/54/61, none in 51/55/60. ATD_LAUNCH_PROFILE=release (log line 203-204), ATD_GAMEPLAY_MODE=RELEASE (218-219), ATD_PRODUCT_GAMEPLAY_READY=true (225-226) all precede the first atd_marks case line (280-320). In 52/53/54/61 derived=[...] lists world-group.properties and achievetodo.progression.freshConfig (plugin-derived); 51/55/60 derived lists no freshConfig."
+  }
+ },
+ "superseded": "No superseded rows in this group (MANIFEST.superseded=[]); the campaign60/61 replacements concern the igloo and glide groups only and touch none of these rows.",
+ "findings": [
+  {
+   "severity": "minor",
+   "criterion": "E6",
+   "evidence": "MANIFEST.runtimes.campaign51..55.evidenceHashes campaign.py=f6d10050..., campaign_cases.py=80931173... vs HARNESS_RC4.sha256 campaign.py=8568cb7d..., campaign_cases.py=fa546eea...; w5-campaign/campaign.py mtime 2026-11-24 03:36, after campaign55/receipts/execution.json 03:34",
+   "description": "campaign51-55 were produced and replayed (REPLAY.json 02:51) by a campaign.py/campaign_cases.py that differs from the one attested in HARNESS_RC4.sha256 and is not archived; only campaign60/61 match HARNESS_RC4. No row of this group carries why.bookkeeping and I re-judged the read verdicts from raw log lines, so this group's verdicts do not depend on the change, but the 'one harness' claim does not hold."
+  }
+ ]
+}

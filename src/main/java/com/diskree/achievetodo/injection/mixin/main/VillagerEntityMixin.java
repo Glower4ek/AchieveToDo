@@ -20,30 +20,31 @@ public abstract class VillagerEntityMixin {
     @Shadow
     public abstract VillagerData getVillagerData();
 
+    /**
+     * A denied trade sees an empty offer list, so vanilla refuses it (the villager shakes its head).
+     * The lock is checked before {@code getOffers()}: generating a cartographer's offers searches for structures
+     * (explorer maps) and stalled the server for seconds, which delayed the lock message (0.3.0 note, fixed in 0.4.0).
+     */
     @WrapOperation(
         method = "mobInteract",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/item/trading/MerchantOffers;isEmpty()Z"
+            target = "Lnet/minecraft/world/entity/npc/villager/Villager;getOffers()Lnet/minecraft/world/item/trading/MerchantOffers;"
         )
     )
-    public boolean lockVillager(
-        MerchantOffers tradeOffers,
-        @NotNull Operation<Boolean> original,
+    public MerchantOffers lockVillager(
+        Villager villager,
+        @NotNull Operation<MerchantOffers> original,
         @Local(argsOnly = true) Player player
     ) {
-        if (original.call(tradeOffers)) {
-            return true;
-        }
-        Villager villagerEntity = (Villager) (Object) this;
-        if (AchieveToDoMod.isTargetInLockedLandmark(player, villagerEntity) ||
+        if (AchieveToDoMod.isTargetInLockedLandmark(player, villager) ||
             AchieveToDoMod.isAbilityLocked(
                 player,
                 AbilityType.findTradeAbility(getVillagerData().profession().unwrapKey().orElse(null))
             )
         ) {
-            return true;
+            return new MerchantOffers();
         }
-        return false;
+        return original.call(villager);
     }
 }

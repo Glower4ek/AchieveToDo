@@ -48,7 +48,7 @@ public class AdvancementDisplaysMixin {
             AdvancementsTabType.findByAdvancement(placedAdvancement.root()) != AdvancementsTabType.CHALLENGES
         ) {
             DisplayInfo display = placedAdvancement.advancement().display().orElse(null);
-            if (display != null && !display.isHidden()) {
+            if (display != null && !display.hidden()) {
                 return true;
             }
         }

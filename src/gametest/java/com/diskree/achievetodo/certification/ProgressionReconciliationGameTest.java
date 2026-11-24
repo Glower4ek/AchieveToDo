@@ -178,7 +178,7 @@ public final class ProgressionReconciliationGameTest implements CustomTestMethod
         int drained = 0;
         while ((packet = joined.channel().readOutbound()) != null) {
             if (packet instanceof ClientboundPlayerPositionPacket position) {
-                new ServerboundAcceptTeleportationPacket(position.id()).handle(joined.player().connection);
+                TeleportAck.accept(position.id(), joined.player());
             }
             ReferenceCountUtil.release(packet);
             if (++drained > 20000) throw new IllegalStateException("Outbound fixture drain exceeded bound");

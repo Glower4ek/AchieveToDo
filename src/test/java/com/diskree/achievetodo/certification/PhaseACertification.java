@@ -126,7 +126,7 @@ public final class PhaseACertification {
         SharedConstants.tryDetectVersion();
         Bootstrap.bootStrap();
         registryAccess = RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY).freeze();
-        fullVanillaRegistryLookup = VanillaRegistries.createLookup();
+        fullVanillaRegistryLookup = VanillaRegistries.createWorldLookup();
     }
 
     public static CertificationArtifacts generate(Path projectRoot) throws IOException {

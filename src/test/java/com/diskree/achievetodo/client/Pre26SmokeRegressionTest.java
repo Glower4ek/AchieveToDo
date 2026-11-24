@@ -33,7 +33,7 @@ class Pre26SmokeRegressionTest {
     private static net.minecraft.core.HolderLookup.Provider lookup;
     @BeforeAll static void bootstrap() {
         SharedConstants.tryDetectVersion(); Bootstrap.bootStrap();
-        lookup = VanillaRegistries.createLookup();
+        lookup = VanillaRegistries.createWorldLookup();
         net.minecraft.core.registries.BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.build(lookup)
             .forEach(net.minecraft.core.component.DataComponentInitializers.PendingComponents::apply);
     }

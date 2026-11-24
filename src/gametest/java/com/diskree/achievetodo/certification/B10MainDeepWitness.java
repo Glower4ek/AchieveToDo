@@ -275,7 +275,7 @@ public final class B10MainDeepWitness {
         Object packet; int count = 0;
         while ((packet = channel.readOutbound()) != null) {
             if (packet instanceof ClientboundSystemChatPacket chat) messages.add(chat.content());
-            if (packet instanceof ClientboundPlayerPositionPacket position) new ServerboundAcceptTeleportationPacket(position.id()).handle(player.connection);
+            if (packet instanceof ClientboundPlayerPositionPacket position) TeleportAck.accept(position.id(), player);
             ReferenceCountUtil.release(packet);
             require(++count < 8192, "outbound packet bound exceeded");
         }

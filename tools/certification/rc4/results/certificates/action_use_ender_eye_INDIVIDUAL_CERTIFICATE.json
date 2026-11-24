@@ -1,0 +1,55 @@
+{
+ "group": "action_use_ender_eye",
+ "reviewer": "rc4-reviewer-04",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "use_ender_eye DIRECT: NativeActionBindings.java:16 (USE_ENDER_EYE in native action set) and NativeActionSpecs.java:29 (Spec USE_ENDER_EYE on EnderEyeItem.use); opened both. SHA-256 recomputed for both files = E1 (93faec2e..., f9d2a17a...). Thresholds normal 429, easy 342, hard 516, chaos 329, custom_vision 429."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "17 rows all PASS. Read all 17 excerpts: locked rows show ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=use_ender_eye, probe 'Test failed' pre and post, count unchanged (e.g. 428->428); allowed rows show 'Test passed. Count: 1' and inventory change; locked rows in 51/52/53/54/55 all PASS with overlay.",
+   "rowsRead": [
+    "campaign51 pass1 use_ender_eye locked",
+    "campaign51 pass1 use_ender_eye allowed",
+    "campaign51 modes use_ender_eye creative/op/spectator",
+    "campaign51 offhand use_ender_eye offhand_locked/offhand_allowed",
+    "campaign51 reload use_ender_eye locked/allowed",
+    "campaign52 thresholds-easy use_ender_eye locked/allowed",
+    "campaign53 thresholds-hard use_ender_eye locked/allowed",
+    "campaign54 thresholds-chaos use_ender_eye locked/allowed",
+    "campaign55 thresholds-custom_vision use_ender_eye locked/allowed"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes for campaign51-55,60,61: onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-...' and joinedLine present in all 7."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes creative/op/spectator present; offhand_locked and offhand_allowed present; thresholds rows for easy, hard, chaos, custom_vision plus normal pass1. No NA rows."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "Reload rows come from campaign51 only; their output.log line numbers start after every pass1/modes/offhand row of the group (reload from line 116996 > offhand max 99676). MANIFEST.e5Reload generationBefore=1 generationAfter=2; campaign51/60 generations [1,2]. All reload excerpts' ATD_STAGE2A_STATE lines show generation 2; every reload verdict (PASS) equals the pass1 verdict for the same ability/phase."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: all 17 rows REPRODUCED, recorded==replayed; receipts/REPLAY.json reproducedAll=true for campaign51-55,60,61. Plugin sha 16d0b2fa... identical in MANIFEST.plugin.perRuntime for all 7 runtimes and in prelaunch; client mod sha e8577e1d... matches. Recomputed SHA-256 of campaign-results.jsonl for all 7 runtimes and each matched evidenceHashes."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "launch.json of campaign51-55,60,61: command holds -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar; -Dachievetodo.* only progression.initialConfig=easy/hard/chaos/hard in 52/53/54/61, none in 51/55/60. output.log of each logs ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before 'Created new objective [atd_marks]' (first case setup); freshConfig appears only in the plugin-logged derived=[...] (together with world-group.properties) for 52/53/54/61, i.e. plugin-derived fresh install."
+  }
+ },
+ "superseded": "No superseded rows in this group (MANIFEST.superseded=[]); campaign60/61 supplements do not touch it.",
+ "findings": [
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "review-rc4-pkg/action_use_ender_eye/excerpts.txt ATD_STAGE2A_STATE lines",
+   "description": "The state lines log the tested ability as {\"USE_ENDER_EYE\": null}, so the lock state itself is not logged; the lock is inferred from count<threshold plus the denial/effect oracles, which agree."
+  }
+ ]
+}

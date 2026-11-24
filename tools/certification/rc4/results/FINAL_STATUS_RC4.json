@@ -1,0 +1,177 @@
+{
+  "started": "2026-11-23T17:58:07+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\certification\\rc4-artifacts\\AchieveToDo-Purpur-mc26.3+0.4.0.jar",
+  "runtimes": {
+    "campaign51": {
+      "mode": "normal",
+      "started": "2026-11-23T17:58:07+00:00",
+      "passes": {
+        "pass1": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 428,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 1
+          },
+          "finished": "2026-11-23T18:53:53+00:00",
+          "aimRetry": []
+        },
+        "presentation": {
+          "counts": {
+            "PASS": 3
+          },
+          "finished": "2026-11-23T18:53:56+00:00"
+        },
+        "modes": {
+          "phases": "creative,op,spectator",
+          "counts": {
+            "PASS": 640,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 1,
+            "NA_VANILLA_NO_CREATIVE_ROUTE": 1,
+            "FAIL_NO_EFFECT": 1,
+            "FAIL_EFFECT_WHILE_LOCKED": 1
+          },
+          "finished": "2026-11-23T20:20:57+00:00",
+          "aimRetry": []
+        },
+        "offhand": {
+          "phases": "offhand_locked,offhand_allowed",
+          "counts": {
+            "PASS": 155,
+            "NA_OFFHAND_NOT_APPLICABLE": 98,
+            "PASS_NO_OVERLAY": 1
+          },
+          "finished": "2026-11-23T20:48:44+00:00",
+          "aimRetry": []
+        },
+        "reload": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 427,
+            "NA_NO_LOCKED_STATE": 1,
+            "PASS_NO_OVERLAY": 1,
+            "FAIL_NO_EFFECT": 1
+          },
+          "finished": "2026-11-23T21:51:15+00:00",
+          "aimRetry": []
+        }
+      },
+      "reload": {
+        "generationBefore": 1,
+        "generationAfter": 2,
+        "at": "2026-11-23T20:48:49+00:00"
+      },
+      "finished": "2026-11-23T21:51:21+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 1759
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign52": {
+      "mode": "easy",
+      "started": "2026-11-23T21:51:21+00:00",
+      "passes": {
+        "thresholds-easy": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 114,
+            "NA_NO_LOCKED_STATE": 2,
+            "PASS_NO_OVERLAY": 2
+          },
+          "finished": "2026-11-23T22:01:56+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-23T22:01:59+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 118
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign53": {
+      "mode": "hard",
+      "started": "2026-11-23T22:01:59+00:00",
+      "passes": {
+        "thresholds-hard": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 115,
+            "FAIL_LEAK": 1,
+            "PASS_NO_OVERLAY": 1,
+            "PASS_MASKED_BY_DEPENDENCY": 1
+          },
+          "finished": "2026-11-23T22:12:43+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-23T22:12:46+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 118
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign54": {
+      "mode": "chaos",
+      "started": "2026-11-23T22:12:46+00:00",
+      "passes": {
+        "thresholds-chaos": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 113,
+            "NA_NO_LOCKED_STATE": 2,
+            "PASS_NO_OVERLAY": 2,
+            "PASS_MASKED_BY_DEPENDENCY": 1
+          },
+          "finished": "2026-11-23T22:23:19+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-23T22:23:22+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 118
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign55": {
+      "mode": "E:\\Vibecode\\AchieveToDo\\certification\\w5-campaign\\configs\\custom_vision.toml",
+      "started": "2026-11-23T22:23:22+00:00",
+      "passes": {
+        "thresholds-custom_vision": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 114,
+            "PASS_MASKED_BY_DEPENDENCY": 2,
+            "PASS_NO_OVERLAY": 2
+          },
+          "finished": "2026-11-23T22:34:04+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-23T22:34:08+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 118
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "rc4",
+  "launch": "release",
+  "finished": "2026-11-23T22:34:08+00:00"
+}

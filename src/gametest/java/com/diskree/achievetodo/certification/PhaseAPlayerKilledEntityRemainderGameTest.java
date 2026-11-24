@@ -225,7 +225,7 @@ public final class PhaseAPlayerKilledEntityRemainderGameTest implements CustomTe
     }
     private static void fail(GameTestHelper h,Context c,String stage,Throwable failure){cleanupWorld(h,c);if(c.joined!=null)cleanup(c.joined);h.fail("kill remainder "+stage+" failed "+PhaseAPlayerKilledEntityRemainderCertification.key(c.row)+": "+describe(failure));}
     private static String ns(String id){return PhaseAPlayerKilledEntityRemainderCertification.namespaced(id);}
-    private static void acknowledge(Joined joined){var channel=joined.channel();channel.runPendingTasks();channel.runScheduledPendingTasks();channel.flushOutbound();Integer id=null;Object packet;while((packet=channel.readOutbound())!=null){if(packet instanceof ClientboundPlayerPositionPacket position)id=position.id();ReferenceCountUtil.release(packet);}require(id!=null,"missing teleport acknowledgement");new ServerboundAcceptTeleportationPacket(id).handle(joined.player().connection);}
+    private static void acknowledge(Joined joined){var channel=joined.channel();channel.runPendingTasks();channel.runScheduledPendingTasks();channel.flushOutbound();Integer id=null;Object packet;while((packet=channel.readOutbound())!=null){if(packet instanceof ClientboundPlayerPositionPacket position)id=position.id();ReferenceCountUtil.release(packet);}require(id!=null,"missing teleport acknowledgement");TeleportAck.accept(id, joined.player());}
     private static Joined join(GameTestHelper h) {
         MinecraftServer server = h.getLevel().getServer(); UUID id = UUID.randomUUID();
         GameProfile profile = new GameProfile(id, "kill" + id.toString().substring(0, 8));

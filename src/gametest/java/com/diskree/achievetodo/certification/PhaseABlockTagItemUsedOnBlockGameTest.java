@@ -528,12 +528,12 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         SignBlockEntity sign = (SignBlockEntity) level.getBlockEntity(pos);
         require(!sign.isWaxed(), "Fixture must be fresh and unwaxed");
         player.teleportTo(pos.getX() + 0.5, pos.getY(), pos.getZ() - 1.5);
-        boolean activeSideFront = sign.isFacingFrontText(player);
-        require(sign.updateText(text -> text.setMessage(0, Component.literal("white dye canary")).setColor(DyeColor.BLACK), activeSideFront), "Could not set fixture text");
-        SignText beforeText = sign.getText(activeSideFront);
-        boolean textPresent = beforeText.hasMessage(player);
+        boolean activeSideFront = sign.getSlotPlayerIsFacing(player) == net.minecraft.world.level.block.entity.SignTextSlot.FRONT;
+        require(sign.updateText(text -> text.asMutable().setLine(0, Component.literal("white dye canary")).asImmutable().withColor(DyeColor.BLACK), signSlot(activeSideFront)), "Could not set fixture text");
+        SignText beforeText = sign.getText(signSlot(activeSideFront));
+        boolean textPresent = beforeText.hasMessage(player.isTextFilteringEnabled());
         require(textPresent, "Active sign side has no text");
-        require(!sign.getText(!activeSideFront).hasMessage(player), "Text fixture leaked to inactive sign side");
+        require(!sign.getText(signSlot(!activeSideFront)).hasMessage(player.isTextFilteringEnabled()), "Text fixture leaked to inactive sign side");
         boolean waxedBefore = sign.isWaxed();
         DyeColor colorBefore = beforeText.getColor();
         require(!waxedBefore, "Fixture must remain unwaxed before dye");
@@ -577,8 +577,8 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         require(result.consumesAction(), "Interaction did not consume action");
         require(level.getBlockEntity(pos) == sign, "Sign block entity was replaced");
         require(!sign.isWaxed(), "Dye interaction waxed the sign");
-        SignText afterText = sign.getText(activeSideFront);
-        require(afterText.hasMessage(player), "Active sign side lost its text");
+        SignText afterText = sign.getText(signSlot(activeSideFront));
+        require(afterText.hasMessage(player.isTextFilteringEnabled()), "Active sign side lost its text");
         DyeColor expectedColor = DyeColor.WHITE;
         DyeColor colorAfter = afterText.getColor();
         require(colorAfter == expectedColor && colorBefore != colorAfter, "Sign color did not change BLACK -> WHITE");
@@ -635,12 +635,12 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         SignBlockEntity sign = (SignBlockEntity) level.getBlockEntity(pos);
         require(!sign.isWaxed(), "Fixture must be fresh and unwaxed for " + caseKey);
         player.teleportTo(pos.getX() + 0.5, pos.getY(), pos.getZ() - 1.5);
-        boolean activeSideFront = sign.isFacingFrontText(player);
-        require(sign.updateText(text -> text.setMessage(0, Component.literal("glow sign canary")), activeSideFront), "Could not set fixture text for " + caseKey);
-        SignText beforeText = sign.getText(activeSideFront);
-        boolean textPresent = beforeText.hasMessage(player);
+        boolean activeSideFront = sign.getSlotPlayerIsFacing(player) == net.minecraft.world.level.block.entity.SignTextSlot.FRONT;
+        require(sign.updateText(text -> text.asMutable().setLine(0, Component.literal("glow sign canary")).asImmutable(), signSlot(activeSideFront)), "Could not set fixture text for " + caseKey);
+        SignText beforeText = sign.getText(signSlot(activeSideFront));
+        boolean textPresent = beforeText.hasMessage(player.isTextFilteringEnabled());
         require(textPresent, "Active sign side has no text for " + caseKey);
-        require(!sign.getText(!activeSideFront).hasMessage(player), "Text fixture leaked to inactive sign side for " + caseKey);
+        require(!sign.getText(signSlot(!activeSideFront)).hasMessage(player.isTextFilteringEnabled()), "Text fixture leaked to inactive sign side for " + caseKey);
         boolean waxedBefore = sign.isWaxed();
         boolean glowingBefore = beforeText.hasGlowingText();
         require(!waxedBefore && !glowingBefore, "Invalid glow-sign fixture state for " + caseKey);
@@ -687,8 +687,8 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         require(result.consumesAction(), "Interaction did not consume action for " + caseKey);
         require(level.getBlockEntity(pos) == sign, "Sign block entity was replaced for " + caseKey);
         require(!sign.isWaxed(), "Glow interaction waxed the sign for " + caseKey);
-        SignText afterText = sign.getText(activeSideFront);
-        require(afterText.hasMessage(player), "Active sign side lost its text for " + caseKey);
+        SignText afterText = sign.getText(signSlot(activeSideFront));
+        require(afterText.hasMessage(player.isTextFilteringEnabled()), "Active sign side lost its text for " + caseKey);
         boolean glowingAfter = afterText.hasGlowingText();
         require(!glowingBefore && glowingAfter, "Sign did not become glowing for " + caseKey);
         require(afterCriterion != null && afterCriterion.isDone(), "Criterion did not become true for " + caseKey);
@@ -1321,7 +1321,7 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         var minimumHeight = TreeGrower.OAK.getMinimumHeight(level);
         require(minimumHeight.isPresent(), "Oak grower has no minimum height for " + caseKey);
         require(level.isInsideBuildHeight(pos.above(minimumHeight.getAsInt())), "Oak growth exceeds world build height for " + caseKey);
-        require(sapling.isValidBonemealTarget(level, pos, saplingState), "Oak sapling is not a valid bonemeal target for " + caseKey);
+        require(sapling.isValidBonemealTarget(level, pos, saplingState, net.minecraft.world.level.block.BonemealSource.INTERACTION), "Oak sapling is not a valid bonemeal target for " + caseKey);
         boolean clearGrowthVolume = isBoneMealGrowthVolumeClear(level, pos);
         require(clearGrowthVolume, "Oak growth volume is not clear for " + caseKey);
 
@@ -1587,15 +1587,15 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         SignBlockEntity sign = (SignBlockEntity) level.getBlockEntity(pos);
         require(!sign.isWaxed(), "Fixture must be fresh and unwaxed");
         player.teleportTo(pos.getX() + 0.5, pos.getY(), pos.getZ() - 1.5);
-        boolean activeSideFront = sign.isFacingFrontText(player);
+        boolean activeSideFront = sign.getSlotPlayerIsFacing(player) == net.minecraft.world.level.block.entity.SignTextSlot.FRONT;
         DyeColor expectedColor = catalogDyeColor(definition);
         DyeColor initialColor = expectedColor == DyeColor.BLACK ? DyeColor.WHITE : DyeColor.BLACK;
         require(initialColor != expectedColor, "Fixture initial color is not contrasting for " + caseKey);
-        require(sign.updateText(text -> text.setMessage(0, Component.literal("dye sign " + definition.get("criterion").getAsString())).setColor(initialColor), activeSideFront), "Could not set fixture text");
-        SignText beforeText = sign.getText(activeSideFront);
-        boolean textPresent = beforeText.hasMessage(player);
+        require(sign.updateText(text -> text.asMutable().setLine(0, Component.literal("dye sign " + definition.get("criterion").getAsString())).asImmutable().withColor(initialColor), signSlot(activeSideFront)), "Could not set fixture text");
+        SignText beforeText = sign.getText(signSlot(activeSideFront));
+        boolean textPresent = beforeText.hasMessage(player.isTextFilteringEnabled());
         require(textPresent, "Active sign side has no text");
-        require(!sign.getText(!activeSideFront).hasMessage(player), "Text fixture leaked to inactive sign side");
+        require(!sign.getText(signSlot(!activeSideFront)).hasMessage(player.isTextFilteringEnabled()), "Text fixture leaked to inactive sign side");
         boolean waxedBefore = sign.isWaxed();
         DyeColor colorBefore = beforeText.getColor();
         require(!waxedBefore, "Fixture must remain unwaxed before dye");
@@ -1643,8 +1643,8 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
         require(result.consumesAction(), "Interaction did not consume action");
         require(level.getBlockEntity(pos) == sign, "Sign block entity was replaced");
         require(!sign.isWaxed(), "Dye interaction waxed the sign");
-        SignText afterText = sign.getText(activeSideFront);
-        require(afterText.hasMessage(player), "Active sign side lost its text");
+        SignText afterText = sign.getText(signSlot(activeSideFront));
+        require(afterText.hasMessage(player.isTextFilteringEnabled()), "Active sign side lost its text");
         DyeColor colorAfter = afterText.getColor();
         require(colorAfter == expectedColor && colorBefore != colorAfter, "Sign color did not change to the catalog dye");
         require(afterCriterion != null && afterCriterion.isDone(), "Criterion did not become true");
@@ -1805,5 +1805,9 @@ public final class PhaseABlockTagItemUsedOnBlockGameTest implements CustomTestMe
     @Override
     public void invokeTestMethod(GameTestHelper helper, Method method) throws ReflectiveOperationException {
         helper.setBlock(0, 0, 0, Blocks.AIR); method.invoke(this, helper);
+    }
+    /** 26.3 addresses sign sides by slot instead of an isFront flag. */
+    private static net.minecraft.world.level.block.entity.SignTextSlot signSlot(boolean front) {
+        return front ? net.minecraft.world.level.block.entity.SignTextSlot.FRONT : net.minecraft.world.level.block.entity.SignTextSlot.BACK;
     }
 }

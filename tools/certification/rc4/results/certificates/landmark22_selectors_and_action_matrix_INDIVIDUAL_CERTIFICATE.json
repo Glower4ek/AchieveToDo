@@ -1,0 +1,87 @@
+{
+  "group": "landmark22_selectors_and_action_matrix",
+  "reviewer": "rc4-reviewer-03",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "22 abilities, all CURATED family=landmark with enforcement site CanonicalLandmarkMembership.java:114,122 (sha 268b068a...d3c recomputed, matches) and resolver AbilityResolvers.findLandmarkAbility (LANDMARK_ABILITIES map, AbilityResolvers.java:92-97). Opened CanonicalLandmarkMembership.java:105-125: for a matched landmark record it resolves findLandmarkAbility(type) and returns LOCKED/UNLOCKED from that ability's state. Resolver files BukkitExactLandmarkRuntime.java (51178dbc...), ExactLandmarkGate.java (3c2582f8..., marked inactive), LandmarkEngine.java (a693db43...) carry no sha256 in E1 to compare (see finding). Thresholds for all 5 configs present for all 22 abilities; 5 config toml hashes recomputed and match."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "184 rows: 183 PASS, 1 PASS_MASKED_BY_DEPENDENCY (campaign54 chaos village locked, score 1, requires open_chest 353: masked, verdict correct). Every ability and case has a proving campaign51 pass1 locked PASS row. Scripted check over all excerpt blocks: every chest/feature locked and op row lacks ClientboundOpenScreenPacket, shows ATD_CRITERION_SUPPRESSED DEFAULT_BLOCK_USE/ANY_BLOCK_USE, count unchanged; every allowed/creative row has the OpenScreenPacket; no mismatches. Igloo audit locked rows: map not framed (probe false), PLAYER_INTERACTED_WITH_ENTITY suppressed, no criteria, count unchanged; tadpole locked rows log DENIAL_INTENT_DISCOVERED interact_inside_igloo, no fountain_of_youth. Allowed audit rows earn map_room / fountain_of_youth as expected (known issues 6 and 8 hold). No why.bookkeeping row in this group; BACAP-tally rule (campaign.py:264-270, applies only when ALL gained advancements are tallies) is sound and hid nothing here (tallies appear only alongside map_room on allowed/creative rows).",
+      "rowsRead": [
+        "campaign51 pass1 interact_inside_village locked",
+        "campaign51 pass1 interact_inside_village allowed",
+        "campaign51 pass1 interact_inside_shipwreck locked",
+        "campaign51 pass1 interact_inside_igloo locked (chest)",
+        "campaign51 pass1 interact_inside_igloo allowed (chest)",
+        "campaign51 pass1 interact_inside_igloo locked (map audit)",
+        "campaign51 pass1 interact_inside_igloo allowed (map audit)",
+        "campaign51 pass1 interact_inside_igloo locked (tadpole audit)",
+        "campaign51 pass1 interact_inside_igloo allowed (tadpole audit)",
+        "campaign51 pass1/modes/reload interact_inside_monster_room all phases",
+        "campaign51 pass1/modes/reload interact_inside_desert_well all phases",
+        "campaign52 thresholds-easy interact_inside_village locked/allowed",
+        "campaign52 thresholds-easy interact_inside_igloo map locked/allowed",
+        "campaign53 thresholds-hard interact_inside_village locked/allowed",
+        "campaign53 thresholds-hard interact_inside_igloo map locked/allowed",
+        "campaign54 thresholds-chaos interact_inside_village locked (PASS_MASKED_BY_DEPENDENCY)",
+        "campaign54 thresholds-chaos interact_inside_village allowed",
+        "campaign54 thresholds-chaos interact_inside_igloo map locked/allowed",
+        "campaign55 thresholds-custom_vision interact_inside_village locked/allowed",
+        "campaign55 thresholds-custom_vision interact_inside_igloo map locked/allowed",
+        "campaign60 modes interact_inside_igloo creative/op/spectator (chest, map, tadpole)",
+        "campaign60 reload interact_inside_igloo locked/allowed (chest, map, tadpole)",
+        "all 184 excerpt blocks scripted: chest/feature locked and op rows have no ClientboundOpenScreenPacket, allowed and creative rows have it"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for campaign51,52,53,54,55,60,61: onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-...' and joinedLine present for each."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows for all 22 abilities (21 from campaign51, igloo from campaign60 incl. both audit cases). Threshold rows for easy/hard/chaos/custom_vision (village chest + igloo map audit, one-per-group sample); full set on normal. No offhand rows and no NA rows; the landmark checks are scope checks on a main-hand interaction with no separate off-hand route claimed."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "21 ability reload rows from campaign51 (after pass1/modes; generation 2 in every reload excerpt, scripted) and 6 igloo reload rows from campaign60 (generations [1,2]; generation 2 in excerpts). Every reload verdict PASS = pass1 PASS. MANIFEST e5Reload generationAfter=2."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 184/184 REPRODUCED. campaign-results.jsonl SHA-256 recomputed for all 7 runtimes (e.g. campaign51 da1d9203...e828, campaign54 94f9d8a6...7fbe) and equal to MANIFEST evidenceHashes; runtime/plugins/achievetodo.jar recomputed = 16d0b2fa...befa in all 7 runtimes; MANIFEST.clientMod sha256 = e8577e1d...c61c; per-runtime replay reproducedAll=true (51:1759, 52-55:118 each, 60:15, 61:2)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json and receipts/launch.json of all 7 runtimes: javaagents = plugins/achievetodo.jar + observer trace-agent.jar; the only -D option is -Dachievetodo.progression.initialConfig=easy|hard|chaos|hard in campaign52/53/54/61, none in 51/55/60. output.log lines 203-226 of each runtime: ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before the first ATD_STAGE2A_STATE; derived=[...] lists world-group.properties and achievetodo.progression.freshConfig only in 52/53/54/61 (plugin-derived fresh installs), not in 51/55/60. Pre-start absence of world-group/world-selection files was not checked beyond the plugin's derived list."
+    }
+  },
+  "superseded": "15 igloo modes/reload rows of campaign51 replaced by campaign60. Checked campaign51 campaign-results.jsonl lines 1013-1075 and 1718-1759: the three non-PASS originals are fixture artefacts. modes map creative FAIL_NO_EFFECT had probesPre already 'Test passed' (leftover framed map); modes tadpole op FAIL_EFFECT_WHILE_LOCKED had probesPre 'Test passed' and output.log 98623-98634 shows DENIAL_INTENT_DISCOVERED interact_inside_igloo with count unchanged (leftover age-locked tadpole); reload tadpole allowed FAIL_NO_EFFECT (output.log 153547-153557) shows interactOn Success and an inventory change but post probe false, consistent with the tadpole no longer present (its death is not directly logged). campaign_cases.py:347-354 now kills tadpoles/frames between rows. campaign60 replacements are all PASS with correct evidence. Replacement justified; the 12 PASS->PASS replacements are a full igloo rerun for consistency.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E1",
+      "evidence": "review-rc4-pkg/landmark22_selectors_and_action_matrix/E1.json familyResolverSites",
+      "description": "Family resolver files (BukkitExactLandmarkRuntime.java, ExactLandmarkGate.java, LandmarkEngine.java) are cited without sha256, so their identity cannot be compared; current hashes 51178dbc..., 3c2582f8..., a693db43...."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt lines 1-13 (campaign51 pass1 village locked) and 138-151 (igloo chest locked)",
+      "description": "Locked landmark rows log ATD_W2_INPUT_EVENT useBlock=ALLOW/cancelled=false and STAGE2A shows INTERACT_INSIDE_*: null, so the server log never states the lock or the denial explicitly; denial is inferred from the missing OpenScreenPacket, criterion suppression and client overlay."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "excerpts.txt lines 691-700 (campaign51 pass1 igloo map audit locked)",
+      "description": "On denied map-into-frame rows the traced Player.interactOn returns Success[swingSource=PREDICTED, wasItemInteraction=true] and no DENIAL_INTENT line is logged; effect absence rests on the probe and the client overlay."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "rows.jsonl campaign54 thresholds-chaos interact_inside_village locked",
+      "description": "Under CHAOS the village lock is only PASS_MASKED_BY_DEPENDENCY (open_chest 353 > village 2); the CHAOS landmark lock is proven only by the igloo map audit row."
+    }
+  ]
+}

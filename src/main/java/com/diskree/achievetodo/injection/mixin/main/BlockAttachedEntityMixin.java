@@ -18,7 +18,7 @@ public class BlockAttachedEntityMixin {
         method = "hurtServer",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/entity/decoration/BlockAttachedEntity;kill(Lnet/minecraft/server/level/ServerLevel;)V",
+            target = "Lnet/minecraft/world/entity/decoration/BlockAttachedEntity;kill(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/Entity;)V",
             shift = At.Shift.BEFORE
         ),
         cancellable = true

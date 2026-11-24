@@ -663,6 +663,9 @@
   "achievetodo.ability.interact_inside_trail_ruins.name": "Trail Ruins",
   "achievetodo.ability.interact_inside_trail_ruins.description": "Ability to interact with objects within Trail Ruins",
   "achievetodo.ability.interact_inside_trail_ruins.locked_message": "You can't interact with objects within Trail Ruins",
+  "achievetodo.ability.interact_inside_abandoned_camp.name": "Abandoned Camp",
+  "achievetodo.ability.interact_inside_abandoned_camp.description": "Ability to interact with objects within an Abandoned Camp",
+  "achievetodo.ability.interact_inside_abandoned_camp.locked_message": "You can't interact with objects within an Abandoned Camp",
 
   "achievetodo.ability.interact_inside_ancient_city.name": "Ancient City",
   "achievetodo.ability.interact_inside_ancient_city.description": "Ability to interact with objects within an Ancient City",

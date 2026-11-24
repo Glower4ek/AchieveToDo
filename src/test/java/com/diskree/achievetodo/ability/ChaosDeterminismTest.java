@@ -17,7 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * (port/.../ChaosProgressionGeneratorTest pins the identical digest). Known issue 2, fixed in 0.3.0.
  */
 final class ChaosDeterminismTest {
-    static final String SEED_42_DIGEST = "33c82f3953d7ef03a65ebfd6661c29bc2d4e1dce5b1993a4fe20999cd3516571";
+    // 0.4.0: the abandoned camp joined the shuffle (0.3.0 digest: 33c82f39...).
+    static final String SEED_42_DIGEST = "b8c3fbbb617cbe680b729c52f96b3721698a141aa24e981d73baf894ee7b45f8";
 
     @BeforeAll static void bootstrap() { SharedConstants.tryDetectVersion(); Bootstrap.bootStrap(); }
 

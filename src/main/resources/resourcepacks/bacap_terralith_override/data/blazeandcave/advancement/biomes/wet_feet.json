@@ -21,424 +21,466 @@
     "river": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:river"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:river"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "deep_ocean": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:deep_ocean"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:deep_ocean"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "ocean": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:ocean"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:ocean"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "beach": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:beach"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:beach"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "deep_frozen_ocean": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:deep_frozen_ocean"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:deep_frozen_ocean"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "frozen_ocean": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:frozen_ocean"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:frozen_ocean"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "cold_ocean": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:cold_ocean"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:cold_ocean"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "deep_cold_ocean": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:deep_cold_ocean"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:deep_cold_ocean"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "lukewarm_ocean": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:lukewarm_ocean"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:lukewarm_ocean"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "deep_lukewarm_ocean": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:deep_lukewarm_ocean"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:deep_lukewarm_ocean"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "warm_ocean": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:warm_ocean"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:warm_ocean"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "deep_warm_ocean": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "terralith:deep_warm_ocean"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type_specific/player": {
-                  "type": "player",
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "terralith:deep_warm_ocean"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "type_specific/player": {
+                    "type": "player",
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "gravel_beach": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "terralith:gravel_beach"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type_specific/player": {
-                  "type": "player",
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "terralith:gravel_beach"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "type_specific/player": {
+                    "type": "player",
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "warm_river": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "terralith:warm_river"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type_specific/player": {
-                  "type": "player",
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "terralith:warm_river"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "type_specific/player": {
+                    "type": "player",
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     }
   }

@@ -9,6 +9,8 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.stream.Collectors;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.data.worldgen.features.CaveFeatures;
+import net.minecraft.data.worldgen.features.MiscOverworldFeatures;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.structure.BuiltinStructures;
 import net.minecraft.world.level.levelgen.structure.Structure;
@@ -19,7 +21,7 @@ public enum LandmarkType {
         BuiltinStructures.DESERT_PYRAMID
     ),
     DESERT_WELL(
-        Feature.DESERT_WELL
+        MiscOverworldFeatures.DESERT_WELL
     ),
     JUNGLE_PYRAMID(
         BuiltinStructures.JUNGLE_TEMPLE
@@ -67,7 +69,7 @@ public enum LandmarkType {
         BuiltinStructures.OCEAN_MONUMENT
     ),
     MONSTER_ROOM(
-        Feature.MONSTER_ROOM
+        CaveFeatures.MONSTER_ROOM
     ),
     MINESHAFT(
         BuiltinStructures.MINESHAFT,
@@ -93,12 +95,33 @@ public enum LandmarkType {
     ),
     END_CITY(
         BuiltinStructures.END_CITY
+    ),
+    /** Minecraft 26.3. */
+    ABANDONED_CAMP(
+        BuiltinStructures.ABANDONED_CAMP_BAMBOO_JUNGLE,
+        BuiltinStructures.ABANDONED_CAMP_BIRCH_FOREST,
+        BuiltinStructures.ABANDONED_CAMP_CHERRY_GROVE,
+        BuiltinStructures.ABANDONED_CAMP_DAPPLED_FOREST,
+        BuiltinStructures.ABANDONED_CAMP_FLOWER_FOREST,
+        BuiltinStructures.ABANDONED_CAMP_FOREST,
+        BuiltinStructures.ABANDONED_CAMP_MEADOW,
+        BuiltinStructures.ABANDONED_CAMP_OLD_GROWTH_BIRCH_FOREST,
+        BuiltinStructures.ABANDONED_CAMP_OLD_GROWTH_PINE_TAIGA,
+        BuiltinStructures.ABANDONED_CAMP_OLD_GROWTH_SPRUCE_TAIGA,
+        BuiltinStructures.ABANDONED_CAMP_PALE_GARDEN,
+        BuiltinStructures.ABANDONED_CAMP_SAVANNA,
+        BuiltinStructures.ABANDONED_CAMP_SNOWY_TAIGA,
+        BuiltinStructures.ABANDONED_CAMP_SPARSE_JUNGLE,
+        BuiltinStructures.ABANDONED_CAMP_SWAMP,
+        BuiltinStructures.ABANDONED_CAMP_TAIGA,
+        BuiltinStructures.ABANDONED_CAMP_WINDSWEPT_FOREST,
+        BuiltinStructures.ABANDONED_CAMP_WOODED_BADLANDS
     );
 
-    public static final HashMap<Feature<?>, LandmarkType> FEATURES = new HashMap<>();
+    public static final HashMap<ResourceKey<Feature>, LandmarkType> FEATURES = new HashMap<>();
 
     private final Set<ResourceKey<Structure>> structureRegistryKeys;
-    private final Feature<?> feature;
+    private final ResourceKey<Feature> feature;
 
     static {
         for (LandmarkType landmarkType : values()) {
@@ -113,11 +136,11 @@ public enum LandmarkType {
         this(null, Arrays.stream(structures).collect(Collectors.toUnmodifiableSet()));
     }
 
-    LandmarkType(Feature<?> feature) {
+    LandmarkType(ResourceKey<Feature> feature) {
         this(feature, null);
     }
 
-    LandmarkType(Feature<?> feature, Set<ResourceKey<Structure>> structureRegistryKeys) {
+    LandmarkType(ResourceKey<Feature> feature, Set<ResourceKey<Structure>> structureRegistryKeys) {
         this.structureRegistryKeys = structureRegistryKeys;
         this.feature = feature;
     }
@@ -134,7 +157,7 @@ public enum LandmarkType {
         return structureRegistryKeys;
     }
 
-    public Feature<?> getFeature() {
+    public ResourceKey<Feature> getFeature() {
         return feature;
     }
 

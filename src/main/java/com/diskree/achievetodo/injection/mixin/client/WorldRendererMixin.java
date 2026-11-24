@@ -4,11 +4,15 @@ import com.diskree.achievetodo.ability.DimensionType;
 import com.diskree.achievetodo.client.AchieveToDoClient;
 import com.diskree.achievetodo.client.gui.DesignCodePalette;
 import com.diskree.achievetodo.client.gui.LockedLandmarkBox;
-import com.mojang.blaze3d.PrimitiveTopology;
-import com.mojang.blaze3d.buffers.GpuBuffer;
-import com.mojang.blaze3d.buffers.GpuBufferSlice;
-import com.mojang.blaze3d.pipeline.RenderTarget;
-import com.mojang.blaze3d.systems.RenderPass;
+import com.mojang.renderpearl.api.pipeline.PrimitiveTopology;
+import com.mojang.renderpearl.api.buffers.GpuBuffer;
+import com.mojang.renderpearl.api.buffers.GpuBufferSlice;
+import com.llamalad7.mixinextras.sugar.Local;
+import com.mojang.renderpearl.api.device.GpuDevice;
+import com.mojang.renderpearl.api.pipeline.RenderPipeline;
+import net.minecraft.client.renderer.oit.OitStage;
+import java.nio.ByteBuffer;
+import com.mojang.renderpearl.api.commands.RenderPass;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferBuilder;
 import com.mojang.blaze3d.vertex.ByteBufferBuilder;
@@ -39,10 +43,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.OptionalDouble;
 import java.util.concurrent.TimeUnit;
 
 @Mixin(net.minecraft.client.renderer.LevelRenderer.class)
@@ -63,26 +63,35 @@ public abstract class WorldRendererMixin {
     @Unique
     private float fadeInsideLockedLandmarkAlpha;
 
-    @Shadow
-    @Final
-    private GameRenderer gameRenderer;
+    /** Vertex buffer reused across frames, like vanilla's weather buffer; written outside any render pass. */
+    @Unique
+    private @Nullable GpuBuffer lockedLandmarkBorderVertexBuffer;
+
+    @Unique
+    private int lockedLandmarkBorderQuadCount;
+
+    @Unique
+    private float lockedLandmarkBorderAlpha;
 
     @Shadow
     @Final
     private LevelRenderState levelRenderState;
 
-    @Shadow
-    public abstract RenderTarget weatherTarget();
-
+    /*
+     * 26.3: the weather/world-border frame pass is gone. Translucent geometry is prepared once per frame in
+     * prepareTranslucents (no render pass open) and drawn either in executeClassicTransparency (one shared pass) or
+     * in executeOit (one pass per OIT stage, "Improved Transparency"). The border follows the same split: the mesh
+     * is built and uploaded here, and drawn right after the vanilla world border / weather in both paths.
+     */
     @Inject(
-        method = "lambda$addWeatherPass$0",
+        method = "prepareTranslucents",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/renderer/WorldBorderRenderer;render(Lnet/minecraft/client/renderer/state/level/WorldBorderRenderState;Lnet/minecraft/world/phys/Vec3;DD)V",
-            shift = At.Shift.AFTER
+            target = "Lcom/mojang/blaze3d/systems/RenderSystem;resizeAllAutoStorageIndexBuffers()V"
         )
     )
-    private void renderLockedLandmarkBorder(GpuBufferSlice fogBuffer, int viewDistance, CallbackInfo ci) {
+    private void prepareLockedLandmarkBorder(CallbackInfo ci) {
+        lockedLandmarkBorderQuadCount = 0;
         @Nullable var level = Minecraft.getInstance().level;
         if (level == null) {
             return;
@@ -120,6 +129,38 @@ public abstract class WorldRendererMixin {
             fadeInsideLockedLandmarkAlpha = 0.0f;
         }
         lastLockedLandmarkBox = foundBox;
+    }
+
+    @Inject(
+        method = "executeClassicTransparency",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/renderer/WorldBorderRenderer;render(Lnet/minecraft/client/renderer/state/level/WorldBorderRenderState;Lcom/mojang/renderpearl/api/commands/RenderPass;Lnet/minecraft/world/phys/Vec3;D)V",
+            shift = At.Shift.AFTER
+        )
+    )
+    private void drawLockedLandmarkBorder(CallbackInfo ci, @Local(argsOnly = true) RenderPass renderPass) {
+        drawLockedLandmarkBorder(renderPass, RenderPipelines.WORLD_BORDER);
+    }
+
+    @Inject(
+        method = "executeOit",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/renderer/WeatherEffectRenderer;renderOit(Lnet/minecraft/client/renderer/oit/OitStage;Lnet/minecraft/client/renderer/state/level/WeatherRenderState;Lcom/mojang/renderpearl/api/commands/RenderPass;)V",
+            shift = At.Shift.AFTER
+        )
+    )
+    private void drawLockedLandmarkBorderOit(CallbackInfo ci, @Local OitStage stage, @Local RenderPass renderPass) {
+        drawLockedLandmarkBorder(renderPass, RenderPipelines.OIT_WORLD_BORDER.getPipeline(stage));
+    }
+
+    @Inject(method = "close", at = @At("HEAD"))
+    private void closeLockedLandmarkBorder(CallbackInfo ci) {
+        if (lockedLandmarkBorderVertexBuffer != null) {
+            lockedLandmarkBorderVertexBuffer.close();
+            lockedLandmarkBorderVertexBuffer = null;
+        }
     }
 
     @Unique
@@ -336,29 +377,43 @@ public abstract class WorldRendererMixin {
                 return;
             }
             try (meshData) {
-                try (GpuBuffer vertexBuffer = RenderSystem.getDevice().createBuffer(
-                    () -> "Locked landmark border vertex buffer",
-                    GpuBuffer.USAGE_VERTEX | GpuBuffer.USAGE_COPY_DST,
-                    meshData.vertexBuffer()
-                )) {
-                    renderLockedLandmarkBorderPass(vertexBuffer, quadCount, alpha);
+                ByteBuffer vertices = meshData.vertexBuffer();
+                GpuDevice device = RenderSystem.getDevice();
+                if (lockedLandmarkBorderVertexBuffer == null || lockedLandmarkBorderVertexBuffer.size() < vertices.remaining()) {
+                    if (lockedLandmarkBorderVertexBuffer != null) {
+                        lockedLandmarkBorderVertexBuffer.close();
+                    }
+                    lockedLandmarkBorderVertexBuffer = device.createBuffer(
+                        () -> "Locked landmark border vertex buffer",
+                        GpuBuffer.USAGE_VERTEX | GpuBuffer.USAGE_COPY_DST,
+                        vertices.remaining()
+                    );
                 }
+                device.createCommandEncoder().writeToBuffer(lockedLandmarkBorderVertexBuffer.slice(), vertices);
+                RenderSystem.getSequentialBuffer(PrimitiveTopology.QUADS).requestIndexCount(quadCount * 6);
+                lockedLandmarkBorderQuadCount = quadCount;
+                lockedLandmarkBorderAlpha = alpha;
             }
         }
     }
 
     @Unique
-    private void renderLockedLandmarkBorderPass(GpuBuffer vertexBuffer, int quadCount, float alpha) {
+    private void drawLockedLandmarkBorder(RenderPass renderPass, RenderPipeline pipeline) {
+        int quadCount = lockedLandmarkBorderQuadCount;
+        GpuBuffer vertexBuffer = lockedLandmarkBorderVertexBuffer;
+        if (quadCount == 0 || vertexBuffer == null) {
+            return;
+        }
+        RenderSystem.AutoStorageIndexBuffer indices = RenderSystem.getSequentialBuffer(PrimitiveTopology.QUADS);
+        if (!indices.hasStorage(quadCount * 6)) {
+            return;
+        }
         Minecraft client = Minecraft.getInstance();
-        RenderTarget mainTarget = gameRenderer.mainRenderTarget();
-        RenderTarget weatherTarget = weatherTarget();
-        RenderTarget outputTarget = weatherTarget != null ? weatherTarget : mainTarget;
-
         Vector4f color = new Vector4f(
             ARGB.redFloat(DesignCodePalette.IN_WORLD_RGB),
             ARGB.greenFloat(DesignCodePalette.IN_WORLD_RGB),
             ARGB.blueFloat(DesignCodePalette.IN_WORLD_RGB),
-            alpha
+            lockedLandmarkBorderAlpha
         );
         GpuBufferSlice transformBuffer = RenderSystem.getDynamicUniforms().writeTransform(
             RenderSystem.getModelViewMatrixCopy(),
@@ -367,39 +422,16 @@ public abstract class WorldRendererMixin {
             new Matrix4f()
         );
 
-        RenderSystem.AutoStorageIndexBuffer indices = RenderSystem.getSequentialBuffer(PrimitiveTopology.QUADS);
-        GpuBuffer indexBuffer = indices.getBuffer(quadCount * 6);
-        RenderPass.Draw<Void> draw = new RenderPass.Draw<>(
-            0,
-            vertexBuffer,
-            indexBuffer,
-            indices.type(),
-            0,
-            quadCount * 6,
-            0
-        );
-
-        try (RenderPass renderPass = RenderSystem.getDevice().createCommandEncoder().createRenderPass(
-            () -> "Locked landmark border",
-            outputTarget.getColorTextureView(),
-            Optional.empty(),
-            outputTarget.getDepthTextureView(),
-            OptionalDouble.empty()
-        )) {
-            renderPass.setPipeline(RenderPipelines.WORLD_BORDER);
-            RenderSystem.bindDefaultUniforms(renderPass);
-            renderPass.setUniform("DynamicTransforms", transformBuffer);
-
-            var texture = client.getTextureManager().getTexture(LOCKED_LANDMARK_BORDER_TEXTURE);
-            renderPass.bindTexture("Sampler0", texture.getTextureView(), texture.getSampler());
-            renderPass.drawMultipleIndexed(
-                List.of(draw),
-                indexBuffer,
-                indices.type(),
-                Collections.emptyList(),
-                null
-            );
-        }
+        renderPass.pushDebugGroup(() -> "AchieveToDo locked landmark border");
+        renderPass.setPipeline(RenderSystem.getCompiledPipeline(pipeline));
+        RenderSystem.bindDefaultUniforms(renderPass);
+        renderPass.setUniform("DynamicTransforms", transformBuffer);
+        var texture = client.getTextureManager().getTexture(LOCKED_LANDMARK_BORDER_TEXTURE);
+        renderPass.setUniform("Sampler0", texture.getTextureView(), texture.getSampler());
+        renderPass.setIndexBuffer(indices.getBuffer(), indices.type());
+        renderPass.setVertexBuffer(0, vertexBuffer.slice());
+        renderPass.drawIndexed(quadCount * 6, 1, 0, 0, 0);
+        renderPass.popDebugGroup();
     }
 
     @Unique

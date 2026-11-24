@@ -44,7 +44,7 @@ public final class PhaseDMaterialSelectorTest {
         // 26.2 registers initializers during item construction; bootstrap alone does not bind their maps.
         // Build genuine vanilla data with the full native lookup, binding only the item registry for this fixture.
         try {
-            BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.build(VanillaRegistries.createLookup()).stream()
+            BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.build(VanillaRegistries.createWorldLookup()).stream()
                 .filter(pending -> pending.key().equals(Registries.ITEM))
                 .forEach(pending -> pending.forEach((holder, components) -> {
                     PREVIOUS_COMPONENTS.put(holder, holder.areComponentsBound() ? holder.components() : null);
@@ -264,7 +264,7 @@ public final class PhaseDMaterialSelectorTest {
     void acceptedIdentityAndProgressionContractsRemainIntact() {
         PhaseDAbilityMappingTest.verifyOldIdentities();
         PhaseDProgressionCompatibilityTest.verifyOldPresets();
-        assertEquals(153, AbilityType.values().length);
+        assertEquals(154, AbilityType.values().length); // 0.4.0 appends INTERACT_INSIDE_ABANDONED_CAMP
         assertEquals(151, AbilityType.USE_COPPER_TOOLS.ordinal());
         assertEquals(152, AbilityType.EQUIP_COPPER_ARMOR.ordinal());
         List<Map<AbilityType, Integer>> presets = List.of(Progressions.getEasyProgression(),

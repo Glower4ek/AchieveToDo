@@ -21,335 +21,368 @@
     "swamp": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:swamp"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:swamp"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "mangrove_swamp": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:mangrove_swamp"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:mangrove_swamp"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "mushroom_fields": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:mushroom_fields"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:mushroom_fields"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "sparse_jungle": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:sparse_jungle"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:sparse_jungle"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "jungle": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:jungle"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:jungle"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "bamboo_jungle": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:bamboo_jungle"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:bamboo_jungle"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "pale_garden": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "minecraft:pale_garden"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "minecraft:type_specific/player": {
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "minecraft:pale_garden"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:type_specific/player": {
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "jungle_mountains": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "terralith:jungle_mountains"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type_specific/player": {
-                  "type": "player",
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "terralith:jungle_mountains"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "type_specific/player": {
+                    "type": "player",
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "orchid_swamp": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "terralith:orchid_swamp"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type_specific/player": {
-                  "type": "player",
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "terralith:orchid_swamp"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "type_specific/player": {
+                    "type": "player",
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "rocky_jungle": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "terralith:rocky_jungle"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type_specific/player": {
-                  "type": "player",
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "terralith:rocky_jungle"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "type_specific/player": {
+                    "type": "player",
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "tropical_jungle": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "terralith:tropical_jungle"
-              }
-            }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:entity_properties",
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type_specific/player": {
-                  "type": "player",
-                  "gamemode": [
-                    "spectator"
-                  ]
+                "location": {
+                  "biomes": "terralith:tropical_jungle"
+                }
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "type_specific/player": {
+                    "type": "player",
+                    "gamemode": [
+                      "spectator"
+                    ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     }
   }

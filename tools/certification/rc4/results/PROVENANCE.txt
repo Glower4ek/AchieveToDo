@@ -1,0 +1,9 @@
+built from release-0.4.0 @ ae87515483b51284d5a42a646fca0fc0840fea0b with --dependency-verification strict, Temurin 25.0.5+8;
+rebuilt from a clean clone on 2026-11-24, both jars byte-identical:
+16d0b2fa632887355eb3a56846d52177aa1b62556fad925205349e9ba220befa  AchieveToDo-Purpur-mc26.3+0.4.0.jar  (port/AchieveToDo-Purpur: gradlew jar, --offline)
+e8577e1d28a7fb9b903eabfed7b9b0e5d5b15ad895be078d8617c6493ccde61c  achievetodo-mc26.3+0.4.0.jar        (gradlew build -x test -x check, --offline)
+
+The Fabric clone build passed strict verification with the shared Gradle home (no loom cache workaround was needed,
+unlike 0.3.0). Server under test: purpur-26.3-2660.jar e831a5dc0e22311b899dcf37d5a138b1ca7104d831bf65f0a5fbb966fef8daae.
+Superseded release candidates (not certified): rc.1 3fae292 (DisplayInfo accessor), rc.2 99ddf8b (abandoned camp not
+captured), rc.3 2126841 (golden dandelion age lock not denied); each was found by the rc.4 smoke run.

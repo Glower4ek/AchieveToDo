@@ -15,9 +15,9 @@ public enum ExternalPack {
         "BlazeandCave's Advancements Pack (BACAP)",
         ChatFormatting.AQUA,
         "https://modrinth.com/datapack/blazeandcaves-advancements-pack",
-        "https://cdn.modrinth.com/data/VoVJ47kN/versions/Y2zZ5eSs/BlazeandCave%27s%20Advancements%20Pack%201.21.zip",
+        "https://cdn.modrinth.com/data/VoVJ47kN/versions/YPEkY5bZ/BlazeandCave%27s%20Advancements%20Pack%201.21.1.zip",
         null,
-        "14da3f07b5467e8b59ffc0253fd8212c938cd739",
+        "18bb8fc57e606a1ad41b3f326c6f211e83d4fd2b",
         true
     ),
     BACAP_HARDCORE(
@@ -60,27 +60,27 @@ public enum ExternalPack {
         "Terralith",
         ChatFormatting.GREEN,
         "https://www.planetminecraft.com/data-pack/terralith-overworld-evolved-100-biomes-caves-and-more/",
-        "https://cdn.modrinth.com/data/8oi3bsk5/versions/CzijfXJQ/Terralith_26.2_v2.6.4.zip",
+        "https://cdn.modrinth.com/data/8oi3bsk5/versions/fqnsIp6d/Terralith_v2.6.5%2B26.3.zip",
         null,
-        "96ccd25be9ba5240ebe8150cc29240aca781f0e1",
+        "f177f61facf8c43705debe1e1508792dcf4d5323",
         true
     ),
     AMPLIFIED_NETHER(
         "Amplified Nether",
         ChatFormatting.DARK_RED,
         "https://www.planetminecraft.com/data-pack/amplified-nether-1-18/",
-        "https://cdn.modrinth.com/data/wXiGiyGX/versions/xIayvf8F/Amplified_Nether_v1.2.15.zip",
+        "https://cdn.modrinth.com/data/wXiGiyGX/versions/sKKMLxcI/Amplified_Nether_v1.3.0%2B26.3.zip",
         null,
-        "94d9604cebbfca667aeb59e4b1ac03e9c6e5cb5d",
+        "c1252e0b65462f80f33baa8d2bc4e11eade19699",
         true
     ),
     NULLSCAPE(
         "Nullscape",
         ChatFormatting.DARK_PURPLE,
         "https://www.planetminecraft.com/data-pack/nullscape/",
-        "https://cdn.modrinth.com/data/LPjGiSO4/versions/prWWpjSv/Nullscape_26.2_v1.2.20.zip",
+        "https://cdn.modrinth.com/data/LPjGiSO4/versions/BJjbILcf/Nullscape_v2.0.1%2B26.3.zip",
         null,
-        "bee4a2182593fdfc5da4b253a342feddf02b88b9",
+        "d759ee004b6d6e633bc849eee0ea2a929de8eabc",
         true
     );
 

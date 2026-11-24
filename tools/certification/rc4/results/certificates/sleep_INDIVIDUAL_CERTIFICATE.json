@@ -1,0 +1,47 @@
+{
+  "group": "sleep",
+  "reviewer": "rc4-reviewer-10",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "Abilities: sleep. BukkitGameplayRuntime.java:116, GameplayGate.java:15, NativeLandmarkOperations.java:90, 3 files SHA-256 = E1; thresholds 24/22/24/24/24; recomputed with hashlib, 0 mismatches. Guard sites name the ability, active=true; all 5 configs list a threshold."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "Read excerpts of every locked/op/offhand_locked row (no non-PASS rows exist) and the pass1/reload allowed rows. Locked: client sleeping=false, lock overlay text with 1 remaining, CRITERION_SUPPRESSED DEFAULT/ANY_BLOCK_USE, count 23->23, no sleep_in_bed; allowed sleeping=true and adventure/sleep_in_bed granted. Verdicts reproducible from the log lines.",
+      "rowsRead": [
+        "campaign51 modes sleep op",
+        "campaign51 pass1 sleep allowed",
+        "campaign51 pass1 sleep locked",
+        "campaign51 reload sleep locked",
+        "campaign52 thresholds-easy sleep locked",
+        "campaign53 thresholds-hard sleep locked",
+        "campaign54 thresholds-chaos sleep locked",
+        "campaign55 thresholds-custom_vision sleep locked"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "All 7 runtimes (campaign51-55, 60, 61) in MANIFEST.runtimes have onlineMode=true, an authenticated \"UUID of player Glower4ek is 89c23030-...\" line and a \"joined the game\" line; configResolved matches each runtime config."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "15 rows, all verdict PASS, no NA_* rows, no why.bookkeeping in any row (BACAP tallies in allowed rows stay in why.leak, harmless on allowed rows; no locked row has any criterion). modes creative/op/spectator present for every ability/case; threshold rows for easy/hard/chaos/custom_vision (campaign52-55) plus normal pass1. No offhand rows; the route is a block/menu or entity interaction. The creative row (sleeping=true at score 23) is the creative bypass, PASS per glossary."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows come from campaign51 (output.log lines >113000, after the offhand pass ~100000 and modes ~43000-67000); e5Reload generationBefore 1 / generationAfter 2; every reload excerpt ATD_STAGE2A_STATE shows \"generation\": 2 (scripted check, 0 mismatches); each reload verdict equals its pass1 verdict (PASS)."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED; MANIFEST runtimes replay reproducedAll=true for all 7; plugin SHA-256 16d0b2fa... identical in all 7 runtimes and prelaunch; clientMod e8577e1d...; recomputed sha256 of campaign51 (da1d9203...), campaign55 (7b1f5824...) and campaign60 (09d650f2...) campaign-results.jsonl equals evidenceHashes.results. 15/15 replay rows REPRODUCED."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json and runtime_args.json of all 7 runtimes contain -javaagent:plugins/achievetodo.jar plus the observer trace-agent.jar; the only -Dachievetodo option is progression.initialConfig=easy/hard/chaos in campaign52/53/54/61 (none in 51/55/60). output.log lines ~203-226: ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before the first case objective; freshConfig appears only inside the logged derived=[...] in 52/53/54/61."
+    }
+  },
+  "superseded": "No superseded rows in this group.",
+  "findings": []
+}

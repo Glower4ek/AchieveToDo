@@ -26,6 +26,10 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import net.minecraft.world.attribute.BedRule;
+import net.minecraft.world.level.block.AbstractBedBlock;
+import net.minecraft.world.level.block.state.BlockState;
+
 @Mixin(Player.class)
 public class PlayerEntityMixin {
 
@@ -34,7 +38,13 @@ public class PlayerEntityMixin {
         at = @At("HEAD"),
         cancellable = true
     )
-    public void lockSleep(BlockPos pos, CallbackInfoReturnable<Either<Player.BedSleepingProblem, Unit>> cir) {
+    public void lockSleep(
+        AbstractBedBlock bedBlock,
+        BlockState bedBlockState,
+        BedRule rule,
+        BlockPos pos,
+        CallbackInfoReturnable<Either<Player.BedSleepingProblem, Unit>> cir
+    ) {
         Player player = (Player) (Object) this;
         if (AchieveToDoMod.isTargetInLockedLandmark(player, player.level(), pos) ||
             AchieveToDoMod.isAbilityLocked(player, AbilityType.SLEEP)

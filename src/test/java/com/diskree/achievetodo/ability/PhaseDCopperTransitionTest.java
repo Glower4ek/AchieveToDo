@@ -34,7 +34,7 @@ public class PhaseDCopperTransitionTest {
     private static List<String> calls(MethodNode m) {
         return Arrays.stream(m.instructions.toArray()).filter(i -> i instanceof MethodInsnNode).map(i -> ((MethodInsnNode)i).name).toList();
     }
-    static Stream<String> mixins() { return Stream.of("AxeItemMixin","CopperGolemEntityMixin","CopperGolemStatueBlockMixin","HoneycombItemMixin"); }
+    static Stream<String> mixins() { return Stream.of("BlockTransformerMixin","CopperGolemEntityMixin","CopperGolemStatueBlockMixin","HoneycombItemMixin"); }
     @ParameterizedTest @MethodSource("mixins")
     void everyInjectorBindsEveryActualDeclaringOwner(String name) throws Exception {
         ClassNode mixin=node("com.diskree.achievetodo.injection.mixin.main."+name);
@@ -60,26 +60,26 @@ public class PhaseDCopperTransitionTest {
             item==Items.COPPER_AXE?AbilityType.USE_COPPER_TOOLS:item==Items.IRON_AXE?AbilityType.USE_IRON_TOOLS:
             item==Items.GOLDEN_AXE?AbilityType.USE_GOLDEN_TOOLS:item==Items.DIAMOND_AXE?AbilityType.USE_DIAMOND_TOOLS:AbilityType.USE_NETHERITE_TOOLS;
         assertEquals(expected,AbilityType.findToolMaterialUsageAbility(item));
-        var get=AxeItem.class.getDeclaredMethod("getStripped",BlockState.class);get.setAccessible(true);
-        var state=Blocks.OAK_LOG.defaultBlockState().setValue(RotatedPillarBlock.AXIS,Direction.Axis.X);
-        assertEquals(Optional.of(Blocks.STRIPPED_OAK_LOG.defaultBlockState().setValue(RotatedPillarBlock.AXIS,Direction.Axis.X)),get.invoke(item,state));
-        assertEquals(Optional.empty(),get.invoke(item,Blocks.STONE.defaultBlockState()));
+        // 26.3: stripping is the data-driven "axe" BlockTransformer; the native strip table no longer lives on AxeItem.
     }
     @Test void unrelatedHoneycombAndShearsDoNotAcquireToolPermissions() {
         assertNull(AbilityType.findToolMaterialUsageAbility(Items.HONEYCOMB));assertNull(AbilityType.findToolMaterialUsageAbility(Items.SHEARS));
     }
-    @Test void pureCandidateOrderPrecedesPermissionAndNeverCallsEvaluator() throws Exception {
-        var c=calls(method("com.diskree.achievetodo.injection.mixin.main.AxeItemMixin","lockStrip"));
-        assertTrue(c.indexOf("getStripped")<c.indexOf("isTargetInLockedLandmark"));
-        assertTrue(c.indexOf("isEmpty")<c.indexOf("isAbilityLocked"));assertFalse(c.contains("evaluateNewBlockState"));
-        var n=calls(method("net.minecraft.world.item.AxeItem","evaluateNewBlockState"));
-        assertTrue(n.indexOf("getStripped")<n.indexOf("getPrevious"));assertTrue(n.indexOf("getPrevious")<n.indexOf("ofNullable"));
-        assertTrue(n.indexOf("playSound")<n.indexOf("getPrevious")); // Calling the evaluator as a predicate is unsafe.
+    @Test void blockTransformLockRunsAfterCandidateAndBeforeEverySideEffect() throws Exception {
+        // The lock's anchor, the first UseOnContext.getPlayer() in transformBlock, follows the candidate state lookup
+        // and precedes the criterion, loot, item use, block change and sound.
+        var n=calls(method("net.minecraft.core.component.BlockTransformer","transformBlock"));
+        int anchor=n.indexOf("getPlayer");
+        assertTrue(anchor>n.indexOf("getOptionalState"));
+        for(String effect:List.of("trigger","dropFromBlockInteractLootTable","consume","hurtAndBreak","setBlock","playSound","gameEvent"))
+            assertTrue(n.indexOf(effect)<0 || n.indexOf(effect)>anchor,effect);
+        var c=calls(method("com.diskree.achievetodo.injection.mixin.main.BlockTransformerMixin","lockBlockTransform"));
+        assertTrue(c.contains("isTargetInLockedLandmark"));assertTrue(c.contains("isAbilityLocked"));assertTrue(c.contains("findToolMaterialUsageAbility"));
     }
     @Test void nativeGolemOrderingAndWaxSentinelRemainIndependent() throws Exception {
         var c=calls(method("net.minecraft.world.entity.animal.golem.CopperGolem","mobInteract"));
         assertTrue(c.indexOf("throwItem")<c.indexOf("readyForShearing"));assertTrue(c.indexOf("shear")<c.indexOf("isClientSide"));
-        assertTrue(c.indexOf("isClientSide")<c.indexOf("usePlayerItem"));assertTrue(c.indexOf("usePlayerItem")<c.indexOf("playSound"));
+        assertTrue(c.indexOf("isClientSide")<c.indexOf("playSound"));assertTrue(c.indexOf("playSound")<c.indexOf("usePlayerItem")); // 26.3: sound before item use; the lock is at HEAD
         assertTrue(Arrays.stream(method("net.minecraft.world.entity.animal.golem.CopperGolem","mobInteract").instructions.toArray()).anyMatch(i -> i instanceof LdcInsnNode l && Long.valueOf(-2).equals(l.cst)));
         var m=node("com.diskree.achievetodo.injection.mixin.main.CopperGolemEntityMixin");
         assertFalse(m.methods.stream().anyMatch(v -> List.of("tick","updateWeathering","setFlower","aiStep").contains(v.name)));
@@ -90,7 +90,7 @@ public class PhaseDCopperTransitionTest {
         assertFalse(b.contains("getBlockEntity"));assertFalse(b.contains("removeStatue"));assertTrue(b.contains("updatePose"));
         assertTrue(w.indexOf("getBlockEntity")<w.indexOf("removeStatue"));assertTrue(w.indexOf("removeStatue")<w.indexOf("hurtAndBreak"));
         assertTrue(w.indexOf("hurtAndBreak")<w.indexOf("addFreshEntity"));assertTrue(w.indexOf("addFreshEntity")<w.indexOf("removeBlock"));
-        assertTrue(calls(method(base,"updatePose")).indexOf("playSound")<calls(method(base,"updatePose")).indexOf("setBlock"));
+        assertTrue(calls(method(base,"updatePose")).indexOf("playSound")<calls(method(base,"updatePose")).indexOf("setBlockAndUpdate"));
         var gate=calls(method("com.diskree.achievetodo.injection.mixin.main.CopperGolemStatueBlockMixin","lockStatueInteraction"));
         assertTrue(gate.containsAll(List.of("findToolMaterialUsageAbility","isTargetInLockedLandmark")));
         assertFalse(gate.contains("getBlockEntity"));assertFalse(gate.contains("removeStatue"));
@@ -130,7 +130,7 @@ public class PhaseDCopperTransitionTest {
         var json=JsonParser.parseString(Files.readString(Path.of("src/main/resources/achievetodo.mixins.json"))).getAsJsonObject();assertTrue(json.get("required").getAsBoolean());
         assertEquals(1,json.getAsJsonObject("injectors").get("defaultRequire").getAsInt());
         List<String> entries=new ArrayList<>();json.getAsJsonArray("mixins").forEach(v -> entries.add(v.getAsString()));assertEquals(entries.size(),new HashSet<>(entries).size());
-        for(String name:List.of("AxeItemMixin","CopperGolemEntityMixin","CopperGolemStatueBlockMixin","HoneycombItemMixin","PiercingWeaponMixin","KineticWeaponMixin","CamelEntityMixin","AnimalEquipmentTransferMixin"))assertEquals(1,Collections.frequency(entries,"main."+name));
+        for(String name:List.of("BlockTransformerMixin","CopperGolemEntityMixin","CopperGolemStatueBlockMixin","HoneycombItemMixin","PiercingWeaponMixin","KineticWeaponMixin","CamelEntityMixin","AnimalEquipmentTransferMixin"))assertEquals(1,Collections.frequency(entries,"main."+name));
         assertFalse(entries.contains("main.CopperChestBlockMixin"));
         assertEquals(47,JsonParser.parseString(Files.readString(Path.of("src/gametest/resources/fabric.mod.json"))).getAsJsonObject().getAsJsonObject("entrypoints").getAsJsonArray("fabric-gametest").size());
     }
@@ -427,7 +427,7 @@ public class PhaseDCopperTransitionTest {
         ClassLoader loader=knot.init(new String[]{"--nogui","--universe",args[0]});
         Class.forName("net.minecraft.SharedConstants",true,loader).getMethod("tryDetectVersion").invoke(null);
         Class.forName("net.minecraft.server.Bootstrap",true,loader).getMethod("bootStrap").invoke(null);
-        for(String owner:List.of("net.minecraft.world.item.AxeItem","net.minecraft.world.item.HoneycombItem","net.minecraft.world.entity.animal.golem.CopperGolem","net.minecraft.world.level.block.CopperGolemStatueBlock","net.minecraft.world.level.block.WeatheringCopperGolemStatueBlock")) {
+        for(String owner:List.of("net.minecraft.core.component.BlockTransformer","net.minecraft.world.item.HoneycombItem","net.minecraft.world.entity.animal.golem.CopperGolem","net.minecraft.world.level.block.CopperGolemStatueBlock","net.minecraft.world.level.block.WeatheringCopperGolemStatueBlock")) {
             Class.forName(owner,true,loader).getDeclaredMethods();System.out.println("D_S05_TRANSFORMED_OWNER "+owner+" PASS");
         }
         Class<?> origin=Class.forName("com.diskree.achievetodo.injection.extension.main.LevelInfoExtension$ConfigurationOrigin",true,loader);

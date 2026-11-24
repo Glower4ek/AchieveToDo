@@ -181,7 +181,7 @@ public final class R4CurrentV1PhaseASingletonSilkTouchNestGameTest implements Cu
         var channel = joined.channel(); channel.runPendingTasks(); channel.runScheduledPendingTasks(); channel.flushOutbound();
         Integer id = null; Object packet;
         while ((packet = channel.readOutbound()) != null) { if (packet instanceof ClientboundPlayerPositionPacket position) id = position.id(); ReferenceCountUtil.release(packet); }
-        require(id != null, "missing server teleport"); new ServerboundAcceptTeleportationPacket(id).handle(joined.player().connection);
+        require(id != null, "missing server teleport"); TeleportAck.accept(id, joined.player());
     }
     private static boolean criterionDone(ServerPlayer player, AdvancementHolder advancement) {
         var criterion = player.getAdvancements().getOrStartProgress(advancement)

@@ -6,7 +6,7 @@ import com.diskree.achievetodo.client.AchieveToDoClient;
 import com.diskree.achievetodo.injection.extension.client.WorldCreatorExtension;
 import com.diskree.achievetodo.server.Constants;
 import net.fabricmc.loader.api.FabricLoader;
-import com.mojang.blaze3d.pipeline.RenderPipeline;
+import com.mojang.renderpearl.api.pipeline.RenderPipeline;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.CycleButton;
 import net.minecraft.client.gui.components.StringWidget;

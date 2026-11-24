@@ -1,0 +1,77 @@
+{
+  "group": "landmark_denial_criteria_26_3",
+  "reviewer": "rc4-reviewer-10",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "Abilities: interact_inside_igloo. family=landmark, resolver AbilityResolvers.findLandmarkAbility in BukkitExactLandmarkRuntime.java, 1 file SHA-256 = E1; thresholds 131/100/162/580/131; recomputed with hashlib, 0 mismatches. Guard sites name the ability, active=true; all 5 configs list a threshold."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "Read excerpts of every locked/op/offhand_locked row (no non-PASS rows exist) and the pass1/reload allowed rows. Locked: chest: screen false, CRITERION_SUPPRESSED DEFAULT/ANY_BLOCK_USE; map into frame and dandelion on tadpole: Player.interactOn traced, ATD_CRITERION_SUPPRESSED PLAYER_INTERACTED_WITH_ENTITY, DENIAL_INTENT_DISCOVERED interact_inside_igloo, probe false, count 130->130, no map_room or fountain_of_youth criteria (known issues 6 and 8 hold); allowed rows gain map_room and fountain_of_youth. Verdicts reproducible from the log lines.",
+      "rowsRead": [
+        "campaign51 pass1 interact_inside_igloo allowed (chest at structure start)",
+        "campaign51 pass1 interact_inside_igloo allowed (criteria audit: golden dandelion on tadp)",
+        "campaign51 pass1 interact_inside_igloo allowed (criteria audit: map into item frame)",
+        "campaign51 pass1 interact_inside_igloo locked (chest at structure start)",
+        "campaign51 pass1 interact_inside_igloo locked (criteria audit: golden dandelion on tadp)",
+        "campaign51 pass1 interact_inside_igloo locked (criteria audit: map into item frame)",
+        "campaign52 thresholds-easy interact_inside_igloo locked (criteria audit: map into item frame)",
+        "campaign53 thresholds-hard interact_inside_igloo locked (criteria audit: map into item frame)",
+        "campaign54 thresholds-chaos interact_inside_igloo locked (criteria audit: map into item frame)",
+        "campaign55 thresholds-custom_vision interact_inside_igloo locked (criteria audit: map into item frame)",
+        "campaign60 modes interact_inside_igloo creative (chest at structure start)",
+        "campaign60 modes interact_inside_igloo creative (criteria audit: golden dandelion on tadp)",
+        "campaign60 modes interact_inside_igloo creative (criteria audit: map into item frame)",
+        "campaign60 modes interact_inside_igloo op (chest at structure start)",
+        "campaign60 modes interact_inside_igloo op (criteria audit: golden dandelion on tadp)",
+        "campaign60 modes interact_inside_igloo op (criteria audit: map into item frame)",
+        "campaign60 modes interact_inside_igloo spectator (chest at structure start)",
+        "campaign60 modes interact_inside_igloo spectator (criteria audit: golden dandelion on tadp)",
+        "campaign60 modes interact_inside_igloo spectator (criteria audit: map into item frame)",
+        "campaign60 reload interact_inside_igloo allowed (chest at structure start)",
+        "campaign60 reload interact_inside_igloo allowed (criteria audit: golden dandelion on tadp)",
+        "campaign60 reload interact_inside_igloo allowed (criteria audit: map into item frame)",
+        "campaign60 reload interact_inside_igloo locked (chest at structure start)",
+        "campaign60 reload interact_inside_igloo locked (criteria audit: golden dandelion on tadp)",
+        "campaign60 reload interact_inside_igloo locked (criteria audit: map into item frame)"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "All 7 runtimes (campaign51-55, 60, 61) in MANIFEST.runtimes have onlineMode=true, an authenticated \"UUID of player Glower4ek is 89c23030-...\" line and a \"joined the game\" line; configResolved matches each runtime config."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "29 rows, all verdict PASS, no NA_* rows, no why.bookkeeping in any row (BACAP tallies in allowed rows stay in why.leak, harmless on allowed rows; no locked row has any criterion). modes creative/op/spectator present for every ability/case; threshold rows for easy/hard/chaos/custom_vision (campaign52-55) plus normal pass1. No offhand rows; the route is a block/menu or entity interaction. Reduced presets carry the map-into-frame case."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "Reload rows come from campaign51 (output.log lines >113000, after the offhand pass ~100000 and modes ~43000-67000); e5Reload generationBefore 1 / generationAfter 2; every reload excerpt ATD_STAGE2A_STATE shows \"generation\": 2 (scripted check, 0 mismatches); each reload verdict equals its pass1 verdict (PASS). Igloo reload rows come from campaign60 (generations [1,2]), lines 2052+ after its modes rows 619-1705, all generation 2."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: all rows REPRODUCED; MANIFEST runtimes replay reproducedAll=true for all 7; plugin SHA-256 16d0b2fa... identical in all 7 runtimes and prelaunch; clientMod e8577e1d...; recomputed sha256 of campaign51 (da1d9203...), campaign55 (7b1f5824...) and campaign60 (09d650f2...) campaign-results.jsonl equals evidenceHashes.results. 29/29 replay rows REPRODUCED."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "launch.json and runtime_args.json of all 7 runtimes contain -javaagent:plugins/achievetodo.jar plus the observer trace-agent.jar; the only -Dachievetodo option is progression.initialConfig=easy/hard/chaos in campaign52/53/54/61 (none in 51/55/60). output.log lines ~203-226: ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before the first case objective; freshConfig appears only inside the logged derived=[...] in 52/53/54/61."
+    }
+  },
+  "superseded": "15 modes/reload igloo rows of campaign51 replaced by campaign60. Checked campaign51 campaign-results.jsonl: modes map creative FAIL_NO_EFFECT had probesPre already \"Test passed. Count: 1\" (leftover frame from an earlier row); modes tadpole op FAIL_EFFECT_WHILE_LOCKED also had the probe true BEFORE the action (pre \"Test passed\", post empty) while output.log 98623-98634 shows CRITERION_SUPPRESSED PLAYER_INTERACTED_WITH_ENTITY, DENIAL_INTENT_DISCOVERED interact_inside_igloo and count 130->130; reload tadpole allowed FAIL_NO_EFFECT had empty probes pre and post (output.log 153547-153557). These are fixture-state contaminations, not product behaviour; campaign60 (generations [1,2], same plugin hash) reran them with clean pre-probes and all pass. Replacement justified.",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc4-pkg/landmark_denial_criteria_26_3/rows.jsonl campaign60 tadpole op/locked rows; campaign51/receipts/output.log 98623-98634",
+      "description": "The tadpole probe is positive-only (empty output both when the tadpole did not age and when it is gone); since campaign51 showed a tadpole disappearing, a locked row with an empty post probe cannot alone distinguish denial from a missing tadpole. Denial is independently shown by ATD_CRITERION_SUPPRESSED, DENIAL_INTENT_DISCOVERED and no fountain_of_youth criterion."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E4",
+      "evidence": "review-rc4-pkg/landmark_denial_criteria_26_3/rows.jsonl",
+      "description": "No offhand_* rows for the map-into-item-frame and golden-dandelion cases although vanilla allows both from the off hand; the landmark guard is hand-independent, so this is a coverage gap only."
+    }
+  ]
+}

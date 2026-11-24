@@ -1,0 +1,43 @@
+{
+ "group": "menu_open_enchanting_table",
+ "reviewer": "rc4-reviewer-04",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "open_enchanting_table DIRECT: GameplayMenuAbilities.java:30 (InventoryType.ENCHANTING -> OPEN_ENCHANTING_TABLE), NativeLandmarkActions.java:135 (EnchantingTableBlock -> OPEN_ENCHANTING_TABLE). SHA-256 of both = E1. Thresholds normal 730, easy 600, hard 860, chaos 588, custom_vision 730."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "15 rows all PASS; read all 15. Locked/op rows: RIGHT_CLICK_BLOCK ENCHANTING_TABLE reaches the server, no OpenScreenPacket, count unchanged, STATE shows OPEN_ENCHANTING_TABLE kind LOCKED required 730; allowed rows: ClientboundOpenScreenPacket, client screen open.",
+   "rowsRead": [
+    "campaign51 pass1 locked/allowed",
+    "campaign51 modes creative/op/spectator",
+    "campaign51 reload locked/allowed",
+    "campaign52-55 thresholds locked/allowed"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes for campaign51-55,60,61: onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-...' and joinedLine present in all 7."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes rows present, thresholds rows for all presets; no offhand route (block menu open). No NA rows."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "Reload rows come from campaign51 only; their output.log line numbers start after every pass1/modes/offhand row of the group (reload from line 114293 > modes max 44617). MANIFEST.e5Reload generationBefore=1 generationAfter=2; campaign51/60 generations [1,2]. All reload excerpts' ATD_STAGE2A_STATE lines show generation 2; every reload verdict (PASS) equals the pass1 verdict for the same ability/phase."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: all 15 rows REPRODUCED, recorded==replayed; receipts/REPLAY.json reproducedAll=true for campaign51-55,60,61. Plugin sha 16d0b2fa... identical in MANIFEST.plugin.perRuntime for all 7 runtimes and in prelaunch; client mod sha e8577e1d... matches. Recomputed SHA-256 of campaign-results.jsonl for all 7 runtimes and each matched evidenceHashes."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "launch.json of campaign51-55,60,61: command holds -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar; -Dachievetodo.* only progression.initialConfig=easy/hard/chaos/hard in 52/53/54/61, none in 51/55/60. output.log of each logs ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before 'Created new objective [atd_marks]' (first case setup); freshConfig appears only in the plugin-logged derived=[...] (together with world-group.properties) for 52/53/54/61, i.e. plugin-derived fresh install."
+  }
+ },
+ "superseded": "No superseded rows in this group (MANIFEST.superseded=[]); campaign60/61 supplements do not touch it.",
+ "findings": []
+}

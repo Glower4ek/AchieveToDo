@@ -1,0 +1,61 @@
+{
+  "group": "movement_sneak",
+  "reviewer": "rc4-reviewer-03",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (sneak), DIRECT. Both cited files recomputed: NativeMovementAgent.java dde2b45c...6e38 and NativeMovementBindings.java dc02c163...b6a1 match E1. Opened NativeMovementAgent.java:76-80 (sneak(): onGround && locked(actor,\"SNEAK\")) and NativeMovementBindings.java:13 (ABILITIES contains SNEAK; guard returns false for CREATIVE/SPECTATOR). Thresholds present for all 5 configs (12/10/28/28/12); all 5 config toml hashes recomputed and match."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "All 15 rows PASS; read all 15 excerpts. Locked rows (51 pass1, 51 reload, 52, 53, 54, 55) show repeated ATD_BRIDGE DENIAL_INTENT_DISCOVERED ability=sneak, STAGE2A SNEAK kind=LOCKED, count unchanged, client overlay true, crouching false. Allowed rows show SNEAK UNLOCKED, no denial, client crouching=true. Op row is denied (op is not a bypass), creative not denied with crouching=true, spectator no denial.",
+      "rowsRead": [
+        "campaign51 pass1 sneak locked",
+        "campaign51 pass1 sneak allowed",
+        "campaign51 modes sneak creative",
+        "campaign51 modes sneak op",
+        "campaign51 modes sneak spectator",
+        "campaign51 reload sneak locked",
+        "campaign51 reload sneak allowed",
+        "campaign52 thresholds-easy sneak locked",
+        "campaign52 thresholds-easy sneak allowed",
+        "campaign53 thresholds-hard sneak locked",
+        "campaign53 thresholds-hard sneak allowed",
+        "campaign54 thresholds-chaos sneak locked",
+        "campaign54 thresholds-chaos sneak allowed",
+        "campaign55 thresholds-custom_vision sneak locked",
+        "campaign55 thresholds-custom_vision sneak allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes for campaign51,52,53,54,55,60,61: onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-...' and joinedLine present for each."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "creative/op/spectator rows present (campaign51 modes); locked+allowed rows for normal, easy, hard, chaos, custom_vision. No offhand rows: sneak is a movement input with no off-hand route. No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "reload rows from campaign51 at output.log 115501-115554, after pass1 (3382-3435) and modes (46180-46270); STAGE2A lines show generation 2; MANIFEST e5Reload generationAfter=2; reload verdicts PASS = pass1 PASS."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl 15/15 REPRODUCED. campaign-results.jsonl SHA-256 recomputed for all 7 runtimes (e.g. campaign51 da1d9203...e828, campaign54 94f9d8a6...7fbe) and equal to MANIFEST evidenceHashes; runtime/plugins/achievetodo.jar recomputed = 16d0b2fa...befa in all 7 runtimes; MANIFEST.clientMod sha256 = e8577e1d...c61c; per-runtime replay reproducedAll=true (51:1759, 52-55:118 each, 60:15, 61:2)."
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "runtime_args.json and receipts/launch.json of all 7 runtimes: javaagents = plugins/achievetodo.jar + observer trace-agent.jar; the only -D option is -Dachievetodo.progression.initialConfig=easy|hard|chaos|hard in campaign52/53/54/61, none in 51/55/60. output.log lines 203-226 of each runtime: ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before the first ATD_STAGE2A_STATE; derived=[...] lists world-group.properties and achievetodo.progression.freshConfig only in 52/53/54/61 (plugin-derived fresh installs), not in 51/55/60. Pre-start absence of world-group/world-selection files was not checked beyond the plugin's derived list."
+    }
+  },
+  "superseded": "No superseded rows in this group (MANIFEST.superseded empty).",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc4-pkg/movement_sneak/excerpts.txt lines 13-18 (campaign51 pass1 sneak allowed)",
+      "description": "The allowed-row effect (client:crouching=true) is visible only in the client probe in rows.jsonl; the server excerpt of allowed rows shows no positive sneak effect, only the absence of denial."
+    }
+  ]
+}
