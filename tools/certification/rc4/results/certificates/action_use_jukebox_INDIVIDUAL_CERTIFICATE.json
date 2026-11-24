@@ -1,0 +1,61 @@
+{
+  "group": "action_use_jukebox",
+  "reviewer": "rc4-reviewer-05",
+  "decision": "CERTIFIED",
+  "criteria": {
+    "E1": {
+      "result": "PASS",
+      "checked": "1 ability (use_jukebox), DIRECT; sites NativeActionBindings.java:18 and NativeActionSpecs.java:37 re-hashed, equal to E1. Line 37 = Spec(\"USE_JUKEBOX\", JukeboxPlayable.tryInsertIntoJukebox, ...). Thresholds normal 284, easy 220, hard 348, chaos 166, custom_vision 284. E1 configs normal/easy/hard/chaos_20261116/custom_vision files re-hashed: all 5 match."
+    },
+    "E2": {
+      "result": "PASS",
+      "checked": "17 rows all PASS. Locked: probe 'Test failed' (jukebox stays has_record=false), inv false, count unchanged, client overlay shows the jukebox lock message. Allowed: probe passes, music_to_my_ears/disc_jockey earned (count +1 in pass1/presets; reload and offhand allowed already had it). Creative effect true (bypass), op denied, spectator ATD_EVENT cancelled=true (vanilla spectator), no overlay. Allowed/creative overlay is the vanilla 'Now playing: C418 - cat', not a lock message.",
+      "rowsRead": [
+        "campaign51 pass1 use_jukebox locked",
+        "campaign51 pass1 use_jukebox allowed",
+        "campaign51 modes use_jukebox creative",
+        "campaign51 modes use_jukebox op",
+        "campaign51 modes use_jukebox spectator",
+        "campaign53 thresholds-hard use_jukebox locked",
+        "campaign53 thresholds-hard use_jukebox allowed",
+        "campaign54 thresholds-chaos use_jukebox locked",
+        "campaign54 thresholds-chaos use_jukebox allowed"
+      ]
+    },
+    "E3": {
+      "result": "PASS",
+      "checked": "MANIFEST.runtimes: campaign51-55, 60, 61 all onlineMode=true, 'UUID of player Glower4ek is 89c23030-ce61-44ab-800a-f2aee455e14a' authenticated line and 'Glower4ek joined the game' line present for each; launch.json onlineMode=true."
+    },
+    "E4": {
+      "result": "PASS",
+      "checked": "modes creative/op/spectator present; offhand_locked/allowed present; thresholds rows for all 5 configs (51-55). No NA rows."
+    },
+    "E5": {
+      "result": "PASS",
+      "checked": "2 reload rows, all campaign51; earliest reload logLine 117580 is after the last pass1/modes/offhand row of this group; MANIFEST.e5Reload generationBefore 1 -> generationAfter 2 (campaign51); MANIFEST campaign60 generations [1,2]; every ATD_STAGE2A_STATE in the reload excerpts shows generation 2; each reload verdict equals the pass1 verdict for the same ability/case/phase."
+    },
+    "E6": {
+      "result": "PASS",
+      "checked": "replay.jsonl: every row REPRODUCED; MANIFEST runtimes replay.reproducedAll=true with problems=[] for 51-55,60,61. plugin.perRuntime all 16d0b2fa632887355eb3a56846d52177aa1b62556fad925205349e9ba220befa (=brief); clientMod e8577e1d28a7fb9b903eabfed7b9b0e5d5b15ad895be078d8617c6493ccde61c (=brief). Recomputed sha256 of campaign-results.jsonl: campaign51 da1d9203...e828, campaign52 3b6431e9...f2b3, campaign61 05a0f6a5...ca8 - all equal evidenceHashes.results. "
+    },
+    "ReleaseLaunch": {
+      "result": "PASS",
+      "checked": "Checked runtime_args.json, receipts/launch.json and output.log of campaign51-55 and 61: command = java -Xms128M -Xmx2G [-Dachievetodo.progression.initialConfig=<easy|hard|chaos> only on 52/53/54/61] -javaagent:plugins/achievetodo.jar -javaagent:<observer trace-agent.jar=Item.use,FireworkRocketItem.use,Player.interactOn> -jar purpur-26.3-2660.jar --nogui; no other -Dachievetodo.* option. output.log lines ~203-226 (before the first atd_marks M...pre line at ~330-616): ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true. derived=[...] lists world-group.properties and achievetodo.progression.freshConfig only for 52/53/54/61 (plugin-derived fresh install); 51 and 55 derived lists have no freshConfig (existing install, no option)."
+    }
+  },
+  "superseded": "No superseded rows in this group (MANIFEST.superseded = []).",
+  "findings": [
+    {
+      "severity": "minor",
+      "criterion": "E6",
+      "evidence": "campaign51/receipts/EVIDENCE_HASHES.json (campaign.py sha) vs HARNESS_RC4.sha256 line 1",
+      "description": "campaign51-55 receipts/EVIDENCE_HASHES.json record campaign.py f6d1005027498919347d2ee638ca8fdef369f540527937b0f34e7fe1ddfc17dd and campaign_cases.py 80931173a0919f4dff9e2025f119be448c164fb7ccc434d478f2622cf1732130, while HARNESS_RC4.sha256 lists 8568cb7d...2473f / fa546eea...6ae (these match only campaign60/61). The statement in the brief that campaign51-55 ran under HARNESS_RC4 is not literally true: the main rows came from an earlier harness revision (before the bookkeeping rule, see the campaign.py:264 comment naming campaign53). No verdict of this group depends on the difference (no row has why.bookkeeping) and replay with campaign_replay.py 96ce05ea... reproduced all rows."
+    },
+    {
+      "severity": "minor",
+      "criterion": "E2",
+      "evidence": "review-rc4-pkg excerpts.txt ATD_STAGE2A_STATE lines: \"ability\": {\"USE_JUKEBOX\": null}",
+      "description": "The server-side state probe reports no lock state for USE_JUKEBOX (null) and ATD_EVENT/ATD_W2_INPUT_EVENT log blockResult=ALLOW/cancelled=false on locked rows, because the guard is a deep native hook that does not log. The denial is evidenced only by the effect oracle (probe/inventory/trace), the unchanged count and the client overlay; observability is weaker than for event-level guards."
+    }
+  ]
+}

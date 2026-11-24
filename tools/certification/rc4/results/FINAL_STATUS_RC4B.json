@@ -1,0 +1,67 @@
+{
+  "started": "2026-11-23T22:37:20+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\certification\\rc4-artifacts\\AchieveToDo-Purpur-mc26.3+0.4.0.jar",
+  "runtimes": {
+    "campaign60": {
+      "mode": "normal",
+      "started": "2026-11-23T22:37:20+00:00",
+      "passes": {
+        "modes": {
+          "phases": "creative,op,spectator",
+          "counts": {
+            "PASS": 9
+          },
+          "finished": "2026-11-23T22:39:32+00:00",
+          "aimRetry": []
+        },
+        "reload": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 6
+          },
+          "finished": "2026-11-23T22:40:57+00:00",
+          "aimRetry": []
+        }
+      },
+      "reload": {
+        "generationBefore": 1,
+        "generationAfter": 2,
+        "at": "2026-11-23T22:39:37+00:00"
+      },
+      "finished": "2026-11-23T22:41:00+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 15
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign61": {
+      "mode": "hard",
+      "started": "2026-11-23T22:41:00+00:00",
+      "passes": {
+        "thresholds-hard": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 2
+          },
+          "finished": "2026-11-23T22:41:48+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-23T22:41:51+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 2
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "rc4b",
+  "launch": "release",
+  "finished": "2026-11-23T22:41:51+00:00"
+}

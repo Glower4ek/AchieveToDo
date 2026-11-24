@@ -1,0 +1,53 @@
+{
+ "group": "movement_jump",
+ "reviewer": "rc4-reviewer-04",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "jump DIRECT: NativeMovementBindings.java:13 (ABILITIES includes JUMP), NativeMovementAgent.java:73,161,167 (locked(actor,'JUMP') on ascent / handlePlayerPositionChange). SHA-256 of both = E1. Thresholds normal 4, easy 0, hard 8, chaos 8, custom_vision 4."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "15 rows: 13 PASS, 1 NA_NO_LOCKED_STATE, 1 PASS_MASKED_BY_DEPENDENCY; read all 15. Locked rows (51 pass1/reload, 53, 54) show DENIAL_INTENT_DISCOVERED ability=jump, STATE JUMP kind LOCKED, count unchanged, stat:JUMP not incremented; allowed rows stat:JUMP true, JUMP UNLOCKED. Custom locked row is masked by vision (threshold 5) but its excerpt still logs a jump denial intent; custom allowed ran at score 5 to satisfy vision.",
+   "rowsRead": [
+    "campaign51 pass1 jump locked/allowed",
+    "campaign51 modes creative/op/spectator",
+    "campaign51 reload locked/allowed",
+    "campaign52 thresholds-easy locked(NA)/allowed",
+    "campaign53 thresholds-hard locked/allowed",
+    "campaign54 thresholds-chaos locked/allowed",
+    "campaign55 thresholds-custom_vision locked(MASKED)/allowed"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes for campaign51-55,60,61: onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-...' and joinedLine present in all 7."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes rows present; no offhand route for jump; NA_NO_LOCKED_STATE on easy follows from the real EASY threshold 0 in E1; thresholds rows for all presets."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "Reload rows come from campaign51 only; their output.log line numbers start after every pass1/modes/offhand row of the group (reload from line 115409 > modes max 46128). MANIFEST.e5Reload generationBefore=1 generationAfter=2; campaign51/60 generations [1,2]. All reload excerpts' ATD_STAGE2A_STATE lines show generation 2; every reload verdict (PASS) equals the pass1 verdict for the same ability/phase."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: all 15 rows REPRODUCED, recorded==replayed; receipts/REPLAY.json reproducedAll=true for campaign51-55,60,61. Plugin sha 16d0b2fa... identical in MANIFEST.plugin.perRuntime for all 7 runtimes and in prelaunch; client mod sha e8577e1d... matches. Recomputed SHA-256 of campaign-results.jsonl for all 7 runtimes and each matched evidenceHashes."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "launch.json of campaign51-55,60,61: command holds -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar; -Dachievetodo.* only progression.initialConfig=easy/hard/chaos/hard in 52/53/54/61, none in 51/55/60. output.log of each logs ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before 'Created new objective [atd_marks]' (first case setup); freshConfig appears only in the plugin-logged derived=[...] (together with world-group.properties) for 52/53/54/61, i.e. plugin-derived fresh install."
+  }
+ },
+ "superseded": "No superseded rows in this group (MANIFEST.superseded=[]); campaign60/61 supplements do not touch it.",
+ "findings": [
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "review-rc4-pkg/movement_jump/rows.jsonl campaign55 thresholds-custom_vision jump locked (requires vision 5)",
+   "description": "Under Custom the jump lock is only shown masked by the locked vision ability (client blind); the jump lock itself is proven on NORMAL, HARD and CHAOS, and the custom excerpt logs DENIAL_INTENT ability=jump."
+  }
+ ]
+}

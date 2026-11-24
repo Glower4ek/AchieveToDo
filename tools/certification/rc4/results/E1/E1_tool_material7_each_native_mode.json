@@ -1,0 +1,330 @@
+{
+  "group": "tool_material7_each_native_mode",
+  "repoHead": "ae87515483b51284d5a42a646fca0fc0840fea0b",
+  "abilities": [
+    {
+      "ability": "use_golden_tools",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeToolAgent.java",
+          "lines": [
+            17
+          ],
+          "sha256": "da48ea01f32736ee8499ea99802a7fa3cbabc16207071c61dab65e240ff11995",
+          "gitBlob": "32ec15f8db3b5efb44363096519393c0718d0288",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/NativeToolBindings.java",
+          "lines": [
+            15
+          ],
+          "sha256": "e6b57972e5a38db4033b951005b562867301517e9392c86301ddc9d97742bfd6",
+          "gitBlob": "d43daa7548251f18d77f67cf36c4fcae47aca227",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findToolMaterialAbility": []
+      },
+      "thresholds": {
+        "normal": 40,
+        "easy": 38,
+        "hard": 38,
+        "chaos_20261116": 72,
+        "custom_vision": 40
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "use_wooden_tools",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeToolAgent.java",
+          "lines": [
+            17
+          ],
+          "sha256": "da48ea01f32736ee8499ea99802a7fa3cbabc16207071c61dab65e240ff11995",
+          "gitBlob": "32ec15f8db3b5efb44363096519393c0718d0288",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/NativeToolBindings.java",
+          "lines": [
+            14
+          ],
+          "sha256": "e6b57972e5a38db4033b951005b562867301517e9392c86301ddc9d97742bfd6",
+          "gitBlob": "d43daa7548251f18d77f67cf36c4fcae47aca227",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findToolMaterialAbility": []
+      },
+      "thresholds": {
+        "normal": 71,
+        "easy": 60,
+        "hard": 82,
+        "chaos_20261116": 220,
+        "custom_vision": 71
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "use_stone_tools",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeToolAgent.java",
+          "lines": [
+            17
+          ],
+          "sha256": "da48ea01f32736ee8499ea99802a7fa3cbabc16207071c61dab65e240ff11995",
+          "gitBlob": "32ec15f8db3b5efb44363096519393c0718d0288",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/NativeToolBindings.java",
+          "lines": [
+            14
+          ],
+          "sha256": "e6b57972e5a38db4033b951005b562867301517e9392c86301ddc9d97742bfd6",
+          "gitBlob": "d43daa7548251f18d77f67cf36c4fcae47aca227",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findToolMaterialAbility": []
+      },
+      "thresholds": {
+        "normal": 116,
+        "easy": 90,
+        "hard": 142,
+        "chaos_20261116": 91,
+        "custom_vision": 116
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "use_iron_tools",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeToolAgent.java",
+          "lines": [
+            17
+          ],
+          "sha256": "da48ea01f32736ee8499ea99802a7fa3cbabc16207071c61dab65e240ff11995",
+          "gitBlob": "32ec15f8db3b5efb44363096519393c0718d0288",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/NativeToolBindings.java",
+          "lines": [
+            15
+          ],
+          "sha256": "e6b57972e5a38db4033b951005b562867301517e9392c86301ddc9d97742bfd6",
+          "gitBlob": "d43daa7548251f18d77f67cf36c4fcae47aca227",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findToolMaterialAbility": []
+      },
+      "thresholds": {
+        "normal": 140,
+        "easy": 106,
+        "hard": 174,
+        "chaos_20261116": 188,
+        "custom_vision": 140
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "use_diamond_tools",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeToolAgent.java",
+          "lines": [
+            17
+          ],
+          "sha256": "da48ea01f32736ee8499ea99802a7fa3cbabc16207071c61dab65e240ff11995",
+          "gitBlob": "32ec15f8db3b5efb44363096519393c0718d0288",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/NativeToolBindings.java",
+          "lines": [
+            15
+          ],
+          "sha256": "e6b57972e5a38db4033b951005b562867301517e9392c86301ddc9d97742bfd6",
+          "gitBlob": "d43daa7548251f18d77f67cf36c4fcae47aca227",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findToolMaterialAbility": []
+      },
+      "thresholds": {
+        "normal": 401,
+        "easy": 318,
+        "hard": 484,
+        "chaos_20261116": 190,
+        "custom_vision": 401
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "use_netherite_tools",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeToolAgent.java",
+          "lines": [
+            17
+          ],
+          "sha256": "da48ea01f32736ee8499ea99802a7fa3cbabc16207071c61dab65e240ff11995",
+          "gitBlob": "32ec15f8db3b5efb44363096519393c0718d0288",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/NativeToolBindings.java",
+          "lines": [
+            16
+          ],
+          "sha256": "e6b57972e5a38db4033b951005b562867301517e9392c86301ddc9d97742bfd6",
+          "gitBlob": "d43daa7548251f18d77f67cf36c4fcae47aca227",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findToolMaterialAbility": []
+      },
+      "thresholds": {
+        "normal": 422,
+        "easy": 336,
+        "hard": 508,
+        "chaos_20261116": 161,
+        "custom_vision": 422
+      },
+      "mapping": "DIRECT"
+    },
+    {
+      "ability": "use_copper_tools",
+      "enforcementSites": [],
+      "directSites": [
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/nativeguard/NativeToolAgent.java",
+          "lines": [
+            17
+          ],
+          "sha256": "da48ea01f32736ee8499ea99802a7fa3cbabc16207071c61dab65e240ff11995",
+          "gitBlob": "32ec15f8db3b5efb44363096519393c0718d0288",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        },
+        {
+          "file": "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/gameplay/NativeToolBindings.java",
+          "lines": [
+            14
+          ],
+          "sha256": "e6b57972e5a38db4033b951005b562867301517e9392c86301ddc9d97742bfd6",
+          "gitBlob": "d43daa7548251f18d77f67cf36c4fcae47aca227",
+          "specs": [],
+          "active": true,
+          "inactiveReason": null
+        }
+      ],
+      "definitionSites": [
+        "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/progression/ProgressionConfigService.java",
+        "port/AchieveToDo-Purpur/src/main/java/com/diskree/achievetodo/progression/Progressions.java"
+      ],
+      "family": null,
+      "familyResolverSites": {
+        "AbilityResolvers.findToolMaterialAbility": []
+      },
+      "thresholds": {
+        "normal": 128,
+        "easy": 98,
+        "hard": 158,
+        "chaos_20261116": 99,
+        "custom_vision": 128
+      },
+      "mapping": "DIRECT"
+    }
+  ],
+  "configs": {
+    "normal": {
+      "file": "campaign51\\runtime\\plugins\\AchieveToDo\\progression\\configs\\normal.toml",
+      "sha256": "c9252ca2c457febf6c89ba49f934614a56c67343e654eb190c7b150fb8cb54da"
+    },
+    "easy": {
+      "file": "campaign52\\runtime\\plugins\\AchieveToDo\\progression\\configs\\easy.toml",
+      "sha256": "12fed2bad5fe3b5a2ac403778898ff8ae65b1a50ef31533d639960ebfef81936"
+    },
+    "hard": {
+      "file": "campaign53\\runtime\\plugins\\AchieveToDo\\progression\\configs\\hard.toml",
+      "sha256": "50d1bf41f22fc8efe2922b508aa27686bdf894f8c4796b10fdd76f74827fb435"
+    },
+    "chaos_20261116": {
+      "file": "campaign54\\runtime\\plugins\\AchieveToDo\\progression\\configs\\chaos_20261116.toml",
+      "sha256": "8c125c638a2342d08aab9e99d13ccc92042d835bcdc72a0954d4164eee7ff1fd"
+    },
+    "custom_vision": {
+      "file": "campaign55\\runtime\\plugins\\AchieveToDo\\progression\\configs\\custom_vision.toml",
+      "sha256": "7e8a1b429dd5199e482fc68c0a8d1a1c9ee39420c3de4121575b49d41efa8171"
+    }
+  }
+}

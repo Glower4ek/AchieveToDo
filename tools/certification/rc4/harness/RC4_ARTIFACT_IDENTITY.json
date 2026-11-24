@@ -1,0 +1,8 @@
+{
+  "server": {
+    "path": "E:\\Vibecode\\AchieveToDo\\test-server\\base-runtime-26.3\\purpur-26.3-2660.jar",
+    "bytes": 58174949,
+    "sha256": "e831a5dc0e22311b899dcf37d5a138b1ca7104d831bf65f0a5fbb966fef8daae",
+    "build": "Purpur 26.3 build 2660"
+  }
+}

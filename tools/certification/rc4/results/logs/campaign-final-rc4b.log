@@ -1,0 +1,36 @@
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign60 16d0b2fa632887355eb3a56846d52177aa1b62556fad925205349e9ba220befa
+[2026-11-23T22:37:21+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-23T22:37:32+00:00] campaign60 up: [03:37:31 INFO]: [AchieveToDo] Resolved progression config normal.toml (normal)
+[2026-11-23T22:37:32+00:00] campaign60 launch profile: release, gameplay mode RELEASE, product gameplay ready
+[2026-11-23T22:37:58+00:00] campaign60 pass modes phases=creative,op,spectator
+CONFIG normal:normal.toml abilities=154
+PASS                       landmark22_selectors_and_action_ma interact_inside_igloo          creative
+PASS                       landmark22_selectors_and_action_ma interact_inside_igloo          op
+PASS                       landmark22_selectors_and_action_ma interact_inside_igloo          spectator
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          creative
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          op
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          spectator
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          creative
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          op
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          spectator
+[2026-11-23T22:39:37+00:00] reload done: generation 2
+[2026-11-23T22:39:57+00:00] campaign60 pass reload phases=locked,allowed
+CONFIG normal:normal.toml abilities=154
+PASS                       landmark22_selectors_and_action_ma interact_inside_igloo          locked
+PASS                       landmark22_selectors_and_action_ma interact_inside_igloo          allowed
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          locked
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          allowed
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          locked
+PASS                       landmark_denial_criteria_26_3      interact_inside_igloo          allowed
+mode hard
+prepared E:\Vibecode\AchieveToDo\certification\w5-campaign\campaign61 16d0b2fa632887355eb3a56846d52177aa1b62556fad925205349e9ba220befa
+E6 replay campaign60: {'REPRODUCED': 15} reproducedAll=True
+[2026-11-23T22:41:01+00:00] natural overworld (backup: world_gen_settings.flat-backup.dat)
+[2026-11-23T22:41:12+00:00] campaign61 up: [03:41:11 INFO]: [AchieveToDo] Resolved progression config hard.toml (hard)
+[2026-11-23T22:41:12+00:00] campaign61 launch profile: release, gameplay mode RELEASE, product gameplay ready
+[2026-11-23T22:41:37+00:00] campaign61 pass thresholds-hard phases=locked,allowed
+CONFIG hard:hard.toml abilities=154
+PASS                       action_glide_with_fireworks        glide_with_fireworks           locked
+PASS                       action_glide_with_fireworks        glide_with_fireworks           allowed
+E6 replay campaign61: {'REPRODUCED': 2} reproducedAll=True
+[2026-11-23T22:41:51+00:00] FINAL_RC4B_DONE

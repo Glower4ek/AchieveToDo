@@ -1,0 +1,60 @@
+{
+ "group": "complex_use_cauldron",
+ "reviewer": "rc4-reviewer-04",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "use_cauldron DIRECT: NativeComplexBindings.java:15, NativeComplexAgent.java:128 (case 'cauldron' -> ability USE_CAULDRON, skips DEFAULT interaction), NativeLandmarkOperations.java:148,244. SHA-256 recomputed for all 3 files = E1. Thresholds normal 513, easy 414, hard 612, chaos 363, custom_vision 513."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "17 rows all PASS; read all 17 excerpts. Locked rows: ServerboundUseItemOnPacket arrives, no fill advancement, probe 'Test passed' unchanged, count unchanged (512, 413, 611, 362, 512). Allowed rows: W2_INPUT_EVENT useBlock=ALLOW, ATD_PROOF_NATIVE_ADVANCEMENT_DONE bubble_bubble_toil_and_trouble/fill_cauldron, count +1 (513->514 etc.), probe flips to 'Test failed'. Offhand_locked: main-hand event ALLOW (empty hand), off-hand use gives no effect, count 512 unchanged. No why.bookkeeping rows; BACAP tallies appear only on allowed rows in why.leak (expected there).",
+   "rowsRead": [
+    "campaign51 pass1 use_cauldron locked/allowed",
+    "campaign51 modes use_cauldron creative/op/spectator",
+    "campaign51 offhand use_cauldron offhand_locked/offhand_allowed",
+    "campaign51 reload use_cauldron locked/allowed",
+    "campaign52 thresholds-easy locked/allowed",
+    "campaign53 thresholds-hard locked/allowed",
+    "campaign54 thresholds-chaos locked/allowed",
+    "campaign55 thresholds-custom_vision locked/allowed"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes for campaign51-55,60,61: onlineMode=true, authenticatedUuidLine 'UUID of player Glower4ek is 89c23030-...' and joinedLine present in all 7."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "modes creative/op/spectator, offhand_locked/allowed, and thresholds rows for easy/hard/chaos/custom_vision present (normal via pass1). No NA rows."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "Reload rows come from campaign51 only; their output.log line numbers start after every pass1/modes/offhand row of the group (reload from line 119355 > offhand max 101877). MANIFEST.e5Reload generationBefore=1 generationAfter=2; campaign51/60 generations [1,2]. All reload excerpts' ATD_STAGE2A_STATE lines show generation 2; every reload verdict (PASS) equals the pass1 verdict for the same ability/phase."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: all 17 rows REPRODUCED, recorded==replayed; receipts/REPLAY.json reproducedAll=true for campaign51-55,60,61. Plugin sha 16d0b2fa... identical in MANIFEST.plugin.perRuntime for all 7 runtimes and in prelaunch; client mod sha e8577e1d... matches. Recomputed SHA-256 of campaign-results.jsonl for all 7 runtimes and each matched evidenceHashes."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "launch.json of campaign51-55,60,61: command holds -javaagent:plugins/achievetodo.jar plus observer trace-agent.jar; -Dachievetodo.* only progression.initialConfig=easy/hard/chaos/hard in 52/53/54/61, none in 51/55/60. output.log of each logs ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before 'Created new objective [atd_marks]' (first case setup); freshConfig appears only in the plugin-logged derived=[...] (together with world-group.properties) for 52/53/54/61, i.e. plugin-derived fresh install."
+  }
+ },
+ "superseded": "No superseded rows in this group (MANIFEST.superseded=[]); campaign60/61 supplements do not touch it.",
+ "findings": [
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "review-rc4-pkg/complex_use_cauldron/excerpts.txt ATD_STAGE2A_STATE lines",
+   "description": "The state lines log the tested ability as {\"USE_CAULDRON\": null}, so the lock state itself is not logged; the lock is inferred from count<threshold plus the denial/effect oracles, which agree."
+  },
+  {
+   "severity": "minor",
+   "criterion": "E2",
+   "evidence": "review-rc4-pkg/complex_use_cauldron/excerpts.txt, every block: 'ATD_BOUNDARY PACKET_OBSERVER_FAILED null'",
+   "description": "The observer packet boundary hook fails on every ServerboundUseItemOnPacket; verdicts do not depend on it (probe, count and advancement lines suffice), but this harness noise is unexplained."
+  }
+ ]
+}

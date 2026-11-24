@@ -6,7 +6,8 @@ Minor issues found during the certification of the Purpur 26.2 port (0.2.1-rc.1 
 3 (Fabric parity); issue 1 is fixed in 0.2.1. On 2026-11-22 the owner decided to fix issues 2 and 3 in both mods for
 0.3.0; the fixes are certified in [certification/0.3.0-purpur-26.2.md](certification/0.3.0-purpur-26.2.md).
 Issues 5-7 come from the notes of the 0.3.0 certification and from the audit asked by issue 4; they are handled in
-0.4.0 (Minecraft 26.3) and need its certification. Issue 8 was found by the 0.4.0 certification smoke run.
+0.4.0 (Minecraft 26.3). Issue 8 was found by the 0.4.0 certification smoke run. Issues 5, 6 and 8 are certified in
+[certification/0.4.0-purpur-26.3.md](certification/0.4.0-purpur-26.3.md).
 
 | # | Issue | Severity | Status |
 |---|---|---|---|
@@ -14,10 +15,10 @@ Issues 5-7 come from the notes of the 0.3.0 certification and from the audit ask
 | 2 | CHAOS thresholds are not reproducible from the world seed across JVM starts | minor (Fabric parity) | **Fixed in 0.3.0** in both mods. Certified in [0.3.0-purpur-26.2.md](certification/0.3.0-purpur-26.2.md) |
 | 3 | Touching a locked nether portal, End portal or end gateway grants the vanilla `enter_block` advancement (+1) | minor (Fabric parity) | **Fixed in 0.3.0** in both mods. Certified in [0.3.0-purpur-26.2.md](certification/0.3.0-purpur-26.2.md) |
 | 4 | Using locked shears on a snow golem or a wolf still grants "Unmasked" (BACAP) or "Shear Brilliance" | minor (Fabric parity) | **Fixed in 0.3.0** in both mods. Certified in [0.3.0-purpur-26.2.md](certification/0.3.0-purpur-26.2.md) |
-| 5 | The cartographer trade denial showed its lock message seconds late or not at all | minor (UX) | **Fixed in 0.4.0** in both mods |
-| 6 | Inside a locked landmark some denied interactions still counted for use criteria (a map put into an item frame, a golden dandelion given to a tadpole, wolf armor, a renamed name tag) | minor (progression) | **Fixed in 0.4.0** in both mods |
+| 5 | The cartographer trade denial showed its lock message seconds late or not at all | minor (UX) | **Fixed in 0.4.0** in both mods. Certified in [0.4.0-purpur-26.3.md](certification/0.4.0-purpur-26.3.md) |
+| 6 | Inside a locked landmark some denied interactions still counted for use criteria (a map put into an item frame, a golden dandelion given to a tadpole, wolf armor, a renamed name tag) | minor (progression) | **Fixed in 0.4.0** in both mods. Certified in [0.4.0-purpur-26.3.md](certification/0.4.0-purpur-26.3.md) |
 | 7 | Right after joining a Purpur server, a locked water bucket can look empty for a moment | cosmetic | Known, by design (see below) |
-| 8 | Inside a locked landmark the 26.3 golden dandelion still locked a baby's age and counted "Fountain of Youth" | minor (landmark lock) | **Fixed in 0.4.0** in both mods |
+| 8 | Inside a locked landmark the 26.3 golden dandelion still locked a baby's age and counted "Fountain of Youth" | minor (landmark lock) | **Fixed in 0.4.0** in both mods. Certified in [0.4.0-purpur-26.3.md](certification/0.4.0-purpur-26.3.md) |
 
 ## 1. Default start ran the legacy path (fixed in 0.2.1)
 

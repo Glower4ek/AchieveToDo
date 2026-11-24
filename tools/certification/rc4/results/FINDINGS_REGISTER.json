@@ -1,0 +1,498 @@
+[
+ {
+  "group": "action_attack_with_mace",
+  "reviewer": "rc4-reviewer-09",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/action_attack_with_mace/excerpts.txt locked rows",
+  "description": "Locked-row excerpts carry no explicit server-side denial line (pig health 10.0f before and after with no server-side DENY/cancel line; denial shown only by the client overlay and unchanged probe); the verdict is reproducible from effect absence, unchanged count and the lock overlay in rows.jsonl client snapshots, so not blocking."
+ },
+ {
+  "group": "action_attack_with_trident",
+  "reviewer": "rc4-reviewer-07",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "MANIFEST.runtimes.campaign51..55.evidenceHashes campaign.py=f6d10050..., campaign_cases.py=80931173... vs HARNESS_RC4.sha256 campaign.py=8568cb7d..., campaign_cases.py=fa546eea...; w5-campaign/campaign.py mtime 2026-11-24 03:36, after campaign55/receipts/execution.json 03:34",
+  "description": "campaign51-55 were produced and replayed (REPLAY.json 02:51) by a campaign.py/campaign_cases.py that differs from the one attested in HARNESS_RC4.sha256 and is not archived; only campaign60/61 match HARNESS_RC4. No row of this group carries why.bookkeeping and I re-judged the read verdicts from raw log lines, so this group's verdicts do not depend on the change, but the 'one harness' claim does not hold."
+ },
+ {
+  "group": "action_charge_respawn_anchor",
+  "reviewer": "rc4-reviewer-07",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "MANIFEST.runtimes.campaign51..55.evidenceHashes campaign.py=f6d10050..., campaign_cases.py=80931173... vs HARNESS_RC4.sha256 campaign.py=8568cb7d..., campaign_cases.py=fa546eea...; w5-campaign/campaign.py mtime 2026-11-24 03:36, after campaign55/receipts/execution.json 03:34",
+  "description": "campaign51-55 were produced and replayed (REPLAY.json 02:51) by a campaign.py/campaign_cases.py that differs from the one attested in HARNESS_RC4.sha256 and is not archived; only campaign60/61 match HARNESS_RC4. No row of this group carries why.bookkeeping and I re-judged the read verdicts from raw log lines, so this group's verdicts do not depend on the change, but the 'one harness' claim does not hold."
+ },
+ {
+  "group": "action_glide_with_fireworks",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign51/receipts/EVIDENCE_HASHES.json (campaign.py sha) vs HARNESS_RC4.sha256 line 1",
+  "description": "campaign51-55 receipts/EVIDENCE_HASHES.json record campaign.py f6d1005027498919347d2ee638ca8fdef369f540527937b0f34e7fe1ddfc17dd and campaign_cases.py 80931173a0919f4dff9e2025f119be448c164fb7ccc434d478f2622cf1732130, while HARNESS_RC4.sha256 lists 8568cb7d...2473f / fa546eea...6ae (these match only campaign60/61). The statement in the brief that campaign51-55 ran under HARNESS_RC4 is not literally true: the main rows came from an earlier harness revision (before the bookkeeping rule, see the campaign.py:264 comment naming campaign53). No verdict of this group depends on the difference (no row has why.bookkeeping) and replay with campaign_replay.py 96ce05ea... reproduced all rows."
+ },
+ {
+  "group": "action_glide_with_fireworks",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg excerpts.txt ATD_STAGE2A_STATE lines: \"ability\": {\"GLIDE_WITH_FIREWORKS\": null}",
+  "description": "The server-side state probe reports no lock state for GLIDE_WITH_FIREWORKS (null) and ATD_EVENT/ATD_W2_INPUT_EVENT log blockResult=ALLOW/cancelled=false on locked rows, because the guard is a deep native hook that does not log. The denial is evidenced only by the effect oracle (probe/inventory/trace), the unchanged count and the client overlay; observability is weaker than for event-level guards."
+ },
+ {
+  "group": "action_shoot_bow",
+  "reviewer": "rc4-reviewer-08",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/action_shoot_bow/excerpts.txt ATD_STAGE2A_STATE lines ('ability': {'SHOOT_BOW': null})",
+  "description": "The state probe does not report the tested ability's lock state for this native ability (null); the lock is inferred from count < threshold plus the denial and overlay, not logged directly."
+ },
+ {
+  "group": "action_use_composter",
+  "reviewer": "rc4-reviewer-07",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "MANIFEST.runtimes.campaign51..55.evidenceHashes campaign.py=f6d10050..., campaign_cases.py=80931173... vs HARNESS_RC4.sha256 campaign.py=8568cb7d..., campaign_cases.py=fa546eea...; w5-campaign/campaign.py mtime 2026-11-24 03:36, after campaign55/receipts/execution.json 03:34",
+  "description": "campaign51-55 were produced and replayed (REPLAY.json 02:51) by a campaign.py/campaign_cases.py that differs from the one attested in HARNESS_RC4.sha256 and is not archived; only campaign60/61 match HARNESS_RC4. No row of this group carries why.bookkeeping and I re-judged the read verdicts from raw log lines, so this group's verdicts do not depend on the change, but the 'one harness' claim does not hold."
+ },
+ {
+  "group": "action_use_ender_eye",
+  "reviewer": "rc4-reviewer-04",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/action_use_ender_eye/excerpts.txt ATD_STAGE2A_STATE lines",
+  "description": "The state lines log the tested ability as {\"USE_ENDER_EYE\": null}, so the lock state itself is not logged; the lock is inferred from count<threshold plus the denial/effect oracles, which agree."
+ },
+ {
+  "group": "action_use_jukebox",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign51/receipts/EVIDENCE_HASHES.json (campaign.py sha) vs HARNESS_RC4.sha256 line 1",
+  "description": "campaign51-55 receipts/EVIDENCE_HASHES.json record campaign.py f6d1005027498919347d2ee638ca8fdef369f540527937b0f34e7fe1ddfc17dd and campaign_cases.py 80931173a0919f4dff9e2025f119be448c164fb7ccc434d478f2622cf1732130, while HARNESS_RC4.sha256 lists 8568cb7d...2473f / fa546eea...6ae (these match only campaign60/61). The statement in the brief that campaign51-55 ran under HARNESS_RC4 is not literally true: the main rows came from an earlier harness revision (before the bookkeeping rule, see the campaign.py:264 comment naming campaign53). No verdict of this group depends on the difference (no row has why.bookkeeping) and replay with campaign_replay.py 96ce05ea... reproduced all rows."
+ },
+ {
+  "group": "action_use_jukebox",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg excerpts.txt ATD_STAGE2A_STATE lines: \"ability\": {\"USE_JUKEBOX\": null}",
+  "description": "The server-side state probe reports no lock state for USE_JUKEBOX (null) and ATD_EVENT/ATD_W2_INPUT_EVENT log blockResult=ALLOW/cancelled=false on locked rows, because the guard is a deep native hook that does not log. The denial is evidenced only by the effect oracle (probe/inventory/trace), the unchanged count and the client overlay; observability is weaker than for event-level guards."
+ },
+ {
+  "group": "action_use_shield",
+  "reviewer": "rc4-reviewer-08",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/action_use_shield/excerpts.txt ATD_STAGE2A_STATE lines ('ability': {'USE_SHIELD': null})",
+  "description": "The state probe does not report the tested ability's lock state for this native ability (null); the lock is inferred from count < threshold plus the denial and overlay, not logged directly."
+ },
+ {
+  "group": "client_local_open_inventory",
+  "reviewer": "rc4-reviewer-06",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "review-rc4-pkg/client_local_open_inventory/rows.jsonl",
+  "description": "No offhand rows and no NA_OFFHAND rows are recorded; the action (empty-hand container/merchant open or inventory key) has no distinct off-hand route, so this is acceptable, but the absence is implicit rather than recorded."
+ },
+ {
+  "group": "client_local_vision",
+  "reviewer": "rc4-reviewer-07",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "MANIFEST.runtimes.campaign51..55.evidenceHashes campaign.py=f6d10050..., campaign_cases.py=80931173... vs HARNESS_RC4.sha256 campaign.py=8568cb7d..., campaign_cases.py=fa546eea...; w5-campaign/campaign.py mtime 2026-11-24 03:36, after campaign55/receipts/execution.json 03:34",
+  "description": "campaign51-55 were produced and replayed (REPLAY.json 02:51) by a campaign.py/campaign_cases.py that differs from the one attested in HARNESS_RC4.sha256 and is not archived; only campaign60/61 match HARNESS_RC4. No row of this group carries why.bookkeeping and I re-judged the read verdicts from raw log lines, so this group's verdicts do not depend on the change, but the 'one harness' claim does not hold."
+ },
+ {
+  "group": "client_local_vision",
+  "reviewer": "rc4-reviewer-07",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "review-rc4-pkg/client_local_vision/rows.jsonl notes and excerpts.txt row headers",
+  "description": "Row note says 'NORMAL/EASY/HARD threshold 0', but the HARD threshold is 2 (E1) and campaign53 has a real locked row; the note is stale."
+ },
+ {
+  "group": "client_local_vision",
+  "reviewer": "rc4-reviewer-07",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "campaign51 modes vision creative/op/spectator rows",
+  "description": "Because the NORMAL vision threshold is 0, the modes and reload passes never exercise vision while locked; creative/op/spectator behaviour of the vision lock is not evidenced."
+ },
+ {
+  "group": "complex_unlock_vault",
+  "reviewer": "rc4-reviewer-07",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "MANIFEST.runtimes.campaign51..55.evidenceHashes campaign.py=f6d10050..., campaign_cases.py=80931173... vs HARNESS_RC4.sha256 campaign.py=8568cb7d..., campaign_cases.py=fa546eea...; w5-campaign/campaign.py mtime 2026-11-24 03:36, after campaign55/receipts/execution.json 03:34",
+  "description": "campaign51-55 were produced and replayed (REPLAY.json 02:51) by a campaign.py/campaign_cases.py that differs from the one attested in HARNESS_RC4.sha256 and is not archived; only campaign60/61 match HARNESS_RC4. No row of this group carries why.bookkeeping and I re-judged the read verdicts from raw log lines, so this group's verdicts do not depend on the change, but the 'one harness' claim does not hold."
+ },
+ {
+  "group": "complex_unlock_vault",
+  "reviewer": "rc4-reviewer-07",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/complex_unlock_vault/excerpts.txt campaign51 pass1 unlock_vault locked (output.log 8102-8117)",
+  "description": "Locked vault rows show no lock message and no explicit plugin decision line (event logs useBlock=ALLOW); the lock is evidenced only by the absent effect (inv/count unchanged, no vault packets), accepted as PASS_NO_OVERLAY."
+ },
+ {
+  "group": "complex_use_cauldron",
+  "reviewer": "rc4-reviewer-04",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/complex_use_cauldron/excerpts.txt ATD_STAGE2A_STATE lines",
+  "description": "The state lines log the tested ability as {\"USE_CAULDRON\": null}, so the lock state itself is not logged; the lock is inferred from count<threshold plus the denial/effect oracles, which agree."
+ },
+ {
+  "group": "complex_use_cauldron",
+  "reviewer": "rc4-reviewer-04",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/complex_use_cauldron/excerpts.txt, every block: 'ATD_BOUNDARY PACKET_OBSERVER_FAILED null'",
+  "description": "The observer packet boundary hook fails on every ServerboundUseItemOnPacket; verdicts do not depend on it (probe, count and advancement lines suffice), but this harness noise is unexplained."
+ },
+ {
+  "group": "complex_use_flint_and_steel",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign51/receipts/EVIDENCE_HASHES.json (campaign.py sha) vs HARNESS_RC4.sha256 line 1",
+  "description": "campaign51-55 receipts/EVIDENCE_HASHES.json record campaign.py f6d1005027498919347d2ee638ca8fdef369f540527937b0f34e7fe1ddfc17dd and campaign_cases.py 80931173a0919f4dff9e2025f119be448c164fb7ccc434d478f2622cf1732130, while HARNESS_RC4.sha256 lists 8568cb7d...2473f / fa546eea...6ae (these match only campaign60/61). The statement in the brief that campaign51-55 ran under HARNESS_RC4 is not literally true: the main rows came from an earlier harness revision (before the bookkeeping rule, see the campaign.py:264 comment naming campaign53). No verdict of this group depends on the difference (no row has why.bookkeeping) and replay with campaign_replay.py 96ce05ea... reproduced all rows."
+ },
+ {
+  "group": "complex_use_flint_and_steel",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg excerpts.txt ATD_STAGE2A_STATE lines: \"ability\": {\"USE_FLINT_AND_STEEL\": null}",
+  "description": "The server-side state probe reports no lock state for USE_FLINT_AND_STEEL (null) and ATD_EVENT/ATD_W2_INPUT_EVENT log blockResult=ALLOW/cancelled=false on locked rows, because the guard is a deep native hook that does not log. The denial is evidenced only by the effect oracle (probe/inventory/trace), the unchanged count and the client overlay; observability is weaker than for event-level guards."
+ },
+ {
+  "group": "complex_use_shears",
+  "reviewer": "rc4-reviewer-06",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "review-rc4-pkg/complex_use_shears/rows.jsonl campaign51 offhand use_shears (wolf armor, cobweb) NA_OFFHAND_NOT_APPLICABLE",
+  "description": "Four NA_OFFHAND rows: cobweb mining uses only the main-hand tool (justified); for wolf armor the empty main hand toggles sitting on an owned wolf so the off-hand shears route is not reached in vanilla - plausible but the NA rests on reasoning, not a tested row."
+ },
+ {
+  "group": "equipment_identity9_routes_slots",
+  "reviewer": "rc4-reviewer-01",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "rows.jsonl campaign51 pass1 equip_golden_armor 'r6 route: dispenser equip onto the player' locked; excerpts.txt line 409 (output.log 13189-13210)",
+  "description": "Counts go 54->55 because pressing the fixture's stone button awarded non-hidden, non-tally BACAP blazeandcave:redstone/click (ATD_PROOF_NATIVE_ADVANCEMENT_DONE), yet why.leak is empty and the row is PASS. The gain comes from the fixture's button press, not from the denied equip (the helmet stayed out of the armor slots), and the reload row for the same case is clean (54->54), so the lock holds. Still, the leak oracle did not flag a non-hidden criterion as the rc.4 rule says it should, and the fixture should pre-grant that advancement."
+ },
+ {
+  "group": "fishing_cast_only",
+  "reviewer": "rc4-reviewer-08",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/fishing_cast_only/excerpts.txt ATD_STAGE2A_STATE lines ('ability': {'USE_FISHING_ROD': null})",
+  "description": "The state probe does not report the tested ability's lock state for this native ability (null); the lock is inferred from count < threshold plus the denial and overlay, not logged directly."
+ },
+ {
+  "group": "fishing_cast_only",
+  "reviewer": "rc4-reviewer-08",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/fishing_cast_only/excerpts.txt, first locked block (ATD_EVENT cancelled=false, blockResult=ALLOW or no event)",
+  "description": "Locked rows contain no positive plugin denial line; the Bukkit-level event logs cancelled=false/ALLOW because the native guard acts later, so the denial is shown only by the missing effect, unchanged count and the client overlay."
+ },
+ {
+  "group": "food_component_start_40",
+  "reviewer": "rc4-reviewer-02",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/food_component_start_40/excerpts.txt:13360 (campaign55 thresholds-custom_vision eat_salmon locked)",
+  "description": "The only Custom-preset locked row is masked by the vision dependency (score 1 < vision 5), so the Custom config gives no direct lock proof for a food ability; the Custom thresholds equal NORMAL's, which are proven in campaign51."
+ },
+ {
+  "group": "food_component_start_40",
+  "reviewer": "rc4-reviewer-02",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/food_component_start_40/excerpts.txt:1306 (campaign51 pass1 eat_cookie locked)",
+  "description": "For most food abilities ATD_STAGE2A_STATE reports the ability lock state as null (18 lines each), so the lock is inferred from DENIAL_INTENT lines, Item.use Pass[] and unchanged count rather than from an explicit LOCKED state."
+ },
+ {
+  "group": "landmark22_selectors_and_action_matrix",
+  "reviewer": "rc4-reviewer-03",
+  "severity": "minor",
+  "criterion": "E1",
+  "evidence": "review-rc4-pkg/landmark22_selectors_and_action_matrix/E1.json familyResolverSites",
+  "description": "Family resolver files (BukkitExactLandmarkRuntime.java, ExactLandmarkGate.java, LandmarkEngine.java) are cited without sha256, so their identity cannot be compared; current hashes 51178dbc..., 3c2582f8..., a693db43...."
+ },
+ {
+  "group": "landmark22_selectors_and_action_matrix",
+  "reviewer": "rc4-reviewer-03",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "excerpts.txt lines 1-13 (campaign51 pass1 village locked) and 138-151 (igloo chest locked)",
+  "description": "Locked landmark rows log ATD_W2_INPUT_EVENT useBlock=ALLOW/cancelled=false and STAGE2A shows INTERACT_INSIDE_*: null, so the server log never states the lock or the denial explicitly; denial is inferred from the missing OpenScreenPacket, criterion suppression and client overlay."
+ },
+ {
+  "group": "landmark22_selectors_and_action_matrix",
+  "reviewer": "rc4-reviewer-03",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "excerpts.txt lines 691-700 (campaign51 pass1 igloo map audit locked)",
+  "description": "On denied map-into-frame rows the traced Player.interactOn returns Success[swingSource=PREDICTED, wasItemInteraction=true] and no DENIAL_INTENT line is logged; effect absence rests on the probe and the client overlay."
+ },
+ {
+  "group": "landmark22_selectors_and_action_matrix",
+  "reviewer": "rc4-reviewer-03",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "rows.jsonl campaign54 thresholds-chaos interact_inside_village locked",
+  "description": "Under CHAOS the village lock is only PASS_MASKED_BY_DEPENDENCY (open_chest 353 > village 2); the CHAOS landmark lock is proven only by the igloo map audit row."
+ },
+ {
+  "group": "landmark_abandoned_camp_26_3",
+  "reviewer": "rc4-reviewer-04",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/landmark_abandoned_camp_26_3/excerpts.txt ATD_STAGE2A_STATE lines",
+  "description": "The state lines log the tested ability as {\"INTERACT_INSIDE_ABANDONED_CAMP\": null}, so the lock state itself is not logged; the lock is inferred from count<threshold plus the denial/effect oracles, which agree."
+ },
+ {
+  "group": "landmark_abandoned_camp_26_3",
+  "reviewer": "rc4-reviewer-04",
+  "severity": "minor",
+  "criterion": "E1",
+  "evidence": "review-rc4-pkg/landmark_abandoned_camp_26_3/E1.json familyResolverSites.AbilityResolvers.findLandmarkAbility",
+  "description": "Family resolver files (e.g. BukkitExactLandmarkRuntime.java) are cited without sha256, so their hashes cannot be compared; the two direct sites with hashes match."
+ },
+ {
+  "group": "landmark_denial_criteria_26_3",
+  "reviewer": "rc4-reviewer-10",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/landmark_denial_criteria_26_3/rows.jsonl campaign60 tadpole op/locked rows; campaign51/receipts/output.log 98623-98634",
+  "description": "The tadpole probe is positive-only (empty output both when the tadpole did not age and when it is gone); since campaign51 showed a tadpole disappearing, a locked row with an empty post probe cannot alone distinguish denial from a missing tadpole. Denial is independently shown by ATD_CRITERION_SUPPRESSED, DENIAL_INTENT_DISCOVERED and no fountain_of_youth criterion."
+ },
+ {
+  "group": "landmark_denial_criteria_26_3",
+  "reviewer": "rc4-reviewer-10",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "review-rc4-pkg/landmark_denial_criteria_26_3/rows.jsonl",
+  "description": "No offhand_* rows for the map-into-item-frame and golden-dandelion cases although vanilla allows both from the off hand; the landmark guard is hand-independent, so this is a coverage gap only."
+ },
+ {
+  "group": "menu_open_anvil",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign51/receipts/EVIDENCE_HASHES.json (campaign.py sha) vs HARNESS_RC4.sha256 line 1",
+  "description": "campaign51-55 receipts/EVIDENCE_HASHES.json record campaign.py f6d1005027498919347d2ee638ca8fdef369f540527937b0f34e7fe1ddfc17dd and campaign_cases.py 80931173a0919f4dff9e2025f119be448c164fb7ccc434d478f2622cf1732130, while HARNESS_RC4.sha256 lists 8568cb7d...2473f / fa546eea...6ae (these match only campaign60/61). The statement in the brief that campaign51-55 ran under HARNESS_RC4 is not literally true: the main rows came from an earlier harness revision (before the bookkeeping rule, see the campaign.py:264 comment naming campaign53). No verdict of this group depends on the difference (no row has why.bookkeeping) and replay with campaign_replay.py 96ce05ea... reproduced all rows."
+ },
+ {
+  "group": "menu_open_barrel",
+  "reviewer": "rc4-reviewer-09",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/menu_open_barrel/excerpts.txt campaign51 pass1 open_barrel locked (output.log 555-571)",
+  "description": "Trace observer logs 'ATD_BOUNDARY PACKET_OBSERVER_FAILED null' on the barrel click; harness-side observer error, denial still visible via INVENTORY_OPEN_MONITOR_CANCELLED true and DEFAULT/ANY_BLOCK_USE criterion suppression."
+ },
+ {
+  "group": "menu_open_brewing_stand",
+  "reviewer": "rc4-reviewer-06",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "review-rc4-pkg/menu_open_brewing_stand/rows.jsonl",
+  "description": "No offhand rows and no NA_OFFHAND rows are recorded; the action (empty-hand container/merchant open or inventory key) has no distinct off-hand route, so this is acceptable, but the absence is implicit rather than recorded."
+ },
+ {
+  "group": "menu_open_cartography_table",
+  "reviewer": "rc4-reviewer-08",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/menu_open_cartography_table/excerpts.txt, first locked block (ATD_EVENT cancelled=false, blockResult=ALLOW or no event)",
+  "description": "Locked rows contain no positive plugin denial line; the Bukkit-level event logs cancelled=false/ALLOW because the native guard acts later, so the denial is shown only by the missing effect, unchanged count and the client overlay."
+ },
+ {
+  "group": "menu_open_chest",
+  "reviewer": "rc4-reviewer-08",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/menu_open_chest/excerpts.txt, first locked block (ATD_EVENT cancelled=false, blockResult=ALLOW or no event)",
+  "description": "Locked rows contain no positive plugin denial line; the Bukkit-level event logs cancelled=false/ALLOW because the native guard acts later, so the denial is shown only by the missing effect, unchanged count and the client overlay."
+ },
+ {
+  "group": "menu_open_crafting_table",
+  "reviewer": "rc4-reviewer-07",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "MANIFEST.runtimes.campaign51..55.evidenceHashes campaign.py=f6d10050..., campaign_cases.py=80931173... vs HARNESS_RC4.sha256 campaign.py=8568cb7d..., campaign_cases.py=fa546eea...; w5-campaign/campaign.py mtime 2026-11-24 03:36, after campaign55/receipts/execution.json 03:34",
+  "description": "campaign51-55 were produced and replayed (REPLAY.json 02:51) by a campaign.py/campaign_cases.py that differs from the one attested in HARNESS_RC4.sha256 and is not archived; only campaign60/61 match HARNESS_RC4. No row of this group carries why.bookkeeping and I re-judged the read verdicts from raw log lines, so this group's verdicts do not depend on the change, but the 'one harness' claim does not hold."
+ },
+ {
+  "group": "menu_open_ender_chest",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign51/receipts/EVIDENCE_HASHES.json (campaign.py sha) vs HARNESS_RC4.sha256 line 1",
+  "description": "campaign51-55 receipts/EVIDENCE_HASHES.json record campaign.py f6d1005027498919347d2ee638ca8fdef369f540527937b0f34e7fe1ddfc17dd and campaign_cases.py 80931173a0919f4dff9e2025f119be448c164fb7ccc434d478f2622cf1732130, while HARNESS_RC4.sha256 lists 8568cb7d...2473f / fa546eea...6ae (these match only campaign60/61). The statement in the brief that campaign51-55 ran under HARNESS_RC4 is not literally true: the main rows came from an earlier harness revision (before the bookkeeping rule, see the campaign.py:264 comment naming campaign53). No verdict of this group depends on the difference (no row has why.bookkeeping) and replay with campaign_replay.py 96ce05ea... reproduced all rows."
+ },
+ {
+  "group": "menu_open_grindstone",
+  "reviewer": "rc4-reviewer-09",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/menu_open_grindstone/excerpts.txt locked rows",
+  "description": "Locked-row excerpts carry no explicit server-side denial line (ATD_EVENT shows useBlock=ALLOW/cancelled=false and no server-side denial line; denial shown only by the client screen=none and the overlay); the verdict is reproducible from effect absence, unchanged count and the lock overlay in rows.jsonl client snapshots, so not blocking."
+ },
+ {
+  "group": "menu_open_shulker_box",
+  "reviewer": "rc4-reviewer-06",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "review-rc4-pkg/menu_open_shulker_box/rows.jsonl",
+  "description": "No offhand rows and no NA_OFFHAND rows are recorded; the action (empty-hand container/merchant open or inventory key) has no distinct off-hand route, so this is acceptable, but the absence is implicit rather than recorded."
+ },
+ {
+  "group": "menu_open_smithing_table",
+  "reviewer": "rc4-reviewer-08",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/menu_open_smithing_table/excerpts.txt, first locked block (ATD_EVENT cancelled=false, blockResult=ALLOW or no event)",
+  "description": "Locked rows contain no positive plugin denial line; the Bukkit-level event logs cancelled=false/ALLOW because the native guard acts later, so the denial is shown only by the missing effect, unchanged count and the client overlay."
+ },
+ {
+  "group": "menu_open_stonecutter",
+  "reviewer": "rc4-reviewer-07",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "MANIFEST.runtimes.campaign51..55.evidenceHashes campaign.py=f6d10050..., campaign_cases.py=80931173... vs HARNESS_RC4.sha256 campaign.py=8568cb7d..., campaign_cases.py=fa546eea...; w5-campaign/campaign.py mtime 2026-11-24 03:36, after campaign55/receipts/execution.json 03:34",
+  "description": "campaign51-55 were produced and replayed (REPLAY.json 02:51) by a campaign.py/campaign_cases.py that differs from the one attested in HARNESS_RC4.sha256 and is not archived; only campaign60/61 match HARNESS_RC4. No row of this group carries why.bookkeeping and I re-judged the read verdicts from raw log lines, so this group's verdicts do not depend on the change, but the 'one harness' claim does not hold."
+ },
+ {
+  "group": "mining_basic_two",
+  "reviewer": "rc4-reviewer-08",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/mining_basic_two/excerpts.txt ATD_STAGE2A_STATE lines ('ability': {'BREAK_BLOCKS': null})",
+  "description": "The state probe does not report the tested ability's lock state for this native ability (null); the lock is inferred from count < threshold plus the denial and overlay, not logged directly."
+ },
+ {
+  "group": "mining_basic_two",
+  "reviewer": "rc4-reviewer-08",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/mining_basic_two/excerpts.txt, first locked block (ATD_EVENT cancelled=false, blockResult=ALLOW or no event)",
+  "description": "Locked rows contain no positive plugin denial line; the Bukkit-level event logs cancelled=false/ALLOW because the native guard acts later, so the denial is shown only by the missing effect, unchanged count and the client overlay."
+ },
+ {
+  "group": "movement_jump",
+  "reviewer": "rc4-reviewer-04",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/movement_jump/rows.jsonl campaign55 thresholds-custom_vision jump locked (requires vision 5)",
+  "description": "Under Custom the jump lock is only shown masked by the locked vision ability (client blind); the jump lock itself is proven on NORMAL, HARD and CHAOS, and the custom excerpt logs DENIAL_INTENT ability=jump."
+ },
+ {
+  "group": "movement_sneak",
+  "reviewer": "rc4-reviewer-03",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/movement_sneak/excerpts.txt lines 13-18 (campaign51 pass1 sneak allowed)",
+  "description": "The allowed-row effect (client:crouching=true) is visible only in the client probe in rows.jsonl; the server excerpt of allowed rows shows no positive sneak effect, only the absence of denial."
+ },
+ {
+  "group": "movement_sprint",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign51/receipts/EVIDENCE_HASHES.json (campaign.py sha) vs HARNESS_RC4.sha256 line 1",
+  "description": "campaign51-55 receipts/EVIDENCE_HASHES.json record campaign.py f6d1005027498919347d2ee638ca8fdef369f540527937b0f34e7fe1ddfc17dd and campaign_cases.py 80931173a0919f4dff9e2025f119be448c164fb7ccc434d478f2622cf1732130, while HARNESS_RC4.sha256 lists 8568cb7d...2473f / fa546eea...6ae (these match only campaign60/61). The statement in the brief that campaign51-55 ran under HARNESS_RC4 is not literally true: the main rows came from an earlier harness revision (before the bookkeeping rule, see the campaign.py:264 comment naming campaign53). No verdict of this group depends on the difference (no row has why.bookkeeping) and replay with campaign_replay.py 96ce05ea... reproduced all rows."
+ },
+ {
+  "group": "opening_three_native_owners",
+  "reviewer": "rc4-reviewer-08",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/opening_three_native_owners/excerpts.txt, first locked block (ATD_EVENT cancelled=false, blockResult=ALLOW or no event)",
+  "description": "Locked rows contain no positive plugin denial line; the Bukkit-level event logs cancelled=false/ALLOW because the native guard acts later, so the denial is shown only by the missing effect, unchanged count and the client overlay."
+ },
+ {
+  "group": "portal_three_conditioned",
+  "reviewer": "rc4-reviewer-09",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/portal_three_conditioned/excerpts.txt locked rows",
+  "description": "Locked-row excerpts carry no explicit server-side denial line (no server-side denial line in the locked portal excerpts; denial shown by client dimension unchanged and overlay); the verdict is reproducible from effect absence, unchanged count and the lock overlay in rows.jsonl client snapshots, so not blocking."
+ },
+ {
+  "group": "throwables_four_paper_candidates",
+  "reviewer": "rc4-reviewer-07",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "MANIFEST.runtimes.campaign51..55.evidenceHashes campaign.py=f6d10050..., campaign_cases.py=80931173... vs HARNESS_RC4.sha256 campaign.py=8568cb7d..., campaign_cases.py=fa546eea...; w5-campaign/campaign.py mtime 2026-11-24 03:36, after campaign55/receipts/execution.json 03:34",
+  "description": "campaign51-55 were produced and replayed (REPLAY.json 02:51) by a campaign.py/campaign_cases.py that differs from the one attested in HARNESS_RC4.sha256 and is not archived; only campaign60/61 match HARNESS_RC4. No row of this group carries why.bookkeeping and I re-judged the read verdicts from raw log lines, so this group's verdicts do not depend on the change, but the 'one harness' claim does not hold."
+ },
+ {
+  "group": "throwables_four_paper_candidates",
+  "reviewer": "rc4-reviewer-07",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/throwables_four_paper_candidates/excerpts.txt campaign51 pass1 throw_ender_pearl locked (output.log 19404-19413)",
+  "description": "Throwable locked excerpts contain no ATD_PACKET_IN or plugin decision line; the denial is inferred from unchanged inventory, slot resync and the client overlay only."
+ },
+ {
+  "group": "tool_material7_each_native_mode",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E6",
+  "evidence": "campaign51/receipts/EVIDENCE_HASHES.json (campaign.py sha) vs HARNESS_RC4.sha256 line 1",
+  "description": "campaign51-55 receipts/EVIDENCE_HASHES.json record campaign.py f6d1005027498919347d2ee638ca8fdef369f540527937b0f34e7fe1ddfc17dd and campaign_cases.py 80931173a0919f4dff9e2025f119be448c164fb7ccc434d478f2622cf1732130, while HARNESS_RC4.sha256 lists 8568cb7d...2473f / fa546eea...6ae (these match only campaign60/61). The statement in the brief that campaign51-55 ran under HARNESS_RC4 is not literally true: the main rows came from an earlier harness revision (before the bookkeeping rule, see the campaign.py:264 comment naming campaign53). No verdict of this group depends on the difference (no row has why.bookkeeping) and replay with campaign_replay.py 96ce05ea... reproduced all rows."
+ },
+ {
+  "group": "tool_material7_each_native_mode",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg excerpts.txt ATD_STAGE2A_STATE lines: \"ability\": {\"USE_*_TOOLS\": null}",
+  "description": "The server-side state probe reports no lock state for USE_*_TOOLS (null) and ATD_EVENT/ATD_W2_INPUT_EVENT log blockResult=ALLOW/cancelled=false on locked rows, because the guard is a deep native hook that does not log. The denial is evidenced only by the effect oracle (probe/inventory/trace), the unchanged count and the client overlay; observability is weaker than for event-level guards."
+ },
+ {
+  "group": "tool_material7_each_native_mode",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "tool_material7_each_native_mode/rows.jsonl campaign53 thresholds-hard use_golden_tools locked (PASS_MASKED_BY_DEPENDENCY, requires break_blocks_in_negative_y 42); allowed row run at score 42",
+  "description": "On HARD the golden-tools lock is not independently proven: the fixture dependency break_blocks_in_negative_y (42) exceeds the locked score 37, and the allowed row runs at 42 rather than at threshold 38. The lock is proven on NORMAL, EASY, CHAOS and Custom, so not a blocker."
+ },
+ {
+  "group": "tool_material7_each_native_mode",
+  "reviewer": "rc4-reviewer-05",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "rows.jsonl campaign52/54/55 thresholds-* use_golden_tools locked (client overlay empty at tick1/post; excerpts show a single ContainerSetContent/SetSlot pair vs repeated pairs over ~3 s on campaign51 output.log 10082-10103)",
+  "description": "In all four reduced presets the golden-tools denial shows no lock message on the client, whereas NORMAL shows it; the block stayed intact and the count unchanged so the lock held, but the missing feedback is unexplained."
+ },
+ {
+  "group": "vehicle_mount_two",
+  "reviewer": "rc4-reviewer-09",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/vehicle_mount_two/excerpts.txt locked rows",
+  "description": "Locked-row excerpts carry no explicit server-side denial line (boat locked excerpt shows only the traced Player.interactOn -> Pass[] and client vehicle empty; no explicit plugin denial log line); the verdict is reproducible from effect absence, unchanged count and the lock overlay in rows.jsonl client snapshots, so not blocking."
+ },
+ {
+  "group": "villager13_profession_resolver",
+  "reviewer": "rc4-reviewer-04",
+  "severity": "minor",
+  "criterion": "E2",
+  "evidence": "review-rc4-pkg/villager13_profession_resolver/excerpts.txt ATD_STAGE2A_STATE lines",
+  "description": "The state lines log the tested ability as {\"TRADE_WITH_*\": null}, so the lock state itself is not logged; the lock is inferred from count<threshold plus the denial/effect oracles, which agree."
+ },
+ {
+  "group": "wandering_trader_separate",
+  "reviewer": "rc4-reviewer-06",
+  "severity": "minor",
+  "criterion": "E4",
+  "evidence": "review-rc4-pkg/wandering_trader_separate/rows.jsonl",
+  "description": "No offhand rows and no NA_OFFHAND rows are recorded; the action (empty-hand container/merchant open or inventory key) has no distinct off-hand route, so this is acceptable, but the absence is implicit rather than recorded."
+ }
+]

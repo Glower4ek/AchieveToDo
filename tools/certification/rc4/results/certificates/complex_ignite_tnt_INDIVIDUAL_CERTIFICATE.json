@@ -1,0 +1,42 @@
+{
+ "group": "complex_ignite_tnt",
+ "reviewer": "rc4-reviewer-06",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "1 ability, 3 guard sites; recomputed SHA-256 of every cited source file under repo/ and all match E1.json; opened guard lines (e.g. NativeComplexSpecs/NativeActionBindings/GameplayMenuAbilities/NativeEquipmentAbilities/GameplayGate/BukkitExpandedGameplayListener) and they reference the ability's AbilityType; thresholds present for normal, easy, hard, chaos_20261116, custom_vision: {\"normal\": 179, \"easy\": 136, \"hard\": 222, \"chaos_20261116\": 800, \"custom_vision\": 179}"
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "17 rows, 0 non-PASS non-NA rows, 0 NA rows. Every locked row PASS with counts unchanged and observed oracles false; allowed rows show the effect (probe/screen true; OpenScreenPacket, 'Test passed. Count: 1', etc.). Read excerpts: locked rows show the denial (native suppression / INVENTORY_OPEN_MONITOR_CANCELLED true / DENIAL_INTENT_DISCOVERED, ATD_CRITERION_SUPPRESSED for item_used_on_block/any_block_use/default_block_use/player_interacted_with_entity) and identical count before/after. No row has why.bookkeeping; no locked row has why.leak. Leaks appear only on allowed or creative rows (legitimate effects). Verdicts reproduced from excerpts.",
+   "rowsRead": [
+    "campaign54 thresholds-chaos ignite_tnt locked/allowed",
+    "campaign51 pass1 ignite_tnt locked",
+    "campaign51 reload ignite_tnt locked"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign51-55 (and 60/61): onlineMode=true, authenticated UUID line for 89c23030-... and join line present."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "creative/op/spectator rows (tag modes) present for every case; offhand rows where an off-hand route exists; thresholds-easy/hard/chaos/custom_vision rows plus NORMAL pass1 present; NA rows: none"
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "reload rows from campaign51 only, logged after all pass1/modes/offhand rows of the group (output.log line order); manifest generationAfter=2, campaign51/60 generations [1,2]; every reload excerpt ATD_STAGE2A_STATE shows generation 2; each reload verdict equals pass1 verdict for the same case/phase."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl 17/17 REPRODUCED; reproducedAll=true for all 7 runtimes; plugin SHA 16d0b2fa...befa identical in every runtime; client mod SHA e8577e1d...c61c; recomputed campaign-results.jsonl SHA-256 for campaign52 and campaign55, both equal evidenceHashes."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "launch.json/runtime_args.json campaign51-55: -javaagent:plugins/achievetodo.jar plus observer trace-agent; only -Dachievetodo option is -Dachievetodo.progression.initialConfig=easy/hard/chaos on campaign52-54, none on 51/55; output.log lines ~203-226 show ATD_LAUNCH_PROFILE=release, ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before cases; freshConfig appears in derived=[...] on 52-54 (plugin-derived)."
+  }
+ },
+ "superseded": "MANIFEST.superseded is empty for this group; no campaign60/61 rows contribute, so no replacement to judge.",
+ "findings": []
+}

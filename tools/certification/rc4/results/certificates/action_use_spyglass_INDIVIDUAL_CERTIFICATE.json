@@ -1,0 +1,49 @@
+{
+ "group": "action_use_spyglass",
+ "reviewer": "rc4-reviewer-09",
+ "decision": "CERTIFIED",
+ "criteria": {
+  "E1": {
+   "result": "PASS",
+   "checked": "Abilities ['use_spyglass']; 3 cited source files ['GameplayGate.java', 'NativeActionBindings.java', 'NativeActionSpecs.java'] re-hashed with hashlib under repo/: all SHA-256 equal E1, all sites active. Opened guard lines (e.g. AbilityType sets in GameplayGate/Native*Bindings, NativePortalAgent 106-116, BukkitExpandedGameplayListener 68-72, GameplayMenuAbilities 21, BukkitGameplayRuntime 139-140, NativeLandmarkOperations 95/119, NativeActionAgent 72) and they name the ability. Thresholds present for normal/easy/hard/chaos_20261116/custom_vision for every ability."
+  },
+  "E2": {
+   "result": "PASS",
+   "checked": "17 rows, all verdict PASS (no non-PASS rows). Every locked row has counts before==after and observed effect oracle false with lock overlay true; every allowed row shows the effect oracle true. Read excerpts of pass1/reload/threshold rows across campaign51-55 (state lines count unchanged, e.g. barrel INVENTORY_OPEN_MONITOR_CANCELLED true, minecart interactOn Success[swingSource=NONE], mace pig health 10.0f->4.0f only when allowed, crossbow arrow probe 'Test failed' when locked vs 'Test passed' allowed). No why.bookkeeping in this group; leaks appear only on allowed rows (expected advancements).",
+   "rowsRead": [
+    "campaign51 pass1 use_spyglass locked",
+    "campaign51 pass1 use_spyglass allowed",
+    "campaign51 reload use_spyglass locked",
+    "campaign51 reload use_spyglass allowed",
+    "campaign52 thresholds-easy use_spyglass locked",
+    "campaign52 thresholds-easy use_spyglass allowed",
+    "campaign53 thresholds-hard use_spyglass locked",
+    "campaign53 thresholds-hard use_spyglass allowed",
+    "campaign54 thresholds-chaos use_spyglass locked",
+    "campaign54 thresholds-chaos use_spyglass allowed"
+   ]
+  },
+  "E3": {
+   "result": "PASS",
+   "checked": "MANIFEST.runtimes campaign51-55,60,61: onlineMode=true, 'UUID of player ... is 89c23030-ce61-44ab-800a-f2aee455e14a' and 'joined the game' lines present for each."
+  },
+  "E4": {
+   "result": "PASS",
+   "checked": "Tags ['modes', 'offhand', 'pass1', 'reload', 'thresholds-chaos', 'thresholds-custom_vision', 'thresholds-easy', 'thresholds-hard']; phases ['allowed', 'creative', 'locked', 'offhand_allowed', 'offhand_locked', 'op', 'spectator']. creative/op/spectator rows present for every ability (tag modes). Off-hand rows present. Threshold rows for easy/hard/chaos/custom_vision present for the first case (one-per-group sample). No NA_* rows."
+  },
+  "E5": {
+   "result": "PASS",
+   "checked": "Reload rows all from campaign51 and start after the last pass1/modes/offhand row of the group (logLines). MANIFEST.e5Reload generationAfter=2; every ATD_STAGE2A_STATE in reload excerpts shows generation 2 (others 1). Each reload verdict PASS equals the pass1 verdict."
+  },
+  "E6": {
+   "result": "PASS",
+   "checked": "replay.jsonl: 17/17 REPRODUCED. REPLAY.json reproducedAll=true for campaign51-55,60,61. Plugin SHA 16d0b2fa...befa identical in all runtimes; client mod e8577e1d...c61c. Recomputed SHA-256 of campaign-results.jsonl for all 7 runtimes: all equal evidenceHashes.results."
+  },
+  "ReleaseLaunch": {
+   "result": "PASS",
+   "checked": "output.log of campaign51-55: ATD_LAUNCH_PROFILE=release (line ~204), ATD_GAMEPLAY_MODE=RELEASE, ATD_PRODUCT_GAMEPLAY_READY=true before first ATD_STAGE2A_STATE. launch.json holds -javaagent:plugins/achievetodo.jar plus trace-agent.jar; only -Dachievetodo.progression.initialConfig=easy/hard/chaos on campaign52/53/54, none on 51/55; freshConfig and world-group.properties appear in the plugin-logged derived=[...] on 52-54 only."
+  }
+ },
+ "superseded": "No superseded rows in this group (MANIFEST.superseded empty); campaign60/61 contribute nothing here.",
+ "findings": []
+}

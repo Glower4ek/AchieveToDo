@@ -1,0 +1,775 @@
+"""Stage 2B single-campaign runner: every case, every phase, one server run, one authenticated client.
+
+Usage: campaign.py <campaign-dir> [--only ability,...] [--phases locked,allowed,...] [--tag pass1]
+Server must already run (run_server.py) and the client must be connected with atd_input_driver.
+Writes <campaign-dir>/receipts/campaign-results.jsonl (one row per case x phase).
+"""
+import argparse, base64, json, re, time
+from pathlib import Path
+
+import campaign_cases
+
+root = Path(__file__).parent
+CLIENT = Path(r'E:/Кубы сборки/ATD 0.4.0 Cert 26.3/minecraft')  # rc.4: Minecraft 26.3 instance
+INBOX, JOURNAL = CLIENT / 'atd-driver' / 'inbox.txt', CLIENT / 'atd-driver' / 'journal.jsonl'
+P = 'Glower4ek'
+# Advancements without "display" (datapack bookkeeping, e.g. BACAP technical/*): not progression, not counted.
+BACAP_TALLY = re.compile(r'blazeandcave:bacap/(advancement_legend|[a-z_]+_milestone)$')
+HIDDEN = frozenset(json.loads((root / 'hidden_advancements.json').read_text(encoding='utf8'))['hidden'])
+USED = re.compile(r'Added 0 to \[atdu\.[^\]]+\] for \S+ \(now (-?\d+)\)')
+HOME = 'execute in minecraft:overworld run tp Glower4ek 8.5 -60 -0.5 180 0'
+
+
+class Server:
+    def __init__(self, attempt: Path):
+        self.control = attempt / 'receipts' / 'control.txt'
+        self.log = attempt / 'receipts' / 'output.log'
+
+    def wait_for(self, needle, timeout=8.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            lines = self.lines()
+            for i in range(len(lines) - 1, -1, -1):
+                if needle in lines[i]:
+                    return lines
+            time.sleep(0.15)
+        return self.lines()
+
+    def lines(self):
+        return self.log.read_text(encoding='utf8', errors='replace').splitlines()
+
+    _COUNT = re.compile(rb'ATD_BRIDGE (?:DELTA_SENT|SNAPSHOT_SENT) [^\n]*?count=(-?\d+)')
+
+    def client_count(self):
+        """The progression count the bridge last sent to the client (incremental scan of the server log)."""
+        if not hasattr(self, '_scan'):
+            self._scan, self._count = 0, None
+        with self.log.open('rb') as f:
+            f.seek(self._scan)
+            data = f.read()
+        end = data.rfind(b'\n') + 1
+        for m in self._COUNT.finditer(data[:end]):
+            self._count = int(m.group(1))
+        self._scan += end
+        return self._count
+
+    def await_count(self, score, extra=0.25, timeout=5.0):
+        """rc.3b: after pinning the score, wait until the bridge has sent that count to the client (DELTA_SENT
+        count=<score>), so the client's lock prediction is current before the action. rc.3 only waited for the server
+        (sync), which let a stale client projection predict a denied use (reload pass, use_water_bucket)."""
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if self.client_count() == int(score):
+                time.sleep(extra)
+                return True
+            time.sleep(0.05)
+        return False
+
+    def sync(self, extra=0.0, timeout=10.0):
+        """0.3.0 harness: wait until the server has executed everything sent so far (a marker command logs its
+        output after them, on the same tick or later), then `extra` seconds for the client to receive the result.
+        Replaces the fixed settle times of rc.2 (2.0 s after setup, 0.8 s after the score pin)."""
+        uid = f'S{int(time.time() * 1000) % 10**9}'
+        start = self.log.stat().st_size
+        self.send([f'scoreboard players set {uid} atd_marks 1'])
+        needle = f'for {uid} '.encode()
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            with self.log.open('rb') as f:
+                f.seek(start)
+                if needle in f.read():
+                    break
+            time.sleep(0.05)
+        else:
+            raise RuntimeError(f'server did not confirm marker {uid}')
+        time.sleep(extra)
+
+    def send(self, commands, settle=0.0):
+        for _ in range(200):
+            if not self.control.read_text().strip():
+                break
+            time.sleep(0.05)
+        tmp = self.control.with_suffix('.staged')
+        for attempt in range(60):
+            try:
+                tmp.write_text('\n'.join(commands) + '\n', encoding='utf8')
+                tmp.replace(self.control)
+                break
+            except OSError:
+                time.sleep(0.15)
+        for _ in range(200):
+            if not self.control.read_text().strip():
+                break
+            time.sleep(0.05)
+        time.sleep(settle)
+
+
+LAST_JOURNAL = [0, 0]
+
+
+def driver(lines, timeout=60):
+    start = JOURNAL.stat().st_size if JOURNAL.exists() else 0
+    for _ in range(100):
+        if not INBOX.exists():
+            break
+        time.sleep(0.05)
+    tmp = INBOX.with_suffix('.tmp')
+    tmp.write_text('\n'.join(lines + ['state done']) + '\n', encoding='utf8')
+    tmp.replace(INBOX)
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        time.sleep(0.2)
+        if JOURNAL.exists():
+            data = JOURNAL.read_bytes()
+            rows = [json.loads(x) for x in data[start:].decode('utf8').splitlines() if x.strip()]
+            if any(r.get('cmd') == 'state' and r.get('tag') == 'done' for r in rows):
+                LAST_JOURNAL[:] = [start, len(data)]
+                return rows
+    raise TimeoutError('driver')
+
+
+def base_reset(c, phase, score):
+    creative = phase == 'creative'
+    cmds = [f'item replace entity {P} weapon.mainhand with minecraft:stick', f'item replace entity {P} weapon.offhand with minecraft:stick',
+            f'clear {P}', f'effect clear {P}', f'effect give {P} minecraft:resistance infinite 255 true', 'execute at Glower4ek run kill @e[type=!player,distance=..60]', 'fill 3 -60 -8 13 -50 2 minecraft:air',
+            'fill 3 -61 -8 13 -61 2 minecraft:grass_block', 'setblock 8 -60 -3 minecraft:stone', 'time set 1000', 'weather clear',
+            f'gamemode {"creative" if creative and not c["hungry"] else "spectator" if phase == "spectator" else "survival"} {P}', f'{"op" if phase == "op" else "deop"} {P}',
+            f'scoreboard players set {P} bac_advancements {score}', HOME]
+    if not c['hungry']:
+        cmds.insert(-1, f'effect give {P} minecraft:saturation 1 20 true')
+    if c['arena'] == 'high':
+        cmds += ['fill 5 99 -5 11 99 1 minecraft:stone', 'fill 5 100 -5 11 104 1 minecraft:air', f'tp {P} 8.5 100 -0.5 180 0']
+    return cmds
+
+
+def directive(cmd):
+    if cmd.startswith('@tp '):
+        return [f'tp {P} {cmd[4:]} 180 0']
+    if cmd == '@home':
+        return [HOME]
+    return [] if cmd.startswith('@') else [cmd]
+
+
+def segment(lines, a, b):
+    out = []
+    for l in lines[a:b]:
+        if 'TraceBridge' in l and 'RETURN_' not in l and 'THROW_' not in l:
+            continue
+        out.append(l)
+    return out
+
+
+def parse_state(seg):
+    for l in seg:
+        if 'ATD_STAGE2A_STATE ' in l:
+            return json.loads(l.split('ATD_STAGE2A_STATE ', 1)[1])
+    return None
+
+
+def probe_outputs(seg):
+    keep = []
+    for l in seg:
+        body = l.split(']: ', 1)[-1]
+        if any(k in body for k in ('Test passed', 'Test failed', 'has the following', 'Found no elements', 'No entity was found',
+                                   'is not a', 'block data', 'entity data')):
+            keep.append(re.sub(r'\d+\.\d{3,}', lambda m: m.group(0)[:6], body))
+    return keep
+
+
+def diff_state(pre, post):
+    d = {}
+    if not pre or not post:
+        return {'missingState': True}
+    for k in ('menu', 'food', 'mode', 'dead', 'worldKey'):
+        if pre.get(k) != post.get(k):
+            d[k] = [pre.get(k), post.get(k)]
+    if pre.get('xp') != post.get('xp'):
+        d['xp'] = [pre.get('xp'), post.get('xp')]
+    inv = [i for i, (x, y) in enumerate(zip(pre.get('inventorySlots', []), post.get('inventorySlots', []))) if x != y]
+    if inv:
+        d['inventorySlots'] = inv
+    stats = {k: post['stats'][k] - pre['stats'].get(k, 0) for k in post.get('stats', {}) if post['stats'][k] != pre['stats'].get(k, 0)}
+    if stats:
+        d['stats'] = stats
+    added = {}
+    for adv, crit in post.get('criteria', {}).items():
+        if adv.startswith('achievetodo:abilities/') or '/recipes/' in adv or adv.startswith('minecraft:recipes'):
+            continue
+        new = sorted(set(crit) - set(pre.get('criteria', {}).get(adv, [])))
+        if new:
+            added[adv] = new
+    if added:
+        d['criteriaAdded'] = added
+    return d
+
+
+def evaluate(c, phase, d, probes_pre, probes_post, states, returns):
+    tokens = c['effect']
+    if phase == 'creative':
+        # Creative never spends items, so 'inv' cannot see the effect there: use the case's creative oracle,
+        # else the other tokens, else the minecraft.used:<item> statistic (awarded in creative as well).
+        if c.get('creative_effect'):
+            tokens = c['creative_effect']
+        elif 'inv' in tokens:
+            tokens = [t for t in tokens if t != 'inv'] or ['used']
+    if any(t in ('na', 'manual') for t in tokens):
+        return 'NOT_AUTOMATED', {}
+    obs, preset = {}, []
+    for t in tokens:
+        if t == 'probe':
+            obs[t] = probes_pre != probes_post
+        elif t == 'inv':
+            obs[t] = bool(d.get('inventorySlots')) or any(s.get('mainhand') != states[0].get('mainhand') for s in states[1:])
+        elif t == 'screen':
+            obs[t] = any(s.get('screen') not in (None, 'none', 'ChatScreen') for s in states[1:]) or 'menu' in d
+        elif t.startswith('stat:'):
+            obs[t] = d.get('stats', {}).get(t[5:], 0) > 0
+        elif t.startswith('client:'):
+            key, _, want = t[7:].partition('=')
+            if key == 'armor':
+                obs[t] = any(s.get('armor') != states[0].get('armor') for s in states[1:])
+            elif want:
+                obs[t] = any(want in str(s.get(key, '')) for s in states[1:])
+                if states and want in str(states[0].get(key, '')):
+                    preset.append(t)  # rc.2c review: already true before the action -> no proof either way
+            else:
+                obs[t] = any(bool(s.get(key)) for s in states[1:])
+                if states and bool(states[0].get(key)):
+                    preset.append(t)
+        elif t.startswith('clear:'):
+            # Inverted client flag: the effect is the ABSENCE of the value in every state (e.g. no black
+            # VisionOverlay once VISION is unlocked; the locked state shows it on every frame).
+            key, _, want = t[6:].partition('=')
+            obs[t] = not any(want in str(s.get(key, '')) for s in states[1:])
+        elif t.startswith('far:'):
+            # Horizontal distance of the client position from the world origin (End outer islands).
+            def dist(s):
+                try:
+                    x, _, z = (float(v) for v in str(s.get('pos', '')).split()[:3])
+                    return (x * x + z * z) ** 0.5
+                except ValueError:
+                    return 0.0
+            obs[t] = any(dist(s) > float(t[4:]) for s in states[1:])
+        elif t == 'used':
+            u = d.get('itemUsed') or [0, 0]
+            obs[t] = u[1] > u[0]
+        elif t.startswith('trace:'):
+            name, _, res = t[6:].partition('=')
+            obs[t] = any(name in r and res in r for r in returns)
+    effect = all(obs.values())
+    none = not any(obs.values())
+    # Criteria the fixture itself earns (e.g. elytra flight in the glide setup) are not a product leak.
+    fixture = set(c.get('fixture_criteria', ()))
+    leak = {adv: crit for adv, crit in d.get('criteriaAdded', {}).items() if adv not in fixture and adv not in HIDDEN}
+    # rc.4 campaign53: BACAP keeps its own tallies (bacap/advancement_legend, bacap/*_milestone) in tick functions; after
+    # the fixture pins a high score they can land in the row's window. A tally alone is not a product leak: an action
+    # can only move a tally by earning a real advancement, and that advancement is then in the leak too (as map_room
+    # is in the audit's allowed rows). Tallies are kept in the receipt as 'bookkeeping'.
+    bookkeeping = {}
+    if leak and all(BACAP_TALLY.match(adv) for adv in leak):
+        bookkeeping, leak = leak, {}
+    overlay = any(s.get('overlay') for s in states[1:])
+    if phase == 'spectator':
+        # Spectator bypasses the product (server and client): vanilla decides what a spectator can do,
+        # the product must neither deny (overlay/discovery) nor leak criteria. The effect is informational.
+        fresh = any(s.get('overlay') and s.get('overlay') != states[0].get('overlay') for s in states[1:])
+        verdict = 'FAIL_DENIED_IN_SPECTATOR' if fresh else ('FAIL_LEAK' if leak else 'PASS')
+        return verdict, {'observed': obs, 'overlay': overlay, 'leak': leak, 'vanillaEffect': effect, 'preset': preset,
+                         **({'bookkeeping': bookkeeping} if bookkeeping else {})}
+    if phase in ('allowed', 'offhand_allowed', 'creative', 'reload_allowed'):
+        verdict = 'PASS' if effect else 'FAIL_NO_EFFECT'
+    else:
+        verdict = 'PASS' if none and not leak else ('FAIL_LEAK' if none else 'FAIL_EFFECT_WHILE_LOCKED')
+        parity = c.get('parity_criteria') or {}
+        if verdict == 'FAIL_LEAK' and all(set(crit) <= set(parity.get(adv, ())) for adv, crit in leak.items()):
+            verdict = 'PASS_PARITY_ENTER_BLOCK'
+        if verdict == 'PASS' and not overlay:
+            verdict = 'PASS_NO_OVERLAY'
+        # 0.3.0: where the denial names what was touched (shelf), a message without that text is a failure.
+        wanted = c.get('overlay_text') or []
+        if wanted and verdict.startswith('PASS') and not any(
+                any(w.lower() in str(s.get('overlay', '')).lower() for w in wanted) for s in states[1:]):
+            verdict = 'FAIL_WRONG_DENIAL_MESSAGE'
+        # use_while_locked: the guard sits after the use starts (crossbow charges, shot is refused).
+        if verdict.startswith('PASS') and not c.get('use_while_locked') and any(s.get('usingItem') for s in states[1:]):
+            verdict = 'PASS_SERVER_CLIENT_DESYNC'
+    return verdict, {'observed': obs, 'overlay': overlay, 'leak': leak, 'preset': preset,
+                     **({'bookkeeping': bookkeeping} if bookkeeping else {})}
+
+
+DIMENSION = {'fortress': 'minecraft:the_nether', 'bastion_remnant': 'minecraft:the_nether', 'end_city': 'minecraft:the_end'}
+
+
+def all_boxes(snap):
+    """Every landmark box in a client snapshot, of any ability."""
+    return [dict((k, int(v) if v.lstrip('-').isdigit() else v) for k, v in re.findall(r'(\w+)=([^,\]]+)', bx))
+            for bx in re.findall(r'Box\[([^\]]*)\]', snap)]
+
+
+def landmark_boxes(c):
+    """Boxes of this ability the client currently holds (the product sends only locked landmark types)."""
+    rows = driver(['landmarks'], timeout=20)
+    snap = next((r.get('snapshot', '') for r in rows if r.get('cmd') == 'landmarks'), '')
+    boxes = [dict((k, int(v) if v.lstrip('-').isdigit() else v) for k, v in re.findall(r'(\w+)=([^,\]]+)', bx))
+             for bx in re.findall(r'Box\[([^\]]*)\]', snap)]
+    return [bx for bx in boxes if bx.get('ability', '').lower() == c['ability']], snap
+
+
+def locate(server, dim, structure, ox, oz):
+    """One /locate from (ox, oz); returns (x, z), 'missing' (game says none nearby) or None (no answer)."""
+    before = len(server.lines())
+    server.send([f'execute in {dim} positioned {ox} 64 {oz} run locate structure {"#minecraft:" + structure[1:] if structure.startswith("#") else "minecraft:" + structure}'], settle=0.5)
+    for _ in range(240):
+        for l in server.lines()[before:]:
+            m = re.search(r'is at \[(-?\d+), (~|-?\d+), (-?\d+)\]', l)
+            if m:
+                return int(m.group(1)), int(m.group(3))
+            if 'Could not find' in l or 'could not find' in l:
+                return 'missing'
+        time.sleep(0.5)
+    return None
+
+
+def wait_box(server, c, dim, x, z, radius, timeout=120.0):
+    """Poll the client's boxes for up to `timeout` s, re-forceloading the area every ~20 s."""
+    deadline, last, snap = time.time() + timeout, 0.0, ''
+    while time.time() < deadline:
+        if time.time() - last > 20:
+            server.send([f'execute in {dim} run forceload add {x - radius} {z - radius} {x + radius} {z + radius}',
+                         f'execute in {dim} run tp {P} {x + 0.5} 160 {z + 0.5} 180 60'], settle=1.0)
+            last = time.time()
+        boxes, snap = landmark_boxes(c)
+        if boxes:
+            return boxes, snap
+        time.sleep(2)
+    return [], snap
+
+
+def landmark_setup(server, c, base_cmds, never_locked=False):
+    """Natural generation only: find a naturally generated structure (or feature) in fresh chunks, read the
+    box the product admitted to the client, and build a closed stone room with a chest inside that box.
+
+    arena 'landmark:<x>:<structure>' -> /locate the structure from several far, never-loaded origins;
+    arena 'feature:<biome|any>'      -> features have no /locate: forceload a growing square of fresh chunks
+                                        (in the given biome) until the product reports a box.
+    The box search runs at score 0 so the landmark is locked and its box is sent to the client in every
+    phase; run_case pins the phase score again right after the fixture is built.
+    """
+    name = c['ability'][len('interact_inside_'):]
+    dim = DIMENSION.get(name, 'minecraft:overworld')
+    server.send(base_cmds + [f'scoreboard players set {P} bac_advancements 0', f'effect give {P} minecraft:slow_falling infinite 1 true'],
+                settle=0.5)
+    import zlib
+    seed = zlib.crc32(c['ability'].encode()) % 40
+    scale = 8 if dim != 'minecraft:overworld' else 1
+    origins = [((40000 + seed * 4000 + k * 24000) // scale, (-40000 - (seed % 7) * 4000 - k * 16000) // scale) for k in range(4)]
+    tried, boxes, snap, found = [], [], '', None
+    if c['arena'].startswith('feature:'):
+        biome = c['arena'].split(':', 1)[1]
+        for ox, oz in origins[:2]:
+            x, z = ox, oz
+            if biome != 'any':
+                before = len(server.lines())
+                server.send([f'execute in {dim} positioned {ox} 64 {oz} run locate biome minecraft:{biome}'], settle=0.5)
+                hit = None
+                for _ in range(240):
+                    for l in server.lines()[before:]:
+                        m = re.search(r'is at \[(-?\d+), (~|-?\d+), (-?\d+)\]', l)
+                        if m:
+                            hit = int(m.group(1)), int(m.group(3))
+                    if hit or any('Could not find' in l for l in server.lines()[before:]):
+                        break
+                    time.sleep(0.5)
+                if not hit:
+                    tried.append(f'biome {biome} not found from {ox},{oz}')
+                    continue
+                x, z = hit
+            # forceload accepts at most 256 chunks per area: 16x16-chunk squares, walking east.
+            for k in range(6):
+                sx = x + k * 256
+                boxes, snap = wait_box(server, c, dim, sx, z, 120, timeout=40.0)
+                server.send([f'execute in {dim} run forceload remove all'], settle=0.5)
+                if boxes:
+                    found = (sx, z)
+                    break
+                tried.append(f'no box in 16x16 chunks at {sx},{z}')
+            if boxes:
+                break
+    else:
+        _, _, structure = c['arena'].split(':', 2)
+        for ox, oz in origins:
+            hit = locate(server, dim, structure, ox, oz)
+            if not isinstance(hit, tuple):
+                tried.append(f'locate from {ox},{oz}: {hit or "no answer"}')
+                continue
+            if never_locked:
+                # Threshold 0: the type is never locked, so the product never sends its boxes. The room goes to
+                # the located structure start, high in the air (closed shell); 'box' is None in the fixture.
+                found, boxes = hit, [dict(minX=hit[0] - 1, maxX=hit[0] + 1, minZ=hit[1], maxZ=hit[1] + 2, minY=150, maxY=150, synthetic=True)]
+                break
+            boxes, snap = wait_box(server, c, dim, hit[0], hit[1], 32)
+            server.send([f'execute in {dim} run forceload remove all'], settle=0.5)
+            if boxes:
+                found = hit
+                break
+            tried.append(f'no admitted box near {hit}')
+    if not boxes:
+        return None, None, f'{"; ".join(tried)}; last snapshot: {snap[:160]}'
+    x, z = found
+    bx = min(boxes, key=lambda q: abs((q['minX'] + q['maxX']) / 2 - x) + abs((q['minZ'] + q['maxZ']) / 2 - z))
+    cx, cz = (bx['minX'] + bx['maxX']) // 2, bx['minZ'] + 1 if bx['maxZ'] > bx['minZ'] else bx['minZ']
+    by = (bx['minY'] + bx['maxY']) // 2
+    # r4: the room must not overlap a box of another locked landmark type (CHAOS r3: the trial chambers chest
+    # was also inside a mineshaft, and the still-locked mineshaft denied the allowed phase). The snapshot was
+    # taken at score 0, so it holds every type's boxes. The centre spot stays first, so a fixture without such
+    # an overlap is unchanged.
+    others = [q for q in all_boxes(snap) if q.get('ability', '').lower() != c['ability'] and not q.get('synthetic')]
+    room_box = lambda px, py, pz: (px - 2, py - 1, pz - 1, px + 2, py + 4, pz + 5)
+    clash = lambda r: [q.get('ability') for q in others
+                       if r[0] <= q['maxX'] and r[3] >= q['minX'] and r[1] <= q['maxY'] and r[4] >= q['minY']
+                       and r[2] <= q['maxZ'] and r[5] >= q['minZ']]
+    overlap = clash(room_box(cx, by, cz))
+    if overlap and not bx.get('synthetic'):
+        spots = sorted(((px, py, pz) for px in range(bx['minX'], bx['maxX'] + 1)
+                        for py in range(bx['minY'], bx['maxY'] + 1, 2) for pz in range(bx['minZ'], bx['maxZ'] + 1)),
+                       key=lambda q: abs(q[0] - cx) + abs(q[1] - by) + abs(q[2] - cz))
+        free = next((q for q in spots if not clash(room_box(*q))), None)
+        if free:
+            tried.append(f'centre room overlaps {sorted(set(overlap))}; moved to {list(free)}')
+            cx, by, cz = free
+        else:
+            tried.append(f'centre room overlaps {sorted(set(overlap))}; no free spot in the box')
+    # rc.4 smoke: half-block centres are computed, never written as f'{v}.5' (for a negative v that is v - 0.5,
+    # which put the item frame inside the north wall and the tadpole a block away from the aim point).
+    # Closed stone shell, air inside: keeps water (ocean structures) and lava out of the chest room.
+    room = [f'execute in {dim} run forceload add {cx - 16} {cz - 16} {cx + 16} {cz + 16}',
+            f'execute in {dim} run fill {cx - 2} {by - 1} {cz - 1} {cx + 2} {by + 4} {cz + 5} minecraft:stone',
+            f'execute in {dim} run fill {cx - 1} {by} {cz} {cx + 1} {by + 3} {cz + 4} minecraft:air',
+            f'execute in {dim} run setblock {cx} {by} {cz} minecraft:chest[facing=south]',
+            f'effect clear {P} minecraft:slow_falling',
+            f'execute in {dim} run tp {P} {cx + 0.5} {by} {cz + 3.5} 180 0']
+    aim = (cx + 0.5, by + 0.5, cz + 1.0)
+    # rc.4 (known issue 6): the target inside the locked landmark can be an item frame on the north wall or a
+    # tadpole instead of the chest. A denied use must not count for player_interacted_with_entity criteria.
+    if c.get('room') == 'item_frame':
+        room[3] = f'execute in {dim} run summon minecraft:item_frame {cx + 0.5} {by + 1.5} {cz + 0.5} {{Facing:3b}}'
+        # Entity reach is 3 blocks: from cz + 3.5 the frame on the north wall is out of reach.
+        room[5] = f'execute in {dim} run tp {P} {cx + 0.5} {by} {cz + 2.5} 180 0'
+        aim = (cx + 0.5, by + 1.5, cz + 0.1)
+    elif c.get('room') == 'tadpole':
+        room[3] = f'execute in {dim} run summon minecraft:tadpole {cx + 0.5} {by} {cz + 1.5} {{NoAI:1b,PersistenceRequired:1b,Silent:1b,Air:32767s}}'
+        # rc.4 campaign51: out of water a tadpole has 15 s of air and then dies, sometimes before the post probe.
+        aim = (cx + 0.5, by + 0.2, cz + 1.5)
+    return room, aim, dict(dimension=dim, located=found, box=bx, chest=[cx, by, cz], room=c.get('room', 'chest'), tried=tried)
+
+
+def judge(c, phase, th, score, lines, idx, rows, requires=None):
+    """Verdict from raw evidence only: server output.log lines with the four marks, driver journal rows.
+    Shared by run_case and campaign_replay.py (E6), so a replay cannot drift from the campaign rule."""
+    allowed = phase in ('allowed', 'offhand_allowed', 'creative', 'reload_allowed')
+    pre_seg = segment(lines, idx['pre'], idx['act'])
+    mid = lines[idx['act']:idx['post']]
+    post_seg = segment(lines, idx['post'], idx['end'])
+    pre_state, post_state = parse_state(pre_seg), parse_state(post_seg)
+    probes_pre, probes_post = probe_outputs(pre_seg), probe_outputs(post_seg)
+    returns = [re.sub(r'.*event=RETURN_([^ (]+)\(.*?value=', lambda m: m.group(1) + ' -> ', l) for l in mid if 'event=RETURN_' in l]
+    returns = [r.split('/')[-1] for r in returns if 'Harness' not in r and 'GameplayEvidenceProbe' not in r]
+    packets = [l.split('ATD_PACKET_IN ', 1)[1] for l in mid if 'ATD_PACKET_IN' in l]
+    suppressed = sum('ATD_CRITERION_SUPPRESSED' in l for l in mid)
+    states = [r for r in rows if r.get('cmd') == 'state' and r.get('tag') in ('pre', 'tick1', 'mid', 'post')]
+    d = diff_state(pre_state, post_state)
+    used = [int(m.group(1)) for seg in (pre_seg, post_seg) for l in seg for m in [USED.search(l)] if m]
+    if len(used) == 2:
+        d['itemUsed'] = used
+    verdict, why = evaluate(c, phase, d, probes_pre, probes_post, states, returns)
+    if c['hungry'] and phase != 'spectator' and (pre_state or {}).get('food', 20) >= 20:
+        verdict = 'INVALID_FIXTURE_NOT_HUNGRY'
+    counts = [(pre_state or {}).get('count'), (post_state or {}).get('count')]
+    if verdict == 'NOT_AUTOMATED':
+        pass
+    elif counts[0] != score:
+        verdict = 'INVALID_FIXTURE_SCORE'
+    elif phase in LOCKED_PHASES and counts[1] is not None and counts[1] >= th:
+        verdict = 'INVALID_SCORE_DRIFT_DURING_ACTION'
+    elif why.get('preset') and phase != 'spectator':
+        # rc.2c review: the client state the effect is read from was already there in the 'pre' sample, so the
+        # row proves neither the lock nor the effect (enter_nether creative: portal fired during the setup).
+        verdict = 'INVALID_FIXTURE_PRESET'
+    elif c.get('expect_hit') and next((s for s in states if s.get('tag') == 'pre'), {}).get('hit', '').startswith('miss'):
+        # rc.2 review: the client aimed at nothing, so the input never reached the fixture; no lock or effect proof.
+        verdict = 'INVALID_FIXTURE_AIM'
+    elif c.get('server_reach') and phase != 'spectator' and not any(
+            r.startswith(t.split('/')[-1] + ' ') for t in c['server_reach'] for r in returns):
+        # rc.2 review: no traced server-side return, so the request may have been stopped by the client mod alone.
+        verdict = 'INVALID_NOT_REACHED_SERVER'
+    elif verdict.startswith('PASS') and phase in LOCKED_PHASES and any(v > score for v in (requires or {}).values()):
+        # A required ability is locked too: the denial may come from it, not from the guard under test.
+        verdict = 'PASS_MASKED_BY_DEPENDENCY'
+    return dict(verdict=verdict, counts=counts, why=why, diff=d, probesPre=probes_pre, probesPost=probes_post,
+                returns=returns[:20], packets=packets[:6], criterionSuppressed=suppressed,
+                client=[{k: s.get(k) for k in ('tag', 'screen', 'guiOverlay', 'mainhand', 'offhand', 'armor', 'hit', 'overlay', 'usingItem',
+                                               'crouching', 'sprinting', 'swimming', 'sleeping', 'vehicle', 'dim', 'pos')} for s in states])
+
+
+MARK = re.compile(r'for M(\d+)(pre|act|post|end) ')
+
+
+def marks(lines, a, e):
+    """Mark indices of one case inside output.log lines [a, e] (the replay side of run_case's idx)."""
+    idx = {}
+    for i in range(a, min(e, len(lines) - 1) + 1):
+        m = MARK.search(lines[i])
+        if m and m.group(2) not in idx:
+            idx[m.group(2)] = i
+    return idx
+
+
+LOCKED_PHASES = ('locked', 'offhand_locked', 'reload_locked', 'op')
+ALLOWED_PHASES = ('allowed', 'offhand_allowed', 'reload_allowed')
+
+
+def active_thresholds(A):
+    """Thresholds of the config the plugin actually selected for this runtime (not normal.toml)."""
+    prog = A / 'runtime' / 'plugins' / 'AchieveToDo' / 'progression'
+    props = dict(l.split('=', 1) for l in (prog / 'world-selection.properties').read_text(encoding='utf8').splitlines()
+                 if '=' in l and not l.startswith('#'))
+    name = props['configName'].strip()
+    files = sorted((prog / 'configs').glob('chaos_*.toml')) if name.lower() == 'chaos' else [prog / 'configs' / f'{name.lower() if name.lower() in ("easy", "normal", "medium", "hard") else name}.toml']
+    if len(files) != 1 or not files[0].is_file():
+        raise RuntimeError(f'active config for {name!r} not found: {files}')
+    values, table = {}, None
+    for line in files[0].read_text(encoding='utf8').splitlines():
+        line = line.split('#', 1)[0].strip()
+        if line.startswith('['):
+            table = line.strip('[]').strip()
+        elif table == 'abilities' and '=' in line:
+            k, v = (x.strip() for x in line.split('=', 1))
+            values[k.strip('"')] = min(int(v), 1152)
+    return name, files[0].name, values
+
+
+def locked_score(c, phase, th, requires=None):
+    """Fixture score: the threshold in allowed phases (raised to the thresholds of the fixture's own required
+    abilities), threshold - locked_margin otherwise (creative included)."""
+    if phase in ALLOWED_PHASES:
+        return max([th] + [v for v in (requires or {}).values() if v > 0])
+    return max(th - c.get('locked_margin', 1), 0)
+
+
+def na_row(results_path, tag, c, phase, th, verdict, config):
+    row = dict(tag=tag, group=c['group'], ability=c['ability'], phase=phase, threshold=th, verdict=verdict, config=config, notes=c['notes'])
+    with results_path.open('a', encoding='utf8') as f:
+        f.write(json.dumps(row, ensure_ascii=False) + '\n')
+    return row
+
+
+def run_case(server, c, phase, thresholds, results_path, tag, config=None):
+    alive = driver(['state alive'], timeout=20)
+    if any(r.get('screen') == 'DeathScreen' for r in alive if r.get('cmd') == 'state'):
+        driver(['respawn', 'wait 20'], timeout=30)
+    ability = c['ability']
+    th = thresholds.get(ability, 0)
+    # A threshold of 0 has no locked state; -1 (permanently locked) has no allowed state.
+    if th == 0 and phase in LOCKED_PHASES:
+        return na_row(results_path, tag, c, phase, th, 'NA_NO_LOCKED_STATE', config)
+    if th == -1 and phase in ALLOWED_PHASES:
+        return na_row(results_path, tag, c, phase, th, 'NA_PERMANENTLY_LOCKED', config)
+    if phase == 'creative' and not c.get('creative', True):
+        return na_row(results_path, tag, c, phase, th, 'NA_VANILLA_NO_CREATIVE_ROUTE', config)
+    offhand = phase.startswith('offhand')
+    if offhand and not c.get('offhand', True):
+        return na_row(results_path, tag, c, phase, th, 'NA_OFFHAND_NOT_APPLICABLE', config)
+    # VISION locked denies every action ("You can't see the world"), so every other case requires it as well.
+    needs = list(c.get('requires', ())) + (['vision'] if ability != 'vision' else [])
+    requires = {r: thresholds.get(r, 0) for r in needs}
+    score = locked_score(c, phase, th, requires)
+    main, off = (c['off'], c['main']) if offhand else (c['main'], c['off'])
+    aim = c['aim']
+    cmds = base_reset(c, phase, score)
+    setup = list(c['setup'])
+    if any(x.startswith('summon ') for x in setup):
+        setup = ['setblock 8 -60 -3 minecraft:air'] + setup
+    fixture = None
+    if c['arena'].startswith(('landmark:', 'feature:')):
+        room, aim, fixture = landmark_setup(server, c, cmds, never_locked=th == 0)
+        if room is None:
+            raise RuntimeError(f'no admitted landmark box for {ability}: {fixture}')
+        cmds, setup = [], room + setup
+    for s in setup:
+        if s.startswith('@wait '):
+            server.send(cmds, settle=float(s.split()[1]))
+            cmds = []
+            continue
+        cmds += directive(s)
+    cmds += [f'item replace entity {P} weapon.mainhand with minecraft:{main}', f'item replace entity {P} weapon.offhand with minecraft:{off}']
+    for it in c['extra_items']:
+        slot, item = it.split()
+        cmds.append(f'item replace entity {P} {slot} with minecraft:{item}')
+    if c['hungry']:
+        cmds += ['difficulty easy', f'effect give {P} minecraft:hunger 8 150 true']
+    server.send(cmds)
+    server.sync(8.5 if c['hungry'] else 0.4)
+    if c['hungry']:
+        server.send([f'effect clear {P}'] + ([f'gamemode creative {P}'] if phase == 'creative' else []), settle=0.3)
+    # BACAP awards earned by fixture items/terrain add to the score; pin it again right before observing.
+    server.send([f'scoreboard players set {P} bac_advancements {score}'])
+    server.sync(0.0)
+    server.await_count(score)
+    if fixture:
+        time.sleep(2.5)
+        server.send([f'scoreboard players set {P} bac_advancements {score}'])
+        server.sync(0.0)
+        server.await_count(score)
+    used = []
+    if phase == 'creative' and c['main'] != 'air':
+        obj = f'atdu.{c["main"]}'
+        server.send([f'scoreboard objectives add {obj} minecraft.used:minecraft.{c["main"]}'], settle=0.3)
+        used = [f'scoreboard players add {P} {obj} 0']
+    uid = f'{int(time.time()*1000)%10**9}'
+    n = len(c['probes'])
+    server.send([f'scoreboard players set M{uid}pre atd_marks 1', f'atdproof stage2a-state {P}', *c['probes'], *used, f'scoreboard players set M{uid}act atd_marks 1'], settle=0.3)
+    server.wait_for(f'for M{uid}act ')
+    acts = []
+    late = [x[7:] for x in c['actions'] if x.startswith('server:')]
+    if late:
+        server.send(late, settle=0.2)
+    for x in c['actions']:
+        if x.startswith('server:'):
+            continue
+        if x == '@landmark':
+            acts.append('click_use')
+        elif x != '@close':
+            acts.append(x)
+    script = ['release_all', 'wait 3']
+    if aim:
+        script += [f'aim {aim[0]} {aim[1]} {aim[2]}', 'wait 3']
+    name = f'{tag}-{c["group"]}-{ability}-{phase}'
+    script += [f'state pre', f'shot {name}-pre', *acts, 'wait 1', 'state tick1', f'wait {c["wait"]}', 'state post', f'shot {name}-post']
+    rows = driver(script, timeout=90)
+    journal = tuple(LAST_JOURNAL)
+    server.send([f'scoreboard players set M{uid}post atd_marks 1', f'atdproof stage2a-state {P}', *c['probes'], *used, f'scoreboard players set M{uid}end atd_marks 1'], settle=0.3)
+    lines = server.wait_for(f'for M{uid}end ')
+    idx = {k: next((i for i, l in enumerate(lines) if f'for M{uid}{k} ' in l), None) for k in ('pre', 'act', 'post', 'end')}
+    if None in idx.values():
+        raise RuntimeError(f'marks missing {idx}')
+    closing = (['close'] if '@close' in c['post'] or 'screen' in c['effect'] else [])
+    if closing:
+        driver(closing + ['wait 2'], timeout=20)
+    post = []
+    for s_ in c['post']:
+        post += directive(s_)
+    post += [HOME, f'gamemode survival {P}', f'deop {P}', 'execute at Glower4ek run kill @e[type=!player,distance=..60]']
+    if c['hungry']:
+        post += ['difficulty peaceful']
+    server.send(post)
+    server.sync(0.1)
+    row = dict(tag=tag, group=c['group'], ability=ability, phase=phase, score=score, threshold=th,
+               **judge(c, phase, th, score, lines, idx, rows, requires),
+               logLines=[idx['pre'], idx['end']], journalBytes=list(journal), notes=c['notes'], fixture=fixture, config=config,
+               requires=requires)
+    with results_path.open('a', encoding='utf8') as f:
+        f.write(json.dumps(row, ensure_ascii=False) + '\n')
+    return row
+
+
+# 0.3.0 presentation checks: chat messages of advancements and abilities must carry their hover text on Purpur
+# (NativeChatAgent rewrites the pre-1.21.5 format of bacap_override.zip and the ability functions).
+PRESENTATION = [
+    ('chat_hover_bacap_override', 'bacap_rewards:msg/farming/an_amazing_story'),  # old format in bacap_override.zip
+    ('chat_hover_bacap', 'bacap_rewards:msg/enchanting/fiery'),                   # 26.2 format in bacap.zip
+    ('chat_hover_ability', 'achievetodo:abilities/jump'),                         # embedded ability message
+]
+
+
+def presentation(attempt, tag='presentation'):
+    """Run each message function for the player and read the newest chat message from the client: PASS when it
+    has a show_text hover that starts with the bracketed name the message shows."""
+    A = root / attempt
+    server = Server(A)
+    out = A / 'receipts' / 'presentation-results.jsonl'
+    rows = []
+    for name, function in PRESENTATION:
+        server.send([f'execute as {P} run function {function}'])
+        server.sync(0.5)
+        journal = driver(['chat 3'], timeout=20)
+        messages = next((r.get('messages') for r in journal if r.get('cmd') == 'chat'), None)
+        newest = messages[0] if isinstance(messages, list) and messages else {}
+        text = newest.get('text', '')
+        bracket = re.search(r'\[([^\]]+)\]', text)
+        hovers = newest.get('hovers', [])
+        ok = bool(bracket) and any(h.strip().startswith(bracket.group(1).strip()) for h in hovers)
+        row = dict(tag=tag, check=name, function=function, verdict='PASS' if ok else 'FAIL_NO_HOVER',
+                   message=text, hovers=hovers, utc=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()))
+        rows.append(row)
+        with out.open('a', encoding='utf8') as f:
+            f.write(json.dumps(row, ensure_ascii=False) + '\n')
+        print(f"{row['verdict']:26} {name}", flush=True)
+    return rows
+
+
+_LOCK = None
+
+
+def single_runner():
+    """The client driver is shared: hold an exclusive OS lock for the whole process lifetime."""
+    global _LOCK
+    if _LOCK is not None:
+        return
+    import msvcrt
+    _LOCK = open(root / 'campaign.lock', 'a+')
+    try:
+        msvcrt.locking(_LOCK.fileno(), msvcrt.LK_NBLCK, 1)
+    except OSError:
+        raise SystemExit('another campaign runner holds campaign.lock')
+
+
+def main(argv=None):
+    single_runner()
+    ap = argparse.ArgumentParser()
+    ap.add_argument('attempt')
+    ap.add_argument('--only', default='')
+    ap.add_argument('--groups', default='')
+    ap.add_argument('--phases', default='locked,allowed')
+    ap.add_argument('--tag', default='pass1')
+    ap.add_argument('--sample', default='', help="'one-per-group': only the first case of every group")
+    o = ap.parse_args(argv)
+    A = root / o.attempt
+    server = Server(A)
+    server.send(['scoreboard objectives add atd_marks dummy', 'gamerule immediate_respawn true', 'gamerule doImmediateRespawn true'], settle=0.5)
+    config_name, config_file, thresholds = active_thresholds(A)
+    config = f'{config_name}:{config_file}'
+    print(f'CONFIG {config} abilities={len(thresholds)}', flush=True)
+    results = A / 'receipts' / 'campaign-results.jsonl'
+    only = set(filter(None, o.only.split(',')))
+    groups = set(filter(None, o.groups.split(',')))
+    seen_groups = set()
+    for c in campaign_cases.CASES:
+        if o.sample == 'one-per-group':
+            if c['group'] in seen_groups:
+                continue
+            seen_groups.add(c['group'])
+        if only and c['ability'] not in only:
+            continue
+        if groups and c['group'] not in groups:
+            continue
+        for phase in o.phases.split(','):
+            # Server gone (auto-stop, crash): stop cleanly instead of writing ERROR for every remaining case.
+            if (A / 'receipts' / 'execution.json').exists():
+                print(f'SERVER_STOPPED before {c["ability"]} {phase}: see receipts/execution.json; rerun the rest with --only', flush=True)
+                return 2
+            try:
+                row = run_case(server, c, phase, thresholds, results, o.tag, config)
+                print(f"{row['verdict']:26} {c['group'][:34]:34} {c['ability'][:30]:30} {phase}", flush=True)
+            except Exception as error:
+                print(f"{'ERROR':26} {c['group'][:34]:34} {c['ability'][:30]:30} {phase} {error}", flush=True)
+                with results.open('a', encoding='utf8') as f:
+                    f.write(json.dumps(dict(tag=o.tag, group=c['group'], ability=c['ability'], phase=phase, verdict='ERROR', error=str(error))) + '\n')
+                try:
+                    driver(['release_all', 'close'], timeout=20)
+                    server.send([HOME, f'gamemode survival {P}'], settle=1)
+                except Exception:
+                    pass
+
+
+if __name__ == '__main__':
+    main()
