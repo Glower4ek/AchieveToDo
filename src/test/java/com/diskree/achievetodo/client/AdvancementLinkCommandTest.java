@@ -45,20 +45,30 @@ class AdvancementLinkCommandTest {
         assertEquals(1, failures.size());
     }
     @Test void absentScreenContractCannotLinkOptionalClasses() {
-        assertFalse(OptionalAdvancementSearch.requestHighlight(new Object(), Identifier.parse("minecraft:story/mine_stone")));
+        assertFalse(OptionalAdvancementSearch.requestHighlight(new Object(), Identifier.parse("minecraft:story/mine_stone"), new Object()));
         assertEquals("advancements_search", OptionalAdvancementSearch.MOD_ID);
     }
     @Test void installedScreenContractUsesNativeFlashingStateWithoutCopyingRendering() {
         var screen = new SearchScreenFixture();
         var id = Identifier.parse("blazeandcave:building/en_garde");
-        assertTrue(OptionalAdvancementSearch.requestHighlight(screen, id));
+        assertTrue(OptionalAdvancementSearch.requestHighlight(screen, id, null));
         assertEquals(id, screen.flashingAdvancementId);
         assertEquals(0, screen.ticks);
         assertEquals(1, screen.stops);
     }
     @Test void changedFieldTypeAndOptionalLinkageFailureAreSafe() {
-        assertFalse(OptionalAdvancementSearch.requestHighlight(new ChangedScreenFixture(), Identifier.parse("minecraft:story/root")));
-        assertFalse(OptionalAdvancementSearch.requestHighlight(new BrokenScreenFixture(), Identifier.parse("minecraft:story/root")));
+        assertFalse(OptionalAdvancementSearch.requestHighlight(new ChangedScreenFixture(), Identifier.parse("minecraft:story/root"), null));
+        assertFalse(OptionalAdvancementSearch.requestHighlight(new BrokenScreenFixture(), Identifier.parse("minecraft:story/root"), null));
+    }
+    // 0.4.1: AdvancementsSearch 1.3.1 (Minecraft 26.3) keeps its state in a patch object; the link must flash the widget
+    // through getOrInitPatch().startFlashing(widget), as the user saw "could not open" with 1.3.1.
+    @Test void patchLayoutOf131FlashesTheWidget() {
+        var screen = new PatchScreenFixture();
+        var widget = new WidgetFixture();
+        assertTrue(OptionalAdvancementSearch.requestHighlight(screen, Identifier.parse("minecraft:story/root"), widget));
+        assertSame(widget, screen.patch.flashing);
+        assertEquals(1, screen.patchCalls);
+        assertFalse(OptionalAdvancementSearch.requestHighlight(screen, Identifier.parse("minecraft:story/root"), new Object()));
     }
     @Test void oneDispatchedClickProducesOneFallbackAndNoServerRetry() throws Exception {
         var dispatcher = new CommandDispatcher<FabricClientCommandSource>();
@@ -91,6 +101,17 @@ class AdvancementLinkCommandTest {
         int ticks = 12;
         int stops;
         public void advancements_search$stopFlashing() { flashingAdvancementId = null; ticks = 0; stops++; }
+    }
+    public static class WidgetFixture {}
+    public static class PatchFixtureBase {
+        WidgetFixture flashing;
+        private void startFlashing(WidgetFixture widget) { flashing = widget; }
+    }
+    public static class PatchFixture extends PatchFixtureBase {}
+    public static class PatchScreenFixture {
+        final PatchFixture patch = new PatchFixture();
+        int patchCalls;
+        private PatchFixture getOrInitPatch() { patchCalls++; return patch; }
     }
     public static class ChangedScreenFixture {
         private String flashingAdvancementId;
