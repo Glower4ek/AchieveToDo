@@ -110,3 +110,11 @@ rows, so opening the advancements screen crashed the client (`Abilities in categ
 distributed across 2 rows`). The certification campaign does not open that screen, so it did not see it. 0.4.1 splits
 a category into rows that differ by at most one, the longer first (landmarks: 12 and 11);
 `AbilityRowsLayoutTest` checks every category.
+
+## 10. Chat advancement links failed with AdvancementsSearch 1.3.1 (fixed in 0.4.2)
+
+Reported by the owner after the 0.4.1 release. Clicking an advancement in chat opened the advancements screen, but
+with AdvancementsSearch 1.3.1 installed the chat also showed a red "could not open this advancement through the
+current AdvancementsSearch integration" message: 1.3.1 moved its flashing state into a patch object
+(`getOrInitPatch()`, `startFlashing(AdvancementWidget)`), so the reflective call for 1.3.0 found nothing. 0.4.2 tries the
+1.3.1 layout first and falls back to the 1.3.0 one; `AdvancementLinkCommandTest` covers both.

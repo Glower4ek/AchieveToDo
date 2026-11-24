@@ -67,9 +67,10 @@ public final class AdvancementLinkCommand {
                 if (node == null) return false;
                 var screen = new AdvancementsScreen(advancements);
                 client.gui.setScreen(screen);
-                if (client.gui.screen() != screen || screen.getAdvancementWidget(node) == null) return false;
+                var widget = screen.getAdvancementWidget(node);
+                if (client.gui.screen() != screen || widget == null) return false;
                 advancements.setSelectedTab(node.root().holder(), true);
-                return OptionalAdvancementSearch.requestHighlight(screen, id);
+                return OptionalAdvancementSearch.requestHighlight(screen, id, widget);
             }
         }, failure -> {
             if (failure == Result.ABSENT) {

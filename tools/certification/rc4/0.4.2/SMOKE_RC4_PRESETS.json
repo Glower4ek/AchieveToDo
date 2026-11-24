@@ -1,0 +1,105 @@
+{
+  "started": "2026-11-24T07:28:56+00:00",
+  "plugin": "E:\\Vibecode\\AchieveToDo\\certification\\rc4-artifacts\\AchieveToDo-Purpur-mc26.3+0.4.2.jar",
+  "runtimes": {
+    "campaign56": {
+      "mode": "easy",
+      "started": "2026-11-24T07:28:56+00:00",
+      "passes": {
+        "smoke-easy": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 5,
+            "NA_NO_LOCKED_STATE": 1
+          },
+          "finished": "2026-11-24T07:30:12+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-24T07:30:15+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 6
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign57": {
+      "mode": "hard",
+      "started": "2026-11-24T07:30:15+00:00",
+      "passes": {
+        "smoke-hard": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 6
+          },
+          "finished": "2026-11-24T07:31:31+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-24T07:31:34+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 6
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign58": {
+      "mode": "chaos",
+      "started": "2026-11-24T07:31:34+00:00",
+      "passes": {
+        "smoke-chaos": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 6
+          },
+          "finished": "2026-11-24T07:32:57+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-24T07:33:00+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 6
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    },
+    "campaign59": {
+      "mode": "E:\\Vibecode\\AchieveToDo\\certification\\w5-campaign\\configs\\custom_vision.toml",
+      "started": "2026-11-24T07:33:00+00:00",
+      "passes": {
+        "smoke-custom_vision": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 5,
+            "PASS_MASKED_BY_DEPENDENCY": 1
+          },
+          "finished": "2026-11-24T07:34:16+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-24T07:34:19+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 6
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "rc4-smoke-presets",
+  "timing": {
+    "easy": 78.3,
+    "hard": 79.8,
+    "chaos": 85.3,
+    "custom_vision": 79.6
+  },
+  "finished": "2026-11-24T07:34:19+00:00"
+}
