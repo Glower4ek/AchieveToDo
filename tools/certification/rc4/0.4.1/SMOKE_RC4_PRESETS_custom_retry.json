@@ -1,0 +1,32 @@
+{
+  "started": "2026-11-24T06:47:39+00:00",
+  "plugin": null,
+  "runtimes": {
+    "campaign62": {
+      "mode": "E:\\Vibecode\\AchieveToDo\\certification\\w5-campaign\\configs\\custom_vision.toml",
+      "started": "2026-11-24T06:47:39+00:00",
+      "passes": {
+        "smoke-custom_vision": {
+          "phases": "locked,allowed",
+          "counts": {
+            "PASS": 5,
+            "PASS_MASKED_BY_DEPENDENCY": 1
+          },
+          "finished": "2026-11-24T06:49:00+00:00",
+          "aimRetry": []
+        }
+      },
+      "finished": "2026-11-24T06:49:03+00:00",
+      "replay": {
+        "counts": {
+          "REPRODUCED": 6
+        },
+        "reproducedAll": true,
+        "exit": 0
+      }
+    }
+  },
+  "state": "DONE",
+  "rules": "rc4-smoke-presets custom retry after Mojang auth outage",
+  "finished": "2026-11-24T06:49:03+00:00"
+}
